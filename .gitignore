@@ -1,0 +1,8 @@
+node_modules
+
+/.cache
+/public/build
+/.netlify
+.env
+.idea
+.DS_Store
