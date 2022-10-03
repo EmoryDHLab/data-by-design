@@ -20,7 +20,7 @@ export default function HomeTitle() {
       </div>
       <div className="flex flex-col items-center middle-full col-start-11 col-span-4 row-span-8 bg-nightingale_blue p-16">
         <div>
-          <img src="ch5-08b-amalg.jpg" className="max-w-full" />
+          <img src="/images/ch5-08b-amalg.jpg" className="max-w-full" />
         </div>
         <div className="caption text-center mt-10 w-5/6">
           <span className="text-offwhite">

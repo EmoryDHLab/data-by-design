@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.cardPlayfair:hover {
+    background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/playfair/1-northamerica.jpg") center;
+}
+
+.cardBrooks:hover {
+    background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/brooks/1-sof_slaveship.jpg") center;
+}
+
+.cardPeabody:hover {
+    background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/peabody/1500s.jpg") center;
+}
+
+.cardWillard:hover {
+    background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/ch4-13-willard.jpg") center;
+}
+
+.cardDubois:hover {
+    background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/dubois/ch5-01-phila.jpg") center;
+}
+
+.cardLabour:hover {
+    background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/railroadscaled.jpg") center;
+}

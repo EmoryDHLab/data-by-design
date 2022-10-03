@@ -504,6 +504,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.visible {
+  visibility: visible !important;
+}
+
 .invisible {
   visibility: hidden !important;
 }
@@ -564,6 +568,26 @@ video {
   grid-row-start: 5 !important;
 }
 
+.mt-16 {
+  margin-top: 4rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem !important;
+}
+
+.mb-7 {
+  margin-bottom: 1.75rem !important;
+}
+
 .ml-32 {
   margin-left: 8rem !important;
 }
@@ -572,8 +596,8 @@ video {
   margin-top: 2.5rem !important;
 }
 
-.mb-7 {
-  margin-bottom: 1.75rem !important;
+.mb-20 {
+  margin-bottom: 5rem !important;
 }
 
 .flex {
@@ -582,6 +606,10 @@ video {
 
 .grid {
   display: grid !important;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .w-5\/6 {
@@ -600,8 +628,56 @@ video {
   width: 60% !important;
 }
 
+.w-2\/5 {
+  width: 40% !important;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.w-3\/5 {
+  width: 60% !important;
+}
+
+.w-2\/5 {
+  width: 40% !important;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.w-3\/5 {
+  width: 60% !important;
+}
+
+.w-2\/5 {
+  width: 40% !important;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.w-3\/5 {
+  width: 60% !important;
+}
+
 .max-w-full {
   max-width: 100% !important;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.resize {
+  resize: both !important;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 }
 
 .grid-cols-14 {
@@ -610,6 +686,10 @@ video {
 
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
 }
 
 .grid-rows-5 {
@@ -642,6 +722,36 @@ video {
   border-width: 1px !important;
 }
 
+.bg-brooks_sec {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(239 205 255 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-playfair_sec {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(209 228 255 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-willard_sec {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(254 255 201 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-peabody_sec {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(219 245 233 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-dubois_sec {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 211 211 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-labour_sec {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 240 188 / var(--tw-bg-opacity)) !important;
+}
+
 .bg-black {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(28 24 23 / var(--tw-bg-opacity)) !important;
@@ -652,9 +762,9 @@ video {
   background-color: rgb(59 111 224 / var(--tw-bg-opacity)) !important;
 }
 
-.bg-dubois_sec {
+.bg-brooks_sec {
   --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 211 211 / var(--tw-bg-opacity)) !important;
+  background-color: rgb(239 205 255 / var(--tw-bg-opacity)) !important;
 }
 
 .p-16 {
@@ -667,6 +777,35 @@ video {
 
 .p-5 {
   padding: 1.25rem !important;
+}
+
+.p-20 {
+  padding: 5rem !important;
+}
+
+.p-5 {
+  padding: 1.25rem !important;
+}
+
+.p-20 {
+  padding: 5rem !important;
+}
+
+.p-5 {
+  padding: 1.25rem !important;
+}
+
+.p-20 {
+  padding: 5rem !important;
+}
+
+.p-5 {
+  padding: 1.25rem !important;
+}
+
+.px-28 {
+  padding-left: 7rem !important;
+  padding-right: 7rem !important;
 }
 
 .pl-24 {
@@ -717,8 +856,8 @@ video {
   font-family: neue-haas-unica, sans-serif !important;
 }
 
-.text-frontTitle {
-  font-size: 14rem !important;
+.font-william {
+  font-family: VTC William, serif !important;
 }
 
 .text-3xl {
@@ -726,14 +865,18 @@ video {
   line-height: 2.25rem !important;
 }
 
-.text-xl {
-  font-size: 1.25rem !important;
-  line-height: 1.75rem !important;
-}
-
 .text-2xl {
   font-size: 1.5rem !important;
   line-height: 2rem !important;
+}
+
+.text-frontTitle {
+  font-size: 14rem !important;
+}
+
+.text-xl {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
 }
 
 .text-lg {
@@ -746,6 +889,31 @@ video {
   line-height: 2.5rem !important;
 }
 
+.text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+}
+
+.text-4xl {
+  font-size: 2.25rem !important;
+  line-height: 2.5rem !important;
+}
+
+.text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+}
+
+.text-4xl {
+  font-size: 2.25rem !important;
+  line-height: 2.5rem !important;
+}
+
+.text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+}
+
 .font-bold {
   font-weight: 700 !important;
 }
@@ -756,6 +924,11 @@ video {
 
 .leading-veryTight {
   line-height: 0.8 !important;
+}
+
+.text-black {
+  --tw-text-opacity: 1 !important;
+  color: rgb(28 24 23 / var(--tw-text-opacity)) !important;
 }
 
 .text-white {
@@ -772,7 +945,48 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 
+.cardPlayfair:hover {
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/playfair/1-northamerica.jpg") center;
+}
+
+.cardBrooks:hover {
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/brooks/1-sof_slaveship.jpg") center;
+}
+
+.cardPeabody:hover {
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/peabody/1500s.jpg") center;
+}
+
+.cardWillard:hover {
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/ch4-13-willard.jpg") center;
+}
+
+.cardDubois:hover {
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/dubois/ch5-01-phila.jpg") center;
+}
+
+.cardLabour:hover {
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/railroadscaled.jpg") center;
+}
+
 .hover\:bg-playfairPrimary:hover {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(59 111 224 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }

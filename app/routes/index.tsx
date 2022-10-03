@@ -1,12 +1,13 @@
 import HomeTitle from "~/components/HomeTitle";
+import ChapterCardGrid from "~/components/ChapterCardGrid";
 
 export default function Index() {
   return (
-    <div>
+    <div className="bg-black">
       <HomeTitle />
       <div className="bg-dubois_sec flex">
         <div className="w-2/5">
-          <img className="p-20 w-full" src="ch4-5.webp" />
+          <img className="p-20 w-full" src="/images/ch4-5.webp" />
         </div>
 
         <div className="p-20 font-william w-3/5">
@@ -22,9 +23,7 @@ export default function Index() {
           <div className="text-lg p-5">Read More -&gt;</div>
         </div>
       </div>
-      <h3 className="text-white font-william font-bold text-center text-3xl mb-7">
-        CHAPTERS
-      </h3>
+      <ChapterCardGrid />
     </div>
   );
 }
