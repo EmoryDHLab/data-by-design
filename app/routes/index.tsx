@@ -1,5 +1,6 @@
 import HomeTitle from "~/components/HomeTitle";
 import ChapterCardGrid from "~/components/ChapterCardGrid";
+import Timeline from "~/components/Timeline";
 
 export default function Index() {
   return (
@@ -23,6 +24,7 @@ export default function Index() {
           <div className="text-lg p-5">Read More -&gt;</div>
         </div>
       </div>
+      <Timeline />
       <ChapterCardGrid />
     </div>
   );

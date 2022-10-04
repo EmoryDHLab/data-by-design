@@ -1,126 +1,95 @@
-import { useEffect, useState } from "react";
 import imageData from "~/timelineImages.json";
 import { useWindowSize } from "~/hooks";
+import { useCallback, useState } from "react";
+import { DndProvider, useDrop, XYCoord } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import TimelineImage from "~/components/TimelineImage";
 
-export default function Timeline() {
+const IMAGE_COUNT = 2;
+
+function createInitialImageState(windowWidth: number) {
+  let images: { [n: number]: object } = {};
+  for (let i = 0; i < IMAGE_COUNT; i++) {
+    while (true) {
+      let randomIndex = Math.floor(Math.random() * imageData.length);
+      if (!(randomIndex in images)) {
+        const left = Math.floor(Math.random() * windowWidth);
+        const top = Math.floor(Math.random() * 250);
+        const transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+
+        images[randomIndex] = {
+          left,
+          top,
+          transform,
+          index: randomIndex,
+          image: imageData[randomIndex],
+        };
+        break;
+      }
+    }
+  }
+
+  return images;
+}
+
+interface Image {
+  index: number;
+  top: number;
+  left: number;
+}
+
+export default function TimelineWrapper() {
   return (
-    <div>
-      <svg
-        width="100%"
-        height={part1Height + "px"}
-        onMouseUp={() => {
-          currentIndex = null;
-        }}
-        onMouseMove={moveImage()}
-      >
-        {imageData
-          .slice(imageSliceIndex, imageSliceIndex + imageLength)
-          .map((img, index) => (
-            <g>
-              <image
-                ref="timeline_img"
-                src={generateImg(img)}
-                width="150"
-                transform={getTransform(index)}
-                onClick={() => shiftTimeline(img)}
-                onMouseDown={changeDisplay(index)}
-                visibility={part1Vis}
-              ></image>
-            </g>
-          ))}
-        <g visibility={part2Vis}>
-          {sortByYear(imageData).map((img, index) => (
-            <image
-              src={generateImg(img)}
-              width="150"
-              x={lineXPosition[index] + timelinePosition}
-              y="150"
-              onClick={() => shift(index)}
-            ></image>
-          ))}
-          {getUniqYear(sortedImages).map((year, index) => (
-            <text
-              x={yearTimelinePosition[index] + timelinePosition}
-              y="140"
-              style="fill: white; font-size: 15px; font-family: VTC William, serif"
-            >
-              {{ year }}
-            </text>
-          ))}
+    <DndProvider backend={HTML5Backend}>
+      <Timeline />
+    </DndProvider>
+  );
+}
 
-          <image
-            y={part1Height - 100}
-            x="300"
-            width={arrowSize}
-            src="../../../assets/ui/homepage/left_arrow.png"
-            onClick={(timelinePosition -= 80)}
+function Timeline() {
+  const windowSize = useWindowSize();
+  const [images, setImages] = useState(() =>
+    createInitialImageState(windowSize.width || 500)
+  );
+
+  const moveImage = useCallback(
+    (index: number, left: number, top: number) => {
+      const newImages = { ...images };
+      newImages[index] = { ...newImages[index], left, top };
+      setImages(newImages);
+    },
+    [images, setImages]
+  );
+
+  const [, drop] = useDrop(
+    () => ({
+      accept: "IMAGE",
+      drop(item: Image, monitor) {
+        const delta = monitor.getDifferenceFromInitialOffset() as XYCoord;
+        const left = Math.round(item.left + delta.x);
+        const top = Math.round(item.top + delta.y);
+        moveImage(item.index, left, top);
+        return undefined;
+      },
+    }),
+    [moveImage]
+  );
+
+  return (
+    <div ref={drop} className="w-full relative h-[500px]">
+      {Object.values(images).map(({ index, left, top, transform }) => {
+        const image = imageData[index];
+        return (
+          <TimelineImage
+            key={index}
+            index={index}
+            left={left}
+            top={top}
+            transform={transform}
+            image={image}
           />
-          <image
-            src="../../../assets/ui/homepage/right_arrow.png"
-            y={part1Height - 100}
-            x={windowSize.width - 350}
-            width={arrowSize}
-            onClick={(timelinePosition += 80)}
-          ></image>
-        </g>
-
-        <text
-          y={part1Start + 10}
-          x={windowSize.width / 2}
-          textAnchor="middle"
-          style={{
-            fill: "white",
-            fontSize: "35px",
-            fontFamily: "VTC William, serif",
-          }}
-        >
-          TIMELINE
-        </text>
-
-        <image
-          y={part1Start + 20}
-          x={windowSize.width / 2 - 20 - 35}
-          width={arrowSize}
-          src={
-            shuffleIcon === "shuffleClick"
-              ? `/ui/homepage/shuffle_click.png`
-              : `/ui/homepage/shuffle_unclick.png`
-          }
-          onClick={viewShuffle}
-          onMousedown={(shuffleIcon = "shuffle_click")}
-          onMouseup={(shuffleIcon = "shuffle_unclick")}
-        ></image>
-
-        <image
-          y={part1Start + 20}
-          x={windowSize.width / 2 - 20 + 35}
-          width={arrowSize}
-          src={`/ui/homepage/${sortIcon}.png`}
-          onClick={viewSort}
-        ></image>
-      </svg>
-
-      <div className="bg-brooks_sec flex mb-20">
-        <div className="w-2/5">
-          <img
-            className="p-20 w-full"
-            src={generateImg(displayImage)}
-            alt={displayImage.ALT - displayImage.TEXT}
-          />
-        </div>
-
-        <div className="p-20 font-william w-3/5">
-          <div className="text-4xl p-5">
-            {displayImage.TITLE} by {displayImage.ARTIST}
-            {displayImage.YEAR}
-          </div>
-          <div className="text-lg p-5">
-            <span style={{ whitespace: pre }}>{displayImage.CREDIT} </span>
-            <span style={{ whitespace: pre }}>{displayImage.DIGITIZED}</span>
-          </div>
-          <div className="text-lg p-5">{displayImage.CHAPTER} -&gt;</div>
-        </div>
-      </div>
+        );
+      })}
     </div>
   );
 }
