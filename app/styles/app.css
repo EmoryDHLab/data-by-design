@@ -37,3 +37,18 @@
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/images/railroadscaled.jpg") center;
 }
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns:
+    1fr
+    min(65ch, 100%)
+    1fr;
+}
+.grid-wrapper > * {
+    grid-column: 2;
+}
+.full-bleed {
+    width: 100%;
+    grid-column: 1 / 4;
+}
