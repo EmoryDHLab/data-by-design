@@ -1,35 +1,25 @@
+import { Link } from "@remix-run/react";
+
 export default function ChapterDropdown() {
   return (
     <div className="absolute z-20 top-10 border divide-y text-white">
       <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <a href="/chapters/peabody/" className="">
-          The Work of Knowledge
-        </a>
+        <Link to="/chapters/peabody/">The Work of Knowledge</Link>
       </div>
       <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <a href="/chapters/playfair/" className="">
-          Visualization as Argument
-        </a>
+        <Link to="/chapters/playfair/">Visualization as Argument</Link>
       </div>
       <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <a href="/chapters/dubois/" className="">
-          Between Data and Truth
-        </a>
+        <Link to="/chapters/dubois/">Between Data and Truth</Link>
       </div>
       <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <a href="/chapters/brooks/" className="">
-          Every Datapoint a Person
-        </a>
+        <Link to="/chapters/brooks/">Every Datapoint a Person</Link>
       </div>
       <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <a href="/chapters/willard/" className="">
-          Narratives of Possession
-        </a>
+        <Link to="/chapters/willard/">Narratives of Possession</Link>
       </div>
       <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <a href="/chapters/labour/" className="">
-          Labour
-        </a>
+        <Link to="/chapters/labour/">Labour</Link>
       </div>
     </div>
   );
