@@ -1164,11 +1164,6 @@ video {
   color: rgb(107 114 128 / var(--tw-text-opacity)) !important;
 }
 
-.text-cyan-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(6 182 212 / var(--tw-text-opacity)) !important;
-}
-
 .opacity-50 {
   opacity: 0.5 !important;
 }
@@ -1242,7 +1237,7 @@ video {
   grid-column: 1 / 4;
 }
 
-.footnote {
+.footnode {
   cursor: pointer;
   display: inline-block;
   font-family: "VTC William";

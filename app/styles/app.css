@@ -42,7 +42,7 @@
     display: grid;
     grid-template-columns:
     1fr
-    min(65ch, 100%)
+    min(85ch, 100%)
     1fr;
 }
 .grid-wrapper > * {
@@ -51,4 +51,20 @@
 .full-bleed {
     width: 100%;
     grid-column: 1 / 4;
+}
+
+.footnote {
+    cursor: pointer;
+    display: inline-block;
+    font-family: "VTC William";
+    font-weight: 700;
+    vertical-align: middle;
+    font-size: .75rem;
+    line-height: 1.25rem;
+    border-radius: 50%;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    margin-left: .25rem;
+    margin-bottom: .2rem;
+    text-align: center;
 }

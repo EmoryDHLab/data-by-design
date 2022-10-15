@@ -1,10 +1,7 @@
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
   serverBuildTarget: "vercel",
-  server:
-    process.env.NETLIFY || process.env.NETLIFY_LOCAL
-      ? "./server.js"
-      : undefined,
+  server: process.env.NODE_ENV === "development" ? undefined : "./server.js",
   serverDependenciesToBundle: [
     "react-dnd",
     "react-dnd-html5-backend",

@@ -9,7 +9,7 @@ export default function ChapterCardGrid() {
       <div className="grid grid-cols-2 grid-rows-3">
         <ChapterCard
           to="/chapters/brooks"
-          className="cardBrooks bg-brooks_sec hover:text-white"
+          className="cardBrooks bg-brooksSecondary hover:text-white"
           title="Every Datapoint a Person"
           subtitle="The Brooks / Diagram of a Slave Ship"
         >
@@ -18,7 +18,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/playfair"
-          className="cardPlayfair bg-playfair_sec hover:text-white"
+          className="cardPlayfair bg-playfairSecondary hover:text-white"
           title="What Visualization Reveals"
           subtitle="William Playfair's Time-Series Charts"
         >
@@ -27,7 +27,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/willard"
-          className="cardWillard bg-willard_sec hover:text-white"
+          className="cardWillard bg-willardSecondary hover:text-white"
           title="Narratives of Possession"
           subtitle="Emma Willard and Shanawdithit’s Narrative Maps"
         >
@@ -36,7 +36,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/peabody"
-          className="cardPeabody bg-peabody_sec hover:text-white"
+          className="cardPeabody bg-peabodySecondary hover:text-white"
           title="The Work of Knowledge"
           subtitle="Elizabeth Palmer Peabody’s Chronological Grids as Argument"
         >
@@ -45,7 +45,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/dubois"
-          className="cardDubois bg-dubois_sec hover:text-white"
+          className="cardDubois bg-duboisSecondary hover:text-white"
           title="Between Data and Truth"
           subtitle="W. E. B. Du Bois’s “Data Portraits”"
         >
@@ -54,7 +54,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/labour"
-          className="cardLabour bg-labour_sec hover:text-white"
+          className="cardLabour bg-labourSecondary hover:text-white"
           title="Labour"
           subtitle="How We Built This"
         >
