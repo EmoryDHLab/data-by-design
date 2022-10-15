@@ -1154,6 +1154,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
+.text-cyan-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(6 182 212 / var(--tw-text-opacity)) !important;
+}
+
 .text-offwhite {
   --tw-text-opacity: 1 !important;
   color: rgb(250 241 233 / var(--tw-text-opacity)) !important;
@@ -1162,11 +1167,6 @@ video {
 .text-gray-500 {
   --tw-text-opacity: 1 !important;
   color: rgb(107 114 128 / var(--tw-text-opacity)) !important;
-}
-
-.text-cyan-500 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(6 182 212 / var(--tw-text-opacity)) !important;
 }
 
 .opacity-50 {
