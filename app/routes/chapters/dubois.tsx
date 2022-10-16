@@ -4,10 +4,13 @@ import Footnote from "~/components/Footnote";
 import DocumentViewer from "~/components/dubois/DocumentViewer";
 import { StudentChart } from "~/components/dubois/StudentChart";
 import Footer from "~/components/Footer";
+import { ThemeContext } from "~/theme";
 
 export default function DuboisChapter() {
   return (
-    <div>
+    <ThemeContext.Provider
+      value={{ backgroundColor: "duboisPrimary", primaryTextColor: "white" }}
+    >
       <div className="chapter-root bg-black">
         <ChapterTitle
           title="Between Data and Truth"
@@ -25,11 +28,7 @@ export default function DuboisChapter() {
             University (now Clark Atlanta University), where W.E.B. Du Bois had
             been teaching for the past two years--and a long two years they had
             been.{" "}
-            <Footnote
-              backgroundColor="bg-duboisPrimary"
-              textColor="text-white"
-              number="1"
-            >
+            <Footnote number="1">
               As indicated in the{" "}
               <span className="italic">
                 Catalogue of the Officers and Students of Atlanta University,
@@ -49,11 +48,18 @@ export default function DuboisChapter() {
               24th, 1899, the most profound of personal tragedies when the Du
               Bois’s two-year-old son, Burghardt, died after a brief illness.
             </span>
-            <span>
-              <span role="button" className="circle">
-                2
-              </span>{" "}
-            </span>
+            <Footnote number="2">
+              The medical cause was diphtheria, although Du Bois and his wife
+              always felt that the root cause of Burghardt’s death was racism.
+              None of Atlanta’s “two or three” Black doctors had been available
+              to make an emergency house call, and not a single one of the
+              city’s many white doctors would allow themselves to cross racial
+              lines to tend to Burghardt, even with the knowledge of the
+              severity of his illness. For more on this incident and Du Bois’s
+              early years in Atlanta, see David Levering Lewis,{" "}
+              <span className="italic">W.E.B. Du Bois: A Biography</span> (New
+              York: Henry Holt, 2009): 152-176.
+            </Footnote>
             <span className="font-normal">
               {" "}
               But any small comfort that might have brought about by the start
@@ -84,11 +90,20 @@ export default function DuboisChapter() {
               beings”—namely, the United States’s Black citizens—"in as
               systematic and compact a form as possible.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                3
+            <Footnote number="3">
+              W.E.B. Du Bois, “
+              <a
+                className="underline"
+                href="http://www.webdubois.org/dbANParis.html"
+              >
+                The American Negro in Paris
+              </a>
+              ,”
+              <span className="italic">
+                The American Monthly Review of Reviews
               </span>{" "}
-            </span>
+              22.5 (November 1900), p. 576.
+            </Footnote>
             <span className="font-normal">
               {" "}
               This “systematic and compact form” was, of course, data
@@ -99,11 +114,14 @@ export default function DuboisChapter() {
             <span className="font-normal">
               , published just one year earlier.
             </span>
-            <span>
-              <span role="button" className="circle">
-                4
-              </span>{" "}
-            </span>
+            <Footnote number="4">
+              <span className="italic">On The Philadelphia Negro</span> as the
+              antecedent to the Paris Exposition charts, see Alexander Weheliye,
+              “Diagrammatics as Physiognomy: W.E.B. Du Bois’s Graphic
+              Modernities,”{" "}
+              <span className="italic">CR: The New Centennial Review</span> 15.2
+              (2015): 23-58.
+            </Footnote>
           </p>
           <div className="flex flex-col items-center middle-full full-bleed py-16">
             <div>
@@ -162,11 +180,17 @@ export default function DuboisChapter() {
               visualization practitioners ever since, Du Bois appreciated the
               ability of the charts to convey trends and patterns “at a glance.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                5
-              </span>{" "}
-            </span>
+            <Footnote number="5">
+              {" "}
+              Du Bois, “
+              <a
+                href="http://www.webdubois.org/dbANParis.html"
+                className="underline text-blue-500"
+              >
+                The American Negro in Paris
+              </a>
+              ,” p. 576.
+            </Footnote>
             <span className="font-normal">
               {" "}
               In this case, Du Bois sought to highlight the growth and progress
@@ -183,11 +207,29 @@ export default function DuboisChapter() {
               segregationist policies and laws of the present,” and which
               attempted to control and constrain all aspects of Black life.
             </span>
-            <span>
-              <span role="button" className="circle">
-                6
-              </span>{" "}
-            </span>
+            <Footnote number="6">
+              Du Bois, “
+              <a
+                href="http://www.webdubois.org/dbANParis.html"
+                className="underline"
+              >
+                The American Negro in Paris
+              </a>
+              ,” p. 577; Whitney Battle-Baptiste and Britt Rusert,
+              “Introduction,” in W.E.B.{" "}
+              <span className="italic">
+                Du Bois’s Data Portraits: VIsualizing Black America
+              </span>
+              , eds. Whitney Battle-Baptiste and Britt Rusert (New York:
+              Princeton Architectural Press, 2018), p. 19. For a sustained
+              meditation on the legacy of the Black Codes and their relation to
+              contemporary digital life, see the special issue of{" "}
+              <span className="italic">The Black Scholar</span> on “Black Code,”
+              edited by Jessica Marie Johnson and Mark Anthony Neal, and in
+              particular, the introduction, “Wild Seed in the Machine,”{" "}
+              <span className="italic">The Black Scholar</span> 47.3 (2017):
+              1-2.
+            </Footnote>
             <span className="font-normal">
               {" "}
               Conceived at a time when Du Bois found himself increasingly
@@ -1306,6 +1348,6 @@ export default function DuboisChapter() {
         </div>
         <Footer backgroundColor="bg-duboisPrimary" textColor="text-white" />
       </div>
-    </div>
+    </ThemeContext.Provider>
   );
 }
