@@ -244,16 +244,7 @@ export default function DuboisChapter() {
               className="italic font-normal"
               style={{ color: "rgb(41, 41, 41)" }}
             >
-              The
-            </span>
-            <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
-              {" "}
-            </span>
-            <span
-              className="font-normal italic"
-              style={{ color: "rgb(41, 41, 41)" }}
-            >
-              Georgia Negro{" "}
+              The Georgia Negro{" "}
             </span>
             <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
               series, which functions as its title page, makes clear how Du Bois
@@ -271,19 +262,19 @@ export default function DuboisChapter() {
               century is the problem of the color line.”
             </span>
           </p>
-          <div className="flex flex-col items-center middle-full">
-            <div>
-              <img
-                src="/_nuxt/img/ch5-03-georgia.1a93e97.jpg"
-                alt=""
-                loading="lazy"
-                width="100%"
-              />
-            </div>
-            <div className="caption text-center mt-10 w-5/6">
+          <div className="flex flex-col items-center middle-full p-10">
+            <img
+              src="/images/dubois/ch5-03-georgia.jpg"
+              alt=""
+              loading="lazy"
+              width="100%"
+            />
+            <div className="font-william text-center mt-10 w-5/6">
               <p>
                 <span>Above: The introductory image of </span>
-                <span>The Georgia Negro: A Social Study, </span>
+                <span className="italic">
+                  The Georgia Negro: A Social Study,{" "}
+                </span>
                 <span>
                   the first set of charts included in the Paris Exposition.
                   Image courtesy of the Library of Congress, Prints &amp;
@@ -320,7 +311,7 @@ export default function DuboisChapter() {
               be addressed.{" "}
             </span>
           </p>
-          <p>
+          <p className="pt-10">
             <span>
               While the first several charts in the series make use of familiar
               visual forms—maps, bar charts, and line graphs—in order to

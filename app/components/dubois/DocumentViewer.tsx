@@ -461,61 +461,59 @@ export default function DocumentViewer() {
   const selectedImage = imageSets[selectedSet].images[selectedImageIndex];
 
   return (
-    <div className="bg-black w-full flex">
-      <div className="py-10 px-5 flex flex-col items-center w-1/5 space-y-5">
-        <button
-          onClick={() => {
-            setSelectedSet(0);
-          }}
-        >
-          {selectedSet === 0 ? (
-            <div className="space-y-5 max-w-[100px]">
-              <img src="/images/dubois/stack1.png" />
-              <img className="w-full" src="/images/dubois/set1.png" />
-            </div>
-          ) : (
-            <div className="space-y-5 max-w-[100px]">
-              <img src="/images/dubois/eyeframe.png" />
-              <img className="w-full" src="/images/dubois/set1.png" />
-            </div>
-          )}
-        </button>
-        <button onClick={() => setSelectedSet(1)}>
-          {selectedSet === 1 ? (
-            <div className="space-y-5 max-w-[100px]">
-              <img src="/images/dubois/stack2.png" />
-              <img className="w-full" src="/images/dubois/set2.png" />
-            </div>
-          ) : (
-            <div className="space-y-5 max-w-[100px]">
-              <img src="/images/dubois/eyeframe.png" />
-              <img className="w-full" src="/images/dubois/set2.png" />
-            </div>
-          )}
-        </button>
-      </div>
-      <div>
-        <div className="grid grid-cols-4 md:grid-cols-9 gap-8 py-5 px-20">
-          {imageSets[selectedSet].images.map(({ src }, index) => (
-            <img
-              src={src}
-              onClick={() => {
-                setSelectedImageIndex(index);
-              }}
-              className={classNames(
-                index === selectedImageIndex &&
-                  "p-1 hover:border-white-700 border-solid border-white border-2 rounded-md",
-                "max-w-[80px]"
-              )}
-            />
-          ))}
+    <div className="bg-black w-full flex flex-col items-center pb-10">
+      <div className="max-w-5xl flex">
+        <div className="py-10 px-5 flex flex-col items-center w-1/6 space-y-5">
+          <button
+            onClick={() => {
+              setSelectedSet(0);
+            }}
+          >
+            {selectedSet === 0 ? (
+              <div className="space-y-5 max-w-[70px]">
+                <img src="/images/dubois/stack1.png" />
+                <img className="w-full" src="/images/dubois/set1.png" />
+              </div>
+            ) : (
+              <div className="space-y-5 max-w-[70px]">
+                <img src="/images/dubois/eyeframe.png" />
+                <img className="w-full" src="/images/dubois/set1.png" />
+              </div>
+            )}
+          </button>
+          <button onClick={() => setSelectedSet(1)}>
+            {selectedSet === 1 ? (
+              <div className="space-y-5 max-w-[70px]">
+                <img src="/images/dubois/stack2.png" />
+                <img className="w-full" src="/images/dubois/set2.png" />
+              </div>
+            ) : (
+              <div className="space-y-5 max-w-[70px]">
+                <img src="/images/dubois/eyeframe.png" />
+                <img className="w-full" src="/images/dubois/set2.png" />
+              </div>
+            )}
+          </button>
         </div>
-        <div className="slides flex flex-nowrap py-5 px-40 content-center relative">
+        <div>
+          <div className="grid grid-cols-4 md:grid-cols-9 gap-8 py-5 px-20">
+            {imageSets[selectedSet].images.map(({ src }, index) => (
+              <img
+                src={src}
+                onClick={() => {
+                  setSelectedImageIndex(index);
+                }}
+                className={classNames(
+                  index === selectedImageIndex &&
+                    "p-1 hover:border-white-700 border-solid border-white border-2 rounded-md",
+                  "max-w-[70px]"
+                )}
+              />
+            ))}
+          </div>
           <div className="flex flex-col items-center">
-            <div className="flex">
-              <img src={selectedImage.src} />
-            </div>
-            <div className="flex text-white">
+            <img src={selectedImage.src} className="max-w-xs" />
+            <div className="flex text-white justify-around w-full">
               <button
                 onClick={() => {
                   setSelectedImageIndex(
@@ -528,7 +526,7 @@ export default function DocumentViewer() {
                   src="/images/dubois/leftarrow.png"
                 />
               </button>
-              <div>
+              <div className="text-center">
                 <p className="my-2 text-white-600 font-normal text-lg mt-5">
                   {selectedImage?.text}
                 </p>
