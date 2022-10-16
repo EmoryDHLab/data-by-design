@@ -21,7 +21,7 @@ export function StudentChart() {
   const [activeChart, setActiveChart] = useState<Chart>(Chart.One);
   const ChartComponent = charts[activeChart];
   return (
-    <div className="middle-full flex flex-col items-center">
+    <div className="flex flex-col items-center max-w-2xl ">
       <span>
         <button
           onClick={() => {

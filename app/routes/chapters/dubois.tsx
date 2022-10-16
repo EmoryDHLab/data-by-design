@@ -383,7 +383,7 @@ export default function DuboisChapter() {
               in time.
             </span>
           </p>
-          <div className="full-bleed">
+          <div className="full-bleed flex flex-col items-center py-10">
             <StudentChart />
           </div>
           <p>

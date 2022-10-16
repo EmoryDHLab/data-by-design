@@ -1,7 +1,9 @@
+import USAMap from "~/components/dubois/USAMap";
+
 export default function StudentChartOne() {
   return (
-    <div className="w-4/5">
-      <div className="col-span-8 2xl:col-span-10 col-start-2 2xl:col-start-3 mt-6 flex flex-col font-duboisWide uppercase">
+    <div>
+      <div className="mt-6 flex flex-col font-duboisWide uppercase">
         <p className="font-bold xl:text-2xl 2xl:text-3xl text-xl tracking-wider text-center">
           A series of statistical charts, illustrating information about the
           graduates of atlanta university, and other black college graduates in
@@ -22,13 +24,14 @@ export default function StudentChartOne() {
           emory university, atlanta, ga. <br />
           united states of america
         </p>
-        <div className="w-2/5 flex flex-col items-center">
-          <span className="flex items-center space-x-2">
+        <div className="w-2/5 flex flex-col items-center space-y-5">
+          <USAMap />
+          <span className="flex items-center justify-center space-x-2">
             <svg width="23" height="23" viewBox="0 0 28 28" fill="none">
               <path
                 d="M13.94 27.108C21.248 27.108 27.116 21.204 27.116 13.932C27.116 6.768 21.356 0.827998 13.94 0.827998C6.74 0.827998 0.836 6.516 0.836 13.932C0.836 21.204 6.704 27.108 13.94 27.108ZM6.812 23.58L9.548 15.444L2.924 10.98H11.06L13.94 2.196L16.892 10.98H25.028L18.404 15.444L21.14 23.58L13.94 18.396L6.812 23.58Z"
                 fill="black"
-              ></path>
+              />
             </svg>{" "}
             <p className="font-dubois uppercase">Atlanta University</p>
           </span>
