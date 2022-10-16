@@ -1,6 +1,7 @@
 import ChapterTitle from "~/components/ChapterTitle";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import Footnote from "~/components/Footnote";
+import DocumentViewer from "~/components/dubois/DocumentViewer";
 
 export default function DuboisChapter() {
   return (
@@ -13,7 +14,7 @@ export default function DuboisChapter() {
         <div className="nav-bar transition">
           <div>breakpoint xl</div>
         </div>
-        <div className="grid-wrapper bg-offwhite pt-16 text-lg">
+        <div className="grid-wrapper bg-offwhite pt-16 text-xl">
           <ChapterSectionTitle color="bg-duboisPrimary">
             Introduction
           </ChapterSectionTitle>
@@ -102,16 +103,16 @@ export default function DuboisChapter() {
               </span>{" "}
             </span>
           </p>
-          <div className="flex flex-col items-center middle-full">
+          <div className="flex flex-col items-center middle-full full-bleed py-16">
             <div>
               <img
-                src="/_nuxt/img/ch5-01-phila.9af3426.jpg"
+                src="/images/dubois/ch5-01-phila.jpg"
                 alt=""
                 loading="lazy"
                 width="100%"
               />
             </div>
-            <div className="caption text-center mt-10 w-5/6">
+            <div className="font-william text-center mt-10 w-5/6">
               <p>
                 <span
                   className="font-normal"
@@ -127,7 +128,7 @@ export default function DuboisChapter() {
                   The Philadelphia Negro
                 </span>
                 <span
-                  className="italic font-normal"
+                  className="font-normal"
                   style={{ color: "rgb(44, 62, 80)" }}
                 >
                   , which was published in 1898. In order to conduct the
@@ -140,7 +141,7 @@ export default function DuboisChapter() {
                   The Philadelpha Negro
                 </span>
                 <span
-                  className="italic font-normal"
+                  className="font-normal"
                   style={{ color: "rgb(44, 62, 80)" }}
                 >
                   , Du Bois (and his wife Nina) moved to the neighborhood, where
@@ -196,9 +197,9 @@ export default function DuboisChapter() {
               data visualization--could do.
             </span>
           </p>
-          <div className="title-text p-4 relative font-william font-bold text-xl lg:text-4xl flex justify-center items-center">
-            <span>Visualization as Evidence, Visualization as Argument</span>
-          </div>
+          <ChapterSectionTitle color="bg-duboisPrimary">
+            Visualization as Evidence, Visualization as Argument
+          </ChapterSectionTitle>
           <p>
             <span className="font-normal">
               The 63 charts created for the Paris Exhibition were grouped into
@@ -232,11 +233,8 @@ export default function DuboisChapter() {
               made in the decades since Emancipation.
             </span>
           </p>
-          <div className="col-span-10 2xl:col-span-14 2xl:col-end-13 flex w-full mx-auto bg-black">
-            <div className="button py-10 px-5 flex flex-col items-center"></div>
-            <div className="min-h-screen items-center justify-center">
-              <div className="slides flex flex-nowrap py-5 px-40 content-center relative"></div>
-            </div>
+          <div className="full-bleed my-10">
+            <DocumentViewer />
           </div>
           <p>
             <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
