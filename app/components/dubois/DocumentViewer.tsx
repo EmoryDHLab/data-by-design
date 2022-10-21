@@ -499,6 +499,7 @@ export default function DocumentViewer() {
           <div className="grid grid-cols-4 md:grid-cols-9 gap-8 py-5 px-20">
             {imageSets[selectedSet].images.map(({ src }, index) => (
               <img
+                key={src}
                 src={src}
                 onClick={() => {
                   setSelectedImageIndex(index);

@@ -1,10 +1,13 @@
 import USAMap from "~/components/dubois/USAMap";
+import PieChart from "~/components/dubois/PieChart.client";
+import studentData from "~/data/chartOne.json";
+import { ClientOnly } from "remix-utils";
 
 export default function StudentChartOne() {
   return (
     <div>
       <div className="mt-6 flex flex-col font-duboisWide uppercase">
-        <p className="font-bold xl:text-2xl 2xl:text-3xl text-xl tracking-wider text-center">
+        <p className="font-bold xl:text-xl 2xl:text-2xl text-lg text-center">
           A series of statistical charts, illustrating information about the
           graduates of atlanta university, and other black college graduates in
           the united states, who contributed data, knowledge, and labor to du
@@ -12,7 +15,7 @@ export default function StudentChartOne() {
         </p>
       </div>
       <div className="flex justify-between items-center p-10 font-duboisNarrow">
-        <p className="2xl:text-[18px] text-lg text-center uppercase w-96">
+        <p className="2xl:text-[16px] text-md text-center uppercase w-96">
           prepared and executed by
           <br />
           tanvi sharma, anna mola,
@@ -51,53 +54,24 @@ export default function StudentChartOne() {
           residence.
         </p>
       </div>
-      <div className="flex justify-center mt-20 mb-20">
-        <div className="col-span-3 2xl:col-span-3 col-start-1 col-end-4 2xl:col-start-2 mt-6 flex flex-col justify-center">
-          <div className="font-duboisNarrow uppercase">
-            <div className="flex flex-col">
+      <div className="flex justify-between mt-20 mb-20">
+        <div className="font-duboisNarrow uppercase">
+          <div className="flex flex-col">
+            {studentData.categories.map((category) => (
               <div className="flex flex-row mb-6 items-center pl-4">
-                <div className="mr-2 rounded-2xl h-8 w-8"></div>
-                <p>Teachers</p>
+                <div
+                  className="mr-2 rounded-2xl h-8 w-8"
+                  style={{
+                    backgroundColor: category.color,
+                    border: "1px solid black",
+                  }}
+                />
+                <p>{category.displayName}</p>
               </div>
-              <div className="flex flex-row mb-6 items-center pl-4">
-                <div className="mr-2 rounded-2xl h-8 w-8"></div>
-                <p>Ministers</p>
-              </div>
-              <div className="flex flex-row mb-6 items-center pl-4">
-                <div className="mr-2 rounded-2xl h-8 w-8"></div>
-                <p>Government Service</p>
-              </div>
-              <div className="flex flex-row mb-6 items-center pl-4">
-                <div className="mr-2 rounded-2xl h-8 w-8"></div>
-                <p>Business</p>
-              </div>
-              <div className="flex flex-row mb-6 items-center pl-4">
-                <div className="mr-2 rounded-2xl h-8 w-8"></div>
-                <p>Other Professions</p>
-              </div>
-              <div className="flex flex-row mb-6 items-center pl-4">
-                <div className="mr-2 rounded-2xl h-8 w-8"></div>
-                <p>House Wives</p>
-              </div>
-              <div className="flex flex-row mb-6 items-center pl-4">
-                <div className="mr-2 rounded-2xl h-8 w-8"></div>
-                <p>Dead</p>
-              </div>
-              <div className="flex flex-row mb-6 items-center pl-4">
-                <div className="mr-2 rounded-2xl h-8 w-8"></div>
-                <p>Unknown</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-        <div id="vue-canvas">
-          <canvas
-            id="defaultCanvas0"
-            className="p5Canvas"
-            width="1000"
-            height="1000"
-          ></canvas>
-        </div>
+        <ClientOnly>{() => <PieChart studentData={studentData} />}</ClientOnly>
       </div>
       <div className="mt-6 font-dubois font-bold text-center uppercase">
         <p>

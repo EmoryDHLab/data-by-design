@@ -1,0 +1,2709 @@
+{
+  "count": 331,
+  "categories": [
+    {
+      "name": "teachers",
+      "displayName": "Teachers",
+      "color": "#D92944",
+      "students": [
+        {
+          "name": "Mrs. Julia Turne",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1873,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lucy C. Laney ",
+          "degree": "",
+          "profession": "Principle Haines Institute",
+          "location": "Augusta",
+          "year": 1873,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Elizabeth (Outlaw) Smith",
+          "degree": "",
+          "profession": "Matron State Nor. School",
+          "location": "Winston, S.C.",
+          "year": 1873,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Jennle S. (Morris) Lee",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Albany",
+          "year": 1874,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Martha A. (Upshaw) Ford",
+          "degree": "",
+          "profession": "Teacher Morris Brown Coll.",
+          "location": "Atlanta",
+          "year": 1874,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Sarah J. Thomas",
+          "degree": "",
+          "profession": "Prin. Shepard School",
+          "location": "Macon",
+          "year": 1875,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Sarah J. (Fleimster) Butler",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Savannah",
+          "year": 1875,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary E. (Ingraham) Hill",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Unadilla",
+          "year": 1875,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "William Henry Crogman",
+          "degree": "",
+          "profession": "Prof. Latin & Greek, Clark Univ.",
+          "location": "Atlanta",
+          "year": 1876,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Samuel Benjamin Morse",
+          "degree": "A.M.",
+          "profession": "",
+          "location": "Music Teacher",
+          "year": 1876,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Richard Robert Wright",
+          "degree": "A.M.",
+          "profession": "Pres. State Indust'l College",
+          "location": "Savannah",
+          "year": 1876,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Alice B. S. Miller, ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Savannah",
+          "year": 1876,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Willianna (Lewis) Taylor",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Chattanooga, Tenn.",
+          "year": 1877,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Susie v. (Whitic) Watts",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Gainesville, Fla.",
+          "year": 1877,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "William Francis Jackson",
+          "degree": "A.M.",
+          "profession": "Prin. Public School",
+          "location": "Jacksonville, Fla.",
+          "year": 1877,
+          "type": "College Graduates"
+        },
+        {
+          "name": "John McIntosh",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "Savannah",
+          "year": 1877,
+          "type": "College Graduates"
+        },
+        {
+          "name": "M. Blanche (Curtis) Walker",
+          "degree": "",
+          "profession": "Matron N.&I. Institute",
+          "location": "Tuskegee, Ala.",
+          "year": 1877,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Indiana M. (Clark) Henry",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "Atlanta",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mildred A. (Brown) Phillip",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Macon",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Fletcher Hamilton Henderson",
+          "degree": "",
+          "profession": "Prin. Howard Nor. School",
+          "location": "Cuthbert",
+          "year": 1879,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Mary E. (Pope) McCree",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "William Edgar Hightower",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Austin, Tex.",
+          "year": 1880,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Ella M. (Pope) King",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Raleigh, N. C.",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Thomas Marshall Dent.",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Rome",
+          "year": 1880,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Minnie F. (Young) Davis",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Athens",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Arrie D. Badger",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ella M. (Thomas) Landrum",
+          "degree": "",
+          "profession": "Teacher Morris Brown College",
+          "location": "Atlanta",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Jennle F. (Wynn) White",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Augusta",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Charles Rice",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "Dallas, Texas",
+          "year": 1881,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Mrs. Lavinia Watts",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Little Rock, Ark.",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Helen (Coles) Young",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Springfleld, Mo.",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Adelia (Hunt) Logan",
+          "degree": "",
+          "profession": "Teacher, N.&I. Institute",
+          "location": "Tuskegee, Ala.",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Benjamin Franklin Hartwell",
+          "degree": "Sc.",
+          "profession": "Teacher",
+          "location": "Valdosta",
+          "year": 1881,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Emma W. (Saxon) Simmons",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Americus",
+          "year": 1882,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Oswell Augustus Combs",
+          "degree": "",
+          "profession": "Prof. Greek, Morris Brown Coll.",
+          "location": "Atlanta",
+          "year": 1882,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Henry Lucius Walker",
+          "degree": "A.M.",
+          "profession": "Prin. Public School",
+          "location": "Augusta",
+          "year": 1882,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Nancy A. (Baber) Lomax",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Little Rock, Ark.",
+          "year": 1882,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mattie (lverson) Heard",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Athens",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Annie B. Thomas",
+          "degree": "",
+          "profession": "Teacher Morris Brown Coll.",
+          "location": "Atlanta",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Janie A. (Brown) Garnett",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Brunswick",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "James Augustus Henry",
+          "degree": "",
+          "profession": "Prin. High School",
+          "location": "Chattanooga, Tenn.",
+          "year": 1883,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Dinah P. (Watts) Pace",
+          "degree": "",
+          "profession": "Teacher & Manager Orphans' Home",
+          "location": "Covlngton",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Paul C. Coley",
+          "degree": "M.D.",
+          "profession": "Teacher",
+          "location": "Hawkinsville",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Charles William Luckie",
+          "degree": "A.M.",
+          "profession": "Teacher, Nor. School",
+          "location": "Prairie View, Tex.",
+          "year": 1883,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Willlam C. McLester",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Sanford, Fla.",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary E. (Bell) Burson",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Amanda F. Woodward",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Fort Worth, Texas",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Sarah V. Maxwell",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Lexington",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Emma (Nelson) White",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Lutherville",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary C. Jackson",
+          "degree": "",
+          "profession": "Teacher Haines Institute",
+          "location": "Augusta",
+          "year": 1885,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Moses Jefferson Johnson",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "Ennis, Tex.",
+          "year": 1885,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Anna (Wade) Richardson",
+          "degree": "",
+          "profession": "Prin. Lamson School",
+          "location": "Marshallville",
+          "year": 1885,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Chlora L. White",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "South Atlanta",
+          "year": 1885,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ella P. Baker",
+          "degree": "",
+          "profession": "Teacher Atl. Baptist College",
+          "location": "Atlanta",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Carrie L. (Fambro) Still",
+          "degree": "",
+          "profession": "Teacher in Normal School",
+          "location": "Woodville, Miss.",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lewis Sherman Clark",
+          "degree": "Sc., A.M.",
+          "profession": "Prin. Knox Institute",
+          "location": "Athens",
+          "year": 1887,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Susie F. Morton",
+          "degree": "",
+          "profession": "Teacher Knox Institute",
+          "location": "Athens",
+          "year": 1887,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lilla E. Badger",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Galveston, Tex.",
+          "year": 1887,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Georgia A. (Knox) Horton",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Savannah",
+          "year": 1887,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Marhoda A. (Hill) Ross",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Candace R. McGhee",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Amanda D. (Frazier) Wimberley",
+          "degree": "",
+          "profession": "Teacher Haines Institute",
+          "location": "Augusta",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lizzie B. (Washington) Stipes",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Chattanooga, Tenn.",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Susan H. Porter",
+          "degree": "",
+          "profession": "Teacher N. and I. Institute",
+          "location": "Tuskegee, Ala.",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Horace Hudson Lomax",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Abbeville, S.C.",
+          "year": 1889,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Mary L. (Austin) Jefferson",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Athens",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Carrie Z. Badger ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Athens",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Waterloo M. (Bullock) Snelson",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Athens",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary H. (McGee) Styles",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Dawson",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Susie V. Stewart",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Thebes",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary A. (Snelson) Cooper",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Waycross",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "William Baxter Matthews",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "Atlanta",
+          "year": 1890,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Sarah A. Dozier ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Virginia C. Dozier ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Hattie M. Jones",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Minnie L. Perry",
+          "degree": "",
+          "profession": "Teacher Carrie Steele Orphanage",
+          "location": "Atlanta",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Henry Alexander Hunt",
+          "degree": "",
+          "profession": "Supt. Indust'l Dept., Biddle Univ.",
+          "location": "Charlotte, N.C.",
+          "year": 1890,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Meta M. (Dolly) Hearst",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Jonesville, Fla.",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ella R. (Cochrane) Whitfield",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Marshallville",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Fannie L. (Scott) Davis",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Tifton",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Emma L. Holmes",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1891,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Adrienne E. (McNeil) Herndon",
+          "degree": "",
+          "profession": "Teacher, Atlanta University",
+          "location": "Atlanta",
+          "year": 1891,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Helena M. Brown",
+          "degree": "",
+          "profession": "Teacher Haines Institute",
+          "location": "Augusta",
+          "year": 1891,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Julius Clifton Styles",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "Dawson",
+          "year": 1891,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Julia M. (Brown) Cooper",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Milledgeville",
+          "year": 1891,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "M. Agnes Boswell",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1892,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ida B. Pollard",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1892,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "M. Pearl Westmoreland ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1892,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary E. Chinn",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Augusta",
+          "year": 1892,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "James Albert Bray",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "Athens",
+          "year": 1893,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Mattie B. Davis ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Athens",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary E. Brittain ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Georgia B. Douglass ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Rosa L. Garner ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mattie L. Sykes",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Eliza B. Twiggs",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Augusta",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary (Graves) Way ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Fitzgerald",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Jessie L. (Thompson) Smith",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Palatka, Fla,",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Elizabeth R. (Holmes) Griffin",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Albany",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Judia C. Jackson",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Athens",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ella E. Davis",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Laura C. Davis ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mattle D. Armaud ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Augusta",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "James Thomas Hodges",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Gonzales, Tex.",
+          "year": 1894,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Nathaniel White Colller",
+          "degree": "",
+          "profession": "Presldent Florida Baptist College",
+          "location": "Jacksonville, Fla.",
+          "year": 1894,
+          "type": "College Graduates"
+        },
+        {
+          "name": "James William Johnson",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "Jacksonville, Fla.",
+          "year": 1894,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Ella L. Mlller",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Jacksonville, Fla.",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Benjamin Franklin Allen",
+          "degree": "",
+          "profession": "Prof. Greek, Lincoln Univ.",
+          "location": "Jefferson City, Mo.",
+          "year": 1894,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Savannah Sorrell",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Marietta",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "John DeBaptiste Jackson",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "Mexico, Mo.",
+          "year": 1894,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Aurora V. Peters",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "New Orleans, La.",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "N. Estelle Taylor ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Rome",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Jennie L. Lloyd ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Savannah",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mrs. Anna S. Ingraham ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Tallapoosa",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Corinne E. Dozier ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Unionville",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Arthur Cuthbert Holmes",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "Albany",
+          "year": 1895,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Julia J. Blount ",
+          "degree": "",
+          "profession": "Teacher Nor. School",
+          "location": "Albany",
+          "year": 1895,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mamie R. Cole",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1895,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Georgia Louise Palmer",
+          "degree": "",
+          "profession": "Teacher, Walker Institute",
+          "location": "Augusta",
+          "year": 1895,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Temperance C. Johnson",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Charlotte, N.C.",
+          "year": 1895,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mattie L. Watts",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Flovilla, Fla.",
+          "year": 1895,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "William DeLyon Thomas",
+          "degree": "",
+          "profession": "Prof. Nat. Sci., State Nor. Sch.",
+          "location": "Frankford, Ky.",
+          "year": 1895,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Martha Freeman Childs",
+          "degree": "",
+          "profession": "Teacher, N.&I. Institute",
+          "location": "Tuskegee, Ala.",
+          "year": 1895,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Mattie L. M. Turner",
+          "degree": "",
+          "profession": "Teacher Knox Inst.",
+          "location": "Athens",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Cella R. Brooks ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ara A. Cooke ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Daisy Fambro ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Emma L. Gleeton ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Carrie F. McHenry",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary M. Smith ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Stella F. White ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Noah Wesley Curtright",
+          "degree": "",
+          "profession": "Prin. Walker Institute",
+          "location": "Augusta",
+          "year": 1896,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Ida C. Wllllams",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Columbus",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Felix Alonzo Ourtright",
+          "degree": "",
+          "profession": "Prin. Ga. N.&I. Institute",
+          "location": "Greensboro",
+          "year": 1896,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Anna E. Maxwell",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Inglewood",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mollie L. Sorrell",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Marietta",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mabel M. Whlte ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Marshallville",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Albert Berry Cooper",
+          "degree": "",
+          "profession": "Prin. Eddy High School",
+          "location": "Milledgeville",
+          "year": 1896,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Fanny Tripp Habersham",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Savannah",
+          "year": 1896,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Minnie C. Wiggins ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Andersonville",
+          "year": 1897,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary M. Wright ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Athens",
+          "year": 1897,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Anna O. Clark",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1897,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Allce B. Clithrall ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Columbus",
+          "year": 1897,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Neille H. McNair ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Columbus",
+          "year": 1897,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Annie M. Brown",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Covington",
+          "year": 1897,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Robert Washington Gadsden",
+          "degree": "",
+          "profession": "Prof. State College",
+          "location": "Dover, Del.",
+          "year": 1897,
+          "type": "College Graduates"
+        },
+        {
+          "name": "George Francis Smith",
+          "degree": "",
+          "profession": "Prof. Math., Lincoln Univ.",
+          "location": "Jefferson City, Mo.",
+          "year": 1897,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Mabel Louise Keith",
+          "degree": "",
+          "profession": "Teaacher, N.&I. Institute",
+          "location": "Tuskegee, Ala.",
+          "year": 1897,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Julia Goodwin Childs",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Athens",
+          "year": 1898,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Minnie O. Reid ",
+          "degree": "",
+          "profession": "Teacher Knox Inst.",
+          "location": "Athens",
+          "year": 1898,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "S. Fannie Wingfield",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Atlanta",
+          "year": 1898,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "J. Ethel Purnell",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Brunswlck",
+          "year": 1898,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Eva. S. Henderson",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Cuthbert",
+          "year": 1898,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mamie E. Hamilton ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Eatonton",
+          "year": 1898,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Aletha R. Howard ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Elberton",
+          "year": 1898,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Alonzo Hertzel Brown",
+          "degree": "",
+          "profession": "Taa. Sci., J.K. Brick Nor.&Agric. School",
+          "location": "Enfield, N.C.",
+          "year": 1898,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Amanda M. Hill",
+          "degree": "",
+          "profession": "Prin. Public School",
+          "location": "LaFayette, Ala.",
+          "year": 1898,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lena M. Jones",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Marietta",
+          "year": 1898,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Harriette M. Landrum ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Marietta",
+          "year": 1898,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ophelia Olivia Brooks",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Sycorax",
+          "year": 1898,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Rosa M. Weaver ",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Tuscaloosa, Ala.",
+          "year": 1898,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Sarah L. Hunt",
+          "degree": "",
+          "profession": "Teacher N.&I. Institute",
+          "location": "Tuskegee, Ala.",
+          "year": 1898,
+          "type": "Normal Graduates"
+        }
+      ]
+    },
+    {
+      "name": "ministers",
+      "displayName": "Ministers",
+      "color": "#5A7BC3",
+      "students": [
+        {
+          "name": "Joseph Edward Smith",
+          "degree": "",
+          "profession": "Pastor",
+          "location": "Chattanooga, Tenn.",
+          "year": 1876,
+          "type": "Theological Class"
+        },
+        {
+          "name": "George W. F. Phillips",
+          "degree": "",
+          "profession": "Pastor",
+          "location": "Lumber City",
+          "year": 1876,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Edgar James Penney",
+          "degree": "A.M.",
+          "profession": "Pastor N. and I. Institute ",
+          "location": "Tuskegee, Ala.",
+          "year": 1876,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Edwin Posey Johnson",
+          "degree": "",
+          "profession": "Gen. Educational Missonary",
+          "location": "Atlanta",
+          "year": 1879,
+          "type": "College Graduates"
+        },
+        {
+          "name": "John Lewis Dart",
+          "degree": "A.M., D.D.",
+          "profession": "Pastor",
+          "location": "Charleston, S.O",
+          "year": 1879,
+          "type": "College Graduates"
+        },
+        {
+          "name": "John William Whittaker",
+          "degree": "A.M.",
+          "profession": "Pastor",
+          "location": "Savannah",
+          "year": 1884,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Leigh Benjamin Maxwell",
+          "degree": "",
+          "profession": "Sec. Intl. S.S. Convention",
+          "location": "Decatur",
+          "year": 1885,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Abraham Lincoln Gaines",
+          "degree": "A.M.",
+          "profession": "Pastor",
+          "location": "Baltimore, Md.",
+          "year": 1887,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Floyd Grant Snelson",
+          "degree": "Ph.D.",
+          "profession": "Presiding Elder",
+          "location": "Sierra Leone, Africa",
+          "year": 1890,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Sllas Xavier Floyd",
+          "degree": "A.M.",
+          "profession": "Asst. Sec. Intnl. S.S. Convention",
+          "location": "Augusta",
+          "year": 1891,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Thomas Jefferson Bell",
+          "degree": "",
+          "profession": "Pastor",
+          "location": "Selma, Ala.",
+          "year": 1891,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Samuel Arthur Stripling",
+          "degree": "",
+          "profession": "Pastor",
+          "location": "Harmony Grove",
+          "year": 1894,
+          "type": "College Graduates"
+        }
+      ]
+    },
+    {
+      "name": "government",
+      "displayName": "Government Service",
+      "color": "#FFD3D3",
+      "students": [
+        {
+          "name": "Henry Harrison Williams",
+          "degree": "",
+          "profession": "Mail Agent",
+          "location": "Atlanta",
+          "year": 1876,
+          "type": "College Graduates"
+        },
+        {
+          "name": "James Snowden Harper",
+          "degree": "A.M.",
+          "profession": "Mail Agent",
+          "location": "Atlanta",
+          "year": 1877,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Jacob Golden Hutchins",
+          "degree": "A.M.",
+          "profession": "Pension Department",
+          "location": "Washington,  D.C.",
+          "year": 1878,
+          "type": "College Graduates"
+        },
+        {
+          "name": "James H. DeLamotta",
+          "degree": "",
+          "profession": "Clerk in Treas. Dept.",
+          "location": "Washington, D.C.",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Peter Augustus Denegall",
+          "degree": "",
+          "profession": "Mail Carrier",
+          "location": "Savannah",
+          "year": 1879,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Abraham Louis Tucker",
+          "degree": "",
+          "profession": "Mail Agent",
+          "location": "Savannah",
+          "year": 1884,
+          "type": "College Graduates"
+        },
+        {
+          "name": "John B. Greenwood",
+          "degree": "",
+          "profession": "Mail Carrier",
+          "location": "Atlanta",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "LaFayette McKeene Hershaw",
+          "degree": "",
+          "profession": "Clerk in Land Office",
+          "location": "Washington, D.C.",
+          "year": 1886,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Samuel Alpheus Ward",
+          "degree": "",
+          "profession": "Clerk In War Dept.",
+          "location": "Washington, D. C.",
+          "year": 1887,
+          "type": "College Graduates"
+        }
+      ]
+    },
+    {
+      "name": "business",
+      "displayName": "Business",
+      "color": "#CDCE9D",
+      "students": [
+        {
+          "name": "Richard Henry Carter",
+          "degree": "A.M.",
+          "profession": "In Business",
+          "location": "Atlanta",
+          "year": 1876,
+          "type": "Theological Class"
+        },
+        {
+          "name": "Cosmo P. Jordan",
+          "degree": "",
+          "profession": "In Business",
+          "location": "Atlanta",
+          "year": 1877,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Drayton Hardy Maffet",
+          "degree": "Sc.",
+          "profession": "In Business",
+          "location": "Tuscon, Arizona",
+          "year": 1880,
+          "type": "College Graduates"
+        },
+        {
+          "name": "John Thomas Grant",
+          "degree": "",
+          "profession": "In Business",
+          "location": "Atlanta",
+          "year": 1883,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Hattie G. Escridge",
+          "degree": "",
+          "profession": "In Business",
+          "location": "Atlanta",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "William Henry Goosby",
+          "degree": "",
+          "profession": "In Business",
+          "location": "Boston, Mass.",
+          "year": 1887,
+          "type": "College Graduates"
+        },
+        {
+          "name": "William Oscar Murphy",
+          "degree": "",
+          "profession": "In Business",
+          "location": "Atlanta",
+          "year": 1891,
+          "type": "College Graduates"
+        }
+      ]
+    },
+    {
+      "name": "other",
+      "displayName": "Other Professions",
+      "color": "#2F4F4F",
+      "students": [
+        {
+          "name": "Butler Romulus Wilson",
+          "degree": "A.M.",
+          "profession": "Lawyer",
+          "location": "Boston, Mass.",
+          "year": 1881,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Paul Edward Spratlin",
+          "degree": "A.M., M.D.",
+          "profession": "Physician",
+          "location": "Denver, Col.",
+          "year": 1881,
+          "type": "College Graduates"
+        },
+        {
+          "name": "James Reynolds Porter",
+          "degree": "D.D.S.",
+          "profession": "Dentist",
+          "location": "Atlanta",
+          "year": 1886,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Simeon Palmer Lloyd",
+          "degree": "M.D.",
+          "profession": "Physician",
+          "location": "Savannah",
+          "year": 1889,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Preston McKinsey Edwards",
+          "degree": "M.D.",
+          "profession": "Physician",
+          "location": "St. Joseph, Mo.",
+          "year": 1889,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Loring Brainerd Palmer",
+          "degree": "A.M.",
+          "profession": "Medical Student",
+          "location": "Atlanta",
+          "year": 1891,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Henry Moses Porter",
+          "degree": "LL.B.",
+          "profession": "Lawyer ",
+          "location": "Augusta",
+          "year": 1893,
+          "type": "College Graduates"
+        },
+        {
+          "name": "George Alexander Towns",
+          "degree": "",
+          "profession": "College Student",
+          "location": "Cambridge, MA",
+          "year": 1894,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Ruth M. Harris",
+          "degree": "",
+          "profession": "Student Atlanta University",
+          "location": "Atlanta",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Stephen Alexander Peters",
+          "degree": "",
+          "profession": "Theological Student",
+          "location": "Atlanta",
+          "year": 1897,
+          "type": "College Graduates"
+        }
+      ]
+    },
+    {
+      "name": "housewives",
+      "displayName": "House Wives",
+      "color": "#FEC313",
+      "students": [
+        {
+          "name": "Adelia (Cleveland) Jones",
+          "degree": "",
+          "profession": "",
+          "location": "Savannah",
+          "year": 1873,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Georgla M. (Swift) King",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1874,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Clara (Jones) King",
+          "degree": "",
+          "profession": "",
+          "location": "Macon",
+          "year": 1874,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Anna F. (White) Shaw",
+          "degree": "",
+          "profession": "",
+          "location": "Brunswick",
+          "year": 1876,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lavinia O. (Mott) Crogman",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1877,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lavinia (Wimbish) Dennis",
+          "degree": "",
+          "profession": "",
+          "location": "So. Atlanta",
+          "year": 1877,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Elizabeth (Easley) Holmes",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ellen (Crump) Harper",
+          "degree": "",
+          "profession": "",
+          "location": "Augusta",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Estella (Crosby) Penney",
+          "degree": "",
+          "profession": "",
+          "location": "Tuskegee, Ala.",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Effie B. (Escridge) Brandon",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1879,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Marla B. (Guion) Harris",
+          "degree": "",
+          "profession": "",
+          "location": "Salisbury, N.C.",
+          "year": 1879,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Emma A. (Escridge) Williams",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Rosa (Morehead) Bass",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary O. (Tate) Cater",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Fannie J. (Wilson) Jackson",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Carrie B. (Pope) Cook",
+          "degree": "",
+          "profession": "",
+          "location": "Chicago, Ill.",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Charlotte E. (Monroe) Hershaw",
+          "degree": "",
+          "profession": "",
+          "location": "Washington, D.C.",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Sallie J. (White) Ryan",
+          "degree": "",
+          "profession": "",
+          "location": "Washington, D.C.",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Carrie E. (Jones) Young",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ida E. (Ferrand) Smith",
+          "degree": "",
+          "profession": "",
+          "location": "Chattanooga, Tenn.",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Cora O. (Calhoun) Horn",
+          "degree": "",
+          "profession": "",
+          "location": "Little Rock, Ark.",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Laura A. (Fambro) Oliver",
+          "degree": "",
+          "profession": "",
+          "location": "Little Rock, Ark.",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Anna B. (Powers) Bond",
+          "degree": "",
+          "profession": "",
+          "location": "Austin, Ill.",
+          "year": 1882,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Sallie U. (Nelms) Frickland",
+          "degree": "",
+          "profession": "",
+          "location": "Bainbridge",
+          "year": 1882,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Sallie E. (Holsey) Rice",
+          "degree": "",
+          "profession": "",
+          "location": "Dallas, Tex.",
+          "year": 1882,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary E. Badger (Mrs. W. N. Cummings)",
+          "degree": "",
+          "profession": "A.M.",
+          "location": "Galveston, Tex.",
+          "year": 1882,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Cecile L. (Barefield) Pettus",
+          "degree": "",
+          "profession": "",
+          "location": "Jersey City, N.J.",
+          "year": 1882,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Georgia E. (Mitchell) Clark",
+          "degree": "",
+          "profession": "",
+          "location": "Rome",
+          "year": 1882,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Frances A. (Smith) Murchison",
+          "degree": "",
+          "profession": "",
+          "location": "Savannah",
+          "year": 1882,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Carrie (Cox) Rakestraw",
+          "degree": "",
+          "profession": "",
+          "location": "Los Angeles, Cal.",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Jessie C. (Craig) Turner",
+          "degree": "",
+          "profession": "",
+          "location": "Washington, D.C.",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Laura L. (Holbrook) LeCane",
+          "degree": "",
+          "profession": "",
+          "location": "Washington, D.C.",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Elnora P. (Koockogey) Frazier",
+          "degree": "",
+          "profession": "",
+          "location": "Anniston, Ala.",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary S. (Goosby) Crumbly",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Katie (Nelson) Goosby",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Amanda L. (Richardson) Starks",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Susie E. (Carter) Huson",
+          "degree": "",
+          "profession": "",
+          "location": "Harriman, Tenn.",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Rosa D. (Lawson) Stoney",
+          "degree": "",
+          "profession": "",
+          "location": "Augusta",
+          "year": 1885,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Llzzie H. (Davis) Carey",
+          "degree": "",
+          "profession": "",
+          "location": "Chicago, Ill.",
+          "year": 1885,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Rachel C. (Baker) Olney",
+          "degree": "",
+          "profession": "",
+          "location": "Lowell, Fla.",
+          "year": 1885,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Maggie N. (Baker) Wimbish",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Florida M. (Beale) Phillips",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Emma A. (Myrick) Henry",
+          "degree": "",
+          "profession": "",
+          "location": "Chattanooga, Tenn.",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Clara C. (Thomas) Maxwell",
+          "degree": "",
+          "profession": "",
+          "location": "Decataur",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary E. (Badger) Cummings",
+          "degree": "A.M.",
+          "profession": "",
+          "location": "Galveston, Texas",
+          "year": 1886,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Sarah A. (Cashin) Brown",
+          "degree": "",
+          "profession": "",
+          "location": "Jacksonville, Fla.",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary F. (Hankerson) Allen",
+          "degree": "",
+          "profession": "",
+          "location": "Los Angeles, Cal.",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary U. (Jackson) Wade",
+          "degree": "",
+          "profession": "",
+          "location": "Westside, Miss.",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Estella B. (Pullen) Thomas",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1887,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Florence H. (Martin) Frazier",
+          "degree": "",
+          "profession": "",
+          "location": "Philadelphia, Pa.",
+          "year": 1887,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Estella B. (Jordan) Thompson",
+          "degree": "",
+          "profession": "",
+          "location": "Arlington, Va.",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary A. (Hill) Grant",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Cornelia T. (Johnson) Hart",
+          "degree": "",
+          "profession": "",
+          "location": "Washington, D.C.",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Beatrice Damaris (McGhee) Curtright",
+          "degree": "",
+          "profession": "",
+          "location": "Augusta",
+          "year": 1896,
+          "type": "College Graduates"
+        }
+      ]
+    },
+    {
+      "name": "deceased",
+      "displayName": "Dead",
+      "color": "#C4C4C4",
+      "students": [
+        {
+          "name": "Fannie A. Wilson",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1880",
+          "year": 1875,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "London Humes Waters",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1882",
+          "year": 1876,
+          "type": "College Graduates"
+        },
+        {
+          "name": "George Simeon Smith",
+          "degree": "A.M.",
+          "profession": "",
+          "location": "Deceased, 1891",
+          "year": 1876,
+          "type": "Theological Class"
+        },
+        {
+          "name": "James O. Wimbish",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1877",
+          "year": 1876,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Pattie M. (Hall) Johnson",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1880",
+          "year": 1877,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Arthur William Upshaw",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1802",
+          "year": 1878,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Nathaniel DeLamotta Harris",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1879",
+          "year": 1878,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Thomas C. Shepard",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1880",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lillie D. (Flemister) McCoy",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1882",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Marla (Smith) Webb",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1889",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ellen M. (Townsley) Pitts",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1889",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "William Henry Harris",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1898",
+          "year": 1878,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Edward Johnson Stewart",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1884",
+          "year": 1879,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Eliza (Jones) Staley",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1884",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "George W. Green",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1886",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Thomas Francis Park Roberts",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1888",
+          "year": 1880,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Preston Brooks Peters",
+          "degree": "Sc.",
+          "profession": "",
+          "location": "Deceased, 1885",
+          "year": 1881,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Mrs. Hattie Henry ",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1894",
+          "year": 1881,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Marin A. (Harmon) Cuthbert",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1896",
+          "year": 1882,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mattie Stafford",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1887",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Clifford R. Wright",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1887",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Geraldine E. (Raney) McLester",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1890",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Katie E. (Short) Wright",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased,1893",
+          "year": 1883,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "William Hoxie Johnson",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1891",
+          "year": 1884,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Mary F. Pullin",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1897",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Dora B. Spencer",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1897",
+          "year": 1884,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "John William Young",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1891",
+          "year": 1886,
+          "type": "College Graduates"
+        },
+        {
+          "name": "Abram B. Tolbert",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1896",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Anna (Alexander) Mahaffey",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased.1899",
+          "year": 1886,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Luke W. Stokellng",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1889",
+          "year": 1887,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Joseph A. Sanders",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1905",
+          "year": 1887,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Gwendoline (Lyman) Hedges",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1895",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Celestia C. Ivy",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1804",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Allean L. Love",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1892",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Katie (Alexander) Davis",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1898",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lula B. (Cook) Phlllips",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1895",
+          "year": 1891,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Katie E. Wood",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1895",
+          "year": 1892,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary E. (Keller) Curtright",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1898",
+          "year": 1892,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary F. Wilson",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1894",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Rosa C. Deveaux",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1895",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Janie C. (Wright) Sloan",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1899",
+          "year": 1895,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Alice O'Neal",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1899",
+          "year": 1896,
+          "type": "Normal Graduates"
+        }
+      ]
+    },
+    {
+      "name": "unknown",
+      "displayName": "Unknown",
+      "color": "#B5CCFF",
+      "students": [
+        {
+          "name": "Hattie Latimer",
+          "degree": "",
+          "profession": "",
+          "location": "New York, N. Y.",
+          "year": 1877,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Artaway J. Tabb",
+          "degree": "",
+          "profession": "",
+          "location": "Chicago, Ill.",
+          "year": 1878,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Wiliam C. Greene",
+          "degree": "",
+          "profession": "",
+          "location": "Albany",
+          "year": 1880,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Willie C. Bryant ",
+          "degree": "",
+          "profession": "",
+          "location": "Birmingham, Ala.",
+          "year": 1887,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Ella O. (Summers) McRee",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Alice M. (McGhan) Hoyt",
+          "degree": "",
+          "profession": "",
+          "location": "Chicago, Ill.",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mattie J. (McHenry) Kane",
+          "degree": "",
+          "profession": "",
+          "location": "Rome",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Annie J. (Raney) Hamilton",
+          "degree": "",
+          "profession": "",
+          "location": "Sanford, Fla.",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Minnie (Wrlght) Price",
+          "degree": "",
+          "profession": "",
+          "location": "South Atlanta",
+          "year": 1888,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Nellie M. (Cook) Hamilton",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Annina J. (Harrison) Pitts",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Florence S. (Johnson) Hunt",
+          "degree": "",
+          "profession": "",
+          "location": "Charlotte, N.C.",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mrs. Emma P. (Quarterman) Tyson",
+          "degree": "",
+          "profession": "",
+          "location": "Gainesville, Fla.",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Clara E. (Davenport) Holmes",
+          "degree": "",
+          "profession": "",
+          "location": "Prairie View, Tex.",
+          "year": 1889,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lizzie M. (Cox) Burch",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary A. Cox",
+          "degree": "",
+          "profession": "",
+          "location": "Decataur",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Martha L. (Williams) Logan",
+          "degree": "",
+          "profession": "",
+          "location": "Macon",
+          "year": 1890,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Nancy A. (Davis) Tate",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1891,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Eleanor B. (Howard) Murphy",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1891,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Rena L. (Kelth) Benson",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1891,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Henrietta R. (Adams) Faduma",
+          "degree": "",
+          "profession": "",
+          "location": "Troy, N.C.",
+          "year": 1891,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Hattie M. (Sturdivant) Spain",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1892,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Nineveh (Rogers) Jackson",
+          "degree": "",
+          "profession": "",
+          "location": "Birmingham, Ala.",
+          "year": 1892,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mary A. (Love) Lightner",
+          "degree": "",
+          "profession": "",
+          "location": "Raleigh, N. C.",
+          "year": 1892,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Sarah E. (Walker) Beasley",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Emma S. (Morton) Hodges",
+          "degree": "",
+          "profession": "",
+          "location": "Gonzales, Tex.",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Fannie B. (Blount) Henderson",
+          "degree": "",
+          "profession": "",
+          "location": "Jackson",
+          "year": 1893,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Lydla E. (Grant) Allen",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mamie L. (Reeves) McGruder",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Bessie H. Whitley ",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Mamie L. Williams ",
+          "degree": "",
+          "profession": "",
+          "location": "Macon",
+          "year": 1894,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Willie A. (Dennis) Weeks",
+          "degree": "",
+          "profession": "",
+          "location": "Columbus",
+          "year": 1895,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Annie B. (Evans) Faison",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Annn M. (Graves) Means",
+          "degree": "",
+          "profession": "",
+          "location": "Norfolk, Va.",
+          "year": 1896,
+          "type": "Normal Graduates"
+        },
+        {
+          "name": "Bessie B. Taylor",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1898,
+          "type": "Normal Graduates"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.0 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -410,6 +410,12 @@ video {
   height: auto;
 }
 
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -560,14 +566,6 @@ video {
   grid-column: span 2 / span 2 !important;
 }
 
-.col-span-8 {
-  grid-column: span 8 / span 8 !important;
-}
-
-.col-span-3 {
-  grid-column: span 3 / span 3 !important;
-}
-
 .col-span-full {
   grid-column: 1 / -1 !important;
 }
@@ -614,10 +612,6 @@ video {
 
 .col-end-11 {
   grid-column-end: 11 !important;
-}
-
-.col-end-4 {
-  grid-column-end: 4 !important;
 }
 
 .row-span-3 {
@@ -788,16 +782,16 @@ video {
   width: 27.5px !important;
 }
 
-.w-4\/5 {
-  width: 80% !important;
-}
-
 .w-96 {
   width: 24rem !important;
 }
 
 .w-8 {
   width: 2rem !important;
+}
+
+.w-4\/5 {
+  width: 80% !important;
 }
 
 .w-screen {
@@ -824,8 +818,8 @@ video {
   max-width: 48rem !important;
 }
 
-.max-w-2xl {
-  max-width: 42rem !important;
+.max-w-\[800px\] {
+  max-width: 800px !important;
 }
 
 .flex-1 {
@@ -1025,16 +1019,6 @@ video {
   background-color: rgb(217 41 68 / var(--tw-bg-opacity)) !important;
 }
 
-.bg-duboisSecondary {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 211 211 / var(--tw-bg-opacity)) !important;
-}
-
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
-}
-
 .p-4 {
   padding: 1rem !important;
 }
@@ -1171,10 +1155,6 @@ video {
 
 .font-duboisNarrow {
   font-family: VTC Du Bois Narrow, serif !important;
-}
-
-.font-dubois {
-  font-family: VTC Du Bois, serif !important;
 }
 
 .text-3xl {
@@ -1450,25 +1430,14 @@ video {
     font-size: 1.5rem !important;
     line-height: 2rem !important;
   }
+
+  .xl\:text-xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:col-span-10 {
-    grid-column: span 10 / span 10 !important;
-  }
-
-  .\32xl\:col-span-3 {
-    grid-column: span 3 / span 3 !important;
-  }
-
-  .\32xl\:col-start-3 {
-    grid-column-start: 3 !important;
-  }
-
-  .\32xl\:col-start-2 {
-    grid-column-start: 2 !important;
-  }
-
   .\32xl\:text-3xl {
     font-size: 1.875rem !important;
     line-height: 2.25rem !important;
@@ -1486,6 +1455,14 @@ video {
   .\32xl\:text-2xl {
     font-size: 1.5rem !important;
     line-height: 2rem !important;
+  }
+
+  .\32xl\:text-\[14px\] {
+    font-size: 14px !important;
+  }
+
+  .\32xl\:text-\[16px\] {
+    font-size: 16px !important;
   }
 }
 

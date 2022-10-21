@@ -1,16 +1,18 @@
+import USAMap from "~/components/dubois/USAMap";
+
 export default function StudentChartTwo() {
   return (
-    <div className="w-4/5">
+    <div>
       <div className="mt-6 flex flex-col font-duboisWide uppercase">
-        <p className="font-bold xl:text-2xl 2xl:text-3xl text-xl tracking-wider text-center">
+        <p className="font-bold xl:text-xl 2xl:text-2xl text-lg text-center">
           a series of statistical charts, illustrating details about the
           graduates of atlanta university, and other black college graduates in
           the united states, who contributed their knowledge, labor, and data to
           du bois’s research program.
         </p>
       </div>
-      <div className="mt-6 flex items-center justify-between font-duboisNarrow uppercase text-center 2xl:text-xl text-lg">
-        <p className="2xl:text-2xl text-lg">
+      <div className="flex items-center justify-between p-10 font-duboisNarrow">
+        <p className="2xl:text-[16px] text-md uppercase w-96">
           prepared and executed by
           <br />
           tanvi sharma, anna mola,
@@ -22,7 +24,9 @@ export default function StudentChartTwo() {
           emory university, atlanta, ga. <br />
           united states of america
         </p>
-        <div className="w-2/5 flex flex-col items-center"></div>
+        <div className="w-2/5 flex flex-col items-center">
+          <USAMap />
+        </div>
       </div>
       <div className="flex flex-col items-center font-duboisNarrow uppercase text-center 2xl:text-2xl text-lg mt-8">
         <p className="m-6 font-bold w-4/5">
@@ -73,14 +77,6 @@ export default function StudentChartTwo() {
               <p>Unknown</p>
             </div>
           </div>
-        </div>
-        <div id="vue-canvas">
-          <canvas
-            id="defaultCanvas0"
-            className="p5Canvas"
-            width="1000"
-            height="1000"
-          ></canvas>
         </div>
       </div>
       <div className="mt-6 font-dubois uppercase">

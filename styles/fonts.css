@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Maranallo";
-    src: url("fonts/Maranallo/Maranallo.ttf") format("truetype");
+    src: url("/fonts/Maranallo/Maranallo.ttf") format("truetype");
 }
 
 @font-face {
