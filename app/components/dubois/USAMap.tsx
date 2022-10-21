@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import statesJson from "~/data/usFeatures.json";
+import statesJson from "~/data/dubois/usFeatures.json";
 
 const collegeList = [
   { city: "Plano, TX", lat: "33.05", lng: "-96.75" },

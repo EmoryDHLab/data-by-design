@@ -1,4 +1,7 @@
 import USAMap from "~/components/dubois/USAMap";
+import Legend from "~/components/dubois/Legend";
+import studentData from "~/data/dubois/studentChartTwo.json";
+import PieChart from "~/components/dubois/PieChart.client";
 
 export default function StudentChartTwo() {
   return (
@@ -41,43 +44,9 @@ export default function StudentChartTwo() {
           catalogue of the officers and students of atlanta university.
         </p>
       </div>
-      <div className="flex items-center justify-between w-4/5 pb-10">
-        <div className="font-duboisNarrow uppercase">
-          <div className="flex flex-col">
-            <div className="flex flex-row mb-6 items-center pl-4">
-              <div className="mr-2 rounded-2xl h-8 w-8"></div>
-              <p>Teachers</p>
-            </div>
-            <div className="flex flex-row mb-6 items-center pl-4">
-              <div className="mr-2 rounded-2xl h-8 w-8"></div>
-              <p>Ministers</p>
-            </div>
-            <div className="flex flex-row mb-6 items-center pl-4">
-              <div className="mr-2 rounded-2xl h-8 w-8"></div>
-              <p>Government Service</p>
-            </div>
-            <div className="flex flex-row mb-6 items-center pl-4">
-              <div className="mr-2 rounded-2xl h-8 w-8"></div>
-              <p>Business</p>
-            </div>
-            <div className="flex flex-row mb-6 items-center pl-4">
-              <div className="mr-2 rounded-2xl h-8 w-8"></div>
-              <p>Other Professions</p>
-            </div>
-            <div className="flex flex-row mb-6 items-center pl-4">
-              <div className="mr-2 rounded-2xl h-8 w-8"></div>
-              <p>House Wives</p>
-            </div>
-            <div className="flex flex-row mb-6 items-center pl-4">
-              <div className="mr-2 rounded-2xl h-8 w-8"></div>
-              <p>Dead</p>
-            </div>
-            <div className="flex flex-row mb-6 items-center pl-4">
-              <div className="mr-2 rounded-2xl h-8 w-8"></div>
-              <p>Unknown</p>
-            </div>
-          </div>
-        </div>
+      <div className="flex justify-between my-20">
+        <Legend categories={studentData.categories} />
+        <PieChart studentData={studentData} />
       </div>
       <div className="mt-6 font-dubois uppercase">
         <p className="text-center">

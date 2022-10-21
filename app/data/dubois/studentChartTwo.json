@@ -1,0 +1,1528 @@
+{
+  "count": 163,
+  "categories": [
+    {
+      "name": "teachers",
+      "displayName": "Teachers",
+      "color": "#D92944",
+      "students": [
+        {
+          "name": "William Henry Crogman",
+          "degree": "Lltt.n.",
+          "profession": "President Clark University",
+          "location": "South Atlantla",
+          "year": 1876,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Richard Robert Wright",
+          "degree": "LL.D.",
+          "profession": "President State Industrial College",
+          "location": "Savannah",
+          "year": 1876,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "John McIntosh",
+          "degree": "",
+          "profession": "Principal City School",
+          "location": "Savannah",
+          "year": 1877,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "John Lewis Dart",
+          "degree": "D.D.",
+          "profession": "Principal Charleston Ind. Inst., and Pastor",
+          "location": "Charleston, S.C.",
+          "year": 1879,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Fletcher Hamilton Henderson",
+          "degree": "",
+          "profession": "Principal Howard NormaI School",
+          "location": "Cuthbert",
+          "year": 1879,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Benjamin Franklin Hartwell",
+          "degree": "Sc.",
+          "profession": "Teacher City School",
+          "location": "Green Cove Springs, Fla.",
+          "year": 1881,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Charles Rice",
+          "degree": "",
+          "profession": "Prinicipal City School",
+          "location": "Dallas, Texas",
+          "year": 1881,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Oswell Augustus Combs",
+          "degree": "",
+          "profession": "Professor of Greek, Morris Brown College",
+          "location": "Atlanta",
+          "year": 1882,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "James Augustus Henry",
+          "degree": "",
+          "profession": "Principal City High School",
+          "location": "Chattanooga, Tenn.",
+          "year": 1883,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Moses Jefferson Johnson",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Kingfisher, Okla.",
+          "year": 1885,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Lewis Sherman Clark",
+          "degree": "Sc., A.M.",
+          "profession": "Principal Knox Institute",
+          "location": "Athens",
+          "year": 1887,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Henry Alexander Hunt",
+          "degree": "",
+          "profession": "Principal High and Industrial School",
+          "location": "Fort Valley",
+          "year": 1890,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "William Baxter Matthews",
+          "degree": "",
+          "profession": "Principal City School",
+          "location": "Atlanta",
+          "year": 1890,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Julius Clifton Styles",
+          "degree": "",
+          "profession": "Principal Masonic Industrial School",
+          "location": "Americus",
+          "year": 1891,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "James Albert Bray",
+          "degree": "A.M., D.D., LL.D. ",
+          "profession": "Pres. Miles Memorial College",
+          "location": "Birmingham, Ala.",
+          "year": 1893,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Benjamin Franklin Allen",
+          "degree": "LL.D.",
+          "profession": "President Lincoln Institute",
+          "location": "Jefferson City, Mo.",
+          "year": 1894,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Nathaniel White Colller",
+          "degree": "A.M.",
+          "profession": "Presldent Florida Baptist College",
+          "location": "Jacksonville, Fla.",
+          "year": 1894,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "James Thomas Hodges",
+          "degree": "",
+          "profession": "Teacher, State N. and I. College ",
+          "location": "Prairie View, Texas",
+          "year": 1894,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Georgo Alexander Towns",
+          "degree": "A.M.",
+          "profession": "Professor of Pedagogy, Atlantla University",
+          "location": "Atlanta",
+          "year": 1894,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Martha Freeman Childs",
+          "degree": "",
+          "profession": "Teacher, City High School",
+          "location": "Baltimore, Md.",
+          "year": 1895,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Arthur Cuthbert Holmes",
+          "degree": "",
+          "profession": "Principal City School",
+          "location": "Albany",
+          "year": 1895,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "William DeLyon Thomas",
+          "degree": "A.M, M.D. ",
+          "profession": "Teacher",
+          "location": "Louisville, Ky.",
+          "year": 1895,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Noah Wesley Curtright",
+          "degree": "",
+          "profession": "Principal High School",
+          "location": "Rome",
+          "year": 1896,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Robert Washington Gadsden",
+          "degree": "",
+          "profession": "Principal City School",
+          "location": "Savannah",
+          "year": 1897,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Mabel Louise Keith (Mrs. William Howard)",
+          "degree": "",
+          "profession": "Voorhees Ind. School",
+          "location": "Denmark, S.C.",
+          "year": 1897,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Alonzo Hertzel Brown",
+          "degree": "A.M.",
+          "profession": "Professor Howard University",
+          "location": "Washington, D. C.",
+          "year": 1898,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Julia Goodwin Childs",
+          "degree": "",
+          "profession": "Teacher Summer High School",
+          "location": "St. Louis, Mo.",
+          "year": 1898,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Caroline Elizabeth Brydie",
+          "degree": "A.M.",
+          "profession": "Teacher High School",
+          "location": "Kansas City, Mo.",
+          "year": 1899,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "William Jefferson Decatur",
+          "degree": "",
+          "profession": "Teacher Howard University",
+          "location": "Washington, D. C.",
+          "year": 1899,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "George Francis Porter",
+          "degree": "",
+          "profession": "Principal High School",
+          "location": "Kansas City, Kan.",
+          "year": 1899,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "William Andrew Rogers",
+          "degree": "A.M.",
+          "profession": "Teacher State Normal School",
+          "location": "Petersburg, Va.",
+          "year": 1899,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Julia Ophelia Wright",
+          "degree": "",
+          "profession": "Teacher State College",
+          "location": "Tallahassee, Fla.",
+          "year": 1899,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Edward Lee Simon",
+          "degree": "",
+          "profession": "Supervisor Indus. Work, Pub. Schools",
+          "location": "Memphis, Tenn.",
+          "year": 1900,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Daisy Cornelia Hayes",
+          "degree": "",
+          "profession": "Teacher City School",
+          "location": "Atlanta",
+          "year": 1901,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "John Willaim Kinney",
+          "degree": "",
+          "profession": "Teacher Manual Training, City Schools",
+          "location": "Jacksonville, Fla.",
+          "year": 1901,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Mary Fauntleroy Monroe",
+          "degree": "",
+          "profession": "Teacher Swayne Institute",
+          "location": "Montgomery, Ala.",
+          "year": 1901,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Edward Eusebia Curtright",
+          "degree": "",
+          "profession": "Teacher N. and I. Institute ",
+          "location": "High Point, N. C.",
+          "year": 1902,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "James Garfield Lemon",
+          "degree": "A.M.",
+          "profession": "Professor Georgia State Industrial College",
+          "location": "Savannah",
+          "year": 1902,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Naomi Beaird Spencer",
+          "degree": "",
+          "profession": "Teacher ",
+          "location": "Okmulgee, Okla.",
+          "year": 1902,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Louie Delphia Davis (Mrs. George R. Shivery)",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Brunswick",
+          "year": 1903,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Samuel Arthur Grant",
+          "degree": "",
+          "profession": "Professor State Norrnal and Ind. College",
+          "location": "Savannah",
+          "year": 1903,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Emanuel Williamson Houstoun",
+          "degree": "",
+          "profession": "Teacher Lincoln Institute ",
+          "location": "Jefferson City, Mo",
+          "year": 1903,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Annie Harper Mack",
+          "degree": "",
+          "profession": "Teacher City School",
+          "location": "Athens",
+          "year": 1903,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Edward Anderson Overstreet",
+          "degree": "",
+          "profession": "Teacher County School",
+          "location": "Savannah",
+          "year": 1903,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Charles Rutherford Westmoreland",
+          "degree": "",
+          "profession": "Teacher Haines Institute",
+          "location": "Augusta",
+          "year": 1903,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Emma Ellen White",
+          "degree": "",
+          "profession": "Teacher City School ",
+          "location": "Atlanta",
+          "year": 1903,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "George Nathaniel White",
+          "degree": "",
+          "profession": "Principal Burrell Normal School ",
+          "location": "Florence, Ala.",
+          "year": 1903,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Annadel Chase King",
+          "degree": "",
+          "profession": "Teacher Florida Baptist College",
+          "location": "Jacksonville, Fla.",
+          "year": 1904,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Christopher Columbus Owens",
+          "degree": "",
+          "profession": "Professor Lane College",
+          "location": "Jackson, Tenn.",
+          "year": 1904,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Annie Hodgson Smith (Mrs. Thomas L. Derricotte)",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Athens",
+          "year": 1904,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Truman Keila Gibson",
+          "degree": "A.M.",
+          "profession": "Teacher St. Paul's School",
+          "location": "Lawrenceville, Va.",
+          "year": 1905,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Carolyn Beatrice King",
+          "degree": "",
+          "profession": "Teacher Atlanta University",
+          "location": "Atlantla",
+          "year": 1905,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Richard Gloster Lockett",
+          "degree": "",
+          "profession": "Teacher City High School",
+          "location": "Houston, Tex.",
+          "year": 1905,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Edward Charles Williams",
+          "degree": "",
+          "profession": "Professor Lane College",
+          "location": "Jackson, Tenn",
+          "year": 1905,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Augustus Granville Dill",
+          "degree": "A.M.",
+          "profession": "Northern Secretary of Atlanta University",
+          "location": "Atlanta",
+          "year": 1906,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Pierce McNeil Thompson",
+          "degree": "A.M.",
+          "profession": "Teacher",
+          "location": "Lawrenceville, Va.",
+          "year": 1906,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Bazoline Estelle Usher",
+          "degree": "",
+          "profession": "Teacher Gloucester School",
+          "location": "Cappahosic, Va.",
+          "year": 1906,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Percy Harper Williams",
+          "degree": "",
+          "profession": "Teacher Emerson Institute",
+          "location": "Mobile, Ala.",
+          "year": 1906,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Mamie Lucinda Abrams",
+          "degree": "",
+          "profession": "Teacher Homer College",
+          "location": "Homer, La.",
+          "year": 1907,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "James Nelson Francis English",
+          "degree": "",
+          "profession": "Teacher State College",
+          "location": "Tallahassee, Fla.",
+          "year": 1907,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Mack Primus Burley",
+          "degree": "",
+          "profession": "Teacher Homer College",
+          "location": "Homer, La.",
+          "year": 1908,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Ruby Rhee Craig",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Gainesville, Tex.",
+          "year": 1908,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Alfred John Elkins",
+          "degree": "",
+          "profession": "Principal High School",
+          "location": "Tenille",
+          "year": 1908,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Mae Catherine Hawes",
+          "degree": "",
+          "profession": "Teacher",
+          "location": "Chattanooga, Tenn.",
+          "year": 1908,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Arthur Walter Ricks",
+          "degree": "",
+          "profession": "Manassas Ind. School",
+          "location": "Manassas, Va.",
+          "year": 1908,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "David Cicero Smith",
+          "degree": "",
+          "profession": "Teacher Knox Institute",
+          "location": "Athens",
+          "year": 1908,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Lucy Case Smith",
+          "degree": "",
+          "profession": "Teacher City School",
+          "location": "Chattanooga, Tenn.",
+          "year": 1908,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Willette Butherford Banks",
+          "degree": "",
+          "profession": "Teacher High and Indus Sch.",
+          "location": "Ft. Valley",
+          "year": 1909,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "James Tate Cater",
+          "degree": "",
+          "profession": "Teacher Atlanta University",
+          "location": "Atlanta",
+          "year": 1909,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Beulah Veronica McDowell",
+          "degree": "",
+          "profession": "Teacher Walker Baptist Institute",
+          "location": "Augusta",
+          "year": 1909,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "Mazie Estella Sams",
+          "degree": "",
+          "profession": "Teacher High School",
+          "location": "Tuscumbia, Ala.",
+          "year": 1909,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        },
+        {
+          "name": "William Henry Watson",
+          "degree": "",
+          "profession": "Teacher State Normal School",
+          "location": "Elizabeth City, N. C.",
+          "year": 1909,
+          "type": "College Graduates",
+          "professionCategory": "teachers"
+        }
+      ]
+    },
+    {
+      "name": "ministers",
+      "displayName": "Ministers",
+      "color": "#5A7BC3",
+      "students": [
+        {
+          "name": "Edgar James Penney",
+          "degree": "D.D.",
+          "profession": "Pastor ",
+          "location": "Muskogee, Okla.",
+          "year": 1876,
+          "type": "College Graduates",
+          "professionCategory": "ministers"
+        },
+        {
+          "name": "Edwin Posey Johnson",
+          "degree": "",
+          "profession": "Pastor ",
+          "location": "Atlanta",
+          "year": 1879,
+          "type": "College Graduates",
+          "professionCategory": "ministers"
+        },
+        {
+          "name": "John William Whittaker",
+          "degree": "",
+          "profession": "Chaplain N. and I. Institute",
+          "location": "Tuskegee, Ala.",
+          "year": 1884,
+          "type": "College Graduates",
+          "professionCategory": "ministers"
+        },
+        {
+          "name": "Abraham Lincoln Gaines",
+          "degree": "A.M.",
+          "profession": "Pastor",
+          "location": "Baltimore, Md.",
+          "year": 1887,
+          "type": "College Graduates",
+          "professionCategory": "ministers"
+        },
+        {
+          "name": "Floyd Grant Snelson",
+          "degree": "Ph.D. ",
+          "profession": "Pastor",
+          "location": "Lockland, Ohio",
+          "year": 1890,
+          "type": "College Graduates",
+          "professionCategory": "ministers"
+        },
+        {
+          "name": "Sllas Xavier Floyd",
+          "degree": "D.D.",
+          "profession": "Principal City School and Pastor ",
+          "location": "Augusta",
+          "year": 1891,
+          "type": "College Graduates",
+          "professionCategory": "ministers"
+        },
+        {
+          "name": "Samuel Arthur Stripling",
+          "degree": "",
+          "profession": "Pastor",
+          "location": "Guthrie, Okla.",
+          "year": 1894,
+          "type": "College Graduates",
+          "professionCategory": "ministers"
+        },
+        {
+          "name": "Albert Berry Cooper",
+          "degree": "",
+          "profession": "Pastor, and Principal Payne Institute",
+          "location": "Cuthbert",
+          "year": 1896,
+          "type": "College Graduates",
+          "professionCategory": "ministers"
+        }
+      ]
+    },
+    {
+      "name": "government",
+      "displayName": "Government Service",
+      "color": "#FFD3D3",
+      "students": [
+        {
+          "name": "Henry Harrison Williams",
+          "degree": "",
+          "profession": "Mail Agent",
+          "location": "Atlanta",
+          "year": 1876,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "James Snowden Harper",
+          "degree": "A.M.",
+          "profession": "Mail Agent",
+          "location": "Atlanta",
+          "year": 1877,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "Jacob Golden Hutchins",
+          "degree": "A.M.",
+          "profession": "Pension Department",
+          "location": "Washington,  D.C.",
+          "year": 1878,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "Peter Augustus Denegall",
+          "degree": "",
+          "profession": "Mail Carrier",
+          "location": "Savanaah",
+          "year": 1879,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "Thomas Marshall Dent",
+          "degree": "",
+          "profession": "Census Bureau",
+          "location": "Washington, D.C.",
+          "year": 1880,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "John Thomas Grant",
+          "degree": "",
+          "profession": "Mail Clerk",
+          "location": "Atlanta",
+          "year": 1883,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "Abraham Louis Tucker",
+          "degree": "",
+          "profession": "Mail Agent and Lawyer",
+          "location": "Savannah",
+          "year": 1884,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "LaFayette McKeene Hershaw",
+          "degree": "",
+          "profession": "Clerk in the Land Office",
+          "location": "Washington, D.C.",
+          "year": 1886,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "Samuel Alpheus Ward",
+          "degree": "M.D.",
+          "profession": "Clerk In War Department",
+          "location": "Washington, D. C.",
+          "year": 1887,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "John DeBaptiste Jackson",
+          "degree": "",
+          "profession": "Mail Carrier",
+          "location": "Jacksonville, Fla.",
+          "year": 1894,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "James William Johnson",
+          "degree": "A.M.",
+          "profession": "U.S. Consul ",
+          "location": "Corinto, Nicaragua",
+          "year": 1894,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "Willlam George Westmoreland",
+          "degree": "",
+          "profession": "Mail Carrier",
+          "location": "Atlanta",
+          "year": 1900,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "Willlam Henry Greenwood",
+          "degree": "",
+          "profession": "Mail Clerk ",
+          "location": "Atlanta",
+          "year": 1902,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "William Andrews, Jr.",
+          "degree": "",
+          "profession": "Mail Clerk",
+          "location": "Atlanta",
+          "year": 1906,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "Lawrence Pleamon Oliver",
+          "degree": "",
+          "profession": "Mail Clerk",
+          "location": "Chicago, Ill.",
+          "year": 1907,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "James Nathaniel Clark",
+          "degree": "",
+          "profession": "Mail Clerk",
+          "location": "Atlanta",
+          "year": 1908,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        },
+        {
+          "name": "Romeo Matthew Smith",
+          "degree": "",
+          "profession": "Mail Clerk",
+          "location": "Savannah",
+          "year": 1908,
+          "type": "College Graduates",
+          "professionCategory": "government"
+        }
+      ]
+    },
+    {
+      "name": "business",
+      "displayName": "Business",
+      "color": "#CDCE9D",
+      "students": [
+        {
+          "name": "William Francis Jackson",
+          "degree": "A.M.",
+          "profession": "In Business",
+          "location": "San Franciso, Cal.",
+          "year": 1877,
+          "type": "College Graduates",
+          "professionCategory": "business"
+        },
+        {
+          "name": "Robert Lloyd Smith",
+          "degree": "",
+          "profession": "Pres. Farmers' Improvement Society",
+          "location": "Paris, Texas",
+          "year": 1880,
+          "type": "College Graduates",
+          "professionCategory": "business"
+        },
+        {
+          "name": "Joseph Taylor Porter",
+          "degree": "",
+          "profession": "in Business",
+          "location": "New York, N.Y.",
+          "year": 1899,
+          "type": "College Graduates",
+          "professionCategory": "business"
+        },
+        {
+          "name": "John Perry Seabrooke, Jr.",
+          "degree": "",
+          "profession": "in Business",
+          "location": "Charleston, S.C.",
+          "year": 1899,
+          "type": "College Graduates",
+          "professionCategory": "business"
+        },
+        {
+          "name": "Harry Herbert Pace",
+          "degree": "",
+          "profession": "Cashier Solvent Savings Bank and Trust co.",
+          "location": "Memphis, Tenn.",
+          "year": 1903,
+          "type": "College Graduates",
+          "professionCategory": "business"
+        },
+        {
+          "name": "Thomas Bernard Harper",
+          "degree": "",
+          "profession": "in Business",
+          "location": "Atlanta",
+          "year": 1905,
+          "type": "College Graduates",
+          "professionCategory": "business"
+        },
+        {
+          "name": "James Francis Jenkins",
+          "degree": "",
+          "profession": "In Business",
+          "location": "Buffalo, N.Y.",
+          "year": 1905,
+          "type": "College Graduates",
+          "professionCategory": "business"
+        },
+        {
+          "name": "Oliver Alphonzo Clark",
+          "degree": "",
+          "profession": "in Business",
+          "location": "Chicago, Ill.",
+          "year": 1907,
+          "type": "College Graduates",
+          "professionCategory": "business"
+        },
+        {
+          "name": "Isaac Owen Westmoreland",
+          "degree": "",
+          "profession": "in Business",
+          "location": "Atlanta",
+          "year": 1907,
+          "type": "College Graduates",
+          "professionCategory": "business"
+        },
+        {
+          "name": "James Madison Baker",
+          "degree": "",
+          "profession": "in Business",
+          "location": "Jacksonville, Fla .",
+          "year": 1909,
+          "type": "College Graduates",
+          "professionCategory": "business"
+        }
+      ]
+    },
+    {
+      "name": "other",
+      "displayName": "Other Professions",
+      "color": "#2F4F4F",
+      "students": [
+        {
+          "name": "Paul Edward Spratlin",
+          "degree": "A.M, M.D. ",
+          "profession": "Physician",
+          "location": "Denver, Col.",
+          "year": 1881,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Butler Romulus Wilson",
+          "degree": "A.M.",
+          "profession": "Lawyer",
+          "location": "Boston, Mass.",
+          "year": 1881,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "James Reynolds Porter",
+          "degree": "D.D.S.",
+          "profession": "Dentist",
+          "location": "Atlanta",
+          "year": 1886,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Preston Mylvea Edwards",
+          "degree": "M.D.",
+          "profession": "Physician",
+          "location": "Hartford, Ct.",
+          "year": 1889,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Loring Brainerd Palmer",
+          "degree": "A.M, M.D. ",
+          "profession": "Physician ",
+          "location": "Atlanta",
+          "year": 1891,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Henry Moses Porter",
+          "degree": "LL.B.",
+          "profession": "Lawyer ",
+          "location": "Chicago, Ill.",
+          "year": 1893,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Felix Alonzo Curtright",
+          "degree": "",
+          "profession": "Sec'y Y. M. C. A.",
+          "location": "Atlanta",
+          "year": 1896,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Stephen Alexander Peters",
+          "degree": "M.D.",
+          "profession": "Physician",
+          "location": "Atlanta",
+          "year": 1897,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Arthur DeLyons Butler",
+          "degree": "A.M.",
+          "profession": "Physician ",
+          "location": "Evanston, Ill.",
+          "year": 1903,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Edwin Augustus Harleston",
+          "degree": "",
+          "profession": "Student Museum of Fine Arts",
+          "location": "Boston, Mass.",
+          "year": 1904,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "George Carey Mack",
+          "degree": "",
+          "profession": "in Dental Laboratory",
+          "location": "Washington, D. C.",
+          "year": 1904,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Francis Summer Alexander",
+          "degree": "",
+          "profession": "Student University of Chicago",
+          "location": "Chicago, Ill.",
+          "year": 1906,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "James Henry Butler",
+          "degree": "",
+          "profession": "Student University of Illlnois (Med. Sch.)",
+          "location": "Chicago, Ill.",
+          "year": 1906,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Charles Columbus Cater",
+          "degree": "",
+          "profession": "Student University of Pennsylvania",
+          "location": "Philadelphia, Pa.",
+          "year": 1907,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "William Frank Montgomery",
+          "degree": "",
+          "profession": "Student Medical Dept., Howard University",
+          "location": "Washington,D.C.",
+          "year": 1907,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Fredrick Douglass Smith",
+          "degree": "",
+          "profession": "Student Medcial Dept., Howard Univ.",
+          "location": "Washlngton,D.C.",
+          "year": 1907,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Austin Thomas Walden",
+          "degree": "",
+          "profession": "Student Univ. of Mich. (Law School)",
+          "location": "Ann Arbor, Mich.",
+          "year": 1907,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        },
+        {
+          "name": "Albert Joseph Wlilliams",
+          "degree": "",
+          "profession": "Fellow Atlanta University",
+          "location": "Atlanta",
+          "year": 1909,
+          "type": "College Graduates",
+          "professionCategory": "other"
+        }
+      ]
+    },
+    {
+      "name": "housewives",
+      "displayName": "House Wives",
+      "color": "#FEC313",
+      "students": [
+        {
+          "name": "Mary European Badger (Mrs. W. N. Cummings)",
+          "degree": "",
+          "profession": "",
+          "location": "Galveston, Texas",
+          "year": 1886,
+          "type": "College Graduates",
+          "professionCategory": "housewives"
+        },
+        {
+          "name": "Georgia Louise Palmer (Mrs. Johnson F. Blair)",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1902",
+          "year": 1895,
+          "type": "College Graduates",
+          "professionCategory": "housewives"
+        },
+        {
+          "name": "Beatrice Damaris McGhee (Mrs. N. W. Curtright)",
+          "degree": "",
+          "profession": "",
+          "location": "Rome",
+          "year": 1896,
+          "type": "College Graduates",
+          "professionCategory": "housewives"
+        },
+        {
+          "name": "Ruth Marian Harris (Mrs. Matthew H. Jackson)",
+          "degree": "",
+          "profession": "",
+          "location": "Washington, D. C.",
+          "year": 1899,
+          "type": "College Graduates",
+          "professionCategory": "housewives"
+        },
+        {
+          "name": "Lula Iola Mack (Mrs. F. H. Wilkins)",
+          "degree": "",
+          "profession": "",
+          "location": "Athens",
+          "year": 1900,
+          "type": "College Graduates",
+          "professionCategory": "housewives"
+        },
+        {
+          "name": "Mary Ruth Greenwood (Mrs. Walter E. Carey)",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1901,
+          "type": "College Graduates",
+          "professionCategory": "housewives"
+        },
+        {
+          "name": "Ada Hawes (Mrs. W. A. Hinton)",
+          "degree": "A.M.",
+          "profession": "",
+          "location": "Roxbury, Mass.",
+          "year": 1901,
+          "type": "College Graduates",
+          "professionCategory": "housewives"
+        },
+        {
+          "name": "Fannie May Howard (Mrs. Joseph H. Douglass)",
+          "degree": "",
+          "profession": "",
+          "location": "New York City",
+          "year": 1905,
+          "type": "College Graduates",
+          "professionCategory": "housewives"
+        }
+      ]
+    },
+    {
+      "name": "deceased",
+      "displayName": "Dead",
+      "color": "#C4C4C4",
+      "students": [
+        {
+          "name": "Samuel Benjamin Morse",
+          "degree": "",
+          "profession": "A.M.",
+          "location": "Deceased, 1909",
+          "year": 1876,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "London Humes Waters",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1882",
+          "year": 1876,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Nathaniel De Lamotta Harris",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1879",
+          "year": 1878,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "William Henry Harris",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1898",
+          "year": 1878,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Arthur William Upshaw",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1892",
+          "year": 1878,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Edward Johnson Stewart",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1884",
+          "year": 1879,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "William Edgar Hightower",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1908",
+          "year": 1880,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Thomas Francis Park Roberts",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1888",
+          "year": 1880,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Preston Brooks Peters",
+          "degree": "Sc.",
+          "profession": "",
+          "location": "Deceased, 1885",
+          "year": 1881,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Henry Lucius Walker",
+          "degree": "A.M.",
+          "profession": "",
+          "location": "Deceased, 1903",
+          "year": 1882,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Charles William Luckie",
+          "degree": "A.M.",
+          "profession": "",
+          "location": "Deceased, 1909",
+          "year": 1883,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "William Hoxie Johnson",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1891",
+          "year": 1884,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Leigh Benjamin Maxwell",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1903",
+          "year": 1885,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "John William Young",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1891",
+          "year": 1886,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Simeon Palmer Lloyd",
+          "degree": "M.D.",
+          "profession": "",
+          "location": "Deceased, 1909",
+          "year": 1889,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Horace Hudson Lomax",
+          "degree": "M.D.",
+          "profession": "",
+          "location": "Deceased, 1907",
+          "year": 1889,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Fanny Tripp Habersham",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1900",
+          "year": 1896,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "George Francis Smith",
+          "degree": "A.M.",
+          "profession": "",
+          "location": "Deceased, 1900",
+          "year": 1897,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Henry Napoleon Lee",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1907",
+          "year": 1900,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Peter Henry Williams",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1902",
+          "year": 1901,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        },
+        {
+          "name": "Sarah Rucker McCombs",
+          "degree": "",
+          "profession": "",
+          "location": "Deceased, 1907",
+          "year": 1904,
+          "type": "College Graduates",
+          "professionCategory": "deceased"
+        }
+      ]
+    },
+    {
+      "name": "unknown",
+      "displayName": "Unknown",
+      "color": "#B5CCFF",
+      "students": [
+        {
+          "name": "Drayton Hardy Maffet",
+          "degree": "Sc.",
+          "profession": "",
+          "location": "Unknown",
+          "year": 1880,
+          "type": "College Graduates",
+          "professionCategory": "unknown"
+        },
+        {
+          "name": "William Henry Goosby",
+          "degree": "",
+          "profession": "",
+          "location": "New York, N. Y.",
+          "year": 1887,
+          "type": "College Graduates",
+          "professionCategory": "unknown"
+        },
+        {
+          "name": "Thomas Jefferson Bell",
+          "degree": "",
+          "profession": "Sec'y Y. M. C. A.",
+          "location": "New York, N. Y.",
+          "year": 1891,
+          "type": "College Graduates",
+          "professionCategory": "unknown"
+        },
+        {
+          "name": "William Oscar Murphy",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1891,
+          "type": "College Graduates",
+          "professionCategory": "unknown"
+        },
+        {
+          "name": "Ophelia Olivia Brooks",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1898,
+          "type": "College Graduates",
+          "professionCategory": "unknown"
+        },
+        {
+          "name": "Alberta Theresa Badger",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1899,
+          "type": "College Graduates",
+          "professionCategory": "unknown"
+        },
+        {
+          "name": "Mildred Rutherford Jackson",
+          "degree": "",
+          "profession": "",
+          "location": "Maiden, Mass.",
+          "year": 1905,
+          "type": "College Graduates",
+          "professionCategory": "unknown"
+        },
+        {
+          "name": "Augustus Davis",
+          "degree": "",
+          "profession": "",
+          "location": "Houston, Tex.",
+          "year": 1907,
+          "type": "College Graduates",
+          "professionCategory": "unknown"
+        },
+        {
+          "name": "Arthur Upshaw Evans",
+          "degree": "",
+          "profession": "",
+          "location": "Atlanta",
+          "year": 1908,
+          "type": "College Graduates",
+          "professionCategory": "unknown"
+        }
+      ]
+    }
+  ]
+}

@@ -1,11 +1,7 @@
 import { Circle } from "~/components/dubois/Circle";
 import { useEffect } from "react";
 import p5 from "p5";
-
-interface StudentData {
-  count: number;
-  categories: any[];
-}
+import { StudentData } from "~/components/dubois/types";
 
 interface Props {
   studentData: StudentData;

@@ -1,7 +1,8 @@
 import USAMap from "~/components/dubois/USAMap";
 import PieChart from "~/components/dubois/PieChart.client";
-import studentData from "~/data/chartOne.json";
+import studentData from "~/data/dubois/studentChartOne.json";
 import { ClientOnly } from "remix-utils";
+import Legend from "~/components/dubois/Legend";
 
 export default function StudentChartOne() {
   return (
@@ -54,23 +55,8 @@ export default function StudentChartOne() {
           residence.
         </p>
       </div>
-      <div className="flex justify-between mt-20 mb-20">
-        <div className="font-duboisNarrow uppercase">
-          <div className="flex flex-col">
-            {studentData.categories.map((category) => (
-              <div className="flex flex-row mb-6 items-center pl-4">
-                <div
-                  className="mr-2 rounded-2xl h-8 w-8"
-                  style={{
-                    backgroundColor: category.color,
-                    border: "1px solid black",
-                  }}
-                />
-                <p>{category.displayName}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="flex justify-between my-20">
+        <Legend categories={studentData.categories} />
         <ClientOnly>{() => <PieChart studentData={studentData} />}</ClientOnly>
       </div>
       <div className="mt-6 font-dubois font-bold text-center uppercase">
