@@ -16,9 +16,6 @@ export default function DuboisChapter() {
           title="Between Data and Truth"
           subtitle="W.E.B. Du Bois’s “Data Portraits”"
         />
-        <div className="nav-bar transition">
-          <div>breakpoint xl</div>
-        </div>
         <div className="grid-wrapper bg-offwhite py-16 text-xl space-y-5">
           <ChapterSectionTitle color="bg-duboisPrimary">
             Introduction
