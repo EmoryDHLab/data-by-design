@@ -19,7 +19,7 @@ export default function DuboisChapter() {
         <div className="nav-bar transition">
           <div>breakpoint xl</div>
         </div>
-        <div className="grid-wrapper bg-offwhite py-16 text-xl">
+        <div className="grid-wrapper bg-offwhite py-16 text-xl space-y-5">
           <ChapterSectionTitle color="bg-duboisPrimary">
             Introduction
           </ChapterSectionTitle>
@@ -337,11 +337,10 @@ export default function DuboisChapter() {
               indictment of the centrality of race and racism to modern American
               sociopolitical life,” as architectural historian Mabel O. Wilson
               explains.
-            </span>
-            <span>
-              <span role="button" className="circle">
-                8
-              </span>{" "}
+              <Footnote number="8">
+                Mabel O. Wilson, “The Cartography of W.E.B. Du Bois’s Color
+                Line,” in Battle-Baptiste and Rusert, p. 39.
+              </Footnote>
             </span>
             <span> But Du Bois mounts the same case through his charts. </span>
             <span className="font-normal">
@@ -398,155 +397,6 @@ export default function DuboisChapter() {
           </p>
           <p>
             <span>
-              [ ABOVE: SCROLLY TELL PLATE 11, THEN PLATE 14, 23, 25 -- Images
-              ch5-04a-d -- see notes in doc]
-            </span>
-          </p>
-          <div className="col-span-full">
-            <div className="bg-theme absolute z-0 left-0 w-screen max-w-full"></div>
-            <div className="relative">
-              <div className="opacity-0 pointer-events-none absolute left-0 -top-screen w-screen h-screen max-w-full max-h-full"></div>
-              <div className="opacity-0 pointer-events-none absolute left-0 w-screen h-screen max-w-full max-h-full"></div>
-            </div>
-            <div className="flex flex-row mx-3 lg:mx-12">
-              <div className="flex-1 z-10 relative">
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>[ No text "font-normal</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>The table in the first edition of the </span>
-                      <span>Atlas</span>
-                      <span>
-                        {" "}
-                        includes data only for the years between 1770 and 1782.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>
-                        Playfair nevertheless plotted data lines for the full
-                        range of years between 1700 and 1780.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>
-                        He shaded the area between the two data lines in order
-                        to illustrate the balance of trade between the two
-                        nations. Stippled dots indicate periods of time when the
-                        amount of imports from North America to England exceeded
-                        the amount of exports from England to North America.
-                        Diagonal lines indicate the times when exports from
-                        England to North America exceed imports.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>
-                        While Playfair includes both major and minor gridlines
-                        along the y-axis of the chart, in the version included
-                        in the first edition of the{" "}
-                      </span>
-                      <span>Atlas</span>
-                      <span>
-                        , Playfair includes minor gridlines along the x-axis
-                        only for the twelve years for which he possesses tabular
-                        data.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>In the third edition of the </span>
-                      <span>Atlas</span>
-                      <span>
-                        , these minor gridlines disappear--along with the data
-                        tables.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>
-                        While Playfair extends the endpoint of the x-axis to
-                        1800, what was then the present, the datalines become
-                        less precise. As he plots the lines of imports and
-                        exports, they become smoother--a reflection either of
-                        his improved engraving technique, or of his desire to
-                        convey a more general impression of the economic
-                        picture, or both.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>In the third edition of the </span>
-                      <span>Atlas</span>
-                      <span>
-                        , Playfair also made significant improvements to the
-                        charts’ design. He replaced the hachure and stippled
-                        dots employed in the second edition to indicate the
-                        difference between the periods of trade in favor of and
-                        against England with hand-stained color.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>
-                        this series begins with several charts focused on
-                        population, before moving on to explore themes related
-                        to employment,
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>education, and economics,</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center pr-12 h-screen max-w-full">
-                  <div>
-                    <p>
-                      <span>
-                        as well as social, cultural, and religious life.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="h-1/2"></div>
-              </div>
-              <div className="flex-1 h-screen max-h-full sticky top-0 z-10"></div>
-            </div>
-          </div>
-          <p>
-            <span>
               Du Bois continues this line of argument, and his graphical
               innovation, in the second series of charts. Focused on the
               “condition of the descendants of former African slaves now
@@ -580,12 +430,6 @@ export default function DuboisChapter() {
               was motivated by a more academic goal: “popularizing and extending
               the study of statistics.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                9
-              </span>{" "}
-            </span>
-            <span></span>
           </p>
           <p>
             <span>
@@ -667,11 +511,7 @@ export default function DuboisChapter() {
             <span className="font-normal">
               , the 2018 volume that compiled the charts in print for the first
               time—bound as a dazzling, full-color book.
-            </span>
-            <span>
-              <span role="button" className="circle">
-                10
-              </span>{" "}
+              <Footnote number="10">See Battle-Baptiste and Rusert.</Footnote>
             </span>
             <span className="font-normal">
               {" "}
@@ -698,7 +538,7 @@ export default function DuboisChapter() {
           <div className="flex flex-col items-center middle-full">
             <div>
               <img
-                src="/dubois/images/ch5-09-exhibit.png"
+                src="/images/dubois/ch5-09-exhibit.png"
                 alt=""
                 loading="lazy"
                 width="100%"
@@ -729,11 +569,13 @@ export default function DuboisChapter() {
             <span className="font-normal">
               challenge “conventional American ideas,” although he does not
               specify what particular ideas he intends to challenge.
-            </span>
-            <span>
-              <span role="button" className="circle">
-                11
-              </span>{" "}
+              <Footnote number="11">
+                Du Bois, “
+                <a href="http://www.webdubois.org/dbANParis.html">
+                  The American Negro in Paris
+                </a>
+                ,” p. 577.{" "}
+              </Footnote>
             </span>
             <span className="font-normal">
               {" "}
@@ -746,11 +588,22 @@ export default function DuboisChapter() {
               another,” as articulated most famously in{" "}
             </span>
             <span className="font-normal italic">The Souls of Black Folk.</span>
-            <span>
-              <span role="button" className="circle">
-                12
+            <Footnote number="12">
+              W.E.B. Du Bois,{" "}
+              <span className="italic">The Souls of Black Folk</span> (New York:
+              Library of America, 1903), p. 8; quoted in Shawn Michelle Smith,{" "}
+              <span className="italic">
+                Photography on the Color Line: W.E.B. Du Bois, Race, and Visual
+                Culture
               </span>{" "}
-            </span>
+              (Durham: Duke Univ. Press, 2004) p. 25. For more on the
+              photographs, see the Library of Congress,{" "}
+              <span className="italic">
+                A Small Nation of People: W.E.B. Du Bois and African American
+                Portraits of Progress{" "}
+              </span>
+              (New York: Amistad-HarperCollins, 2003).{" "}
+            </Footnote>
             <span className="font-normal">
               {" "}
               With the photos, which not only featured black citizens but were
@@ -758,11 +611,14 @@ export default function DuboisChapter() {
               white international audience a view of how Black American saw
               themselves.
             </span>
-            <span>
-              <span role="button" className="circle">
-                13
-              </span>{" "}
-            </span>
+            <Footnote number="13">
+              Historian of photography Deborah Willis identifies one of these
+              photographers as the prominent Black portraitist Thomas Askew.
+              Others remain unknown. See “The Sociologist’s Eye: W.E.B. Du Bois
+              and the Paris Exposition,” in{" "}
+              <span className="italic">A Small Nation of People</span>, pp.
+              51-78.
+            </Footnote>
           </p>
           <p>
             <span className="font-normal">
@@ -776,11 +632,7 @@ export default function DuboisChapter() {
               superior perspective on turn-of-the-century race relations,
               sociability, and even existence itself.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                14
-              </span>{" "}
-            </span>
+            <Footnote number="14">Battle-Baptiste and Rusert, p. 15.</Footnote>
             <span className="font-normal"> In direct comparison to the </span>
             <span className="font-normal italic">Statistical Atlas</span>
             <span className="font-normal">
@@ -835,11 +687,13 @@ export default function DuboisChapter() {
               American Negro and his plight, and by measurement and comparison
               and research, work up to any valid generalization which I could.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                15
-              </span>{" "}
-            </span>
+            <Footnote number="15">
+              W.E.B. Du Bois,{" "}
+              <span className="italic">
+                Dusk of Dawn: An Essay Toward an Autobiography of a Race Concept
+              </span>
+              , ed. Irene Diggs (New Brunswick NJ: Transaction, 1984), p. 51.
+            </Footnote>
             <span>
               {" "}
               Here we see the strength of Du Bois’s belief in the power of

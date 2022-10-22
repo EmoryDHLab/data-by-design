@@ -645,14 +645,14 @@ video {
   margin-bottom: 0.5rem !important;
 }
 
-.mx-3 {
-  margin-left: 0.75rem !important;
-  margin-right: 0.75rem !important;
-}
-
 .my-20 {
   margin-top: 5rem !important;
   margin-bottom: 5rem !important;
+}
+
+.mx-3 {
+  margin-left: 0.75rem !important;
+  margin-right: 0.75rem !important;
 }
 
 .mt-16 {
@@ -701,14 +701,6 @@ video {
 
 .mt-6 {
   margin-top: 1.5rem !important;
-}
-
-.mt-20 {
-  margin-top: 5rem !important;
-}
-
-.mb-20 {
-  margin-bottom: 5rem !important;
 }
 
 .mt-8 {
