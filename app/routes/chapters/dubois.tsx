@@ -6,8 +6,6 @@ import { StudentChart } from "~/components/dubois/StudentChart";
 import Footer from "~/components/Footer";
 import { ThemeContext } from "~/theme";
 
-// this is a react component. its a function that returns jsx
-
 export default function DuboisChapter() {
   return (
     <ThemeContext.Provider
@@ -29,10 +27,10 @@ export default function DuboisChapter() {
             been.{" "}
             <Footnote number="1">
               As indicated in the{" "}
-              <span className="italic">
+              <cite>
                 Catalogue of the Officers and Students of Atlanta University,
                 1899-1900
-              </span>
+              </cite>
               , available online at:{" "}
               <a href="http://digitalcommons.auctr.edu/aucatalogs/31">
                 http://digitalcommons.auctr.edu/aucatalogs/31
@@ -56,8 +54,8 @@ export default function DuboisChapter() {
               lines to tend to Burghardt, even with the knowledge of the
               severity of his illness. For more on this incident and Du Bois’s
               early years in Atlanta, see David Levering Lewis,{" "}
-              <span className="italic">W.E.B. Du Bois: A Biography</span> (New
-              York: Henry Holt, 2009): 152-176.
+              <cite>W.E.B. Du Bois: A Biography</cite> (New York: Henry Holt,
+              2009): 152-176.
             </Footnote>
             <span className="font-normal">
               {" "}
@@ -98,10 +96,8 @@ export default function DuboisChapter() {
                 The American Negro in Paris
               </a>
               ,”
-              <span className="italic">
-                The American Monthly Review of Reviews
-              </span>{" "}
-              22.5 (November 1900), p. 576.
+              <cite>The American Monthly Review of Reviews</cite> 22.5 (November
+              1900), p. 576.
             </Footnote>
             <span className="font-normal">
               {" "}
@@ -114,12 +110,10 @@ export default function DuboisChapter() {
               , published just one year earlier.
             </span>
             <Footnote number="4">
-              <span className="italic">On The Philadelphia Negro</span> as the
-              antecedent to the Paris Exposition charts, see Alexander Weheliye,
-              “Diagrammatics as Physiognomy: W.E.B. Du Bois’s Graphic
-              Modernities,”{" "}
-              <span className="italic">CR: The New Centennial Review</span> 15.2
-              (2015): 23-58.
+              <cite>On The Philadelphia Negro</cite> as the antecedent to the
+              Paris Exposition charts, see Alexander Weheliye, “Diagrammatics as
+              Physiognomy: W.E.B. Du Bois’s Graphic Modernities,”{" "}
+              <cite>CR: The New Centennial Review</cite> 15.2 (2015): 23-58.
             </Footnote>
           </p>
           <div className="flex flex-col items-center middle-full full-bleed py-16">
@@ -216,18 +210,15 @@ export default function DuboisChapter() {
               </a>
               ,” p. 577; Whitney Battle-Baptiste and Britt Rusert,
               “Introduction,” in W.E.B.{" "}
-              <span className="italic">
-                Du Bois’s Data Portraits: VIsualizing Black America
-              </span>
-              , eds. Whitney Battle-Baptiste and Britt Rusert (New York:
-              Princeton Architectural Press, 2018), p. 19. For a sustained
-              meditation on the legacy of the Black Codes and their relation to
-              contemporary digital life, see the special issue of{" "}
-              <span className="italic">The Black Scholar</span> on “Black Code,”
-              edited by Jessica Marie Johnson and Mark Anthony Neal, and in
-              particular, the introduction, “Wild Seed in the Machine,”{" "}
-              <span className="italic">The Black Scholar</span> 47.3 (2017):
-              1-2.
+              <cite>Du Bois’s Data Portraits: VIsualizing Black America</cite>,
+              eds. Whitney Battle-Baptiste and Britt Rusert (New York: Princeton
+              Architectural Press, 2018), p. 19. For a sustained meditation on
+              the legacy of the Black Codes and their relation to contemporary
+              digital life, see the special issue of{" "}
+              <cite>The Black Scholar</cite> on “Black Code,” edited by Jessica
+              Marie Johnson and Mark Anthony Neal, and in particular, the
+              introduction, “Wild Seed in the Machine,”{" "}
+              <cite>The Black Scholar</cite> 47.3 (2017): 1-2.
             </Footnote>
             <span className="font-normal">
               {" "}
@@ -323,9 +314,7 @@ export default function DuboisChapter() {
             <div className="font-william text-center mt-10 w-5/6">
               <p>
                 <span>Above: The introductory image of </span>
-                <span className="italic">
-                  The Georgia Negro: A Social Study,{" "}
-                </span>
+                <cite>The Georgia Negro: A Social Study, </cite>
                 <span>
                   the first set of charts included in the Paris Exposition.
                   Image courtesy of the Library of Congress, Prints &amp;
@@ -597,19 +586,18 @@ export default function DuboisChapter() {
             <span className="font-normal italic">The Souls of Black Folk.</span>
 
             <Footnote number="12">
-              W.E.B. Du Bois,{" "}
-              <span className="italic">The Souls of Black Folk</span> (New York:
+              W.E.B. Du Bois, <cite>The Souls of Black Folk</cite> (New York:
               Library of America, 1903), p. 8; quoted in Shawn Michelle Smith,{" "}
-              <span className="italic">
+              <cite>
                 Photography on the Color Line: W.E.B. Du Bois, Race, and Visual
                 Culture
-              </span>{" "}
+              </cite>{" "}
               (Durham: Duke Univ. Press, 2004) p. 25. For more on the
               photographs, see the Library of Congress,{" "}
-              <span className="italic">
+              <cite>
                 A Small Nation of People: W.E.B. Du Bois and African American
                 Portraits of Progress{" "}
-              </span>
+              </cite>
               (New York: Amistad-HarperCollins, 2003).{" "}
             </Footnote>
 
@@ -626,8 +614,7 @@ export default function DuboisChapter() {
               photographers as the prominent Black portraitist Thomas Askew.
               Others remain unknown. See “The Sociologist’s Eye: W.E.B. Du Bois
               and the Paris Exposition,” in{" "}
-              <span className="italic">A Small Nation of People</span>, pp.
-              51-78.
+              <cite>A Small Nation of People</cite>, pp. 51-78.
             </Footnote>
           </p>
           <p>
@@ -642,9 +629,7 @@ export default function DuboisChapter() {
               superior perspective on turn-of-the-century race relations,
               sociability, and even existence itself.”
             </span>
-
             <Footnote number="14">Battle-Baptiste and Rusert, p. 15.</Footnote>
-
             <span className="font-normal"> In direct comparison to the </span>
             <span className="font-normal italic">Statistical Atlas</span>
             <span className="font-normal">
@@ -699,15 +684,13 @@ export default function DuboisChapter() {
               American Negro and his plight, and by measurement and comparison
               and research, work up to any valid generalization which I could.”
             </span>
-
             <Footnote number="15">
               W.E.B. Du Bois,{" "}
-              <span className="italic">
+              <cite>
                 Dusk of Dawn: An Essay Toward an Autobiography of a Race Concept
-              </span>
+              </cite>
               , ed. Irene Diggs (New Brunswick NJ: Transaction, 1984), p. 51.
             </Footnote>
-
             <span>
               {" "}
               Here we see the strength of Du Bois’s belief in the power of
@@ -739,7 +722,7 @@ export default function DuboisChapter() {
 
             <Footnote number="16">
               Du Bois,
-              <span className="italic"> Dusk of Dawn </span>p. 67.
+              <cite> Dusk of Dawn </cite>p. 67.
             </Footnote>
           </p>
           <p>
@@ -762,7 +745,7 @@ export default function DuboisChapter() {
 
             <Footnote number="17">
               Du Bois,
-              <span className="italic"> Dusk of Dawn </span>p. 67.
+              <cite> Dusk of Dawn </cite>p. 67.
             </Footnote>
 
             <span>
@@ -774,14 +757,14 @@ export default function DuboisChapter() {
 
             <Footnote number="18">
               In keeping with the approach of Saidiya Hartman as outlined in
-              <span className="italic">
+              <cite>
                 {" "}
                 p. 67. Scenes of Subjection: Terror, Slavery, and Self-Making in
                 Nineteenth-Century America{" "}
-              </span>
+              </cite>
               (New York: Oxford Univ. Press, 1997), I elect not to restage the
               violence of this horrific act. To read Du Bois’s account, see
-              <span className="italic"> Dusk of Dawn </span>p. 67.
+              <cite> Dusk of Dawn </cite>p. 67.
             </Footnote>
 
             <span>
@@ -964,10 +947,7 @@ export default function DuboisChapter() {
 
             <Footnote number="19">
               “The Georgia Negro Exhibit for the Paris Exposition,”
-              <span className="italic">
-                {" "}
-                The Bulletin of Atlanta University,{" "}
-              </span>
+              <cite> The Bulletin of Atlanta University, </cite>
               May 1900, p. 2.
             </Footnote>
 
@@ -982,11 +962,11 @@ export default function DuboisChapter() {
 
             <Footnote number="20">
               W.E.B. Du Bois,
-              <span className="italic">
+              <cite>
                 {" "}
                 A Soliloquy on viewing my life from the last decade of its first
                 century,{" "}
-              </span>
+              </cite>
               ca. 1961. W.E.B. Du Bois Papers (MS 312). Special Collections and
               University Archives, University of Massachusetts Amherst
               Libraries. p. 18.
@@ -1022,16 +1002,13 @@ export default function DuboisChapter() {
 
             <Footnote number="21">
               “Atlanta University Exhibit At Paris,”’
-              <span className="italic">The Atlanta Journal,</span> February 22,
-              1900. Archives Research Center, Robert W. Woodruff Library,
-              Atlanta University Center, Box 23, folder 6; “Catalogue of the
-              Officers and Students of Atlanta University, 1899-1900,”
-              <span className="italic">
-                {" "}
-                Atlanta University Bulletin (Catalogs)
-              </span>{" "}
-              31. Archives Research Center, Robert W. Woodruff Library, Atlanta
-              University Center.
+              <cite>The Atlanta Journal,</cite> February 22, 1900. Archives
+              Research Center, Robert W. Woodruff Library, Atlanta University
+              Center, Box 23, folder 6; “Catalogue of the Officers and Students
+              of Atlanta University, 1899-1900,”
+              <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives
+              Research Center, Robert W. Woodruff Library, Atlanta University
+              Center.
             </Footnote>
 
             <span className="font-normal">
@@ -1044,16 +1021,13 @@ export default function DuboisChapter() {
             </span>
             <Footnote number="22">
               “Atlanta University Exhibit At Paris,”’
-              <span className="italic">The Atlanta Journal,</span> February 22,
-              1900. Archives Research Center, Robert W. Woodruff Library,
-              Atlanta University Center, Box 23, folder 6; “Catalogue of the
-              Officers and Students of Atlanta University, 1899-1900,”
-              <span className="italic">
-                {" "}
-                Atlanta University Bulletin (Catalogs)
-              </span>{" "}
-              31. Archives Research Center, Robert W. Woodruff Library, Atlanta
-              University Center.
+              <cite>The Atlanta Journal,</cite> February 22, 1900. Archives
+              Research Center, Robert W. Woodruff Library, Atlanta University
+              Center, Box 23, folder 6; “Catalogue of the Officers and Students
+              of Atlanta University, 1899-1900,”
+              <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives
+              Research Center, Robert W. Woodruff Library, Atlanta University
+              Center.
             </Footnote>
             <span className="font-normal">
               {" "}
