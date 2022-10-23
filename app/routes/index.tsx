@@ -6,7 +6,7 @@ export default function Index() {
   return (
     <div className="bg-black">
       <HomeTitle />
-      <div className="bg-dubois_sec flex">
+      <div className="bg-duboisSecondary flex">
         <div className="w-2/5">
           <img className="p-20 w-full" src="/images/ch4-5.webp" />
         </div>

@@ -6,6 +6,8 @@ import { StudentChart } from "~/components/dubois/StudentChart";
 import Footer from "~/components/Footer";
 import { ThemeContext } from "~/theme";
 
+// this is a react component. its a function that returns jsx
+
 export default function DuboisChapter() {
   return (
     <ThemeContext.Provider
