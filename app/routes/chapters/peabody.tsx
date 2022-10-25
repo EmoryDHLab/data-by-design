@@ -1,16 +1,19 @@
 import ChapterTitle from "~/components/ChapterTitle";
+import { ThemeContext } from "~/theme";
 
 export default function PeabodyPage() {
   return (
-    <div>
+    <ThemeContext.Provider
+      value={{ backgroundColor: "peabodyPrimary", primaryTextColor: "white" }}
+    >
       <ChapterTitle
         title="The Work of Knowledge"
         subtitle="Elizabeth Palmer Peabody’s Chronological Grids"
       />
       <div className="grid-wrapper bg-offwhite">
-        <div className="flex">
-          <div>
-            <p>
+        <div className="flex full-bleed pt-20 pb-40">
+          <div className="text-xl w-1/2">
+            <p className="px-20 py-5">
               <span>
                 Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
               </span>
@@ -41,7 +44,7 @@ export default function PeabodyPage() {
                 </span>{" "}
               </span>
             </p>
-            <p>
+            <p className="px-20 py-5">
               <span>
                 Indeed, Peabody was an educator to her core. She came from a
                 family of teachers. Her mother and two sisters all taught
@@ -68,123 +71,111 @@ export default function PeabodyPage() {
                 to call it, was a method with data visualization at its center.
               </span>
             </p>
-          </div>
-          <div>
-            <div className="flex flex-col items-center middle-full">
-              <div>
-                <div className="border-primary border-4 border-dashed p-1">
-                  <div className="w-full overflow-hidden border-2 centered-image">
-                    <img src="/images/peabody/railroadscaled.webp" alt="" />
-                  </div>
-                </div>
+            <div className="w-full h-[300px]" />
+            <div className="bg-peabodyPrimary p-10 w-fit max-w-2xl font-william">
+              <div className="text-xl lg:text-2xl xl:text-4xl">
+                <p>
+                  <span>
+                    Peabody designed her charts to be abstract rather than
+                    intuitive;
+                  </span>
+                </p>
               </div>
-              <div className="caption text-center mt-10 w-5/6">
-                The range of Peabody's promotional tour, as plotted on an 1850
-                rail map of the United States. Image courtesy of the Library of
-                Congress, Geography and Map Division.
+              <div className="text-base lg:text-xl xl:text-2xl py-4">
+                <p>
+                  <span>
+                    to promote sustained reflection rather than immediate
+                    insight. And she did so with a clear goal in mind: to
+                    provoke a unique imaginative response in each viewer.{" "}
+                  </span>
+                </p>
+              </div>
+            </div>
+            <p className="p-20">
+              <span>
+                Along with boxes of her textbooks, Peabody traveled with a
+                fabric roll the size of a living room rug, which contained a
+                floor-sized version of one of the chronological charts described
+                in the book. Peabody identified the charts—in their vibrant,
+                full-color detail—as key components of her visual pedagogy. As
+                she describes in the “Advertisement” that begins the{" "}
+              </span>
+              <span className="italic">Polish-American System</span>
+              <span>
+                , the charts were “intended to do for the science of history
+                what maps do for that of geography; and they will make [it] easy
+                to lay the foundations of historical knowledge in the minds of
+                the young.”
+              </span>
+              <span>
+                <span role="button" className="circle">
+                  2
+                </span>{" "}
+              </span>
+              <span>
+                {" "}
+                Like Playfair, Willard, and other early proponents of data
+                visualization, Peabody understood the value of visual
+                communication. But she did not intend, as did Playfair, to
+                produce a clarifying “picture of the past.”
+              </span>
+              <span>
+                <span role="button" className="circle">
+                  3
+                </span>{" "}
+              </span>
+              <span>
+                {" "}
+                Rather, Peabody designed her charts to be abstract rather than
+                intuitive; to promote sustained reflection rather than immediate
+                insight. And she did so with a clear goal in mind: to provoke a
+                unique imaginative response in each viewer. Aligning the
+                insight-prompting power of inductive reasoning with her own
+                ideas about the generative potential of aesthetic judgment,
+                Peabody placed her charts within a proto-participatory learning
+                environment that was intended both to produce new knowledge
+                about the past and to help envision new pathways for the future.
+              </span>
+            </p>
+          </div>
+          <div className="w-1/2 flex flex-col items-center">
+            <div className="border-peabodyPrimary border-4 border-dashed p-1">
+              <div className="w-full overflow-hidden border-2 max-w-md">
+                <img src="/images/peabody/railroadscaled.webp" alt="" />
+              </div>
+            </div>
+            <div className="text-lg text-center mt-10 w-2/3 font-william">
+              The range of Peabody's promotional tour, as plotted on an 1850
+              rail map of the United States. Image courtesy of the Library of
+              Congress, Geography and Map Division.
+            </div>
+            <div className="w-full h-[200px]" />
+            <div className="flex flex-col items-center w-1/2">
+              <div className="space-y-2">
+                <img className="max-w-xs" src="/images/peabody/1500s.jpg" />
+                <img className="max-w-xs" src="/images/peabody/1600s.jpg" />
+                <img className="max-w-xs" src="/images/peabody/1700s.jpg" />
+                <img className="max-w-xs" src="/images/peabody/1800s.jpg" />
+              </div>
+              <div className="text-center mt-10 w-5/6">
+                <p>
+                  <span>
+                    The four chronological charts included in Elizabeth Palmer
+                    Peabody’s{" "}
+                  </span>
+                  <span>Chronological History of the United States</span>
+                  <span>
+                    {" "}
+                    (1865), which display the significant events of the 1500s,
+                    1600s, 1700s, and 1800s. Images courtesy of the Internet
+                    Archive. Digitized by the Library of Congress.
+                  </span>
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-start-2 col-end-8">
-          <div className="big text-xl lg:text-2xl xl:text-4xl">
-            <p>
-              <span>
-                Peabody designed her charts to be abstract rather than
-                intuitive;
-              </span>
-            </p>
-          </div>
-          <div className="small text-base lg:text-xl xl:text-2xl">
-            <p>
-              <span>
-                to promote sustained reflection rather than immediate insight.
-                And she did so with a clear goal in mind: to provoke a unique
-                imaginative response in each viewer.{" "}
-              </span>
-            </p>
-          </div>
-          <div>
-            <div
-              className="grid grid-cols-10 2xl:grid-cols-14"
-              style={{ marginBottom: "178px" }}
-            >
-              <p>
-                <span>
-                  Along with boxes of her textbooks, Peabody traveled with a
-                  fabric roll the size of a living room rug, which contained a
-                  floor-sized version of one of the chronological charts
-                  described in the book. Peabody identified the charts—in their
-                  vibrant, full-color detail—as key components of her visual
-                  pedagogy. As she describes in the “Advertisement” that begins
-                  the{" "}
-                </span>
-                <span className="italic">Polish-American System</span>
-                <span>
-                  , the charts were “intended to do for the science of history
-                  what maps do for that of geography; and they will make [it]
-                  easy to lay the foundations of historical knowledge in the
-                  minds of the young.”
-                </span>
-                <span>
-                  <span role="button" className="circle">
-                    2
-                  </span>{" "}
-                </span>
-                <span>
-                  {" "}
-                  Like Playfair, Willard, and other early proponents of data
-                  visualization, Peabody understood the value of visual
-                  communication. But she did not intend, as did Playfair, to
-                  produce a clarifying “picture of the past.”
-                </span>
-                <span>
-                  <span role="button" className="circle">
-                    3
-                  </span>{" "}
-                </span>
-                <span>
-                  {" "}
-                  Rather, Peabody designed her charts to be abstract rather than
-                  intuitive; to promote sustained reflection rather than
-                  immediate insight. And she did so with a clear goal in mind:
-                  to provoke a unique imaginative response in each viewer.
-                  Aligning the insight-prompting power of inductive reasoning
-                  with her own ideas about the generative potential of aesthetic
-                  judgment, Peabody placed her charts within a
-                  proto-participatory learning environment that was intended
-                  both to produce new knowledge about the past and to help
-                  envision new pathways for the future.
-                </span>
-              </p>
-            </div>
-            <div className="pin-spacer">
-              <div className="space-y-6 right-col col-span-full col-start-7 2xl:col-start-8 self-center grid grid-cols-7">
-                <div className="flex flex-col items-center middle-full">
-                  <div className="caption text-center mt-10 w-5/6">
-                    <p>
-                      <span>
-                        The four chronological charts included in Elizabeth
-                        Palmer Peabody’s{" "}
-                      </span>
-                      <span>Chronological History of the United States</span>
-                      <span>
-                        {" "}
-                        (1865), which display the significant events of the
-                        1500s, 1600s, 1700s, and 1800s. Images courtesy of the
-                        Internet Archive. Digitized by the Library of Congress.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="grid grid-cols-10 2xl:grid-cols-14">
-              <div className="space-y-6 contents middle-subgrid"></div>
-            </div>
-          </div>
+        <div>
           <div className="section-root">
             <div className="grid grid-cols-10 2xl:grid-cols-14 my-12">
               <div className="chapter-title col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 relative">
@@ -2373,6 +2364,6 @@ export default function PeabodyPage() {
           </div>
         </div>
       </div>
-    </div>
+    </ThemeContext.Provider>
   );
 }
