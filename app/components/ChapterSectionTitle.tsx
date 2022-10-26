@@ -1,14 +1,18 @@
-import { ReactNodeLike } from "prop-types";
+import type { ReactNodeLike } from "prop-types";
+import { useContext } from "react";
+import { ThemeContext } from "~/theme";
 
 interface Props {
-  color: string;
   children: ReactNodeLike;
 }
 
-export default function ChapterSectionTitle({ color, children }: Props) {
+export default function ChapterSectionTitle({ children }: Props) {
+  const { backgroundColor } = useContext(ThemeContext);
   return (
     <div className="relative my-10">
-      <div className={`opacity-50 ${color} w-full h-full absolute`} />
+      <div
+        className={`opacity-50 bg-${backgroundColor} w-full h-full absolute`}
+      />
       <div className="p-4 relative font-william font-bold text-xl lg:text-4xl flex justify-center items-center">
         <span>{children}</span>
       </div>

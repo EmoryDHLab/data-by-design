@@ -1,5 +1,7 @@
 import ChapterTitle from "~/components/ChapterTitle";
 import { ThemeContext } from "~/theme";
+import ChapterSectionTitle from "~/components/ChapterSectionTitle";
+import PullQuote from "~/components/PullQuote";
 
 export default function PeabodyPage() {
   return (
@@ -10,9 +12,9 @@ export default function PeabodyPage() {
         title="The Work of Knowledge"
         subtitle="Elizabeth Palmer Peabody’s Chronological Grids"
       />
-      <div className="grid-wrapper bg-offwhite">
+      <div className="grid-wrapper bg-offwhite text-xl">
         <div className="flex full-bleed pt-20 pb-40">
-          <div className="text-xl w-1/2">
+          <div className="w-1/2">
             <p className="px-20 py-5">
               <span>
                 Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
@@ -72,25 +74,12 @@ export default function PeabodyPage() {
               </span>
             </p>
             <div className="w-full h-[300px]" />
-            <div className="bg-peabodyPrimary p-10 w-fit max-w-2xl font-william">
-              <div className="text-xl lg:text-2xl xl:text-4xl">
-                <p>
-                  <span>
-                    Peabody designed her charts to be abstract rather than
-                    intuitive;
-                  </span>
-                </p>
-              </div>
-              <div className="text-base lg:text-xl xl:text-2xl py-4">
-                <p>
-                  <span>
-                    to promote sustained reflection rather than immediate
-                    insight. And she did so with a clear goal in mind: to
-                    provoke a unique imaginative response in each viewer.{" "}
-                  </span>
-                </p>
-              </div>
-            </div>
+            <PullQuote
+              title="Peabody designed her charts to be abstract rather than intuitive;"
+              subtitle="to promote sustained reflection rather than immediate insight. And
+            she did so with a clear goal in mind: to provoke a unique
+            imaginative response in each viewer."
+            />
             <p className="p-20">
               <span>
                 Along with boxes of her textbooks, Peabody traveled with a
@@ -175,333 +164,284 @@ export default function PeabodyPage() {
             </div>
           </div>
         </div>
+        <ChapterSectionTitle>
+          A Visual Method of Making History
+        </ChapterSectionTitle>
+        <div className="space-y-5 pb-10">
+          <p>
+            <span>
+              Peabody’s method of visualizing events of historical significance
+              was inspired by a system developed in Poland in the 1820s, and
+              popularized in subsequent decades by the military general (and
+              erstwhile math teacher) Jósef Bem.
+            </span>
+            <span>
+              <span role="button" className="circle">
+                4
+              </span>{" "}
+            </span>
+            <span>
+              {" "}
+              Bem’s system employed a grid overlaid with shapes and colors to
+              visually represent events in time.{" "}
+            </span>
+            <span>In </span>
+            <span className="italic">
+              Cartographies of Time: A History of the Timeline
+            </span>
+            <span>
+              , Daniel Rosenberg and Anthony Grafton describe how the system
+              “swept across Europe and North America” in the middle decades of
+              the nineteenth century.
+            </span>
+            <span>
+              <span role="button" className="circle">
+                5
+              </span>{" "}
+            </span>
+            <span>
+              {" "}
+              But Peabody first encountered the system by chance: through a
+              traveling lecturer who briefly boarded with her family on West
+              Street. The boarder, a man named Joseph Podbielski, had come from
+              Poland with copies of Bem’s charts, which he intended to promote
+              on a lecture tour of the United States. While he soon departed the
+              family’s residence, Peabody remained “captivated” by the charts,
+              according to one of her biographers, Bruce Ronda.
+            </span>
+            <span>
+              <span role="button" className="circle">
+                6
+              </span>{" "}
+            </span>
+            <span>
+              {" "}
+              She went on to devote several years to a study of the Polish
+              System, culminating with the development of her own modified
+              version: the
+            </span>
+            <span className="italic"> Polish-American System </span>
+            <span>that prompted her own national tour.</span>
+          </p>
+          <p>
+            <span>
+              On this point, Peabody makes special note that she employs “a
+              somewhat different, and, as it seems to me, a more expressive
+              distribution of colors.”
+            </span>
+            <span>
+              <span role="button" className="circle">
+                7
+              </span>{" "}
+            </span>
+          </p>
+        </div>
+        <div className="bg-peabodyPrimary full-bleed h-[1000px] flex flex-col items-center justify-center">
+          SCROLLYTELL HERE
+        </div>
+        <div className="flex">
+          <div className="py-10 space-y-5 w-3/5">
+            <p>
+              <span>In </span>
+              <span className="italic">
+                The Polish-American System of Chronology
+              </span>
+              <span>
+                , Peabody covers a tremendous expanse of time: the period
+                between 2500 BCE and 1849 CE (what was then the present). But
+                Peabody also saw the need for a textbook that focused
+                exclusively on the United States, and that went into more detail
+                than she could cover in a textbook on world history. And so,
+                shortly after the release of the{" "}
+              </span>
+              <span className="italic">Polish-American System</span>
+              <span>
+                , she began working on the book that would be published, in
+                1856, as{" "}
+              </span>
+              <span className="italic">
+                A Chronological History of the United States
+              </span>
+              <span>
+                . This textbook contained the four full-color plates displayed
+                above; one for each of the centuries since the first European
+                colonizers set foot on Native American land. As Peabody
+                envisioned it, the basic exercise was to read a chapter of the
+                textbook, which contained a narrative account of the events of a
+                single century, and then match each item in the list of events
+                that concluded the chapter with its visual representation on the
+                corresponding chart.
+              </span>
+            </p>
+            <p>
+              <span>
+                For example, by cross-referencing the table of events of the
+                seventeenth century, pictured just below, to its corresponding
+                chart, it is possible to identify, for example,{" "}
+                <a href="javascript:;">the founding of Jamestown in 1607</a>;
+                that is the large red square in the first row on the right—red
+                to signal England’s involvement, and its full-square shading to
+                indicate its heightened significance. One can also identify, in
+                the last square on the right, one row from the top,{" "}
+                <a href="javascript:;">the settlement of Plymouth in 1620</a>.
+                The square is nearly entirely red—again, because of England’s
+                involvement and because of its heightened significance—save for
+                a small teal square in the middle-right position. Teal
+                corresponds to action by the Dutch; indeed, this registers{" "}
+                <a href="javascript:;">
+                  the first enslaved Africans arriving in Virginia in that same
+                  year.
+                </a>{" "}
+                On the side of abolition but by no means its most radical
+                proponent, the square’s ratio of red to teal reflects Peabody’s
+                awareness of—if not an urgency about—the need to end slavery in
+                the United States.
+              </span>
+              <span>
+                <span role="button" className="circle">
+                  9
+                </span>{" "}
+              </span>
+            </p>
+          </div>
+        </div>
+        <div className="py-10 space-y-5">
+          <p>
+            <span>
+              Chronology—or, the study of events in time—is not, of course, the
+              same as historiography—the study of how history is written. But in
+              Peabody’s mind, the one led to the other: “If you have the dates
+              here [on the charts] represented perfectly by heart,” as she
+              explains in the introduction to students included in the{" "}
+            </span>
+            <span className="italic">Chronological History</span>
+            <span>
+              , “events are so connected in the narrative of history.”
+            </span>
+            <span>
+              <span role="button" className="circle">
+                10
+              </span>{" "}
+            </span>
+            <span>
+              {" "}
+              In keeping with the leading pedagogical theories of the day, which
+              emphasized mental recall, students were expected to commit the
+              charts to memory.
+            </span>
+            <span>
+              <span role="button" className="circle">
+                11
+              </span>{" "}
+            </span>
+            <span>
+              {" "}
+              But Peabody’s approach diverged from the rote memorization that
+              characterized most mid-nineteenth-century classrooms in that her
+              ultimate aim was for each student’s mental picture of past events
+              to prompt a richer--and, crucially, and
+              individually-constructed--narrative of history. For Peabody, the
+              power of this personal narrative of history was immense: it could
+              show “the origin and consequences of national action”; and for the
+              US in particular—the world’s first representative democracy—it
+              could instruct “every one what to do and what to leave undone, in
+              his own inevitable action,” as a necessary participant in their
+              own governance.
+            </span>
+            <span>
+              <span role="button" className="circle">
+                12
+              </span>{" "}
+            </span>
+          </p>
+          <p>
+            <span>
+              Far from an antiquated line of thinking, Peabody’s belief in the
+              catalyzing effects of chronology remains deeply embedded in US
+              culture today. As a prominent example, one might consider the
+              efforts of{" "}
+            </span>
+            <span className="italic">New York Times </span>
+            <span>
+              {" "}
+              journalist Nikole Hannah-Jones to replace 1776 with 1619—
+            </span>
+            <span className="italic">contra </span>
+            <span>
+              Peabody, the year the first enslaved Africans actually arrived in
+              Virginia—as the starting point for the history of the United
+              States. The goal of this revised origin point, as Hannah-Jones
+              explains in the visual feature that introduces the 1619 Project,
+              is to “reframe the country’s history by placing the consequences
+              of slavery and the contributions of black Americans at the very
+              center of our national narrative.”
+            </span>
+            <span>
+              <span role="button" className="circle">
+                13
+              </span>{" "}
+            </span>
+            <span>
+              {" "}
+              This recentered narrative would ideally, in turn—in a view
+              endorsed by the{" "}
+            </span>
+            <span className="italic">Times </span>
+            <span>
+              editorial board—prepare US citizens of all races “for a more just
+              future.”
+            </span>
+            <span>
+              <span role="button" className="circle">
+                14
+              </span>{" "}
+            </span>
+          </p>
+          <p>
+            <span>
+              But it is not only the narrative of the nation’s founding that can
+              benefit from a recentering of the enduring costs of its legacy of
+              slavery, or of the contributions made by its Black citizens. In
+              her acclaimed recent book,{" "}
+            </span>
+            <span className="italic">Dear Science and Other Stories</span>
+            <span>
+              , Black studies scholar Katherine McKittrick takes on the project
+              not of history but of science, explaining how an account that
+              centers Black people, Black life, and Blackness more broadly can
+              reveal the “asymmetrically connected knowledge systems” that
+              structure modern scientific inquiry.
+            </span>
+            <span>
+              <span role="button" className="circle">
+                15
+              </span>{" "}
+            </span>
+            <span>
+              {" "}
+              For McKittrick, an awareness of the range of related yet unequally
+              weighted knowledge-making systems is what enables her own vision
+              of a liberatory Black science to unfold. In addition, it also
+              offers lessons to scholars outside the field of Black
+              studies—including white scholars, such as myself, who cannot claim
+              to know Blackness firsthand—about the “asymmetrically connected
+              knowledge systems” that structure all of our work.
+            </span>
+          </p>
+        </div>
+        <div className="full-bleed">
+          <PullQuote
+            title="Our ways of knowing—about science, about history,
+                              or about any other phenomena in the world—"
+            subtitle="are overdetermined by the asymmetrically connected
+                              (and constructed) systems that shape them."
+          />
+        </div>
         <div>
           <div className="section-root">
-            <div className="grid grid-cols-10 2xl:grid-cols-14 my-12">
-              <div className="chapter-title col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 relative">
-                <div className="opacity-50 bg-theme w-full h-full absolute"></div>
-                <div className="title-text p-4 relative font-william font-bold text-xl lg:text-4xl flex justify-center items-center">
-                  <span>A Visual Method of Making History</span>
-                </div>
-              </div>
-            </div>
-            <div className="space-y-10">
-              <div>
-                <div className="grid grid-cols-10 2xl:grid-cols-14">
-                  <div className="space-y-6 contents middle-subgrid">
-                    <p>
-                      <span>
-                        Peabody’s method of visualizing events of historical
-                        significance was inspired by a system developed in
-                        Poland in the 1820s, and popularized in subsequent
-                        decades by the military general (and erstwhile math
-                        teacher) Jósef Bem.
-                      </span>
-                      <span>
-                        <span role="button" className="circle">
-                          4
-                        </span>{" "}
-                      </span>
-                      <span>
-                        {" "}
-                        Bem’s system employed a grid overlaid with shapes and
-                        colors to visually represent events in time.{" "}
-                      </span>
-                      <span>In </span>
-                      <span className="italic">
-                        Cartographies of Time: A History of the Timeline
-                      </span>
-                      <span>
-                        , Daniel Rosenberg and Anthony Grafton describe how the
-                        system “swept across Europe and North America” in the
-                        middle decades of the nineteenth century.
-                      </span>
-                      <span>
-                        <span role="button" className="circle">
-                          5
-                        </span>{" "}
-                      </span>
-                      <span>
-                        {" "}
-                        But Peabody first encountered the system by chance:
-                        through a traveling lecturer who briefly boarded with
-                        her family on West Street. The boarder, a man named
-                        Joseph Podbielski, had come from Poland with copies of
-                        Bem’s charts, which he intended to promote on a lecture
-                        tour of the United States. While he soon departed the
-                        family’s residence, Peabody remained “captivated” by the
-                        charts, according to one of her biographers, Bruce
-                        Ronda.
-                      </span>
-                      <span>
-                        <span role="button" className="circle">
-                          6
-                        </span>{" "}
-                      </span>
-                      <span>
-                        {" "}
-                        She went on to devote several years to a study of the
-                        Polish System, culminating with the development of her
-                        own modified version: the
-                      </span>
-                      <span className="italic"> Polish-American System </span>
-                      <span>that prompted her own national tour.</span>
-                    </p>
-                    <p>
-                      <span>
-                        On this point, Peabody makes special note that she
-                        employs “a somewhat different, and, as it seems to me, a
-                        more expressive distribution of colors.”
-                      </span>
-                      <span>
-                        <span role="button" className="circle">
-                          7
-                        </span>{" "}
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div
-                className="grid grid-cols-10 2xl:grid-cols-14"
-                style={{ marginBottom: "252px" }}
-              >
-                <div className="pin-spacer">
-                  <div className="space-y-6 left-col col-start-1 col-end-6 2xl:col-end-8 self-center grid grid-cols-7">
-                    <p>
-                      <span>In </span>
-                      <span className="italic">
-                        The Polish-American System of Chronology
-                      </span>
-                      <span>
-                        , Peabody covers a tremendous expanse of time: the
-                        period between 2500 BCE and 1849 CE (what was then the
-                        present). But Peabody also saw the need for a textbook
-                        that focused exclusively on the United States, and that
-                        went into more detail than she could cover in a textbook
-                        on world history. And so, shortly after the release of
-                        the{" "}
-                      </span>
-                      <span className="italic">Polish-American System</span>
-                      <span>
-                        , she began working on the book that would be published,
-                        in 1856, as{" "}
-                      </span>
-                      <span className="italic">
-                        A Chronological History of the United States
-                      </span>
-                      <span>
-                        . This textbook contained the four full-color plates
-                        displayed above; one for each of the centuries since the
-                        first European colonizers set foot on Native American
-                        land. As Peabody envisioned it, the basic exercise was
-                        to read a chapter of the textbook, which contained a
-                        narrative account of the events of a single century, and
-                        then match each item in the list of events that
-                        concluded the chapter with its visual representation on
-                        the corresponding chart.
-                      </span>
-                    </p>
-                    <p>
-                      <span>
-                        For example, by cross-referencing the table of events of
-                        the seventeenth century, pictured just below, to its
-                        corresponding chart, it is possible to identify, for
-                        example,{" "}
-                        <a href="javascript:;">
-                          the founding of Jamestown in 1607
-                        </a>
-                        ; that is the large red square in the first row on the
-                        right—red to signal England’s involvement, and its
-                        full-square shading to indicate its heightened
-                        significance. One can also identify, in the last square
-                        on the right, one row from the top,{" "}
-                        <a href="javascript:;">
-                          the settlement of Plymouth in 1620
-                        </a>
-                        . The square is nearly entirely red—again, because of
-                        England’s involvement and because of its heightened
-                        significance—save for a small teal square in the
-                        middle-right position. Teal corresponds to action by the
-                        Dutch; indeed, this registers{" "}
-                        <a href="javascript:;">
-                          the first enslaved Africans arriving in Virginia in
-                          that same year.
-                        </a>{" "}
-                        On the side of abolition but by no means its most
-                        radical proponent, the square’s ratio of red to teal
-                        reflects Peabody’s awareness of—if not an urgency
-                        about—the need to end slavery in the United States.
-                      </span>
-                      <span>
-                        <span role="button" className="circle">
-                          9
-                        </span>{" "}
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="space-y-6 right-col col-span-full col-start-7 2xl:col-start-8 self-center grid grid-cols-7">
-                  <div className="border-primary border-4 border-dashed p-1"></div>
-                </div>
-              </div>
-            </div>
             <div>
               <div className="grid grid-cols-10 2xl:grid-cols-14">
                 <div className="space-y-6 contents middle-subgrid">
-                  <p>
-                    <span>
-                      Chronology—or, the study of events in time—is not, of
-                      course, the same as historiography—the study of how
-                      history is written. But in Peabody’s mind, the one led to
-                      the other: “If you have the dates here [on the charts]
-                      represented perfectly by heart,” as she explains in the
-                      introduction to students included in the{" "}
-                    </span>
-                    <span className="italic">Chronological History</span>
-                    <span>
-                      , “events are so connected in the narrative of history.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        10
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      In keeping with the leading pedagogical theories of the
-                      day, which emphasized mental recall, students were
-                      expected to commit the charts to memory.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        11
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      But Peabody’s approach diverged from the rote memorization
-                      that characterized most mid-nineteenth-century classrooms
-                      in that her ultimate aim was for each student’s mental
-                      picture of past events to prompt a richer--and, crucially,
-                      and individually-constructed--narrative of history. For
-                      Peabody, the power of this personal narrative of history
-                      was immense: it could show “the origin and consequences of
-                      national action”; and for the US in particular—the world’s
-                      first representative democracy—it could instruct “every
-                      one what to do and what to leave undone, in his own
-                      inevitable action,” as a necessary participant in their
-                      own governance.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        12
-                      </span>{" "}
-                    </span>
-                  </p>
-                  <p>
-                    <span>
-                      Far from an antiquated line of thinking, Peabody’s belief
-                      in the catalyzing effects of chronology remains deeply
-                      embedded in US culture today. As a prominent example, one
-                      might consider the efforts of{" "}
-                    </span>
-                    <span className="italic">New York Times </span>
-                    <span>
-                      {" "}
-                      journalist Nikole Hannah-Jones to replace 1776 with 1619—
-                    </span>
-                    <span className="italic">contra </span>
-                    <span>
-                      Peabody, the year the first enslaved Africans actually
-                      arrived in Virginia—as the starting point for the history
-                      of the United States. The goal of this revised origin
-                      point, as Hannah-Jones explains in the visual feature that
-                      introduces the 1619 Project, is to “reframe the country’s
-                      history by placing the consequences of slavery and the
-                      contributions of black Americans at the very center of our
-                      national narrative.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        13
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      This recentered narrative would ideally, in turn—in a view
-                      endorsed by the{" "}
-                    </span>
-                    <span className="italic">Times </span>
-                    <span>
-                      editorial board—prepare US citizens of all races “for a
-                      more just future.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        14
-                      </span>{" "}
-                    </span>
-                  </p>
-                  <p>
-                    <span>
-                      But it is not only the narrative of the nation’s founding
-                      that can benefit from a recentering of the enduring costs
-                      of its legacy of slavery, or of the contributions made by
-                      its Black citizens. In her acclaimed recent book,{" "}
-                    </span>
-                    <span className="italic">
-                      Dear Science and Other Stories
-                    </span>
-                    <span>
-                      , Black studies scholar Katherine McKittrick takes on the
-                      project not of history but of science, explaining how an
-                      account that centers Black people, Black life, and
-                      Blackness more broadly can reveal the “asymmetrically
-                      connected knowledge systems” that structure modern
-                      scientific inquiry.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        15
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      For McKittrick, an awareness of the range of related yet
-                      unequally weighted knowledge-making systems is what
-                      enables her own vision of a liberatory Black science to
-                      unfold. In addition, it also offers lessons to scholars
-                      outside the field of Black studies—including white
-                      scholars, such as myself, who cannot claim to know
-                      Blackness firsthand—about the “asymmetrically connected
-                      knowledge systems” that structure all of our work.
-                    </span>
-                  </p>
-                  <div className="md:my-16 middle-full">
-                    <div className="bg-theme font-william grid grid-cols-8 py-9">
-                      <div className="col-start-2 col-end-8">
-                        <div className="big text-xl lg:text-2xl xl:text-4xl">
-                          <p>
-                            <span>
-                              Our ways of knowing—about science, about history,
-                              or about any other phenomena in the world—
-                            </span>
-                          </p>
-                        </div>
-                        <div className="small text-base lg:text-xl xl:text-2xl">
-                          <p>
-                            <span>
-                              are overdetermined by the asymmetrically connected
-                              (and constructed) systems that shape them.
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <p>
                     <span>
                       Indeed, our ways of knowing—about science, about history,
