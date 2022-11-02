@@ -1,4 +1,4 @@
-import imageData from "~/timelineImages.json";
+import imageData from "~/data/timelineImages.json";
 import { useWindowSize } from "~/hooks";
 import { useCallback, useState } from "react";
 import { DndProvider, useDrop, XYCoord } from "react-dnd";

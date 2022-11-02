@@ -16,9 +16,7 @@ export default function DuboisChapter() {
         subtitle="W.E.B. Du Bois’s “Data Portraits”"
       />
       <div className="grid-wrapper bg-offwhite py-16 text-xl space-y-5">
-        <ChapterSectionTitle color="bg-duboisPrimary">
-          Introduction
-        </ChapterSectionTitle>
+        <ChapterSectionTitle>Introduction</ChapterSectionTitle>
         <p className="pt-16">
           October 4th, 1899, was the first day of the fall term at Atlanta
           University (now Clark Atlanta University), where W.E.B. Du Bois had
@@ -115,7 +113,7 @@ export default function DuboisChapter() {
             <cite>CR: The New Centennial Review</cite> 15.2 (2015): 23-58.
           </Footnote>
         </p>
-        <div className="flex flex-col items-center middle-full full-bleed py-16">
+        <div className="flex flex-col items-center full-bleed py-16">
           <div>
             <img
               src="/images/dubois/ch5-01-phila.jpg"

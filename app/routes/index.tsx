@@ -14,8 +14,8 @@ export default function Index() {
         <div className="p-20 font-william w-3/5">
           <div className="text-4xl p-5">Some Words From Lauren</div>
           <div className="text-lg p-5">
-            <span style={{ whitespace: "pre" }}>Some more text </span>
-            <span style={{ whitespace: "pre" }}>
+            <span style={{ whiteSpace: "pre" }}>Some more text </span>
+            <span style={{ whiteSpace: "pre" }}>
               Additional research for this project was completed through
               fellowships from the American Antiquarian Society and the Library
               Company of Philadelphia.
