@@ -12,7 +12,7 @@ export default function PeabodyPage() {
         title="The Work of Knowledge"
         subtitle="Elizabeth Palmer Peabody’s Chronological Grids"
       />
-      <div className="grid-wrapper bg-offwhite text-xl">
+      <div className="grid-wrapper bg-offwhite text-xl space-y-5">
         <div className="flex full-bleed pt-20 pb-40">
           <div className="w-1/2">
             <p className="px-20 py-5">
@@ -437,163 +437,194 @@ export default function PeabodyPage() {
                               (and constructed) systems that shape them."
           />
         </div>
-        <div>
-          <div className="section-root">
-            <div>
-              <div className="grid grid-cols-10 2xl:grid-cols-14">
-                <div className="space-y-6 contents middle-subgrid">
-                  <p>
-                    <span>
-                      Indeed, our ways of knowing—about science, about history,
-                      or about any other phenomena in the world—are
-                      overdetermined by the asymmetrically connected (and
-                      constructed) systems that shape them. Data visualization
-                      is no exception. This latter point has been made by
-                      science and technology studies scholars for
-                      decades—perhaps most famously by feminist philosopher
-                      Donna Haraway, who uses the example of data visualization
-                      in order to formulate her own influential theory of{" "}
-                    </span>
-                    <span className="italic">situated knowledges</span>
-                    <span>—put plainly, the view that </span>
-                    <span>
-                      all knowledge is rooted in a particular perspective, and
-                      thereby informed by the social, cultural, and political as
-                      well as scientific contexts that surround it.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        16
-                      </span>{" "}
-                    </span>
-                    <span> </span>
-                    <span>
-                      Crucially for Haraway, as for McKittrick, our awareness of
-                      how knowledge is{" "}
-                    </span>
-                    <span className="italic">situated</span>
-                    <span>, as Haraway would say; or how knowledge is </span>
-                    <span className="italic">relational</span>
-                    <span>
-                      , as perhaps would McKittrick, does not diminish the
-                      validity of what we presently know, nor does it foreclose
-                      any future knowledge-making.{" "}
-                    </span>
-                    <span>On the contrary, </span>
-                    <span>
-                      these more nuanced understandings of the perspectives and
-                      places from which knowledge is made are precisely those on
-                      which, to quote Haraway, “
-                    </span>
-                    <span>
-                      the possibility of sustained, rational, objective inquiry
-                      rests.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        17
-                      </span>{" "}
-                    </span>
-                  </p>
-                  <p>
-                    <span></span>
-                  </p>
-                  <p>
-                    <span>
-                      With a renewed sense of the stakes of acknowledging the
-                      perspectives and places that shape what we know,{" "}
-                    </span>
-                    <span>
-                      we might return to Peabody’s chronological charts with the
-                      observation that few twenty-first-century viewers—or, for
-                      that matter, nineteenth-century ones—could have intuited
-                      the significance of the events encoded in the charts
-                      without first taking the time to learn how the system
-                      worked.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        18
-                      </span>{" "}
-                    </span>
-                    <span> </span>
-                    <span>
-                      This lengthy and difficult learning process might be
-                      viewed as a liability by visualization researchers and
-                      designers who continue to champion the ease and efficiency
-                      of visualization; or those who maintain that data
-                      visualization is best deployed to amplify already existing
-                      thought processes. In support of these arguments, consider
-                      the representation of the events encoded in Peabody’s
-                      chart of the seventeenth century as a timeline, rather
-                      than a grid, shown just below. The progression of events
-                      over the course of the century, culminating in a series of
-                      wars and rebellions in the late 1680s and early 1690s,
-                      becomes much more immediately legible.
-                    </span>
-                  </p>
-                  <div className="col-span-full bg-black text-white pt-20">
-                    <div className="flex mt-4">
-                      <div className="w-1/2 flex justify-center">
-                        <div className="w-3/4"></div>
-                      </div>
-                      <div className="w-1/2 flex justify-center">
-                        <div className="w-3/4"></div>
-                      </div>
-                    </div>
-                    <div className="w-full mt-12 flex justify-center"></div>
-                    <div className="w-full mt-1 pb-6 flex justify-center"></div>
-                  </div>
-                  <p>
-                    <span>
-                      But for Peabody, her charts’ near-total abstraction was
-                      precisely the point. She designed her charts to appeal to
-                      the senses directly, to provide what she called “outlines
-                      to the eye.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        19
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      Her hope was that, by providing the outline of
-                      history—and, crucially, only the outline—each viewer could
-                      fill in the missing parts of the story themselves.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        20
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      The result would be a proliferation of historical
-                      narratives, one originating in the mind of each viewer,
-                      and reflecting their own interpretation of the chart.
-                      Anticipating claims about both the situated and relational
-                      nature of knowledge production, Peabody’s visualization
-                      system reconfigures the otherwise unidirectional transfer
-                      of knowledge between image and viewer. What’s more, it
-                      affirms each interpretation of each image as knowledge,
-                      and therefore, each viewer as that knowledge’s source.
-                    </span>
-                  </p>
-                </div>
-              </div>
+        <p>
+          <span>
+            Indeed, our ways of knowing—about science, about history, or about
+            any other phenomena in the world—are overdetermined by the
+            asymmetrically connected (and constructed) systems that shape them.
+            Data visualization is no exception. This latter point has been made
+            by science and technology studies scholars for decades—perhaps most
+            famously by feminist philosopher Donna Haraway, who uses the example
+            of data visualization in order to formulate her own influential
+            theory of{" "}
+          </span>
+          <span className="italic">situated knowledges</span>
+          <span>—put plainly, the view that </span>
+          <span>
+            all knowledge is rooted in a particular perspective, and thereby
+            informed by the social, cultural, and political as well as
+            scientific contexts that surround it.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              16
+            </span>{" "}
+          </span>
+          <span> </span>
+          <span>
+            Crucially for Haraway, as for McKittrick, our awareness of how
+            knowledge is{" "}
+          </span>
+          <span className="italic">situated</span>
+          <span>, as Haraway would say; or how knowledge is </span>
+          <span className="italic">relational</span>
+          <span>
+            , as perhaps would McKittrick, does not diminish the validity of
+            what we presently know, nor does it foreclose any future
+            knowledge-making.{" "}
+          </span>
+          <span>On the contrary, </span>
+          <span>
+            these more nuanced understandings of the perspectives and places
+            from which knowledge is made are precisely those on which, to quote
+            Haraway, “
+          </span>
+          <span>
+            the possibility of sustained, rational, objective inquiry rests.”
+          </span>
+          <span>
+            <span role="button" className="circle">
+              17
+            </span>{" "}
+          </span>
+        </p>
+        <p>
+          <span>
+            With a renewed sense of the stakes of acknowledging the perspectives
+            and places that shape what we know,{" "}
+          </span>
+          <span>
+            we might return to Peabody’s chronological charts with the
+            observation that few twenty-first-century viewers—or, for that
+            matter, nineteenth-century ones—could have intuited the significance
+            of the events encoded in the charts without first taking the time to
+            learn how the system worked.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              18
+            </span>{" "}
+          </span>
+          <span> </span>
+          <span>
+            This lengthy and difficult learning process might be viewed as a
+            liability by visualization researchers and designers who continue to
+            champion the ease and efficiency of visualization; or those who
+            maintain that data visualization is best deployed to amplify already
+            existing thought processes. In support of these arguments, consider
+            the representation of the events encoded in Peabody’s chart of the
+            seventeenth century as a timeline, rather than a grid, shown just
+            below. The progression of events over the course of the century,
+            culminating in a series of wars and rebellions in the late 1680s and
+            early 1690s, becomes much more immediately legible.
+          </span>
+        </p>
+        <div className="full-bleed bg-black h-[500px] text-white flex items-center justify-center">
+          CHART HERE
+        </div>
+        <p>
+          <span>
+            But for Peabody, her charts’ near-total abstraction was precisely
+            the point. She designed her charts to appeal to the senses directly,
+            to provide what she called “outlines to the eye.”
+          </span>
+          <span>
+            <span role="button" className="circle">
+              19
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            Her hope was that, by providing the outline of history—and,
+            crucially, only the outline—each viewer could fill in the missing
+            parts of the story themselves.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              20
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            The result would be a proliferation of historical narratives, one
+            originating in the mind of each viewer, and reflecting their own
+            interpretation of the chart. Anticipating claims about both the
+            situated and relational nature of knowledge production, Peabody’s
+            visualization system reconfigures the otherwise unidirectional
+            transfer of knowledge between image and viewer. What’s more, it
+            affirms each interpretation of each image as knowledge, and
+            therefore, each viewer as that knowledge’s source.
+          </span>
+        </p>
+        <ChapterSectionTitle>
+          The Politics of Visual Knowledge Production
+        </ChapterSectionTitle>
+        <div className="full-bleed flex pt-10">
+          <div className="w-1/2 px-20">
+            <p>
+              <span>
+                Peabody was a lifelong proponent of what might be described
+                today as participatory learning. In the early 1860s, as the
+                nation became increasingly consumed by the Civil War, Peabody
+                found purchase in a personal recommitment to early childhood
+                education. Her kindergarten—the first of its kind in the United
+                States—which she opened with her sister (and Horace Mann’s
+                widow), Mary Tyler Mann, served as a proving ground for her
+                innovative pedagogical ideas. With her sister, she also
+                published a series of texts that documented the theories they
+                enacted in the classroom: that physical play mattered as much as
+                formal instruction, and that knowledge was derived not from any
+                external authority but rather, from a focused and sustained
+                analysis of “the self-activity of the mind.”
+              </span>
+              <span>
+                <span role="button" className="circle">
+                  21
+                </span>{" "}
+              </span>
+              <span></span>
+            </p>
+            <p>
+              <span>
+                In addition, on her own, Peabody continued to iterate on the
+                teaching and learning materials associated with the{" "}
+              </span>
+              <span className="italic">Polish-American System</span>
+              <span>
+                . In 1870, she began printing workbooks with sheets of blank
+                charts—"blank centuries,” as she called them--so that students
+                could
+              </span>
+              <span className="italic"> </span>
+              <span>themselves create</span>
+              <span className="italic"> </span>
+              <span>the visualizations that they would then study.</span>
+            </p>
+          </div>
+          <div className="w-1/2 px-20">
+            <img
+              src="/images/ch4-blank-chart.webp"
+              alt=""
+              loading="lazy"
+              width="500px"
+            />
+            <div className="text-center mt-10 w-5/6">
+              <p>
+                <span>A blank chart from </span>
+                <span className="italic">
+                  Blank Centuries for Monographs of History{" "}
+                </span>
+                <span>
+                  (1870), the workbook that Peabody printed to accompany her
+                  history textbooks. Courtesy of the American Antiquarian
+                  Society. Photo by Lauren Klein
+                </span>
+                <span>. </span>
+              </p>
             </div>
           </div>
         </div>
         <div className="section-root">
-          <div className="grid grid-cols-10 2xl:grid-cols-14 my-12">
-            <div className="chapter-title col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 relative">
-              <div className="opacity-50 bg-theme w-full h-full absolute"></div>
-              <div className="title-text p-4 relative font-william font-bold text-xl lg:text-4xl flex justify-center items-center">
-                <span>The Politics of Visual Knowledge Production</span>
-              </div>
-            </div>
-          </div>
           <div className="space-y-10">
             <div>
               <div
@@ -601,76 +632,11 @@ export default function PeabodyPage() {
                 style={{ marginBottom: "53px" }}
               >
                 <div className="pin-spacer">
-                  <div className="space-y-6 left-col col-start-1 col-end-6 2xl:col-end-8 self-center grid grid-cols-7">
-                    <p>
-                      <span>
-                        Peabody was a lifelong proponent of what might be
-                        described today as participatory learning. In the early
-                        1860s, as the nation became increasingly consumed by the
-                        Civil War, Peabody found purchase in a personal
-                        recommitment to early childhood education. Her
-                        kindergarten—the first of its kind in the United
-                        States—which she opened with her sister (and Horace
-                        Mann’s widow), Mary Tyler Mann, served as a proving
-                        ground for her innovative pedagogical ideas. With her
-                        sister, she also published a series of texts that
-                        documented the theories they enacted in the classroom:
-                        that physical play mattered as much as formal
-                        instruction, and that knowledge was derived not from any
-                        external authority but rather, from a focused and
-                        sustained analysis of “the self-activity of the mind.”
-                      </span>
-                      <span>
-                        <span role="button" className="circle">
-                          21
-                        </span>{" "}
-                      </span>
-                      <span></span>
-                    </p>
-                    <p>
-                      <span>
-                        In addition, on her own, Peabody continued to iterate on
-                        the teaching and learning materials associated with the{" "}
-                      </span>
-                      <span className="italic">Polish-American System</span>
-                      <span>
-                        . In 1870, she began printing workbooks with sheets of
-                        blank charts—"blank centuries,” as she called them--so
-                        that students could
-                      </span>
-                      <span className="italic"> </span>
-                      <span>themselves create</span>
-                      <span className="italic"> </span>
-                      <span>
-                        the visualizations that they would then study.
-                      </span>
-                    </p>
-                  </div>
+                  <div className="space-y-6 left-col col-start-1 col-end-6 2xl:col-end-8 self-center grid grid-cols-7"></div>
                 </div>
                 <div className="space-y-6 right-col col-span-full col-start-7 2xl:col-start-8 self-center grid grid-cols-7">
                   <div className="flex flex-col items-center middle-full">
-                    <div>
-                      <img
-                        src="/_nuxt/img/ch4-blank-chart.b797a02.webp"
-                        alt=""
-                        loading="lazy"
-                        width="500px"
-                      />
-                    </div>
-                    <div className="caption text-center mt-10 w-5/6">
-                      <p>
-                        <span>A blank chart from </span>
-                        <span className="italic">
-                          Blank Centuries for Monographs of History{" "}
-                        </span>
-                        <span>
-                          (1870), the workbook that Peabody printed to accompany
-                          her history textbooks. Courtesy of the American
-                          Antiquarian Society. Photo by Lauren Klein
-                        </span>
-                        <span>. </span>
-                      </p>
-                    </div>
+                    <div></div>
                   </div>
                 </div>
               </div>
