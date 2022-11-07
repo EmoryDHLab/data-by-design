@@ -18,7 +18,8 @@
     src: url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff2") format("woff2");
     font-weight: 700;
-    font-style: normal;
+    font-style: bold;
+    font-stretch: wider;
 }
 
 @font-face {
@@ -26,7 +27,7 @@
     src: url("/fonts/VTCDubois/VTCDuBois-LightWide.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-LightWide.woff2") format("woff2");
     font-weight: 300;
-    font-style: normal;
+    font-stretch: wider;
 }
 
 @font-face {
@@ -35,7 +36,7 @@
     format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-RegularNarrow.woff2") format("woff2");
     font-weight: normal;
-    font-style: normal;
+    font-stretch: narrower;
 }
 
 @font-face {
@@ -43,7 +44,7 @@
     src: url("/fonts/VTCDubois/VTCDuBois-LightNarrow.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-LightNarrow.woff2") format("woff2");
     font-weight: 300;
-    font-style: normal;
+    font-stretch: narrower;
 }
 
 @font-face {
@@ -63,6 +64,13 @@
     url("/fonts/William/VTCWilliam-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: "VTC William";
+    src: url("/fonts/William/VTCWilliam-Regular.woff") format("woff"),
+    url("/fonts/William/VTCWilliam-Regular.woff2") format("woff2");
+    font-weight: normal;
 }
 
 @font-face {
@@ -94,7 +102,7 @@
     src: url("/fonts/William/VTCWilliam-BoldWide.woff") format("woff"),
     url("/fonts/William/VTCWilliam-BoldWide.woff2") format("woff2");
     font-weight: bold;
-    font-style: normal;
+    font-stretch: wider;
 }
 
 /*

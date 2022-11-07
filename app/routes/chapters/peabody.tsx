@@ -7,10 +7,11 @@ export default function PeabodyPage() {
         title="The Work of Knowledge"
         subtitle="Elizabeth Palmer Peabody’s Chronological Grids"
       />
-      <div className="grid-wrapper bg-offwhite">
+      <div className="grid-wrapper bg-offwhite py-16  space-y-5">
         <div className="flex">
+          
           <div>
-            <p>
+            <p className="pt-16">
               <span>
                 Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
               </span>

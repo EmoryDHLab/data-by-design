@@ -631,9 +631,9 @@ video {
   margin-bottom: 2.5rem !important;
 }
 
-.my-5 {
-  margin-top: 1.25rem !important;
-  margin-bottom: 1.25rem !important;
+.my-3 {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
 }
 
 .my-2 {
@@ -1269,6 +1269,10 @@ video {
   font-family: VTC William, serif !important;
 }
 
+.font-duboisWide {
+  font-family: VTC Du Bois Wide, serif !important;
+}
+
 .font-sans {
   font-family: neue-haas-unica, sans-serif !important;
 }
@@ -1279,10 +1283,6 @@ video {
 
 .font-dubois {
   font-family: VTC Du Bois, serif !important;
-}
-
-.font-duboisWide {
-  font-family: VTC Du Bois Wide, serif !important;
 }
 
 .text-3xl {
@@ -1300,6 +1300,15 @@ video {
   line-height: 1.75rem !important;
 }
 
+.text-base {
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+}
+
+.text-frontTitle {
+  font-size: 14rem !important;
+}
+
 .text-xl {
   font-size: 1.25rem !important;
   line-height: 1.75rem !important;
@@ -1308,15 +1317,6 @@ video {
 .text-4xl {
   font-size: 2.25rem !important;
   line-height: 2.5rem !important;
-}
-
-.text-base {
-  font-size: 1rem !important;
-  line-height: 1.5rem !important;
-}
-
-.text-frontTitle {
-  font-size: 14rem !important;
 }
 
 .text-sm {
@@ -1518,29 +1518,29 @@ video {
     margin-bottom: 2.5rem !important;
   }
 
-  .md\:h-96 {
-    height: 24rem !important;
+  .md\:h-80 {
+    height: 20rem !important;
   }
 
   .md\:grid-cols-9 {
     grid-template-columns: repeat(9, minmax(0, 1fr)) !important;
   }
 
-  .md\:text-7xl {
-    font-size: 4.5rem !important;
+  .md\:text-5xl {
+    font-size: 3rem !important;
     line-height: 1 !important;
   }
 
-  .md\:text-4xl {
-    font-size: 2.25rem !important;
-    line-height: 2.5rem !important;
+  .md\:text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
   }
 }
 
 @media (min-width: 1024px) {
-  .lg\:text-4xl {
-    font-size: 2.25rem !important;
-    line-height: 2.5rem !important;
+  .lg\:text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
   }
 
   .lg\:text-2xl {
@@ -1551,6 +1551,11 @@ video {
   .lg\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
   }
 }
 
