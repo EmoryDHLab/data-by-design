@@ -274,7 +274,9 @@ export default function DuboisChapter() {
         <div className="full-bleed my-10">
           <DocumentViewer />
         </div>
-        <p>
+        <div className="full-bleed flex">
+        <div className="w-1/2 px-20 flex items-center">
+          <div>
           <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
             The first chart of{" "}
           </span>
@@ -299,8 +301,9 @@ export default function DuboisChapter() {
             {" "}
             century is the problem of the color line.”
           </span>
-        </p>
-        <div className="flex flex-col items-center middle-full p-10">
+          </div>
+        </div>
+        <div className="flex flex-col items-center middle-full p-10 w-1/2">
           <img
             src="/images/dubois/ch5-03-georgia.jpg"
             alt=""
@@ -319,6 +322,7 @@ export default function DuboisChapter() {
               <span>LC-DIG-ppmsca-33863.</span>
             </p>
           </div>
+        </div>
         </div>
         <p>
           <span>These words would reappear several years later in </span>
