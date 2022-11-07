@@ -608,7 +608,7 @@ export default function PeabodyPage() {
               loading="lazy"
               width="500px"
             />
-            <div className="text-center mt-10 w-5/6">
+            <div className="text-center mt-10 w-5/6 font-william">
               <p>
                 <span>A blank chart from </span>
                 <span className="italic">
@@ -624,738 +624,316 @@ export default function PeabodyPage() {
             </div>
           </div>
         </div>
-        <div className="section-root">
-          <div className="space-y-10">
-            <div>
-              <div
-                className="grid grid-cols-10 2xl:grid-cols-14"
-                style={{ marginBottom: "53px" }}
-              >
-                <div className="pin-spacer">
-                  <div className="space-y-6 left-col col-start-1 col-end-6 2xl:col-end-8 self-center grid grid-cols-7"></div>
-                </div>
-                <div className="space-y-6 right-col col-span-full col-start-7 2xl:col-start-8 self-center grid grid-cols-7">
-                  <div className="flex flex-col items-center middle-full">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="grid grid-cols-10 2xl:grid-cols-14">
-                <div className="space-y-6 contents middle-subgrid">
-                  <div className="col-span-full bg-offblack text-white mt-12 pt-20">
-                    <div className="w-full flex flex-row">
-                      <div className="w-1/2 flex items-center justify-center">
-                        <div className="w-8/12"></div>
-                      </div>
-                      <div className="w-1/2 flex items-center justify-center">
-                        <div className="w-8/12"></div>
-                      </div>
-                    </div>
-                    <div className="w-full flex flex-row py-12 xl:py-8">
-                      <div className="w-1/2 flex flex-col gap-4 items-center">
-                        <div className="flex flex-col gap-12 xl:flex-row w-4/5 justify-between items-center">
-                          <div className="w-full xl:w-4/5">
-                            <div className="font-sans text-sm tracking-wide w-full grid grid-cols-3 gap-y-8 gap-x-4 text-white ml-4 h-52 opacity-100">
-                              <div className="cursor-pointer flex flex-row gap-2 pl-2 border-l-2 border-transparent border-peabodyorange height-0">
-                                <div>1</div>
-                                <div className="event-text">
-                                  battles, sieges, beginning of war
-                                </div>
-                              </div>
-                              <div className="cursor-pointer flex flex-row gap-2 pl-2 border-l-2 border-transparent height-0">
-                                <div>2</div>
-                                <div className="event-text">
-                                  conquests, annexations, unions
-                                </div>
-                              </div>
-                              <div className="cursor-pointer flex flex-row gap-2 pl-2 border-l-2 border-transparent height-0">
-                                <div>3</div>
-                                <div className="event-text">
-                                  losses and disasters
-                                </div>
-                              </div>
-                              <div className="cursor-pointer flex flex-row gap-2 pl-2 border-l-2 border-transparent height-0">
-                                <div>4</div>
-                                <div className="event-text">
-                                  falls of states
-                                </div>
-                              </div>
-                              <div className="cursor-pointer flex flex-row gap-2 pl-2 border-l-2 border-transparent height-0">
-                                <div>5</div>
-                                <div className="event-text">
-                                  foundations of states and revolutions
-                                </div>
-                              </div>
-                              <div className="cursor-pointer flex flex-row gap-2 pl-2 border-l-2 border-transparent height-0">
-                                <div>6</div>
-                                <div className="event-text">
-                                  treaties and sundries
-                                </div>
-                              </div>
-                              <div className="cursor-pointer flex flex-row gap-2 pl-2 border-l-2 border-transparent height-0">
-                                <div>7</div>
-                                <div className="event-text">births</div>
-                              </div>
-                              <div className="cursor-pointer flex flex-row gap-2 pl-2 border-l-2 border-transparent height-0">
-                                <div>8</div>
-                                <div className="event-text">deeds</div>
-                              </div>
-                              <div className="cursor-pointer flex flex-row gap-2 pl-2 border-l-2 border-transparent height-0">
-                                <div>9</div>
-                                <div className="event-text">
-                                  deaths, of remarkable individuals
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="w-1/2 flex flex-col gap-4 items-center">
-                        <div className="h-72r xl:h-56 flex flex-col justify-evenly items-center">
-                          <div className="flex w-full justify-evenly">
-                            <button>
-                              <svg
-                                width="77"
-                                height="32"
-                                viewBox="0 0 77 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="white selected"
-                              >
-                                <path
-                                  d="M70 31H7C4.66 28.66 3.34 27.34 1 25V7C3.34 4.66 4.66 3.34 7 1H70C72.34 3.34 73.66 4.66 76 7V25C73.66 27.34 72.34 28.66 70 31Z"
-                                  stroke="white"
-                                  stroke-width="2"
-                                ></path>
-                                <text
-                                  x="50%"
-                                  y="50%"
-                                  text-anchor="middle"
-                                  dominant-baseline="middle"
-                                  className="font-william"
-                                >
-                                  1500s
-                                </text>
-                              </svg>
-                            </button>
-                            <button>
-                              <svg
-                                width="77"
-                                height="32"
-                                viewBox="0 0 77 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="white"
-                              >
-                                <path
-                                  d="M70 31H7C4.66 28.66 3.34 27.34 1 25V7C3.34 4.66 4.66 3.34 7 1H70C72.34 3.34 73.66 4.66 76 7V25C73.66 27.34 72.34 28.66 70 31Z"
-                                  stroke="white"
-                                  stroke-width="2"
-                                ></path>
-                                <text
-                                  x="50%"
-                                  y="50%"
-                                  text-anchor="middle"
-                                  dominant-baseline="middle"
-                                  className="font-william"
-                                >
-                                  1600s
-                                </text>
-                              </svg>
-                            </button>
-                            <button>
-                              <svg
-                                width="77"
-                                height="32"
-                                viewBox="0 0 77 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="white"
-                              >
-                                <path
-                                  d="M70 31H7C4.66 28.66 3.34 27.34 1 25V7C3.34 4.66 4.66 3.34 7 1H70C72.34 3.34 73.66 4.66 76 7V25C73.66 27.34 72.34 28.66 70 31Z"
-                                  stroke="white"
-                                  stroke-width="2"
-                                ></path>
-                                <text
-                                  x="50%"
-                                  y="50%"
-                                  text-anchor="middle"
-                                  dominant-baseline="middle"
-                                  className="font-william"
-                                >
-                                  1700s
-                                </text>
-                              </svg>
-                            </button>
-                            <button>
-                              <svg
-                                width="77"
-                                height="32"
-                                viewBox="0 0 77 32"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="white"
-                              >
-                                <path
-                                  d="M70 31H7C4.66 28.66 3.34 27.34 1 25V7C3.34 4.66 4.66 3.34 7 1H70C72.34 3.34 73.66 4.66 76 7V25C73.66 27.34 72.34 28.66 70 31Z"
-                                  stroke="white"
-                                  stroke-width="2"
-                                ></path>
-                                <text
-                                  x="50%"
-                                  y="50%"
-                                  text-anchor="middle"
-                                  dominant-baseline="middle"
-                                  className="font-william"
-                                >
-                                  1800s
-                                </text>
-                              </svg>
-                            </button>
-                          </div>
-                          <div className="flex text-white min-h-28">
-                            <button className="invisible">
-                              <svg width="27" height="20" viewBox="0 0 27 20">
-                                <path
-                                  d="M26.877 8.10034V10.9373H2.87988L3.45581 9.89213L9.79104 19.0377H6.52744L0.000236511 9.66815V9.36952L6.52744 0H9.79104L3.45581 9.14555L2.87988 8.10034H26.877Z"
-                                  fill="white"
-                                ></path>
-                              </svg>
-                            </button>
-                            <div className="mx-4 my-2 text-base w-96 flex flex-row justify-between gap-4">
-                              <div>
-                                <span className="font-william">1501:</span>{" "}
-                                Henry VII. grants patent for colonizing America.
-                              </div>
-                              <div className="self-end flex flex-col items-center gap-2">
-                                <button>
-                                  <svg
-                                    width="26"
-                                    height="23"
-                                    viewBox="0 0 26 23"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      fill="white"
-                                      d="M1.88884 17.9178V4.47945L4.39774 1.92393H21.3591L23.868 4.47945V17.9178L21.3591 20.4733H4.39774L1.88884 17.9178ZM0 18.8409L3.73951 22.3876H22.0173L25.7569 18.8409V3.54664L22.0173 0H3.73951L0 3.54664V18.8409Z"
-                                    ></path>
-                                  </svg>
-                                </button>
-                                <div className="text-sm">1/22</div>
-                              </div>
-                            </div>
-                            <button className="transform rotate-180">
-                              <svg width="27" height="20" viewBox="0 0 27 20">
-                                <path
-                                  d="M26.877 8.10034V10.9373H2.87988L3.45581 9.89213L9.79104 19.0377H6.52744L0.000236511 9.66815V9.36952L6.52744 0H9.79104L3.45581 9.14555L2.87988 8.10034H26.877Z"
-                                  fill="white"
-                                ></path>
-                              </svg>
-                            </button>
-                          </div>
-                          <div className="-ml-16 flex uppercase divide-x">
-                            <button className="hover:underline pr-2 flex items-center gap-2">
-                              Complete
-                            </button>
-                            <button className="hover:underline pl-2">
-                              Reset
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div
-                className="grid grid-cols-10 2xl:grid-cols-14"
-                style={{ marginBottom: "381px" }}
-              >
-                <div className="pin-spacer">
-                  <div className="space-y-6 left-col col-start-1 col-end-6 2xl:col-end-8 self-center grid grid-cols-7">
-                    <p>
-                      <span>
-                        But the exercise of creating a chronological chart from
-                        scratch is quite hard, as you--the reader--might have
-                        discovered from the interaction above. Not to worry,
-                        however! The difficulty level was high for students of
-                        the nineteenth century as well. P
-                      </span>
-                      <span>
-                        eabody’s nephew, Julian Hawthorne, who served as her
-                        first test subject, recalled that she “labored during
-                        some years to teach me all the leading dates of human
-                        history,” but that he nevertheless remained “most inapt
-                        and grievous” throughout the process.
-                      </span>
-                      <span>
-                        <span role="button" className="circle">
-                          22
-                        </span>{" "}
-                      </span>
-                      <span>
-                        {" "}
-                        The evidence in the archive confirms this first-hand
-                        account. At the American Antiquarian Society, the
-                        Library Company of Philadelphia, Yale’s Beinecke
-                        Library, and Princeton’s Special Collections can be
-                        found{" "}
-                      </span>
-                      <span>
-                        multiple copies of Peabody’s workbooks, many of which
-                        I’ve personally paged through over the course of
-                        conducting research for this project. The workbooks all
-                        tend to follow a similar pattern: a page or two of grids
-                        filled out in earnest; then a series of attempts
-                        abandoned halfway; and then a shift in purpose, the grid
-                        becoming a canvas for pattern and unbridled play.
-                      </span>
-                    </p>
-                    <p>
-                      <span>
-                        It’s worth repeating that the difficulty of the
-                        Polish-American system is both a liability of the form
-                        and also the point. Peabody first developed her method
-                        at a time when the nation’s future seemed to hang in
-                        balance. The second half of the 1840s had brought an
-                        increased awareness of the nation’s growing
-                        sectarianism, as well as its range of social
-                        ills--albeit with a (mostly) optimistic view about the
-                        potential of its governing structures to address these
-                        challenges. But as the 1850s unfolded, the magnitude of
-                        these challenges became increasingly more pronounced.
-                        Even as her privilege protected her from having to enter
-                        the political fray, Peabody recognized that the task of
-                        resolving the underlying issue of sectarianism, not to
-                        mention the moral obligation of ending slavery, posed a
-                        degree of difficulty of the highest order. Peabody
-                        understood, moreover, that any successful resolution
-                        would require sustained effort and thought.
-                      </span>
-                    </p>
-                    <div className="md:my-16 middle-full">
-                      <div className="bg-theme font-william grid grid-cols-8 py-9">
-                        <div className="col-start-2 col-end-8">
-                          <div className="big text-xl lg:text-2xl xl:text-4xl">
-                            <p>
-                              <span>
-                                By prompting her students to create new
-                                narratives of the past,
-                              </span>
-                            </p>
-                          </div>
-                          <div className="small text-base lg:text-xl xl:text-2xl">
-                            <p>
-                              <span>
-                                they would also imagine alternative possible
-                                futures.
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <p>
-                      <span>Her goal with the </span>
-                      <span className="italic">Polish-American System</span>
-                      <span>
-                        {" "}
-                        was thus to create a framework, equal parts intellectual
-                        and immersive, through which this difficult thinking
-                        could take place. “The old world is covered with bad
-                        institutions which men have created, very often with
-                        positively good intentions, but on false notions, or, at
-                        least, without large and profound ideas,” she explains
-                        in the preface to the{" "}
-                      </span>
-                      <span className="italic">Chronological History</span>
-                      <span>
-                        . “Whether the new world shall estimate and sift out
-                        these evils, or repeat these mistakes, depends on young
-                        Americans, who are now sitting in schoolrooms all over
-                        the country, unconscious of their powers and consequent
-                        responsibilities,” she further explains.
-                      </span>
-                      <span>
-                        <span role="button" className="circle">
-                          23
-                        </span>{" "}
-                      </span>
-                      <span>
-                        {" "}
-                        Her hope was that the act of creating the chronological
-                        charts, rather than simply studying them, would prompt
-                        both self-reflection and new ideas. Put another way:
-                        Peabody hoped that by prompting her students to create
-                        new narratives of the past, they would also imagine
-                        alternative possible futures.
-                      </span>
-                    </p>
-                    <p>
-                      <span>
-                        The political context that provided Peabody with the
-                        motivation to publish her history textbooks is crucial
-                        for understanding both her ideas about the uses of
-                        visualization, and the form that her visualizations
-                        take. But this context is not easily discerned from the
-                        visualizations themselves. Without the knowledge of how
-                        to decode the charts, let alone a sense of their
-                        political stakes, the charts’ geometric abstraction
-                        prompts a purely aesthetic response.
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div className="space-y-6 right-col col-span-full col-start-7 2xl:col-start-8 self-center grid grid-cols-7">
-                  <div className="flex flex-col items-center middle-full">
-                    <div>
-                      <div
-                        className="doc-table-root"
-                        style={{
-                          display: "grid",
-                          gridTemplateAreas:
-                            '"area0 area1" "area2 area3" "area4 area5" "area6 area7"',
-                        }}
-                      >
-                        <div
-                          className="doc-table-cell"
-                          style={{ gridArea: "area0" }}
-                        >
-                          <img
-                            src="/image/peabody/ch4-5.webp"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                        <div
-                          className="doc-table-cell"
-                          style={{ gridArea: "area1" }}
-                        >
-                          <img
-                            src="/image/peabody/ch4-6.webp"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                        <div
-                          className="doc-table-cell"
-                          style={{ gridArea: "area2" }}
-                        >
-                          <img
-                            src="/image/peabody/ch4-7.webp"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                        <div
-                          className="doc-table-cell"
-                          style={{ gridArea: "area3" }}
-                        >
-                          <img
-                            src="/image/peabody/ch4-8.webp"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                        <div
-                          className="doc-table-cell"
-                          style={{ gridArea: "area4" }}
-                        >
-                          <img
-                            src="/image/peabody/ch4-9.webp"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                        <div
-                          className="doc-table-cell"
-                          style={{ gridArea: "area5" }}
-                        >
-                          <img
-                            src="/image/peabody/ch4-10.webp"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                        <div
-                          className="doc-table-cell"
-                          style={{ gridArea: "area6" }}
-                        >
-                          <img
-                            src="/image/peabody/ch4-11.webp"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                        <div
-                          className="doc-table-cell"
-                          style={{ gridArea: "area7" }}
-                        >
-                          <img
-                            src="/image/peabody/ch4-12.webp"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="caption text-center mt-10 w-5/6">
-                      <p>
-                        <span>
-                          Images of student-created charts from a copy of{" "}
-                        </span>
-                        <span className="italic">
-                          The Polish-American System
-                        </span>
-                        <span>
-                          {" "}
-                          housed at the American Antiquarian Society. Courtesy
-                          of the American Antiquarian Society. Photos by Lauren
-                          Klein.
-                        </span>
-                        <span></span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="grid grid-cols-10 2xl:grid-cols-14">
-                <div className="space-y-6 contents middle-subgrid">
-                  <p>
-                    <span>
-                      Other charts from the same era make their politics more
-                      explicit, however—for example, Emma Willard’s 1846{" "}
-                    </span>
-                    <span className="italic">Temple of Time</span>
-                    <span>
-                      , which depicts past centuries as the pillars that support
-                      the titular temple. In the chart, the nineteenth
-                      century—then the present—is represented as an unfinished
-                      column, not yet stable enough to support the weight of the
-                      past. On the ceiling of the temple, Willard catalogues key
-                      figures from each prior century, including statesmen,
-                      philosophers, discoverers, and poets. On the floor of the
-                      temple, she lays out the developments of major
-                      nation-states, their paths drawn as rivers subjected—like
-                      water levels—to the expansions and contractions of state
-                      power over time. Significantly, Willard places the path of
-                      the United States front and center. From the perspective
-                      of the viewer, this river flows directly towards them,
-                      enfolding them in the expanding influence of the United
-                      States: the future to come.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        24
-                      </span>{" "}
-                    </span>
-                  </p>
-                  <div className="flex flex-col items-center middle-full">
-                    <div>
-                      <img
-                        src="/_nuxt/img/ch4-13-willard.434d8e6.jpg"
-                        alt=""
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="caption text-center mt-10 w-5/6">
-                      <p>
-                        <span>Emma Willard’s perspectival </span>
-                        <span className="italic">Temple of Time</span>
-                        <span>
-                          {" "}
-                          (1846). Image courtesy of the David Rumsey Map
-                          Collection, Cartography Associates.
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                  <p>
-                    <span>
-                      While sharply divergent from Peabody’s charts in terms of
-                      aesthetics, Peabody nevertheless identified Willard as a
-                      major source of inspiration, crediting Willard with
-                      creating “the most ingenious chart ever besides [her own]
-                      invented.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        25
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      In Chapter 3, I discuss Willard’s influences, which
-                      included Joseph Priestley’s{" "}
-                    </span>
-                    <span className="italic">New Chart of History</span>
-                    <span>
-                      , from 1796, among the most circulated charts of its time;
-                      and Playfair’s{" "}
-                    </span>
-                    <span className="italic">
-                      Commercial and Political Atlas
-                    </span>
-                    <span>
-                      , the subject of Chapter 1. According to historian Susan
-                      Schulten, Willard appreciated the efficiency of these
-                      charts, but felt that they gave “little sense of the{" "}
-                    </span>
-                    <span className="italic">dimension, </span>
-                    <span>
-                      such as the relative importance of periods or the
-                      subjective experience of time.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        26
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      Sure enough, while neither Preistley’s timeline nor
-                      Playfair’s import-export charts provide a sense of the
-                      subjective experience of time, they do offer images that
-                      are just as interpretable today as they were at the time
-                      of their making.
-                    </span>
-                  </p>
-                  <p>
-                    <span>
-                      By contrast, the more abstract impression first conveyed
-                      by Peabody’s chronological grids immediately
-                      invites—indeed, requires—additional interpretation. Her
-                      configuration of her data not,{" "}
-                    </span>
-                    <span className="italic">pace</span>
-                    <span>
-                      {" "}
-                      Playfair, according to the cartesian grid but instead as a
-                      visual text, designed to be read from left to right, top
-                      to bottom, underscores her interpretive intent. (What
-                      might seem to be x-y axes that divide each image into
-                      quadrants are instead, as Peabody explains, only intended
-                      to serve as visual anchor points in an otherwise
-                      unstructured field.) Like the process of interpreting a
-                      text, Peabody’s charts encourage further contemplation.
-                      The charts may serve as the basis for future knowledge,
-                      but they do not serve as that knowledge’s definitive
-                      source. This view of how knowledge should be constructed
-                      is conveyed not only in the accompanying textbooks, but
-                      through the visually-compelling yet nonetheless
-                      unintuitive design of the charts themselves.
-                    </span>
-                  </p>
-                  <p>
-                    <span>
-                      With the addition of the workbooks, which enabled the
-                      students to create their own charts, Peabody further
-                      underscores her belief in a more participatory form of
-                      knowledge production. This form of knowledge-making
-                      challenges the hierarchy that most commonly structures the
-                      relationship between the designer of a visualization and
-                      those who view (or interact) with it. According to
-                      Peabody’s participatory process, it is the student who is
-                      authorized to both create and interpret the image, rather
-                      than the designer—in this case, Peabody herself—who
-                      originally developed its designs. If there is a single
-                      message communicated by Peabody’s chronological charts, it
-                      is that their meaning is not fixed. Rather, they impress
-                      upon the viewer a sense of responsibility--first for
-                      developing informed interpretations of the images they
-                      perceive, and then for designing a course of future
-                      action.
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div className="full-bleed bg-black text-white h-[896px] flex items-center justify-center">
+          CHART HERE
+        </div>
+        <div className="full-bleed flex py-10">
+          <div className="w-1/2 space-y-8">
+            <p className="px-20">
+              <span>
+                But the exercise of creating a chronological chart from scratch
+                is quite hard, as you--the reader--might have discovered from
+                the interaction above. Not to worry, however! The difficulty
+                level was high for students of the nineteenth century as well. P
+              </span>
+              <span>
+                eabody’s nephew, Julian Hawthorne, who served as her first test
+                subject, recalled that she “labored during some years to teach
+                me all the leading dates of human history,” but that he
+                nevertheless remained “most inapt and grievous” throughout the
+                process.
+              </span>
+              <span>
+                <span role="button" className="circle">
+                  22
+                </span>{" "}
+              </span>
+              <span>
+                {" "}
+                The evidence in the archive confirms this first-hand account. At
+                the American Antiquarian Society, the Library Company of
+                Philadelphia, Yale’s Beinecke Library, and Princeton’s Special
+                Collections can be found{" "}
+              </span>
+              <span>
+                multiple copies of Peabody’s workbooks, many of which I’ve
+                personally paged through over the course of conducting research
+                for this project. The workbooks all tend to follow a similar
+                pattern: a page or two of grids filled out in earnest; then a
+                series of attempts abandoned halfway; and then a shift in
+                purpose, the grid becoming a canvas for pattern and unbridled
+                play.
+              </span>
+            </p>
+            <p className="px-20">
+              <span>
+                It’s worth repeating that the difficulty of the Polish-American
+                system is both a liability of the form and also the point.
+                Peabody first developed her method at a time when the nation’s
+                future seemed to hang in balance. The second half of the 1840s
+                had brought an increased awareness of the nation’s growing
+                sectarianism, as well as its range of social ills--albeit with a
+                (mostly) optimistic view about the potential of its governing
+                structures to address these challenges. But as the 1850s
+                unfolded, the magnitude of these challenges became increasingly
+                more pronounced. Even as her privilege protected her from having
+                to enter the political fray, Peabody recognized that the task of
+                resolving the underlying issue of sectarianism, not to mention
+                the moral obligation of ending slavery, posed a degree of
+                difficulty of the highest order. Peabody understood, moreover,
+                that any successful resolution would require sustained effort
+                and thought.
+              </span>
+            </p>
+            <PullQuote
+              title="By prompting her students to create new narratives of the past, "
+              subtitle="they would also imagine alternative possible futures. "
+            />
+            <p className="px-20">
+              <span>Her goal with the </span>
+              <span className="italic">Polish-American System</span>
+              <span>
+                {" "}
+                was thus to create a framework, equal parts intellectual and
+                immersive, through which this difficult thinking could take
+                place. “The old world is covered with bad institutions which men
+                have created, very often with positively good intentions, but on
+                false notions, or, at least, without large and profound ideas,”
+                she explains in the preface to the{" "}
+              </span>
+              <span className="italic">Chronological History</span>
+              <span>
+                . “Whether the new world shall estimate and sift out these
+                evils, or repeat these mistakes, depends on young Americans, who
+                are now sitting in schoolrooms all over the country, unconscious
+                of their powers and consequent responsibilities,” she further
+                explains.
+              </span>
+              <span>
+                <span role="button" className="circle">
+                  23
+                </span>{" "}
+              </span>
+              <span>
+                {" "}
+                Her hope was that the act of creating the chronological charts,
+                rather than simply studying them, would prompt both
+                self-reflection and new ideas. Put another way: Peabody hoped
+                that by prompting her students to create new narratives of the
+                past, they would also imagine alternative possible futures.
+              </span>
+            </p>
+            <p className="px-20">
+              <span>
+                The political context that provided Peabody with the motivation
+                to publish her history textbooks is crucial for understanding
+                both her ideas about the uses of visualization, and the form
+                that her visualizations take. But this context is not easily
+                discerned from the visualizations themselves. Without the
+                knowledge of how to decode the charts, let alone a sense of
+                their political stakes, the charts’ geometric abstraction
+                prompts a purely aesthetic response.
+              </span>
+            </p>
           </div>
         </div>
-        <div className="section-root">
-          <div className="grid grid-cols-10 2xl:grid-cols-14 my-12">
-            <div className="chapter-title col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 relative">
-              <div className="opacity-50 bg-theme w-full h-full absolute"></div>
-              <div className="title-text p-4 relative font-william font-bold text-xl lg:text-4xl flex justify-center items-center">
-                <span>The Gendered Archive of Data Visualization</span>
-              </div>
-            </div>
+        <p>
+          <span>
+            Other charts from the same era make their politics more explicit,
+            however—for example, Emma Willard’s 1846{" "}
+          </span>
+          <span className="italic">Temple of Time</span>
+          <span>
+            , which depicts past centuries as the pillars that support the
+            titular temple. In the chart, the nineteenth century—then the
+            present—is represented as an unfinished column, not yet stable
+            enough to support the weight of the past. On the ceiling of the
+            temple, Willard catalogues key figures from each prior century,
+            including statesmen, philosophers, discoverers, and poets. On the
+            floor of the temple, she lays out the developments of major
+            nation-states, their paths drawn as rivers subjected—like water
+            levels—to the expansions and contractions of state power over time.
+            Significantly, Willard places the path of the United States front
+            and center. From the perspective of the viewer, this river flows
+            directly towards them, enfolding them in the expanding influence of
+            the United States: the future to come.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              24
+            </span>{" "}
+          </span>
+        </p>
+        <div className="flex flex-col items-center full-bleed">
+          <div>
+            <img src="/images/ch4-13-willard.jpg" alt="" loading="lazy" />
           </div>
+          <div className="font-william text-center mt-10 w-5/6">
+            <p>
+              <span>Emma Willard’s perspectival </span>
+              <span className="italic">Temple of Time</span>
+              <span>
+                {" "}
+                (1846). Image courtesy of the David Rumsey Map Collection,
+                Cartography Associates.
+              </span>
+            </p>
+          </div>
+        </div>
+        <p>
+          <span>
+            While sharply divergent from Peabody’s charts in terms of
+            aesthetics, Peabody nevertheless identified Willard as a major
+            source of inspiration, crediting Willard with creating “the most
+            ingenious chart ever besides [her own] invented.”
+          </span>
+          <span>
+            <span role="button" className="circle">
+              25
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            In Chapter 3, I discuss Willard’s influences, which included Joseph
+            Priestley’s{" "}
+          </span>
+          <span className="italic">New Chart of History</span>
+          <span>
+            , from 1796, among the most circulated charts of its time; and
+            Playfair’s{" "}
+          </span>
+          <span className="italic">Commercial and Political Atlas</span>
+          <span>
+            , the subject of Chapter 1. According to historian Susan Schulten,
+            Willard appreciated the efficiency of these charts, but felt that
+            they gave “little sense of the{" "}
+          </span>
+          <span className="italic">dimension, </span>
+          <span>
+            such as the relative importance of periods or the subjective
+            experience of time.”
+          </span>
+          <span>
+            <span role="button" className="circle">
+              26
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            Sure enough, while neither Preistley’s timeline nor Playfair’s
+            import-export charts provide a sense of the subjective experience of
+            time, they do offer images that are just as interpretable today as
+            they were at the time of their making.
+          </span>
+        </p>
+        <p>
+          <span>
+            By contrast, the more abstract impression first conveyed by
+            Peabody’s chronological grids immediately invites—indeed,
+            requires—additional interpretation. Her configuration of her data
+            not,{" "}
+          </span>
+          <span className="italic">pace</span>
+          <span>
+            {" "}
+            Playfair, according to the cartesian grid but instead as a visual
+            text, designed to be read from left to right, top to bottom,
+            underscores her interpretive intent. (What might seem to be x-y axes
+            that divide each image into quadrants are instead, as Peabody
+            explains, only intended to serve as visual anchor points in an
+            otherwise unstructured field.) Like the process of interpreting a
+            text, Peabody’s charts encourage further contemplation. The charts
+            may serve as the basis for future knowledge, but they do not serve
+            as that knowledge’s definitive source. This view of how knowledge
+            should be constructed is conveyed not only in the accompanying
+            textbooks, but through the visually-compelling yet nonetheless
+            unintuitive design of the charts themselves.
+          </span>
+        </p>
+        <p>
+          <span>
+            With the addition of the workbooks, which enabled the students to
+            create their own charts, Peabody further underscores her belief in a
+            more participatory form of knowledge production. This form of
+            knowledge-making challenges the hierarchy that most commonly
+            structures the relationship between the designer of a visualization
+            and those who view (or interact) with it. According to Peabody’s
+            participatory process, it is the student who is authorized to both
+            create and interpret the image, rather than the designer—in this
+            case, Peabody herself—who originally developed its designs. If there
+            is a single message communicated by Peabody’s chronological charts,
+            it is that their meaning is not fixed. Rather, they impress upon the
+            viewer a sense of responsibility--first for developing informed
+            interpretations of the images they perceive, and then for designing
+            a course of future action.
+          </span>
+        </p>
+        <ChapterSectionTitle>
+          The Gendered Archive of Data Visualization
+        </ChapterSectionTitle>
+        <p>
+          <span>
+            There is a final lesson to be learned from Elizabeth Palmer Peabody
+            and her charts, which has to do with the labor—physical as much as
+            intellectual—that is involved in the production of knowledge. An
+            additional aspect of Peabody’s pedagogy were the “mural charts” that
+            she created in order to center classroom discussion. These were the
+            charts she traveled with on her national promotional tour, as
+            mentioned at the outset of this chapter, and{" "}
+          </span>
+          <span>
+            by all accounts they were dazzling: triangles and squares of
+            crimson, ochre, and forest green, set against a sharp black grid. In
+            her version of a sales pitch, Peabody would “lay [a] chart down on
+            the floor”{" "}
+          </span>
+          <span>
+            and invite her would-be textbook adopters to sit around it and
+            contemplate the colors and patterns they perceived.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              27
+            </span>{" "}
+          </span>
+        </p>
+        <p>
+          <span>
+            The pedagogical impact of this embodied interaction was nothing
+            short of transformative. “I have never known a system which placed
+            the events of the history of all nations before the mind with such
+            clearness, so little confusion, and so much permanency,” wrote
+            Eliphalet Nott, then president of Union College, who participated in
+            one of Peabody’s teaching demonstrations.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              28
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            Anticipating a decidedly twenty-first-century view of the value of
+            immersive education, Peabody staged an encounter with the data that
+            involved the whole body. This was an interaction that, she hoped,
+            would in turn stimulate the imagination to new heights. Indeed, if
+            visualization is to offer “richer understandings [of data] that
+            enable researchers to ask bolder questions,” as esteemed
+            visualization researcher Ben Shneiderman believes, then the mural
+            chart seems to represent an early apotheosis.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              29
+            </span>{" "}
+          </span>
+          <span></span>
+        </p>
+        <div className="section-root">
           <div className="space-y-10">
             <div>
               <div className="grid grid-cols-10 2xl:grid-cols-14">
-                <div className="space-y-6 contents middle-subgrid">
-                  <p>
-                    <span>
-                      There is a final lesson to be learned from Elizabeth
-                      Palmer Peabody and her charts, which has to do with the
-                      labor—physical as much as intellectual—that is involved in
-                      the production of knowledge. An additional aspect of
-                      Peabody’s pedagogy were the “mural charts” that she
-                      created in order to center classroom discussion. These
-                      were the charts she traveled with on her national
-                      promotional tour, as mentioned at the outset of this
-                      chapter, and{" "}
-                    </span>
-                    <span>
-                      by all accounts they were dazzling: triangles and squares
-                      of crimson, ochre, and forest green, set against a sharp
-                      black grid. In her version of a sales pitch, Peabody would
-                      “lay [a] chart down on the floor”{" "}
-                    </span>
-                    <span>
-                      and invite her would-be textbook adopters to sit around it
-                      and contemplate the colors and patterns they perceived.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        27
-                      </span>{" "}
-                    </span>
-                  </p>
-                  <p>
-                    <span>
-                      The pedagogical impact of this embodied interaction was
-                      nothing short of transformative. “I have never known a
-                      system which placed the events of the history of all
-                      nations before the mind with such clearness, so little
-                      confusion, and so much permanency,” wrote Eliphalet Nott,
-                      then president of Union College, who participated in one
-                      of Peabody’s teaching demonstrations.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        28
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      Anticipating a decidedly twenty-first-century view of the
-                      value of immersive education, Peabody staged an encounter
-                      with the data that involved the whole body. This was an
-                      interaction that, she hoped, would in turn stimulate the
-                      imagination to new heights. Indeed, if visualization is to
-                      offer “richer understandings [of data] that enable
-                      researchers to ask bolder questions,” as esteemed
-                      visualization researcher Ben Shneiderman believes, then
-                      the mural chart seems to represent an early apotheosis.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        29
-                      </span>{" "}
-                    </span>
-                    <span></span>
-                  </p>
-                </div>
+                <div className="space-y-6 contents middle-subgrid"></div>
               </div>
             </div>
             <div>
