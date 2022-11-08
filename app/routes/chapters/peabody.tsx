@@ -5,6 +5,7 @@ import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import OneColumnLayout from "~/components/layout/OneColumnLayout";
+import FullBleed from "~/components/layout/FullBleed";
 
 export default function PeabodyPage() {
   return (
@@ -167,10 +168,10 @@ export default function PeabodyPage() {
             </div>
           </Column>
         </TwoColumnLayout>
+        <ChapterSectionTitle>
+          A Visual Method of Making History
+        </ChapterSectionTitle>
         <OneColumnLayout>
-          <ChapterSectionTitle>
-            A Visual Method of Making History
-          </ChapterSectionTitle>
           <div className="space-y-5 py-10">
             <p>
               <span>
@@ -310,7 +311,7 @@ export default function PeabodyPage() {
               </p>
             </div>
           </div>
-          <div className="py-10 space-y-5">
+          <div className="pt-10 space-y-5">
             <p>
               <span>
                 Chronology—or, the study of events in time—is not, of course,
@@ -434,14 +435,14 @@ export default function PeabodyPage() {
               </span>
             </p>
           </div>
-          <div className="full-bleed">
+          <FullBleed>
             <PullQuote
               title="Our ways of knowing—about science, about history,
                               or about any other phenomena in the world—"
               subtitle="are overdetermined by the asymmetrically connected
                               (and constructed) systems that shape them."
             />
-          </div>
+          </FullBleed>
           <p>
             <span>
               Indeed, our ways of knowing—about science, about history, or about
@@ -525,9 +526,9 @@ export default function PeabodyPage() {
               legible.
             </span>
           </p>
-          <div className="full-bleed bg-black h-[500px] text-white flex items-center justify-center">
+          <FullBleed className="bg-black h-[500px] text-white flex items-center justify-center my-8">
             CHART HERE
-          </div>
+          </FullBleed>
           <p>
             <span>
               But for Peabody, her charts’ near-total abstraction was precisely
@@ -562,11 +563,13 @@ export default function PeabodyPage() {
               therefore, each viewer as that knowledge’s source.
             </span>
           </p>
+        </OneColumnLayout>
+        <div className="py-10">
           <ChapterSectionTitle>
             The Politics of Visual Knowledge Production
           </ChapterSectionTitle>
-          <div className="full-bleed flex pt-10">
-            <div className="w-1/2 px-20">
+          <TwoColumnLayout className="py-10">
+            <Column className="px-20">
               <p>
                 <span>
                   Peabody was a lifelong proponent of what might be described
@@ -606,8 +609,8 @@ export default function PeabodyPage() {
                 <span className="italic"> </span>
                 <span>the visualizations that they would then study.</span>
               </p>
-            </div>
-            <div className="w-1/2 px-20">
+            </Column>
+            <Column className="px-20">
               <img
                 src="/images/ch4-blank-chart.webp"
                 alt=""
@@ -628,8 +631,10 @@ export default function PeabodyPage() {
                   <span>. </span>
                 </p>
               </div>
-            </div>
-          </div>
+            </Column>
+          </TwoColumnLayout>
+        </div>
+        <OneColumnLayout>
           <div className="full-bleed bg-black text-white h-[896px] flex items-center justify-center">
             CHART HERE
           </div>
