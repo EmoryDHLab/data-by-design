@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.2.0 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -526,16 +526,8 @@ video {
   position: relative !important;
 }
 
-.sticky {
-  position: sticky !important;
-}
-
 .top-10 {
   top: 2.5rem !important;
-}
-
-.top-0 {
-  top: 0px !important;
 }
 
 .z-20 {
@@ -660,11 +652,6 @@ video {
   margin-bottom: 3rem !important;
 }
 
-.mx-3 {
-  margin-left: 0.75rem !important;
-  margin-right: 0.75rem !important;
-}
-
 .mt-16 {
   margin-top: 4rem !important;
 }
@@ -769,18 +756,6 @@ video {
   height: 896px !important;
 }
 
-.h-screen {
-  height: 100vh !important;
-}
-
-.h-1\/2 {
-  height: 50% !important;
-}
-
-.max-h-full {
-  max-height: 100% !important;
-}
-
 .w-full {
   width: 100% !important;
 }
@@ -833,6 +808,10 @@ video {
   width: 66.666667% !important;
 }
 
+.w-3\/4 {
+  width: 75% !important;
+}
+
 .max-w-full {
   max-width: 100% !important;
 }
@@ -863,14 +842,6 @@ video {
 
 .max-w-md {
   max-width: 28rem !important;
-}
-
-.max-w-screen-2xl {
-  max-width: 1536px !important;
-}
-
-.flex-1 {
-  flex: 1 1 0% !important;
 }
 
 .transform {
@@ -1122,6 +1093,11 @@ video {
   background-color: rgb(154 228 193 / var(--tw-bg-opacity)) !important;
 }
 
+.bg-playfairPrimary {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(59 111 224 / var(--tw-bg-opacity)) !important;
+}
+
 .p-4 {
   padding: 1rem !important;
 }
@@ -1246,8 +1222,8 @@ video {
   padding-top: 5rem !important;
 }
 
-.pr-12 {
-  padding-right: 3rem !important;
+.pb-12 {
+  padding-bottom: 3rem !important;
 }
 
 .text-center {
@@ -1491,11 +1467,6 @@ video {
     margin-bottom: 4rem !important;
   }
 
-  .md\:my-10 {
-    margin-top: 2.5rem !important;
-    margin-bottom: 2.5rem !important;
-  }
-
   .md\:mb-10 {
     margin-bottom: 2.5rem !important;
   }
@@ -1520,16 +1491,6 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:my-52 {
-    margin-top: 13rem !important;
-    margin-bottom: 13rem !important;
-  }
-
-  .lg\:mx-12 {
-    margin-left: 3rem !important;
-    margin-right: 3rem !important;
-  }
-
   .lg\:text-4xl {
     font-size: 2.25rem !important;
     line-height: 2.5rem !important;
