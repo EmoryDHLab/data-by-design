@@ -635,6 +635,11 @@ video {
   margin-bottom: 1.25rem !important;
 }
 
+.my-8 {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
 .my-2 {
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important;
@@ -658,16 +663,6 @@ video {
 .mx-3 {
   margin-left: 0.75rem !important;
   margin-right: 0.75rem !important;
-}
-
-.my-16 {
-  margin-top: 4rem !important;
-  margin-bottom: 4rem !important;
-}
-
-.my-8 {
-  margin-top: 2rem !important;
-  margin-bottom: 2rem !important;
 }
 
 .mt-16 {
@@ -720,10 +715,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem !important;
-}
-
-.mt-12 {
-  margin-top: 3rem !important;
 }
 
 .flex {
@@ -794,6 +785,10 @@ video {
   width: 100% !important;
 }
 
+.w-screen {
+  width: 100vw !important;
+}
+
 .w-5\/6 {
   width: 83.333333% !important;
 }
@@ -860,6 +855,10 @@ video {
 
 .max-w-\[800px\] {
   max-width: 800px !important;
+}
+
+.max-w-\[1536px\] {
+  max-width: 1536px !important;
 }
 
 .max-w-md {
@@ -934,10 +933,6 @@ video {
   flex-direction: column !important;
 }
 
-.flex-wrap {
-  flex-wrap: wrap !important;
-}
-
 .items-center {
   align-items: center !important;
 }
@@ -960,10 +955,6 @@ video {
 
 .gap-8 {
   gap: 2rem !important;
-}
-
-.gap-2 {
-  gap: 0.5rem !important;
 }
 
 .gap-x-6 {
@@ -1111,14 +1102,14 @@ video {
   background-color: rgb(59 111 224 / var(--tw-bg-opacity)) !important;
 }
 
-.bg-white {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
-}
-
 .bg-offwhite {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(250 241 233 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-white {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
 }
 
 .bg-duboisPrimary {
@@ -1129,11 +1120,6 @@ video {
 .bg-peabodyPrimary {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(154 228 193 / var(--tw-bg-opacity)) !important;
-}
-
-.bg-offblack {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(28 24 23 / var(--tw-bg-opacity)) !important;
 }
 
 .p-4 {
@@ -1256,8 +1242,8 @@ video {
   padding-top: 2.5rem !important;
 }
 
-.pt-8 {
-  padding-top: 2rem !important;
+.pt-20 {
+  padding-top: 5rem !important;
 }
 
 .pr-12 {
@@ -1349,10 +1335,6 @@ video {
 
 .leading-veryTight {
   line-height: 0.8 !important;
-}
-
-.tracking-wide {
-  letter-spacing: 0.025em !important;
 }
 
 .text-black {
@@ -1565,14 +1547,6 @@ video {
 }
 
 @media (min-width: 1280px) {
-  .xl\:flex-col {
-    flex-direction: column !important;
-  }
-
-  .xl\:items-center {
-    align-items: center !important;
-  }
-
   .xl\:text-4xl {
     font-size: 2.25rem !important;
     line-height: 2.5rem !important;

@@ -10,7 +10,7 @@ interface Props {
 export default function ChapterSectionTitle({ children }: Props) {
   const { backgroundColor } = useContext(ThemeContext);
   return (
-    <OneColumnLayout>
+    <OneColumnLayout className="w-full">
       <div className="relative">
         <div
           className={`opacity-50 bg-${backgroundColor} w-full h-full absolute`}

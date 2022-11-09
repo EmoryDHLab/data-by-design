@@ -7,5 +7,5 @@ interface Props {
 
 // Implements a full bleed grid: https://www.joshwcomeau.com/css/full-bleed/
 export default function FullBleedGrid({ children, className }: Props) {
-  return <div className={`grid-wrapper ${className}`}>{children}</div>;
+  return <div className={`grid-wrapper ${className ?? ""}`}>{children}</div>;
 }
