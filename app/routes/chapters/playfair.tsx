@@ -9,18 +9,19 @@ import FullBleed from "~/components/layout/FullBleed";
 import RecreationCovid from "~/components/playfair/RecreationCovid";
 import StackedChart from "~/components/playfair/StackedChart";
 import CombChart from "~/components/playfair/CombChart";
+import Figure from "~/components/layout/Figure";
 
 export default function PlayfairPage() {
   return (
     <ThemeContext.Provider
       value={{ backgroundColor: "playfairPrimary", primaryTextColor: "white" }}
-      >
+    >
       <ChapterTitle
         title="Visualization as Argument"
         subtitle="William Playfair's Time-Series Charts"
       />
       <TwoColumnLayout className="py-10">
-        <Column>
+        <Column shouldPin={true}>
           <p className="px-20 py-5">
             One can only imagine the choice words exclaimed by the Scottish
             political economist William Playfair (1759-1823) when he recognized
@@ -70,46 +71,46 @@ export default function PlayfairPage() {
             the lines of imports and exports by himself.
             <span role="button" className="circle">
               5
-            </span>{" "}
+            </span>
           </p>
         </Column>
-        <Column className="flex flex-col items-center">
-          <figure className="flex flex-col items-center my-12 w-3/4">
-            <img className="space-y-2" src="/images/playfair/1-northamerica.jpg" alt="" />
-            <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              William Playfair's chart of "Exports &amp; Imports to and from all
-              of North America," published in the third edition of the <cite> Commercial
-              and Political Atlas</cite> (1801). Image courtesy of the Library Company of
-              Philadelphia.
-            </figcaption>
-          </figure>
+        <Column>
+          <Figure
+            src="/images/playfair/1-northamerica.jpg"
+            alt=""
+          >
+            William Playfair's chart of "Exports &amp; Imports to and from all
+            of North America," published in the third edition of the <cite> Commercial
+            and Political Atlas</cite> (1801). Image courtesy of the Library Company of
+            Philadelphia.
+          </Figure>
 
-          <figure className="flex flex-col items-center my-12 w-3/4">
-            <img className="space-y-2" src="/images/playfair/2-wheat.jpg" alt="" />
-            <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              Playfair's "Chart Showing at One View the Price of
-              the Quarter of Wheat, &amp; Wages of Labour by the
-              Week, from the Year 1565 to 1821," published in
-              1822. The chart's representation of the price of
-              wheat is among the first bar charts presently known.
-              (The bar charts included in the <cite> Commercial and
-              Political Atlas</cite> are believed to be the first).
-              Image courtesy of Wikimedia Commons."
-            </figcaption>
-          </figure>
+          <Figure
+            src="/images/playfair/2-wheat.jpg"
+            alt=""
+          >
+            Playfair's "Chart Showing at One View the Price of
+            the Quarter of Wheat, &amp; Wages of Labour by the
+            Week, from the Year 1565 to 1821," published in
+            1822. The chart's representation of the price of
+            wheat is among the first bar charts presently known.
+            (The bar charts included in the <cite> Commercial and
+            Political Atlas</cite> are believed to be the first).
+            Image courtesy of Wikimedia Commons."
+          </Figure>
 
-          <figure className="flex flex-col items-center my-12 w-3/4">
-            <img className="space-y-2" src="/images/playfair/3-pie.jpg" alt="" />
-            <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              Playfair's "Chart Representing the Extent,
-              Population &amp; Revenues, of the Principal Nations
-              in Europe, after the Division of Poland &amp; Treaty
-              of Luneville," published in the <cite>Statistical Breviary</cite>
-              (1801). The pie charts included in this volume are
-              considered the first presently known. Image courtesy
-              of Wikimedia Commons.
-            </figcaption>
-          </figure>
+          <Figure
+            src="/images/playfair/3-pie.jpg"
+            alt=""
+          >
+            Playfair's "Chart Representing the Extent,
+            Population &amp; Revenues, of the Principal Nations
+            in Europe, after the Division of Poland &amp; Treaty
+            of Luneville," published in the <cite>Statistical Breviary</cite>
+            (1801). The pie charts included in this volume are
+            considered the first presently known. Image courtesy
+            of Wikimedia Commons.
+          </Figure>
         </Column>
       </TwoColumnLayout>
       <OneColumnLayout className="space-y-5 py-10">
@@ -181,7 +182,7 @@ export default function PlayfairPage() {
       </ChapterSectionTitle>
 
       <TwoColumnLayout>
-        <Column className="space-y-5 py-10">
+        <Column className="space-y-5 py-10" shouldPin={true}>
           <p>
             Playfair did not intend to include the charts' underlying
             data in his book. It was only after soliciting feedback
@@ -202,18 +203,18 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column className="flex flex-col items-center">
-          <figure className="flex flex-col items-center my-12 w-3/4">
-            <img className="space-y-2" src="/images/playfair/chart-1787.jpg" alt="" />
-            <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              The data on "America" included in the second edition
-              of The Commercial and Political Atlas (1787), on the
-              recommendation of James Watt. Image courtesy of the
-              Library Company of Philadelphia,
-              <a href="http://www.librarycompany.org">
-                www.librarycompany.org
-              </a>
-            </figcaption>
-          </figure>
+          <Figure
+            src="/images/playfair/chart-1787.jpg"
+            alt=""
+          >
+            The data on "America" included in the second edition
+            of The Commercial and Political Atlas (1787), on the
+            recommendation of James Watt. Image courtesy of the
+            Library Company of Philadelphia,
+            <a href="http://www.librarycompany.org">
+              www.librarycompany.org
+            </a>
+          </Figure>
         </Column>
       </TwoColumnLayout>
       <OneColumnLayout className="space-y-5 py-10">
@@ -377,13 +378,13 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column>
-        <figure className="flex flex-col items-center my-12 w-3/4">
-            <img className="space-y-2" src="/images/playfair/5-minard.png" alt="" />
-            <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              Charles Minard's 1869 chart of Napoleon's failed
-              Russia campaign. Image courtesy of Wikimedia Commons.
-            </figcaption>
-          </figure>
+          <Figure
+            src="/images/playfair/5-minard.png"
+            alt=""
+          >
+            Charles Minard's 1869 chart of Napoleon's failed
+            Russia campaign. Image courtesy of Wikimedia Commons.
+          </Figure>
         </Column>
       </TwoColumnLayout>
       <OneColumnLayout className="space-y-5 py-10">
@@ -507,7 +508,7 @@ export default function PlayfairPage() {
         Playfair's Argument in the Present
       </ChapterSectionTitle>
       <TwoColumnLayout>
-        <Column className="space-y-5 py-10">
+        <Column className="space-y-5 py-10" shouldPin={true}>
           <p>
             From our perspective in the present, it appears that
             Playfair was correct in his assertion about the
@@ -532,23 +533,21 @@ export default function PlayfairPage() {
           />
         </Column>
         <Column>
-          <figure className="flex flex-col items-center my-12 w-3/4">
-            <img className="space-y-2" src="/images/playfair/6-snow.jpg" alt="" />
-            <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              The map created by John Snow in 1854 that shows how
-              Cholera cases are clustered around the town's water
-              pump. Image courtesy of Wikimedia Commons.
-            </figcaption>
-          </figure>
-          <figure className="flex flex-col items-center my-12 w-3/4">
-            <img className="space-y-2" src="/images/playfair/7-nightingale.jpg" alt="" />
-            <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              The coxcomb chart created by Florence Nightingale in
-              1858 which emphasizes the number of (preventable)
-              British military deaths due to poor sanitation.
-              Image courtesy of Wikimedia Commons.
-            </figcaption>
-          </figure>
+          <Figure
+            src="/images/playfair/6-snow.jpg"
+            alt=""
+          >
+            The map created by John Snow in 1854 that shows how Cholera cases are clustered
+            around the town's water pump. Image courtesy of Wikimedia Commons.
+          </Figure>
+          <Figure
+            src="/images/playfair/7-nightingale.jpg"
+            alt=""
+          >
+            The coxcomb chart created by Florence Nightingale in 1858 which emphasizes the number
+            of (preventable) British military deaths due to poor sanitation.
+            Image courtesy of Wikimedia Commons.
+          </Figure>
         </Column>
       </TwoColumnLayout>
       <OneColumnLayout className="space-y-5 py-10">
@@ -598,7 +597,7 @@ export default function PlayfairPage() {
         </p>
       </OneColumnLayout>
       <TwoColumnLayout>
-        <Column className="space-y-5 py-10">
+        <Column className="space-y-5 py-10" shouldPin={true}>
           <p>
             Consider the wide range of visualization libraries and
             platforms that make use of Playfair's charts in order to
@@ -628,30 +627,24 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column>
-          <div className="flex">
-            <figure className="flex flex-col items-center my-12 w-3/4">
-              <img className="space-y-2" src="/images/playfair/8-lyra.png" alt="" />
-              <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              </figcaption>
-            </figure>
-            <figure className="flex flex-col items-center my-12 w-3/4">
-              <img className="space-y-2" src="/images/playfair/9-protovis.png" alt="" />
-              <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              </figcaption>
-            </figure>
-          </div>
-          <figure className="flex flex-col items-center my-12 w-3/4">
-            <img className="space-y-2" src="/images/playfair/10-camoes.png" alt="" />
-            <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              Clockwise from top left: Playfair's chart of wheat and
-              wages, as recreated in Lyra, an early visualization
-              platform designed by Arvind Satyanarayan and Jeffrey
-              Heer; the same chart recreated in Protovis, an early
-              JavaScript visualization library developed by Mike
-              Bostock; the same chart recreated in Microsoft Excel
-              by Jorge Camoes. Screenshots by Lauren Klein.
-            </figcaption>
-          </figure>
+          <Figure
+            src="/images/playfair/8-lyra.png"
+            alt=""
+          ></Figure>
+          <Figure
+            src="/images/playfair/9-protovis.png"
+            alt=""
+          ></Figure>
+          <Figure
+            src="/images/playfair/10-camoes.png"
+            alt=""
+          >
+            Clockwise from top left: Playfair's chart of wheat and wages, as recreated in Lyra,
+            an early visualization platform designed by Arvind Satyanarayan and Jeffrey Heer;
+            the same chart recreated in Protovis, an early JavaScript visualization library
+            developed by Mike Bostock; the same chart recreated in Microsoft Excel by Jorge
+            Camoes. Screenshots by Lauren Klein."
+          </Figure>
         </Column>
       </TwoColumnLayout>
       <OneColumnLayout className="space-y-5 py-10">
@@ -738,7 +731,7 @@ export default function PlayfairPage() {
         </p>
       </OneColumnLayout>
       <TwoColumnLayout>
-        <Column className="space-y-5 py-10">
+        <Column className="space-y-5 py-10" shouldPin={true}>
           <p>
             The reality, of course, was that Playfair's “simple
             invention” would go unrecognized for over a century—first
@@ -772,17 +765,15 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column>
-          <figure className="flex flex-col items-center my-12 w-3/4">
-            <img className="space-y-2" src="/images/playfair/jevons.png" alt="" />
-            <figcaption className="text-lg text-center mt-10 w-2/3 font-william">
-              Jevons's illustration of the benefits of the
-              "graphical method," in which "it becomes possible to
-              trae a line among the points which will approximate
-              to the true law more nearly than the ponts
-              themselves." Image Courtesy of Google Books.
-              Digitized by Harvard University.
-            </figcaption>
-          </figure>
+          <Figure
+            src="/images/playfair/jevons.png"
+            alt=""
+          >
+            Jevons's illustration of the benefits of the "graphical method,"
+            in which "it becomes possible to trae a line among the points
+            which will approximate to the true law more nearly than the ponts
+            themselves." Image Courtesy of Google Books. Digitized by Harvard University.
+          </Figure>
         </Column>
       </TwoColumnLayout>
       <OneColumnLayout className="space-y-5 py-10">
