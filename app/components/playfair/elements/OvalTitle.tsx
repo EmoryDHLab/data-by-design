@@ -1,0 +1,43 @@
+export default function OvalTitle(props) {
+  return (
+    <g>
+      <ellipse
+        cx={props.ellipse.cx}
+        cy={props.ellipse.cy}
+        rx={props.ellipse.rx}
+        ry={props.ellipse.ry}
+        fill={props.color}
+        stroke="black"
+        strokeWidth="0.2"
+      >
+      </ellipse>
+      <text
+        fill="black"
+        x={props.topText.x}
+        y={props.topText.y}
+        fontFamily="Maranallo"
+        fontSize="2.7"
+      >
+        {props.topText.text}
+      </text>
+      <text
+        fill="black"
+        x={props.midText.x}
+        y={props.midText.y}
+        fontFamily="Chancery Cursive"
+        fontSize="2.9"
+      >
+        {props.midText.text}
+      </text>
+      <text
+        fill="black"
+        x={props.botText.x}
+        y={props.botText.y}
+        fontFamily="Maranallo"
+        fontSize="3"
+      >
+        {props.botText.text}
+      </text>
+    </g>
+  )
+}
