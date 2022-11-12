@@ -6,4 +6,11 @@ export interface StudentData {
 export interface Category {
   displayName: string;
   color: string;
+  students: Student[];
+}
+
+export interface Student {
+  name: string;
+  location: string;
+  year: number;
 }
