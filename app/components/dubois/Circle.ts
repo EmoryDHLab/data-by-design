@@ -4,7 +4,7 @@ export class Circle {
   x: number;
   y: number;
   color: string;
-  id: string;
+  id: number;
   diameter: number;
   others: Circle[];
   dragging: boolean;
@@ -19,7 +19,7 @@ export class Circle {
     x: number,
     y: number,
     diameter: number,
-    id: string,
+    id: number,
     others: Circle[],
     text: string
   ) {
@@ -83,7 +83,9 @@ export class Circle {
   pressed() {
     if (
       this.p5.dist(this.p5.mouseX, this.p5.mouseY, this.x, this.y) <
-      this.diameter / 2
+        this.diameter / 2 &&
+      this.p5.mouseX &&
+      this.p5.mouseY
     ) {
       this.dragging = true;
       // If so, keep track of relative location of click to corner of rectangle
@@ -93,9 +95,8 @@ export class Circle {
   }
 
   update() {
-    const center = { x: this.p5.width / 2, y: this.p5.width / 2 };
     // Adjust location if being dragged
-    if (this.dragging) {
+    if (this.dragging && this.offsetX && this.offsetY) {
       this.x = this.p5.mouseX + this.offsetX;
       this.y = this.p5.mouseY + this.offsetY;
     }

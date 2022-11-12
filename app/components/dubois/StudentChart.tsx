@@ -19,7 +19,7 @@ const charts: { [key in Chart]: () => ReactNodeLike } = {
 
 export function StudentChart() {
   const [activeChart, setActiveChart] = useState<Chart>(Chart.One);
-  const ChartComponent = charts[activeChart];
+  const ChartComponent = charts[activeChart] || null;
   return (
     <div className="flex flex-col items-center max-w-[800px] ">
       <span>

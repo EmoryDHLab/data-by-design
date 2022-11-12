@@ -1,7 +1,7 @@
 import { Circle } from "~/components/dubois/Circle";
 import { useEffect } from "react";
 import p5 from "p5";
-import { StudentData } from "~/components/dubois/types";
+import { Student, StudentData } from "~/components/dubois/types";
 
 interface Props {
   studentData: StudentData;
@@ -15,16 +15,16 @@ const OFFSET = Math.PI * 1.1;
  * return undefined.
  */
 function createNewCircle(
-  p5,
-  circles,
-  categoryCircles,
-  id,
-  student,
-  pieChartRadius,
-  circleDiameter,
-  startAngle,
-  endAngle,
-  center
+  p5: p5,
+  circles: Circle[],
+  categoryCircles: Circle[],
+  id: number,
+  student: Student,
+  pieChartRadius: number,
+  circleDiameter: number,
+  startAngle: number,
+  endAngle: number,
+  center: { x: number; y: number }
 ) {
   // Using polar coordinates here
   // Get a random radius
