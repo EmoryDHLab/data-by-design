@@ -1,13 +1,12 @@
-interface Props {
-  backgroundColor: string;
-  textColor: string;
-}
+import { useContext } from "react";
+import { ThemeContext } from "~/theme";
 
-export default function Footer({ backgroundColor, textColor }: Props) {
+export default function Footer() {
+  const { backgroundColor, primaryTextColor } = useContext(ThemeContext);
   return (
     <div>
       <div
-        className={`grid grid-cols-12 gap-x-6 p-10 ${backgroundColor} ${textColor}`}
+        className={`grid grid-cols-12 gap-x-6 p-10 bg-${backgroundColor} text-${primaryTextColor}`}
       >
         <div className="col-start-3 col-end-6 space-y-20">
           <span className="font-william text-3xl">Data By Design</span>
