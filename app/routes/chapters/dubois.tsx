@@ -275,54 +275,61 @@ export default function DuboisChapter() {
           <DocumentViewer />
         </div>
         <div className="full-bleed flex">
-        <div className="w-1/2 px-20 flex items-center">
-          <div>
-          <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
-            The first chart of{" "}
-          </span>
-          <span
-            className="italic font-normal"
-            style={{ color: "rgb(41, 41, 41)" }}
-          >
-            The Georgia Negro{" "}
-          </span>
-          <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
-            series, which functions as its title page, makes clear how Du Bois
-            understood the twofold purpose of the project. Below a pair of
-            Mercator projections, one of Africa and the other of the Americas,
-            which together depict the “routes of the African slave trade,” are
-            two epigraphs. The first makes the expository aim of the series
-            explicit: “to illustrate the development of the American Negro in a
-            single typical state of the United States.” The second advances the
-            argument of the series: “The problem of the 20
-          </span>
-          <span style={{ color: "rgb(41, 41, 41)" }}>th</span>
-          <span style={{ color: "rgb(41, 41, 41)" }}>
-            {" "}
-            century is the problem of the color line.”
-          </span>
-          </div>
-        </div>
-        <div className="flex flex-col items-center middle-full p-10 w-1/2">
-          <img
-            src="/images/dubois/ch5-03-georgia.jpg"
-            alt=""
-            loading="lazy"
-            width="100%"
-          />
-          <div className="font-william text-center mt-10 w-5/6">
-            <p>
-              <span>Above: The introductory image of </span>
-              <cite>The Georgia Negro: A Social Study, </cite>
-              <span>
-                the first set of charts included in the Paris Exposition. Image
-                courtesy of the Library of Congress, Prints &amp; Photographs
-                Division,{" "}
+          <div className="w-1/2 px-20 flex items-center">
+            <div>
+              <span
+                className="font-normal"
+                style={{ color: "rgb(41, 41, 41)" }}
+              >
+                The first chart of{" "}
               </span>
-              <span>LC-DIG-ppmsca-33863.</span>
-            </p>
+              <span
+                className="italic font-normal"
+                style={{ color: "rgb(41, 41, 41)" }}
+              >
+                The Georgia Negro{" "}
+              </span>
+              <span
+                className="font-normal"
+                style={{ color: "rgb(41, 41, 41)" }}
+              >
+                series, which functions as its title page, makes clear how Du
+                Bois understood the twofold purpose of the project. Below a pair
+                of Mercator projections, one of Africa and the other of the
+                Americas, which together depict the “routes of the African slave
+                trade,” are two epigraphs. The first makes the expository aim of
+                the series explicit: “to illustrate the development of the
+                American Negro in a single typical state of the United States.”
+                The second advances the argument of the series: “The problem of
+                the 20
+              </span>
+              <span style={{ color: "rgb(41, 41, 41)" }}>th</span>
+              <span style={{ color: "rgb(41, 41, 41)" }}>
+                {" "}
+                century is the problem of the color line.”
+              </span>
+            </div>
           </div>
-        </div>
+          <div className="flex flex-col items-center middle-full p-10 w-1/2">
+            <img
+              src="/images/dubois/ch5-03-georgia.jpg"
+              alt=""
+              loading="lazy"
+              width="100%"
+            />
+            <div className="font-william text-center mt-10 w-5/6">
+              <p>
+                <span>Above: The introductory image of </span>
+                <cite>The Georgia Negro: A Social Study, </cite>
+                <span>
+                  the first set of charts included in the Paris Exposition.
+                  Image courtesy of the Library of Congress, Prints &amp;
+                  Photographs Division,{" "}
+                </span>
+                <span>LC-DIG-ppmsca-33863.</span>
+              </p>
+            </div>
+          </div>
         </div>
         <p>
           <span>These words would reappear several years later in </span>
@@ -816,7 +823,7 @@ export default function DuboisChapter() {
         <div className="flex flex-col items-center middle-full">
           <div>
             <img
-              src="/dubois/images/ch5-11-property.jpg"
+              src="/images/dubois/ch5-11-property.jpg"
               alt=""
               loading="lazy"
               width="100%"
@@ -836,11 +843,9 @@ export default function DuboisChapter() {
             </p>
           </div>
         </div>
-        <p>
-          <span className="font-normal">
-            Education, Collaboration, and Credit
-          </span>
-        </p>
+        <ChapterSectionTitle>
+          Education, Collaboration, and Credit
+        </ChapterSectionTitle>
         <p>
           <span className="font-normal">
             If one major purpose of the Paris Exposition was to illustrate the
@@ -878,7 +883,7 @@ export default function DuboisChapter() {
         <div className="flex flex-col items-center middle-full">
           <div>
             <img
-              src="/dubois/images/ch5-12-series.jpg"
+              src="/images/dubois/ch5-12-series.jpg"
               alt=""
               loading="lazy"
               width="100%"
@@ -1115,9 +1120,9 @@ export default function DuboisChapter() {
             Exposition charts.
           </span>
         </p>
-        <p>
-          <span>Visualization as Witness and as Testimony</span>
-        </p>
+        <ChapterSectionTitle>
+          Visualization as Witness and as Testimony
+        </ChapterSectionTitle>
         <p>
           <span>
             The charts that Du Bois and his students together created for the
