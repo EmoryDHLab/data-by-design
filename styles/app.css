@@ -1185,6 +1185,11 @@ video {
   padding-bottom: 4rem !important;
 }
 
+.py-20 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
 .py-9 {
   padding-top: 2.25rem !important;
   padding-bottom: 2.25rem !important;
@@ -1214,6 +1219,10 @@ video {
   padding-top: 0px !important;
 }
 
+.pt-20 {
+  padding-top: 5rem !important;
+}
+
 .pl-24 {
   padding-left: 6rem !important;
 }
@@ -1240,10 +1249,6 @@ video {
 
 .pt-10 {
   padding-top: 2.5rem !important;
-}
-
-.pt-20 {
-  padding-top: 5rem !important;
 }
 
 .pr-12 {
@@ -1428,6 +1433,18 @@ video {
 }
 
 .grid-wrapper > * {
+  grid-column: 2;
+}
+
+.column-grid-wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(45ch, 100%)
+    1fr;
+}
+
+.column-grid-wrapper > * {
   grid-column: 2;
 }
 

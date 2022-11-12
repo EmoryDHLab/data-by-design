@@ -19,7 +19,7 @@ export default function PeabodyPage() {
       />
       <TwoColumnLayout className="py-10">
         <Column>
-          <p className="px-20 py-5">
+          <p>
             <span>
               Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
             </span>
@@ -49,7 +49,7 @@ export default function PeabodyPage() {
               </span>{" "}
             </span>
           </p>
-          <p className="px-20 py-5">
+          <p>
             <span>
               Indeed, Peabody was an educator to her core. She came from a
               family of teachers. Her mother and two sisters all taught
@@ -77,13 +77,15 @@ export default function PeabodyPage() {
             </span>
           </p>
           <div className="w-full h-[300px]" />
-          <PullQuote
-            title="Peabody designed her charts to be abstract rather than intuitive;"
-            subtitle="to promote sustained reflection rather than immediate insight. And
+          <FullBleed>
+            <PullQuote
+              title="Peabody designed her charts to be abstract rather than intuitive;"
+              subtitle="to promote sustained reflection rather than immediate insight. And
             she did so with a clear goal in mind: to provoke a unique
             imaginative response in each viewer."
-          />
-          <p className="p-20">
+            />
+          </FullBleed>
+          <p className="py-20">
             <span>
               Along with boxes of her textbooks, Peabody traveled with a fabric
               roll the size of a living room rug, which contained a floor-sized
@@ -607,7 +609,7 @@ export default function PeabodyPage() {
               <span>the visualizations that they would then study.</span>
             </p>
           </Column>
-          <Column className="px-20">
+          <Column>
             <img
               src="/images/ch4-blank-chart.webp"
               alt=""
@@ -636,7 +638,7 @@ export default function PeabodyPage() {
       </div>
       <TwoColumnLayout>
         <Column className="space-y-8">
-          <p className="px-20">
+          <p>
             <span>
               But the exercise of creating a chronological chart from scratch is
               quite hard, as you--the reader--might have discovered from the
@@ -670,7 +672,7 @@ export default function PeabodyPage() {
               the grid becoming a canvas for pattern and unbridled play.
             </span>
           </p>
-          <p className="px-20">
+          <p>
             <span>
               It’s worth repeating that the difficulty of the Polish-American
               system is both a liability of the form and also the point. Peabody
@@ -693,7 +695,7 @@ export default function PeabodyPage() {
             title="By prompting her students to create new narratives of the past, "
             subtitle="they would also imagine alternative possible futures. "
           />
-          <p className="px-20">
+          <p>
             <span>Her goal with the </span>
             <span className="italic">Polish-American System</span>
             <span>
@@ -726,7 +728,7 @@ export default function PeabodyPage() {
               they would also imagine alternative possible futures.
             </span>
           </p>
-          <p className="px-20">
+          <p>
             <span>
               The political context that provided Peabody with the motivation to
               publish her history textbooks is crucial for understanding both
@@ -936,7 +938,7 @@ export default function PeabodyPage() {
         </p>
       </CenteredLayout>
       <TwoColumnLayout className="pt-20">
-        <Column className="px-20">
+        <Column>
           <p>
             <span>
               And yet, because the mural charts were not valued as objects of
@@ -982,7 +984,7 @@ export default function PeabodyPage() {
             </span>
           </p>
         </Column>
-        <Column className="px-20">
+        <Column>
           <div className="flex flex-col items-center middle-full">
             <div>
               <div
