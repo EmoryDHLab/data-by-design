@@ -4,13 +4,14 @@ import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
-import OneColumnLayout from "~/components/layout/OneColumnLayout";
+import CenteredLayout from "~/components/layout/CenteredLayout";
 import FullBleed from "~/components/layout/FullBleed";
+import Footer from "~/components/Footer";
 
 export default function PeabodyPage() {
   return (
     <ThemeContext.Provider
-      value={{ backgroundColor: "peabodyPrimary", primaryTextColor: "white" }}
+      value={{ backgroundColor: "peabodyPrimary", primaryTextColor: "black" }}
     >
       <ChapterTitle
         title="The Work of Knowledge"
@@ -169,7 +170,7 @@ export default function PeabodyPage() {
       <ChapterSectionTitle>
         A Visual Method of Making History
       </ChapterSectionTitle>
-      <OneColumnLayout>
+      <CenteredLayout>
         <div className="space-y-5 py-10">
           <p>
             <span>
@@ -559,13 +560,13 @@ export default function PeabodyPage() {
             therefore, each viewer as that knowledge’s source.
           </span>
         </p>
-      </OneColumnLayout>
+      </CenteredLayout>
       <div className="py-10">
         <ChapterSectionTitle>
           The Politics of Visual Knowledge Production
         </ChapterSectionTitle>
         <TwoColumnLayout className="py-10">
-          <Column className="px-20">
+          <Column>
             <p>
               <span>
                 Peabody was a lifelong proponent of what might be described
@@ -739,7 +740,7 @@ export default function PeabodyPage() {
           </p>
         </Column>
       </TwoColumnLayout>
-      <OneColumnLayout>
+      <CenteredLayout>
         <p>
           <span>
             Other charts from the same era make their politics more explicit,
@@ -871,11 +872,11 @@ export default function PeabodyPage() {
             a course of future action.
           </span>
         </p>
-      </OneColumnLayout>
+      </CenteredLayout>
       <ChapterSectionTitle>
         The Gendered Archive of Data Visualization
       </ChapterSectionTitle>
-      <OneColumnLayout className="space-y-5">
+      <CenteredLayout className="space-y-5">
         <p>
           <span>
             There is a final lesson to be learned from Elizabeth Palmer Peabody
@@ -933,7 +934,7 @@ export default function PeabodyPage() {
             </span>{" "}
           </span>
         </p>
-      </OneColumnLayout>
+      </CenteredLayout>
       <TwoColumnLayout className="pt-20">
         <Column className="px-20">
           <p>
@@ -1144,492 +1145,382 @@ export default function PeabodyPage() {
           </div>
         </Column>
       </TwoColumnLayout>
-      <OneColumnLayout>
-        <div className="section-root">
-          <div className="space-y-10">
-            <div>
-              <div className="grid grid-cols-10 2xl:grid-cols-14">
-                <div className="space-y-6 contents middle-subgrid"></div>
-              </div>
-            </div>
-            <div>
-              <div
-                className="grid grid-cols-10 2xl:grid-cols-14"
-                style={{ marginBottom: "103px" }}
-              >
-                <div className="space-y-6 left-col col-start-1 col-end-6 2xl:col-end-8 self-center grid grid-cols-7"></div>
-                <div className="pin-spacer">
-                  <div className="space-y-6 right-col col-span-full col-start-7 2xl:col-start-8 self-center grid grid-cols-7"></div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div
-                className="grid grid-cols-10 2xl:grid-cols-14"
-                style={{ marginBottom: "301px" }}
-              >
-                <div className="space-y-6 left-col col-start-1 col-end-6 2xl:col-end-8 self-center grid grid-cols-7"></div>
-                <div className="pin-spacer">
-                  <div className="space-y-6 right-col col-span-full col-start-7 2xl:col-start-8 self-center grid grid-cols-7"></div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="grid grid-cols-10 2xl:grid-cols-14">
-                <div className="space-y-6 contents middle-subgrid">
-                  <p>
-                    <span>
-                      The tedious, time-intensive nature of the Floor Chart
-                      project provides another path of connection back to the
-                      original mural charts. For Peabody did not only
-                      demonstrate the charts as part of her sales pitch; as an
-                      additional incentive, she also promised an original mural
-                      chart to any teacher who purchased copies of one of her
-                      textbooks for their entire class. Writing to a friend in
-                      1850, Peabody revealed that she was “aching from the
-                      fatigue of making Charts for the Schools who will take the
-                      book.” The letter continues:
-                    </span>
-                  </p>
-                  <div className="md:my-16 middle-text flex flex-col">
-                    <div className="font-william">
-                      <p>
-                        <span>
-                          Every school must have a mural chart—&amp; there is
-                          but one way of making them (until they can be made by
-                          ten thousands) &amp; that is by stencilling [
-                        </span>
-                        <span className="italic">sic</span>
-                        <span>
-                          ]… I can do one a day. But I must sell them cheap… To
-                          day I worked 15 hours—only sitting down to take my
-                          meals—&amp; so I have done all week—so much fatigue
-                          stupefies one—but as soon as it is adopted in a few
-                          towns I shall be able to hire someone to do this
-                          drudgery for me.
-                        </span>
-                      </p>
-                    </div>
-                    <div className="font-sans text-lg text-gray-500">
-                      <p>
-                        <span>Elizabeth Peabody,</span>
-                      </p>
-                      <p>
-                        <span>Letter to Samuel Gray Ward, September 1850</span>
-                      </p>
-                    </div>
-                  </div>
-                  <p>
-                    <span>
-                      While we cannot change the fact that we no longer have
-                      access to the original mural charts, letters like these
-                      help to attest to the physical labor that was required to
-                      produce them. With its reference to the “stencilling”
-                      through which Peabody created her colorful symbols, as
-                      well as to its characterization of the tasks involved in
-                      making the charts as “drudgery,” the letter also
-                      underscores the gendered dimensions of Peabody’s knowledge
-                      work.
-                    </span>
-                  </p>
-                  <div className="md:my-16 middle-full">
-                    <div className="bg-theme font-william grid grid-cols-8 py-9">
-                      <div className="col-start-2 col-end-8">
-                        <div className="big text-xl lg:text-2xl xl:text-4xl">
-                          <p>
-                            <span>Who else are we missing</span>
-                          </p>
-                        </div>
-                        <div className="small text-base lg:text-xl xl:text-2xl">
-                          <p>
-                            <span>
-                              when we fail to include examples like these in the
-                              stories we tell about the emergence of data
-                              visualization?
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <p>
-                    <span>
-                      It’s not a coincidence that Peabody understood the labor
-                      of making her mural charts as women’s work, and that these
-                      same charts were not preserved. Then as now, there exists
-                      a hierarchy of work that aligns with the hierarchy of
-                      gender that governs the Anglo-Western world. Work that is
-                      performed outside the home is valued, both culturally and
-                      monetarily, over work that is performed within it. Work
-                      that is perceived as more rigorous, or more
-                      professional—like, for instance, the political economy
-                      that functioned as Playfair’s primary trade—is valued,
-                      again, both culturally and monetarily, over work that is
-                      perceived as more intuitive, or more domestic—like, for
-                      instance, the teaching that functioned as Peabody’s main
-                      employ. Even—or, more precisely, especially—within the art
-                      world, creative work that is perceived as high art is
-                      valued above work perceived as craft.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        37
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      These gendered divisions of labor are among primary
-                      reasons that Peabody’s mural charts never entered the
-                      archive. And they are the same reasons that her charts
-                      have not (yet) been centered in the account of the rise of
-                      modern data visualization that is most commonly told. But
-                      who else are we missing when we fail to include examples
-                      like these in the stories we tell about the emergence of
-                      data visualization? And what possible future visualization
-                      designs are we foreclosing, either intentionally or
-                      inadvertently, when we do?
-                    </span>
-                  </p>
-                  <p>
-                    <span>
-                      Women’s work of various forms has much to contribute to
-                      larger narratives about the development of most scholarly
-                      disciplines and professional fields. A final example helps
-                      to underscore this point: most contemporary viewers, when
-                      seeing Peabody’s charts for the first time, observe that
-                      they look like paintings by Piet Mondrian, the famous
-                      Dutch modernist.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        38
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      To be sure, Peabody’s charts strongly resemble Mondrian’s
-                      own bold, colorful, geometric grid. But Peabody’s
-                      self-account of the work involved in making the mural
-                      charts brings to mind a second point of reference, which
-                      is not painting but quilting: an artform traditionally
-                      practiced by women, and that has long been relegated to
-                      the world of “folk art” and craft.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        39
-                      </span>{" "}
-                    </span>
-                  </p>
-                  <div className="flex flex-col items-center middle-full">
-                    <div>
-                      <div
-                        className="doc-table-root"
-                        style={{
-                          display: "grid",
-                          gridTemplateAreas: '"area0 area1"',
-                        }}
-                      >
-                        <div
-                          className="doc-table-cell"
-                          style={{ gridArea: "area0" }}
-                        >
-                          <img
-                            src="/_nuxt/img/ch4-19-rachel-carey-george.fcb276a.jpg"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                        <div
-                          className="doc-table-cell"
-                          style={{ gridArea: "area1" }}
-                        >
-                          <img
-                            src="/_nuxt/img/ch4-20-gbq-q030-06.e84f07f.jpg"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="caption text-center mt-10 w-5/6">
-                      <p>
-                        <span>
-                          Left: “Housetop,” by Rachel Carey George, ca. 1935.
-                          Right: “Housetop” variation, design by Mary Lee
-                          Bendolph. 1998, quilted by Essie Bendolph Pettaway,
-                          2001. Photos courtesy of Tinwood Media.{" "}
-                        </span>
-                        <span>Permissions pending.</span>
-                      </p>
-                    </div>
-                  </div>
-                  <p>
-                    <span>
-                      Pictured above are two quilts from the area of Alabama
-                      known as Gee’s Bend, a small, rural Black community, 35
-                      miles south of Selma, that can trace its roots to a cotton
-                      plantation that was established there in the early
-                      nineteenth century. While valued by the residents of Gee’s
-                      Bend for centuries, both for their aesthetics and for the
-                      family histories that they encode, the quilts have only
-                      recently begun to be recognized by art historians as key
-                      contributors to the development of modernist art.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        40
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      Exhibitions at the Whitney Museum in New York, in 2002;
-                      the Turner Contemporary in London, in 2019; and others,
-                      have confirmed how the quilts “predate like-minded works
-                      by their more famous abstract art cousins.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        41
-                      </span>{" "}
-                    </span>
-                    <span></span>
-                  </p>
-                  <p>
-                    <span>
-                      As Black women who pursued their art while enslaved, and
-                      have continued to persist through slavery’s perpetual
-                      wake, the life experiences of the Gee’s Bend quilters
-                      could not be farther removed from those of Elizabeth
-                      Palmer Peabody, a white woman protected by her family’s
-                      membership in the Boston elite. But the creative work of
-                      the Gee’s Bend quilters, as distinguished historian Elsa
-                      Barkley Brown has shown, offers a model that can help
-                      structure a range of complex questions about epistemology,
-                      historiography, and pedagogy—indeed, the same questions in
-                      which Peabody’s work was engaged. Drawing inspiration from
-                      the “polyrhythmic, ‘nonsymmetrical,’ and nonlinear”
-                      patterns of the Gee’s Bend—among the Black women’s quilts
-                      that she studies—Brown advocates for a pivoting of the
-                      center of the history classroom—that is, not decentering
-                      one perspective in favor of another but instead
-                      intentionally and continually shifting the focus from one
-                      perspective to the next.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        42
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      The result of this pedagogical strategy is capacious and
-                      multifold: it allows the artifacts and experiences under
-                      analysis to be understood in the context of their own
-                      creation, and it allows the students performing this
-                      interpretive work to “become the voices of authority in
-                      their own education.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        43
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      Ultimately, Brown concludes, “the class is a quilt. It is
-                      precisely the contrast which organizes the whole and holds
-                      it together.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        44
-                      </span>{" "}
-                    </span>
-                    <span></span>
-                  </p>
-                  <p>
-                    <span>
-                      We might similarly come to understand history as a
-                      quilt—as Brown strongly implies and as our project team
-                      has literally fabricated. But our work—and now I speak as
-                      a “we” in the general sense, on behalf of scholars of data
-                      visualization and those who design them—is far from
-                      complete. Consider the surprise that greeted me—along with
-                      no small degree of pleasure—upon discovering that a quilt
-                      created by Loretta Pettway, one of the Gee’s Bend
-                      quilters, graces the cover of Edward Tufte’s most recent
-                      book,{" "}
-                    </span>
-                    <span className="italic">Seeing with Fresh Eyes</span>
-                    <span>
-                      {" "}
-                      (2020). More than merely a compelling image—“unorthodox,
-                      fresh, amazing” is the extent of how Tufte describes it in
-                      the text—we must learn to see Pettaway’s quilt, like
-                      Peabody’s chart, as a system of knowledge making.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        45
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      These two systems of knowledge-making, moreover, helpfully
-                      converge. Both employ shape and color in order to
-                      represent and recall past events: the quilts in order
-                      commemorate a community’s ancestors and their stories; and
-                      the charts, as we have learned, in order to craft new
-                      narratives about the nation’s defining historical events.
-                      Both also rely upon sense perception—and more
-                      specifically, the tactile experiences of the body—in order
-                      to assimilate visual display into knowledge. Whether
-                      enveloping oneself in a quilt, or gathering together
-                      around a mural chart, the result is a more immersive
-                      encounter with the object—and with the events of the past
-                      that the object seeks to commemorate, on the one hand; or
-                      on the other, convey.
-                    </span>
-                  </p>
-                  <p>
-                    <span></span>
-                  </p>
-                  <p>
-                    <span>
-                      As Brown reminds us with respect to the quilts, these
-                      artifacts are “illustrative of a particular way of seeing,
-                      of ordering the world.”
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        46
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      We might extend this assertion to data visualization.
-                      Indeed, the images and interactions that we create reflect
-                      our own ways of seeing and ordering the world. This fact
-                      does not invalidate the insights that they prompt, or the
-                      knowledge that they help us to acquire. On the contrary,
-                      it informs the knowledge that any particular visualization
-                      helps bring to light. With a wider awareness of the
-                      multiple ways of seeing the world, and a wider range of
-                      methods for ordering its data, we can enrich the basis of
-                      what we presently know, and—as Peabody envisioned—open up
-                      new possibilities for future knowledge.
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
+      <CenteredLayout>
+        <p>
+          <span>
+            The tedious, time-intensive nature of the Floor Chart project
+            provides another path of connection back to the original mural
+            charts. For Peabody did not only demonstrate the charts as part of
+            her sales pitch; as an additional incentive, she also promised an
+            original mural chart to any teacher who purchased copies of one of
+            her textbooks for their entire class. Writing to a friend in 1850,
+            Peabody revealed that she was “aching from the fatigue of making
+            Charts for the Schools who will take the book.” The letter
+            continues:
+          </span>
+        </p>
+        <div className="font-william">
+          <p>
+            <span>
+              Every school must have a mural chart—&amp; there is but one way of
+              making them (until they can be made by ten thousands) &amp; that
+              is by stencilling [
+            </span>
+            <span className="italic">sic</span>
+            <span>
+              ]… I can do one a day. But I must sell them cheap… To day I worked
+              15 hours—only sitting down to take my meals—&amp; so I have done
+              all week—so much fatigue stupefies one—but as soon as it is
+              adopted in a few towns I shall be able to hire someone to do this
+              drudgery for me.
+            </span>
+          </p>
+          <div className="font-sans text-lg text-gray-500">
+            <p>
+              <span>Elizabeth Peabody,</span>
+            </p>
+            <p>
+              <span>Letter to Samuel Gray Ward, September 1850</span>
+            </p>
           </div>
         </div>
-        <div className="section-root">
-          <div className="grid grid-cols-10 2xl:grid-cols-14 my-12">
-            <div className="chapter-title col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 relative">
-              <div className="opacity-50 bg-theme w-full h-full absolute"></div>
-              <div className="title-text p-4 relative font-william font-bold text-xl lg:text-4xl flex justify-center items-center">
-                <span>The Visualization Work to Come</span>
+        <p>
+          <span>
+            While we cannot change the fact that we no longer have access to the
+            original mural charts, letters like these help to attest to the
+            physical labor that was required to produce them. With its reference
+            to the “stencilling” through which Peabody created her colorful
+            symbols, as well as to its characterization of the tasks involved in
+            making the charts as “drudgery,” the letter also underscores the
+            gendered dimensions of Peabody’s knowledge work.
+          </span>
+        </p>
+        <FullBleed>
+          <PullQuote
+            title="Who else are we missing"
+            subtitle="when we fail to include examples like these in the stories we tell about the emergence of data visualization? "
+          />
+        </FullBleed>
+        <p>
+          <span>
+            It’s not a coincidence that Peabody understood the labor of making
+            her mural charts as women’s work, and that these same charts were
+            not preserved. Then as now, there exists a hierarchy of work that
+            aligns with the hierarchy of gender that governs the Anglo-Western
+            world. Work that is performed outside the home is valued, both
+            culturally and monetarily, over work that is performed within it.
+            Work that is perceived as more rigorous, or more professional—like,
+            for instance, the political economy that functioned as Playfair’s
+            primary trade—is valued, again, both culturally and monetarily, over
+            work that is perceived as more intuitive, or more domestic—like, for
+            instance, the teaching that functioned as Peabody’s main employ.
+            Even—or, more precisely, especially—within the art world, creative
+            work that is perceived as high art is valued above work perceived as
+            craft.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              37
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            These gendered divisions of labor are among primary reasons that
+            Peabody’s mural charts never entered the archive. And they are the
+            same reasons that her charts have not (yet) been centered in the
+            account of the rise of modern data visualization that is most
+            commonly told. But who else are we missing when we fail to include
+            examples like these in the stories we tell about the emergence of
+            data visualization? And what possible future visualization designs
+            are we foreclosing, either intentionally or inadvertently, when we
+            do?
+          </span>
+        </p>
+        <p>
+          <span>
+            Women’s work of various forms has much to contribute to larger
+            narratives about the development of most scholarly disciplines and
+            professional fields. A final example helps to underscore this point:
+            most contemporary viewers, when seeing Peabody’s charts for the
+            first time, observe that they look like paintings by Piet Mondrian,
+            the famous Dutch modernist.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              38
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            To be sure, Peabody’s charts strongly resemble Mondrian’s own bold,
+            colorful, geometric grid. But Peabody’s self-account of the work
+            involved in making the mural charts brings to mind a second point of
+            reference, which is not painting but quilting: an artform
+            traditionally practiced by women, and that has long been relegated
+            to the world of “folk art” and craft.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              39
+            </span>{" "}
+          </span>
+        </p>
+        <div className="flex flex-col items-center middle-full">
+          <div>
+            <div
+              className="doc-table-root"
+              style={{
+                display: "grid",
+                gridTemplateAreas: '"area0 area1"',
+              }}
+            >
+              <div className="doc-table-cell" style={{ gridArea: "area0" }}>
+                <img
+                  src="/images/ch4-19-rachel-carey-george.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <div className="doc-table-cell" style={{ gridArea: "area1" }}>
+                <img
+                  src="/images/ch4-20-gbq-q030-06.jpg"
+                  alt=""
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
-          <div className="space-y-10">
-            <div>
-              <div className="grid grid-cols-10 2xl:grid-cols-14">
-                <div className="space-y-6 contents middle-subgrid">
-                  <p>
-                    <span>
-                      Throughout this project, I argue for the knowledge that
-                      can be gained by expanding the history of data
-                      visualization to include a wider range of forms and
-                      figures. To be sure, additional examples of early attempts
-                      at visualizing data help inspire us, in the present, to
-                      imagine new visual and interactive forms. But there is a
-                      deeper lesson that I have also sought to convey, which has
-                      to do with how visualization “produces the knowledge it
-                      draws,” as Johanna Drucker explains.
-                    </span>
-                    <span>
-                      <span role="button" className="circle">
-                        47
-                      </span>{" "}
-                    </span>
-                    <span>
-                      {" "}
-                      Elizabeth Palmer Peabody’s method of making history,
-                      premised on visual abstraction and designed for prolonged
-                      engagement, encourages multiple individual interpretations
-                      of the data on display. In so doing, it advances a
-                      pluralistic and non-hierarchical view of how knowledge is
-                      produced.
-                    </span>
-                  </p>
-                  <p>
-                    <span></span>
-                  </p>
-                  <p>
-                    <span>In addition to advancing a belief in </span>
-                    <span className="italic">how</span>
-                    <span>
-                      {" "}
-                      knowledge is produced, Peabody’s method advances a belief
-                      in{" "}
-                    </span>
-                    <span className="italic">who</span>
-                    <span>
-                      {" "}
-                      is authorized to produce knowledge. Peabody believed that
-                      her students were each capable of producing historical
-                      knowledge, and that together, they might arrive at a
-                      solution to the nation’s most pressing political concerns.
-                      We might further expand Peabody’s view of the value of
-                      bringing together multiple perspectives, enhanced by the
-                      example of the Gee’s Bend quilts, into a broader claim
-                      about the need to expand the range of sources—and the
-                      range of people—who we enable, as visualization designers,
-                      to make knowledge claims. Following the theories and
-                      approaches of the scholars introduced in this essay,
-                      including Donna Haraway, Katherine McKittrick, and Elsa
-                      Barkley Brown, we might therefore employ Peabody’s
-                      pedagogy as a path to understanding the situated and
-                      relational nature of all that we know. Moving forward,
-                      more specifically, we might better attempt to design
-                      visualizations that value the interpretations prompted by
-                      each viewer as they encounter (or interact with) the data
-                      on display.
-                    </span>
-                  </p>
-                  <p>
-                    <span></span>
-                  </p>
-                  <p>
-                    <span>
-                      Finally, we might employ Peabody’s data creations—both the
-                      textbooks and workbooks that are preserved in the archive,
-                      and the mural charts that are not—in order to reflect upon
-                      the range of labor that is involved in knowledge work, and
-                      the range of people who perform it. How might we value the
-                      full range of labor that contributes to the creation of
-                      any particular visualization? How might we honor all of
-                      those we rely upon to perform this work? And how might we
-                      ensure that their contributions are no longer erased from
-                      history? Here, once again, Peabody’s visual method becomes
-                      valuable. Because it authorizes us as viewers, as
-                      students, and as scholars, to fill in the details of the
-                      stories that we can only perceive in the abstract.
-                      Peabody’s hope, which we might carry forward, is that when
-                      presented with the outlines of history, we might take it
-                      upon ourselves to color them in.
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="font-william text-center mt-10 w-5/6">
+            <p>
+              <span>
+                Left: “Housetop,” by Rachel Carey George, ca. 1935. Right:
+                “Housetop” variation, design by Mary Lee Bendolph. 1998, quilted
+                by Essie Bendolph Pettaway, 2001. Photos courtesy of Tinwood
+                Media.{" "}
+              </span>
+              <span>Permissions pending.</span>
+            </p>
           </div>
         </div>
-      </OneColumnLayout>
+        <p>
+          <span>
+            Pictured above are two quilts from the area of Alabama known as
+            Gee’s Bend, a small, rural Black community, 35 miles south of Selma,
+            that can trace its roots to a cotton plantation that was established
+            there in the early nineteenth century. While valued by the residents
+            of Gee’s Bend for centuries, both for their aesthetics and for the
+            family histories that they encode, the quilts have only recently
+            begun to be recognized by art historians as key contributors to the
+            development of modernist art.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              40
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            Exhibitions at the Whitney Museum in New York, in 2002; the Turner
+            Contemporary in London, in 2019; and others, have confirmed how the
+            quilts “predate like-minded works by their more famous abstract art
+            cousins.”
+          </span>
+          <span>
+            <span role="button" className="circle">
+              41
+            </span>{" "}
+          </span>
+          <span></span>
+        </p>
+        <p>
+          <span>
+            As Black women who pursued their art while enslaved, and have
+            continued to persist through slavery’s perpetual wake, the life
+            experiences of the Gee’s Bend quilters could not be farther removed
+            from those of Elizabeth Palmer Peabody, a white woman protected by
+            her family’s membership in the Boston elite. But the creative work
+            of the Gee’s Bend quilters, as distinguished historian Elsa Barkley
+            Brown has shown, offers a model that can help structure a range of
+            complex questions about epistemology, historiography, and
+            pedagogy—indeed, the same questions in which Peabody’s work was
+            engaged. Drawing inspiration from the “polyrhythmic,
+            ‘nonsymmetrical,’ and nonlinear” patterns of the Gee’s Bend—among
+            the Black women’s quilts that she studies—Brown advocates for a
+            pivoting of the center of the history classroom—that is, not
+            decentering one perspective in favor of another but instead
+            intentionally and continually shifting the focus from one
+            perspective to the next.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              42
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            The result of this pedagogical strategy is capacious and multifold:
+            it allows the artifacts and experiences under analysis to be
+            understood in the context of their own creation, and it allows the
+            students performing this interpretive work to “become the voices of
+            authority in their own education.”
+          </span>
+          <span>
+            <span role="button" className="circle">
+              43
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            Ultimately, Brown concludes, “the class is a quilt. It is precisely
+            the contrast which organizes the whole and holds it together.”
+          </span>
+          <span>
+            <span role="button" className="circle">
+              44
+            </span>{" "}
+          </span>
+          <span></span>
+        </p>
+        <p>
+          <span>
+            We might similarly come to understand history as a quilt—as Brown
+            strongly implies and as our project team has literally fabricated.
+            But our work—and now I speak as a “we” in the general sense, on
+            behalf of scholars of data visualization and those who design
+            them—is far from complete. Consider the surprise that greeted
+            me—along with no small degree of pleasure—upon discovering that a
+            quilt created by Loretta Pettway, one of the Gee’s Bend quilters,
+            graces the cover of Edward Tufte’s most recent book,{" "}
+          </span>
+          <span className="italic">Seeing with Fresh Eyes</span>
+          <span>
+            {" "}
+            (2020). More than merely a compelling image—“unorthodox, fresh,
+            amazing” is the extent of how Tufte describes it in the text—we must
+            learn to see Pettaway’s quilt, like Peabody’s chart, as a system of
+            knowledge making.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              45
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            These two systems of knowledge-making, moreover, helpfully converge.
+            Both employ shape and color in order to represent and recall past
+            events: the quilts in order commemorate a community’s ancestors and
+            their stories; and the charts, as we have learned, in order to craft
+            new narratives about the nation’s defining historical events. Both
+            also rely upon sense perception—and more specifically, the tactile
+            experiences of the body—in order to assimilate visual display into
+            knowledge. Whether enveloping oneself in a quilt, or gathering
+            together around a mural chart, the result is a more immersive
+            encounter with the object—and with the events of the past that the
+            object seeks to commemorate, on the one hand; or on the other,
+            convey.
+          </span>
+        </p>
+        <p>
+          <span>
+            As Brown reminds us with respect to the quilts, these artifacts are
+            “illustrative of a particular way of seeing, of ordering the world.”
+          </span>
+          <span>
+            <span role="button" className="circle">
+              46
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            We might extend this assertion to data visualization. Indeed, the
+            images and interactions that we create reflect our own ways of
+            seeing and ordering the world. This fact does not invalidate the
+            insights that they prompt, or the knowledge that they help us to
+            acquire. On the contrary, it informs the knowledge that any
+            particular visualization helps bring to light. With a wider
+            awareness of the multiple ways of seeing the world, and a wider
+            range of methods for ordering its data, we can enrich the basis of
+            what we presently know, and—as Peabody envisioned—open up new
+            possibilities for future knowledge.
+          </span>
+        </p>
+      </CenteredLayout>
+      <ChapterSectionTitle>The Visualization Work To Come</ChapterSectionTitle>
+      <CenteredLayout>
+        <p>
+          <span>
+            Throughout this project, I argue for the knowledge that can be
+            gained by expanding the history of data visualization to include a
+            wider range of forms and figures. To be sure, additional examples of
+            early attempts at visualizing data help inspire us, in the present,
+            to imagine new visual and interactive forms. But there is a deeper
+            lesson that I have also sought to convey, which has to do with how
+            visualization “produces the knowledge it draws,” as Johanna Drucker
+            explains.
+          </span>
+          <span>
+            <span role="button" className="circle">
+              47
+            </span>{" "}
+          </span>
+          <span>
+            {" "}
+            Elizabeth Palmer Peabody’s method of making history, premised on
+            visual abstraction and designed for prolonged engagement, encourages
+            multiple individual interpretations of the data on display. In so
+            doing, it advances a pluralistic and non-hierarchical view of how
+            knowledge is produced.
+          </span>
+        </p>
+        <p>
+          <span>In addition to advancing a belief in </span>
+          <span className="italic">how</span>
+          <span>
+            {" "}
+            knowledge is produced, Peabody’s method advances a belief in{" "}
+          </span>
+          <span className="italic">who</span>
+          <span>
+            {" "}
+            is authorized to produce knowledge. Peabody believed that her
+            students were each capable of producing historical knowledge, and
+            that together, they might arrive at a solution to the nation’s most
+            pressing political concerns. We might further expand Peabody’s view
+            of the value of bringing together multiple perspectives, enhanced by
+            the example of the Gee’s Bend quilts, into a broader claim about the
+            need to expand the range of sources—and the range of people—who we
+            enable, as visualization designers, to make knowledge claims.
+            Following the theories and approaches of the scholars introduced in
+            this essay, including Donna Haraway, Katherine McKittrick, and Elsa
+            Barkley Brown, we might therefore employ Peabody’s pedagogy as a
+            path to understanding the situated and relational nature of all that
+            we know. Moving forward, more specifically, we might better attempt
+            to design visualizations that value the interpretations prompted by
+            each viewer as they encounter (or interact with) the data on
+            display.
+          </span>
+        </p>
+        <p>
+          <span>
+            Finally, we might employ Peabody’s data creations—both the textbooks
+            and workbooks that are preserved in the archive, and the mural
+            charts that are not—in order to reflect upon the range of labor that
+            is involved in knowledge work, and the range of people who perform
+            it. How might we value the full range of labor that contributes to
+            the creation of any particular visualization? How might we honor all
+            of those we rely upon to perform this work? And how might we ensure
+            that their contributions are no longer erased from history? Here,
+            once again, Peabody’s visual method becomes valuable. Because it
+            authorizes us as viewers, as students, and as scholars, to fill in
+            the details of the stories that we can only perceive in the
+            abstract. Peabody’s hope, which we might carry forward, is that when
+            presented with the outlines of history, we might take it upon
+            ourselves to color them in.
+          </span>
+        </p>
+      </CenteredLayout>
+      <Footer />
     </ThemeContext.Provider>
   );
 }

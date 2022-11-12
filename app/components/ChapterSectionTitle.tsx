@@ -1,7 +1,7 @@
 import type { ReactNodeLike } from "prop-types";
 import { useContext } from "react";
 import { ThemeContext } from "~/theme";
-import OneColumnLayout from "./layout/OneColumnLayout";
+import CenteredLayout from "./layout/CenteredLayout";
 
 interface Props {
   children: ReactNodeLike;
@@ -10,7 +10,7 @@ interface Props {
 export default function ChapterSectionTitle({ children }: Props) {
   const { backgroundColor } = useContext(ThemeContext);
   return (
-    <OneColumnLayout className="w-full">
+    <CenteredLayout className="w-full">
       <div className="relative">
         <div
           className={`opacity-50 bg-${backgroundColor} w-full h-full absolute`}
@@ -19,6 +19,6 @@ export default function ChapterSectionTitle({ children }: Props) {
           <span>{children}</span>
         </div>
       </div>
-    </OneColumnLayout>
+    </CenteredLayout>
   );
 }
