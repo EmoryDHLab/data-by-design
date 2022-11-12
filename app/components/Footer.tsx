@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div>
       <div
-        className={`grid grid-cols-12 gap-x-6 p-10 bg-${backgroundColor} text-${primaryTextColor}`}
+        className={`grid grid-cols-12 gap-x-6 p-10 pt-20 bg-${backgroundColor} text-${primaryTextColor}`}
       >
         <div className="col-start-3 col-end-6 space-y-20">
           <span className="font-william text-3xl">Data By Design</span>
