@@ -7,6 +7,7 @@ import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import FullBleed from "~/components/layout/FullBleed";
 import Footer from "~/components/Footer";
+import FootnotesToggle from "~/components/FootnotesToggle";
 
 export default function PeabodyPage() {
   return (
@@ -19,64 +20,67 @@ export default function PeabodyPage() {
       />
       <TwoColumnLayout className="py-10">
         <Column>
-          <p>
-            <span>
-              Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
-            </span>
-            <span>
-              Today, she is most widely recognized for her proximity to more
-              famous men—in particular, to the writers of the American
-              Renaissance, such as Ralph Waldo Emerson and Nathaniel Hawthorne,
-              and to early champions of educational reform, such as Bronson
-              Alcott and Horace Mann. (One of her sisters, Sophia Amelia
-              Peabody, was married to Hawthorne; and the other, Mary Tyler
-              Peabody, was married to Mann). But Elizabeth Palmer Peabody had
-              intellectual impact in her own right: th e bookstore that she ran
-              out of her home, at 13 West Street, in Boston, functioned as the{" "}
-            </span>
-            <span className="italic">de facto</span>
-            <span>
-              {" "}
-              salon for the transcendentalist movement. She edited and published
-              the first version of Henry David Thoreau’s essay on civil
-              disobedience. And she is credited with starting the first
-              kindergarten in the United States
-            </span>
-            <span>.</span>
-            <span>
-              <span role="button" className="circle">
-                1
-              </span>{" "}
-            </span>
-          </p>
-          <p>
-            <span>
-              Indeed, Peabody was an educator to her core. She came from a
-              family of teachers. Her mother and two sisters all taught
-              grade-school at various times. And in the 1850s, when she set out
-              from her home in Boston to ride the rails, it was with an
-              explicitly educational aim: to promote the pair of
-            </span>
-            <span> history textbooks she had recently written, </span>
-            <span className="italic">
-              The Polish-American System of Chronology
-            </span>
-            <span> (1850) and </span>
-            <span className="italic">
-              A Chronological History of the United States{" "}
-            </span>
-            <span>
-              (1856). She traveled as far north as [^Hover1]Rochester,
-              NY[/Hover1]; as far west as [^Hover2]Louisville, KY[/Hover2]; and
-              as far south as [^Hover3]Richmond, VA[/Hover3], in order to{" "}
-            </span>
-            <span>evangelize about </span>
-            <span>
-              her new pedagogical method. The Polish-American System, she came
-              to call it, was a method with data visualization at its center.
-            </span>
-          </p>
-          <div className="w-full h-[300px]" />
+          <FootnotesToggle />
+          <div className="right-bleed space-y-10">
+            <p>
+              <span>
+                Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
+              </span>
+              <span>
+                Today, she is most widely recognized for her proximity to more
+                famous men—in particular, to the writers of the American
+                Renaissance, such as Ralph Waldo Emerson and Nathaniel
+                Hawthorne, and to early champions of educational reform, such as
+                Bronson Alcott and Horace Mann. (One of her sisters, Sophia
+                Amelia Peabody, was married to Hawthorne; and the other, Mary
+                Tyler Peabody, was married to Mann). But Elizabeth Palmer
+                Peabody had intellectual impact in her own right: the bookstore
+                that she ran out of her home, at 13 West Street, in Boston,
+                functioned as the{" "}
+              </span>
+              <span className="italic">de facto</span>
+              <span>
+                {" "}
+                salon for the transcendentalist movement. She edited and
+                published the first version of Henry David Thoreau’s essay on
+                civil disobedience. And she is credited with starting the first
+                kindergarten in the United States
+              </span>
+              <span>.</span>
+              <span>
+                <span role="button" className="circle">
+                  1
+                </span>{" "}
+              </span>
+            </p>
+            <p>
+              <span>
+                Indeed, Peabody was an educator to her core. She came from a
+                family of teachers. Her mother and two sisters all taught
+                grade-school at various times. And in the 1850s, when she set
+                out from her home in Boston to ride the rails, it was with an
+                explicitly educational aim: to promote the pair of
+              </span>
+              <span> history textbooks she had recently written, </span>
+              <span className="italic">
+                The Polish-American System of Chronology
+              </span>
+              <span> (1850) and </span>
+              <span className="italic">
+                A Chronological History of the United States{" "}
+              </span>
+              <span>
+                (1856). She traveled as far north as [^Hover1]Rochester,
+                NY[/Hover1]; as far west as [^Hover2]Louisville, KY[/Hover2];
+                and as far south as [^Hover3]Richmond, VA[/Hover3], in order to{" "}
+              </span>
+              <span>evangelize about </span>
+              <span>
+                her new pedagogical method. The Polish-American System, she came
+                to call it, was a method with data visualization at its center.
+              </span>
+            </p>
+          </div>
           <FullBleed>
             <PullQuote
               title="Peabody designed her charts to be abstract rather than intuitive;"
@@ -133,12 +137,14 @@ export default function PeabodyPage() {
           </p>
         </Column>
         <Column className="flex flex-col items-center">
-          <div className="border-peabodyPrimary border-4 border-dashed p-1">
-            <div className="w-full overflow-hidden border-2 max-w-md">
-              <img src="/images/peabody/railroadscaled.webp" alt="" />
-            </div>
+          <div className="border-peabodyPrimaryHalfOpacity border-[50px] p-1">
+            <img
+              className="max-w-md"
+              src="/images/peabody/railroadscaled.webp"
+              alt=""
+            />
           </div>
-          <div className="text-lg text-center mt-10 w-2/3 font-william">
+          <div className="text-lg text-center mt-10 w-2/3 font-dubois max-w-[318px]">
             The range of Peabody's promotional tour, as plotted on an 1850 rail
             map of the United States. Image courtesy of the Library of Congress,
             Geography and Map Division.
