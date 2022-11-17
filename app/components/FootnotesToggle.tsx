@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { ThemeContext } from "~/theme";
 
-export default function FootnotesToggle() {
+interface Props {
+  className?: string;
+}
+
+export default function FootnotesToggle({ className }: Props) {
   const { backgroundColor } = useContext(ThemeContext);
   return (
-    <div className="flex items-center space-x-2">
+    <div className={`flex items-center space-x-2 ${className ?? ""}`}>
       <div
         className={`border-${backgroundColor} w-[45px] h-[21px] flex items-center border-2 rounded-full`}
       >

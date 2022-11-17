@@ -7,9 +7,13 @@ import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import FullBleed from "~/components/layout/FullBleed";
 import Footer from "~/components/Footer";
-import FootnotesToggle from "~/components/FootnotesToggle";
+import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
+import { useState } from "react";
 
 export default function PeabodyPage() {
+  const [tourLocation, setTourLocation] = useState<
+    "Rochester" | "Louisville" | "Richmond" | undefined
+  >(undefined);
   return (
     <ThemeContext.Provider
       value={{ backgroundColor: "peabodyPrimary", primaryTextColor: "black" }}
@@ -20,7 +24,6 @@ export default function PeabodyPage() {
       />
       <TwoColumnLayout className="py-10">
         <Column>
-          <FootnotesToggle />
           <div className="right-bleed space-y-10">
             <p>
               <span>
@@ -70,9 +73,31 @@ export default function PeabodyPage() {
                 A Chronological History of the United States{" "}
               </span>
               <span>
-                (1856). She traveled as far north as [^Hover1]Rochester,
-                NY[/Hover1]; as far west as [^Hover2]Louisville, KY[/Hover2];
-                and as far south as [^Hover3]Richmond, VA[/Hover3], in order to{" "}
+                (1856). She traveled as far north as{" "}
+                <span
+                  className="font-semibold"
+                  onMouseEnter={() => setTourLocation("Rochester")}
+                  onMouseLeave={() => setTourLocation(undefined)}
+                >
+                  Rochester, NY
+                </span>
+                ; as far west as{" "}
+                <span
+                  className="font-semibold"
+                  onMouseEnter={() => setTourLocation("Louisville")}
+                  onMouseLeave={() => setTourLocation(undefined)}
+                >
+                  Louisville, KY
+                </span>
+                ; and as far south as{" "}
+                <span
+                  className="font-semibold"
+                  onMouseEnter={() => setTourLocation("Richmond")}
+                  onMouseLeave={() => setTourLocation(undefined)}
+                >
+                  Richmond, VA
+                </span>
+                , in order to{" "}
               </span>
               <span>evangelize about </span>
               <span>
@@ -137,18 +162,7 @@ export default function PeabodyPage() {
           </p>
         </Column>
         <Column className="flex flex-col items-center">
-          <div className="border-peabodyPrimaryHalfOpacity border-[50px] p-1">
-            <img
-              className="max-w-md"
-              src="/images/peabody/railroadscaled.webp"
-              alt=""
-            />
-          </div>
-          <div className="text-lg text-center mt-10 w-2/3 font-dubois max-w-[318px]">
-            The range of Peabody's promotional tour, as plotted on an 1850 rail
-            map of the United States. Image courtesy of the Library of Congress,
-            Geography and Map Division.
-          </div>
+          <PromotionalTourMap tourLocation={tourLocation} />
           <div className="w-full h-[200px]" />
           <div className="flex flex-col items-center w-1/2">
             <div className="space-y-2">
