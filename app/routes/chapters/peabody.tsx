@@ -1,5 +1,5 @@
 import ChapterTitle from "~/components/ChapterTitle";
-import { ThemeContext } from "~/theme";
+import { HoverState, ChapterContext } from "~/theme";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
@@ -9,14 +9,18 @@ import FullBleed from "~/components/layout/FullBleed";
 import Footer from "~/components/Footer";
 import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import { useState } from "react";
+import HoverText from "~/components/HoverText";
 
 export default function PeabodyPage() {
-  const [tourLocation, setTourLocation] = useState<
-    "Rochester" | "Louisville" | "Richmond" | undefined
-  >(undefined);
+  const [hoverState, setHoverState] = useState<HoverState>(undefined);
   return (
-    <ThemeContext.Provider
-      value={{ backgroundColor: "peabodyPrimary", primaryTextColor: "black" }}
+    <ChapterContext.Provider
+      value={{
+        backgroundColor: "peabodyPrimary",
+        primaryTextColor: "black",
+        hoverState,
+        setHoverState,
+      }}
     >
       <ChapterTitle
         title="The Work of Knowledge"
@@ -74,29 +78,17 @@ export default function PeabodyPage() {
               </span>
               <span>
                 (1856). She traveled as far north as{" "}
-                <span
-                  className="font-semibold"
-                  onMouseEnter={() => setTourLocation("Rochester")}
-                  onMouseLeave={() => setTourLocation(undefined)}
-                >
+                <HoverText hoverState="Rochester" className="font-semibold">
                   Rochester, NY
-                </span>
+                </HoverText>
                 ; as far west as{" "}
-                <span
-                  className="font-semibold"
-                  onMouseEnter={() => setTourLocation("Louisville")}
-                  onMouseLeave={() => setTourLocation(undefined)}
-                >
+                <HoverText hoverState="Louisville" className="font-semibold">
                   Louisville, KY
-                </span>
+                </HoverText>
                 ; and as far south as{" "}
-                <span
-                  className="font-semibold"
-                  onMouseEnter={() => setTourLocation("Richmond")}
-                  onMouseLeave={() => setTourLocation(undefined)}
-                >
+                <HoverText hoverState="Richmond" className="font-semibold">
                   Richmond, VA
-                </span>
+                </HoverText>
                 , in order to{" "}
               </span>
               <span>evangelize about </span>
@@ -162,7 +154,7 @@ export default function PeabodyPage() {
           </p>
         </Column>
         <Column className="flex flex-col items-center">
-          <PromotionalTourMap tourLocation={tourLocation} />
+          <PromotionalTourMap />
           <div className="w-full h-[200px]" />
           <div className="flex flex-col items-center w-1/2">
             <div className="space-y-2">
@@ -1538,6 +1530,6 @@ export default function PeabodyPage() {
         </p>
       </CenteredLayout>
       <Footer />
-    </ThemeContext.Provider>
+    </ChapterContext.Provider>
   );
 }

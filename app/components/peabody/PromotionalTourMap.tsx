@@ -1,4 +1,6 @@
 import { classNames } from "~/utils";
+import { useContext } from "react";
+import { ChapterContext } from "~/theme";
 
 const tourLocations = {
   Rochester: {
@@ -12,21 +14,24 @@ const tourLocations = {
   },
 };
 
-interface Props {
-  tourLocation: "Rochester" | "Louisville" | "Richmond";
-}
+export default function PromotionalTourMap() {
+  const { hoverState } = useContext(ChapterContext);
+  let transformStyles = "";
 
-export default function PromotionalTourMap({ tourLocation }: Props) {
+  if (
+    hoverState === "Rochester" ||
+    hoverState === "Louisville" ||
+    hoverState === "Richmond"
+  ) {
+    transformStyles = tourLocations[hoverState].mapStyles;
+  }
   return (
     <div className="flex flex-col items-center">
       <div className="border-peabodyPrimaryHalfOpacity border-[50px] p-1 max-w-xl overflow-hidden">
         <img
           src="/images/peabody/railroadscaled.webp"
           alt=""
-          className={classNames(
-            "transition-transform",
-            tourLocation && tourLocations[tourLocation].mapStyles
-          )}
+          className={classNames("transition-transform", transformStyles)}
         />
       </div>
       <div className="text-lg text-center mt-10 w-2/3 font-dubois max-w-[318px]">

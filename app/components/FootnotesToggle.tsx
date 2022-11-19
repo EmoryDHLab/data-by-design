@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { ThemeContext } from "~/theme";
+import { ChapterContext } from "~/theme";
 
 interface Props {
   className?: string;
 }
 
 export default function FootnotesToggle({ className }: Props) {
-  const { backgroundColor } = useContext(ThemeContext);
+  const { backgroundColor } = useContext(ChapterContext);
   return (
     <div className={`flex items-center space-x-2 ${className ?? ""}`}>
       <div
