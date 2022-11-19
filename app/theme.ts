@@ -1,6 +1,13 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 
-export type HoverState = "Rochester" | "Louisville" | "Richmond" | undefined;
+export type HoverState =
+  | "Rochester"
+  | "Louisville"
+  | "Richmond"
+  | "Jamestown"
+  | "Plymouth"
+  | "FirstEnslavedAfricans"
+  | undefined;
 
 interface IChapterContext {
   backgroundColor: string;

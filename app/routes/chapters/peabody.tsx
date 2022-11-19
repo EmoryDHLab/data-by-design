@@ -295,20 +295,29 @@ export default function PeabodyPage() {
               <span>
                 For example, by cross-referencing the table of events of the
                 seventeenth century, pictured just below, to its corresponding
-                chart, it is possible to identify, for example, the founding of
-                Jamestown in 1607; that is the large red square in the first row
-                on the right—red to signal England’s involvement, and its
-                full-square shading to indicate its heightened significance. One
-                can also identify, in the last square on the right, one row from
-                the top, the settlement of Plymouth in 1620. The square is
-                nearly entirely red—again, because of England’s involvement and
-                because of its heightened significance—save for a small teal
-                square in the middle-right position. Teal corresponds to action
-                by the Dutch; indeed, this registers the first enslaved Africans
-                arriving in Virginia in that same year. On the side of abolition
-                but by no means its most radical proponent, the square’s ratio
-                of red to teal reflects Peabody’s awareness of—if not an urgency
-                about—the need to end slavery in the United States.
+                chart, it is possible to identify, for example, the{" "}
+                <HoverText hoverState="Jamestown">
+                  founding of Jamestown in 1607;
+                </HoverText>{" "}
+                that is the large red square in the first row on the right—red
+                to signal England’s involvement, and its full-square shading to
+                indicate its heightened significance. One can also identify, in
+                the last square on the right, one row from the top,{" "}
+                <HoverText hoverState="Plymouth">
+                  the settlement of Plymouth in 1620.
+                </HoverText>{" "}
+                The square is nearly entirely red—again, because of England’s
+                involvement and because of its heightened significance—save for
+                a small teal square in the middle-right position. Teal
+                corresponds to action by the Dutch; indeed, this registers the
+                <HoverText hoverState="FirstEnslavedAfricans">
+                  first enslaved Africans arriving in Virginia in that same
+                  year.
+                </HoverText>
+                On the side of abolition but by no means its most radical
+                proponent, the square’s ratio of red to teal reflects Peabody’s
+                awareness of—if not an urgency about—the need to end slavery in
+                the United States.
               </span>
               <span>
                 <span role="button" className="circle">

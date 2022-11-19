@@ -5,7 +5,7 @@ interface Props {
   className?: string;
 }
 
-export default function FootnotesToggle({ className }: Props) {
+export default function ViewFootnotesToggle({ className }: Props) {
   const { backgroundColor } = useContext(ChapterContext);
   return (
     <div className={`flex items-center space-x-2 ${className ?? ""}`}>
