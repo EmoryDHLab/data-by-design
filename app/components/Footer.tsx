@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { ThemeContext } from "~/theme";
+import { ChapterContext } from "~/theme";
 
 export default function Footer() {
-  const { backgroundColor, primaryTextColor } = useContext(ThemeContext);
+  const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   return (
     <div>
       <div

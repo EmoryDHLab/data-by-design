@@ -4,11 +4,11 @@ import Footnote from "~/components/Footnote";
 import DocumentViewer from "~/components/dubois/DocumentViewer";
 import { StudentChart } from "~/components/dubois/StudentChart";
 import Footer from "~/components/Footer";
-import { ThemeContext } from "~/theme";
+import { ChapterContext } from "~/theme";
 
 export default function DuboisChapter() {
   return (
-    <ThemeContext.Provider
+    <ChapterContext.Provider
       value={{ backgroundColor: "duboisPrimary", accentColor: "duboisSecondary", primaryTextColor: "white" }}
     >
       <ChapterTitle
@@ -1222,6 +1222,6 @@ export default function DuboisChapter() {
         </p>
       </div>
       <Footer backgroundColor="bg-duboisPrimary" textColor="text-white" />
-    </ThemeContext.Provider>
+    </ChapterContext.Provider>
   );
 }

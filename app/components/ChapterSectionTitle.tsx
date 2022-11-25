@@ -1,6 +1,6 @@
 import type { ReactNodeLike } from "prop-types";
 import { useContext } from "react";
-import { ThemeContext } from "~/theme";
+import { ChapterContext } from "~/theme";
 import CenteredLayout from "./layout/CenteredLayout";
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function ChapterSectionTitle({ children }: Props) {
-  const { accentColor } = useContext(ThemeContext);
+  const { accentColor } = useContext(ChapterContext);
   return (
     <CenteredLayout className="py-32 w-full">
         <div className={`bg-${accentColor} p-4 font-william text-xl lg:text-3xl flex justify-center items-center`}>
