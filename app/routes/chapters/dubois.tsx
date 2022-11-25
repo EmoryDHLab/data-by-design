@@ -9,18 +9,17 @@ import { ThemeContext } from "~/theme";
 export default function DuboisChapter() {
   return (
     <ThemeContext.Provider
-      value={{ backgroundColor: "duboisPrimary", primaryTextColor: "white" }}
+      value={{ backgroundColor: "duboisPrimary", accentColor: "duboisSecondary", primaryTextColor: "white" }}
     >
       <ChapterTitle
         title="Between Data and Truth"
         subtitle="W.E.B. Du Bois’s “Data Portraits”"
       />
       <div className="grid-wrapper bg-offwhite py-16 text-xl space-y-5">
-        <ChapterSectionTitle>Introduction</ChapterSectionTitle>
         <p className="pt-16">
           October 4th, 1899, was the first day of the fall term at Atlanta
           University (now Clark Atlanta University), where W.E.B. Du Bois had
-          been teaching for the past two years--and a long two years they had
+          been teaching for the past two years—and a long two years they had
           been.{" "}
           <Footnote number="1">
             As indicated in the{" "}
@@ -223,8 +222,8 @@ export default function DuboisChapter() {
             violence of white supremacy, the range of materials assembled for
             the Paris Exposition at once attest to his deep-seated belief in the
             transformative power of data and, at the same time, his growing
-            awareness of the limits of what data--and, by extension, data
-            visualization--could do.
+            awareness of the limits of what data—and, by extension, data
+            visualization—could do.
           </span>
         </p>
         <ChapterSectionTitle color="bg-duboisPrimary">
@@ -271,7 +270,7 @@ export default function DuboisChapter() {
             made in the decades since Emancipation.
           </span>
         </p>
-        <div className="full-bleed my-10">
+        <div className="full-bleed py-20 my-10">
           <DocumentViewer />
         </div>
         <div className="full-bleed flex">
@@ -416,7 +415,7 @@ export default function DuboisChapter() {
         </p>
         <p>
           <span>
-            [ ABOVE: SCROLLY TELL PLATE 41, THEN PLATE 44, 50, 61 -- Images
+            [ ABOVE: SCROLLY TELL PLATE 41, THEN PLATE 44, 50, 61 — Images
             ch5-05a-d]{" "}
           </span>
         </p>
@@ -926,7 +925,7 @@ export default function DuboisChapter() {
           <span className="font-normal">
             {" "}
             for May 1900, which included an article on the exposition,
-            emphasizes how the work “was done entirely by Negroes--Dr. Du Bois
+            emphasizes how the work “was done entirely by Negroes—Dr. Du Bois
             and his assistants, most of whom are Atlanta University graduates.”
           </span>
           <Footnote number="19">
@@ -1030,7 +1029,7 @@ export default function DuboisChapter() {
               <span>
                 Above: The page in the Atlanta University Bulletin that records
                 the current occupations of AU alumni. Also note the number of
-                alumni working as teachers--Rogers’s eventual employ as well.
+                alumni working as teachers—Rogers’s eventual employ as well.
                 Image courtesy of the Archives Research Center, Digital Commons
                 @ Robert W. Woodruff Library, Atlanta University Center
               </span>
@@ -1127,7 +1126,7 @@ export default function DuboisChapter() {
           <span>
             The charts that Du Bois and his students together created for the
             Paris Exposition demonstrate how data visualization can serve as
-            witness and as testimony: documenting the existing conditions--and
+            witness and as testimony: documenting the existing conditions—and
             even the accomplishments—of a group that would otherwise go
             overlooked. They also show how visualization can be used to make
             arguments, either on their own through choices about what data to

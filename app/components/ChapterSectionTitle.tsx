@@ -8,17 +8,14 @@ interface Props {
 }
 
 export default function ChapterSectionTitle({ children }: Props) {
-  const { backgroundColor } = useContext(ThemeContext);
+  const { accentColor } = useContext(ThemeContext);
   return (
-    <CenteredLayout className="w-full">
-      <div className="relative">
-        <div
-          className={`opacity-50 bg-${backgroundColor} w-full h-full absolute`}
-        />
-        <div className="p-4 relative font-william font-bold text-xl lg:text-4xl flex justify-center items-center">
+    <CenteredLayout className="py-32 w-full">
+        <div className={`bg-${accentColor} p-4 font-william text-xl lg:text-3xl flex justify-center items-center`}>
           <span>{children}</span>
-        </div>
       </div>
     </CenteredLayout>
   );
 }
+
+// Backticcs create a template string. Template string allow you to put variable in the string. You have to tell react this is an expression with curly braces.
