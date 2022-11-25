@@ -18,6 +18,7 @@ interface IChapterContext {
 
 export const ChapterContext = createContext<IChapterContext>({
   backgroundColor: "duboisPrimary",
+  accentColor: "duboisSecondary",
   primaryTextColor: "white",
   hoverState: undefined,
   setHoverState: (_: SetStateAction<HoverState>) => {
