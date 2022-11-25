@@ -18,4 +18,4 @@ export default function ChapterSectionTitle({ children }: Props) {
   );
 }
 
-// Backticcs create a template string. Template string allow you to put variable in the string. You have to tell react this is an expression with curly braces.
+// Backticks create a template string. Template string allow you to put variable in the string. You have to tell react this is an expression with curly braces.
