@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "~/theme";
+import { ChapterContext } from "~/theme";
 
 interface Props {
   title: string;
@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default function PullQuote({ title, subtitle }: Props) {
-  const { backgroundColor } = useContext(ThemeContext);
+  const { backgroundColor } = useContext(ChapterContext);
   return (
     <div
       className={`bg-${backgroundColor} p-10 font-william flex flex-col items-center my-8`}
