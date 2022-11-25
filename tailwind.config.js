@@ -52,6 +52,7 @@ module.exports = {
         playfairPrimary: "#3B6FE0",
         peabodySecondary: "#DBF5E9",
         peabodyPrimary: "#9AE4C1",
+        peabodyPrimaryHalfOpacity: "#9ae4c180",
         willardSecondary: "#FEFFC9",
         willardPrimary: "#FEC313",
         labourSecondary: "#FFF0BC",

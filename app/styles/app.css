@@ -57,8 +57,19 @@
     min(45ch, 100%)
     1fr;
 }
+
 .column-grid-wrapper > * {
     grid-column: 2;
+}
+
+.left-bleed {
+    width: 100%;
+    grid-column: 1 / 2;
+}
+
+.right-bleed {
+    width: 100%;
+    grid-column: 2 / 4;
 }
 
 .full-bleed {

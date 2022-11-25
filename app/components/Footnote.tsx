@@ -1,6 +1,6 @@
 import { ReactNodeLike } from "prop-types";
 import { useContext, useState } from "react";
-import { ThemeContext } from "~/theme";
+import { ChapterContext } from "~/theme";
 
 interface Props {
   number: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function Footnote({ number, children }: Props) {
-  const { backgroundColor, primaryTextColor } = useContext(ThemeContext);
+  const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
   return (
     <span>

@@ -1,5 +1,5 @@
 import ChapterTitle from "~/components/ChapterTitle";
-import { ThemeContext } from "~/theme";
+import { HoverState, ChapterContext } from "~/theme";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
@@ -7,11 +7,20 @@ import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import FullBleed from "~/components/layout/FullBleed";
 import Footer from "~/components/Footer";
+import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
+import { useState } from "react";
+import HoverText from "~/components/HoverText";
 
 export default function PeabodyPage() {
+  const [hoverState, setHoverState] = useState<HoverState>(undefined);
   return (
-    <ThemeContext.Provider
-      value={{ backgroundColor: "peabodyPrimary", primaryTextColor: "black" }}
+    <ChapterContext.Provider
+      value={{
+        backgroundColor: "peabodyPrimary",
+        primaryTextColor: "black",
+        hoverState,
+        setHoverState,
+      }}
     >
       <ChapterTitle
         title="The Work of Knowledge"
@@ -19,64 +28,76 @@ export default function PeabodyPage() {
       />
       <TwoColumnLayout className="py-10">
         <Column>
-          <p>
-            <span>
-              Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
-            </span>
-            <span>
-              Today, she is most widely recognized for her proximity to more
-              famous men—in particular, to the writers of the American
-              Renaissance, such as Ralph Waldo Emerson and Nathaniel Hawthorne,
-              and to early champions of educational reform, such as Bronson
-              Alcott and Horace Mann. (One of her sisters, Sophia Amelia
-              Peabody, was married to Hawthorne; and the other, Mary Tyler
-              Peabody, was married to Mann). But Elizabeth Palmer Peabody had
-              intellectual impact in her own right: th e bookstore that she ran
-              out of her home, at 13 West Street, in Boston, functioned as the{" "}
-            </span>
-            <span className="italic">de facto</span>
-            <span>
-              {" "}
-              salon for the transcendentalist movement. She edited and published
-              the first version of Henry David Thoreau’s essay on civil
-              disobedience. And she is credited with starting the first
-              kindergarten in the United States
-            </span>
-            <span>.</span>
-            <span>
-              <span role="button" className="circle">
-                1
-              </span>{" "}
-            </span>
-          </p>
-          <p>
-            <span>
-              Indeed, Peabody was an educator to her core. She came from a
-              family of teachers. Her mother and two sisters all taught
-              grade-school at various times. And in the 1850s, when she set out
-              from her home in Boston to ride the rails, it was with an
-              explicitly educational aim: to promote the pair of
-            </span>
-            <span> history textbooks she had recently written, </span>
-            <span className="italic">
-              The Polish-American System of Chronology
-            </span>
-            <span> (1850) and </span>
-            <span className="italic">
-              A Chronological History of the United States{" "}
-            </span>
-            <span>
-              (1856). She traveled as far north as [^Hover1]Rochester,
-              NY[/Hover1]; as far west as [^Hover2]Louisville, KY[/Hover2]; and
-              as far south as [^Hover3]Richmond, VA[/Hover3], in order to{" "}
-            </span>
-            <span>evangelize about </span>
-            <span>
-              her new pedagogical method. The Polish-American System, she came
-              to call it, was a method with data visualization at its center.
-            </span>
-          </p>
-          <div className="w-full h-[300px]" />
+          <div className="right-bleed space-y-10">
+            <p>
+              <span>
+                Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
+              </span>
+              <span>
+                Today, she is most widely recognized for her proximity to more
+                famous men—in particular, to the writers of the American
+                Renaissance, such as Ralph Waldo Emerson and Nathaniel
+                Hawthorne, and to early champions of educational reform, such as
+                Bronson Alcott and Horace Mann. (One of her sisters, Sophia
+                Amelia Peabody, was married to Hawthorne; and the other, Mary
+                Tyler Peabody, was married to Mann). But Elizabeth Palmer
+                Peabody had intellectual impact in her own right: the bookstore
+                that she ran out of her home, at 13 West Street, in Boston,
+                functioned as the{" "}
+              </span>
+              <span className="italic">de facto</span>
+              <span>
+                {" "}
+                salon for the transcendentalist movement. She edited and
+                published the first version of Henry David Thoreau’s essay on
+                civil disobedience. And she is credited with starting the first
+                kindergarten in the United States
+              </span>
+              <span>.</span>
+              <span>
+                <span role="button" className="circle">
+                  1
+                </span>{" "}
+              </span>
+            </p>
+            <p>
+              <span>
+                Indeed, Peabody was an educator to her core. She came from a
+                family of teachers. Her mother and two sisters all taught
+                grade-school at various times. And in the 1850s, when she set
+                out from her home in Boston to ride the rails, it was with an
+                explicitly educational aim: to promote the pair of
+              </span>
+              <span> history textbooks she had recently written, </span>
+              <span className="italic">
+                The Polish-American System of Chronology
+              </span>
+              <span> (1850) and </span>
+              <span className="italic">
+                A Chronological History of the United States{" "}
+              </span>
+              <span>
+                (1856). She traveled as far north as{" "}
+                <HoverText hoverState="Rochester" className="font-semibold">
+                  Rochester, NY
+                </HoverText>
+                ; as far west as{" "}
+                <HoverText hoverState="Louisville" className="font-semibold">
+                  Louisville, KY
+                </HoverText>
+                ; and as far south as{" "}
+                <HoverText hoverState="Richmond" className="font-semibold">
+                  Richmond, VA
+                </HoverText>
+                , in order to{" "}
+              </span>
+              <span>evangelize about </span>
+              <span>
+                her new pedagogical method. The Polish-American System, she came
+                to call it, was a method with data visualization at its center.
+              </span>
+            </p>
+          </div>
           <FullBleed>
             <PullQuote
               title="Peabody designed her charts to be abstract rather than intuitive;"
@@ -133,16 +154,7 @@ export default function PeabodyPage() {
           </p>
         </Column>
         <Column className="flex flex-col items-center">
-          <div className="border-peabodyPrimary border-4 border-dashed p-1">
-            <div className="w-full overflow-hidden border-2 max-w-md">
-              <img src="/images/peabody/railroadscaled.webp" alt="" />
-            </div>
-          </div>
-          <div className="text-lg text-center mt-10 w-2/3 font-william">
-            The range of Peabody's promotional tour, as plotted on an 1850 rail
-            map of the United States. Image courtesy of the Library of Congress,
-            Geography and Map Division.
-          </div>
+          <PromotionalTourMap />
           <div className="w-full h-[200px]" />
           <div className="flex flex-col items-center w-1/2">
             <div className="space-y-2">
@@ -283,20 +295,29 @@ export default function PeabodyPage() {
               <span>
                 For example, by cross-referencing the table of events of the
                 seventeenth century, pictured just below, to its corresponding
-                chart, it is possible to identify, for example, the founding of
-                Jamestown in 1607; that is the large red square in the first row
-                on the right—red to signal England’s involvement, and its
-                full-square shading to indicate its heightened significance. One
-                can also identify, in the last square on the right, one row from
-                the top, the settlement of Plymouth in 1620. The square is
-                nearly entirely red—again, because of England’s involvement and
-                because of its heightened significance—save for a small teal
-                square in the middle-right position. Teal corresponds to action
-                by the Dutch; indeed, this registers the first enslaved Africans
-                arriving in Virginia in that same year. On the side of abolition
-                but by no means its most radical proponent, the square’s ratio
-                of red to teal reflects Peabody’s awareness of—if not an urgency
-                about—the need to end slavery in the United States.
+                chart, it is possible to identify, for example, the{" "}
+                <HoverText hoverState="Jamestown">
+                  founding of Jamestown in 1607;
+                </HoverText>{" "}
+                that is the large red square in the first row on the right—red
+                to signal England’s involvement, and its full-square shading to
+                indicate its heightened significance. One can also identify, in
+                the last square on the right, one row from the top,{" "}
+                <HoverText hoverState="Plymouth">
+                  the settlement of Plymouth in 1620.
+                </HoverText>{" "}
+                The square is nearly entirely red—again, because of England’s
+                involvement and because of its heightened significance—save for
+                a small teal square in the middle-right position. Teal
+                corresponds to action by the Dutch; indeed, this registers the
+                <HoverText hoverState="FirstEnslavedAfricans">
+                  first enslaved Africans arriving in Virginia in that same
+                  year.
+                </HoverText>
+                On the side of abolition but by no means its most radical
+                proponent, the square’s ratio of red to teal reflects Peabody’s
+                awareness of—if not an urgency about—the need to end slavery in
+                the United States.
               </span>
               <span>
                 <span role="button" className="circle">
@@ -1518,6 +1539,6 @@ export default function PeabodyPage() {
         </p>
       </CenteredLayout>
       <Footer />
-    </ThemeContext.Provider>
+    </ChapterContext.Provider>
   );
 }
