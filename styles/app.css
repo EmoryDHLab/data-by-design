@@ -635,9 +635,9 @@ video {
   margin-bottom: 1.25rem !important;
 }
 
-.my-12 {
-  margin-top: 3rem !important;
-  margin-bottom: 3rem !important;
+.my-10 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
 }
 
 .my-8 {
@@ -655,9 +655,9 @@ video {
   margin-bottom: 5rem !important;
 }
 
-.my-10 {
-  margin-top: 2.5rem !important;
-  margin-bottom: 2.5rem !important;
+.my-12 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
 }
 
 .mx-3 {
@@ -825,12 +825,12 @@ video {
   width: 27.5px !important;
 }
 
-.w-8 {
-  width: 2rem !important;
-}
-
 .w-96 {
   width: 24rem !important;
+}
+
+.w-8 {
+  width: 2rem !important;
 }
 
 .w-4\/5 {
@@ -1228,6 +1228,11 @@ video {
   padding-bottom: 1rem !important;
 }
 
+.py-16 {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
 .py-10 {
   padding-top: 2.5rem !important;
   padding-bottom: 2.5rem !important;
@@ -1246,11 +1251,6 @@ video {
 .px-20 {
   padding-left: 5rem !important;
   padding-right: 5rem !important;
-}
-
-.py-16 {
-  padding-top: 4rem !important;
-  padding-bottom: 4rem !important;
 }
 
 .py-20 {
@@ -1328,23 +1328,27 @@ video {
 }
 
 .font-william {
-  font-family: VTC William, serif !important;
+  font-family: VTC Du Bois, serif !important;
 }
 
-.font-dubois {
-  font-family: VTC Du Bois, serif !important;
+.font-duboisWide {
+  font-family: VTC Du Bois Wide, serif !important;
+}
+
+.font-duboisLight {
+  font-family: VTC Du Bois Light, serif !important;
 }
 
 .font-sans {
   font-family: neue-haas-unica, sans-serif !important;
 }
 
-.font-duboisNarrow {
-  font-family: VTC Du Bois Narrow, serif !important;
+.font-dubois {
+  font-family: VTC Du Bois, serif !important;
 }
 
-.font-duboisWide {
-  font-family: VTC Du Bois Wide, serif !important;
+.font-duboisNarrow {
+  font-family: VTC Du Bois Narrow, serif !important;
 }
 
 .text-3xl {
@@ -1549,8 +1553,7 @@ video {
 .footnote {
   cursor: pointer;
   display: inline-block;
-  font-family: "VTC William";
-  font-weight: 700;
+  font-family: "VTC Du Bois";
   vertical-align: middle;
   font-size: .75rem;
   line-height: 1.25rem;
@@ -1606,8 +1609,8 @@ video {
     margin-bottom: 2.5rem !important;
   }
 
-  .md\:h-96 {
-    height: 24rem !important;
+  .md\:h-80 {
+    height: 20rem !important;
   }
 
   .md\:grid-cols-9 {
@@ -1624,11 +1627,6 @@ video {
   .lg\:mx-12 {
     margin-left: 3rem !important;
     margin-right: 3rem !important;
-  }
-
-  .lg\:text-3xl {
-    font-size: 1.875rem !important;
-    line-height: 2.25rem !important;
   }
 
   .lg\:text-2xl {

@@ -13,20 +13,26 @@
     font-style: normal;
 }
 
+
 @font-face {
-    font-family: "VTC Du Bois Wide";
-    src: url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff") format("woff"),
-    url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
+    font-family: "VTC Du Bois Light";
+    src: url("/fonts/VTCDubois/VTCDuBois-Light.woff") format("woff"),
+    url("/fonts/VTCDubois/VTCDuBois-Light.woff2") format("woff2");
+    font-weight: normal;
 }
 
 @font-face {
     font-family: "VTC Du Bois Wide";
+    src: url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff") format("woff"),
+    url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "VTC Du Bois Light Wide";
     src: url("/fonts/VTCDubois/VTCDuBois-LightWide.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-LightWide.woff2") format("woff2");
-    font-weight: 300;
-    font-style: normal;
+    font-weight: lighter;
+    font-stretch: wider;
 }
 
 @font-face {
@@ -39,7 +45,7 @@
 }
 
 @font-face {
-    font-family: "VTC Du Bois Narrow";
+    font-family: "VTC Du Bois Light Narrow";
     src: url("/fonts/VTCDubois/VTCDuBois-LightNarrow.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-LightNarrow.woff2") format("woff2");
     font-weight: 300;
@@ -57,45 +63,7 @@
     src: url("/fonts/DxDIcons/DxDIcons-Regular.ttf") format("truetype");
 }
 
-@font-face {
-    font-family: "VTC William";
-    src: url("/fonts/William/VTCWilliam-Regular.woff") format("woff"),
-    url("/fonts/William/VTCWilliam-Regular.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: "VTC William";
-    src: url("/fonts/William/VTCWilliam-Bold.woff") format("woff"),
-    url("/fonts/William/VTCWilliam-Bold.woff2") format("woff2");
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "VTC William";
-    src: url("/fonts/William/VTCWilliam-BoldItalic.woff") format("woff"),
-    url("/fonts/William/VTCWilliam-BoldItalic.woff2") format("woff2");
-    font-weight: bold;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "VTC William";
-    src: url("/fonts/William/VTCWilliam-Italic.woff") format("woff"),
-    url("/fonts/William/VTCWilliam-Italic.woff2") format("woff2");
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "VTC William Wide";
-    src: url("/fonts/William/VTCWilliam-BoldWide.woff") format("woff"),
-    url("/fonts/William/VTCWilliam-BoldWide.woff2") format("woff2");
-    font-weight: bold;
-    font-style: normal;
-}
 
 /*
  * The Typekit service used to deliver this font or fonts for use on websites

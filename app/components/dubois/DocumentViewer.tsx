@@ -461,7 +461,7 @@ export default function DocumentViewer() {
   const selectedImage = imageSets[selectedSet].images[selectedImageIndex];
 
   return (
-    <div className="bg-black w-full flex flex-col items-center pb-10">
+    <div className="py-16 bg-black w-full flex flex-col items-center pb-10">
       <div className="max-w-5xl flex">
         <div className="py-10 px-5 flex flex-col items-center w-1/6 space-y-5">
           <button
@@ -518,7 +518,7 @@ export default function DocumentViewer() {
               <button
                 onClick={() => {
                   setSelectedImageIndex(
-                    (i) => (i + 1) % imageSets[selectedSet].images.length
+                    (i) => (i + imageSets[selectedSet].images.length - 1) % imageSets[selectedSet].images.length
                   );
                 }}
               >
@@ -527,7 +527,7 @@ export default function DocumentViewer() {
                   src="/images/dubois/leftarrow.png"
                 />
               </button>
-              <div className="text-center">
+              <div className="text-center w-96">
                 <p className="my-2 text-white-600 font-normal text-lg mt-5">
                   {selectedImage?.text}
                 </p>
@@ -541,7 +541,11 @@ export default function DocumentViewer() {
                   {selectedImage?.credit3}
                 </p>
               </div>
-              <button>
+              <button onClick={() => {
+                  setSelectedImageIndex(
+                    (i) => (i + 1) % imageSets[selectedSet].images.length
+                  );
+                }}>
                 <img
                   className="w-[27.5px] h-[19.5px] mt-5"
                   src="/images/dubois/rightarrow.png"

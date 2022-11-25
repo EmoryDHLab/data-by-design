@@ -24,10 +24,13 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        william: ["VTC William", "serif"],
+        william: ["VTC Du Bois", "serif"],
         dubois: ["VTC Du Bois", "serif"],
+        duboisLight: ["VTC Du Bois Light", "serif"],
         duboisWide: ["VTC Du Bois Wide", "serif"],
+        duboisLightWide: ["VTC Du Bois Light Wide", "serif"],
         duboisNarrow: ["VTC Du Bois Narrow", "serif"],
+        duboisLightNarrow: ["VTC Du Bois Light Narrow", "serif"],
         sans: ["neue-haas-unica", "sans-serif"],
         icons: ["DxD Icons"],
       },
