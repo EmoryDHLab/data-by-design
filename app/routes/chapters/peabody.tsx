@@ -10,6 +10,7 @@ import Footer from "~/components/Footer";
 import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import { useState } from "react";
 import HoverText from "~/components/HoverText";
+import PeabodySquare from "~/components/peabody/PeabodySquare";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -254,79 +255,86 @@ export default function PeabodyPage() {
             </span>
           </p>
         </div>
-        <FullBleed className="bg-peabodyPrimary h-[1000px] flex flex-col items-center justify-center">
-          SCROLLYTELL HERE
-        </FullBleed>
-        <div className="flex">
-          <div className="py-10 space-y-5 w-3/5">
-            <p>
-              <span>In </span>
-              <span className="italic">
-                The Polish-American System of Chronology
-              </span>
-              <span>
-                , Peabody covers a tremendous expanse of time: the period
-                between 2500 BCE and 1849 CE (what was then the present). But
-                Peabody also saw the need for a textbook that focused
-                exclusively on the United States, and that went into more detail
-                than she could cover in a textbook on world history. And so,
-                shortly after the release of the{" "}
-              </span>
-              <span className="italic">Polish-American System</span>
-              <span>
-                , she began working on the book that would be published, in
-                1856, as{" "}
-              </span>
-              <span className="italic">
-                A Chronological History of the United States
-              </span>
-              <span>
-                . This textbook contained the four full-color plates displayed
-                above; one for each of the centuries since the first European
-                colonizers set foot on Native American land. As Peabody
-                envisioned it, the basic exercise was to read a chapter of the
-                textbook, which contained a narrative account of the events of a
-                single century, and then match each item in the list of events
-                that concluded the chapter with its visual representation on the
-                corresponding chart.
-              </span>
-            </p>
-            <p>
-              <span>
-                For example, by cross-referencing the table of events of the
-                seventeenth century, pictured just below, to its corresponding
-                chart, it is possible to identify, for example, the{" "}
-                <HoverText hoverState="Jamestown">
-                  founding of Jamestown in 1607;
-                </HoverText>{" "}
-                that is the large red square in the first row on the right—red
-                to signal England’s involvement, and its full-square shading to
-                indicate its heightened significance. One can also identify, in
-                the last square on the right, one row from the top,{" "}
-                <HoverText hoverState="Plymouth">
-                  the settlement of Plymouth in 1620.
-                </HoverText>{" "}
-                The square is nearly entirely red—again, because of England’s
-                involvement and because of its heightened significance—save for
-                a small teal square in the middle-right position. Teal
-                corresponds to action by the Dutch; indeed, this registers the
-                <HoverText hoverState="FirstEnslavedAfricans">
-                  first enslaved Africans arriving in Virginia in that same
-                  year.
-                </HoverText>
-                On the side of abolition but by no means its most radical
-                proponent, the square’s ratio of red to teal reflects Peabody’s
-                awareness of—if not an urgency about—the need to end slavery in
-                the United States.
-              </span>
-              <span>
-                <span role="button" className="circle">
-                  9
-                </span>{" "}
-              </span>
-            </p>
-          </div>
-        </div>
+      </CenteredLayout>
+      <div className="bg-peabodyPrimary h-[1000px] w-full flex flex-col items-center justify-center">
+        SCROLLYTELL HERE
+      </div>
+      <TwoColumnLayout>
+        <Column className="py-10 space-y-5">
+          <p>
+            <span>In </span>
+            <span className="italic">
+              The Polish-American System of Chronology
+            </span>
+            <span>
+              , Peabody covers a tremendous expanse of time: the period between
+              2500 BCE and 1849 CE (what was then the present). But Peabody also
+              saw the need for a textbook that focused exclusively on the United
+              States, and that went into more detail than she could cover in a
+              textbook on world history. And so, shortly after the release of
+              the{" "}
+            </span>
+            <span className="italic">Polish-American System</span>
+            <span>
+              , she began working on the book that would be published, in 1856,
+              as{" "}
+            </span>
+            <span className="italic">
+              A Chronological History of the United States
+            </span>
+            <span>
+              . This textbook contained the four full-color plates displayed
+              above; one for each of the centuries since the first European
+              colonizers set foot on Native American land. As Peabody envisioned
+              it, the basic exercise was to read a chapter of the textbook,
+              which contained a narrative account of the events of a single
+              century, and then match each item in the list of events that
+              concluded the chapter with its visual representation on the
+              corresponding chart.
+            </span>
+          </p>
+          <p>
+            <span>
+              For example, by cross-referencing the table of events of the
+              seventeenth century, pictured just below, to its corresponding
+              chart, it is possible to identify, for example, the{" "}
+              <HoverText className="font-semibold" hoverState="Jamestown">
+                founding of Jamestown in 1607;
+              </HoverText>{" "}
+              that is the large red square in the first row on the right—red to
+              signal England’s involvement, and its full-square shading to
+              indicate its heightened significance. One can also identify, in
+              the last square on the right, one row from the top,{" "}
+              <HoverText className="font-semibold" hoverState="Plymouth">
+                the settlement of Plymouth in 1620.
+              </HoverText>{" "}
+              The square is nearly entirely red—again, because of England’s
+              involvement and because of its heightened significance—save for a
+              small teal square in the middle-right position. Teal corresponds
+              to action by the Dutch; indeed, this registers the{" "}
+              <HoverText
+                className="font-semibold"
+                hoverState="FirstEnslavedAfricans"
+              >
+                first enslaved Africans arriving in Virginia in that same year.
+              </HoverText>{" "}
+              On the side of abolition but by no means its most radical
+              proponent, the square’s ratio of red to teal reflects Peabody’s
+              awareness of—if not an urgency about—the need to end slavery in
+              the United States.
+            </span>
+            <span>
+              <span role="button" className="circle">
+                9
+              </span>{" "}
+            </span>
+          </p>
+        </Column>
+        <Column className="py-10 space-y-5">
+          <PeabodySquare />
+        </Column>
+      </TwoColumnLayout>
+      <CenteredLayout>
         <div className="pt-10 space-y-5">
           <p>
             <span>

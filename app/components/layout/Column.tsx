@@ -1,7 +1,7 @@
 import type { ReactNodeLike } from "prop-types";
 
 interface Props {
-  children: ReactNodeLike;
+  children?: ReactNodeLike;
   className?: string;
 }
 
