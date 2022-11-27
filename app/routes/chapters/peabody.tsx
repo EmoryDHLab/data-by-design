@@ -10,7 +10,7 @@ import Footer from "~/components/Footer";
 import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import { useState } from "react";
 import HoverText from "~/components/HoverText";
-import PeabodySquare from "~/components/peabody/PeabodySquare";
+import HoverZoomPeabodySquare from "~/components/peabody/PeabodySquare";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -331,7 +331,7 @@ export default function PeabodyPage() {
           </p>
         </Column>
         <Column className="py-10 space-y-5">
-          <PeabodySquare />
+          <HoverZoomPeabodySquare />
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/theme";
 
-export default function PeabodySquare() {
+export default function HoverZoomPeabodySquare() {
   const { hoverState } = useContext(ChapterContext);
   return (
     <div className="relative">
