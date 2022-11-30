@@ -514,10 +514,6 @@ video {
   visibility: visible !important;
 }
 
-.collapse {
-  visibility: collapse !important;
-}
-
 .fixed {
   position: fixed !important;
 }
@@ -801,10 +797,6 @@ video {
 
 .w-1\/2 {
   width: 50% !important;
-}
-
-.w-3\/4 {
-  width: 75% !important;
 }
 
 .w-2\/3 {
@@ -1261,8 +1253,6 @@ video {
   padding-top: 2.5rem !important;
 }
 
-.pb-12 {
-  padding-bottom: 3rem !important;
 .pb-12 {
   padding-bottom: 3rem !important;
 }
