@@ -514,6 +514,10 @@ video {
   visibility: visible !important;
 }
 
+.collapse {
+  visibility: collapse !important;
+}
+
 .fixed {
   position: fixed !important;
 }
