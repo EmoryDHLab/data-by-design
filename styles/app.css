@@ -639,6 +639,16 @@ video {
   margin-bottom: 5rem !important;
 }
 
+.my-12 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.mx-3 {
+  margin-left: 0.75rem !important;
+  margin-right: 0.75rem !important;
+}
+
 .mt-16 {
   margin-top: 4rem !important;
 }
@@ -747,6 +757,22 @@ video {
   height: 896px !important;
 }
 
+.h-full {
+  height: 100% !important;
+}
+
+.h-screen {
+  height: 100vh !important;
+}
+
+.h-1\/2 {
+  height: 50% !important;
+}
+
+.max-h-full {
+  max-height: 100% !important;
+}
+
 .w-full {
   width: 100% !important;
 }
@@ -841,6 +867,58 @@ video {
 
 .max-w-\[318px\] {
   max-width: 318px !important;
+}
+
+.max-w-\[318px\] {
+  max-width: 318px !important;
+}
+
+.-translate-x-\[22rem\] {
+  --tw-translate-x: -22rem !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.translate-y-\[17\.9rem\] {
+  --tw-translate-y: 17.9rem !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.translate-x-\[4rem\] {
+  --tw-translate-x: 4rem !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.-translate-y-\[3rem\] {
+  --tw-translate-y: -3rem !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.-translate-x-\[14rem\] {
+  --tw-translate-x: -14rem !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.-translate-y-\[2rem\] {
+  --tw-translate-y: -2rem !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.scale-\[2\.56\] {
+  --tw-scale-x: 2.56 !important;
+  --tw-scale-y: 2.56 !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.scale-\[3\] {
+  --tw-scale-x: 3 !important;
+  --tw-scale-y: 3 !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.scale-\[3\.3\] {
+  --tw-scale-x: 3.3 !important;
+  --tw-scale-y: 3.3 !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 
 .-translate-x-\[22rem\] {
@@ -1201,6 +1279,11 @@ video {
   padding-bottom: 5rem !important;
 }
 
+.py-9 {
+  padding-top: 2.25rem !important;
+  padding-bottom: 2.25rem !important;
+}
+
 .pl-2 {
   padding-left: 0.5rem !important;
 }
@@ -1259,6 +1342,10 @@ video {
 
 .pb-12 {
   padding-bottom: 3rem !important;
+}
+
+.pr-12 {
+  padding-right: 3rem !important;
 }
 
 .text-center {
@@ -1538,6 +1625,11 @@ video {
     margin-bottom: 4rem !important;
   }
 
+  .md\:my-10 {
+    margin-top: 2.5rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+
   .md\:h-80 {
     height: 20rem !important;
   }
@@ -1548,6 +1640,16 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:my-52 {
+    margin-top: 13rem !important;
+    margin-bottom: 13rem !important;
+  }
+
+  .lg\:mx-12 {
+    margin-left: 3rem !important;
+    margin-right: 3rem !important;
+  }
+
   .lg\:text-2xl {
     font-size: 1.5rem !important;
     line-height: 2rem !important;
@@ -1556,6 +1658,11 @@ video {
   .lg\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
+  }
+
+  .lg\:text-4xl {
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
   }
 }
 
