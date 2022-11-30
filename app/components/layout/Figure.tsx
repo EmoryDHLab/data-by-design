@@ -11,7 +11,7 @@ interface Props {
 export default function Figure({ alt, children, src, className }: Props) {
   return (
     <div className={`flex justify-center ${className ?? ""}`}>
-      <figure className="w-3/4">
+      <figure>
         <img src={src} alt={alt} />
         <figcaption className="font-william text-center mt-6 mb-12">
           {children}

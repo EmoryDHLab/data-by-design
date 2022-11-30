@@ -514,6 +514,10 @@ video {
   visibility: visible !important;
 }
 
+.collapse {
+  visibility: collapse !important;
+}
+
 .fixed {
   position: fixed !important;
 }
@@ -544,10 +548,6 @@ video {
 
 .col-span-2 {
   grid-column: span 2 / span 2 !important;
-}
-
-.col-span-full {
-  grid-column: 1 / -1 !important;
 }
 
 .col-span-6 {
@@ -582,10 +582,6 @@ video {
   grid-column-start: 11 !important;
 }
 
-.col-start-7 {
-  grid-column-start: 7 !important;
-}
-
 .col-end-6 {
   grid-column-end: 6 !important;
 }
@@ -600,10 +596,6 @@ video {
 
 .col-end-11 {
   grid-column-end: 11 !important;
-}
-
-.col-end-8 {
-  grid-column-end: 8 !important;
 }
 
 .row-span-3 {
@@ -645,16 +637,6 @@ video {
 .my-20 {
   margin-top: 5rem !important;
   margin-bottom: 5rem !important;
-}
-
-.my-12 {
-  margin-top: 3rem !important;
-  margin-bottom: 3rem !important;
-}
-
-.mx-3 {
-  margin-left: 0.75rem !important;
-  margin-right: 0.75rem !important;
 }
 
 .mt-16 {
@@ -709,6 +691,10 @@ video {
   margin-top: 2rem !important;
 }
 
+.mb-12 {
+  margin-bottom: 3rem !important;
+}
+
 .flex {
   display: flex !important;
 }
@@ -759,22 +745,6 @@ video {
 
 .h-\[896px\] {
   height: 896px !important;
-}
-
-.h-full {
-  height: 100% !important;
-}
-
-.h-screen {
-  height: 100vh !important;
-}
-
-.h-1\/2 {
-  height: 50% !important;
-}
-
-.max-h-full {
-  max-height: 100% !important;
 }
 
 .w-full {
@@ -833,12 +803,12 @@ video {
   width: 50% !important;
 }
 
-.w-2\/3 {
-  width: 66.666667% !important;
-}
-
 .w-3\/4 {
   width: 75% !important;
+}
+
+.w-2\/3 {
+  width: 66.666667% !important;
 }
 
 .max-w-full {
@@ -875,14 +845,6 @@ video {
 
 .max-w-\[318px\] {
   max-width: 318px !important;
-}
-
-.max-w-screen-2xl {
-  max-width: 1536px !important;
-}
-
-.flex-1 {
-  flex: 1 1 0% !important;
 }
 
 .-translate-x-\[22rem\] {
@@ -963,18 +925,6 @@ video {
 
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-}
-
-.grid-cols-10 {
-  grid-template-columns: repeat(10, minmax(0, 1fr)) !important;
-}
-
-.grid-cols-7 {
-  grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
-}
-
-.grid-cols-8 {
-  grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
 }
 
 .grid-rows-3 {
@@ -1074,10 +1024,6 @@ video {
   --tw-divide-y-reverse: 0 !important;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse))) !important;
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse)) !important;
-}
-
-.self-center {
-  align-self: center !important;
 }
 
 .overflow-hidden {
@@ -1259,11 +1205,6 @@ video {
   padding-bottom: 5rem !important;
 }
 
-.py-9 {
-  padding-top: 2.25rem !important;
-  padding-bottom: 2.25rem !important;
-}
-
 .pl-2 {
   padding-left: 0.5rem !important;
 }
@@ -1320,6 +1261,8 @@ video {
   padding-top: 2.5rem !important;
 }
 
+.pb-12 {
+  padding-bottom: 3rem !important;
 .pb-12 {
   padding-bottom: 3rem !important;
 }
@@ -1456,10 +1399,6 @@ video {
 
 .underline {
   text-decoration-line: underline !important;
-}
-
-.opacity-50 {
-  opacity: 0.5 !important;
 }
 
 .outline {
@@ -1605,11 +1544,6 @@ video {
     margin-bottom: 4rem !important;
   }
 
-  .md\:my-10 {
-    margin-top: 2.5rem !important;
-    margin-bottom: 2.5rem !important;
-  }
-
   .md\:h-80 {
     height: 20rem !important;
   }
@@ -1620,16 +1554,6 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:my-52 {
-    margin-top: 13rem !important;
-    margin-bottom: 13rem !important;
-  }
-
-  .lg\:mx-12 {
-    margin-left: 3rem !important;
-    margin-right: 3rem !important;
-  }
-
   .lg\:text-2xl {
     font-size: 1.5rem !important;
     line-height: 2rem !important;
@@ -1638,11 +1562,6 @@ video {
   .lg\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
-  }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem !important;
-    line-height: 2.5rem !important;
   }
 }
 
@@ -1668,20 +1587,8 @@ video {
     grid-column: span 8 / span 8 !important;
   }
 
-  .\32xl\:col-start-8 {
-    grid-column-start: 8 !important;
-  }
-
   .\32xl\:col-start-4 {
     grid-column-start: 4 !important;
-  }
-
-  .\32xl\:col-end-8 {
-    grid-column-end: 8 !important;
-  }
-
-  .\32xl\:grid-cols-14 {
-    grid-template-columns: repeat(14, minmax(0, 1fr)) !important;
   }
 
   .\32xl\:text-2xl {
