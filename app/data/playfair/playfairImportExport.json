@@ -1,0 +1,232 @@
+[
+{
+  "Years": 1700,
+  "Imports": 300000,
+  "Exports": 180000,
+  "Balance": "",
+  "Imports1801": 300000,
+  "Exports1801": 70000,
+  "ImportsDraft": 300000,
+  "ExportsDraft": 160000
+},
+{
+  "Years": 1710,
+  "Imports": 310000,
+  "Exports": 200000,
+  "Balance": "",
+  "Imports1801": 400000,
+  "Exports1801": 200000,
+  "ImportsDraft": 400000,
+  "ExportsDraft": 200000
+},
+{
+  "Years": 1720,
+  "Imports": 500000,
+  "Exports": 210000,
+  "Balance": "",
+  "Imports1801": 600000,
+  "Exports1801": 195000,
+  "ImportsDraft": 540000,
+  "ExportsDraft": 300000
+},
+{
+  "Years": 1730,
+  "Imports": 640000,
+  "Exports": 380000,
+  "Balance": "",
+  "Imports1801": 720000,
+  "Exports1801": 350000,
+  "ImportsDraft": 650000,
+  "ExportsDraft": 400000
+},
+{
+  "Years": 1740,
+  "Imports": 650000,
+  "Exports": 500000,
+  "Balance": "",
+  "Imports1801": 800000,
+  "Exports1801": 500000,
+  "ImportsDraft": 800000,
+  "ExportsDraft": 590000
+},
+{
+  "Years": 1750,
+  "Imports": 800000,
+  "Exports": 950000,
+  "Balance": "",
+  "Imports1801": 860000,
+  "Exports1801": 950000,
+  "ImportsDraft": 880000,
+  "ExportsDraft": 900000
+},
+{
+  "Years": 1760,
+  "Imports": 960000,
+  "Exports": 1900000,
+  "Balance": "",
+  "Imports1801": 1000000,
+  "Exports1801": 1950000,
+  "ImportsDraft": 1020000,
+  "ExportsDraft": 1800000
+},
+{
+  "Years": 1768,
+  "Imports": 1400000,
+  "Exports": 3800000,
+  "Balance": "",
+  "Imports1801": 1500000,
+  "Exports1801": 4210000,
+  "ImportsDraft": 1550000,
+  "ExportsDraft": 4000000
+},
+{
+  "Years": 1770,
+  "Imports": 1480000,
+  "Exports": 4550000,
+  "Balance": 3070000,
+  "Imports1801": 1600000,
+  "Exports1801": 4700000,
+  "ImportsDraft": 1580000,
+  "ExportsDraft": 4400000
+},
+{
+  "Years": 1771,
+  "Imports": 1430000,
+  "Exports": 4630000,
+  "Balance": 3200000,
+  "Imports1801": 1620000,
+  "Exports1801": 4820000,
+  "ImportsDraft": 1585000,
+  "ExportsDraft": 4340000
+},
+{
+  "Years": 1772,
+  "Imports": 1445000,
+  "Exports": 3600000,
+  "Balance": 2155000,
+  "Imports1801": 1650000,
+  "Exports1801": 4800000,
+  "ImportsDraft": 1585000,
+  "ExportsDraft": 3000000
+},
+{
+  "Years": 1773,
+  "Imports": 1465000,
+  "Exports": 2465000,
+  "Balance": 1000000,
+  "Imports1801": 1675000,
+  "Exports1801": 2580000,
+  "ImportsDraft": 1595000,
+  "ExportsDraft": 2360000
+},
+{
+  "Years": 1774,
+  "Imports": 1435000,
+  "Exports": 3840000,
+  "Balance": 2300000,
+  "Imports1801": 1730000,
+  "Exports1801": 2800000,
+  "ImportsDraft": 1700000,
+  "ExportsDraft": 3700000
+},
+{
+  "Years": 1775,
+  "Imports": 2065000,
+  "Exports": 985000,
+  "Balance": 1080000,
+  "Imports1801": 1900000,
+  "Exports1801": 3600000,
+  "ImportsDraft": 2000000,
+  "ExportsDraft": 1000000
+},
+{
+  "Years": 1776,
+  "Imports": 245000,
+  "Exports": 1190000,
+  "Balance": 945000,
+  "Imports1801": 2050000,
+  "Exports1801": 1700000,
+  "ImportsDraft": 400000,
+  "ExportsDraft": 1100000
+},
+{
+  "Years": 1777,
+  "Imports": 230000,
+  "Exports": 1880000,
+  "Balance": 1650000,
+  "Imports1801": 1000000,
+  "Exports1801": 1680000,
+  "ImportsDraft": 400000,
+  "ExportsDraft": 1800000
+},
+{
+  "Years": 1778,
+  "Imports": 265000,
+  "Exports": 1150000,
+  "Balance": 885000,
+  "Imports1801": 265000,
+  "Exports1801": 1950000,
+  "ImportsDraft": 400000,
+  "ExportsDraft": 1200000
+},
+{
+  "Years": 1779,
+  "Imports": 295000,
+  "Exports": 1370000,
+  "Balance": 1075000,
+  "Imports1801": 125000,
+  "Exports1801": 1350000,
+  "ImportsDraft": 400000,
+  "ExportsDraft": 1500000
+},
+{
+  "Years": 1780,
+  "Imports": 300000,
+  "Exports": 1805000,
+  "Balance": 1505000,
+  "Imports1801": 135000,
+  "Exports1801": 1570000,
+  "ImportsDraft": 400000,
+  "ExportsDraft": 1750000
+},
+{
+  "Years": 1781,
+  "Imports": 385000,
+  "Exports": 1545000,
+  "Balance": 1160000,
+  "Imports1801": 195000,
+  "Exports1801": 1900000,
+  "ImportsDraft": 1,
+  "ExportsDraft": 1
+},
+{
+  "Years": 1782,
+  "Imports": 295000,
+  "Exports": 905000,
+  "Balance": 610000,
+  "Imports1801": 295000,
+  "Exports1801": 2100000,
+  "ImportsDraft": 1,
+  "ExportsDraft": 1
+},
+{
+  "Years": 1790,
+  "Imports": 1800000,
+  "Exports": 3900000,
+  "Balance": "",
+  "Imports1801": 1950000,
+  "Exports1801": 3900000,
+  "ImportsDraft": 1,
+  "ExportsDraft": 1
+},
+{
+  "Years": 1800,
+  "Imports": 3300000,
+  "Exports": 4900000,
+  "Balance": "",
+  "Imports1801": 2600000,
+  "Exports1801": 5200000,
+  "ImportsDraft": 1,
+  "ExportsDraft": 1
+}
+]

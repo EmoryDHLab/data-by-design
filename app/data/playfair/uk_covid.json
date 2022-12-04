@@ -1,0 +1,2381 @@
+[{
+  "date": "2020-12-17",
+  "cumCasesByPublishDate": "1948660",
+  "cumDeaths28DaysByDeathDate": "67085",
+  "newCasesByPublishDate": "35383",
+  "newDeaths28DaysByDeathDate": "369",
+  "usDeath": "302261"
+}, {
+  "date": "2020-12-16",
+  "cumCasesByPublishDate": "1913277",
+  "cumDeaths28DaysByDeathDate": "66716",
+  "newCasesByPublishDate": "25161",
+  "newDeaths28DaysByDeathDate": "344",
+  "usDeath": "298823"
+}, {
+  "date": "2020-12-15",
+  "cumCasesByPublishDate": "1888116",
+  "cumDeaths28DaysByDeathDate": "66372",
+  "newCasesByPublishDate": "18450",
+  "newDeaths28DaysByDeathDate": "405",
+  "usDeath": "295375"
+}, {
+  "date": "2020-12-14",
+  "cumCasesByPublishDate": "1869666",
+  "cumDeaths28DaysByDeathDate": "65967",
+  "newCasesByPublishDate": "20263",
+  "newDeaths28DaysByDeathDate": "437",
+  "usDeath": "292404"
+}, {
+  "date": "2020-12-13",
+  "cumCasesByPublishDate": "1849403",
+  "cumDeaths28DaysByDeathDate": "65530",
+  "newCasesByPublishDate": "18447",
+  "newDeaths28DaysByDeathDate": "352",
+  "usDeath": "291046"
+}, {
+  "date": "2020-12-12",
+  "cumCasesByPublishDate": "1830956",
+  "cumDeaths28DaysByDeathDate": "65178",
+  "newCasesByPublishDate": "21502",
+  "newDeaths28DaysByDeathDate": "400",
+  "usDeath": "289552"
+}, {
+  "date": "2020-12-11",
+  "cumCasesByPublishDate": "1809455",
+  "cumDeaths28DaysByDeathDate": "64778",
+  "newCasesByPublishDate": "21672",
+  "newDeaths28DaysByDeathDate": "414",
+  "usDeath": "287058"
+}, {
+  "date": "2020-12-10",
+  "cumCasesByPublishDate": "1787783",
+  "cumDeaths28DaysByDeathDate": "64364",
+  "newCasesByPublishDate": "20964",
+  "newDeaths28DaysByDeathDate": "420",
+  "usDeath": "284309"
+}, {
+  "date": "2020-12-09",
+  "cumCasesByPublishDate": "1766819",
+  "cumDeaths28DaysByDeathDate": "63944",
+  "newCasesByPublishDate": "16578",
+  "newDeaths28DaysByDeathDate": "409",
+  "usDeath": "281194"
+}, {
+  "date": "2020-12-08",
+  "cumCasesByPublishDate": "1750241",
+  "cumDeaths28DaysByDeathDate": "63535",
+  "newCasesByPublishDate": "12282",
+  "newDeaths28DaysByDeathDate": "425",
+  "usDeath": "278030"
+}, {
+  "date": "2020-12-07",
+  "cumCasesByPublishDate": "1737960",
+  "cumDeaths28DaysByDeathDate": "63110",
+  "newCasesByPublishDate": "14718",
+  "newDeaths28DaysByDeathDate": "412",
+  "usDeath": "275327"
+}, {
+  "date": "2020-12-06",
+  "cumCasesByPublishDate": "1723242",
+  "cumDeaths28DaysByDeathDate": "62698",
+  "newCasesByPublishDate": "17272",
+  "newDeaths28DaysByDeathDate": "407",
+  "usDeath": "274030"
+}, {
+  "date": "2020-12-05",
+  "cumCasesByPublishDate": "1705971",
+  "cumDeaths28DaysByDeathDate": "62291",
+  "newCasesByPublishDate": "15539",
+  "newDeaths28DaysByDeathDate": "384",
+  "usDeath": "272885"
+}, {
+  "date": "2020-12-04",
+  "cumCasesByPublishDate": "1690432",
+  "cumDeaths28DaysByDeathDate": "61907",
+  "newCasesByPublishDate": "16298",
+  "newDeaths28DaysByDeathDate": "469",
+  "usDeath": "270405"
+}, {
+  "date": "2020-12-03",
+  "cumCasesByPublishDate": "1674134",
+  "cumDeaths28DaysByDeathDate": "61438",
+  "newCasesByPublishDate": "14879",
+  "newDeaths28DaysByDeathDate": "465",
+  "usDeath": "267832"
+}, {
+  "date": "2020-12-02",
+  "cumCasesByPublishDate": "1659256",
+  "cumDeaths28DaysByDeathDate": "60973",
+  "newCasesByPublishDate": "16170",
+  "newDeaths28DaysByDeathDate": "382",
+  "usDeath": "265007"
+}, {
+  "date": "2020-12-01",
+  "cumCasesByPublishDate": "1643086",
+  "cumDeaths28DaysByDeathDate": "60591",
+  "newCasesByPublishDate": "13430",
+  "newDeaths28DaysByDeathDate": "398",
+  "usDeath": "262203"
+}, {
+  "date": "2020-11-30",
+  "cumCasesByPublishDate": "1629657",
+  "cumDeaths28DaysByDeathDate": "60193",
+  "newCasesByPublishDate": "12330",
+  "newDeaths28DaysByDeathDate": "421",
+  "usDeath": "259697"
+}, {
+  "date": "2020-11-29",
+  "cumCasesByPublishDate": "1617327",
+  "cumDeaths28DaysByDeathDate": "59772",
+  "newCasesByPublishDate": "12155",
+  "newDeaths28DaysByDeathDate": "457",
+  "usDeath": "258662"
+}, {
+  "date": "2020-11-28",
+  "cumCasesByPublishDate": "1605172",
+  "cumDeaths28DaysByDeathDate": "59315",
+  "newCasesByPublishDate": "15871",
+  "newDeaths28DaysByDeathDate": "461",
+  "usDeath": "257839"
+}, {
+  "date": "2020-11-27",
+  "cumCasesByPublishDate": "1589301",
+  "cumDeaths28DaysByDeathDate": "58854",
+  "newCasesByPublishDate": "16022",
+  "newDeaths28DaysByDeathDate": "417",
+  "usDeath": "256588"
+}, {
+  "date": "2020-11-26",
+  "cumCasesByPublishDate": "1574562",
+  "cumDeaths28DaysByDeathDate": "58437",
+  "newCasesByPublishDate": "17555",
+  "newDeaths28DaysByDeathDate": "432",
+  "usDeath": "255196"
+}, {
+  "date": "2020-11-25",
+  "cumCasesByPublishDate": "1557007",
+  "cumDeaths28DaysByDeathDate": "58005",
+  "newCasesByPublishDate": "18213",
+  "newDeaths28DaysByDeathDate": "478",
+  "usDeath": "253809"
+}, {
+  "date": "2020-11-24",
+  "cumCasesByPublishDate": "1538794",
+  "cumDeaths28DaysByDeathDate": "57527",
+  "newCasesByPublishDate": "11299",
+  "newDeaths28DaysByDeathDate": "457",
+  "usDeath": "251529"
+}, {
+  "date": "2020-11-23",
+  "cumCasesByPublishDate": "1527495",
+  "cumDeaths28DaysByDeathDate": "57070",
+  "newCasesByPublishDate": "15450",
+  "newDeaths28DaysByDeathDate": "462",
+  "usDeath": "249423"
+}, {
+  "date": "2020-11-22",
+  "cumCasesByPublishDate": "1512045",
+  "cumDeaths28DaysByDeathDate": "56608",
+  "newCasesByPublishDate": "18662",
+  "newDeaths28DaysByDeathDate": "473",
+  "usDeath": "248565"
+}, {
+  "date": "2020-11-21",
+  "cumCasesByPublishDate": "1493383",
+  "cumDeaths28DaysByDeathDate": "56135",
+  "newCasesByPublishDate": "19875",
+  "newDeaths28DaysByDeathDate": "461",
+  "usDeath": "247648"
+}, {
+  "date": "2020-11-20",
+  "cumCasesByPublishDate": "1473508",
+  "cumDeaths28DaysByDeathDate": "55674",
+  "newCasesByPublishDate": "20252",
+  "newDeaths28DaysByDeathDate": "450",
+  "usDeath": "246094"
+}, {
+  "date": "2020-11-19",
+  "cumCasesByPublishDate": "1453256",
+  "cumDeaths28DaysByDeathDate": "55224",
+  "newCasesByPublishDate": "22915",
+  "newDeaths28DaysByDeathDate": "461",
+  "usDeath": "244200"
+}, {
+  "date": "2020-11-18",
+  "cumCasesByPublishDate": "1430341",
+  "cumDeaths28DaysByDeathDate": "54763",
+  "newCasesByPublishDate": "19609",
+  "newDeaths28DaysByDeathDate": "485",
+  "usDeath": "242180"
+}, {
+  "date": "2020-11-17",
+  "cumCasesByPublishDate": "1410732",
+  "cumDeaths28DaysByDeathDate": "54278",
+  "newCasesByPublishDate": "20051",
+  "newDeaths28DaysByDeathDate": "439",
+  "usDeath": "240298"
+}, {
+  "date": "2020-11-16",
+  "cumCasesByPublishDate": "1390681",
+  "cumDeaths28DaysByDeathDate": "53839",
+  "newCasesByPublishDate": "21363",
+  "newDeaths28DaysByDeathDate": "424",
+  "usDeath": "238736"
+}, {
+  "date": "2020-11-15",
+  "cumCasesByPublishDate": "1369318",
+  "cumDeaths28DaysByDeathDate": "53415",
+  "newCasesByPublishDate": "24962",
+  "newDeaths28DaysByDeathDate": "450",
+  "usDeath": "238127"
+}, {
+  "date": "2020-11-14",
+  "cumCasesByPublishDate": "1344356",
+  "cumDeaths28DaysByDeathDate": "52965",
+  "newCasesByPublishDate": "26860",
+  "newDeaths28DaysByDeathDate": "428",
+  "usDeath": "237419"
+}, {
+  "date": "2020-11-13",
+  "cumCasesByPublishDate": "1317496",
+  "cumDeaths28DaysByDeathDate": "52537",
+  "newCasesByPublishDate": "27301",
+  "newDeaths28DaysByDeathDate": "434",
+  "usDeath": "236067"
+}, {
+  "date": "2020-11-12",
+  "cumCasesByPublishDate": "1290195",
+  "cumDeaths28DaysByDeathDate": "52103",
+  "newCasesByPublishDate": "33470",
+  "newDeaths28DaysByDeathDate": "418",
+  "usDeath": "234763"
+}, {
+  "date": "2020-11-11",
+  "cumCasesByPublishDate": "1256725",
+  "cumDeaths28DaysByDeathDate": "51685",
+  "newCasesByPublishDate": "22950",
+  "newDeaths28DaysByDeathDate": "387",
+  "usDeath": "233652"
+}, {
+  "date": "2020-11-10",
+  "cumCasesByPublishDate": "1233775",
+  "cumDeaths28DaysByDeathDate": "51298",
+  "newCasesByPublishDate": "20412",
+  "newDeaths28DaysByDeathDate": "387",
+  "usDeath": "232073"
+}, {
+  "date": "2020-11-09",
+  "cumCasesByPublishDate": "1213363",
+  "cumDeaths28DaysByDeathDate": "50911",
+  "newCasesByPublishDate": "21350",
+  "newDeaths28DaysByDeathDate": "480",
+  "usDeath": "230716"
+}, {
+  "date": "2020-11-08",
+  "cumCasesByPublishDate": "1192013",
+  "cumDeaths28DaysByDeathDate": "50431",
+  "newCasesByPublishDate": "20572",
+  "newDeaths28DaysByDeathDate": "413",
+  "usDeath": "230136"
+}, {
+  "date": "2020-11-07",
+  "cumCasesByPublishDate": "1171441",
+  "cumDeaths28DaysByDeathDate": "50018",
+  "newCasesByPublishDate": "24957",
+  "newDeaths28DaysByDeathDate": "388",
+  "usDeath": "229635"
+}, {
+  "date": "2020-11-06",
+  "cumCasesByPublishDate": "1146484",
+  "cumDeaths28DaysByDeathDate": "49630",
+  "newCasesByPublishDate": "23287",
+  "newDeaths28DaysByDeathDate": "399",
+  "usDeath": "228503"
+}, {
+  "date": "2020-11-05",
+  "cumCasesByPublishDate": "1123197",
+  "cumDeaths28DaysByDeathDate": "49231",
+  "newCasesByPublishDate": "24141",
+  "newDeaths28DaysByDeathDate": "375",
+  "usDeath": "227317"
+}, {
+  "date": "2020-11-04",
+  "cumCasesByPublishDate": "1099059",
+  "cumDeaths28DaysByDeathDate": "48856",
+  "newCasesByPublishDate": "25177",
+  "newDeaths28DaysByDeathDate": "329",
+  "usDeath": "226162"
+}, {
+  "date": "2020-11-03",
+  "cumCasesByPublishDate": "1073882",
+  "cumDeaths28DaysByDeathDate": "48527",
+  "newCasesByPublishDate": "20018",
+  "newDeaths28DaysByDeathDate": "359",
+  "usDeath": "225036"
+}, {
+  "date": "2020-11-02",
+  "cumCasesByPublishDate": "1053864",
+  "cumDeaths28DaysByDeathDate": "48168",
+  "newCasesByPublishDate": "18950",
+  "newDeaths28DaysByDeathDate": "330",
+  "usDeath": "223511"
+}, {
+  "date": "2020-11-01",
+  "cumCasesByPublishDate": "1034914",
+  "cumDeaths28DaysByDeathDate": "47838",
+  "newCasesByPublishDate": "23254",
+  "newDeaths28DaysByDeathDate": "356",
+  "usDeath": "223037"
+}, {
+  "date": "2020-10-31",
+  "cumCasesByPublishDate": "1011660",
+  "cumDeaths28DaysByDeathDate": "47482",
+  "newCasesByPublishDate": "21915",
+  "newDeaths28DaysByDeathDate": "320",
+  "usDeath": "222639"
+}, {
+  "date": "2020-10-30",
+  "cumCasesByPublishDate": "989745",
+  "cumDeaths28DaysByDeathDate": "47162",
+  "newCasesByPublishDate": "24405",
+  "newDeaths28DaysByDeathDate": "338",
+  "usDeath": "221669"
+}, {
+  "date": "2020-10-29",
+  "cumCasesByPublishDate": "965340",
+  "cumDeaths28DaysByDeathDate": "46824",
+  "newCasesByPublishDate": "23065",
+  "newDeaths28DaysByDeathDate": "310",
+  "usDeath": "220722"
+}, {
+  "date": "2020-10-28",
+  "cumCasesByPublishDate": "942275",
+  "cumDeaths28DaysByDeathDate": "46514",
+  "newCasesByPublishDate": "24701",
+  "newDeaths28DaysByDeathDate": "283",
+  "usDeath": "219667"
+}, {
+  "date": "2020-10-27",
+  "cumCasesByPublishDate": "917575",
+  "cumDeaths28DaysByDeathDate": "46231",
+  "newCasesByPublishDate": "22885",
+  "newDeaths28DaysByDeathDate": "266",
+  "usDeath": "218622"
+}, {
+  "date": "2020-10-26",
+  "cumCasesByPublishDate": "894690",
+  "cumDeaths28DaysByDeathDate": "45965",
+  "newCasesByPublishDate": "20890",
+  "newDeaths28DaysByDeathDate": "277",
+  "usDeath": "217693"
+}, {
+  "date": "2020-10-25",
+  "cumCasesByPublishDate": "873800",
+  "cumDeaths28DaysByDeathDate": "45688",
+  "newCasesByPublishDate": "19790",
+  "newDeaths28DaysByDeathDate": "247",
+  "usDeath": "217294"
+}, {
+  "date": "2020-10-24",
+  "cumCasesByPublishDate": "854010",
+  "cumDeaths28DaysByDeathDate": "45441",
+  "newCasesByPublishDate": "23012",
+  "newDeaths28DaysByDeathDate": "213",
+  "usDeath": "216907"
+}, {
+  "date": "2020-10-23",
+  "cumCasesByPublishDate": "830998",
+  "cumDeaths28DaysByDeathDate": "45228",
+  "newCasesByPublishDate": "20530",
+  "newDeaths28DaysByDeathDate": "222",
+  "usDeath": "216010"
+}, {
+  "date": "2020-10-22",
+  "cumCasesByPublishDate": "810467",
+  "cumDeaths28DaysByDeathDate": "45006",
+  "newCasesByPublishDate": "21242",
+  "newDeaths28DaysByDeathDate": "234",
+  "usDeath": "215069"
+}, {
+  "date": "2020-10-21",
+  "cumCasesByPublishDate": "789229",
+  "cumDeaths28DaysByDeathDate": "44772",
+  "newCasesByPublishDate": "26688",
+  "newDeaths28DaysByDeathDate": "222",
+  "usDeath": "213943"
+}, {
+  "date": "2020-10-20",
+  "cumCasesByPublishDate": "762542",
+  "cumDeaths28DaysByDeathDate": "44550",
+  "newCasesByPublishDate": "21331",
+  "newDeaths28DaysByDeathDate": "194",
+  "usDeath": "212918"
+}, {
+  "date": "2020-10-19",
+  "cumCasesByPublishDate": "741212",
+  "cumDeaths28DaysByDeathDate": "44356",
+  "newCasesByPublishDate": "18804",
+  "newDeaths28DaysByDeathDate": "191",
+  "usDeath": "212088"
+}, {
+  "date": "2020-10-18",
+  "cumCasesByPublishDate": "722409",
+  "cumDeaths28DaysByDeathDate": "44165",
+  "newCasesByPublishDate": "16982",
+  "newDeaths28DaysByDeathDate": "159",
+  "usDeath": "211637"
+}, {
+  "date": "2020-10-17",
+  "cumCasesByPublishDate": "705428",
+  "cumDeaths28DaysByDeathDate": "44006",
+  "newCasesByPublishDate": "16171",
+  "newDeaths28DaysByDeathDate": "175",
+  "usDeath": "211235"
+}, {
+  "date": "2020-10-16",
+  "cumCasesByPublishDate": "689257",
+  "cumDeaths28DaysByDeathDate": "43831",
+  "newCasesByPublishDate": "15650",
+  "newDeaths28DaysByDeathDate": "147",
+  "usDeath": "210458"
+}, {
+  "date": "2020-10-15",
+  "cumCasesByPublishDate": "673622",
+  "cumDeaths28DaysByDeathDate": "43684",
+  "newCasesByPublishDate": "18980",
+  "newDeaths28DaysByDeathDate": "151",
+  "usDeath": "209564"
+}, {
+  "date": "2020-10-14",
+  "cumCasesByPublishDate": "654644",
+  "cumDeaths28DaysByDeathDate": "43533",
+  "newCasesByPublishDate": "19724",
+  "newDeaths28DaysByDeathDate": "115",
+  "usDeath": "208636"
+}, {
+  "date": "2020-10-13",
+  "cumCasesByPublishDate": "634920",
+  "cumDeaths28DaysByDeathDate": "43418",
+  "newCasesByPublishDate": "17234",
+  "newDeaths28DaysByDeathDate": "110",
+  "usDeath": "207838"
+}, {
+  "date": "2020-10-12",
+  "cumCasesByPublishDate": "617688",
+  "cumDeaths28DaysByDeathDate": "43308",
+  "newCasesByPublishDate": "13972",
+  "newDeaths28DaysByDeathDate": "112",
+  "usDeath": "207114"
+}, {
+  "date": "2020-10-11",
+  "cumCasesByPublishDate": "603716",
+  "cumDeaths28DaysByDeathDate": "43196",
+  "newCasesByPublishDate": "12872",
+  "newDeaths28DaysByDeathDate": "122",
+  "usDeath": "206829"
+}, {
+  "date": "2020-10-10",
+  "cumCasesByPublishDate": "590844",
+  "cumDeaths28DaysByDeathDate": "43074",
+  "newCasesByPublishDate": "15166",
+  "newDeaths28DaysByDeathDate": "103",
+  "usDeath": "206360"
+}, {
+  "date": "2020-10-09",
+  "cumCasesByPublishDate": "575679",
+  "cumDeaths28DaysByDeathDate": "42971",
+  "newCasesByPublishDate": "13864",
+  "newDeaths28DaysByDeathDate": "79",
+  "usDeath": "205670"
+}, {
+  "date": "2020-10-08",
+  "cumCasesByPublishDate": "561815",
+  "cumDeaths28DaysByDeathDate": "42892",
+  "newCasesByPublishDate": "17540",
+  "newDeaths28DaysByDeathDate": "92",
+  "usDeath": "204765"
+}, {
+  "date": "2020-10-07",
+  "cumCasesByPublishDate": "544275",
+  "cumDeaths28DaysByDeathDate": "42800",
+  "newCasesByPublishDate": "14162",
+  "newDeaths28DaysByDeathDate": "102",
+  "usDeath": "203777"
+}, {
+  "date": "2020-10-06",
+  "cumCasesByPublishDate": "530113",
+  "cumDeaths28DaysByDeathDate": "42698",
+  "newCasesByPublishDate": "14542",
+  "newDeaths28DaysByDeathDate": "69",
+  "usDeath": "202855"
+}, {
+  "date": "2020-10-05",
+  "cumCasesByPublishDate": "515571",
+  "cumDeaths28DaysByDeathDate": "42629",
+  "newCasesByPublishDate": "12594",
+  "newDeaths28DaysByDeathDate": "69",
+  "usDeath": "202233"
+}, {
+  "date": "2020-10-04",
+  "cumCasesByPublishDate": "502978",
+  "cumDeaths28DaysByDeathDate": "42560",
+  "newCasesByPublishDate": "22961",
+  "newDeaths28DaysByDeathDate": "60",
+  "usDeath": "201903"
+}, {
+  "date": "2020-10-03",
+  "cumCasesByPublishDate": "480017",
+  "cumDeaths28DaysByDeathDate": "42500",
+  "newCasesByPublishDate": "12872",
+  "newDeaths28DaysByDeathDate": "66",
+  "usDeath": "201530"
+}, {
+  "date": "2020-10-02",
+  "cumCasesByPublishDate": "467146",
+  "cumDeaths28DaysByDeathDate": "42434",
+  "newCasesByPublishDate": "6968",
+  "newDeaths28DaysByDeathDate": "68",
+  "usDeath": "200787"
+}, {
+  "date": "2020-10-01",
+  "cumCasesByPublishDate": "460178",
+  "cumDeaths28DaysByDeathDate": "42366",
+  "newCasesByPublishDate": "6914",
+  "newDeaths28DaysByDeathDate": "66",
+  "usDeath": "199943"
+}, {
+  "date": "2020-09-30",
+  "cumCasesByPublishDate": "453264",
+  "cumDeaths28DaysByDeathDate": "42300",
+  "newCasesByPublishDate": "7108",
+  "newDeaths28DaysByDeathDate": "57",
+  "usDeath": "199084"
+}, {
+  "date": "2020-09-29",
+  "cumCasesByPublishDate": "446156",
+  "cumDeaths28DaysByDeathDate": "42243",
+  "newCasesByPublishDate": "7143",
+  "newDeaths28DaysByDeathDate": "48",
+  "usDeath": "198024"
+}, {
+  "date": "2020-09-28",
+  "cumCasesByPublishDate": "439013",
+  "cumDeaths28DaysByDeathDate": "42195",
+  "newCasesByPublishDate": "4044",
+  "newDeaths28DaysByDeathDate": "54",
+  "usDeath": "197292"
+}, {
+  "date": "2020-09-27",
+  "cumCasesByPublishDate": "434969",
+  "cumDeaths28DaysByDeathDate": "42141",
+  "newCasesByPublishDate": "5693",
+  "newDeaths28DaysByDeathDate": "47",
+  "usDeath": "197047"
+}, {
+  "date": "2020-09-26",
+  "cumCasesByPublishDate": "429277",
+  "cumDeaths28DaysByDeathDate": "42094",
+  "newCasesByPublishDate": "6042",
+  "newDeaths28DaysByDeathDate": "39",
+  "usDeath": "196740"
+}, {
+  "date": "2020-09-25",
+  "cumCasesByPublishDate": "423236",
+  "cumDeaths28DaysByDeathDate": "42055",
+  "newCasesByPublishDate": "6874",
+  "newDeaths28DaysByDeathDate": "32",
+  "usDeath": "195866"
+}, {
+  "date": "2020-09-24",
+  "cumCasesByPublishDate": "416363",
+  "cumDeaths28DaysByDeathDate": "42023",
+  "newCasesByPublishDate": "6634",
+  "newDeaths28DaysByDeathDate": "35",
+  "usDeath": "195017"
+}, {
+  "date": "2020-09-23",
+  "cumCasesByPublishDate": "409729",
+  "cumDeaths28DaysByDeathDate": "41988",
+  "newCasesByPublishDate": "6178",
+  "newDeaths28DaysByDeathDate": "56",
+  "usDeath": "194084"
+}, {
+  "date": "2020-09-22",
+  "cumCasesByPublishDate": "403551",
+  "cumDeaths28DaysByDeathDate": "41932",
+  "newCasesByPublishDate": "4926",
+  "newDeaths28DaysByDeathDate": "39",
+  "usDeath": "192925"
+}, {
+  "date": "2020-09-21",
+  "cumCasesByPublishDate": "398625",
+  "cumDeaths28DaysByDeathDate": "41893",
+  "newCasesByPublishDate": "4368",
+  "newDeaths28DaysByDeathDate": "27",
+  "usDeath": "192066"
+}, {
+  "date": "2020-09-20",
+  "cumCasesByPublishDate": "394257",
+  "cumDeaths28DaysByDeathDate": "41866",
+  "newCasesByPublishDate": "3899",
+  "newDeaths28DaysByDeathDate": "31",
+  "usDeath": "191783"
+}, {
+  "date": "2020-09-19",
+  "cumCasesByPublishDate": "390358",
+  "cumDeaths28DaysByDeathDate": "41835",
+  "newCasesByPublishDate": "4422",
+  "newDeaths28DaysByDeathDate": "20",
+  "usDeath": "191459"
+}, {
+  "date": "2020-09-18",
+  "cumCasesByPublishDate": "385936",
+  "cumDeaths28DaysByDeathDate": "41815",
+  "newCasesByPublishDate": "4322",
+  "newDeaths28DaysByDeathDate": "23",
+  "usDeath": "190708"
+}, {
+  "date": "2020-09-17",
+  "cumCasesByPublishDate": "381614",
+  "cumDeaths28DaysByDeathDate": "41792",
+  "newCasesByPublishDate": "3395",
+  "newDeaths28DaysByDeathDate": "27",
+  "usDeath": "189807"
+}, {
+  "date": "2020-09-16",
+  "cumCasesByPublishDate": "378219",
+  "cumDeaths28DaysByDeathDate": "41765",
+  "newCasesByPublishDate": "3991",
+  "newDeaths28DaysByDeathDate": "26",
+  "usDeath": "188929"
+}, {
+  "date": "2020-09-15",
+  "cumCasesByPublishDate": "374228",
+  "cumDeaths28DaysByDeathDate": "41739",
+  "newCasesByPublishDate": "3105",
+  "newDeaths28DaysByDeathDate": "18",
+  "usDeath": "187745"
+}, {
+  "date": "2020-09-14",
+  "cumCasesByPublishDate": "371125",
+  "cumDeaths28DaysByDeathDate": "41721",
+  "newCasesByPublishDate": "2621",
+  "newDeaths28DaysByDeathDate": "21",
+  "usDeath": "186705"
+}, {
+  "date": "2020-09-13",
+  "cumCasesByPublishDate": "368504",
+  "cumDeaths28DaysByDeathDate": "41700",
+  "newCasesByPublishDate": "3330",
+  "newDeaths28DaysByDeathDate": "16",
+  "usDeath": "186300"
+}, {
+  "date": "2020-09-12",
+  "cumCasesByPublishDate": "365174",
+  "cumDeaths28DaysByDeathDate": "41684",
+  "newCasesByPublishDate": "3497",
+  "newDeaths28DaysByDeathDate": "18",
+  "usDeath": "185910"
+}, {
+  "date": "2020-09-11",
+  "cumCasesByPublishDate": "361677",
+  "cumDeaths28DaysByDeathDate": "41666",
+  "newCasesByPublishDate": "3539",
+  "newDeaths28DaysByDeathDate": "13",
+  "usDeath": "185089"
+}, {
+  "date": "2020-09-10",
+  "cumCasesByPublishDate": "358138",
+  "cumDeaths28DaysByDeathDate": "41653",
+  "newCasesByPublishDate": "2919",
+  "newDeaths28DaysByDeathDate": "13",
+  "usDeath": "184075"
+}, {
+  "date": "2020-09-09",
+  "cumCasesByPublishDate": "355219",
+  "cumDeaths28DaysByDeathDate": "41640",
+  "newCasesByPublishDate": "2659",
+  "newDeaths28DaysByDeathDate": "9",
+  "usDeath": "182919"
+}, {
+  "date": "2020-09-08",
+  "cumCasesByPublishDate": "352560",
+  "cumDeaths28DaysByDeathDate": "41631",
+  "newCasesByPublishDate": "2460",
+  "newDeaths28DaysByDeathDate": "9",
+  "usDeath": "181827"
+}, {
+  "date": "2020-09-07",
+  "cumCasesByPublishDate": "350100",
+  "cumDeaths28DaysByDeathDate": "41622",
+  "newCasesByPublishDate": "2948",
+  "newDeaths28DaysByDeathDate": "15",
+  "usDeath": "181477"
+}, {
+  "date": "2020-09-06",
+  "cumCasesByPublishDate": "347152",
+  "cumDeaths28DaysByDeathDate": "41607",
+  "newCasesByPublishDate": "2988",
+  "newDeaths28DaysByDeathDate": "8",
+  "usDeath": "181250"
+}, {
+  "date": "2020-09-05",
+  "cumCasesByPublishDate": "344164",
+  "cumDeaths28DaysByDeathDate": "41599",
+  "newCasesByPublishDate": "1813",
+  "newDeaths28DaysByDeathDate": "13",
+  "usDeath": "180802"
+}, {
+  "date": "2020-09-04",
+  "cumCasesByPublishDate": "342351",
+  "cumDeaths28DaysByDeathDate": "41586",
+  "newCasesByPublishDate": "1940",
+  "newDeaths28DaysByDeathDate": "7",
+  "usDeath": "179876"
+}, {
+  "date": "2020-09-03",
+  "cumCasesByPublishDate": "340411",
+  "cumDeaths28DaysByDeathDate": "41579",
+  "newCasesByPublishDate": "1735",
+  "newDeaths28DaysByDeathDate": "10",
+  "usDeath": "178874"
+}, {
+  "date": "2020-09-02",
+  "cumCasesByPublishDate": "338676",
+  "cumDeaths28DaysByDeathDate": "41569",
+  "newCasesByPublishDate": "1508",
+  "newDeaths28DaysByDeathDate": "9",
+  "usDeath": "177803"
+}, {
+  "date": "2020-09-01",
+  "cumCasesByPublishDate": "337168",
+  "cumDeaths28DaysByDeathDate": "41560",
+  "newCasesByPublishDate": "1295",
+  "newDeaths28DaysByDeathDate": "3",
+  "usDeath": "176771"
+}, {
+  "date": "2020-08-31",
+  "cumCasesByPublishDate": "335873",
+  "cumDeaths28DaysByDeathDate": "41557",
+  "newCasesByPublishDate": "1406",
+  "newDeaths28DaysByDeathDate": "9",
+  "usDeath": "175752"
+}, {
+  "date": "2020-08-30",
+  "cumCasesByPublishDate": "334467",
+  "cumDeaths28DaysByDeathDate": "41548",
+  "newCasesByPublishDate": "1715",
+  "newDeaths28DaysByDeathDate": "6",
+  "usDeath": "175375"
+}, {
+  "date": "2020-08-29",
+  "cumCasesByPublishDate": "332752",
+  "cumDeaths28DaysByDeathDate": "41542",
+  "newCasesByPublishDate": "1108",
+  "newDeaths28DaysByDeathDate": "5",
+  "usDeath": "174901"
+}, {
+  "date": "2020-08-28",
+  "cumCasesByPublishDate": "331644",
+  "cumDeaths28DaysByDeathDate": "41537",
+  "newCasesByPublishDate": "1276",
+  "newDeaths28DaysByDeathDate": "10",
+  "usDeath": "173886"
+}, {
+  "date": "2020-08-27",
+  "cumCasesByPublishDate": "330368",
+  "cumDeaths28DaysByDeathDate": "41527",
+  "newCasesByPublishDate": "1522",
+  "newDeaths28DaysByDeathDate": "8",
+  "usDeath": "172862"
+}, {
+  "date": "2020-08-26",
+  "cumCasesByPublishDate": "328846",
+  "cumDeaths28DaysByDeathDate": "41519",
+  "newCasesByPublishDate": "1048",
+  "newDeaths28DaysByDeathDate": "11",
+  "usDeath": "171734"
+}, {
+  "date": "2020-08-25",
+  "cumCasesByPublishDate": "327798",
+  "cumDeaths28DaysByDeathDate": "41508",
+  "newCasesByPublishDate": "1184",
+  "newDeaths28DaysByDeathDate": "12",
+  "usDeath": "170437"
+}, {
+  "date": "2020-08-24",
+  "cumCasesByPublishDate": "326614",
+  "cumDeaths28DaysByDeathDate": "41496",
+  "newCasesByPublishDate": "853",
+  "newDeaths28DaysByDeathDate": "6",
+  "usDeath": "169292"
+}, {
+  "date": "2020-08-23",
+  "cumCasesByPublishDate": "325761",
+  "cumDeaths28DaysByDeathDate": "41490",
+  "newCasesByPublishDate": "1160",
+  "newDeaths28DaysByDeathDate": "14",
+  "usDeath": "168948"
+}, {
+  "date": "2020-08-22",
+  "cumCasesByPublishDate": "324601",
+  "cumDeaths28DaysByDeathDate": "41476",
+  "newCasesByPublishDate": "1288",
+  "newDeaths28DaysByDeathDate": "8",
+  "usDeath": "168374"
+}, {
+  "date": "2020-08-21",
+  "cumCasesByPublishDate": "323313",
+  "cumDeaths28DaysByDeathDate": "41468",
+  "newCasesByPublishDate": "1033",
+  "newDeaths28DaysByDeathDate": "7",
+  "usDeath": "167338"
+}, {
+  "date": "2020-08-20",
+  "cumCasesByPublishDate": "322280",
+  "cumDeaths28DaysByDeathDate": "41461",
+  "newCasesByPublishDate": "1182",
+  "newDeaths28DaysByDeathDate": "8",
+  "usDeath": "166221"
+}, {
+  "date": "2020-08-19",
+  "cumCasesByPublishDate": "321098",
+  "cumDeaths28DaysByDeathDate": "41453",
+  "newCasesByPublishDate": "812",
+  "newDeaths28DaysByDeathDate": "3",
+  "usDeath": "165099"
+}, {
+  "date": "2020-08-18",
+  "cumCasesByPublishDate": "320286",
+  "cumDeaths28DaysByDeathDate": "41450",
+  "newCasesByPublishDate": "1089",
+  "newDeaths28DaysByDeathDate": "9",
+  "usDeath": "163686"
+}, {
+  "date": "2020-08-17",
+  "cumCasesByPublishDate": "319197",
+  "cumDeaths28DaysByDeathDate": "41441",
+  "newCasesByPublishDate": "713",
+  "newDeaths28DaysByDeathDate": "12",
+  "usDeath": "162498"
+}, {
+  "date": "2020-08-16",
+  "cumCasesByPublishDate": "318484",
+  "cumDeaths28DaysByDeathDate": "41429",
+  "newCasesByPublishDate": "1040",
+  "newDeaths28DaysByDeathDate": "4",
+  "usDeath": "162089"
+}, {
+  "date": "2020-08-15",
+  "cumCasesByPublishDate": "317444",
+  "cumDeaths28DaysByDeathDate": "41425",
+  "newCasesByPublishDate": "1077",
+  "newDeaths28DaysByDeathDate": "12",
+  "usDeath": "161471"
+}, {
+  "date": "2020-08-14",
+  "cumCasesByPublishDate": "316367",
+  "cumDeaths28DaysByDeathDate": "41413",
+  "newCasesByPublishDate": "1441",
+  "newDeaths28DaysByDeathDate": "7",
+  "usDeath": "160245"
+}, {
+  "date": "2020-08-13",
+  "cumCasesByPublishDate": "314927",
+  "cumDeaths28DaysByDeathDate": "41406",
+  "newCasesByPublishDate": "1129",
+  "newDeaths28DaysByDeathDate": "9",
+  "usDeath": "159025"
+}, {
+  "date": "2020-08-12",
+  "cumCasesByPublishDate": "313798",
+  "cumDeaths28DaysByDeathDate": "41397",
+  "newCasesByPublishDate": "1009",
+  "newDeaths28DaysByDeathDate": "7",
+  "usDeath": "157861"
+}, {
+  "date": "2020-08-11",
+  "cumCasesByPublishDate": "312789",
+  "cumDeaths28DaysByDeathDate": "41390",
+  "newCasesByPublishDate": "1148",
+  "newDeaths28DaysByDeathDate": "10",
+  "usDeath": "156348"
+}, {
+  "date": "2020-08-10",
+  "cumCasesByPublishDate": "311641",
+  "cumDeaths28DaysByDeathDate": "41380",
+  "newCasesByPublishDate": "740",
+  "newDeaths28DaysByDeathDate": "13",
+  "usDeath": "155018"
+}, {
+  "date": "2020-08-09",
+  "cumCasesByPublishDate": "310825",
+  "cumDeaths28DaysByDeathDate": "41367",
+  "newCasesByPublishDate": "1062",
+  "newDeaths28DaysByDeathDate": "8",
+  "usDeath": "154588"
+}, {
+  "date": "2020-08-08",
+  "cumCasesByPublishDate": "309763",
+  "cumDeaths28DaysByDeathDate": "41359",
+  "newCasesByPublishDate": "758",
+  "newDeaths28DaysByDeathDate": "14",
+  "usDeath": "153973"
+}, {
+  "date": "2020-08-07",
+  "cumCasesByPublishDate": "309005",
+  "cumDeaths28DaysByDeathDate": "41345",
+  "newCasesByPublishDate": "871",
+  "newDeaths28DaysByDeathDate": "12",
+  "usDeath": "152889"
+}, {
+  "date": "2020-08-06",
+  "cumCasesByPublishDate": "308134",
+  "cumDeaths28DaysByDeathDate": "41333",
+  "newCasesByPublishDate": "950",
+  "newDeaths28DaysByDeathDate": "9",
+  "usDeath": "151558"
+}, {
+  "date": "2020-08-05",
+  "cumCasesByPublishDate": "307184",
+  "cumDeaths28DaysByDeathDate": "41324",
+  "newCasesByPublishDate": "892",
+  "newDeaths28DaysByDeathDate": "6",
+  "usDeath": "150321"
+}, {
+  "date": "2020-08-04",
+  "cumCasesByPublishDate": "306293",
+  "cumDeaths28DaysByDeathDate": "41318",
+  "newCasesByPublishDate": "670",
+  "newDeaths28DaysByDeathDate": "14",
+  "usDeath": "148966"
+}, {
+  "date": "2020-08-03",
+  "cumCasesByPublishDate": "305623",
+  "cumDeaths28DaysByDeathDate": "41304",
+  "newCasesByPublishDate": "898",
+  "newDeaths28DaysByDeathDate": "15",
+  "usDeath": "147722"
+}, {
+  "date": "2020-08-02",
+  "cumCasesByPublishDate": "304685",
+  "cumDeaths28DaysByDeathDate": "41289",
+  "newCasesByPublishDate": "744",
+  "newDeaths28DaysByDeathDate": "10",
+  "usDeath": "147205"
+}, {
+  "date": "2020-08-01",
+  "cumCasesByPublishDate": "303942",
+  "cumDeaths28DaysByDeathDate": "41279",
+  "newCasesByPublishDate": "761",
+  "newDeaths28DaysByDeathDate": "11",
+  "usDeath": "146711"
+}, {
+  "date": "2020-07-31",
+  "cumCasesByPublishDate": "303181",
+  "cumDeaths28DaysByDeathDate": "41268",
+  "newCasesByPublishDate": "880",
+  "newDeaths28DaysByDeathDate": "14",
+  "usDeath": "145513"
+}, {
+  "date": "2020-07-30",
+  "cumCasesByPublishDate": "302301",
+  "cumDeaths28DaysByDeathDate": "41254",
+  "newCasesByPublishDate": "846",
+  "newDeaths28DaysByDeathDate": "10",
+  "usDeath": "144184"
+}, {
+  "date": "2020-07-29",
+  "cumCasesByPublishDate": "301455",
+  "cumDeaths28DaysByDeathDate": "41244",
+  "newCasesByPublishDate": "763",
+  "newDeaths28DaysByDeathDate": "12",
+  "usDeath": "142939"
+}, {
+  "date": "2020-07-28",
+  "cumCasesByPublishDate": "300692",
+  "cumDeaths28DaysByDeathDate": "41232",
+  "newCasesByPublishDate": "581",
+  "newDeaths28DaysByDeathDate": "12",
+  "usDeath": "141442"
+}, {
+  "date": "2020-07-27",
+  "cumCasesByPublishDate": "300111",
+  "cumDeaths28DaysByDeathDate": "41220",
+  "newCasesByPublishDate": "685",
+  "newDeaths28DaysByDeathDate": "11",
+  "usDeath": "140317"
+}, {
+  "date": "2020-07-26",
+  "cumCasesByPublishDate": "299426",
+  "cumDeaths28DaysByDeathDate": "41209",
+  "newCasesByPublishDate": "745",
+  "newDeaths28DaysByDeathDate": "16",
+  "usDeath": "139254"
+}, {
+  "date": "2020-07-25",
+  "cumCasesByPublishDate": "298681",
+  "cumDeaths28DaysByDeathDate": "41193",
+  "newCasesByPublishDate": "767",
+  "newDeaths28DaysByDeathDate": "15",
+  "usDeath": "138694"
+}, {
+  "date": "2020-07-24",
+  "cumCasesByPublishDate": "297914",
+  "cumDeaths28DaysByDeathDate": "41178",
+  "newCasesByPublishDate": "768",
+  "newDeaths28DaysByDeathDate": "7",
+  "usDeath": "137685"
+}, {
+  "date": "2020-07-23",
+  "cumCasesByPublishDate": "297146",
+  "cumDeaths28DaysByDeathDate": "41171",
+  "newCasesByPublishDate": "769",
+  "newDeaths28DaysByDeathDate": "16",
+  "usDeath": "136505"
+}, {
+  "date": "2020-07-22",
+  "cumCasesByPublishDate": "296377",
+  "cumDeaths28DaysByDeathDate": "41155",
+  "newCasesByPublishDate": "560",
+  "newDeaths28DaysByDeathDate": "17",
+  "usDeath": "135431"
+}, {
+  "date": "2020-07-21",
+  "cumCasesByPublishDate": "295817",
+  "cumDeaths28DaysByDeathDate": "41138",
+  "newCasesByPublishDate": "445",
+  "newDeaths28DaysByDeathDate": "20",
+  "usDeath": "134289"
+}, {
+  "date": "2020-07-20",
+  "cumCasesByPublishDate": "295372",
+  "cumDeaths28DaysByDeathDate": "41118",
+  "newCasesByPublishDate": "557",
+  "newDeaths28DaysByDeathDate": "12",
+  "usDeath": "133243"
+}, {
+  "date": "2020-07-19",
+  "cumCasesByPublishDate": "294792",
+  "cumDeaths28DaysByDeathDate": "41106",
+  "newCasesByPublishDate": "726",
+  "newDeaths28DaysByDeathDate": "14",
+  "usDeath": "132868"
+}, {
+  "date": "2020-07-18",
+  "cumCasesByPublishDate": "294066",
+  "cumDeaths28DaysByDeathDate": "41092",
+  "newCasesByPublishDate": "827",
+  "newDeaths28DaysByDeathDate": "14",
+  "usDeath": "132341"
+}, {
+  "date": "2020-07-17",
+  "cumCasesByPublishDate": "293239",
+  "cumDeaths28DaysByDeathDate": "41078",
+  "newCasesByPublishDate": "687",
+  "newDeaths28DaysByDeathDate": "18",
+  "usDeath": "131467"
+}, {
+  "date": "2020-07-16",
+  "cumCasesByPublishDate": "292552",
+  "cumDeaths28DaysByDeathDate": "41060",
+  "newCasesByPublishDate": "642",
+  "newDeaths28DaysByDeathDate": "13",
+  "usDeath": "130525"
+}, {
+  "date": "2020-07-15",
+  "cumCasesByPublishDate": "291911",
+  "cumDeaths28DaysByDeathDate": "41047",
+  "newCasesByPublishDate": "538",
+  "newDeaths28DaysByDeathDate": "20",
+  "usDeath": "129585"
+}, {
+  "date": "2020-07-14",
+  "cumCasesByPublishDate": "291373",
+  "cumDeaths28DaysByDeathDate": "41027",
+  "newCasesByPublishDate": "398",
+  "newDeaths28DaysByDeathDate": "21",
+  "usDeath": "128726"
+}, {
+  "date": "2020-07-13",
+  "cumCasesByPublishDate": "290133",
+  "cumDeaths28DaysByDeathDate": "41006",
+  "newCasesByPublishDate": "530",
+  "newDeaths28DaysByDeathDate": "24",
+  "usDeath": "127981"
+}, {
+  "date": "2020-07-12",
+  "cumCasesByPublishDate": "289603",
+  "cumDeaths28DaysByDeathDate": "40982",
+  "newCasesByPublishDate": "650",
+  "newDeaths28DaysByDeathDate": "13",
+  "usDeath": "127651"
+}, {
+  "date": "2020-07-11",
+  "cumCasesByPublishDate": "288953",
+  "cumDeaths28DaysByDeathDate": "40969",
+  "newCasesByPublishDate": "820",
+  "newDeaths28DaysByDeathDate": "22",
+  "usDeath": "127177"
+}, {
+  "date": "2020-07-10",
+  "cumCasesByPublishDate": "288133",
+  "cumDeaths28DaysByDeathDate": "40947",
+  "newCasesByPublishDate": "512",
+  "newDeaths28DaysByDeathDate": "21",
+  "usDeath": "126424"
+}, {
+  "date": "2020-07-09",
+  "cumCasesByPublishDate": "287621",
+  "cumDeaths28DaysByDeathDate": "40926",
+  "newCasesByPublishDate": "642",
+  "newDeaths28DaysByDeathDate": "37",
+  "usDeath": "125589"
+}, {
+  "date": "2020-07-08",
+  "cumCasesByPublishDate": "286979",
+  "cumDeaths28DaysByDeathDate": "40889",
+  "newCasesByPublishDate": "630",
+  "newDeaths28DaysByDeathDate": "24",
+  "usDeath": "124724"
+}, {
+  "date": "2020-07-07",
+  "cumCasesByPublishDate": "286349",
+  "cumDeaths28DaysByDeathDate": "40865",
+  "newCasesByPublishDate": "581",
+  "newDeaths28DaysByDeathDate": "27",
+  "usDeath": "123906"
+}, {
+  "date": "2020-07-06",
+  "cumCasesByPublishDate": "285768",
+  "cumDeaths28DaysByDeathDate": "40838",
+  "newCasesByPublishDate": "343",
+  "newDeaths28DaysByDeathDate": "35",
+  "usDeath": "122996"
+}, {
+  "date": "2020-07-05",
+  "cumCasesByPublishDate": "285416",
+  "cumDeaths28DaysByDeathDate": "40803",
+  "newCasesByPublishDate": "516",
+  "newDeaths28DaysByDeathDate": "27",
+  "usDeath": "122761"
+}, {
+  "date": "2020-07-04",
+  "cumCasesByPublishDate": "284900",
+  "cumDeaths28DaysByDeathDate": "40776",
+  "newCasesByPublishDate": "624",
+  "newDeaths28DaysByDeathDate": "33",
+  "usDeath": "122554"
+}, {
+  "date": "2020-07-03",
+  "cumCasesByPublishDate": "284276",
+  "cumDeaths28DaysByDeathDate": "40743",
+  "newCasesByPublishDate": "544",
+  "newDeaths28DaysByDeathDate": "29",
+  "usDeath": "122254"
+}, {
+  "date": "2020-07-02",
+  "cumCasesByPublishDate": "283757",
+  "cumDeaths28DaysByDeathDate": "40714",
+  "newCasesByPublishDate": "576",
+  "newDeaths28DaysByDeathDate": "43",
+  "usDeath": "121652"
+}, {
+  "date": "2020-07-01",
+  "cumCasesByPublishDate": "313483",
+  "cumDeaths28DaysByDeathDate": "40671",
+  "newCasesByPublishDate": "829",
+  "newDeaths28DaysByDeathDate": "27",
+  "usDeath": "120953"
+}, {
+  "date": "2020-06-30",
+  "cumCasesByPublishDate": "312654",
+  "cumDeaths28DaysByDeathDate": "40644",
+  "newCasesByPublishDate": "689",
+  "newDeaths28DaysByDeathDate": "47",
+  "usDeath": "120257"
+}, {
+  "date": "2020-06-29",
+  "cumCasesByPublishDate": "311965",
+  "cumDeaths28DaysByDeathDate": "40597",
+  "newCasesByPublishDate": "815",
+  "newDeaths28DaysByDeathDate": "39",
+  "usDeath": "119677"
+}, {
+  "date": "2020-06-28",
+  "cumCasesByPublishDate": "311151",
+  "cumDeaths28DaysByDeathDate": "40558",
+  "newCasesByPublishDate": "901",
+  "newDeaths28DaysByDeathDate": "43",
+  "usDeath": "119339"
+}, {
+  "date": "2020-06-27",
+  "cumCasesByPublishDate": "310250",
+  "cumDeaths28DaysByDeathDate": "40515",
+  "newCasesByPublishDate": "890",
+  "newDeaths28DaysByDeathDate": "49",
+  "usDeath": "119066"
+}, {
+  "date": "2020-06-26",
+  "cumCasesByPublishDate": "309360",
+  "cumDeaths28DaysByDeathDate": "40466",
+  "newCasesByPublishDate": "1006",
+  "newDeaths28DaysByDeathDate": "41",
+  "usDeath": "118563"
+}, {
+  "date": "2020-06-25",
+  "cumCasesByPublishDate": "307980",
+  "cumDeaths28DaysByDeathDate": "40425",
+  "newCasesByPublishDate": "1118",
+  "newDeaths28DaysByDeathDate": "68",
+  "usDeath": "117942"
+}, {
+  "date": "2020-06-24",
+  "cumCasesByPublishDate": "306862",
+  "cumDeaths28DaysByDeathDate": "40357",
+  "newCasesByPublishDate": "653",
+  "newDeaths28DaysByDeathDate": "75",
+  "usDeath": "117295"
+}, {
+  "date": "2020-06-23",
+  "cumCasesByPublishDate": "306210",
+  "cumDeaths28DaysByDeathDate": "40282",
+  "newCasesByPublishDate": "874",
+  "newDeaths28DaysByDeathDate": "64",
+  "usDeath": "116588"
+}, {
+  "date": "2020-06-22",
+  "cumCasesByPublishDate": "305289",
+  "cumDeaths28DaysByDeathDate": "40218",
+  "newCasesByPublishDate": "958",
+  "newDeaths28DaysByDeathDate": "64",
+  "usDeath": "115866"
+}, {
+  "date": "2020-06-21",
+  "cumCasesByPublishDate": "304331",
+  "cumDeaths28DaysByDeathDate": "40154",
+  "newCasesByPublishDate": "1221",
+  "newDeaths28DaysByDeathDate": "54",
+  "usDeath": "115577"
+}, {
+  "date": "2020-06-20",
+  "cumCasesByPublishDate": "303110",
+  "cumDeaths28DaysByDeathDate": "40100",
+  "newCasesByPublishDate": "1295",
+  "newDeaths28DaysByDeathDate": "60",
+  "usDeath": "115284"
+}, {
+  "date": "2020-06-19",
+  "cumCasesByPublishDate": "301815",
+  "cumDeaths28DaysByDeathDate": "40040",
+  "newCasesByPublishDate": "1346",
+  "newDeaths28DaysByDeathDate": "52",
+  "usDeath": "114669"
+}, {
+  "date": "2020-06-18",
+  "cumCasesByPublishDate": "300469",
+  "cumDeaths28DaysByDeathDate": "39988",
+  "newCasesByPublishDate": "1218",
+  "newDeaths28DaysByDeathDate": "61",
+  "usDeath": "114020"
+}, {
+  "date": "2020-06-17",
+  "cumCasesByPublishDate": "299251",
+  "cumDeaths28DaysByDeathDate": "39927",
+  "newCasesByPublishDate": "1115",
+  "newDeaths28DaysByDeathDate": "58",
+  "usDeath": "113335"
+}, {
+  "date": "2020-06-16",
+  "cumCasesByPublishDate": "298136",
+  "cumDeaths28DaysByDeathDate": "39869",
+  "newCasesByPublishDate": "1279",
+  "newDeaths28DaysByDeathDate": "84",
+  "usDeath": "112556"
+}, {
+  "date": "2020-06-15",
+  "cumCasesByPublishDate": "296857",
+  "cumDeaths28DaysByDeathDate": "39785",
+  "newCasesByPublishDate": "1056",
+  "newDeaths28DaysByDeathDate": "70",
+  "usDeath": "111838"
+}, {
+  "date": "2020-06-14",
+  "cumCasesByPublishDate": "295889",
+  "cumDeaths28DaysByDeathDate": "39715",
+  "newCasesByPublishDate": "1514",
+  "newDeaths28DaysByDeathDate": "87",
+  "usDeath": "111451"
+}, {
+  "date": "2020-06-13",
+  "cumCasesByPublishDate": "294375",
+  "cumDeaths28DaysByDeathDate": "39628",
+  "newCasesByPublishDate": "1425",
+  "newDeaths28DaysByDeathDate": "62",
+  "usDeath": "111095"
+}, {
+  "date": "2020-06-12",
+  "cumCasesByPublishDate": "292950",
+  "cumDeaths28DaysByDeathDate": "39566",
+  "newCasesByPublishDate": "1541",
+  "newDeaths28DaysByDeathDate": "79",
+  "usDeath": "110402"
+}, {
+  "date": "2020-06-11",
+  "cumCasesByPublishDate": "291409",
+  "cumDeaths28DaysByDeathDate": "39487",
+  "newCasesByPublishDate": "1266",
+  "newDeaths28DaysByDeathDate": "80",
+  "usDeath": "109636"
+}, {
+  "date": "2020-06-10",
+  "cumCasesByPublishDate": "290143",
+  "cumDeaths28DaysByDeathDate": "39407",
+  "newCasesByPublishDate": "1003",
+  "newDeaths28DaysByDeathDate": "109",
+  "usDeath": "108738"
+}, {
+  "date": "2020-06-09",
+  "cumCasesByPublishDate": "289140",
+  "cumDeaths28DaysByDeathDate": "39298",
+  "newCasesByPublishDate": "1387",
+  "newDeaths28DaysByDeathDate": "90",
+  "usDeath": "107850"
+}, {
+  "date": "2020-06-08",
+  "cumCasesByPublishDate": "287399",
+  "cumDeaths28DaysByDeathDate": "39208",
+  "newCasesByPublishDate": "1205",
+  "newDeaths28DaysByDeathDate": "123",
+  "usDeath": "106959"
+}, {
+  "date": "2020-06-07",
+  "cumCasesByPublishDate": "286194",
+  "cumDeaths28DaysByDeathDate": "39085",
+  "newCasesByPublishDate": "1326",
+  "newDeaths28DaysByDeathDate": "127",
+  "usDeath": "106285"
+}, {
+  "date": "2020-06-06",
+  "cumCasesByPublishDate": "284868",
+  "cumDeaths28DaysByDeathDate": "38958",
+  "newCasesByPublishDate": "1557",
+  "newDeaths28DaysByDeathDate": "111",
+  "usDeath": "105839"
+}, {
+  "date": "2020-06-05",
+  "cumCasesByPublishDate": "283311",
+  "cumDeaths28DaysByDeathDate": "38847",
+  "newCasesByPublishDate": "1650",
+  "newDeaths28DaysByDeathDate": "122",
+  "usDeath": "105125"
+}, {
+  "date": "2020-06-04",
+  "cumCasesByPublishDate": "281661",
+  "cumDeaths28DaysByDeathDate": "38725",
+  "newCasesByPublishDate": "1805",
+  "newDeaths28DaysByDeathDate": "134",
+  "usDeath": "104288"
+}, {
+  "date": "2020-06-03",
+  "cumCasesByPublishDate": "279856",
+  "cumDeaths28DaysByDeathDate": "38591",
+  "newCasesByPublishDate": "1871",
+  "newDeaths28DaysByDeathDate": "155",
+  "usDeath": "103407"
+}, {
+  "date": "2020-06-02",
+  "cumCasesByPublishDate": "277985",
+  "cumDeaths28DaysByDeathDate": "38436",
+  "newCasesByPublishDate": "1613",
+  "newDeaths28DaysByDeathDate": "169",
+  "usDeath": "102433"
+}, {
+  "date": "2020-06-01",
+  "cumCasesByPublishDate": "276332",
+  "cumDeaths28DaysByDeathDate": "38267",
+  "newCasesByPublishDate": "1570",
+  "newDeaths28DaysByDeathDate": "135",
+  "usDeath": "101460"
+}, {
+  "date": "2020-05-31",
+  "cumCasesByPublishDate": "274762",
+  "cumDeaths28DaysByDeathDate": "38132",
+  "newCasesByPublishDate": "1936",
+  "newDeaths28DaysByDeathDate": "126",
+  "usDeath": "100780"
+}, {
+  "date": "2020-05-30",
+  "cumCasesByPublishDate": "272826",
+  "cumDeaths28DaysByDeathDate": "38006",
+  "newCasesByPublishDate": "2445",
+  "newDeaths28DaysByDeathDate": "163",
+  "usDeath": "100127"
+}, {
+  "date": "2020-05-29",
+  "cumCasesByPublishDate": "271222",
+  "cumDeaths28DaysByDeathDate": "37843",
+  "newCasesByPublishDate": "2095",
+  "newDeaths28DaysByDeathDate": "186",
+  "usDeath": "99202"
+}, {
+  "date": "2020-05-28",
+  "cumCasesByPublishDate": "269127",
+  "cumDeaths28DaysByDeathDate": "37657",
+  "newCasesByPublishDate": "1887",
+  "newDeaths28DaysByDeathDate": "217",
+  "usDeath": "98031"
+}, {
+  "date": "2020-05-27",
+  "cumCasesByPublishDate": "267240",
+  "cumDeaths28DaysByDeathDate": "37440",
+  "newCasesByPublishDate": "2013",
+  "newDeaths28DaysByDeathDate": "195",
+  "usDeath": "96793"
+}, {
+  "date": "2020-05-26",
+  "cumCasesByPublishDate": "265227",
+  "cumDeaths28DaysByDeathDate": "37245",
+  "newCasesByPublishDate": "2004",
+  "newDeaths28DaysByDeathDate": "211",
+  "usDeath": "95458"
+}, {
+  "date": "2020-05-25",
+  "cumCasesByPublishDate": "261184",
+  "cumDeaths28DaysByDeathDate": "37034",
+  "newCasesByPublishDate": "1625",
+  "newDeaths28DaysByDeathDate": "201",
+  "usDeath": "94793"
+}, {
+  "date": "2020-05-24",
+  "cumCasesByPublishDate": "259559",
+  "cumDeaths28DaysByDeathDate": "36833",
+  "newCasesByPublishDate": "2409",
+  "newDeaths28DaysByDeathDate": "195",
+  "usDeath": "94238"
+}, {
+  "date": "2020-05-23",
+  "cumCasesByPublishDate": "257154",
+  "cumDeaths28DaysByDeathDate": "36638",
+  "newCasesByPublishDate": "2959",
+  "newDeaths28DaysByDeathDate": "216",
+  "usDeath": "93549"
+}, {
+  "date": "2020-05-22",
+  "cumCasesByPublishDate": "254195",
+  "cumDeaths28DaysByDeathDate": "36422",
+  "newCasesByPublishDate": "3287",
+  "newDeaths28DaysByDeathDate": "222",
+  "usDeath": "92511"
+}, {
+  "date": "2020-05-21",
+  "cumCasesByPublishDate": "250908",
+  "cumDeaths28DaysByDeathDate": "36200",
+  "newCasesByPublishDate": "2615",
+  "newDeaths28DaysByDeathDate": "237",
+  "usDeath": "91220"
+}, {
+  "date": "2020-05-20",
+  "cumCasesByPublishDate": "248293",
+  "cumDeaths28DaysByDeathDate": "35963",
+  "newCasesByPublishDate": "2472",
+  "newDeaths28DaysByDeathDate": "267",
+  "usDeath": "89843"
+}, {
+  "date": "2020-05-19",
+  "cumCasesByPublishDate": "248818",
+  "cumDeaths28DaysByDeathDate": "35696",
+  "newCasesByPublishDate": "2412",
+  "newDeaths28DaysByDeathDate": "275",
+  "usDeath": "88444"
+}, {
+  "date": "2020-05-18",
+  "cumCasesByPublishDate": "246406",
+  "cumDeaths28DaysByDeathDate": "35421",
+  "newCasesByPublishDate": "2684",
+  "newDeaths28DaysByDeathDate": "293",
+  "usDeath": "87126"
+}, {
+  "date": "2020-05-17",
+  "cumCasesByPublishDate": "243723",
+  "cumDeaths28DaysByDeathDate": "35128",
+  "newCasesByPublishDate": "3562",
+  "newDeaths28DaysByDeathDate": "266",
+  "usDeath": "86271"
+}, {
+  "date": "2020-05-16",
+  "cumCasesByPublishDate": "240161",
+  "cumDeaths28DaysByDeathDate": "34862",
+  "newCasesByPublishDate": "3451",
+  "newDeaths28DaysByDeathDate": "313",
+  "usDeath": "85398"
+}, {
+  "date": "2020-05-15",
+  "cumCasesByPublishDate": "236711",
+  "cumDeaths28DaysByDeathDate": "34549",
+  "newCasesByPublishDate": "3560",
+  "newDeaths28DaysByDeathDate": "312",
+  "usDeath": "84161"
+}, {
+  "date": "2020-05-14",
+  "cumCasesByPublishDate": "233151",
+  "cumDeaths28DaysByDeathDate": "34237",
+  "newCasesByPublishDate": "3446",
+  "newDeaths28DaysByDeathDate": "333",
+  "usDeath": "82626"
+}, {
+  "date": "2020-05-13",
+  "cumCasesByPublishDate": "229705",
+  "cumDeaths28DaysByDeathDate": "33904",
+  "newCasesByPublishDate": "3242",
+  "newDeaths28DaysByDeathDate": "316",
+  "usDeath": "80774"
+}, {
+  "date": "2020-05-12",
+  "cumCasesByPublishDate": "226463",
+  "cumDeaths28DaysByDeathDate": "33588",
+  "newCasesByPublishDate": "3403",
+  "newDeaths28DaysByDeathDate": "320",
+  "usDeath": "79040"
+}, {
+  "date": "2020-05-11",
+  "cumCasesByPublishDate": "223060",
+  "cumDeaths28DaysByDeathDate": "33268",
+  "newCasesByPublishDate": "3877",
+  "newDeaths28DaysByDeathDate": "308",
+  "usDeath": "77534"
+}, {
+  "date": "2020-05-10",
+  "cumCasesByPublishDate": "219183",
+  "cumDeaths28DaysByDeathDate": "32960",
+  "newCasesByPublishDate": "3923",
+  "newDeaths28DaysByDeathDate": "347",
+  "usDeath": "76640"
+}, {
+  "date": "2020-05-09",
+  "cumCasesByPublishDate": "215260",
+  "cumDeaths28DaysByDeathDate": "32613",
+  "newCasesByPublishDate": "3896",
+  "newDeaths28DaysByDeathDate": "378",
+  "usDeath": "75608"
+}, {
+  "date": "2020-05-08",
+  "cumCasesByPublishDate": "211364",
+  "cumDeaths28DaysByDeathDate": "32235",
+  "newCasesByPublishDate": "4649",
+  "newDeaths28DaysByDeathDate": "381",
+  "usDeath": "74152"
+}, {
+  "date": "2020-05-07",
+  "cumCasesByPublishDate": "206715",
+  "cumDeaths28DaysByDeathDate": "31854",
+  "newCasesByPublishDate": "5614",
+  "newDeaths28DaysByDeathDate": "460",
+  "usDeath": "72371"
+}, {
+  "date": "2020-05-06",
+  "cumCasesByPublishDate": "201101",
+  "cumDeaths28DaysByDeathDate": "31394",
+  "newCasesByPublishDate": "6111",
+  "newDeaths28DaysByDeathDate": "461",
+  "usDeath": "69619"
+}, {
+  "date": "2020-05-05",
+  "cumCasesByPublishDate": "194990",
+  "cumDeaths28DaysByDeathDate": "30933",
+  "newCasesByPublishDate": "4406",
+  "newDeaths28DaysByDeathDate": "463",
+  "usDeath": "67703"
+}, {
+  "date": "2020-05-04",
+  "cumCasesByPublishDate": "190584",
+  "cumDeaths28DaysByDeathDate": "30470",
+  "newCasesByPublishDate": "3985",
+  "newDeaths28DaysByDeathDate": "483",
+  "usDeath": "65209"
+}, {
+  "date": "2020-05-03",
+  "cumCasesByPublishDate": "186599",
+  "cumDeaths28DaysByDeathDate": "29987",
+  "newCasesByPublishDate": "4339",
+  "newDeaths28DaysByDeathDate": "449",
+  "usDeath": "64181"
+}, {
+  "date": "2020-05-02",
+  "cumCasesByPublishDate": "182260",
+  "cumDeaths28DaysByDeathDate": "29538",
+  "newCasesByPublishDate": "4806",
+  "newDeaths28DaysByDeathDate": "493",
+  "usDeath": "62938"
+}, {
+  "date": "2020-05-01",
+  "cumCasesByPublishDate": "177454",
+  "cumDeaths28DaysByDeathDate": "29045",
+  "newCasesByPublishDate": "6201",
+  "newDeaths28DaysByDeathDate": "567",
+  "usDeath": "61407"
+}, {
+  "date": "2020-04-30",
+  "cumCasesByPublishDate": "171253",
+  "cumDeaths28DaysByDeathDate": "28478",
+  "newCasesByPublishDate": "6032",
+  "newDeaths28DaysByDeathDate": "548",
+  "usDeath": "59599"
+}, {
+  "date": "2020-04-29",
+  "cumCasesByPublishDate": "165221",
+  "cumDeaths28DaysByDeathDate": "27930",
+  "newCasesByPublishDate": "4076",
+  "newDeaths28DaysByDeathDate": "570",
+  "usDeath": "57446"
+}, {
+  "date": "2020-04-28",
+  "cumCasesByPublishDate": "161145",
+  "cumDeaths28DaysByDeathDate": "27360",
+  "newCasesByPublishDate": "3996",
+  "newDeaths28DaysByDeathDate": "559",
+  "usDeath": "54761"
+}, {
+  "date": "2020-04-27",
+  "cumCasesByPublishDate": "157149",
+  "cumDeaths28DaysByDeathDate": "26801",
+  "newCasesByPublishDate": "4310",
+  "newDeaths28DaysByDeathDate": "595",
+  "usDeath": "52684"
+}, {
+  "date": "2020-04-26",
+  "cumCasesByPublishDate": "152840",
+  "cumDeaths28DaysByDeathDate": "26206",
+  "newCasesByPublishDate": "4463",
+  "newDeaths28DaysByDeathDate": "632",
+  "usDeath": "51397"
+}, {
+  "date": "2020-04-25",
+  "cumCasesByPublishDate": "148377",
+  "cumDeaths28DaysByDeathDate": "25574",
+  "newCasesByPublishDate": "4913",
+  "newDeaths28DaysByDeathDate": "646",
+  "usDeath": "50175"
+}, {
+  "date": "2020-04-24",
+  "cumCasesByPublishDate": "143464",
+  "cumDeaths28DaysByDeathDate": "24928",
+  "newCasesByPublishDate": "5386",
+  "newDeaths28DaysByDeathDate": "682",
+  "usDeath": "48548"
+}, {
+  "date": "2020-04-23",
+  "cumCasesByPublishDate": "138078",
+  "cumDeaths28DaysByDeathDate": "24246",
+  "newCasesByPublishDate": "4583",
+  "newDeaths28DaysByDeathDate": "674",
+  "usDeath": "46576"
+}, {
+  "date": "2020-04-22",
+  "cumCasesByPublishDate": "133495",
+  "cumDeaths28DaysByDeathDate": "23572",
+  "newCasesByPublishDate": "4451",
+  "newDeaths28DaysByDeathDate": "728",
+  "usDeath": "44762"
+}, {
+  "date": "2020-04-21",
+  "cumCasesByPublishDate": "129044",
+  "cumDeaths28DaysByDeathDate": "22844",
+  "newCasesByPublishDate": "4301",
+  "newDeaths28DaysByDeathDate": "742",
+  "usDeath": "42680"
+}, {
+  "date": "2020-04-20",
+  "cumCasesByPublishDate": "124743",
+  "cumDeaths28DaysByDeathDate": "22102",
+  "newCasesByPublishDate": "4676",
+  "newDeaths28DaysByDeathDate": "782",
+  "usDeath": "40199"
+}, {
+  "date": "2020-04-19",
+  "cumCasesByPublishDate": "120067",
+  "cumDeaths28DaysByDeathDate": "21320",
+  "newCasesByPublishDate": "5850",
+  "newDeaths28DaysByDeathDate": "762",
+  "usDeath": "38384"
+}, {
+  "date": "2020-04-18",
+  "cumCasesByPublishDate": "114217",
+  "cumDeaths28DaysByDeathDate": "20558",
+  "newCasesByPublishDate": "5526",
+  "newDeaths28DaysByDeathDate": "799",
+  "usDeath": "36621"
+}, {
+  "date": "2020-04-17",
+  "cumCasesByPublishDate": "108692",
+  "cumDeaths28DaysByDeathDate": "19759",
+  "newCasesByPublishDate": "5599",
+  "newDeaths28DaysByDeathDate": "819",
+  "usDeath": "34730"
+}, {
+  "date": "2020-04-16",
+  "cumCasesByPublishDate": "103093",
+  "cumDeaths28DaysByDeathDate": "18940",
+  "newCasesByPublishDate": "4618",
+  "newDeaths28DaysByDeathDate": "838",
+  "usDeath": "32612"
+}, {
+  "date": "2020-04-15",
+  "cumCasesByPublishDate": "98476",
+  "cumDeaths28DaysByDeathDate": "18102",
+  "newCasesByPublishDate": "4605",
+  "newDeaths28DaysByDeathDate": "879",
+  "usDeath": "30415"
+}, {
+  "date": "2020-04-14",
+  "cumCasesByPublishDate": "93873",
+  "cumDeaths28DaysByDeathDate": "17223",
+  "newCasesByPublishDate": "5252",
+  "newDeaths28DaysByDeathDate": "859",
+  "usDeath": "27869"
+}, {
+  "date": "2020-04-13",
+  "cumCasesByPublishDate": "88621",
+  "cumDeaths28DaysByDeathDate": "16364",
+  "newCasesByPublishDate": "4342",
+  "newDeaths28DaysByDeathDate": "893",
+  "usDeath": "25516"
+}, {
+  "date": "2020-04-12",
+  "cumCasesByPublishDate": "84279",
+  "cumDeaths28DaysByDeathDate": "15471",
+  "newCasesByPublishDate": "5288",
+  "newDeaths28DaysByDeathDate": "957",
+  "usDeath": "23886"
+}, {
+  "date": "2020-04-11",
+  "cumCasesByPublishDate": "78991",
+  "cumDeaths28DaysByDeathDate": "14514",
+  "newCasesByPublishDate": "5234",
+  "newDeaths28DaysByDeathDate": "955",
+  "usDeath": "22186"
+}, {
+  "date": "2020-04-10",
+  "cumCasesByPublishDate": "73758",
+  "cumDeaths28DaysByDeathDate": "13559",
+  "newCasesByPublishDate": "5706",
+  "newDeaths28DaysByDeathDate": "942",
+  "usDeath": "20107"
+}, {
+  "date": "2020-04-09",
+  "cumCasesByPublishDate": "68052",
+  "cumDeaths28DaysByDeathDate": "12617",
+  "newCasesByPublishDate": "4675",
+  "newDeaths28DaysByDeathDate": "998",
+  "usDeath": "18035"
+}, {
+  "date": "2020-04-08",
+  "cumCasesByPublishDate": "63377",
+  "cumDeaths28DaysByDeathDate": "11619",
+  "newCasesByPublishDate": "5865",
+  "newDeaths28DaysByDeathDate": "1073",
+  "usDeath": "15973"
+}, {
+  "date": "2020-04-07",
+  "cumCasesByPublishDate": "57512",
+  "cumDeaths28DaysByDeathDate": "10546",
+  "newCasesByPublishDate": "3888",
+  "newDeaths28DaysByDeathDate": "999",
+  "usDeath": "13976"
+}, {
+  "date": "2020-04-06",
+  "cumCasesByPublishDate": "53624",
+  "cumDeaths28DaysByDeathDate": "9547",
+  "newCasesByPublishDate": "4143",
+  "newDeaths28DaysByDeathDate": "892",
+  "usDeath": "11932"
+}, {
+  "date": "2020-04-05",
+  "cumCasesByPublishDate": "49481",
+  "cumDeaths28DaysByDeathDate": "8655",
+  "newCasesByPublishDate": "6199",
+  "newDeaths28DaysByDeathDate": "914",
+  "usDeath": "10619"
+}, {
+  "date": "2020-04-04",
+  "cumCasesByPublishDate": "43282",
+  "cumDeaths28DaysByDeathDate": "7741",
+  "newCasesByPublishDate": "4000",
+  "newDeaths28DaysByDeathDate": "904",
+  "usDeath": "9280"
+}, {
+  "date": "2020-04-03",
+  "cumCasesByPublishDate": "39282",
+  "cumDeaths28DaysByDeathDate": "6837",
+  "newCasesByPublishDate": "4672",
+  "newDeaths28DaysByDeathDate": "839",
+  "usDeath": "7799"
+}, {
+  "date": "2020-04-02",
+  "cumCasesByPublishDate": "34610",
+  "cumDeaths28DaysByDeathDate": "5998",
+  "newCasesByPublishDate": "4522",
+  "newDeaths28DaysByDeathDate": "805",
+  "usDeath": "6514"
+}, {
+  "date": "2020-04-01",
+  "cumCasesByPublishDate": "30088",
+  "cumDeaths28DaysByDeathDate": "5193",
+  "newCasesByPublishDate": "4567",
+  "newDeaths28DaysByDeathDate": "767",
+  "usDeath": "5336"
+}, {
+  "date": "2020-03-31",
+  "cumCasesByPublishDate": "25521",
+  "cumDeaths28DaysByDeathDate": "4426",
+  "newCasesByPublishDate": "3250",
+  "newDeaths28DaysByDeathDate": "661",
+  "usDeath": "4332"
+}, {
+  "date": "2020-03-30",
+  "cumCasesByPublishDate": "22271",
+  "cumDeaths28DaysByDeathDate": "3765",
+  "newCasesByPublishDate": "2665",
+  "newDeaths28DaysByDeathDate": "585",
+  "usDeath": "3425"
+}, {
+  "date": "2020-03-29",
+  "cumCasesByPublishDate": "19606",
+  "cumDeaths28DaysByDeathDate": "3180",
+  "newCasesByPublishDate": "2502",
+  "newDeaths28DaysByDeathDate": "507",
+  "usDeath": "2837"
+}, {
+  "date": "2020-03-28",
+  "cumCasesByPublishDate": "17104",
+  "cumDeaths28DaysByDeathDate": "2673",
+  "newCasesByPublishDate": "2556",
+  "newDeaths28DaysByDeathDate": "436",
+  "usDeath": "2333"
+}, {
+  "date": "2020-03-27",
+  "cumCasesByPublishDate": "14548",
+  "cumDeaths28DaysByDeathDate": "2237",
+  "newCasesByPublishDate": "2890",
+  "newDeaths28DaysByDeathDate": "399",
+  "usDeath": "1782"
+}, {
+  "date": "2020-03-26",
+  "cumCasesByPublishDate": "11658",
+  "cumDeaths28DaysByDeathDate": "1838",
+  "newCasesByPublishDate": "2129",
+  "newDeaths28DaysByDeathDate": "360",
+  "usDeath": "1374"
+}, {
+  "date": "2020-03-25",
+  "cumCasesByPublishDate": "9529",
+  "cumDeaths28DaysByDeathDate": "1478",
+  "newCasesByPublishDate": "1452",
+  "newDeaths28DaysByDeathDate": "302",
+  "usDeath": "1058"
+}, {
+  "date": "2020-03-24",
+  "cumCasesByPublishDate": "8077",
+  "cumDeaths28DaysByDeathDate": "1176",
+  "newCasesByPublishDate": "1427",
+  "newDeaths28DaysByDeathDate": "237",
+  "usDeath": "820"
+}, {
+  "date": "2020-03-23",
+  "cumCasesByPublishDate": "6650",
+  "cumDeaths28DaysByDeathDate": "939",
+  "newCasesByPublishDate": "967",
+  "newDeaths28DaysByDeathDate": "186",
+  "usDeath": "582"
+}, {
+  "date": "2020-03-22",
+  "cumCasesByPublishDate": "5683",
+  "cumDeaths28DaysByDeathDate": "753",
+  "newCasesByPublishDate": "665",
+  "newDeaths28DaysByDeathDate": "165",
+  "usDeath": "481"
+}, {
+  "date": "2020-03-21",
+  "cumCasesByPublishDate": "5018",
+  "cumDeaths28DaysByDeathDate": "588",
+  "newCasesByPublishDate": "1035",
+  "newDeaths28DaysByDeathDate": "131",
+  "usDeath": "335"
+}, {
+  "date": "2020-03-20",
+  "cumCasesByPublishDate": "3983",
+  "cumDeaths28DaysByDeathDate": "457",
+  "newCasesByPublishDate": "714",
+  "newDeaths28DaysByDeathDate": "109",
+  "usDeath": "273"
+}, {
+  "date": "2020-03-19",
+  "cumCasesByPublishDate": "3269",
+  "cumDeaths28DaysByDeathDate": "348",
+  "newCasesByPublishDate": "643",
+  "newDeaths28DaysByDeathDate": "74",
+  "usDeath": "203"
+}, {
+  "date": "2020-03-18",
+  "cumCasesByPublishDate": "2626",
+  "cumDeaths28DaysByDeathDate": "274",
+  "newCasesByPublishDate": "676",
+  "newDeaths28DaysByDeathDate": "68",
+  "usDeath": "155"
+}, {
+  "date": "2020-03-17",
+  "cumCasesByPublishDate": "1950",
+  "cumDeaths28DaysByDeathDate": "206",
+  "newCasesByPublishDate": "407",
+  "newDeaths28DaysByDeathDate": "52",
+  "usDeath": "124"
+}, {
+  "date": "2020-03-16",
+  "cumCasesByPublishDate": "1543",
+  "cumDeaths28DaysByDeathDate": "154",
+  "newCasesByPublishDate": "152",
+  "newDeaths28DaysByDeathDate": "46",
+  "usDeath": "100"
+}, {
+  "date": "2020-03-15",
+  "cumCasesByPublishDate": "1391",
+  "cumDeaths28DaysByDeathDate": "108",
+  "newCasesByPublishDate": "330",
+  "newDeaths28DaysByDeathDate": "32",
+  "usDeath": "79"
+}, {
+  "date": "2020-03-14",
+  "cumCasesByPublishDate": "1061",
+  "cumDeaths28DaysByDeathDate": "76",
+  "newCasesByPublishDate": "264",
+  "newDeaths28DaysByDeathDate": "22",
+  "usDeath": "64"
+}, {
+  "date": "2020-03-13",
+  "cumCasesByPublishDate": "797",
+  "cumDeaths28DaysByDeathDate": "54",
+  "newCasesByPublishDate": "207",
+  "newDeaths28DaysByDeathDate": "16",
+  "usDeath": "56"
+}, {
+  "date": "2020-03-12",
+  "cumCasesByPublishDate": "590",
+  "cumDeaths28DaysByDeathDate": "38",
+  "newCasesByPublishDate": "134",
+  "newDeaths28DaysByDeathDate": "13",
+  "usDeath": "51"
+}, {
+  "date": "2020-03-11",
+  "cumCasesByPublishDate": "456",
+  "cumDeaths28DaysByDeathDate": "25",
+  "newCasesByPublishDate": "83",
+  "newDeaths28DaysByDeathDate": "8",
+  "usDeath": "43"
+}, {
+  "date": "2020-03-10",
+  "cumCasesByPublishDate": "373",
+  "cumDeaths28DaysByDeathDate": "17",
+  "newCasesByPublishDate": "52",
+  "newDeaths28DaysByDeathDate": "3",
+  "usDeath": "37"
+}, {
+  "date": "2020-03-09",
+  "cumCasesByPublishDate": "321",
+  "cumDeaths28DaysByDeathDate": "14",
+  "newCasesByPublishDate": "50",
+  "newDeaths28DaysByDeathDate": "5",
+  "usDeath": "35"
+}, {
+  "date": "2020-03-08",
+  "cumCasesByPublishDate": "271",
+  "cumDeaths28DaysByDeathDate": "9",
+  "newCasesByPublishDate": "65",
+  "newDeaths28DaysByDeathDate": "3",
+  "usDeath": "31"
+}, {
+  "date": "2020-03-07",
+  "cumCasesByPublishDate": "206",
+  "cumDeaths28DaysByDeathDate": "6",
+  "newCasesByPublishDate": "46",
+  "newDeaths28DaysByDeathDate": "0",
+  "usDeath": "27"
+}, {
+  "date": "2020-03-06",
+  "cumCasesByPublishDate": "160",
+  "cumDeaths28DaysByDeathDate": "6",
+  "newCasesByPublishDate": "46",
+  "newDeaths28DaysByDeathDate": "0",
+  "usDeath": "26"
+}, {
+  "date": "2020-03-05",
+  "cumCasesByPublishDate": "114",
+  "cumDeaths28DaysByDeathDate": "6",
+  "newCasesByPublishDate": "29",
+  "newDeaths28DaysByDeathDate": "3",
+  "usDeath": "20"
+}, {
+  "date": "2020-03-04",
+  "cumCasesByPublishDate": "85",
+  "cumDeaths28DaysByDeathDate": "3",
+  "newCasesByPublishDate": "34",
+  "newDeaths28DaysByDeathDate": "0",
+  "usDeath": "16"
+}, {
+  "date": "2020-03-03",
+  "cumCasesByPublishDate": "51",
+  "cumDeaths28DaysByDeathDate": "3",
+  "newCasesByPublishDate": "11",
+  "newDeaths28DaysByDeathDate": "2",
+  "usDeath": "14"
+}, {
+  "date": "2020-03-02",
+  "cumCasesByPublishDate": "40",
+  "cumDeaths28DaysByDeathDate": "1",
+  "newCasesByPublishDate": "5",
+  "newDeaths28DaysByDeathDate": "1",
+  "usDeath": "11"
+}, {
+  "date": "2020-03-01",
+  "cumCasesByPublishDate": "35",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "12",
+  "newDeaths28DaysByDeathDate": "0",
+  "usDeath": "8"
+}, {
+  "date": "2020-02-29",
+  "cumCasesByPublishDate": "23",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "4",
+  "newDeaths28DaysByDeathDate": "0",
+  "usDeath": "5"
+}, {
+  "date": "2020-02-28",
+  "cumCasesByPublishDate": "19",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "6",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "4"
+}, {
+  "date": "2020-02-27",
+  "cumCasesByPublishDate": "13",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "2"
+}, {
+  "date": "2020-02-26",
+  "cumCasesByPublishDate": "13",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "2"
+}, {
+  "date": "2020-02-25",
+  "cumCasesByPublishDate": "13",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-24",
+  "cumCasesByPublishDate": "13",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "4",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-23",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-22",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-21",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-20",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-19",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-18",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-17",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-16",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-15",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-14",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-13",
+  "cumCasesByPublishDate": "9",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "1",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-12",
+  "cumCasesByPublishDate": "8",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-11",
+  "cumCasesByPublishDate": "8",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-10",
+  "cumCasesByPublishDate": "8",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "4",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": "0"
+}, {
+  "date": "2020-02-09",
+  "cumCasesByPublishDate": "4",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "1",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-02-08",
+  "cumCasesByPublishDate": "3",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-02-07",
+  "cumCasesByPublishDate": "3",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-02-06",
+  "cumCasesByPublishDate": "3",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "1",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-02-05",
+  "cumCasesByPublishDate": "2",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-02-04",
+  "cumCasesByPublishDate": "2",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-02-03",
+  "cumCasesByPublishDate": "2",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-02-02",
+  "cumCasesByPublishDate": "2",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-02-01",
+  "cumCasesByPublishDate": "2",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-31",
+  "cumCasesByPublishDate": "2",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "2",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-30",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-29",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-28",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-27",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-26",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-25",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-24",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-23",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-22",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-21",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-20",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-19",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-18",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-17",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-16",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-15",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-14",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}, {
+  "date": "2020-01-13",
+  "cumCasesByPublishDate": "",
+  "cumDeaths28DaysByDeathDate": "",
+  "newCasesByPublishDate": "0",
+  "newDeaths28DaysByDeathDate": "",
+  "usDeath": ""
+}]
