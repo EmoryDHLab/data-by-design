@@ -8,7 +8,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import Navbar from "./components/Navbar";
-import styles from "../styles/app.css";
+import styles from "../styles/generated-app.css";
 import fontStyles from "../styles/fonts.css";
 
 export const meta: MetaFunction = () => ({

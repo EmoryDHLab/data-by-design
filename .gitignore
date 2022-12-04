@@ -8,4 +8,4 @@ node_modules
 .DS_Store
 .vercel
 /api
-/styles/app.css
+/styles/generated-app.css
