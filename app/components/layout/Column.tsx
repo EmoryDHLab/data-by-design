@@ -20,7 +20,7 @@ export default function Column({ children, className, shouldPin }: Props) {
         start: "top top",
         end: "bottom center",
         markers: false, // set to true for debugging
-        pin: pin.current.firstChild
+        pin: pin.current.firstChild,
       });
     }
   });
@@ -31,8 +31,8 @@ export default function Column({ children, className, shouldPin }: Props) {
   // to position: fixed things don't collapse.
   // This extra layer maintains the layout.
   return (
-    <div ref={pin} className={`column-grid-wrapper w-1/2 ${className ?? ""}`}>
-      <div>{children}</div>
+    <div ref={pin} className={`w-1/2 ${className ?? ""}`}>
+      <div className="column-grid-wrapper">{children}</div>
     </div>
-  )
+  );
 }
