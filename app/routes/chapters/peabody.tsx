@@ -1,5 +1,6 @@
 import ChapterTitle from "~/components/ChapterTitle";
-import { HoverState, ChapterContext } from "~/theme";
+import type { HoverState } from "~/theme";
+import { ChapterContext } from "~/theme";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
@@ -10,7 +11,7 @@ import Footer from "~/components/Footer";
 import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import { useState } from "react";
 import HoverText from "~/components/HoverText";
-import HoverZoomPeabodySquare from "~/components/peabody/PeabodySquare";
+import HoverZoomPeabodySquare from "~/components/peabody/HoverZoomPeabodySquare";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
