@@ -10,6 +10,7 @@ import StackedChart from "~/components/playfair/StackedChart";
 import CombChart from "~/components/playfair/CombChart";
 import Figure from "~/components/layout/Figure";
 import CenteredLayout from "~/components/layout/CenteredLayout";
+import Scrollytell from "~/components/playfair/Scrollytell";
 
 export default function PlayfairPage() {
   return (
@@ -269,9 +270,10 @@ export default function PlayfairPage() {
         </div>
       </CenteredLayout>
 
-      <FullBleed className="bg-playfairPrimary h-[1000px] flex flex-col items-center justify-center">
+      {/* <FullBleed className="bg-playfairPrimary h-[1000px] flex flex-col items-center justify-center">
         SCROLLYTELL HERE
-      </FullBleed>
+      </FullBleed> */}
+      <Scrollytell />
 
       <CenteredLayout>
         <div className="space-y-5 py-10">

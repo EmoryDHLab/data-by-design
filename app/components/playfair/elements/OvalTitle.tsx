@@ -1,42 +1,42 @@
-export default function OvalTitle(props) {
+export default function OvalTitle({ color, ellipse, opacity, topText, midText, botText }) {
   return (
-    <g>
+    <g opacity={opacity}>
       <ellipse
-        cx={props.ellipse.cx}
-        cy={props.ellipse.cy}
-        rx={props.ellipse.rx}
-        ry={props.ellipse.ry}
-        fill={props.color}
+        cx={ellipse.cx}
+        cy={ellipse.cy}
+        rx={ellipse.rx}
+        ry={ellipse.ry}
+        fill={color}
         stroke="black"
         strokeWidth="0.2"
       >
       </ellipse>
       <text
         fill="black"
-        x={props.topText.x}
-        y={props.topText.y}
+        x={topText.x}
+        y={topText.y}
         fontFamily="Maranallo"
         fontSize="2.7"
       >
-        {props.topText.text}
+        {topText.text}
       </text>
       <text
         fill="black"
-        x={props.midText.x}
-        y={props.midText.y}
+        x={midText.x}
+        y={midText.y}
         fontFamily="Chancery Cursive"
         fontSize="2.9"
       >
-        {props.midText.text}
+        {midText.text}
       </text>
       <text
         fill="black"
-        x={props.botText.x}
-        y={props.botText.y}
+        x={botText.x}
+        y={botText.y}
         fontFamily="Maranallo"
         fontSize="3"
       >
-        {props.botText.text}
+        {botText.text}
       </text>
     </g>
   )
