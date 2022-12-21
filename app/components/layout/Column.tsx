@@ -20,7 +20,7 @@ export default function Column({ children, className, shouldPin }: Props) {
         trigger: pin.current.parentElement,
         start: "top top",
         end: "bottom center",
-        markers: true, // set to true for debugging
+        markers: false, // set to true for debugging
         pin: pin.current.firstChild,
       });
     }
