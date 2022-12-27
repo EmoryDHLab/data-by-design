@@ -2,26 +2,26 @@ import * as d3 from "d3";
 import statesJson from "~/data/dubois/usFeatures.json";
 
 const collegeList = [
-  { city: "Plano, TX", lat: "33.05", lng: "-96.75" },
-  { city: "Irvine, CA", lat: "33.68", lng: "-117.77" },
-  { city: "Madison, WI", lat: "43.09", lng: "-89.43" },
-  { city: "Fremont, CA", lat: "37.50", lng: "-122.08" },
-  { city: "Huntington Beach, CA", lat: "33.69", lng: "-118.01" },
-  { city: "Fargo, ND", lat: "46.88", lng: "-96.79" },
-  { city: "Grand Prairie, TX", lat: "32.69", lng: "-97.02" },
-  { city: "San Jose, CA", lat: "37.30", lng: "-121.82" },
-  { city: "Scottsdale, AZ", lat: "33.68", lng: "-111.86" },
-  { city: "San Francisco, CA", lat: "37.73", lng: "-123.03" },
-  { city: "Bismarck, ND", lat: "46.81", lng: "-100.78" },
-  { city: "Overland Park, KS", lat: "38.89", lng: "-94.69" },
-  { city: "Santa Rosa, CA", lat: "38.45", lng: "-122.71" },
-  { city: "Austin, TX", lat: "30.30", lng: "-97.75" },
-  { city: "Sioux Falls, SD", lat: "43.54", lng: "-96.73" },
-  { city: "Pearl City, HI", lat: "21.41", lng: "-157.97" },
-  { city: "Glendale, CA", lat: "34.15", lng: "-118.26" },
-  { city: "San Diego, CA", lat: "32.82", lng: "-117.13" },
-  { city: "St. Paul, MN", lat: "44.95", lng: "-93.10" },
-  { city: "Charleston, SC", lat: "32.82", lng: "-79.96" },
+  { city: "Plano, TX", lat: 33.05, lng: -96.75 },
+  { city: "Irvine, CA", lat: 33.68, lng: -117.77 },
+  { city: "Madison, WI", lat: 43.09, lng: -89.43 },
+  { city: "Fremont, CA", lat: 37.5, lng: -122.08 },
+  { city: "Huntington Beach, CA", lat: 33.69, lng: -118.01 },
+  { city: "Fargo, ND", lat: 46.88, lng: -96.79 },
+  { city: "Grand Prairie, TX", lat: 32.69, lng: -97.02 },
+  { city: "San Jose, CA", lat: 37.3, lng: -121.82 },
+  { city: "Scottsdale, AZ", lat: 33.68, lng: -111.86 },
+  { city: "San Francisco, CA", lat: 37.73, lng: -123.03 },
+  { city: "Bismarck, ND", lat: 46.81, lng: -100.78 },
+  { city: "Overland Park, KS", lat: 38.89, lng: -94.69 },
+  { city: "Santa Rosa, CA", lat: 38.45, lng: -122.71 },
+  { city: "Austin, TX", lat: 30.3, lng: -97.75 },
+  { city: "Sioux Falls, SD", lat: 43.54, lng: -96.73 },
+  { city: "Pearl City, HI", lat: 21.41, lng: -157.97 },
+  { city: "Glendale, CA", lat: 34.15, lng: -118.26 },
+  { city: "San Diego, CA", lat: 32.82, lng: -117.13 },
+  { city: "St. Paul, MN", lat: 44.95, lng: -93.1 },
+  { city: "Charleston, SC", lat: 32.82, lng: -79.96 },
 ];
 const stateColors = {
   Alabama: { color: "#D92944" },
@@ -80,14 +80,15 @@ const usaProjection = d3.geoAlbers();
 const cityData = collegeList.map(({ city, lng, lat }) => {
   return {
     city: city,
-    x: usaProjection([lng, lat])[0],
-    y: usaProjection([lng, lat])[1],
+    x: usaProjection([lng, lat])?.[0],
+    y: usaProjection([lng, lat])?.[1],
   };
 });
 
 export default function USAMap() {
   const stateData = statesJson.features.map((feature) => {
-    const state = stateColors[feature.properties.NAME];
+    const state =
+      stateColors[feature.properties.NAME as keyof typeof stateColors];
     return { feature, name: feature.properties.NAME, color: state.color };
   });
 
