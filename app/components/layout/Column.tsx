@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 interface Props {
-  children: ReactNodeLike;
+  children?: ReactNodeLike;
   className?: string;
   shouldPin?: boolean;
 }

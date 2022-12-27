@@ -11,6 +11,7 @@ export type HoverState =
 
 interface IChapterContext {
   backgroundColor: string;
+  accentColor: string;
   primaryTextColor: string;
   hoverState: HoverState;
   setHoverState: Dispatch<SetStateAction<HoverState>>;
