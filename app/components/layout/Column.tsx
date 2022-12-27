@@ -13,7 +13,7 @@ export default function Column({ children, className, shouldPin }: Props) {
   const pin = useRef(null);
 
   useEffect(() => {
-    let st = null;
+    let st: ScrollTrigger;
     if (shouldPin) {
       gsap.registerPlugin(ScrollTrigger);
       st = ScrollTrigger.create({
@@ -24,10 +24,9 @@ export default function Column({ children, className, shouldPin }: Props) {
         pin: pin.current.firstChild,
       });
     }
-
     return () => {
       st?.kill();
-    }
+    };
   }, [pin, shouldPin]);
 
   // The pinned element gets immediately wrapped in a <div> with a fixed width/height to match.

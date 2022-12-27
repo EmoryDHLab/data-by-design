@@ -3,7 +3,6 @@ import type { ReactNodeLike } from "prop-types";
 interface Props {
   children: ReactNodeLike;
   alt: string;
-  children: string;
   src: string;
   className?: string;
 }
@@ -18,5 +17,5 @@ export default function Figure({ alt, children, src, className }: Props) {
         </figcaption>
       </figure>
     </div>
-  )
+  );
 }

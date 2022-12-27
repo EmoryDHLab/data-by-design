@@ -159,7 +159,7 @@ export default function PeabodyPage() {
         <Column className="flex flex-col items-center">
           <PromotionalTourMap />
           <div className="w-full h-[200px]" />
-          <div className="flex flex-col items-center w-1/2">
+          <div className="flex flex-col items-center">
             <div className="space-y-2">
               <img className="max-w-xs" src="/images/peabody/1500s.jpg" />
               <img className="max-w-xs" src="/images/peabody/1600s.jpg" />
@@ -332,7 +332,7 @@ export default function PeabodyPage() {
             </span>
           </p>
         </Column>
-        <Column className="py-10 space-y-5">
+        <Column shouldPin={true}>
           <HoverZoomPeabodySquare />
         </Column>
       </TwoColumnLayout>
@@ -662,140 +662,168 @@ export default function PeabodyPage() {
       <div className="w-screen bg-black text-white h-[896px] flex items-center justify-center">
         CHART HERE
       </div>
-      <TwoColumnLayout>
+      <TwoColumnLayout className="pt-20">
         <Column className="space-y-8">
-          <p>
-            <span>
-              But the exercise of creating a chronological chart from scratch is
-              quite hard, as you--the reader--might have discovered from the
-              interaction above. Not to worry, however! The difficulty level was
-              high for students of the nineteenth century as well. P
-            </span>
-            <span>
-              eabody’s nephew, Julian Hawthorne, who served as her first test
-              subject, recalled that she “labored during some years to teach me
-              all the leading dates of human history,” but that he nevertheless
-              remained “most inapt and grievous” throughout the process.
-            </span>
-            <span>
-              <span role="button" className="circle">
-                22
-              </span>{" "}
-            </span>
-            <span>
-              {" "}
-              The evidence in the archive confirms this first-hand account. At
-              the American Antiquarian Society, the Library Company of
-              Philadelphia, Yale’s Beinecke Library, and Princeton’s Special
-              Collections can be found{" "}
-            </span>
-            <span>
-              multiple copies of Peabody’s workbooks, many of which I’ve
-              personally paged through over the course of conducting research
-              for this project. The workbooks all tend to follow a similar
-              pattern: a page or two of grids filled out in earnest; then a
-              series of attempts abandoned halfway; and then a shift in purpose,
-              the grid becoming a canvas for pattern and unbridled play.
-            </span>
-          </p>
-          <p>
-            <span>
-              It’s worth repeating that the difficulty of the Polish-American
-              system is both a liability of the form and also the point. Peabody
-              first developed her method at a time when the nation’s future
-              seemed to hang in balance. The second half of the 1840s had
-              brought an increased awareness of the nation’s growing
-              sectarianism, as well as its range of social ills--albeit with a
-              (mostly) optimistic view about the potential of its governing
-              structures to address these challenges. But as the 1850s unfolded,
-              the magnitude of these challenges became increasingly more
-              pronounced. Even as her privilege protected her from having to
-              enter the political fray, Peabody recognized that the task of
-              resolving the underlying issue of sectarianism, not to mention the
-              moral obligation of ending slavery, posed a degree of difficulty
-              of the highest order. Peabody understood, moreover, that any
-              successful resolution would require sustained effort and thought.
-            </span>
-          </p>
-          <PullQuote
-            title="By prompting her students to create new narratives of the past, "
-            subtitle="they would also imagine alternative possible futures. "
-          />
-          <p>
-            <span>Her goal with the </span>
-            <span className="italic">Polish-American System</span>
-            <span>
-              {" "}
-              was thus to create a framework, equal parts intellectual and
-              immersive, through which this difficult thinking could take place.
-              “The old world is covered with bad institutions which men have
-              created, very often with positively good intentions, but on false
-              notions, or, at least, without large and profound ideas,” she
-              explains in the preface to the{" "}
-            </span>
-            <span className="italic">Chronological History</span>
-            <span>
-              . “Whether the new world shall estimate and sift out these evils,
-              or repeat these mistakes, depends on young Americans, who are now
-              sitting in schoolrooms all over the country, unconscious of their
-              powers and consequent responsibilities,” she further explains.
-            </span>
-            <span>
-              <span role="button" className="circle">
-                23
-              </span>{" "}
-            </span>
-            <span>
-              {" "}
-              Her hope was that the act of creating the chronological charts,
-              rather than simply studying them, would prompt both
-              self-reflection and new ideas. Put another way: Peabody hoped that
-              by prompting her students to create new narratives of the past,
-              they would also imagine alternative possible futures.
-            </span>
-          </p>
-          <p>
-            <span>
-              The political context that provided Peabody with the motivation to
-              publish her history textbooks is crucial for understanding both
-              her ideas about the uses of visualization, and the form that her
-              visualizations take. But this context is not easily discerned from
-              the visualizations themselves. Without the knowledge of how to
-              decode the charts, let alone a sense of their political stakes,
-              the charts’ geometric abstraction prompts a purely aesthetic
-              response.
-            </span>
-          </p>
+          <FullBleed className="px-20">
+            <p>
+              <span>
+                But the exercise of creating a chronological chart from scratch
+                is quite hard, as you--the reader--might have discovered from
+                the interaction above. Not to worry, however! The difficulty
+                level was high for students of the nineteenth century as well.
+              </span>
+              <span>
+                Peabody’s nephew, Julian Hawthorne, who served as her first test
+                subject, recalled that she “labored during some years to teach
+                me all the leading dates of human history,” but that he
+                nevertheless remained “most inapt and grievous” throughout the
+                process.
+              </span>
+              <span>
+                <span role="button" className="circle">
+                  22
+                </span>{" "}
+              </span>
+              <span>
+                {" "}
+                The evidence in the archive confirms this first-hand account. At
+                the American Antiquarian Society, the Library Company of
+                Philadelphia, Yale’s Beinecke Library, and Princeton’s Special
+                Collections can be found{" "}
+              </span>
+              <span>
+                multiple copies of Peabody’s workbooks, many of which I’ve
+                personally paged through over the course of conducting research
+                for this project. The workbooks all tend to follow a similar
+                pattern: a page or two of grids filled out in earnest; then a
+                series of attempts abandoned halfway; and then a shift in
+                purpose, the grid becoming a canvas for pattern and unbridled
+                play.
+              </span>
+            </p>
+            <p>
+              <span>
+                It’s worth repeating that the difficulty of the Polish-American
+                system is both a liability of the form and also the point.
+                Peabody first developed her method at a time when the nation’s
+                future seemed to hang in balance. The second half of the 1840s
+                had brought an increased awareness of the nation’s growing
+                sectarianism, as well as its range of social ills--albeit with a
+                (mostly) optimistic view about the potential of its governing
+                structures to address these challenges. But as the 1850s
+                unfolded, the magnitude of these challenges became increasingly
+                more pronounced. Even as her privilege protected her from having
+                to enter the political fray, Peabody recognized that the task of
+                resolving the underlying issue of sectarianism, not to mention
+                the moral obligation of ending slavery, posed a degree of
+                difficulty of the highest order. Peabody understood, moreover,
+                that any successful resolution would require sustained effort
+                and thought.
+              </span>
+            </p>
+            <FullBleed>
+              <PullQuote
+                title="By prompting her students to create new narratives of the past, "
+                subtitle="they would also imagine alternative possible futures. "
+              />
+            </FullBleed>
+            <p>
+              <span>Her goal with the </span>
+              <span className="italic">Polish-American System</span>
+              <span>
+                {" "}
+                was thus to create a framework, equal parts intellectual and
+                immersive, through which this difficult thinking could take
+                place. “The old world is covered with bad institutions which men
+                have created, very often with positively good intentions, but on
+                false notions, or, at least, without large and profound ideas,”
+                she explains in the preface to the{" "}
+              </span>
+              <span className="italic">Chronological History</span>
+              <span>
+                . “Whether the new world shall estimate and sift out these
+                evils, or repeat these mistakes, depends on young Americans, who
+                are now sitting in schoolrooms all over the country, unconscious
+                of their powers and consequent responsibilities,” she further
+                explains.
+              </span>
+              <span>
+                <span role="button" className="circle">
+                  23
+                </span>{" "}
+              </span>
+              <span>
+                {" "}
+                Her hope was that the act of creating the chronological charts,
+                rather than simply studying them, would prompt both
+                self-reflection and new ideas. Put another way: Peabody hoped
+                that by prompting her students to create new narratives of the
+                past, they would also imagine alternative possible futures.
+              </span>
+            </p>
+            <p>
+              <span>
+                The political context that provided Peabody with the motivation
+                to publish her history textbooks is crucial for understanding
+                both her ideas about the uses of visualization, and the form
+                that her visualizations take. But this context is not easily
+                discerned from the visualizations themselves. Without the
+                knowledge of how to decode the charts, let alone a sense of
+                their political stakes, the charts’ geometric abstraction
+                prompts a purely aesthetic response.
+              </span>
+            </p>
+            <p>
+              <span>
+                Other charts from the same era make their politics more
+                explicit, however—for example, Emma Willard’s 1846{" "}
+              </span>
+              <span className="italic">Temple of Time</span>
+              <span>
+                , which depicts past centuries as the pillars that support the
+                titular temple. In the chart, the nineteenth century—then the
+                present—is represented as an unfinished column, not yet stable
+                enough to support the weight of the past. On the ceiling of the
+                temple, Willard catalogues key figures from each prior century,
+                including statesmen, philosophers, discoverers, and poets. On
+                the floor of the temple, she lays out the developments of major
+                nation-states, their paths drawn as rivers subjected—like water
+                levels—to the expansions and contractions of state power over
+                time. Significantly, Willard places the path of the United
+                States front and center. From the perspective of the viewer,
+                this river flows directly towards them, enfolding them in the
+                expanding influence of the United States: the future to come.
+              </span>
+              <span>
+                <span role="button" className="circle">
+                  24
+                </span>{" "}
+              </span>
+            </p>
+          </FullBleed>
+        </Column>
+        <Column shouldPin={true}>
+          <FullBleed className="px-10 flex flex-col items-center">
+            <div className="grid grid-cols-4 gap-2">
+              <img src="/images/ch4-5.webp" />
+              <img src="/images/ch4-6.webp" />
+              <img src="/images/ch4-7.webp" />
+              <img src="/images/ch4-8.webp" />
+              <img src="/images/ch4-9.webp" />
+              <img src="/images/ch4-10.webp" />
+              <img src="/images/ch4-11.webp" />
+              <img src="/images/ch4-12.webp" />
+            </div>
+            <figcaption className="text-center font-william pt-5 max-w-md">
+              Images of student-created charts from a copy of{" "}
+              <span className="italic">The Polish-American System</span> housed
+              at the American Antiquarian Society. Courtesy of the American
+              Antiquarian Society. Photos by Lauren Klein.
+            </figcaption>
+          </FullBleed>
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>
-        <p>
-          <span>
-            Other charts from the same era make their politics more explicit,
-            however—for example, Emma Willard’s 1846{" "}
-          </span>
-          <span className="italic">Temple of Time</span>
-          <span>
-            , which depicts past centuries as the pillars that support the
-            titular temple. In the chart, the nineteenth century—then the
-            present—is represented as an unfinished column, not yet stable
-            enough to support the weight of the past. On the ceiling of the
-            temple, Willard catalogues key figures from each prior century,
-            including statesmen, philosophers, discoverers, and poets. On the
-            floor of the temple, she lays out the developments of major
-            nation-states, their paths drawn as rivers subjected—like water
-            levels—to the expansions and contractions of state power over time.
-            Significantly, Willard places the path of the United States front
-            and center. From the perspective of the viewer, this river flows
-            directly towards them, enfolding them in the expanding influence of
-            the United States: the future to come.
-          </span>
-          <span>
-            <span role="button" className="circle">
-              24
-            </span>{" "}
-          </span>
-        </p>
         <div className="flex flex-col items-center full-bleed py-10">
           <div>
             <img src="/images/ch4-13-willard.jpg" alt="" loading="lazy" />
