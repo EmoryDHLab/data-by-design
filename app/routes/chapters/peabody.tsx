@@ -20,6 +20,7 @@ export default function PeabodyPage() {
       value={{
         backgroundColor: "peabodyPrimary",
         primaryTextColor: "black",
+        accentColor: "peabodyPrimary",
         hoverState,
         setHoverState,
       }}
