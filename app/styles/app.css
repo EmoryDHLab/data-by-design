@@ -62,6 +62,11 @@
     grid-column: 2;
 }
 
+.scrollytell .column-grid-wrapper {
+    display: block;
+    grid-template-columns: unset;
+}
+
 .left-bleed {
     width: 100%;
     grid-column: 1 / 2;
