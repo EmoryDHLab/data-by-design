@@ -11,6 +11,7 @@ import CombChart from "~/components/playfair/CombChart";
 import Figure from "~/components/layout/Figure";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import Scrollytell from "~/components/playfair/Scrollytell";
+import Footer from "~/components/Footer";
 
 export default function PlayfairPage() {
   return (
@@ -814,6 +815,7 @@ export default function PlayfairPage() {
           </p>
         </div>
       </CenteredLayout>
+      <Footer />
     </ChapterContext.Provider>
   );
 }
