@@ -12,6 +12,7 @@ import Figure from "~/components/layout/Figure";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import Scrollytell from "~/components/playfair/Scrollytell";
 import Footer from "~/components/Footer";
+import Footnote from "~/components/Footnote";
 
 export default function PlayfairPage() {
   return (
@@ -29,8 +30,8 @@ export default function PlayfairPage() {
               One can only imagine the choice words exclaimed by the Scottish
               political economist William Playfair (1759-1823) when he recognized
               the error that he had inadvertently engraved into the tail end of
-              the data line on his chart of “Exports &amp; Imports to and from all
-              of North America.” Engraving was—and still is—an incredibly
+              the data line on his chart of "Exports &amp; Imports to and from all
+              of North America." Engraving was—and still is—an incredibly
               time-consuming process. Albrecht Dürer, the Renaissance printmaker
               credited with elevating engraving into an art form, took over three
               months to complete his famed <cite>Knight, Death, and Devil</cite>
@@ -47,22 +48,44 @@ export default function PlayfairPage() {
               charts, pie charts, and time series graphs are frequently
               heralded as the first of their kind. In the opening lines
               of <cite>The Visual Display of Quantitative Information</cite>,
-              Edward Tufte describes Playfair's work as “remarkable.”
-              <span role="button" className="circle">1</span>
+              Edward Tufte describes Playfair's work as "remarkable."
+              <Footnote number="1">
+                Edward Tufte, <cite>The Visual Display of Quantitative Information</cite>
+                (Cheshire, CT: Graphics Press, 2001), p. 32
+              </Footnote>
               And most other histories of visualization have followed
               suit.
-              <span role="button" className="circle">
-                2
-              </span>
-              But in his own time, Playfair remained “largely
-              unacknowledged” for his contributions.
-              <span role="button" className="circle">
-                3
-              </span>
+              <Footnote number="2">
+                In their preface to the modern edition of Playfair's
+                <cite>Commercial and Political Atlas</cite> (1786), for instance,
+                Howard Wainer and Ian Spence describe that text as the "Bible" of
+                contemporary visualization design (New York: Cambridge University
+                Press, 2005), p. vi. In related work, Wainer traces a direct line
+                from Playfair to Jacques Bertin, author of <cite>The Semiology of Graphics</cite>,
+                the most significant study of visualization of the twentieth century
+                (Bertin 1983, vii). Bertin himself selects an 1805 chart of Playfair's
+                as one of only two historical images he reproduces in his foundational text.
+                Also see Michael Friendly, "The Golden Age of Statistical Graphics,"
+                Statistical Science 23.4 (2008): 502-535; and more recently, Sandra Rendgen,
+                <cite>History of Information Graphics</cite> (Koln, Germany: Taschen, 2019).
+              </Footnote>
+              But in his own time, Playfair remained "largely
+              unacknowledged" for his contributions.
+              <Footnote number="3">
+                Howard Wainer and Ian Spence, "Introduction" in William Playfair,
+                <cite>The Commercial and Political Atlas and Statistical Breviary</cite>,
+                eds. Howard Wainer and Ian Spence (New York: Cambridge Univ. Press, 2005), p. 9
+              </Footnote>
               More to the point, he was almost always nearly broke.
-              <span role="button" className="circle">
-                4
-              </span>
+              <Footnote number="4">
+                Responsible for numerous failed money-making schemes throughout his life, Playfair,
+                in 1816, attempted blackmail. Claiming ownership of a set of papers that would cast
+                doubt on the lineage of the twin inheritors of the Douglas estate—a seven-year debate,
+                known as the Douglas Cause, that earned dubious distinction as the longest and most
+                expensive legal battle in Scottish history—Playfair attempted to extort funds from
+                Lord Douglas himself, one of the wealthiest men in Scotland. For more on this episode
+                in Playfair’s life, see Wainer and Spence 8-9.
+              </Footnote>
               Thus while Playfair chose to commission one of the most
               skilled engravers in all of London, Samuel John Neele, to
               produce the plates for the third edition of his <cite>Atlas</cite>,
@@ -72,9 +95,9 @@ export default function PlayfairPage() {
               charts' decoration, framing, titles, and other lettering,
               leaving Playfair—who had trained as an engineer—to engrave
               the lines of imports and exports by himself.
-              <span role="button" className="circle">
-                5
-              </span>
+              <Footnote number="5">
+                My account of Neele and Playfair's distribution of tasks derives from Wainer and Spence.
+              </Footnote>
             </p>
           </div>
         </Column>
@@ -121,8 +144,8 @@ export default function PlayfairPage() {
         <div className="space-y-5 py-10">
           <p>
           To produce a copperplate engraving such as the one
-          employed to print “Exports &amp; Imports to and from all
-          of North America,” a thin copper plate is first coated
+          employed to print "Exports &amp; Imports to and from all
+          of North America," a thin copper plate is first coated
           with a ground: a layer of wax, varnish, chalk, or soot.
           Using a stylus, the engraver traces an outline of the
           design in mirror image into the ground. The wax (or
@@ -131,14 +154,25 @@ export default function PlayfairPage() {
           subsequent inscription process. With a metal tool called a
           burin, the engraver carves the image directly into the
           copper plate—a process that requires significant strength.
-          <span role="button" className="circle">6</span>
+          <Footnote number="6">
+            My account of copperplate engraving derives from Wainer and Spence,
+            as well as Roger Gaskell, "Printing House and Engraving Shop:
+            A Mysterious Collaboration" <em>BC</em> 53 (2004): 213-51. Interested
+            readers may also consult "From Paper to Copper: The Engraver's Process,"
+            a demonstration by Andrew Stein Raftery, Associate Professor of
+            Printmaking at the Rhode Island School of Design, viewable online at:
+            <a href="https://www.youtube.com/watch?v=fQvghHs15hA">YouTube</a>.
+          </Footnote>
         </p>
         <p>
           Playfair's error was thus a common one—a slip of a tired
           hand—but its frequent occurrence would not have made it
           any more tolerable to the man who was already, by his own
-          account, “long anxious” to be acknowledged as an
-          innovator.<span role="button" className="circle">7</span>
+          account, "long anxious" to be acknowledged as an
+          innovator.<Footnote number="7">
+            William Playfair, <cite>The Commercial and Political Atlas</cite>,
+            3rd ed. (London: 1801), p. viii.
+          </Footnote>
           Unlike the array of digital processes employed today to
           create such visualizations—from standalone platforms such
           as Adobe Illustrator or Tableau to software libraries such
@@ -182,7 +216,7 @@ export default function PlayfairPage() {
         </p>
         </div>
       </CenteredLayout>
-
+*
       <ChapterSectionTitle>
         The Value of Visual Knowledge
       </ChapterSectionTitle>
@@ -195,14 +229,14 @@ export default function PlayfairPage() {
             from James Watt, inventor of the steam engine—and for whom
             Playfair worked in his youth—that he received the advice
             to include his charts' data in tabular form.
-            “It might be proper,” Watt advised, “to give in letter
+            "It might be proper," Watt advised, "to give in letter
             press the Tables from which the Charts have been
             constructed… for the charts now seem to rest on your own
             authority, and it will naturally be enquired from whence
-            you have derived our intelligence.”
-            <span role="button" className="circle">
-              8
-            </span>
+            you have derived our intelligence."
+            <Footnote number="8">
+              Quoted in<cite> Wainer and Spence</cite>, p. 14.
+            </Footnote>
             Playfair thus dutifully compiled statistical tables to
             accompany each of his charts, which he included in the
             first and second editions of the <cite>Atlas</cite>.
@@ -231,10 +265,10 @@ export default function PlayfairPage() {
           that he no longer felt obligated to include the associated
           data tables, as Watt had initially advised. Indeed,
           Playfair understood the function of his charts as quite
-          distinct from that of tables, or “figures,” as he termed
+          distinct from that of tables, or "figures," as he termed
           them. In introduction to the Atlas, he explains:
         </p>
-        <p>
+        <blockquote className="font-william">
           The advantage proposed by this method, is not that of giving
           a more accurate statement than
           by figures, but it is to give a more simple and
@@ -242,57 +276,63 @@ export default function PlayfairPage() {
           amounts, at different periods, by presenting to the
           eye a figure, the proportions of which correspond with
           the amount of the sums intended to be expressed.
-          <span role="button" className="circle">9</span>
-        </p>
+          <Footnote number="9">
+            Playfair, pp. ix-x.
+          </Footnote>
+        </blockquote>
         <p>
           attr
         </p>
         <p>
-          In explicit contrast to the “more accurate” information
+          In explicit contrast to the "more accurate" information
           conveyed through the form of the data table, Playfair
           understood the value of his charts as their ability to
-          impart a “simple and permanent idea.” In other words, the
+          impart a "simple and permanent idea." In other words, the
           knowledge conveyed through the charts was different than
           the knowledge conveyed through the data, and explicitly
           so. It was admittedly more reductive, but it was also
           easier to understand—and, as a result, easier to remember.
         </p>
         <p>
-          Playfair's interest in presenting a “simple and permanent
-          idea,” over and above any particular data point, is
+          Playfair's interest in presenting a "simple and permanent
+          idea," over and above any particular data point, is
           further born out in the liberties he took in interpolating
-          his data. For example, his “Chart of Imports &amp; Exports
-          to and from all of North America” clearly depicts economic
+          his data. For example, his "Chart of Imports &amp; Exports
+          to and from all of North America" clearly depicts economic
           instability. But even if that instability could be
           confirmed by other sources, Playfair did not necessarily
           possess all of the data to support the line that he
-          engraved.<span role="button" className="circle">10</span>
+          engraved.<Footnote number="10">
+            Wainer and Spence find evidence of similar extrapolation
+            in the chart of trade with the Channel Islands. It depicts
+            seven reversals of the balance of trade, whereas the data
+            table records only three. See p. 21.
+          </Footnote>
         </p>
         </div>
       </CenteredLayout>
 
-      {/* <FullBleed className="bg-playfairPrimary h-[1000px] flex flex-col items-center justify-center">
-        SCROLLYTELL HERE
-      </FullBleed> */}
       <Scrollytell />
 
       <CenteredLayout>
         <div className="space-y-5 py-10">
           <p>
             Clearly, for Playfair, his lack of data was not of concern. His
-            intention was to model a new “mode of painting to the
-            eye,” one that—following John Locke and the dominant
+            intention was to model a new "mode of painting to the
+            eye," one that—following John Locke and the dominant
             Enlightenment view—could be first perceived by the senses
             and then processed by the mind.
-            <span role="button" className="circle">11</span>
+            <Footnote number="11">
+              Playfair, p. 29.
+            </Footnote>
             More specifically, Playfair advances a belief in the role
             of sensory perception, ​​and of vision in particular—in
             prompting a particular form of crystalizing insight that
-            can lead to new knowledge: “On inspecting any one of these
-            Charts attentively,” Playfair himself explains, “a
+            can lead to new knowledge: "On inspecting any one of these
+            Charts attentively," Playfair himself explains, "a
             sufficiently distinct impression will be made, to remain
             unimpaired for a time, and the idea which does remain will
-            be simple and complete.”
+            be simple and complete."
           </p>
           <p>
             Playfair's belief in the clarifying and consolidating
@@ -300,14 +340,19 @@ export default function PlayfairPage() {
             the present along with his iconic charts. This enduring
             belief is perhaps most evident in the work of Edward
             Tufte, who maintains that visualizations of data should be
-            “clear” and “efficient”; that they should present
-            “accurate” representations of the data at hand; and that
+            "clear" and "efficient"; that they should present
+            "accurate" representations of the data at hand; and that
             they should encourage the viewer to think about the
-            “substance” of the data, rather than the “methodology”
-            underneath.<span role="button" className="circle">12</span>
+            "substance" of the data, rather than the "methodology"
+            underneath.
+            <Footnote number="12">
+              Tufte, p. 13.
+            </Footnote>
             In this way, Tufte explains, visualizations can be made to
-            “<em>reveal</em>” the data on display (emphasis in the original).
-            <span role="button" className="circle">13</span>
+            "<em>reveal</em>" the data on display (emphasis in the original).
+            <Footnote number="13">
+              Tufte, p. 13.
+            </Footnote>
           </p>
           <p>
             And while scholars in the field of visualization—a
@@ -318,24 +363,49 @@ export default function PlayfairPage() {
             of the underlying data that are too large, or too complex,
             to be perceived by the eye alone. In a recent interview,
             esteemed visualization scholar Ben Shneiderman analogizes
-            visualization to “a telescope or a microscope that
-            increases your perceptual abilities,” allowing people to
-            “understand complex processes so as to support better
-            decisions.”<span role="button" className="circle"> 14</span>
+            visualization to "a telescope or a microscope that
+            increases your perceptual abilities," allowing people to
+            "understand complex processes so as to support better
+            decisions."
+            <Footnote number=" 14">
+              Jessica Hullman, "The Purpose of Visualization is Insight,
+              not Pictures: An Interview with Ben Shneiderman,"
+              <cite>ACM Interactions</cite>, August 5, 2019.
+              <a href="https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben">
+                https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben
+              </a>
+            </Footnote>
             ​​Intoning the lessons of his own influential textbook,
             <cite>Readings in Information Visualization: Using Vision to
             Think</cite>, coauthored with Stuart Card and Jock Mackinlay,
-            Shneiderman insists that “the purpose of data visualization
-            is insight.”<span role="button" className="circle">15</span>
-            And while acknowledging that both “designers of
+            Shneiderman insists that "the purpose of data visualization
+            is insight."
+            <Footnote number="15">
+              Stuart Card, Jock Mackinlay, and Ben Shneiderman, eds.,
+              <cite>Readings in Information Visualization: Using Vision to Think</cite>
+              (Burlington, MA: Morgan Kaufmann, 1999), p. 5.
+            </Footnote>
+            And while acknowledging that both "designers of
             visualizations, and scholars who study them, have
-            struggled to give a coherent definition of <em>insight</em>,”
+            struggled to give a coherent definition of <em>insight</em>,"
             data journalist and visualization designer Alberto
             Cairo also maintains that clear and accurate images (and,
             increasingly, interactive graphics), can lead to new
             knowledge about a subject—knowledge that would otherwise
             remain hidden from view.
-            <span role="button" className="circle">16</span>
+            <Footnote number="16">
+              Alberto Cairo, <cite>The Truthful Art: Data, Charts, and Maps for
+              Communication</cite> (San Francisco: New Riders Press, 2016), p. 59.
+              This view is confirmed in any number of recent books about visualization
+              written for a popular audience, such as Nathan Yao's
+              <cite>Visualize This: The Flowing Data Guide to Design, Visualization, and Statistics</cite>
+              (New York: Wiley, 2011), Stephen Few's Show Me the
+              <cite>Numbers: Designing Tables and Graphs to Enlighten</cite>,
+              2nd ed., (El Dorado Hills, CA: Analytics Press, 2012),
+              and David McCandless's <cite>Knowledge is Beautiful: Impossible Ideas,
+              Invisible Patterns, and Hidden Connections—Visualized</cite>
+              (New York: Harper Collins, 2014).
+            </Footnote>
           </p>
           <FullBleed>
             <PullQuote
@@ -343,7 +413,7 @@ export default function PlayfairPage() {
               subtitle="His intent was to produce a visual impression--one
                       inspired by the data, but not a direct
                       representation of it--that would, in turn, prompt
-                        the insights that lead to new knowledge." />
+                      the insights that lead to new knowledge." />
           </FullBleed>
           <p className="pb-12">
             Playfair's charts may thus endure as an ur-example of the
@@ -355,7 +425,7 @@ export default function PlayfairPage() {
             visual impression--one inspired by the data, but not a
             direct representation of it--that would, in turn, prompt
             the insights that lead to new knowledge. This was
-            emphatically not the “data-driven knowledge” that defines
+            emphatically not the "data-driven knowledge" that defines
             our current moment, but rather his own interpretation of
             the data that, through visualization, could become
             knowledge of a new kind.
@@ -381,11 +451,13 @@ export default function PlayfairPage() {
             Revolution still lingered in the minds of the European
             elite, as they continued to consider the possibility of
             additional colonial revolts. Thus when Playfair explains
-            that he has “chosen the present moment” to re-release
-            his <cite>Atlas</cite> because of the “singularity of the situation in which
-            Europe is now placed,” it was this revolutionary
-            political “situation” to which he refers.
-            <span role="button" className="circle">17</span>
+            that he has "chosen the present moment" to re-release
+            his <cite>Atlas</cite> because of the "singularity of the situation in which
+            Europe is now placed," it was this revolutionary
+            political "situation" to which he refers.
+            <Footnote number="17">
+              Playfair, p. iii.
+            </Footnote>
           </p>
         </Column>
         <Column>
@@ -406,32 +478,41 @@ export default function PlayfairPage() {
             the so-called Age of Revolutions had brought about.
             Playfair was openly unsure about what the future might
             hold. In the preface to the third edition of the
-            <cite>Atlas</cite>, he speculates that “Europe may probably be convulsed
-            with war for fifty years to come,” and professes
+            <cite>Atlas</cite>, he speculates that "Europe may probably be convulsed
+            with war for fifty years to come," and professes
             uncertainty about whether he is witnessing the end of
             European cultural and economic dominance, or whether its
-            “art and commerce” will prevail. <span role="button" className="circle">18</span>
+            "art and commerce" will prevail.
+            <Footnote number="18">
+              Playfair, p. iv
+            </Footnote>
             But regardless of the outcome—or, I would contend,
             precisely <em>because</em> of the uncertainty of the outcome—Playfair identifies
             tremendous value in the clarity of perspective produced by
             his charts. As he explains:
           </p>
-          <p className="md:my-16 middle-text flex flex-col">
-            “If [a future of war] turns out so, a picture of the
+          <blockquote className="font-william">
+            "If [a future of war] turns out so, a picture of the
             past will be a valuable thing, if, on the contrary,
             commerce should still continue its progress, this will
             make the first part of a great whole, which, when
             completed on some future day, will be a most valuable
-            work.”<span role="button" className="circle">19</span>
-          </p>
+            work."
+            <Footnote number="19">
+              Playfair, p. iv
+            </Footnote>
+          </blockquote>
           <p>
             attr
           </p>
           <p>
             From these lines, it would seem that Playfair believes
-            that his “simple and complete” images can not only capture
+            that his "simple and complete" images can not only capture
             the instability of his time, but also guard against the
-            uncertainty of the future.<span role="button" className="circle">20</span>
+            uncertainty of the future.
+            <Footnote number="20">
+              Playfair, p. xiv
+            </Footnote>
             His goal is to cut through complexity, guided by a belief
             that less detail—and not more—is what will enable more
             useful and enduring knowledge.
@@ -439,15 +520,20 @@ export default function PlayfairPage() {
           <p>
             But a pair of questions remains: for whom is this
             knowledge truly useful, and for what reasons is it
-            necessary that this particular “picture of the past”
+            necessary that this particular "picture of the past"
             endure? As Playfair elaborates the impetus behind the
-            “form and manner” of his charts, he makes clear that his
-            intended audience is not “any person” in the world, but
-            rather, the narrower world of “men of high rank, or active
-            business”<span role="button" className="circle">21</span>
-            These men, he continues, “can only pay attention to
-            general outlines; nor is attention to particulars of use.”
-            <span role="button" className="circle">22</span>
+            "form and manner" of his charts, he makes clear that his
+            intended audience is not "any person" in the world, but
+            rather, the narrower world of "men of high rank, or active
+            business"
+            <Footnote number="21">
+              Playfair, p. xiv
+            </Footnote>
+            These men, he continues, "can only pay attention to
+            general outlines; nor is attention to particulars of use."
+            <Footnote number="22">
+              Playfair, p. xv
+            </Footnote>
           </p>
           <p>
             Their concerns are not with complexity, or with individual
@@ -465,7 +551,7 @@ export default function PlayfairPage() {
           <FullBleed>
             <PullQuote
               title="For whom is this knowledge truly useful"
-              subtitle="and for what reasons is it necessary that this particular “picture of the past” endure?"
+              subtitle='and for what reasons is it necessary that this particular "picture of the past" endure?'
             />
           </FullBleed>
 
@@ -482,10 +568,19 @@ export default function PlayfairPage() {
           </p>
           <p>
             ​​Playfair's import-export charts advance a belief in what
-            can be gained by the “big picture” view without
+            can be gained by the "big picture" view without
             registering any concern about what might be lost in the
             details, or about who might be impacted by that missing
-            information. <span role="button" className="circle">23</span>
+            information.
+            <Footnote number="23">
+              On visualization as enabling the “big picture” of a dataset,
+              see Kosara et al. (2009) and Shneiderman (2014). Also see the
+              work of Google’s “Big Picture” data visualization research
+              group at, co-directed by Fernanda Viegas and Martin Wattenberg.
+              <a href="https://research.google.com/bigpicture/">
+                https://research.google.com/bigpicture/
+              </a>.
+            </Footnote>
             The boldly colored data lines, enhanced by the
             hand-tinting that shades the areas between them, and set
             against the stark black gridlines, emblematize the
@@ -497,7 +592,7 @@ export default function PlayfairPage() {
             encounter with an authoritative image of enduring
             significance. As viewers, we are not prompted to question
             the data that we see visualized on the chart, nor are we
-            pushed to extend our inquiry beyond its “big picture”
+            pushed to extend our inquiry beyond its "big picture"
             view.
           </p>
           <p>
@@ -525,8 +620,10 @@ export default function PlayfairPage() {
           <p>
             From our perspective in the present, it appears that
             Playfair was correct in his assertion about the
-            significant and enduring “importance” of his charts.
-            <span role="button" className="circle">24</span>
+            significant and enduring "importance" of his charts.
+            <Footnote number="24">
+              Playfair, p. v
+            </Footnote>
             His charts are indeed among a small set of data
             visualizations—also including John Snow's 1854 map of
             cholera deaths, Florence Nightingale's 1858 coxcomb charts
@@ -605,7 +702,7 @@ export default function PlayfairPage() {
             dataset and the image are altogether distinct. Thus as
             Playfair continues to be positioned as the source of so
             many of the visual typologies that we encounter today, we
-            would be well-served by attending to his “assumptions”
+            would be well-served by attending to his "assumptions"
             about his images, and how they diverge—or not—from the
             images we encounter today.
           </p>
@@ -621,22 +718,37 @@ export default function PlayfairPage() {
             video for Lyra, their drag-and-drop visualization
             platform, around a recreation of Playfair's 1822 bar
             chart comparing the price of wheat and worker's wages.
-            <span role="button" className="circle">25</span>
+            <Footnote number="25">
+              See: <a href="http://idl.cs.washington.edu/projects/lyra/">http://idl.cs.washington.edu/projects/lyra/</a>
+            </Footnote>
             Michael Bostock, similarly, demonstrates the flexibility
             of Protovis, the visualization toolkit he developed
             before D3, with this example (among several others).
-            <span role="button" className="circle">26</span>
+            <Footnote number="26">
+              See: <a href="https://mbostock.github.io/protovis/ex/wheat.html">https://mbostock.github.io/protovis/ex/wheat.html</a>
+            </Footnote>
             Jorge Camoes, an independent database consultant,
             recreates several of Playfair's charts in Microsoft
             Excel in order to demonstrate his own spreadsheet
-            bonafides.<span role="button" className="circle">27</span>
-            The list could go on.<span role="button" className="circle">28</span>
+            bonafides.
+            <Footnote number="27">
+              See: <a href="https://excelcharts.com/excel-charts-meet-william-playfair/">https://excelcharts.com/excel-charts-meet-william-playfair/</a>
+            </Footnote>
+            The list could go on.
+            <Footnote number="28">
+              Another notable recreation of Playfair is
+              <a href="http://dougmccune.com/blog/2010/01/19/recreating-william-playfairs-importexport-charts/">
+                Doug McCune's design of a custom app to generate
+                Playfair-esque charts using contemporary
+                import-export data.
+              </a>
+            </Footnote>
             And while they make very different assumptions about the
             function of data and its relation to visual display,
             they express a view of the value of visualization that
             is inherited from Playfair himself. Indeed, in many
             ways, Playfair's argument about the value of reducing
-            complexity in the service of a “simple view” has become
+            complexity in the service of a "simple view" has become
             synonymous with the argument for the value of
             visualization itself.
           </p>
@@ -682,15 +794,24 @@ export default function PlayfairPage() {
             specific trends that can be discerned from each dataset—in
             the case of <a href=""> deaths from Covid-19</a>, the
             waves of infection, and the comparative response between
-            the US and the UK <span role="button" className="circle">29</span>;
-            in the case of <a href="">comparative income levels</a>, the
+            the US and the UK
+            <Footnote number="29">
+              Data on deaths from Covid-19 courtesy of TK.
+            </Footnote>
+            ; in the case of <a href="">comparative income levels</a>, the
             increasingly tenacious grip of global neoliberalism
-            <span role="button" className="circle">30</span>; and in the case of
+            <Footnote number="30">
+              Data on income courtesy of TK.
+            </Footnote>
+            ; and in the case of
             <a href="">women representatives in government</a>, how much more work is to be done.
-            <span role="button" className="circle">31</span>
+            <Footnote number="31">
+              Data on women in the US Congress courtesy of TK. Data on women
+              MPs courtesy of Sam Joiner, <cite>The Times</cite> of London.
+            </Footnote>
             But these are all general trends. How are we to be
             prompted to think about, for example, the uncertainty
-            around how “death” from Covid-19 has been defined; how the
+            around how "death" from Covid-19 has been defined; how the
             average income level erases the widening gap rich and
             poor; or, in the case of political representation, how
             gradual change is often accelerated by specific events.
@@ -712,8 +833,8 @@ export default function PlayfairPage() {
             interaction, or other instance of data visualization that
             we encounter in the world. Thus while contemporary
             visualization researchers increasingly assert, as does Ben
-            Shneiderman, that “the purpose of visualization is
-            insight, not pictures,” we must continually ask ourselves
+            Shneiderman, that "the purpose of visualization is
+            insight, not pictures," we must continually ask ourselves
             about the nature of this insight—the basis for its
             knowledge claims, the utility it serves, and for whom its
             utility applies—lest we fall back into the passive mode of
@@ -737,21 +858,23 @@ export default function PlayfairPage() {
             schemes. Published with the dialogue was a set of
             letters—their veracity similarly difficult to discern—one
             which included an endorsement, on the part of Franklin, of
-            Playfair's visual method of display: “I have begun to
-            practice the mode here,” writes Playfair in the voice of
-            Franklin, “and it throws light on the state of our
+            Playfair's visual method of display: "I have begun to
+            practice the mode here," writes Playfair in the voice of
+            Franklin, "and it throws light on the state of our
             accounts, as if by inspiration, one minute giving a much
             clearer idea of the matter, than whole days and weeks
-            without this simple invention.”
-            <span role="button" className="circle">32</span>
+            without this simple invention."
+            <Footnote number="32">
+              Need LCP cite, (1787, 232).
+            </Footnote>
           </p>
         </div>
       </CenteredLayout>
       <TwoColumnLayout>
         <Column className="space-y-5 py-10" shouldPin={true}>
           <p>
-            The reality, of course, was that Playfair's “simple
-            invention” would go unrecognized for over a century—first
+            The reality, of course, was that Playfair's "simple
+            invention" would go unrecognized for over a century—first
             eclipsed by another individual, William Stanley Jevons,
             who, in the 1860s, introduced a set of impeccable
             time-series charts that were almost certainly inspired by
@@ -760,7 +883,16 @@ export default function PlayfairPage() {
             concomitant development of hardware and software for
             graphical display) allowed data visualization to become a
             field of study in its own right.
-            <span role="button" className="circle">33</span>
+            <Footnote number="33">
+              Michael Friendly and Daniel Denis’s comprehensive website,
+              <cite>Milestones in the history of thematic cartography,
+              statistical graphics, and data visualization</cite>, viewable at
+              <a href="http://www.datavis.ca/milestones/">http://www.datavis.ca/milestones/</a>
+              serves as the benchmark reference for this history. See their entry,
+              "1950-1974: Re-birth of data visualization," for an extended
+              treatment of the impact of digital computing on the proliferation
+              of theories of data visualization and their associated techniques.
+            </Footnote>
           </p>
           <p>
             The fact that Playfair's charts now hold a highly visible
@@ -769,9 +901,11 @@ export default function PlayfairPage() {
             only widely recognized for their historical contributions
             to the development of the field, but also often recreated
             with contemporary technologies, attests to the enduring if
-            uncertain “value” of the charts that he explicitly
+            uncertain "value" of the charts that he explicitly
             envisioned in his <cite>Atlas</cite>.
-            <span role="button" className="circle">34</span>
+            <Footnote number="34">
+            Playfair, <cite>Atlas</cite>, p. iv.
+            </Footnote>
             That his charts are so often recreated today also speaks
             to Playfair's status—now if not then—as a master of his
             craft, as the majority of those who seek to recreate
@@ -797,8 +931,8 @@ export default function PlayfairPage() {
         <div className="space-y-5 py-10">
           <p>
             And yet errors like the one that Playfair inscribed into
-            his chart of “Exports &amp; Imports to and from all of
-            North America,” which led us to arrive at this chapter's
+            his chart of "Exports &amp; Imports to and from all of
+            North America," which led us to arrive at this chapter's
             claims, are far more difficult to detect today. Common
             among the array of visualization tools currently in use is
             that each allows for easy revision. Errors in scale can be
