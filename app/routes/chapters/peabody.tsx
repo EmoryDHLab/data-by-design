@@ -12,6 +12,8 @@ import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import { useState } from "react";
 import HoverText from "~/components/HoverText";
 import HoverZoomPeabodySquare from "~/components/peabody/HoverZoomPeabodySquare";
+import OverlaidPeabodySquare from "~/components/peabody/OverlaidPeabodySquare";
+import PeabodyTimelineView from "~/components/peabody/PeabodyTimelineView";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -551,9 +553,9 @@ export default function PeabodyPage() {
             early 1690s, becomes much more immediately legible.
           </span>
         </p>
-        <FullBleed className="bg-black h-[500px] text-white flex items-center justify-center my-8">
-          CHART HERE
-        </FullBleed>
+      </CenteredLayout>
+      <PeabodyTimelineView />
+      <CenteredLayout>
         <p>
           <span>
             But for Peabody, her charts’ near-total abstraction was precisely
