@@ -14,6 +14,7 @@ import HoverText from "~/components/HoverText";
 import HoverZoomPeabodySquare from "~/components/peabody/HoverZoomPeabodySquare";
 import ImageCaption from "~/components/ImageCaption";
 import InlineFootnote from "~/components/InlineFootnote";
+import { peabodyFootnotes } from "~/footnotes";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -21,8 +22,10 @@ export default function PeabodyPage() {
     <ChapterContext.Provider
       value={{
         backgroundColor: "peabodyPrimary",
-        primaryTextColor: "black",
         accentColor: "peabodyPrimary",
+        footnoteTextColor: "playfairPrimary",
+        primaryTextColor: "black",
+        footnotes: peabodyFootnotes,
         hoverState,
         setHoverState,
       }}

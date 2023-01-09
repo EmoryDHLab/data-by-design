@@ -14,11 +14,17 @@ import Scrollytell from "~/components/playfair/Scrollytell";
 import Footer from "~/components/Footer";
 import ImageCaption from "~/components/ImageCaption";
 import InlineFootnote from "~/components/InlineFootnote";
+import { playfairFootnotes } from "~/footnotes";
 
 export default function PlayfairPage() {
   return (
     <ChapterContext.Provider
-      value={{ backgroundColor: "playfairPrimary", primaryTextColor: "white" }}
+      value={{
+        backgroundColor: "playfairPrimary",
+        primaryTextColor: "white",
+        footnoteTextColor: "playfairPrimary",
+        footnotes: playfairFootnotes,
+      }}
     >
       <ChapterTitle
         title="Visualization as Argument"
@@ -51,22 +57,14 @@ export default function PlayfairPage() {
               first of their kind. In the opening lines of{" "}
               <cite>The Visual Display of Quantitative Information</cite>,
               Edward Tufte describes Playfair's work as “remarkable.”
-              <span role="button" className="circle">
-                1
-              </span>
+              <InlineFootnote index={0}></InlineFootnote>
               And most other histories of visualization have followed suit.
-              <span role="button" className="circle">
-                2
-              </span>
+              <InlineFootnote index={1}></InlineFootnote>
               But in his own time, Playfair remained “largely unacknowledged”
               for his contributions.
-              <span role="button" className="circle">
-                3
-              </span>
+              <InlineFootnote index={3}></InlineFootnote>
               More to the point, he was almost always nearly broke.
-              <span role="button" className="circle">
-                4
-              </span>
+              <InlineFootnote index={4}></InlineFootnote>
               Thus while Playfair chose to commission one of the most skilled
               engravers in all of London, Samuel John Neele, to produce the
               plates for the third edition of his <cite>Atlas</cite>, he also
@@ -76,9 +74,7 @@ export default function PlayfairPage() {
               titles, and other lettering, leaving Playfair—who had trained as
               an engineer—to engrave the lines of imports and exports by
               himself.
-              <span role="button" className="circle">
-                5
-              </span>
+              <InlineFootnote index={5}></InlineFootnote>
             </p>
           </div>
         </Column>
@@ -130,9 +126,7 @@ export default function PlayfairPage() {
             its frequent occurrence would not have made it any more tolerable to
             the man who was already, by his own account, “long anxious” to be
             acknowledged as an innovator.
-            <span role="button" className="circle">
-              7
-            </span>
+            <InlineFootnote index={6}></InlineFootnote>
             Unlike the array of digital processes employed today to create such
             visualizations—from standalone platforms such as Adobe Illustrator
             or Tableau to software libraries such as D3.js or Processing—each of
@@ -185,9 +179,7 @@ export default function PlayfairPage() {
             the charts now seem to rest on your own authority, and it will
             naturally be enquired from whence you have derived our
             intelligence.”
-            <span role="button" className="circle">
-              8
-            </span>
+            <InlineFootnote index={7}></InlineFootnote>
             Playfair thus dutifully compiled statistical tables to accompany
             each of his charts, which he included in the first and second
             editions of the <cite>Atlas</cite>.
@@ -219,9 +211,7 @@ export default function PlayfairPage() {
             at different periods, by presenting to the eye a figure, the
             proportions of which correspond with the amount of the sums intended
             to be expressed.
-            <span role="button" className="circle">
-              9
-            </span>
+            <InlineFootnote index={8}></InlineFootnote>
           </p>
           <p>attr</p>
           <p>
@@ -241,9 +231,7 @@ export default function PlayfairPage() {
             depicts economic instability. But even if that instability could be
             confirmed by other sources, Playfair did not necessarily possess all
             of the data to support the line that he engraved.
-            <span role="button" className="circle">
-              10
-            </span>
+            <InlineFootnote index={9}></InlineFootnote>
           </p>
         </div>
       </CenteredLayout>
@@ -260,9 +248,7 @@ export default function PlayfairPage() {
             intention was to model a new “mode of painting to the eye,” one
             that—following John Locke and the dominant Enlightenment view—could
             be first perceived by the senses and then processed by the mind.
-            <span role="button" className="circle">
-              11
-            </span>
+            <InlineFootnote index={10}></InlineFootnote>
             More specifically, Playfair advances a belief in the role of sensory
             perception, ​​and of vision in particular—in prompting a particular
             form of crystalizing insight that can lead to new knowledge: “On
@@ -280,14 +266,10 @@ export default function PlayfairPage() {
             “accurate” representations of the data at hand; and that they should
             encourage the viewer to think about the “substance” of the data,
             rather than the “methodology” underneath.
-            <span role="button" className="circle">
-              12
-            </span>
+            <InlineFootnote index={11}></InlineFootnote>
             In this way, Tufte explains, visualizations can be made to “
             <em>reveal</em>” the data on display (emphasis in the original).
-            <span role="button" className="circle">
-              13
-            </span>
+            <InlineFootnote index={12}></InlineFootnote>
           </p>
           <p>
             And while scholars in the field of visualization—a subfield of
@@ -300,19 +282,14 @@ export default function PlayfairPage() {
             visualization to “a telescope or a microscope that increases your
             perceptual abilities,” allowing people to “understand complex
             processes so as to support better decisions.”
-            <span role="button" className="circle">
-              {" "}
-              14
-            </span>
+            <InlineFootnote index={13}></InlineFootnote>
             ​​Intoning the lessons of his own influential textbook,
             <cite>
               Readings in Information Visualization: Using Vision to Think
             </cite>
             , coauthored with Stuart Card and Jock Mackinlay, Shneiderman
             insists that “the purpose of data visualization is insight.”
-            <span role="button" className="circle">
-              15
-            </span>
+            <InlineFootnote index={14}></InlineFootnote>
             And while acknowledging that both “designers of visualizations, and
             scholars who study them, have struggled to give a coherent
             definition of <em>insight</em>,” data journalist and visualization
@@ -320,9 +297,7 @@ export default function PlayfairPage() {
             (and, increasingly, interactive graphics), can lead to new knowledge
             about a subject—knowledge that would otherwise remain hidden from
             view.
-            <span role="button" className="circle">
-              16
-            </span>
+            <InlineFootnote index={15}></InlineFootnote>
           </p>
           <FullBleed>
             <PullQuote
@@ -391,10 +366,7 @@ export default function PlayfairPage() {
             convulsed with war for fifty years to come,” and professes
             uncertainty about whether he is witnessing the end of European
             cultural and economic dominance, or whether its “art and commerce”
-            will prevail.{" "}
-            <span role="button" className="circle">
-              18
-            </span>
+            will prevail. <InlineFootnote index={17}></InlineFootnote>
             But regardless of the outcome—or, I would contend, precisely{" "}
             <em>because</em> of the uncertainty of the outcome—Playfair
             identifies tremendous value in the clarity of perspective produced
@@ -405,18 +377,14 @@ export default function PlayfairPage() {
             valuable thing, if, on the contrary, commerce should still continue
             its progress, this will make the first part of a great whole, which,
             when completed on some future day, will be a most valuable work.”
-            <span role="button" className="circle">
-              19
-            </span>
+            <InlineFootnote index={18}></InlineFootnote>
           </p>
           <p>attr</p>
           <p>
             From these lines, it would seem that Playfair believes that his
             “simple and complete” images can not only capture the instability of
             his time, but also guard against the uncertainty of the future.
-            <span role="button" className="circle">
-              20
-            </span>
+            <InlineFootnote index={19}></InlineFootnote>
             His goal is to cut through complexity, guided by a belief that less
             detail—and not more—is what will enable more useful and enduring
             knowledge.
@@ -428,14 +396,10 @@ export default function PlayfairPage() {
             behind the “form and manner” of his charts, he makes clear that his
             intended audience is not “any person” in the world, but rather, the
             narrower world of “men of high rank, or active business”
-            <span role="button" className="circle">
-              21
-            </span>
+            <InlineFootnote index={20}></InlineFootnote>
             These men, he continues, “can only pay attention to general
             outlines; nor is attention to particulars of use.”
-            <span role="button" className="circle">
-              22
-            </span>
+            <InlineFootnote index={21}></InlineFootnote>
           </p>
           <p>
             Their concerns are not with complexity, or with individual impact,
@@ -471,9 +435,7 @@ export default function PlayfairPage() {
             gained by the “big picture” view without registering any concern
             about what might be lost in the details, or about who might be
             impacted by that missing information.{" "}
-            <span role="button" className="circle">
-              23
-            </span>
+            <InlineFootnote index={22}></InlineFootnote>
             The boldly colored data lines, enhanced by the hand-tinting that
             shades the areas between them, and set against the stark black
             gridlines, emblematize the graphical authority that theorists such
@@ -510,9 +472,7 @@ export default function PlayfairPage() {
             From our perspective in the present, it appears that Playfair was
             correct in his assertion about the significant and enduring
             “importance” of his charts.
-            <span role="button" className="circle">
-              24
-            </span>
+            <InlineFootnote index={23}></InlineFootnote>
             His charts are indeed among a small set of data visualizations—also
             including John Snow's 1854 map of cholera deaths, Florence
             Nightingale's 1858 coxcomb charts of mortality during the Crimean
@@ -595,25 +555,17 @@ export default function PlayfairPage() {
             the product demo video for Lyra, their drag-and-drop visualization
             platform, around a recreation of Playfair's 1822 bar chart comparing
             the price of wheat and worker's wages.
-            <span role="button" className="circle">
-              25
-            </span>
+            <InlineFootnote index={24}></InlineFootnote>
             Michael Bostock, similarly, demonstrates the flexibility of
             Protovis, the visualization toolkit he developed before D3, with
             this example (among several others).
-            <span role="button" className="circle">
-              26
-            </span>
+            <InlineFootnote index={25}></InlineFootnote>
             Jorge Camoes, an independent database consultant, recreates several
             of Playfair's charts in Microsoft Excel in order to demonstrate his
             own spreadsheet bonafides.
-            <span role="button" className="circle">
-              27
-            </span>
+            <InlineFootnote index={26}></InlineFootnote>
             The list could go on.
-            <span role="button" className="circle">
-              28
-            </span>
+            <InlineFootnote index={27}></InlineFootnote>
             And while they make very different assumptions about the function of
             data and its relation to visual display, they express a view of the
             value of visualization that is inherited from Playfair himself.
@@ -654,20 +606,13 @@ export default function PlayfairPage() {
             discerned from each dataset—in the case of{" "}
             <a href=""> deaths from Covid-19</a>, the waves of infection, and
             the comparative response between the US and the UK{" "}
-            <span role="button" className="circle">
-              29
-            </span>
-            ; in the case of <a href="">comparative income levels</a>, the
-            increasingly tenacious grip of global neoliberalism
-            <span role="button" className="circle">
-              30
-            </span>
-            ; and in the case of
+            <InlineFootnote index={28}></InlineFootnote>; in the case of{" "}
+            <a href="">comparative income levels</a>, the increasingly tenacious
+            grip of global neoliberalism
+            <InlineFootnote index={29}></InlineFootnote>; and in the case of
             <a href="">women representatives in government</a>, how much more
             work is to be done.
-            <span role="button" className="circle">
-              31
-            </span>
+            <InlineFootnote index={30}></InlineFootnote>
             But these are all general trends. How are we to be prompted to think
             about, for example, the uncertainty around how “death” from Covid-19
             has been defined; how the average income level erases the widening
@@ -716,9 +661,7 @@ export default function PlayfairPage() {
             accounts, as if by inspiration, one minute giving a much clearer
             idea of the matter, than whole days and weeks without this simple
             invention.”
-            <span role="button" className="circle">
-              32
-            </span>
+            <InlineFootnote index={31}></InlineFootnote>
           </p>
         </div>
       </CenteredLayout>
@@ -733,9 +676,7 @@ export default function PlayfairPage() {
             itself, as the advent of digital computing (and the concomitant
             development of hardware and software for graphical display) allowed
             data visualization to become a field of study in its own right.
-            <span role="button" className="circle">
-              33
-            </span>
+            <InlineFootnote index={32}></InlineFootnote>
           </p>
           <p>
             The fact that Playfair's charts now hold a highly visible position
@@ -745,9 +686,7 @@ export default function PlayfairPage() {
             often recreated with contemporary technologies, attests to the
             enduring if uncertain “value” of the charts that he explicitly
             envisioned in his <cite>Atlas</cite>.
-            <span role="button" className="circle">
-              34
-            </span>
+            <InlineFootnote index={33}></InlineFootnote>
             That his charts are so often recreated today also speaks to
             Playfair's status—now if not then—as a master of his craft, as the
             majority of those who seek to recreate Playfair online are evidently
