@@ -14,8 +14,9 @@ import Figure from "~/components/layout/Figure";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import Scrollytell from "~/components/playfair/Scrollytell";
 import Footer from "~/components/Footer";
-import Footnote from "~/components/Footnote";
+import InlineFootnote from "~/components/InlineFootnote";
 import ImageCaption from "~/components/ImageCaption";
+import { playfairFootnotes } from "~/footnotes";
 
 export default function PlayfairPage() {
   const [footnoteState, setFootnoteState] = useState<number>(0);
@@ -27,6 +28,8 @@ export default function PlayfairPage() {
       value={{
         backgroundColor: "playfairPrimary",
         primaryTextColor: "white",
+        footnoteTextColor: "playfairPrimary",
+        footnotes: playfairFootnotes,
         footnoteState,
         setFootnoteState,
       }}
@@ -67,19 +70,15 @@ export default function PlayfairPage() {
               heralded as the first of their kind. In the opening lines
               of <cite>The Visual Display of Quantitative Information</cite>,
               Edward Tufte describes Playfair's work as "remarkable."
-              <Footnote number="1">
-              </Footnote>
+              <InlineFootnote index={1} />
               And most other histories of visualization have followed
               suit.
-              <Footnote number="2">
-              </Footnote>
+              <InlineFootnote index={2} />
               But in his own time, Playfair remained "largely
               unacknowledged" for his contributions.
-              <Footnote number="3">
-              </Footnote>
+              <InlineFootnote index={3} />
               More to the point, he was almost always nearly broke.
-              <Footnote number="4">
-              </Footnote>
+              <InlineFootnote index={4} />
               Thus while Playfair chose to commission one of the most
               skilled engravers in all of London, Samuel John Neele, to
               produce the plates for the third edition of his <cite>Atlas</cite>,
@@ -89,8 +88,7 @@ export default function PlayfairPage() {
               charts' decoration, framing, titles, and other lettering,
               leaving Playfair—who had trained as an engineer—to engrave
               the lines of imports and exports by himself.
-              <Footnote number="5">
-              </Footnote>
+              <InlineFootnote index={5} />
             </p>
           </div>
         </Column>
@@ -147,16 +145,14 @@ export default function PlayfairPage() {
           subsequent inscription process. With a metal tool called a
           burin, the engraver carves the image directly into the
           copper plate—a process that requires significant strength.
-          <Footnote number="6">
-          </Footnote>
+          <InlineFootnote index={6} />
         </p>
         <p>
           Playfair's error was thus a common one—a slip of a tired
           hand—but its frequent occurrence would not have made it
           any more tolerable to the man who was already, by his own
           account, "long anxious" to be acknowledged as an
-          innovator.<Footnote number="7">
-          </Footnote>
+          innovator.<InlineFootnote index={7} />
           Unlike the array of digital processes employed today to
           create such visualizations—from standalone platforms such
           as Adobe Illustrator or Tableau to software libraries such
@@ -218,8 +214,7 @@ export default function PlayfairPage() {
             constructed… for the charts now seem to rest on your own
             authority, and it will naturally be enquired from whence
             you have derived our intelligence."
-            <Footnote number="8">
-            </Footnote>
+            <InlineFootnote index={8} />
             Playfair thus dutifully compiled statistical tables to
             accompany each of his charts, which he included in the
             first and second editions of the <cite>Atlas</cite>.
@@ -259,8 +254,7 @@ export default function PlayfairPage() {
           amounts, at different periods, by presenting to the
           eye a figure, the proportions of which correspond with
           the amount of the sums intended to be expressed.
-          <Footnote number="9">
-          </Footnote>
+          <InlineFootnote index={9} />
         </blockquote>
         <p>
           attr
@@ -284,8 +278,7 @@ export default function PlayfairPage() {
           instability. But even if that instability could be
           confirmed by other sources, Playfair did not necessarily
           possess all of the data to support the line that he
-          engraved.<Footnote number="10">
-          </Footnote>
+          engraved.<InlineFootnote index={10} />
         </p>
         </div>
       </CenteredLayout>
@@ -300,8 +293,7 @@ export default function PlayfairPage() {
             eye," one that—following John Locke and the dominant
             Enlightenment view—could be first perceived by the senses
             and then processed by the mind.
-            <Footnote number="11">
-            </Footnote>
+            <InlineFootnote index={11} />
             More specifically, Playfair advances a belief in the role
             of sensory perception, ​​and of vision in particular—in
             prompting a particular form of crystalizing insight that
@@ -322,12 +314,10 @@ export default function PlayfairPage() {
             they should encourage the viewer to think about the
             "substance" of the data, rather than the "methodology"
             underneath.
-            <Footnote number="12">
-            </Footnote>
+            <InlineFootnote index={12} />
             In this way, Tufte explains, visualizations can be made to
             "<em>reveal</em>" the data on display (emphasis in the original).
-            <Footnote number="13">
-            </Footnote>
+            <InlineFootnote index={13} />
           </p>
           <p>
             And while scholars in the field of visualization—a
@@ -342,15 +332,13 @@ export default function PlayfairPage() {
             increases your perceptual abilities," allowing people to
             "understand complex processes so as to support better
             decisions."
-            <Footnote number=" 14">
-            </Footnote>
+            <InlineFootnote index={ 14} />
             ​​Intoning the lessons of his own influential textbook,
             <cite>Readings in Information Visualization: Using Vision to
             Think</cite>, coauthored with Stuart Card and Jock Mackinlay,
             Shneiderman insists that "the purpose of data visualization
             is insight."
-            <Footnote number="15">
-            </Footnote>
+            <InlineFootnote index={15} />
             And while acknowledging that both "designers of
             visualizations, and scholars who study them, have
             struggled to give a coherent definition of <em>insight</em>,"
@@ -359,8 +347,7 @@ export default function PlayfairPage() {
             increasingly, interactive graphics), can lead to new
             knowledge about a subject—knowledge that would otherwise
             remain hidden from view.
-            <Footnote number="16">
-            </Footnote>
+            <InlineFootnote index={16} />
           </p>
           <FullBleed>
             <PullQuote
@@ -410,8 +397,7 @@ export default function PlayfairPage() {
             his <cite>Atlas</cite> because of the "singularity of the situation in which
             Europe is now placed," it was this revolutionary
             political "situation" to which he refers.
-            <Footnote number="17">
-            </Footnote>
+            <InlineFootnote index={17} />
           </p>
         </Column>
         <Column>
@@ -437,8 +423,7 @@ export default function PlayfairPage() {
             uncertainty about whether he is witnessing the end of
             European cultural and economic dominance, or whether its
             "art and commerce" will prevail.
-            <Footnote number="18">
-            </Footnote>
+            <InlineFootnote index={18} />
             But regardless of the outcome—or, I would contend,
             precisely <em>because</em> of the uncertainty of the outcome—Playfair identifies
             tremendous value in the clarity of perspective produced by
@@ -451,8 +436,7 @@ export default function PlayfairPage() {
             make the first part of a great whole, which, when
             completed on some future day, will be a most valuable
             work."
-            <Footnote number="19">
-            </Footnote>
+            <InlineFootnote index={19} />
           </blockquote>
           <p>
             attr
@@ -462,8 +446,7 @@ export default function PlayfairPage() {
             that his "simple and complete" images can not only capture
             the instability of his time, but also guard against the
             uncertainty of the future.
-            <Footnote number="20">
-            </Footnote>
+            <InlineFootnote index={20} />
             His goal is to cut through complexity, guided by a belief
             that less detail—and not more—is what will enable more
             useful and enduring knowledge.
@@ -477,12 +460,10 @@ export default function PlayfairPage() {
             intended audience is not "any person" in the world, but
             rather, the narrower world of "men of high rank, or active
             business"
-            <Footnote number="21">
-            </Footnote>
+            <InlineFootnote index={21} />
             These men, he continues, "can only pay attention to
             general outlines; nor is attention to particulars of use."
-            <Footnote number="22">
-            </Footnote>
+            <InlineFootnote index={22} />
           </p>
           <p>
             Their concerns are not with complexity, or with individual
@@ -522,8 +503,7 @@ export default function PlayfairPage() {
             registering any concern about what might be lost in the
             details, or about who might be impacted by that missing
             information.
-            <Footnote number="23">
-            </Footnote>
+            <InlineFootnote index={23} />
             The boldly colored data lines, enhanced by the
             hand-tinting that shades the areas between them, and set
             against the stark black gridlines, emblematize the
@@ -564,8 +544,7 @@ export default function PlayfairPage() {
             From our perspective in the present, it appears that
             Playfair was correct in his assertion about the
             significant and enduring "importance" of his charts.
-            <Footnote number="24">
-            </Footnote>
+            <InlineFootnote index={24} />
             His charts are indeed among a small set of data
             visualizations—also including John Snow's 1854 map of
             cholera deaths, Florence Nightingale's 1858 coxcomb charts
@@ -660,30 +639,18 @@ export default function PlayfairPage() {
             video for Lyra, their drag-and-drop visualization
             platform, around a recreation of Playfair's 1822 bar
             chart comparing the price of wheat and worker's wages.
-            <Footnote number="25">
-            </Footnote>
+            <InlineFootnote index={25} />
             Michael Bostock, similarly, demonstrates the flexibility
             of Protovis, the visualization toolkit he developed
             before D3, with this example (among several others).
-            <Footnote number="26">
-              See: <a href="https://mbostock.github.io/protovis/ex/wheat.html">https://mbostock.github.io/protovis/ex/wheat.html</a>
-            </Footnote>
+            <InlineFootnote index={26} />
             Jorge Camoes, an independent database consultant,
             recreates several of Playfair's charts in Microsoft
             Excel in order to demonstrate his own spreadsheet
             bonafides.
-            <Footnote number="27">
-              See: <a href="https://excelcharts.com/excel-charts-meet-william-playfair/">https://excelcharts.com/excel-charts-meet-william-playfair/</a>
-            </Footnote>
+            <InlineFootnote index={27} />
             The list could go on.
-            <Footnote number="28">
-              Another notable recreation of Playfair is
-              <a href="http://dougmccune.com/blog/2010/01/19/recreating-william-playfairs-importexport-charts/">
-                Doug McCune's design of a custom app to generate
-                Playfair-esque charts using contemporary
-                import-export data.
-              </a>
-            </Footnote>
+            <InlineFootnote index={28} />
             And while they make very different assumptions about the
             function of data and its relation to visual display,
             they express a view of the value of visualization that
@@ -736,20 +703,13 @@ export default function PlayfairPage() {
             the case of <a href=""> deaths from Covid-19</a>, the
             waves of infection, and the comparative response between
             the US and the UK
-            <Footnote number="29">
-              Data on deaths from Covid-19 courtesy of TK.
-            </Footnote>
+            <InlineFootnote index={29} />
             ; in the case of <a href="">comparative income levels</a>, the
             increasingly tenacious grip of global neoliberalism
-            <Footnote number="30">
-              Data on income courtesy of TK.
-            </Footnote>
+            <InlineFootnote index={30} />
             ; and in the case of
             <a href="">women representatives in government</a>, how much more work is to be done.
-            <Footnote number="31">
-              Data on women in the US Congress courtesy of TK. Data on women
-              MPs courtesy of Sam Joiner, <cite>The Times</cite> of London.
-            </Footnote>
+            <InlineFootnote index={31} />
             But these are all general trends. How are we to be
             prompted to think about, for example, the uncertainty
             around how "death" from Covid-19 has been defined; how the
@@ -805,9 +765,7 @@ export default function PlayfairPage() {
             accounts, as if by inspiration, one minute giving a much
             clearer idea of the matter, than whole days and weeks
             without this simple invention."
-            <Footnote number="32">
-              Need LCP cite, (1787, 232).
-            </Footnote>
+            <InlineFootnote index={32} />
           </p>
         </div>
       </CenteredLayout>
@@ -824,16 +782,7 @@ export default function PlayfairPage() {
             concomitant development of hardware and software for
             graphical display) allowed data visualization to become a
             field of study in its own right.
-            <Footnote number="33">
-              Michael Friendly and Daniel Denis’s comprehensive website,
-              <cite>Milestones in the history of thematic cartography,
-              statistical graphics, and data visualization</cite>, viewable at
-              <a href="http://www.datavis.ca/milestones/">http://www.datavis.ca/milestones/</a>
-              serves as the benchmark reference for this history. See their entry,
-              "1950-1974: Re-birth of data visualization," for an extended
-              treatment of the impact of digital computing on the proliferation
-              of theories of data visualization and their associated techniques.
-            </Footnote>
+            <InlineFootnote index={33} />
           </p>
           <p>
             The fact that Playfair's charts now hold a highly visible
@@ -844,9 +793,7 @@ export default function PlayfairPage() {
             with contemporary technologies, attests to the enduring if
             uncertain "value" of the charts that he explicitly
             envisioned in his <cite>Atlas</cite>.
-            <Footnote number="34">
-            Playfair, <cite>Atlas</cite>, p. iv.
-            </Footnote>
+            <InlineFootnote index={34} />
             That his charts are so often recreated today also speaks
             to Playfair's status—now if not then—as a master of his
             craft, as the majority of those who seek to recreate
