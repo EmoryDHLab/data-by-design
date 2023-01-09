@@ -3,12 +3,13 @@ import { useContext, useState } from "react";
 import { ChapterContext } from "~/theme";
 
 interface Props {
-  number: string;
-  children: ReactNodeLike;
+  index: number;
+  children?: ReactNodeLike;
 }
 
-export default function Footnote({ number, children }: Props) {
-  const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
+export default function InlineFootnote({ index }: Props) {
+  const { backgroundColor, primaryTextColor, footnoteTextColor, footnotes } =
+    useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
   return (
     <span>
@@ -16,9 +17,11 @@ export default function Footnote({ number, children }: Props) {
         onClick={() => setIsTextVisible(!isTextVisible)}
         className={`footnote bg-${backgroundColor} text-${primaryTextColor}`}
       >
-        {number}
+        {index + 1}
       </button>
-      {isTextVisible && <div className={`text-blue-600`}>{children}</div>}
+      {isTextVisible && (
+        <div className={`text-${footnoteTextColor}`}>{footnotes[index]}</div>
+      )}
     </span>
   );
 }

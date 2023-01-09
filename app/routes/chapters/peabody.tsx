@@ -13,7 +13,7 @@ import { useState } from "react";
 import HoverText from "~/components/HoverText";
 import HoverZoomPeabodySquare from "~/components/peabody/HoverZoomPeabodySquare";
 import ImageCaption from "~/components/ImageCaption";
-import Footnote from "~/components/Footnote";
+import InlineFootnote from "~/components/InlineFootnote";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -60,23 +60,7 @@ export default function PeabodyPage() {
               </span>
               <span>.</span>
 
-              <Footnote number="1">
-                For more on Peabody’s biography, see Bruce A. Rhoda,
-                <cite>
-                  {" "}
-                  Elizabeth Palmer Peabody: A Reformer on Her Own Terms{" "}
-                </cite>
-                (Cambridge: Harvard Univ. Press, 1999), Megan Marshall,
-                <cite>
-                  {" "}
-                  The Peabody Sisters: Three Women Who Ignited American
-                  Romanticism{" "}
-                </cite>
-                (New York: Mariner, 2006), and Monika Elbert, Julie E. Hall, and
-                Katharine Rodier, eds.,{" "}
-                <cite> Reinventing the Peabody Sisters</cite> (Iowa City: Univ.
-                of Iowa Press, 2006).
-              </Footnote>
+              <InlineFootnote index={0}></InlineFootnote>
             </p>
             <p>
               <span>
@@ -141,14 +125,7 @@ export default function PeabodyPage() {
               young.”
             </span>
 
-            <Footnote number="2">
-              Elizabeth Palmer Peabody,{" "}
-              <cite>
-                The Polish-American System of Chronology, reproduced, with some
-                modifications, from General Bem’s Franco-Polish Method
-              </cite>{" "}
-              (Boston, 1850), p. 3.
-            </Footnote>
+            <InlineFootnote index={1}></InlineFootnote>
 
             <span>
               {" "}
@@ -157,10 +134,7 @@ export default function PeabodyPage() {
               communication. But she did not intend, as did Playfair, to produce
               a clarifying “picture of the past.”
             </span>
-            <Footnote number="3">
-              William Playfair, <cite>The Commercial and Political Atlas,</cite>{" "}
-              3rd ed. (London, 1801 [1786]), p. iv.
-            </Footnote>
+            <InlineFootnote index={2}></InlineFootnote>
 
             <span>
               {" "}
@@ -208,23 +182,7 @@ export default function PeabodyPage() {
               popularized in subsequent decades by the military general (and
               erstwhile math teacher) Jósef Bem.
             </span>
-            <Footnote number="4">
-              While it exceeds the scope of this essay, it is worth noting the
-              particular appeal of Bem’s Polish identity. Peabody had a
-              particular interest in the ideas coming out of central and eastern
-              Europe as a result of her ongoing engagement in theories of
-              language. She had sustained correspondence with the Hungarian
-              philologist Charles Kraitsir throughout the 1840s, and he traveled
-              to Boston to meet with her in 1847. Peabody went on to support the
-              (failed) Hungarian Revolution of 1848, which she viewed as allied
-              with the aims of American Independence. Among her central concerns
-              with standard accounts of US History was that they were written
-              from the perspective of England. She would have likely imputed an
-              anti-colonial stance inherent in Bem’s system. For more on her
-              relationship with Kraitsir, see Ronda (1999, pp. 225-226). For
-              more on her support for the Hungarian Revolution and her views on
-              history, see Baym (1991).
-            </Footnote>
+            <InlineFootnote index={3}></InlineFootnote>
             <span>
               {" "}
               Bem’s system employed a grid overlaid with shapes and colors to
@@ -239,11 +197,9 @@ export default function PeabodyPage() {
               “swept across Europe and North America” in the middle decades of
               the nineteenth century.
             </span>
-            <span>
-              <span role="button" className="circle">
-                5
-              </span>{" "}
-            </span>
+
+            <InlineFootnote index={4}></InlineFootnote>
+
             <span>
               {" "}
               But Peabody first encountered the system by chance: through a
@@ -254,11 +210,7 @@ export default function PeabodyPage() {
               family’s residence, Peabody remained “captivated” by the charts,
               according to one of her biographers, Bruce Ronda.
             </span>
-            <span>
-              <span role="button" className="circle">
-                6
-              </span>{" "}
-            </span>
+            <InlineFootnote index={5}></InlineFootnote>
             <span>
               {" "}
               She went on to devote several years to a study of the Polish
@@ -274,11 +226,7 @@ export default function PeabodyPage() {
               somewhat different, and, as it seems to me, a more expressive
               distribution of colors.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                7
-              </span>{" "}
-            </span>
+            <InlineFootnote index={6}></InlineFootnote>
           </p>
         </div>
       </CenteredLayout>
@@ -349,11 +297,7 @@ export default function PeabodyPage() {
               awareness of—if not an urgency about—the need to end slavery in
               the United States.
             </span>
-            <span>
-              <span role="button" className="circle">
-                9
-              </span>{" "}
-            </span>
+            <InlineFootnote index={8}></InlineFootnote>
           </p>
         </Column>
         <Column shouldPin={true}>
@@ -374,22 +318,14 @@ export default function PeabodyPage() {
             <span>
               , “events are so connected in the narrative of history.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                10
-              </span>{" "}
-            </span>
+            <InlineFootnote index={9}></InlineFootnote>
             <span>
               {" "}
               In keeping with the leading pedagogical theories of the day, which
               emphasized mental recall, students were expected to commit the
               charts to memory.
             </span>
-            <span>
-              <span role="button" className="circle">
-                11
-              </span>{" "}
-            </span>
+            <InlineFootnote index={10}></InlineFootnote>
             <span>
               {" "}
               But Peabody’s approach diverged from the rote memorization that
@@ -404,11 +340,7 @@ export default function PeabodyPage() {
               his own inevitable action,” as a necessary participant in their
               own governance.
             </span>
-            <span>
-              <span role="button" className="circle">
-                12
-              </span>{" "}
-            </span>
+            <InlineFootnote index={11}></InlineFootnote>
           </p>
           <p>
             <span>
@@ -432,11 +364,7 @@ export default function PeabodyPage() {
               of slavery and the contributions of black Americans at the very
               center of our national narrative.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                13
-              </span>{" "}
-            </span>
+            <InlineFootnote index={12}></InlineFootnote>
             <span>
               {" "}
               This recentered narrative would ideally, in turn—in a view
@@ -447,11 +375,7 @@ export default function PeabodyPage() {
               editorial board—prepare US citizens of all races “for a more just
               future.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                14
-              </span>{" "}
-            </span>
+            <InlineFootnote index={13}></InlineFootnote>
           </p>
           <p>
             <span>
@@ -468,11 +392,7 @@ export default function PeabodyPage() {
               reveal the “asymmetrically connected knowledge systems” that
               structure modern scientific inquiry.
             </span>
-            <span>
-              <span role="button" className="circle">
-                15
-              </span>{" "}
-            </span>
+            <InlineFootnote index={14}></InlineFootnote>
             <span>
               {" "}
               For McKittrick, an awareness of the range of related yet unequally
@@ -511,11 +431,7 @@ export default function PeabodyPage() {
             informed by the social, cultural, and political as well as
             scientific contexts that surround it.
           </span>
-          <span>
-            <span role="button" className="circle">
-              16
-            </span>{" "}
-          </span>
+          <InlineFootnote index={15}></InlineFootnote>
           <span> </span>
           <span>
             Crucially for Haraway, as for McKittrick, our awareness of how
@@ -538,11 +454,7 @@ export default function PeabodyPage() {
           <span>
             the possibility of sustained, rational, objective inquiry rests.”
           </span>
-          <span>
-            <span role="button" className="circle">
-              17
-            </span>{" "}
-          </span>
+          <InlineFootnote index={16}></InlineFootnote>
         </p>
         <p>
           <span>
@@ -556,11 +468,7 @@ export default function PeabodyPage() {
             of the events encoded in the charts without first taking the time to
             learn how the system worked.
           </span>
-          <span>
-            <span role="button" className="circle">
-              18
-            </span>{" "}
-          </span>
+          <InlineFootnote index={17}></InlineFootnote>
           <span> </span>
           <span>
             This lengthy and difficult learning process might be viewed as a
@@ -584,22 +492,14 @@ export default function PeabodyPage() {
             the point. She designed her charts to appeal to the senses directly,
             to provide what she called “outlines to the eye.”
           </span>
-          <span>
-            <span role="button" className="circle">
-              19
-            </span>{" "}
-          </span>
+          <InlineFootnote index={18}></InlineFootnote>
           <span>
             {" "}
             Her hope was that, by providing the outline of history—and,
             crucially, only the outline—each viewer could fill in the missing
             parts of the story themselves.
           </span>
-          <span>
-            <span role="button" className="circle">
-              20
-            </span>{" "}
-          </span>
+          <InlineFootnote index={19}></InlineFootnote>
           <span>
             {" "}
             The result would be a proliferation of historical narratives, one
@@ -635,11 +535,7 @@ export default function PeabodyPage() {
                 external authority but rather, from a focused and sustained
                 analysis of “the self-activity of the mind.”
               </span>
-              <span>
-                <span role="button" className="circle">
-                  21
-                </span>{" "}
-              </span>
+              <InlineFootnote index={20}></InlineFootnote>
               <span></span>
             </p>
             <p>
@@ -698,11 +594,7 @@ export default function PeabodyPage() {
                 nevertheless remained “most inapt and grievous” throughout the
                 process.
               </span>
-              <span>
-                <span role="button" className="circle">
-                  22
-                </span>{" "}
-              </span>
+              <InlineFootnote index={21}></InlineFootnote>
               <span>
                 {" "}
                 The evidence in the archive confirms this first-hand account. At
@@ -766,11 +658,7 @@ export default function PeabodyPage() {
                 of their powers and consequent responsibilities,” she further
                 explains.
               </span>
-              <span>
-                <span role="button" className="circle">
-                  23
-                </span>{" "}
-              </span>
+              <InlineFootnote index={22}></InlineFootnote>
               <span>
                 {" "}
                 Her hope was that the act of creating the chronological charts,
@@ -813,11 +701,7 @@ export default function PeabodyPage() {
                 this river flows directly towards them, enfolding them in the
                 expanding influence of the United States: the future to come.
               </span>
-              <span>
-                <span role="button" className="circle">
-                  24
-                </span>{" "}
-              </span>
+              <InlineFootnote index={23}></InlineFootnote>
             </p>
           </FullBleed>
         </Column>
@@ -861,11 +745,7 @@ export default function PeabodyPage() {
             source of inspiration, crediting Willard with creating “the most
             ingenious chart ever besides [her own] invented.”
           </span>
-          <span>
-            <span role="button" className="circle">
-              25
-            </span>{" "}
-          </span>
+          <InlineFootnote index={24}></InlineFootnote>
           <span>
             {" "}
             In Chapter 3, I discuss Willard’s influences, which included Joseph
@@ -887,11 +767,7 @@ export default function PeabodyPage() {
             such as the relative importance of periods or the subjective
             experience of time.”
           </span>
-          <span>
-            <span role="button" className="circle">
-              26
-            </span>{" "}
-          </span>
+          <InlineFootnote index={25}></InlineFootnote>
           <span>
             {" "}
             Sure enough, while neither Preistley’s timeline nor Playfair’s
@@ -967,11 +843,7 @@ export default function PeabodyPage() {
             and invite her would-be textbook adopters to sit around it and
             contemplate the colors and patterns they perceived.
           </span>
-          <span>
-            <span role="button" className="circle">
-              27
-            </span>{" "}
-          </span>
+          <InlineFootnote index={26}></InlineFootnote>
         </p>
         <p>
           <span>
@@ -982,11 +854,7 @@ export default function PeabodyPage() {
             Eliphalet Nott, then president of Union College, who participated in
             one of Peabody’s teaching demonstrations.
           </span>
-          <span>
-            <span role="button" className="circle">
-              28
-            </span>{" "}
-          </span>
+          <InlineFootnote index={27}></InlineFootnote>
           <span>
             {" "}
             Anticipating a decidedly twenty-first-century view of the value of
@@ -998,11 +866,7 @@ export default function PeabodyPage() {
             visualization researcher Ben Shneiderman believes, then the mural
             chart seems to represent an early apotheosis.
           </span>
-          <span>
-            <span role="button" className="circle">
-              29
-            </span>{" "}
-          </span>
+          <InlineFootnote index={28}></InlineFootnote>
         </p>
       </CenteredLayout>
       <TwoColumnLayout className="pt-20">
@@ -1018,11 +882,7 @@ export default function PeabodyPage() {
               Peabody’s biographer, Bruce Ronda, speculates that they “must have
               been much larger than even folio size.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                30
-              </span>{" "}
-            </span>
+            <InlineFootnote index={29}></InlineFootnote>
             <span>
               {" "}
               And while he does not provide any more specificity, Peabody’s
@@ -1030,11 +890,7 @@ export default function PeabodyPage() {
               “hung on the walls of our sitting room” offers first-hand account
               of the impression they made.
             </span>
-            <span>
-              <span role="button" className="circle">
-                31
-              </span>{" "}
-            </span>
+            <InlineFootnote index={30}></InlineFootnote>
             <span>
               {" "}
               As an additional datapoint, one might consider the “poster-sized
@@ -1045,11 +901,7 @@ export default function PeabodyPage() {
               an archive but instead kept in her sister’s attic, where they
               remain today.
             </span>
-            <span>
-              <span role="button" className="circle">
-                32
-              </span>{" "}
-            </span>
+            <InlineFootnote index={31}></InlineFootnote>
           </p>
         </Column>
         <Column>
@@ -1091,22 +943,14 @@ export default function PeabodyPage() {
               prompted me to undertake a project to reimagine and restage
               Peabody’s immersive learning experience for the present.
             </span>
-            <span>
-              <span role="button" className="circle">
-                33
-              </span>{" "}
-            </span>
+            <InlineFootnote index={32}></InlineFootnote>
             <span>
               {" "}
               Working with my research group, in a team that has involved
               multiple cohorts of students over multiple years, we first created
               a touch matrix made of strips of copper tape.
             </span>
-            <span>
-              <span role="button" className="circle">
-                34
-              </span>{" "}
-            </span>
+            <InlineFootnote index={33}></InlineFootnote>
             <span>
               {" "}
               The matrix works like a computer keyboard, with columns and rows
@@ -1117,11 +961,7 @@ export default function PeabodyPage() {
               members of the lab, that approximates the visual features of
               Peabody’s original charts.
             </span>
-            <span>
-              <span role="button" className="circle">
-                35
-              </span>{" "}
-            </span>
+            <InlineFootnote index={34}></InlineFootnote>
             <span>
               {" "}
               The topper holds in place a series of strips of individually
@@ -1129,11 +969,7 @@ export default function PeabodyPage() {
               programmed to display Peabody’s “painted centuries,” as she
               sometimes described them.
             </span>
-            <span>
-              <span role="button" className="circle">
-                36
-              </span>{" "}
-            </span>
+            <InlineFootnote index={35}></InlineFootnote>
             <span>
               {" "}
               While Peabody used a stick to point to specific events on the
@@ -1283,11 +1119,7 @@ export default function PeabodyPage() {
             work that is perceived as high art is valued above work perceived as
             craft.
           </span>
-          <span>
-            <span role="button" className="circle">
-              37
-            </span>{" "}
-          </span>
+          <InlineFootnote index={36}></InlineFootnote>
           <span>
             {" "}
             These gendered divisions of labor are among primary reasons that
@@ -1310,11 +1142,7 @@ export default function PeabodyPage() {
             first time, observe that they look like paintings by Piet Mondrian,
             the famous Dutch modernist.
           </span>
-          <span>
-            <span role="button" className="circle">
-              38
-            </span>{" "}
-          </span>
+          <InlineFootnote index={37}></InlineFootnote>
           <span>
             {" "}
             To be sure, Peabody’s charts strongly resemble Mondrian’s own bold,
@@ -1324,11 +1152,7 @@ export default function PeabodyPage() {
             traditionally practiced by women, and that has long been relegated
             to the world of “folk art” and craft.
           </span>
-          <span>
-            <span role="button" className="circle">
-              39
-            </span>{" "}
-          </span>
+          <InlineFootnote index={38}></InlineFootnote>
         </p>
         <div className="flex flex-col items-center middle-full">
           <div>
@@ -1377,11 +1201,7 @@ export default function PeabodyPage() {
             begun to be recognized by art historians as key contributors to the
             development of modernist art.
           </span>
-          <span>
-            <span role="button" className="circle">
-              40
-            </span>{" "}
-          </span>
+          <InlineFootnote index={39}></InlineFootnote>
           <span>
             {" "}
             Exhibitions at the Whitney Museum in New York, in 2002; the Turner
@@ -1389,11 +1209,7 @@ export default function PeabodyPage() {
             quilts “predate like-minded works by their more famous abstract art
             cousins.”
           </span>
-          <span>
-            <span role="button" className="circle">
-              41
-            </span>{" "}
-          </span>
+          <InlineFootnote index={40}></InlineFootnote>
           <span></span>
         </p>
         <p>
@@ -1415,11 +1231,7 @@ export default function PeabodyPage() {
             intentionally and continually shifting the focus from one
             perspective to the next.
           </span>
-          <span>
-            <span role="button" className="circle">
-              42
-            </span>{" "}
-          </span>
+          <InlineFootnote index={41}></InlineFootnote>
           <span>
             {" "}
             The result of this pedagogical strategy is capacious and multifold:
@@ -1428,21 +1240,13 @@ export default function PeabodyPage() {
             students performing this interpretive work to “become the voices of
             authority in their own education.”
           </span>
-          <span>
-            <span role="button" className="circle">
-              43
-            </span>{" "}
-          </span>
+          <InlineFootnote index={42}></InlineFootnote>
           <span>
             {" "}
             Ultimately, Brown concludes, “the class is a quilt. It is precisely
             the contrast which organizes the whole and holds it together.”
           </span>
-          <span>
-            <span role="button" className="circle">
-              44
-            </span>{" "}
-          </span>
+          <InlineFootnote index={43}></InlineFootnote>
           <span></span>
         </p>
         <p>
@@ -1464,11 +1268,7 @@ export default function PeabodyPage() {
             learn to see Pettaway’s quilt, like Peabody’s chart, as a system of
             knowledge making.
           </span>
-          <span>
-            <span role="button" className="circle">
-              45
-            </span>{" "}
-          </span>
+          <InlineFootnote index={44}></InlineFootnote>
           <span>
             {" "}
             These two systems of knowledge-making, moreover, helpfully converge.
@@ -1490,11 +1290,7 @@ export default function PeabodyPage() {
             As Brown reminds us with respect to the quilts, these artifacts are
             “illustrative of a particular way of seeing, of ordering the world.”
           </span>
-          <span>
-            <span role="button" className="circle">
-              46
-            </span>{" "}
-          </span>
+          <InlineFootnote index={45}></InlineFootnote>
           <span>
             {" "}
             We might extend this assertion to data visualization. Indeed, the
