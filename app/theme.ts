@@ -15,8 +15,6 @@ interface IChapterContext {
   primaryTextColor: string;
   hoverState: HoverState;
   setHoverState: Dispatch<SetStateAction<HoverState>>;
-  footnoteState: number;
-  setFootnoteState: Dispatch<SetStateAction<number>>;
   footnotes: ReactNode[];
   footnoteTextColor: string;
   footnoteState: number;

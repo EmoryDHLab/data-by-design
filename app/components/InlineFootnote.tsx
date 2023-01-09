@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/theme";
 
 interface Props {
-  number: string;
+  number: number;
   children: ReactNodeLike;
 }
 

@@ -15,6 +15,7 @@ import Scrollytell from "~/components/playfair/Scrollytell";
 import Footer from "~/components/Footer";
 import InlineFootnote from "~/components/InlineFootnote";
 import ImageCaption from "~/components/ImageCaption";
+import InlineFootnote from "~/components/InlineFootnote";
 import { playfairFootnotes } from "~/footnotes";
 
 export default function PlayfairPage() {
@@ -49,10 +50,10 @@ export default function PlayfairPage() {
               months to complete his famed <cite>Knight, Death, and Devil</cite>
               (1513), a print not much larger than an iPad. In the case of
               Playfair, however, it was not merely the time he had invested in
-              producing the twenty-eight plates he planned to include in the third
-              edition of his <cite>Commercial and Political Atlas</cite>
-              (1801), a revised version of the volume he first published in 1786;
-              it was also the expense.
+              producing the twenty-eight plates he planned to include in the
+              third edition of his <cite>Commercial and Political Atlas</cite>
+              (1801), a revised version of the volume he first published in
+              1786; it was also the expense.
             </p>
             <p>
               Today, Playfair is widely celebrated for his leading role
@@ -84,107 +85,95 @@ export default function PlayfairPage() {
           </div>
         </Column>
         <Column>
-          <Figure
-            src="/images/playfair/1-northamerica.jpg"
-            alt=""
-          >
+          <Figure src="/images/playfair/1-northamerica.jpg" alt="">
             William Playfair's chart of "Exports &amp; Imports to and from all
-            of North America," published in the third edition of the <cite> Commercial
-            and Political Atlas</cite> (1801). Image courtesy of the Library Company of
-            Philadelphia.
+            of North America," published in the third edition of the{" "}
+            <cite> Commercial and Political Atlas</cite> (1801). Image courtesy
+            of the Library Company of Philadelphia.
           </Figure>
 
-          <Figure
-            src="/images/playfair/2-wheat.jpg"
-            alt=""
-          >
-            Playfair's "Chart Showing at One View the Price of
-            the Quarter of Wheat, &amp; Wages of Labour by the
-            Week, from the Year 1565 to 1821," published in
-            1822. The chart's representation of the price of
-            wheat is among the first bar charts presently known.
-            (The bar charts included in the <cite> Commercial and
-            Political Atlas</cite> are believed to be the first).
-            Image courtesy of Wikimedia Commons."
+          <Figure src="/images/playfair/2-wheat.jpg" alt="">
+            Playfair's "Chart Showing at One View the Price of the Quarter of
+            Wheat, &amp; Wages of Labour by the Week, from the Year 1565 to
+            1821," published in 1822. The chart's representation of the price of
+            wheat is among the first bar charts presently known. (The bar charts
+            included in the <cite> Commercial and Political Atlas</cite> are
+            believed to be the first). Image courtesy of Wikimedia Commons."
           </Figure>
 
-          <Figure
-            src="/images/playfair/3-pie.jpg"
-            alt=""
-          >
-            Playfair's "Chart Representing the Extent,
-            Population &amp; Revenues, of the Principal Nations
-            in Europe, after the Division of Poland &amp; Treaty
-            of Luneville," published in the <cite>Statistical Breviary</cite>
-            (1801). The pie charts included in this volume are
-            considered the first presently known. Image courtesy
-            of Wikimedia Commons.
+          <Figure src="/images/playfair/3-pie.jpg" alt="">
+            Playfair's "Chart Representing the Extent, Population &amp;
+            Revenues, of the Principal Nations in Europe, after the Division of
+            Poland &amp; Treaty of Luneville," published in the{" "}
+            <cite>Statistical Breviary</cite>
+            (1801). The pie charts included in this volume are considered the
+            first presently known. Image courtesy of Wikimedia Commons.
           </Figure>
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>
         <div className="space-y-5 py-10">
           <p>
-          To produce a copperplate engraving such as the one
-          employed to print "Exports &amp; Imports to and from all
-          of North America," a thin copper plate is first coated
-          with a ground: a layer of wax, varnish, chalk, or soot.
-          Using a stylus, the engraver traces an outline of the
-          design in mirror image into the ground. The wax (or
-          equivalent) layer is then removed, and the engraver
-          employs the faint impression that remains to guide the
-          subsequent inscription process. With a metal tool called a
-          burin, the engraver carves the image directly into the
-          copper plate—a process that requires significant strength.
-          <InlineFootnote index={5} />
-        </p>
-        <p>
-          Playfair's error was thus a common one—a slip of a tired
-          hand—but its frequent occurrence would not have made it
-          any more tolerable to the man who was already, by his own
-          account, "long anxious" to be acknowledged as an
-          innovator.<InlineFootnote index={6} />
-          Unlike the array of digital processes employed today to
-          create such visualizations—from standalone platforms such
-          as Adobe Illustrator or Tableau to software libraries such
-          as D3.js or Processing—each of which allow for revision
-          (to varying degrees), the engraving process employed by
-          Playfair resulted in an image that was irreversibly
-          inscribed into copper. When considered in the context of
-          the time and money invested in the work, it might as well
-          have been set in the proverbial stone.
-        </p>
-        <p>
-          This chapter takes up the methods involved in making data
-          visualizations, both past and present, in order to trouble
-          the relationship between data and its visual display.
-          While it's easy to assume that any particular
-          visualization--or, at least, any good one--offers a direct
-          representation of the data underneath; that it is neutral
-          and objective; and that there is no argument associated
-          with its choice of visual form, these are each only
-          assumptions. As we will show, the ability to create a
-          visualization directly from the data is a relatively
-          recent innovation, one that derives from the affordances
-          of the particular tools we now use for visualizing data
-          more than any enduring belief about the direct
-          relationship between a visualization and the data it
-          purports to represent.
-        </p>
-        <p>
-          As the example of Playfair's time-series charts help us to
-          see, data visualizations are each a form of knowledge in
-          and of themselves. Each data visualization, furthermore,
-          carries with it an argument: about the specific forms of
-          knowledge that it is best suited to convey; and about the
-          specific groups of people who can best benefit from it.
-          These arguments do not invalidate the knowledge produced
-          by any particular image or interaction. But they must be
-          recognized for what they are--arguments--if we as viewers,
-          and as designers, are to make appropriate and informed use
-          of the images that we on the one hand encounter, and on
-          the other create.
-        </p>
+            To produce a copperplate engraving such as the one
+            employed to print "Exports &amp; Imports to and from all
+            of North America," a thin copper plate is first coated
+            with a ground: a layer of wax, varnish, chalk, or soot.
+            Using a stylus, the engraver traces an outline of the
+            design in mirror image into the ground. The wax (or
+            equivalent) layer is then removed, and the engraver
+            employs the faint impression that remains to guide the
+            subsequent inscription process. With a metal tool called a
+            burin, the engraver carves the image directly into the
+            copper plate—a process that requires significant strength.
+            <InlineFootnote index={5} />
+          </p>
+          <p>
+            Playfair's error was thus a common one—a slip of a tired
+            hand—but its frequent occurrence would not have made it
+            any more tolerable to the man who was already, by his own
+            account, "long anxious" to be acknowledged as an
+            innovator.<InlineFootnote index={6} />
+            Unlike the array of digital processes employed today to
+            create such visualizations—from standalone platforms such
+            as Adobe Illustrator or Tableau to software libraries such
+            as D3.js or Processing—each of which allow for revision
+            (to varying degrees), the engraving process employed by
+            Playfair resulted in an image that was irreversibly
+            inscribed into copper. When considered in the context of
+            the time and money invested in the work, it might as well
+            have been set in the proverbial stone.
+          </p>
+          <p>
+            This chapter takes up the methods involved in making data
+            visualizations, both past and present, in order to trouble
+            the relationship between data and its visual display.
+            While it's easy to assume that any particular
+            visualization--or, at least, any good one--offers a direct
+            representation of the data underneath; that it is neutral
+            and objective; and that there is no argument associated
+            with its choice of visual form, these are each only
+            assumptions. As we will show, the ability to create a
+            visualization directly from the data is a relatively
+            recent innovation, one that derives from the affordances
+            of the particular tools we now use for visualizing data
+            more than any enduring belief about the direct
+            relationship between a visualization and the data it
+            purports to represent.
+          </p>
+          <p>
+            As the example of Playfair's time-series charts help us to
+            see, data visualizations are each a form of knowledge in
+            and of themselves. Each data visualization, furthermore,
+            carries with it an argument: about the specific forms of
+            knowledge that it is best suited to convey; and about the
+            specific groups of people who can best benefit from it.
+            These arguments do not invalidate the knowledge produced
+            by any particular image or interaction. But they must be
+            recognized for what they are--arguments--if we as viewers,
+            and as designers, are to make appropriate and informed use
+            of the images that we on the one hand encounter, and on
+            the other create.
+          </p>
         </div>
       </CenteredLayout>
 *
@@ -212,65 +201,59 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column className="flex flex-col items-center">
-          <Figure
-            src="/images/playfair/chart-1787.jpg"
-            alt=""
-          >
-            The data on "America" included in the second edition
-            of The Commercial and Political Atlas (1787), on the
-            recommendation of James Watt. Image courtesy of the
-            Library Company of Philadelphia,
-            <a href="http://www.librarycompany.org">
-              www.librarycompany.org
-            </a>
+          <Figure src="/images/playfair/chart-1787.jpg" alt="">
+            The data on "America" included in the second edition of The
+            Commercial and Political Atlas (1787), on the recommendation of
+            James Watt. Image courtesy of the Library Company of Philadelphia,
+            <a href="http://www.librarycompany.org">www.librarycompany.org</a>
           </Figure>
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>
         <div className="space-y-5 py-10">
           <p>
-          But by the book's third edition, Playfair had gained
-          enough confidence in the form and function of his charts
-          that he no longer felt obligated to include the associated
-          data tables, as Watt had initially advised. Indeed,
-          Playfair understood the function of his charts as quite
-          distinct from that of tables, or "figures," as he termed
-          them. In introduction to the Atlas, he explains:
-        </p>
-        <blockquote className="font-william">
-          The advantage proposed by this method, is not that of giving
-          a more accurate statement than
-          by figures, but it is to give a more simple and
-          permanent idea of the gradual progress and comparative
-          amounts, at different periods, by presenting to the
-          eye a figure, the proportions of which correspond with
-          the amount of the sums intended to be expressed.
-          <InlineFootnote index={8} />
-        </blockquote>
-        <p>
-          attr
-        </p>
-        <p>
-          In explicit contrast to the "more accurate" information
-          conveyed through the form of the data table, Playfair
-          understood the value of his charts as their ability to
-          impart a "simple and permanent idea." In other words, the
-          knowledge conveyed through the charts was different than
-          the knowledge conveyed through the data, and explicitly
-          so. It was admittedly more reductive, but it was also
-          easier to understand—and, as a result, easier to remember.
-        </p>
-        <p>
-          Playfair's interest in presenting a "simple and permanent
-          idea," over and above any particular data point, is
-          further born out in the liberties he took in interpolating
-          his data. For example, his "Chart of Imports &amp; Exports
-          to and from all of North America" clearly depicts economic
-          instability. But even if that instability could be
-          confirmed by other sources, Playfair did not necessarily
-          possess all of the data to support the line that he
-          engraved.<InlineFootnote index={9} />
-        </p>
+            But by the book's third edition, Playfair had gained
+            enough confidence in the form and function of his charts
+            that he no longer felt obligated to include the associated
+            data tables, as Watt had initially advised. Indeed,
+            Playfair understood the function of his charts as quite
+            distinct from that of tables, or "figures," as he termed
+            them. In introduction to the Atlas, he explains:
+          </p>
+          <blockquote className="font-william">
+            The advantage proposed by this method, is not that of giving
+            a more accurate statement than
+            by figures, but it is to give a more simple and
+            permanent idea of the gradual progress and comparative
+            amounts, at different periods, by presenting to the
+            eye a figure, the proportions of which correspond with
+            the amount of the sums intended to be expressed.
+            <InlineFootnote index={8} />
+          </blockquote>
+          <p>
+            attr
+          </p>
+          <p>
+            In explicit contrast to the "more accurate" information
+            conveyed through the form of the data table, Playfair
+            understood the value of his charts as their ability to
+            impart a "simple and permanent idea." In other words, the
+            knowledge conveyed through the charts was different than
+            the knowledge conveyed through the data, and explicitly
+            so. It was admittedly more reductive, but it was also
+            easier to understand—and, as a result, easier to remember.
+          </p>
+          <p>
+            Playfair's interest in presenting a "simple and permanent
+            idea," over and above any particular data point, is
+            further born out in the liberties he took in interpolating
+            his data. For example, his "Chart of Imports &amp; Exports
+            to and from all of North America" clearly depicts economic
+            instability. But even if that instability could be
+            confirmed by other sources, Playfair did not necessarily
+            possess all of the data to support the line that he
+            engraved.<InlineFootnote index={9} />
+          </p>
         </div>
       </CenteredLayout>
 
@@ -392,12 +375,9 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column>
-          <Figure
-            src="/images/playfair/5-minard.png"
-            alt=""
-          >
-            Charles Minard's 1869 chart of Napoleon's failed
-            Russia campaign. Image courtesy of Wikimedia Commons.
+          <Figure src="/images/playfair/5-minard.png" alt="">
+            Charles Minard's 1869 chart of Napoleon's failed Russia campaign.
+            Image courtesy of Wikimedia Commons.
           </Figure>
         </Column>
       </TwoColumnLayout>
@@ -510,19 +490,17 @@ export default function PlayfairPage() {
             view.
           </p>
           <p>
-            While we are no longer living in the Age of Revolutions,
-            we nonetheless continue to face social and political
-            crises of significant stakes. What has been shown by
-            several of the most pressing of these—the ongoing
-            coronavirus pandemic and the unfolding of climate change,
-            to name just two—is that data visualization will continue
-            to play a prominent role in communicating information and
-            in shaping the terms of public debate. As such, it
-            behooves us, as visualization designers and researchers
-            ourselves, to be better trained to see the politics of
-            knowledge production that are embedded in the
-            visualizations we design, so that they can achieve their
-            intended use.
+            While we are no longer living in the Age of Revolutions, we
+            nonetheless continue to face social and political crises of
+            significant stakes. What has been shown by several of the most
+            pressing of these—the ongoing coronavirus pandemic and the unfolding
+            of climate change, to name just two—is that data visualization will
+            continue to play a prominent role in communicating information and
+            in shaping the terms of public debate. As such, it behooves us, as
+            visualization designers and researchers ourselves, to be better
+            trained to see the politics of knowledge production that are
+            embedded in the visualizations we design, so that they can achieve
+            their intended use.
           </p>
         </div>
       </CenteredLayout>
@@ -555,37 +533,30 @@ export default function PlayfairPage() {
           />
         </Column>
         <Column>
-          <Figure
-            src="/images/playfair/6-snow.jpg"
-            alt=""
-          >
-            The map created by John Snow in 1854 that shows how Cholera cases are clustered
-            around the town's water pump. Image courtesy of Wikimedia Commons.
+          <Figure src="/images/playfair/6-snow.jpg" alt="">
+            The map created by John Snow in 1854 that shows how Cholera cases
+            are clustered around the town's water pump. Image courtesy of
+            Wikimedia Commons.
           </Figure>
-          <Figure
-            src="/images/playfair/7-nightingale.jpg"
-            alt=""
-          >
-            The coxcomb chart created by Florence Nightingale in 1858 which emphasizes the number
-            of (preventable) British military deaths due to poor sanitation.
-            Image courtesy of Wikimedia Commons.
+          <Figure src="/images/playfair/7-nightingale.jpg" alt="">
+            The coxcomb chart created by Florence Nightingale in 1858 which
+            emphasizes the number of (preventable) British military deaths due
+            to poor sanitation. Image courtesy of Wikimedia Commons.
           </Figure>
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>
         <div className="space-y-5 py-10">
           <p>
-            Consider the process of recreating one of Playfair's
-            charts with D3.js, as we did for this chapter. Unlike
-            Playfair's chart, which needed no actual data in order to
-            be produced, we were required to begin with a dataset.
-            These data were required not merely as a guide, but as the
-            very foundation of the visualization itself. D3 is, after
-            all, a software library designed with data at its core.
-            Its own innovation is not any new mode of graphical
-            display, but instead the ease and efficiency with which a
-            dataset can be visualized, on the web, according to any
-            conceivable form.
+            Consider the process of recreating one of Playfair's charts with
+            D3.js, as we did for this chapter. Unlike Playfair's chart, which
+            needed no actual data in order to be produced, we were required to
+            begin with a dataset. These data were required not merely as a
+            guide, but as the very foundation of the visualization itself. D3
+            is, after all, a software library designed with data at its core.
+            Its own innovation is not any new mode of graphical display, but
+            instead the ease and efficiency with which a dataset can be
+            visualized, on the web, according to any conceivable form.
           </p>
 
           <p>
@@ -595,7 +566,7 @@ export default function PlayfairPage() {
                 <rect width="35%" height="100%" fill="#F3ECCB" x="65" />
                 <StackedChart />
                 <CombChart />
-              {/* <StackedChart :playfairData="this.playfairData"></StackedChart>
+                {/* <StackedChart :playfairData="this.playfairData"></StackedChart>
               <CoxcombChart :playfairData="this.playfairData"></CoxcombChart> */}
               </svg>
             </span>
@@ -653,22 +624,14 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column>
-          <Figure
-            src="/images/playfair/8-lyra.png"
-            alt=""
-          ></Figure>
-          <Figure
-            src="/images/playfair/9-protovis.png"
-            alt=""
-          ></Figure>
-          <Figure
-            src="/images/playfair/10-camoes.png"
-            alt=""
-          >
-            Clockwise from top left: Playfair's chart of wheat and wages, as recreated in Lyra,
-            an early visualization platform designed by Arvind Satyanarayan and Jeffrey Heer;
-            the same chart recreated in Protovis, an early JavaScript visualization library
-            developed by Mike Bostock; the same chart recreated in Microsoft Excel by Jorge
+          <Figure src="/images/playfair/8-lyra.png" alt=""></Figure>
+          <Figure src="/images/playfair/9-protovis.png" alt=""></Figure>
+          <Figure src="/images/playfair/10-camoes.png" alt="">
+            Clockwise from top left: Playfair's chart of wheat and wages, as
+            recreated in Lyra, an early visualization platform designed by
+            Arvind Satyanarayan and Jeffrey Heer; the same chart recreated in
+            Protovis, an early JavaScript visualization library developed by
+            Mike Bostock; the same chart recreated in Microsoft Excel by Jorge
             Camoes. Screenshots by Lauren Klein."
           </Figure>
         </Column>
@@ -795,14 +758,12 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column>
-          <Figure
-            src="/images/playfair/jevons.png"
-            alt=""
-          >
-            Jevons's illustration of the benefits of the "graphical method,"
-            in which "it becomes possible to trae a line among the points
-            which will approximate to the true law more nearly than the ponts
-            themselves." Image Courtesy of Google Books. Digitized by Harvard University.
+          <Figure src="/images/playfair/jevons.png" alt="">
+            Jevons's illustration of the benefits of the "graphical method," in
+            which "it becomes possible to trae a line among the points which
+            will approximate to the true law more nearly than the ponts
+            themselves." Image Courtesy of Google Books. Digitized by Harvard
+            University.
           </Figure>
         </Column>
       </TwoColumnLayout>

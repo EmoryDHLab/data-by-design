@@ -75,5 +75,9 @@ module.exports = {
   variants: {
     extend: {},
   },
-  safelist: ["text-duboisPrimary"],
+  safelist: [
+    "text-duboisPrimary",
+    "text-playfairPrimary",
+    "text-peabodyPrimary",
+  ],
 };
