@@ -12,6 +12,7 @@ import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import { useState } from "react";
 import HoverText from "~/components/HoverText";
 import HoverZoomPeabodySquare from "~/components/peabody/HoverZoomPeabodySquare";
+import ImageCaption from "~/components/ImageCaption";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -166,21 +167,13 @@ export default function PeabodyPage() {
               <img className="max-w-xs" src="/images/peabody/1700s.jpg" />
               <img className="max-w-xs" src="/images/peabody/1800s.jpg" />
             </div>
-            <div className="text-center mt-10 w-5/6">
-              <p>
-                <span>
-                  The four chronological charts included in Elizabeth Palmer
-                  Peabody’s{" "}
-                </span>
-                <span>Chronological History of the United States</span>
-                <span>
-                  {" "}
-                  (1865), which display the significant events of the 1500s,
-                  1600s, 1700s, and 1800s. Images courtesy of the Internet
-                  Archive. Digitized by the Library of Congress.
-                </span>
-              </p>
-            </div>
+            <ImageCaption>
+              The four chronological charts included in Elizabeth Palmer
+              Peabody’s Chronological History of the United States (1865), which
+              display the significant events of the 1500s, 1600s, 1700s, and
+              1800s. Images courtesy of the Internet Archive. Digitized by the
+              Library of Congress.
+            </ImageCaption>
           </div>
         </Column>
       </TwoColumnLayout>
@@ -642,20 +635,15 @@ export default function PeabodyPage() {
               loading="lazy"
               width="500px"
             />
-            <div className="text-center mt-10 w-5/6 font-william">
-              <p>
-                <span>A blank chart from </span>
-                <span className="italic">
-                  Blank Centuries for Monographs of History{" "}
-                </span>
-                <span>
-                  (1870), the workbook that Peabody printed to accompany her
-                  history textbooks. Courtesy of the American Antiquarian
-                  Society. Photo by Lauren Klein
-                </span>
-                <span>. </span>
-              </p>
-            </div>
+            <ImageCaption>
+              A blank chart from
+              <span className="italic">
+                Blank Centuries for Monographs of History{" "}
+              </span>
+              (1870), the workbook that Peabody printed to accompany her history
+              textbooks. Courtesy of the American Antiquarian Society. Photo by
+              Lauren Klein.
+            </ImageCaption>
           </Column>
         </TwoColumnLayout>
       </div>
@@ -814,12 +802,12 @@ export default function PeabodyPage() {
               <img src="/images/ch4-11.webp" />
               <img src="/images/ch4-12.webp" />
             </div>
-            <figcaption className="text-center font-william pt-5 max-w-md">
-              Images of student-created charts from a copy of{" "}
+            <ImageCaption>
+              Images of student-created charts from a copy of
               <span className="italic">The Polish-American System</span> housed
               at the American Antiquarian Society. Courtesy of the American
               Antiquarian Society. Photos by Lauren Klein.
-            </figcaption>
+            </ImageCaption>
           </FullBleed>
         </Column>
       </TwoColumnLayout>
@@ -828,18 +816,13 @@ export default function PeabodyPage() {
           <div>
             <img src="/images/ch4-13-willard.jpg" alt="" loading="lazy" />
           </div>
-          <div className="font-william text-center mt-10 w-5/6">
-            <p>
-              <span>Emma Willard’s perspectival </span>
-              <span className="italic">Temple of Time</span>
-              <span>
-                {" "}
-                (1846). Image courtesy of the David Rumsey Map Collection,
-                Cartography Associates.
-              </span>
-            </p>
-          </div>
         </div>
+        <ImageCaption>
+          Emma Willard’s perspectival
+          <span className="italic">Temple of Time</span> (1846). Image courtesy
+          of the David Rumsey Map Collection, Cartography Associates.
+        </ImageCaption>
+
         <p>
           <span>
             While sharply divergent from Peabody’s charts in terms of
@@ -1056,17 +1039,17 @@ export default function PeabodyPage() {
                 </div>
               </div>
             </div>
-            <div className="font-william text-center mt-10 w-5/6">
+            <ImageCaption>
               <p>
-                <span>
-                  Left: One of the timelines created by Anne Laura Clarke, as
-                  explored by Granville Ganter in his essay on Clarke’s
-                  traveling lectures. Right: Another timeline as it was first
-                  encountered by Ganter. Photos by Granville Ganter. Courtesy of
-                  Granville Ganter.{" "}
-                </span>
+                {" "}
+                <span className="font-bold">Left:</span> One of the timelines
+                created by Anne Laura Clarke, as explored by Granville Ganter in
+                his essay on Clarke’s traveling lectures.{" "}
               </p>
-            </div>
+              <span className="font-bold">Right:</span> Another timeline as it
+              was first encountered by Ganter. Photos by Granville Ganter.
+              Courtesy of Granville Ganter.{" "}
+            </ImageCaption>
           </div>
         </Column>
       </TwoColumnLayout>
@@ -1187,17 +1170,13 @@ export default function PeabodyPage() {
                 </div>
               </div>
             </div>
-            <div className="caption text-center mt-10 w-5/6">
-              <p>
-                <span>
-                  The layers of the touch interface, built with copper tape and
-                  a foam spacer; the assembled touch interface; a view of the
-                  modular circuit boards for communicating with the LEDs; a
-                  rendering of the completed Floor Chart; the LEDs displayed on
-                  top of the quilted chart. Photos by Lauren Klein.
-                </span>
-              </p>
-            </div>
+            <ImageCaption>
+              The layers of the touch interface, built with copper tape and a
+              foam spacer; the assembled touch interface; a view of the modular
+              circuit boards for communicating with the LEDs; a rendering of the
+              completed Floor Chart; the LEDs displayed on top of the quilted
+              chart. Photos by Lauren Klein.
+            </ImageCaption>
           </div>
         </Column>
       </TwoColumnLayout>
@@ -1346,17 +1325,12 @@ export default function PeabodyPage() {
               </div>
             </div>
           </div>
-          <div className="font-william text-center mt-10 w-5/6">
-            <p>
-              <span>
-                Left: “Housetop,” by Rachel Carey George, ca. 1935. Right:
-                “Housetop” variation, design by Mary Lee Bendolph. 1998, quilted
-                by Essie Bendolph Pettaway, 2001. Photos courtesy of Tinwood
-                Media.{" "}
-              </span>
-              <span>Permissions pending.</span>
-            </p>
-          </div>
+          <ImageCaption>
+            Left: “Housetop,” by Rachel Carey George, ca. 1935. <br></br> Right:
+            “Housetop” variation, design by Mary Lee Bendolph. 1998, quilted by
+            Essie Bendolph Pettaway, 2001. Photos courtesy of Tinwood Media.{" "}
+            <span>Permissions pending.</span>
+          </ImageCaption>
         </div>
         <p>
           <span>

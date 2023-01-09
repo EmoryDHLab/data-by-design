@@ -14,6 +14,7 @@ import CenteredLayout from "~/components/layout/CenteredLayout";
 import Scrollytell from "~/components/playfair/Scrollytell";
 import Footer from "~/components/Footer";
 import Footnote from "~/components/Footnote";
+import ImageCaption from "~/components/ImageCaption";
 
 export default function PlayfairPage() {
   const [footnoteState, setFootnoteState] = useState<number>(0);
