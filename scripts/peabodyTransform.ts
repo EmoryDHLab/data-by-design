@@ -10,7 +10,8 @@ const actorColors = {
 };
 
 async function run() {
-  const file = Deno.args[0];
+  const baseYear = Deno.args[0];
+  const file = `../app/data/peabody${baseYear}s.json`;
   const peabodyDataText = await Deno.readTextFile(file);
   const peabodyData = JSON.parse(peabodyDataText);
   const yearSquares = new Array(100);
@@ -60,19 +61,22 @@ async function run() {
           [actorColors[actors[0]]],
         ];
       }
-      yearSquares[year - 1601] = eventSquares;
+      yearSquares[year - baseYear - 1] = eventSquares;
     } else {
-      if (yearSquares[year - 1601] === undefined) {
-        yearSquares[year - 1601] = new Array(9);
+      if (yearSquares[year - baseYear - 1] === undefined) {
+        yearSquares[year - baseYear - 1] = new Array(9);
       }
       for (const square of squares) {
         const colors = actors.map((a) => actorColors[a]);
-        yearSquares[year - 1601][square - 1] = colors;
+        yearSquares[year - baseYear - 1][square - 1] = colors;
       }
     }
   }
 
-  await Deno.writeTextFile(Deno.args[1], JSON.stringify(yearSquares));
+  await Deno.writeTextFile(
+    `../app/data/peabody/${baseYear}SquareColors.json`,
+    JSON.stringify(yearSquares)
+  );
 }
 
 run();

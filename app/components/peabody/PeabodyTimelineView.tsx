@@ -1,8 +1,10 @@
 import OverlaidPeabodySquare from "~/components/peabody/OverlaidPeabodySquare";
-import type { SetStateAction } from "react";
 import { useState } from "react";
 import RecreatedPeabodySquare from "~/components/peabody/RecreatedPeabodySquare";
-import peabodySquareColors from "~/data/peabody/1600Square.json";
+import peabody1500SquareColors from "~/data/peabody/1500SquareColors.json";
+import peabody1600SquareColors from "~/data/peabody/1600SquareColors.json";
+import peabody1700SquareColors from "~/data/peabody/1700SquareColors.json";
+import peabody1800SquareColors from "~/data/peabody/1800SquareColors.json";
 import type { HighlightedElement } from "~/components/peabody/peabodyUtils";
 import { numberRange } from "~/utils";
 import RecreatedEventSquare from "~/components/peabody/RecreatedEventSquare";
@@ -11,16 +13,62 @@ export default function PeabodyTimelineView() {
   const [highlightedElement, setHighlightedElement] = useState<
     HighlightedElement | undefined
   >(undefined);
+  const [activeYearData, setActiveYearData] = useState({
+    squareColors: peabody1500SquareColors,
+    year: 1500,
+  });
   return (
     <div className="w-full bg-black">
+      <div className="flex text-white">
+        <button
+          onClick={() =>
+            setActiveYearData({
+              squareColors: peabody1500SquareColors,
+              year: 1500,
+            })
+          }
+        >
+          1500s
+        </button>
+        <button
+          onClick={() =>
+            setActiveYearData({
+              squareColors: peabody1600SquareColors,
+              year: 1600,
+            })
+          }
+        >
+          1600s
+        </button>
+        <button
+          onClick={() =>
+            setActiveYearData({
+              squareColors: peabody1700SquareColors,
+              year: 1700,
+            })
+          }
+        >
+          1700s
+        </button>
+        <button
+          onClick={() =>
+            setActiveYearData({
+              squareColors: peabody1800SquareColors,
+              year: 1800,
+            })
+          }
+        >
+          1800s
+        </button>
+      </div>
       <div className="flex pt-20">
         <div className="w-1/2 flex justify-center">
           <div className="w-5/6">
             <OverlaidPeabodySquare
               setHighlightedElement={setHighlightedElement}
               highlightedElement={highlightedElement}
-              squareColors={peabodySquareColors}
-              overlayImage="/images/peabody/1600s.jpg"
+              squareColors={activeYearData.squareColors}
+              overlayImage={`/images/peabody/${activeYearData.year}s.jpg`}
             />
           </div>
         </div>
@@ -29,14 +77,14 @@ export default function PeabodyTimelineView() {
             <RecreatedPeabodySquare
               setHighlightedElement={setHighlightedElement}
               highlightedElement={highlightedElement}
-              squareColors={peabodySquareColors}
+              squareColors={activeYearData.squareColors}
             />
           </div>
         </div>
       </div>
       <div className="w-full mt-12 flex justify-center">
         <div className="flex w-3/4">
-          {peabodySquareColors.map((yearSquareColors, yearIndex) => (
+          {activeYearData.squareColors.map((yearSquareColors, yearIndex) => (
             <div className="w-6 h-full flex flex-col-reverse border border-transparent">
               {yearSquareColors &&
                 yearSquareColors
