@@ -13,6 +13,7 @@ import CenteredLayout from "~/components/layout/CenteredLayout";
 import Scrollytell from "~/components/playfair/Scrollytell";
 import Footer from "~/components/Footer";
 import ImageCaption from "~/components/ImageCaption";
+import Footnote from "~/components/Footnote";
 
 
 export default function PlayfairPage() {
