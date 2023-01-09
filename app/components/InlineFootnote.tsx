@@ -17,14 +17,16 @@ export default function InlineFootnote({ index }: Props) {
   }, [isTextVisible, setFootnoteState]);
 
   return (
-    <span className="pr-1">
+    <span>
       <button
         onClick={() => setIsTextVisible(!isTextVisible)}
         className={`footnote bg-${backgroundColor} text-${primaryTextColor}`}
       >
-        {number}
+        {index + 1}
       </button>
-      {isTextVisible && <div className={`text-blue-600`}>{children}</div>}
+      {isTextVisible && (
+        <div className={`text-${footnoteTextColor}`}>{footnotes[index]}</div>
+      )}
     </span>
   );
 }
