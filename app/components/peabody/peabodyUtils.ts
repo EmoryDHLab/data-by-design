@@ -17,3 +17,9 @@ export function getYearYFromIndex(index: number) {
   let row = Math.floor(index / 10);
   return 3 + row * YEAR_WIDTH + (row > 4 ? 3 : 0);
 }
+
+export type Actor = string;
+
+export type YearSquare = (Actor[] | null)[];
+
+export type SquareData = (YearSquare | null)[];

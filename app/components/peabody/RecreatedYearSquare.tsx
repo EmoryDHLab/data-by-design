@@ -2,6 +2,7 @@ import {
   getYearXFromIndex,
   getYearYFromIndex,
   YEAR_WIDTH,
+  YearSquare,
 } from "~/components/peabody/peabodyUtils";
 import RecreatedEventSquare from "~/components/peabody/RecreatedEventSquare";
 import { numberRange } from "~/utils";
@@ -11,6 +12,7 @@ interface Props {
   handleEnterEventSquare: (index: number) => void;
   handleLeaveEventSquare: (index: number) => void;
   highlightedIndex?: number;
+  yearSquareColors: YearSquare | null;
 }
 
 export default function RecreatedYearSquare({
@@ -18,6 +20,7 @@ export default function RecreatedYearSquare({
   highlightedIndex,
   handleEnterEventSquare,
   handleLeaveEventSquare,
+  yearSquareColors,
 }: Props) {
   return (
     <svg
@@ -32,6 +35,7 @@ export default function RecreatedYearSquare({
         const absoluteIndex = index * 9 + eventIndex;
         return (
           <RecreatedEventSquare
+            eventSquareColors={yearSquareColors?.[eventIndex] ?? null}
             isHighlighted={absoluteIndex === highlightedIndex}
             index={eventIndex}
             handleMouseEnter={() => {

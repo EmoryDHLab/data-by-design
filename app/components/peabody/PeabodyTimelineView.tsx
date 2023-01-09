@@ -1,6 +1,7 @@
 import OverlaidPeabodySquare from "~/components/peabody/OverlaidPeabodySquare";
 import { useState } from "react";
 import RecreatedPeabodySquare from "~/components/peabody/RecreatedPeabodySquare";
+import peabodySquareColors from "~/data/peabody/1600Square.json";
 
 export default function PeabodyTimelineView() {
   const [highlightedEventSquareIndex, setHighlightedEventSquareIndex] =
@@ -31,6 +32,7 @@ export default function PeabodyTimelineView() {
               setHighlightedEventSquareIndex(undefined);
             }}
             highlightedIndex={highlightedEventSquareIndex}
+            squareColors={peabodySquareColors}
           />
         </div>
       </div>
