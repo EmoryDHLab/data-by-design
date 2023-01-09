@@ -10,9 +10,9 @@ interface Props {
   absoluteIndex: number;
   index: number;
   highlightedElement: HighlightedElement | undefined;
-  setHighlightedElement: Dispatch<SetStateAction<HighlightedElement>>;
-  handleMouseEnter: () => void;
-  handleMouseLeave: () => void;
+  setHighlightedElement: Dispatch<
+    SetStateAction<HighlightedElement | undefined>
+  >;
   eventSquareColors: string[] | null;
 }
 
