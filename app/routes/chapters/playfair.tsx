@@ -15,6 +15,7 @@ import Scrollytell from "~/components/playfair/Scrollytell";
 import Footer from "~/components/Footer";
 import Footnote from "~/components/Footnote";
 import ImageCaption from "~/components/ImageCaption";
+import Footnote from "~/components/Footnote";
 
 export default function PlayfairPage() {
   const [footnoteState, setFootnoteState] = useState<number>(0);

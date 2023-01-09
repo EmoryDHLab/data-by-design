@@ -13,6 +13,7 @@ import { useState } from "react";
 import HoverText from "~/components/HoverText";
 import HoverZoomPeabodySquare from "~/components/peabody/HoverZoomPeabodySquare";
 import ImageCaption from "~/components/ImageCaption";
+import Footnote from "~/components/Footnote";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -58,11 +59,24 @@ export default function PeabodyPage() {
                 kindergarten in the United States
               </span>
               <span>.</span>
-              <span>
-                <span role="button" className="circle">
-                  1
-                </span>{" "}
-              </span>
+
+              <Footnote number="1">
+                For more on Peabody’s biography, see Bruce A. Rhoda,
+                <cite>
+                  {" "}
+                  Elizabeth Palmer Peabody: A Reformer on Her Own Terms{" "}
+                </cite>
+                (Cambridge: Harvard Univ. Press, 1999), Megan Marshall,
+                <cite>
+                  {" "}
+                  The Peabody Sisters: Three Women Who Ignited American
+                  Romanticism{" "}
+                </cite>
+                (New York: Mariner, 2006), and Monika Elbert, Julie E. Hall, and
+                Katharine Rodier, eds.,{" "}
+                <cite> Reinventing the Peabody Sisters</cite> (Iowa City: Univ.
+                of Iowa Press, 2006).
+              </Footnote>
             </p>
             <p>
               <span>
@@ -126,11 +140,16 @@ export default function PeabodyPage() {
               the foundations of historical knowledge in the minds of the
               young.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                2
-              </span>{" "}
-            </span>
+
+            <Footnote number="2">
+              Elizabeth Palmer Peabody,{" "}
+              <cite>
+                The Polish-American System of Chronology, reproduced, with some
+                modifications, from General Bem’s Franco-Polish Method
+              </cite>{" "}
+              (Boston, 1850), p. 3.
+            </Footnote>
+
             <span>
               {" "}
               Like Playfair, Willard, and other early proponents of data
@@ -138,11 +157,11 @@ export default function PeabodyPage() {
               communication. But she did not intend, as did Playfair, to produce
               a clarifying “picture of the past.”
             </span>
-            <span>
-              <span role="button" className="circle">
-                3
-              </span>{" "}
-            </span>
+            <Footnote number="3">
+              William Playfair, <cite>The Commercial and Political Atlas,</cite>{" "}
+              3rd ed. (London, 1801 [1786]), p. iv.
+            </Footnote>
+
             <span>
               {" "}
               Rather, Peabody designed her charts to be abstract rather than
@@ -189,11 +208,23 @@ export default function PeabodyPage() {
               popularized in subsequent decades by the military general (and
               erstwhile math teacher) Jósef Bem.
             </span>
-            <span>
-              <span role="button" className="circle">
-                4
-              </span>{" "}
-            </span>
+            <Footnote number="4">
+              While it exceeds the scope of this essay, it is worth noting the
+              particular appeal of Bem’s Polish identity. Peabody had a
+              particular interest in the ideas coming out of central and eastern
+              Europe as a result of her ongoing engagement in theories of
+              language. She had sustained correspondence with the Hungarian
+              philologist Charles Kraitsir throughout the 1840s, and he traveled
+              to Boston to meet with her in 1847. Peabody went on to support the
+              (failed) Hungarian Revolution of 1848, which she viewed as allied
+              with the aims of American Independence. Among her central concerns
+              with standard accounts of US History was that they were written
+              from the perspective of England. She would have likely imputed an
+              anti-colonial stance inherent in Bem’s system. For more on her
+              relationship with Kraitsir, see Ronda (1999, pp. 225-226). For
+              more on her support for the Hungarian Revolution and her views on
+              history, see Baym (1991).
+            </Footnote>
             <span>
               {" "}
               Bem’s system employed a grid overlaid with shapes and colors to
@@ -1040,15 +1071,14 @@ export default function PeabodyPage() {
               </div>
             </div>
             <ImageCaption>
+              <span className="font-bold">Left:</span> One of the timelines
+              created by Anne Laura Clarke, as explored by Granville Ganter in
+              his essay on Clarke’s traveling lectures.{" "}
               <p>
-                {" "}
-                <span className="font-bold">Left:</span> One of the timelines
-                created by Anne Laura Clarke, as explored by Granville Ganter in
-                his essay on Clarke’s traveling lectures.{" "}
+                <span className="font-bold">Right:</span> Another timeline as it
+                was first encountered by Ganter. Photos by Granville Ganter.
+                Courtesy of Granville Ganter.{" "}
               </p>
-              <span className="font-bold">Right:</span> Another timeline as it
-              was first encountered by Ganter. Photos by Granville Ganter.
-              Courtesy of Granville Ganter.{" "}
             </ImageCaption>
           </div>
         </Column>
@@ -1326,9 +1356,13 @@ export default function PeabodyPage() {
             </div>
           </div>
           <ImageCaption>
-            Left: “Housetop,” by Rachel Carey George, ca. 1935. <br></br> Right:
-            “Housetop” variation, design by Mary Lee Bendolph. 1998, quilted by
-            Essie Bendolph Pettaway, 2001. Photos courtesy of Tinwood Media.{" "}
+            <span className="font-bold">Left: </span>“Housetop,” by Rachel Carey
+            George, ca. 1935.{" "}
+            <p>
+              <span className="font-bold">Right:</span> “Housetop” variation,
+              design by Mary Lee Bendolph. 1998, quilted by Essie Bendolph
+              Pettaway, 2001. Photos courtesy of Tinwood Media.{" "}
+            </p>
             <span>Permissions pending.</span>
           </ImageCaption>
         </div>
