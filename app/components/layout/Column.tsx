@@ -1,7 +1,8 @@
 import type { ReactNodeLike } from "prop-types";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ChapterContext } from "~/theme";
 
 interface Props {
   children?: ReactNodeLike;
@@ -11,23 +12,29 @@ interface Props {
 
 export default function Column({ children, className, shouldPin }: Props) {
   const pin = useRef(null);
+  const content = useRef(null);
+  const { footnoteState } = useContext(ChapterContext);
+  const scrollTrigger = useRef(null);
 
   useEffect(() => {
-    let st: ScrollTrigger;
     if (shouldPin) {
       gsap.registerPlugin(ScrollTrigger);
-      st = ScrollTrigger.create({
+      scrollTrigger.current = ScrollTrigger.create({
         trigger: pin.current.parentElement,
         start: "top top",
-        end: "bottom center",
+        end: `bottom ${content.current?.clientHeight}px`,
         markers: false, // set to true for debugging
         pin: pin.current.firstChild,
       });
     }
     return () => {
-      st?.kill();
+      scrollTrigger.current?.kill();
     };
-  }, [pin, shouldPin]);
+  }, [pin, shouldPin, content]);
+
+  useEffect(() => {
+    scrollTrigger.current?.refresh();
+  }, [footnoteState, scrollTrigger]);
 
   // The pinned element gets immediately wrapped in a <div> with a fixed width/height to match.
   // A class of "pin-spacer" is added to that wrapper. Think of it like a proxy element that props
@@ -36,7 +43,7 @@ export default function Column({ children, className, shouldPin }: Props) {
   // This extra layer maintains the layout.
   return (
     <div ref={pin} className={`w-1/2 ${className ?? ""}`}>
-      <div className="column-grid-wrapper">{children}</div>
+      <div ref={content} className="column-grid-wrapper">{children}</div>
     </div>
   );
 }

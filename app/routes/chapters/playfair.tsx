@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/theme";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -15,9 +16,16 @@ import Footer from "~/components/Footer";
 import Footnote from "~/components/Footnote";
 
 export default function PlayfairPage() {
+  const [footnoteState, setFootnoteState] = useState<number>(0);
+
   return (
     <ChapterContext.Provider
-      value={{ backgroundColor: "playfairPrimary", primaryTextColor: "white" }}
+      value={{
+        backgroundColor: "playfairPrimary",
+        primaryTextColor: "white",
+        footnoteState,
+        setFootnoteState,
+      }}
     >
       <ChapterTitle
         title="Visualization as Argument"
