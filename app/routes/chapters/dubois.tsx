@@ -5,6 +5,8 @@ import DocumentViewer from "~/components/dubois/DocumentViewer";
 import { StudentChart } from "~/components/dubois/StudentChart";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/theme";
+import ImageCaption from "~/components/ImageCaption";
+
 
 export default function DuboisChapter() {
   return (

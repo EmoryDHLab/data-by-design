@@ -12,6 +12,8 @@ import Figure from "~/components/layout/Figure";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import Scrollytell from "~/components/playfair/Scrollytell";
 import Footer from "~/components/Footer";
+import ImageCaption from "~/components/ImageCaption";
+
 
 export default function PlayfairPage() {
   return (
