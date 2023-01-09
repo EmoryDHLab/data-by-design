@@ -7,10 +7,10 @@ interface Props {
   children: ReactNodeLike;
   id: number;
   setProgress: React.Dispatch<React.SetStateAction<number>>;
-  last: boolean;
+  isLast: boolean;
 }
 
-export default function ScrollytellContent({ children, id, setProgress, last }: Props) {
+export default function ScrollytellContent({ children, id, setProgress, isLast }: Props) {
   const trigger = useRef();
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function ScrollytellContent({ children, id, setProgress, last }: 
     <p
       ref={trigger}
       className="text-white text-2xl content-center"
-      style={{ height: last ? "50vh" : "80vh" }}
+      style={{ height: isLast ? "50vh" : "80vh" }}
     >
       {children}
     </p>

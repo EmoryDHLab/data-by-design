@@ -8,14 +8,12 @@ interface Props {
 }
 
 export default function Footnote({ number, children }: Props) {
-  const { backgroundColor, primaryTextColor, footnoteState, setFootnoteState, } = useContext(ChapterContext);
+  const { backgroundColor, primaryTextColor, setFootnoteState, } = useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
 
-  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
-    setFootnoteState(footnoteState + 1);
-  }, [isTextVisible]);
-  /* eslint-enable react-hooks/exhaustive-deps */
+    setFootnoteState(footnoteState => footnoteState + 1);
+  }, [isTextVisible, setFootnoteState]);
 
   return (
     <span className="pr-1">
