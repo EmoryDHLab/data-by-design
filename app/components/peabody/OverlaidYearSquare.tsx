@@ -3,21 +3,26 @@ import OverlaidEventSquare from "~/components/peabody/OverlaidEventSquare";
 import {
   getYearXFromIndex,
   getYearYFromIndex,
+  HighlightedElement,
   YEAR_WIDTH,
+  YearSquare,
 } from "~/components/peabody/peabodyUtils";
+import { Dispatch, SetStateAction } from "react";
 
 interface Props {
   index: number;
-  handleEnterEventSquare: (index: number) => void;
-  handleLeaveEventSquare: (index: number) => void;
-  highlightedIndex?: number;
+  highlightedElement: HighlightedElement | undefined;
+  setHighlightedElement: Dispatch<
+    SetStateAction<HighlightedElement | undefined>
+  >;
+  yearSquareColors: YearSquare | null;
 }
 
 export default function OverlaidYearSquare({
   index,
-  handleEnterEventSquare,
-  handleLeaveEventSquare,
-  highlightedIndex,
+  setHighlightedElement,
+  highlightedElement,
+  yearSquareColors,
 }: Props) {
   return (
     <svg
@@ -31,13 +36,10 @@ export default function OverlaidYearSquare({
         const absoluteIndex = index * 9 + eventIndex;
         return (
           <OverlaidEventSquare
-            isHighlighted={absoluteIndex === highlightedIndex}
-            handleMouseEnter={() => {
-              handleEnterEventSquare(absoluteIndex);
-            }}
-            handleMouseLeave={() => {
-              handleLeaveEventSquare(absoluteIndex);
-            }}
+            highlightedElement={highlightedElement}
+            setHighlightedElement={setHighlightedElement}
+            eventSquareColors={yearSquareColors?.[eventIndex] ?? null}
+            absoluteIndex={absoluteIndex}
             index={eventIndex}
           />
         );

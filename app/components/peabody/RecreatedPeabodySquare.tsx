@@ -1,19 +1,23 @@
 // RecreatedPeabodySquare represents a Peabody square that is fully recreated in svg and
 // not an overlay of a Peabody square image.
 import RecreatedYearSquare from "~/components/peabody/RecreatedYearSquare";
-import type { SquareData } from "~/components/peabody/peabodyUtils";
+import type {
+  HighlightedElement,
+  SquareData,
+} from "~/components/peabody/peabodyUtils";
+import { Dispatch, SetStateAction } from "react";
 
 interface Props {
-  handleEnterEventSquare: (index: number) => void;
-  handleLeaveEventSquare: (index: number) => void;
-  highlightedIndex?: number;
+  setHighlightedElement: Dispatch<
+    SetStateAction<HighlightedElement | undefined>
+  >;
+  highlightedElement?: HighlightedElement;
   squareColors: SquareData;
 }
 
 export default function RecreatedPeabodySquare({
-  handleEnterEventSquare,
-  handleLeaveEventSquare,
-  highlightedIndex,
+  setHighlightedElement,
+  highlightedElement,
   squareColors,
 }: Props) {
   return (
@@ -25,9 +29,8 @@ export default function RecreatedPeabodySquare({
             <g>
               <RecreatedYearSquare
                 yearSquareColors={yearSquareColors}
-                highlightedIndex={highlightedIndex}
-                handleEnterEventSquare={handleEnterEventSquare}
-                handleLeaveEventSquare={handleLeaveEventSquare}
+                highlightedElement={highlightedElement}
+                setHighlightedElement={setHighlightedElement}
                 index={index}
               />
             </g>

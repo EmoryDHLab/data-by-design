@@ -23,3 +23,29 @@ export type Actor = string;
 export type YearSquare = (Actor[] | null)[];
 
 export type SquareData = (YearSquare | null)[];
+
+export interface HighlightedElement {
+  elementIndex: number;
+  polygonIndex?: number;
+}
+
+// Coordinates for rendering various polygon combos in an event square
+const TWO_POLYGONS = ["0, 0 30, 0 0, 30", "0, 30 30, 30 30, 0"];
+const THREE_POLYGONS = [
+  "0, 0 30, 0 15, 15",
+  "0, 0 0, 30 15, 15",
+  "0, 30 30, 30 30, 0",
+];
+const FOUR_POLYGONS = [
+  "0, 0, 15, 0, 0, 30",
+  "0, 30, 15, 30, 15, 0",
+  "15, 0, 30, 0, 15, 30",
+  "15, 30, 30, 30, 30, 0",
+];
+
+export const POLYGONS = [
+  undefined,
+  TWO_POLYGONS,
+  THREE_POLYGONS,
+  FOUR_POLYGONS,
+];
