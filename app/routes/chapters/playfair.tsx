@@ -15,7 +15,6 @@ import Scrollytell from "~/components/playfair/Scrollytell";
 import Footer from "~/components/Footer";
 import InlineFootnote from "~/components/InlineFootnote";
 import ImageCaption from "~/components/ImageCaption";
-import InlineFootnote from "~/components/InlineFootnote";
 import { playfairFootnotes } from "~/footnotes";
 
 export default function PlayfairPage() {
