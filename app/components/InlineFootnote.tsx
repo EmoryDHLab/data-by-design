@@ -1,5 +1,5 @@
-import type { ReactNodeLike } from "prop-types";
-import { useContext, useEffect, useState } from "react";
+import { ReactNodeLike } from "prop-types";
+import { useContext, useState } from "react";
 import { ChapterContext } from "~/theme";
 
 interface Props {
@@ -8,15 +8,10 @@ interface Props {
 }
 
 export default function Footnote({ number, children }: Props) {
-  const { backgroundColor, primaryTextColor, setFootnoteState, } = useContext(ChapterContext);
+  const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
-
-  useEffect(() => {
-    setFootnoteState(footnoteState => footnoteState + 1);
-  }, [isTextVisible, setFootnoteState]);
-
   return (
-    <span className="pr-1">
+    <span>
       <button
         onClick={() => setIsTextVisible(!isTextVisible)}
         className={`footnote bg-${backgroundColor} text-${primaryTextColor}`}

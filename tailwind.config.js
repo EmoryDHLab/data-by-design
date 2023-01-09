@@ -75,4 +75,5 @@ module.exports = {
   variants: {
     extend: {},
   },
+  safelist: ["text-duboisPrimary"],
 };

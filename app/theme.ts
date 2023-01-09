@@ -1,4 +1,4 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext, Dispatch, SetStateAction, ReactNode } from "react";
 
 export type HoverState =
   | "Rochester"
@@ -17,12 +17,15 @@ interface IChapterContext {
   setHoverState: Dispatch<SetStateAction<HoverState>>;
   footnoteState: number;
   setFootnoteState: Dispatch<SetStateAction<number>>;
+  footnotes: ReactNode[];
+  footnoteTextColor: string;
 }
 
 export const ChapterContext = createContext<IChapterContext>({
   backgroundColor: "duboisPrimary",
   accentColor: "duboisSecondary",
   primaryTextColor: "white",
+  footnoteTextColor: "black",
   hoverState: undefined,
   setHoverState: (_: SetStateAction<HoverState>) => {
     console.error("setHoverState not implemented. Did you pass it to context?");
@@ -31,4 +34,5 @@ export const ChapterContext = createContext<IChapterContext>({
   setFootnoteState: (_: SetStateAction<number>) => {
     console.error("setFootnoteState not implemented. Did you pass it to context?");
   },
+  footnotes: [],
 });
