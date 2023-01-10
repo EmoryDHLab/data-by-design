@@ -45,7 +45,7 @@ module.exports = {
         offblack: "#1C1817",
         offwhite: "#FAF1E9",
         nightingale_blue: "#3B6FE0",
-        peabodyorange: "rgb(219, 136, 42)",
+        peabodyOrange: "rgb(219, 136, 42)",
         brooksSecondary: "#EFCDFF",
         brooksPrimary: "#8C20E1",
         duboisTextColor: "white",
