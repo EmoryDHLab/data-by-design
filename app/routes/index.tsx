@@ -1,6 +1,7 @@
-import HomeTitle from "~/components/HomeTitle";
+import HomeTitle from "~/components/home/HomeTitle";
 import ChapterCardGrid from "~/components/ChapterCardGrid";
-import Timeline from "~/components/Timeline";
+import Timeline from "~/components/home/Timeline.client";
+import { ClientOnly } from "remix-utils";
 
 export default function Index() {
   return (
@@ -14,8 +15,8 @@ export default function Index() {
         <div className="p-20 font-william w-3/5">
           <div className="text-4xl p-5">Some Words From Lauren</div>
           <div className="text-lg p-5">
-            <span style={{ whiteSpace: "pre" }}>Some more text </span>
-            <span style={{ whiteSpace: "pre" }}>
+            <span>Some more text </span>
+            <span>
               Additional research for this project was completed through
               fellowships from the American Antiquarian Society and the Library
               Company of Philadelphia.
@@ -24,7 +25,7 @@ export default function Index() {
           <div className="text-lg p-5">Read More -&gt;</div>
         </div>
       </div>
-      <Timeline />
+      <ClientOnly>{() => <Timeline />}</ClientOnly>
       <ChapterCardGrid />
     </div>
   );
