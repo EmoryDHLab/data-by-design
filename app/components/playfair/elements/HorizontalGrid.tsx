@@ -7,7 +7,7 @@ export default function HorizontalGrid(props) {
         x2="3"
         y2={props.yValue + 3}
         stroke="black"
-        opacity={props.opacity ? props.opacity : "0.4"}
+        opacity={props.opacity ?? "0.4"}
         strokeWidth="0.2"
       ></line>
       <text
@@ -17,7 +17,7 @@ export default function HorizontalGrid(props) {
         fontFamily="Arial"
         fontSize="1.5"
       >
-        {props.text ? props.text : props.yValue}
+        {props.text ?? props.yValue}
       </text>
     </g>
   )

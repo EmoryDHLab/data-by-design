@@ -1,4 +1,11 @@
-export default function VerticalGrid({ xValue, offset, opacity, text }) {
+interface Props {
+  xValue: float;
+  offset: number;
+  opacity: float;
+  text: string;
+}
+
+export default function VerticalGrid({ xValue, offset, opacity, text }: Props) {
   return (
     <g>
       <line
@@ -6,7 +13,7 @@ export default function VerticalGrid({ xValue, offset, opacity, text }) {
         y1="3"
         x2={xValue + offset}
         y2="47"
-        opacity={opacity?.toString() ? opacity : "0.4"}
+        opacity={opacity ?? "0.4"}
         stroke="black"
         strokeWidth="0.1"
       ></line>
@@ -16,8 +23,9 @@ export default function VerticalGrid({ xValue, offset, opacity, text }) {
         y={47 + offset - 1}
         fontFamily="Chancery Cursive"
         fontSize="3"
-        >{text ? text : xValue}</text
       >
+        {text ?? xValue}
+      </text>
     </g>
   )
 }

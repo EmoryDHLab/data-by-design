@@ -1,15 +1,27 @@
 import ChapterTitle from "~/components/ChapterTitle";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
-import Footnote from "~/components/Footnote";
+import InlineFootnote from "~/components/InlineFootnote";
 import DocumentViewer from "~/components/dubois/DocumentViewer";
 import { StudentChart } from "~/components/dubois/StudentChart";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/theme";
+import ImageCaption from "~/components/ImageCaption";
+import { duboisFootnotes } from "~/footnotes";
 
 export default function DuboisChapter() {
+  const [footnoteState, setFootnoteState] = useState<number>(0);
+
   return (
     <ChapterContext.Provider
-      value={{ backgroundColor: "duboisPrimary", accentColor: "duboisSecondary", primaryTextColor: "white" }}
+      value={{
+        backgroundColor: "duboisPrimary",
+        accentColor: "duboisSecondary",
+        footnoteTextColor: "duboisPrimary",
+        primaryTextColor: "white",
+        footnotes: duboisFootnotes,
+        footnoteState,
+        setFootnoteState,
+      }}
     >
       <ChapterTitle
         title="Between Data and Truth"
@@ -19,20 +31,8 @@ export default function DuboisChapter() {
         <p className="pt-16">
           October 4th, 1899, was the first day of the fall term at Atlanta
           University (now Clark Atlanta University), where W.E.B. Du Bois had
-          been teaching for the past two years&mdash;and a long two years they had
-          been.{" "}
-          <Footnote number="1">
-            As indicated in the{" "}
-            <cite>
-              Catalogue of the Officers and Students of Atlanta University,
-              1899-1900
-            </cite>
-            , available online at:{" "}
-            <a href="http://digitalcommons.auctr.edu/aucatalogs/31">
-              http://digitalcommons.auctr.edu/aucatalogs/31
-            </a>
-            .
-          </Footnote>
+          been teaching for the past two years&mdash;and a long two years they
+          had been. <InlineFootnote index={0}></InlineFootnote>
           <span className="font-normal">
             {" "}
             After relocating from Philadelphia to Atlanta in January 1897, Du
@@ -41,7 +41,7 @@ export default function DuboisChapter() {
             24th, 1899, the most profound of personal tragedies when the Du
             Bois’s two-year-old son, Burghardt, died after a brief illness.
           </span>
-          <Footnote number="2">
+          <InlineFootnote index={1}>
             The medical cause was diphtheria, although Du Bois and his wife
             always felt that the root cause of Burghardt’s death was racism.
             None of Atlanta’s “two or three” Black doctors had been available to
@@ -52,7 +52,7 @@ export default function DuboisChapter() {
             Atlanta, see David Levering Lewis,{" "}
             <cite>W.E.B. Du Bois: A Biography</cite> (New York: Henry Holt,
             2009): 152-176.
-          </Footnote>
+          </InlineFootnote>
           <span className="font-normal">
             {" "}
             But any small comfort that might have brought about by the start of
@@ -79,22 +79,11 @@ export default function DuboisChapter() {
             the show. While Murray tasked himself with assembling a set of books
             and pamphlets by Black writers to put on display, Du Bois saw his
             purview in more conceptual terms: to present “the history and
-            present condition of a large group of human beings”&mdash;namely, the
-            United States’s Black citizens&mdash;"in as systematic and compact a form
-            as possible.”
+            present condition of a large group of human beings”&mdash;namely,
+            the United States’s Black citizens&mdash;"in as systematic and
+            compact a form as possible.”
           </span>
-          <Footnote number="3">
-            W.E.B. Du Bois, “
-            <a
-              className="underline"
-              href="http://www.webdubois.org/dbANParis.html"
-            >
-              The American Negro in Paris
-            </a>
-            ,”
-            <cite>The American Monthly Review of Reviews</cite> 22.5 (November
-            1900), p. 576.
-          </Footnote>
+          <InlineFootnote index={2}></InlineFootnote>
           <span className="font-normal">
             {" "}
             This “systematic and compact form” was, of course, data
@@ -105,12 +94,7 @@ export default function DuboisChapter() {
           <span className="font-normal">
             , published just one year earlier.
           </span>
-          <Footnote number="4">
-            <cite>On The Philadelphia Negro</cite> as the antecedent to the
-            Paris Exposition charts, see Alexander Weheliye, “Diagrammatics as
-            Physiognomy: W.E.B. Du Bois’s Graphic Modernities,”{" "}
-            <cite>CR: The New Centennial Review</cite> 15.2 (2015): 23-58.
-          </Footnote>
+          <InlineFootnote index={3}></InlineFootnote>
         </p>
         <div className="flex flex-col items-center full-bleed py-16">
           <div>
@@ -169,24 +153,14 @@ export default function DuboisChapter() {
             visualization practitioners ever since, Du Bois appreciated the
             ability of the charts to convey trends and patterns “at a glance.”
           </span>
-          <Footnote number="5">
-            {" "}
-            Du Bois, “
-            <a
-              href="http://www.webdubois.org/dbANParis.html"
-              className="underline text-blue-500"
-            >
-              The American Negro in Paris
-            </a>
-            ,” p. 576.
-          </Footnote>
+          <InlineFootnote index={4}></InlineFootnote>
           <span className="font-normal">
             {" "}
             In this case, Du Bois sought to highlight the growth and progress of
             Black Americans in the years since emancipation. But Du Bois
             understood that data could not convey the full picture of this
-            progress&mdash;nor could it convey the full extent of the obstacles that
-            the nation’s Black citizens were required to overcome. Thus he
+            progress&mdash;nor could it convey the full extent of the obstacles
+            that the nation’s Black citizens were required to overcome. Thus he
             supplemented the charts with over 500 photographs that documented
             “typical” Black Americans at home, at school, and at work; as well
             as with three large manuscript volumes that compiled the complete
@@ -196,25 +170,7 @@ export default function DuboisChapter() {
             segregationist policies and laws of the present,” and which
             attempted to control and constrain all aspects of Black life.
           </span>
-          <Footnote number="6">
-            Du Bois, “
-            <a
-              href="http://www.webdubois.org/dbANParis.html"
-              className="underline"
-            >
-              The American Negro in Paris
-            </a>
-            ,” p. 577; Whitney Battle-Baptiste and Britt Rusert, “Introduction,”
-            in W.E.B.{" "}
-            <cite>Du Bois’s Data Portraits: VIsualizing Black America</cite>,
-            eds. Whitney Battle-Baptiste and Britt Rusert (New York: Princeton
-            Architectural Press, 2018), p. 19. For a sustained meditation on the
-            legacy of the Black Codes and their relation to contemporary digital
-            life, see the special issue of <cite>The Black Scholar</cite> on
-            “Black Code,” edited by Jessica Marie Johnson and Mark Anthony Neal,
-            and in particular, the introduction, “Wild Seed in the Machine,”{" "}
-            <cite>The Black Scholar</cite> 47.3 (2017): 1-2.
-          </Footnote>
+          <InlineFootnote index={5}></InlineFootnote>
           <span className="font-normal">
             {" "}
             Conceived at a time when Du Bois found himself increasingly
@@ -235,17 +191,7 @@ export default function DuboisChapter() {
             sets.
           </span>
 
-          <Footnote number="7">
-            The visualization designer Jason Forrest believes that there is
-            evidence of an additional chart, bringing the total to 64. See
-            “Discovering an Unknown Chart from W.E.B. Du Bois’s ‘The Exhibition
-            of American Negroes’,”
-            <cite>
-              {" "}
-              Nightingale: The Journal of the Data Visualization Society,{" "}
-            </cite>
-            January 1, 2019.
-          </Footnote>
+          <InlineFootnote index={6}></InlineFootnote>
 
           <span className="font-normal"> The first set, </span>
           <span className="font-normal italic">
@@ -339,10 +285,7 @@ export default function DuboisChapter() {
             indictment of the centrality of race and racism to modern American
             sociopolitical life,” as architectural historian Mabel O. Wilson
             explains.
-            <Footnote number="8">
-              Mabel O. Wilson, “The Cartography of W.E.B. Du Bois’s Color Line,”
-              in Battle-Baptiste and Rusert, p. 39.
-            </Footnote>
+            <InlineFootnote index={7}></InlineFootnote>
           </span>
           <span> But Du Bois mounts the same case through his charts. </span>
           <span className="font-normal">
@@ -359,28 +302,28 @@ export default function DuboisChapter() {
         <p className="pt-10">
           <span>
             While the first several charts in the series make use of familiar
-            visual forms&mdash;maps, bar charts, and line graphs&mdash;in order to introduce
-            the exhibition’s international viewership to the state of Georgia
-            and its significance as an object of study, the visual style shifts
-            to altogether new terrain once the focus on Georgia’s Black
-            residents has been established. In his comparative representation of
-            the places where Georgia’s Black citizens reside, for example, Du
-            Bois brings together aspects of the bar chart and the line chart
-            along with a new form of spiral graph in order to give animacy to
-            the presence of Black people in each of type of locale. In a later
-            chart, which documents the decrease in illiteracy rates in the years
-            between 1860 and 1900, Du Bois makes use of what graphic designer
-            Silas Munro describes as a “lattice-like arrangement,” in which an
-            otherwise standard bar is folded at a right angle in order to
-            further accentuate the decreasing rate of illiteracy. Du Bois
-            elaborates upon this technique in a later chart, which compares the
-            numbers of Black property owners, and the value of their properties,
-            in two Georgia cities. Another unique chart in this series, which
-            plots the “assessed value of household and kitchen furniture” owned
-            by Black Georgians, takes the standard bar chart and bends it into a
-            spiral, concentrating the viewer’s focus on the cumulative value of
-            the population’s material possessions in addition to its growth in
-            time.
+            visual forms&mdash;maps, bar charts, and line graphs&mdash;in order
+            to introduce the exhibition’s international viewership to the state
+            of Georgia and its significance as an object of study, the visual
+            style shifts to altogether new terrain once the focus on Georgia’s
+            Black residents has been established. In his comparative
+            representation of the places where Georgia’s Black citizens reside,
+            for example, Du Bois brings together aspects of the bar chart and
+            the line chart along with a new form of spiral graph in order to
+            give animacy to the presence of Black people in each of type of
+            locale. In a later chart, which documents the decrease in illiteracy
+            rates in the years between 1860 and 1900, Du Bois makes use of what
+            graphic designer Silas Munro describes as a “lattice-like
+            arrangement,” in which an otherwise standard bar is folded at a
+            right angle in order to further accentuate the decreasing rate of
+            illiteracy. Du Bois elaborates upon this technique in a later chart,
+            which compares the numbers of Black property owners, and the value
+            of their properties, in two Georgia cities. Another unique chart in
+            this series, which plots the “assessed value of household and
+            kitchen furniture” owned by Black Georgians, takes the standard bar
+            chart and bends it into a spiral, concentrating the viewer’s focus
+            on the cumulative value of the population’s material possessions in
+            addition to its growth in time.
           </span>
         </p>
         <div className="full-bleed flex flex-col items-center py-10">
@@ -429,6 +372,7 @@ export default function DuboisChapter() {
             famous today for its visual depiction of the closing of the American
             frontier, in its own time the atlas was motivated by a more academic
             goal: “popularizing and extending the study of statistics.”
+            <InlineFootnote index={8}></InlineFootnote>
           </span>
         </p>
         <p>
@@ -509,7 +453,7 @@ export default function DuboisChapter() {
           <span className="font-normal">
             , the 2018 volume that compiled the charts in print for the first
             time&mdash;bound as a dazzling, full-color book.
-            <Footnote number="10">See Battle-Baptiste and Rusert.</Footnote>
+            <InlineFootnote index={9}></InlineFootnote>
           </span>
           <span className="font-normal">
             {" "}
@@ -529,8 +473,8 @@ export default function DuboisChapter() {
             vitrines; the most significant of the charts, installed in ornate
             wooden frames; and alongside them, photographs: over 500 portraits
             of the nation’s Black citizens, pictured at school, at home, and at
-            work&mdash;in other words, in the activities that defined their everyday
-            lives.
+            work&mdash;in other words, in the activities that defined their
+            everyday lives.
           </span>
         </p>
         <div className="flex flex-col items-center middle-full">
@@ -567,13 +511,7 @@ export default function DuboisChapter() {
           <span className="font-normal">
             challenge “conventional American ideas,” although he does not
             specify what particular ideas he intends to challenge.
-            <Footnote number="11">
-              Du Bois, “
-              <a href="http://www.webdubois.org/dbANParis.html">
-                The American Negro in Paris
-              </a>
-              ,” p. 577.{" "}
-            </Footnote>
+            <InlineFootnote index={10}></InlineFootnote>
           </span>
           <span className="font-normal">
             {" "}
@@ -586,21 +524,7 @@ export default function DuboisChapter() {
             famously in{" "}
           </span>
           <span className="font-normal italic">The Souls of Black Folk.</span>
-          <Footnote number="12">
-            W.E.B. Du Bois, <cite>The Souls of Black Folk</cite> (New York:
-            Library of America, 1903), p. 8; quoted in Shawn Michelle Smith,{" "}
-            <cite>
-              Photography on the Color Line: W.E.B. Du Bois, Race, and Visual
-              Culture
-            </cite>{" "}
-            (Durham: Duke Univ. Press, 2004) p. 25. For more on the photographs,
-            see the Library of Congress,{" "}
-            <cite>
-              A Small Nation of People: W.E.B. Du Bois and African American
-              Portraits of Progress{" "}
-            </cite>
-            (New York: Amistad-HarperCollins, 2003).{" "}
-          </Footnote>
+          <InlineFootnote index={11}></InlineFootnote>
           <span className="font-normal">
             {" "}
             With the photos, which not only featured black citizens but were
@@ -608,13 +532,7 @@ export default function DuboisChapter() {
             white international audience a view of how Black American saw
             themselves.
           </span>
-          <Footnote number="13">
-            Historian of photography Deborah Willis identifies one of these
-            photographers as the prominent Black portraitist Thomas Askew.
-            Others remain unknown. See “The Sociologist’s Eye: W.E.B. Du Bois
-            and the Paris Exposition,” in <cite>A Small Nation of People</cite>,
-            pp. 51-78.
-          </Footnote>
+          <InlineFootnote index={12}></InlineFootnote>
         </p>
         <p>
           <span className="font-normal">
@@ -628,7 +546,7 @@ export default function DuboisChapter() {
             turn-of-the-century race relations, sociability, and even existence
             itself.”
           </span>
-          <Footnote number="14">Battle-Baptiste and Rusert, p. 15.</Footnote>
+          <InlineFootnote index={13}></InlineFootnote>
           <span className="font-normal"> In direct comparison to the </span>
           <span className="font-normal italic">Statistical Atlas</span>
           <span className="font-normal">
@@ -683,28 +601,23 @@ export default function DuboisChapter() {
             American Negro and his plight, and by measurement and comparison and
             research, work up to any valid generalization which I could.”
           </span>
-          <Footnote number="15">
-            W.E.B. Du Bois,{" "}
-            <cite>
-              Dusk of Dawn: An Essay Toward an Autobiography of a Race Concept
-            </cite>
-            , ed. Irene Diggs (New Brunswick NJ: Transaction, 1984), p. 51.
-          </Footnote>
+          <InlineFootnote index={14}></InlineFootnote>
           <span>
             {" "}
             Here we see the strength of Du Bois’s belief in the power of
-            “facts”&mdash;the more facts the better&mdash;when they could be aggregated and
-            analyzed in the service of generalized claims.{" "}
+            “facts”&mdash;the more facts the better&mdash;when they could be
+            aggregated and analyzed in the service of generalized claims.{" "}
           </span>
         </p>
         <p>
           <span className="font-normal">
-            But after only a year in the Deep South&mdash;and just a few months before
-            he began to assemble the materials for Paris Exposition&mdash;Du Bois
-            experienced what can only be described as an intellectual epiphany,
-            one brought about not by any new sociological research but instead
-            by his own first-hand evidence of how white supremacy overdetermined
-            any and all of the work he might do.{" "}
+            But after only a year in the Deep South&mdash;and just a few months
+            before he began to assemble the materials for Paris
+            Exposition&mdash;Du Bois experienced what can only be described as
+            an intellectual epiphany, one brought about not by any new
+            sociological research but instead by his own first-hand evidence of
+            how white supremacy overdetermined any and all of the work he might
+            do.{" "}
           </span>
           <span>In </span>
           <span>Dusk of Dawn</span>
@@ -717,10 +630,7 @@ export default function DuboisChapter() {
             across this plan which I had as a scientist, a red ray which could
             not be ignored.”
           </span>
-          <Footnote number="16">
-            Du Bois,
-            <cite> Dusk of Dawn </cite>p. 67.
-          </Footnote>
+          <InlineFootnote index={15}></InlineFootnote>
         </p>
         <p>
           <span>
@@ -739,27 +649,14 @@ export default function DuboisChapter() {
           </span>
           <span>Atlanta Constitution</span>
           <span>, the leading newspaper of the South.</span>
-          <Footnote number="17">
-            Du Bois,
-            <cite> Dusk of Dawn </cite>p. 67.
-          </Footnote>
+          <InlineFootnote index={16}></InlineFootnote>
           <span>
             {" "}
             But while walking from the Atlanta University campus to the
-            newspaper office&mdash;he planned to deliver the statement in person&mdash;Du
-            Bois learned of a gruesome new turn of events.
+            newspaper office&mdash;he planned to deliver the statement in
+            person&mdash;Du Bois learned of a gruesome new turn of events.
           </span>
-          <Footnote number="18">
-            In keeping with the approach of Saidiya Hartman as outlined in
-            <cite>
-              {" "}
-              p. 67. Scenes of Subjection: Terror, Slavery, and Self-Making in
-              Nineteenth-Century America{" "}
-            </cite>
-            (New York: Oxford Univ. Press, 1997), I elect not to restage the
-            violence of this horrific act. To read Du Bois’s account, see
-            <cite> Dusk of Dawn </cite>p. 67.
-          </Footnote>
+          <InlineFootnote index={17}></InlineFootnote>
           <span>
             {" "}
             He turned around and went home, his statement never to see the light
@@ -770,8 +667,8 @@ export default function DuboisChapter() {
           <span>
             While Du Bois’s desire to publish a statement on the “facts” of the
             case was extinguished at that point, he continued to
-            contemplate&mdash;deeply&mdash;the larger function of his sociological work. As
-            he narrates in{" "}
+            contemplate&mdash;deeply&mdash;the larger function of his
+            sociological work. As he narrates in{" "}
           </span>
           <span>Dusk of Dawn:</span>
           <span></span>
@@ -812,9 +709,9 @@ export default function DuboisChapter() {
             charge: not an emphasis on any particular methodology, but instead a
             broader attempt to describe “the truth.” Thus when Du Bois turned to
             the Paris Exhibition in several months’ time, it was this
-            “truth”&mdash;the experience and effects of living within, and continually
-            resisting, a racist regime&mdash;that Du Bois sought, through the charts
-            and
+            “truth”&mdash;the experience and effects of living within, and
+            continually resisting, a racist regime&mdash;that Du Bois sought,
+            through the charts and
           </span>
           <span> </span>
           <span>the photographs together, to put on public display.</span>
@@ -848,15 +745,15 @@ export default function DuboisChapter() {
         <p>
           <span className="font-normal">
             If one major purpose of the Paris Exposition was to illustrate the
-            accomplishments&mdash;and, therefore, the requisite tenacity&mdash;of Black
-            Americans as a group, a second equally major purpose was to
-            illustrate the accomplishments of a much smaller group: the students
-            of Atlanta University. These students were pictured in several of
-            photographs included in the exhibition, along with students from
-            other Black universities and industrial schools; but their talents
-            and potential were most visible in the second series of charts,
-            which were credited not to Du Bois but to “Negro students under the
-            direction of Atlanta University.”
+            accomplishments&mdash;and, therefore, the requisite
+            tenacity&mdash;of Black Americans as a group, a second equally major
+            purpose was to illustrate the accomplishments of a much smaller
+            group: the students of Atlanta University. These students were
+            pictured in several of photographs included in the exhibition, along
+            with students from other Black universities and industrial schools;
+            but their talents and potential were most visible in the second
+            series of charts, which were credited not to Du Bois but to “Negro
+            students under the direction of Atlanta University.”
           </span>
         </p>
         <p>
@@ -925,14 +822,11 @@ export default function DuboisChapter() {
           <span className="font-normal">
             {" "}
             for May 1900, which included an article on the exposition,
-            emphasizes how the work “was done entirely by Negroes&mdash;Dr. Du Bois
-            and his assistants, most of whom are Atlanta University graduates.”
+            emphasizes how the work “was done entirely by Negroes&mdash;Dr. Du
+            Bois and his assistants, most of whom are Atlanta University
+            graduates.”
           </span>
-          <Footnote number="19">
-            “The Georgia Negro Exhibit for the Paris Exposition,”
-            <cite> The Bulletin of Atlanta University, </cite>
-            May 1900, p. 2.
-          </Footnote>
+          <InlineFootnote index={18}></InlineFootnote>
           <span className="font-normal">
             {" "}
             Du Bois himself provides only slightly more clarity, recalling in
@@ -941,17 +835,7 @@ export default function DuboisChapter() {
             charts,” resulting in the “most interesting set of drawings” that
             were displayed in Paris.
           </span>
-          <Footnote number="20">
-            W.E.B. Du Bois,
-            <cite>
-              {" "}
-              A Soliloquy on viewing my life from the last decade of its first
-              century,{" "}
-            </cite>
-            ca. 1961. W.E.B. Du Bois Papers (MS 312). Special Collections and
-            University Archives, University of Massachusetts Amherst Libraries.
-            p. 18.
-          </Footnote>
+          <InlineFootnote index={19}></InlineFootnote>
           <span className="font-normal">
             {" "}
             And while Du Bois goes on to describe the contents of the charts as
@@ -978,16 +862,7 @@ export default function DuboisChapter() {
             confirms this role, listing Rogers’s occupation as “Work on Paris
             Exhibit.”
           </span>
-          <Footnote number="21">
-            “Atlanta University Exhibit At Paris,”’
-            <cite>The Atlanta Journal,</cite> February 22, 1900. Archives
-            Research Center, Robert W. Woodruff Library, Atlanta University
-            Center, Box 23, folder 6; “Catalogue of the Officers and Students of
-            Atlanta University, 1899-1900,”
-            <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives
-            Research Center, Robert W. Woodruff Library, Atlanta University
-            Center.
-          </Footnote>
+          <InlineFootnote index={20}></InlineFootnote>
           <span className="font-normal">
             {" "}
             (Rogers had graduated the previous year.) But “based on the volume
@@ -996,16 +871,7 @@ export default function DuboisChapter() {
             confirms, “it seems implausible that Rogers and Du Bois worked alone
             to complete the project.”
           </span>
-          <Footnote number="22">
-            “Atlanta University Exhibit At Paris,”’
-            <cite>The Atlanta Journal,</cite> February 22, 1900. Archives
-            Research Center, Robert W. Woodruff Library, Atlanta University
-            Center, Box 23, folder 6; “Catalogue of the Officers and Students of
-            Atlanta University, 1899-1900,”
-            <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives
-            Research Center, Robert W. Woodruff Library, Atlanta University
-            Center.
-          </Footnote>
+          <InlineFootnote index={21}></InlineFootnote>
           <span className="font-normal">
             {" "}
             The fact that the first set of charts are more sophisticated in
@@ -1029,9 +895,9 @@ export default function DuboisChapter() {
               <span>
                 Above: The page in the Atlanta University Bulletin that records
                 the current occupations of AU alumni. Also note the number of
-                alumni working as teachers&mdash;Rogers’s eventual employ as well.
-                Image courtesy of the Archives Research Center, Digital Commons
-                @ Robert W. Woodruff Library, Atlanta University Center
+                alumni working as teachers&mdash;Rogers’s eventual employ as
+                well. Image courtesy of the Archives Research Center, Digital
+                Commons @ Robert W. Woodruff Library, Atlanta University Center
               </span>
               <span>.</span>
             </p>
@@ -1051,15 +917,7 @@ export default function DuboisChapter() {
             as sociologist Aldon Morris explains, recent graduates of HBCUs
             across the nation, and his own graduate and undergraduate students.
           </span>
-          <Footnote number="23">
-            Aldon Morris,
-            <cite>
-              {" "}
-              The Scholar Denied: W.E.B. Du Bois and the Birth of Modern
-              Sociology{" "}
-            </cite>
-            (Oakland: Univ. of California Press, 2015), p. 71.
-          </Footnote>
+          <InlineFootnote index={22}></InlineFootnote>
           <span className="font-normal">
             {" "}
             Their work together became the basis for what Morris names the Du
@@ -1077,10 +935,7 @@ export default function DuboisChapter() {
             Negro.”
           </span>
           <span className="font-normal"> </span>
-          <Footnote number="24">
-            “Catalogue of the Officers and Students of Atlanta University,
-            1899-1900,” p. 14.
-          </Footnote>
+          <InlineFootnote index={23}></InlineFootnote>
           <span className="font-normal">
             {" "}
             While there is minimal evidence as to the specific research tasks
@@ -1090,16 +945,7 @@ export default function DuboisChapter() {
             sites for the data collection required to produce the annual
             reports.
           </span>
-          <Footnote number="25">
-            In the report published in advance of the 1900 Atlanta Conference,
-            on the life trajectories and achievements of college-educated Black
-            citizens, Du Bois describes his “general method” of distributing
-            surveys to “about fifty” “experienced correspondents throughout the
-            South,” drawing from a network of “graduates of Atlanta, Fisk, and
-            other institutions.”
-            <cite> See The College-Bred Negro, ed. W.E.B. Du Bois </cite>
-            (Atlanta: Atlanta Univ. Press, 1900), p. 10.
-          </Footnote>
+          <InlineFootnote index={24}></InlineFootnote>
         </p>
         <p>
           <span className="font-normal">
@@ -1126,20 +972,20 @@ export default function DuboisChapter() {
           <span>
             The charts that Du Bois and his students together created for the
             Paris Exposition demonstrate how data visualization can serve as
-            witness and as testimony: documenting the existing conditions&mdash;and
-            even the accomplishments&mdash;of a group that would otherwise go
-            overlooked. They also show how visualization can be used to make
-            arguments, either on their own through choices about what data to
-            visualize and how to visualize it; or through comparison to other
-            datasets or to other data visualizations. At the same time, the
-            arguments mounted through visualizations of data cannot stand on
-            their own; they must be accompanied by additional forms of
-            information and methods of presentation, as well as the broader
-            context in which they are intended to intervene. Du Bois understood
-            these things as well, as evidenced through his decision to display
-            the charts alongside the photographs at the Paris Exposition, as
-            well as through his writing throughout his life about the uses and
-            limits of data.
+            witness and as testimony: documenting the existing
+            conditions&mdash;and even the accomplishments&mdash;of a group that
+            would otherwise go overlooked. They also show how visualization can
+            be used to make arguments, either on their own through choices about
+            what data to visualize and how to visualize it; or through
+            comparison to other datasets or to other data visualizations. At the
+            same time, the arguments mounted through visualizations of data
+            cannot stand on their own; they must be accompanied by additional
+            forms of information and methods of presentation, as well as the
+            broader context in which they are intended to intervene. Du Bois
+            understood these things as well, as evidenced through his decision
+            to display the charts alongside the photographs at the Paris
+            Exposition, as well as through his writing throughout his life about
+            the uses and limits of data.
           </span>
         </p>
         <p>
@@ -1154,52 +1000,29 @@ export default function DuboisChapter() {
             designer Mona Chalabi discovered when she created Du Bois’s charts
             with contemporary data.
           </span>
-          <Footnote number="26">
-            Mona Chalabi, “W.E.B. Du Bois: Retracing his attempt to challenge
-            racism with data,”
-            <cite> The Guardian, </cite>
-            February 14, 2017,
-            https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs
-          </Footnote>
+          <InlineFootnote index={25}></InlineFootnote>
           <span>
             {" "}
             The methods of data collection employed by Du Bois, focused as they
             were on the data that others did not see as important&mdash;or,
-            alternately, intentionally sought to ignore&mdash;similarly continue to
-            inspire artists and activists alike to turn their critical eye to
+            alternately, intentionally sought to ignore&mdash;similarly continue
+            to inspire artists and activists alike to turn their critical eye to
             the racism that overdetermines which data are collected and which
             are not, as the artist and educator Mimi Onuoha explores in her
             multimedia installation, “In Absentia.”
           </span>
-          <Footnote number="27">
-            Documentation of the installation is available on the artist’s
-            website,
-            <cite> Mimi Onuoha, </cite>
-            “In Absentia” (2019), https://mimionuoha.com/in-absentia, accessed
-            February 21, 2021.
-          </Footnote>
+          <InlineFootnote index={26}></InlineFootnote>
         </p>
         <p>
           <span>
             As scholars and activists turn, once again, to questions of how data
             can be enlisted as “protest,” “accountability,” and “collective
             action,” as the group Data for Black Lives aims to do, Du Bois again
-            emerges as a key antecedent&mdash;as much for how he understood how data
-            and data visualization is complicit in holding up the structures of
-            white supremacy is it can be used to dismantle them.
+            emerges as a key antecedent&mdash;as much for how he understood how
+            data and data visualization is complicit in holding up the
+            structures of white supremacy is it can be used to dismantle them.
           </span>
-          <Footnote number="28">
-            This mission is stated on the landing page of the group’s website.
-            See “Data for Black Lives,” https://d4bl.org/, accessed February 21,
-            2021. The scholar Ruha Benjamin has also cited Du Bois as a key
-            antecedent for her work. See,
-            <cite>
-              {" "}
-              for example, Race After Technology: Abolitionist Tools for the New
-              Jim Code{" "}
-            </cite>
-            (New York: Polity, 2020).
-          </Footnote>
+          <InlineFootnote index={27}></InlineFootnote>
           <span>
             {" "}
             The challenge as Du Bois understood it, and as these artists,
@@ -1208,17 +1031,7 @@ export default function DuboisChapter() {
             same time: how data has been used as a tool of oppression, and at
             the same time how it can be wielded back.
           </span>
-          <Footnote number="29">
-            For additional examples of how data can be wielded back against
-            inequality and oppression, see Lauren F. Klein and Miriam Posner,
-            “Data,” in
-            <cite> Keywords for American Cultural Studies, </cite>
-            3rd ed., eds. Bruce Burgett and Glenn Hendler (New York: New York
-            University Press, 2000) : 82-5; and Catherine D’Ignazio and Lauren
-            F. Klein,
-            <cite> Data Feminism </cite>
-            (MIT Press, 2020).
-          </Footnote>
+          <InlineFootnote index={28}></InlineFootnote>
         </p>
       </div>
       <Footer backgroundColor="bg-duboisPrimary" textColor="text-white" />

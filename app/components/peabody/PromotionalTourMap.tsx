@@ -1,6 +1,7 @@
 import { classNames } from "~/utils";
 import { useContext } from "react";
 import { ChapterContext } from "~/theme";
+import ImageCaption from "~/components/ImageCaption";
 
 const tourLocations = {
   Rochester: {
@@ -34,11 +35,11 @@ export default function PromotionalTourMap() {
           className={classNames("transition-transform", transformStyles)}
         />
       </div>
-      <div className="text-lg text-center mt-10 w-2/3 font-dubois max-w-[318px]">
+      <ImageCaption>
         The range of Peabody's promotional tour, as plotted on an 1850 rail map
         of the United States. Image courtesy of the Library of Congress,
         Geography and Map Division.
-      </div>
+      </ImageCaption>
     </div>
   );
 }

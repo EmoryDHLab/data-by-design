@@ -6,10 +6,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 interface Props {
   children: ReactNodeLike;
   id: number;
-  update(): number;
+  setProgress: React.Dispatch<React.SetStateAction<number>>;
+  isLast: boolean;
 }
 
-export default function Content({ children, id, update }: Props) {
+export default function ScrollytellContent({ children, id, setProgress, isLast }: Props) {
   const trigger = useRef();
 
   useEffect(() => {
@@ -19,18 +20,22 @@ export default function Content({ children, id, update }: Props) {
       start: "top 90%",
       end: "top 10%",
       markers: false, // set to true for debugging
-      onUpdate: (({progress}) => { update(progress + id)}),
+      onUpdate: (({progress}) => { setProgress(progress + id)}),
       preventOverlaps: true,
-      id
+      id,
     });
 
     return () => {
       st.kill();
     }
-  }, [trigger, id, update]);
+  }, [trigger, id, setProgress]);
 
   return (
-    <p ref={trigger} className="text-white text-2xl content-center" style={{height: id === 9 ? "auto" : "80vh"}}>
+    <p
+      ref={trigger}
+      className="text-white text-2xl content-center"
+      style={{ height: isLast ? "50vh" : "80vh" }}
+    >
       {children}
     </p>
   )
