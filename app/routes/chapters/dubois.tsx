@@ -9,6 +9,8 @@ import ImageCaption from "~/components/ImageCaption";
 import { duboisFootnotes } from "~/footnotes";
 
 export default function DuboisChapter() {
+  const [footnoteState, setFootnoteState] = useState<number>(0);
+
   return (
     <ChapterContext.Provider
       value={{
@@ -17,6 +19,8 @@ export default function DuboisChapter() {
         footnoteTextColor: "duboisPrimary",
         primaryTextColor: "white",
         footnotes: duboisFootnotes,
+        footnoteState,
+        setFootnoteState,
       }}
     >
       <ChapterTitle

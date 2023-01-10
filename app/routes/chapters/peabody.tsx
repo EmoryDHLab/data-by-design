@@ -18,6 +18,8 @@ import { peabodyFootnotes } from "~/footnotes";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
+  const [footnoteState, setFootnoteState] = useState<number>(0);
+
   return (
     <ChapterContext.Provider
       value={{
@@ -28,6 +30,8 @@ export default function PeabodyPage() {
         footnotes: peabodyFootnotes,
         hoverState,
         setHoverState,
+        footnoteState,
+        setFootnoteState,
       }}
     >
       <ChapterTitle
