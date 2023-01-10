@@ -43,9 +43,17 @@ const FOUR_POLYGONS = [
   "15, 30, 30, 30, 30, 0",
 ];
 
+const THREE_POLYGONS_SPLIT = [
+  "0, 0 30, 0 15, 15",
+  "0, 0 0, 30 15, 15",
+  "15, 15 30, 0 30, 30",
+  "15, 15 0, 30 30, 30",
+];
+
 export const POLYGONS = [
   undefined,
   TWO_POLYGONS,
   THREE_POLYGONS,
   FOUR_POLYGONS,
+  THREE_POLYGONS_SPLIT,
 ];

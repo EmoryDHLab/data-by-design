@@ -14,8 +14,8 @@ export default function PeabodyTimelineView() {
     HighlightedElement | undefined
   >(undefined);
   const [activeYearData, setActiveYearData] = useState({
-    squareColors: peabody1500SquareColors,
-    year: 1500,
+    squareColors: peabody1700SquareColors,
+    year: 1700,
   });
   return (
     <div className="w-full bg-black">
@@ -131,7 +131,7 @@ export default function PeabodyTimelineView() {
                   fontSize="4"
                   fontVariant="small-caps"
                 >
-                  {1600 + i}
+                  {activeYearData.year + i}
                 </text>
               )}
             </g>

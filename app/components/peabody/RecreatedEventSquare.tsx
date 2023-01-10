@@ -21,8 +21,6 @@ export default function RecreatedEventSquare({
   index,
   highlightedElement,
   setHighlightedElement,
-  handleMouseEnter,
-  handleMouseLeave,
   eventSquareColors,
 }: Props) {
   if (eventSquareColors && eventSquareColors.length > 1) {
@@ -33,8 +31,6 @@ export default function RecreatedEventSquare({
         height="30"
         x={getEventXFromIndex(index)}
         y={getEventYFromIndex(index)}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
         viewBox="0 0 30 30"
       >
         {polygons.map((p, i) => {

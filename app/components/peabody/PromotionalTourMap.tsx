@@ -4,13 +4,13 @@ import { ChapterContext } from "~/theme";
 
 const tourLocations = {
   Rochester: {
-    mapStyles: "scale-[2.56] -translate-x-[22rem] translate-y-[17.9rem]",
+    mapStyles: "scale-[2.56] -translate-x-[14.25rem] translate-y-[11.5rem]",
   },
   Louisville: {
     mapStyles: "scale-[3] translate-x-[4rem] -translate-y-[3rem]",
   },
   Richmond: {
-    mapStyles: "scale-[3.3] -translate-x-[14rem] -translate-y-[2rem]",
+    mapStyles: "scale-[3.3] -translate-x-[9rem] -translate-y-[1rem]",
   },
 };
 
