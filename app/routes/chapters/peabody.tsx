@@ -12,12 +12,10 @@ import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import { useState } from "react";
 import HoverText from "~/components/HoverText";
 import HoverZoomPeabodySquare from "~/components/peabody/HoverZoomPeabodySquare";
-import OverlaidPeabodySquare from "~/components/peabody/OverlaidPeabodySquare";
 import PeabodyTimelineView from "~/components/peabody/PeabodyTimelineView";
 import ImageCaption from "~/components/ImageCaption";
 import InlineFootnote from "~/components/InlineFootnote";
 import { peabodyFootnotes } from "~/footnotes";
-
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);

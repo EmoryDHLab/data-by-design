@@ -14,7 +14,7 @@ interface Props {
   setHighlightedElement: Dispatch<
     SetStateAction<HighlightedElement | undefined>
   >;
-  highlightedElement?: number;
+  highlightedElement?: HighlightedElement;
   yearSquareColors: YearSquare | null;
 }
 

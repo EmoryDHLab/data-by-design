@@ -3,7 +3,7 @@ import ChapterCard from "~/components/ChapterCard";
 export default function ChapterCardGrid() {
   return (
     <>
-      <h3 className="text-white font-william font-bold text-center text-3xl mb-7">
+      <h3 className="text-white font-william font-bold text-center text-3xl mb-7 pt-5">
         CHAPTERS
       </h3>
       <div className="grid grid-cols-2 grid-rows-3">

@@ -2,6 +2,7 @@ import imageData from "~/data/timelineImages.json";
 import { useWindowSize } from "~/hooks";
 import type { Dispatch, MouseEvent, SetStateAction } from "react";
 import { useState, useEffect } from "react";
+import { Image } from "~/components/home/timelineUtils";
 
 interface TimelineState {
   imageSliceStart: number;
@@ -14,11 +15,15 @@ const PART_ONE_START = 40;
 const PART_ONE_HEIGHT = 600;
 
 interface Props {
-  setSelectedImage: Dispatch<SetStateAction<typeof imageData[0] | undefined>>;
+  selectedImage: Image;
+  setSelectedImage: Dispatch<SetStateAction<Image>>;
 }
 
 // Timeline of draggable documents arranged randomly
-export default function DraggableTimeline({ setSelectedImage }: Props) {
+export default function DraggableTimeline({
+  selectedImage,
+  setSelectedImage,
+}: Props) {
   const windowSize = useWindowSize();
   const [{ imageSliceStart, imagePositions, draggedImage }, setState] =
     useState<TimelineState>(() => ({
@@ -69,23 +74,29 @@ export default function DraggableTimeline({ setSelectedImage }: Props) {
     >
       {imageData
         .slice(imageSliceStart, imageSliceStart + IMAGE_COUNT)
-        .map((img, index) => (
-          <g key={img.FILE_NAME}>
-            <image
-              style={{ cursor: "pointer" }}
-              onClick={() => setSelectedImage(img)}
-              href={`/images/${img.CHAPTER}/${img.FILE_NAME}`}
-              width={150}
-              transform={getTransform(index)}
-              onMouseDown={() => {
-                setState((state) => ({
-                  ...state,
-                  draggedImage: { index },
-                }));
-              }}
-            />
-          </g>
-        ))}
+        .map((img, index) => {
+          const isSelected =
+            img.CHAPTER === selectedImage.CHAPTER &&
+            img.FILE_NAME === selectedImage.FILE_NAME;
+          return (
+            <g key={img.FILE_NAME}>
+              <image
+                className={isSelected ? "border-4 border-red-500 rounded" : ""}
+                style={{ cursor: "pointer" }}
+                onClick={() => setSelectedImage(img)}
+                href={`/images/${img.CHAPTER}/${img.FILE_NAME}`}
+                width={150}
+                transform={getTransform(index)}
+                onMouseDown={() => {
+                  setState((state) => ({
+                    ...state,
+                    draggedImage: { index },
+                  }));
+                }}
+              />
+            </g>
+          );
+        })}
     </svg>
   );
 }

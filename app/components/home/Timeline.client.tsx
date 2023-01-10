@@ -11,7 +11,7 @@ enum TimelineType {
 }
 
 export default function Timeline() {
-  const [timelineType, setTimelineType] = useState(TimelineType.Ordered);
+  const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
   const [selectedImage, setSelectedImage] = useState<Image>(
     () => imageData[Math.floor(Math.random() * imageData.length)]
   );
@@ -42,9 +42,15 @@ export default function Timeline() {
         </button>
       </div>
       {timelineType === TimelineType.Draggable ? (
-        <DraggableTimeline setSelectedImage={setSelectedImage} />
+        <DraggableTimeline
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
+        />
       ) : (
-        <OrderedTimeline setSelectedImage={setSelectedImage} />
+        <OrderedTimeline
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
+        />
       )}
       <div className="bg-brooksSecondary flex p-10">
         <img
