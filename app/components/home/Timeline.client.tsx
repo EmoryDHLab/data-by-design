@@ -59,11 +59,15 @@ export default function Timeline() {
         />
         <div className="p-20 font-dubois w-3/5 text-black text-left">
           <div className="text-3xl p-5">
-            {selectedImage.TITLE} by {selectedImage.ARTIST} (
-            {selectedImage.YEAR})
+            {selectedImage.TITLE}
+            <br></br>
+            <div className="font-italic text-xl">
+              by {selectedImage.ARTIST} ({selectedImage.YEAR})
+            </div>
           </div>
           <div className="font-sans text-lg p-5">
             <span>{selectedImage.CREDIT} </span>
+            <br></br>
             <span>{selectedImage.DIGITIZED}</span>
           </div>
           <Link
