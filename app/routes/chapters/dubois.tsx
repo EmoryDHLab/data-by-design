@@ -7,6 +7,8 @@ import Footer from "~/components/Footer";
 import { ChapterContext } from "~/theme";
 import { duboisFootnotes } from "~/footnotes";
 import { useState } from "react";
+import CenteredLayout from "~/components/layout/CenteredLayout";
+import FootnotesList from "~/components/FootnotesList";
 
 export default function DuboisChapter() {
   const [footnoteState, setFootnoteState] = useState<number>(0);
@@ -1034,6 +1036,9 @@ export default function DuboisChapter() {
           <InlineFootnote index={28}></InlineFootnote>
         </p>
       </div>
+      <CenteredLayout>
+        <FootnotesList footnotes={duboisFootnotes} />
+      </CenteredLayout>
       <Footer backgroundColor="bg-duboisPrimary" textColor="text-white" />
     </ChapterContext.Provider>
   );

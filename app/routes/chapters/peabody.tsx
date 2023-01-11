@@ -18,6 +18,7 @@ import InlineFootnote from "~/components/InlineFootnote";
 import { peabodyFootnotes } from "~/footnotes";
 import { EditablePeabodySquare } from "~/components/peabody/EditablePeabodySquare";
 import PeabodySandbox from "~/components/peabody/PeabodySandbox";
+import FootnotesList from "~/components/FootnotesList";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -1391,6 +1392,9 @@ export default function PeabodyPage() {
         </p>
       </CenteredLayout>
       <PeabodySandbox />
+      <CenteredLayout>
+        <FootnotesList footnotes={peabodyFootnotes} />
+      </CenteredLayout>
       <Footer />
     </ChapterContext.Provider>
   );
