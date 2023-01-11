@@ -1,6 +1,6 @@
 export default function HomeTitle() {
   return (
-    <div className="grid bg-black text-white grid-cols-14 grid-rows-30 font-william pt-5">
+    <div className="grid bg-black text-white grid-cols-14 grid-rows-30 font-dubois pt-5">
       <div className="col-start-1 col-end-11 grid grid-cols-5 grid-rows-5">
         <div className="font-bold text-frontTitle col-start-1 col-span-4 row-span-3 z-10 leading-veryTight pl-24">
           <span>DATA BY</span> <span className="ml-32">DESIGN</span>

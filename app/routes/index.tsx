@@ -20,14 +20,15 @@ export default function Index() {
             <img className="p-20 w-full" src="/images/ch4-5.webp" />
           </div>
 
-          <div className="p-20 font-william w-3/5">
-            <div className="text-4xl p-5">Some Words From Lauren</div>
-            <div className="text-lg p-5">
-              <span>Some more text </span>
+          <div className="p-20 w-3/5">
+            <div className="font-dubois text-4xl p-5">
+              Some Words From Lauren
+            </div>
+            <div className="font-sans text-lg p-5">
               <span>
-                Additional research for this project was completed through
-                fellowships from the American Antiquarian Society and the
-                Library Company of Philadelphia.
+                Some more text Additional research for this project was
+                completed through fellowships from the American Antiquarian
+                Society and the Library Company of Philadelphia.
               </span>
             </div>
             <div className="text-lg p-5">Read More -&gt;</div>

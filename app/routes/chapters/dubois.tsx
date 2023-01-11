@@ -105,7 +105,7 @@ export default function DuboisChapter() {
               width="100%"
             />
           </div>
-          <div className="font-william text-center mt-10 w-5/6">
+          <div className="font-dubois text-center mt-10 w-5/6">
             <p>
               <span
                 className="font-normal"
@@ -262,7 +262,7 @@ export default function DuboisChapter() {
               loading="lazy"
               width="100%"
             />
-            <div className="font-william text-center mt-10 w-5/6">
+            <div className="font-dubois text-center mt-10 w-5/6">
               <p>
                 <span>Above: The introductory image of </span>
                 <cite>The Georgia Negro: A Social Study, </cite>
@@ -674,7 +674,7 @@ export default function DuboisChapter() {
           <span></span>
         </p>
         <div className="md:my-16 middle-text flex flex-col">
-          <div className="font-william">
+          <div className="font-dubois">
             <p>
               <span>
                 “Two considerations thereafter broke in upon my work and

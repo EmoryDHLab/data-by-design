@@ -9,7 +9,7 @@ export default function Footer() {
         className={`grid grid-cols-12 gap-x-6 p-10 pt-20 bg-${backgroundColor} text-${primaryTextColor}`}
       >
         <div className="col-start-3 col-end-6 space-y-20">
-          <span className="font-william text-3xl">Data By Design</span>
+          <span className="font-dubois text-3xl">Data By Design</span>
           <div className="text-base">
             Designed and developed by the Georgia Tech / Emory Digital
             Humanities Lab in collaboration with Polymode.
@@ -26,7 +26,7 @@ export default function Footer() {
             Company of Philadelphia.
           </div>
         </div>
-        <div className="font-william text-lg col-start-9 col-end-12">
+        <div className="font-dubois text-lg col-start-9 col-end-12">
           <p className="text-2xl">Notebook</p>
           <br />
           Email <br />

@@ -1068,7 +1068,7 @@ export default function PeabodyPage() {
             continues:
           </span>
         </p>
-        <div className="font-william">
+        <div className="font-dubois">
           <p>
             <span>
               Every school must have a mural chart—&amp; there is but one way of

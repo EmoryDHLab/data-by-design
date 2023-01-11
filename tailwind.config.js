@@ -24,7 +24,6 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        william: ["VTC Du Bois", "serif"],
         dubois: ["VTC Du Bois", "serif"],
         duboisLight: ["VTC Du Bois Light", "serif"],
         duboisWide: ["VTC Du Bois Wide", "serif"],

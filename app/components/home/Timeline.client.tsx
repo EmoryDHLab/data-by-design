@@ -17,7 +17,7 @@ export default function Timeline() {
   );
 
   return (
-    <div className="text-white text-center font-william text-3xl py-4">
+    <div className="text-white text-center font-dubois text-3xl py-4">
       <h1>TIMELINE</h1>
       <div className="flex justify-center">
         <button onClick={() => setTimelineType(TimelineType.Draggable)}>
@@ -57,12 +57,12 @@ export default function Timeline() {
           className="w-2/5"
           src={`/images/${selectedImage.CHAPTER}/${selectedImage.FILE_NAME}`}
         />
-        <div className="p-20 font-william w-3/5 text-black text-left">
-          <div className="text-4xl p-5">
+        <div className="p-20 font-dubois w-3/5 text-black text-left">
+          <div className="text-3xl p-5">
             {selectedImage.TITLE} by {selectedImage.ARTIST} (
             {selectedImage.YEAR})
           </div>
-          <div className="text-lg p-5">
+          <div className="font-sans text-lg p-5">
             <span>{selectedImage.CREDIT} </span>
             <span>{selectedImage.DIGITIZED}</span>
           </div>

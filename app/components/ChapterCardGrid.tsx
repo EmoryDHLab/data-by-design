@@ -3,7 +3,7 @@ import ChapterCard from "~/components/ChapterCard";
 export default function ChapterCardGrid() {
   return (
     <>
-      <h3 className="text-white font-william font-bold text-center text-3xl mb-7 pt-5">
+      <h3 className="text-white font-dubois font-bold text-center text-3xl mb-7 pt-5">
         CHAPTERS
       </h3>
       <div className="grid grid-cols-2 grid-rows-3">
@@ -14,7 +14,7 @@ export default function ChapterCardGrid() {
           subtitle="The Brooks / Diagram of a Slave Ship"
         >
           Before there are data, there are people. People who offer up their
-          lives as data -- or whose lives become data without consent.
+          lives as data — or whose lives become data without consent.
         </ChapterCard>
         <ChapterCard
           to="/chapters/playfair"
@@ -23,7 +23,7 @@ export default function ChapterCardGrid() {
           subtitle="William Playfair's Time-Series Charts"
         >
           Data visualization has never been neutral or objective. There is a
-          meaning -- and an argument -- conveyed through each design.
+          meaning — and an argument — conveyed through each design.
         </ChapterCard>
         <ChapterCard
           to="/chapters/willard"

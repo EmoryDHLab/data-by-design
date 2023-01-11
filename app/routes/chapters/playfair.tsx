@@ -219,7 +219,7 @@ export default function PlayfairPage() {
             distinct from that of tables, or "figures," as he termed
             them. In introduction to the Atlas, he explains:
           </p>
-          <blockquote className="font-william">
+          <blockquote className="font-dubois">
             The advantage proposed by this method, is not that of giving
             a more accurate statement than
             by figures, but it is to give a more simple and
@@ -399,7 +399,7 @@ export default function PlayfairPage() {
             tremendous value in the clarity of perspective produced by
             his charts. As he explains:
           </p>
-          <blockquote className="font-william">
+          <blockquote className="font-dubois">
             "If [a future of war] turns out so, a picture of the
             past will be a valuable thing, if, on the contrary,
             commerce should still continue its progress, this will
