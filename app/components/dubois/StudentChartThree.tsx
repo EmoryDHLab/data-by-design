@@ -1,3 +1,6 @@
+import { ClientOnly } from "remix-utils";
+import DoublePendulum from "~/components/dubois/Pendulum.client";
+
 export default function StudentChartThree() {
-  return <div></div>;
+  return <ClientOnly>{() => <DoublePendulum />}</ClientOnly>;
 }
