@@ -4,23 +4,27 @@ import {
   HighlightedElement,
   POLYGONS,
 } from "~/components/peabody/peabodyUtils";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 interface Props {
+  // Index in total peabody square, so 0..99
   absoluteIndex: number;
+  // Index in year square, so 0..8
   index: number;
   highlightedElement: HighlightedElement | undefined;
   setHighlightedElement: Dispatch<
     SetStateAction<HighlightedElement | undefined>
   >;
+  handleClick?: (index: number) => void;
   eventSquareColors: string[] | null;
 }
 
-export default function OverlaidEventSquare({
+export default function RecreatedEventSquare({
   absoluteIndex,
   index,
   highlightedElement,
   setHighlightedElement,
+  handleClick,
   eventSquareColors,
 }: Props) {
   if (eventSquareColors && eventSquareColors.length > 1) {
@@ -31,6 +35,7 @@ export default function OverlaidEventSquare({
         height="30"
         x={getEventXFromIndex(index)}
         y={getEventYFromIndex(index)}
+        onClick={() => handleClick(absoluteIndex)}
         viewBox="0 0 30 30"
       >
         {polygons.map((p, i) => {
@@ -39,6 +44,7 @@ export default function OverlaidEventSquare({
             highlightedElement?.elementIndex === absoluteIndex;
           return (
             <polygon
+              key={p}
               stroke="gold"
               onMouseEnter={() =>
                 setHighlightedElement({
@@ -48,19 +54,21 @@ export default function OverlaidEventSquare({
               }
               onMouseLeave={() => setHighlightedElement(undefined)}
               strokeWidth={isHighlighted ? "5" : "0"}
-              fillOpacity="0"
               points={p}
+              fill={eventSquareColors[i]}
             />
           );
         })}
       </svg>
     );
   }
+
   const isHighlighted = highlightedElement?.elementIndex === absoluteIndex;
   return (
     <svg
       width="30"
       height="30"
+      onClick={() => handleClick(absoluteIndex)}
       x={getEventXFromIndex(index)}
       y={getEventYFromIndex(index)}
       viewBox="0 0 30 30"
@@ -71,19 +79,18 @@ export default function OverlaidEventSquare({
         x="2.5"
         y="2.5"
         stroke="gold"
-        fillOpacity="0"
+        fill={eventSquareColors?.[0] ?? "white"}
         strokeWidth={isHighlighted ? "5" : "0"}
       />
       <rect
-        onMouseEnter={() => {
-          setHighlightedElement({ elementIndex: absoluteIndex });
-        }}
-        onMouseLeave={() => {
-          setHighlightedElement(undefined);
-        }}
+        onMouseEnter={() =>
+          setHighlightedElement({ elementIndex: absoluteIndex })
+        }
+        onMouseLeave={() => setHighlightedElement(undefined)}
         stroke="black"
         strokeWidth={isHighlighted ? "5" : "0"}
-        fillOpacity="0"
+        fill={eventSquareColors?.[0] ?? "white"}
+        fillOpacity={isHighlighted ? "0" : "1"}
         width="30"
         height="30"
       />

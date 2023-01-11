@@ -4,7 +4,7 @@ import {
   HighlightedElement,
   POLYGONS,
 } from "~/components/peabody/peabodyUtils";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 interface Props {
   absoluteIndex: number;
@@ -16,7 +16,7 @@ interface Props {
   eventSquareColors: string[] | null;
 }
 
-export default function RecreatedEventSquare({
+export default function OverlaidEventSquare({
   absoluteIndex,
   index,
   highlightedElement,
@@ -39,6 +39,7 @@ export default function RecreatedEventSquare({
             highlightedElement?.elementIndex === absoluteIndex;
           return (
             <polygon
+              key={p}
               stroke="gold"
               onMouseEnter={() =>
                 setHighlightedElement({
@@ -48,15 +49,14 @@ export default function RecreatedEventSquare({
               }
               onMouseLeave={() => setHighlightedElement(undefined)}
               strokeWidth={isHighlighted ? "5" : "0"}
+              fillOpacity="0"
               points={p}
-              fill={eventSquareColors[i]}
             />
           );
         })}
       </svg>
     );
   }
-
   const isHighlighted = highlightedElement?.elementIndex === absoluteIndex;
   return (
     <svg
@@ -72,18 +72,19 @@ export default function RecreatedEventSquare({
         x="2.5"
         y="2.5"
         stroke="gold"
-        fill={eventSquareColors?.[0] ?? "white"}
+        fillOpacity="0"
         strokeWidth={isHighlighted ? "5" : "0"}
       />
       <rect
-        onMouseEnter={() =>
-          setHighlightedElement({ elementIndex: absoluteIndex })
-        }
-        onMouseLeave={() => setHighlightedElement(undefined)}
+        onMouseEnter={() => {
+          setHighlightedElement({ elementIndex: absoluteIndex });
+        }}
+        onMouseLeave={() => {
+          setHighlightedElement(undefined);
+        }}
         stroke="black"
         strokeWidth={isHighlighted ? "5" : "0"}
-        fill={eventSquareColors?.[0] ?? "white"}
-        fillOpacity={isHighlighted ? "0" : "1"}
+        fillOpacity="0"
         width="30"
         height="30"
       />

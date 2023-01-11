@@ -5,7 +5,7 @@ import {
   YEAR_WIDTH,
   YearSquare,
 } from "~/components/peabody/peabodyUtils";
-import RecreatedEventSquare from "~/components/peabody/RecreatedEventSquare";
+import RecreatedEventSquare from "~/components/peabody/recreated/RecreatedEventSquare";
 import { numberRange } from "~/utils";
 import { Dispatch, SetStateAction } from "react";
 
@@ -15,6 +15,7 @@ interface Props {
     SetStateAction<HighlightedElement | undefined>
   >;
   highlightedElement?: HighlightedElement;
+  handleSquareClick?: (index: number) => void;
   yearSquareColors: YearSquare | null;
 }
 
@@ -22,6 +23,7 @@ export default function RecreatedYearSquare({
   index,
   highlightedElement,
   setHighlightedElement,
+  handleSquareClick,
   yearSquareColors,
 }: Props) {
   return (
@@ -37,7 +39,9 @@ export default function RecreatedYearSquare({
         const absoluteIndex = index * 9 + eventIndex;
         return (
           <RecreatedEventSquare
+            key={eventIndex}
             eventSquareColors={yearSquareColors?.[eventIndex] ?? null}
+            handleClick={handleSquareClick}
             absoluteIndex={absoluteIndex}
             index={eventIndex}
             highlightedElement={highlightedElement}

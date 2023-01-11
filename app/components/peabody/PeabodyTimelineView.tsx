@@ -1,13 +1,13 @@
-import OverlaidPeabodySquare from "~/components/peabody/OverlaidPeabodySquare";
+import OverlaidPeabodySquare from "~/components/peabody/overlaid/OverlaidPeabodySquare";
 import { useState } from "react";
-import RecreatedPeabodySquare from "~/components/peabody/RecreatedPeabodySquare";
+import RecreatedPeabodySquare from "~/components/peabody/recreated/RecreatedPeabodySquare";
 import peabody1500SquareColors from "~/data/peabody/1500SquareColors.json";
 import peabody1600SquareColors from "~/data/peabody/1600SquareColors.json";
 import peabody1700SquareColors from "~/data/peabody/1700SquareColors.json";
 import peabody1800SquareColors from "~/data/peabody/1800SquareColors.json";
 import type { HighlightedElement } from "~/components/peabody/peabodyUtils";
 import { numberRange } from "~/utils";
-import RecreatedEventSquare from "~/components/peabody/RecreatedEventSquare";
+import RecreatedEventSquare from "~/components/peabody/recreated/RecreatedEventSquare";
 
 export default function PeabodyTimelineView() {
   const [highlightedElement, setHighlightedElement] = useState<
@@ -85,12 +85,16 @@ export default function PeabodyTimelineView() {
       <div className="w-full mt-12 flex justify-center">
         <div className="flex w-3/4">
           {activeYearData.squareColors.map((yearSquareColors, yearIndex) => (
-            <div className="w-6 h-full flex flex-col-reverse border border-transparent">
+            <div
+              key={yearIndex}
+              className="w-6 h-full flex flex-col-reverse border border-transparent"
+            >
               {yearSquareColors &&
                 yearSquareColors
                   .filter(Boolean)
                   .map((eventSquareColors, eventIndex) => (
                     <RecreatedEventSquare
+                      key={eventIndex}
                       absoluteIndex={yearIndex * 9 + eventIndex}
                       index={eventIndex}
                       highlightedElement={highlightedElement}
@@ -113,7 +117,7 @@ export default function PeabodyTimelineView() {
             strokeWidth="0.5"
           />
           {[...numberRange(1, 100)].map((i) => (
-            <g>
+            <g key={i}>
               <line
                 x1={i * 3 - 1.5}
                 y1={0}

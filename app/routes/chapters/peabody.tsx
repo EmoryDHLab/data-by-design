@@ -16,6 +16,8 @@ import PeabodyTimelineView from "~/components/peabody/PeabodyTimelineView";
 import ImageCaption from "~/components/ImageCaption";
 import InlineFootnote from "~/components/InlineFootnote";
 import { peabodyFootnotes } from "~/footnotes";
+import { EditablePeabodySquare } from "~/components/peabody/EditablePeabodySquare";
+import PeabodySandbox from "~/components/peabody/PeabodySandbox";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -1388,6 +1390,7 @@ export default function PeabodyPage() {
           </span>
         </p>
       </CenteredLayout>
+      <PeabodySandbox />
       <Footer />
     </ChapterContext.Provider>
   );

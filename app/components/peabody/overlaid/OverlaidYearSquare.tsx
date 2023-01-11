@@ -1,5 +1,5 @@
 import { numberRange } from "~/utils";
-import OverlaidEventSquare from "~/components/peabody/OverlaidEventSquare";
+import OverlaidEventSquare from "~/components/peabody/overlaid/OverlaidEventSquare";
 import {
   getYearXFromIndex,
   getYearYFromIndex,
@@ -36,6 +36,7 @@ export default function OverlaidYearSquare({
         const absoluteIndex = index * 9 + eventIndex;
         return (
           <OverlaidEventSquare
+            key={eventIndex}
             highlightedElement={highlightedElement}
             setHighlightedElement={setHighlightedElement}
             eventSquareColors={yearSquareColors?.[eventIndex] ?? null}

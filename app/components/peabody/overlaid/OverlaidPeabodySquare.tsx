@@ -1,5 +1,5 @@
 import { numberRange } from "~/utils";
-import OverlaidYearSquare from "~/components/peabody/OverlaidYearSquare";
+import OverlaidYearSquare from "~/components/peabody/overlaid/OverlaidYearSquare";
 import { Dispatch, SetStateAction } from "react";
 import {
   HighlightedElement,
@@ -15,6 +15,8 @@ interface Props {
   squareColors: SquareData;
 }
 
+// Overlaid Peabody Square is a layer on top of the Peabody square image that
+// allows a user to hover over the various squares
 export default function OverlaidPeabodySquare({
   overlayImage,
   setHighlightedElement,
@@ -26,6 +28,7 @@ export default function OverlaidPeabodySquare({
       <image href={overlayImage} x="-3.5" y="-3.5" width="105.5" height="106" />
       {[...numberRange(0, 99)].map((index) => (
         <OverlaidYearSquare
+          key={index}
           yearSquareColors={squareColors[index]}
           highlightedElement={highlightedElement}
           setHighlightedElement={setHighlightedElement}

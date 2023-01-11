@@ -1,6 +1,6 @@
 // RecreatedPeabodySquare represents a Peabody square that is fully recreated in svg and
 // not an overlay of a Peabody square image.
-import RecreatedYearSquare from "~/components/peabody/RecreatedYearSquare";
+import RecreatedYearSquare from "~/components/peabody/recreated/RecreatedYearSquare";
 import type {
   HighlightedElement,
   SquareData,
@@ -12,12 +12,15 @@ interface Props {
     SetStateAction<HighlightedElement | undefined>
   >;
   highlightedElement?: HighlightedElement;
+  handleSquareClick?: (index: number) => void;
   squareColors: SquareData;
 }
 
+// Recreated Peabody Square is a square fully recreated using SVG.
 export default function RecreatedPeabodySquare({
   setHighlightedElement,
   highlightedElement,
+  handleSquareClick,
   squareColors,
 }: Props) {
   return (
@@ -26,8 +29,9 @@ export default function RecreatedPeabodySquare({
         <rect className="fill-peabodyOrange" x="0" width="100" height="99" />
         {squareColors.map((yearSquareColors, index) => {
           return (
-            <g>
+            <g key={index}>
               <RecreatedYearSquare
+                handleSquareClick={handleSquareClick}
                 yearSquareColors={yearSquareColors}
                 highlightedElement={highlightedElement}
                 setHighlightedElement={setHighlightedElement}
