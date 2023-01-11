@@ -5,8 +5,8 @@ import DocumentViewer from "~/components/dubois/DocumentViewer";
 import { StudentChart } from "~/components/dubois/StudentChart";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/theme";
-import ImageCaption from "~/components/ImageCaption";
 import { duboisFootnotes } from "~/footnotes";
+import { useState } from "react";
 
 export default function DuboisChapter() {
   const [footnoteState, setFootnoteState] = useState<number>(0);
