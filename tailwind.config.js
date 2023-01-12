@@ -33,6 +33,7 @@ module.exports = {
         sans: ["neue-haas-unica", "sans-serif"],
         icons: ["DxD Icons"],
       },
+
       gridTemplateColumns: {
         14: "repeat(14, minmax(0, 1fr))",
       },

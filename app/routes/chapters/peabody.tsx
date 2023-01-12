@@ -19,6 +19,7 @@ import { peabodyFootnotes } from "~/footnotes";
 import { EditablePeabodySquare } from "~/components/peabody/EditablePeabodySquare";
 import PeabodySandbox from "~/components/peabody/PeabodySandbox";
 import FootnotesList from "~/components/FootnotesList";
+import IntroParagraph from "~/components/IntroParagraph";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -46,9 +47,9 @@ export default function PeabodyPage() {
         <Column>
           <div className="right-bleed space-y-10">
             <p>
-              <span>
+              <IntroParagraph>
                 Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
-              </span>
+              </IntroParagraph>
               <span>
                 Today, she is most widely recognized for her proximity to more
                 famous men—in particular, to the writers of the American
@@ -114,9 +115,7 @@ export default function PeabodyPage() {
           <FullBleed>
             <PullQuote
               title="Peabody designed her charts to be abstract rather than intuitive;"
-              subtitle="to promote sustained reflection rather than immediate insight. And
-            she did so with a clear goal in mind: to provoke a unique
-            imaginative response in each viewer."
+              subtitle="to promote sustained reflection rather than immediate insight. "
             />
           </FullBleed>
           <p className="py-20">

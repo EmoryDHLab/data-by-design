@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.first-paragraph::first-letter {
+    float: left;
+    font-size: 5.2rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+    margin: 1.15rem 0 0;
+    padding: 0 1rem .5rem 1rem;
+}
+
 .cardPlayfair:hover {
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
