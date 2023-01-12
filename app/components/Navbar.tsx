@@ -6,16 +6,16 @@ import { classNames } from "~/utils";
 export default function Navbar() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   return (
-    <div className="w-full bg-black flex justify-evenly pb-2 pt-2 z-1">
-      <div className="font-dubois text-white text-2xl">
+    <div className="w-full bg-black flex items-center justify-evenly sm:pb-2 sm:pt-2 py-2 sm:py-0 z-1">
+      <div className="font-dubois text-white sm:text-2xl text-xl px-2 sm:px-0">
         <Link to="/">Data by Design</Link>
       </div>
-      <div className="flex justify-around w-3/5 font-sans text-white text-xl">
+      <div className="flex items-center justify-around w-3/5 font-sans text-white sm:text-xl">
         <div
           onMouseEnter={() => setIsDropdownVisible(true)}
           onMouseLeave={() => setIsDropdownVisible(false)}
           className={classNames(
-            "font-sans text-white text-xl px-5 pb-4",
+            "font-sans px-5",
             isDropdownVisible ? "text-playfairSecondary" : ""
           )}
         >

@@ -8,7 +8,7 @@ export default function Footer() {
       <div
         className={`grid grid-cols-12 gap-x-6 p-10 pt-20 bg-${backgroundColor} text-${primaryTextColor}`}
       >
-        <div className="col-start-3 col-end-6 space-y-20">
+        <div className="sm:col-start-3 sm:col-end-6 space-y-20">
           <span className="font-dubois text-3xl">Data By Design</span>
           <div className="text-base">
             Designed and developed by the Georgia Tech / Emory Digital
