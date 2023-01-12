@@ -9,6 +9,14 @@
 
 @font-face {
     font-family: "VTC Du Bois";
+    src: url("/fonts/VTCDubois/VTCDuBois-Bold.woff") format("woff"),
+    url("/fonts/VTCDubois/VTCDuBois-Bold.woff2") format("woff2");
+    font-weight: bolder;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "VTC Du Bois";
     src: url("/fonts/VTCDubois/VTCDuBois-Regular.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-Regular.woff2") format("woff2");
     font-weight: normal;
@@ -21,6 +29,14 @@
     url("/fonts/VTCDubois/VTCDuBois-Italic.woff") format("woff2");
     font-weight: normal;
     font-style: italic;
+}
+
+@font-face {
+    font-family: "VTC Du Bois RItalic";
+    src: url("/fonts/VTCDubois/VTCDuBois-RItalic.woff") format("woff"),
+    url("/fonts/VTCDubois/VTCDuBois-RItalic.woff") format("woff2");
+    font-weight: normal;
+    font-style: oblique;
 }
 
 @font-face {

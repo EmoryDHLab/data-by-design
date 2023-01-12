@@ -9,6 +9,7 @@ import { duboisFootnotes } from "~/footnotes";
 import { useState } from "react";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import FootnotesList from "~/components/FootnotesList";
+import IntroParagraph from "~/components/IntroParagraph";
 
 export default function DuboisChapter() {
   const [footnoteState, setFootnoteState] = useState<number>(0);
@@ -31,10 +32,13 @@ export default function DuboisChapter() {
       />
       <div className="grid-wrapper bg-offwhite py-16 space-y-5">
         <p className="pt-16">
-          October 4th, 1899, was the first day of the fall term at Atlanta
-          University (now Clark Atlanta University), where W.E.B. Du Bois had
-          been teaching for the past two years&mdash;and a long two years they
-          had been. <InlineFootnote index={0}></InlineFootnote>
+          <IntroParagraph>
+            October 4th, 1899, was the first day of the fall term at Atlanta
+            University
+          </IntroParagraph>{" "}
+          (now Clark Atlanta University), where W.E.B. Du Bois had been teaching
+          for the past two years&mdash;and a long two years they had been.{" "}
+          <InlineFootnote index={0}></InlineFootnote>
           <span className="font-normal">
             {" "}
             After relocating from Philadelphia to Atlanta in January 1897, Du

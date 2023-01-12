@@ -16,6 +16,7 @@ import Footer from "~/components/Footer";
 import InlineFootnote from "~/components/InlineFootnote";
 import { playfairFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
+import IntroParagraph from "~/components/IntroParagraph";
 
 export default function PlayfairPage() {
   const [footnoteState, setFootnoteState] = useState<number>(0);
@@ -39,8 +40,10 @@ export default function PlayfairPage() {
         <Column shouldPin={true}>
           <div className="right-bleed space-y-10">
             <p>
-              One can only imagine the choice words exclaimed by the Scottish
-              political economist William Playfair (1759-1823) when he
+              <IntroParagraph>
+                One can only imagine the choice words exclaimed by the{" "}
+              </IntroParagraph>{" "}
+              Scottish political economist William Playfair (1759-1823) when he
               recognized the error that he had inadvertently engraved into the
               tail end of the data line on his chart of "Exports &amp; Imports
               to and from all of North America." Engraving was—and still is—an
