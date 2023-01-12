@@ -17,10 +17,13 @@ export default function ChapterCard({
   className,
 }: Props) {
   return (
-    <Link to={to} className={"text-black font-dubois " + className}>
-      <div className="text-3xl mt-16 mb-3 px-28 font-bold">{title}</div>
-      <div className="text-xl mb-2 px-28">{subtitle}</div>
-      <div className="font-sans px-28 mb-10">{children}</div>
+    <Link
+      to={to}
+      className={"text-black font-dubois px-5 sm:px-28 " + className}
+    >
+      <div className="text-3xl mt-16 mb-3 font-bold">{title}</div>
+      <div className="text-xl mb-2">{subtitle}</div>
+      <div className="font-sans mb-10">{children}</div>
     </Link>
   );
 }

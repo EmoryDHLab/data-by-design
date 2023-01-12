@@ -2,11 +2,11 @@ import ChapterCard from "~/components/ChapterCard";
 
 export default function ChapterCardGrid() {
   return (
-    <>
+    <div className="bg-black">
       <h3 className="text-white font-dubois font-bold text-center text-3xl mb-7 pt-5">
         CHAPTERS
       </h3>
-      <div className="grid grid-cols-2 grid-rows-3">
+      <div className="grid sm:grid-cols-2 grid-cols-1 sm:grid-rows-3">
         <ChapterCard
           to="/chapters/brooks"
           className="cardBrooks bg-brooksSecondary hover:text-white"
@@ -62,6 +62,6 @@ export default function ChapterCardGrid() {
           space for what cannot be conveyed through data alone?
         </ChapterCard>
       </div>
-    </>
+    </div>
   );
 }
