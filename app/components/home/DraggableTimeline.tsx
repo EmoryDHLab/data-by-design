@@ -1,7 +1,7 @@
 import imageData from "~/data/timelineImages.json";
 import { useWindowSize } from "~/hooks";
 import type { Dispatch, MouseEvent, SetStateAction } from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Image } from "~/components/home/timelineUtils";
 
 interface TimelineState {
@@ -25,7 +25,8 @@ export default function DraggableTimeline({
   setSelectedImage,
 }: Props) {
   const windowSize = useWindowSize();
-  const [{ imageSliceStart, imagePositions, draggedImage }, setState] =
+  const draggableImageRef = useRef<number | undefined>(undefined);
+  const [{ imageSliceStart, imagePositions }, setState] =
     useState<TimelineState>(() => ({
       imageSliceStart: Math.floor(Math.random() * 30),
       imagePositions: [],
@@ -55,10 +56,10 @@ export default function DraggableTimeline({
     return "";
   }
 
-  function moveDraggedImage(event: MouseEvent<SVGElement>) {
-    if (draggedImage) {
-      imagePositions[draggedImage.index].x = event.clientX;
-      imagePositions[draggedImage.index].y = event.clientY;
+  function moveDraggedImage() {
+    if (draggableImageRef.current) {
+      imagePositions[draggableImageRef.current].x = event.clientX - 100;
+      imagePositions[draggableImageRef.current].y = event.clientY - 180;
       setState((state) => ({ ...state, imagePositions: [...imagePositions] }));
     }
   }
@@ -69,7 +70,7 @@ export default function DraggableTimeline({
       height="600px"
       onMouseMove={moveDraggedImage}
       onMouseUp={() => {
-        setState((state) => ({ ...state, draggedImage: undefined }));
+        draggableImageRef.current = undefined;
       }}
     >
       {imageData
@@ -88,10 +89,7 @@ export default function DraggableTimeline({
                 width={150}
                 transform={getTransform(index)}
                 onMouseDown={() => {
-                  setState((state) => ({
-                    ...state,
-                    draggedImage: { index },
-                  }));
+                  draggableImageRef.current = index;
                 }}
               />
             </g>
