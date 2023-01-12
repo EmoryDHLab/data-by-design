@@ -7,8 +7,8 @@ interface Props {
 export default function FootnotesList({ footnotes }: Props) {
   return (
     <ol className="space-y-5 text-xs">
-      {footnotes.map((footnote) => (
-        <li>{footnote}</li>
+      {footnotes.map((footnote, index) => (
+        <li key={index}>{footnote}</li>
       ))}
     </ol>
   );

@@ -4,6 +4,7 @@
 
 
 .first-paragraph::first-letter {
+    display: block;
     float: left;
     font-size: 5.2rem;
     line-height: 2.5rem;

@@ -9,7 +9,6 @@ const actorColors = [
   "rgb(68,108,73)",
   "rgb(217,182,17)",
   "rgb(209,42,5)",
-  "rgb(209,42,5)",
 ];
 
 export default function PeabodySandbox() {
@@ -19,6 +18,7 @@ export default function PeabodySandbox() {
       <div className="flex justify-around w-1/2 py-10">
         {actorColors.map((color) => (
           <span
+            key={color}
             onClick={() => setCurrentColor(color)}
             className={classNames(
               "w-5 h-5",

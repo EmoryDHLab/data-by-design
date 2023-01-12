@@ -16,10 +16,10 @@ import PeabodyTimelineView from "~/components/peabody/PeabodyTimelineView";
 import ImageCaption from "~/components/ImageCaption";
 import InlineFootnote from "~/components/InlineFootnote";
 import { peabodyFootnotes } from "~/footnotes";
-import { EditablePeabodySquare } from "~/components/peabody/EditablePeabodySquare";
 import PeabodySandbox from "~/components/peabody/PeabodySandbox";
 import FootnotesList from "~/components/FootnotesList";
 import IntroParagraph from "~/components/IntroParagraph";
+import ImageModal from "~/components/layout/ImageModal";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -46,7 +46,7 @@ export default function PeabodyPage() {
       <TwoColumnLayout className="py-10">
         <Column>
           <div className="right-bleed space-y-10">
-            <p>
+            <div>
               <IntroParagraph>
                 Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
               </IntroParagraph>
@@ -71,9 +71,8 @@ export default function PeabodyPage() {
                 kindergarten in the United States
               </span>
               <span>.</span>
-
-              <InlineFootnote index={0}></InlineFootnote>
-            </p>
+              <InlineFootnote index={0} />
+            </div>
             <p>
               <span>
                 Indeed, Peabody was an educator to her core. She came from a
@@ -165,10 +164,22 @@ export default function PeabodyPage() {
           <div className="w-full h-[200px]" />
           <div className="flex flex-col items-center">
             <div className="space-y-2">
-              <img className="max-w-xs" src="/images/peabody/1500s.jpg" />
-              <img className="max-w-xs" src="/images/peabody/1600s.jpg" />
-              <img className="max-w-xs" src="/images/peabody/1700s.jpg" />
-              <img className="max-w-xs" src="/images/peabody/1800s.jpg" />
+              <ImageModal
+                className="max-w-xs"
+                src="/images/peabody/1500s.jpg"
+              />
+              <ImageModal
+                className="max-w-xs"
+                src="/images/peabody/1600s.jpg"
+              />
+              <ImageModal
+                className="max-w-xs"
+                src="/images/peabody/1700s.jpg"
+              />
+              <ImageModal
+                className="max-w-xs"
+                src="/images/peabody/1800s.jpg"
+              />
             </div>
             <ImageCaption>
               The four chronological charts included in Elizabeth Palmer
