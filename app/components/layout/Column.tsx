@@ -8,9 +8,10 @@ interface Props {
   children?: ReactNodeLike;
   className?: string;
   shouldPin?: boolean;
+  id?: number;
 }
 
-export default function Column({ children, className, shouldPin }: Props) {
+export default function Column({ children, className, shouldPin, id }: Props) {
   const pin = useRef(null);
   const content = useRef(null);
   const { footnoteState } = useContext(ChapterContext);
@@ -24,7 +25,10 @@ export default function Column({ children, className, shouldPin }: Props) {
         start: "top 60px",
         end: `bottom ${content.current?.clientHeight}px`,
         markers: false, // set to true for debugging
-        pin: pin.current.firstChild,
+        pin: content.current,
+        preventOverlaps: true,
+        fastScrollEnd: true,
+        anticipatePin: 1,
       });
     }
     return () => {

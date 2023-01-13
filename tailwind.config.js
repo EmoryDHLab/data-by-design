@@ -69,7 +69,7 @@ module.exports = {
       },
       lineHeight: {
         veryTight: "0.8",
-      },
+      }
     },
   },
   variants: {
@@ -78,6 +78,14 @@ module.exports = {
   safelist: [
     "text-duboisPrimary",
     "text-playfairPrimary",
+    "bg-playfairPrimary",
     "text-peabodyPrimary",
+    "bg-peabodyPrimary",
+    "transition-opacity",
+    "opacity-0",
+    "opacity-100",
+    "duration-700",
+    "text-offblack",
+    "font-extrabold",
   ],
 };
