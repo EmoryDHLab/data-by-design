@@ -2,6 +2,7 @@ import { classNames } from "~/utils";
 import { useContext } from "react";
 import { ChapterContext } from "~/theme";
 import ImageCaption from "~/components/ImageCaption";
+import ImageModal from "~/components/layout/ImageModal";
 
 const tourLocations = {
   Rochester: {
@@ -29,7 +30,7 @@ export default function PromotionalTourMap() {
   return (
     <div className="flex flex-col items-center">
       <div className="border-peabodyPrimaryHalfOpacity border-[50px] p-1 max-w-xl overflow-hidden">
-        <img
+        <ImageModal
           src="/images/peabody/railroadscaled.webp"
           alt=""
           className={classNames("transition-transform", transformStyles)}

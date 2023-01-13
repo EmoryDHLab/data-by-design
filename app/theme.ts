@@ -12,6 +12,7 @@ export type HoverState =
 interface IChapterContext {
   backgroundColor: string;
   accentColor: string;
+  accentTextColor: string;
   primaryTextColor: string;
   hoverState: HoverState;
   setHoverState: Dispatch<SetStateAction<HoverState>>;
@@ -24,6 +25,7 @@ interface IChapterContext {
 export const ChapterContext = createContext<IChapterContext>({
   backgroundColor: "duboisPrimary",
   accentColor: "duboisSecondary",
+  accentTextColor: "black",
   primaryTextColor: "white",
   footnoteTextColor: "black",
   hoverState: undefined,
@@ -32,7 +34,9 @@ export const ChapterContext = createContext<IChapterContext>({
   },
   footnoteState: 0,
   setFootnoteState: (_: SetStateAction<number>) => {
-    console.error("setFootnoteState not implemented. Did you pass it to context?");
+    console.error(
+      "setFootnoteState not implemented. Did you pass it to context?"
+    );
   },
   footnotes: [],
 });
