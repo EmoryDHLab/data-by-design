@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { classNames } from "~/utils";
+import ImageModal from "~/components/layout/ImageModal";
 
 const imageSets = [
   {
@@ -513,12 +514,14 @@ export default function DocumentViewer() {
             ))}
           </div>
           <div className="flex flex-col items-center">
-            <img src={selectedImage.src} className="max-w-xs" />
+            <ImageModal src={selectedImage.src} className="max-w-xs" />
             <div className="flex text-white justify-around w-full">
               <button
                 onClick={() => {
                   setSelectedImageIndex(
-                    (i) => (i + imageSets[selectedSet].images.length - 1) % imageSets[selectedSet].images.length
+                    (i) =>
+                      (i + imageSets[selectedSet].images.length - 1) %
+                      imageSets[selectedSet].images.length
                   );
                 }}
               >
@@ -541,11 +544,13 @@ export default function DocumentViewer() {
                   {selectedImage?.credit3}
                 </p>
               </div>
-              <button onClick={() => {
+              <button
+                onClick={() => {
                   setSelectedImageIndex(
                     (i) => (i + 1) % imageSets[selectedSet].images.length
                   );
-                }}>
+                }}
+              >
                 <img
                   className="w-[27.5px] h-[19.5px] mt-5"
                   src="/images/dubois/rightarrow.png"

@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/theme";
+import ImageModal from "~/components/layout/ImageModal";
 
 export default function HoverZoomPeabodySquare() {
   const { hoverState } = useContext(ChapterContext);
   return (
     <div className="relative">
-      <img
+      <ImageModal
         className="border-peabodyPrimaryHalfOpacity border-[50px]"
         src="/images/peabody/1600s.jpg"
       />

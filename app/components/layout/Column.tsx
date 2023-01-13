@@ -21,7 +21,7 @@ export default function Column({ children, className, shouldPin }: Props) {
       gsap.registerPlugin(ScrollTrigger);
       scrollTrigger.current = ScrollTrigger.create({
         trigger: pin.current.parentElement,
-        start: "top top",
+        start: "top 60px",
         end: `bottom ${content.current?.clientHeight}px`,
         markers: false, // set to true for debugging
         pin: pin.current.firstChild,
@@ -43,7 +43,9 @@ export default function Column({ children, className, shouldPin }: Props) {
   // This extra layer maintains the layout.
   return (
     <div ref={pin} className={`w-1/2 ${className ?? ""}`}>
-      <div ref={content} className="column-grid-wrapper">{children}</div>
+      <div ref={content} className="column-grid-wrapper">
+        {children}
+      </div>
     </div>
   );
 }
