@@ -23,7 +23,7 @@ export default function Column({ children, className, shouldPin, id }: Props) {
       scrollTrigger.current = ScrollTrigger.create({
         trigger: pin.current.parentElement,
         start: "top 60px",
-        end: `bottom ${content.current?.clientHeight}px`,
+        end: `bottom ${content.current?.clientHeight + 120}px`,
         markers: false, // set to true for debugging
         pin: content.current,
         preventOverlaps: true,
