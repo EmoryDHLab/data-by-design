@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Column from "../layout/Column";
 import Recreation from "./Recreation";
 import ScrollytellContent from "../ScrollytellContent";
+import { ChapterContext } from "~/theme";
+import { ScrollytellContext } from "~/scrollytellContext";
 
 const triggers = [
   (<>The table in the first edition of the <cite>Atlas</cite> includes data only for the years between 1770 and 1782.</>),
@@ -17,30 +19,38 @@ const triggers = [
 ];
 
 export default function Scrollytell() {
-  const [progress, setProgress] = useState(0.0);
+  const [ scrollProgress, setScrollProgress ] = useState(0.0);
+  const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
 
   return (
-    <div className="bg-playfairPrimary flex max-w-screen scrollytell">
-      <Column className="w-screen mx-24">
-        <p className="h-screen text-white text-2xl"></p>
-        {triggers.map((trigger, index) => {
-          return (
-            <ScrollytellContent
-              key={index}
-              setProgress={setProgress}
-              id={index}
-              last={index + 1 === triggers.length}
-            >
-              {trigger}
-            </ScrollytellContent>
-          );
-        })}
-      </Column>
-      <Column shouldPin={true}>
-        <div className="grid content-center h-screen mr-24">
-          <Recreation scrollProg={progress} />
-        </div>
-      </Column>
-    </div>
+    <ScrollytellContext.Provider
+      value={{
+        scrollProgress,
+        setScrollProgress
+      }}
+    >
+      <div className={`bg-${backgroundColor} flex max-w-screen scrollytell`}>
+        <Column className="w-screen mx-24">
+          <p className="text-2xl h-[50vh]"></p>
+          {triggers.map((trigger, index) => {
+            return (
+              <ScrollytellContent
+                key={index}
+                id={index}
+                last={index + 1 === triggers.length}
+                color={primaryTextColor}
+              >
+                {trigger}
+              </ScrollytellContent>
+            );
+          })}
+        </Column>
+        <Column shouldPin={true}>
+          <div className="grid content-center h-screen mr-24">
+            <Recreation />
+          </div>
+        </Column>
+      </div>
+    </ScrollytellContext.Provider>
   )
 }

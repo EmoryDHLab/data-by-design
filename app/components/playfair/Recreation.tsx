@@ -1,4 +1,5 @@
-// import { useEffect } from "react";
+import { useContext } from "react";
+import { ScrollytellContext } from "~/scrollytellContext";
 import * as d3 from "d3";
 import VerticalGrid from "./elements/VerticalGrid";
 import HorizontalGrid from "./elements/HorizontalGrid";
@@ -59,29 +60,27 @@ const scaleMapper = (sOut, sIn) => {
   return (x) => sOut[0] + m * (x - sIn[0]);
 };
 
-interface Props {
-  scrollProg: float
-}
+export default function Recreation() {
+  const { scrollProgress } = useContext(ScrollytellContext);
 
-export default function Recreation({ scrollProg }: Props) {
   const transitionInOut = (arrayIn, arrayOut) => {
     let progToOpacityIn = scaleMapper([0.0, 1.0], arrayIn);
     let progToOpacityOut = scaleMapper([1.0, 0.0], arrayOut);
-    if (scrollProg <= arrayIn[0]) {
+    if (scrollProgress <= arrayIn[0]) {
       return 0;
-    } else if (scrollProg > arrayIn[0] && scrollProg <= arrayIn[1]) {
-      return progToOpacityIn(scrollProg);
-    } else if (scrollProg > arrayOut[0] && scrollProg <= arrayOut[1]) {
-      return progToOpacityOut(scrollProg);
+    } else if (scrollProgress > arrayIn[0] && scrollProgress <= arrayIn[1]) {
+      return progToOpacityIn(scrollProgress);
+    } else if (scrollProgress > arrayOut[0] && scrollProgress <= arrayOut[1]) {
+      return progToOpacityOut(scrollProgress);
     }
   };
 
   const transitionIn = (array) => {
-    if (scrollProg <= array[0]) {
+    if (scrollProgress <= array[0]) {
       return 0;
-    } else if (scrollProg > array[0] && scrollProg <= array[1]) {
+    } else if (scrollProgress > array[0] && scrollProgress <= array[1]) {
       let progToOpacity = scaleMapper([0.0, 1.0], array);
-      return progToOpacity(scrollProg);
+      return progToOpacity(scrollProgress);
     } else {
       return 1;
     }
@@ -129,7 +128,7 @@ export default function Recreation({ scrollProg }: Props) {
             />
           )
         })}
-        <g opacity={scrollProg > 0 && scrollProg < 2 ? transitionInOut([0, 0.5], [1.25, 2]) : 0}>
+        <g opacity={scrollProgress > 0 && scrollProgress < 2 ? transitionInOut([0, 0.5], [1.25, 2]) : 0}>
           {scatterImport.map((plot) => {
             return(
               <ScatterPlot
@@ -154,7 +153,7 @@ export default function Recreation({ scrollProg }: Props) {
         {/* First edition lines */}
         <g
           transform="scale(0.106, 0.09) translate(28,155)"
-          opacity={scrollProg >= 1 && scrollProg < 5.5 ? transitionInOut([1, 2], [5, 5.5]) : 0}
+          opacity={scrollProgress >= 1 && scrollProgress < 5.5 ? transitionInOut([1, 2], [5, 5.5]) : 0}
         >
           <path
             d={Paths.import1stEd}
@@ -170,7 +169,7 @@ export default function Recreation({ scrollProg }: Props) {
           />
         </g>
         {/* Shaded area */}
-        <StippleHatch opacity={scrollProg >= 2 && scrollProg < 5.5 ? transitionInOut([2.25, 3], [5, 5.75]): 0} />
+        <StippleHatch opacity={scrollProgress >= 2 && scrollProgress < 5.5 ? transitionInOut([2.25, 3], [5, 5.75]): 0} />
         {/* Detail lines */}
         {xMinorValues.map((xValue, index) => {
           return (
@@ -179,17 +178,17 @@ export default function Recreation({ scrollProg }: Props) {
               xValue={xMinorScale(xValue)}
               offset={(width / 11) * 7 + 3}
               text={' '}
-              opacity={scrollProg >= 3 && scrollProg < 5 ? transitionInOut([3, 4], [4, 5]) : 0}
+              opacity={scrollProgress >= 3 && scrollProgress < 5 ? transitionInOut([3, 4], [4, 5]) : 0}
             />
           )
         })}
         {/* 3rd edition lines */}
-        <g transform="scale(0.22, 0.195) translate(14,58)" opacity={scrollProg >= 5 ? transitionIn([5, 6]) : 0}>
+        <g transform="scale(0.22, 0.195) translate(14,58)" opacity={scrollProgress >= 5 ? transitionIn([5, 6]) : 0}>
           <path d={Paths.import3rdEd} stroke="#F4B20C" fill="none" />
           <path d={Paths.export3rdEd} stroke="#56190F" fill="none" />
         </g>
         {/* Labels */}
-        <g opacity={scrollProg >= 6 ? transitionIn([6, 7]) : 0}>
+        <g opacity={scrollProgress >= 6 ? transitionIn([6, 7]) : 0}>
           <text
             fill="black"
             fontSize="3"
@@ -208,16 +207,16 @@ export default function Recreation({ scrollProg }: Props) {
           </text>
         </g>
         {/* Color Areas */}
-        <ColorArea opacity={scrollProg >= 6 ? transitionIn([6, 7]) : 0} />
+        <ColorArea opacity={scrollProgress >= 6 ? transitionIn([6, 7]) : 0} />
         <OvalTitle
           color="#FCE2B0"
           ellipse={{ cx: 28, cy: 17, rx: (width / 11) * 1.9, ry: 10 }}
           topText={{ text: "EXPORTS & IMPORTS", x: 14, y: 15 }}
           midText={{ text: "to and from all", x: 22, y: 18.5 }}
           botText={{ text: "NORTH AMERICA", x: 15, y: 22 }}
-          opacity={scrollProg >= 7 ? transitionIn([7, 8]) : 0}
+          opacity={scrollProgress >= 7 ? transitionIn([7, 8]) : 0}
         />
-        <g opacity={scrollProg >= 8 ? transitionIn([8, 9]) : 0}>
+        <g opacity={scrollProgress >= 8 ? transitionIn([8, 9]) : 0}>
           <text
             fill="black"
             x={width / 2}
@@ -238,7 +237,7 @@ export default function Recreation({ scrollProg }: Props) {
           </text>
         </g>
         <image
-          opacity={scrollProg > 9 ? transitionIn([9, 9.25]) : 0}
+          opacity={scrollProgress > 9 ? transitionIn([9, 9.25]) : 0}
           transform="scale(1, .85)"
           href="/images/playfair/1-northamerica.jpg"
           width={100}
