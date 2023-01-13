@@ -2,12 +2,12 @@ import ImageModal from "~/components/layout/ImageModal";
 
 export default function HomeTitle() {
   return (
-    <div className="sm:grid bg-black text-white sm:grid-cols-14 sm:grid-rows-30 font-dubois">
-      <div className="flex flex-col items-center middle-full col-start-11 col-span-4 bg-nightingale_blue sm:p-16 pb-5 pt-10">
+    <div className="sm:grid bg-black text-white sm:grid-cols-14 sm:grid-rows-30 font-dubois pt-10 sm:pt-5">
+      <div className="flex flex-col items-center col-start-11 col-span-4 bg-nightingale_blue sm:p-16 pb-5 pt-10">
         <div className="flex flex-col items-center">
           <ImageModal
             src="/images/ch5-08b-amalg.jpg"
-            className="sm:max-w-full w-3/5 sm:w-full"
+            className="w-3/5 sm:w-full"
           />
         </div>
         <div className="caption text-center sm:pt-10 py-5 w-5/6 sm:text-lg sm:w-full text-sm">

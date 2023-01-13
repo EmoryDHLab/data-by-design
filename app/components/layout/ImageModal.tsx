@@ -13,7 +13,7 @@ export default function ImageModal({ alt, className, src, title }: Props) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div>
+    <>
       <img
         src={src}
         alt={alt}
@@ -76,6 +76,6 @@ export default function ImageModal({ alt, className, src, title }: Props) {
           </div>
         </Dialog>
       </Transition.Root>
-    </div>
+    </>
   );
 }
