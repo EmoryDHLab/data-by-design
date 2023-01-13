@@ -332,9 +332,7 @@ export default function DuboisChapter() {
             addition to its growth in time.
           </span>
         </p>
-        <div className="full-bleed flex flex-col items-center py-10">
-          <StudentChart />
-        </div>
+
         <p>
           <span>
             As the series unfolds, so too does its argument about the progress
@@ -971,6 +969,9 @@ export default function DuboisChapter() {
             Exposition charts.
           </span>
         </p>
+        <div className="full-bleed flex flex-col items-center py-10">
+          <StudentChart />
+        </div>
         <ChapterSectionTitle>
           Visualization as Witness and as Testimony
         </ChapterSectionTitle>

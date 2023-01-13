@@ -415,7 +415,6 @@ export default function PlayfairPage() {
             <PullQuote
               title="For whom is this knowledge truly useful"
               subtitle='and for what reasons is it necessary that this particular "picture of the past" endure?'
-              subtitle='and for what reasons is it necessary that this particular "picture of the past" endure?'
             />
           </FullBleed>
 
