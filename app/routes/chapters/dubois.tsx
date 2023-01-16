@@ -10,6 +10,7 @@ import { useState } from "react";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import FootnotesList from "~/components/FootnotesList";
 import IntroParagraph from "~/components/IntroParagraph";
+import ImageModal from "~/components/layout/ImageModal";
 
 export default function DuboisChapter() {
   const [footnoteState, setFootnoteState] = useState<number>(0);
@@ -104,7 +105,7 @@ export default function DuboisChapter() {
         </p>
         <div className="flex flex-col items-center full-bleed py-16">
           <div>
-            <img
+            <ImageModal
               src="/images/dubois/ch5-01-phila.jpg"
               alt=""
               loading="lazy"
@@ -262,7 +263,7 @@ export default function DuboisChapter() {
             </div>
           </div>
           <div className="flex flex-col items-center middle-full p-10 w-1/2">
-            <img
+            <ImageModal
               src="/images/dubois/ch5-03-georgia.jpg"
               alt=""
               loading="lazy"
@@ -483,7 +484,7 @@ export default function DuboisChapter() {
         </p>
         <div className="flex flex-col items-center middle-full">
           <div>
-            <img
+            <ImageModal
               src="/images/dubois/ch5-09-exhibit.png"
               alt=""
               loading="lazy"
@@ -722,7 +723,7 @@ export default function DuboisChapter() {
         </p>
         <div className="flex flex-col items-center middle-full">
           <div>
-            <img
+            <ImageModal
               src="/images/dubois/ch5-11-property.jpg"
               alt=""
               loading="lazy"
@@ -782,7 +783,7 @@ export default function DuboisChapter() {
         </p>
         <div className="flex flex-col items-center middle-full">
           <div>
-            <img
+            <ImageModal
               src="/images/dubois/ch5-12-series.jpg"
               alt=""
               loading="lazy"
@@ -887,7 +888,7 @@ export default function DuboisChapter() {
         </p>
         <div className="flex flex-col items-center middle-full">
           <div>
-            <img
+            <ImageModal
               src="/images/dubois/ch5-14-rogers.jpg"
               alt=""
               loading="lazy"

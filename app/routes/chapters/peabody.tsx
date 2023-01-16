@@ -577,7 +577,7 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column>
-            <img
+            <ImageModal
               src="/images/ch4-blank-chart.webp"
               alt=""
               loading="lazy"
@@ -729,14 +729,14 @@ export default function PeabodyPage() {
         <Column shouldPin={true}>
           <FullBleed className="px-10 flex flex-col items-center">
             <div className="grid grid-cols-4 gap-2">
-              <img src="/images/ch4-5.webp" />
-              <img src="/images/ch4-6.webp" />
-              <img src="/images/ch4-7.webp" />
-              <img src="/images/ch4-8.webp" />
-              <img src="/images/ch4-9.webp" />
-              <img src="/images/ch4-10.webp" />
-              <img src="/images/ch4-11.webp" />
-              <img src="/images/ch4-12.webp" />
+              <ImageModal src="/images/ch4-5.webp" />
+              <ImageModal src="/images/ch4-6.webp" />
+              <ImageModal src="/images/ch4-7.webp" />
+              <ImageModal src="/images/ch4-8.webp" />
+              <ImageModal src="/images/ch4-9.webp" />
+              <ImageModal src="/images/ch4-10.webp" />
+              <ImageModal src="/images/ch4-11.webp" />
+              <ImageModal src="/images/ch4-12.webp" />
             </div>
             <ImageCaption>
               Images of student-created charts from a copy of
@@ -750,7 +750,11 @@ export default function PeabodyPage() {
       <CenteredLayout>
         <div className="flex flex-col items-center full-bleed py-10">
           <div>
-            <img src="/images/ch4-13-willard.jpg" alt="" loading="lazy" />
+            <ImageModal
+              src="/images/ch4-13-willard.jpg"
+              alt=""
+              loading="lazy"
+            />
           </div>
         </div>
         <ImageCaption>
@@ -936,10 +940,18 @@ export default function PeabodyPage() {
                 }}
               >
                 <div className="doc-table-cell" style={{ gridArea: "area0" }}>
-                  <img src="/images/ch4-clarke1.jpg" alt="" loading="lazy" />
+                  <ImageModal
+                    src="/images/ch4-clarke1.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
                 </div>
                 <div className="doc-table-cell" style={{ gridArea: "area1" }}>
-                  <img src="/images/ch4-clarke2.jpg" alt="" loading="lazy" />
+                  <ImageModal
+                    src="/images/ch4-clarke2.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </div>
@@ -1032,24 +1044,28 @@ export default function PeabodyPage() {
                 }}
               >
                 <div className="doc-table-cell" style={{ gridArea: "area0" }}>
-                  <img
+                  <ImageModal
                     src="/images/ch4-15a-fc-left.png"
                     alt=""
                     loading="lazy"
                   />
                 </div>
                 <div className="doc-table-cell" style={{ gridArea: "area1" }}>
-                  <img
+                  <ImageModal
                     src="/images/ch4-15b-fc-right.png"
                     alt=""
                     loading="lazy"
                   />
                 </div>
                 <div className="doc-table-cell" style={{ gridArea: "area2" }}>
-                  <img src="/images/ch4-17-leds.webp" alt="" loading="lazy" />
+                  <ImageModal
+                    src="/images/ch4-17-leds.webp"
+                    alt=""
+                    loading="lazy"
+                  />
                 </div>
                 <div className="doc-table-cell" style={{ gridArea: "area3" }}>
-                  <img
+                  <ImageModal
                     src="/images/ch4-18-rendering.webp"
                     alt=""
                     loading="lazy"
@@ -1176,29 +1192,19 @@ export default function PeabodyPage() {
           <InlineFootnote index={38}></InlineFootnote>
         </p>
         <div className="flex flex-col items-center middle-full">
-          <div>
-            <div
-              className="doc-table-root"
-              style={{
-                display: "grid",
-                gridTemplateAreas: '"area0 area1"',
-              }}
-            >
-              <div className="doc-table-cell" style={{ gridArea: "area0" }}>
-                <img
-                  src="/images/ch4-19-rachel-carey-george.jpg"
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-              <div className="doc-table-cell" style={{ gridArea: "area1" }}>
-                <img
-                  src="/images/ch4-20-gbq-q030-06.jpg"
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </div>
+          <div className="flex space-x-5">
+            <ImageModal
+              className="h-full"
+              src="/images/ch4-19-rachel-carey-george.jpg"
+              alt=""
+              loading="lazy"
+            />
+            <ImageModal
+              className="h-full"
+              src="/images/ch4-20-gbq-q030-06.jpg"
+              alt=""
+              loading="lazy"
+            />
           </div>
           <ImageCaption>
             <span className="font-bold">Left: </span>“Housetop,” by Rachel Carey

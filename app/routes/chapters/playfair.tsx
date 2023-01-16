@@ -26,6 +26,8 @@ export default function PlayfairPage() {
       value={{
         backgroundColor: "playfairPrimary",
         primaryTextColor: "white",
+        accentColor: "playfairPrimary",
+        accentTextColor: "white",
         footnoteTextColor: "playfairPrimary",
         footnotes: playfairFootnotes,
         footnoteState,

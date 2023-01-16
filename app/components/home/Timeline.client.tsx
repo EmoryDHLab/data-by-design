@@ -15,12 +15,18 @@ export default function Timeline() {
   const [selectedImage, setSelectedImage] = useState<Image>(
     () => imageData[Math.floor(Math.random() * imageData.length)]
   );
+  const [shouldShuffle, setShouldShuffle] = useState(false);
 
   return (
     <div className="text-white text-center font-dubois text-3xl py-4 bg-black">
       <h1>TIMELINE</h1>
       <div className="flex justify-center">
-        <button onClick={() => setTimelineType(TimelineType.Draggable)}>
+        <button
+          onClick={() => {
+            setTimelineType(TimelineType.Draggable);
+            setShouldShuffle((shouldShuffle) => !shouldShuffle);
+          }}
+        >
           <img
             className="w-10"
             src={
@@ -45,6 +51,7 @@ export default function Timeline() {
         <DraggableTimeline
           selectedImage={selectedImage}
           setSelectedImage={setSelectedImage}
+          shouldShuffle={shouldShuffle}
         />
       ) : (
         <OrderedTimeline

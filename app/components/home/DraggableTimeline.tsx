@@ -17,12 +17,15 @@ const PART_ONE_HEIGHT = 600;
 interface Props {
   selectedImage: Image;
   setSelectedImage: Dispatch<SetStateAction<Image>>;
+  // Dumb hack to shuffle timeline
+  shouldShuffle: boolean;
 }
 
 // Timeline of draggable documents arranged randomly
 export default function DraggableTimeline({
   selectedImage,
   setSelectedImage,
+  shouldShuffle,
 }: Props) {
   const windowSize = useWindowSize();
   const draggableImageRef = useRef<number | undefined>(undefined);
@@ -45,7 +48,7 @@ export default function DraggableTimeline({
         return { x, y, r };
       }),
     }));
-  }, [windowSize.width]);
+  }, [windowSize.width, shouldShuffle]);
 
   function getTransform(index: number) {
     const position = imagePositions[index];

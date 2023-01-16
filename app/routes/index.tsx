@@ -4,6 +4,7 @@ import Timeline from "~/components/home/Timeline.client";
 import { ClientOnly } from "remix-utils";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/theme";
+import ImageModal from "~/components/layout/ImageModal";
 
 export default function Index() {
   return (
@@ -16,7 +17,10 @@ export default function Index() {
       <HomeTitle />
       <div className="bg-duboisSecondary flex flex-col sm:flex-row">
         <div className="sm:w-2/5">
-          <img className="sm:p-20 p-10 pb-5 w-full" src="/images/ch4-5.webp" />
+          <ImageModal
+            className="sm:p-20 p-10 pb-5 w-full"
+            src="/images/ch4-5.webp"
+          />
         </div>
 
         <div className="sm:p-20 sm:w-3/5 w-full">

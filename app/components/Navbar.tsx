@@ -6,7 +6,7 @@ import { classNames } from "~/utils";
 export default function Navbar() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   return (
-    <div className="w-full bg-black flex items-center justify-evenly sm:pb-2 sm:pt-2 py-2 sm:py-0 z-1">
+    <div className="fixed w-full bg-black flex items-center justify-evenly sm:pb-2 sm:pt-2 py-2 sm:py-0 z-20">
       <div className="font-dubois text-white sm:text-2xl text-xl px-2 sm:px-0">
         <Link to="/">Data by Design</Link>
       </div>
