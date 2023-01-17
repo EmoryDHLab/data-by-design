@@ -42,7 +42,7 @@ export default function Scrollytell() {
           })}
         </Column>
         <Column shouldPin={true}>
-        <div className="grid content-center mt-8 my-4 mr-24 gap">
+        <div className="grid mb-4 mr-24">
           <Tutorial />
         </div>
         </Column>

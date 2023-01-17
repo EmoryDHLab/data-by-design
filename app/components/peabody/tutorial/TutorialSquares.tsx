@@ -17,7 +17,7 @@ export default function Tutorial() {
 
   return (
     <div>
-      <svg viewBox="0 0 99 99" className="max-h-[calc(60vh-60px)] m-auto">
+      <svg viewBox="0 0 99 99" className="mt-8 mx-auto">
         <g>
           <rect className="fill-peabodyOrange" x="0" width="100" height="99" />
           {[...numberRange(1601, 1700)].map((year, index) => {

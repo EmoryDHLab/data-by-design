@@ -8,10 +8,11 @@ interface Props {
   children?: ReactNodeLike;
   className?: string;
   shouldPin?: boolean;
+  debug?: boolean;
   id?: number;
 }
 
-export default function Column({ children, className, shouldPin, id }: Props) {
+export default function Column({ children, className, shouldPin, id, debug }: Props) {
   const pin = useRef(null);
   const content = useRef(null);
   const { footnoteState } = useContext(ChapterContext);
@@ -21,10 +22,10 @@ export default function Column({ children, className, shouldPin, id }: Props) {
     if (shouldPin) {
       gsap.registerPlugin(ScrollTrigger);
       scrollTrigger.current = ScrollTrigger.create({
-        trigger: pin.current.parentElement,
+        trigger: pin.current,
         start: "top 60px",
         end: `bottom ${content.current?.clientHeight + 120}px`,
-        markers: false, // set to true for debugging
+        markers: debug ?? false, // set to true for debugging
         pin: content.current,
         preventOverlaps: true,
         fastScrollEnd: true,
@@ -34,11 +35,11 @@ export default function Column({ children, className, shouldPin, id }: Props) {
     return () => {
       scrollTrigger.current?.kill();
     };
-  }, [pin, shouldPin, content]);
+  }, [pin, shouldPin, content, debug]);
 
   useEffect(() => {
     scrollTrigger.current?.refresh();
-  }, [footnoteState, scrollTrigger]);
+  }, [footnoteState, scrollTrigger, content, pin]);
 
   // The pinned element gets immediately wrapped in a <div> with a fixed width/height to match.
   // A class of "pin-spacer" is added to that wrapper. Think of it like a proxy element that props
@@ -46,7 +47,7 @@ export default function Column({ children, className, shouldPin, id }: Props) {
   // to position: fixed things don't collapse.
   // This extra layer maintains the layout.
   return (
-    <div ref={pin} className={`w-1/2 ${className ?? ""}`}>
+    <div ref={pin} className={`w-1/2 pt-4 ${className ?? ""}`}>
       <div ref={content} className="column-grid-wrapper">
         {children}
       </div>
