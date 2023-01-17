@@ -12,12 +12,12 @@ export default function Tutorial() {
     HighlightedElement | undefined
   >(undefined);
 
-  const [activeYear, setActiveYear] = useState<number>(undefined);
+  const [activeYear, setActiveYear] = useState<number | undefined>(undefined);
   const { scrollProgress } = useContext(ScrollytellContext);
 
   return (
-    <>
-      <svg className="w-full" viewBox="0 0 99 99">
+    <div>
+      <svg viewBox="0 0 99 99" className="max-h-[calc(60vh-60px)] m-auto">
         <g>
           <rect className="fill-peabodyOrange" x="0" width="100" height="99" />
           {[...numberRange(1601, 1700)].map((year, index) => {
@@ -53,6 +53,6 @@ export default function Tutorial() {
         </g>
       </svg>
       <TutorialKey highlightedElement={highlightedElement} />
-    </>
+    </div>
   )
 }
