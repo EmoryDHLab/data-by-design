@@ -5,9 +5,11 @@ import { ChapterContext } from "~/theme";
 interface Props {
   number: number;
   children: ReactNodeLike;
+  bgOverride: string;
+  textOverride: string;
 }
 
-export default function InlineFootnote({ index }: Props) {
+export default function InlineFootnote({ index, bgOverride, textOverride }: Props) {
   const { backgroundColor, primaryTextColor, footnoteTextColor, footnotes, setFootnoteState, } =
     useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
@@ -20,12 +22,12 @@ export default function InlineFootnote({ index }: Props) {
     <span>
       <button
         onClick={() => setIsTextVisible(!isTextVisible)}
-        className={`footnote bg-${backgroundColor} text-${primaryTextColor}`}
+        className={`footnote bg-${bgOverride ?? backgroundColor} text-${textOverride ?? primaryTextColor}`}
       >
         {index + 1}
       </button>
       {isTextVisible && (
-        <div className={`text-${footnoteTextColor}`}>{footnotes[index]}</div>
+        <div className={`text-${textOverride ?? footnoteTextColor}`}>{footnotes[index]}</div>
       )}
     </span>
   );

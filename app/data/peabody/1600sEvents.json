@@ -1,0 +1,382 @@
+{
+  "actorColors": {
+    "England": "rgb(119,43,21)",
+    "France": "rgb(60,100,100)",
+    "Americas": "rgb(222,145,49)",
+    "Holland": "rgb(68,108,73)",
+    "Sweden": "rgb(217,182,17)"
+  },
+  "keyText": [
+    "Battles, Sieges, Beginning of War",
+    "Conquests, Annexations, Unions",
+    "Losses and Disasters",
+    "Falls of States",
+    "Foundations of States and Revolutions",
+    "Treaties and Sundries",
+    "Births",
+    "Deeds",
+    "Deaths, of Remarkable Individuals"
+  ],
+  "events": [
+    {
+      "event": "Bartholomew Gosnold attempts to colonize Nashua",
+      "year": 1602,
+      "squares": [8],
+      "actors": ["England"]
+    },
+    {
+      "event": "First permanent french settlement at Port Royal in Acadia (Canada)",
+      "year": 1605,
+      "squares": [5],
+      "actors": ["France"]
+    },
+    {
+      "event": "George Weymouth's voyage to the Americas and piracy",
+      "year": 1605,
+      "squares": [8],
+      "actors": ["England"]
+    },
+    {
+      "event": "Jamestown, Virginia, the first permanent English colony",
+      "year": 1607,
+      "squares": "full",
+      "actors": ["England"]
+    },
+    {
+      "event": "Samuel de Champlain founds Quebec",
+      "year": 1608,
+      "squares": [5],
+      "actors": ["France"]
+    },
+    {
+      "event": "Pocahontas saves Captain Smith",
+      "year": 1608,
+      "squares": [8],
+      "actors": ["Americas"]
+    },
+    {
+      "event": "Short Indian War; English first attack French at Port Royal.",
+      "year": 1612,
+      "squares": [1],
+      "actors": ["England", "Americas", "England", "France"]
+    },
+    {
+      "event": "Pocahontas marries John Rolfe.",
+      "year": 1612,
+      "squares": [6],
+      "actors": ["England", "Americas"]
+    },
+    {
+      "event": "Dutch settle on the Hudson and Manhattan Island",
+      "year": 1615,
+      "squares": [5],
+      "actors": ["Holland"]
+    },
+    {
+      "event": "Pilgrims settle Plymouth",
+      "year": 1620,
+      "squares": [1, 2, 3, 4, 5, 7, 8, 9],
+      "actors": ["England"]
+    },
+    {
+      "event": "First slaves in Virginia (20 brought on a Dutch ship)",
+      "year": 1620,
+      "squares": [6],
+      "actors": ["Holland"]
+    },
+    {
+      "event": "Pocahontas dies",
+      "year": 1622,
+      "squares": [9],
+      "actors": ["Holland"]
+    },
+    {
+      "event": "Jamestown massacre",
+      "year": 1622,
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    },
+    {
+      "event": "Assaults on Powhatan settlements",
+      "year": 1622,
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    },
+    {
+      "event": " \"Indians are conquered\"",
+      "year": 1622,
+      "squares": [3],
+      "actors": ["Americas"]
+    },
+    {
+      "event": "Shores of Maine and New Hampshire settled",
+      "year": 1623,
+      "squares": "full",
+      "actors": ["England"]
+    },
+    {
+      "event": "English take Quebec",
+      "year": 1629,
+      "squares": [1],
+      "actors": ["England", "France"]
+    },
+    {
+      "event": "Peace with France (concluding the Anglo-French War)",
+      "year": 1629,
+      "squares": [6],
+      "actors": ["France", "England"]
+    },
+    {
+      "event": "French found Montreal",
+      "year": 1630,
+      "squares": [5],
+      "actors": ["France"]
+    },
+    {
+      "event": "De Vries' Voyage to Delaware",
+      "year": 1630,
+      "squares": [8],
+      "actors": ["Holland"]
+    },
+    {
+      "event": "Maryland settled by English Catholics",
+      "year": 1634,
+      "squares": "full",
+      "actors": ["England"]
+    },
+    {
+      "event": "Connecticut settled by Pilgrims from Massachusetts",
+      "year": 1635,
+      "squares": "full",
+      "actors": ["England"]
+    },
+    {
+      "event": "Rhode Island settled by Roger Williams, and Harvard College founded.",
+      "year": 1636,
+      "squares": "full",
+      "actors": ["England"]
+    },
+    {
+      "event": "English colonists in Connecticut killed by the Pequot",
+      "year": 1637,
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    },
+    {
+      "event": "Colonists, led by Captain Mason, attack Pequot village",
+      "year": 1637,
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    },
+    {
+      "event": "\"Pequot name and race were entirely extinguished\"",
+      "year": 1637,
+      "squares": [3],
+      "actors": ["Americas"]
+    },
+    {
+      "event": "Swedes and Finns colonize on the Delaware",
+      "year": 1638,
+      "squares": "full",
+      "actors": ["Sweden"]
+    },
+    {
+      "event": "English treaty with the Five Nations",
+      "year": 1644,
+      "squares": [6],
+      "actors": ["Americas", "England"]
+    },
+    {
+      "event": "Powhatan attack Virginia",
+      "year": 1644,
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    },
+    {
+      "event": "Retaliation against the Powhatan [third Anglo-Powhatan war]",
+      "year": 1644,
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    },
+    {
+      "event": "Powhatan decimated by the colonists [Third Anglo-Powhatan War]",
+      "year": 1644,
+      "squares": [3],
+      "actors": ["Americas"]
+    },
+    {
+      "event": "Dutch treaty with the Algonquins",
+      "year": 1645,
+      "squares": [6],
+      "actors": ["Americas", "Holland"]
+    },
+    {
+      "event": "New Sweden conquered by New Netherlands",
+      "year": 1655,
+      "squares": "full",
+      "actors": ["Sweden", "Holland"]
+    },
+    {
+      "event": "General persecution of Quakers",
+      "year": 1659,
+      "squares": [6],
+      "actors": ["England"]
+    },
+    {
+      "event": "Death of Mary Dyer",
+      "year": 1659,
+      "squares": [9],
+      "actors": ["England"]
+    },
+    {
+      "event": "North Carolina settled by persecuted Quakers",
+      "year": 1663,
+      "squares": "full",
+      "actors": ["England"]
+    },
+    {
+      "event": "New Netherlands surrendered to the English",
+      "year": 1664,
+      "squares": [1, 2, 4, 5, 6, 7, 8, 9],
+      "actors": ["England"]
+    },
+    {
+      "event": "New Netherlands surrendered to the English",
+      "year": 1664,
+      "squares": [3],
+      "actors": ["Holland"]
+    },
+    {
+      "event": "New Jersey granted to Berkeley and Carteret",
+      "year": 1665,
+      "squares": "full",
+      "actors": ["England"]
+    },
+    {
+      "event": "South Carolina settled. Locke's \"Grant Model\"",
+      "year": 1670,
+      "squares": "full",
+      "actors": ["England"]
+    },
+    {
+      "event": "King Philip's War",
+      "year": 1675,
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    },
+    {
+      "event": "King Philip's War",
+      "year": 1675,
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    },
+    {
+      "event": "Narragansetts destroyed",
+      "year": 1675,
+      "squares": [3],
+      "actors": ["Americas"]
+    },
+    {
+      "event": "King Philip Killed",
+      "year": 1675,
+      "squares": [9],
+      "actors": ["Americas"]
+    },
+    {
+      "event": "Bacon's Rebellion",
+      "year": 1676,
+      "squares": [8],
+      "actors": ["England"]
+    },
+    {
+      "event": "\"Indian War\" in Virginia",
+      "year": 1676,
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    },
+    {
+      "event": "\"Indian War\" in Virginia",
+      "year": 1676,
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    },
+    {
+      "event": "\"Indian War\" in Virginia",
+      "year": 1676,
+      "squares": [3],
+      "actors": ["Americas"]
+    },
+    {
+      "event": "Bacon dies",
+      "year": 1676,
+      "squares": [9],
+      "actors": ["England"]
+    },
+    {
+      "event": "Pennsylvania and Delaware founded by Penn",
+      "year": 1681,
+      "squares": "full",
+      "actors": ["England"]
+    },
+    {
+      "event": "La Salle sailed down the Mississippi",
+      "year": 1682,
+      "squares": [8],
+      "actors": ["France"]
+    },
+    {
+      "event": "French found Fort Niagra",
+      "year": 1686,
+      "squares": [5],
+      "actors": ["France"]
+    },
+    {
+      "event": "Sir Edmund Andros appointed governor of New England",
+      "year": 1686,
+      "squares": [8],
+      "actors": ["England"]
+    },
+    {
+      "event": "King William's War",
+      "year": 1689,
+      "squares": [1],
+      "actors": ["England", "France"]
+    },
+    {
+      "event": "Schenectady burnt, and massacre by French and Indians",
+      "year": 1690,
+      "squares": [1],
+      "actors": ["Americas", "France", "England"]
+    },
+    {
+      "event": "Delaware separated from Pennsylvania. College of \"William and Mary\" founded in Virginia",
+      "year": 1691,
+      "squares": "full",
+      "actors": ["England"]
+    },
+    {
+      "event": "Witchcraft in Massachusetts",
+      "year": 1692,
+      "squares": [6],
+      "actors": ["England"]
+    },
+    {
+      "event": "22 executions",
+      "year": 1692,
+      "squares": [9],
+      "actors": ["England"]
+    },
+    {
+      "event": "Peace of Ryswick ends \"King William's War\"",
+      "year": 1697,
+      "squares": [6],
+      "actors": ["England", "France"]
+    },
+    {
+      "event": "French found Biloxi on the Mississippi",
+      "year": 1699,
+      "squares": [5],
+      "actors": ["France"]
+    }
+  ]
+}

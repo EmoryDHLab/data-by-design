@@ -50,10 +50,15 @@ const THREE_POLYGONS_SPLIT = [
   "15, 15 0, 30 30, 30",
 ];
 
+const SQUARE = [
+  "0 0, 0 30, 30 30, 30, 0"
+]
+
 export const POLYGONS = [
-  undefined,
+  SQUARE,
   TWO_POLYGONS,
   THREE_POLYGONS,
   FOUR_POLYGONS,
   THREE_POLYGONS_SPLIT,
 ];
+

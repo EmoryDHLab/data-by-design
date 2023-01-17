@@ -20,6 +20,7 @@ import PeabodySandbox from "~/components/peabody/PeabodySandbox";
 import FootnotesList from "~/components/FootnotesList";
 import IntroParagraph from "~/components/IntroParagraph";
 import ImageModal from "~/components/layout/ImageModal";
+import Scrollytell from "~/components/peabody/PeabodyScrollytell";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -251,9 +252,9 @@ export default function PeabodyPage() {
           </p>
         </div>
       </CenteredLayout>
-      <div className="bg-peabodyPrimary h-[1000px] w-full flex flex-col items-center justify-center">
-        SCROLLYTELL HERE
-      </div>
+
+      <Scrollytell />
+
       <TwoColumnLayout>
         <Column className="py-10 space-y-5">
           <p>
