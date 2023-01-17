@@ -20,7 +20,7 @@ import PeabodySandbox from "~/components/peabody/PeabodySandbox";
 import FootnotesList from "~/components/FootnotesList";
 import IntroParagraph from "~/components/IntroParagraph";
 import ImageModal from "~/components/layout/ImageModal";
-import Scrollytell from "~/components/peabody/Scrollytell";
+import Scrollytell from "~/components/peabody/PeabodyScrollytell";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);

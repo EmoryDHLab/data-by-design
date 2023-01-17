@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { ScrollytellContext } from "~/scrollytellContext";
 import Column from "../layout/Column";
 import ScrollytellContent from "../ScrollytellContent";
-import Tutorial from "./Tutorial";
+import Tutorial from "./tutorial/TutorialSquares";
 import { ChapterContext } from "~/theme";
 import InlineFootnote from "../InlineFootnote";
 
