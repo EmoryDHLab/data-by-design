@@ -1192,22 +1192,24 @@ export default function PeabodyPage() {
           </span>
           <InlineFootnote index={38}></InlineFootnote>
         </p>
-        <div className="flex flex-col items-center middle-full">
-          <div className="flex space-x-5">
+        <div className="grid grid-cols-2 items-center middle-full gap-x-4">
+          <div className="flex space-x-5 self-stretch">
             <ImageModal
               className="h-full w-full"
-              src="/images/ch4-19-rachel-carey-george.jpg"
-              alt=""
-              loading="lazy"
-            />
-            <ImageModal
-              className="h-full w-full"
-              src="/images/ch4-20-gbq-q030-06.jpg"
+              src="/images/ch4-19-rachel-carey-george.webp"
               alt=""
               loading="lazy"
             />
           </div>
-          <ImageCaption>
+          <div className="flex space-x-5 self-stretch">
+            <ImageModal
+              className="h-full w-full"
+              src="/images/ch4-20-gbq-q030-06.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <ImageCaption className="col-span-2">
             <span className="font-bold">Left: </span>“Housetop,” by Rachel Carey
             George, ca. 1935.{" "}
             <p>
