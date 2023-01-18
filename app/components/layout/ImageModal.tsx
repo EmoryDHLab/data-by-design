@@ -1,24 +1,31 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/outline";
+import { ChapterContext } from "~/theme";
 
 interface Props {
   title?: string;
   src: string;
   alt?: string;
   className?: string;
+  loading?: boolean;
 }
 
-export default function ImageModal({ alt, className, src, title }: Props) {
+export default function ImageModal({ alt, className, src, title, loading }: Props) {
   const [open, setOpen] = useState(false);
+
+  const { setDocHeightState } = useContext(ChapterContext);
 
   return (
     <>
       <img
+        role="button"
         src={src}
         alt={alt}
         className={className}
+        loading={loading ?? "lazy"}
         onClick={() => setOpen(true)}
+        onLoad={() => setDocHeightState(docHeightState => docHeightState + 1)}
       />
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -57,7 +64,11 @@ export default function ImageModal({ alt, className, src, title }: Props) {
                         </Dialog.Title>
                       )}
                       <div className="mt-2">
-                        <img src={src} alt={title} />
+                        <img
+                          src={src}
+                          alt={title}
+                          loading={loading ?? "lazy"}
+                        />
                       </div>
                     </div>
                   </div>

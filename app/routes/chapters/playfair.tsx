@@ -19,7 +19,7 @@ import FootnotesList from "~/components/FootnotesList";
 import IntroParagraph from "~/components/IntroParagraph";
 
 export default function PlayfairPage() {
-  const [footnoteState, setFootnoteState] = useState<number>(0);
+  const [docHeightState, setDocHeightState] = useState<number>(0);
 
   return (
     <ChapterContext.Provider
@@ -30,8 +30,8 @@ export default function PlayfairPage() {
         accentTextColor: "white",
         footnoteTextColor: "playfairPrimary",
         footnotes: playfairFootnotes,
-        footnoteState,
-        setFootnoteState,
+        docHeightState,
+        setDocHeightState,
       }}
     >
       <ChapterTitle

@@ -15,7 +15,7 @@ interface Props {
 export default function Column({ children, className, shouldPin, id, debug }: Props) {
   const pin = useRef(null);
   const content = useRef(null);
-  const { footnoteState } = useContext(ChapterContext);
+  const { docHeightState } = useContext(ChapterContext);
   const scrollTrigger = useRef(null);
 
   useEffect(() => {
@@ -29,7 +29,6 @@ export default function Column({ children, className, shouldPin, id, debug }: Pr
         pin: content.current,
         preventOverlaps: true,
         fastScrollEnd: true,
-        anticipatePin: 1,
       });
     }
     return () => {
@@ -39,7 +38,7 @@ export default function Column({ children, className, shouldPin, id, debug }: Pr
 
   useEffect(() => {
     scrollTrigger.current?.refresh();
-  }, [footnoteState, scrollTrigger, content, pin]);
+  }, [docHeightState, scrollTrigger, content, pin]);
 
   // The pinned element gets immediately wrapped in a <div> with a fixed width/height to match.
   // A class of "pin-spacer" is added to that wrapper. Think of it like a proxy element that props

@@ -24,7 +24,7 @@ import Scrollytell from "~/components/peabody/PeabodyScrollytell";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
-  const [footnoteState, setFootnoteState] = useState<number>(0);
+  const [docHeightState, setDocHeightState] = useState<number>(0);
 
   return (
     <ChapterContext.Provider
@@ -36,8 +36,8 @@ export default function PeabodyPage() {
         footnotes: peabodyFootnotes,
         hoverState,
         setHoverState,
-        footnoteState,
-        setFootnoteState,
+        docHeightState,
+        setDocHeightState,
       }}
     >
       <ChapterTitle
@@ -1195,13 +1195,13 @@ export default function PeabodyPage() {
         <div className="flex flex-col items-center middle-full">
           <div className="flex space-x-5">
             <ImageModal
-              className="h-full"
+              className="h-full w-full"
               src="/images/ch4-19-rachel-carey-george.jpg"
               alt=""
               loading="lazy"
             />
             <ImageModal
-              className="h-full"
+              className="h-full w-full"
               src="/images/ch4-20-gbq-q030-06.jpg"
               alt=""
               loading="lazy"

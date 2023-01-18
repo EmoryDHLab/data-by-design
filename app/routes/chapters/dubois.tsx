@@ -13,7 +13,7 @@ import IntroParagraph from "~/components/IntroParagraph";
 import ImageModal from "~/components/layout/ImageModal";
 
 export default function DuboisChapter() {
-  const [footnoteState, setFootnoteState] = useState<number>(0);
+  const [docHeightState, setDocHeightState] = useState<number>(0);
 
   return (
     <ChapterContext.Provider
@@ -23,8 +23,8 @@ export default function DuboisChapter() {
         footnoteTextColor: "duboisPrimary",
         primaryTextColor: "white",
         footnotes: duboisFootnotes,
-        footnoteState,
-        setFootnoteState,
+        docHeightState,
+        setDocHeightState,
       }}
     >
       <ChapterTitle

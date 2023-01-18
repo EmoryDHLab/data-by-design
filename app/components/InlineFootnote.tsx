@@ -10,13 +10,13 @@ interface Props {
 }
 
 export default function InlineFootnote({ index, bgOverride, textOverride }: Props) {
-  const { backgroundColor, primaryTextColor, footnoteTextColor, footnotes, setFootnoteState, } =
+  const { backgroundColor, primaryTextColor, footnoteTextColor, footnotes, setDocHeightState, } =
     useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
 
   useEffect(() => {
-    setFootnoteState(footnoteState => footnoteState + 1);
-  }, [isTextVisible, setFootnoteState]);
+    setDocHeightState(docHeightState => docHeightState + 1);
+  }, [isTextVisible, setDocHeightState]);
 
   return (
     <span>
