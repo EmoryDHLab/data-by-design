@@ -19,7 +19,7 @@ export default function ChapterCard({
   return (
     <Link
       to={to}
-      className={"text-black font-dubois px-5 sm:px-28 " + className}
+      className={"text-white font-dubois px-5 sm:px-28 " + className}
     >
       <div className="text-3xl mt-16 mb-3 font-bold">{title}</div>
       <div className="text-xl mb-2">{subtitle}</div>

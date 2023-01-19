@@ -30,7 +30,7 @@ export default function OrderedTimeline({
     <div className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5">
       {Object.entries(imagesByYear).map(([year, images]) => (
         <div style={{ minWidth: `${images.length * 10 + 150}px` }}>
-          <h4 className="text-md text-left">{year}</h4>
+          <h4 className="text-base text-left">{year}</h4>
           <div className="relative">
             {images.map((image, index) => {
               const isSelected =

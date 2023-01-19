@@ -1,3 +1,5 @@
+// This is the home page!
+
 import HomeTitle from "~/components/home/HomeTitle";
 import ChapterCardGrid from "~/components/ChapterCardGrid";
 import Timeline from "~/components/home/Timeline.client";
@@ -32,7 +34,7 @@ export default function Index() {
               Library Company of Philadelphia.
             </span>
           </div>
-          <div className="text-lg p-5">Read More -&gt;</div>
+          <div className="font-dubois text-lg p-5">READ MORE → </div>
         </div>
       </div>
       <ClientOnly>{() => <Timeline />}</ClientOnly>

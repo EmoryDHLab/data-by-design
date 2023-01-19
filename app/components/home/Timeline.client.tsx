@@ -18,9 +18,9 @@ export default function Timeline() {
   const [shouldShuffle, setShouldShuffle] = useState(false);
 
   return (
-    <div className="text-white text-center font-dubois text-3xl py-4 bg-black">
+    <div className="text-white text-center font-duboisWide text-3xl p-10 bg-black">
       <h1>TIMELINE</h1>
-      <div className="flex justify-center">
+      <div className="flex justify-center p-3">
         <button
           onClick={() => {
             setTimelineType(TimelineType.Draggable);
@@ -28,7 +28,7 @@ export default function Timeline() {
           }}
         >
           <img
-            className="w-10"
+            className="w-14 m-2"
             src={
               timelineType === TimelineType.Draggable
                 ? "/images/ui/shuffle_click.png"
@@ -38,7 +38,7 @@ export default function Timeline() {
         </button>
         <button onClick={() => setTimelineType(TimelineType.Ordered)}>
           <img
-            className="w-10"
+            className="w-14 m-2"
             src={
               timelineType === TimelineType.Ordered
                 ? "/images/ui/sort_selected.png"
@@ -68,11 +68,11 @@ export default function Timeline() {
           <div className="text-3xl p-5">
             {selectedImage.TITLE}
             <br></br>
-            <div className="font-italic text-xl">
+            <div className="font-dubois italic text-xl pt-4">
               by {selectedImage.ARTIST} ({selectedImage.YEAR})
             </div>
           </div>
-          <div className="font-sans text-lg p-5">
+          <div className="font-sans text-lg p-4">
             <span>{selectedImage.CREDIT} </span>
             <br></br>
             <span>{selectedImage.DIGITIZED}</span>
@@ -81,7 +81,7 @@ export default function Timeline() {
             to={`/chapters/${selectedImage.CHAPTER}`}
             className="text-lg p-5"
           >
-            Go to chapter -&gt;
+            GO TO CHAPTER →
           </Link>
         </div>
       </div>
