@@ -19,10 +19,12 @@ export default function Navbar() {
             isDropdownVisible ? "text-playfairSecondary" : ""
           )}
         >
-          <div>Chapters</div>
+          <div className="font-dubois text-sm tracking-wider">CHAPTERS</div>
           {isDropdownVisible && <ChapterDropdown />}
         </div>
-        <Link to="/about">About</Link>
+        <Link to="/about" className="font-dubois text-sm tracking-wider">
+          ABOUT
+        </Link>
       </div>
     </div>
   );
