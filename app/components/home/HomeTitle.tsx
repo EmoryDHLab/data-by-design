@@ -30,7 +30,7 @@ export default function HomeTitle() {
           <br />
           1786-1900
         </div>
-        <div className="flex py-10 font-duboisLight pb-15 sm:p-0 sm:contents justify-between col-start-4 pr-8">
+        <div className="flex py-10 font-dubois font-light pb-15 sm:p-0 sm:contents justify-between col-start-4 pr-8">
           <div className="sm:text-xl italic text-sm sm:col-start-2 sm:col-span-2 sm:row-start-5">
             What is the story we tell
             <br /> about the emergence of

@@ -25,7 +25,6 @@ module.exports = {
     extend: {
       fontFamily: {
         dubois: ["VTC Du Bois", "serif"],
-        duboisLight: ["VTC Du Bois Light", "serif"],
         duboisWide: ["VTC Du Bois Wide", "serif"],
         duboisLightWide: ["VTC Du Bois Light Wide", "serif"],
         duboisNarrow: ["VTC Du Bois Narrow", "serif"],
@@ -69,7 +68,7 @@ module.exports = {
       },
       lineHeight: {
         veryTight: "0.8",
-      }
+      },
     },
   },
   variants: {
