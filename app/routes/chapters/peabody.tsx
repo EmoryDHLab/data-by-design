@@ -21,6 +21,7 @@ import FootnotesList from "~/components/FootnotesList";
 import IntroParagraph from "~/components/IntroParagraph";
 import ImageModal from "~/components/layout/ImageModal";
 import Scrollytell from "~/components/peabody/PeabodyScrollytell";
+import Quotation from "~/components/Quotation";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -1098,31 +1099,28 @@ export default function PeabodyPage() {
             continues:
           </span>
         </p>
-        <div className="font-dubois">
-          <p>
-            <span>
-              Every school must have a mural chart—&amp; there is but one way of
-              making them (until they can be made by ten thousands) &amp; that
-              is by stencilling [
-            </span>
-            <span className="italic">sic</span>
-            <span>
-              ]… I can do one a day. But I must sell them cheap… To day I worked
-              15 hours—only sitting down to take my meals—&amp; so I have done
-              all week—so much fatigue stupefies one—but as soon as it is
-              adopted in a few towns I shall be able to hire someone to do this
-              drudgery for me.
-            </span>
-          </p>
-          <div className="font-sans text-lg text-gray-500">
-            <p>
-              <span>Elizabeth Peabody,</span>
-            </p>
-            <p>
-              <span>Letter to Samuel Gray Ward, September 1850</span>
-            </p>
-          </div>
-        </div>
+
+        <Quotation
+          quote={
+            <>
+              <span>
+                Every school must have a mural chart—&amp; there is but one way
+                of making them (until they can be made by ten thousands) &amp;
+                that is by stenciling [
+              </span>
+              <span className="italic">sic</span>
+              <span>
+                ]… I can do one a day. But I must sell them cheap… To day I
+                worked 15 hours—only sitting down to take my meals—&amp; so I
+                have done all week—so much fatigue stupefies one—but as soon as
+                it is adopted in a few towns I shall be able to hire someone to
+                do this drudgery for me.
+              </span>
+            </>
+          }
+          byline="Elizabeth Peabody,Letter to Samuel Gray Ward, September 1850"
+        ></Quotation>
+
         <p>
           <span>
             While we cannot change the fact that we no longer have access to the
