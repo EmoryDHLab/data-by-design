@@ -22,12 +22,12 @@ export default function InlineFootnote({ index, bgOverride, textOverride }: Prop
     <span>
       <button
         onClick={() => setIsTextVisible(!isTextVisible)}
-        className={`footnote bg-${bgOverride ?? backgroundColor} text-${textOverride ?? primaryTextColor}`}
+        className={`footnote mr-2 bg-${bgOverride ?? backgroundColor} text-${textOverride ?? primaryTextColor}`}
       >
         {index + 1}
       </button>
       {isTextVisible && (
-        <div className={`text-${textOverride ?? footnoteTextColor}`}>{footnotes[index]}</div>
+        <span className={`block text-${textOverride ?? footnoteTextColor}`}>{footnotes[index]}</span>
       )}
     </span>
   );

@@ -16,13 +16,14 @@
     "@remix-run/vercel": "^1.7.2",
     "cross-env": "^7.0.3",
     "d3": "^7.6.1",
-    "gsap": "^3.11.3",
+    "intersection-observer": "^0.12.2",
     "p5": "^1.5.0",
     "react": "^18.2.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
-    "remix-utils": "^3.3.0"
+    "remix-utils": "^3.3.0",
+    "scrollama": "^3.2.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.7.2",

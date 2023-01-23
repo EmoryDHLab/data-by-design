@@ -1,3 +1,3 @@
 export default function IntroParagraph({ children }) {
-  return <div className="first-paragraph font-dubois">{children}</div>;
+  return <p className="first-paragraph font-dubois">{children}</p>;
 }
