@@ -1,11 +1,11 @@
-import { useContext, useState } from "react";
-import Column from "../layout/Column";
+import { useContext, useEffect, useRef, useState } from "react";
+import scrollama from "scrollama";
 import Recreation from "./Recreation";
-import ScrollytellContent from "../ScrollytellContent";
 import { ChapterContext } from "~/theme";
 import { ScrollytellContext } from "~/scrollytellContext";
 
 const triggers = [
+  (<></>),
   (<>The table in the first edition of the <cite>Atlas</cite> includes data only for the years between 1770 and 1782.</>),
   (<>Playfair nevertheless plotted data lines for the full range of years between 1700 and 1780.</>),
   (<>He shaded the area between the two data lines in order to illustrate the balance of trade between the two nations. Stippled dots indicate periods of time when the amount of imports from North America to England exceeded the amount of exports from England to North America. Diagonal lines indicate the times when exports from England to North America exceed imports.</>),
@@ -20,7 +20,25 @@ const triggers = [
 
 export default function Scrollytell() {
   const [ scrollProgress, setScrollProgress ] = useState(0.0);
-  const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
+  const { backgroundColor, primaryTextColor, docHeightState } = useContext(ChapterContext);
+  const scroller = useRef(scrollama());
+  const steps = useRef(undefined);
+
+  useEffect(() => {
+    if (steps.current?.children.length !== triggers.length) return;
+    scroller.current.setup({
+      offset: "60px",
+      step: ".step",
+      progress: true,
+    })
+    .onStepProgress(({index, progress}) => setScrollProgress(index + progress));
+
+    return () => scroller.current?.destroy();
+  }, [setScrollProgress, steps]);
+
+  useEffect(() => {
+    scroller.current?.resize();
+  }, [docHeightState]);
 
   return (
     <ScrollytellContext.Provider
@@ -29,27 +47,19 @@ export default function Scrollytell() {
         setScrollProgress
       }}
     >
-      <div className={`bg-${backgroundColor} flex max-w-screen scrollytell`}>
-        <Column className="w-screen mx-24">
-          <p className="text-2xl h-[50vh]"></p>
+      <div className={`bg-${backgroundColor} flex justify-between`}>
+        <div ref={steps} className="bias-1/2 w-2/5">
           {triggers.map((trigger, index) => {
             return (
-              <ScrollytellContent
-                key={index}
-                id={index}
-                last={index + 1 === triggers.length}
-                color={primaryTextColor}
-              >
+              <p key={index} data-step={index} className={`step text-2xl content-center px-12 ${index + 1 === triggers.length || index == 0 ? "h-[60vh]" : "h-screen"} text-${primaryTextColor}`}>
                 {trigger}
-              </ScrollytellContent>
+              </p>
             );
           })}
-        </Column>
-        <Column shouldPin={true}>
-          <div className="grid content-center h-screen mr-24">
-            <Recreation />
-          </div>
-        </Column>
+        </div>
+        <div className="sticky top-[60px] h-screen bias-1/2 w-3/5 mr-24">
+          <Recreation />
+        </div>
       </div>
     </ScrollytellContext.Provider>
   )

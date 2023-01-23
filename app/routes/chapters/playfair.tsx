@@ -41,10 +41,8 @@ export default function PlayfairPage() {
       <TwoColumnLayout className="py-10">
         <Column shouldPin={true}>
           <div className="right-bleed space-y-10">
-            <p>
-              <IntroParagraph>
-                One can only imagine the choice words exclaimed by the{" "}
-              </IntroParagraph>{" "}
+            <IntroParagraph>
+              One can only imagine the choice words exclaimed by the
               Scottish political economist William Playfair (1759-1823) when he
               recognized the error that he had inadvertently engraved into the
               tail end of the data line on his chart of "Exports &amp; Imports
@@ -59,7 +57,7 @@ export default function PlayfairPage() {
               third edition of his <cite>Commercial and Political Atlas</cite>
               (1801), a revised version of the volume he first published in
               1786; it was also the expense.
-            </p>
+            </IntroParagraph>
             <p>
               Today, Playfair is widely celebrated for his leading role in the
               development of modern data visualization. His bar charts, pie
@@ -89,14 +87,14 @@ export default function PlayfairPage() {
           </div>
         </Column>
         <Column>
-          <Figure src="/images/playfair/1-northamerica.jpg" alt="">
+          <Figure className="ml-12" src="/images/playfair/1-northamerica.jpg" alt="">
             William Playfair's chart of "Exports &amp; Imports to and from all
             of North America," published in the third edition of the{" "}
             <cite> Commercial and Political Atlas</cite> (1801). Image courtesy
             of the Library Company of Philadelphia.
           </Figure>
 
-          <Figure src="/images/playfair/2-wheat.jpg" alt="">
+          <Figure className="ml-12" src="/images/playfair/2-wheat.jpg" alt="">
             Playfair's "Chart Showing at One View the Price of the Quarter of
             Wheat, &amp; Wages of Labour by the Week, from the Year 1565 to
             1821," published in 1822. The chart's representation of the price of
@@ -105,7 +103,7 @@ export default function PlayfairPage() {
             believed to be the first). Image courtesy of Wikimedia Commons."
           </Figure>
 
-          <Figure src="/images/playfair/3-pie.jpg" alt="">
+          <Figure className="ml-12" src="/images/playfair/3-pie.jpg" alt="">
             Playfair's "Chart Representing the Extent, Population &amp;
             Revenues, of the Principal Nations in Europe, after the Division of
             Poland &amp; Treaty of Luneville," published in the{" "}
@@ -575,9 +573,9 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column>
-          <Figure src="/images/playfair/8-lyra.png" alt=""></Figure>
-          <Figure src="/images/playfair/9-protovis.png" alt=""></Figure>
-          <Figure src="/images/playfair/10-camoes.png" alt="">
+          <Figure className="ml-12" src="/images/playfair/8-lyra.png" alt=""></Figure>
+          <Figure className="ml-12" src="/images/playfair/9-protovis.png" alt=""></Figure>
+          <Figure className="ml-12" src="/images/playfair/10-camoes.png" alt="">
             Clockwise from top left: Playfair's chart of wheat and wages, as
             recreated in Lyra, an early visualization platform designed by
             Arvind Satyanarayan and Jeffrey Heer; the same chart recreated in
@@ -696,7 +694,7 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column>
-          <Figure src="/images/playfair/jevons.png" alt="">
+          <Figure className="ml-12" src="/images/playfair/jevons.png" alt="">
             Jevons's illustration of the benefits of the "graphical method," in
             which "it becomes possible to trae a line among the points which
             will approximate to the true law more nearly than the ponts

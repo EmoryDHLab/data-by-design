@@ -1,12 +1,12 @@
-import { useContext, useState } from "react";
-import { ScrollytellContext } from "~/scrollytellContext";
-import Column from "../layout/Column";
-import ScrollytellContent from "../ScrollytellContent";
+import { useContext, useEffect, useRef, useState } from "react";
+import scrollama from "scrollama";
 import Tutorial from "./tutorial/TutorialSquares";
 import { ChapterContext } from "~/theme";
+import { ScrollytellContext } from "~/scrollytellContext";
 import InlineFootnote from "../InlineFootnote";
 
 const triggers = [
+  (<></>),
   (<>Peabody's version of Bem's system borrows the idea of a numbered grid, with each year in a century marked out in its own box.</>),
   (<>She also borrows the idea of subdividing each box, so that each of the nine interior squares corresponds to a particular type of historical event.</>),
   (<>In the Polish-American System, as in Bem's, the top left corner is the space for wars, battles, and sieges; in the top middle is the space for conquests and unions; in the top right is the space for losses and divisions, and so on.</>),
@@ -15,8 +15,26 @@ const triggers = [
 ];
 
 export default function Scrollytell() {
-  const [scrollProgress, setScrollProgress] = useState(0.0);
-  const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
+  const [ scrollProgress, setScrollProgress ] = useState(0.0);
+  const { backgroundColor, primaryTextColor, docHeightState } = useContext(ChapterContext);
+  const scroller = useRef(scrollama());
+  const steps = useRef(undefined);
+
+  useEffect(() => {
+    if (steps.current?.children.length !== triggers.length) return;
+    scroller.current.setup({
+      offset: "60px",
+      step: ".step",
+      progress: true,
+    })
+    .onStepProgress(({index, progress}) => setScrollProgress(index + progress));
+
+    return () => scroller.current?.destroy();
+  }, [setScrollProgress, steps]);
+
+  useEffect(() => {
+    scroller.current?.resize()
+  }, [docHeightState])
 
   return (
     <ScrollytellContext.Provider
@@ -25,28 +43,20 @@ export default function Scrollytell() {
         setScrollProgress
       }}
     >
-      <div className={`bg-${backgroundColor} flex max-w-screen scrollytell`}>
-        <Column className="w-screen mx-24">
-          <p className="text-2xl h-[50vh]"></p>
+      <div className={`bg-${backgroundColor} flex justify-between`}>
+        <div ref={steps} className="bias-1/2 w-1/2">
           {triggers.map((trigger, index) => {
             return (
-              <ScrollytellContent
-                key={index}
-                id={index}
-                last={index + 1 === triggers.length}
-                color={primaryTextColor}
-              >
+              <p key={index} data-step={index} className={`step text-2xl content-center px-12 ${index + 1 === triggers.length || index == 0 ? "h-[60vh]" : "h-screen"} text-${primaryTextColor}`}>
                 {trigger}
-              </ScrollytellContent>
+              </p>
             );
           })}
-        </Column>
-        <Column shouldPin={true}>
-        <div className="grid mb-4 mr-24">
+        </div>
+        <div className="sticky top-[60px] h-screen bias-1/2 w-1/2 mr-24">
           <Tutorial />
         </div>
-        </Column>
       </div>
     </ScrollytellContext.Provider>
   )
-};
+}

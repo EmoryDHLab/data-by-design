@@ -43,76 +43,53 @@ export default function PeabodyPage() {
     >
       <ChapterTitle
         title="The Work of Knowledge"
-        subtitle="Elizabeth Palmer Peabody’s Chronological Grids"
+        subtitle="Elizabeth Palmer Peabody's Chronological Grids"
       />
       <TwoColumnLayout className="py-10">
-        <Column>
-          <div className="right-bleed space-y-10">
-            <div>
-              <IntroParagraph>
-                Elizabeth Palmer Peabody was born in Massachusetts in 1804.{" "}
-              </IntroParagraph>
-              <span>
-                Today, she is most widely recognized for her proximity to more
-                famous men—in particular, to the writers of the American
-                Renaissance, such as Ralph Waldo Emerson and Nathaniel
-                Hawthorne, and to early champions of educational reform, such as
-                Bronson Alcott and Horace Mann. (One of her sisters, Sophia
-                Amelia Peabody, was married to Hawthorne; and the other, Mary
-                Tyler Peabody, was married to Mann). But Elizabeth Palmer
-                Peabody had intellectual impact in her own right: the bookstore
-                that she ran out of her home, at 13 West Street, in Boston,
-                functioned as the{" "}
-              </span>
-              <span className="italic">de facto</span>
-              <span>
-                {" "}
-                salon for the transcendentalist movement. She edited and
-                published the first version of Henry David Thoreau’s essay on
-                civil disobedience. And she is credited with starting the first
-                kindergarten in the United States
-              </span>
-              <span>.</span>
-              <InlineFootnote index={0} />
-            </div>
-            <p>
-              <span>
-                Indeed, Peabody was an educator to her core. She came from a
-                family of teachers. Her mother and two sisters all taught
-                grade-school at various times. And in the 1850s, when she set
-                out from her home in Boston to ride the rails, it was with an
-                explicitly educational aim: to promote the pair of
-              </span>
-              <span> history textbooks she had recently written, </span>
-              <span className="italic">
-                The Polish-American System of Chronology
-              </span>
-              <span> (1850) and </span>
-              <span className="italic">
-                A Chronological History of the United States{" "}
-              </span>
-              <span>
-                (1856). She traveled as far north as{" "}
-                <HoverText hoverState="Rochester" className="font-semibold">
-                  Rochester, NY
-                </HoverText>
-                ; as far west as{" "}
-                <HoverText hoverState="Louisville" className="font-semibold">
-                  Louisville, KY
-                </HoverText>
-                ; and as far south as{" "}
-                <HoverText hoverState="Richmond" className="font-semibold">
-                  Richmond, VA
-                </HoverText>
-                , in order to{" "}
-              </span>
-              <span>evangelize about </span>
-              <span>
-                her new pedagogical method. The Polish-American System, she came
-                to call it, was a method with data visualization at its center.
-              </span>
-            </p>
-          </div>
+        <Column shouldPin={true}>
+          <IntroParagraph>
+            Elizabeth Palmer Peabody was born in Massachusetts in 1804.
+            Today, she is most widely recognized for her proximity to more
+            famous men—in particular, to the writers of the American
+            Renaissance, such as Ralph Waldo Emerson and Nathaniel
+            Hawthorne, and to early champions of educational reform, such as
+            Bronson Alcott and Horace Mann. (One of her sisters, Sophia
+            Amelia Peabody, was married to Hawthorne; and the other, Mary
+            Tyler Peabody, was married to Mann). But Elizabeth Palmer
+            Peabody had intellectual impact in her own right: the bookstore
+            that she ran out of her home, at 13 West Street, in Boston,
+            functioned as the <span className="italic">de facto</span>
+            salon for the transcendentalist movement. She edited and
+            published the first version of Henry David Thoreau's essay on
+            civil disobedience. And she is credited with starting the first
+            kindergarten in the United States.
+            <InlineFootnote index={0} />
+          </IntroParagraph>
+          <p>
+            Indeed, Peabody was an educator to her core. She came from a
+            family of teachers. Her mother and two sisters all taught
+            grade-school at various times. And in the 1850s, when she set
+            out from her home in Boston to ride the rails, it was with an
+            explicitly educational aim: to promote the pair of
+            history textbooks she had recently written,
+            <cite>The Polish-American System of Chronology</cite>
+            (1850) and <cite>A Chronological History of the United States</cite>
+            (1856). She traveled as far north as
+              <HoverText hoverState="Rochester" className="font-semibold">
+                Rochester, NY
+              </HoverText>
+              ; as far west as{" "}
+              <HoverText hoverState="Louisville" className="font-semibold">
+                Louisville, KY
+              </HoverText>
+              ; and as far south as{" "}
+              <HoverText hoverState="Richmond" className="font-semibold">
+                Richmond, VA
+              </HoverText>
+            , in order to evangelize about her new pedagogical method.
+            The Polish-American System, she came to call it, was a method
+            with data visualization at its center.
+          </p>
           <FullBleed>
             <PullQuote
               title="Peabody designed her charts to be abstract rather than intuitive;"
@@ -185,7 +162,7 @@ export default function PeabodyPage() {
             </div>
             <ImageCaption>
               The four chronological charts included in Elizabeth Palmer
-              Peabody’s Chronological History of the United States (1865), which
+              Peabody's Chronological History of the United States (1865), which
               display the significant events of the 1500s, 1600s, 1700s, and
               1800s. Images courtesy of the Internet Archive. Digitized by the
               Library of Congress.
@@ -200,7 +177,7 @@ export default function PeabodyPage() {
         <div className="space-y-5 py-10">
           <p>
             <span>
-              Peabody’s method of visualizing events of historical significance
+              Peabody's method of visualizing events of historical significance
               was inspired by a system developed in Poland in the 1820s, and
               popularized in subsequent decades by the military general (and
               erstwhile math teacher) Jósef Bem.
@@ -208,7 +185,7 @@ export default function PeabodyPage() {
             <InlineFootnote index={3}></InlineFootnote>
             <span>
               {" "}
-              Bem’s system employed a grid overlaid with shapes and colors to
+              Bem's system employed a grid overlaid with shapes and colors to
               visually represent events in time.{" "}
             </span>
             <span>In </span>
@@ -228,9 +205,9 @@ export default function PeabodyPage() {
               But Peabody first encountered the system by chance: through a
               traveling lecturer who briefly boarded with her family on West
               Street. The boarder, a man named Joseph Podbielski, had come from
-              Poland with copies of Bem’s charts, which he intended to promote
+              Poland with copies of Bem's charts, which he intended to promote
               on a lecture tour of the United States. While he soon departed the
-              family’s residence, Peabody remained “captivated” by the charts,
+              family's residence, Peabody remained “captivated” by the charts,
               according to one of her biographers, Bruce Ronda.
             </span>
             <InlineFootnote index={5}></InlineFootnote>
@@ -257,69 +234,54 @@ export default function PeabodyPage() {
       <Scrollytell />
 
       <TwoColumnLayout>
-        <Column className="py-10 space-y-5">
+        <Column>
           <p>
-            <span>In </span>
-            <span className="italic">
-              The Polish-American System of Chronology
-            </span>
-            <span>
-              , Peabody covers a tremendous expanse of time: the period between
-              2500 BCE and 1849 CE (what was then the present). But Peabody also
-              saw the need for a textbook that focused exclusively on the United
-              States, and that went into more detail than she could cover in a
-              textbook on world history. And so, shortly after the release of
-              the{" "}
-            </span>
-            <span className="italic">Polish-American System</span>
-            <span>
-              , she began working on the book that would be published, in 1856,
-              as{" "}
-            </span>
-            <span className="italic">
-              A Chronological History of the United States
-            </span>
-            <span>
-              . This textbook contained the four full-color plates displayed
-              above; one for each of the centuries since the first European
-              colonizers set foot on Native American land. As Peabody envisioned
-              it, the basic exercise was to read a chapter of the textbook,
-              which contained a narrative account of the events of a single
-              century, and then match each item in the list of events that
-              concluded the chapter with its visual representation on the
-              corresponding chart.
-            </span>
+            In <cite>The Polish-American System of Chronology</cite>,
+            Peabody covers a tremendous expanse of time: the period between
+            2500 BCE and 1849 CE (what was then the present). But Peabody also
+            saw the need for a textbook that focused exclusively on the United
+            States, and that went into more detail than she could cover in a
+            textbook on world history. And so, shortly after the release of
+            the <cite>Polish-American System</cite>, she began working on the
+            book that would be published, in 1856, as <cite>A Chronological
+            History of the United States</cite>. This textbook contained the
+            four full-color plates displayed
+            above; one for each of the centuries since the first European
+            colonizers set foot on Native American land. As Peabody envisioned
+            it, the basic exercise was to read a chapter of the textbook,
+            which contained a narrative account of the events of a single
+            century, and then match each item in the list of events that
+            concluded the chapter with its visual representation on the
+            corresponding chart.
           </p>
           <p>
-            <span>
-              For example, by cross-referencing the table of events of the
-              seventeenth century, pictured just below, to its corresponding
-              chart, it is possible to identify, for example, the{" "}
-              <HoverText className="font-semibold" hoverState="Jamestown">
-                founding of Jamestown in 1607;
-              </HoverText>{" "}
-              that is the large red square in the first row on the right—red to
-              signal England’s involvement, and its full-square shading to
-              indicate its heightened significance. One can also identify, in
-              the last square on the right, one row from the top,{" "}
-              <HoverText className="font-semibold" hoverState="Plymouth">
-                the settlement of Plymouth in 1620.
-              </HoverText>{" "}
-              The square is nearly entirely red—again, because of England’s
-              involvement and because of its heightened significance—save for a
-              small teal square in the middle-right position. Teal corresponds
-              to action by the Dutch; indeed, this registers the{" "}
-              <HoverText
-                className="font-semibold"
-                hoverState="FirstEnslavedAfricans"
-              >
-                first enslaved Africans arriving in Virginia in that same year.
-              </HoverText>{" "}
-              On the side of abolition but by no means its most radical
-              proponent, the square’s ratio of red to teal reflects Peabody’s
-              awareness of—if not an urgency about—the need to end slavery in
-              the United States.
-            </span>
+            For example, by cross-referencing the table of events of the
+            seventeenth century, pictured just below, to its corresponding
+            chart, it is possible to identify, for example, the
+            <HoverText className="font-semibold" hoverState="Jamestown">
+              founding of Jamestown in 1607;
+            </HoverText>
+            that is the large red square in the first row on the right—red to
+            signal England's involvement, and its full-square shading to
+            indicate its heightened significance. One can also identify, in
+            the last square on the right, one row from the top,
+            <HoverText className="font-semibold" hoverState="Plymouth">
+              the settlement of Plymouth in 1620.
+            </HoverText>{" "}
+            The square is nearly entirely red—again, because of England's
+            involvement and because of its heightened significance—save for a
+            small teal square in the middle-right position. Teal corresponds
+            to action by the Dutch; indeed, this registers the
+            <HoverText
+              className="font-semibold"
+              hoverState="FirstEnslavedAfricans"
+            >
+              first enslaved Africans arriving in Virginia in that same year.
+            </HoverText>
+            On the side of abolition but by no means its most radical
+            proponent, the square's ratio of red to teal reflects Peabody's
+            awareness of—if not an urgency about—the need to end slavery in
+            the United States.
             <InlineFootnote index={8}></InlineFootnote>
           </p>
         </Column>
@@ -333,7 +295,7 @@ export default function PeabodyPage() {
             <span>
               Chronology—or, the study of events in time—is not, of course, the
               same as historiography—the study of how history is written. But in
-              Peabody’s mind, the one led to the other: “If you have the dates
+              Peabody's mind, the one led to the other: “If you have the dates
               here [on the charts] represented perfectly by heart,” as she
               explains in the introduction to students included in the{" "}
             </span>
@@ -351,14 +313,14 @@ export default function PeabodyPage() {
             <InlineFootnote index={10}></InlineFootnote>
             <span>
               {" "}
-              But Peabody’s approach diverged from the rote memorization that
+              But Peabody's approach diverged from the rote memorization that
               characterized most mid-nineteenth-century classrooms in that her
-              ultimate aim was for each student’s mental picture of past events
+              ultimate aim was for each student's mental picture of past events
               to prompt a richer--and, crucially, and
               individually-constructed--narrative of history. For Peabody, the
               power of this personal narrative of history was immense: it could
               show “the origin and consequences of national action”; and for the
-              US in particular—the world’s first representative democracy—it
+              US in particular—the world's first representative democracy—it
               could instruct “every one what to do and what to leave undone, in
               his own inevitable action,” as a necessary participant in their
               own governance.
@@ -367,7 +329,7 @@ export default function PeabodyPage() {
           </p>
           <p>
             <span>
-              Far from an antiquated line of thinking, Peabody’s belief in the
+              Far from an antiquated line of thinking, Peabody's belief in the
               catalyzing effects of chronology remains deeply embedded in US
               culture today. As a prominent example, one might consider the
               efforts of{" "}
@@ -383,7 +345,7 @@ export default function PeabodyPage() {
               Virginia—as the starting point for the history of the United
               States. The goal of this revised origin point, as Hannah-Jones
               explains in the visual feature that introduces the 1619 Project,
-              is to “reframe the country’s history by placing the consequences
+              is to “reframe the country's history by placing the consequences
               of slavery and the contributions of black Americans at the very
               center of our national narrative.”
             </span>
@@ -402,7 +364,7 @@ export default function PeabodyPage() {
           </p>
           <p>
             <span>
-              But it is not only the narrative of the nation’s founding that can
+              But it is not only the narrative of the nation's founding that can
               benefit from a recentering of the enduring costs of its legacy of
               slavery, or of the contributions made by its Black citizens. In
               her acclaimed recent book,{" "}
@@ -485,7 +447,7 @@ export default function PeabodyPage() {
             and places that shape what we know,{" "}
           </span>
           <span>
-            we might return to Peabody’s chronological charts with the
+            we might return to Peabody's chronological charts with the
             observation that few twenty-first-century viewers—or, for that
             matter, nineteenth-century ones—could have intuited the significance
             of the events encoded in the charts without first taking the time to
@@ -499,7 +461,7 @@ export default function PeabodyPage() {
             champion the ease and efficiency of visualization; or those who
             maintain that data visualization is best deployed to amplify already
             existing thought processes. In support of these arguments, consider
-            the representation of the events encoded in Peabody’s chart of the
+            the representation of the events encoded in Peabody's chart of the
             seventeenth century as a timeline, rather than a grid, shown just
             below. The progression of events over the course of the century,
             culminating in a series of wars and rebellions in the late 1680s and
@@ -511,7 +473,7 @@ export default function PeabodyPage() {
       <CenteredLayout>
         <p>
           <span>
-            But for Peabody, her charts’ near-total abstraction was precisely
+            But for Peabody, her charts' near-total abstraction was precisely
             the point. She designed her charts to appeal to the senses directly,
             to provide what she called “outlines to the eye.”
           </span>
@@ -528,11 +490,11 @@ export default function PeabodyPage() {
             The result would be a proliferation of historical narratives, one
             originating in the mind of each viewer, and reflecting their own
             interpretation of the chart. Anticipating claims about both the
-            situated and relational nature of knowledge production, Peabody’s
+            situated and relational nature of knowledge production, Peabody's
             visualization system reconfigures the otherwise unidirectional
-            transfer of knowledge between image and viewer. What’s more, it
+            transfer of knowledge between image and viewer. What's more, it
             affirms each interpretation of each image as knowledge, and
-            therefore, each viewer as that knowledge’s source.
+            therefore, each viewer as that knowledge's source.
           </span>
         </p>
       </CenteredLayout>
@@ -549,7 +511,7 @@ export default function PeabodyPage() {
                 nation became increasingly consumed by the Civil War, Peabody
                 found purchase in a personal recommitment to early childhood
                 education. Her kindergarten—the first of its kind in the United
-                States—which she opened with her sister (and Horace Mann’s
+                States—which she opened with her sister (and Horace Mann's
                 widow), Mary Tyler Mann, served as a proving ground for her
                 innovative pedagogical ideas. With her sister, she also
                 published a series of texts that documented the theories they
@@ -562,20 +524,12 @@ export default function PeabodyPage() {
               <span></span>
             </p>
             <p>
-              <span>
-                In addition, on her own, Peabody continued to iterate on the
-                teaching and learning materials associated with the{" "}
-              </span>
-              <span className="italic">Polish-American System</span>
-              <span>
-                . In 1870, she began printing workbooks with sheets of blank
-                charts—"blank centuries,” as she called them--so that students
-                could
-              </span>
-              <span className="italic"> </span>
-              <span>themselves create</span>
-              <span className="italic"> </span>
-              <span>the visualizations that they would then study.</span>
+              In addition, on her own, Peabody continued to iterate on the
+              teaching and learning materials associated with the
+              <cite>Polish-American System</cite>. In 1870, she began
+              printing workbooks with sheets of blank charts—"blank centuries,”
+              as she called them--so that students could themselves create
+              the visualizations that they would then study.
             </p>
           </Column>
           <Column>
@@ -586,10 +540,7 @@ export default function PeabodyPage() {
               width="500px"
             />
             <ImageCaption>
-              A blank chart from
-              <span className="italic">
-                Blank Centuries for Monographs of History{" "}
-              </span>
+              A blank chart from <cite>Blank Centuries for Monographs of History</cite>
               (1870), the workbook that Peabody printed to accompany her history
               textbooks. Courtesy of the American Antiquarian Society. Photo by
               Lauren Klein.
@@ -601,132 +552,101 @@ export default function PeabodyPage() {
         CHART HERE
       </div>
       <TwoColumnLayout className="pt-20">
-        <Column className="space-y-8">
-          <FullBleed className="px-20">
-            <p>
-              <span>
-                But the exercise of creating a chronological chart from scratch
-                is quite hard, as you--the reader--might have discovered from
-                the interaction above. Not to worry, however! The difficulty
-                level was high for students of the nineteenth century as well.
-              </span>
-              <span>
-                Peabody’s nephew, Julian Hawthorne, who served as her first test
-                subject, recalled that she “labored during some years to teach
-                me all the leading dates of human history,” but that he
-                nevertheless remained “most inapt and grievous” throughout the
-                process.
-              </span>
-              <InlineFootnote index={21}></InlineFootnote>
-              <span>
-                {" "}
-                The evidence in the archive confirms this first-hand account. At
-                the American Antiquarian Society, the Library Company of
-                Philadelphia, Yale’s Beinecke Library, and Princeton’s Special
-                Collections can be found{" "}
-              </span>
-              <span>
-                multiple copies of Peabody’s workbooks, many of which I’ve
-                personally paged through over the course of conducting research
-                for this project. The workbooks all tend to follow a similar
-                pattern: a page or two of grids filled out in earnest; then a
-                series of attempts abandoned halfway; and then a shift in
-                purpose, the grid becoming a canvas for pattern and unbridled
-                play.
-              </span>
-            </p>
-            <p>
-              <span>
-                It’s worth repeating that the difficulty of the Polish-American
-                system is both a liability of the form and also the point.
-                Peabody first developed her method at a time when the nation’s
-                future seemed to hang in balance. The second half of the 1840s
-                had brought an increased awareness of the nation’s growing
-                sectarianism, as well as its range of social ills--albeit with a
-                (mostly) optimistic view about the potential of its governing
-                structures to address these challenges. But as the 1850s
-                unfolded, the magnitude of these challenges became increasingly
-                more pronounced. Even as her privilege protected her from having
-                to enter the political fray, Peabody recognized that the task of
-                resolving the underlying issue of sectarianism, not to mention
-                the moral obligation of ending slavery, posed a degree of
-                difficulty of the highest order. Peabody understood, moreover,
-                that any successful resolution would require sustained effort
-                and thought.
-              </span>
-            </p>
-            <FullBleed>
-              <PullQuote
-                title="By prompting her students to create new narratives of the past, "
-                subtitle="they would also imagine alternative possible futures. "
-              />
-            </FullBleed>
-            <p>
-              <span>Her goal with the </span>
-              <span className="italic">Polish-American System</span>
-              <span>
-                {" "}
-                was thus to create a framework, equal parts intellectual and
-                immersive, through which this difficult thinking could take
-                place. “The old world is covered with bad institutions which men
-                have created, very often with positively good intentions, but on
-                false notions, or, at least, without large and profound ideas,”
-                she explains in the preface to the{" "}
-              </span>
-              <span className="italic">Chronological History</span>
-              <span>
-                . “Whether the new world shall estimate and sift out these
-                evils, or repeat these mistakes, depends on young Americans, who
-                are now sitting in schoolrooms all over the country, unconscious
-                of their powers and consequent responsibilities,” she further
-                explains.
-              </span>
-              <InlineFootnote index={22}></InlineFootnote>
-              <span>
-                {" "}
-                Her hope was that the act of creating the chronological charts,
-                rather than simply studying them, would prompt both
-                self-reflection and new ideas. Put another way: Peabody hoped
-                that by prompting her students to create new narratives of the
-                past, they would also imagine alternative possible futures.
-              </span>
-            </p>
-            <p>
-              <span>
-                The political context that provided Peabody with the motivation
-                to publish her history textbooks is crucial for understanding
-                both her ideas about the uses of visualization, and the form
-                that her visualizations take. But this context is not easily
-                discerned from the visualizations themselves. Without the
-                knowledge of how to decode the charts, let alone a sense of
-                their political stakes, the charts’ geometric abstraction
-                prompts a purely aesthetic response.
-              </span>
-            </p>
-            <p>
-              <span>
-                Other charts from the same era make their politics more
-                explicit, however—for example, Emma Willard’s 1846{" "}
-              </span>
-              <span className="italic">Temple of Time</span>
-              <span>
-                , which depicts past centuries as the pillars that support the
-                titular temple. In the chart, the nineteenth century—then the
-                present—is represented as an unfinished column, not yet stable
-                enough to support the weight of the past. On the ceiling of the
-                temple, Willard catalogues key figures from each prior century,
-                including statesmen, philosophers, discoverers, and poets. On
-                the floor of the temple, she lays out the developments of major
-                nation-states, their paths drawn as rivers subjected—like water
-                levels—to the expansions and contractions of state power over
-                time. Significantly, Willard places the path of the United
-                States front and center. From the perspective of the viewer,
-                this river flows directly towards them, enfolding them in the
-                expanding influence of the United States: the future to come.
-              </span>
-              <InlineFootnote index={23}></InlineFootnote>
-            </p>
-          </FullBleed>
+        <Column>
+          <p>
+            But the exercise of creating a chronological chart from scratch
+            is quite hard, as you--the reader--might have discovered from
+            the interaction above. Not to worry, however! The difficulty
+            level was high for students of the nineteenth century as well.
+            Peabody's nephew, Julian Hawthorne, who served as her first test
+            subject, recalled that she “labored during some years to teach
+            me all the leading dates of human history,” but that he
+            nevertheless remained “most inapt and grievous” throughout the
+            process.
+            <InlineFootnote index={21}></InlineFootnote>
+            The evidence in the archive confirms this first-hand account. At
+            the American Antiquarian Society, the Library Company of
+            Philadelphia, Yale's Beinecke Library, and Princeton's Special
+            Collections can be found
+            multiple copies of Peabody's workbooks, many of which I've
+            personally paged through over the course of conducting research
+            for this project. The workbooks all tend to follow a similar
+            pattern: a page or two of grids filled out in earnest; then a
+            series of attempts abandoned halfway; and then a shift in
+            purpose, the grid becoming a canvas for pattern and unbridled
+            play.
+          </p>
+          <p>
+            It's worth repeating that the difficulty of the Polish-American
+            system is both a liability of the form and also the point.
+            Peabody first developed her method at a time when the nation's
+            future seemed to hang in balance. The second half of the 1840s
+            had brought an increased awareness of the nation's growing
+            sectarianism, as well as its range of social ills--albeit with a
+            (mostly) optimistic view about the potential of its governing
+            structures to address these challenges. But as the 1850s
+            unfolded, the magnitude of these challenges became increasingly
+            more pronounced. Even as her privilege protected her from having
+            to enter the political fray, Peabody recognized that the task of
+            resolving the underlying issue of sectarianism, not to mention
+            the moral obligation of ending slavery, posed a degree of
+            difficulty of the highest order. Peabody understood, moreover,
+            that any successful resolution would require sustained effort
+            and thought.
+          </p>
+          <PullQuote
+            title="By prompting her students to create new narratives of the past, "
+            subtitle="they would also imagine alternative possible futures. "
+          />
+          <p>
+            Her goal with the <cite>Polish-American System</cite>
+            was thus to create a framework, equal parts intellectual and
+            immersive, through which this difficult thinking could take
+            place. “The old world is covered with bad institutions which men
+            have created, very often with positively good intentions, but on
+            false notions, or, at least, without large and profound ideas,”
+            she explains in the preface to the
+            <cite>Chronological History</cite>. “Whether the new world shall
+            estimate and sift out these evils, or repeat these mistakes, depends
+            on young Americans, who are now sitting in schoolrooms all over the
+            country, unconscious of their powers and consequent responsibilities,”
+            she further explains.
+            <InlineFootnote index={22}></InlineFootnote>
+            Her hope was that the act of creating the chronological charts,
+            rather than simply studying them, would prompt both
+            self-reflection and new ideas. Put another way: Peabody hoped
+            that by prompting her students to create new narratives of the
+            past, they would also imagine alternative possible futures.
+          </p>
+          <p>
+            The political context that provided Peabody with the motivation
+            to publish her history textbooks is crucial for understanding
+            both her ideas about the uses of visualization, and the form
+            that her visualizations take. But this context is not easily
+            discerned from the visualizations themselves. Without the
+            knowledge of how to decode the charts, let alone a sense of
+            their political stakes, the charts' geometric abstraction
+            prompts a purely aesthetic response.
+          </p>
+          <p>
+            Other charts from the same era make their politics more
+            explicit, however—for example, Emma Willard's 1846
+            <cite>Temple of Time</cite>, which depicts past centuries
+            as the pillars that support the
+            titular temple. In the chart, the nineteenth century—then the
+            present—is represented as an unfinished column, not yet stable
+            enough to support the weight of the past. On the ceiling of the
+            temple, Willard catalogues key figures from each prior century,
+            including statesmen, philosophers, discoverers, and poets. On
+            the floor of the temple, she lays out the developments of major
+            nation-states, their paths drawn as rivers subjected—like water
+            levels—to the expansions and contractions of state power over
+            time. Significantly, Willard places the path of the United
+            States front and center. From the perspective of the viewer,
+            this river flows directly towards them, enfolding them in the
+            expanding influence of the United States: the future to come.
+            <InlineFootnote index={23}></InlineFootnote>
+          </p>
         </Column>
         <Column shouldPin={true}>
           <FullBleed className="px-10 flex flex-col items-center">
@@ -760,14 +680,14 @@ export default function PeabodyPage() {
           </div>
         </div>
         <ImageCaption>
-          Emma Willard’s perspectival
+          Emma Willard's perspectival
           <span className="italic">Temple of Time</span> (1846). Image courtesy
           of the David Rumsey Map Collection, Cartography Associates.
         </ImageCaption>
 
         <p>
           <span>
-            While sharply divergent from Peabody’s charts in terms of
+            While sharply divergent from Peabody's charts in terms of
             aesthetics, Peabody nevertheless identified Willard as a major
             source of inspiration, crediting Willard with creating “the most
             ingenious chart ever besides [her own] invented.”
@@ -775,13 +695,13 @@ export default function PeabodyPage() {
           <InlineFootnote index={24}></InlineFootnote>
           <span>
             {" "}
-            In Chapter 3, I discuss Willard’s influences, which included Joseph
-            Priestley’s{" "}
+            In Chapter 3, I discuss Willard's influences, which included Joseph
+            Priestley's{" "}
           </span>
           <span className="italic">New Chart of History</span>
           <span>
             , from 1796, among the most circulated charts of its time; and
-            Playfair’s{" "}
+            Playfair's{" "}
           </span>
           <span className="italic">Commercial and Political Atlas</span>
           <span>
@@ -797,7 +717,7 @@ export default function PeabodyPage() {
           <InlineFootnote index={25}></InlineFootnote>
           <span>
             {" "}
-            Sure enough, while neither Preistley’s timeline nor Playfair’s
+            Sure enough, while neither Preistley's timeline nor Playfair's
             import-export charts provide a sense of the subjective experience of
             time, they do offer images that are just as interpretable today as
             they were at the time of their making.
@@ -806,7 +726,7 @@ export default function PeabodyPage() {
         <p>
           <span>
             By contrast, the more abstract impression first conveyed by
-            Peabody’s chronological grids immediately invites—indeed,
+            Peabody's chronological grids immediately invites—indeed,
             requires—additional interpretation. Her configuration of her data
             not,{" "}
           </span>
@@ -819,9 +739,9 @@ export default function PeabodyPage() {
             that divide each image into quadrants are instead, as Peabody
             explains, only intended to serve as visual anchor points in an
             otherwise unstructured field.) Like the process of interpreting a
-            text, Peabody’s charts encourage further contemplation. The charts
+            text, Peabody's charts encourage further contemplation. The charts
             may serve as the basis for future knowledge, but they do not serve
-            as that knowledge’s definitive source. This view of how knowledge
+            as that knowledge's definitive source. This view of how knowledge
             should be constructed is conveyed not only in the accompanying
             textbooks, but through the visually-compelling yet nonetheless
             unintuitive design of the charts themselves.
@@ -834,11 +754,11 @@ export default function PeabodyPage() {
             more participatory form of knowledge production. This form of
             knowledge-making challenges the hierarchy that most commonly
             structures the relationship between the designer of a visualization
-            and those who view (or interact) with it. According to Peabody’s
+            and those who view (or interact) with it. According to Peabody's
             participatory process, it is the student who is authorized to both
             create and interpret the image, rather than the designer—in this
             case, Peabody herself—who originally developed its designs. If there
-            is a single message communicated by Peabody’s chronological charts,
+            is a single message communicated by Peabody's chronological charts,
             it is that their meaning is not fixed. Rather, they impress upon the
             viewer a sense of responsibility--first for developing informed
             interpretations of the images they perceive, and then for designing
@@ -855,7 +775,7 @@ export default function PeabodyPage() {
             There is a final lesson to be learned from Elizabeth Palmer Peabody
             and her charts, which has to do with the labor—physical as much as
             intellectual—that is involved in the production of knowledge. An
-            additional aspect of Peabody’s pedagogy were the “mural charts” that
+            additional aspect of Peabody's pedagogy were the “mural charts” that
             she created in order to center classroom discussion. These were the
             charts she traveled with on her national promotional tour, as
             mentioned at the outset of this chapter, and{" "}
@@ -879,7 +799,7 @@ export default function PeabodyPage() {
             the events of the history of all nations before the mind with such
             clearness, so little confusion, and so much permanency,” wrote
             Eliphalet Nott, then president of Union College, who participated in
-            one of Peabody’s teaching demonstrations.
+            one of Peabody's teaching demonstrations.
           </span>
           <InlineFootnote index={27}></InlineFootnote>
           <span>
@@ -897,37 +817,26 @@ export default function PeabodyPage() {
         </p>
       </CenteredLayout>
       <TwoColumnLayout className="pt-20">
-        <Column>
+        <Column shouldPin={true}>
           <p>
-            <span>
-              And yet, because the mural charts were not valued as objects of
-              knowledge in their own time, not a single one has been preserved.
-              ​​
-            </span>
-            <span>
-              Scholars even remain uncertain as to many of their basic features.
-              Peabody’s biographer, Bruce Ronda, speculates that they “must have
-              been much larger than even folio size.”
-            </span>
+            And yet, because the mural charts were not valued as objects of
+            knowledge in their own time, not a single one has been preserved.
+            Scholars even remain uncertain as to many of their basic features.
+            Peabody's biographer, Bruce Ronda, speculates that they “must have
+            been much larger than even folio size.”
             <InlineFootnote index={29}></InlineFootnote>
-            <span>
-              {" "}
-              And while he does not provide any more specificity, Peabody’s
-              nephew Julian’s recollection of the “huge, colored charts” which
-              “hung on the walls of our sitting room” offers first-hand account
-              of the impression they made.
-            </span>
+            And while he does not provide any more specificity, Peabody's
+            nephew Julian's recollection of the “huge, colored charts” which
+            “hung on the walls of our sitting room” offers first-hand account
+            of the impression they made.
             <InlineFootnote index={30}></InlineFootnote>
-            <span>
-              {" "}
-              As an additional datapoint, one might consider the “poster-sized
-              timelines” created by Peabody’s contemporary, Anne Laura Clarke,
-              who created her timelines with the help of her sister, also named
-              Elizabeth, to accompany a series of lectures on history which she
-              delivered across the country. Clarke’s charts were not acquired by
-              an archive but instead kept in her sister’s attic, where they
-              remain today.
-            </span>
+            As an additional datapoint, one might consider the “poster-sized
+            timelines” created by Peabody's contemporary, Anne Laura Clarke,
+            who created her timelines with the help of her sister, also named
+            Elizabeth, to accompany a series of lectures on history which she
+            delivered across the country. Clarke's charts were not acquired by
+            an archive but instead kept in her sister's attic, where they
+            remain today.
             <InlineFootnote index={31}></InlineFootnote>
           </p>
         </Column>
@@ -960,7 +869,7 @@ export default function PeabodyPage() {
             <ImageCaption>
               <span className="font-bold">Left:</span> One of the timelines
               created by Anne Laura Clarke, as explored by Granville Ganter in
-              his essay on Clarke’s traveling lectures.{" "}
+              his essay on Clarke's traveling lectures.{" "}
               <p>
                 <span className="font-bold">Right:</span> Another timeline as it
                 was first encountered by Ganter. Photos by Granville Ganter.
@@ -971,67 +880,51 @@ export default function PeabodyPage() {
         </Column>
       </TwoColumnLayout>
       <TwoColumnLayout>
-        <Column>
+        <Column shouldPin={true}>
           <p>
-            <span>
-              The absence of Peabody’s mural charts from the archive has
-              prompted me to undertake a project to reimagine and restage
-              Peabody’s immersive learning experience for the present.
-            </span>
+            The absence of Peabody's mural charts from the archive has
+            prompted me to undertake a project to reimagine and restage
+            Peabody's immersive learning experience for the present.
             <InlineFootnote index={32}></InlineFootnote>
-            <span>
-              {" "}
-              Working with my research group, in a team that has involved
-              multiple cohorts of students over multiple years, we first created
-              a touch matrix made of strips of copper tape.
-            </span>
+            Working with my research group, in a team that has involved
+            multiple cohorts of students over multiple years, we first created
+            a touch matrix made of strips of copper tape.
             <InlineFootnote index={33}></InlineFootnote>
-            <span>
-              {" "}
-              The matrix works like a computer keyboard, with columns and rows
-              of conductive material--in this case, the copper tape--separated
-              by foam spacer. When a person presses on a square of the grid, the
-              two layers of copper tape touch each other, creating a connection.
-              Above the touch matrix sits a cloth topper, also fabricated by
-              members of the lab, that approximates the visual features of
-              Peabody’s original charts.
-            </span>
+            The matrix works like a computer keyboard, with columns and rows
+            of conductive material--in this case, the copper tape--separated
+            by foam spacer. When a person presses on a square of the grid, the
+            two layers of copper tape touch each other, creating a connection.
+            Above the touch matrix sits a cloth topper, also fabricated by
+            members of the lab, that approximates the visual features of
+            Peabody's original charts.
             <InlineFootnote index={34}></InlineFootnote>
-            <span>
-              {" "}
-              The topper holds in place a series of strips of individually
-              addressable LEDs, resulting in a 30 x 30 grid that can be
-              programmed to display Peabody’s “painted centuries,” as she
-              sometimes described them.
-            </span>
+            The topper holds in place a series of strips of individually
+            addressable LEDs, resulting in a 30 x 30 grid that can be
+            programmed to display Peabody's “painted centuries,” as she
+            sometimes described them.
             <InlineFootnote index={35}></InlineFootnote>
-            <span>
-              {" "}
-              While Peabody used a stick to point to specific events on the
-              grid, the Floor Chart responds to touch; users can press on
-              individual squares in order to cycle through the possible colors
-              of each chart, allowing them to engage their whole bodies in the
-              creation of chronological charts of their own.
-            </span>
+            While Peabody used a stick to point to specific events on the
+            grid, the Floor Chart responds to touch; users can press on
+            individual squares in order to cycle through the possible colors
+            of each chart, allowing them to engage their whole bodies in the
+            creation of chronological charts of their own.
           </p>
           <p>
-            <span>
-              The project has required a range of domain expertise, from
-              electronics prototyping to signal processing to circuit board
-              design. It has also required a truly tremendous amount of labor.
-              Each yard-long strip of copper tape needed to be perfectly
-              aligned, lest a small misalignment at one end result in a
-              significant gap at the other. Each of the nine-hundred
-              square-shaped holes of the membrane layer of the touch matrix was
-              required to be cut out by hand, as laser-cutting the holes would
-              have released harmful toxins. Each electrical connection was
-              required to be soldered, tested, and then—in almost all
-              cases—soldered again, so as to ensure that the circuit remained
-              intact. As much as an exercise in physical fabrication, the
-              project has become an exercise in the physicality of work
-              itself—of the focus that is required, and the resultant fatigue,
-              of any large-scale project that is made by human hands.
-            </span>
+            The project has required a range of domain expertise, from
+            electronics prototyping to signal processing to circuit board
+            design. It has also required a truly tremendous amount of labor.
+            Each yard-long strip of copper tape needed to be perfectly
+            aligned, lest a small misalignment at one end result in a
+            significant gap at the other. Each of the nine-hundred
+            square-shaped holes of the membrane layer of the touch matrix was
+            required to be cut out by hand, as laser-cutting the holes would
+            have released harmful toxins. Each electrical connection was
+            required to be soldered, tested, and then—in almost all
+            cases—soldered again, so as to ensure that the circuit remained
+            intact. As much as an exercise in physical fabrication, the
+            project has become an exercise in the physicality of work
+            itself—of the focus that is required, and the resultant fatigue,
+            of any large-scale project that is made by human hands.
           </p>
         </Column>
         <Column>
@@ -1129,7 +1022,7 @@ export default function PeabodyPage() {
             to the “stencilling” through which Peabody created her colorful
             symbols, as well as to its characterization of the tasks involved in
             making the charts as “drudgery,” the letter also underscores the
-            gendered dimensions of Peabody’s knowledge work.
+            gendered dimensions of Peabody's knowledge work.
           </span>
         </p>
         <FullBleed>
@@ -1140,17 +1033,17 @@ export default function PeabodyPage() {
         </FullBleed>
         <p>
           <span>
-            It’s not a coincidence that Peabody understood the labor of making
-            her mural charts as women’s work, and that these same charts were
+            It's not a coincidence that Peabody understood the labor of making
+            her mural charts as women's work, and that these same charts were
             not preserved. Then as now, there exists a hierarchy of work that
             aligns with the hierarchy of gender that governs the Anglo-Western
             world. Work that is performed outside the home is valued, both
             culturally and monetarily, over work that is performed within it.
             Work that is perceived as more rigorous, or more professional—like,
-            for instance, the political economy that functioned as Playfair’s
+            for instance, the political economy that functioned as Playfair's
             primary trade—is valued, again, both culturally and monetarily, over
             work that is perceived as more intuitive, or more domestic—like, for
-            instance, the teaching that functioned as Peabody’s main employ.
+            instance, the teaching that functioned as Peabody's main employ.
             Even—or, more precisely, especially—within the art world, creative
             work that is perceived as high art is valued above work perceived as
             craft.
@@ -1159,7 +1052,7 @@ export default function PeabodyPage() {
           <span>
             {" "}
             These gendered divisions of labor are among primary reasons that
-            Peabody’s mural charts never entered the archive. And they are the
+            Peabody's mural charts never entered the archive. And they are the
             same reasons that her charts have not (yet) been centered in the
             account of the rise of modern data visualization that is most
             commonly told. But who else are we missing when we fail to include
@@ -1171,18 +1064,18 @@ export default function PeabodyPage() {
         </p>
         <p>
           <span>
-            Women’s work of various forms has much to contribute to larger
+            Women's work of various forms has much to contribute to larger
             narratives about the development of most scholarly disciplines and
             professional fields. A final example helps to underscore this point:
-            most contemporary viewers, when seeing Peabody’s charts for the
+            most contemporary viewers, when seeing Peabody's charts for the
             first time, observe that they look like paintings by Piet Mondrian,
             the famous Dutch modernist.
           </span>
           <InlineFootnote index={37}></InlineFootnote>
           <span>
             {" "}
-            To be sure, Peabody’s charts strongly resemble Mondrian’s own bold,
-            colorful, geometric grid. But Peabody’s self-account of the work
+            To be sure, Peabody's charts strongly resemble Mondrian's own bold,
+            colorful, geometric grid. But Peabody's self-account of the work
             involved in making the mural charts brings to mind a second point of
             reference, which is not painting but quilting: an artform
             traditionally practiced by women, and that has long been relegated
@@ -1221,10 +1114,10 @@ export default function PeabodyPage() {
         <p>
           <span>
             Pictured above are two quilts from the area of Alabama known as
-            Gee’s Bend, a small, rural Black community, 35 miles south of Selma,
+            Gee's Bend, a small, rural Black community, 35 miles south of Selma,
             that can trace its roots to a cotton plantation that was established
             there in the early nineteenth century. While valued by the residents
-            of Gee’s Bend for centuries, both for their aesthetics and for the
+            of Gee's Bend for centuries, both for their aesthetics and for the
             family histories that they encode, the quilts have only recently
             begun to be recognized by art historians as key contributors to the
             development of modernist art.
@@ -1243,17 +1136,17 @@ export default function PeabodyPage() {
         <p>
           <span>
             As Black women who pursued their art while enslaved, and have
-            continued to persist through slavery’s perpetual wake, the life
-            experiences of the Gee’s Bend quilters could not be farther removed
+            continued to persist through slavery's perpetual wake, the life
+            experiences of the Gee's Bend quilters could not be farther removed
             from those of Elizabeth Palmer Peabody, a white woman protected by
-            her family’s membership in the Boston elite. But the creative work
-            of the Gee’s Bend quilters, as distinguished historian Elsa Barkley
+            her family's membership in the Boston elite. But the creative work
+            of the Gee's Bend quilters, as distinguished historian Elsa Barkley
             Brown has shown, offers a model that can help structure a range of
             complex questions about epistemology, historiography, and
-            pedagogy—indeed, the same questions in which Peabody’s work was
+            pedagogy—indeed, the same questions in which Peabody's work was
             engaged. Drawing inspiration from the “polyrhythmic,
-            ‘nonsymmetrical,’ and nonlinear” patterns of the Gee’s Bend—among
-            the Black women’s quilts that she studies—Brown advocates for a
+            ‘nonsymmetrical,' and nonlinear” patterns of the Gee's Bend—among
+            the Black women's quilts that she studies—Brown advocates for a
             pivoting of the center of the history classroom—that is, not
             decentering one perspective in favor of another but instead
             intentionally and continually shifting the focus from one
@@ -1285,15 +1178,15 @@ export default function PeabodyPage() {
             behalf of scholars of data visualization and those who design
             them—is far from complete. Consider the surprise that greeted
             me—along with no small degree of pleasure—upon discovering that a
-            quilt created by Loretta Pettway, one of the Gee’s Bend quilters,
-            graces the cover of Edward Tufte’s most recent book,{" "}
+            quilt created by Loretta Pettway, one of the Gee's Bend quilters,
+            graces the cover of Edward Tufte's most recent book,{" "}
           </span>
           <span className="italic">Seeing with Fresh Eyes</span>
           <span>
             {" "}
             (2020). More than merely a compelling image—“unorthodox, fresh,
             amazing” is the extent of how Tufte describes it in the text—we must
-            learn to see Pettaway’s quilt, like Peabody’s chart, as a system of
+            learn to see Pettaway's quilt, like Peabody's chart, as a system of
             knowledge making.
           </span>
           <InlineFootnote index={44}></InlineFootnote>
@@ -1301,9 +1194,9 @@ export default function PeabodyPage() {
             {" "}
             These two systems of knowledge-making, moreover, helpfully converge.
             Both employ shape and color in order to represent and recall past
-            events: the quilts in order commemorate a community’s ancestors and
+            events: the quilts in order commemorate a community's ancestors and
             their stories; and the charts, as we have learned, in order to craft
-            new narratives about the nation’s defining historical events. Both
+            new narratives about the nation's defining historical events. Both
             also rely upon sense perception—and more specifically, the tactile
             experiences of the body—in order to assimilate visual display into
             knowledge. Whether enveloping oneself in a quilt, or gathering
@@ -1354,7 +1247,7 @@ export default function PeabodyPage() {
           </span>
           <span>
             {" "}
-            Elizabeth Palmer Peabody’s method of making history, premised on
+            Elizabeth Palmer Peabody's method of making history, premised on
             visual abstraction and designed for prolonged engagement, encourages
             multiple individual interpretations of the data on display. In so
             doing, it advances a pluralistic and non-hierarchical view of how
@@ -1366,22 +1259,22 @@ export default function PeabodyPage() {
           <span className="italic">how</span>
           <span>
             {" "}
-            knowledge is produced, Peabody’s method advances a belief in{" "}
+            knowledge is produced, Peabody's method advances a belief in{" "}
           </span>
           <span className="italic">who</span>
           <span>
             {" "}
             is authorized to produce knowledge. Peabody believed that her
             students were each capable of producing historical knowledge, and
-            that together, they might arrive at a solution to the nation’s most
-            pressing political concerns. We might further expand Peabody’s view
+            that together, they might arrive at a solution to the nation's most
+            pressing political concerns. We might further expand Peabody's view
             of the value of bringing together multiple perspectives, enhanced by
-            the example of the Gee’s Bend quilts, into a broader claim about the
+            the example of the Gee's Bend quilts, into a broader claim about the
             need to expand the range of sources—and the range of people—who we
             enable, as visualization designers, to make knowledge claims.
             Following the theories and approaches of the scholars introduced in
             this essay, including Donna Haraway, Katherine McKittrick, and Elsa
-            Barkley Brown, we might therefore employ Peabody’s pedagogy as a
+            Barkley Brown, we might therefore employ Peabody's pedagogy as a
             path to understanding the situated and relational nature of all that
             we know. Moving forward, more specifically, we might better attempt
             to design visualizations that value the interpretations prompted by
@@ -1391,7 +1284,7 @@ export default function PeabodyPage() {
         </p>
         <p>
           <span>
-            Finally, we might employ Peabody’s data creations—both the textbooks
+            Finally, we might employ Peabody's data creations—both the textbooks
             and workbooks that are preserved in the archive, and the mural
             charts that are not—in order to reflect upon the range of labor that
             is involved in knowledge work, and the range of people who perform
@@ -1399,10 +1292,10 @@ export default function PeabodyPage() {
             the creation of any particular visualization? How might we honor all
             of those we rely upon to perform this work? And how might we ensure
             that their contributions are no longer erased from history? Here,
-            once again, Peabody’s visual method becomes valuable. Because it
+            once again, Peabody's visual method becomes valuable. Because it
             authorizes us as viewers, as students, and as scholars, to fill in
             the details of the stories that we can only perceive in the
-            abstract. Peabody’s hope, which we might carry forward, is that when
+            abstract. Peabody's hope, which we might carry forward, is that when
             presented with the outlines of history, we might take it upon
             ourselves to color them in.
           </span>
