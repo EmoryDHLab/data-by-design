@@ -16,7 +16,7 @@ import Footer from "~/components/Footer";
 import InlineFootnote from "~/components/InlineFootnote";
 import { playfairFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
-import IntroParagraph from "~/components/IntroParagraph";
+import IntroSentence from "~/components/IntroSentence";
 
 export default function PlayfairPage() {
   const [docHeightState, setDocHeightState] = useState<number>(0);
@@ -41,8 +41,8 @@ export default function PlayfairPage() {
       <TwoColumnLayout className="py-10">
         <Column shouldPin={true}>
           <div className="right-bleed space-y-10">
-            <IntroParagraph>
-              One can only imagine the choice words exclaimed by the
+            <IntroSentence>
+              One can only imagine the choice words exclaimed by the </IntroSentence> 
               Scottish political economist William Playfair (1759-1823) when he
               recognized the error that he had inadvertently engraved into the
               tail end of the data line on his chart of "Exports &amp; Imports
@@ -57,7 +57,8 @@ export default function PlayfairPage() {
               third edition of his <cite>Commercial and Political Atlas</cite>
               (1801), a revised version of the volume he first published in
               1786; it was also the expense.
-            </IntroParagraph>
+            
+
             <p>
               Today, Playfair is widely celebrated for his leading role in the
               development of modern data visualization. His bar charts, pie

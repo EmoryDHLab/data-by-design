@@ -18,7 +18,7 @@ import InlineFootnote from "~/components/InlineFootnote";
 import { peabodyFootnotes } from "~/footnotes";
 import PeabodySandbox from "~/components/peabody/PeabodySandbox";
 import FootnotesList from "~/components/FootnotesList";
-import IntroParagraph from "~/components/IntroParagraph";
+import IntroSentence from "~/components/IntroSentence";
 import ImageModal from "~/components/layout/ImageModal";
 import Scrollytell from "~/components/peabody/PeabodyScrollytell";
 import Quotation from "~/components/Quotation";
@@ -47,8 +47,8 @@ export default function PeabodyPage() {
       />
       <TwoColumnLayout className="py-10">
         <Column shouldPin={true}>
-          <IntroParagraph>
-            Elizabeth Palmer Peabody was born in Massachusetts in 1804.
+          <IntroSentence>
+            Elizabeth Palmer Peabody was born in Massachusetts in 1804. </IntroSentence>
             Today, she is most widely recognized for her proximity to more
             famous men—in particular, to the writers of the American
             Renaissance, such as Ralph Waldo Emerson and Nathaniel
@@ -64,7 +64,8 @@ export default function PeabodyPage() {
             civil disobedience. And she is credited with starting the first
             kindergarten in the United States.
             <InlineFootnote index={0} />
-          </IntroParagraph>
+            
+          
           <p>
             Indeed, Peabody was an educator to her core. She came from a
             family of teachers. Her mother and two sisters all taught

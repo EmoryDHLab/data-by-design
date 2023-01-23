@@ -9,7 +9,7 @@ import { duboisFootnotes } from "~/footnotes";
 import { useState } from "react";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import FootnotesList from "~/components/FootnotesList";
-import IntroParagraph from "~/components/IntroParagraph";
+import IntroSentence from "~/components/IntroSentence";
 import ImageModal from "~/components/layout/ImageModal";
 
 export default function DuboisChapter() {
@@ -33,10 +33,10 @@ export default function DuboisChapter() {
       />
       <div className="grid-wrapper bg-offwhite py-16 space-y-5">
         <p className="pt-16">
-          <IntroParagraph>
+          <IntroSentence>
             October 4th, 1899, was the first day of the fall term at Atlanta
             University
-          </IntroParagraph>{" "}
+          </IntroSentence>{" "}
           (now Clark Atlanta University), where W.E.B. Du Bois had been teaching
           for the past two years&mdash;and a long two years they had been.{" "}
           <InlineFootnote index={0}></InlineFootnote>
