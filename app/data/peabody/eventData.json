@@ -1,0 +1,1314 @@
+{
+  "events": {
+    "1501": [{
+      "year": 1501,
+      "actors": ["England"],
+      "squares": [6],
+      "event": "Henry VII. grants patent for colonizing America."
+    }],
+    "1512": [{
+      "year": 1512,
+      "actors": ["Spain"],
+      "squares": [8],
+      "event": "Ponce de Leon discovers Florida."
+    }],
+    "1517": [{
+      "year": 1517,
+      "actors": ["England"],
+      "squares": [8],
+      "event": "Sebastian Cabot's last voyage in the English service."
+    }],
+    "1520": [{
+      "year": 1520,
+      "actors": ["Americas"],
+      "squares": [3],
+      "event": "Chicorans enslaved by the Spanish"
+    }, {
+      "year": 1520,
+      "actors": ["Spain"],
+      "squares": [8],
+      "event": "Vázquez de Ayllón's Piracy on Chicora."
+    }],
+    "1523": [{
+      "year": 1523,
+      "actors": ["France"],
+      "squares": [8],
+      "event": "Verrazzani explores American coasts for France."
+    }],
+    "1525": [{
+      "year": 1525,
+      "actors": ["Spain"],
+      "squares": [8],
+      "event": "Stephen Gomez tries to discover North West Passage to India for Spain."
+    }],
+    "1526": [{
+      "year": 1526,
+      "actors": ["Spain"],
+      "squares": [8],
+      "event": "Pamphilo de Narvaez attempts to conquer Florida."
+    }],
+    "1534": [{
+      "year": 1534,
+      "actors": ["France"],
+      "squares": [8],
+      "event": "James Cartier discovers River St. Lawrence."
+    }],
+    "1537": [{
+      "year": 1537,
+      "actors": ["Spain"],
+      "squares": [8],
+      "event": "Ferdinand de Soto attempts to conquer Florida."
+    }],
+    "1540": [{
+      "year": 1540,
+      "actors": ["France"],
+      "squares": [9],
+      "event": "Roberval and Cartier try in vain to colonize Canada."
+    }],
+    "1542": [{
+      "year": 1542,
+      "actors": ["Spain"],
+      "squares": [9],
+      "event": "Ferdinand de Soto dies on the Mississippi."
+    }],
+    "1562": [{
+      "year": 1562,
+      "actors": ["France"],
+      "squares": [8],
+      "event": "Coligny sends a Huguenot Colony to America."
+    }],
+    "1565": [{
+      "year": 1565,
+      "actors": ["Spain"],
+      "squares": [1],
+      "event": "Menéndez conquers the French colony (founding St. Augustine)"
+    }, {
+      "year": 1565,
+      "actors": ["Spain", "France"],
+      "squares": [2],
+      "event": "Menéndez conquers the French colony (founding St. Augustine)"
+    }, {
+      "year": 1565,
+      "actors": ["Spain"],
+      "squares": [5, 8],
+      "event": "Foundation of St. Augustine by Menéndez"
+    }, {
+      "year": 1565,
+      "actors": ["France"],
+      "squares": [3],
+      "event": "Menéndez conquers the French colony (founding St. Augustine)"
+    }],
+    "1576": [{
+      "year": 1576,
+      "actors": ["England"],
+      "squares": [8],
+      "event": "Martin Frobisher renews English Explorations."
+    }],
+    "1578": [{
+      "year": 1578,
+      "actors": ["England"],
+      "squares": [8, 9],
+      "event": "Sir Humphrey Gilbert's Voyage and Death."
+    }],
+    "1579": [{
+      "year": 1579,
+      "actors": ["England"],
+      "squares": [8],
+      "event": "Sir Francis Drake discovers Oregon, and names it New Albion."
+    }],
+    "1584": [{
+      "year": 1584,
+      "actors": ["England"],
+      "squares": [8],
+      "event": "Sir Walter Raleigh gets patent to colonize."
+    }],
+    "1585": [{
+      "year": 1585,
+      "actors": ["England"],
+      "squares": [8],
+      "event": "Sir W. R.'s unsuccessful colony at Roanoke, carried out by Sir Richard Grenville."
+    }],
+    "1602": [{
+      "year": 1602,
+      "event": "Bartholomew Gosnold attempts to colonize Nashua",
+      "squares": [8],
+      "actors": ["England"]
+    }],
+    "1605": [{
+      "year": 1605,
+      "event": "First permanent french settlement at Port Royal in Acadia (Canada)",
+      "squares": [5],
+      "actors": ["France"]
+    }, {
+      "year": 1605,
+      "event": "George Weymouth's voyage to the Americas and piracy",
+      "squares": [8],
+      "actors": ["England"]
+    }],
+    "1607": [{
+      "year": 1607,
+      "event": "Jamestown, Virginia, the first permanent English colony",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1608": [{
+      "year": 1608,
+      "event": "Samuel de Champlain founds Quebec",
+      "squares": [5],
+      "actors": ["France"]
+    }, {
+      "year": 1608,
+      "event": "Pocahontas saves Captain Smith",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1612": [{
+      "year": 1612,
+      "event": "Short Indian War; English first attack French at Port Royal.",
+      "squares": [1],
+      "actors": ["England", "Americas", "England", "France"]
+    }, {
+      "year": 1612,
+      "event": "Pocahontas marries John Rolfe.",
+      "squares": [6],
+      "actors": ["England", "Americas"]
+    }],
+    "1615": [{
+      "year": 1615,
+      "event": "Dutch settle on the Hudson and Manhattan Island",
+      "squares": [5],
+      "actors": ["Holland"]
+    }],
+    "1620": [{
+      "year": 1620,
+      "event": "Pilgrims settle Plymouth",
+      "squares": [1, 2, 3, 4, 5, 7, 8, 9],
+      "actors": ["England"]
+    }, {
+      "year": 1620,
+      "event": "First slaves in Virginia (20 brought on a Dutch ship)",
+      "squares": [6],
+      "actors": ["Holland"]
+    }],
+    "1622": [{
+      "year": 1622,
+      "event": "Pocahontas dies",
+      "squares": [9],
+      "actors": ["Holland"]
+    }, {
+      "year": 1622,
+      "event": "Jamestown massacre",
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1622,
+      "event": "Assaults on Powhatan settlements",
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    }, {
+      "year": 1622,
+      "event": " \"Indians are conquered\"",
+      "squares": [3],
+      "actors": ["Americas"]
+    }],
+    "1623": [{
+      "year": 1623,
+      "event": "Shores of Maine and New Hampshire settled",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1629": [{
+      "year": 1629,
+      "event": "English take Quebec",
+      "squares": [1],
+      "actors": ["England", "France"]
+    }, {
+      "year": 1629,
+      "event": "Peace with France (concluding the Anglo-French War)",
+      "squares": [6],
+      "actors": ["France", "England"]
+    }],
+    "1630": [{
+      "year": 1630,
+      "event": "French found Montreal",
+      "squares": [5],
+      "actors": ["France"]
+    }, {
+      "year": 1630,
+      "event": "De Vries' Voyage to Delaware",
+      "squares": [8],
+      "actors": ["Holland"]
+    }],
+    "1634": [{
+      "year": 1634,
+      "event": "Maryland settled by English Catholics",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1635": [{
+      "year": 1635,
+      "event": "Connecticut settled by Pilgrims from Massachusetts",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1636": [{
+      "year": 1636,
+      "event": "Rhode Island settled by Roger Williams, and Harvard College founded.",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1637": [{
+      "year": 1637,
+      "event": "English colonists in Connecticut killed by the Pequot",
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1637,
+      "event": "Colonists, led by Captain Mason, attack Pequot village",
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    }, {
+      "year": 1637,
+      "event": "\"Pequot name and race were entirely extinguished\"",
+      "squares": [3],
+      "actors": ["Americas"]
+    }],
+    "1638": [{
+      "year": 1638,
+      "event": "Swedes and Finns colonize on the Delaware",
+      "squares": "full",
+      "actors": ["Sweden"]
+    }],
+    "1644": [{
+      "year": 1644,
+      "event": "English treaty with the Five Nations",
+      "squares": [6],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1644,
+      "event": "Powhatan attack Virginia",
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1644,
+      "event": "Retaliation against the Powhatan [third Anglo-Powhatan war]",
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    }, {
+      "year": 1644,
+      "event": "Powhatan decimated by the colonists [Third Anglo-Powhatan War]",
+      "squares": [3],
+      "actors": ["Americas"]
+    }],
+    "1645": [{
+      "year": 1645,
+      "event": "Dutch treaty with the Algonquins",
+      "squares": [6],
+      "actors": ["Americas", "Holland"]
+    }],
+    "1655": [{
+      "year": 1655,
+      "event": "New Sweden conquered by New Netherlands",
+      "squares": "full",
+      "actors": ["Sweden", "Holland"]
+    }],
+    "1659": [{
+      "year": 1659,
+      "event": "General persecution of Quakers",
+      "squares": [6],
+      "actors": ["England"]
+    }, {
+      "year": 1659,
+      "event": "Death of Mary Dyer",
+      "squares": [9],
+      "actors": ["England"]
+    }],
+    "1663": [{
+      "year": 1663,
+      "event": "North Carolina settled by persecuted Quakers",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1664": [{
+      "year": 1664,
+      "event": "New Netherlands surrendered to the English",
+      "squares": [1, 2, 4, 5, 6, 7, 8, 9],
+      "actors": ["England"]
+    }, {
+      "year": 1664,
+      "event": "New Netherlands surrendered to the English",
+      "squares": [3],
+      "actors": ["Holland"]
+    }],
+    "1665": [{
+      "year": 1665,
+      "event": "New Jersey granted to Berkeley and Carteret",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1670": [{
+      "year": 1670,
+      "event": "South Carolina settled. Locke's \"Grant Model\"",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1675": [{
+      "year": 1675,
+      "event": "King Philip's War",
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1675,
+      "event": "King Philip's War",
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    }, {
+      "year": 1675,
+      "event": "Narragansetts destroyed",
+      "squares": [3],
+      "actors": ["Americas"]
+    }, {
+      "year": 1675,
+      "event": "King Philip Killed",
+      "squares": [9],
+      "actors": ["Americas"]
+    }],
+    "1676": [{
+      "year": 1676,
+      "event": "Bacon's Rebellion",
+      "squares": [8],
+      "actors": ["England"]
+    }, {
+      "year": 1676,
+      "event": "\"Indian War\" in Virginia",
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1676,
+      "event": "\"Indian War\" in Virginia",
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    }, {
+      "year": 1676,
+      "event": "\"Indian War\" in Virginia",
+      "squares": [3],
+      "actors": ["Americas"]
+    }, {
+      "year": 1676,
+      "event": "Bacon dies",
+      "squares": [9],
+      "actors": ["England"]
+    }],
+    "1681": [{
+      "year": 1681,
+      "event": "Pennsylvania and Delaware founded by Penn",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1682": [{
+      "year": 1682,
+      "event": "La Salle sailed down the Mississippi",
+      "squares": [8],
+      "actors": ["France"]
+    }],
+    "1686": [{
+      "year": 1686,
+      "event": "French found Fort Niagra",
+      "squares": [5],
+      "actors": ["France"]
+    }, {
+      "year": 1686,
+      "event": "Sir Edmund Andros appointed governor of New England",
+      "squares": [8],
+      "actors": ["England"]
+    }],
+    "1689": [{
+      "year": 1689,
+      "event": "King William's War",
+      "squares": [1],
+      "actors": ["England", "France"]
+    }],
+    "1690": [{
+      "year": 1690,
+      "event": "Schenectady burnt, and massacre by French and Indians",
+      "squares": [1],
+      "actors": ["Americas", "France", "England"]
+    }],
+    "1691": [{
+      "year": 1691,
+      "event": "Delaware separated from Pennsylvania. College of \"William and Mary\" founded in Virginia",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1692": [{
+      "year": 1692,
+      "event": "Witchcraft in Massachusetts",
+      "squares": [6],
+      "actors": ["England"]
+    }, {
+      "year": 1692,
+      "event": "22 executions",
+      "squares": [9],
+      "actors": ["England"]
+    }],
+    "1697": [{
+      "year": 1697,
+      "event": "Peace of Ryswick ends \"King William's War\"",
+      "squares": [6],
+      "actors": ["England", "France"]
+    }],
+    "1699": [{
+      "year": 1699,
+      "event": "French found Biloxi on the Mississippi",
+      "squares": [5],
+      "actors": ["France"]
+    }],
+    "1701": [{
+      "year": 1701,
+      "event": "French Found Detroit and Kaskasia",
+      "squares": [5],
+      "actors": ["France"]
+    }],
+    "1704": [{
+      "year": 1704,
+      "event": "French and Native American allies massacre English settlement in Deerfield, New Hampshire (Raid on Deerfield)",
+      "squares": [1],
+      "actors": ["France", "Americas", "England"]
+    }],
+    "1708": [{
+      "year": 1708,
+      "event": "French and Native American allies massacre English settlement in Haverhill, New Hampshire (Raid on Haverhill)",
+      "squares": [1],
+      "actors": ["France", "Americas", "England"]
+    }],
+    "1710": [{
+      "year": 1710,
+      "event": "English Conquer Portroyal in Acadia",
+      "squares": [2],
+      "actors": ["Americas"]
+    }],
+    "1713": [{
+      "year": 1713,
+      "event": "Peace of Urecht restores all conquests to France",
+      "squares": [6],
+      "actors": ["England", "France"]
+    }],
+    "1715": [{
+      "year": 1715,
+      "event": "Tuscarooras, expelled from their native hunting grounds in South Carolina by German Emigrants, join the Five Nations",
+      "squares": [3],
+      "actors": ["Americas"]
+    }],
+    "1718": [{
+      "year": 1718,
+      "event": "Founding of New Orleans",
+      "squares": [5],
+      "actors": ["France"]
+    }],
+    "1725": [{
+      "year": 1725,
+      "event": "Death of the Jesuit Missionary Sébastien Râle in Maine",
+      "squares": [9],
+      "actors": ["France"]
+    }],
+    "1728": [{
+      "year": 1728,
+      "event": "Destruction of the Natchez tribe by the French",
+      "squares": [1],
+      "actors": ["France"]
+    }, {
+      "year": 1728,
+      "event": "Destruction of the Natchez tribe by the French",
+      "squares": [2],
+      "actors": ["France", "Americas"]
+    }, {
+      "year": 1728,
+      "event": "Destruction of the Natchez tribe by the French",
+      "squares": [3],
+      "actors": ["Americas"]
+    }],
+    "1732": [{
+      "year": 1732,
+      "event": "Georgia Washington born in Virginia",
+      "squares": [7],
+      "actors": ["Americas"]
+    }],
+    "1733": [{
+      "year": 1733,
+      "event": "Georgia founded by James Oglethorpe",
+      "squares": "full",
+      "actors": ["England"]
+    }],
+    "1742": [{
+      "year": 1742,
+      "event": "Oglethorpe and Native American allies drive Spaniards out of Georgia",
+      "squares": [1],
+      "actors": ["England"]
+    }, {
+      "year": 1742,
+      "event": "Oglethorpe and Native American allies drive Spaniards out of Georgia",
+      "squares": [2],
+      "actors": ["Americas", "Spain"]
+    }, {
+      "year": 1742,
+      "event": "Oglethorpe and Native American allies drive Spaniards out of Georgia",
+      "squares": [3],
+      "actors": ["Spain"]
+    }],
+    "1745": [{
+      "year": 1745,
+      "event": "Louisburg captured by William Pepperell of Boston",
+      "squares": [1],
+      "actors": ["England", "France"]
+    }],
+    "1748": [{
+      "year": 1748,
+      "event": "Peace of Aix-le-Chapelle restores Louisburg to France",
+      "squares": [6],
+      "actors": ["France", "England"]
+    }],
+    "1750": [{
+      "year": 1750,
+      "event": "Franklin's experiments on electricity?",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1754": [{
+      "year": 1754,
+      "event": "Washington's mission to the Frence, at Venango. His victory at Great Meadows.",
+      "squares": [1],
+      "actors": ["England", "France"]
+    }, {
+      "year": 1754,
+      "event": "Native American depredations were made upon the frontiers of Maine",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1755": [{
+      "year": 1755,
+      "event": "Braddock defeated by French",
+      "squares": [1],
+      "actors": ["France", "Americas"]
+    }, {
+      "year": 1755,
+      "event": "Expulsion of the Acadians",
+      "squares": [3],
+      "actors": ["France"]
+    }],
+    "1758": [{
+      "year": 1758,
+      "event": "Final capture of Louisburg by the English",
+      "squares": [1],
+      "actors": ["England", "France"]
+    }],
+    "1759": [{
+      "year": 1759,
+      "event": "Quebec captured.",
+      "squares": [1],
+      "actors": ["England", "France"]
+    }, {
+      "year": 1759,
+      "event": "Wolfe and Montcalm both fall",
+      "squares": [9],
+      "actors": ["England", "France"]
+    }],
+    "1760": [{
+      "year": 1760,
+      "event": "English conquer Canada and the French lose it",
+      "squares": [2],
+      "actors": ["England", "France"]
+    }, {
+      "year": 1760,
+      "event": "English conquer Canada and the French lose it",
+      "squares": [3],
+      "actors": ["France"]
+    }],
+    "1763": [{
+      "year": 1763,
+      "event": "Treaty of Paris",
+      "squares": [6],
+      "actors": ["England", "France"]
+    }, {
+      "year": 1763,
+      "event": "Pontiac's Conspiracy",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1765": [{
+      "year": 1765,
+      "event": "Stamp Act (repealed the next year)",
+      "squares": [6],
+      "actors": ["England"]
+    }],
+    "1767": [{
+      "year": 1767,
+      "event": "Parliament imposes duties on tea and other articles imported by the Colonies",
+      "squares": [6],
+      "actors": ["England"]
+    }],
+    "1769": [{
+      "year": 1769,
+      "event": "Pontiac makes treaty of peace",
+      "squares": [6],
+      "actors": ["England", "Americas"]
+    }, {
+      "year": 1769,
+      "event": "Pontiac killed",
+      "squares": [9],
+      "actors": ["Americas"]
+    }],
+    "1770": [{
+      "year": 1770,
+      "event": "Boston Massacre",
+      "squares": [3],
+      "actors": ["England", "Americas"]
+    }, {
+      "year": 1770,
+      "event": "James Otis and Josiah Quincy defend soldiers charged in Boston Massacre",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1773": [{
+      "year": 1773,
+      "event": "Boston Tea Party and other demonstrations",
+      "squares": [6],
+      "actors": ["Americas"]
+    }],
+    "1774": [{
+      "year": 1774,
+      "event": "First Continental Congress at Philidelphia",
+      "squares": [5],
+      "actors": ["Americas"]
+    }, {
+      "year": 1774,
+      "event": "British Parliament passes the Port Bill",
+      "squares": [6],
+      "actors": ["England"]
+    }],
+    "1775": [{
+      "year": 1775,
+      "event": "Revolutionary War begins",
+      "squares": "full",
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1775,
+      "event": "General Montgomery dies in Quebec",
+      "squares": [9],
+      "actors": ["Americas"]
+    }],
+    "1776": [{
+      "year": 1776,
+      "event": "Declaration of Independence; American victories in the Revolutionary War",
+      "squares": "full",
+      "actors": ["Americas"]
+    }, {
+      "year": 1776,
+      "event": "British defeat in the battle of Trenton",
+      "squares": [3],
+      "actors": ["England"]
+    }],
+    "1777": [{
+      "year": 1777,
+      "event": "Revolutionary War continues",
+      "squares": "full",
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1777,
+      "event": "Embassy to France",
+      "squares": [6],
+      "actors": ["Americas", "France"]
+    }, {
+      "year": 1777,
+      "event": "Lafayette and French officers join the war",
+      "squares": [8],
+      "actors": ["France"]
+    }],
+    "1778": [{
+      "year": 1778,
+      "event": "Victory at Valley Forge",
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1778,
+      "event": "Savannah taken by the British",
+      "squares": [2],
+      "actors": ["England", "Americas"]
+    }, {
+      "year": 1778,
+      "event": "Defeat on Quaker Hill",
+      "squares": [3],
+      "actors": ["Americas"]
+    }, {
+      "year": 1778,
+      "event": "Alliance with France",
+      "squares": [6],
+      "actors": ["Americas", "France"]
+    }, {
+      "year": 1778,
+      "event": "Massacre at Wyoming by Tories and Iroquois allies",
+      "squares": [9],
+      "actors": ["England", "Americas"]
+    }],
+    "1779": [{
+      "year": 1779,
+      "event": "General losses for the Americans, especially at the South",
+      "squares": "full",
+      "actors": ["England", "Americas"]
+    }],
+    "1780": [{
+      "year": 1780,
+      "event": "Victories at Hanging Rock and King's Mountain",
+      "squares": "full",
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1780,
+      "event": "French reinforcement, under the command of Count Rochambeau",
+      "squares": [6],
+      "actors": ["Americas", "France"]
+    }, {
+      "year": 1780,
+      "event": "Treason of Benedict Arnold",
+      "squares": [8],
+      "actors": ["Americas"]
+    }, {
+      "year": 1780,
+      "event": "Major Andre's death",
+      "squares": [9],
+      "actors": ["England"]
+    }],
+    "1781": [{
+      "year": 1781,
+      "event": "Victories at Cowpens; Guildfort Court House, Eutaw Springs, and Yorktown end the war",
+      "squares": "full",
+      "actors": ["Americas", "France", "England"]
+    }],
+    "1783": [{
+      "year": 1783,
+      "event": "England acknowledges Independence of U.S.",
+      "squares": "full",
+      "actors": ["Americas", "England"]
+    }],
+    "1787": [{
+      "year": 1787,
+      "event": "Shay's Rebellion",
+      "squares": [1],
+      "actors": ["Americas"]
+    }, {
+      "year": 1787,
+      "event": "Constitutional Convention",
+      "squares": [5],
+      "actors": ["Americas"]
+    }],
+    "1789": [{
+      "year": 1789,
+      "event": "Federal Union begins. Washington takes office as President.",
+      "squares": "full",
+      "actors": ["Americas"]
+    }],
+    "1790": [{
+      "year": 1790,
+      "event": "General Harmar defeated in Northwest Indian War",
+      "squares": [1],
+      "actors": ["Americas"]
+    }],
+    "1791": [{
+      "year": 1791,
+      "event": "General St. Clair defeated in Northwest Indian War",
+      "squares": [1],
+      "actors": ["Americas"]
+    }, {
+      "year": 1791,
+      "event": "Vermont Admitted to the Union",
+      "squares": [2],
+      "actors": ["Americas"]
+    }],
+    "1792": [{
+      "year": 1792,
+      "event": "Kentucy separated from Virginia, and admitted",
+      "squares": [2],
+      "actors": ["Americas"]
+    }],
+    "1794": [{
+      "year": 1794,
+      "event": "General Wayne ends the Northwest Indian War",
+      "squares": [1],
+      "actors": ["Americas"]
+    }, {
+      "year": 1794,
+      "event": "Jay's Treaty is signed",
+      "squares": [6],
+      "actors": ["England", "Americas"]
+    }],
+    "1795": [{
+      "year": 1795,
+      "event": "Treaty made with Barbary Powers",
+      "squares": [6],
+      "actors": ["Americas"]
+    }],
+    "1797": [{
+      "year": 1797,
+      "event": "John Adams takes office as 2nd President of the United States",
+      "squares": [5],
+      "actors": ["Americas"]
+    }],
+    "1798": [{
+      "year": 1798,
+      "event": "Short French War",
+      "squares": [1],
+      "actors": ["Americas", "France"]
+    }],
+    "1799": [{
+      "year": 1799,
+      "event": "Tenessee admitted to the Union",
+      "squares": [2],
+      "actors": ["Americas"]
+    }, {
+      "year": 1799,
+      "event": "Washington's death",
+      "squares": [9],
+      "actors": ["Americas"]
+    }],
+    "1800": [{
+      "year": 1800,
+      "event": "Federal Government moved from Philidelphia to the City of Washington, in the District of Columbia",
+      "squares": [5],
+      "actors": ["Americas"]
+    }, {
+      "year": 1800,
+      "event": "Treaty of peace with Bonaparte",
+      "squares": [6],
+      "actors": ["Americas", "France"]
+    }],
+    "1801": [{
+      "year": 1801,
+      "event": "Thomas Jefferson, third President of U.S.A., takes office",
+      "squares": [5],
+      "actors": ["Americas"]
+    }],
+    "1802": [{
+      "year": 1802,
+      "event": "Ohio, 17th State, admitted to Union",
+      "squares": [2],
+      "actors": ["Americas"]
+    }],
+    "1803": [{
+      "year": 1803,
+      "event": "Difficulties with Tripoli",
+      "squares": [1],
+      "actors": ["Americas"]
+    }, {
+      "year": 1803,
+      "event": "Jefferson buys Louisiana",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1804": [{
+      "year": 1804,
+      "event": "Lear's treaty with Barbary Powers",
+      "squares": [6],
+      "actors": ["Americas"]
+    }, {
+      "year": 1804,
+      "event": "Decatur's and Eaton's exploits in the Barbary States",
+      "squares": [8],
+      "actors": ["Americas"]
+    }, {
+      "year": 1804,
+      "event": "Hamilton's death",
+      "squares": [9],
+      "actors": ["Americas"]
+    }],
+    "1807": [{
+      "year": 1807,
+      "event": "Foreign slave trade abolished",
+      "squares": [6],
+      "actors": ["Americas"]
+    }, {
+      "year": 1807,
+      "event": "Burr's trial",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1809": [{
+      "year": 1809,
+      "event": "James Madison, fourth President of U.S.A., takes office",
+      "squares": [5],
+      "actors": ["Americas"]
+    }],
+    "1811": [{
+      "year": 1811,
+      "event": "Battle of Tippecanoe",
+      "squares": [1],
+      "actors": ["Americas"]
+    }, {
+      "year": 1811,
+      "event": "Tecumseh's confederation",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1812": [{
+      "year": 1812,
+      "event": "War with England",
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1812,
+      "event": "Louisiana admitted",
+      "squares": [2],
+      "actors": ["Americas"]
+    }, {
+      "year": 1812,
+      "event": "British losses from the naval victories of Commodores Hull, Jones, Decatur, Bainbridge, and the American privateers; and the land victories of Colonels Wool, Brown, and Miller.",
+      "squares": [3],
+      "actors": ["England"]
+    }, {
+      "year": 1812,
+      "event": "Gen. Hull's surrender of Detroit",
+      "squares": [6],
+      "actors": ["Americas", "England"]
+    }],
+    "1813": [{
+      "year": 1813,
+      "event": "Victories of Winchester, Croghan, Perry, Harrison, Scott, and Jacksan by land; and of Lawrence, Porster, Allen, and Burroughs by sea.",
+      "squares": "full",
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1813,
+      "event": "Tecumseh killed",
+      "squares": [9],
+      "actors": ["Americas"]
+    }],
+    "1814": [{
+      "year": 1814,
+      "event": "Victories of Fort Erie, Chippeway, Lundy's Lane, Baltimore, Plattsburg, and in Florida.",
+      "squares": "full",
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1814,
+      "event": "English capitulate at Ghent, notwithstanding their successes on the coast, burning of Washington, etc.",
+      "squares": [6],
+      "actors": ["Americas", "England"]
+    }],
+    "1815": [{
+      "year": 1815,
+      "event": "Jackson's final victory at New Orleans",
+      "squares": [1],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1815,
+      "event": "Treaty with Algiers",
+      "squares": [6],
+      "actors": ["Americas"]
+    }, {
+      "year": 1815,
+      "event": "Decatur's victories at Algiers (Second Barbary War)",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1816": [{
+      "year": 1816,
+      "event": "Indiana, 19th State, admitted",
+      "squares": [2],
+      "actors": ["Americas"]
+    }, {
+      "year": 1816,
+      "event": "United States Bank rechartered",
+      "squares": [6],
+      "actors": ["Americas"]
+    }],
+    "1817": [{
+      "year": 1817,
+      "event": "James Monroe, fifth President, takes office",
+      "squares": [1],
+      "actors": ["Americas"]
+    }, {
+      "year": 1817,
+      "event": "Mississippi admitted",
+      "squares": [2],
+      "actors": ["Americas"]
+    }, {
+      "year": 1817,
+      "event": "First Seminole War begins",
+      "squares": [5],
+      "actors": ["Americas"]
+    }],
+    "1818": [{
+      "year": 1818,
+      "event": "Illinois, 21st State, admitted to Union",
+      "squares": [2],
+      "actors": ["Americas"]
+    }],
+    "1819": [{
+      "year": 1819,
+      "event": "Alabama, 22nd State, admitted to Union",
+      "squares": [2],
+      "actors": ["Americas"]
+    }],
+    "1820": [{
+      "year": 1820,
+      "event": "Maine, 23rd State, admitted to Union",
+      "squares": [2],
+      "actors": ["Americas"]
+    }, {
+      "year": 1820,
+      "event": "Missouri compromise signed, violating ordinance of 1787",
+      "squares": [6],
+      "actors": ["Americas"]
+    }],
+    "1821": [{
+      "year": 1821,
+      "event": "Missouri, 24th State, admitted to Union.",
+      "squares": [2],
+      "actors": ["Americas"]
+    }, {
+      "year": 1821,
+      "event": "Controvery in Congress surrounding Missouri Compromise",
+      "squares": [6],
+      "actors": ["Americas"]
+    }],
+    "1824": [{
+      "year": 1824,
+      "event": "Great Protective Tariff",
+      "squares": [6],
+      "actors": ["Americas"]
+    }, {
+      "year": 1824,
+      "event": "Lafayette's visit",
+      "squares": [8],
+      "actors": ["France"]
+    }],
+    "1825": [{
+      "year": 1825,
+      "event": "Join Quincy Adams, sixth President, takes office",
+      "squares": [5],
+      "actors": ["Americas"]
+    }, {
+      "year": 1825,
+      "event": "Treaty with the Creeks after conflicts in Georgia",
+      "squares": [6],
+      "actors": ["Americas"]
+    }],
+    "1826": [{
+      "year": 1826,
+      "event": "Adams and Jefferson die, July 4th",
+      "squares": [9],
+      "actors": ["Americas"]
+    }],
+    "1827": [{
+      "year": 1827,
+      "event": "Anti-Masonry movement",
+      "squares": [6],
+      "actors": ["Americas"]
+    }, {
+      "year": 1827,
+      "event": "Morgan's abduction",
+      "squares": [9],
+      "actors": ["Americas"]
+    }],
+    "1829": [{
+      "year": 1829,
+      "event": "Andrew Jacsion, seventh President, takes office",
+      "squares": [5],
+      "actors": ["Americas"]
+    }],
+    "1830": [{
+      "year": 1830,
+      "event": "Treaty of United States with turkey",
+      "squares": [6],
+      "actors": ["Americas"]
+    }],
+    "1832": [{
+      "year": 1832,
+      "event": "Blackhawk's War",
+      "squares": [1],
+      "actors": ["Americas"]
+    }, {
+      "year": 1832,
+      "event": "Nullification in South Carolina",
+      "squares": [6],
+      "actors": ["Americas"]
+    }, {
+      "year": 1832,
+      "event": "Jackson lays veto on the United States Bank",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1833": [{
+      "year": 1833,
+      "event": "Jackson removes deposits from U.S. Bank",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1835": [{
+      "year": 1835,
+      "event": "Jackson's proclamation against the french",
+      "squares": [8],
+      "actors": ["Americas", "France"]
+    }, {
+      "year": 1835,
+      "event": "Death of Lafayette",
+      "squares": [9],
+      "actors": ["France"]
+    }],
+    "1836": [{
+      "year": 1836,
+      "event": "Florida War begins with massacre of Dade's command",
+      "squares": "full",
+      "actors": ["Americas", "Native"]
+    }],
+    "1837": [{
+      "year": 1837,
+      "event": "Martin Van Buren, eighth President, takes office",
+      "squares": [5],
+      "actors": ["Americas"]
+    }],
+    "1838": [{
+      "year": 1838,
+      "event": "Mormon War",
+      "squares": [1],
+      "actors": ["Americas"]
+    }, {
+      "year": 1838,
+      "event": "Insurrection in Canada",
+      "squares": [6],
+      "actors": ["England", "Americas"]
+    }, {
+      "year": 1838,
+      "event": "Van Buren's proclamation about the Canada difficulties",
+      "squares": [8],
+      "actors": ["Americas", "England"]
+    }],
+    "1839": [{
+      "year": 1839,
+      "event": "Difficulties on the frontiers of Maine and new Brunswick compromised for a time, by Scott, without a war",
+      "squares": [6],
+      "actors": ["Americas", "England"]
+    }],
+    "1841": [{
+      "year": 1841,
+      "event": "William H. Harrison, ninth President, takes office. John Tyler succeeds after Harrison's death",
+      "squares": [5],
+      "actors": ["Americas"]
+    }, {
+      "year": 1841,
+      "event": "William H. Harrison dies",
+      "squares": [9],
+      "actors": ["Americas"]
+    }],
+    "1842": [{
+      "year": 1842,
+      "event": "Dorr's insurrection in Rhode Island",
+      "squares": [1],
+      "actors": ["Americas"]
+    }, {
+      "year": 1842,
+      "event": "Ashburton treaty between the U.S. and British North American colonies",
+      "squares": [6],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1842,
+      "event": "Colonel Worth brought the Florida war to an end",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1844": [{
+      "year": 1844,
+      "event": "Texas applies for admission; not received till next year",
+      "squares": [2],
+      "actors": ["Americas"]
+    }],
+    "1845": [{
+      "year": 1845,
+      "event": "Second Mormon War",
+      "squares": [1],
+      "actors": ["Americas"]
+    }, {
+      "year": 1845,
+      "event": "Iowa and Florida admitted",
+      "squares": [2],
+      "actors": ["Americas"]
+    }, {
+      "year": 1845,
+      "event": "James K. Polk, eleventh President, takes office",
+      "squares": [5],
+      "actors": ["Americas"]
+    }],
+    "1846": [{
+      "year": 1846,
+      "event": "Oregon Treaty",
+      "squares": [6],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1846,
+      "event": "Mexican-American War begins",
+      "squares": "full",
+      "actors": ["Americas", "Mexico"]
+    }],
+    "1847": [{
+      "year": 1847,
+      "event": "Taylor's and Scott's victories in the Mexican-American War",
+      "squares": "full",
+      "actors": ["Americas", "Mexico"]
+    }],
+    "1848": [{
+      "year": 1848,
+      "event": "Treaty of Guadalupe Hidalgo",
+      "squares": [6],
+      "actors": ["Americas", "Mexico"]
+    }, {
+      "year": 1848,
+      "event": "James Marshall discovers the gold in California, at Sutter's mill",
+      "squares": [8],
+      "actors": ["Americas"]
+    }],
+    "1849": [{
+      "year": 1849,
+      "event": "Zachary Taylor, twelfth President, takes office",
+      "squares": [5],
+      "actors": ["Americas"]
+    }],
+    "1850": [{
+      "year": 1850,
+      "event": "California, 31st State, admitted free.",
+      "squares": [2],
+      "actors": ["Americas"]
+    }, {
+      "year": 1850,
+      "event": "Domestic slave-trade abolished in District of Columbia; Stringent Fugitive Slave Law promulgated (Compromise of 1850)",
+      "squares": [6],
+      "actors": ["Americas"]
+    }, {
+      "year": 1850,
+      "event": "President Taylor dies",
+      "squares": [9],
+      "actors": ["Americas"]
+    }]
+  },
+  "actors": {
+    "1500": ["England", "Spain", "Americas", "France"],
+    "1600": ["England", "France", "Americas", "Holland", "Sweden"],
+    "1700": ["France", "Americas", "England", "Spain"],
+    "1800": ["Americas", "England", "France", "Native", "Mexico"]
+  },
+  "actorColors": {
+    "England": "rgb(119,43,21)",
+    "France": "rgb(60,100,100)",
+    "Americas": "rgb(222,145,49)",
+    "Holland": "rgb(68,108,73)",
+    "Sweden": "rgb(217,182,17)",
+    "Spain": "rgb(209, 42, 5)",
+    "Native": "url(#diagonalHatch)",
+    "Mexico": "rgb(209, 42, 5)"
+  },
+  "eventTypes": [
+    "Battles, Sieges, Beginning of War",
+    "Conquests, Annexations, Unions",
+    "Losses and Disasters",
+    "Falls of States",
+    "Foundations of States and Revolutions",
+    "Treaties and Sundries",
+    "Births",
+    "Deeds",
+    "Deaths, of Remarkable Individuals"
+  ]
+}
