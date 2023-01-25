@@ -44,11 +44,13 @@ export default function QuizEventSquare({
 
   const squareEvent = currentCenturyEvents.filter(e => e.year === year).find(e => e.squares.includes(index + 1) || e.squares === "full");
 
-  const eventColors = useRef(squareEvent?.actors.map(actor => eventData.actorColors[actor]));
+  const eventColors = useRef([]);
+
+  eventColors.current = squareEvent?.actors.map(actor => eventData.actorColors[actor]);
 
   const polygons = [];
 
-  if (squareEvent?.actors.length > 1) {
+  if (squareEvent?.actors?.length > 1) {
     if (squareEvent?.squares === "full") {
       switch (index) {
         case 0:
@@ -78,7 +80,7 @@ export default function QuizEventSquare({
   }, [setOpacity, clearSquares]);
 
   useEffect(() => {
-    if (currentEvent?.year === year && (currentEvent?.squares === "full" || currentEvent?.squares.length === 9 || currentEvent?.squares.includes( index + 1))) setOpacity(1);
+    if (currentEvent?.year === year && (currentEvent?.squares === "full" || currentEvent?.squares?.length === 9 || currentEvent?.squares.includes( index + 1))) setOpacity(1);
   }, [currentEvent, setOpacity]);
 
   useEffect(() => {
