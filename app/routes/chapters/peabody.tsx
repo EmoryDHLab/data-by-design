@@ -22,6 +22,7 @@ import IntroSentence from "~/components/IntroSentence";
 import ImageModal from "~/components/layout/ImageModal";
 import Scrollytell from "~/components/peabody/PeabodyScrollytell";
 import Quotation from "~/components/Quotation";
+import PeabodyQuiz from "~/components/peabody/PeabodyQuiz";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -549,9 +550,9 @@ export default function PeabodyPage() {
           </Column>
         </TwoColumnLayout>
       </div>
-      <div className="w-screen bg-black text-white h-[896px] flex items-center justify-center">
-        CHART HERE
-      </div>
+
+        <PeabodyQuiz />
+
       <TwoColumnLayout className="pt-20">
         <Column>
           <p>
