@@ -4,18 +4,26 @@ import { ChapterContext } from "~/theme";
 export default function Footer() {
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   return (
-    <div>
+    <footer>
       <div
         className={`grid grid-cols-12 gap-x-6 p-10 pt-20 bg-${backgroundColor} text-${primaryTextColor}`}
       >
-        <div className="sm:col-start-3 sm:col-end-6 space-y-20">
-          <span className="font-dubois text-3xl">Data By Design</span>
-          <div className="text-base">
+        <div className="sm:col-start-3 sm:col-end-6 space-y-10">
+          <span className="font-dubois text-3xl">Data By Design</span>{" "}
+          <div className="py-5">
+            <br />
+            <address>
+              Email <br />
+              Contact <br />
+            </address>
+          </div>
+        </div>
+
+        <div className="text-sm col-start-6 col-end-9 space-y-5">
+          <div>
             Designed and developed by the Georgia Tech / Emory Digital
             Humanities Lab in collaboration with Polymode.
           </div>
-        </div>
-        <div className="text-base col-start-6 col-end-9 space-y-16">
           <div>
             Data by Design has been generously funded by a 2018-2019 NEH-Mellon
             Fellowship for Digital Publication.
@@ -26,15 +34,8 @@ export default function Footer() {
             Company of Philadelphia.
           </div>
         </div>
-        <div className="font-dubois text-lg col-start-9 col-end-12">
-          <p className="text-2xl">Notebook</p>
-          <br />
-          Email <br />
-          Facebook <br />
-          Contact <br />
-        </div>
       </div>
       <div className="bg-black">Stanford Footnote Placeholder</div>
-    </div>
+    </footer>
   );
 }
