@@ -1,4 +1,4 @@
-export default function FancyButton({action, children}) {
+export default function FancyButton({action, outlineColor, children}) {
   return (
     <button onClick={action} type="button">
       <svg
@@ -10,7 +10,7 @@ export default function FancyButton({action, children}) {
       >
         <path
           d="M70 31H7C4.66 28.66 3.34 27.34 1 25V7C3.34 4.66 4.66 3.34 7 1H70C72.34 3.34 73.66 4.66 76 7V25C73.66 27.34 72.34 28.66 70 31Z"
-          stroke="white"
+          stroke={outlineColor ?? "white"}
           strokeWidth={2}
         />
         <text
@@ -19,7 +19,7 @@ export default function FancyButton({action, children}) {
           textAnchor="middle"
           dominantBaseline="middle"
           className="font-william"
-          fill="white"
+          fill={outlineColor ?? "white"}
         >
           {children}
         </text>

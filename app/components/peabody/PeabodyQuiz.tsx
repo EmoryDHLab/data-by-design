@@ -27,6 +27,7 @@ const getCenturyEvents = ((century) => {
 export default function PeabodyQuiz() {
   const [currentCentury, setCurrentCentury] = useState(centuries[0]);
   const [currentEvent, setCurrentEvent] = useState(undefined);
+  const [hoveredEvent, setHoveredEvent] = useState(undefined);
   const [currentCenturyEvents, setCurrentCenturyEvents] = useState(getCenturyEvents(centuries[0]));
   const [solved, setSolved] = useState([]);
   const [previous, setPrevious] = useState(undefined);
@@ -52,6 +53,8 @@ export default function PeabodyQuiz() {
     <QuizContext.Provider value={{
       currentEvent,
       setCurrentEvent,
+      hoveredEvent,
+      setHoveredEvent,
       currentCentury,
       currentCenturyEvents,
       solved,
@@ -64,7 +67,7 @@ export default function PeabodyQuiz() {
           {centuries.map((century, index) => {
             return (
               <div key={`button-${index}`} className="my-auto">
-                <FancyButton action={() => setCurrentCentury(century)}>
+                <FancyButton outlineColor={currentCentury === century ? "gold" : "white" } action={() => setCurrentCentury(century)}>
                   {century}s
                 </FancyButton>
               </div>
@@ -116,7 +119,7 @@ export default function PeabodyQuiz() {
           <div className="col-span-5 text-2xl">
             {currentEvent?.year ? `${currentEvent.year}:` : ""} {currentEvent?.event ?? "Some instructions?"}
           </div>
-          <div className="col-span-1 text-center" style={{fontFamily: "DxD Icons"}}>
+          <div className="col-span-1 text-center text-2xl" style={{fontFamily: "DxD Icons"}}>
           <button
               type="button"
               disabled={!next}

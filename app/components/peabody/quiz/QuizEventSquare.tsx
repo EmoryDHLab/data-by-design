@@ -23,10 +23,12 @@ export default function QuizEventSquare({
   year,
 }: Props) {
   const [opacity, setOpacity] = useState(0);
+  const [hovered, setHovered] = useState(false);
 
   const {
     currentEvent,
     setCurrentEvent,
+    setHoveredEvent,
     currentCenturyEvents,
     solved,
     setSolved,
@@ -69,6 +71,16 @@ export default function QuizEventSquare({
     squareEvent && solved.includes(squareEvent) ? setOpacity(1) : setOpacity(0);
   }, [squareEvent, solved]);
 
+  const mouseEnter = () => {
+    setHoveredEvent({ type: index, event: squareEvent });
+    setHovered(true);
+  };
+
+  const mouseLeave = () => {
+    setHoveredEvent(undefined);
+    setHovered(false);
+  }
+
   return (
     <svg
       viewBox="0 0 30 30"
@@ -76,13 +88,14 @@ export default function QuizEventSquare({
       height="30"
       x={getEventXFromIndex(index)}
       y={getEventYFromIndex(index)}
+      className="cursor-pointer"
       onClick={() => setSolved([...solved, squareEvent])}
-      // onMouseEnter={mouseEnter}
-      // onMouseLeave={mouseLeave}
+      onMouseEnter={mouseEnter}
+      onMouseLeave={mouseLeave}
     >
       <rect
-        stroke="#b3b3b3"
-        strokeWidth={0.5}
+        stroke={hovered ? "gold" : "#b3b3b3"}
+        strokeWidth={hovered ? 10 : 0.5}
         fillOpacity={opacity}
         fill="#e5e7eb"
         width="30"
