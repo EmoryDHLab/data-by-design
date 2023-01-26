@@ -8,15 +8,8 @@ import eventData from "~/data/peabody/eventData.json";
 import type { HighlightedElement } from "~/components/peabody/peabodyUtils";
 import QuizKey from "./quiz/QuizKey";
 import FancyButton from "../FancyButton";
-// import { numberRange } from "~/utils";
-// import QuizEventSquare from "~/components/peabody/quiz/QuizEventSquare";
 
-const centuries = [
-  { century: 1500, data: peabody1500SquareColors},
-  { century: 1600, data: peabody1600SquareColors},
-  { century: 1700, data: peabody1700SquareColors},
-  { century: 1800, data: peabody1800SquareColors},
-];
+const centuries = [ 1500, 1600, 1700, 1800, ];
 
 export const QuizContext = createContext({
   clearSquares: 0,
@@ -32,46 +25,34 @@ const getCenturyEvents = ((century) => {
 })
 
 export default function PeabodyQuiz() {
-  const [highlightedElement, setHighlightedElement] = useState<
-  HighlightedElement | undefined
-  >(undefined);
-
-  const [activeYearData, setActiveYearData] = useState({
-    squareColors: peabody1500SquareColors,
-    year: 1500,
-  });
-
-  const [clearSquares, setClearSquares] = useState(0);
-  const [fillAllSquares, setFillAllSquares] = useState(false);
+  const [currentCentury, setCurrentCentury] = useState(centuries[0]);
   const [currentEvent, setCurrentEvent] = useState(undefined);
-  const [currentCenturyEvents, setCurrentCenturyEvents] = useState(getCenturyEvents(1500));
+  const [currentCenturyEvents, setCurrentCenturyEvents] = useState(getCenturyEvents(centuries[0]));
   const [solved, setSolved] = useState([]);
+  const [previous, setPrevious] = useState(undefined);
+  const [next, setNext] = useState(undefined);
 
   useEffect(() => {
-    setClearSquares(clearSquares => clearSquares + 1);
-  }, [setClearSquares, activeYearData, setFillAllSquares]);
-
-  useEffect(() => {
-    setCurrentCenturyEvents(getCenturyEvents(activeYearData.year));
-  }, [activeYearData, setCurrentCenturyEvents]);
-
-  useEffect(() => {
-    setFillAllSquares(false);
-    setCurrentEvent(undefined);
     setSolved([]);
-  }, [clearSquares, setFillAllSquares]);
+    setCurrentCenturyEvents(getCenturyEvents(currentCentury));
+  }, [currentCentury, setCurrentCenturyEvents, setSolved]);
 
   useEffect(() => {
-    if (fillAllSquares) setSolved(currentCenturyEvents);
-  }, [fillAllSquares, setSolved]);
+     setCurrentEvent(solved.length > 0 ?solved[solved.length - 1] : undefined);
+  }, [solved]);
+
+  useEffect(() => {
+    if (!currentCenturyEvents) return;
+    const currentIndex = currentCenturyEvents.indexOf(currentEvent)
+    setPrevious(currentCenturyEvents[currentIndex - 1]);
+    setNext(currentCenturyEvents[currentIndex + 1]);
+  }, [currentEvent, setPrevious, setNext]);
 
   return (
     <QuizContext.Provider value={{
-      clearSquares,
-      fillAllSquares,
       currentEvent,
       setCurrentEvent,
-      currentCentury: activeYearData.year,
+      currentCentury,
       currentCenturyEvents,
       solved,
       setSolved,
@@ -83,15 +64,8 @@ export default function PeabodyQuiz() {
           {centuries.map((century, index) => {
             return (
               <div key={`button-${index}`} className="my-auto">
-                <FancyButton
-                  action={() =>
-                    setActiveYearData({
-                      squareColors: century.data,
-                      year: century.century
-                    })
-                  }
-                >
-                  {century.century}s
+                <FancyButton action={() => setCurrentCentury(century)}>
+                  {century}s
                 </FancyButton>
               </div>
             )
@@ -101,7 +75,7 @@ export default function PeabodyQuiz() {
             <div className="text-center text-2xl">
               <button
                 className="items-center text-white"
-                onClick={() => setClearSquares(clearSquares + 1)}
+                onClick={() => setSolved([])}
                 style={{fontFamily: "DxD Icons"}}
               >
                 e
@@ -110,7 +84,7 @@ export default function PeabodyQuiz() {
             <div className="text-center text-2xl">
               <button
                 className="items-center text-white"
-                onClick={() => setFillAllSquares(true)}
+                onClick={() => setSolved(currentCenturyEvents)}
                 style={{fontFamily: "DxD Icons"}}
               >
                 d
@@ -129,109 +103,41 @@ export default function PeabodyQuiz() {
             <div>Complete</div>
           </div>
 
-
           {/* SECOND ROW */}
-          <div className="col-span-1 text-2xl" style={{fontFamily: "DxD Icons"}}>c</div>
+          <div className="col-span-1 text-2xl" style={{fontFamily: "DxD Icons"}}>
+            <button
+              type="button"
+              disabled={!previous}
+              onClick={() => setCurrentEvent(previous)}
+            >
+              c
+            </button>
+          </div>
           <div className="col-span-5 text-2xl">
             {currentEvent?.year ? `${currentEvent.year}:` : ""} {currentEvent?.event ?? "Some instructions?"}
           </div>
-          <div className="col-span-1 text-center" style={{fontFamily: "DxD Icons"}}>b</div>
+          <div className="col-span-1 text-center" style={{fontFamily: "DxD Icons"}}>
+          <button
+              type="button"
+              disabled={!next}
+              onClick={() => setCurrentEvent(next)}
+            >
+              b
+            </button>
+          </div>
           {/* THIRD ROW */}
           <div className="col-span-6"></div>
           <div className="col-span-1">{solved.length}/{currentCenturyEvents.length}</div>
         </div>
         <div className="w-9/12 my-0 mx-auto">
             <svg viewBox="0 0 99 99">
-              <image href={`/images/peabody/${activeYearData.year}s.jpg`} x="-3.5" y="-3.5" height="106" width="105.5"></image>
+              <image href={`/images/peabody/${currentCentury}s.jpg`} x="-3.5" y="-3.5" height="106" width="105.5"></image>
             </svg>
         </div>
         <div className="w-9/12 my-0 mx-auto">
-          <QuizPeabodySquare
-            setHighlightedElement={setHighlightedElement}
-            highlightedElement={highlightedElement}
-            squareColors={activeYearData.squareColors}
-          />
+          <QuizPeabodySquare />
         </div>
       </div>
-      {/* <div className="w-full bg-black py-12 h-[calc(100vh-30px)] gird grid-cols-2 text-white">
-        <div className="text-white">
-          <div className="justify-center grid grid-cols-2 gap-4 pl-16">
-            <QuizKey />
-            <div>poo</div>
-          </div>
-          <div className="">
-            {centuries.map((century, index) => {
-              return (
-                <div key={`button-${index}`}>
-                  <FancyButton
-                    action={() =>
-                      setActiveYearData({
-                        squareColors: century.data,
-                        year: century.century
-                      })
-                    }
-                  >
-                    {century.century}
-                  </FancyButton>
-                </div>
-              )
-            })}
-            <div className="text-center text-3xl">
-              <button
-                className="items-center text-white"
-                onClick={() => setClearSquares(clearSquares + 1)}
-                style={{fontFamily: "DxD Icons"}}
-                onMouseEnter={() => setOpen(false)}
-              >
-                e
-              </button>
-            </div>
-            <div className="text-center text-3xl">
-              <button
-                className="items-center text-white"
-                onClick={() => setFillAllSquares(true)}
-                style={{fontFamily: "DxD Icons"}}
-              >
-                d
-              </button>
-            </div>
-            <div className="text-center text-3xl">
-              <button
-                className="items-center text-white"
-                onClick={() => {}}
-                style={{fontFamily: "DxD Icons"}}
-              >
-                f
-              </button>
-            </div>
-            {/* <div className="col-span-1 text-2xl" style={{fontFamily: "DxD Icons"}}>c</div>
-            <div className="col-span-5 text-2xl">
-              {currentEvent?.year ? `${currentEvent.year}:` : ""} {currentEvent?.event ?? "Some instructions?"}
-            </div>
-            <div className="col-span-1 text-center" style={{fontFamily: "DxD Icons"}}>b</div>
-            <div className="col-span-6"></div>
-            <div className="col-span-1">{solved.length}/{currentCenturyEvents.length}</div>
-          </div>
-        {/* </div>
-        <div className="">
-          {/* <div className="w-1/2 flex justify-center">
-            <div className="w-5/6"> *
-            <svg className="w-full" viewBox="0 0 99 99">
-              <image href={`/images/peabody/${activeYearData.year}s.jpg`} x="-3.5" y="-3.5" width="105.5" height="106"></image>
-            </svg>
-            {/* </div>
-          </div>
-          <div className="">
-            {/* <div className="w-5/6">
-              <QuizPeabodySquare
-                setHighlightedElement={setHighlightedElement}
-                highlightedElement={highlightedElement}
-                squareColors={activeYearData.squareColors}
-              />
-            {/* </div>
-          </div>
-        </div>
-      </div> */}
     </QuizContext.Provider>
   );
 }

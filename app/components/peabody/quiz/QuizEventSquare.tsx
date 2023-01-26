@@ -14,29 +14,19 @@ interface Props {
   absoluteIndex: number;
   // Index in year square, so 0..8
   index: number;
-  highlightedElement: HighlightedElement | undefined;
-  setHighlightedElement: Dispatch<
-    SetStateAction<HighlightedElement | undefined>
-  >;
-  eventSquareColors: string[] | null;
   year: number;
 }
 
 export default function QuizEventSquare({
   absoluteIndex,
   index,
-  highlightedElement,
-  setHighlightedElement,
-  eventSquareColors,
   year,
 }: Props) {
   const [opacity, setOpacity] = useState(0);
 
   const {
-    clearSquares,
     currentEvent,
     setCurrentEvent,
-    fillAllSquares,
     currentCenturyEvents,
     solved,
     setSolved,
@@ -76,21 +66,8 @@ export default function QuizEventSquare({
   }
 
   useEffect(() => {
-    setOpacity(0);
-  }, [setOpacity, clearSquares]);
-
-  useEffect(() => {
-    if (currentEvent?.year === year && (currentEvent?.squares === "full" || currentEvent?.squares?.length === 9 || currentEvent?.squares.includes( index + 1))) setOpacity(1);
-  }, [currentEvent, setOpacity]);
-
-  useEffect(() => {
-    if (fillAllSquares) setOpacity(1);
-  }, [setOpacity, fillAllSquares]);
-
-  useEffect(() => {
-    setCurrentEvent(squareEvent);
-    if (squareEvent) setSolved([...solved, squareEvent]);
-  }, [opacity, setCurrentEvent]);
+    squareEvent && solved.includes(squareEvent) ? setOpacity(1) : setOpacity(0);
+  }, [squareEvent, solved]);
 
   return (
     <svg
@@ -99,7 +76,7 @@ export default function QuizEventSquare({
       height="30"
       x={getEventXFromIndex(index)}
       y={getEventYFromIndex(index)}
-      onClick={() => setOpacity(1)}
+      onClick={() => setSolved([...solved, squareEvent])}
       // onMouseEnter={mouseEnter}
       // onMouseLeave={mouseLeave}
     >
