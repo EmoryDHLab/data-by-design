@@ -13,19 +13,11 @@ import type { Dispatch, SetStateAction } from "react";
 
 interface Props {
   index: number;
-  setHighlightedElement: Dispatch<
-    SetStateAction<HighlightedElement | undefined>
-  >;
-  highlightedElement?: HighlightedElement;
-  yearSquareColors: YearSquare | null;
   year: number;
 }
 
 export default function QuizYearSquare({
   index,
-  highlightedElement,
-  setHighlightedElement,
-  yearSquareColors,
   year,
 }: Props) {
 
@@ -43,11 +35,8 @@ export default function QuizYearSquare({
         return (
           <QuizEventSquare
             key={eventIndex}
-            eventSquareColors={yearSquareColors?.[eventIndex] ?? null}
             absoluteIndex={absoluteIndex}
             index={eventIndex}
-            highlightedElement={highlightedElement}
-            setHighlightedElement={setHighlightedElement}
             year={year}
           />
         );

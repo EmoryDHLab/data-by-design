@@ -8,30 +8,14 @@ import type {
 import type { Dispatch, SetStateAction } from "react";
 import { useContext } from "react";
 import { QuizContext } from "../PeabodyQuiz";
-
-interface Props {
-  setHighlightedElement: Dispatch<
-    SetStateAction<HighlightedElement | undefined>
-  >;
-  highlightedElement?: HighlightedElement;
-  handleSquareClick?: (index: number) => void;
-  squareColors: SquareData;
-  className?: string;
-}
+import { numberRange } from "~/utils";
 
 // Recreated Peabody Square is a square fully recreated using SVG.
-export default function QuizPeabodySquare({
-  setHighlightedElement,
-  highlightedElement,
-  handleSquareClick,
-  squareColors,
-  clearSquares,
-  className,
-}: Props) {
+export default function QuizPeabodySquare() {
   const { currentCentury } = useContext(QuizContext);
 
   return (
-    <svg className={`w-full ${className ?? ""}`} viewBox="0 0 99 99">
+    <svg className="w-full" viewBox="0 0 99 99">
       <defs>
         <pattern
           id="diagonalHatch"
@@ -50,14 +34,10 @@ export default function QuizPeabodySquare({
       </defs>
       <g>
         <rect className="fill-peabodyOrange" x="0" width="100" height="99" />
-        {squareColors.map((yearSquareColors, index) => {
+        {[...numberRange(currentCentury + 1, currentCentury + 100)].map((year, index) => {
           return (
             <g key={index}>
               <QuizYearSquare
-                handleSquareClick={handleSquareClick}
-                yearSquareColors={yearSquareColors}
-                highlightedElement={highlightedElement}
-                setHighlightedElement={setHighlightedElement}
                 index={index}
                 year={currentCentury + index + 1}
               />
