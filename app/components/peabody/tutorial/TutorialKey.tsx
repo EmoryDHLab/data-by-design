@@ -32,7 +32,7 @@ export default function TutorialKey({ highlightedElement }) {
                 </defs>
                 <rect
                   stroke="#b3b3b3"
-                  strokeWidth="0.5"
+                  strokeWidth={highlightedElement?.event?.actors.includes(actor) ? 2 : 0.5}
                   fillOpacity="1"
                   fill={eventsData.actorColors[actor]}
                   width="30"
@@ -43,7 +43,7 @@ export default function TutorialKey({ highlightedElement }) {
               <span
                 className={`font-${
                   highlightedElement?.event?.actors.includes(actor)
-                    ? "extrabold"
+                    ? "extrabold border-b-2 border-b-peabodyOrange"
                     : "normal"
                 }`}
               >

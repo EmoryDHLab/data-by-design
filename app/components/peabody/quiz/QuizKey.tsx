@@ -12,7 +12,7 @@ export default function QuizKey() {
           {eventData.eventTypes.map((type, index) => {
             return (
               <li key={`type-${index}`}>
-                <span className={`border-b-${hoveredEvent?.type === index ? 2 : 0} border-[#db882a]`}>{type}</span>
+                <span className={`border-b-${hoveredEvent?.type === index ? 2 : 0} border-peabodyOrange`}>{type}</span>
               </li>
             )
           })}
@@ -30,7 +30,7 @@ export default function QuizKey() {
                   </defs>
                   <rect stroke="#b3b3b3" strokeWidth={`${hoveredEvent?.event?.actors.includes(actor) ? 2 : 0.5}`} fillOpacity="1" fill={eventData.actorColors[actor]} width="30" height="30" className=""></rect>
                 </svg>
-                <span className={`border-b-${hoveredEvent?.event?.actors.includes(actor) ? 2 : 0} border-[#db882a]`}>
+                <span className={`border-b-${hoveredEvent?.event?.actors.includes(actor) ? 2 : 0} border-peabodyOrange`}>
                   {actor}
                 </span>
               </div>
