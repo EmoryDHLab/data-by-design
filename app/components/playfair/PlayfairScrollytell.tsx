@@ -100,7 +100,7 @@ export default function PlayfairScrollytell() {
               <p
                 key={index}
                 data-step={index}
-                className={`step text-xl content-center px-12 ${
+                className={`step text-xl content-center px-20 ${
                   index + 1 === triggers.length || index == 0
                     ? "h-[60vh]"
                     : "h-screen"
@@ -112,6 +112,7 @@ export default function PlayfairScrollytell() {
           })}
         </div>
         <div className="sticky top-[60px] h-screen bias-1/2 w-3/5 mr-24">
+          <div className="text-3xl relative top-[calc(100vh-12rem)] right-[35vw] text-white">↓</div>
           <Recreation />
         </div>
       </div>

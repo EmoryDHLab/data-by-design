@@ -47,13 +47,14 @@ export default function Scrollytell() {
         <div ref={steps} className="bias-1/2 w-1/2">
           {triggers.map((trigger, index) => {
             return (
-              <p key={index} data-step={index} className={`step text-2xl content-center px-12 ${index + 1 === triggers.length || index == 0 ? "h-[60vh]" : "h-screen"} text-${primaryTextColor}`}>
+              <p key={index} data-step={index} className={`step text-2xl content-center px-20 ${index + 1 === triggers.length || index == 0 ? "h-[60vh]" : "h-screen"} text-${primaryTextColor}`}>
                 {trigger}
               </p>
             );
           })}
         </div>
         <div className="sticky top-[60px] h-screen bias-1/2 w-1/2 mr-24">
+          <div className="text-3xl relative top-[calc(100vh-12rem)] left-[calc(-50vw+6rem)]">↓</div>
           <Tutorial />
         </div>
       </div>
