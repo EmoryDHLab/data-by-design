@@ -5,7 +5,7 @@ import ImageCaption from "~/components/ImageCaption";
 import ImageModal from "~/components/layout/ImageModal";
 
 const tourLocations = {
-  Rochester: {
+  Spiral: {
     mapStyles: "scale-[2.56] -translate-x-[14.25rem] translate-y-[11.5rem]",
   },
   Louisville: {
@@ -16,7 +16,7 @@ const tourLocations = {
   },
 };
 
-export default function PromotionalTourMap() {
+export default function HoverImagesDubois() {
   const { hoverState } = useContext(ChapterContext);
   let transformStyles = "";
 

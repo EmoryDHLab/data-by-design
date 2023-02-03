@@ -11,8 +11,13 @@ import CenteredLayout from "~/components/layout/CenteredLayout";
 import FootnotesList from "~/components/FootnotesList";
 import IntroSentence from "~/components/IntroSentence";
 import ImageModal from "~/components/layout/ImageModal";
+import Quotation from "~/components/Quotation";
+import type { HoverState } from "~/theme";
+import HoverText from "~/components/HoverText";
+import HoverImagesDubois from "~/components/dubois/HoverImagesDubois";
 
 export default function DuboisChapter() {
+  const [hoverState, setHoverState] = useState<HoverState>(undefined);
   const [docHeightState, setDocHeightState] = useState<number>(0);
 
   return (
@@ -23,6 +28,8 @@ export default function DuboisChapter() {
         footnoteTextColor: "duboisPrimary",
         primaryTextColor: "white",
         footnotes: duboisFootnotes,
+        hoverState,
+        setHoverState,
         docHeightState,
         setDocHeightState,
       }}
@@ -260,15 +267,68 @@ export default function DuboisChapter() {
                 {" "}
                 century is the problem of the color line.”
               </span>
+              <p>
+                <span>These words would reappear several years later in </span>
+                <span>The Souls of Black Folk</span>
+                <span>
+                  {" "}
+                  (19n03), where they would become “perhaps Du Bois’s most
+                  famous indictment of the centrality of race and racism to
+                  modern American sociopolitical life,” as architectural
+                  historian Mabel O. Wilson explains.
+                  <InlineFootnote index={7}></InlineFootnote>
+                </span>
+                <span>
+                  But Du Bois mounts the same case through his charts.{" "}
+                </span>
+                <span className="font-normal">
+                  Both through his choices about what data to visualize, and
+                  about how to visualize them, Du Bois advances a clear argument
+                  about the nation’s Black citizens: not only about the{" "}
+                </span>
+                <span>
+                  progress that the nation’s Black citizens had made up to that
+                  date, but also about the extent of the challenges that
+                  remained to be addressed.{" "}
+                </span>
+              </p>
+              <p className="pt-10">
+                <span>
+                  While the first several charts in the series make use of
+                  familiar visual forms&mdash;maps, bar charts, and line
+                  graphs&mdash;in order to introduce the exhibition’s
+                  international viewership to the state of Georgia and its
+                  significance as an object of study, the visual style shifts to
+                  altogether new terrain once the focus on Georgia’s Black
+                  residents has been established.{" "}
+                  <HoverText hoverState="Rochester" className="font-semibold">
+                    In his comparative representation of the places where
+                    Georgia’s Black citizens reside, for example, Du Bois brings
+                    together aspects of the bar chart and the line chart along
+                    with a new form of spiral graph{" "}
+                  </HoverText>
+                  in order to give animacy to the presence of Black people in
+                  each of type of locale. In a later chart, which documents the
+                  decrease in illiteracy rates in the years between 1860 and
+                  1900, Du Bois makes use of what graphic designer Silas Munro
+                  describes as a “lattice-like arrangement,” in which an
+                  otherwise standard bar is folded at a right angle in order to
+                  further accentuate the decreasing rate of illiteracy. Du Bois
+                  elaborates upon this technique in a later chart, which
+                  compares the numbers of Black property owners, and the value
+                  of their properties, in two Georgia cities. Another unique
+                  chart in this series, which plots the “assessed value of
+                  household and kitchen furniture” owned by Black Georgians,
+                  takes the standard bar chart and bends it into a spiral,
+                  concentrating the viewer’s focus on the cumulative value of
+                  the population’s material possessions in addition to its
+                  growth in time.
+                </span>
+              </p>
             </div>
           </div>
           <div className="flex flex-col items-center middle-full p-10 w-1/2">
-            <ImageModal
-              src="/images/dubois/ch5-03-georgia.jpg"
-              alt=""
-              loading="lazy"
-              width="100%"
-            />
+            <HoverImagesDubois />
             <div className="font-dubois text-center mt-10 w-5/6">
               <p>
                 <span>Above: The introductory image of </span>
@@ -283,57 +343,10 @@ export default function DuboisChapter() {
             </div>
           </div>
         </div>
-        <p>
-          <span>These words would reappear several years later in </span>
-          <span>The Souls of Black Folk</span>
-          <span>
-            {" "}
-            (19n03), where they would become “perhaps Du Bois’s most famous
-            indictment of the centrality of race and racism to modern American
-            sociopolitical life,” as architectural historian Mabel O. Wilson
-            explains.
-            <InlineFootnote index={7}></InlineFootnote>
-          </span>
-          <span> But Du Bois mounts the same case through his charts. </span>
-          <span className="font-normal">
-            Both through his choices about what data to visualize, and about how
-            to visualize them, Du Bois advances a clear argument about the
-            nation’s Black citizens: not only about the{" "}
-          </span>
-          <span>
-            progress that the nation’s Black citizens had made up to that date,
-            but also about the extent of the challenges that remained to be
-            addressed.{" "}
-          </span>
-        </p>
-        <p className="pt-10">
-          <span>
-            While the first several charts in the series make use of familiar
-            visual forms&mdash;maps, bar charts, and line graphs&mdash;in order
-            to introduce the exhibition’s international viewership to the state
-            of Georgia and its significance as an object of study, the visual
-            style shifts to altogether new terrain once the focus on Georgia’s
-            Black residents has been established. In his comparative
-            representation of the places where Georgia’s Black citizens reside,
-            for example, Du Bois brings together aspects of the bar chart and
-            the line chart along with a new form of spiral graph in order to
-            give animacy to the presence of Black people in each of type of
-            locale. In a later chart, which documents the decrease in illiteracy
-            rates in the years between 1860 and 1900, Du Bois makes use of what
-            graphic designer Silas Munro describes as a “lattice-like
-            arrangement,” in which an otherwise standard bar is folded at a
-            right angle in order to further accentuate the decreasing rate of
-            illiteracy. Du Bois elaborates upon this technique in a later chart,
-            which compares the numbers of Black property owners, and the value
-            of their properties, in two Georgia cities. Another unique chart in
-            this series, which plots the “assessed value of household and
-            kitchen furniture” owned by Black Georgians, takes the standard bar
-            chart and bends it into a spiral, concentrating the viewer’s focus
-            on the cumulative value of the population’s material possessions in
-            addition to its growth in time.
-          </span>
-        </p>
 
+        <ChapterSectionTitle color="bg-duboisPrimary">
+          A Visual Method of Making History
+        </ChapterSectionTitle>
         <p>
           <span>
             As the series unfolds, so too does its argument about the progress
@@ -447,7 +460,9 @@ export default function DuboisChapter() {
           </span>
         </p>
         <p>
-          <span className="font-normal">Between Chart and Photograph</span>
+          <ChapterSectionTitle color="bg-duboisPrimary">
+            Between Chart and Photograph
+          </ChapterSectionTitle>
         </p>
         <p>
           <span className="font-normal">
@@ -678,32 +693,31 @@ export default function DuboisChapter() {
           <span>Dusk of Dawn:</span>
           <span></span>
         </p>
-        <div className="md:my-16 middle-text flex flex-col">
-          <div className="font-dubois">
-            <p>
+
+        <Quotation
+          quote={
+            <span>
+              “Two considerations thereafter broke in upon my work and
+              eventually disrupted it: first, one could not be a calm, cool, and
+              detached scientist while Negroes were lynched, murdered, and
+              starved; and secondly, there was no such definite demand for
+              scientific work of the sort that I was doing. I regarded it as
+              axiomatic that the world wanted to learn the truth and if the
+              truth was sought with even approximate accuracy and painstaking
+              devotion, the world would gladly support the effort.”
+            </span>
+          }
+          byline={
+            <>
               <span>
-                “Two considerations thereafter broke in upon my work and
-                eventually disrupted it: first, one could not be a calm, cool,
-                and detached scientist while Negroes were lynched, murdered, and
-                starved; and secondly, there was no such definite demand for
-                scientific work of the sort that I was doing. I regarded it as
-                axiomatic that the world wanted to learn the truth and if the
-                truth was sought with even approximate accuracy and painstaking
-                devotion, the world would gladly support the effort.”
+                {" "}
+                W.E.B. Du Bois,
+                <span className="italic">Dusk of Dawn</span>, pp. 67-8.
               </span>
-            </p>
-            <p>
-              <span className="font-normal"> - W.E.B. Du Bois, </span>
-              <span className="font-normal italic">Dusk of Dawn</span>
-              <span className="font-normal">, pp. 67-8.</span>
-            </p>
-          </div>
-          <div className="font-sans text-lg text-gray-500">
-            <p>
-              <span className="font-normal">attr</span>
-            </p>
-          </div>
-        </div>
+            </>
+          }
+        ></Quotation>
+
         <p>
           <span>
             From these lines, it becomes clear that Du Bois emerged from the
