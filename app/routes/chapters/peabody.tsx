@@ -665,6 +665,7 @@ export default function PeabodyPage() {
       </TwoColumnLayout>
       <CenteredLayout>
         <div className="flex flex-col items-center full-bleed py-10">
+          {/* Question: Should we use Full Bleed here?*/}
           <div>
             <ImageModal
               src="/images/ch4-13-willard.jpg"

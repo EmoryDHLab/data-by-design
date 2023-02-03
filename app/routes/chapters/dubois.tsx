@@ -7,7 +7,12 @@ import Footer from "~/components/Footer";
 import { ChapterContext } from "~/theme";
 import { duboisFootnotes } from "~/footnotes";
 import { useState } from "react";
+
+import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
+import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
+import FullBleed from "~/components/layout/FullBleed";
+
 import FootnotesList from "~/components/FootnotesList";
 import IntroSentence from "~/components/IntroSentence";
 import ImageModal from "~/components/layout/ImageModal";
@@ -15,6 +20,7 @@ import Quotation from "~/components/Quotation";
 import type { HoverState } from "~/theme";
 import HoverText from "~/components/HoverText";
 import HoverImagesDubois from "~/components/dubois/HoverImagesDubois";
+import ImageCaption from "~/components/ImageCaption";
 
 export default function DuboisChapter() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -38,164 +44,140 @@ export default function DuboisChapter() {
         title="Between Data and Truth"
         subtitle="W.E.B. Du Bois’s “Data Portraits”"
       />
+
       <div className="grid-wrapper bg-offwhite py-16 space-y-5">
-        <p className="pt-16">
-          <IntroSentence>
-            October 4th, 1899, was the first day of the fall term at Atlanta
-            University
-          </IntroSentence>{" "}
-          (now Clark Atlanta University), where W.E.B. Du Bois had been teaching
-          for the past two years&mdash;and a long two years they had been.{" "}
-          <InlineFootnote index={0}></InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            After relocating from Philadelphia to Atlanta in January 1897, Du
-            Bois and his family were first required to contend with the overt
-            racism of their everyday lives in the New South; and then, on May
-            24th, 1899, the most profound of personal tragedies when the Du
-            Bois’s two-year-old son, Burghardt, died after a brief illness.
-          </span>
-          <InlineFootnote index={1}>
-            The medical cause was diphtheria, although Du Bois and his wife
-            always felt that the root cause of Burghardt’s death was racism.
-            None of Atlanta’s “two or three” Black doctors had been available to
-            make an emergency house call, and not a single one of the city’s
-            many white doctors would allow themselves to cross racial lines to
-            tend to Burghardt, even with the knowledge of the severity of his
-            illness. For more on this incident and Du Bois’s early years in
-            Atlanta, see David Levering Lewis,{" "}
-            <cite>W.E.B. Du Bois: A Biography</cite> (New York: Henry Holt,
-            2009): 152-176.
-          </InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            But any small comfort that might have brought about by the start of
-            the school year and the return to a teaching routine would soon
-            evanesce as Du Bois found himself pulled into an unexpected new
-            project, one that had the potential to put his research to date on a
-            major international stage.
-          </span>
-        </p>
-        <p>
-          <span className="font-normal">
-            On that very same day in October, Du Bois’s own college classmate,
-            the lawyer and newspaper editor Thomas J. Calloway began the letter
-            campaign that would result in a commitment from the federal
-            government to fund an “Exhibit of American Negroes” at the 1900{" "}
-          </span>
-          <span className="font-normal italic">Exposition Universelle</span>
-          <span className="font-normal"> in Paris</span>
-          <span className="font-normal italic">, </span>
-          <span className="font-normal">
-            which was scheduled to open the following spring. With time running
-            short, Calloway turned to Du Bois and one other man, Daniel A.P.
-            Murray, the Assistant Librarian of Congress, to design and curate
-            the show. While Murray tasked himself with assembling a set of books
-            and pamphlets by Black writers to put on display, Du Bois saw his
-            purview in more conceptual terms: to present “the history and
-            present condition of a large group of human beings”&mdash;namely,
-            the United States’s Black citizens&mdash;"in as systematic and
-            compact a form as possible.”
-          </span>
-          <InlineFootnote index={2}></InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            This “systematic and compact form” was, of course, data
-            visualization&mdash;a technique that he’d studied during his time in
-            Germany, and which he’d perfected in his groundbreaking study,{" "}
-          </span>
-          <span className="font-normal italic">The Philadelphia Negro</span>
-          <span className="font-normal">
-            , published just one year earlier.
-          </span>
-          <InlineFootnote index={3}></InlineFootnote>
-        </p>
-        <div className="flex flex-col items-center full-bleed py-16">
-          <div>
-            <ImageModal
-              src="/images/dubois/ch5-01-phila.jpg"
-              alt=""
-              loading="lazy"
-              width="100%"
-            />
-          </div>
-          <div className="font-dubois text-center mt-10 w-5/6">
-            <p>
-              <span
-                className="font-normal"
-                style={{ color: "rgb(44, 62, 80)" }}
-              >
-                Above: “Distribution of African American inhabitants of the 7th
-                Ward,” the central image of{" "}
-              </span>
-              <span
-                className="italic font-normal"
-                style={{ color: "rgb(44, 62, 80)" }}
-              >
-                The Philadelphia Negro
-              </span>
-              <span
-                className="font-normal"
-                style={{ color: "rgb(44, 62, 80)" }}
-              >
-                , which was published in 1898. In order to conduct the research
-                for{" "}
-              </span>
-              <span
-                className="italic font-normal"
-                style={{ color: "rgb(44, 62, 80)" }}
-              >
-                The Philadelpha Negro
-              </span>
-              <span
-                className="font-normal"
-                style={{ color: "rgb(44, 62, 80)" }}
-              >
-                , Du Bois (and his wife Nina) moved to the neighborhood, where
-                Du Bois administered social surveys and collected the other data
-                that would culminate in the report. Image courtesy of Wikimedia
-                Commons.
-              </span>
-            </p>
-          </div>
-        </div>
-        <p>
-          <span className="font-normal">
-            For the Paris Exposition, as the event is more commonly known, Du
-            Bois worked with a team of Atlanta University students to create 63
-            poster-sized statistical charts. Like William Playfair and most
-            visualization practitioners ever since, Du Bois appreciated the
-            ability of the charts to convey trends and patterns “at a glance.”
-          </span>
-          <InlineFootnote index={4}></InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            In this case, Du Bois sought to highlight the growth and progress of
-            Black Americans in the years since emancipation. But Du Bois
-            understood that data could not convey the full picture of this
-            progress&mdash;nor could it convey the full extent of the obstacles
-            that the nation’s Black citizens were required to overcome. Thus he
-            supplemented the charts with over 500 photographs that documented
-            “typical” Black Americans at home, at school, and at work; as well
-            as with three large manuscript volumes that compiled the complete
-            Black Codes of Georgia&mdash;the legislation that, as Whitney
-            Battle-Baptiste and Britt Rusert explain, “stretch[ed] from the
-            slave codes of the colonial and antebellum period to the
-            segregationist policies and laws of the present,” and which
-            attempted to control and constrain all aspects of Black life.
-          </span>
-          <InlineFootnote index={5}></InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            Conceived at a time when Du Bois found himself increasingly
-            affected, both personally and intellectually, by the racism and
-            violence of white supremacy, the range of materials assembled for
-            the Paris Exposition at once attest to his deep-seated belief in the
-            transformative power of data and, at the same time, his growing
-            awareness of the limits of what data&mdash;and, by extension, data
-            visualization&mdash;could do.
-          </span>
-        </p>
+        <CenteredLayout>
+          <p className="pt-16">
+            <IntroSentence>
+              October 4th, 1899, was the first day of the fall term at Atlanta
+              University
+            </IntroSentence>{" "}
+            (now Clark Atlanta University), where W.E.B. Du Bois had been
+            teaching for the past two years&mdash;and a long two years they had
+            been. <InlineFootnote index={0}></InlineFootnote>
+            <span className="font-normal">
+              {" "}
+              After relocating from Philadelphia to Atlanta in January 1897, Du
+              Bois and his family were first required to contend with the overt
+              racism of their everyday lives in the New South; and then, on May
+              24th, 1899, the most profound of personal tragedies when the Du
+              Bois’s two-year-old son, Burghardt, died after a brief illness.
+            </span>
+            <InlineFootnote index={1}>
+              The medical cause was diphtheria, although Du Bois and his wife
+              always felt that the root cause of Burghardt’s death was racism.
+              None of Atlanta’s “two or three” Black doctors had been available
+              to make an emergency house call, and not a single one of the
+              city’s many white doctors would allow themselves to cross racial
+              lines to tend to Burghardt, even with the knowledge of the
+              severity of his illness. For more on this incident and Du Bois’s
+              early years in Atlanta, see David Levering Lewis,{" "}
+              <cite>W.E.B. Du Bois: A Biography</cite> (New York: Henry Holt,
+              2009): 152-176.
+            </InlineFootnote>
+            <span className="font-normal">
+              {" "}
+              But any small comfort that might have brought about by the start
+              of the school year and the return to a teaching routine would soon
+              evanesce as Du Bois found himself pulled into an unexpected new
+              project, one that had the potential to put his research to date on
+              a major international stage.
+            </span>
+          </p>
+          <p>
+            <span className="font-normal">
+              On that very same day in October, Du Bois’s own college classmate,
+              the lawyer and newspaper editor Thomas J. Calloway began the
+              letter campaign that would result in a commitment from the federal
+              government to fund an “Exhibit of American Negroes” at the 1900{" "}
+            </span>
+            <span className="font-normal italic">Exposition Universelle</span>
+            <span className="font-normal"> in Paris</span>
+            <span className="font-normal italic">, </span>
+            <span className="font-normal">
+              which was scheduled to open the following spring. With time
+              running short, Calloway turned to Du Bois and one other man,
+              Daniel A.P. Murray, the Assistant Librarian of Congress, to design
+              and curate the show. While Murray tasked himself with assembling a
+              set of books and pamphlets by Black writers to put on display, Du
+              Bois saw his purview in more conceptual terms: to present “the
+              history and present condition of a large group of human
+              beings”&mdash;namely, the United States’s Black citizens&mdash;"in
+              as systematic and compact a form as possible.”
+            </span>
+            <InlineFootnote index={2}></InlineFootnote>
+            <span className="font-normal">
+              {" "}
+              This “systematic and compact form” was, of course, data
+              visualization&mdash;a technique that he’d studied during his time
+              in Germany, and which he’d perfected in his groundbreaking study,{" "}
+            </span>
+            <span className="font-normal italic">The Philadelphia Negro</span>
+            <span className="font-normal">
+              , published just one year earlier.
+            </span>
+            <InlineFootnote index={3}></InlineFootnote>
+          </p>
+        </CenteredLayout>
+        {/* Question: Is this the correct use of Full Bleed here? Does it have to be a child of CenteredLayou*/}
+        <FullBleed>
+          <ImageModal
+            src="/images/dubois/ch5-01-phila.jpg"
+            alt=""
+            loading="lazy"
+          />
+        </FullBleed>
+
+        <ImageCaption>
+          Above: “Distribution of African American inhabitants of the 7th Ward,”
+          the central image of <cite>The Philadelphia Negro</cite>, which was
+          published in 1898. In order to conduct the research for{" "}
+          <cite>The Philadelpha Negro</cite>, Du Bois (and his wife Nina) moved
+          to the neighborhood, where Du Bois administered social surveys and
+          collected the other data that would culminate in the report. Image
+          courtesy of Wikimedia Commons.
+        </ImageCaption>
+
+        <CenteredLayout>
+          <p>
+            <span className="font-normal">
+              For the Paris Exposition, as the event is more commonly known, Du
+              Bois worked with a team of Atlanta University students to create
+              63 poster-sized statistical charts. Like William Playfair and most
+              visualization practitioners ever since, Du Bois appreciated the
+              ability of the charts to convey trends and patterns “at a glance.”
+            </span>
+            <InlineFootnote index={4}></InlineFootnote>
+            <span className="font-normal">
+              {" "}
+              In this case, Du Bois sought to highlight the growth and progress
+              of Black Americans in the years since emancipation. But Du Bois
+              understood that data could not convey the full picture of this
+              progress&mdash;nor could it convey the full extent of the
+              obstacles that the nation’s Black citizens were required to
+              overcome. Thus he supplemented the charts with over 500
+              photographs that documented “typical” Black Americans at home, at
+              school, and at work; as well as with three large manuscript
+              volumes that compiled the complete Black Codes of
+              Georgia&mdash;the legislation that, as Whitney Battle-Baptiste and
+              Britt Rusert explain, “stretch[ed] from the slave codes of the
+              colonial and antebellum period to the segregationist policies and
+              laws of the present,” and which attempted to control and constrain
+              all aspects of Black life.
+            </span>
+            <InlineFootnote index={5}></InlineFootnote>
+            <span className="font-normal">
+              {" "}
+              Conceived at a time when Du Bois found himself increasingly
+              affected, both personally and intellectually, by the racism and
+              violence of white supremacy, the range of materials assembled for
+              the Paris Exposition at once attest to his deep-seated belief in
+              the transformative power of data and, at the same time, his
+              growing awareness of the limits of what data&mdash;and, by
+              extension, data visualization&mdash;could do.
+            </span>
+          </p>
+        </CenteredLayout>
         <ChapterSectionTitle color="bg-duboisPrimary">
           Visualization as Evidence, Visualization as Argument
         </ChapterSectionTitle>
@@ -301,28 +283,36 @@ export default function DuboisChapter() {
                   significance as an object of study, the visual style shifts to
                   altogether new terrain once the focus on Georgia’s Black
                   residents has been established.{" "}
-                  <HoverText hoverState="Rochester" className="font-semibold">
+                  <HoverText hoverState="City" className="font-semibold">
                     In his comparative representation of the places where
                     Georgia’s Black citizens reside, for example, Du Bois brings
                     together aspects of the bar chart and the line chart along
                     with a new form of spiral graph{" "}
                   </HoverText>
                   in order to give animacy to the presence of Black people in
-                  each of type of locale. In a later chart, which documents the
-                  decrease in illiteracy rates in the years between 1860 and
-                  1900, Du Bois makes use of what graphic designer Silas Munro
+                  each of type of locale.{" "}
+                  <HoverText hoverState="Illiteracy" className="font-semibold">
+                    In a later chart, which documents the decrease in illiteracy
+                    rates in the years between 1860 and 1900,
+                  </HoverText>{" "}
+                  Du Bois makes use of what graphic designer Silas Munro
                   describes as a “lattice-like arrangement,” in which an
                   otherwise standard bar is folded at a right angle in order to
                   further accentuate the decreasing rate of illiteracy. Du Bois
-                  elaborates upon this technique in a later chart, which
-                  compares the numbers of Black property owners, and the value
-                  of their properties, in two Georgia cities. Another unique
-                  chart in this series, which plots the “assessed value of
-                  household and kitchen furniture” owned by Black Georgians,
-                  takes the standard bar chart and bends it into a spiral,
-                  concentrating the viewer’s focus on the cumulative value of
-                  the population’s material possessions in addition to its
-                  growth in time.
+                  elaborates upon this technique in a{" "}
+                  <HoverText hoverState="Owners" className="font-semibold">
+                    later chart, which compares the numbers of Black property
+                    owners, and the value of their properties, in two Georgia
+                    cities.
+                  </HoverText>{" "}
+                  Another unique chart in this series, which{" "}
+                  <HoverText hoverState="Value" className="font-semibold">
+                    plots the “assessed value of household and kitchen
+                    furniture” owned by Black Georgians, takes the standard bar
+                    chart and bends it into a spiral, concentrating the viewer’s
+                    focus on the cumulative value of the population’s material
+                    possessions in addition to its growth in time.
+                  </HoverText>
                 </span>
               </p>
             </div>
@@ -357,6 +347,7 @@ export default function DuboisChapter() {
             significance for his larger goal.
           </span>
         </p>
+
         <p>
           <span>
             Du Bois continues this line of argument, and his graphical
@@ -497,31 +488,21 @@ export default function DuboisChapter() {
             everyday lives.
           </span>
         </p>
-        <div className="flex flex-col items-center middle-full">
-          <div>
-            <ImageModal
-              src="/images/dubois/ch5-09-exhibit.png"
-              alt=""
-              loading="lazy"
-              width="100%"
-            />
-          </div>
-          <div className="caption text-center mt-10 w-5/6">
-            <p>
-              <span>
-                Above: A photo of the “Exposition des Nègres D'Amérique” as it
-                was installed at the 1900{" "}
-              </span>
-              <span>Exposition Universelle</span>
-              <span>
-                {" "}
-                in Paris. Image courtesy of the Library of Congress, Prints
-                &amp; Photographs Division, LC-DIG-ppmsca-08994
-              </span>
-              <span>.</span>
-            </p>
-          </div>
-        </div>
+
+        <ImageModal
+          src="/images/dubois/ch5-09-exhibit.png"
+          alt=""
+          loading="lazy"
+          width="100%"
+        />
+
+        <ImageCaption className="text-center mt-10 ml-16 w-5/6">
+          Above: A photo of the “Exposition des Nègres D'Amérique” as it was
+          installed at the 1900 Exposition Universelle in Paris. Image courtesy
+          of the Library of Congress, Prints &amp; Photographs Division,
+          LC-DIG-ppmsca-08994 .
+        </ImageCaption>
+
         <p>
           <span className="font-normal">
             In a reflection on the Paris Exhibition, published several months
@@ -812,9 +793,8 @@ export default function DuboisChapter() {
                 Illustrating the Condition of the Descendants of Former African
                 Slaves Now Resident in the United States of America.” Image
                 courtesy of the Library of Congress, Prints &amp; Photographs
-                Division, LC-DIG-ppmsca-08994
+                Division, LC-DIG-ppmsca-08994.
               </span>
-              <span>.</span>
             </p>
           </div>
         </div>
