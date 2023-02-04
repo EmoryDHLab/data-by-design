@@ -61,7 +61,7 @@ export const duboisFootnotes = [
       The American Negro in Paris
     </a>
     ,” p. 577; Whitney Battle-Baptiste and Britt Rusert, “Introduction,” in
-    W.E.B. <cite>Du Bois’s Data Portraits: VIsualizing Black America</cite>,
+    W.E.B. <cite>Du Bois’s Data Portraits: Visualizing Black America</cite>,
     eds. Whitney Battle-Baptiste and Britt Rusert (New York: Princeton
     Architectural Press, 2018), p. 19. For a sustained meditation on the legacy
     of the Black Codes and their relation to contemporary digital life, see the

@@ -19,7 +19,10 @@ import ImageModal from "~/components/layout/ImageModal";
 import Quotation from "~/components/Quotation";
 import type { HoverState } from "~/theme";
 import HoverText from "~/components/HoverText";
-import HoverImagesDubois from "~/components/dubois/HoverImagesDubois";
+import HoverImages1 from "~/components/dubois/HoverImages1";
+import HoverImages2 from "~/components/dubois/HoverImages2";
+import HoverImages3 from "~/components/dubois/HoverImages3";
+
 import ImageCaption from "~/components/ImageCaption";
 
 export default function DuboisChapter() {
@@ -307,7 +310,7 @@ export default function DuboisChapter() {
           </div>
         </div>
         <div className="flex flex-col items-center middle-full p-10 w-1/2">
-          <HoverImagesDubois />
+          <HoverImages1 />
           <div className="font-dubois text-center mt-10 w-5/6">
             <p>
               <span>Above: The introductory image of </span>
@@ -345,20 +348,29 @@ export default function DuboisChapter() {
             in the United States of America,” as the introductory chart of this
             series explains, these charts document the upward progress of Black
             Americans in a national and international context. They also make
-            use of comparisons to other populations, both within the United
-            States and abroad, in order to challenge racist assumptions about
-            Black Americans’ social, intellectual, and economic lives. As with
-            the first series of charts, this series begins with several charts
-            focused on population, before moving on to explore themes related to
-            employment, education, and economics, as well as social, cultural,
-            and religious life.
+            use of{" "}
+            <HoverText hoverState="Countries" className="font-semibold">
+              {" "}
+              comparisons to other populations,
+            </HoverText>{" "}
+            both within the United States and abroad, in order to challenge
+            racist assumptions about Black Americans’ social, intellectual, and
+            economic lives. As with the first series of charts, this series
+            begins with several charts
+            <HoverText hoverState="Occupations" className="font-semibold">
+              focused on population,{" "}
+            </HoverText>{" "}
+            <HoverText hoverState="Freedom" className="font-semibold">
+              before moving on to explore themes related to employment,
+            </HoverText>{" "}
+            education, and{" "}
+            <HoverText hoverState="Newspapers" className="font-semibold">
+              {" "}
+              economics,
+            </HoverText>{" "}
+            as well as social, cultural, and religious life.
           </p>
-          <p>
-            <span>
-              [ ABOVE: SCROLLY TELL PLATE 41, THEN PLATE 44, 50, 61 &mdash;
-              Images ch5-05a-d]{" "}
-            </span>
-          </p>
+
           <p>
             <span>
               An unnamed interlocutor in this series is the US Federal
@@ -467,7 +479,9 @@ export default function DuboisChapter() {
           </p>
         </Column>
         <Column>
-          <HoverImagesDubois />
+          <HoverImages2 />
+          <HoverImages3 />
+          {/* Comment: Look at scroll for both of these. Might be better to ultimately make it one image that changes */}
         </Column>
       </TwoColumnLayout>
 

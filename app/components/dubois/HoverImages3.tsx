@@ -3,26 +3,10 @@ import { useContext } from "react";
 import { ChapterContext } from "~/theme";
 import ImageModal from "~/components/layout/ImageModal";
 
-export default function PromotionalTourMap() {
+export default function HoverImages3() {
   const { hoverState } = useContext(ChapterContext);
-  let imageSource = "/images/dubois/ch5-03-georgia.jpg";
+  let imageSource = "/images/dubois/ch5-06a-letter.jpg";
 
-  if (hoverState === "City") {
-    imageSource = "/images/dubois/ch5-04a-city.jpg";
-  }
-
-  if (hoverState === "Illiteracy") {
-    imageSource = "/images/dubois/ch5-04b-illiteracy.jpg";
-  }
-
-  if (hoverState === "Owners") {
-    imageSource = "/images/dubois/ch5-04c-owners.jpg";
-  }
-
-  if (hoverState === "Value") {
-    imageSource = "/images/dubois/ch5-06a-letter.jpg";
-  }
-  // ————————————————— have to set a new default here? Should this just be a new component? Help me friencs.. .. 
   if (hoverState === "Letter") {
     imageSource = "/images/dubois/ch5-06b-map.jpg";
   }
