@@ -3,25 +3,17 @@ import scrollama from "scrollama";
 import Tutorial from "./tutorial/TutorialSquares";
 import { ChapterContext } from "~/theme";
 import { ScrollytellContext } from "~/scrollytellContext";
-import InlineFootnote from "../InlineFootnote";
-
-const triggers = [
-  (<></>),
-  (<>Peabody's version of Bem's system borrows the idea of a numbered grid, with each year in a century marked out in its own box.</>),
-  (<>She also borrows the idea of subdividing each box, so that each of the nine interior squares corresponds to a particular type of historical event.</>),
-  (<>In the Polish-American System, as in Bem's, the top left corner is the space for wars, battles, and sieges; in the top middle is the space for conquests and unions; in the top right is the space for losses and divisions, and so on.</>),
-  (<>Shapes that take up the entire box indicate an event of such magnitude or complexity that the other events in that same year hardly matter.</>),
-  (<>The events are also color-coded, indicating the various countries involved in a particular event. On this point, Peabody makes special note that she employs "a somewhat different, and, as it seems to me, a more expressive distribution of colors."<InlineFootnote index={7} bgOverride="white" textOverride="offblack" /></>),
-];
+import TutorialTriggers from "./tutorial/TutorialTriggers";
 
 export default function Scrollytell() {
   const [ scrollProgress, setScrollProgress ] = useState(0.0);
+  const [ highlightedSquare, setHighlightedSquare ] = useState(undefined);
   const { backgroundColor, primaryTextColor, docHeightState } = useContext(ChapterContext);
   const scroller = useRef(scrollama());
   const steps = useRef(undefined);
 
   useEffect(() => {
-    if (steps.current?.children.length !== triggers.length) return;
+    if (steps.current?.children.length !== TutorialTriggers.length) return;
     scroller.current.setup({
       offset: "60px",
       step: ".step",
@@ -29,7 +21,7 @@ export default function Scrollytell() {
     })
     .onStepProgress(({index, progress}) => setScrollProgress(index + progress));
 
-    return () => scroller.current?.destroy();
+    // return () => scroller.current?.destroy();
   }, [setScrollProgress, steps]);
 
   useEffect(() => {
@@ -40,21 +32,23 @@ export default function Scrollytell() {
     <ScrollytellContext.Provider
       value={{
         scrollProgress,
-        setScrollProgress
+        setScrollProgress,
+        highlightedSquare,
+        setHighlightedSquare,
       }}
     >
       <div className={`bg-${backgroundColor} flex justify-between`}>
         <div ref={steps} className="bias-1/2 w-1/2">
-          {triggers.map((trigger, index) => {
+          {TutorialTriggers.map((trigger, index) => {
             return (
-              <p key={index} data-step={index} className={`step text-2xl content-center px-20 ${index + 1 === triggers.length || index == 0 ? "h-[60vh]" : "h-screen"} text-${primaryTextColor}`}>
+              <div key={index} data-step={index} className={`step text-2xl content-center px-20 ${index == 0 ? "h-[60vh]" : "h-screen"} text-${primaryTextColor}`}>
                 {trigger}
-              </p>
+              </div>
             );
           })}
         </div>
-        <div className="sticky top-[60px] h-screen bias-1/2 w-1/2 mr-24">
-          <div className="text-3xl relative top-[calc(100vh-12rem)] left-[calc(-50vw+6rem)]">↓</div>
+        <div className="sticky top-[30px] h-screen bias-1/2 w-1/2 mr-24">
+          <div className="text-3xl relative top-[calc(100vh-120px)] left-[calc(-50vw+6rem)]">↓</div>
           <Tutorial />
         </div>
       </div>

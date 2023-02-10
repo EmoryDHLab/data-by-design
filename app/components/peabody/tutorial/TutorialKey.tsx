@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ScrollytellContext } from "~/scrollytellContext";
 import eventsData from "~/data/peabody/1600sEvents.json";
 
-export default function TutorialKey({ highlightedElement }) {
-  const { scrollProgress } = useContext(ScrollytellContext);
+export default function TutorialKey() {
+  const { scrollProgress, highlightedSquare } = useContext(ScrollytellContext);
 
   return (
     <div
@@ -12,7 +12,22 @@ export default function TutorialKey({ highlightedElement }) {
       } transition-opacity duration-700 pt-5`}
     >
       <div className="pb-4 font-dubois">
-        {highlightedElement?.event?.event ?? "Hover over an event."}
+        {highlightedSquare?.yearEvent?.event ?? ""}
+        {!highlightedSquare?.yearEvent?.event &&
+          <span>
+            Hover over an event
+            <svg viewBox="0 0 30 30" className="w-6 ml-4 inline">
+              <rect
+                stroke="#b3b3b3"
+                strokeWidth={5}
+                fillOpacity={1}
+                fill="white"
+                width={30}
+                height={30}
+              ></rect>
+            </svg>
+          </span>
+        }
       </div>
       <div className="flex flex-row w-full justify-between">
         {Object.keys(eventsData.actorColors).map((actor, index) => {
@@ -32,7 +47,7 @@ export default function TutorialKey({ highlightedElement }) {
                 </defs>
                 <rect
                   stroke="#b3b3b3"
-                  strokeWidth={highlightedElement?.event?.actors.includes(actor) ? 2 : 0.5}
+                  strokeWidth={highlightedSquare?.yearEvent?.actors.includes(actor) ? 2 : 0.5}
                   fillOpacity="1"
                   fill={eventsData.actorColors[actor]}
                   width="30"
@@ -42,7 +57,7 @@ export default function TutorialKey({ highlightedElement }) {
               </svg>
               <span
                 className={`font-${
-                  highlightedElement?.event?.actors.includes(actor)
+                  highlightedSquare?.yearEvent?.actors.includes(actor)
                     ? "extrabold border-b-2 border-b-peabodyOrange"
                     : "normal"
                 }`}
@@ -59,8 +74,8 @@ export default function TutorialKey({ highlightedElement }) {
             <div
               key={index}
               className={`flex flex-row pl-2 border-l-2 ${
-                highlightedElement?.eventType == index &&
-                highlightedElement?.event?.squares !== "full"
+                highlightedSquare?.square == index + 1 &&
+                highlightedSquare?.yearEvent?.squares !== "full"
                   ? "border-peabodyOrange"
                   : "border-transparent"
               }`}
