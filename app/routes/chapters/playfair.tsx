@@ -144,7 +144,7 @@ export default function PlayfairPage() {
         </Column>
         <Column shouldPin={true}>
           <Figure
-            className="ml-12"
+            className="ml-0 md:ml-12"
             src="/images/playfair/1-northamerica.jpg"
             alt=""
           >
@@ -154,7 +154,7 @@ export default function PlayfairPage() {
             of the Library Company of Philadelphia.
           </Figure>
 
-          <Figure className="ml-12" src="/images/playfair/2-wheat.jpg" alt="">
+          <Figure className="ml-0 md:ml-12" src="/images/playfair/2-wheat.jpg" alt="">
             Playfair's "Chart Showing at One View the Price of the Quarter of
             Wheat, &amp; Wages of Labour by the Week, from the Year 1565 to
             1821," published in 1822. The chart's representation of the price of
@@ -163,7 +163,7 @@ export default function PlayfairPage() {
             believed to be the first). Image courtesy of Wikimedia Commons."
           </Figure>
 
-          <Figure className="ml-12" src="/images/playfair/3-pie.jpg" alt="">
+          <Figure className="ml-0 md:ml-12" src="/images/playfair/3-pie.jpg" alt="">
             Playfair's "Chart Representing the Extent, Population &amp;
             Revenues, of the Principal Nations in Europe, after the Division of
             Poland &amp; Treaty of Luneville," published in the{" "}
@@ -237,8 +237,8 @@ export default function PlayfairPage() {
               <InlineFootnote index={9} />
             </p>
         </Column>
-        <Column shouldPin={true}>
-          <Figure className="ml-12" src="/images/playfair/chart-1787.jpg" alt="">
+        <Column className="md:ml-12" shouldPin={true}>
+          <Figure src="/images/playfair/chart-1787.jpg" alt="">
             The data on "America" included in the second edition of The
             Commercial and Political Atlas (1787), on the recommendation of
             James Watt. Image courtesy of the Library Company of
@@ -248,7 +248,6 @@ export default function PlayfairPage() {
       </TwoColumnLayout>
       <PlayfairScrollytell />
       <CenteredLayout>
-        <div className="space-y-5 py-10">
           <p>
             Clearly, for Playfair, his lack of data was not of concern. His
             intention was to model a new "mode of painting to the eye," one
@@ -327,11 +326,11 @@ export default function PlayfairPage() {
             of the data that, through visualization, could become knowledge of a
             new kind.
           </p>
-          <ChapterSectionTitle>
-            The Politics of Playfair's Charts
-          </ChapterSectionTitle>
-        </div>
-
+      </CenteredLayout>
+      <ChapterSectionTitle>
+        The Politics of Playfair's Charts
+      </ChapterSectionTitle>
+      <CenteredLayout>
         <Figure src="/images/playfair/5-minard.png" alt="">
           Charles Minard's 1869 chart of Napoleon's failed Russia campaign.
           Image courtesy of Wikimedia Commons.
@@ -372,7 +371,7 @@ export default function PlayfairPage() {
             by his charts. As he explains:
           </p>
 
-          {/* <Quotation
+          <Quotation
             quote={
               <>
                 <span>
@@ -385,7 +384,7 @@ export default function PlayfairPage() {
               </>
             }
             byline=" William Playfair, p. iv."
-          ></Quotation> */}
+          ></Quotation>
 
           <p>attr</p>
           <p>
@@ -475,7 +474,7 @@ export default function PlayfairPage() {
         Playfair's Argument in the Present
       </ChapterSectionTitle>
       <TwoColumnLayout>
-        <Column className="space-y-5 py-10" shouldPin={true}>
+        <Column className="py-5 md:py-10" shouldPin={true}>
           <p>
             From our perspective in the present, it appears that Playfair was
             correct in his assertion about the significant and enduring
@@ -493,7 +492,7 @@ export default function PlayfairPage() {
             uses of visualization itself.
           </p>
         </Column>
-        <Column>
+        <Column className="md:ml-12">
           <Figure src="/images/playfair/6-snow.jpg" alt="">
             The map created by John Snow in 1854 that shows how Cholera cases
             are clustered around the town's water pump. Image courtesy of
@@ -513,7 +512,6 @@ export default function PlayfairPage() {
         />
       </FullBleed>
       <CenteredLayout>
-        <div className="space-y-5 py-10">
           <p>
             Consider the process of recreating one of Playfair's charts with
             D3.js, as we did for this chapter. Unlike Playfair's chart, which
@@ -554,10 +552,9 @@ export default function PlayfairPage() {
             about his images, and how they diverge—or not—from the images we
             encounter today.
           </p>
-        </div>
       </CenteredLayout>
       <TwoColumnLayout>
-        <Column className="space-y-5 py-10" shouldPin={true}>
+        <Column className="py-5 md:py-10" shouldPin={true}>
           <p>
             Consider the wide range of visualization libraries and platforms
             that make use of Playfair's charts in order to demonstrate their own
@@ -606,7 +603,7 @@ export default function PlayfairPage() {
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>
-        <div className="space-y-5 py-10">
+        <div className="py-5 md:py-10">
           <p>
             While this argument is not always made explicitly, or even
             intentionally, it is evident in the wide range of contexts in which
@@ -666,7 +663,7 @@ export default function PlayfairPage() {
       </ChapterSectionTitle>
 
       <TwoColumnLayout>
-        <Column className="space-y-5" shouldPin={true}>
+        <Column shouldPin={true}>
           <p>
             ​​Playfair clearly longed to be recognized for his graphical
             innovations. In 1787, one year after the initial publication of the
