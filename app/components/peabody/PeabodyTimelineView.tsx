@@ -18,7 +18,7 @@ export default function PeabodyTimelineView() {
     year: 1700,
   });
   return (
-    <div className="w-full bg-black">
+    <div className="w-full bg-black col-span-full">
       <div className="flex text-white">
         <button
           onClick={() =>
@@ -100,6 +100,7 @@ export default function PeabodyTimelineView() {
                       highlightedElement={highlightedElement}
                       setHighlightedElement={setHighlightedElement}
                       eventSquareColors={eventSquareColors}
+                      className="w-full h-auto"
                     />
                   ))}
             </div>

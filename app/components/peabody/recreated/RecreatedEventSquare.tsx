@@ -17,6 +17,7 @@ interface Props {
   >;
   handleClick?: (index: number) => void;
   eventSquareColors: string[] | null;
+  className: string | null;
 }
 
 export default function RecreatedEventSquare({
@@ -26,6 +27,7 @@ export default function RecreatedEventSquare({
   setHighlightedElement,
   handleClick,
   eventSquareColors,
+  className
 }: Props) {
   if (eventSquareColors && eventSquareColors.length > 1) {
     const polygons = POLYGONS[eventSquareColors.length - 1];
@@ -37,6 +39,7 @@ export default function RecreatedEventSquare({
         y={getEventYFromIndex(index)}
         onClick={() => handleClick(absoluteIndex)}
         viewBox="0 0 30 30"
+        className={className ?? ""}
       >
         {polygons.map((p, i) => {
           const isHighlighted =
@@ -72,6 +75,7 @@ export default function RecreatedEventSquare({
       x={getEventXFromIndex(index)}
       y={getEventYFromIndex(index)}
       viewBox="0 0 30 30"
+      className={className ?? ""}
     >
       <rect
         width="25"
