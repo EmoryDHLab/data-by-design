@@ -39,26 +39,25 @@ export default function PlayfairPage() {
         title="Visualization as Argument"
         subtitle="William Playfair's Time-Series Charts"
       />
-      <TwoColumnLayout className="py-10">
-        <Column shouldPin={true}>
-          <div className="right-bleed space-y-10">
+      <TwoColumnLayout>
+        <Column>
             <IntroSentence>
-              One can only imagine the choice words exclaimed by the{" "}
+              One can only imagine the choice words exclaimed by the
+              Scottish political economist William Playfair (1759-1823) when he
+              recognized the error that he had inadvertently engraved into the
+              tail end of the data line on his chart of "Exports &amp; Imports to
+              and from all of North America." Engraving was—and still is—an
+              incredibly time-consuming process. Albrecht Dürer, the Renaissance
+              printmaker credited with elevating engraving into an art form, took
+              over three months to complete his famed{" "}
+              <cite>Knight, Death, and Devil</cite>
+              (1513), a print not much larger than an iPad. In the case of
+              Playfair, however, it was not merely the time he had invested in
+              producing the twenty-eight plates he planned to include in the third
+              edition of his <cite>Commercial and Political Atlas</cite>
+              (1801), a revised version of the volume he first published in 1786;
+              it was also the expense.
             </IntroSentence>
-            Scottish political economist William Playfair (1759-1823) when he
-            recognized the error that he had inadvertently engraved into the
-            tail end of the data line on his chart of "Exports &amp; Imports to
-            and from all of North America." Engraving was—and still is—an
-            incredibly time-consuming process. Albrecht Dürer, the Renaissance
-            printmaker credited with elevating engraving into an art form, took
-            over three months to complete his famed{" "}
-            <cite>Knight, Death, and Devil</cite>
-            (1513), a print not much larger than an iPad. In the case of
-            Playfair, however, it was not merely the time he had invested in
-            producing the twenty-eight plates he planned to include in the third
-            edition of his <cite>Commercial and Political Atlas</cite>
-            (1801), a revised version of the volume he first published in 1786;
-            it was also the expense.
             <p>
               Today, Playfair is widely celebrated for his leading role in the
               development of modern data visualization. His bar charts, pie
@@ -85,9 +84,7 @@ export default function PlayfairPage() {
               himself.
               <InlineFootnote index={4} />
             </p>
-          </div>
 
-          <div className="space-y-5 py-10">
             <p>
               To produce a copperplate engraving such as the one employed to
               print "Exports &amp; Imports to and from all of North America," a
@@ -144,9 +141,8 @@ export default function PlayfairPage() {
               use of the images that we on the one hand encounter, and on the
               other create.
             </p>
-          </div>
         </Column>
-        <Column>
+        <Column shouldPin={true}>
           <Figure
             className="ml-12"
             src="/images/playfair/1-northamerica.jpg"
@@ -179,7 +175,7 @@ export default function PlayfairPage() {
       </TwoColumnLayout>
       <ChapterSectionTitle>The Value of Visual Knowledge</ChapterSectionTitle>
       <TwoColumnLayout>
-        <Column className="space-y-5 py-10" shouldPin={true}>
+        <Column>
           <p>
             Playfair did not intend to include the charts' underlying data in
             his book. It was only after soliciting feedback from James Watt,
@@ -195,7 +191,6 @@ export default function PlayfairPage() {
             each of his charts, which he included in the first and second
             editions of the <cite>Atlas</cite>.
           </p>
-          <div>
             <p>
               But by the book's third edition, Playfair had gained enough
               confidence in the form and function of his charts that he no
@@ -206,7 +201,7 @@ export default function PlayfairPage() {
               explains:
             </p>
 
-            <Quotation
+            {/* <Quotation
               quote={
                 <>
                   <span>
@@ -220,7 +215,7 @@ export default function PlayfairPage() {
                 </>
               }
               byline="Playfair, pp. ix-x. attr"
-            ></Quotation>
+            ></Quotation> */}
 
             <p>
               In explicit contrast to the "more accurate" information conveyed
@@ -241,14 +236,13 @@ export default function PlayfairPage() {
               possess all of the data to support the line that he engraved.
               <InlineFootnote index={9} />
             </p>
-          </div>
         </Column>
-        <Column className="flex flex-col items-center">
-          <Figure src="/images/playfair/chart-1787.jpg" alt="">
+        <Column shouldPin={true}>
+          <Figure className="ml-12" src="/images/playfair/chart-1787.jpg" alt="">
             The data on "America" included in the second edition of The
             Commercial and Political Atlas (1787), on the recommendation of
-            James Watt. Image courtesy of the Library Company of Philadelphia,
-            <a href="http://www.librarycompany.org">www.librarycompany.org</a>
+            James Watt. Image courtesy of the Library Company of
+            Philadelphia, <a href="http://www.librarycompany.org">www.librarycompany.org</a>
           </Figure>
         </Column>
       </TwoColumnLayout>
@@ -378,7 +372,7 @@ export default function PlayfairPage() {
             by his charts. As he explains:
           </p>
 
-          <Quotation
+          {/* <Quotation
             quote={
               <>
                 <span>
@@ -391,7 +385,7 @@ export default function PlayfairPage() {
               </>
             }
             byline=" William Playfair, p. iv."
-          ></Quotation>
+          ></Quotation> */}
 
           <p>attr</p>
           <p>

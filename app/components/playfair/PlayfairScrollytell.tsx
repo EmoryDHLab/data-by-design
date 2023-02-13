@@ -93,8 +93,8 @@ export default function PlayfairScrollytell() {
         setScrollProgress,
       }}
     >
-      <div className={`bg-${backgroundColor} flex justify-between`}>
-        <div ref={steps} className="bias-1/2 w-2/5">
+      <div className={`bg-${backgroundColor} md:flex justify-between`}>
+        <div ref={steps} className="bias-full w-full md:bias-1/2 md:w-2/5">
           {triggers.map((trigger, index) => {
             return (
               <p
@@ -111,7 +111,7 @@ export default function PlayfairScrollytell() {
             );
           })}
         </div>
-        <div className="sticky top-[60px] h-screen bias-1/2 w-3/5 mr-24">
+        <div className="sticky top-[60px] h-screen mr-24 bias-full w-full md:bias-1/2 md:w-3/5">
           <div className="text-3xl relative top-[calc(100vh-12rem)] right-[35vw] text-white">↓</div>
           <Recreation />
         </div>

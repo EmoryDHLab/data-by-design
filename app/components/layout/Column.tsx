@@ -9,7 +9,7 @@ interface Props {
 export default function Column({ children, className, shouldPin }: Props) {
 
   return (
-    <div className={`${className ?? ""} h-full bias-1/2 w-1/2 px-12 space-y-5 dbd-column ${shouldPin ? "sticky top-[60px]" : ""}`}>
+    <div className={`${className ?? ""} h-full bias-1/2 w-1/2 space-y-5 ${shouldPin ? "sticky top-[60px]" : ""}`}>
       {children}
     </div>
   );
