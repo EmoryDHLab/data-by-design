@@ -38,7 +38,11 @@ export default function Scrollytell() {
       }}
     >
       <div className={`bg-${backgroundColor} flex justify-between`}>
-        <div ref={steps} className="bias-1/2 w-1/2">
+        <div className="sticky top-[30px] h-screen bias-1/2 w-1/2 mr-24 order-last">
+          <div className="text-3xl relative top-[calc(100vh-120px)] left-[calc(-50vw+6rem)]">↓</div>
+          <Tutorial />
+        </div>
+        <div ref={steps} className="bias-1/2 w-1/2 ">
           {TutorialTriggers.map((trigger, index) => {
             return (
               <div key={index} data-step={index} className={`step text-2xl content-center px-20 ${index == 0 ? "h-[60vh]" : "h-screen"} text-${primaryTextColor}`}>
@@ -46,10 +50,6 @@ export default function Scrollytell() {
               </div>
             );
           })}
-        </div>
-        <div className="sticky top-[30px] h-screen bias-1/2 w-1/2 mr-24">
-          <div className="text-3xl relative top-[calc(100vh-120px)] left-[calc(-50vw+6rem)]">↓</div>
-          <Tutorial />
         </div>
       </div>
     </ScrollytellContext.Provider>

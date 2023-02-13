@@ -31,10 +31,10 @@ export default function Tutorial() {
   return (
     <div className="grid grid-cols-1 h-[calc(100%-80px)]">
       {/* {scrollProgress} */}
-      <div>
-        <figure className="my-auto">
+      <div className="my-auto">
+        <figure>
           <svg viewBox="0 0 99 99" className="mt-8 mx-8">
-            <g mask="url(#tutorial-mask)">
+            <g mask="url(#tutorial-mask)" tabIndex={0}>
               <rect className="fill-peabodyOrange" x="0" width={99} height={99} />
               {[...numberRange(1601, 1700)].map((year, index) => {
                 const yearEvents = eventsData.events.filter(event => event.year === year);
@@ -76,12 +76,12 @@ export default function Tutorial() {
             {/* <ellipse className="peabody-focus" cx={focusShapeSize.cx} cy={focusShapeSize.cy} rx={focusShapeSize.rx} ry={focusShapeSize.ry} fill="none" stroke="#db882a" strokeWidth="1"></ellipse> */}
             <rect className="peabody-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" fill="none" stroke="#db882a" strokeWidth="1" />
           </svg>
-          <figcaption className="text-center p-6">An interactive explanation of the Peabody's Polish-American System {scrollProgress}</figcaption>
+          <figcaption className="text-center p-6">An interactive explanation of the Peabody's Polish-American System</figcaption>
         </figure>
       </div>
-      <div>
-        {/* <TutorialKey highlightedElement={highlightedElement} /> */}
-      </div>
+      {/* <div>
+        <TutorialKey highlightedElement={highlightedElement} />
+      </div> */}
     </div>
   )
 
