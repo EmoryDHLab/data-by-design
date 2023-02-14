@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ScrollytellContext } from "~/scrollytellContext";
 import eventsData from "~/data/peabody/1600sEvents.json";
 
@@ -37,10 +37,10 @@ export default function TutorialKey() {
                 <defs>
                   <pattern width="5" height="10" patternUnits="userSpaceOnUse">
                     <line
-                      x1="0"
-                      y1="0"
-                      x2="0"
-                      y2="10"
+                      x1={0}
+                      y1={0}
+                      x2={0}
+                      y2={10}
                       style={{ stroke: "orange", strokeWidth: 4 }}
                     ></line>
                   </pattern>
@@ -48,10 +48,10 @@ export default function TutorialKey() {
                 <rect
                   stroke="#b3b3b3"
                   strokeWidth={highlightedSquare?.yearEvent?.actors.includes(actor) ? 2 : 0.5}
-                  fillOpacity="1"
+                  fillOpacity={1}
                   fill={eventsData.actorColors[actor]}
-                  width="30"
-                  height="30"
+                  width={30}
+                  height={30}
                   className=""
                 ></rect>
               </svg>

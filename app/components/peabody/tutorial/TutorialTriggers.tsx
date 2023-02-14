@@ -1,5 +1,6 @@
 import InlineFootnote from "~/components/InlineFootnote";
 import TutorialKey from "./TutorialKey";
+import eventsData from "~/data/peabody/1600sEvents.json";
 
 const Key = function ({ highlight }) {
   return (
@@ -46,7 +47,21 @@ const Key = function ({ highlight }) {
       </div>
     </div>
   )
-}
+};
+
+const Actors = function() {
+  return (
+    <div className="flex text-sm mt-6 gap-2">
+      {Object.keys(eventsData.actorColors).map((actor, index) => {
+          return (
+            <div key={index} className={`font-normal bg-${actor} text-${actor === "Americas" || actor === "Sweden" ? "black" : "white"} p-2 border-2 border-black`}>
+              {actor}
+            </div>
+          );
+        })}
+    </div>
+  )
+};
 
 const TutorialTriggers = [
   (<p key={1}></p>),
@@ -69,17 +84,20 @@ const TutorialTriggers = [
   </>),
   (<>
     <p key={5}>
+      The events are also color-coded, indicating the various countries involved
+      in a particular event. On this point, Peabody makes special note that she
+      employs "a somewhat different, and, as it seems to me, a more expressive
+      distribution of colors."
+      <InlineFootnote index={7} bgOverride="white" textOverride="offblack" />
+    </p>
+    <Actors />
+  </>),
+  (<>
+    <p key={6}>
       Shapes that take up the entire box indicate an event of such magnitude or
       complexity that the other events in that same year hardly matter.
     </p>
   </>),
-  (<p key={6}>
-    The events are also color-coded, indicating the various countries involved
-    in a particular event. On this point, Peabody makes special note that she
-    employs "a somewhat different, and, as it seems to me, a more expressive
-    distribution of colors."
-    <InlineFootnote index={7} bgOverride="white" textOverride="offblack" />
-  </p>),
   (<TutorialKey key={7} />)
 ];
 

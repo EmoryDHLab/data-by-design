@@ -1,4 +1,4 @@
-import { useContext, useRef, useEffect, useState } from "react";
+import { useContext, useRef } from "react";
 import { ScrollytellContext } from "~/scrollytellContext";
 
 import {
@@ -60,41 +60,6 @@ export default function TutorialEventSquare({
     polygons.push(...POLYGONS[0]);
   }
 
-  // const [isHighlighted, setIsHighlighted] = useState(false);
-  // const [isVisible, setIsVisible] = useState(false);
-  const [fillColor, setFillColor] = useState("white");
-
-  // useEffect(() => {
-  //   setIsHighlighted(highlightedElement?.year === year && highlightedElement.eventType === eventIndex);
-  // }, [setIsHighlighted, year, highlightedElement, eventIndex]);
-
-  // useEffect(() => {
-  //   setIsVisible(
-  //     (scrollProgress >=3 && yearEvent?.squares == "full") ||
-  //    scrollProgress >= 4
-  //   );
-  // }, [setIsVisible, scrollProgress, yearEvent]);
-
-  // useEffect(() => {
-  //   if (shouldHighlight && scrollProgress >= 3.25 && scrollProgress < 5) {
-  //     switch (eventIndex) {
-  //       case 2:
-  //         setFillColor("#355c66");
-  //         break;
-  //       case 4:
-  //         setFillColor("#498868");
-  //         break;
-  //       case 6:
-  //         setFillColor("#8c2a22");
-  //         break;
-  //       default:
-  //         setFillColor("white");
-  //     }
-  //   } else {
-  //     setFillColor("white");
-  //   }
-  // }, [shouldHighlight, setFillColor, eventIndex, scrollProgress]);
-
   return (
     <>
       <svg
@@ -115,7 +80,6 @@ export default function TutorialEventSquare({
         <rect
           stroke="#b3b3b3"
           strokeWidth={0.5}
-          // fillOpacity={active ? 1 : 0}
           fillOpacity={1}
           fill="white"
           width={30}
@@ -126,9 +90,9 @@ export default function TutorialEventSquare({
           return (
             <polygon
               key={i}
-              className={`transition-opacity duration-700 opacity-${(year === 1623 && scrollProgress >= 3.25) || scrollProgress >= 4.25 ? 100 : 0}`}
-              stroke="gold"
-              strokeWidth={0}
+              className={`transition-opacity duration-700 opacity-${(year === 1607 && scrollProgress >= 4.25) || (year === 1615 && scrollProgress >= 3.25 && scrollProgress <= 4.25) || scrollProgress >= 5.25 ? 100 : 0}`}
+              stroke={eventColors.current[i] ?? "gold"}
+              strokeWidth={0.5}
               points={p}
               fill={eventColors.current[i]}
               fillOpacity={1}
@@ -139,9 +103,9 @@ export default function TutorialEventSquare({
       <text
         x={getEventXFromIndex(eventIndex) + 10}
         y={getEventYFromIndex(eventIndex) + 22}
-        fill="black"
+        fill={year === 1615 && scrollProgress >= 3.25 && eventIndex === 4 ? "white" : "black"}
         className="number pointer-events-none"
-        opacity={(active && scrollProgress < 5) || (shouldHighlight && scrollProgress >= 2.25 && scrollProgress < 3.25) ? 1 : 0}
+        opacity={(active && scrollProgress < 5) || (shouldHighlight && scrollProgress >= 2.25 && scrollProgress < 4.25) ? 1 : 0}
       >
         {eventIndex + 1}
       </text>

@@ -73,7 +73,7 @@ export default function PeabodyPage() {
             to promote the pair of history textbooks she had recently written,
             <cite>The Polish-American System of Chronology</cite>
             (1850) and <cite>A Chronological History of the United States</cite>
-            (1856). She traveled as far north as
+            (1856). She traveled as far north as{" "}
             <HoverText hoverState="Rochester" className="font-semibold">
               Rochester, NY
             </HoverText>
