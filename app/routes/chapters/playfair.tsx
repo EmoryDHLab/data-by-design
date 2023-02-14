@@ -583,16 +583,14 @@ export default function PlayfairPage() {
         </Column>
         <Column>
           <Figure
-            className="ml-12"
             src="/images/playfair/8-lyra.png"
             alt=""
           ></Figure>
           <Figure
-            className="ml-12"
             src="/images/playfair/9-protovis.png"
             alt=""
           ></Figure>
-          <Figure className="ml-12" src="/images/playfair/10-camoes.png" alt="">
+          <Figure src="/images/playfair/10-camoes.png" alt="">
             Clockwise from top left: Playfair's chart of wheat and wages, as
             recreated in Lyra, an early visualization platform designed by
             Arvind Satyanarayan and Jeffrey Heer; the same chart recreated in
@@ -730,7 +728,7 @@ export default function PlayfairPage() {
           </div>
         </Column>
         <Column>
-          <Figure className="ml-12" src="/images/playfair/jevons.png" alt="">
+          <Figure src="/images/playfair/jevons.png" alt="">
             Jevons's illustration of the benefits of the "graphical method," in
             which{" "}
             <span>
