@@ -14,6 +14,9 @@ const tourLocations = {
   Richmond: {
     mapStyles: "scale-[3.3] -translate-x-[9rem] -translate-y-[1rem]",
   },
+  Rochester: {
+    mapStyles: "scale-[4] -translate-x-[22rem] translate-y-[22rem]",
+  },
 };
 
 export default function HoverImagesDubois() {

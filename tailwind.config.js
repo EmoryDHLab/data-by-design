@@ -58,6 +58,11 @@ module.exports = {
         willardSecondary: "#FEFFC9",
         willardPrimary: "#FEC313",
         labourSecondary: "#FFF0BC",
+        England: "rgb(119,43,21)",
+        France: "rgb(60,100,100)",
+        Americas: "rgb(222,145,49)",
+        Holland: "rgb(68,108,73)",
+        Sweden: "rgb(217,182,17)"
       },
       inset: {
         screen: "100vh",
@@ -86,5 +91,10 @@ module.exports = {
     "duration-700",
     "text-offblack",
     "font-extrabold",
+    "bg-England",
+    "bg-France",
+    "bg-Americas",
+    "bg-Holland",
+    "bg-Sweden",
   ],
 };

@@ -1,4 +1,4 @@
-import { useContext, useRef, useEffect, useState } from "react";
+import { useContext, useRef } from "react";
 import { ScrollytellContext } from "~/scrollytellContext";
 
 import {
@@ -17,21 +17,21 @@ interface Props {
   mouseLeave:  Dispatch<SetStateAction<undefined>>;
   yearEvent: object;
   highlightedElement: object;
+  shouldHighlight: boolean;
 }
 
 export default function TutorialEventSquare({
   eventIndex,
   active,
   year,
-  mouseEnter,
-  mouseLeave,
   yearEvent,
-  highlightedElement
+  highlightedElement,
+  shouldHighlight,
 }: Props) {
   const eventColors = useRef<string|undefined>(undefined);
   eventColors.current = yearEvent?.actors.map(actor => Events.actorColors[actor]);
 
-  const { scrollProgress } = useContext(ScrollytellContext);
+  const { scrollProgress, setHighlightedSquare } = useContext(ScrollytellContext);
 
   const polygons = [];
 
@@ -60,20 +60,6 @@ export default function TutorialEventSquare({
     polygons.push(...POLYGONS[0]);
   }
 
-  const [isHighlighted, setIsHighlighted] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsHighlighted(highlightedElement?.year === year && highlightedElement.eventType === eventIndex);
-  }, [setIsHighlighted, year, highlightedElement, eventIndex]);
-
-  useEffect(() => {
-    setIsVisible(
-      (scrollProgress >=3 && yearEvent?.squares == "full") ||
-     scrollProgress >= 4
-    );
-  }, [setIsVisible, scrollProgress, yearEvent]);
-
   return (
     <>
       <svg
@@ -83,8 +69,8 @@ export default function TutorialEventSquare({
         height="30"
         x={getEventXFromIndex(eventIndex)}
         y={getEventYFromIndex(eventIndex)}
-        onMouseEnter={mouseEnter}
-        onMouseLeave={mouseLeave}
+        onMouseEnter={() => setHighlightedSquare({yearEvent, square: eventIndex + 1})}
+        onMouseLeave={() => setHighlightedSquare(undefined)}
       >
         <defs>
           <pattern width="5" height="10" patternUnits="userSpaceOnUse">
@@ -93,20 +79,20 @@ export default function TutorialEventSquare({
         </defs>
         <rect
           stroke="#b3b3b3"
-          strokeWidth={isHighlighted ? "5" : "0.5"}
-          fillOpacity={active ? 1 : 0}
+          strokeWidth={0.5}
+          fillOpacity={1}
           fill="white"
-          width="30"
-          height="30"
+          width={30}
+          height={30}
         >
         </rect>
         {polygons.map((p, i) => {
           return (
             <polygon
               key={i}
-              className={`transition-opacity duration-700 opacity-${isVisible ? 100 : 0}`}
-              stroke="gold"
-              strokeWidth={isHighlighted ? "5" : "0"}
+              className={`transition-opacity duration-700 opacity-${(year === 1607 && scrollProgress >= 4.25) || (year === 1615 && scrollProgress >= 3.25 && scrollProgress <= 4.25) || scrollProgress >= 5.25 ? 100 : 0}`}
+              stroke={eventColors.current[i] ?? "gold"}
+              strokeWidth={0.5}
               points={p}
               fill={eventColors.current[i]}
               fillOpacity={1}
@@ -117,9 +103,9 @@ export default function TutorialEventSquare({
       <text
         x={getEventXFromIndex(eventIndex) + 10}
         y={getEventYFromIndex(eventIndex) + 22}
-        fill="black"
+        fill={year === 1615 && scrollProgress >= 3.25 && eventIndex === 4 ? "white" : "black"}
         className="number pointer-events-none"
-        opacity={active ? 1 : 0}
+        opacity={(active && scrollProgress < 5) || (shouldHighlight && scrollProgress >= 2.25 && scrollProgress < 4.25) ? 1 : 0}
       >
         {eventIndex + 1}
       </text>

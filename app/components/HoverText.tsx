@@ -13,9 +13,12 @@ export default function HoverText({ className, children, hoverState }: Props) {
   const { setHoverState } = useContext(ChapterContext);
   return (
     <span
-      className={className ?? ""}
+      className={`cursor-pointer ${className ?? ""}`}
       onMouseEnter={() => setHoverState(hoverState)}
+      onFocus={() => setHoverState(hoverState)}
       onMouseLeave={() => setHoverState(undefined)}
+      onBlur={() => setHoverState(undefined)}
+      tabIndex={0}
     >
       {children}
     </span>
