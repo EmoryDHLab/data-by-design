@@ -75,7 +75,7 @@ export default function Tutorial() {
             </mask>
             <rect className="peabody-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" fill="none" stroke="#db882a" strokeWidth={1} />
           </svg>
-          <figcaption className="text-center p-6">An interactive explanation of the Peabody's Polish-American System {scrollProgress}</figcaption>
+          <figcaption className="text-center p-6">An interactive explanation of the Peabody's Polish-American System</figcaption>
         </figure>
       </div>
     </div>
