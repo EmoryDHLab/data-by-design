@@ -87,7 +87,7 @@ export default function Recreation() {
   };
 
   return (
-    <svg viewBox="0 0 100 50" className="w-full h-full flex ml-6">
+    <svg viewBox="0 0 100 50" className="w-full md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0">
       <rect width="100%" height="100%" fill="#F3ECCB"></rect>
       <rect
         fill="transparent"

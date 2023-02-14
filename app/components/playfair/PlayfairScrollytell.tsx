@@ -93,27 +93,29 @@ export default function PlayfairScrollytell() {
         setScrollProgress,
       }}
     >
-      <div className={`bg-${backgroundColor} flex justify-between`}>
-        <div ref={steps} className="bias-1/2 w-2/5">
+      <div className={`bg-${backgroundColor} md:flex justify-between`}>
+        <div className="sticky top-[60px] h-screen mt-16 md:mt-0 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last">
+          <div className="text-3xl relative md:top-[calc(100vh-12rem)] right-[35vw] text-white hidden md:block">↓</div>
+          <Recreation />
+        </div>
+        <div ref={steps} className="bias-full w-full md:bias-1/2 md:w-2/5 relative">
           {triggers.map((trigger, index) => {
             return (
-              <p
-                key={index}
-                data-step={index}
-                className={`step text-xl content-center px-20 ${
-                  index + 1 === triggers.length || index == 0
-                    ? "h-[60vh]"
-                    : "h-screen"
-                } text-${primaryTextColor}`}
+              <div
+                  key={index}
+                  data-step={index}
+                  className={`step text-xl content-center p-5 md:px-20 ${
+                    index + 1 === triggers.length || index == 0
+                      ? `${index !== 0 ? "h-[65vh]" : ""} md:h-[60vh]`
+                      : "h-screen"
+                  } text-${primaryTextColor}`}
               >
-                {trigger}
-              </p>
+                <p className={`${index === 0 ? "": "bg-[#3b6fe0bf]"} p-3 md:p-0`}>
+                  {trigger}
+                </p>
+              </div>
             );
           })}
-        </div>
-        <div className="sticky top-[60px] h-screen bias-1/2 w-3/5 mr-24">
-          <div className="text-3xl relative top-[calc(100vh-12rem)] right-[35vw] text-white">↓</div>
-          <Recreation />
         </div>
       </div>
     </ScrollytellContext.Provider>

@@ -13,7 +13,7 @@ export default function Figure({ alt, children, src, className }: Props) {
     <div className={`flex justify-center ${className ?? ""}`}>
       <figure>
         <ImageModal src={src} alt={alt} />
-        <figcaption className="font-dubois text-center mt-6 mb-12">
+        <figcaption className="font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12">
           {children}
         </figcaption>
       </figure>
