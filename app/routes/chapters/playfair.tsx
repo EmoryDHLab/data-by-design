@@ -524,7 +524,7 @@ export default function PlayfairPage() {
             visualized, on the web, according to any conceivable form.
           </p>
 
-          <p>
+          <p className="my-6 md:my-12">
             <span className="col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 mt-6 flex flex-row">
               <svg viewBox="0 0 100 50">
                 <rect width="64%" height="100%" fill="#F3ECCB" />
@@ -581,7 +581,7 @@ export default function PlayfairPage() {
             synonymous with the argument for the value of visualization itself.
           </p>
         </Column>
-        <Column>
+        <Column className="md:ml-12">
           <Figure
             src="/images/playfair/8-lyra.png"
             alt=""
@@ -635,7 +635,7 @@ export default function PlayfairPage() {
             their answers are not conveyed—or nor are the questions even
             prompted—by the simple view presented through Playfair's form.
           </p>
-          <p>
+          <p className="my-6 md:my-12">
             <RecreationCovid />
           </p>
           <p>
@@ -727,7 +727,7 @@ export default function PlayfairPage() {
             </p>
           </div>
         </Column>
-        <Column>
+        <Column className="md:ml-12">
           <Figure src="/images/playfair/jevons.png" alt="">
             Jevons's illustration of the benefits of the "graphical method," in
             which{" "}
