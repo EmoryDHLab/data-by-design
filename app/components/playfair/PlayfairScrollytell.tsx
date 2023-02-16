@@ -94,7 +94,7 @@ export default function PlayfairScrollytell() {
       }}
     >
       <div className={`bg-${backgroundColor} md:flex justify-between`}>
-        <div className="sticky top-[60px] h-screen mt-16 md:mt-0 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last">
+        <div className="sticky top-16 md:top-0 h-screen mt-16 md:mt-0 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last md:pb-[60px]">
           <div className="text-3xl relative md:top-[calc(100vh-12rem)] right-[35vw] text-white hidden md:block">↓</div>
           <Recreation />
         </div>
