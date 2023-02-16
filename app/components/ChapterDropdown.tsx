@@ -1,29 +1,68 @@
+import { useState } from "react";
 import { Link } from "@remix-run/react";
 
-export default function ChapterDropdown() {
+const CHAPTERS = [
+  {
+    link: "brooks",
+    title: "Every Datapoint a Person"
+  },
+  {
+    link: "playfair",
+    title: "Visualization as Argument"
+  },
+  {
+    link: "peabody",
+    title: "The Work of Knowledge"
+  },
+  {
+    link: "dubois",
+    title: "Between Data and Truth"
+  },
+  {
+    link: "shanawdithit",
+    title: "Narratives of Possession"
+  },
+  {
+    link: "labour",
+    title: "Labour"
+  },
+]
+
+export default function ChapterDropdown({ children }) {
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  const keyUp = (key) => {
+    switch (key) {
+      case "Enter":
+        setIsDropdownVisible(!isDropdownVisible);
+        break;
+      case "Escape":
+        setIsDropdownVisible(false);
+    }
+  }
+
   return (
-    <div className="absolute z-20 top-10 border divide-y text-white">
-      <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <Link to="/chapters/brooks/">Every Datapoint a Person</Link>
-      </div>
-      <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <Link to="/chapters/playfair/">Visualization as Argument</Link>
-      </div>
-      <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <Link to="/chapters/peabody/">The Work of Knowledge</Link>
-      </div>
-     
-      <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <Link to="/chapters/dubois/">Between Data and Truth</Link>
-      </div>
-      
-      <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <Link to="/chapters/shanawdithit
-/">Narratives of Possession</Link>
-      </div>
-      <div className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5">
-        <Link to="/chapters/labour/">Labour</Link>
-      </div>
+    <div
+      role="button"
+      onMouseEnter={() => setIsDropdownVisible(true)}
+      onMouseLeave={() => setIsDropdownVisible(false)}
+      onClick={() => setIsDropdownVisible(!isDropdownVisible)}
+      onKeyUp={({ key }) => keyUp(key)}
+      tabIndex={0}
+    >
+      {children}
+      <menu
+        className={`absolute border divide-y text-white ${isDropdownVisible ? "visible" : "hidden"}`}
+      >
+        {CHAPTERS.map((chapter, index) => (
+          <li
+            key={index}
+            className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5"
+          >
+            <Link to={`/chapters/${chapter.link}`}>{chapter.title}</Link>
+          </li>
+        ))}
+      </menu>
     </div>
   );
 }

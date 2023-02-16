@@ -1,31 +1,23 @@
 import ChapterDropdown from "~/components/ChapterDropdown";
-import { useState } from "react";
 import { Link } from "@remix-run/react";
-import { classNames } from "~/utils";
 
 export default function Navbar() {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
   return (
-    <div className="fixed w-full bg-black flex items-center justify-evenly sm:pb-2 sm:pt-2 py-2 sm:py-0 z-20">
-      <div className="font-dubois text-white sm:text-2xl text-xl px-2 sm:px-0">
+    <nav className="fixed text-white w-full bg-black flex items-center justify-evenly py-0 md:py-2 z-20">
+      <li className="font-dubois sm:text-2xl text-xl px-0 md:px-2 inline-block">
         <Link to="/">Data by Design</Link>
-      </div>
-      <div className="flex items-center justify-around w-3/5 font-sans text-white sm:text-xl">
-        <div
-          onMouseEnter={() => setIsDropdownVisible(true)}
-          onMouseLeave={() => setIsDropdownVisible(false)}
-          className={classNames(
-            "font-sans px-5",
-            isDropdownVisible ? "text-playfairSecondary" : ""
-          )}
-        >
-          <div className="font-dubois text-sm tracking-wider">CHAPTERS</div>
-          {isDropdownVisible && <ChapterDropdown />}
-        </div>
+      </li>
+      <li className="inline-block">
+        <ChapterDropdown>
+          CHAPTERS
+        </ChapterDropdown>
+      </li>
+      <li className="inline-block">
         <Link to="/about" className="font-dubois text-sm tracking-wider">
           ABOUT
         </Link>
-      </div>
-    </div>
+      </li>
+    </nav>
   );
 }
