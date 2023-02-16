@@ -37,15 +37,15 @@ export default function Scrollytell() {
         setHighlightedSquare,
       }}
     >
-      <div className={`bg-${backgroundColor} flex justify-between`}>
-        <div className="sticky top-[30px] h-screen bias-1/2 w-1/2 mr-24 order-last">
-          <div className="text-3xl relative top-[calc(100vh-120px)] left-[calc(-50vw+6rem)]">↓</div>
+      <div className={`bg-${backgroundColor} md:flex justify-between`}>
+        <div className="sticky top-16 md:top-0 h-screen bias-full md:bias-1/2 md:w-1/2 md:mr-24 md:order-last">
+          <div className="text-3xl relative top-[calc(100vh-120px)] left-[calc(-50vw+6rem)] hidden md:block">↓</div>
           <Tutorial />
         </div>
-        <div ref={steps} className="bias-1/2 w-1/2 ">
+        <div ref={steps} className="bias-full md:bias-1/2 md:w-1/2 ">
           {TutorialTriggers.map((trigger, index) => {
             return (
-              <div key={index} data-step={index} className={`step text-2xl content-center px-20 ${index == 0 ? "h-[60vh]" : "h-screen"} text-${primaryTextColor}`}>
+              <div key={index} data-step={index} className={`step relative text-2xl content-center p-5 md:px-20 ${index == 0 ? "h-[60vh]" : "h-screen"} text-${primaryTextColor}`}>
                 {trigger}
               </div>
             );

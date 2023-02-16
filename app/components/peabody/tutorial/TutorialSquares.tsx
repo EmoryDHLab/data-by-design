@@ -33,7 +33,7 @@ export default function Tutorial() {
 
   return (
     <div className="grid grid-cols-1 h-[calc(100%-80px)]">
-      <div className="my-auto">
+      <div className="my-0 md:my-auto">
         <figure>
           <svg viewBox="0 0 99 99" className="mt-8 mx-8">
             <g mask="url(#tutorial-mask)" tabIndex={0}>
@@ -75,7 +75,7 @@ export default function Tutorial() {
             </mask>
             <rect className="peabody-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" fill="none" stroke="#db882a" strokeWidth={1} />
           </svg>
-          <figcaption className="text-center p-6">An interactive explanation of the Peabody's Polish-American System</figcaption>
+          <figcaption className="text-center p-6 opacity-0 md:opacity-100">An interactive explanation of the Peabody's Polish-American System</figcaption>
         </figure>
       </div>
     </div>

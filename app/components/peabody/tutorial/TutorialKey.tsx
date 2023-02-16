@@ -7,7 +7,7 @@ export default function TutorialKey() {
 
   return (
     <div
-      className={`opacity-${
+      className={` bg-[#9ae4c1cc] opacity-${
         scrollProgress > 2 ? "100" : "0"
       } transition-opacity duration-700 pt-5`}
     >

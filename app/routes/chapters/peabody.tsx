@@ -7,6 +7,7 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import FullBleed from "~/components/layout/FullBleed";
+import Figure from "~/components/layout/Figure";
 import Footer from "~/components/Footer";
 import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import { useState } from "react";
@@ -46,25 +47,25 @@ export default function PeabodyPage() {
         title="The Work of Knowledge"
         subtitle="Elizabeth Palmer Peabody's Chronological Grids"
       />
-      <TwoColumnLayout className="py-10">
+      <TwoColumnLayout>
         <Column shouldPin={true}>
           <IntroSentence>
             Elizabeth Palmer Peabody was born in Massachusetts in 1804.
+            Today, she is most widely recognized for her proximity to more famous
+            men—in particular, to the writers of the American Renaissance, such as
+            Ralph Waldo Emerson and Nathaniel Hawthorne, and to early champions of
+            educational reform, such as Bronson Alcott and Horace Mann. (One of
+            her sisters, Sophia Amelia Peabody, was married to Hawthorne; and the
+            other, Mary Tyler Peabody, was married to Mann). But Elizabeth Palmer
+            Peabody had intellectual impact in her own right: the bookstore that
+            she ran out of her home, at 13 West Street, in Boston, functioned as
+            the <i>de facto</i>
+            salon for the transcendentalist movement. She edited and published the
+            first version of Henry David Thoreau's essay on civil disobedience.
+            And she is credited with starting the first kindergarten in the United
+            States.
+            <InlineFootnote index={0} />
           </IntroSentence>
-          Today, she is most widely recognized for her proximity to more famous
-          men—in particular, to the writers of the American Renaissance, such as
-          Ralph Waldo Emerson and Nathaniel Hawthorne, and to early champions of
-          educational reform, such as Bronson Alcott and Horace Mann. (One of
-          her sisters, Sophia Amelia Peabody, was married to Hawthorne; and the
-          other, Mary Tyler Peabody, was married to Mann). But Elizabeth Palmer
-          Peabody had intellectual impact in her own right: the bookstore that
-          she ran out of her home, at 13 West Street, in Boston, functioned as
-          the <cite>de facto</cite>
-          salon for the transcendentalist movement. She edited and published the
-          first version of Henry David Thoreau's essay on civil disobedience.
-          And she is credited with starting the first kindergarten in the United
-          States.
-          <InlineFootnote index={0} />
           <p>
             Indeed, Peabody was an educator to her core. She came from a family
             of teachers. Her mother and two sisters all taught grade-school at
@@ -95,117 +96,99 @@ export default function PeabodyPage() {
               subtitle="to promote sustained reflection rather than immediate insight. "
             />
           </FullBleed>
-          <p className="py-20">
-            <span>
-              Along with boxes of her textbooks, Peabody traveled with a fabric
-              roll the size of a living room rug, which contained a floor-sized
-              version of one of the chronological charts described in the book.
-              Peabody identified the charts—in their vibrant, full-color
-              detail—as key components of her visual pedagogy. As she describes
-              in the "Advertisement" that begins the
-            </span>
-            <cite>Polish-American System</cite>
-            <span>
-              , the charts were "intended to do for the science of history what
-              maps do for that of geography; and they will make [it] easy to lay
-              the foundations of historical knowledge in the minds of the
-              young."
-            </span>
-
+          <p>
+            Along with boxes of her textbooks, Peabody traveled with a fabric
+            roll the size of a living room rug, which contained a floor-sized
+            version of one of the chronological charts described in the book.
+            Peabody identified the charts—in their vibrant, full-color
+            detail—as key components of her visual pedagogy. As she describes
+            in the "Advertisement" that begins the <cite>Polish-American System</cite>
+            the charts were "intended to do for the science of history what
+            maps do for that of geography; and they will make [it] easy to lay
+            the foundations of historical knowledge in the minds of the
+            young."
             <InlineFootnote index={1}></InlineFootnote>
-
-            <span>
-
-              Like Playfair, Willard, and other early proponents of data
-              visualization, Peabody understood the value of visual
-              communication. But she did not intend, as did Playfair, to produce
-              a clarifying "picture of the past."
-            </span>
+            Like Playfair, Willard, and other early proponents of data
+            visualization, Peabody understood the value of visual
+            communication. But she did not intend, as did Playfair, to produce
+            a clarifying "picture of the past."
             <InlineFootnote index={2}></InlineFootnote>
-
-            <span>
-
-              Rather, Peabody designed her charts to be abstract rather than
-              intuitive; to promote sustained reflection rather than immediate
-              insight. And she did so with a clear goal in mind: to provoke a
-              unique imaginative response in each viewer. Aligning the
-              insight-prompting power of inductive reasoning with her own ideas
-              about the generative potential of aesthetic judgment, Peabody
-              placed her charts within a proto-participatory learning
-              environment that was intended both to produce new knowledge about
-              the past and to help envision new pathways for the future.
-            </span>
+            Rather, Peabody designed her charts to be abstract rather than
+            intuitive; to promote sustained reflection rather than immediate
+            insight. And she did so with a clear goal in mind: to provoke a
+            unique imaginative response in each viewer. Aligning the
+            insight-prompting power of inductive reasoning with her own ideas
+            about the generative potential of aesthetic judgment, Peabody
+            placed her charts within a proto-participatory learning
+            environment that was intended both to produce new knowledge about
+            the past and to help envision new pathways for the future.
           </p>
         </Column>
-        <Column className="flex flex-col items-center md:ml-12">
+        <Column className="md:ml-12">
           <PromotionalTourMap />
-          <div className="w-full h-[200px]" />
-          <div className="flex flex-col items-center">
-            <div className="space-y-2">
-              <ImageModal
-                className="max-w-xs"
-                src="/images/peabody/1500s.jpg"
-              />
-              <ImageModal
-                className="max-w-xs"
-                src="/images/peabody/1600s.jpg"
-              />
-              <ImageModal
-                className="max-w-xs"
-                src="/images/peabody/1700s.jpg"
-              />
-              <ImageModal
-                className="max-w-xs"
-                src="/images/peabody/1800s.jpg"
-              />
-            </div>
-            <ImageCaption>
-              The four chronological charts included in Elizabeth Palmer
-              Peabody's Chronological History of the United States (1865), which
-              display the significant events of the 1500s, 1600s, 1700s, and
-              1800s. Images courtesy of the Internet Archive. Digitized by the
-              Library of Congress.
-            </ImageCaption>
-          </div>
+          <Figure
+            images={[
+              {
+                src: "/images/peabody/1500s.jpg",
+                alt: ""
+              },
+              {
+                src: "/images/peabody/1600s.jpg",
+                alt: ""
+              },
+              {
+                src: "/images/peabody/1700s.jpg",
+                alt: ""
+              },
+              {
+                src: "/images/peabody/1800s.jpg",
+                alt: ""
+              }
+            ]}
+          >
+            The four chronological charts included in Elizabeth Palmer
+            Peabody's Chronological History of the United States (1865), which
+            display the significant events of the 1500s, 1600s, 1700s, and
+            1800s. Images courtesy of the Internet Archive. Digitized by the
+            Library of Congress.
+          </Figure>
         </Column>
       </TwoColumnLayout>
       <ChapterSectionTitle>
         A Visual Method of Making History
       </ChapterSectionTitle>
       <CenteredLayout>
-        <div className="space-y-5 py-10">
-          <p>
-            Peabody's method of visualizing events of historical significance
-            was inspired by a system developed in Poland in the 1820s, and
-            popularized in subsequent decades by the military general (and
-            erstwhile math teacher) Jósef Bem.
-            <InlineFootnote index={3}></InlineFootnote>
-            Bem's system employed a grid overlaid with shapes and colors to
-            visually represent events in time. In <cite>Cartographies of Time:
-            A History of the Timeline</cite>, Daniel Rosenberg and Anthony
-            Grafton describe how the system "swept across Europe and North
-            America" in the middle decades of the nineteenth century.
-            <InlineFootnote index={4}></InlineFootnote>
-            But Peabody first encountered the system by chance: through a
-            traveling lecturer who briefly boarded with her family on West
-            Street. The boarder, a man named Joseph Podbielski, had come from
-            Poland with copies of Bem's charts, which he intended to promote
-            on a lecture tour of the United States. While he soon departed the
-            family's residence, Peabody remained "captivated" by the charts,
-            according to one of her biographers, Bruce Ronda.
-            <InlineFootnote index={5}></InlineFootnote>
-            She went on to devote several years to a study of the Polish
-            System, culminating with the development of her own modified
-            version: the <cite> Polish-American System </cite>
-            that prompted her own national tour.
-          </p>
-          <p>
-            On this point, Peabody makes special note that she employs "a
-            somewhat different, and, as it seems to me, a more expressive
-            distribution of colors."
-            <InlineFootnote index={6}></InlineFootnote>
-          </p>
-        </div>
+        <p>
+          Peabody's method of visualizing events of historical significance
+          was inspired by a system developed in Poland in the 1820s, and
+          popularized in subsequent decades by the military general (and
+          erstwhile math teacher) Jósef Bem.
+          <InlineFootnote index={3}></InlineFootnote>
+          Bem's system employed a grid overlaid with shapes and colors to
+          visually represent events in time. In <cite>Cartographies of Time:
+          A History of the Timeline</cite>, Daniel Rosenberg and Anthony
+          Grafton describe how the system "swept across Europe and North
+          America" in the middle decades of the nineteenth century.
+          <InlineFootnote index={4}></InlineFootnote>
+          But Peabody first encountered the system by chance: through a
+          traveling lecturer who briefly boarded with her family on West
+          Street. The boarder, a man named Joseph Podbielski, had come from
+          Poland with copies of Bem's charts, which he intended to promote
+          on a lecture tour of the United States. While he soon departed the
+          family's residence, Peabody remained "captivated" by the charts,
+          according to one of her biographers, Bruce Ronda.
+          <InlineFootnote index={5}></InlineFootnote>
+          She went on to devote several years to a study of the Polish
+          System, culminating with the development of her own modified
+          version: the <cite> Polish-American System </cite>
+          that prompted her own national tour.
+        </p>
+        <p>
+          On this point, Peabody makes special note that she employs "a
+          somewhat different, and, as it seems to me, a more expressive
+          distribution of colors."
+          <InlineFootnote index={6}></InlineFootnote>
+        </p>
       </CenteredLayout>
 
       <Scrollytell />
@@ -402,11 +385,10 @@ export default function PeabodyPage() {
       </CenteredLayout>
       <PeabodyTimelineView />
 
-      <div className="py-10">
         <ChapterSectionTitle>
           The Politics of Visual Knowledge Production
         </ChapterSectionTitle>
-        <TwoColumnLayout className="py-10">
+        <TwoColumnLayout>
           <Column>
             <p>
               Peabody was a lifelong proponent of what might be described
@@ -433,22 +415,15 @@ export default function PeabodyPage() {
               visualizations that they would then study.
             </p>
           </Column>
-          <Column>
-            <ImageModal
-              src="/images/ch4-blank-chart.webp"
-              alt=""
-              loading="lazy"
-              width="500px"
-            />
-            <ImageCaption>
+          <Column className="md:ml-12">
+            <Figure src="/images/ch4-blank-chart.webp" alt="">
               A blank chart from <cite>Blank Centuries for Monographs of History</cite>
               (1870), the workbook that Peabody printed to accompany her history
               textbooks. Courtesy of the American Antiquarian Society. Photo by
               Lauren Klein.
-            </ImageCaption>
+            </Figure>
           </Column>
         </TwoColumnLayout>
-      </div>
 
       <PeabodyQuiz />
 
@@ -543,44 +518,58 @@ export default function PeabodyPage() {
             <InlineFootnote index={23}></InlineFootnote>
           </p>
         </Column>
-        <Column shouldPin={true}>
-          <FullBleed className="px-10 flex flex-col items-center">
-            <div className="grid grid-cols-4 gap-2">
-              <ImageModal src="/images/ch4-5.webp" />
-              <ImageModal src="/images/ch4-6.webp" />
-              <ImageModal src="/images/ch4-7.webp" />
-              <ImageModal src="/images/ch4-8.webp" />
-              <ImageModal src="/images/ch4-9.webp" />
-              <ImageModal src="/images/ch4-10.webp" />
-              <ImageModal src="/images/ch4-11.webp" />
-              <ImageModal src="/images/ch4-12.webp" />
-            </div>
-            <ImageCaption>
-              Images of student-created charts from a copy of
-              <cite>The Polish-American System</cite> housed
-              at the American Antiquarian Society. Courtesy of the American
-              Antiquarian Society. Photos by Lauren Klein.
-            </ImageCaption>
-          </FullBleed>
+        <Column className="md:ml-12" shouldPin={true}>
+          <Figure
+            className="grid grid-cols-2 md:grid-cols-4 gap-2"
+            images={[
+              {
+                src: "/images/ch4-5.webp",
+                alt: ""
+              },
+              {
+                src: "/images/ch4-6.webp",
+                alt: ""
+              },
+              {
+                src: "/images/ch4-7.webp",
+                alt: ""
+              },
+              {
+                src: "/images/ch4-8.webp",
+                alt: ""
+              },
+              {
+                src: "/images/ch4-9.webp",
+                alt: ""
+              },
+              {
+                src: "/images/ch4-10.webp",
+                alt: ""
+              },
+              {
+                src: "/images/ch4-11.webp",
+                alt: ""
+              },
+              {
+                src: "/images/ch4-12.webp",
+                alt: ""
+              },
+            ]}
+          >
+            Images of student-created charts from a copy of
+            <cite>The Polish-American System</cite> housed
+            at the American Antiquarian Society. Courtesy of
+            the American Antiquarian Society. Photos by
+            Lauren Klein.
+          </Figure>
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>
-        <div className="flex flex-col items-center full-bleed py-10">
-          {/* Question: Should we use Full Bleed here?*/}
-          <div>
-            <ImageModal
-              src="/images/ch4-13-willard.jpg"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-        </div>
-        <ImageCaption>
-          Emma Willard's perspectival
-          <cite>Temple of Time</cite> (1846). Image courtesy
-          of the David Rumsey Map Collection, Cartography Associates.
-        </ImageCaption>
-
+        <Figure className="full-bleed" src="/images/ch4-13-willard.jpg" alt="">
+          Emma Willard's perspectival <cite>Temple of Time</cite> (1846).
+          Image courtesy of the David Rumsey Map Collection, Cartography
+          Associates.
+        </Figure>
         <p>
           While sharply divergent from Peabody's charts in terms of
           aesthetics, Peabody nevertheless identified Willard as a major
@@ -696,43 +685,30 @@ export default function PeabodyPage() {
             <InlineFootnote index={31}></InlineFootnote>
           </p>
         </Column>
-        <Column>
-          <div className="flex flex-col items-center middle-full">
-            <div>
-              <div
-                className="doc-table-root"
-                style={{
-                  display: "grid",
-                  gridTemplateAreas: '"area0 area1"',
-                }}
-              >
-                <div className="doc-table-cell" style={{ gridArea: "area0" }}>
-                  <ImageModal
-                    src="/images/ch4-clarke1.jpg"
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-                <div className="doc-table-cell" style={{ gridArea: "area1" }}>
-                  <ImageModal
-                    src="/images/ch4-clarke2.jpg"
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-            <ImageCaption>
-              <span className="font-bold">Left:</span> One of the timelines
-              created by Anne Laura Clarke, as explored by Granville Ganter in
-              his essay on Clarke's traveling lectures.
-              <p>
-                <span className="font-bold">Right:</span> Another timeline as it
-                was first encountered by Ganter. Photos by Granville Ganter.
-                Courtesy of Granville Ganter.
-              </p>
-            </ImageCaption>
-          </div>
+        <Column className="md:ml-12">
+          <Figure
+            className="grid grid-cols-2 items-center middle-full gap-x-4"
+            images={[
+              {
+                src: "/images/ch4-clarke1.jpg",
+                alt: ""
+              },
+              {
+                src: "/images/ch4-clarke2.jpg",
+                alt: ""
+              }
+            ]}
+          >
+            <p>
+              <strong>Left:</strong> One of the timelines created by Anne Laura Clarke,
+              as explored by Granville Ganter in his essay on Clarke's traveling lectures.
+            </p>
+            <p>
+              <strong>Right:</strong> Another timeline as it
+              was first encountered by Ganter. Photos by Granville Ganter.
+              Courtesy of Granville Ganter.
+            </p>
+          </Figure>
         </Column>
       </TwoColumnLayout>
       <TwoColumnLayout>
@@ -823,54 +799,28 @@ export default function PeabodyPage() {
           </p>
         </Column>
         <Column className="md:ml-12">
-          <div className="flex flex-col items-center middle-full">
-            <div>
-              <div
-                style={{
-                  display: "grid",
-                  gap: "0.5rem",
-                  gridTemplateAreas:
-                    '"area0 area1" "area2 area2" "area3 area3"',
-                }}
-              >
-                <div className="doc-table-cell" style={{ gridArea: "area0" }}>
-                  <ImageModal
-                    src="/images/ch4-15a-fc-left.png"
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-                <div className="doc-table-cell" style={{ gridArea: "area1" }}>
-                  <ImageModal
-                    src="/images/ch4-15b-fc-right.png"
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-                <div className="doc-table-cell" style={{ gridArea: "area2" }}>
-                  <ImageModal
-                    src="/images/ch4-17-leds.webp"
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-                <div className="doc-table-cell" style={{ gridArea: "area3" }}>
-                  <ImageModal
-                    src="/images/ch4-18-rendering.webp"
-                    alt=""
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-            <ImageCaption>
-              The layers of the touch interface, built with copper tape and a
-              foam spacer; the assembled touch interface; a view of the modular
-              circuit boards for communicating with the LEDs; a rendering of the
-              completed Floor Chart; the LEDs displayed on top of the quilted
-              chart. Photos by Lauren Klein.
-            </ImageCaption>
-          </div>
+          <Figure
+            className="grid grid-cols-2 items-center middle-full gap-x-4"
+            images={[
+              {
+                src: "/images/ch4-15a-fc-left.png",
+                alt: "",
+              },
+              {
+                src: "/images/ch4-15b-fc-right.png",
+                alt: ""
+              }
+            ]}
+          >
+          </Figure>
+          <Figure src="/images/ch4-17-leds.webp" alt="" />
+          <Figure src="/images/ch4-18-rendering.webp" alt="">
+            The layers of the touch interface, built with copper tape and a
+                foam spacer; the assembled touch interface; a view of the modular
+                circuit boards for communicating with the LEDs; a rendering of the
+                completed Floor Chart; the LEDs displayed on top of the quilted
+                chart. Photos by Lauren Klein.
+          </Figure>
         </Column>
       </TwoColumnLayout>
 
@@ -923,35 +873,29 @@ export default function PeabodyPage() {
           to the world of "folk art" and craft.
           <InlineFootnote index={38}></InlineFootnote>
         </p>
-        <div className="grid grid-cols-2 items-center middle-full gap-x-4">
-          <div className="flex space-x-5 self-stretch">
-            <ImageModal
-              className="h-full w-full"
-              src="/images/ch4-19-rachel-carey-george.webp"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div className="flex space-x-5 self-stretch">
-            <ImageModal
-              className="h-full w-full"
-              src="/images/ch4-20-gbq-q030-06.webp"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <ImageCaption className="col-span-2">
-            <p>
-              <strong>Left:</strong> "Housetop," by Rachel Carey George, ca. 1935.
-            </p>
-            <p>
-              <strong>Right:</strong> "Housetop" variation,
-              design by Mary Lee Bendolph. 1998, quilted by Essie Bendolph
-              Pettaway, 2001. Photos courtesy of Tinwood Media.
-            </p>
-            <p><em>Permissions pending.</em></p>
-          </ImageCaption>
-        </div>
+        <Figure
+          className="grid grid-cols-2 items-center middle-full gap-x-4"
+          images={[
+            {
+              src: "/images/ch4-19-rachel-carey-george.webp",
+              alt: "",
+            },
+            {
+              src: "/images/ch4-20-gbq-q030-06.webp",
+              alt: ""
+            }
+          ]}
+        >
+          <p>
+            <strong>Left:</strong> "Housetop," by Rachel Carey George, ca. 1935.
+          </p>
+          <p>
+            <strong>Right:</strong> "Housetop" variation,
+            design by Mary Lee Bendolph. 1998, quilted by Essie Bendolph
+            Pettaway, 2001. Photos courtesy of Tinwood Media.
+          </p>
+          <p><em>Permissions pending.</em></p>
+        </Figure>
         <p>
           Pictured above are two quilts from the area of Alabama known as
           Gee's Bend, a small, rural Black community, 35 miles south of Selma,

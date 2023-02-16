@@ -4,7 +4,7 @@ import eventsData from "~/data/peabody/1600sEvents.json";
 
 const Key = function ({ highlight }) {
   return (
-    <div className="grid grid-cols-2 text-sm p-8">
+    <div className="grid grid-cols-2 text-sm p-8 bg-[#9ae4c1cc]">
       <div>
         <ol className="list-decimal">
           <li>Battles, Sieges, Beginning of War</li>
@@ -51,7 +51,7 @@ const Key = function ({ highlight }) {
 
 const Actors = function() {
   return (
-    <div className="flex text-sm mt-6 gap-2">
+    <div className="flex text-sm mt-6 gap-2 bg-[#9ae4c1cc]">
       {Object.keys(eventsData.actorColors).map((actor, index) => {
           return (
             <div key={index} className={`font-normal bg-${actor} text-${actor === "Americas" || actor === "Sweden" ? "black" : "white"} p-2 border-2 border-black`}>
@@ -64,17 +64,17 @@ const Actors = function() {
 };
 
 const TutorialTriggers = [
-  (<p key={1}></p>),
-  (<p key={2}>
+  (<p className="p-3 md:p-0" key={1}></p>),
+  (<p className="bg-[#9ae4c1cc] p-3 md:p-0" key={2}>
     Peabody's version of Bem's system borrows the idea of a numbered grid,
     with each year in a century marked out in its own box.
   </p>),
-  (<p key={3}>
+  (<p className="bg-[#9ae4c1cc] p-3 md:p-0" key={3}>
     She also borrows the idea of subdividing each box, so that each of the
     nine interior squares corresponds to a particular type of historical event.
   </p>),
   (<>
-    <p key={4}>
+    <p className="bg-[#9ae4c1cc] p-3 md:p-0" key={4}>
       In the Polish-American System, as in Bem's, the top left corner is the
       space for wars, battles, and sieges; in the top middle is the space for
       conquests and unions; in the top right is the space for losses and divisions,
@@ -83,7 +83,7 @@ const TutorialTriggers = [
     <Key />
   </>),
   (<>
-    <p key={5}>
+    <p className="bg-[#9ae4c1cc] p-3 md:p-0" key={5}>
       The events are also color-coded, indicating the various countries involved
       in a particular event. On this point, Peabody makes special note that she
       employs "a somewhat different, and, as it seems to me, a more expressive
@@ -93,7 +93,7 @@ const TutorialTriggers = [
     <Actors />
   </>),
   (<>
-    <p key={6}>
+    <p className="bg-[#9ae4c1cc] p-3 md:p-0" key={6}>
       Shapes that take up the entire box indicate an event of such magnitude or
       complexity that the other events in that same year hardly matter.
     </p>
