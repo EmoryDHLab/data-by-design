@@ -727,57 +727,79 @@ export const playfairFootnotes = [
 ];
 export const brooksFootnotes = [
   //1
-  <span></span>,
+  <span>Equiano 55, 58.</span>,
   //2
-  <span></span>,
+  <span>Equiano 58; more on Cugoano refusal, p. 15.</span>,
   //3
-  <span></span>,
+  <span>Equiano 58; more on Cugoano refusal, p. 15.</span>,
   //4
-  <span></span>,
+  <span>Clarkson, history of abolition, need ##.</span>,
   //5
-  <span></span>,
+  <span>Ref here about retaining anglo-western focus.</span>,
   //6
-  <span></span>,
+  <span>Finley 34.</span>,
   //7
-  <span></span>,
+  <span>Wood 28.</span>,
   //8
-  <span></span>,
+  <span> Cite Finley here too. </span>,
   //9
-  <span></span>,
+  <span>In an example of mixed methods research avant le letter, Clarkson also published the transcripts of his interviews with these men at roughly the same time as he released his revised version of the Plymouth Committee's "Plan." For more on the interviews, see Riedeker 319-324.</span>,
   //10
-  <span></span>,
+  <span>Wood 28</span>,
   //11
-  <span></span>,
+  <span>Finley 67.</span>,
   //12
-  <span></span>,
+  <span>Quoted in Baucom 218.</span>,
   //13
-  <span></span>,
+  <span>Finley 99.</span>,
   //14
-  <span></span>,
+  <span>Quoted in Baucom 267,</span>,
   //15
-  <span></span>,
+  <span>Baucom 267-8.</span>,
   //16
-  <span></span>,
+  <span>Finley 40.</span>,
   //17
-  <span></span>,
+  <span>Browne 49.</span>,
   //18
-  <span></span>,
+  <span>Browne 49.</span>,
   //19
-  <span></span>,
+  <span>Wood 17.</span>,
   //20
-  <span></span>,
+  <span>Bernier 998.</span>,
   //21
-  <span></span>,
+  <span>Finley 59.</span>,
   //22
-  <span></span>,
-  //22
-  <span></span>,
+  <span>Baucom 223.</span>,
   //23
-  <span></span>,
+  <span>Baucom 274.</span>,
   //24
-  <span></span>,
+  <span> Baucom 274.</span>,
   //25
-  <span></span>,
+  <span>Finley 62.</span>,
+  //26
+  <span>Cartographies of time.</span>,
+  //27
+  <span>Wood 5.</span>,
+  //28
+  <span>Wood 4.</span>,
+  //29
+  <span>CoT 143.</span>,
+  //30
+  <span>Cartographies of time.</span>,
+  //31
+  <span>CoT 136.</span>,
+  //32
+  <span>Quoted in CoT 136</span>,
+  //33
+  <span>CoT 136.</span>,
+  //34
+  <span>From Hyrogliphics… p. 189.</span>,
+  //35
+  <span>Isoytpe design and contexts, 10.</span>,
+  //36
+  <span>Qutoed in Isotype, Design and Cotext, 11.</span>,
+  //37
+  <span>Ref DF</span>,
 ];
 export const mapsFootnotes = [
   //1

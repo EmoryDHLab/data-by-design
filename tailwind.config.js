@@ -80,6 +80,7 @@ module.exports = {
     extend: {},
   },
   safelist: [
+    "bg-brooksPrimary",
     "text-duboisPrimary",
     "text-playfairPrimary",
     "bg-playfairPrimary",
