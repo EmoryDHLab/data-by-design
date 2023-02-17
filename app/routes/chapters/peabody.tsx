@@ -690,11 +690,11 @@ export default function PeabodyPage() {
             className="grid grid-cols-2 items-center middle-full gap-x-4"
             images={[
               {
-                src: "/images/ch4-clarke1.jpg",
+                src: "/images/ch4-clarke1.webp",
                 alt: ""
               },
               {
-                src: "/images/ch4-clarke2.jpg",
+                src: "/images/ch4-clarke2.webp",
                 alt: ""
               }
             ]}

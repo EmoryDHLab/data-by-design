@@ -60,84 +60,138 @@ export default function PeabodyQuiz() {
       solved,
       setSolved,
     }}>
-      <div className="grid grid-cols-2 bg-black gap-x-32 h-[calc(100vh-30px)] text-white text-center w-full py-6">
-        <QuizKey />
-        <div className="grid grid-cols-7 gap-y-6 grid-rows-3 row-span-1 h-[fit-content]">
-          {/* FIRST ROW */}
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-12 h-[calc(100vh-30px)] text-white text-center w-full p-6">
+        <div className="w-full md:w-9/12 my-0 mx-auto">
+          <QuizKey />
+        </div>
+        <div className="grid grid-cols-7 gap-y-2 md:gap-y-6">
           {centuries.map((century, index) => {
             return (
-              <div key={`button-${index}`} className="my-auto">
+              <svg viewBox="0 0 100 32" key={`button-${index}`} className="my-auto">
                 <FancyButton outlineColor={currentCentury === century ? "gold" : "white" } action={() => setCurrentCentury(century)}>
                   {century}s
                 </FancyButton>
-              </div>
+              </svg>
             )
           })}
-          <div className="col-span-3 grid grid-cols-3 grid-rows-2">
-
-            <div className="text-center text-2xl">
-              <button
-                className="items-center text-white"
-                onClick={() => setSolved([])}
-                style={{fontFamily: "DxD Icons"}}
-              >
-                e
-              </button>
-            </div>
-            <div className="text-center text-2xl">
-              <button
-                className="items-center text-white"
-                onClick={() => setSolved(currentCenturyEvents)}
-                style={{fontFamily: "DxD Icons"}}
-              >
-                d
-              </button>
-            </div>
-            <div className="text-center text-2xl">
-              <button
-                className="items-center text-white"
-                onClick={() => {}}
-                style={{fontFamily: "DxD Icons"}}
-              >
-                f
-              </button>
-            </div>
-            <div>Reset</div>
-            <div>Complete</div>
-          </div>
-
-          {/* SECOND ROW */}
-          <div className="col-span-1 text-2xl" style={{fontFamily: "DxD Icons"}}>
-            <button
+          <svg viewBox="0 0 100 32" className="my-auto text-center">
+            <text
+              onClick={() => setSolved([])}
               type="button"
-              disabled={!previous}
-              onClick={() => setCurrentEvent(previous)}
+              x={0}
+              y={0}
+              fill="white"
+              role="button"
+              dominantBaseline="middle"
+              textAnchor="middle"
             >
-              c
-            </button>
-          </div>
-          <div className="col-span-5 text-2xl">
-            {currentEvent?.year ? `${currentEvent.year}:` : ""} {currentEvent?.event ?? "Some instructions?"}
-          </div>
-          <div className="col-span-1 text-center text-2xl" style={{fontFamily: "DxD Icons"}}>
-          <button
+              <tspan x={50} fontSize={16} dy={12.75} fontFamily="DxD Icons">e</tspan>
+              <tspan x={50} fontSize={8} dy={12.75}>RESET</tspan>
+            </text>
+          </svg>
+
+          <svg viewBox="0 0 100 32" className="my-auto text-center">
+            <text
+              onClick={() => setSolved(currentCenturyEvents)}
               type="button"
-              disabled={!next}
-              onClick={() => setCurrentEvent(next)}
+              x={0}
+              y={0}
+              fill="white"
+              role="button"
+              dominantBaseline="middle"
+              textAnchor="middle"
             >
-              b
-            </button>
-          </div>
-          {/* THIRD ROW */}
-          <div className="col-span-6"></div>
-          <div className="col-span-1">{solved.length}/{currentCenturyEvents.length}</div>
+              <tspan x={50} fontSize={16} dy={12.75} fontFamily="DxD Icons">d</tspan>
+              <tspan x={50} fontSize={8} dy={12.75}>Complete</tspan>
+            </text>
+          </svg>
+
+          <svg viewBox="0 0 100 32" className="my-auto text-center">
+            <text
+              type="button"
+              x={0}
+              y={0}
+              fill="white"
+              role="button"
+              dominantBaseline="middle"
+              textAnchor="middle"
+            >
+              <tspan x={50} fontSize={16} dy={12.75} fontFamily="DxD Icons">f</tspan>
+              {/* <tspan x={50} fontSize={8} dy={12.75}>xxx</tspan> */}
+            </text>
+          </svg>
+
+          <svg viewBox="0 0 100 32" className="my-auto text-center">
+            <g>
+              <text
+                onClick={() => setCurrentEvent(previous)}
+                type="button"
+                x={0}
+                y={16}
+                fill="white"
+                role={previous ? "button" : ""}
+                fontFamily="DxD Icons"
+                fontSize={24}
+              >
+                c
+              </text>
+            </g>
+          </svg>
+
+          <svg viewBox="0 0 100 32" className="my-auto text-center col-span-5">
+            <g>
+              <text
+                x={50}
+                y={16}
+                fill="white"
+                fontSize={4}
+                dominantBaseline="middle"
+                textAnchor="middle"
+              >
+                {currentEvent?.year ? `${currentEvent.year}:` : ""} {currentEvent?.event ?? "Some instructions?"}
+              </text>
+            </g>
+          </svg>
+
+          <svg viewBox="0 0 100 32" className="my-auto text-center">
+            <g>
+              <text
+                onClick={() => setCurrentEvent(next)}
+                type="button"
+                x={50}
+                y={16}
+                fill="white"
+                role={next ? "button" : ""}
+                fontFamily="DxD Icons"
+                fontSize={24}
+              >
+                b
+              </text>
+            </g>
+          </svg>
+
+          {/* <svg viewBox="0 0 100 32" className="my-auto text-center col-end-7">
+            <g>
+              <text
+                x={50}
+                y={16}
+                fill="white"
+                fontSize={24}
+                dominantBaseline="middle"
+                textAnchor="middle"
+              >
+                {solved.length}/{currentCenturyEvents.length}
+              </text>
+            </g>
+          </svg> */}
+
         </div>
-        <div className="w-9/12 my-0 mx-auto">
+        <div className="hidden md:block md:w-9/12 my-0 mx-auto">
             <svg viewBox="0 0 99 99">
               <image href={`/images/peabody/${currentCentury}s.jpg`} x="-3.5" y="-3.5" height="106" width="105.5"></image>
             </svg>
         </div>
-        <div className="w-9/12 my-0 mx-auto">
+        <div className="w-full col-span-full md:col-span-1 md:w-9/12 my-0 mx-auto">
           <QuizPeabodySquare />
         </div>
       </div>

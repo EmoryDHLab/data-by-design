@@ -15,12 +15,12 @@ export default function QuizPeabodySquare() {
   const { currentCentury } = useContext(QuizContext);
 
   return (
-    <svg className="w-full" viewBox="0 0 99 99">
+    <svg className="" viewBox="0 0 99 99">
       <defs>
         <pattern
           id="diagonalHatch"
-          width="5"
-          height="10"
+          width={5}
+          height={10}
           patternUnits="userSpaceOnUse"
         >
           <line
@@ -28,7 +28,7 @@ export default function QuizPeabodySquare() {
             y1="0"
             x2="0"
             y2="10"
-            style={{stroke: "orange", strokeWidth: 4}}
+            style={{stroke: "orange", strokeWidth: 1}}
           />
         </pattern>
       </defs>
