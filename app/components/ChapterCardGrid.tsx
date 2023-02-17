@@ -11,7 +11,7 @@ export default function ChapterCardGrid() {
           to="/chapters/brooks"
           className="cardBrooks bg-black hover:text-white"
           title="Every Datapoint a Person"
-          subtitle="The Brooks / Diagram of a Slave Ship"
+          subtitle="Diagram of a Slave Ship"
         >
           Before there are data, there are people. People who offer up their
           lives as data — or whose lives become data without consent.
@@ -26,10 +26,10 @@ export default function ChapterCardGrid() {
           meaning — and an argument — conveyed through each design.
         </ChapterCard>
         <ChapterCard
-          to="/chapters/willard"
-          className="cardWillard bg-black hover:text-white"
+          to="/chapters/shanawdithit"
+          className="cardShanawdithit bg-black hover:text-white"
           title="Narratives of Possession"
-          subtitle="Emma Willard and Shanawdithit’s Narrative Maps"
+          subtitle="Shanawdithit’s Narrative Maps"
         >
           Maps can create nations and contest them. <br />
           How have maps been used to document multiple pasts?
@@ -53,13 +53,13 @@ export default function ChapterCardGrid() {
           space for what cannot be conveyed through data alone?
         </ChapterCard>
         <ChapterCard
-          to="/chapters/labour"
+          to="/chapters/labor"
           className="cardLabour bg-black hover:text-white"
-          title="Labour"
-          subtitle="How We Built This"
+          title="The Process is the Product"
+          subtitle="The Making of Data by Design"
         >
-          How can data visualization bear witness to oppression? How can it hold
-          space for what cannot be conveyed through data alone?
+          Any digital project is the work of many hands. How can this labor be 
+          visualized? What labor remains out of sight? 
         </ChapterCard>
       </div>
     </div>
