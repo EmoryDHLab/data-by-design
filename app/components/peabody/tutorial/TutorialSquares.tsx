@@ -12,7 +12,7 @@ export default function Tutorial() {
   >(undefined);
 
   const [activeYear, setActiveYear] = useState<number | undefined>(undefined);
-  const [focusShapeSize, setFocusShapeSize] = useState<object>({ x: 0, y: 0, w: 100, h: 100 })
+  const [focusShapeSize, setFocusShapeSize] = useState<object>({ x: 0, y: 0, w: 100, h: 100 });
   const { scrollProgress } = useContext(ScrollytellContext);
 
   useEffect(() => {
@@ -71,9 +71,9 @@ export default function Tutorial() {
             </g>
             <mask id="tutorial-mask">
               <rect x="0" width={99} height={99} fill="white" fillOpacity={0.1} className="transition-opacity duration-700" />
-              <rect className="peabody-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" />
+              <rect className="scrollytell-shape-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" />
             </mask>
-            <rect className="peabody-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" fill="none" stroke="#db882a" strokeWidth={1} />
+            <rect className="scrollytell-shape-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" fill="none" stroke="#db882a" strokeWidth={1} />
           </svg>
           <figcaption className="text-center p-6 opacity-0 md:opacity-100">An interactive explanation of the Peabody's Polish-American System</figcaption>
         </figure>

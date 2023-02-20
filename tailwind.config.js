@@ -45,8 +45,14 @@ module.exports = {
         offwhite: "#FAF1E9",
         nightingale_blue: "#3B6FE0",
         peabodyOrange: "rgb(219, 136, 42)",
-        brooksSecondary: "#EFCDFF",
-        brooksPrimary: "#8C20E1",
+        brooksSecondary: {
+          DEFAULT: "#EFCDFF",
+          translucent: "#EFCDFFCC"
+        },
+        brooksPrimary: {
+          DEFAULT: "#8C20E1",
+          translucent: "#8c20e1cc"
+        },
         duboisTextColor: "white",
         duboisSecondary: "#FFD3D3",
         duboisPrimary: "#D92944",

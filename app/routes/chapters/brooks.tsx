@@ -25,7 +25,8 @@ export default function BrooksPage() {
     <ChapterContext.Provider
       value={{
         backgroundColor: "brooksPrimary",
-        accentColor: "brooksPrimary",
+        accentColor: "brooksSecondary",
+        accentTextColor: "black",
         footnoteTextColor: "playfairPrimary",
         primaryTextColor: "white",
         footnotes: brooksFootnotes,
