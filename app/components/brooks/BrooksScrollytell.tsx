@@ -4,7 +4,6 @@ import { ChapterContext } from "~/theme";
 import { ScrollytellContext } from "~/scrollytellContext";
 
 const triggers = [
-  <></>,
   <>Elford's "Plan" divides the ship's hold into six distinct areas: the largest, in the bow of the ship, and which occupies the entire right half of the diagram, is labeled the "Men's room," and depicts 120 male bodies in four rows of 30.</>,
   <>In the middle is a narrow column labeled "Boy's room" and depicts smaller male figures in six rows of 12.</>,
   <>To the left is the larger "Women's room," depicting figures the same size as the men, but with breasts, in four rows of 21 figures representing 84 women total.</>,
@@ -68,42 +67,42 @@ export default function BrooksScrollytell() {
       }}
     >
       <div className={`bg-${accentColor}`}>
-        <div className="sticky top-0 h-screen grid grid-cols-1 content-end">
-            <div className="text-3xl relative md:top-[calc(100vh-12rem)] ml-12 text-white hidden md:block">↓</div>
-            <div className="mb-6">
-              <figure className="w-11/12 m-auto">
-                <svg viewBox="0 0 100 36" className="w-full md:h-full">
-                  <g className="">
-                    <image mask="url(#ship-mask)"
-                      href="/images/brooks/slaveship.webp"
-                      height={"100%"}
-                      width="100%"
-                    />
-                    <mask id="ship-mask">
-                      <rect x="0" width={100} height={36} fill="white" fillOpacity={0.3} />
-                      <rect className="scrollytell-shape-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" />
-                    </mask>
-                    <rect className="scrollytell-shape-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" fill="none" stroke="#db882a" strokeWidth={1} />
-                  </g>
-                </svg>
-                {/* <figcaption>{scrollProgress} {triggers.length}</figcaption> */}
-              </figure>
-            </div>
+        <div className="sticky pt-16 md:pt-0 top-0 h-screen grid grid-cols-1 md:content-end">
+          <div className="text-3xl relative md:top-[calc(100vh-12rem)] ml-12 text-white hidden md:block">↓</div>
+          <div className="mb-6">
+            <figure className="w-11/12 m-auto">
+              <svg viewBox="0 0 100 36" className="w-full md:h-full">
+                <g className="">
+                  <image mask="url(#ship-mask)"
+                    href="/images/brooks/slaveship.webp"
+                    height={"100%"}
+                    width="100%"
+                  />
+                  <mask id="ship-mask">
+                    <rect x="0" width={100} height={36} fill="white" fillOpacity={0.3} />
+                    <rect className="scrollytell-shape-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" />
+                  </mask>
+                  <rect className="scrollytell-shape-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" fill="none" stroke="#db882a" strokeWidth={1} />
+                </g>
+              </svg>
+              {/* <figcaption>{scrollProgress} {triggers.length}</figcaption> */}
+            </figure>
           </div>
+        </div>
 
-          <div ref={steps}>
+        <div className="relative top-0" ref={steps}>
           {triggers.map((trigger, index) => {
             return (
               <div
                 key={index}
                 data-step={index}
-                className={`step text-xl content-center p-5 md:px-20 relative ${
-                  index + 1 === triggers.length || index == 0
+                className={`step text-xl content-center p-5 md:px-20 relative z-50 ${
+                  index + 1 === triggers.length
                     ? `${index !== 0 ? "h-[65vh]" : ""} md:h-[60vh]`
                     : "h-screen"
                 } text-${accentTextColor}`}
               >
-                <p className={`${index !== triggers.length - 1 && index !== 0 ? "bg-brooksSecondary-translucent p-3 md:p-12 w-9/12" : ""}`}>
+                <p className={`${index !== triggers.length - 1 ? "bg-brooksSecondary-translucent p-3 md:p-12 w-9/12" : ""}`}>
                   {trigger}
                 </p>
               </div>
