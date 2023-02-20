@@ -17,11 +17,6 @@ const eventTypes = [
 export default function QuizKey() {
   const { currentCentury, hoveredEvent } = useContext(QuizContext);
 
-  useEffect(() => {
-    console.log("🚀 ~ file: QuizKey.tsx:7 ~ QuizKey ~ hoveredEvent", hoveredEvent)
-
-  })
-
   const location = (position) => {
     switch (position) {
       case 0:
@@ -40,7 +35,7 @@ export default function QuizKey() {
   }
 
   return (
-    <svg viewBox="0 0 100 25">
+    <svg viewBox="0 0 100 25" className="mx-16">
       <g>
         <text
           fill="white"

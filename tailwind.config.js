@@ -103,5 +103,6 @@ module.exports = {
     "bg-Americas",
     "bg-Holland",
     "bg-Sweden",
+    "font-icons",
   ],
 };

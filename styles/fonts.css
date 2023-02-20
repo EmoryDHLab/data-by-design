@@ -4,6 +4,16 @@
     font-family: "Maranallo";
     src: url("/fonts/Maranallo/Maranallo.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "Chancery Cursive";
+    src: url("/fonts/Chancery/Chancery_Cursive_Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DxD Icons";
+    src: url("/fonts/DxDIcons/DxDIcons-Regular.ttf") format("truetype");
+}
 /* ############### dubois ##############*/
 /* normal */
 
@@ -82,7 +92,7 @@
     src: url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff2") format("woff2");
     font-weight: bold;
-  
+
 }
 
 @font-face {
@@ -90,7 +100,7 @@
     src: url("/fonts/VTCDubois/VTCDuBois-ItalicWide.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-ItalicWide.woff2") format("woff2");
     font-style: italic;
- 
+
 }
 
 
@@ -194,17 +204,6 @@
 
 
 /* ------ end ------ */
-
-@font-face {
-    font-family: "Chancery Cursive";
-    src: url("/fonts/Chancery/Chancery_Cursive_Italic.ttf")
-    format("truetype");
-}
-
-@font-face {
-    font-family: "DxD Icons";
-    src: url("/fonts/DxDIcons/DxDIcons-Regular.ttf") format("truetype");
-}
 
 /*
  * The Typekit service used to deliver this font or fonts for use on websites

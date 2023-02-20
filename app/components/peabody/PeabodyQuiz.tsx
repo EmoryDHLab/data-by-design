@@ -60,21 +60,21 @@ export default function PeabodyQuiz() {
       solved,
       setSolved,
     }}>
-      <div className="grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-12 h-[calc(100vh-30px)] text-white text-center w-full p-6">
-        <div className="w-full md:w-9/12 my-0 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-12 text-white text-center w-full p-6">
+        <div className="h-auto grid grid-cols-1">
           <QuizKey />
         </div>
-        <div className="grid grid-cols-7 gap-y-2 md:gap-y-6">
+        <div className="h-auto grid grid-cols-7 gap-y-2">
           {centuries.map((century, index) => {
             return (
-              <svg viewBox="0 0 100 32" key={`button-${index}`} className="my-auto">
+              <svg viewBox="0 0 100 32" key={`button-${index}`} className="w-full">
                 <FancyButton outlineColor={currentCentury === century ? "gold" : "white" } action={() => setCurrentCentury(century)}>
                   {century}s
                 </FancyButton>
               </svg>
             )
           })}
-          <svg viewBox="0 0 100 32" className="my-auto text-center">
+          <svg viewBox="0 0 100 32" className="text-center w-full">
             <text
               onClick={() => setSolved([])}
               type="button"
@@ -85,12 +85,12 @@ export default function PeabodyQuiz() {
               dominantBaseline="middle"
               textAnchor="middle"
             >
-              <tspan x={50} fontSize={16} dy={12.75} fontFamily="DxD Icons">e</tspan>
+              <tspan x={50} fontSize={16} dy={12.75} className={"font-icons"}>e</tspan>
               <tspan x={50} fontSize={8} dy={12.75}>RESET</tspan>
             </text>
           </svg>
 
-          <svg viewBox="0 0 100 32" className="my-auto text-center">
+          <svg viewBox="0 0 100 32" className="text-center w-full">
             <text
               onClick={() => setSolved(currentCenturyEvents)}
               type="button"
@@ -101,12 +101,12 @@ export default function PeabodyQuiz() {
               dominantBaseline="middle"
               textAnchor="middle"
             >
-              <tspan x={50} fontSize={16} dy={12.75} fontFamily="DxD Icons">d</tspan>
+              <tspan x={50} fontSize={16} dy={12.75} className={"font-icons"}>d</tspan>
               <tspan x={50} fontSize={8} dy={12.75}>Complete</tspan>
             </text>
           </svg>
 
-          <svg viewBox="0 0 100 32" className="my-auto text-center">
+          <svg viewBox="0 0 100 32" className="text-center w-full">
             <text
               type="button"
               x={0}
@@ -116,33 +116,33 @@ export default function PeabodyQuiz() {
               dominantBaseline="middle"
               textAnchor="middle"
             >
-              <tspan x={50} fontSize={16} dy={12.75} fontFamily="DxD Icons">f</tspan>
+              <tspan x={50} fontSize={16} dy={12.75} className={"font-icons"}>f</tspan>
               {/* <tspan x={50} fontSize={8} dy={12.75}>xxx</tspan> */}
             </text>
           </svg>
 
-          <svg viewBox="0 0 100 32" className="my-auto text-center">
+          <svg viewBox="0 0 50 50" className="text-center w-1/2">
             <g>
               <text
                 onClick={() => setCurrentEvent(previous)}
                 type="button"
                 x={0}
-                y={16}
+                y={25}
                 fill="white"
                 role={previous ? "button" : ""}
-                fontFamily="DxD Icons"
-                fontSize={24}
+                className={"font-icons"}
+                fontSize={25}
               >
                 c
               </text>
             </g>
           </svg>
 
-          <svg viewBox="0 0 100 32" className="my-auto text-center col-span-5">
+          <svg viewBox="0 0 100 12" className="text-center col-span-5 w-full">
             <g>
               <text
                 x={50}
-                y={16}
+                y={6}
                 fill="white"
                 fontSize={4}
                 dominantBaseline="middle"
@@ -153,24 +153,24 @@ export default function PeabodyQuiz() {
             </g>
           </svg>
 
-          <svg viewBox="0 0 100 32" className="my-auto text-center">
+          <svg viewBox="0 0 50 50" className="text-center w-1/2">
             <g>
               <text
                 onClick={() => setCurrentEvent(next)}
                 type="button"
-                x={50}
-                y={16}
+                x={25}
+                y={25}
                 fill="white"
                 role={next ? "button" : ""}
-                fontFamily="DxD Icons"
-                fontSize={24}
+                className={"font-icons"}
+                fontSize={25}
               >
                 b
               </text>
             </g>
           </svg>
 
-          {/* <svg viewBox="0 0 100 32" className="my-auto text-center col-end-7">
+          {/* <svg viewBox="0 0 100 32" className="text-center col-end-7">
             <g>
               <text
                 x={50}
