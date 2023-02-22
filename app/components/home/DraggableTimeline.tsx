@@ -29,6 +29,7 @@ export default function DraggableTimeline({
 }: Props) {
   const windowSize = useWindowSize();
   const draggableImageRef = useRef<number | undefined>(undefined);
+  const [startPosition, setStartPosition] = useState<object | undefined>(undefined);
   const [{ imageSliceStart, imagePositions }, setState] =
     useState<TimelineState>(() => ({
       imageSliceStart: Math.floor(Math.random() * 30),
@@ -50,6 +51,10 @@ export default function DraggableTimeline({
     }));
   }, [windowSize.width, shouldShuffle]);
 
+  useEffect(() => {
+    console.log(draggableImageRef.current)
+  });
+
   function getTransform(index: number) {
     const position = imagePositions[index];
     if (position) {
@@ -59,10 +64,16 @@ export default function DraggableTimeline({
     return "";
   }
 
-  function moveDraggedImage() {
+  function moveDraggedImage({ clientX, clientY }) {
     if (draggableImageRef.current) {
-      imagePositions[draggableImageRef.current].x = event.clientX - 100;
-      imagePositions[draggableImageRef.current].y = event.clientY - 180;
+      if (!startPosition) {
+        setStartPosition({clientX, clientY});
+      }
+      setStartPosition({clientX, clientY});
+      const moveX = clientX - startPosition.clientX;
+      const moveY = clientY - startPosition.clientY;
+      imagePositions[draggableImageRef.current].x += moveX;
+      imagePositions[draggableImageRef.current].y += moveY;
       setState((state) => ({ ...state, imagePositions: [...imagePositions] }));
     }
   }
@@ -74,6 +85,7 @@ export default function DraggableTimeline({
       onMouseMove={moveDraggedImage}
       onMouseUp={() => {
         draggableImageRef.current = undefined;
+        setStartPosition(undefined);
       }}
     >
       {imageData
