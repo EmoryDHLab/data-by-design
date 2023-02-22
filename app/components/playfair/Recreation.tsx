@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ScrollytellContext } from "~/scrollytellContext";
 import * as d3 from "d3";
 import VerticalGrid from "./elements/VerticalGrid";
 import HorizontalGrid from "./elements/HorizontalGrid";
@@ -60,9 +58,7 @@ const scaleMapper = (sOut, sIn) => {
   return (x) => sOut[0] + m * (x - sIn[0]);
 };
 
-export default function Recreation() {
-  const { scrollProgress } = useContext(ScrollytellContext);
-
+export default function Recreation({ scrollProgress }) {
   const transitionInOut = (arrayIn, arrayOut) => {
     let progToOpacityIn = scaleMapper([0.0, 1.0], arrayIn);
     let progToOpacityOut = scaleMapper([1.0, 0.0], arrayOut);

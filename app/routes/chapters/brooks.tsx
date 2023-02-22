@@ -6,7 +6,6 @@ import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
-import FullBleed from "~/components/layout/FullBleed";
 import Figure from "~/components/layout/Figure";
 import Footer from "~/components/Footer";
 import { brooksFootnotes } from "~/footnotes";
@@ -18,6 +17,7 @@ import FootnotesList from "~/components/FootnotesList";
 import BrooksChart from "~/components/brooks/BrooksChart";
 
 export default function BrooksPage() {
+  console.log("🚀 ~ file: brooks.tsx:4 ~ ChapterContext", ChapterContext)
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
   const [docHeightState, setDocHeightState] = useState<number>(0);
 
@@ -54,8 +54,7 @@ export default function BrooksPage() {
           birthplace at the age of 11 and carried to the Atlantic coast, Equiano was then
           forced aboard a slave ship. There he encountered "a multitude of black people of
           every description chained together," the captives packed in quarters "so crowded
-          that each had scarcely room to turn himself."
-          <InlineFootnote index={0} />
+          that each had scarcely room to turn himself."<InlineFootnote index={0} />
           Equiano sailed to Barbados and then to Virginia, where he was sold into slavery.
           He would remain enslaved for almost twenty years.
         </p>
@@ -91,16 +90,15 @@ export default function BrooksPage() {
           />
           <p>
             The route that Finley evokes, the infamous Middle Passage, was what Equiano, one year later,
-            writing in his autobiography, would describe as "a scene of horror almost inconceivable."
-            <InlineFootnote index={1} />
-            The route was the same that fellow Black British antislavery activist, Quobna Ottobah Cugoano,
-            in his own treatise, <cite>Thoughts and Sentiments on the Evil and Wicked Traffic of the Slavery
-            and Commerce of the Human Species</cite>, published in 1787, recalled such a trauma that he refused
-            to describe it at all.<InlineFootnote index={2} /> But in the image that Clarkson received from the
-            Plymouth Committee, and that he shared with Equiano, he believed he'd found the key to conveying this
-            horror to his white compatriots. The image would create an "instantaneous impression" in "all who saw
-            it" and compel them to join the abolitionist cause.
-            <InlineFootnote index={3} />
+            writing in his autobiography, would describe as "a scene of horror almost
+            inconceivable."<InlineFootnote index={1} /> The route was the same that fellow Black British
+            antislavery activist, Quobna Ottobah Cugoano, in his own treatise, <cite>Thoughts and Sentiments
+            on the Evil and Wicked Traffic of the Slavery and Commerce of the Human Species</cite>, published
+            in 1787, recalled such a trauma that he refused to describe it at all.<InlineFootnote index={2} />
+            But in the image that Clarkson received from the Plymouth Committee, and that he shared with Equiano,
+            he believed he'd found the key to conveying this horror to his white compatriots. The image would
+            create an "instantaneous impression" in "all who saw it" and compel them to join the abolitionist
+            cause.<InlineFootnote index={3} />
           </p>
           <p>
             The "instantaneous impression" that Clarkson associated with the image, was--like all carefully
@@ -167,8 +165,7 @@ export default function BrooksPage() {
           <p>
             Finley speculates that among the "most useful" artifacts included in Parrey's report were the
             hand-drawn diagrams of the ships created by the captains themselves, which indicated the "cargo
-            area and the space allotted for the different types of goods to be stowed."
-            <InlineFootnote index={5} />
+            area and the space allotted for the different types of goods to be stowed."<InlineFootnote index={5} />
             Intended to maximize the efficiency of packing cargo on board—since, of course, the principal
             objective of these ships was financial profit—the diagrams became inspiration to Elford, who
             recognized in the simple sketches a visual representation of the violence that accompanies the
@@ -185,8 +182,7 @@ export default function BrooksPage() {
               what was given visual form and what was not. In contrast to the chart of the
               Marie Séraphique, the two areas of the hold labeled "store room" are here left
               blank, even as they were assuredly packed with all of the materials required
-              to sustain the captives and crew throughout the voyage.
-              <InlineFootnote index={7} />
+              to sustain the captives and crew throughout the voyage.<InlineFootnote index={7} />
               In Elford's "Plan," however, the white space of the store rooms emphasizes its
               rhetorical point: to call attention to the fact that it is people who are packed
               as cargo on the ship.
@@ -225,15 +221,13 @@ export default function BrooksPage() {
               visited merchant halls in order to examine the muster rolls stored there, computing mortality
               rates among the sailors and gathering 20,000 of their names. He then sought out
               individuals—primarily sailors who had been mistreated or maimed—who could speak from direct
-              experience about the conditions aboard slave ships.
-              <InlineFootnote index={8} />
+              experience about the conditions aboard slave ships.<InlineFootnote index={8} />
               More than anyone else involved in the abolitionist effort at the time, Clarkston understood
               the value of evidence—and data in particular—in order to advance his claims.
             </p>
             <p>
               The evidence-backed revisions that Clarkson made to the original "Plan" secured what historian
-              Marcus Wood describes as its "graphic authority."
-              <InlineFootnote index={9} />
+              Marcus Wood describes as its "graphic authority."<InlineFootnote index={9} />
               Drawing from the conventions of naval architecture, which were by that time strongly established,
               Clarkson created a series of cross-sections that showed each deck from above and from the
               side—cross-sections that, like the Plymouth Committee's "Plan," included human figures intended
@@ -257,8 +251,7 @@ export default function BrooksPage() {
               to how each figure is labeled with a number that corresponds to a place in the text. "Each is
               incomplete without the other," she explains. "Once having moved from the visuals to the text,
               these two aspects of the broadside virtually require the individual reader to move back and forth
-              between these two elements."
-              <InlineFootnote index={10} />
+              between these two elements."<InlineFootnote index={10} />
             </p>
             <p>
               At this juncture one point becomes important to underscore: these "readers," like the figures
@@ -269,8 +262,7 @@ export default function BrooksPage() {
               the slave trade in several weeks' time. Wilberforce believed, and even said as much, that if the
               MPs "could actually see one thousandth part of the evils of that practice which they have, for so
               many years, under one pretense or another, been prevailed on to suffer to be continued," that they
-              would quickly come around to the abolitionist cause.
-              <InlineFootnote index={11} />
+              would quickly come around to the abolitionist cause.<InlineFootnote index={11} />
               Thus the "Description" can be viewed, according to Finley, as a "necessary weapon"--one which
               restages the violence of the slave trade in its attempt to give that violence visual form.
               <InlineFootnote index={12} />
@@ -280,17 +272,14 @@ export default function BrooksPage() {
               that was intended was one of imaginative, sympathetic response. Clarkson himself frames the
               value of the image in these terms, recalling how "No one saw it but he was impressed. It spoke to
               him in a language, which was at once intelligible and irresistible. It brought forth tears of
-              sympathy in behalf of the sufferers, and it fixed their sufferings in his heart."
-              <InlineFootnote index={13} />
+              sympathy in behalf of the sufferers, and it fixed their sufferings in his heart."<InlineFootnote index={13} />
               Here, Ian Baucom argues, Clarkson mobilizes the ideas of the Scottish Enlightment as he enlists
               the "facts" of the slave trade in the interest of engaging the "otherwise disinterested spectator
-              in the sufferings of an actually unseen other."
-              <InlineFootnote index={14} />
+              in the sufferings of an actually unseen other."<InlineFootnote index={14} />
               But for this transformation to take place, the viewer would be required to enlist their own
               imagination in imagining the suffering of others. As Finley explains, "The image is a starting
               point for the viewer - a point of reference while the text enables the reader to elaborate on the
-              image in her mind."
-              <InlineFootnote index={15} />
+              image in her mind."<InlineFootnote index={15} />
             </p>
             <p>
               But there is a second set of people less explicitly, but no less clearly engaged by the "Description":

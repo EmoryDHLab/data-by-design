@@ -1,32 +1,15 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import scrollama from "scrollama";
+import { useContext, useRef, useState } from "react";
 import Tutorial from "./tutorial/TutorialSquares";
 import { ChapterContext } from "~/theme";
 import { ScrollytellContext } from "~/scrollytellContext";
 import TutorialTriggers from "./tutorial/TutorialTriggers";
+import ScrollytellWrapper from "../ScrollytellWrapper";
 
 export default function Scrollytell() {
   const [ scrollProgress, setScrollProgress ] = useState(0.0);
   const [ highlightedSquare, setHighlightedSquare ] = useState(undefined);
-  const { backgroundColor, primaryTextColor, docHeightState } = useContext(ChapterContext);
-  const scroller = useRef(scrollama());
+  const { primaryTextColor } = useContext(ChapterContext);
   const steps = useRef(undefined);
-
-  useEffect(() => {
-    if (steps.current?.children.length !== TutorialTriggers.length) return;
-    scroller.current.setup({
-      offset: "60px",
-      step: ".step",
-      progress: true,
-    })
-    .onStepProgress(({index, progress}) => setScrollProgress(index + progress));
-
-    // return () => scroller.current?.destroy();
-  }, [setScrollProgress, steps]);
-
-  useEffect(() => {
-    scroller.current?.resize()
-  }, [docHeightState])
 
   return (
     <ScrollytellContext.Provider
@@ -37,7 +20,12 @@ export default function Scrollytell() {
         setHighlightedSquare,
       }}
     >
-      <div className={`bg-${backgroundColor} md:flex justify-between`}>
+      <ScrollytellWrapper
+        className={`md:flex justify-between`}
+        setScrollProgress={setScrollProgress}
+        triggers={TutorialTriggers}
+        steps={steps}
+      >
         <div className="sticky top-16 md:top-0 h-screen bias-full md:bias-1/2 md:w-1/2 md:mr-24 md:order-last">
           <div className="text-3xl relative top-[calc(100vh-120px)] left-[calc(-50vw+6rem)] hidden md:block">↓</div>
           <Tutorial />
@@ -51,7 +39,7 @@ export default function Scrollytell() {
             );
           })}
         </div>
-      </div>
+      </ScrollytellWrapper>
     </ScrollytellContext.Provider>
   )
 }

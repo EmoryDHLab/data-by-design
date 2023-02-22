@@ -1,4 +1,5 @@
-import { createContext, Dispatch, SetStateAction, ReactNode } from "react";
+import { createContext } from "react";
+import type { Dispatch, SetStateAction, ReactNode } from "react";
 
 export type HoverState =
   | "Rochester"
@@ -22,7 +23,7 @@ interface IChapterContext {
   setDocHeightState: Dispatch<SetStateAction<number>>;
 }
 
-export const ChapterContext = createContext<IChapterContext>({
+const ChapterContext = createContext<IChapterContext>({
   backgroundColor: "duboisPrimary",
   accentColor: "duboisSecondary",
   accentTextColor: "black",
@@ -40,3 +41,7 @@ export const ChapterContext = createContext<IChapterContext>({
   },
   footnotes: [],
 });
+
+ChapterContext.displayName = "ChapterContext";
+
+export { ChapterContext };

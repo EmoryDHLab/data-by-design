@@ -1,9 +1,11 @@
 import { createContext } from "react";
-import type { Dispatch } from "react";
+import type { Dispatch, useRef } from "react";
 
 interface IScrollytellContext {
   scrollProgress: float;
   setScrollProgress: Dispatch<SetStateAction<number>>;
+  setTriggers: Dispatch<SetStateAction<array>>;
+  steps: useRef<HTMLDivElement<null>>;
 }
 
 export const ScrollytellContext = createContext<IScrollytellContext>({
@@ -11,4 +13,8 @@ export const ScrollytellContext = createContext<IScrollytellContext>({
   setScrollProgress: (_: SetStateAction<float>) => {
     console.error("setScrollProgress not implemented. Did you pass it to context?");
   },
+  setTriggers: (_: SetStateAction<array>) => {
+    // console.error("setTriggers not implemented. Did you pass it to context?");
+  },
+  steps: null,
 });

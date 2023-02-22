@@ -1,11 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import QuizPeabodySquare from "~/components/peabody/quiz/QuizPeabodySquare";
-import peabody1500SquareColors from "~/data/peabody/1500SquareColors.json";
-import peabody1600SquareColors from "~/data/peabody/1600SquareColors.json";
-import peabody1700SquareColors from "~/data/peabody/1700SquareColors.json";
-import peabody1800SquareColors from "~/data/peabody/1800SquareColors.json";
 import eventData from "~/data/peabody/eventData.json";
-import type { HighlightedElement } from "~/components/peabody/peabodyUtils";
 import QuizKey from "./quiz/QuizKey";
 import FancyButton from "../FancyButton";
 

@@ -1,8 +1,7 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import scrollama from "scrollama";
+import { useContext, useRef, useState } from "react";
 import Recreation from "./Recreation";
 import { ChapterContext } from "~/theme";
-import { ScrollytellContext } from "~/scrollytellContext";
+import ScrollytellWrapper from "../ScrollytellWrapper";
 
 const triggers = [
   <></>,
@@ -61,42 +60,16 @@ const triggers = [
 ];
 
 export default function PlayfairScrollytell() {
-  const [scrollProgress, setScrollProgress] = useState(0.0);
-  const { backgroundColor, primaryTextColor, docHeightState } =
-    useContext(ChapterContext);
-  const scroller = useRef(scrollama());
-  const steps = useRef(undefined);
-
-  useEffect(() => {
-    if (steps.current?.children.length !== triggers.length) return;
-    scroller.current
-      .setup({
-        offset: "60px",
-        step: ".step",
-        progress: true,
-      })
-      .onStepProgress(({ index, progress }) =>
-        setScrollProgress(index + progress)
-      );
-
-    return () => scroller.current?.destroy();
-  }, [setScrollProgress, steps]);
-
-  useEffect(() => {
-    scroller.current?.resize();
-  }, [docHeightState]);
+  const [scrollProgress, setScrollProgress] = useState<float>(0.0);
+  const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
+  const steps = useRef<HTMLDivElement>(undefined);
 
   return (
-    <ScrollytellContext.Provider
-      value={{
-        scrollProgress,
-        setScrollProgress,
-      }}
-    >
+    <ScrollytellWrapper setScrollProgress={setScrollProgress} triggers={triggers} steps={steps}>
       <div className={`bg-${backgroundColor} md:flex justify-between`}>
         <div className="sticky top-16 md:top-0 h-screen mt-16 md:mt-0 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last md:pb-[60px]">
           <div className="text-3xl relative md:top-[calc(100vh-12rem)] right-[35vw] text-white hidden md:block">↓</div>
-          <Recreation />
+          <Recreation scrollProgress={scrollProgress} />
         </div>
         <div ref={steps} className="bias-full w-full md:bias-1/2 md:w-2/5 relative">
           {triggers.map((trigger, index) => {
@@ -118,6 +91,6 @@ export default function PlayfairScrollytell() {
           })}
         </div>
       </div>
-    </ScrollytellContext.Provider>
+    </ScrollytellWrapper>
   );
 }
