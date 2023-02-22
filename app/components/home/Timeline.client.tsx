@@ -26,6 +26,7 @@ export default function Timeline() {
             setTimelineType(TimelineType.Draggable);
             setShouldShuffle((shouldShuffle) => !shouldShuffle);
           }}
+          type="button"
         >
           <img
             className="w-14 m-2"
@@ -34,9 +35,10 @@ export default function Timeline() {
                 ? "/images/ui/shuffle_click.png"
                 : "/images/ui/shuffle_unclick.png"
             }
+            alt="Shuffle"
           />
         </button>
-        <button onClick={() => setTimelineType(TimelineType.Ordered)}>
+        <button type="button" onClick={() => setTimelineType(TimelineType.Ordered)}>
           <img
             className="w-14 m-2"
             src={
@@ -44,6 +46,7 @@ export default function Timeline() {
                 ? "/images/ui/sort_selected.png"
                 : "/images/ui/sort_unselected.png"
             }
+            alt="Sort"
           />
         </button>
       </div>
@@ -63,6 +66,7 @@ export default function Timeline() {
         <img
           className="sm:w-2/5 w-4/5"
           src={`/images/${selectedImage.CHAPTER}/${selectedImage.FILE_NAME}`}
+          alt={selectedImage.FILE_NAME}
         />
         <div className="sm:p-20 pt-10 pb-20 font-dubois sm:w-3/5 w-full text-black text-left">
           <div className="text-3xl p-5">
