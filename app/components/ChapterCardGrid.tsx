@@ -38,7 +38,7 @@ export default function ChapterCardGrid() {
           to="/chapters/peabody"
           className="cardPeabody bg-black hover:text-white"
           title="The Work of Knowledge"
-          subtitle="Elizabeth Palmer Peabody’s Chronological Grids as Argument"
+          subtitle="Elizabeth Palmer Peabody’s Chronological Grids"
         >
           We have come to believe that data visualizations should be clear and
           efficient. Is there value in designs that make us pause and reflect?
