@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .small-caps {
+      font-variant-caps: all-small-caps;
+    }
+  }
 
 .first-paragraph::first-letter {
     display: block;

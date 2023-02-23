@@ -24,7 +24,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        dubois: ["VTC Du Bois", "serif"],
+        dubois: ["VTC Du Bois, serif", { fontFeatureSettings: ' "ss06"' }],
         duboisWide: ["VTC Du Bois Wide", "serif"],
         duboisLightWide: ["VTC Du Bois Light Wide", "serif"],
         duboisNarrow: ["VTC Du Bois Narrow", "serif"],
@@ -47,11 +47,11 @@ module.exports = {
         peabodyOrange: "rgb(219, 136, 42)",
         brooksSecondary: {
           DEFAULT: "#EFCDFF",
-          translucent: "#EFCDFFCC"
+          translucent: "#EFCDFFCC",
         },
         brooksPrimary: {
           DEFAULT: "#8C20E1",
-          translucent: "#8c20e1cc"
+          translucent: "#8c20e1cc",
         },
         duboisTextColor: "white",
         duboisSecondary: "#FFD3D3",
@@ -68,7 +68,7 @@ module.exports = {
         France: "rgb(60,100,100)",
         Americas: "rgb(222,145,49)",
         Holland: "rgb(68,108,73)",
-        Sweden: "rgb(217,182,17)"
+        Sweden: "rgb(217,182,17)",
       },
       inset: {
         screen: "100vh",

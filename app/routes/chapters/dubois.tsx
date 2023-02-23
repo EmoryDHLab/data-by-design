@@ -50,10 +50,11 @@ export default function DuboisChapter() {
 
       <CenteredLayout>
         <p className="pt-16">
-          <IntroSentence>
-            October 4th, 1899, was the first day of the fall term at Atlanta
-            University
-          </IntroSentence>{" "}
+          <IntroSentence
+            letter=" O"
+            sentence="ctober 4th, 1899, was the first day of the fall term at Atlanta
+            University "
+          ></IntroSentence>
           (now Clark Atlanta University), where W.E.B. Du Bois had been teaching
           for the past two years&mdash;and a long two years they had been.{" "}
           <InlineFootnote index={0}></InlineFootnote>

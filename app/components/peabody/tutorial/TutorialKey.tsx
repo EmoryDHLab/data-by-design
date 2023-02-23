@@ -13,8 +13,8 @@ export default function TutorialKey() {
     >
       <div className="pb-4 font-dubois">
         {highlightedSquare?.yearEvent?.event ?? ""}
-        {!highlightedSquare?.yearEvent?.event &&
-          <span>
+        {!highlightedSquare?.yearEvent?.event && (
+          <span className="italic font-bold small-caps		">
             Hover over an event
             <svg viewBox="0 0 30 30" className="w-6 ml-4 inline">
               <rect
@@ -27,7 +27,7 @@ export default function TutorialKey() {
               ></rect>
             </svg>
           </span>
-        }
+        )}
       </div>
       <div className="flex flex-row w-full justify-between">
         {Object.keys(eventsData.actorColors).map((actor, index) => {
@@ -47,7 +47,11 @@ export default function TutorialKey() {
                 </defs>
                 <rect
                   stroke="#b3b3b3"
-                  strokeWidth={highlightedSquare?.yearEvent?.actors.includes(actor) ? 2 : 0.5}
+                  strokeWidth={
+                    highlightedSquare?.yearEvent?.actors.includes(actor)
+                      ? 2
+                      : 0.5
+                  }
                   fillOpacity={1}
                   fill={eventsData.actorColors[actor]}
                   width={30}
@@ -58,8 +62,8 @@ export default function TutorialKey() {
               <span
                 className={`font-${
                   highlightedSquare?.yearEvent?.actors.includes(actor)
-                    ? "extrabold border-b-2 border-b-peabodyOrange"
-                    : "normal"
+                    ? "extrabold small-caps text-lg border-b-2 border-b-peabodyOrange"
+                    : "font-sans font-semibold text-base small-caps "
                 }`}
               >
                 {actor}
@@ -68,12 +72,12 @@ export default function TutorialKey() {
           );
         })}
       </div>
-      <div className="font-sans text-sm small-caps tracking-wide w-full grid grid-cols-3 mt-5">
+      <div className="font-sans text-sm font-semibold small-caps tracking-wide w-full grid grid-cols-3 mt-5">
         {eventsData.keyText.map((text, index) => {
           return (
             <div
               key={index}
-              className={`flex flex-row pl-2 border-l-2 ${
+              className={`flex flex-row pl-2 py-3 border-l-2 ${
                 highlightedSquare?.square == index + 1 &&
                 highlightedSquare?.yearEvent?.squares !== "full"
                   ? "border-peabodyOrange"
@@ -81,7 +85,7 @@ export default function TutorialKey() {
               }`}
             >
               <div className="shrink">{index + 1}</div>
-              <div className="cursor-pointer pl-2 border-l-2 border-transparent">
+              <div className="cursor-pointer pl-1 border-l-2 border-transparent">
                 {text}
               </div>
             </div>
