@@ -5,22 +5,22 @@ import ImageModal from "~/components/layout/ImageModal";
 
 export default function HoverImages2() {
   const { hoverState } = useContext(ChapterContext);
-  let imageSource = "/images/dubois/ch5-05a-countries.jpg";
+  let imageSource = "/images/dubois/ch5-05a-countries.png";
 
   if (hoverState === "Countries") {
-    imageSource = "/images/dubois/ch5-05a-countries.jpg";
+    imageSource = "/images/dubois/ch5-05a-countries.png";
   }
 
   if (hoverState === "Occupations") {
-    imageSource = "/images/dubois/ch5-05b-occupations.jpg";
+    imageSource = "/images/dubois/ch5-05b-occupations.png";
   }
 
   if (hoverState === "Freedom") {
-    imageSource = "/images/dubois/ch5-05c-freedom.jpg";
+    imageSource = "/images/dubois/ch5-05c-freedom.png";
   }
 
   if (hoverState === "Newspapers") {
-    imageSource = "/images/dubois/ch5-05d-newspapers.jpg";
+    imageSource = "/images/dubois/ch5-05d-newspapers.png";
   }
 
   return (
