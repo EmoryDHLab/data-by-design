@@ -125,7 +125,7 @@ export default function DuboisChapter() {
       {/* Question: Is this the correct use of Full Bleed here? Does it have to be a child of CenteredLayou*/}
       <FullBleed>
         <ImageModal
-          src="/images/dubois/ch5-01-phila.jpg"
+          src="/images/dubois/ch5-01-phila.png"
           alt=""
           loading="lazy"
         />
@@ -754,7 +754,7 @@ export default function DuboisChapter() {
         <div className="flex flex-col items-center middle-full">
           <div>
             <ImageModal
-              src="/images/dubois/ch5-11-property.jpg"
+              src="/images/dubois/ch5-11-property.png"
               alt=""
               loading="lazy"
               width="100%"
@@ -816,7 +816,7 @@ export default function DuboisChapter() {
         <div className="flex flex-col items-center middle-full">
           <div>
             <ImageModal
-              src="/images/dubois/ch5-12-series.jpg"
+              src="/images/dubois/ch5-12-series.png"
               alt=""
               loading="lazy"
               width="100%"
@@ -920,7 +920,7 @@ export default function DuboisChapter() {
         <div className="flex flex-col items-center middle-full">
           <div>
             <ImageModal
-              src="/images/dubois/ch5-14-rogers.jpg"
+              src="/images/dubois/ch5-14-rogers.png"
               alt=""
               loading="lazy"
               width="100%"
