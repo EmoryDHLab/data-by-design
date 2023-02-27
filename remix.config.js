@@ -41,6 +41,7 @@ module.exports = {
     "d3-timer",
     "d3-transition",
     "d3-zoom",
+    "delaunator"
   ],
   ignoredRouteFiles: ["**/.*"],
   // appDirectory: "app",
