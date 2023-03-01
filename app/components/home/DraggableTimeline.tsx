@@ -1,8 +1,8 @@
 import imageData from "~/data/timelineImages.json";
 import { useWindowSize } from "~/hooks";
-import type { Dispatch, MouseEvent, SetStateAction } from "react";
-import { useState, useEffect, useRef } from "react";
-import { Image } from "~/components/home/timelineUtils";
+import { createRef, useState, useEffect } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import type { Image } from "~/components/home/timelineUtils";
 
 interface TimelineState {
   imageSliceStart: number;
@@ -12,7 +12,7 @@ interface TimelineState {
 
 const IMAGE_COUNT = 30;
 const PART_ONE_START = 40;
-const PART_ONE_HEIGHT = 600;
+const PART_ONE_HEIGHT = window.innerHeight / 2;
 
 interface Props {
   selectedImage: Image;
@@ -28,7 +28,9 @@ export default function DraggableTimeline({
   shouldShuffle,
 }: Props) {
   const windowSize = useWindowSize();
-  const draggableImageRef = useRef<number | undefined>(undefined);
+  const svgRef = createRef();
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+  const [isDragging, setIsDragging] = useState<boolean>(false);
   const [startPosition, setStartPosition] = useState<object | undefined>(undefined);
   const [{ imageSliceStart, imagePositions }, setState] =
     useState<TimelineState>(() => ({
@@ -37,23 +39,20 @@ export default function DraggableTimeline({
       draggedImage: undefined,
     }));
 
+  const images = imageData.slice(imageSliceStart, imageSliceStart + IMAGE_COUNT);
+
   useEffect(() => {
     setState((state) => ({
       ...state,
       imagePositions: Array.from({ length: IMAGE_COUNT }, () => {
         const windowWidth = windowSize.width ?? 200;
-        const x = Math.random() * (windowWidth - 100);
+        const x = Math.random() * (windowWidth - 200);
         const y = PART_ONE_START + Math.random() * (PART_ONE_HEIGHT - 200);
         const r = Math.random() * 60 - 30;
-
         return { x, y, r };
       }),
     }));
   }, [windowSize.width, shouldShuffle]);
-
-  useEffect(() => {
-    console.log(draggableImageRef.current)
-  });
 
   function getTransform(index: number) {
     const position = imagePositions[index];
@@ -65,46 +64,93 @@ export default function DraggableTimeline({
   }
 
   function moveDraggedImage({ clientX, clientY }) {
-    if (draggableImageRef.current) {
+    if (isDragging) {
       if (!startPosition) {
         setStartPosition({clientX, clientY});
+        return;
       }
       setStartPosition({clientX, clientY});
       const moveX = clientX - startPosition.clientX;
       const moveY = clientY - startPosition.clientY;
-      imagePositions[draggableImageRef.current].x += moveX;
-      imagePositions[draggableImageRef.current].y += moveY;
+      imagePositions[currentImageIndex].x += moveX;
+      imagePositions[currentImageIndex].y += moveY;
       setState((state) => ({ ...state, imagePositions: [...imagePositions] }));
     }
   }
 
+  const keyUp = (key) => {
+    switch (key) {
+      case 'ArrowRight':
+        if (currentImageIndex < images.length - 1) {
+          setCurrentImageIndex(currentImageIndex + 1);
+        } else {
+          setCurrentImageIndex(0);
+        }
+        break;
+      case 'ArrowLeft':
+        if (currentImageIndex > 1) {
+          setCurrentImageIndex(currentImageIndex - 1);
+        } else {
+          setCurrentImageIndex(images.length - 1);
+        }
+        break;
+      }
+    }
+
+  useEffect(() => {
+    setSelectedImage(images[currentImageIndex]);
+  }, [svgRef, currentImageIndex, setSelectedImage, images, selectedImage]);
+
+  // Move the selected image to the top of the pile. I don't love this
+  useEffect(() => {
+    const imageToFront = svgRef.current.getElementById(selectedImage.FILE_NAME);
+    if (imageToFront) {
+      svgRef.current?.appendChild(
+        svgRef.current.removeChild(
+          imageToFront
+        )
+      );
+    }
+  }, [svgRef, selectedImage]);
+
   return (
     <svg
+      ref={svgRef}
       width="100%"
-      height="600px"
+      height="50vh"
       onMouseMove={moveDraggedImage}
       onMouseUp={() => {
-        draggableImageRef.current = undefined;
+        setIsDragging(false);
         setStartPosition(undefined);
       }}
+      onKeyUp={({ key }) => keyUp(key)}
+      // Scroll the timeline up to show reveal image detail below
+      // TODO: Consider reworking to side-by-side layout.
+      onFocus={() => window.scrollTo(
+        {
+          top: svgRef.current.getBoundingClientRect().top + window.pageYOffset - 120,
+          behavior: "smooth"
+      })}
+      tabIndex={0}
     >
-      {imageData
-        .slice(imageSliceStart, imageSliceStart + IMAGE_COUNT)
-        .map((img, index) => {
+      {images.map((img, index) => {
           const isSelected =
             img.CHAPTER === selectedImage.CHAPTER &&
             img.FILE_NAME === selectedImage.FILE_NAME;
           return (
-            <g key={img.FILE_NAME}>
+            <g
+                key={img.FILE_NAME}
+                id={img.FILE_NAME}
+            >
               <image
-                className={isSelected ? "border-4 border-red-500 rounded" : ""}
+                className={isSelected ? "outline outline-4 outline-red-500" : ""}
                 style={{ cursor: "pointer" }}
-                onClick={() => setSelectedImage(img)}
                 href={`/images/${img.CHAPTER}/${img.FILE_NAME}`}
                 width={150}
                 transform={getTransform(index)}
                 onMouseDown={() => {
-                  draggableImageRef.current = index;
+                  setIsDragging(true);
+                  setCurrentImageIndex(index);
                 }}
               />
             </g>

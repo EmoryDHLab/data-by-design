@@ -4,6 +4,7 @@ import OrderedTimeline from "~/components/home/OrderedTimeline";
 import type { Image } from "./timelineUtils";
 import imageData from "~/data/timelineImages.json";
 import { Link } from "@remix-run/react";
+import Figure from "../layout/Figure";
 
 enum TimelineType {
   Draggable,
@@ -63,10 +64,10 @@ export default function Timeline() {
         />
       )}
       <div className="bg-brooksSecondary flex sm:flex-row flex-col items-center sm:p-10 pt-10">
-        <img
-          className="sm:w-2/5 w-4/5"
+        <Figure
+          className="w-2/5 md:w-4/5"
           src={`/images/${selectedImage.CHAPTER}/${selectedImage.FILE_NAME}`}
-          alt={selectedImage.FILE_NAME}
+          alt={selectedImage.ALT_TEXT}
         />
         <div className="sm:p-20 pt-10 pb-20 font-dubois sm:w-3/5 w-full text-black text-left">
           <div className="text-3xl p-5">

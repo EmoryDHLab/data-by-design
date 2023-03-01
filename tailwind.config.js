@@ -104,5 +104,8 @@ module.exports = {
     "bg-Holland",
     "bg-Sweden",
     "font-icons",
+    "outline-4",
+    "outline-red-500",
+    "outline-solid",
   ],
 };

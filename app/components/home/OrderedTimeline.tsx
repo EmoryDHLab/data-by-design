@@ -1,5 +1,5 @@
 import imageData from "~/data/timelineImages.json";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 import type { Image } from "~/components/home/timelineUtils";
 import { classNames } from "~/utils";
@@ -18,6 +18,8 @@ function groupByYear() {
 
 const imagesByYear = groupByYear();
 
+const sortedImages = imageData.sort((a, b) => parseFloat(a.YEAR) - parseFloat(b.YEAR))
+
 interface Props {
   selectedImage: Image;
   setSelectedImage: Dispatch<SetStateAction<Image>>;
@@ -27,32 +29,81 @@ export default function OrderedTimeline({
   setSelectedImage,
   selectedImage,
 }: Props) {
-  const slider = useRef(undefined);
+  const sliderRef = useRef(undefined);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [mouseIsDown, setMouseIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
+  useEffect(() => {
+    sliderRef.current?.focus();
+  }, [sliderRef]);
+
+  useEffect(() => {
+    const selectedImageSelector = `img[src="/images/${selectedImage.CHAPTER}/${selectedImage.FILE_NAME}`;
+    sliderRef.current?.querySelector(selectedImageSelector)?.focus();
+  }, [sliderRef, selectedImage]);
+
+  useEffect(() => {
+    setSelectedImage(sortedImages[currentImageIndex]);
+  }, [setSelectedImage, currentImageIndex]);
+
   const mouseDown = (pageX) => {
     setMouseIsDown(true);
-    setStartX(pageX - slider.current.offsetLeft);
-    setScrollLeft(slider.current.scrollLeft);
+    setStartX(pageX - sliderRef.current.offsetLeft);
+    setScrollLeft(sliderRef.current.scrollLeft);
   };
 
+  // Fake sideways scroll with dragging the mouse.
   const mouseMove = (event) => {
     if (!mouseIsDown) return;
     event.preventDefault();
-    const x = event.pageX - slider.current.offsetLeft;
+    const x = event.pageX - sliderRef.current.offsetLeft;
     const walk = (x - startX) * 3;
-    slider.current.scrollLeft = scrollLeft - walk;
+    sliderRef.
+    current.scrollLeft = scrollLeft - walk;
+  };
+
+  const updateSelected = (image) => {
+    setCurrentImageIndex(sortedImages.indexOf(image));
+  };
+
+  const keyUp = (event) => {
+    const { key } = event;
+    switch (key) {
+      case 'ArrowRight':
+        if (currentImageIndex < imageData.length - 1) {
+          setCurrentImageIndex(currentImageIndex + 1);
+        } else {
+          setCurrentImageIndex(0);
+        }
+        break;
+      case 'ArrowLeft':
+        if (currentImageIndex > 0) {
+          setCurrentImageIndex(currentImageIndex - 1);
+        } else {
+          setCurrentImageIndex(imageData.length - 1);
+        }
+        break;
+      }
+    event.preventDefault();
   }
 
   return (
     <div
-      ref={slider}
+      ref={sliderRef}
       className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5"
       onMouseDown={({ pageX }) => mouseDown(pageX)}
       onMouseUp={() => setMouseIsDown(false)}
       onMouseMove={(event) => mouseMove(event)}
+      onKeyDown={keyUp}
+      tabIndex={0}
+      onFocus={() => window.scrollTo(
+        {
+          top: sliderRef.current.getBoundingClientRect().top + window.pageYOffset - 120,
+          behavior: "smooth"
+      })}
+
     >
       {Object.entries(imagesByYear).map(([year, images]) => (
         <div key={year} style={{ minWidth: `${images.length * 10 + 150}px` }}>
@@ -66,14 +117,16 @@ export default function OrderedTimeline({
                 <img
                   role="button"
                   key={index}
-                  onClick={() => setSelectedImage(image)}
+                  tabIndex={0}
+                  onClick={() => updateSelected(image)}
+                  onFocus={() => setSelectedImage(image)}
                   className={classNames(
                     "absolute w-[150px]",
-                    isSelected && "border-4 border-red-500 rounded",
+                    isSelected && "border-4 border-red-500",
                   )}
                   style={{ left: `${index * 10}px`, top: "0", zIndex: isSelected ? images.length + 1 : index + 1 }}
                   src={`/images/${image.CHAPTER}/${image.FILE_NAME}`}
-                  alt={image.FILE_NAME}
+                  alt={image.ALT_TEXT}
                 />
               );
             })}
