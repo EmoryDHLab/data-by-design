@@ -13,8 +13,8 @@ export default function Footer() {
           <div className="py-5">
             <br />
             <address>
-              Email <br />
-              Contact <br />
+              Contact: Lauren Klein <br /> 
+              Email: <a href="mailto:lauren.klein@emory.edu">lauren.klein@emory.edu</a><br />
             </address>
           </div>
         </div>
