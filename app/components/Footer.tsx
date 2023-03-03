@@ -26,7 +26,7 @@ export default function Footer() {
           </div>
           <div>
             Data by Design has been generously funded by a 2018-2019 NEH-Mellon
-            Fellowship for Digital Publication.
+            Fellowship for Digital Publication (FEL-257658-18) and a 2021-2022 NEH ODH Advancement Grant (HAA-281011-21).
           </div>
           <div>
             Additional research for this project was completed through
