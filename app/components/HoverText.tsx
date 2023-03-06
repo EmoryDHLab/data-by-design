@@ -13,7 +13,7 @@ export default function HoverText({ className, children, hoverState }: Props) {
   const { setHoverState } = useContext(ChapterContext);
   return (
     <span
-      className={`cursor-pointer ${className ?? ""}`}
+      className={`cursor-pointer font-semibold underline decoration-dotted ${className ?? ""}`}
       onMouseEnter={() => setHoverState(hoverState)}
       onFocus={() => setHoverState(hoverState)}
       onMouseLeave={() => setHoverState(undefined)}

@@ -8,6 +8,14 @@ export type HoverState =
   | "Jamestown"
   | "Plymouth"
   | "FirstEnslavedAfricans"
+  | "hold"
+  | "crossSections"
+  | "watercolor"
+  | "tables"
+  | "nonhumanCargo"
+  | "naked"
+  | "shackledMen"
+  | "nursingMother"
   | undefined;
 
 interface IChapterContext {
