@@ -22,6 +22,7 @@ import IntroSentence from "~/components/IntroSentence";
 import Scrollytell from "~/components/peabody/PeabodyScrollytell";
 import Quotation from "~/components/Quotation";
 import PeabodyQuiz from "~/components/peabody/PeabodyQuiz";
+import PeabodyBarGraph from "~/components/peabody/PeabodyBarGraph";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -382,7 +383,8 @@ export default function PeabodyPage() {
           each viewer as that knowledge's source.
         </p>
       </CenteredLayout>
-      <PeabodyTimelineView />
+      {/* <PeabodyTimelineView /> */}
+      <PeabodyBarGraph />
 
       <ChapterSectionTitle>
         The Politics of Visual Knowledge Production
@@ -424,7 +426,7 @@ export default function PeabodyPage() {
         </Column>
       </TwoColumnLayout>
 
-      <PeabodyQuiz />
+      {/* <PeabodyQuiz /> */}
 
       <TwoColumnLayout className="pt-20">
         <Column>

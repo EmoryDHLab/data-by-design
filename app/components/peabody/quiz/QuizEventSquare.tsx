@@ -84,8 +84,8 @@ export default function QuizEventSquare({
   return (
     <svg
       viewBox="0 0 30 30"
-      width="30"
-      height="30"
+      width={30}
+      height={30}
       x={getEventXFromIndex(index)}
       y={getEventYFromIndex(index)}
       className="cursor-pointer"
@@ -97,9 +97,9 @@ export default function QuizEventSquare({
         stroke={hovered ? "gold" : "#b3b3b3"}
         strokeWidth={hovered ? 10 : 0.5}
         fillOpacity={opacity}
-        fill="#e5e7eb"
-        width="30"
-        height="30"
+        fill="#d9bb9f"
+        width={30}
+        height={30}
       ></rect>
       {polygons.map((p, i) => {
         return (

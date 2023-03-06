@@ -36,7 +36,7 @@ export default function ScrollytellWrapper({ children, steps, triggers, setScrol
   }, [docHeightState]);
 
   return (
-    <div className={`bg-${accentColor} ${className ?? ""}`}>
+    <div className={`bg-${accentColor} max-w-[100vw] ${className ?? ""}`}>
       {children }
     </div>
   )

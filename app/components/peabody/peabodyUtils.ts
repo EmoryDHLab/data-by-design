@@ -1,3 +1,5 @@
+import eventData from "~/data/peabody/eventData.json";
+
 export function getEventXFromIndex(index: number) {
   return (index % 3) * 30;
 }
@@ -62,3 +64,42 @@ export const POLYGONS = [
   THREE_POLYGONS_SPLIT,
 ];
 
+export const getCenturyEvents = ((century) => {
+  return Object.keys(eventData.events).map((year) => {
+    if (year >= century + 1 && year <= century + 100) {
+        return eventData.events[year].flat();
+    }
+    return undefined;
+  }).filter(Boolean).flat();
+});
+
+export const strokeDasharray = (index, isVertical) => {
+  if (isVertical) {
+    switch(index) {
+      case 8:
+        return "top";
+      default:
+        return "middle";
+    }
+  }
+  switch (index) {
+    case 0:
+      return "nw";
+    case 1:
+      return "n";
+    case 2:
+      return "ne";
+    case 3:
+      return "w";
+    case 4:
+      return "c";
+    case 5:
+      return "e";
+    case 6:
+      return "sw";
+    case 7:
+      return "s";
+    case 8:
+      return "se";
+  }
+};
