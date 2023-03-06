@@ -22,7 +22,7 @@ export default function HoverImages1() {
   if (hoverState === "Value") {
     imageSource = "/images/dubois/ch5-06a-letter.png";
   }
-  // ————————————————— have to set a new default here? Should this just be a new component? Help me friencs.. ..
+
   if (hoverState === "Letter") {
     imageSource = "/images/dubois/ch5-06b-map.png";
   }

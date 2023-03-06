@@ -27,7 +27,7 @@ export default function BrooksPage() {
         backgroundColor: "brooksPrimary",
         accentColor: "brooksSecondary",
         accentTextColor: "black",
-        footnoteTextColor: "playfairPrimary",
+        footnoteTextColor: "brooksPrimary",
         primaryTextColor: "white",
         footnotes: brooksFootnotes,
         hoverState,

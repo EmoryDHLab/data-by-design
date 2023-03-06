@@ -21,7 +21,7 @@ import type { HoverState } from "~/theme";
 import HoverText from "~/components/HoverText";
 import HoverImages1 from "~/components/dubois/HoverImages1";
 import HoverImages2 from "~/components/dubois/HoverImages2";
-import HoverImages3 from "~/components/dubois/HoverImages3";
+import PhotographChart from "~/components/dubois/PhotographChart";
 
 import ImageCaption from "~/components/ImageCaption";
 
@@ -218,7 +218,7 @@ export default function DuboisChapter() {
       <DocumentViewer />
 
       <TwoColumnLayout>
-        <div className="w-1/2 px-20 flex items-center">
+        <Column className="px-20">
           <div>
             <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
               The first chart of{" "}
@@ -309,8 +309,8 @@ export default function DuboisChapter() {
               </span>
             </p>
           </div>
-        </div>
-        <div className="flex flex-col items-center middle-full p-10 w-1/2">
+        </Column>
+        <Column shouldPin={true}>
           <HoverImages1 />
           <div className="font-dubois text-center mt-10 w-5/6">
             <p>
@@ -324,7 +324,7 @@ export default function DuboisChapter() {
               <span>LC-DIG-ppmsca-33863.</span>
             </p>
           </div>
-        </div>
+        </Column>
       </TwoColumnLayout>
 
       <ChapterSectionTitle color="bg-duboisPrimary">
@@ -332,7 +332,7 @@ export default function DuboisChapter() {
       </ChapterSectionTitle>
 
       <TwoColumnLayout>
-        <Column>
+        <Column className="px-20">
           <p>
             As the series unfolds, so too does its argument about the progress
             of the state’s Black citizens, and it does so in a way in which the
@@ -479,9 +479,8 @@ export default function DuboisChapter() {
             </span>
           </p>
         </Column>
-        <Column>
+        <Column shouldPin={true}>
           <HoverImages2 />
-          <HoverImages3 />
           {/* Comment: Look at scroll for both of these. Might be better to ultimately make it one image that changes */}
         </Column>
       </TwoColumnLayout>
@@ -611,15 +610,9 @@ export default function DuboisChapter() {
             picture was gained by viewing them together.
           </span>
         </p>
-        <p>
-          <span className="font-normal"></span>
-        </p>
-        <p>
-          <span>
-            [ CHART + PHOTOGRAPHS IN IMAGE OF FIRST CHART W/ MERCATOR
-            PROJECTIONS, REPLACE TEXT W/ CAPTION ]
-          </span>
-        </p>
+      </CenteredLayout>
+      <PhotographChart></PhotographChart>
+      <CenteredLayout>
         <p>
           <span className="font-normal">
             The idea of the charts and the photographs as stereoscopic pairs is

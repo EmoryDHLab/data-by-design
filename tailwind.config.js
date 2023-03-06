@@ -46,8 +46,8 @@ module.exports = {
         nightingale_blue: "#3B6FE0",
         peabodyOrange: "rgb(219, 136, 42)",
         brooksSecondary: {
-          DEFAULT: "#EFCDFF",
-          translucent: "#EFCDFFCC",
+          DEFAULT: "#E0DCF2",
+          translucent: "#E0DCF2CC",
         },
         brooksPrimary: {
           DEFAULT: "#8C20E1",
