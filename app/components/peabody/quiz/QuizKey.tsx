@@ -2,18 +2,6 @@ import { useContext, useEffect } from "react";
 import { QuizContext } from "../PeabodyQuiz";
 import eventData from "~/data/peabody/eventData.json";
 
-const eventTypes = [
-  'Battles, Sieges, Beginning of War',
-  'Conquests, Annexations, Unions',
-  'Losses and Disasters',
-  'Falls of States',
-  'Foundations of States and Revolutions',
-  'Treaties and Sundries',
-  'Births',
-  'Deeds',
-  'Deaths, of Remarkable Individuals',
-]
-
 export default function QuizKey() {
   const { currentCentury, hoveredEvent } = useContext(QuizContext);
 
@@ -43,7 +31,7 @@ export default function QuizKey() {
           x={0}
           y={0}
         >
-          {eventTypes.map((type, index) => {
+          {eventData.eventTypes.map((type, index) => {
             return (
               <tspan
                 key={index}

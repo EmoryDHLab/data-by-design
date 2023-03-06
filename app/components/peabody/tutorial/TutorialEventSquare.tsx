@@ -90,7 +90,17 @@ export default function TutorialEventSquare({
           return (
             <polygon
               key={i}
-              className={`transition-opacity duration-700 opacity-${(year === 1607 && scrollProgress >= 4.25) || (year === 1615 && scrollProgress >= 3.25 && scrollProgress <= 4.25) || scrollProgress >= 5.25 ? 100 : 0}`}
+              className={
+                `transition-opacity
+                duration-700
+                opacity-${
+                  (year === 1615 && scrollProgress >= 3.25 && scrollProgress < 4.25) ||
+                  (year === 1607 && scrollProgress >= 4.25 && scrollProgress < 5.25) ||
+                  (year === 1620 && scrollProgress >= 5.25 && scrollProgress < 7.25) ||
+                  (year === 1622 && scrollProgress >= 7.25 && scrollProgress < 12.25) ||
+                  scrollProgress >= 12.25 ? 100 : 0
+                }`
+              }
               stroke={eventColors.current[i] ?? "gold"}
               strokeWidth={0.5}
               points={p}

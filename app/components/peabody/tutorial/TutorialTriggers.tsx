@@ -1,21 +1,17 @@
 import InlineFootnote from "~/components/InlineFootnote";
-import TutorialKey from "./TutorialKey";
-import eventsData from "~/data/peabody/1600sEvents.json";
+import PeabodyActors from "../PeabodyActors";
+import eventData from "~/data/peabody/eventData.json";
 
 const Key = function ({ highlight }) {
   return (
     <div className="grid grid-cols-2 text-sm p-8 bg-[#9ae4c1cc]">
       <div>
         <ol className="list-decimal font-sans text-sm font-semibold small-caps tracking-wide ">
-          <li>Battles, Sieges, Beginning of War</li>
-          <li>Conquests, Annexations, Unions</li>
-          <li>Losses and Disasters</li>
-          <li>Falls of States</li>
-          <li>Foundations of States and Revolutions</li>
-          <li>Treaties and Sundries</li>
-          <li>Births</li>
-          <li>Deeds</li>
-          <li>Deaths of Remarkable Individuals </li>
+          {eventData.eventTypes.map((type, index) => {
+            return(
+              <li key={index}>{type}</li>
+            )
+          })}
         </ol>
       </div>
 
@@ -165,24 +161,7 @@ const Key = function ({ highlight }) {
   );
 };
 
-const Actors = function () {
-  return (
-    <div className="flex text-sm mt-6 gap-2 bg-[#9ae4c1cc]">
-      {Object.keys(eventsData.actorColors).map((actor, index) => {
-        return (
-          <div
-            key={index}
-            className={`font-normal bg-${actor} text-${
-              actor === "Americas" || actor === "Sweden" ? "black" : "white"
-            } p-2 border-2 border-black`}
-          >
-            {actor}
-          </div>
-        );
-      })}
-    </div>
-  );
-};
+
 
 const TutorialTriggers = [
   <p className="p-3 md:p-0" key={1}></p>,
@@ -211,15 +190,91 @@ const TutorialTriggers = [
       distribution of colors."
       <InlineFootnote index={7} bgOverride="white" textOverride="offblack" />
     </p>
-    <Actors />
+    <div className="flex text-sm mt-6 gap-2 bg-[#9ae4c1cc]">
+      <PeabodyActors century="1600" />
+    </div>
   </>,
   <>
     <p className="bg-[#9ae4c1cc] p-3 md:p-0" key={6}>
       Shapes that take up the entire box indicate an event of such magnitude or
       complexity that the other events in that same year hardly matter.
     </p>
+    <p>
+      1607 marks the establishment of Jamestown.
+    </p>
+    <p className="text-sm">
+      <PeabodyActors actor="England" />
+    </p>
   </>,
-  <TutorialKey key={7} />,
+  <>
+    <p>Events inform each other. Here we see Pilgrims settling Plymouth in 1920.</p>
+    <p className="p-2 text-sm uppercase border-l-2 border-peabodyOrange">
+      2. {eventData.eventTypes[1]}
+    </p>
+    <p className="text-sm p-1">
+      <PeabodyActors actor="England" /> <PeabodyActors actor="Holland" className="opacity-25 text-black" />
+    </p>
+  </>,
+  <>
+    <p>It also marks the first slaves in being brought to Jamestown, Virginia (20 brought on a Dutch ship).</p>
+    <p className="p-2 text-sm uppercase border-l-2 border-peabodyOrange">
+      6. {eventData.eventTypes[5]}
+    </p>
+    <p className="text-sm p-1">
+      <PeabodyActors actor="England" className="opacity-50 text-black" /> <PeabodyActors actor="Holland" />
+    </p>
+  </>,
+  <>
+    <p>Peabody also uses diagonals to show an event being shared by 2 countries (or more).</p>
+    <p className="text-sm">
+      <PeabodyActors actor="England" /> <PeabodyActors actor="Americas" /> <PeabodyActors actor="Holland" />
+    </p>
+  </>,
+  <>
+    <p>
+      Here we see the Jamestown Massacre.
+    </p>
+    <p className="p-2 text-sm uppercase border-l-2 border-peabodyOrange">
+      1. {eventData.eventTypes[0]}
+    </p>
+    <p className="text-sm p-1">
+      <PeabodyActors actor="England" /> <PeabodyActors actor="Americas" />
+    </p>
+  </>,
+  <>
+  <p>
+    Assault on Powhatan Settlements.
+  </p>
+  <p className="p-2 text-sm uppercase border-l-2 border-peabodyOrange">
+    2. {eventData.eventTypes[1]}
+  </p>
+  <p className="text-sm p-1">
+    <PeabodyActors actor="England" /> <PeabodyActors actor="Americas" />
+  </p>
+</>,
+<>
+  <p>
+    "Indians are conquered."
+  </p>
+  <p className="p-2 text-sm uppercase border-l-2 border-peabodyOrange">
+    3. {eventData.eventTypes[2]}
+  </p>
+  <p className="text-sm p-1">
+    <PeabodyActors actor="Americas" />
+  </p>
+</>,
+<>
+  <p>
+    And the death of Pocahontas.
+  </p>
+  <p className="p-2 text-sm uppercase border-l-2 border-peabodyOrange">
+    9. {eventData.eventTypes[8]}
+  </p>
+  <p className="text-sm p-1">
+    <PeabodyActors actor="Holland" />
+  </p>
+</>,
+<p key={7}></p>,
 ];
 
 export default TutorialTriggers;

@@ -46,7 +46,9 @@ export default function ChapterDropdown({ children }) {
       role="button"
       onMouseEnter={() => setIsDropdownVisible(true)}
       onMouseLeave={() => setIsDropdownVisible(false)}
+      onFocus={() => setIsDropdownVisible(true)}
       onClick={() => setIsDropdownVisible(!isDropdownVisible)}
+      onBlur={(e) => console.log(e)}
       onKeyUp={({ key }) => keyUp(key)}
       tabIndex={0}
     >
@@ -57,7 +59,9 @@ export default function ChapterDropdown({ children }) {
         {CHAPTERS.map((chapter, index) => (
           <li
             key={index}
+            onBlur={() => setIsDropdownVisible(index !== CHAPTERS.length - 1)}
             className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5"
+            tabIndex={index + 1}
           >
             <Link to={`/chapters/${chapter.link}`}>{chapter.title}</Link>
           </li>

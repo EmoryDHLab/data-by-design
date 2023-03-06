@@ -12,23 +12,45 @@ export default function Tutorial() {
   >(undefined);
 
   const [activeYear, setActiveYear] = useState<number | undefined>(undefined);
-  const [focusShapeSize, setFocusShapeSize] = useState<object>({ x: 0, y: 0, w: 100, h: 100 });
+  const [focusShapeSize, setFocusShapeSize] = useState<object>({ x: 0, y: 0, w: 100, h: 100, s: 1 });
   const { scrollProgress } = useContext(ScrollytellContext);
 
   useEffect(() => {
     switch (true) {
-      case scrollProgress < 0.25 || scrollProgress >= 5.24:
-        setFocusShapeSize({ x: 0, y: 0, w: 100, h: 100 });
+      case scrollProgress < 0.25 || scrollProgress >= 12.24:
+        setFocusShapeSize({ x: 0, y: 0, w: 100, h: 100, s: 1 });
         break;
       case (scrollProgress > 0.25 && scrollProgress < 1.5):
-        setFocusShapeSize( { x: 0, y: 0, w: 50, h: 50 });
+        setFocusShapeSize( { x: 0, y: 0, w: 50, h: 50, s: 1 });
         break;
       case scrollProgress >= 1.25 && scrollProgress < 4.25:
-        setFocusShapeSize({ x: 38.5, y: 11.5, w: 10, h: 10 });
+        setFocusShapeSize({ x: 38.5, y: 11.5, w: 10, h: 10, s: 1 });
         break;
-      case scrollProgress >= 4.25:
-        setFocusShapeSize({ x: 59.5, y: 2.5, w: 10, h: 10 });
-    }
+      case scrollProgress >= 4.25 && scrollProgress < 5.25:
+        setFocusShapeSize({ x: 59.5, y: 2.5, w: 10, h: 10, s: 1 });
+        break;
+      case scrollProgress >= 5.25 && scrollProgress < 6.25:
+        setFocusShapeSize({ x: 86.5, y: 11.5, w: 10, h: 10, s: 1 });
+        break;
+      case scrollProgress >= 6.25 && scrollProgress < 7.25:
+        setFocusShapeSize({ x: 92.75, y: 14.75, w: 3.4, h: 3.4, s: 0.5 });
+        break;
+      case scrollProgress >= 7.25 && scrollProgress <= 8.25:
+        setFocusShapeSize({ x: 11.5, y: 20.5, w: 10, h: 10, s: 1 });
+        break;
+      case scrollProgress >= 8.25 && scrollProgress <= 9.25:
+        setFocusShapeSize({ x: 11.75, y: 20.75, w: 3.4, h: 3.4, s: 0.5 });
+        break;
+      case scrollProgress >= 9.25 && scrollProgress <= 10.25:
+        setFocusShapeSize({ x: 14.75, y: 20.75, w: 3.4, h: 3.4, s: 0.5 });
+        break;
+      case scrollProgress >= 10.25 && scrollProgress <= 11.25:
+        setFocusShapeSize({ x: 17.75, y: 20.75, w: 3.4, h: 3.4, s: 0.5 });
+        break;
+      case scrollProgress >= 11.25 && scrollProgress <= 12.25:
+        setFocusShapeSize({ x: 17.75, y: 26.75, w: 3.4, h: 3.4, s: 0.5 });
+        break;
+        }
   }, [scrollProgress, setFocusShapeSize]);
 
   return (
@@ -49,22 +71,26 @@ export default function Tutorial() {
                     setActive={setActiveYear}
                     yearEvents={yearEvents}
                   >
-                    {[...numberRange(0, 9)].map((eventIndex) => {
-                      const yearEvent = yearEvents?.find(event => event.squares.includes(eventIndex + 1) || event.squares === "full")
-                      return (
-                        <TutorialEventSquare
-                          eventIndex={eventIndex}
-                          yearEvent={yearEvent}
-                          year={year}
-                          key={eventIndex}
-                          active={activeYear === year}
-                          mouseEnter={() => { setHighlightedElement({eventType: eventIndex, event: yearEvent, year})}}
-                          mouseLeave={() => { setHighlightedElement(undefined)}}
-                          highlightedElement={highlightedElement}
-                          shouldHighlight={year === 1615}
-                        />
-                      )
-                    })}
+                    {yearEvents &&
+                      <>
+                        {[...numberRange(0, 8)].map((eventIndex) => {
+                          const yearEvent = yearEvents?.find(event => event.squares.includes(eventIndex + 1) || event.squares === "full")
+                          return (
+                            <TutorialEventSquare
+                              eventIndex={eventIndex}
+                              yearEvent={yearEvent}
+                              year={year}
+                              key={eventIndex}
+                              active={activeYear === year}
+                              mouseEnter={() => { setHighlightedElement({eventType: eventIndex, event: yearEvent, year})}}
+                              mouseLeave={() => { setHighlightedElement(undefined)}}
+                              highlightedElement={highlightedElement}
+                              shouldHighlight={year === 1615}
+                            />
+                          )
+                        })}
+                      </>
+                    }
                   </TutorialYearSquare>
                 )
               })}
@@ -73,7 +99,7 @@ export default function Tutorial() {
               <rect x="0" width={99} height={99} fill="white" fillOpacity={0.1} className="transition-opacity duration-700" />
               <rect className="scrollytell-shape-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" />
             </mask>
-            <rect className="scrollytell-shape-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" fill="none" stroke="#db882a" strokeWidth={1} />
+            <rect className="scrollytell-shape-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" fill="none" stroke="#db882a" strokeWidth={focusShapeSize.s} />
           </svg>
           <figcaption className="text-center p-6 opacity-0 md:opacity-100">An interactive explanation of the Peabody's Polish-American System</figcaption>
         </figure>

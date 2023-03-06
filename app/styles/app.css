@@ -139,3 +139,15 @@
 .chapter-body p {
     margin: .75rem auto;
 }
+
+.se { stroke-dasharray: 0 30 30 }
+.nw { stroke-dasharray: 30 30  0 }
+.sw { stroke-dasharray: 0 60 30 }
+.ne { stroke-dasharray: 30 0 30 }
+.w { stroke-dasharray: 0 90 0 }
+.n { stroke-dasharray: 30 90 }
+.s { stroke-dasharray: 0 60 30 30 }
+.e { stroke-dasharray: 0 30 30 60 }
+.c { stroke-dasharray: 0 120 }
+.top { stroke-dasharray: 30 0 30 30 }
+.middle { stroke-dasharray: 0 30 0 }

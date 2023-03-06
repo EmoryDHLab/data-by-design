@@ -485,7 +485,7 @@
       "year": 1710,
       "event": "English Conquer Portroyal in Acadia",
       "squares": [2],
-      "actors": ["Americas"]
+      "actors": ["England", "France"]
     }],
     "1713": [{
       "year": 1713,
@@ -588,7 +588,7 @@
       "year": 1755,
       "event": "Braddock defeated by French",
       "squares": [1],
-      "actors": ["France", "Americas"]
+      "actors": ["France", "England"]
     }, {
       "year": 1755,
       "event": "Expulsion of the Acadians",
@@ -699,7 +699,7 @@
     "1776": [{
       "year": 1776,
       "event": "Declaration of Independence; American victories in the Revolutionary War",
-      "squares": "full",
+      "squares": [1,2,4,5,6,7,8,9],
       "actors": ["Americas"]
     }, {
       "year": 1776,
@@ -710,8 +710,18 @@
     "1777": [{
       "year": 1777,
       "event": "Revolutionary War continues",
-      "squares": "full",
+      "squares": [1, 2, 4],
+      "actors": ["Americas"]
+    }, {
+      "year": 1777,
+      "event": "Revolutionary War continues",
+      "squares": [3, 5, 7],
       "actors": ["Americas", "England"]
+    }, {
+      "year": 1777,
+      "event": "Revolutionary War continues",
+      "squares": [9],
+      "actors": ["England"]
     }, {
       "year": 1777,
       "event": "Embassy to France",
@@ -758,7 +768,12 @@
     "1780": [{
       "year": 1780,
       "event": "Victories at Hanging Rock and King's Mountain",
-      "squares": "full",
+      "squares": [1,2,4],
+      "actors": ["Americas"]
+    }, {
+      "year": 1780,
+      "event": "Victories at Hanging Rock and King's Mountain",
+      "squares": [3,5,7],
       "actors": ["Americas", "England"]
     }, {
       "year": 1780,
@@ -779,8 +794,44 @@
     "1781": [{
       "year": 1781,
       "event": "Victories at Cowpens; Guildfort Court House, Eutaw Springs, and Yorktown end the war",
-      "squares": "full",
+      "squares": [1],
+      "actors": ["France", "Americas"],
+      "transform": [-90, "center"]
+    }, {
+      "year": 1781,
+      "event": "Victories at Cowpens; Guildfort Court House, Eutaw Springs, and Yorktown end the war",
+      "squares": [2],
+      "actors": ["Americas"]
+    }, {
+      "year": 1781,
+      "event": "Victories at Cowpens; Guildfort Court House, Eutaw Springs, and Yorktown end the war",
+      "squares": [3],
+      "actors": ["Americas", "England"]
+    }, {
+      "year": 1781,
+      "event": "Victories at Cowpens; Guildfort Court House, Eutaw Springs, and Yorktown end the war",
+      "squares": [4],
+      "actors": ["France"]
+    }, {
+      "year": 1781,
+      "event": "Victories at Cowpens; Guildfort Court House, Eutaw Springs, and Yorktown end the war",
+      "squares": [5],
       "actors": ["Americas", "France", "England"]
+    }, {
+      "year": 1781,
+      "event": "Victories at Cowpens; Guildfort Court House, Eutaw Springs, and Yorktown end the war",
+      "squares": [6],
+      "actors": ["England"]
+    }, {
+      "year": 1781,
+      "event": "Victories at Cowpens; Guildfort Court House, Eutaw Springs, and Yorktown end the war",
+      "squares": [7],
+      "actors": ["France", "England"]
+    }, {
+      "year": 1781,
+      "event": "Victories at Cowpens; Guildfort Court House, Eutaw Springs, and Yorktown end the war",
+      "squares": [8, 9],
+      "actors": ["England"]
     }],
     "1783": [{
       "year": 1783,

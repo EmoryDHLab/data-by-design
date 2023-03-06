@@ -17,7 +17,6 @@ import FootnotesList from "~/components/FootnotesList";
 import BrooksChart from "~/components/brooks/BrooksChart";
 
 export default function BrooksPage() {
-  console.log("🚀 ~ file: brooks.tsx:4 ~ ChapterContext", ChapterContext);
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
   const [docHeightState, setDocHeightState] = useState<number>(0);
 
