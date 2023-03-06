@@ -15,6 +15,9 @@ import InlineFootnote from "~/components/InlineFootnote";
 import BrooksScrollytell from "~/components/brooks/BrooksScrollytell";
 import FootnotesList from "~/components/FootnotesList";
 import BrooksChart from "~/components/brooks/BrooksChart";
+import SeraphiqueTour from "~/components/brooks/SeraphiqueTour";
+import type { HoverState } from "~/theme";
+import HoverText from "~/components/HoverText";
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -221,6 +224,23 @@ export default function BrooksPage() {
       <TwoColumnLayout>
         <Column shouldPin={true}>
           <p>
+            It is unknown as to whether Elford was familiar with an earlier, more
+            literal depiction of a slave ship, the Marie Séraphique, which dates
+            to around 1770. This image, commissioned by the owner of the ship,
+            presents <HoverText hoverState="hold">a view of the hold—and</HoverText> the captives
+            within it—as one of <HoverText hoverState="crossSections">four cross-sections
+            of each of the ship's levels</HoverText>. This image, which also includes
+            a <HoverText hoverState="watercolor">watercolor of the ship arriving into
+            Loango</HoverText> as well as <HoverText hoverState="tables">tables that
+            depict the numbers of captives</HoverText>—312
+            souls--alongside information about the other, <HoverText hoverState="nonhumanCargo">nonhuman
+            cargo aboard</HoverText>, is shocking in its attempt at realism. The captives here are each
+            individually drawn, depicted lying on their sides. <HoverText hoverState="naked">Most are naked, but several
+            are clothed</HoverText>. The <HoverText hoverState="shackledMen">men are shackled</HoverText>—some
+            their arms and legs shackled to each other; others shackled to
+            two-by-two. <HoverText hoverState="nursingMother">One woman nurses a child</HoverText>.
+          </p>
+          <p>
             Regardless of whether Elford saw this particular image, he clearly
             considered what was given visual form and what was not. In contrast
             to the chart of the Marie Séraphique, the two areas of the hold
@@ -253,7 +273,8 @@ export default function BrooksPage() {
           </p>
         </Column>
         <Column className="md:ml-12">
-          <Figure src="/images/brooks/2-1468px-Plan.jpeg" alt=""></Figure>
+          {/* <Figure src="/images/brooks/2-1468px-Plan.jpeg" alt=""></Figure> */}
+          <SeraphiqueTour />
         </Column>
       </TwoColumnLayout>
 
