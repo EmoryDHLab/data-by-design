@@ -48,7 +48,6 @@ export default function ChapterDropdown({ children }) {
       onMouseLeave={() => setIsDropdownVisible(false)}
       onFocus={() => setIsDropdownVisible(true)}
       onClick={() => setIsDropdownVisible(!isDropdownVisible)}
-      onBlur={(e) => console.log(e)}
       onKeyUp={({ key }) => keyUp(key)}
       tabIndex={0}
     >
