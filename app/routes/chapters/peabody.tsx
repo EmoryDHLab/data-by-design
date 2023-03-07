@@ -47,11 +47,8 @@ export default function PeabodyPage() {
         subtitle="Elizabeth Palmer Peabody's Chronological Grids"
       />
       <TwoColumnLayout>
-        <Column shouldPin={true}>
-          <IntroSentence
-            letter=" E"
-            sentence="lizabeth Palmer Peabody was born in Massachusetts in 1804. "
-          ></IntroSentence>
+        <Column shouldPin={true} className="first-paragraph">
+          Elizabeth Palmer Peabody was born in Massachusetts in 1804.
           Today, she is most widely recognized for her proximity to more famous
           men—in particular, to the writers of the American Renaissance, such as
           Ralph Waldo Emerson and Nathaniel Hawthorne, and to early champions of
@@ -60,33 +57,22 @@ export default function PeabodyPage() {
           other, Mary Tyler Peabody, was married to Mann). But Elizabeth Palmer
           Peabody had intellectual impact in her own right: the bookstore that
           she ran out of her home, at 13 West Street, in Boston, functioned as
-          the <i>de facto</i>
-          salon for the transcendentalist movement. She edited and published the
-          first version of Henry David Thoreau's essay on civil disobedience.
-          And she is credited with starting the first kindergarten in the United
-          States.
-          <InlineFootnote index={0} />
+          the <i>de facto</i> salon for the transcendentalist movement. She edited
+          and published the first version of Henry David Thoreau's essay on civil
+          disobedience. And she is credited with starting the first kindergarten
+          in the United States.<InlineFootnote index={0} />
           <p>
             Indeed, Peabody was an educator to her core. She came from a family
             of teachers. Her mother and two sisters all taught grade-school at
             various times. And in the 1850s, when she set out from her home in
             Boston to ride the rails, it was with an explicitly educational aim:
             to promote the pair of history textbooks she had recently written,
-            <cite>The Polish-American System of Chronology</cite>
-            (1850) and <cite>A Chronological History of the United States</cite>
-            (1856). She traveled as far north as
-            <HoverText hoverState="Rochester" className="font-semibold">
-              Rochester, NY
-            </HoverText>
-            ; as far west as
-            <HoverText hoverState="Louisville" className="font-semibold">
-              Louisville, KY
-            </HoverText>
-            ; and as far south as
-            <HoverText hoverState="Richmond" className="font-semibold">
-              Richmond, VA
-            </HoverText>
-            , in order to evangelize about her new pedagogical method. The
+            <cite>The Polish-American System of Chronology</cite>(1850) and
+            <cite>A Chronological History of the United States</cite> (1856). She
+            traveled as far north as <HoverText hoverState="Rochester">Rochester,
+            NY</HoverText>; as far west as <HoverText hoverState="Louisville">Louisville,
+            KY</HoverText>; and as far south as <HoverText hoverState="Richmond">Richmond,
+            VA</HoverText>, in order to evangelize about her new pedagogical method. The
             Polish-American System, she came to call it, was a method with data
             visualization at its center.
           </p>
@@ -426,7 +412,7 @@ export default function PeabodyPage() {
         </Column>
       </TwoColumnLayout>
 
-      {/* <PeabodyQuiz /> */}
+      <PeabodyQuiz />
 
       <TwoColumnLayout className="pt-20">
         <Column>

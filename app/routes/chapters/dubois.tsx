@@ -14,7 +14,6 @@ import CenteredLayout from "~/components/layout/CenteredLayout";
 import FullBleed from "~/components/layout/FullBleed";
 
 import FootnotesList from "~/components/FootnotesList";
-import IntroSentence from "~/components/IntroSentence";
 import ImageModal from "~/components/layout/ImageModal";
 import Quotation from "~/components/Quotation";
 import type { HoverState } from "~/theme";
@@ -49,76 +48,42 @@ export default function DuboisChapter() {
       />
 
       <CenteredLayout>
-        <p className="pt-16">
-          <IntroSentence
-            letter=" O"
-            sentence="ctober 4th, 1899, was the first day of the fall term at Atlanta
-            University "
-          ></IntroSentence>
+        <p className="first-paragraph">
+          October 4th, 1899,
+          was the first day of the fall term at Atlanta University
           (now Clark Atlanta University), where W.E.B. Du Bois had been teaching
-          for the past two years&mdash;and a long two years they had been.{" "}
-          <InlineFootnote index={0}></InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            After relocating from Philadelphia to Atlanta in January 1897, Du
-            Bois and his family were first required to contend with the overt
-            racism of their everyday lives in the New South; and then, on May
-            24th, 1899, the most profound of personal tragedies when the Du
-            Bois’s two-year-old son, Burghardt, died after a brief illness.
-          </span>
-          <InlineFootnote index={1}>
-            The medical cause was diphtheria, although Du Bois and his wife
-            always felt that the root cause of Burghardt’s death was racism.
-            None of Atlanta’s “two or three” Black doctors had been available to
-            make an emergency house call, and not a single one of the city’s
-            many white doctors would allow themselves to cross racial lines to
-            tend to Burghardt, even with the knowledge of the severity of his
-            illness. For more on this incident and Du Bois’s early years in
-            Atlanta, see David Levering Lewis,{" "}
-            <cite>W.E.B. Du Bois: A Biography</cite> (New York: Henry Holt,
-            2009): 152-176.
-          </InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            But any small comfort that might have brought about by the start of
-            the school year and the return to a teaching routine would soon
-            evanesce as Du Bois found himself pulled into an unexpected new
-            project, one that had the potential to put his research to date on a
-            major international stage.
-          </span>
+          for the past two years&mdash;and a long two years they had been.
+          <InlineFootnote index={0}></InlineFootnote> After relocating from
+          Philadelphia to Atlanta in January 1897, Du Bois and his family were
+          first required to contend with the overt racism of their everyday lives
+          in the New South; and then, on May 24th, 1899, the most profound of personal
+          tragedies when the Du Bois's two-year-old son, Burghardt, died after a brief
+          illness.<InlineFootnote index={1} />
+          But any small comfort that might have brought about by the start of
+          the school year and the return to a teaching routine would soon
+          evanesce as Du Bois found himself pulled into an unexpected new
+          project, one that had the potential to put his research to date on a
+          major international stage.
         </p>
         <p>
-          <span className="font-normal">
-            On that very same day in October, Du Bois’s own college classmate,
-            the lawyer and newspaper editor Thomas J. Calloway began the letter
-            campaign that would result in a commitment from the federal
-            government to fund an “Exhibit of American Negroes” at the 1900{" "}
-          </span>
-          <span className="font-normal italic">Exposition Universelle</span>
-          <span className="font-normal"> in Paris</span>
-          <span className="font-normal italic">, </span>
-          <span className="font-normal">
-            which was scheduled to open the following spring. With time running
-            short, Calloway turned to Du Bois and one other man, Daniel A.P.
-            Murray, the Assistant Librarian of Congress, to design and curate
-            the show. While Murray tasked himself with assembling a set of books
-            and pamphlets by Black writers to put on display, Du Bois saw his
-            purview in more conceptual terms: to present “the history and
-            present condition of a large group of human beings”&mdash;namely,
-            the United States’s Black citizens&mdash;"in as systematic and
-            compact a form as possible.”
-          </span>
-          <InlineFootnote index={2}></InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            This “systematic and compact form” was, of course, data
-            visualization&mdash;a technique that he’d studied during his time in
-            Germany, and which he’d perfected in his groundbreaking study,{" "}
-          </span>
-          <span className="font-normal italic">The Philadelphia Negro</span>
-          <span className="font-normal">
-            , published just one year earlier.
-          </span>
+          On that very same day in October, Du Bois’s own college classmate,
+          the lawyer and newspaper editor Thomas J. Calloway began the letter
+          campaign that would result in a commitment from the federal
+          government to fund an “Exhibit of American Negroes” at the 1900
+          <cite>Exposition Universelle</cite> in Paris,
+          which was scheduled to open the following spring. With time running
+          short, Calloway turned to Du Bois and one other man, Daniel A.P.
+          Murray, the Assistant Librarian of Congress, to design and curate
+          the show. While Murray tasked himself with assembling a set of books
+          and pamphlets by Black writers to put on display, Du Bois saw his
+          purview in more conceptual terms: to present “the history and
+          present condition of a large group of human beings”&mdash;namely,
+          the United States's Black citizens&mdash;"in as systematic and
+          compact a form as possible."<InlineFootnote index={2}></InlineFootnote>
+          This “systematic and compact form” was, of course, data
+          visualization&mdash;a technique that he'd studied during his time in
+          Germany, and which he'd perfected in his groundbreaking study,
+          <cite>The Philadelphia Negro</cite>, published just one year earlier.
           <InlineFootnote index={3}></InlineFootnote>
         </p>
       </CenteredLayout>
