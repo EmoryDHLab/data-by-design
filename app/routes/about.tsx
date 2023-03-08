@@ -10,8 +10,6 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 
-import IntroSentence from "~/components/IntroSentence";
-
 export default function AboutPage() {
   return (
     <div>
@@ -48,11 +46,8 @@ export default function AboutPage() {
             </p>
           </Column>
           <Column className="px-6">
-            <p className="pt-16 ">
-              <IntroSentence
-                letter=" D"
-                sentence=" ata by Design, a project of the Emory Digital Humanities Lab, was created by an interdisciplinary team of faculty, staff, students, and professionals, collaborating across two continents, three states, and four institutions. "
-              ></IntroSentence>
+            <p className="pt-16 first-paragraph">
+              Data by Design, a project of the Emory Digital Humanities Lab, was created by an interdisciplinary team of faculty, staff, students, and professionals, collaborating across two continents, three states, and four institutions. "
             </p>
             <p>
               <span className="font-normal">

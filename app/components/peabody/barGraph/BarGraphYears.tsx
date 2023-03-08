@@ -26,7 +26,6 @@ export default function BarGraphYears({ year }: Props) {
       {yearEvents?.length > 0 &&
         <>
           {[...numberRange(0, 8)].map((eventIndex) => {
-            console.log("🚀 ~ file: BarGraphYears.tsx:29 ~ {[...numberRange ~ eventIndex:", eventIndex)
             return (
               <RecreatedEventSquare
                 key={eventIndex}

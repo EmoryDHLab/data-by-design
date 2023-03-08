@@ -58,7 +58,7 @@ export default function Tutorial() {
       <div className="my-0 md:my-auto">
         <figure>
           <svg viewBox="0 0 99 99" className="mt-8 mx-8">
-            <g mask="url(#tutorial-mask)" tabIndex={0}>
+            <g mask="url(#tutorial-mask)">
               <rect className="fill-peabodyOrange" x="0" width={99} height={99} />
               {[...numberRange(1601, 1700)].map((year, index) => {
                 const yearEvents = eventsData.events.filter(event => event.year === year);

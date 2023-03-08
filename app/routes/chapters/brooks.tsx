@@ -9,7 +9,6 @@ import CenteredLayout from "~/components/layout/CenteredLayout";
 import Figure from "~/components/layout/Figure";
 import Footer from "~/components/Footer";
 import { brooksFootnotes } from "~/footnotes";
-import IntroSentence from "~/components/IntroSentence";
 import Quotation from "~/components/Quotation";
 import InlineFootnote from "~/components/InlineFootnote";
 import BrooksScrollytell from "~/components/brooks/BrooksScrollytell";
@@ -44,23 +43,16 @@ export default function BrooksPage() {
       />
       <CenteredLayout>
         <p>
-          {" "}
           Before there are data, there are people. People who offer up their
           lives as data -- or whose lives become data without consent.
         </p>
-        <p>
-          <IntroSentence
-            letter=" I"
-            sentence="t was a long and circuitous—and often painful—path that led Olaudah
-            Equiano, "
-          ></IntroSentence>
+        <p className="first-paragraph">
+          It was a long and
+          circuitous—and often painful—path that led Olaudah Equiano,"
           the famed author and abolitionist, to London in January 1777.
-          According to his autobiography,{" "}
-          <cite>
-            The Interesting Narrative of the Life of Olaudah Equiano, or
-            Gustavus Vassa, the African{" "}
-          </cite>{" "}
-          (1789), Equiano was born in the Igbo area of the Kingdom of Benin, in
+          According to his autobiography, <cite>The Interesting Narrative of the
+          Life of Olaudah Equiano, or Gustavus Vassa, the African</cite> (1789),
+          Equiano was born in the Igbo area of the Kingdom of Benin, in
           what is now southeastern Nigeria. Kidnapped from his birthplace at the
           age of 11 and carried to the Atlantic coast, Equiano was then forced
           aboard a slave ship. There he encountered "a multitude of black people

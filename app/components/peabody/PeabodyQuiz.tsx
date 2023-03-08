@@ -42,7 +42,7 @@ export default function PeabodyQuiz() {
     const currentIndex = currentCenturyEvents.indexOf(currentEvent)
     setPrevious(currentCenturyEvents[currentIndex - 1]);
     setNext(currentCenturyEvents[currentIndex + 1]);
-  }, [currentEvent, setPrevious, setNext]);
+  }, [currentEvent, currentCenturyEvents, setPrevious, setNext]);
 
   return (
     <QuizContext.Provider value={{
@@ -55,7 +55,7 @@ export default function PeabodyQuiz() {
       solved,
       setSolved,
     }}>
-      <div className="grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-12 text-white text-center w-full p-6">
+      <div className="hidden md:grid grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-12 text-white text-center w-full p-6">
         <div className="h-auto grid grid-cols-1">
           <QuizKey />
         </div>
