@@ -42,7 +42,7 @@ export default function TutorialYearSquare({ year, index, active, setActive, chi
       onBlur={() => setActive(undefined)}
     >
       <g>
-        <rect fill="white" width={90} height={90} tabIndex={0} className="focus:outline-none focus:ring focus:ring-violet-300" />
+        <rect fill="white" width={90} height={90} className="focus:outline-none focus:ring focus:ring-violet-300" />
         {children}
       </g>
       <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central"

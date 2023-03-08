@@ -22,6 +22,7 @@ export default function Scrollytell() {
     >
       <ScrollytellWrapper
         className={`md:flex justify-between`}
+        scrollProgress={scrollProgress}
         setScrollProgress={setScrollProgress}
         triggers={TutorialTriggers}
         steps={steps}
@@ -33,7 +34,23 @@ export default function Scrollytell() {
         <div ref={steps} className="bias-full md:bias-1/2 md:w-1/2 ">
           {TutorialTriggers.map((trigger, index) => {
             return (
-              <div key={index} data-step={index} className={`step relative text-2xl content-center p-5 md:px-20 ${index == 0 ? "h-[60vh]" : "h-screen"} text-${primaryTextColor}`}>
+              // <div
+              //   key={index}
+              //   data-step={index}
+              //   className={`step relative text-2xl content-center p-5 md:px-20 ${
+              //     index + 1 === TutorialTriggers.length
+              //       ? "md:h-[50vh]"
+              //       : "h-screen"
+              //     } text-${primaryTextColor}`}>
+              <div
+                key={index}
+                data-step={index}
+                className={`step text-xl content-center p-5 md:px-20 ${
+                  index + 1 === TutorialTriggers.length || index == 0
+                    ? `${index !== 0 ? "h-[65vh]" : ""} md:h-[60vh]`
+                    : "h-screen"
+                } text-${primaryTextColor}`}
+              >
                 {trigger}
               </div>
             );

@@ -1,8 +1,10 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import scrollama from "scrollama";
+import type { ScrollamaInstance } from "scrollama";
 import { ChapterContext } from "~/theme";
 
 interface Props {
+  scrollProgress : float;
   setScrollProgress: Dispatch<SetStateAction<float>>;
   children: ReactNodeLike;
   steps: useRef<HTMLDivElement<undefined>>;
@@ -10,13 +12,15 @@ interface Props {
   className?: string;
 }
 
-export default function ScrollytellWrapper({ children, steps, triggers, setScrollProgress, className }: Props) {
+export default function ScrollytellWrapper({ children, steps, triggers, scrollProgress, setScrollProgress, className }: Props) {
   const { accentColor, docHeightState } = useContext(ChapterContext);
-  const scroller = useRef(scrollama());
+  const scrollerRef = useRef<ScrollamaInstance>(scrollama());
+  const scrollerElementRef = useRef<HTMLDivElement | undefined>(undefined);
+  const [offsetTop, setOffsetTop] = useState<number>(0);
 
   useEffect(() => {
     if (steps.current?.children.length !== triggers.length) return;
-    scroller.current
+    scrollerRef.current
       .setup({
         offset: "60px",
         step: ".step",
@@ -26,17 +30,45 @@ export default function ScrollytellWrapper({ children, steps, triggers, setScrol
         setScrollProgress(index + progress)
       );
 
-    const scrollerCopy = scroller.current;
+    const scrollerRefCopy = scrollerRef.current;
 
-    return () => scrollerCopy?.destroy();
+    return () => scrollerRefCopy?.destroy();
   }, [setScrollProgress, steps, triggers]);
 
   useEffect(() => {
-    scroller.current?.resize();
-  }, [docHeightState]);
+    scrollerRef.current?.resize();
+    setOffsetTop(scrollerElementRef.current?.offsetTop + 60);
+  }, [docHeightState, setOffsetTop, scrollerRef, scrollerElementRef]);
+
+  const keyUp = (code) => {
+    if (scrollProgress < triggers.length) {
+      event.preventDefault();
+      switch (code) {
+        case "ArrowRight":
+        case "ArrowDown":
+          window.scrollBy({left: 0, top: window.innerHeight, behavior: 'smooth'});
+          break;
+        case "ArrowLeft":
+        case "ArrowUp":
+          window.scrollBy({left: 0, top: -Math.abs(window.innerHeight), behavior: 'smooth'});
+          break;
+        case "Tab":
+          window.scrollBy({ left: 0, top: -Math.abs(window.innerHeight * scrollProgress)});
+      }
+    }
+  };
 
   return (
-    <div className={`bg-${accentColor} max-w-[100vw] ${className ?? ""}`}>
+    <div
+      ref={scrollerElementRef}
+      className={`bg-${accentColor} max-w-[100vw] ${className ?? ""}`}
+      tabIndex={0}
+      onFocus={() => {
+        window.scrollTo({top: offsetTop, left: 0, block: "start", inline: "nearest"});
+        setScrollProgress(0);
+      }}
+      onKeyUp={(event) => { event.preventDefault(); keyUp(event.code)}}
+      >
       {children }
     </div>
   )

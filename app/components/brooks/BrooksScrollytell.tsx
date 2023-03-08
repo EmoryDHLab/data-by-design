@@ -37,9 +37,11 @@ export default function BrooksScrollytell() {
   }, [scrollProgress, setFocusShapeSize]);
 
   return (
-    <ScrollytellWrapper setScrollProgress={setScrollProgress} triggers={triggers} steps={steps}>
-      <div className="sticky pt-16 md:pt-0 top-0 h-screen grid grid-cols-1 md:content-end order-first">
-        <div className="text-3xl relative md:top-[calc(100vh-12rem)] ml-12 text-white hidden md:block">↓</div>
+    <ScrollytellWrapper scrollProgress={scrollProgress} setScrollProgress={setScrollProgress} triggers={triggers} steps={steps}>
+      <div
+        className="sticky pt-16 md:pt-0 top-0 h-screen grid grid-cols-1 md:content-end order-first"
+      >
+        <div className="text-3xl relative md:top-[calc(100vh-21rem)] ml-12 text-black hidden md:block" tabIndex={-1}>↓</div>
         <div className="mb-6">
           <figure className="w-11/12 m-auto">
             <svg viewBox="0 0 100 36" className="w-full md:h-full">
@@ -53,10 +55,20 @@ export default function BrooksScrollytell() {
                   <rect x="0" width={100} height={36} fill="white" fillOpacity={0.3} />
                   <rect className="scrollytell-shape-focus z-10" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" />
                 </mask>
-                <rect className="scrollytell-shape-focus" x={focusShapeSize.x} y={focusShapeSize.y} width={focusShapeSize.w} height={focusShapeSize.h} fill="white" fill="none" stroke="#db882a" strokeWidth={1} />
+                <rect
+                  className="scrollytell-shape-focus"
+                  x={focusShapeSize.x}
+                  y={focusShapeSize.y}
+                  width={focusShapeSize.w}
+                  height={focusShapeSize.h}
+                  fill="white"
+                  fill="none"
+                  stroke="#db882a"
+                  strokeWidth={1}
+                />
               </g>
             </svg>
-            <figcaption>{scrollProgress} {triggers.length}</figcaption>
+            <figcaption></figcaption>
           </figure>
         </div>
       </div>

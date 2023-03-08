@@ -161,10 +161,8 @@ const Key = function ({ highlight }) {
   );
 };
 
-
-
 const TutorialTriggers = [
-  <p className="p-3 md:p-0" key={1}></p>,
+  <></>,
   <p className="bg-[#9ae4c1cc] p-3 md:p-0" key={2}>
     Peabody's version of Bem's system borrows the idea of a numbered grid, with
     each year in a century marked out in its own box.
@@ -274,7 +272,6 @@ const TutorialTriggers = [
     <PeabodyActors actor="Holland" />
   </p>
 </>,
-<p key={7}></p>,
 ];
 
 export default TutorialTriggers;
