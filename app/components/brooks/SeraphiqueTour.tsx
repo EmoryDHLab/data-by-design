@@ -4,7 +4,7 @@ import { ChapterContext } from "~/theme";
 const tourLocations = {
   hold: {
     transform: "scale-[2.5] -translate-x-[3rem] -translate-y-[1.25rem]",
-    mask: { x: 0, y: 0, h: 70, w: 50}
+    mask: { x: 24, y: 0, h: 70, w: 12}
   },
   crossSections: {
     transform: "scale-[1.2] -translate-x-[.3rem] -translate-y-[.45rem]",
@@ -47,7 +47,7 @@ export default function SeraphiqueTour() {
         <mask id="seraphique">
           <rect x={0} y={0} width={50} height={70} fill="white" fillOpacity={0.3} />
           <rect
-            className={`transition-[x] transition-[y] transition-[height] transition-[width] z-10`}
+            className={`duration-1000 transition-[x] transition-[y] transition-[height] transition-[width] z-10`}
             x={tourLocations[hoverState]?.mask.x ?? 0}
             y={tourLocations[hoverState]?.mask.y ?? 0}
             width={tourLocations[hoverState]?.mask.w ?? 50}
@@ -62,7 +62,7 @@ export default function SeraphiqueTour() {
             role="presentation"
             href="/images/brooks/2-1468px-Plan.jpeg"
             width="100%"
-            className={`transition-transform ${tourLocations[hoverState]?.transform ?? ""}`}
+            className={`duration-1000 transition-transform ${tourLocations[hoverState]?.transform ?? ""}`}
           />
         </g>
         <g>
