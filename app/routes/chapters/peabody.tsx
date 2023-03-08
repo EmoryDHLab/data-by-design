@@ -18,7 +18,6 @@ import InlineFootnote from "~/components/InlineFootnote";
 import { peabodyFootnotes } from "~/footnotes";
 import PeabodySandbox from "~/components/peabody/PeabodySandbox";
 import FootnotesList from "~/components/FootnotesList";
-import IntroSentence from "~/components/IntroSentence";
 import Scrollytell from "~/components/peabody/PeabodyScrollytell";
 import Quotation from "~/components/Quotation";
 import PeabodyQuiz from "~/components/peabody/PeabodyQuiz";
