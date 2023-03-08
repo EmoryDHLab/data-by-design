@@ -29,9 +29,7 @@ export default function Index() {
           <div className="font-dubois text-4xl p-5">Introduction</div>
           <div className="font-sans text-lg p-5">
             <span>
-              Additional research for this project was completed
-              through fellowships from the American Antiquarian Society and the
-              Library Company of Philadelphia.
+            Data visualization is not a recent innovation. Even in the eighteenth century, activists and educators, as well as economists and statisticians, were fully aware of the power of visualization to produce the insight that leads to new knowledge. But that power is only one half of data visualization's double-edged sword. The other has to do with the abstraction required to produce this insight, which often comes at the expense of the context of the data, and--at times--the human lives the data claims to represent. Can we tell a story about the rise of modern data visualization that takes this tension into account? Is it possible that questions of ethics, and of justice, have been present in the field of data visualization from its start? 
             </span>
           </div>
           <div className="font-dubois text-lg p-5">READ MORE → </div>
