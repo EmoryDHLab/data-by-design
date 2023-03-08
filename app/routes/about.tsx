@@ -33,7 +33,7 @@ export default function AboutPage() {
               <p className="pb-4">
                 <span className="font-dubois"> Credits Citation </span>
                 <p>
-                  <cite>
+                  <cite className="select-all">
                     L. Klein, T. Sharma, J. Varner, N. Yang, D. Jutan, J. Fu, A.
                     Mola, Z. Fang, S. Li, M. Adams, Y. Li, and S. Munro. Data by
                     Design. 2023 public beta.
