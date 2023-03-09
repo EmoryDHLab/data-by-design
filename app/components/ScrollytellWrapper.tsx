@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import scrollama from "scrollama";
 import type { ScrollamaInstance } from "scrollama";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 
 interface Props {
   scrollProgress : float;
@@ -42,7 +42,6 @@ export default function ScrollytellWrapper({ children, steps, triggers, scrollPr
 
   const keyUp = (code) => {
     if (scrollProgress < triggers.length) {
-      event.preventDefault();
       switch (code) {
         case "ArrowRight":
         case "ArrowDown":
@@ -63,11 +62,11 @@ export default function ScrollytellWrapper({ children, steps, triggers, scrollPr
       ref={scrollerElementRef}
       className={`bg-${accentColor} max-w-[100vw] ${className ?? ""}`}
       tabIndex={0}
-      onFocus={() => {
-        window.scrollTo({top: offsetTop, left: 0, block: "start", inline: "nearest"});
-        setScrollProgress(0);
-      }}
-      onKeyUp={(event) => { event.preventDefault(); keyUp(event.code)}}
+      // onFocus={() => {
+      //   window.scrollTo({top: offsetTop, left: 0, block: "start", inline: "nearest"});
+      //   setScrollProgress(0);
+      // }}
+      // onKeyUp={(event) => { event.preventDefault(); keyUp(event.code)}}
       >
       {children }
     </div>

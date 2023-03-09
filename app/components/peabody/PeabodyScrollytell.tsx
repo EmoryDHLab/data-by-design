@@ -1,6 +1,6 @@
 import { useContext, useRef, useState } from "react";
 import Tutorial from "./tutorial/TutorialSquares";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import TutorialTriggers from "./tutorial/TutorialTriggers";
 import ScrollytellWrapper from "../ScrollytellWrapper";

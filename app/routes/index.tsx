@@ -5,7 +5,7 @@ import ChapterCardGrid from "~/components/ChapterCardGrid";
 import Timeline from "~/components/home/Timeline.client";
 import { ClientOnly } from "remix-utils";
 import Footer from "~/components/Footer";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 import ImageModal from "~/components/layout/ImageModal";
 
 export default function Index() {

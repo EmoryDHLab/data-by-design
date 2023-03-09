@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 // scale(2.5) translateX(-19px) translateY(-8px)
 const tourLocations = {
   hold: {

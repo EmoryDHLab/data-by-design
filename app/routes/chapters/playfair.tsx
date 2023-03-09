@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";

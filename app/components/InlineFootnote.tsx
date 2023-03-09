@@ -1,6 +1,6 @@
 import type { ReactNodeLike } from "prop-types";
 import { useContext, useEffect, useState } from "react";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 
 interface Props {
   number: number;

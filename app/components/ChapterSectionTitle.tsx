@@ -1,6 +1,6 @@
 import type { ReactNodeLike } from "prop-types";
 import { useContext } from "react";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 import CenteredLayout from "./layout/CenteredLayout";
 
 interface Props {

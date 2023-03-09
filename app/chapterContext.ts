@@ -29,6 +29,8 @@ interface IChapterContext {
   footnoteTextColor: string;
   docHeightState: number;
   setDocHeightState: Dispatch<SetStateAction<number>>;
+  requireConsentState: boolean;
+  setRequireConsentState: Dispatch<SetStateAction<boolean>>;
 }
 
 const ChapterContext = createContext<IChapterContext>({
@@ -48,6 +50,7 @@ const ChapterContext = createContext<IChapterContext>({
     );
   },
   footnotes: [],
+  requireConsent: false,
 });
 
 ChapterContext.displayName = "ChapterContext";

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 
 interface Props {
   title: string;

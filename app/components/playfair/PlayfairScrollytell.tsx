@@ -1,6 +1,6 @@
 import { useContext, useRef, useState } from "react";
 import Recreation from "./Recreation";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 import ScrollytellWrapper from "../ScrollytellWrapper";
 
 const triggers = [

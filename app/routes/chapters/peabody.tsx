@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
-import type { HoverState } from "~/theme";
-import { ChapterContext } from "~/theme";
+import type { HoverState } from "~/chapterContext";
+import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";

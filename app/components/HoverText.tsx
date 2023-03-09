@@ -1,6 +1,6 @@
 import type { ReactNodeLike } from "prop-types";
-import type { HoverState } from "~/theme";
-import { ChapterContext } from "~/theme";
+import type { HoverState } from "~/chapterContext";
+import { ChapterContext } from "~/chapterContext";
 import { useContext } from "react";
 
 interface Props {

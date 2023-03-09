@@ -4,7 +4,7 @@ import InlineFootnote from "~/components/InlineFootnote";
 import DocumentViewer from "~/components/dubois/DocumentViewer";
 import { StudentChart } from "~/components/dubois/StudentChart";
 import Footer from "~/components/Footer";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 import { duboisFootnotes } from "~/footnotes";
 import { useState } from "react";
 
@@ -16,7 +16,7 @@ import FullBleed from "~/components/layout/FullBleed";
 import FootnotesList from "~/components/FootnotesList";
 import ImageModal from "~/components/layout/ImageModal";
 import Quotation from "~/components/Quotation";
-import type { HoverState } from "~/theme";
+import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
 import HoverImages1 from "~/components/dubois/HoverImages1";
 import HoverImages2 from "~/components/dubois/HoverImages2";

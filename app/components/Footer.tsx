@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ChapterContext } from "~/theme";
+import { ChapterContext } from "~/chapterContext";
 
 export default function Footer() {
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="py-5">
             <br />
             <address>
-              Contact: Lauren Klein <br /> 
+              Contact: Lauren Klein <br />
               Email: <a href="mailto:lauren.klein@emory.edu">lauren.klein@emory.edu</a><br />
             </address>
           </div>
