@@ -1,7 +1,7 @@
 import { Circle } from "~/components/dubois/Circle";
 import { useEffect } from "react";
 import p5 from "p5";
-import { Student, StudentData } from "~/components/dubois/types";
+import type { Student, StudentData } from "~/components/dubois/types";
 
 interface Props {
   studentData: StudentData;
@@ -110,6 +110,7 @@ function placeCategories(p5: p5, studentData: StudentData, circles: Circle[]) {
   for (const { students } of categories) {
     const categoryAngle = (students.length / count) * 2 * Math.PI;
     placeCategoryCircles(p5, circles, currentAngle, categoryAngle, students);
+    console.log("🚀 ~ file: PieChart.client.tsx:107 ~ placeCategories ~ circles:", circles)
     currentAngle += categoryAngle;
   }
 }

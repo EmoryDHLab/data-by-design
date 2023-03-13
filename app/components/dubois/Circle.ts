@@ -54,10 +54,12 @@ export class Circle {
           textWidth = width;
         }
       }
-      const x = this.p5.mouseX;
-      const y = this.p5.mouseY;
       const width = textWidth + 20;
       const height = 55;
+      const mouseX = this.p5.mouseX;
+      const mouseY = this.p5.mouseY;
+      const x = mouseX + width > 490 ? mouseX - width : mouseX;
+      const y = mouseY + height > 490 ? mouseY - height : mouseY;
 
       // Drawing the text box with the cut corners
       this.p5.beginShape();
@@ -74,7 +76,7 @@ export class Circle {
       this.p5.fill("black");
       this.p5.noStroke();
       this.p5.textSize(16);
-      this.p5.text(this.text, this.p5.mouseX + 10, this.p5.mouseY + 10);
+      this.p5.text(this.text, x + 10, y + 10);
     } else {
       this.rollover = false;
     }
