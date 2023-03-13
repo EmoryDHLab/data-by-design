@@ -10,10 +10,10 @@ export default function CenturySelect() {
   } = useContext(BarGraphContext);
 
   return (
-    <div className="h-auto grid grid-cols-4 gap-y-2">
+    <div className="h-auto flex justify-start">
       {centuries.map((century, index) => {
         return (
-          <svg viewBox="0 0 100 32" key={`button-${index}`} className="w-full">
+          <svg viewBox="0 0 100 32" key={`button-${index}`} className="w-1/6">
             <FancyButton outlineColor={currentCentury === century ? "gold" : "white" } action={() => setCurrentCentury(century)}>
               {century}s
             </FancyButton>
