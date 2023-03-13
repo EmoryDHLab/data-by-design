@@ -110,7 +110,6 @@ function placeCategories(p5: p5, studentData: StudentData, circles: Circle[]) {
   for (const { students } of categories) {
     const categoryAngle = (students.length / count) * 2 * Math.PI;
     placeCategoryCircles(p5, circles, currentAngle, categoryAngle, students);
-    console.log("🚀 ~ file: PieChart.client.tsx:107 ~ placeCategories ~ circles:", circles)
     currentAngle += categoryAngle;
   }
 }
