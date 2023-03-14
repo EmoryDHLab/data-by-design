@@ -462,7 +462,7 @@ export default function DocumentViewer() {
   const selectedImage = imageSets[selectedSet].images[selectedImageIndex];
 
   return (
-    <div className="py-16 bg-black w-full flex flex-col items-center pb-10">
+    <div className="py-10 my-10 bg-black w-full flex flex-col items-center pb-10">
       <div className="max-w-5xl flex">
         <div className="py-10 px-5 flex flex-col items-center w-1/6 space-y-5">
           <button
@@ -530,17 +530,17 @@ export default function DocumentViewer() {
                   src="/images/dubois/leftarrow.png"
                 />
               </button>
-              <div className="text-center w-96">
-                <p className="my-2 text-white-600 font-normal text-lg mt-5">
+              <div className="text-center font-dubois  w-100">
+                <p className="my-2 uppercase text-white-600 text-lg mt-5">
                   {selectedImage?.text}
                 </p>
-                <p className="text-white-600 font-thin text-sm text-center">
+                <p className="text-white-600 my-1 text-sm text-center">
                   {selectedImage?.credit1}
                 </p>
-                <p className="text-white-600 font-thin text-sm text-center">
+                <p className="text-white-600 my-1  text-sm text-center">
                   {selectedImage?.credit2}
                 </p>
-                <p className="text-white-600 font-thin text-sm">
+                <p className="text-white-600 my-1  text-sm">
                   {selectedImage?.credit3}
                 </p>
               </div>
