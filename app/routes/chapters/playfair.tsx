@@ -524,15 +524,13 @@ export default function PlayfairPage() {
           web, according to any conceivable form.
         </p>
 
-        <p className="my-6 md:my-12">
+        <p className="my-6 md:my-12 w-full h-full">
           <span className="col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 mt-6 flex flex-row">
             <svg viewBox="0 0 100 50">
               <rect width="64%" height="100%" fill="#F3ECCB" />
               <rect width="35%" height="100%" fill="#F3ECCB" x="65" />
               <StackedChart />
               <CombChart />
-              {/* <StackedChart :playfairData="this.playfairData"></StackedChart>
-              <CoxcombChart :playfairData="this.playfairData"></CoxcombChart> */}
             </svg>
           </span>
         </p>
