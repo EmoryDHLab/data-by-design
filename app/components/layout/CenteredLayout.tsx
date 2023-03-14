@@ -1,4 +1,4 @@
-import { ReactNodeLike } from "prop-types";
+import type { ReactNodeLike } from "prop-types";
 
 interface Props {
   children: ReactNodeLike;
