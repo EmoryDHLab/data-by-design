@@ -121,6 +121,7 @@ module.exports = {
     "bg-playfairSecondary",
     "bg-playfairPrimary-translucent",
     "bg-playfairSecondary-translucent",
+    "bg-playfairSecondary",
     "text-peabodyPrimary",
     "text-peabodyOrange",
     "bg-peabodyPrimary",

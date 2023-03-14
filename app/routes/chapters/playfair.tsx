@@ -19,6 +19,7 @@ import FootnotesList from "~/components/FootnotesList";
 import Quotation from "~/components/Quotation";
 import ChapterBody from "~/components/layout/ChapterBody";
 import figures from "~/data/figures/playfair.json";
+import ChapterBody from "~/components/layout/ChapterBody";
 
 export default function PlayfairPage() {
   const [docHeightState, setDocHeightState] = useState<number>(0);
@@ -269,6 +270,58 @@ export default function PlayfairPage() {
           <FigureObj figure={figures['1-northamerica']} />
           <FigureObj figure={figures["2-wheat"]} />
           <FigureObj figure={figures["3-pie"]} />
+        <Column shouldPin={true}>
+          <span
+            ref={anchors.chartOne.ref}
+            id="chartOne"
+          >
+            <Figure
+              className="ml-0 md:ml-12"
+              src="/images/playfair/1-northamerica.jpg"
+              alt=""
+            >
+              William Playfair's chart of "Exports &amp; Imports to and from all
+              of North America," published in the third edition of the{" "}
+              <cite> Commercial and Political Atlas</cite> (1801). Image courtesy
+              of the Library Company of Philadelphia.
+            </Figure>
+          </span>
+
+          <span
+            ref={anchors.chartTwo.ref}
+            id="chartTwo"
+          >
+            <Figure
+              className="ml-0 md:ml-12"
+              src="/images/playfair/2-wheat.jpg"
+              alt=""
+            >
+              Playfair's "Chart Showing at One View the Price of the Quarter of
+              Wheat, &amp; Wages of Labour by the Week, from the Year 1565 to
+              1821," published in 1822. The chart's representation of the price of
+              wheat is among the first bar charts presently known. (The bar charts
+              included in the <cite> Commercial and Political Atlas</cite> are
+              believed to be the first). Image courtesy of Wikimedia Commons."
+            </Figure>
+          </span>
+
+          <span
+            ref={anchors.chartThree.ref}
+            id="chartThree"
+          >
+            <Figure
+              className="ml-0 md:ml-12"
+              src="/images/playfair/3-pie.jpg"
+              alt=""
+            >
+              Playfair's "Chart Representing the Extent, Population &amp;
+              Revenues, of the Principal Nations in Europe, after the Division of
+              Poland &amp; Treaty of Luneville," published in the{" "}
+              <cite>Statistical Breviary</cite>
+              (1801). The pie charts included in this volume are considered the
+              first presently known. Image courtesy of Wikimedia Commons.
+            </Figure>
+          </span>
         </Column>
       </TwoColumnLayout>
       <ChapterSectionTitle title="The Value of Visual Knowledge" />
@@ -360,6 +413,20 @@ export default function PlayfairPage() {
             James Watt. Image courtesy of the Library Company of Philadelphia,{" "}
             <a href="http://www.librarycompany.org">www.librarycompany.org</a>
           </Figure> */}
+          <span
+            ref={anchors.chartFour.ref}
+            id="chartFour"
+          >
+            <Figure
+              src="/images/playfair/chart-1787.jpg"
+              alt=""
+            >
+              The data on "America" included in the second edition of The
+              Commercial and Political Atlas (1787), on the recommendation of
+              James Watt. Image courtesy of the Library Company of Philadelphia,{" "}
+              <a href="http://www.librarycompany.org">www.librarycompany.org</a>
+            </Figure>
+          </span>
         </Column>
       </TwoColumnLayout>
       <span
@@ -479,6 +546,15 @@ export default function PlayfairPage() {
 
       <CenteredLayout>
         <FigureObj figure={figures["5-minard"]} />
+        <span
+          ref={anchors.chartFive.ref}
+          id="chartFive"
+        >
+          <Figure src="/images/playfair/5-minard.png" alt="">
+            Charles Minard's 1869 chart of Napoleon's failed Russia campaign.
+            Image courtesy of Wikimedia Commons.
+          </Figure>
+        </span>
         <p>
           Playfair created his charts in an era of intense political change. At
           the time that he released the third and most widely circulated edition
