@@ -1,6 +1,5 @@
 // This is the home page!
 
-import HomeTitle from "~/components/home/HomeTitle";
 import ChapterCardGrid from "~/components/ChapterCardGrid";
 import Timeline from "~/components/home/Timeline.client";
 import { ClientOnly } from "remix-utils";
@@ -16,8 +15,7 @@ export default function Index() {
         primaryTextColor: "white",
       }}
     >
-      <HomeTitle />
-      <div className="bg-black flex flex-col sm:flex-row">
+      {/* <div className="bg-black flex flex-col sm:flex-row">
         <div className="sm:p-20 sm:w-3/5 w-full">
           <div className="font-dubois text-4xl text-white p-5"></div>
           <div className="font-sans text-white text-xl p-5 px-12">
@@ -50,10 +48,8 @@ export default function Index() {
             src="/images/ch4-5.webp"
           />
         </div>
-      </div>
+      </div> */}
       <ClientOnly>{() => <Timeline />}</ClientOnly>
       <ChapterCardGrid />
       <Footer />
     </ChapterContext.Provider>
-  );
-}
