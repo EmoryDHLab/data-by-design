@@ -7,13 +7,15 @@ import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import { duboisFootnotes } from "~/footnotes";
 import { useState } from "react";
-
+// import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import FullBleed from "~/components/layout/FullBleed";
 
 import FootnotesList from "~/components/FootnotesList";
+import Figure from "~/components/layout/Figure";
+
 import ImageModal from "~/components/layout/ImageModal";
 import Quotation from "~/components/Quotation";
 import type { HoverState } from "~/chapterContext";
@@ -23,6 +25,7 @@ import HoverImages2 from "~/components/dubois/HoverImages2";
 import PhotographChart from "~/components/dubois/PhotographChart";
 
 import ImageCaption from "~/components/ImageCaption";
+// import { classNames } from "~/utils";
 
 export default function DuboisChapter() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -49,16 +52,17 @@ export default function DuboisChapter() {
 
       <CenteredLayout>
         <p className="first-paragraph">
-          October 4th, 1899,
-          was the first day of the fall term at Atlanta University
-          (now Clark Atlanta University), where W.E.B. Du Bois had been teaching
-          for the past two years&mdash;and a long two years they had been.
+          October 4th, 1899, was the first day of the fall term at Atlanta
+          University (now Clark Atlanta University), where W.E.B. Du Bois had
+          been teaching for the past two years&mdash;and a long two years they
+          had been.
           <InlineFootnote index={0}></InlineFootnote> After relocating from
           Philadelphia to Atlanta in January 1897, Du Bois and his family were
-          first required to contend with the overt racism of their everyday lives
-          in the New South; and then, on May 24th, 1899, the most profound of personal
-          tragedies when the Du Bois's two-year-old son, Burghardt, died after a brief
-          illness.<InlineFootnote index={1} />
+          first required to contend with the overt racism of their everyday
+          lives in the New South; and then, on May 24th, 1899, the most profound
+          of personal tragedies when the Du Bois's two-year-old son, Burghardt,
+          died after a brief illness.
+          <InlineFootnote index={1} />
           But any small comfort that might have brought about by the start of
           the school year and the return to a teaching routine would soon
           evanesce as Du Bois found himself pulled into an unexpected new
@@ -66,20 +70,20 @@ export default function DuboisChapter() {
           major international stage.
         </p>
         <p>
-          On that very same day in October, Du Bois’s own college classmate,
-          the lawyer and newspaper editor Thomas J. Calloway began the letter
-          campaign that would result in a commitment from the federal
-          government to fund an “Exhibit of American Negroes” at the 1900
-          <cite>Exposition Universelle</cite> in Paris,
-          which was scheduled to open the following spring. With time running
-          short, Calloway turned to Du Bois and one other man, Daniel A.P.
-          Murray, the Assistant Librarian of Congress, to design and curate
-          the show. While Murray tasked himself with assembling a set of books
-          and pamphlets by Black writers to put on display, Du Bois saw his
-          purview in more conceptual terms: to present “the history and
-          present condition of a large group of human beings”&mdash;namely,
-          the United States's Black citizens&mdash;"in as systematic and
-          compact a form as possible."<InlineFootnote index={2}></InlineFootnote>
+          On that very same day in October, Du Bois’s own college classmate, the
+          lawyer and newspaper editor Thomas J. Calloway began the letter
+          campaign that would result in a commitment from the federal government
+          to fund an “Exhibit of American Negroes” at the 1900
+          <cite>Exposition Universelle</cite> in Paris, which was scheduled to
+          open the following spring. With time running short, Calloway turned to
+          Du Bois and one other man, Daniel A.P. Murray, the Assistant Librarian
+          of Congress, to design and curate the show. While Murray tasked
+          himself with assembling a set of books and pamphlets by Black writers
+          to put on display, Du Bois saw his purview in more conceptual terms:
+          to present “the history and present condition of a large group of
+          human beings”&mdash;namely, the United States's Black
+          citizens&mdash;"in as systematic and compact a form as possible."
+          <InlineFootnote index={2}></InlineFootnote>
           This “systematic and compact form” was, of course, data
           visualization&mdash;a technique that he'd studied during his time in
           Germany, and which he'd perfected in his groundbreaking study,
@@ -156,21 +160,17 @@ export default function DuboisChapter() {
 
           <InlineFootnote index={6}></InlineFootnote>
 
-          <span className="font-normal"> The first set, </span>
-          <span className="font-normal italic">
-            The Georgia Negro: A Sociological Study
-          </span>
           <span className="font-normal">
-            , focused on statistics that had been compiled by Du Bois and his
+            {" "}
+            The first set,<cite>The Georgia Negro: A Sociological Study</cite>,
+            focused on statistics that had been compiled by Du Bois and his
             students that related to the Black population of that state. The
             second set was more national in scope. Entitled{" "}
-          </span>
-          <span className="font-normal italic">
-            A Series of Statistical Charts Illustrating the Condition of the
-            Descendants of Former Slaves Now in Residence in the United States
-            of America
-          </span>
-          <span className="font-normal">
+            <cite>
+              A Series of Statistical Charts Illustrating the Condition of the
+              Descendants of Former Slaves Now in Residence in the United States
+              of America
+            </cite>
             , this set drew from several data sources, including the US Census,
             in order to put the Black population of the United States in
             national and international perspectives. Throughout both series of
@@ -186,15 +186,7 @@ export default function DuboisChapter() {
         <Column className="px-20">
           <div>
             <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
-              The first chart of{" "}
-            </span>
-            <span
-              className="italic font-normal"
-              style={{ color: "rgb(41, 41, 41)" }}
-            >
-              The Georgia Negro{" "}
-            </span>
-            <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
+              The first chart of <cite>The Georgia Negro </cite>
               series, which functions as its title page, makes clear how Du Bois
               understood the twofold purpose of the project. Below a pair of
               Mercator projections, one of Africa and the other of the Americas,
@@ -202,22 +194,16 @@ export default function DuboisChapter() {
               two epigraphs. The first makes the expository aim of the series
               explicit: “to illustrate the development of the American Negro in
               a single typical state of the United States.” The second advances
-              the argument of the series: “The problem of the 20
-            </span>
-            <span style={{ color: "rgb(41, 41, 41)" }}>th</span>
-            <span style={{ color: "rgb(41, 41, 41)" }}>
-              {" "}
-              century is the problem of the color line.”
+              the argument of the series: “The problem of the 20 the century is
+              the problem of the color line.”
             </span>
             <p>
-              <span>These words would reappear several years later in </span>
-              <span>The Souls of Black Folk</span>
               <span>
-                {" "}
-                (19n03), where they would become “perhaps Du Bois’s most famous
-                indictment of the centrality of race and racism to modern
-                American sociopolitical life,” as architectural historian Mabel
-                O. Wilson explains.
+                These words would reappear several years later in
+                <cite>The Souls of Black Folk </cite> (19n03), where they would
+                become “perhaps Du Bois’s most famous indictment of the
+                centrality of race and racism to modern American sociopolitical
+                life,” as architectural historian Mabel O. Wilson explains.
                 <InlineFootnote index={7}></InlineFootnote>
               </span>
               <span>But Du Bois mounts the same case through his charts. </span>
@@ -736,167 +722,157 @@ export default function DuboisChapter() {
       <ChapterSectionTitle>
         Education, Collaboration, and Credit
       </ChapterSectionTitle>
+      <TwoColumnLayout>
+        <Column className="py-5 md:py-10">
+          <p>
+            <span className="font-normal">
+              If one major purpose of the Paris Exposition was to illustrate the
+              accomplishments&mdash;and, therefore, the requisite
+              tenacity&mdash;of Black Americans as a group, a second equally
+              major purpose was to illustrate the accomplishments of a much
+              smaller group: the students of Atlanta University. These students
+              were pictured in several of photographs included in the
+              exhibition, along with students from other Black universities and
+              industrial schools; but their talents and potential were most
+              visible in the second series of charts, which were credited not to
+              Du Bois but to “Negro students under the direction of Atlanta
+              University.”
+            </span>
+          </p>
+          <p>
+            <span className="font-normal">
+              Through his explicit acknowledgement of his students’
+              contributions, as well as the contents of the charts themselves,
+              Du Bois sought to demonstrate the capability of his Atlanta
+              University students. To wit: the introductory chart of the second
+              series, which announces itself as a study of the Black citizens of
+              the United States, is illustrated not by any visualization of the
+              population as a whole, but instead by a pie chart that displays
+              the occupations of the 330 individuals who had graduated from
+              Atlanta University to that date. Additional statistics printed at
+              the bottom of the chart provide additional information about the
+              University, including the number of current faculty members (20)
+              and students (250), as well as buildings on campus (5) and books
+              in the library (11,000). A final number closes the chart: the
+              amount of funding required to seed an endowment for this level of
+              intellectual inquiry ($500,000). In this way, the chart reads as
+              an advertisement for the past successes of the University and a
+              plea for its future support.
+            </span>
+          </p>
+          <p>
+            <span className="font-normal">
+              While the subsequent charts in the series deliver on the promise
+              to treat the Black population of the United States as a whole,
+              they continue to underscore the value of Atlanta University, both
+              for its students and for the nation. Unlike the first set of
+              charts, which do not include credit lines except on the
+              introductory image, each chart in this series contains a credit
+              line just below its title: “Done by Atlanta University.” The
+              credit line serves the dual purpose of acknowledging their labor
+              and accentuating their skill.
+            </span>
+          </p>
+        </Column>
+        <Column className="md:ml-12">
+          <Figure
+            images={[
+              {
+                src: "/images/dubois/ch5-12-series.png",
+                alt: "",
+              },
+            ]}
+          >
+            Above: The title image of the second set of charts prepared for the
+            Paris Exposition, “A Series of Statistical Charts Illustrating the
+            Condition of the Descendants of Former African Slaves Now Resident
+            in the United States of America.” Image courtesy of the Library of
+            Congress, Prints &amp; Photographs Division, LC-DIG-ppmsca-08994.
+          </Figure>
+        </Column>
+      </TwoColumnLayout>
+
+      <TwoColumnLayout>
+        <Column>
+          <p>
+            <span className="font-normal">
+              As to who, more specifically, Du Bois intended to credit, it
+              remains difficult to discern. The{" "}
+              <cite>Atlanta University Bulletin</cite>
+              for May 1900, which included an article on the exposition,
+              emphasizes how the work “was done entirely by Negroes&mdash;Dr. Du
+              Bois and his assistants, most of whom are Atlanta University
+              graduates.”
+            </span>
+            <InlineFootnote index={18}></InlineFootnote>
+            <span className="font-normal">
+              Du Bois himself provides only slightly more clarity, recalling in
+              his third and final autobiographical text, written late in life,
+              “I got a couple of my best students and put a series of facts into
+              charts,” resulting in the “most interesting set of drawings” that
+              were displayed in Paris.
+            </span>
+            <InlineFootnote index={19}></InlineFootnote>
+            <span className="font-normal">
+              And while Du Bois goes on to describe the contents of the charts
+              as well as how “the details of finishing these fifty or more
+              charts, in colors, with accuracy, was terribly difficult with
+              little money, limited time, and not too much encouragement,” he
+              does not name any of the students who might have helped to ease
+              this challenging task.
+            </span>
+          </p>
+          <p>
+            <span className="font-normal">
+              [ SOMETHING INTERESTING WITH ALL OF THE SINGLE CREDIT LINES? ]
+            </span>
+          </p>
+          <p>
+            <span className="font-normal">
+              Newspaper reportage of the Paris Exposition does name one former
+              student, William Andrew Rogers, as responsible for having
+              “executed” the charts. The 1899-1900 Atlanta University{" "}
+              <cite>College Bulletin</cite> confirms this role, listing Rogers’s
+              occupation as “Work on Paris Exhibit.”
+            </span>
+            <InlineFootnote index={20}></InlineFootnote>
+            <span className="font-normal">
+              {" "}
+              (Rogers had graduated the previous year.) But “based on the volume
+              of the designs, each piece’s complexity and detail, and the
+              compressed project timeline,” as graphic designer Silas Munro
+              confirms, “it seems implausible that Rogers and Du Bois worked
+              alone to complete the project.”
+            </span>
+            <InlineFootnote index={21}></InlineFootnote>
+            <span className="font-normal">
+              {" "}
+              The fact that the first set of charts are more sophisticated in
+              their visual design, and more professional in their execution,
+              suggests that Rogers and Du Bois might have worked on the first
+              series together, while enlisting additional students in the design
+              and execution of the second set of charts.{" "}
+            </span>
+          </p>
+        </Column>
+        <Column className="md:ml-12">
+          <Figure
+            images={[
+              {
+                src: "/images/dubois/ch5-14-rogers.png",
+                alt: "",
+              },
+            ]}
+          >
+            Above: The page in the Atlanta University Bulletin that records the
+            current occupations of AU alumni. Also note the number of alumni
+            working as teachers&mdash;Rogers’s eventual employ as well. Image
+            courtesy of the Archives Research Center, Digital Commons @ Robert
+            W. Woodruff Library, Atlanta University Center
+          </Figure>
+        </Column>
+      </TwoColumnLayout>
       <CenteredLayout>
-        <p>
-          <span className="font-normal">
-            If one major purpose of the Paris Exposition was to illustrate the
-            accomplishments&mdash;and, therefore, the requisite
-            tenacity&mdash;of Black Americans as a group, a second equally major
-            purpose was to illustrate the accomplishments of a much smaller
-            group: the students of Atlanta University. These students were
-            pictured in several of photographs included in the exhibition, along
-            with students from other Black universities and industrial schools;
-            but their talents and potential were most visible in the second
-            series of charts, which were credited not to Du Bois but to “Negro
-            students under the direction of Atlanta University.”
-          </span>
-        </p>
-        <p>
-          <span className="font-normal">
-            Through his explicit acknowledgement of his students’ contributions,
-            as well as the contents of the charts themselves, Du Bois sought to
-            demonstrate the capability of his Atlanta University students. To
-            wit: the introductory chart of the second series, which announces
-            itself as a study of the Black citizens of the United States, is
-            illustrated not by any visualization of the population as a whole,
-            but instead by a pie chart that displays the occupations of the 330
-            individuals who had graduated from Atlanta University to that date.
-            Additional statistics printed at the bottom of the chart provide
-            additional information about the University, including the number of
-            current faculty members (20) and students (250), as well as
-            buildings on campus (5) and books in the library (11,000). A final
-            number closes the chart: the amount of funding required to seed an
-            endowment for this level of intellectual inquiry ($500,000). In this
-            way, the chart reads as an advertisement for the past successes of
-            the University and a plea for its future support.
-          </span>
-        </p>
-        <div className="flex flex-col items-center middle-full">
-          <div>
-            <ImageModal
-              src="/images/dubois/ch5-12-series.png"
-              alt=""
-              loading="lazy"
-              width="100%"
-            />
-          </div>
-          <div className="caption text-center mt-10 w-5/6">
-            <p>
-              <span>
-                Above: The title image of the second set of charts prepared for
-                the Paris Exposition, “A Series of Statistical Charts
-                Illustrating the Condition of the Descendants of Former African
-                Slaves Now Resident in the United States of America.” Image
-                courtesy of the Library of Congress, Prints &amp; Photographs
-                Division, LC-DIG-ppmsca-08994.
-              </span>
-            </p>
-          </div>
-        </div>
-        <p>
-          <span className="font-normal">
-            While the subsequent charts in the series deliver on the promise to
-            treat the Black population of the United States as a whole, they
-            continue to underscore the value of Atlanta University, both for its
-            students and for the nation. Unlike the first set of charts, which
-            do not include credit lines except on the introductory image, each
-            chart in this series contains a credit line just below its title:
-            “Done by Atlanta University.” The credit line serves the dual
-            purpose of acknowledging their labor and accentuating their skill.
-          </span>
-        </p>
-        <p>
-          <span className="font-normal">
-            As to who, more specifically, Du Bois intended to credit, it remains
-            difficult to discern. The{" "}
-          </span>
-          <span className="font-normal italic">
-            Atlanta University Bulletin
-          </span>
-          <span className="font-normal">
-            {" "}
-            for May 1900, which included an article on the exposition,
-            emphasizes how the work “was done entirely by Negroes&mdash;Dr. Du
-            Bois and his assistants, most of whom are Atlanta University
-            graduates.”
-          </span>
-          <InlineFootnote index={18}></InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            Du Bois himself provides only slightly more clarity, recalling in
-            his third and final autobiographical text, written late in life, “I
-            got a couple of my best students and put a series of facts into
-            charts,” resulting in the “most interesting set of drawings” that
-            were displayed in Paris.
-          </span>
-          <InlineFootnote index={19}></InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            And while Du Bois goes on to describe the contents of the charts as
-            well as how “the details of finishing these fifty or more charts, in
-            colors, with accuracy, was terribly difficult with little money,
-            limited time, and not too much encouragement,” he does not name any
-            of the students who might have helped to ease this challenging task.
-          </span>
-        </p>
-        <p>
-          <span className="font-normal">
-            [ SOMETHING INTERESTING WITH ALL OF THE SINGLE CREDIT LINES? ]
-          </span>
-        </p>
-        <p>
-          <span className="font-normal">
-            Newspaper reportage of the Paris Exposition does name one former
-            student, William Andrew Rogers, as responsible for having “executed”
-            the charts. The 1899-1900 Atlanta University{" "}
-          </span>
-          <span className="font-normal italic">College Bulletin</span>
-          <span className="font-normal">
-            {" "}
-            confirms this role, listing Rogers’s occupation as “Work on Paris
-            Exhibit.”
-          </span>
-          <InlineFootnote index={20}></InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            (Rogers had graduated the previous year.) But “based on the volume
-            of the designs, each piece’s complexity and detail, and the
-            compressed project timeline,” as graphic designer Silas Munro
-            confirms, “it seems implausible that Rogers and Du Bois worked alone
-            to complete the project.”
-          </span>
-          <InlineFootnote index={21}></InlineFootnote>
-          <span className="font-normal">
-            {" "}
-            The fact that the first set of charts are more sophisticated in
-            their visual design, and more professional in their execution,
-            suggests that Rogers and Du Bois might have worked on the first
-            series together, while enlisting additional students in the design
-            and execution of the second set of charts.{" "}
-          </span>
-        </p>
-        <div className="flex flex-col items-center middle-full">
-          <div>
-            <ImageModal
-              src="/images/dubois/ch5-14-rogers.png"
-              alt=""
-              loading="lazy"
-              width="100%"
-            />
-          </div>
-          <div className="caption text-center mt-10 w-5/6">
-            <p>
-              <span>
-                Above: The page in the Atlanta University Bulletin that records
-                the current occupations of AU alumni. Also note the number of
-                alumni working as teachers&mdash;Rogers’s eventual employ as
-                well. Image courtesy of the Archives Research Center, Digital
-                Commons @ Robert W. Woodruff Library, Atlanta University Center
-              </span>
-              <span>.</span>
-            </p>
-          </div>
-        </div>
         <p>
           <span className="font-normal">
             If this were true, it would not have been the first time that Du
