@@ -17,7 +17,6 @@ import BrooksChart from "~/components/brooks/BrooksChart";
 import SeraphiqueTour from "~/components/brooks/SeraphiqueTour";
 import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
-import Consent from "~/components/Consent";
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
