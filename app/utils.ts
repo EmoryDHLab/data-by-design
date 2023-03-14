@@ -7,3 +7,7 @@ export function* numberRange(start: number, end: number) {
     yield i;
   }
 }
+
+export function scrollToAnchor(hash: string) {
+  document.getElementById(hash.replace("#", ""))?.scrollIntoView({ block: start });
+}

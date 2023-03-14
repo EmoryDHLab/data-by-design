@@ -94,6 +94,7 @@ module.exports = {
     "text-duboisPrimary",
     "text-playfairPrimary",
     "bg-playfairPrimary",
+    "bg-playfairSecondary",
     "text-peabodyPrimary",
     "text-peabodyOrange",
     "bg-peabodyPrimary",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -17,17 +17,53 @@ import InlineFootnote from "~/components/InlineFootnote";
 import { playfairFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import Quotation from "~/components/Quotation";
+import ChapterBody from "~/components/layout/ChapterBody";
 
 export default function PlayfairPage() {
   const [docHeightState, setDocHeightState] = useState<number>(0);
+
+  const anchors = {
+    chartOne: {
+      type: "figure",
+      ref: useRef()
+    },
+    chartTwo: {
+      type: "figure",
+      ref: useRef()
+    },
+    chartThree: {
+      type: "figure",
+      ref: useRef()
+    },
+    chartFour: {
+      type: "figure",
+      ref: useRef()
+    },
+    scrollytellOne: {
+      type: "scrollytell",
+      ref: useRef()
+    },
+    chartFive: {
+      type: "figure",
+      ref: useRef()
+    },
+    // chartSix: {
+    //   type: "figure",
+    //   ref: useRef()
+    // },
+    // chartSeven: {
+    //   type: "figure",
+    //   ref: useRef()
+    // }
+}
 
   return (
     <ChapterContext.Provider
       value={{
         backgroundColor: "playfairPrimary",
         primaryTextColor: "white",
-        accentColor: "playfairPrimary",
-        accentTextColor: "white",
+        accentColor: "playfairSecondary",
+        accentTextColor: "black",
         footnoteTextColor: "playfairPrimary",
         footnotes: playfairFootnotes,
         docHeightState,
@@ -38,6 +74,7 @@ export default function PlayfairPage() {
         title="Visualization as Argument"
         subtitle="William Playfair's Time-Series Charts"
       />
+      <ChapterBody anchors={anchors}>
       <TwoColumnLayout>
         <Column>
           <p className="first-paragraph">
@@ -137,42 +174,57 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column shouldPin={true}>
-          <Figure
-            className="ml-0 md:ml-12"
-            src="/images/playfair/1-northamerica.jpg"
-            alt=""
+          <span
+            ref={anchors.chartOne.ref}
+            id="chartOne"
           >
-            William Playfair's chart of "Exports &amp; Imports to and from all
-            of North America," published in the third edition of the{" "}
-            <cite> Commercial and Political Atlas</cite> (1801). Image courtesy
-            of the Library Company of Philadelphia.
-          </Figure>
+            <Figure
+              className="ml-0 md:ml-12"
+              src="/images/playfair/1-northamerica.jpg"
+              alt=""
+            >
+              William Playfair's chart of "Exports &amp; Imports to and from all
+              of North America," published in the third edition of the{" "}
+              <cite> Commercial and Political Atlas</cite> (1801). Image courtesy
+              of the Library Company of Philadelphia.
+            </Figure>
+          </span>
 
-          <Figure
-            className="ml-0 md:ml-12"
-            src="/images/playfair/2-wheat.jpg"
-            alt=""
+          <span
+            ref={anchors.chartTwo.ref}
+            id="chartTwo"
           >
-            Playfair's "Chart Showing at One View the Price of the Quarter of
-            Wheat, &amp; Wages of Labour by the Week, from the Year 1565 to
-            1821," published in 1822. The chart's representation of the price of
-            wheat is among the first bar charts presently known. (The bar charts
-            included in the <cite> Commercial and Political Atlas</cite> are
-            believed to be the first). Image courtesy of Wikimedia Commons."
-          </Figure>
+            <Figure
+              className="ml-0 md:ml-12"
+              src="/images/playfair/2-wheat.jpg"
+              alt=""
+            >
+              Playfair's "Chart Showing at One View the Price of the Quarter of
+              Wheat, &amp; Wages of Labour by the Week, from the Year 1565 to
+              1821," published in 1822. The chart's representation of the price of
+              wheat is among the first bar charts presently known. (The bar charts
+              included in the <cite> Commercial and Political Atlas</cite> are
+              believed to be the first). Image courtesy of Wikimedia Commons."
+            </Figure>
+          </span>
 
-          <Figure
-            className="ml-0 md:ml-12"
-            src="/images/playfair/3-pie.jpg"
-            alt=""
+          <span
+            ref={anchors.chartThree.ref}
+            id="chartThree"
           >
-            Playfair's "Chart Representing the Extent, Population &amp;
-            Revenues, of the Principal Nations in Europe, after the Division of
-            Poland &amp; Treaty of Luneville," published in the{" "}
-            <cite>Statistical Breviary</cite>
-            (1801). The pie charts included in this volume are considered the
-            first presently known. Image courtesy of Wikimedia Commons.
-          </Figure>
+            <Figure
+              className="ml-0 md:ml-12"
+              src="/images/playfair/3-pie.jpg"
+              alt=""
+            >
+              Playfair's "Chart Representing the Extent, Population &amp;
+              Revenues, of the Principal Nations in Europe, after the Division of
+              Poland &amp; Treaty of Luneville," published in the{" "}
+              <cite>Statistical Breviary</cite>
+              (1801). The pie charts included in this volume are considered the
+              first presently known. Image courtesy of Wikimedia Commons.
+            </Figure>
+          </span>
         </Column>
       </TwoColumnLayout>
       <ChapterSectionTitle>The Value of Visual Knowledge</ChapterSectionTitle>
@@ -239,15 +291,28 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column className="md:ml-12" shouldPin={true}>
-          <Figure src="/images/playfair/chart-1787.jpg" alt="">
-            The data on "America" included in the second edition of The
-            Commercial and Political Atlas (1787), on the recommendation of
-            James Watt. Image courtesy of the Library Company of Philadelphia,{" "}
-            <a href="http://www.librarycompany.org">www.librarycompany.org</a>
-          </Figure>
+          <span
+            ref={anchors.chartFour.ref}
+            id="chartFour"
+          >
+            <Figure
+              src="/images/playfair/chart-1787.jpg"
+              alt=""
+            >
+              The data on "America" included in the second edition of The
+              Commercial and Political Atlas (1787), on the recommendation of
+              James Watt. Image courtesy of the Library Company of Philadelphia,{" "}
+              <a href="http://www.librarycompany.org">www.librarycompany.org</a>
+            </Figure>
+          </span>
         </Column>
       </TwoColumnLayout>
-      <PlayfairScrollytell />
+      <span
+        ref={anchors.scrollytellOne.ref}
+        id="scrollytellOne"
+      >
+        <PlayfairScrollytell />
+      </span>
       <CenteredLayout>
         <p>
           Clearly, for Playfair, his lack of data was not of concern. His
@@ -256,7 +321,7 @@ export default function PlayfairPage() {
           first perceived by the senses and then processed by the mind.
           <InlineFootnote index={10} />
           More specifically, Playfair advances a belief in the role of sensory
-          perception, ​​and of vision in particular—in prompting a particular
+          perception, and of vision in particular—in prompting a particular
           form of crystalizing insight that can lead to new knowledge: "On
           inspecting any one of these Charts attentively," Playfair himself
           explains, "a sufficiently distinct impression will be made, to remain
@@ -287,22 +352,17 @@ export default function PlayfairPage() {
           visualization scholar Ben Shneiderman analogizes visualization to "a
           telescope or a microscope that increases your perceptual abilities,"
           allowing people to "understand complex processes so as to support
-          better decisions."
-          <InlineFootnote index={13} />
-          ​​Intoning the lessons of his own influential textbook,
-          <cite>
-            Readings in Information Visualization: Using Vision to Think
-          </cite>
-          , coauthored with Stuart Card and Jock Mackinlay, Shneiderman insists
-          that "the purpose of data visualization is insight."
-          <InlineFootnote index={14} />
-          And while acknowledging that both "designers of visualizations, and
-          scholars who study them, have struggled to give a coherent definition
-          of <em>insight</em>," data journalist and visualization designer
-          Alberto Cairo also maintains that clear and accurate images (and,
-          increasingly, interactive graphics), can lead to new knowledge about a
-          subject—knowledge that would otherwise remain hidden from view.
-          <InlineFootnote index={15} />
+          better decisions."<InlineFootnote index={13} /> Intoning the lessons
+          of his own influential textbook, <cite>Readings in Information Visualization:
+          Using Vision to Think</cite>, coauthored with Stuart Card and Jock
+          Mackinlay, Shneiderman insists that "the purpose of data visualization
+          is insight."<InlineFootnote index={14} /> And while acknowledging that
+          both "designers of visualizations, and scholars who study them, have
+          struggled to give a coherent definition of <em>insight</em>," data journalist
+          and visualization designer Alberto Cairo also maintains that clear and
+          accurate images (and, increasingly, interactive graphics), can lead to
+          new knowledge about a subject—knowledge that would otherwise remain
+          hidden from view.<InlineFootnote index={15} />
         </p>
         <FullBleed>
           <PullQuote
@@ -331,10 +391,15 @@ export default function PlayfairPage() {
         The Politics of Playfair's Charts
       </ChapterSectionTitle>
       <CenteredLayout>
-        <Figure src="/images/playfair/5-minard.png" alt="">
-          Charles Minard's 1869 chart of Napoleon's failed Russia campaign.
-          Image courtesy of Wikimedia Commons.
-        </Figure>
+        <span
+          ref={anchors.chartFive.ref}
+          id="chartFive"
+        >
+          <Figure src="/images/playfair/5-minard.png" alt="">
+            Charles Minard's 1869 chart of Napoleon's failed Russia campaign.
+            Image courtesy of Wikimedia Commons.
+          </Figure>
+        </span>
         <p>
           Playfair created his charts in an era of intense political change. At
           the time that he released the third and most widely circulated edition
@@ -733,6 +798,7 @@ export default function PlayfairPage() {
           </Figure>
         </Column>
       </TwoColumnLayout>
+      </ChapterBody>
       <CenteredLayout>
         <FootnotesList footnotes={playfairFootnotes} />
       </CenteredLayout>
