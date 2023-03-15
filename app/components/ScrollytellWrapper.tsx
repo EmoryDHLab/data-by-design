@@ -60,7 +60,7 @@ export default function ScrollytellWrapper({ children, steps, triggers, scrollPr
   return (
     <div
       ref={scrollerElementRef}
-      className={`bg-${accentColor} max-w-[100vw] ${className ?? ""}`}
+      className={`bg-${accentColor} max-w-[100vw] top-[90px] ${className ?? ""}`}
       tabIndex={0}
       // onFocus={() => {
       //   window.scrollTo({top: offsetTop, left: 0, block: "start", inline: "nearest"});

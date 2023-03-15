@@ -47,14 +47,38 @@ export default function PlayfairPage() {
       type: "figure",
       ref: useRef()
     },
-    // chartSix: {
-    //   type: "figure",
-    //   ref: useRef()
-    // },
-    // chartSeven: {
-    //   type: "figure",
-    //   ref: useRef()
-    // }
+    chartSix: {
+      type: "figure",
+      ref: useRef()
+    },
+    chartSeven: {
+      type: "figure",
+      ref: useRef()
+    },
+    viz1: {
+      type: "visualization",
+      ref: useRef()
+    },
+    chart8: {
+      type: "figure",
+      ref: useRef()
+    },
+    chart9: {
+      type: "figure",
+      ref: useRef()
+    },
+    chart10: {
+      type: "figure",
+      ref: useRef()
+    },
+    chart11: {
+      type: "figure",
+      ref: useRef()
+    },
+    viz2: {
+      type: "visualization",
+      ref: useRef()
+    }
 }
 
   return (
@@ -503,7 +527,7 @@ export default function PlayfairPage() {
             them.
           </p>
           <p>
-            ​​Playfair's import-export charts advance a belief in what can be
+            Playfair's import-export charts advance a belief in what can be
             gained by the "big picture" view without registering any concern
             about what might be lost in the details, or about who might be
             impacted by that missing information.
@@ -558,16 +582,26 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column className="md:ml-12">
-          <Figure src="/images/playfair/6-snow.jpg" alt="">
-            The map created by John Snow in 1854 that shows how Cholera cases
-            are clustered around the town's water pump. Image courtesy of
-            Wikimedia Commons.
-          </Figure>
-          <Figure src="/images/playfair/7-nightingale.jpg" alt="">
-            The coxcomb chart created by Florence Nightingale in 1858 which
-            emphasizes the number of (preventable) British military deaths due
-            to poor sanitation. Image courtesy of Wikimedia Commons.
-          </Figure>
+          <span
+            ref={anchors.chartSix.ref}
+            id="chartSix"
+          >
+            <Figure src="/images/playfair/6-snow.jpg" alt="">
+              The map created by John Snow in 1854 that shows how Cholera cases
+              are clustered around the town's water pump. Image courtesy of
+              Wikimedia Commons.
+            </Figure>
+          </span>
+          <span
+            ref={anchors.chartSeven.ref}
+            id="chartSeven"
+          >
+            <Figure src="/images/playfair/7-nightingale.jpg" alt="">
+              The coxcomb chart created by Florence Nightingale in 1858 which
+              emphasizes the number of (preventable) British military deaths due
+              to poor sanitation. Image courtesy of Wikimedia Commons.
+            </Figure>
+          </span>
         </Column>
       </TwoColumnLayout>
       <FullBleed>
@@ -589,7 +623,7 @@ export default function PlayfairPage() {
           web, according to any conceivable form.
         </p>
 
-        <p className="my-6 md:my-12 w-full h-full">
+        <p className="my-6 md:my-12 w-full h-full" ref={anchors.viz1.ref} id="viz1">
           <span className="col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 mt-6 flex flex-row">
             <svg viewBox="0 0 100 50">
               <rect width="64%" height="100%" fill="#F3ECCB" />
@@ -644,16 +678,31 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column className="md:ml-12">
-          <Figure src="/images/playfair/8-lyra.png" alt=""></Figure>
-          <Figure src="/images/playfair/9-protovis.png" alt=""></Figure>
-          <Figure src="/images/playfair/10-camoes.png" alt="">
-            Clockwise from top left: Playfair's chart of wheat and wages, as
-            recreated in Lyra, an early visualization platform designed by
-            Arvind Satyanarayan and Jeffrey Heer; the same chart recreated in
-            Protovis, an early JavaScript visualization library developed by
-            Mike Bostock; the same chart recreated in Microsoft Excel by Jorge
-            Camoes. Screenshots by Lauren Klein."
-          </Figure>
+          <span
+            ref={anchors.chart8.ref}
+            id="chart8"
+          >
+            <Figure src="/images/playfair/8-lyra.png" alt=""></Figure>
+          </span>
+          <span
+            ref={anchors.chart9.ref}
+            id="chart9"
+          >
+            <Figure src="/images/playfair/9-protovis.png" alt=""></Figure>
+          </span>
+          <span
+            ref={anchors.chart10.ref}
+            id="chart10"
+          >
+            <Figure src="/images/playfair/10-camoes.png" alt="">
+              Clockwise from top left: Playfair's chart of wheat and wages, as
+              recreated in Lyra, an early visualization platform designed by
+              Arvind Satyanarayan and Jeffrey Heer; the same chart recreated in
+              Protovis, an early JavaScript visualization library developed by
+              Mike Bostock; the same chart recreated in Microsoft Excel by Jorge
+              Camoes. Screenshots by Lauren Klein."
+            </Figure>
+          </span>
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>
@@ -691,7 +740,7 @@ export default function PlayfairPage() {
             their answers are not conveyed—or nor are the questions even
             prompted—by the simple view presented through Playfair's form.
           </p>
-          <p className="my-6 md:my-12">
+          <p className="my-6 md:my-12" ref={anchors.viz2.ref} id="viz2">
             <RecreationCovid />
           </p>
           <p>
@@ -784,18 +833,20 @@ export default function PlayfairPage() {
           </div>
         </Column>
         <Column className="md:ml-12">
-          <Figure src="/images/playfair/jevons.png" alt="">
-            Jevons's illustration of the benefits of the "graphical method," in
-            which{" "}
-            <span>
-              "it becomes possible to trace a line among the points which will
-              approximate to the true law more nearly than the ponts
-              themselves."
-            </span>{" "}
-            <br></br>
-            Image Courtesy of Google Books. <br></br>Digitized by Harvard
-            University.
-          </Figure>
+          <span
+            ref={anchors.chart11.ref}
+            id="chart11"
+          >
+            <Figure src="/images/playfair/jevons.png" alt="">
+              Jevons's illustration of the benefits of the "graphical method," in
+              which
+              <blockquote>
+                "it becomes possible to trace a line among the points which will
+                approximate to the true law more nearly than the points themselves."
+              </blockquote>
+              Image Courtesy of Google Books. Digitized by Harvard University.
+            </Figure>
+          </span>
         </Column>
       </TwoColumnLayout>
       </ChapterBody>
