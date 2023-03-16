@@ -53,3 +53,5 @@ export default function Index() {
       <ChapterCardGrid />
       <Footer />
     </ChapterContext.Provider>
+  );
+}
