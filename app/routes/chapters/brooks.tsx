@@ -47,6 +47,7 @@ export default function BrooksPage() {
       />
 
       {/* <Consent> */}
+ 
         <CenteredLayout>
           <p>
             Before there are data, there are people. People who offer up their
