@@ -49,6 +49,9 @@ export default function Index() {
           />
         </div>
       </div> */}
+
+     
+
       <ClientOnly>{() => <Timeline />}</ClientOnly>
       <ChapterCardGrid />
       <Footer />
