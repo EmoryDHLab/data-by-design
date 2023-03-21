@@ -46,7 +46,9 @@ export default function OrderedTimeline({
 
   useEffect(() => {
     setSelectedImage(sortedImages[currentImageIndex]);
-  }, [setSelectedImage, currentImageIndex]);
+    // TODO: Rethink after homepage design changes
+    // sliderRef.current.scrollIntoView({ block: "end", behavior: "smooth" });
+  }, [setSelectedImage, currentImageIndex, sliderRef]);
 
   const mouseDown = (pageX) => {
     setMouseIsDown(true);
@@ -98,11 +100,8 @@ export default function OrderedTimeline({
       onMouseMove={(event) => mouseMove(event)}
       onKeyDown={keyUp}
       tabIndex={0}
-      onFocus={() => window.scrollTo(
-        {
-          top: sliderRef.current.getBoundingClientRect().top + window.pageYOffset - 120,
-          behavior: "smooth"
-      })}
+      // TODO: Rethink after homepage design changes
+      // onFocus={() => sliderRef.current.scrollIntoView({ block: "end" })}
 
     >
       {Object.entries(imagesByYear).map(([year, images]) => (

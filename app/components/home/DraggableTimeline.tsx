@@ -124,13 +124,9 @@ export default function DraggableTimeline({
         setStartPosition(undefined);
       }}
       onKeyUp={({ key }) => keyUp(key)}
-      // Scroll the timeline up to show reveal image detail below
-      // TODO: Consider reworking to side-by-side layout.
-      onFocus={() => window.scrollTo(
-        {
-          top: svgRef.current.getBoundingClientRect().top + window.pageYOffset - 120,
-          behavior: "smooth"
-      })}
+      // Scroll the timeline up to show reveal image detail above
+      // TODO: Rethink after homepage design changes
+      // onFocus={() => svgRef.current.scrollIntoView({ block: "end" })}
       tabIndex={0}
     >
       {images.map((img, index) => {
