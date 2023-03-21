@@ -7,6 +7,7 @@ import RecreatedSquare from "./barGraph/RecreatedSquare";
 import Timeline from "./barGraph/Timeline";
 import { getCenturyEvents } from "./peabodyUtils";
 import BarGraphContext from "./barGraph/BarGraphContext";
+import BarGraphActors from "./barGraph/BarGraphActors";
 const centuries = [1500, 1600, 1700, 1800];
 
 export default function PeabodyBarGraph() {
@@ -57,6 +58,7 @@ export default function PeabodyBarGraph() {
             The Peabody Chart as Bar Graph
           </h4>
           <CenturySelect />
+          <BarGraphActors />
         </div>
         <div>
           <Key />
