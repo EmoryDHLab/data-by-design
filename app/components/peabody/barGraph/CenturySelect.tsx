@@ -7,7 +7,7 @@ export default function CenturySelect() {
     useContext(BarGraphContext);
 
   return (
-    <div className="h-auto flex justify-start">
+    <div className="flex justify-start mb-6">
       {centuries.map((century, index) => {
         return (
           <svg viewBox="0 0 100 32" key={`button-${index}`} className="w-1/6">
