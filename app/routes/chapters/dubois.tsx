@@ -183,7 +183,7 @@ export default function DuboisChapter() {
       <DocumentViewer />
 
       <TwoColumnLayout>
-        <Column className="px-20">
+        <Column className="px-10">
           <div>
             <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
               The first chart of <cite>The Georgia Negro </cite>
@@ -283,7 +283,7 @@ export default function DuboisChapter() {
       </ChapterSectionTitle>
 
       <TwoColumnLayout>
-        <Column className="px-20">
+        <Column className="px-10">
           <p>
             As the series unfolds, so too does its argument about the progress
             of the state’s Black citizens, and it does so in a way in which the

@@ -10,7 +10,7 @@ interface Props {
 export default function ChapterSectionTitle({ children }: Props) {
   const { accentColor, accentTextColor } = useContext(ChapterContext);
   return (
-    <CenteredLayout className="py-10 md:py-20 w-full">
+    <CenteredLayout className=" py-5 md:my-5 md:py-20 w-full">
       <div
         className={`bg-${accentColor} p-4 font-dubois text-xl lg:text-2xl flex justify-center items-center text-${accentTextColor}`}
       >
