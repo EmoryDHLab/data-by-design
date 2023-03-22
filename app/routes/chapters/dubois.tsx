@@ -302,22 +302,20 @@ export default function DuboisChapter() {
             Americans in a national and international context. They also make
             use of{" "}
             <HoverText hoverState="Countries" className="font-semibold">
-              {" "}
               comparisons to other populations,
             </HoverText>{" "}
             both within the United States and abroad, in order to challenge
             racist assumptions about Black Americans’ social, intellectual, and
             economic lives. As with the first series of charts, this series
-            begins with several charts
+            begins with several charts{" "}
             <HoverText hoverState="Occupations" className="font-semibold">
-              focused on population,{" "}
+              focused on population,
             </HoverText>{" "}
             <HoverText hoverState="Freedom" className="font-semibold">
               before moving on to explore themes related to employment,
             </HoverText>{" "}
             education, and{" "}
             <HoverText hoverState="Newspapers" className="font-semibold">
-              {" "}
               economics,
             </HoverText>{" "}
             as well as social, cultural, and religious life.
@@ -342,16 +340,14 @@ export default function DuboisChapter() {
               The 409 maps and diagrams began, as Du Bois’s did, by introducing
               viewers to{" "}
               <HoverText hoverState="Map" className="font-semibold">
-                {" "}
-                the population of the United States.{" "}
+                the population of the United States.
               </HoverText>{" "}
               Through by-then standard bar charts, pie charts, and line graphs,
               as well as its own creative use of pattern and visual form, the
               Atlas included, for example, a{" "}
               <HoverText hoverState="Populations" className="font-semibold">
-                {" "}
                 prototypal bump chart that ranked each state according to its
-                population;{" "}
+                population;
               </HoverText>{" "}
               a map that illustrated{" "}
               <HoverText hoverState="Gender" className="font-semibold">
@@ -360,34 +356,37 @@ export default function DuboisChapter() {
                 another that illustrated{" "}
               </HoverText>{" "}
               <HoverText hoverState="Race" className="font-semibold">
-                {" "}
                 the spatial distribution of the nation’s Black population.
               </HoverText>{" "}
-              <HoverText hoverState="Race-Distrib" className="font-semibold">
-                {" "}
+              <HoverText
+                hoverState="Race-Distribution"
+                className="font-semibold"
+              >
                 (Another chart used area charts in small multiples in order
-                compare certain state’s Black and white populations).{" "}
+                compare certain state’s Black and white populations).
               </HoverText>{" "}
               And while race was certainly of concern in the census; indeed,
               race remains one of the lighting rod issues of the census, even
-              today&mdash;it was not the{" "}
-            </span>
-            <span>Statistical Atlas’s </span>
-            <span>
+              today&mdash;it was not the <cite>Statistical Atlas’s </cite>
               main concern. Indeed, after a series of charts early in the atlas
               that visualized the nation’s Black population, the focus of the
               atlas shifts,
-              <HoverText hoverState="Religion" className="font-semibold">
+              <HoverText hoverState="Foreign" className="font-semibold">
                 {" "}
-                turning first to the nation’s immigrant population before
-                expanding outward to consider other features altogether:
+                turning first to the nation’s immigrant population{" "}
               </HoverText>{" "}
-              <HoverText hoverState="Occuptation" className="font-semibold">
+              before expanding outward to consider other features altogether:
+              <HoverText hoverState="Age-Sex" className="font-semibold">
                 {" "}
-                the population’s age and gender breakdown, its religion, the
-                occupations of its inhabitants, and more.{" "}
+                the population’s age and gender breakdown,
+              </HoverText>{" "}
+              <HoverText hoverState="Religion" className="font-semibold">
+                its religion,
+              </HoverText>{" "}
+              <HoverText hoverState="Occupation" className="font-semibold">
+                the occupations of its inhabitants, and more.
               </HoverText>
-            </span>
+            </span>{" "}
           </p>
 
           <p>

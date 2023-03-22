@@ -23,37 +23,6 @@ export default function HoverImages1() {
     imageSource = "/images/dubois/ch5-06a-letter.png";
   }
 
-  if (hoverState === "Letter") {
-    imageSource = "/images/dubois/ch5-06b-map.png";
-  }
-  if (hoverState === "Map") {
-    imageSource = "/images/dubois/ch5-04d-value.png";
-  }
-  if (hoverState === "Populations") {
-    imageSource = "/images/dubois/ch5-07a-populations.png";
-  }
-  if (hoverState === "Gender") {
-    imageSource = "/images/dubois/ch5-07b-gender.png";
-  }
-  if (hoverState === "Race") {
-    imageSource = "/images/dubois/ch5-07c-race.png";
-  }
-  if (hoverState === "Race-Distribution") {
-    imageSource = "/images/dubois/ch5-07d-race-distrib.png";
-  }
-  if (hoverState === "Foreign") {
-    imageSource = "/images/dubois/ch5-07e-foreign.png";
-  }
-  if (hoverState === "Age-Sex") {
-    imageSource = "/images/dubois/ch5-07f-age-sex.png";
-  }
-
-  if (hoverState === "Religion") {
-    imageSource = "/images/dubois/ch5-07g-religion.png";
-  }
-  if (hoverState === "Occupation") {
-    imageSource = "/images/dubois/ch5-07h-occupation.png";
-  }
   // —————————————————
 
   return (
