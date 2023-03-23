@@ -1,119 +1,69 @@
-import {
-  getEventXFromIndex,
-  getEventYFromIndex,
-  POLYGONS,
-} from "~/components/peabody/peabodyUtils";
-import type { HighlightedElement } from "~/components/peabody/peabodyUtils";
-import type { Dispatch, SetStateAction } from "react";
-import { useContext, useEffect, useRef, useState  } from "react";
+import { useContext } from "react";
 import { QuizContext } from "../PeabodyQuiz";
-import eventData from "~/data/peabody/eventData.json";
+import { getEventXFromIndex, getEventYFromIndex } from "~/components/peabody/peabodyUtils";
+import { BottomPolygon, FullPolygon, TopPolygon } from "./QuizPolygons";
 
-interface Props {
-  // Index in total peabody square, so 0..99
-  absoluteIndex: number;
-  // Index in year square, so 0..8
-  index: number;
-  year: number;
-}
-
-export default function QuizEventSquare({
-  absoluteIndex,
-  index,
-  year,
-}: Props) {
-  const [opacity, setOpacity] = useState(0);
-  const [hovered, setHovered] = useState(false);
+export default function QuizEventSquare({ index, size, yearX, yearY }) {
+  const x = getEventXFromIndex(index, size) + yearX;
+  const y = getEventYFromIndex(index, size) + yearY;
 
   const {
-    currentEvent,
-    setCurrentEvent,
-    setHoveredEvent,
-    currentCenturyEvents,
-    solved,
-    setSolved,
+    focusedCategory,
+    setFocusedCategory,
+    selectedCategories,
+    solvedEvents,
+    handleCategoryClick,
   } = useContext(QuizContext);
 
-  const squareEvent = currentCenturyEvents.filter(e => e.year === year).find(e => e.squares.includes(index + 1) || e.squares === "full");
-
-  const eventColors = useRef([]);
-
-  eventColors.current = squareEvent?.actors.map(actor => eventData.actorColors[actor]);
-
-  const polygons = [];
-
-  if (squareEvent?.actors?.length > 1) {
-    if (squareEvent?.squares === "full") {
-      switch (index) {
-        case 0:
-        case 1:
-        case 3:
-          polygons.push(...POLYGONS[0]);
-          eventColors.current = [eventData.actorColors[squareEvent.actors[0]]];
-          break;
-        case 5:
-        case 7:
-        case 8:
-          polygons.push(...POLYGONS[0]);
-          eventColors.current = [eventData.actorColors[squareEvent.actors[1]]];
-          break;
-        default:
-          polygons.push(...POLYGONS[squareEvent?.actors.length - 1]);
-      }
-    } else {
-      polygons.push(...POLYGONS[squareEvent?.actors.length - 1]);
-    }
-  } else if (squareEvent) {
-    polygons.push(...POLYGONS[0])
-  }
-
-  useEffect(() => {
-    squareEvent && solved.includes(squareEvent) ? setOpacity(1) : setOpacity(0);
-  }, [squareEvent, solved]);
-
-  const mouseEnter = () => {
-    setHoveredEvent({ type: index, event: squareEvent });
-    setHovered(true);
-  };
-
-  const mouseLeave = () => {
-    setHoveredEvent(undefined);
-    setHovered(false);
-  }
-
   return (
-    <svg
-      viewBox="0 0 30 30"
-      width={30}
-      height={30}
-      x={getEventXFromIndex(index)}
-      y={getEventYFromIndex(index)}
-      className="cursor-pointer"
-      onClick={() => setSolved([...solved, squareEvent])}
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
+    <g
+      role="button"
+      onClick={() => handleCategoryClick(index)}
+      onMouseEnter={() => setFocusedCategory(index)}
+      onMouseLeave={() => setFocusedCategory(undefined)}
     >
       <rect
-        stroke={hovered ? "gold" : "#b3b3b3"}
-        strokeWidth={hovered ? 10 : 0.5}
-        fillOpacity={opacity}
-        fill="#d9bb9f"
-        width={30}
-        height={30}
+        width={size}
+        height={size}
+        x={x}
+        y={y}
+        stroke={"#b3b3b3"}
+        strokeWidth={focusedCategory === index ? 0.3 : 0.1}
+        fillOpacity={focusedCategory === index ? 1.0 : 0.0}
+        fill={solvedEvents.includes(index) ? "" : "gold"}
       ></rect>
-      {polygons.map((p, i) => {
-        return (
-          <polygon
-            key={i}
-            className={`transition-opacity duration-700`}
-            stroke="gold"
-            strokeWidth={0.5}
-            points={p}
-            fill={eventColors.current[i]}
-            fillOpacity={opacity}
-          />
-        );
-      })}
-    </svg>
+      {selectedCategories.includes(index) &&
+        <>
+          <line x1={x} x2={x + size} y1={y} y2={y + size} className="stroke-red-400" strokeWidth={0.5}/>
+          <line x1={x} x2={x + size} y1={y + size} y2={y} className="stroke-red-400" strokeWidth={0.5}/>
+        </>
+      }
+      <text
+        x={x + 1.25}
+        y={y + 2.75}
+        fill="black"
+        fillOpacity={1.0}
+        fontSize={2}
+      >
+        {index + 1}
+      </text>
+      <g>
+        {(solvedEvents.includes(index) && (index === 0 || index === 5)) && (
+          <>
+            <TopPolygon index={index} x={x} y={y} size={size} color="rgb(222,145,49)" />
+            <BottomPolygon index={index} x={x} y={y} size={size} color="rgb(119,43,21)" />
+          </>
+        )}
+        {(solvedEvents.includes(index) && index === 1) && (
+          <>
+            <TopPolygon index={index} x={x} y={y} size={size} color="rgb(119,43,21)" />
+            <BottomPolygon index={index} x={x} y={y} size={size} color="rgb(222,145,49)" />
+          </>
+        )}
+        {(solvedEvents.includes(index) && index === 2) && (
+          <FullPolygon index={index} x={x} y={y} size={size} color="rgb(222,145,49)" />
+        )}
+      </g>
+    </g>
   );
 }

@@ -1,194 +1,154 @@
 import { createContext, useEffect, useState } from "react";
-import QuizPeabodySquare from "~/components/peabody/quiz/QuizPeabodySquare";
 import eventData from "~/data/peabody/eventData.json";
-import QuizKey from "./quiz/QuizKey";
-import FancyButton from "../FancyButton";
+import SelectActors from "./quiz/SelectActors";
+import QuizSquare from "./quiz/QuizSquare";
+import QuizEventCategories from "./quiz/QuizEventCategories";
 
-const centuries = [ 1500, 1600, 1700, 1800, ];
+const quizEvents = eventData.events[1644];
+const step1Event = quizEvents.find((event) => event.squares.includes(1));
+const step2Event = quizEvents.find((event) => event.squares.includes(2));
+const step3Event = quizEvents.find((event) => event.squares.includes(3));
+const step4Event = quizEvents.find((event) => event.squares.includes(6));
 
 export const QuizContext = createContext({
   clearSquares: 0,
   currentCentury: 1500,
+  currentEvent: undefined
 });
 
-const getCenturyEvents = ((century) => {
-  return Object.keys(eventData.events).map((year) => {
-    if (year >= century + 1 && year <= century + 100) {
-        return eventData.events[year].flat();
-    }
-  }).filter(Boolean).flat();
-})
-
 export default function PeabodyQuiz() {
-  const [currentCentury, setCurrentCentury] = useState(centuries[0]);
-  const [currentEvent, setCurrentEvent] = useState(undefined);
-  const [hoveredEvent, setHoveredEvent] = useState(undefined);
-  const [currentCenturyEvents, setCurrentCenturyEvents] = useState(getCenturyEvents(centuries[0]));
-  const [solved, setSolved] = useState([]);
-  const [previous, setPrevious] = useState(undefined);
-  const [next, setNext] = useState(undefined);
+  const [currentEvent, setCurrentEvent] = useState(step1Event);
+  const [stepState, setStepState] = useState<number>(0);
+  const [solvedEvents, setSolvedEvents] = useState<array>([]);
+  const [selectedCategories, setSelectedCategories] = useState<array>([]);
+  const [focusedCategory, setFocusedCategory] = useState<number|undefined>(undefined);
 
   useEffect(() => {
-    setSolved([]);
-    setCurrentCenturyEvents(getCenturyEvents(currentCentury));
-  }, [currentCentury, setCurrentCenturyEvents, setSolved]);
+      setSelectedCategories(solvedEvents);
+  }, [stepState, setSelectedCategories, solvedEvents]);
 
-  useEffect(() => {
-     setCurrentEvent(solved.length > 0 ?solved[solved.length - 1] : undefined);
-  }, [solved]);
-
-  useEffect(() => {
-    if (!currentCenturyEvents) return;
-    const currentIndex = currentCenturyEvents.indexOf(currentEvent)
-    setPrevious(currentCenturyEvents[currentIndex - 1]);
-    setNext(currentCenturyEvents[currentIndex + 1]);
-  }, [currentEvent, currentCenturyEvents, setPrevious, setNext]);
+  // Called when an event square or category is selected
+  const handleCategoryClick = (selected) => {
+    switch (stepState) {
+      case 2:
+        if (selected > 0) setSelectedCategories(selectedCategories.concat([selected]));
+        if (selected === 0) {
+          setSolvedEvents(solvedEvents.concat([selected]));
+          setStepState(3);
+          setCurrentEvent(step2Event);
+        }
+        break;
+      case 3:
+        if (selected > 1) setSelectedCategories(selectedCategories.concat([selected]));
+        if (selected === 1) {
+          setSolvedEvents(solvedEvents.concat([selected]));
+          setStepState(4);
+          setCurrentEvent(step3Event);
+        }
+        break;
+      case 4:
+        if (selected > 2) setSelectedCategories(selectedCategories.concat([selected]));
+        if (selected === 2) {
+          setSolvedEvents(solvedEvents.concat([selected]));
+          setStepState(5);
+          setCurrentEvent(step4Event);
+        }
+        break;
+      case 5:
+        if (selected === 5) {
+          setSolvedEvents(solvedEvents.concat([selected]));
+          setStepState(5);
+          setCurrentEvent(step4Event);
+        } else {
+          setSelectedCategories(selectedCategories.concat([selected]));
+        }
+        break;
+      default:
+        setSolvedEvents([]);
+        setStepState(0);
+        setCurrentEvent(step1Event);
+        setSelectedCategories([]);
+    }
+  };
 
   return (
     <QuizContext.Provider value={{
       currentEvent,
-      setCurrentEvent,
-      hoveredEvent,
-      setHoveredEvent,
-      currentCentury,
-      currentCenturyEvents,
-      solved,
-      setSolved,
+      stepState,
+      setStepState,
+      focusedCategory,
+      setFocusedCategory,
+      selectedCategories,
+      solvedEvents,
+      handleCategoryClick,
     }}>
-      <div className="hidden md:grid grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-12 text-white text-center w-full p-6">
-        <div className="h-auto grid grid-cols-1">
-          <QuizKey />
-        </div>
-        <div className="h-auto grid grid-cols-7 gap-y-2">
-          {centuries.map((century, index) => {
-            return (
-              <svg viewBox="0 0 100 32" key={`button-${index}`} className="w-full">
-                <FancyButton outlineColor={currentCentury === century ? "gold" : "white" } action={() => setCurrentCentury(century)}>
-                  {century}s
-                </FancyButton>
-              </svg>
-            )
-          })}
-          <svg viewBox="0 0 100 32" className="text-center w-full">
+      <div className="bg-black w-full h-[calc(100vh-48px)]">
+        <svg viewBox="0 0 300 200" className="h-full m-auto w-11/12">
+          <g className={`${stepState >= 1 ? "-translate-x-12 -translate-y-2 scale-75 " : ""} transition-all duration-1000`}>
             <text
-              onClick={() => setSolved([])}
-              type="button"
-              x={0}
-              y={0}
-              fill="white"
-              role="button"
-              dominantBaseline="middle"
-              textAnchor="middle"
+              x={85}
+              y={30}
+              fontSize={6} fill="white"
             >
-              <tspan x={50} fontSize={16} dy={12.75} className={"font-icons"}>e</tspan>
-              <tspan x={50} fontSize={8} dy={12.75}>RESET</tspan>
+              EVENT
             </text>
-          </svg>
+            <text x={85} y={46} fontSize={12} fill="white" fontFamily="VTC Du Bois, serif">
+              {currentEvent.event.replace(/ \[.*\]/, '')}
+            </text>
 
-          <svg viewBox="0 0 100 32" className="text-center w-full">
             <text
-              onClick={() => setSolved(currentCenturyEvents)}
-              type="button"
-              x={0}
-              y={0}
+              x={85}
+              y={58}
+              fontSize={stepState < 1 ? 6 : 0.0}
               fill="white"
-              role="button"
-              dominantBaseline="middle"
-              textAnchor="middle"
+              fontFamily="VTC Du Bois Narrow, serif"
+              fontStyle="italic"
+              fillOpacity={stepState < 1 ? 1.0 : 0.0}
+              className="transition-all duration-1000"
             >
-              <tspan x={50} fontSize={16} dy={12.75} className={"font-icons"}>d</tspan>
-              <tspan x={50} fontSize={8} dy={12.75}>Complete</tspan>
+              Select the countries involved
             </text>
-          </svg>
 
-          <svg viewBox="0 0 100 32" className="text-center w-full">
             <text
-              type="button"
-              x={0}
-              y={0}
+              x={85}
+              y={80}
+              fontSize={10}
               fill="white"
-              role="button"
-              dominantBaseline="middle"
-              textAnchor="middle"
+              fontFamily="VTC Du Bois Narrow, serif"
+              fontStyle="italic"
+              fillOpacity={stepState >= 2 ? 1.0 : 0.0}
+              className="transition-all duration-1000"
             >
-              <tspan x={50} fontSize={16} dy={12.75} className={"font-icons"}>f</tspan>
-              {/* <tspan x={50} fontSize={8} dy={12.75}>xxx</tspan> */}
+              Categorize the the event.
             </text>
-          </svg>
+            <SelectActors />
+            <QuizEventCategories />
+          </g>
 
-          <svg viewBox="0 0 50 50" className="text-center w-1/2">
-            <g>
-              <text
-                onClick={() => setCurrentEvent(previous)}
-                type="button"
-                x={0}
-                y={25}
-                fill="white"
-                role={previous ? "button" : ""}
-                className={"font-icons"}
-                fontSize={25}
-              >
-                c
-              </text>
-            </g>
-          </svg>
+          <g className={`fill-peabodyOrange scale-${stepState >= 1 ? 100 : 0} transition-all duration-1000 origin-bottom-right`}>
+            <text
+              x={165}
+              y={15}
+              fontSize={6}
+              fill="white"
+              fontFamily="VTC Du Bois Narrow, serif"
+              fontStyle="italic"
+              fillOpacity={stepState === 1 ? 1.0 : 0.0}
+              className="transition-all duration-1000"
+            >
+              Select the year
+            </text>
 
-          <svg viewBox="0 0 100 12" className="text-center col-span-5 w-full">
-            <g>
-              <text
-                x={50}
-                y={6}
-                fill="white"
-                fontSize={4}
-                dominantBaseline="middle"
-                textAnchor="middle"
-              >
-                {currentEvent?.year ? `${currentEvent.year}:` : ""} {currentEvent?.event ?? "Some instructions?"}
-              </text>
-            </g>
-          </svg>
-
-          <svg viewBox="0 0 50 50" className="text-center w-1/2">
-            <g>
-              <text
-                onClick={() => setCurrentEvent(next)}
-                type="button"
-                x={25}
-                y={25}
-                fill="white"
-                role={next ? "button" : ""}
-                className={"font-icons"}
-                fontSize={25}
-              >
-                b
-              </text>
-            </g>
-          </svg>
-
-          {/* <svg viewBox="0 0 100 32" className="text-center col-end-7">
-            <g>
-              <text
-                x={50}
-                y={16}
-                fill="white"
-                fontSize={24}
-                dominantBaseline="middle"
-                textAnchor="middle"
-              >
-                {solved.length}/{currentCenturyEvents.length}
-              </text>
-            </g>
-          </svg> */}
-
-        </div>
-        <div className="hidden md:block md:w-9/12 my-0 mx-auto">
-            <svg viewBox="0 0 99 99">
-              <image href={`/images/peabody/${currentCentury}s.jpg`} x="-3.5" y="-3.5" height="106" width="105.5"></image>
-            </svg>
-        </div>
-        <div className="w-full col-span-full md:col-span-1 md:w-9/12 my-0 mx-auto">
-          <QuizPeabodySquare />
-        </div>
+            <rect
+              width={125}
+              height={125}
+              x={165}
+              y={19.5}
+              tabIndex={0}
+            />
+            <QuizSquare />
+          </g>
+        </svg>
       </div>
     </QuizContext.Provider>
   );
