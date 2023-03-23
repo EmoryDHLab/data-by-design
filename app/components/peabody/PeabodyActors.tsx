@@ -1,12 +1,15 @@
+import type { Dispatch, SetStateAction } from "react";
 import eventData from "~/data/peabody/eventData.json";
 
 interface Props {
   actor?: string;
   className?: string;
-  century?: number
+  century?: number;
+  handleClick?: Dispatch<SetStateAction<string>>|undefined;
+  highlight?: array;
 }
 
-export default function PeabodyActors({ actor, className, century }: Props) {
+export default function PeabodyActors({ actor, className, century, handleClick, highlight }: Props) {
   const textColor = (actorName) => {
     return actorName === "Americas" || actorName === "Sweden" ? "black" : "white";
   };
@@ -25,7 +28,13 @@ export default function PeabodyActors({ actor, className, century }: Props) {
         return (
           <span
             key={index}
-            className={`font-normal bg-${actor} text-${textColor(actor)} p-2 border-2 border-black`}
+            className={`font-normal bg-${actor} text-${textColor(actor)} p-2 border-2  ${highlight?.includes(actor) ? "border-white": "border-black"}`}
+            role={handleClick ? "button" : ""}
+            onClick={() => {
+              if (handleClick) {
+                handleClick(actor)
+              }
+            }}
           >
             {actor}
           </span>

@@ -1,23 +1,23 @@
 import eventData from "~/data/peabody/eventData.json";
 
-export function getEventXFromIndex(index: number) {
-  return (index % 3) * 30;
+export function getEventXFromIndex(index: number, size: float) {
+  return (index % 3) * (size ?? 30);
 }
 
-export function getEventYFromIndex(index: number) {
-  return Math.floor(index / 3) * 30;
+export function getEventYFromIndex(index: number, size: float) {
+  return Math.floor(index / 3) * (size ?? 30);
 }
 
 export const YEAR_WIDTH = 9;
 
-export function getYearXFromIndex(index: number) {
+export function getYearXFromIndex(index: number, width: float) {
   let column = index % 10;
-  return 3 + column * YEAR_WIDTH + (column > 4 ? 3 : 0);
+  return 3 + column * (width ?? YEAR_WIDTH) + (column > 4 ? 3 : 0);
 }
 
-export function getYearYFromIndex(index: number) {
+export function getYearYFromIndex(index: number, width: float) {
   let row = Math.floor(index / 10);
-  return 3 + row * YEAR_WIDTH + (row > 4 ? 3 : 0);
+  return 3 + row * (width ?? YEAR_WIDTH) + (row > 4 ? 3 : 0);
 }
 
 export type Actor = string;

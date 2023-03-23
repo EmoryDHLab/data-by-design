@@ -115,5 +115,9 @@ module.exports = {
     "outline-4",
     "outline-red-500",
     "outline-solid",
+    "scale-0",
+    "scale-100",
+    "fill-gray-300",
+    "fill-gray-50",
   ],
 };
