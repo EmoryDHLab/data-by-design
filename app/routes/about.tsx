@@ -173,7 +173,7 @@ export default function AboutPage() {
                   <p>
                     <p className="font-dubois pt-5 uppercase"> Developers: </p>{" "}
                     Dan Jutan (Georgia Tech, BS Computer Science ‘24),
-                    <p> Nicholas Yang (NYU, BS Computer Science ‘22),</p>
+                    <p> Nicholas Yang (NYU, BA Computer Science ‘22),</p>
                     <p>
                       {" "}
                       Jianing Fu (Georgia Tech, BS ‘21, Computer Science, Univ.
@@ -194,33 +194,25 @@ export default function AboutPage() {
                     and 2023 by the faculty and students associated with the
                     Emory Digital Humanities Lab (formerly the Georgia Tech
                     Digital Humanities Lab), in collaboration with the design
-                    firm Polymode. Lauren Klein (Emory, Departments of
-                    Quantitative Theory & Methods and English) directed the
-                    project and conducted the historical and archival research
-                    for the project. She also wrote the text for the site. Tanvi
-                    Sharma (NYU, MS ‘23, Interactive Design and Media) was the
-                    lead designer on the project. She prototyped the project
-                    website, designing both site-wide and page-specific
+                    firm Polymode. Lauren Klein directed the project and
+                    conducted the historical and archival research for the
+                    project. She also wrote the text for the site. Tanvi Sharma
+                    was the lead designer on the project. She prototyped the
+                    project website, designing both site-wide and page-specific
                     interactions, as well as the custom visualizations that
-                    appear on the site. Dan Jutan (Georgia Tech, BS ‘24,
-                    Computer Science) was the first lead developer on the
-                    project, between 2021 and 2022. He designed the site
+                    appear on the site. Dan Jutan was the first lead developer
+                    on the project, between 2021 and 2022. He designed the site
                     architecture, both frontend and backend, and implemented
                     both site-wide and page-specific components, including those
-                    that appear on the Peabody chapter page. Nicholas Yang (NYU,
-                    BS ‘22, Computer Science) joined the team as developer and
-                    then lead developer on the project. He implemented the
-                    components that appear on the Du Bois chapter page, as well
-                    as several additional site-wide components. Jianing Fu
-                    (Georgia Tech, BS ‘21, Computer Science, Univ. of
-                    California, Berkeley, MEng ‘22, Computer Science) built the
-                    components on the project’s front page, including the
-                    interactive timeline. Anna Mola (Emory, BA ‘22, Computer
-                    Science and Visual Arts) built the components of the
-                    Playfair chapter. Zhou Fang (Emory BA ‘22, Quantitative
-                    Sciences) built the image browser component of the Du Bois
-                    chapter. Silas Munro (Polymode) created the initial design
-                    concept for the site.
+                    that appear on the Peabody chapter page. Nicholas Yang
+                    joined the team as developer and then lead developer on the
+                    project. He implemented the components that appear on the Du
+                    Bois chapter page, as well as several additional site-wide
+                    components. Jianing Fu built the components on the project’s
+                    front page, including the interactive timeline. Anna Mola
+                    built the components of the Playfair chapter. Zhou Fang
+                    built the image browser component of the Du Bois chapter.
+                    Silas Munro created the initial design concept for the site.
                   </span>
                 </p>
               </Column>
@@ -278,26 +270,21 @@ export default function AboutPage() {
                     <span className="">
                       The prototype for Data by Design was created between 2018
                       and 2021 by the faculty and students associated with the
-                      Georgia Tech Digital Humanities Lab. Lauren Klein (Emory,
-                      Departments of Quantitative Theory & Methods and English)
-                      directed the project and conducted the historical and
-                      archival research for the project. She also wrote the text
-                      for the site. Qing Tian (Georgia Tech, MS Digital Media
-                      ‘19) was the lead designer on the project. She designed
-                      the front page as well as the custom page navigation for
-                      each of the chapter pages. Adam Hayward (Georgia Tech, BS
-                      ‘20, Computer Science), was the first lead developer on
-                      the project between 2018 and 2019. He designed the initial
-                      site architecture and implemented the layout and
-                      visualizations for the Peabody chapter. Dan Jutan (Georgia
-                      Tech, BS ‘24, Computer Science) took over as lead
-                      developer between 2019 and 2021, expanding the site
-                      architecture, both frontend and backend, building a Google
-                      Docs-based authoring system, and implementing a range of
-                      site-wide and page-specific components. Jianing Fu
-                      (Georgia Tech, BS ‘21, Computer Science, Univ. of
-                      California, Berkeley, MEng ‘22, Computer Science) built
-                      the components on the project’s front page, including the
+                      Georgia Tech Digital Humanities Lab. Lauren Klein directed
+                      the project and conducted the historical and archival
+                      research for the project. She also wrote the text for the
+                      site. Qing Tian was the lead designer on the project. She
+                      designed the front page as well as the custom page
+                      navigation for each of the chapter pages. Adam Hayward,
+                      was the first lead developer on the project between 2018
+                      and 2019. He designed the initial site architecture and
+                      implemented the layout and visualizations for the Peabody
+                      chapter. Dan Jutan took over as lead developer between
+                      2019 and 2021, expanding the site architecture, both
+                      frontend and backend, building a Google Docs-based
+                      authoring system, and implementing a range of site-wide
+                      and page-specific components. Jianing Fu built the
+                      components on the project’s front page, including the
                       interactive timeline.
                     </span>
                   </p>
