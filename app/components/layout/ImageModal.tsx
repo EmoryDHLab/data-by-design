@@ -6,6 +6,7 @@ interface Props {
   title?: string;
   src: string;
   alt?: string;
+  title?: string;
   className?: string;
   loading?: boolean;
 }
@@ -22,6 +23,7 @@ export default function ImageModal({ alt, className, src, title, loading }: Prop
         role="button"
         src={src}
         alt={alt}
+        title={title}
         className={className}
         loading={loading ?? "lazy"}
         onClick={() => setOpen(true)}
@@ -67,7 +69,8 @@ export default function ImageModal({ alt, className, src, title, loading }: Prop
                         <img
                           className="mx-auto"
                           src={src}
-                          alt={title}
+                          alt={alt}
+                          title={title}
                           loading={loading ?? "lazy"}
                         />
                       </div>
