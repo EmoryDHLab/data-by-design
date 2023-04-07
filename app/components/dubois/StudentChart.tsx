@@ -1,9 +1,10 @@
 import { classNames } from "~/utils";
-import { useState } from "react";
+import React, { useState } from "react";
 import StudentChartOne from "~/components/dubois/StudentChartOne";
 import StudentChartTwo from "~/components/dubois/StudentChartTwo";
 import StudentChartThree from "~/components/dubois/StudentChartThree";
 import type { ReactNodeLike } from "prop-types";
+import { ClientOnly } from "remix-utils";
 
 enum Chart {
   One,
@@ -18,7 +19,7 @@ const charts: { [key in Chart]: () => ReactNodeLike } = {
 };
 
 export function StudentChart() {
-  const [activeChart, setActiveChart] = useState<Chart>(Chart.One);
+  const [activeChart, setActiveChart] = useState<Chart>(Chart.Three);
   const ChartComponent = charts[activeChart] || null;
   return (
     <div className="flex flex-col items-center max-w-[800px] ">
@@ -57,7 +58,7 @@ export function StudentChart() {
           Chart Three
         </button>
       </span>
-      <ChartComponent />
+      <ClientOnly>{() => <ChartComponent />}</ClientOnly>
     </div>
   );
 }
