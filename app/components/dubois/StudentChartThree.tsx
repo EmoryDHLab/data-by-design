@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
 import { useWindowSize } from "~/hooks";
+import { classNames } from "~/utils";
 
 const stories = [
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis tellus sed suscipit consectetur.",
@@ -32,6 +33,34 @@ const stories = [
 ];
 
 const DEFAULT_WIDTH = 400;
+
+function DraggableNote({
+  top,
+  left,
+  className,
+  style: { transform, ...style },
+  story,
+  rotation,
+  ...props
+}) {
+  return (
+    <div
+      style={{
+        top: `${top}px`,
+        left: `${left}px`,
+        transform: `${transform} rotate(${rotation})`,
+        ...style,
+      }}
+      className={classNames(
+        className,
+        "z-10 bg-white rounded border border-slate-500 w-64 h-32 truncate whitespace-normal absolute p-5"
+      )}
+      {...props}
+    >
+      {story}
+    </div>
+  );
+}
 export default function StudentChartThree() {
   const size = useWindowSize();
   const chartWidth = (size.width ?? DEFAULT_WIDTH) * 0.8;
@@ -56,24 +85,18 @@ export default function StudentChartThree() {
         className="relative bg-slate-800 m-10"
         style={{ width: `${chartWidth}px`, height: `${chartHeight}px` }}
       >
-        {stories.map((story, index) => {
-          // We randomly decide to position a rectangle in a random manner
-          const isRandom = Math.random() > 0.5;
-          let top, left;
-          top = Math.random() * chartHeight * 0.6;
-          left = Math.random() * chartWidth * 0.6;
+        {stories.map((story) => {
+          const top = Math.random() * chartHeight * 0.6;
+          const left = Math.random() * chartWidth * 0.6;
 
           return (
             <Draggable bounds="parent">
-              <div
-                style={{
-                  top: `${top}px`,
-                  left: `${left}px`,
-                }}
-                className="z-10 bg-white rounded border border-slate-500 w-64 h-32 truncate whitespace-normal absolute p-5"
-              >
-                {story}
-              </div>
+              <DraggableNote
+                top={top}
+                left={left}
+                story={story}
+                rotation="45deg"
+              />
             </Draggable>
           );
         })}
