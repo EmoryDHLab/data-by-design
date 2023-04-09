@@ -6,5 +6,10 @@ export interface Image {
   CREDIT: string;
   DIGITIZED: string;
   YEAR: string;
-  "ALT-TEXT": string;
+  ALT_TEXT: string;
+}
+
+export enum TimelineType {
+  Draggable,
+  Ordered,
 }
