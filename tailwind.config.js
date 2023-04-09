@@ -79,7 +79,7 @@ module.exports = {
         "-screen": "-100vh",
       },
       fontSize: {
-        frontTitle: "12rem",
+        frontTitle: "8rem",
       },
       lineHeight: {
         veryTight: "0.8",

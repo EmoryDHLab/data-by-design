@@ -31,7 +31,9 @@ export default function DraggableTimeline({
   const svgRef = createRef();
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [startPosition, setStartPosition] = useState<object | undefined>(undefined);
+  const [startPosition, setStartPosition] = useState<object | undefined>(
+    undefined
+  );
   const [{ imageSliceStart, imagePositions }, setState] =
     useState<TimelineState>(() => ({
       imageSliceStart: Math.floor(Math.random() * 30),
@@ -39,7 +41,10 @@ export default function DraggableTimeline({
       draggedImage: undefined,
     }));
 
-  const images = imageData.slice(imageSliceStart, imageSliceStart + IMAGE_COUNT);
+  const images = imageData.slice(
+    imageSliceStart,
+    imageSliceStart + IMAGE_COUNT
+  );
 
   useEffect(() => {
     setState((state) => ({
@@ -66,10 +71,10 @@ export default function DraggableTimeline({
   function moveDraggedImage({ clientX, clientY }) {
     if (isDragging) {
       if (!startPosition) {
-        setStartPosition({clientX, clientY});
+        setStartPosition({ clientX, clientY });
         return;
       }
-      setStartPosition({clientX, clientY});
+      setStartPosition({ clientX, clientY });
       const moveX = clientX - startPosition.clientX;
       const moveY = clientY - startPosition.clientY;
       imagePositions[currentImageIndex].x += moveX;
@@ -80,22 +85,22 @@ export default function DraggableTimeline({
 
   const keyUp = (key) => {
     switch (key) {
-      case 'ArrowRight':
+      case "ArrowRight":
         if (currentImageIndex < images.length - 1) {
           setCurrentImageIndex(currentImageIndex + 1);
         } else {
           setCurrentImageIndex(0);
         }
         break;
-      case 'ArrowLeft':
+      case "ArrowLeft":
         if (currentImageIndex > 1) {
           setCurrentImageIndex(currentImageIndex - 1);
         } else {
           setCurrentImageIndex(images.length - 1);
         }
         break;
-      }
     }
+  };
 
   useEffect(() => {
     setSelectedImage(images[currentImageIndex]);
@@ -105,11 +110,7 @@ export default function DraggableTimeline({
   useEffect(() => {
     const imageToFront = svgRef.current.getElementById(selectedImage.FILE_NAME);
     if (imageToFront) {
-      svgRef.current?.appendChild(
-        svgRef.current.removeChild(
-          imageToFront
-        )
-      );
+      svgRef.current?.appendChild(svgRef.current.removeChild(imageToFront));
     }
   }, [svgRef, selectedImage]);
 
@@ -130,28 +131,25 @@ export default function DraggableTimeline({
       tabIndex={0}
     >
       {images.map((img, index) => {
-          const isSelected =
-            img.CHAPTER === selectedImage.CHAPTER &&
-            img.FILE_NAME === selectedImage.FILE_NAME;
-          return (
-            <g
-                key={img.FILE_NAME}
-                id={img.FILE_NAME}
-            >
-              <image
-                className={isSelected ? "outline outline-4 outline-red-500" : ""}
-                style={{ cursor: "pointer" }}
-                href={`/images/${img.CHAPTER}/${img.FILE_NAME}`}
-                width={150}
-                transform={getTransform(index)}
-                onMouseDown={() => {
-                  setIsDragging(true);
-                  setCurrentImageIndex(index);
-                }}
-              />
-            </g>
-          );
-        })}
+        const isSelected =
+          img.CHAPTER === selectedImage.CHAPTER &&
+          img.FILE_NAME === selectedImage.FILE_NAME;
+        return (
+          <g key={img.FILE_NAME} id={img.FILE_NAME}>
+            <image
+              className={isSelected ? "outline outline-4 outline-red-500" : ""}
+              style={{ cursor: "pointer" }}
+              href={`/images/${img.CHAPTER}/${img.FILE_NAME}`}
+              width={150}
+              transform={getTransform(index)}
+              onMouseDown={() => {
+                setIsDragging(true);
+                setCurrentImageIndex(index);
+              }}
+            />
+          </g>
+        );
+      })}
     </svg>
   );
 }
