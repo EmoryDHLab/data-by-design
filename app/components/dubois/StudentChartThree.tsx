@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import Draggable from "react-draggable";
 import { useWindowSize } from "~/hooks";
 
 const stories = [
@@ -35,12 +36,12 @@ export default function StudentChartThree() {
   const size = useWindowSize();
   const chartWidth = (size.width ?? DEFAULT_WIDTH) * 0.8;
   const chartHeight = chartWidth;
-  const [r0, setR0] = useState(() => 100 + Math.random() * 500);
+  const [r0, setR0] = useState(() => (Math.random() * chartWidth) / 2);
   const [q, setQ] = useState(() => Math.random() * Math.PI * 2);
   const [r1, setR1] = useState(() => 100 + Math.random() * 500);
   const [t, setT] = useState(() => Math.random() * Math.PI * 2);
   return (
-    <div>
+    <div className="z-20">
       <button
         onClick={() => {
           setR0(() => Math.random() * 500);
@@ -52,22 +53,28 @@ export default function StudentChartThree() {
         Shuffle
       </button>
       <div
-        className="relative p-10 bg-slate-800 m-10"
+        className="relative bg-slate-800 m-10"
         style={{ width: `${chartWidth}px`, height: `${chartHeight}px` }}
       >
         {stories.map((story, index) => {
-          const top = r0 * Math.sin(q * index) + chartHeight / 2;
-          const left = r1 * Math.cos(t * index) + chartWidth / 3;
+          // We randomly decide to position a rectangle in a random manner
+          const isRandom = Math.random() > 0.5;
+          let top, left;
+          top = Math.random() * chartHeight * 0.6;
+          left = Math.random() * chartWidth * 0.6;
+
           return (
-            <div
-              className="bg-white rounded border border-slate-500 w-64 h-32 truncate whitespace-normal absolute p-5"
-              style={{
-                top: `${Math.max(Math.min(top, chartHeight - 64), 64)}px`,
-                left: `${Math.max(Math.min(left, chartHeight - 128), 128)}px`,
-              }}
-            >
-              {story}
-            </div>
+            <Draggable bounds="parent">
+              <div
+                style={{
+                  top: `${top}px`,
+                  left: `${left}px`,
+                }}
+                className="z-10 bg-white rounded border border-slate-500 w-64 h-32 truncate whitespace-normal absolute p-5"
+              >
+                {story}
+              </div>
+            </Draggable>
           );
         })}
       </div>
