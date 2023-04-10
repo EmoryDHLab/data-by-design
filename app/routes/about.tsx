@@ -77,7 +77,7 @@ export default function AboutPage() {
               </p>
               <p className="py-2">
                 {" "}
-                <span className="font-medium"> Nicholas Yang </span> (NYU, BS
+                <span className="font-medium"> Nicholas Yang </span> (NYU, BA
                 ‘22, Computer Science) is a current developer on the project and
                 former lead developer on the project. He designed and
                 implemented the current site architecture and implemented many
