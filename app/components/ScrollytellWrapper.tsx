@@ -55,7 +55,7 @@ export default function ScrollytellWrapper({
         threshold
       })
       .onStepProgress(({ index, progress }) => {
-        setCurrentStep(index);
+        if (setCurrentStep) setCurrentStep(index);
         setScrollProgress(index + progress);
       }
       );
