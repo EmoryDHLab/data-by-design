@@ -74,10 +74,10 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center sm:p-10 pb-5 pt-20 w-1/4">
+        <div className="flex flex-col items-center p-10 pb-5 pt-20 sm:w-1/4">
           <div className="flex flex-col items-center">
             <Figure
-              className="w-3/5 sm:w-full pt-10"
+              className="sm:w-3/5 sm:w-full pt-10"
               imageClassName="max-h-96"
               src={`/images/${selectedImage.CHAPTER}/${selectedImage.FILE_NAME}`}
               alt={selectedImage.ALT_TEXT}
@@ -91,9 +91,9 @@ export default function Index() {
                 </div>
               </div>
               <div className="  py-2 w-5/6 sm:text-base sm:w-full text-sm">
-                <span>{selectedImage.CREDIT} </span>
+                {/* <span>{selectedImage.CREDIT} </span> */}
                 <br></br>
-                <span>{selectedImage.DIGITIZED}</span>
+                {/* <span>{selectedImage.DIGITIZED}</span> */}
               </div>
               <Link
                 to={`/chapters/${selectedImage.CHAPTER}`}
