@@ -13,7 +13,6 @@ import Footer from "~/components/Footer";
 import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import HoverText from "~/components/HoverText";
 import HoverZoomPeabodySquare from "~/components/peabody/HoverZoomPeabodySquare";
-import PeabodyTimelineView from "~/components/peabody/PeabodyTimelineView";
 import InlineFootnote from "~/components/InlineFootnote";
 import { peabodyFootnotes } from "~/footnotes";
 import PeabodySandbox from "~/components/peabody/PeabodySandbox";
@@ -22,6 +21,7 @@ import Scrollytell from "~/components/peabody/PeabodyScrollytell";
 import Quotation from "~/components/Quotation";
 import PeabodyQuiz from "~/components/peabody/PeabodyQuiz";
 import PeabodyBarGraph from "~/components/peabody/PeabodyBarGraph";
+import LEDChart from "~/components/peabody/LEDChart";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -138,6 +138,7 @@ export default function PeabodyPage() {
           </Figure>
         </Column>
       </TwoColumnLayout>
+      {/* <LEDChart /> */}
       <ChapterSectionTitle>
         A Visual Method of Making History
       </ChapterSectionTitle>
@@ -368,7 +369,7 @@ export default function PeabodyPage() {
           each viewer as that knowledge's source.
         </p>
       </CenteredLayout>
-      {/* <PeabodyTimelineView /> */}
+
       <PeabodyBarGraph />
 
       <ChapterSectionTitle>
@@ -613,7 +614,7 @@ export default function PeabodyPage() {
         The Gendered Archive of Data Visualization
       </ChapterSectionTitle>
       <TwoColumnLayout className="pt-20">
-        <Column shouldPin={true}>
+        <Column>
           <p>
             There is a final lesson to be learned from Elizabeth Palmer Peabody
             and her charts, which has to do with the labor—physical as much as
@@ -669,7 +670,7 @@ export default function PeabodyPage() {
             <InlineFootnote index={31}></InlineFootnote>
           </p>
         </Column>
-        <Column className="md:ml-12">
+        <Column className="md:ml-12" shouldPin={true}>
           <Figure
             className="grid grid-cols-2 items-center middle-full gap-x-4"
             images={[
@@ -742,46 +743,6 @@ export default function PeabodyPage() {
             of work itself—of the focus that is required, and the resultant
             fatigue, of any large-scale project that is made by human hands.
           </p>
-
-          <p>
-            <span>
-              The tedious, time-intensive nature of the Floor Chart project
-              provides another path of connection back to the original mural
-              charts. For Peabody did not only demonstrate the charts as part of
-              her sales pitch; as an additional incentive, she also promised an
-              original mural chart to any teacher who purchased copies of one of
-              her textbooks for their entire class. Writing to a friend in 1850,
-              Peabody revealed that she was "aching from the fatigue of making
-              Charts for the Schools who will take the book." The letter
-              continues:
-            </span>
-          </p>
-
-          <Quotation
-            quote={
-              <>
-                Every school must have a mural chart—&amp; there is but one way
-                of making them (until they can be made by ten thousands) &amp;
-                that is by stenciling [<em>sic</em>]... I can do one a day. But
-                I must sell them cheap… To day I worked 15 hours—only sitting
-                down to take my meals—&amp; so I have done all week—so much
-                fatigue stupefies one—but as soon as it is adopted in a few
-                towns I shall be able to hire someone to do this drudgery for
-                me.
-              </>
-            }
-            byline="Elizabeth Peabody,Letter to Samuel Gray Ward, September 1850"
-          ></Quotation>
-
-          <p>
-            While we cannot change the fact that we no longer have access to the
-            original mural charts, letters like these help to attest to the
-            physical labor that was required to produce them. With its reference
-            to the "stencilling" through which Peabody created her colorful
-            symbols, as well as to its characterization of the tasks involved in
-            making the charts as "drudgery," the letter also underscores the
-            gendered dimensions of Peabody's knowledge work.
-          </p>
         </Column>
         <Column className="md:ml-12">
           <Figure
@@ -815,46 +776,94 @@ export default function PeabodyPage() {
             subtitle="when we fail to include examples like these in the stories we tell about the emergence of data visualization? "
           />
         </FullBleed>
-        <p>
-          It's not a coincidence that Peabody understood the labor of making her
-          mural charts as women's work, and that these same charts were not
-          preserved. Then as now, there exists a hierarchy of work that aligns
-          with the hierarchy of gender that governs the Anglo-Western world.
-          Work that is performed outside the home is valued, both culturally and
-          monetarily, over work that is performed within it. Work that is
-          perceived as more rigorous, or more professional—like, for instance,
-          the political economy that functioned as Playfair's primary trade—is
-          valued, again, both culturally and monetarily, over work that is
-          perceived as more intuitive, or more domestic—like, for instance, the
-          teaching that functioned as Peabody's main employ. Even—or, more
-          precisely, especially—within the art world, creative work that is
-          perceived as high art is valued above work perceived as craft.
-          <InlineFootnote index={36}></InlineFootnote>
-          These gendered divisions of labor are among primary reasons that
-          Peabody's mural charts never entered the archive. And they are the
-          same reasons that her charts have not (yet) been centered in the
-          account of the rise of modern data visualization that is most commonly
-          told. But who else are we missing when we fail to include examples
-          like these in the stories we tell about the emergence of data
-          visualization? And what possible future visualization designs are we
-          foreclosing, either intentionally or inadvertently, when we do?
-        </p>
-        <p>
-          Women's work of various forms has much to contribute to larger
-          narratives about the development of most scholarly disciplines and
-          professional fields. A final example helps to underscore this point:
-          most contemporary viewers, when seeing Peabody's charts for the first
-          time, observe that they look like paintings by Piet Mondrian, the
-          famous Dutch modernist.
-          <InlineFootnote index={37}></InlineFootnote>
-          To be sure, Peabody's charts strongly resemble Mondrian's own bold,
-          colorful, geometric grid. But Peabody's self-account of the work
-          involved in making the mural charts brings to mind a second point of
-          reference, which is not painting but quilting: an artform
-          traditionally practiced by women, and that has long been relegated to
-          the world of "folk art" and craft.
-          <InlineFootnote index={38}></InlineFootnote>
-        </p>
+      </CenteredLayout>
+
+      <TwoColumnLayout>
+        <Column>
+          <p>
+            The tedious, time-intensive nature of the Floor Chart project
+            provides another path of connection back to the original mural
+            charts. For Peabody did not only demonstrate the charts as part of
+            her sales pitch; as an additional incentive, she also promised an
+            original mural chart to any teacher who purchased copies of one of
+            her textbooks for their entire class. Writing to a friend in 1850,
+            Peabody revealed that she was "aching from the fatigue of making
+            Charts for the Schools who will take the book." The letter
+            continues:
+          </p>
+
+          <Quotation
+            quote={
+              <>
+                Every school must have a mural chart—&amp; there is but one way
+                of making them (until they can be made by ten thousands) &amp;
+                that is by stenciling [<em>sic</em>]... I can do one a day. But
+                I must sell them cheap… To day I worked 15 hours—only sitting
+                down to take my meals—&amp; so I have done all week—so much
+                fatigue stupefies one—but as soon as it is adopted in a few
+                towns I shall be able to hire someone to do this drudgery for
+                me.
+              </>
+            }
+            byline="Elizabeth Peabody,Letter to Samuel Gray Ward, September 1850"
+          ></Quotation>
+
+          <p>
+            While we cannot change the fact that we no longer have access to the
+            original mural charts, letters like these help to attest to the
+            physical labor that was required to produce them. With its reference
+            to the "stencilling" through which Peabody created her colorful
+            symbols, as well as to its characterization of the tasks involved in
+            making the charts as "drudgery," the letter also underscores the
+            gendered dimensions of Peabody's knowledge work.
+          </p>
+          <p>
+            It's not a coincidence that Peabody understood the labor of making her
+            mural charts as women's work, and that these same charts were not
+            preserved. Then as now, there exists a hierarchy of work that aligns
+            with the hierarchy of gender that governs the Anglo-Western world.
+            Work that is performed outside the home is valued, both culturally and
+            monetarily, over work that is performed within it. Work that is
+            perceived as more rigorous, or more professional—like, for instance,
+            the political economy that functioned as Playfair's primary trade—is
+            valued, again, both culturally and monetarily, over work that is
+            perceived as more intuitive, or more domestic—like, for instance, the
+            teaching that functioned as Peabody's main employ. Even—or, more
+            precisely, especially—within the art world, creative work that is
+            perceived as high art is valued above work perceived as craft.
+            <InlineFootnote index={36}></InlineFootnote>
+            These gendered divisions of labor are among primary reasons that
+            Peabody's mural charts never entered the archive. And they are the
+            same reasons that her charts have not (yet) been centered in the
+            account of the rise of modern data visualization that is most commonly
+            told. But who else are we missing when we fail to include examples
+            like these in the stories we tell about the emergence of data
+            visualization? And what possible future visualization designs are we
+            foreclosing, either intentionally or inadvertently, when we do?
+          </p>
+          <p>
+            Women's work of various forms has much to contribute to larger
+            narratives about the development of most scholarly disciplines and
+            professional fields. A final example helps to underscore this point:
+            most contemporary viewers, when seeing Peabody's charts for the first
+            time, observe that they look like paintings by Piet Mondrian, the
+            famous Dutch modernist.
+            <InlineFootnote index={37}></InlineFootnote>
+            To be sure, Peabody's charts strongly resemble Mondrian's own bold,
+            colorful, geometric grid. But Peabody's self-account of the work
+            involved in making the mural charts brings to mind a second point of
+            reference, which is not painting but quilting: an artform
+            traditionally practiced by women, and that has long been relegated to
+            the world of "folk art" and craft.
+            <InlineFootnote index={38}></InlineFootnote>
+          </p>
+        </Column>
+        <Column shouldPin={true}>
+            <LEDChart />
+        </Column>
+      </TwoColumnLayout>
+
+      <CenteredLayout>
         <Figure
           className="grid grid-cols-2 items-center middle-full gap-x-4"
           images={[
