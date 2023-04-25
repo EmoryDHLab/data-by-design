@@ -152,3 +152,7 @@
 .c { stroke-dasharray: 0 120 }
 .top { stroke-dasharray: 30 0 30 30 }
 .middle { stroke-dasharray: 0 30 0 }
+
+html {
+    scroll-padding-top: 3em;
+}

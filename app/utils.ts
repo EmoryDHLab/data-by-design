@@ -10,4 +10,8 @@ export function* numberRange(start: number, end: number) {
 
 export function scrollToAnchor(hash: string) {
   document.getElementById(hash.replace("#", ""))?.scrollIntoView({ block: start });
-}
+};
+
+export function spacesToHyphens(str: string) {
+  return str.replace(/\s/g, "-").toLowerCase();
+};

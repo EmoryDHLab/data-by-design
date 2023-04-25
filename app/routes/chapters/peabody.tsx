@@ -47,19 +47,20 @@ export default function PeabodyPage() {
       />
       <TwoColumnLayout>
         <Column shouldPin={true} className="first-paragraph">
-          Elizabeth Palmer Peabody was born in Massachusetts in 1804.
-          Today, she is most widely recognized for her proximity to more famous
-          men—in particular, to the writers of the American Renaissance, such as
-          Ralph Waldo Emerson and Nathaniel Hawthorne, and to early champions of
+          Elizabeth Palmer Peabody was born in Massachusetts in 1804. Today, she
+          is most widely recognized for her proximity to more famous men—in
+          particular, to the writers of the American Renaissance, such as Ralph
+          Waldo Emerson and Nathaniel Hawthorne, and to early champions of
           educational reform, such as Bronson Alcott and Horace Mann. (One of
           her sisters, Sophia Amelia Peabody, was married to Hawthorne; and the
           other, Mary Tyler Peabody, was married to Mann). But Elizabeth Palmer
           Peabody had intellectual impact in her own right: the bookstore that
           she ran out of her home, at 13 West Street, in Boston, functioned as
-          the <i>de facto</i> salon for the transcendentalist movement. She edited
-          and published the first version of Henry David Thoreau's essay on civil
-          disobedience. And she is credited with starting the first kindergarten
-          in the United States.<InlineFootnote index={0} />
+          the <i>de facto</i> salon for the transcendentalist movement. She
+          edited and published the first version of Henry David Thoreau's essay
+          on civil disobedience. And she is credited with starting the first
+          kindergarten in the United States.
+          <InlineFootnote index={0} />
           <p>
             Indeed, Peabody was an educator to her core. She came from a family
             of teachers. Her mother and two sisters all taught grade-school at
@@ -67,13 +68,16 @@ export default function PeabodyPage() {
             Boston to ride the rails, it was with an explicitly educational aim:
             to promote the pair of history textbooks she had recently written,
             <cite>The Polish-American System of Chronology</cite>(1850) and
-            <cite>A Chronological History of the United States</cite> (1856). She
-            traveled as far north as <HoverText hoverState="Rochester">Rochester,
-            NY</HoverText>; as far west as <HoverText hoverState="Louisville">Louisville,
-            KY</HoverText>; and as far south as <HoverText hoverState="Richmond">Richmond,
-            VA</HoverText>, in order to evangelize about her new pedagogical method. The
-            Polish-American System, she came to call it, was a method with data
-            visualization at its center.
+            <cite>A Chronological History of the United States</cite> (1856).
+            She traveled as far north as{" "}
+            <HoverText hoverState="Rochester">Rochester, NY</HoverText>; as far
+            west as{" "}
+            <HoverText hoverState="Louisville">Louisville, KY</HoverText>; and
+            as far south as{" "}
+            <HoverText hoverState="Richmond">Richmond, VA</HoverText>, in order
+            to evangelize about her new pedagogical method. The Polish-American
+            System, she came to call it, was a method with data visualization at
+            its center.
           </p>
           <FullBleed>
             <PullQuote
@@ -139,9 +143,7 @@ export default function PeabodyPage() {
         </Column>
       </TwoColumnLayout>
       {/* <LEDChart /> */}
-      <ChapterSectionTitle>
-        A Visual Method of Making History
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="A Visual Method of Making History" />
       <CenteredLayout>
         <p>
           Peabody's method of visualizing events of historical significance was
@@ -372,9 +374,7 @@ export default function PeabodyPage() {
 
       <PeabodyBarGraph />
 
-      <ChapterSectionTitle>
-        The Politics of Visual Knowledge Production
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="The Politics of Visual Knowledge Production" />
       <TwoColumnLayout>
         <Column>
           <p>
@@ -610,9 +610,7 @@ export default function PeabodyPage() {
           course of future action.
         </p>
       </CenteredLayout>
-      <ChapterSectionTitle>
-        The Gendered Archive of Data Visualization
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="The Gendered Archive of Data Visualization" />
       <TwoColumnLayout className="pt-20">
         <Column>
           <p>
@@ -818,48 +816,50 @@ export default function PeabodyPage() {
             gendered dimensions of Peabody's knowledge work.
           </p>
           <p>
-            It's not a coincidence that Peabody understood the labor of making her
-            mural charts as women's work, and that these same charts were not
-            preserved. Then as now, there exists a hierarchy of work that aligns
-            with the hierarchy of gender that governs the Anglo-Western world.
-            Work that is performed outside the home is valued, both culturally and
-            monetarily, over work that is performed within it. Work that is
-            perceived as more rigorous, or more professional—like, for instance,
-            the political economy that functioned as Playfair's primary trade—is
-            valued, again, both culturally and monetarily, over work that is
-            perceived as more intuitive, or more domestic—like, for instance, the
-            teaching that functioned as Peabody's main employ. Even—or, more
-            precisely, especially—within the art world, creative work that is
-            perceived as high art is valued above work perceived as craft.
+            It's not a coincidence that Peabody understood the labor of making
+            her mural charts as women's work, and that these same charts were
+            not preserved. Then as now, there exists a hierarchy of work that
+            aligns with the hierarchy of gender that governs the Anglo-Western
+            world. Work that is performed outside the home is valued, both
+            culturally and monetarily, over work that is performed within it.
+            Work that is perceived as more rigorous, or more professional—like,
+            for instance, the political economy that functioned as Playfair's
+            primary trade—is valued, again, both culturally and monetarily, over
+            work that is perceived as more intuitive, or more domestic—like, for
+            instance, the teaching that functioned as Peabody's main employ.
+            Even—or, more precisely, especially—within the art world, creative
+            work that is perceived as high art is valued above work perceived as
+            craft.
             <InlineFootnote index={36}></InlineFootnote>
             These gendered divisions of labor are among primary reasons that
             Peabody's mural charts never entered the archive. And they are the
             same reasons that her charts have not (yet) been centered in the
-            account of the rise of modern data visualization that is most commonly
-            told. But who else are we missing when we fail to include examples
-            like these in the stories we tell about the emergence of data
-            visualization? And what possible future visualization designs are we
-            foreclosing, either intentionally or inadvertently, when we do?
+            account of the rise of modern data visualization that is most
+            commonly told. But who else are we missing when we fail to include
+            examples like these in the stories we tell about the emergence of
+            data visualization? And what possible future visualization designs
+            are we foreclosing, either intentionally or inadvertently, when we
+            do?
           </p>
           <p>
             Women's work of various forms has much to contribute to larger
             narratives about the development of most scholarly disciplines and
             professional fields. A final example helps to underscore this point:
-            most contemporary viewers, when seeing Peabody's charts for the first
-            time, observe that they look like paintings by Piet Mondrian, the
-            famous Dutch modernist.
+            most contemporary viewers, when seeing Peabody's charts for the
+            first time, observe that they look like paintings by Piet Mondrian,
+            the famous Dutch modernist.
             <InlineFootnote index={37}></InlineFootnote>
             To be sure, Peabody's charts strongly resemble Mondrian's own bold,
             colorful, geometric grid. But Peabody's self-account of the work
             involved in making the mural charts brings to mind a second point of
             reference, which is not painting but quilting: an artform
-            traditionally practiced by women, and that has long been relegated to
-            the world of "folk art" and craft.
+            traditionally practiced by women, and that has long been relegated
+            to the world of "folk art" and craft.
             <InlineFootnote index={38}></InlineFootnote>
           </p>
         </Column>
         <Column shouldPin={true}>
-            <LEDChart />
+          <LEDChart />
         </Column>
       </TwoColumnLayout>
 
@@ -975,7 +975,7 @@ export default function PeabodyPage() {
           knowledge.
         </p>
       </CenteredLayout>
-      <ChapterSectionTitle>The Visualization Work To Come</ChapterSectionTitle>
+      <ChapterSectionTitle title="The Visualization Work To Come" />
       <CenteredLayout>
         <p>
           Throughout this project, I argue for the knowledge that can be gained
