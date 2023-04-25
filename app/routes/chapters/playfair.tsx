@@ -41,15 +41,14 @@ export default function PlayfairPage() {
       <TwoColumnLayout>
         <Column>
           <p className="first-paragraph">
-            One can only imagine
-            the choice words exclaimed by the Scottish political economist"
-            William Playfair (1759-1823) when he recognized the error that he
-            had inadvertently engraved into the tail end of the data line on his
-            chart of "Exports &amp; Imports to and from all of North America."
-            Engraving was—and still is—an incredibly time-consuming process.
-            Albrecht Dürer, the Renaissance printmaker credited with elevating
-            engraving into an art form, took over three months to complete his
-            famed <cite>Knight, Death, and Devil</cite>
+            One can only imagine the choice words exclaimed by the Scottish
+            political economist" William Playfair (1759-1823) when he recognized
+            the error that he had inadvertently engraved into the tail end of
+            the data line on his chart of "Exports &amp; Imports to and from all
+            of North America." Engraving was—and still is—an incredibly
+            time-consuming process. Albrecht Dürer, the Renaissance printmaker
+            credited with elevating engraving into an art form, took over three
+            months to complete his famed <cite>Knight, Death, and Devil</cite>
             (1513), a print not much larger than an iPad. In the case of
             Playfair, however, it was not merely the time he had invested in
             producing the twenty-eight plates he planned to include in the third
@@ -175,7 +174,7 @@ export default function PlayfairPage() {
           </Figure>
         </Column>
       </TwoColumnLayout>
-      <ChapterSectionTitle>The Value of Visual Knowledge</ChapterSectionTitle>
+      <ChapterSectionTitle title="The Value of Visual Knowledge" />
       <TwoColumnLayout>
         <Column>
           <p>
@@ -327,9 +326,7 @@ export default function PlayfairPage() {
           kind.
         </p>
       </CenteredLayout>
-      <ChapterSectionTitle>
-        The Politics of Playfair's Charts
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="The Politics of Playfair's Charts" />
       <CenteredLayout>
         <Figure src="/images/playfair/5-minard.png" alt="">
           Charles Minard's 1869 chart of Napoleon's failed Russia campaign.
@@ -470,9 +467,7 @@ export default function PlayfairPage() {
           </p>
         </div>
       </CenteredLayout>
-      <ChapterSectionTitle>
-        Playfair's Argument in the Present
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="Playfair's Argument in the Present" />
       <TwoColumnLayout>
         <Column className="py-5 md:py-10" shouldPin={true}>
           <p>
@@ -646,11 +641,7 @@ export default function PlayfairPage() {
           </p>
         </div>
       </CenteredLayout>
-
-      <ChapterSectionTitle>
-        What Visualization Does Not Reveal
-      </ChapterSectionTitle>
-
+      <ChapterSectionTitle title="What Visualization Does Not Reveal" />
       <TwoColumnLayout>
         <Column shouldPin={true}>
           <p>

@@ -7,3 +7,7 @@ export function* numberRange(start: number, end: number) {
     yield i;
   }
 }
+
+export function spacesToHyphens(str: string) {
+  return str.replace(/\s/g, "-").toLowerCase();
+}

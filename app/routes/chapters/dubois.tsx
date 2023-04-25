@@ -7,7 +7,6 @@ import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import { duboisFootnotes } from "~/footnotes";
 import { useState } from "react";
-// import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
@@ -25,7 +24,6 @@ import HoverImages2 from "~/components/dubois/HoverImages2";
 import PhotographChart from "~/components/dubois/PhotographChart";
 
 import ImageCaption from "~/components/ImageCaption";
-// import { classNames } from "~/utils";
 
 export default function DuboisChapter() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -148,9 +146,7 @@ export default function DuboisChapter() {
           </span>
         </p>
       </CenteredLayout>
-      <ChapterSectionTitle color="bg-duboisPrimary">
-        Visualization as Evidence, Visualization as Argument
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="Visualization as Evidence, Visualization as Argument" />
       <CenteredLayout>
         <p>
           <span className="font-normal">
@@ -278,9 +274,7 @@ export default function DuboisChapter() {
         </Column>
       </TwoColumnLayout>
 
-      <ChapterSectionTitle color="bg-duboisPrimary">
-        A Visual Method of Making History
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="A Visual Method of Making History" />
 
       <TwoColumnLayout>
         <Column className="px-10">
@@ -435,9 +429,7 @@ export default function DuboisChapter() {
         </Column>
       </TwoColumnLayout>
 
-      <ChapterSectionTitle color="bg-duboisPrimary">
-        Between Chart and Photograph
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="Between Chart and Photograph" />
       <CenteredLayout>
         <p>
           <span className="font-normal">
@@ -718,9 +710,7 @@ export default function DuboisChapter() {
           </div>
         </div>
       </CenteredLayout>
-      <ChapterSectionTitle>
-        Education, Collaboration, and Credit
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="Education, Collaboration, and Credit" />
       <TwoColumnLayout>
         <Column className="py-5 md:py-10">
           <p>
@@ -939,9 +929,7 @@ export default function DuboisChapter() {
         <StudentChart />
       </div>
 
-      <ChapterSectionTitle>
-        Visualization as Witness and as Testimony
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="Visualization as Witness and as Testimony" />
       <CenteredLayout>
         <p>
           <span>

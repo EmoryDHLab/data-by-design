@@ -1,6 +1,4 @@
 import ChapterTitle from "~/components/ChapterTitle";
-import ChapterSectionTitle from "~/components/ChapterSectionTitle";
-import InlineFootnote from "~/components/InlineFootnote";
 
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
