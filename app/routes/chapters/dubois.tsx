@@ -47,7 +47,7 @@ export default function DuboisChapter() {
         title="Between Data and Truth"
         subtitle="W.E.B. Du Bois’s “Data Portraits”"
       />
-
+      {/* <div className="leading-7"> */}
       <CenteredLayout>
         <p className="first-paragraph">
           October 4th, 1899, was the first day of the fall term at Atlanta
@@ -223,7 +223,7 @@ export default function DuboisChapter() {
                 significance as an object of study, the visual style shifts to
                 altogether new terrain once the focus on Georgia’s Black
                 residents has been established.{" "}
-                <HoverText hoverState="City" className="font-semibold">
+                <HoverText hoverState="City" className="font-medium">
                   In his comparative representation of the places where
                   Georgia’s Black citizens reside, for example, Du Bois brings
                   together aspects of the bar chart and the line chart along
@@ -231,7 +231,7 @@ export default function DuboisChapter() {
                 </HoverText>
                 in order to give animacy to the presence of Black people in each
                 of type of locale.{" "}
-                <HoverText hoverState="Illiteracy" className="font-semibold">
+                <HoverText hoverState="Illiteracy" className="font-medium">
                   In a later chart, which documents the decrease in illiteracy
                   rates in the years between 1860 and 1900,
                 </HoverText>{" "}
@@ -240,13 +240,13 @@ export default function DuboisChapter() {
                 bar is folded at a right angle in order to further accentuate
                 the decreasing rate of illiteracy. Du Bois elaborates upon this
                 technique in a{" "}
-                <HoverText hoverState="Owners" className="font-semibold">
+                <HoverText hoverState="Owners" className="font-medium">
                   later chart, which compares the numbers of Black property
                   owners, and the value of their properties, in two Georgia
                   cities.
                 </HoverText>{" "}
                 Another unique chart in this series, which{" "}
-                <HoverText hoverState="Value" className="font-semibold">
+                <HoverText hoverState="Value" className="font-medium">
                   plots the “assessed value of household and kitchen furniture”
                   owned by Black Georgians, takes the standard bar chart and
                   bends it into a spiral, concentrating the viewer’s focus on
@@ -295,21 +295,21 @@ export default function DuboisChapter() {
             series explains, these charts document the upward progress of Black
             Americans in a national and international context. They also make
             use of{" "}
-            <HoverText hoverState="Countries" className="font-semibold">
+            <HoverText hoverState="Countries" className="font-medium">
               comparisons to other populations,
             </HoverText>{" "}
             both within the United States and abroad, in order to challenge
             racist assumptions about Black Americans’ social, intellectual, and
             economic lives. As with the first series of charts, this series
             begins with several charts{" "}
-            <HoverText hoverState="Occupations" className="font-semibold">
+            <HoverText hoverState="Occupations" className="font-medium">
               focused on population,
             </HoverText>{" "}
-            <HoverText hoverState="Freedom" className="font-semibold">
+            <HoverText hoverState="Freedom" className="font-medium">
               before moving on to explore themes related to employment,
             </HoverText>{" "}
             education, and{" "}
-            <HoverText hoverState="Newspapers" className="font-semibold">
+            <HoverText hoverState="Newspapers" className="font-medium">
               economics,
             </HoverText>{" "}
             as well as social, cultural, and religious life.
@@ -333,29 +333,26 @@ export default function DuboisChapter() {
             <span>
               The 409 maps and diagrams began, as Du Bois’s did, by introducing
               viewers to{" "}
-              <HoverText hoverState="Map" className="font-semibold">
+              <HoverText hoverState="Map" className="font-medium">
                 the population of the United States.
               </HoverText>{" "}
               Through by-then standard bar charts, pie charts, and line graphs,
               as well as its own creative use of pattern and visual form, the
               Atlas included, for example, a{" "}
-              <HoverText hoverState="Populations" className="font-semibold">
+              <HoverText hoverState="Populations" className="font-medium">
                 prototypal bump chart that ranked each state according to its
                 population;
               </HoverText>{" "}
               a map that illustrated{" "}
-              <HoverText hoverState="Gender" className="font-semibold">
+              <HoverText hoverState="Gender" className="font-medium">
                 {" "}
                 the spatial distribution of the nation’s male population; and
                 another that illustrated{" "}
               </HoverText>{" "}
-              <HoverText hoverState="Race" className="font-semibold">
+              <HoverText hoverState="Race" className="font-medium">
                 the spatial distribution of the nation’s Black population.
               </HoverText>{" "}
-              <HoverText
-                hoverState="Race-Distribution"
-                className="font-semibold"
-              >
+              <HoverText hoverState="Race-Distribution" className="font-medium">
                 (Another chart used area charts in small multiples in order
                 compare certain state’s Black and white populations).
               </HoverText>{" "}
@@ -365,19 +362,19 @@ export default function DuboisChapter() {
               main concern. Indeed, after a series of charts early in the atlas
               that visualized the nation’s Black population, the focus of the
               atlas shifts,
-              <HoverText hoverState="Foreign" className="font-semibold">
+              <HoverText hoverState="Foreign" className="font-medium">
                 {" "}
                 turning first to the nation’s immigrant population{" "}
               </HoverText>{" "}
               before expanding outward to consider other features altogether:
-              <HoverText hoverState="Age-Sex" className="font-semibold">
+              <HoverText hoverState="Age-Sex" className="font-medium">
                 {" "}
                 the population’s age and gender breakdown,
               </HoverText>{" "}
-              <HoverText hoverState="Religion" className="font-semibold">
+              <HoverText hoverState="Religion" className="font-medium">
                 its religion,
               </HoverText>{" "}
-              <HoverText hoverState="Occupation" className="font-semibold">
+              <HoverText hoverState="Occupation" className="font-medium">
                 the occupations of its inhabitants, and more.
               </HoverText>
             </span>{" "}
@@ -1000,6 +997,7 @@ export default function DuboisChapter() {
       <CenteredLayout>
         <FootnotesList footnotes={duboisFootnotes} />
       </CenteredLayout>
+      {/* </div> */}
       <Footer backgroundColor="bg-duboisPrimary" textColor="text-white" />
     </ChapterContext.Provider>
   );
