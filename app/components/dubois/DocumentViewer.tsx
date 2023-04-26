@@ -98,7 +98,7 @@ const imageSets = [
         text: "Race amalgamation in Georgia based on a study of 40,000 individuals of Negro descent.",
       },
       {
-        src: "/images/dubois/876.png",
+        src: "/images/dubois/876.jpeg",
         credit1: "Image courtesy of the Library of Congress,",
         credit2: "Prints & Photographs Division,",
         credit3: "LC-DIG-ppmsca-33876.",
