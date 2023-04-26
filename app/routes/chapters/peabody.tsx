@@ -46,7 +46,7 @@ export default function PeabodyPage() {
         subtitle="Elizabeth Palmer Peabody's Chronological Grids"
       />
       <TwoColumnLayout>
-        <Column shouldPin={true} className="first-paragraph">
+        <Column shouldPin={true} className="first-paragraph leading-7">
           Elizabeth Palmer Peabody was born in Massachusetts in 1804. Today, she
           is most widely recognized for her proximity to more famous men—in
           particular, to the writers of the American Renaissance, such as Ralph

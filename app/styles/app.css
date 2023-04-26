@@ -12,11 +12,10 @@
     float: left;
     font-family: VTC Du Bois, serif !important;
     font-feature-settings: "ss06" !important;
-    font-size: 5.2rem;
-    line-height: 2.5rem;
+    font-size: 5.5rem;
+    line-height: 3.5rem;
     font-weight: bold;
-    margin: 1rem 0 0;
-    padding: 0 1rem .5rem 1rem;
+    padding: 1rem 0.75rem 0rem 0rem;
 }
 
 .cardPlayfair:hover,
@@ -139,6 +138,7 @@
 
 .chapter-body p {
     margin: .75rem auto;
+  line-height:1.75rem;
 }
 
 .se { stroke-dasharray: 0 30 30 }
