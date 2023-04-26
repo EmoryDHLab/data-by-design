@@ -44,7 +44,7 @@ export default function AboutPage() {
             </p>
           </Column>
           <Column className="px-3">
-            <p className="pt-16 first-paragraph">
+            <p className="pt-16 first-paragraph leading-7">
               Data by Design, a project of the Emory Digital Humanities Lab, was
               created by an interdisciplinary team of faculty, staff, students,
               and professionals, collaborating across two continents, three
