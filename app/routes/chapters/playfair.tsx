@@ -345,12 +345,16 @@ export default function PlayfairPage() {
           first perceived by the senses and then processed by the mind.
           <InlineFootnote index={10} />
           More specifically, Playfair advances a belief in the role of sensory
-          perception, and of vision in particular—in prompting a particular
-          form of crystalizing insight that can lead to new knowledge: "On
-          inspecting any one of these Charts attentively," Playfair himself
-          explains, "a sufficiently distinct impression will be made, to remain
-          unimpaired for a time, and the idea which does remain will be simple
-          and complete."
+          perception, ​​and of vision in particular—in prompting a particular
+          form of crystalizing insight that can lead to new knowledge:{" "}
+          <q>On inspecting any one of these Charts attentively,</q> Playfair
+          himself explains,{" "}
+          <q>
+            {" "}
+            a sufficiently distinct impression will be made, to remain
+            unimpaired for a time, and the idea which does remain will be simple
+            and complete.
+          </q>
         </p>
         <p>
           Playfair's belief in the clarifying and consolidating capacity of data
@@ -362,8 +366,8 @@ export default function PlayfairPage() {
           the viewer to think about the "substance" of the data, rather than the
           "methodology" underneath.
           <InlineFootnote index={11} />
-          In this way, Tufte explains, visualizations can be made to "
-          <em>reveal</em>" the data on display (emphasis in the original).
+          In this way, Tufte explains, visualizations can be made to
+          <em>'reveal'</em> the data on display (emphasis in the original).
           <InlineFootnote index={12} />
         </p>
         <p>
@@ -373,20 +377,31 @@ export default function PlayfairPage() {
           efficiency of data visualization, and about its ability to illuminate
           aspects of the underlying data that are too large, or too complex, to
           be perceived by the eye alone. In a recent interview, esteemed
-          visualization scholar Ben Shneiderman analogizes visualization to "a
-          telescope or a microscope that increases your perceptual abilities,"
-          allowing people to "understand complex processes so as to support
-          better decisions."<InlineFootnote index={13} /> Intoning the lessons
-          of his own influential textbook, <cite>Readings in Information Visualization:
-          Using Vision to Think</cite>, coauthored with Stuart Card and Jock
-          Mackinlay, Shneiderman insists that "the purpose of data visualization
-          is insight."<InlineFootnote index={14} /> And while acknowledging that
-          both "designers of visualizations, and scholars who study them, have
-          struggled to give a coherent definition of <em>insight</em>," data journalist
-          and visualization designer Alberto Cairo also maintains that clear and
-          accurate images (and, increasingly, interactive graphics), can lead to
-          new knowledge about a subject—knowledge that would otherwise remain
-          hidden from view.<InlineFootnote index={15} />
+          visualization scholar Ben Shneiderman analogizes visualization to{" "}
+          <q>
+            a telescope or a microscope that increases your perceptual
+            abilities,
+          </q>{" "}
+          allowing people to{" "}
+          <q>understand complex processes so as to support better decisions.</q>
+          <InlineFootnote index={13} />
+          ​​Intoning the lessons of his own influential textbook,
+          <cite>
+            Readings in Information Visualization: Using Vision to Think
+          </cite>
+          , coauthored with Stuart Card and Jock Mackinlay, Shneiderman insists
+          that <q>the purpose of data visualization is insight.</q>
+          <InlineFootnote index={14} />
+          And while acknowledging that both{" "}
+          <q>
+            designers of visualizations, and scholars who study them, have
+            struggled to give a coherent definition of <em>insight</em>,
+          </q>{" "}
+          data journalist and visualization designer Alberto Cairo also
+          maintains that clear and accurate images (and, increasingly,
+          interactive graphics), can lead to new knowledge about a
+          subject—knowledge that would otherwise remain hidden from view.
+          <InlineFootnote index={15} />
         </p>
       </CenteredLayout>
       <FullBleed>
@@ -443,10 +458,10 @@ export default function PlayfairPage() {
           Haiti. Meanwhile, the effects of the American Revolution still
           lingered in the minds of the European elite, as they continued to
           consider the possibility of additional colonial revolts. Thus when
-          Playfair explains that he has "chosen the present moment" to
-          re-release his <cite>Atlas</cite> because of the "singularity of the
-          situation in which Europe is now placed," it was this revolutionary
-          political "situation" to which he refers.
+          Playfair explains that he has <q>chosen the present moment</q> to
+          re-release his <cite>Atlas</cite> because of the{" "}
+          <q>singularity of the situation in which Europe is now placed,</q> it
+          was this revolutionary political "situation" to which he refers.
           <InlineFootnote index={16} />
         </p>
 
@@ -455,12 +470,14 @@ export default function PlayfairPage() {
             Playfair understood his work as an active political intervention: a
             means of countering the instability that the so-called Age of
             Revolutions had brought about. Playfair was openly unsure about what
-            the future might hold. In the preface to the third edition of the
-            <cite>Atlas</cite>, he speculates that "Europe may probably be
-            convulsed with war for fifty years to come," and professes
-            uncertainty about whether he is witnessing the end of European
-            cultural and economic dominance, or whether its "art and commerce"
-            will prevail.
+            the future might hold. In the preface to the third edition of the{" "}
+            <cite>Atlas</cite>, he speculates that{" "}
+            <q>
+              Europe may probably be convulsed with war for fifty years to come,
+            </q>{" "}
+            and professes uncertainty about whether he is witnessing the end of
+            European cultural and economic dominance, or whether its "art and
+            commerce" will prevail.
             <InlineFootnote index={17} />
             But regardless of the outcome—or, I would contend, precisely{" "}
             <em>because</em> of the uncertainty of the outcome—Playfair
@@ -499,10 +516,13 @@ export default function PlayfairPage() {
             "picture of the past" endure? As Playfair elaborates the impetus
             behind the "form and manner" of his charts, he makes clear that his
             intended audience is not "any person" in the world, but rather, the
-            narrower world of "men of high rank, or active business"
+            narrower world of <q>men of high rank, or active business</q>
             <InlineFootnote index={20} />
-            These men, he continues, "can only pay attention to general
-            outlines; nor is attention to particulars of use."
+            These men, he continues,{" "}
+            <q>
+              can only pay attention to general outlines; nor is attention to
+              particulars of use.
+            </q>
             <InlineFootnote index={21} />
           </p>
           <p>
