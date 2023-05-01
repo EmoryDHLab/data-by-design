@@ -183,11 +183,13 @@ export default function PlayfairPage() {
             his book. It was only after soliciting feedback from James Watt,
             inventor of the steam engine—and for whom Playfair worked in his
             youth—that he received the advice to include his charts' data in
-            tabular form. "It might be proper," Watt advised, "to give in letter
-            press the Tables from which the Charts have been constructed… for
-            the charts now seem to rest on your own authority, and it will
-            naturally be enquired from whence you have derived our
-            intelligence."
+            tabular form. <q>It might be proper,</q> Watt advised,{" "}
+            <q className="font-dubois">
+              to give in letter press the Tables from which the Charts have been
+              constructed… for the charts now seem to rest on your own
+              authority, and it will naturally be enquired from whence you have
+              derived our intelligence.{" "}
+            </q>
             <InlineFootnote index={7} />
             Playfair thus dutifully compiled statistical tables to accompany
             each of his charts, which he included in the first and second
@@ -198,8 +200,8 @@ export default function PlayfairPage() {
             confidence in the form and function of his charts that he no longer
             felt obligated to include the associated data tables, as Watt had
             initially advised. Indeed, Playfair understood the function of his
-            charts as quite distinct from that of tables, or "figures," as he
-            termed them. In introduction to the Atlas, he explains:
+            charts as quite distinct from that of tables, or <q>figures,</q>as
+            he termed them. In introduction to the Atlas, he explains:
           </p>
 
           <Quotation
@@ -219,16 +221,18 @@ export default function PlayfairPage() {
           ></Quotation>
 
           <p>
-            In explicit contrast to the "more accurate" information conveyed
-            through the form of the data table, Playfair understood the value of
-            his charts as their ability to impart a "simple and permanent idea."
+            In explicit contrast to the <q>more accurate</q> information
+            conveyed through the form of the data table, Playfair understood the
+            value of his charts as their ability to impart a{" "}
+            <q>simple and permanent idea.</q>
             In other words, the knowledge conveyed through the charts was
             different than the knowledge conveyed through the data, and
             explicitly so. It was admittedly more reductive, but it was also
             easier to understand—and, as a result, easier to remember.
           </p>
           <p>
-            Playfair's interest in presenting a "simple and permanent idea,"
+            Playfair's interest in presenting a{" "}
+            <q>simple and permanent idea,</q>
             over and above any particular data point, is further born out in the
             liberties he took in interpolating his data. For example, his "Chart
             of Imports &amp; Exports to and from all of North America" clearly
@@ -272,13 +276,16 @@ export default function PlayfairPage() {
           visualization has carried forward into the present along with his
           iconic charts. This enduring belief is perhaps most evident in the
           work of Edward Tufte, who maintains that visualizations of data should
-          be "clear" and "efficient"; that they should present "accurate"
+          be <q>clear</q> and <q>efficient</q>; that they should present{" "}
+          <q>accurate</q>
           representations of the data at hand; and that they should encourage
-          the viewer to think about the "substance" of the data, rather than the
-          "methodology" underneath.
+          the viewer to think about the <q>substance</q> of the data, rather
+          than the
+          <q>methodology</q> underneath.
           <InlineFootnote index={11} />
-          In this way, Tufte explains, visualizations can be made to
-          <em>'reveal'</em> the data on display (emphasis in the original).
+          In this way, Tufte explains, visualizations can be made to{" "}
+          <q>reveal</q>
+          the data on display (emphasis in the original).
           <InlineFootnote index={12} />
         </p>
         <p>
@@ -334,9 +341,9 @@ export default function PlayfairPage() {
           accuracy but inspiration. His intent was to produce a visual
           impression—one inspired by the data, but not a direct representation
           of it—that would, in turn, prompt the insights that lead to new
-          knowledge. This was emphatically not the "data-driven knowledge" that
-          defines our current moment, but rather his own interpretation of the
-          data that, through visualization, could become knowledge of a new
+          knowledge. This was emphatically not the <q>data-driven knowledge</q>{" "}
+          that defines our current moment, but rather his own interpretation of
+          the data that, through visualization, could become knowledge of a new
           kind.
         </p>
 
@@ -360,7 +367,8 @@ export default function PlayfairPage() {
           Playfair explains that he has <q>chosen the present moment</q> to
           re-release his <cite>Atlas</cite> because of the{" "}
           <q>singularity of the situation in which Europe is now placed,</q> it
-          was this revolutionary political "situation" to which he refers.
+          was this revolutionary political <q>"situation"</q> to which he
+          refers.
           <InlineFootnote index={16} />
         </p>
 
@@ -375,8 +383,8 @@ export default function PlayfairPage() {
               Europe may probably be convulsed with war for fifty years to come,
             </q>{" "}
             and professes uncertainty about whether he is witnessing the end of
-            European cultural and economic dominance, or whether its "art and
-            commerce" will prevail.
+            European cultural and economic dominance, or whether its{" "}
+            <q>"art and commerce"</q> will prevail.
             <InlineFootnote index={17} />
             But regardless of the outcome—or, I would contend, precisely{" "}
             <em>because</em> of the uncertainty of the outcome—Playfair
@@ -412,10 +420,11 @@ export default function PlayfairPage() {
           <p>
             But a pair of questions remains: for whom is this knowledge truly
             useful, and for what reasons is it necessary that this particular
-            "picture of the past" endure? As Playfair elaborates the impetus
-            behind the "form and manner" of his charts, he makes clear that his
-            intended audience is not "any person" in the world, but rather, the
-            narrower world of <q>men of high rank, or active business</q>
+            <q>picture of the past</q> endure? As Playfair elaborates the
+            impetus behind the <q>form and manner</q> of his charts, he makes
+            clear that his intended audience is not <q>any person</q> in the
+            world, but rather, the narrower world of{" "}
+            <q>men of high rank, or active business</q>
             <InlineFootnote index={20} />
             These men, he continues,{" "}
             <q>
@@ -455,9 +464,9 @@ export default function PlayfairPage() {
           </p>
           <p>
             ​​Playfair's import-export charts advance a belief in what can be
-            gained by the "big picture" view without registering any concern
-            about what might be lost in the details, or about who might be
-            impacted by that missing information.
+            gained by the <q>big picture</q> view without registering any
+            concern about what might be lost in the details, or about who might
+            be impacted by that missing information.
             <InlineFootnote index={22} />
             The boldly colored data lines, enhanced by the hand-tinting that
             shades the areas between them, and set against the stark black
@@ -468,7 +477,8 @@ export default function PlayfairPage() {
             Neele—further reinforce the impression of an encounter with an
             authoritative image of enduring significance. As viewers, we are not
             prompted to question the data that we see visualized on the chart,
-            nor are we pushed to extend our inquiry beyond its "big picture"
+            nor are we pushed to extend our inquiry beyond its{" "}
+            <q>big picture</q>
             view.
           </p>
           <p>
@@ -492,7 +502,7 @@ export default function PlayfairPage() {
           <p>
             From our perspective in the present, it appears that Playfair was
             correct in his assertion about the significant and enduring
-            "importance" of his charts.
+            <q>importance</q> of his charts.
             <InlineFootnote index={23} />
             His charts are indeed among a small set of data visualizations—also
             including John Snow's 1854 map of cholera deaths, Florence
@@ -675,19 +685,18 @@ export default function PlayfairPage() {
             veracity similarly difficult to discern—one which included an
             endorsement, on the part of Franklin, of Playfair's visual method of
             display:{" "}
-            <span className="font-dubois">
+            <q className="font-dubois">
               "I have begun to practice the mode here,"{" "}
-            </span>{" "}
+            </q>{" "}
             writes Playfair in the voice of Franklin,{" "}
-            <span className="font-dubois">
+            <q className="font-dubois">
               {" "}
               "and it throws light on the state of our accounts, as if by
               inspiration, one minute giving a much clearer idea of the matter,
               than whole days and weeks without this simple invention."
-            </span>
+            </q>
             <InlineFootnote index={31} />
           </p>
-
           <p>
             The reality, of course, was that Playfair's "simple invention" would
             go unrecognized for over a century—first eclipsed by another
@@ -705,7 +714,7 @@ export default function PlayfairPage() {
             pleasure. That his charts are not only widely recognized for their
             historical contributions to the development of the field, but also
             often recreated with contemporary technologies, attests to the
-            enduring if uncertain "value" of the charts that he explicitly
+            enduring if uncertain <q>value</q> of the charts that he explicitly
             envisioned in his <cite>Atlas</cite>.
             <InlineFootnote index={33} />
             That his charts are so often recreated today also speaks to
@@ -736,13 +745,15 @@ export default function PlayfairPage() {
         </Column>
         <Column className="md:ml-12">
           <Figure src="/images/playfair/jevons.png" alt="">
-            Jevons's illustration of the benefits of the "graphical method," in
-            which{" "}
-            <span className="italic">
-              "it becomes possible to trace a line among the points which will
-              approximate to the true law more nearly than the points
-              themselves."
-            </span>{" "}
+            Jevons's illustration of the benefits of the{" "}
+            <q>graphical method,</q> in which{" "}
+            <em className="italic">
+              <q>
+                it becomes possible to trace a line among the points which will
+                approximate to the true law more nearly than the points
+                themselves.
+              </q>
+            </em>{" "}
             <br></br>
             Image Courtesy of Google Books. <br></br>Digitized by Harvard
             University.
