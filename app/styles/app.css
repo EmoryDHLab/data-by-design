@@ -8,6 +8,8 @@
     }
 }
 
+
+
 .first-paragraph::first-letter {
     float: left;
     font-family: VTC Du Bois, serif !important;
