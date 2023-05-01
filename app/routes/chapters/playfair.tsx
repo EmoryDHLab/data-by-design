@@ -42,19 +42,20 @@ export default function PlayfairPage() {
         <Column>
           <p className="first-paragraph">
             One can only imagine the choice words exclaimed by the Scottish
-            political economist" William Playfair (1759-1823) when he recognized
-            the error that he had inadvertently engraved into the tail end of
-            the data line on his chart of "Exports &amp; Imports to and from all
-            of North America." Engraving was—and still is—an incredibly
-            time-consuming process. Albrecht Dürer, the Renaissance printmaker
-            credited with elevating engraving into an art form, took over three
-            months to complete his famed <cite>Knight, Death, and Devil</cite>
-            (1513), a print not much larger than an iPad. In the case of
-            Playfair, however, it was not merely the time he had invested in
-            producing the twenty-eight plates he planned to include in the third
-            edition of his <cite>Commercial and Political Atlas</cite>
-            (1801), a revised version of the volume he first published in 1786;
-            it was also the expense.
+            political economist" William Playfair (1759 – 1823) when he
+            recognized the error that he had inadvertently engraved into the
+            tail end of the data line on his chart of "Exports &amp; Imports to
+            and from all of North America." Engraving was—and still is—an
+            incredibly time-consuming process. Albrecht Dürer, the Renaissance
+            printmaker credited with elevating engraving into an art form, took
+            over three months to complete his famed{" "}
+            <cite>Knight, Death, and Devil</cite> (1513), a print not much
+            larger than an iPad. In the case of Playfair, however, it was not
+            merely the time he had invested in producing the twenty-eight plates
+            he planned to include in the third edition of his{" "}
+            <cite>Commercial and Political Atlas</cite> (1801), a revised
+            version of the volume he first published in 1786; it was also the
+            expense.
           </p>
           <p>
             Today, Playfair is widely celebrated for his leading role in the
@@ -201,21 +202,21 @@ export default function PlayfairPage() {
             termed them. In introduction to the Atlas, he explains:
           </p>
 
-          {/* <Quotation
-              quote={
-                <>
-                  <span>
-                    The advantage proposed by this method, is not that of giving
-                    a more accurate statement than by figures, but it is to give
-                    a more simple and permanent idea of the gradual progress and
-                    comparative amounts, at different periods, by presenting to
-                    the eye a figure, the proportions of which correspond with
-                    the amount of the sums intended to be expressed.
-                  </span>
-                </>
-              }
-              byline="Playfair, pp. ix-x. attr"
-            ></Quotation> */}
+          <Quotation
+            quote={
+              <>
+                <span>
+                  The advantage proposed by this method, is not that of giving a
+                  more accurate statement than by figures, but it is to give a
+                  more simple and permanent idea of the gradual progress and
+                  comparative amounts, at different periods, by presenting to
+                  the eye a figure, the proportions of which correspond with the
+                  amount of the sums intended to be expressed.
+                </span>
+              </>
+            }
+            byline="Playfair, pp. ix-x. attr"
+          ></Quotation>
 
           <p>
             In explicit contrast to the "more accurate" information conveyed
@@ -303,15 +304,18 @@ export default function PlayfairPage() {
           subject—knowledge that would otherwise remain hidden from view.
           <InlineFootnote index={15} />
         </p>
-        <FullBleed>
-          <PullQuote
-            title="Playfair's goal was not accuracy but inspiration."
-            subtitle="His intent was to produce a visual impression—one
+      </CenteredLayout>
+      <FullBleed>
+        <PullQuote
+          title="Playfair's goal was not accuracy but inspiration."
+          subtitle="His intent was to produce a visual impression—one
                       inspired by the data, but not a direct
                       representation of it—that would, in turn, prompt
                       the insights that lead to new knowledge."
-          />
-        </FullBleed>
+        />
+      </FullBleed>
+
+      <CenteredLayout>
         <p className="pb-12">
           Playfair's charts may thus endure as an ur-example of the
           insight-producing power of data visualization. And yet, they are not
@@ -325,9 +329,9 @@ export default function PlayfairPage() {
           data that, through visualization, could become knowledge of a new
           kind.
         </p>
-      </CenteredLayout>
-      <ChapterSectionTitle title="The Politics of Playfair's Charts" />
-      <CenteredLayout>
+
+        <ChapterSectionTitle title="The Politics of Playfair's Charts" />
+
         <Figure src="/images/playfair/5-minard.png" alt="">
           Charles Minard's 1869 chart of Napoleon's failed Russia campaign.
           Image courtesy of Wikimedia Commons.
@@ -582,7 +586,7 @@ export default function PlayfairPage() {
             Arvind Satyanarayan and Jeffrey Heer; the same chart recreated in
             Protovis, an early JavaScript visualization library developed by
             Mike Bostock; the same chart recreated in Microsoft Excel by Jorge
-            Camoes. Screenshots by Lauren Klein."
+            Camoes. Screenshots by Lauren Klein.
           </Figure>
         </Column>
       </TwoColumnLayout>
@@ -646,7 +650,7 @@ export default function PlayfairPage() {
         <Column shouldPin={true}>
           <p>
             ​​Playfair clearly longed to be recognized for his graphical
-            innovations. In 1787, one year after the initial publication of the
+            innovations. In 1787, one year after the initial publication of the{" "}
             <cite>Commercial and Political Atlas</cite>. he authored an
             account—almost certainly fictitious—of a dialogue between Benjamin
             Franklin and Joseph II, Holy Roman Emperor. The men's conversation
@@ -655,11 +659,17 @@ export default function PlayfairPage() {
             schemes. Published with the dialogue was a set of letters—their
             veracity similarly difficult to discern—one which included an
             endorsement, on the part of Franklin, of Playfair's visual method of
-            display: "I have begun to practice the mode here," writes Playfair
-            in the voice of Franklin, "and it throws light on the state of our
-            accounts, as if by inspiration, one minute giving a much clearer
-            idea of the matter, than whole days and weeks without this simple
-            invention."
+            display:{" "}
+            <span className="font-dubois">
+              "I have begun to practice the mode here,"{" "}
+            </span>{" "}
+            writes Playfair in the voice of Franklin,{" "}
+            <span className="font-dubois">
+              {" "}
+              "and it throws light on the state of our accounts, as if by
+              inspiration, one minute giving a much clearer idea of the matter,
+              than whole days and weeks without this simple invention."
+            </span>
             <InlineFootnote index={31} />
           </p>
 
@@ -713,9 +723,9 @@ export default function PlayfairPage() {
           <Figure src="/images/playfair/jevons.png" alt="">
             Jevons's illustration of the benefits of the "graphical method," in
             which{" "}
-            <span>
+            <span className="italic">
               "it becomes possible to trace a line among the points which will
-              approximate to the true law more nearly than the ponts
+              approximate to the true law more nearly than the points
               themselves."
             </span>{" "}
             <br></br>
