@@ -67,7 +67,7 @@ export default function PeabodyPage() {
             various times. And in the 1850s, when she set out from her home in
             Boston to ride the rails, it was with an explicitly educational aim:
             to promote the pair of history textbooks she had recently written,
-            <cite>The Polish-American System of Chronology</cite>(1850) and
+            <cite>The Polish-American System of Chronology</cite> (1850) and
             <cite>A Chronological History of the United States</cite> (1856).
             She traveled as far north as{" "}
             <HoverText hoverState="Rochester">Rochester, NY</HoverText>; as far
@@ -91,7 +91,7 @@ export default function PeabodyPage() {
             version of one of the chronological charts described in the book.
             Peabody identified the charts—in their vibrant, full-color detail—as
             key components of her visual pedagogy. As she describes in the
-            "Advertisement" that begins the <cite>Polish-American System</cite>
+            "Advertisement" that begins the <cite>Polish-American System</cite>{" "}
             the charts were "intended to do for the science of history what maps
             do for that of geography; and they will make [it] easy to lay the
             foundations of historical knowledge in the minds of the young."
@@ -167,7 +167,7 @@ export default function PeabodyPage() {
           biographers, Bruce Ronda.
           <InlineFootnote index={5}></InlineFootnote>
           She went on to devote several years to a study of the Polish System,
-          culminating with the development of her own modified version: the{" "}
+          culminating with the development of her own modified version: the
           <cite> Polish-American System </cite>
           that prompted her own national tour.
         </p>
@@ -204,14 +204,14 @@ export default function PeabodyPage() {
           <p>
             For example, by cross-referencing the table of events of the
             seventeenth century, pictured just below, to its corresponding
-            chart, it is possible to identify, for example, the
+            chart, it is possible to identify, for example, the{" "}
             <HoverText className="font-semibold" hoverState="Jamestown">
               founding of Jamestown in 1607;
             </HoverText>
             that is the large red square in the first row on the right—red to
             signal England's involvement, and its full-square shading to
             indicate its heightened significance. One can also identify, in the
-            last square on the right, one row from the top,
+            last square on the right, one row from the top,{" "}
             <HoverText className="font-semibold" hoverState="Plymouth">
               the settlement of Plymouth in 1620.
             </HoverText>
@@ -223,6 +223,7 @@ export default function PeabodyPage() {
               className="font-semibold"
               hoverState="FirstEnslavedAfricans"
             >
+              {" "}
               first enslaved Africans arriving in Virginia in that same year.
             </HoverText>
             On the side of abolition but by no means its most radical proponent,
@@ -235,7 +236,7 @@ export default function PeabodyPage() {
             same as historiography—the study of how history is written. But in
             Peabody's mind, the one led to the other: "If you have the dates
             here [on the charts] represented perfectly by heart," as she
-            explains in the introduction to students included in the
+            explains in the introduction to students included in the{" "}
             <cite>Chronological History</cite>, "events are so connected in the
             narrative of history."
             <InlineFootnote index={9}></InlineFootnote>
@@ -394,7 +395,7 @@ export default function PeabodyPage() {
           </p>
           <p>
             In addition, on her own, Peabody continued to iterate on the
-            teaching and learning materials associated with the
+            teaching and learning materials associated with the{" "}
             <cite>Polish-American System</cite>. In 1870, she began printing
             workbooks with sheets of blank charts—"blank centuries," as she
             called them--so that students could themselves create the
@@ -464,12 +465,11 @@ export default function PeabodyPage() {
             "The old world is covered with bad institutions which men have
             created, very often with positively good intentions, but on false
             notions, or, at least, without large and profound ideas," she
-            explains in the preface to the
-            <cite>Chronological History</cite>. "Whether the new world shall
-            estimate and sift out these evils, or repeat these mistakes, depends
-            on young Americans, who are now sitting in schoolrooms all over the
-            country, unconscious of their powers and consequent
-            responsibilities," she further explains.
+            explains in the preface to the <cite>Chronological History</cite>.
+            "Whether the new world shall estimate and sift out these evils, or
+            repeat these mistakes, depends on young Americans, who are now
+            sitting in schoolrooms all over the country, unconscious of their
+            powers and consequent responsibilities," she further explains.
             <InlineFootnote index={22}></InlineFootnote>
             Her hope was that the act of creating the chronological charts,
             rather than simply studying them, would prompt both self-reflection
@@ -940,8 +940,7 @@ export default function PeabodyPage() {
           complete. Consider the surprise that greeted me—along with no small
           degree of pleasure—upon discovering that a quilt created by Loretta
           Pettway, one of the Gee's Bend quilters, graces the cover of Edward
-          Tufte's most recent book,
-          <cite>Seeing with Fresh Eyes</cite>
+          Tufte's most recent book, <cite>Seeing with Fresh Eyes</cite>
           (2020). More than merely a compelling image—"unorthodox, fresh,
           amazing" is the extent of how Tufte describes it in the text—we must
           learn to see Pettaway's quilt, like Peabody's chart, as a system of

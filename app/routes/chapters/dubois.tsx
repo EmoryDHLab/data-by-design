@@ -71,7 +71,7 @@ export default function DuboisChapter() {
           On that very same day in October, Du Bois’s own college classmate, the
           lawyer and newspaper editor Thomas J. Calloway began the letter
           campaign that would result in a commitment from the federal government
-          to fund an “Exhibit of American Negroes” at the 1900
+          to fund an “Exhibit of American Negroes” at the 1900{" "}
           <cite>Exposition Universelle</cite> in Paris, which was scheduled to
           open the following spring. With time running short, Calloway turned to
           Du Bois and one other man, Daniel A.P. Murray, the Assistant Librarian
@@ -180,7 +180,7 @@ export default function DuboisChapter() {
 
       <TwoColumnLayout>
         <Column className="px-10">
-          <div>
+          <div className="leading-7">
             <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
               The first chart of <cite>The Georgia Negro </cite>
               series, which functions as its title page, makes clear how Du Bois
