@@ -1,155 +1,195 @@
-import { createContext, useEffect, useState } from "react";
-import eventData from "~/data/peabody/eventData.json";
-import SelectActors from "./quiz/SelectActors";
-import QuizSquare from "./quiz/QuizSquare";
+import { createContext, useEffect, useRef, useState } from "react";
+import QuizConclusion from "./quiz/QuizConclusion";
 import QuizEventCategories from "./quiz/QuizEventCategories";
-
-const quizEvents = eventData.events[1644];
-const step1Event = quizEvents.find((event) => event.squares.includes(1));
-const step2Event = quizEvents.find((event) => event.squares.includes(2));
-const step3Event = quizEvents.find((event) => event.squares.includes(3));
-const step4Event = quizEvents.find((event) => event.squares.includes(6));
+import QuizFeedback from "./quiz/QuizFeedback";
+import QuizInstructions from "./quiz/QuizInstructions";
+import QuizIntro from "./quiz/QuizIntro";
+import QuizNav from "./quiz/QuizNav";
+import QuizSelectActors from "./quiz/QuizSelectActors";
+import QuizSquare from "./quiz/QuizSquare";
+import { quizSteps } from "./quiz/quizSteps";
+import eventData from "~/data/peabody/eventData.json";
+import type { QuizStep } from "~/types/peabody";
 
 export const QuizContext = createContext({
   clearSquares: 0,
   currentCentury: 1500,
-  currentEvent: undefined
+  currentStep: undefined
 });
 
+
 export default function PeabodyQuiz() {
-  const [currentEvent, setCurrentEvent] = useState(step1Event);
-  const [stepState, setStepState] = useState<number>(0);
-  const [solvedEvents, setSolvedEvents] = useState<array>([]);
+  const [currentStep, setCurrentStep] = useState<QuizStep>(quizSteps[0]);
+  const [currentStepCount, setCurrentStepCount] = useState<number>(0);
   const [selectedCategories, setSelectedCategories] = useState<array>([]);
+  const [selectedYears, setSelectedYears] = useState<array>([]);
   const [focusedCategory, setFocusedCategory] = useState<number|undefined>(undefined);
+  const [feedback, setFeedback] = useState<object>({});
+  const endRef = useRef();
 
   useEffect(() => {
-      setSelectedCategories(solvedEvents);
-  }, [stepState, setSelectedCategories, solvedEvents]);
+    setSelectedCategories([]);
+    setSelectedYears([]);
+  }, [setSelectedCategories, setSelectedYears, currentStepCount]);
+
+  useEffect(() => {
+    if (selectedYears.length >= 3 && currentStepCount === 2) {
+      setFeedback({
+        message: "1644, the Powhatan attacked Virginia in 1644.",
+        correct: false
+      });
+
+      setCurrentStepCount(currentStepCount => currentStepCount + 1);
+      setSelectedYears([]);
+    }
+  }, [setCurrentStepCount, selectedYears, setSelectedYears, currentStepCount]);
+
+  useEffect(() => {
+    if (selectedCategories.length >= 3) {
+      setFeedback({
+        message: `${currentStep.stepEvent.event.replace(/ \[.*\]/, '')} was categorized as ${eventData.eventTypes[currentStep.stepEvent.squares[0] - 1]}`,
+        correct: false
+      });
+      setCurrentStepCount(currentStepCount => currentStepCount + 1);
+    }
+
+  }, [selectedCategories, currentStep, setFeedback]);
+
+  useEffect(() => {
+    setCurrentStep(quizSteps[currentStepCount]);
+    setSelectedCategories([])
+    if (currentStepCount === 9) endRef.current.scrollIntoView({ block: "end", behavior: "smooth" });
+  }, [currentStepCount, setCurrentStep, setSelectedCategories]);
+
+  const handleYearClick = (year) => {
+    if (year === 1644 && currentStepCount === 2) {
+      setCurrentStepCount(currentStepCount => currentStepCount + 1);
+      setSelectedYears([]);
+      setFeedback({
+        message: `YES it was 1644. Now select how Peabody would categorize ${quizSteps[2].stepEvent.event}`,
+        correct: true
+      });
+    } else {
+      setSelectedYears([...selectedYears, year]);
+    }
+  }
 
   // Called when an event square or category is selected
   const handleCategoryClick = (selected) => {
-    switch (stepState) {
-      case 2:
-        if (selected > 0) setSelectedCategories(selectedCategories.concat([selected]));
-        if (selected === 0) {
-          setSolvedEvents(solvedEvents.concat([selected]));
-          setStepState(3);
-          setCurrentEvent(step2Event);
-        }
-        break;
-      case 3:
-        if (selected > 1) setSelectedCategories(selectedCategories.concat([selected]));
-        if (selected === 1) {
-          setSolvedEvents(solvedEvents.concat([selected]));
-          setStepState(4);
-          setCurrentEvent(step3Event);
-        }
-        break;
-      case 4:
-        if (selected > 2) setSelectedCategories(selectedCategories.concat([selected]));
-        if (selected === 2) {
-          setSolvedEvents(solvedEvents.concat([selected]));
-          setStepState(5);
-          setCurrentEvent(step4Event);
-        }
-        break;
-      case 5:
-        if (selected === 5) {
-          setSolvedEvents(solvedEvents.concat([selected]));
-          setStepState(5);
-          setCurrentEvent(step4Event);
-        } else {
-          setSelectedCategories(selectedCategories.concat([selected]));
-        }
-        break;
-      default:
-        setSolvedEvents([]);
-        setStepState(0);
-        setCurrentEvent(step1Event);
-        setSelectedCategories([]);
+    if (currentStepCount === 3 && selected == 0) {
+      setCurrentStepCount(4);
+      setFeedback({
+        message: "Peabody identified other events that took place in the year.",
+        correct: true
+      });
+    } else if (currentStepCount === 4 && selected == 1) {
+      setCurrentStepCount(5);
+      setFeedback({
+        message: "The third event that Peabody identified taking place later that year is...",
+        correct: true
+      });
+    } else if (currentStepCount === 5 && selected == 2) {
+      setCurrentStepCount(6);
+      setFeedback({
+        message: "One more...",
+        correct: true
+      });
+    } else if (currentStepCount === 6 && selected == 5) {
+      setCurrentStepCount(7);
+      setFeedback({
+        message: "All done! Click above to continue.",
+        correct: true
+      });
+    } else if (!currentStep.solvedEvents.includes(selected)) {
+        setSelectedCategories([selected, ...selectedCategories])
+
     }
   };
 
   return (
     <QuizContext.Provider value={{
-      currentEvent,
-      stepState,
-      setStepState,
+      currentStep,
+      currentStepCount,
+      setCurrentStepCount,
       focusedCategory,
       setFocusedCategory,
-      selectedCategories,
-      solvedEvents,
       handleCategoryClick,
+      selectedCategories,
+      setSelectedCategories,
+      selectedYears,
+      setSelectedYears,
+      handleYearClick,
+      feedback,
+      setFeedback
     }}>
-      <div className="bg-black w-full h-[calc(100vh-48px)]">
-        <svg viewBox="0 0 300 200" className="h-full m-auto w-11/12">
-          <g className={`${stepState >= 1 ? "-translate-x-12 -translate-y-2 scale-75 " : ""} transition-all duration-1000`}>
-            <text
-              x={85}
-              y={30}
-              fontSize={6} fill="white"
-            >
-              EVENT
-            </text>
-            <text x={85} y={46} fontSize={12} fill="white" fontFamily="VTC Du Bois, serif">
-              {currentEvent.event.replace(/ \[.*\]/, '')}
-            </text>
+      <section className="bg-black w-full h-[400vh]">
+        <svg viewBox="0 0 300 200" className="h-screen m-auto w-11/12 sticky top-0">
+          {currentStepCount <= 1 &&
+            <QuizIntro className={`transition-all duration-1000 ${currentStepCount > 0 ? "-translate-x-full" : ""}`} />
+          }
 
-            <text
-              x={85}
-              y={58}
-              fontSize={stepState < 1 ? 6 : 0.0}
-              fill="white"
-              fontFamily="VTC Du Bois Narrow, serif"
-              fontStyle="italic"
-              fillOpacity={stepState < 1 ? 1.0 : 0.0}
-              className="transition-all duration-1000"
-            >
-              Select the countries involved
-            </text>
+          {currentStepCount > 0 &&
+            <QuizConclusion className={`transition-opacity duration-1000 delay-300 opacity-${currentStepCount === 8 ? 100 : 0}`} />
+          }
 
-            <text
-              x={85}
-              y={80}
-              fontSize={10}
-              fill="white"
-              fontFamily="VTC Du Bois Narrow, serif"
-              fontStyle="italic"
-              fillOpacity={stepState >= 2 ? 1.0 : 0.0}
-              className="transition-all duration-1000"
-            >
-              Categorize the the event.
-            </text>
-            <SelectActors />
-            <QuizEventCategories />
-          </g>
+          <QuizFeedback />
 
-          <g className={`fill-peabodyOrange scale-${stepState >= 1 ? 100 : 0} transition-all duration-1000 origin-bottom-right`}>
-            <text
-              x={165}
-              y={15}
-              fontSize={6}
-              fill="white"
-              fontFamily="VTC Du Bois Narrow, serif"
-              fontStyle="italic"
-              fillOpacity={stepState === 1 ? 1.0 : 0.0}
-              className="transition-all duration-1000"
-            >
-              Select the year
-            </text>
-
-            <rect
-              width={125}
-              height={125}
-              x={165}
-              y={19.5}
-              tabIndex={0}
-            />
+          <g className={`bg-white scale-${currentStepCount >= 2 ? 100 : 0} transition-all duration-1000 origin-bottom-right`}>
             <QuizSquare />
           </g>
+
+         <g className={`${currentStepCount === 0 ? "hidden translate-x-full" : ""} ${currentStepCount >= 2 && currentStepCount < 8 ? "-translate-x-8 translate-y-2 scale-75 " : ""} ${currentStepCount >= 7 ? "-translate-x-full" : ""} ${currentStepCount === 8 ? "hidden" : ""} transition-all duration-1000`}>
+            <text
+              x={60}
+              y={41}
+              fontSize={6} fill="white"
+              className={`opacity`}
+            >
+              EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
+            </text>
+            <text x={60} y={55} fontSize={12} fill="white" fontFamily="VTC Du Bois, serif">
+              {currentStep.stepEvent.event.replace(/ \[.*\]/, '')}
+            </text>
+
+            <g className={` transition-all duration-700 delay-100`}>
+              <QuizSelectActors />
+              <QuizEventCategories />
+            </g>
+          </g>
+
+          <svg
+            width={300}
+            height={10}
+            y={165}
+          >
+            <text
+              className={`transition-transform duration-1000 ${currentStepCount < 9 ? "translate-y-full" : ""}`}
+              fontSize={10}
+              x="50%"
+              y="50%"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="white"
+            >
+              <tspan fontFamily="DxD Icons" fontSize={16}>t</tspan>
+              <tspan
+                dx={2}
+                fontFamily="VTC Du Bois Narrow, serif"
+                className="tracking-widest"
+              >
+                Scroll down to continue reading.
+              </tspan>
+            </text>
+          </svg>
+
+          <QuizInstructions />
+
+          <QuizNav />
+
+          <text x={280} y={215} fill="white" fontSize={3}>{currentStepCount} of 9</text>
         </svg>
-      </div>
+      </section>
+      <section ref={endRef}>&nbsp;</section>
     </QuizContext.Provider>
   );
 }

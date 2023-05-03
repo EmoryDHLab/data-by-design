@@ -1,12 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { QuizContext } from "../PeabodyQuiz";
 import QuizEventSquare from "./QuizEventSquare";
 import { getYearXFromIndex, getYearYFromIndex } from "~/components/peabody/peabodyUtils";
 import { numberRange } from "~/utils";
+import { getCenturyEvents } from "../peabodyUtils";
 
 const YEAR_WIDTH = 11.6;
 const width = YEAR_WIDTH - YEAR_WIDTH / 48;
 const height = YEAR_WIDTH - YEAR_WIDTH / 48;
+
+const quizYears = [1601, 1606, 1641, 1650, 1651];
+
+const centuryEvents = getCenturyEvents(1600);
 
 interface Props {
   index: number;
@@ -18,83 +23,71 @@ export default function QuizYearSquare({
   year
 }: Props) {
   const x = getYearXFromIndex(index, YEAR_WIDTH) + 165;
-  const y = getYearYFromIndex(index, YEAR_WIDTH) + 19.5;
-  const { stepState, setStepState } = useContext(QuizContext);
-  const [focusedYear, setFocusedYear] = useState(undefined);
-  const [selected, setSelected] = useState<boolean>(false);
-  const [textOpacity, setTextOpacity] = useState<float>(0.5);
-  const [fillColor, setFillColor] = useState<number>(200);
+  const y = getYearYFromIndex(index, YEAR_WIDTH) + 25;
+  const {
+    currentStepCount,
+    selectedYears,
+    handleYearClick
+  } = useContext(QuizContext);
 
-  useEffect(() => {
-    if (stepState <= 1) {
-      setTextOpacity(focusedYear ? 1.0 : 0.5);
-    } else {
-      setTextOpacity(0.0);
-    }
-  }, [focusedYear, stepState, setTextOpacity]);
-
-  // TODO: Maybe just an inline ternary in the template?
-  useEffect(() => {
-    if (stepState >= 2) {
-      if (year !== 1644) setFillColor(300);
-      if (year === 1644) setFillColor(50);
-    }
-  }, [setFillColor, stepState, year]);
-
-  const handleClick = () => {
-    if (year === 1644 && stepState === 1) {
-      setStepState(stepState + 1);
-    } else {
-      setSelected(true);
-    }
-  };
+  const yearEvents = centuryEvents.filter(event => event.year == year);
 
   return (
-    <g
-      onMouseEnter={() => setFocusedYear(year)}
-      onMouseLeave={() => setFocusedYear(undefined)}
-      role="button"
-      onClick={handleClick}
+    <svg
+      viewBox="0 0 90 90"
+      width={width}
+      height={height}
+      x={x}
+      y={y}
+      role={currentStepCount === 2 ? "button" : ""}
+      tabIndex={currentStepCount === 2 ? 0 : -1}
+      onClick={() => handleYearClick(year)}
+      onKeyUp={({ key }) => { if (key === "Enter") handleYearClick(year); }}
+      className="fill-gray-300"
     >
-      <rect
-        className={`fill-gray-${fillColor}`}
-        width={width}
-        height={height}
-        x={x}
-        y={y}
-      />
-      {(selected && stepState <= 1) &&
-        <>
-          <line x1={x} x2={x + width} y1={y} y2={y + height} className="stroke-red-400" strokeWidth={0.2}/>
-          <line x1={x} x2={x + width} y1={y + height} y2={y} className="stroke-red-400" strokeWidth={0.2}/>
-        </>
-      }
-      <text
-        x={x + 2}
-        y={y + 6.5}
-        fill="black"
-        fillOpacity={textOpacity}
-        fontSize={3}
-      >
-        {year}
-      </text>
+      <rect width={90} height={90} className="fill-peabodyChartBackground" />
+      <line x1={30} x2={30} y1={0} y2={90} className="stroke-gray-400" strokeWidth={2} strokeOpacity={0.25} />
+      <line x1={60} x2={60} y1={0} y2={90} className="stroke-gray-400" strokeWidth={2} strokeOpacity={0.25} />
+      <line x1={0} x2={90} y1={30} y2={30} className="stroke-gray-400" strokeWidth={2} strokeOpacity={0.25} />
+      <line x1={0} x2={90} y1={60} y2={60} className="stroke-gray-400" strokeWidth={2} strokeOpacity={0.25} />
 
-      {(stepState >= 2 && year === 1644) &&
+      {(
+        currentStepCount < 3 ||
+        (currentStepCount >= 3 && currentStepCount < 8 && year !== 1644) ||
+        (currentStepCount >= 8 && quizYears.includes(year))
+      ) &&
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="central"
+          className="font-william text-2xl fill-current pointer-events-none"
+          color="#3c6464"
+          fontSize={3}
+        >
+          {year}
+        </text>
+      }
+
+      {(selectedYears.includes(year) && currentStepCount <= 2) &&
         <>
-          {[...numberRange(0, 8)].map((eventIndex) => {
-            return (
-              <QuizEventSquare
-                key={eventIndex}
-                size={width / 3}
-                index={eventIndex}
-                yearX={x}
-                yearY={y}
-              />
-            );
-          })}
+          <line x1={0} x2={90} y1={0} y2={90} className="stroke-red-400" strokeWidth={2}/>
+          <line x1={90} x2={0} y1={0} y2={90} className="stroke-red-400" strokeWidth={2}/>
         </>
       }
 
-    </g>
+      {[...numberRange(0, 8)].map((eventIndex) => {
+        const absoluteIndex = index * 9 + eventIndex;
+        return (
+          <QuizEventSquare
+            key={`quiz${absoluteIndex}`}
+            index={eventIndex}
+            year={year}
+            absoluteIndex={absoluteIndex}
+            yearEvents={yearEvents}
+          />
+        )
+      })}
+    </svg>
   );
 }

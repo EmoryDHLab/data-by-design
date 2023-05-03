@@ -4,11 +4,11 @@ import eventData from "~/data/peabody/eventData.json";
 
 export default function QuizEventCategories() {
   const {
-    stepState,
+    currentStepCount,
     focusedCategory,
     setFocusedCategory,
     selectedCategories,
-    solvedEvents,
+    currentStep,
     handleCategoryClick,
   } = useContext(QuizContext);
 
@@ -17,12 +17,12 @@ export default function QuizEventCategories() {
   const textDecoration = (index: number) => {
     if (
       selectedCategories.includes(index) &&
-      !solvedEvents.includes(index)
+      !currentStep.solvedEvents.includes(index)
     ) {
       return "line-through";
     } else if (
       focusedCategory === index &&
-      !solvedEvents.includes(index)
+      !currentStep.solvedEvents.includes(index)
     ) {
       return "underline";
     }
@@ -32,7 +32,7 @@ export default function QuizEventCategories() {
   // Half opacity if incorrectly selected or already solved
   // Otherwise, show
   const textOpacity = (index: number) => {
-    if (stepState < 2) {
+    if (currentStepCount < 3) {
       return 0.0;
     } else if (selectedCategories.includes(index)) {
       return 0.5;
@@ -43,31 +43,51 @@ export default function QuizEventCategories() {
 
   // Gold if focused or already solved
   const textColor = (index: number) => {
-    return solvedEvents.includes(index) || focusedCategory === index ? "gold" : "white";
+    if (currentStep.solvedEvents.includes(index)) return "gray";
+    if (focusedCategory === index) return "gold";
+    return  "white";
+  };
+
+  const role = (index: number) => {
+    if (currentStepCount > 2 && currentStepCount < 7) {
+      if (
+        selectedCategories.includes(index) ||
+        currentStep.solvedEvents.includes(index)
+      ) {
+        return undefined;
+      } else {
+        return "button";
+      }
+    }
   };
 
   return (
       <text
         fill="white"
         fontSize={6}
-        x={85}
+        x={60}
         y={85}
         fillOpacity={0}
       >
         {eventData.eventTypes.map((type, index) => {
+          const squareRole = role(index)
           return (
             <tspan
               fillOpacity={textOpacity(index)}
               className="transition-[fill-opacity] duration-1000"
               key={index}
-              x={85}
+              x={60}
               dy={10}
               fill={textColor(index)}
-              role={selectedCategories.includes(index) ? "" : "button"}
+              role={squareRole ?? ""}
+              tabIndex={squareRole === "button" ? 0 : -1}
               onMouseEnter={() => setFocusedCategory(index)}
               onMouseLeave={() => setFocusedCategory(undefined)}
               onClick={() => handleCategoryClick(index)}
+              onKeyUp={({ key }) => { if (key === "Enter") handleCategoryClick(index) }}
               textDecoration={textDecoration(index)}
+              onFocus={() => setFocusedCategory(index)}
+              onBlur={() => setFocusedCategory(undefined)}
             >
               {index + 1}. {type}
             </tspan>

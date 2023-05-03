@@ -158,3 +158,12 @@
 html {
     scroll-padding-top: 3em;
 }
+
+tspan:focus {
+    outline: none;
+    text-decoration: underline;
+}
+
+svg.actor-button:focus {
+    outline: none;
+}
