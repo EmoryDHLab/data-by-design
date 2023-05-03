@@ -281,11 +281,6 @@
     }],
     "1644": [{
       "year": 1644,
-      "event": "English treaty with the Five Nations",
-      "squares": [6],
-      "actors": ["Americas", "England"]
-    }, {
-      "year": 1644,
       "event": "Powhatan attack Virginia",
       "squares": [1],
       "actors": ["Americas", "England"]
@@ -299,6 +294,11 @@
       "event": "Powhatan decimated by the colonists [Third Anglo-Powhatan War]",
       "squares": [3],
       "actors": ["Americas"]
+    }, {
+      "year": 1644,
+      "event": "English treaty with the Five Nations",
+      "squares": [6],
+      "actors": ["Americas", "England"]
     }],
     "1645": [{
       "year": 1645,
