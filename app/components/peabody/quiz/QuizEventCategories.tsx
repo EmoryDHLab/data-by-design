@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { QuizContext } from "../PeabodyQuiz";
 import eventData from "~/data/peabody/eventData.json";
 
+const unusedCategories = [3, 4, 6, 7, 8];
+
 export default function QuizEventCategories() {
   const {
     currentStepCount,
@@ -10,6 +12,7 @@ export default function QuizEventCategories() {
     selectedCategories,
     currentStep,
     handleCategoryClick,
+    setCurrentStepCount
   } = useContext(QuizContext);
 
   // Strike through if category is incorrectly selected
@@ -64,17 +67,17 @@ export default function QuizEventCategories() {
   return (
       <text
         fill="white"
-        fontSize={6}
         x={60}
         y={85}
         fillOpacity={0}
-      >
+        >
         {eventData.eventTypes.map((type, index) => {
           const squareRole = role(index)
           return (
             <tspan
+              fontSize={6}
               fillOpacity={textOpacity(index)}
-              className="transition-[fill-opacity] duration-1000"
+              className={`transition-[fill-opacity] duration-1000 ${unusedCategories.includes(index) && currentStepCount >= 7 ? "hidden" : ""}`}
               key={index}
               x={60}
               dy={10}
@@ -93,6 +96,25 @@ export default function QuizEventCategories() {
             </tspan>
           );
         })}
+        <tspan
+          className="transition-[fill-opacity] duration-1000 font-duboisLightNarrow italic focus:outline-none focus:underline hover:underline"
+          dy={24}
+          fillOpacity={currentStepCount >= 7 ? 1.0 : 0.0}
+          fontSize={14}
+          role={currentStepCount === 7 ? "button": ""}
+          tabIndex={currentStepCount === 7 ? 0: -1}
+          onClick={() => setCurrentStepCount(8)}
+          onKeyUp={({ key }) => { if (key === "Enter" || key === "Space") setCurrentStepCount(8) }}
+          x={60}
+          // y="50%"
+          // textAnchor="middle"
+          // dominantBaseline="middle"
+          fontFamily="VTC Du Bois Narrow, serif"
+          fontStyle="italic"
+        >
+          CONTINUE
+          <tspan dx={2} className="font-icons">b</tspan>
+        </tspan>
       </text>
   );
 };
