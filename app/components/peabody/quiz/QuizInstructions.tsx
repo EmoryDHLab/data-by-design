@@ -21,7 +21,7 @@ const InstructionsContent = ({ className, children, ...props }) => {
 };
 
 export default function QuizInstructions() {
-  const { currentStepCount, setCurrentStepCount } = useContext(QuizContext);
+  const { currentStepCount } = useContext(QuizContext);
 
   return (
     <svg
@@ -52,22 +52,6 @@ export default function QuizInstructions() {
         `}
       >
         CATEGORIZE THE EVENT
-      </InstructionsContent>
-      <InstructionsContent
-        className={`
-          font-duboisLightNarrow italic focus:outline-none focus:underline hover:underline
-          ${currentStepCount < 7 ? "translate-x-full" : ""}
-          ${currentStepCount > 7 ? "-translate-x-full" : ""}
-        `}
-        role={currentStepCount === 7 ? "button": ""}
-        tabIndex={currentStepCount === 7 ? 0: -1}
-        onClick={() => setCurrentStepCount(8)}
-        onKeyUp={({ key }) => { if (key === "Enter" || key === "Space") setCurrentStepCount(8) }}
-      >
-        <>
-          CONTINUE
-          <tspan dx={2} className="font-icons">b</tspan>
-        </>
       </InstructionsContent>
     </svg>
   );

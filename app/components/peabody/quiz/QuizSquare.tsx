@@ -26,7 +26,7 @@ export default function QuizSquare() {
 
   return (
     <g
-      className={`${currentStepCount === 0 ? "hidden" : ""} transition-all duration-700 ${currentStepCount >= 3 && currentStepCount < 8 ? "scale-[7] -translate-x-[78rem]  -translate-y-[30rem]" : ""} ${currentStepCount === 9 ? "-translate-x-1/4" : ""} focus:outline focus:outline-1`}
+      className={`${currentStepCount === 0 ? "hidden" : ""} transition-all duration-700 ${currentStepCount >= 3 && currentStepCount < 8 ? "scale-[7] -translate-x-[78rem]  -translate-y-[30rem]" : ""} focus:outline focus:outline-1`}
       tabIndex={currentStepCount > 1 ? 0 : -1}
       ref={squareRef}
     >

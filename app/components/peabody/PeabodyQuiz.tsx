@@ -10,6 +10,7 @@ import QuizSquare from "./quiz/QuizSquare";
 import { quizSteps } from "./quiz/quizSteps";
 import eventData from "~/data/peabody/eventData.json";
 import type { QuizStep } from "~/types/peabody";
+import QuizFinal from "./quiz/QuizFinal";
 
 export const QuizContext = createContext({
   clearSquares: 0,
@@ -25,7 +26,12 @@ export default function PeabodyQuiz() {
   const [selectedYears, setSelectedYears] = useState<array>([]);
   const [focusedCategory, setFocusedCategory] = useState<number|undefined>(undefined);
   const [feedback, setFeedback] = useState<object>({});
+  const quizRef = useRef();
   const endRef = useRef();
+
+  useEffect(() => {
+    if (currentStepCount < 9) quizRef.current.scrollIntoView();
+  }, [currentStepCount]);
 
   useEffect(() => {
     setSelectedCategories([]);
@@ -97,7 +103,7 @@ export default function PeabodyQuiz() {
     } else if (currentStepCount === 6 && selected == 5) {
       setCurrentStepCount(7);
       setFeedback({
-        message: "All done! Click above to continue.",
+        message: "All done!",
         correct: true
       });
     } else if (!currentStep.solvedEvents.includes(selected)) {
@@ -123,14 +129,16 @@ export default function PeabodyQuiz() {
       setFeedback
     }}>
       <section className="bg-black w-full h-[400vh]">
-        <svg viewBox="0 0 300 200" className="h-screen m-auto w-11/12 sticky top-0">
+        <svg ref={quizRef} viewBox="0 0 300 200" className="h-screen m-auto w-11/12 sticky top-0">
           {currentStepCount <= 1 &&
             <QuizIntro className={`transition-all duration-1000 ${currentStepCount > 0 ? "-translate-x-full" : ""}`} />
           }
 
           {currentStepCount > 0 &&
-            <QuizConclusion className={`transition-opacity duration-1000 delay-300 opacity-${currentStepCount === 8 ? 100 : 0}`} />
+            <QuizConclusion className={`transition-opacity duration-1000 ${currentStepCount === 8 ? "opacity-100 delay-300" : "opacity-0"}`} />
           }
+
+          <QuizFinal />
 
           <QuizFeedback />
 
@@ -156,31 +164,6 @@ export default function PeabodyQuiz() {
               <QuizEventCategories />
             </g>
           </g>
-
-          <svg
-            width={300}
-            height={10}
-            y={165}
-          >
-            <text
-              className={`transition-transform duration-1000 ${currentStepCount < 9 ? "translate-y-full" : ""}`}
-              fontSize={10}
-              x="50%"
-              y="50%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="white"
-            >
-              <tspan fontFamily="DxD Icons" fontSize={16}>t</tspan>
-              <tspan
-                dx={2}
-                fontFamily="VTC Du Bois Narrow, serif"
-                className="tracking-widest"
-              >
-                Scroll down to continue reading.
-              </tspan>
-            </text>
-          </svg>
 
           <QuizInstructions />
 
