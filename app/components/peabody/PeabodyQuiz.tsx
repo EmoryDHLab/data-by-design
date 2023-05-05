@@ -30,7 +30,7 @@ export default function PeabodyQuiz() {
   const endRef = useRef();
 
   useEffect(() => {
-    if (currentStepCount < 9) quizRef.current.scrollIntoView();
+    if (currentStepCount > 0 && currentStepCount < 9) quizRef.current.scrollIntoView({ behavior: "smooth" });
   }, [currentStepCount]);
 
   useEffect(() => {
@@ -128,7 +128,7 @@ export default function PeabodyQuiz() {
       feedback,
       setFeedback
     }}>
-      <section className="bg-black w-full h-[400vh]">
+      <section className="bg-black w-full h-[125vh]">
         <svg ref={quizRef} viewBox="0 0 300 200" className="h-screen m-auto w-11/12 sticky top-0">
           {currentStepCount <= 1 &&
             <QuizIntro className={`transition-all duration-1000 ${currentStepCount > 0 ? "-translate-x-full" : ""}`} />
