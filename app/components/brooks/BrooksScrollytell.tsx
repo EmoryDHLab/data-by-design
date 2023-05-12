@@ -14,7 +14,7 @@ const triggers = [
 ];
 
 export default function BrooksScrollytell() {
-  const { accentTextColor, requireConsentState, setRequireConsentState } = useContext(ChapterContext);
+  const { accentTextColor, hideSensitiveState, setHideSensitiveState } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<float>(0.0);
   const [focusShapeSize, setFocusShapeSize] = useState<object>({ x: 0, y: 0, w: 74, h: 30 });
   const steps = useRef<HTMLDivElement | undefined>(undefined);
@@ -43,7 +43,7 @@ export default function BrooksScrollytell() {
       <div
         className="cursor-pointer sticky pt-16 md:pt-0 top-0 h-screen grid grid-cols-1 md:content-end order-first"
       >
-        <div className="text-3xl relative md:top-[calc(100vh-28rem)] ml-4 text-black hidden md:block" tabIndex={-1}>↓</div>
+        <div className="text-3xl relative md:top-[calc(100vh-40rem)] ml-4 text-black hidden md:block" tabIndex={-1}>↓</div>
         <div className="mb-6">
           <div className="w-11/12 m-auto"
           >
@@ -67,24 +67,23 @@ export default function BrooksScrollytell() {
                   y={0}
                   />
 
-                {/* {requireConsentState && (
+                {hideSensitiveState && (
                   <svg
                     x={9.5} y={2}
                     viewBox="0 0 59.71 16.88"
                     width={58}
                     height={25}
-                    role="button"
-                    className="cursor-pointer"
-                    onClick={(event) => {
-                      console.log("🚀 ~ file: BrooksScrollyTell.tsx:79 ~ BrooksScrollytell ~ event:", event)
-                      event.preventDefault();
-                      setRequireConsentState(false);
-                    }}
+                    // role="button"
+                    // className="cursor-pointer"
+                    // onClick={(event) => {
+                    //   event.preventDefault();
+                    //   setHideSensitiveState(false);
+                    // }}
                   >
-                    <path strokeWidth={0.5} fillOpacity={1} fill="#ede6d9" stroke="black" width={55}
+                    <path strokeWidth={0.5} fillOpacity={1} fill="#D9D9D9" stroke="#8C20E1" width={55}
                         d="m.5,3.39c11.37-1.12,55.38-8.07,58.66,4.69C52.12,20.69,11.57,16.2.58,15.14c-.03-3.92-.05-7.83-.08-11.75Z" />
-                    <EyeSlashIcon className="w-1 h-1" height={5} y={4}/>
-/                    <FancyButton
+                    <EyeSlashIcon stroke="#8C20E1" strokeOpacity={0.75} className="w-1 h-1" height={8} y={4}/>
+{/* /                    <FancyButton
                       y={11}
                       x={23.5}
                       fontSize={12}
@@ -94,9 +93,9 @@ export default function BrooksScrollytell() {
                       action={(e) => e.preventDefault()}
                     >
                       Show Image
-                    </FancyButton>
+                    </FancyButton> */}
                   </svg>
-                )} */}
+                )}
 
                 <mask id="ship-mask">
                   <rect
