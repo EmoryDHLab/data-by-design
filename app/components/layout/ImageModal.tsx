@@ -1,29 +1,48 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
+import { ChapterContext } from "~/chapterContext";
 import { Dialog, Transition } from "@headlessui/react";
-// import { ChapterContext } from "~/theme";
+import { EyeSlashIcon } from '@heroicons/react/24/outline'
+import type { ChapterFigure } from "~/types/figureType";
 
 interface Props {
+  figure?: ChapterFigure;
   title?: string;
-  src: string;
+  sr?: string;
   alt?: string;
   title?: string;
   className?: string;
   loading?: boolean;
 }
 
-export default function ImageModal({ alt, className, src, title, loading }: Props) {
+export default function ImageModal({ figure, alt, className, src, title, loading }: Props) {
   const [open, setOpen] = useState(false);
+  const { hideSensitiveState } = useContext(ChapterContext);
 
-  // TODO: Do we still need this?
-  // const { setDocHeightState } = useContext(ChapterContext);
+  if (figure?.sensitive && hideSensitiveState) {
+    return (
+      <section className="grid grid-cols-1 place-items-center border-4 border-[#8C20E1] bg-[#D9D9D9]">
+        <EyeSlashIcon
+          className="h-36 absolute my-auto mx-auto"
+          stroke="#8C20E1"
+          strokeOpacity={0.75}
+        />
+        <img
+          className="opacity-0"
+          src={`/images/${figure.chapter}/${figure.fileName}`}
+          alt={figure.altText ?? alt}
+          title={figure.title ?? title}
+        />
+      </section>
+    );
+  }
 
   return (
     <>
       <img
         role="button"
-        src={src}
-        alt={alt}
-        title={title}
+        src={figure ? `/images/${figure.chapter}/${figure.fileName}` : src}
+        alt={figure?.altText ?? alt}
+        title={figure?.title ?? title}
         className={className}
         loading={loading ?? "lazy"}
         onClick={() => setOpen(true)}
@@ -62,15 +81,15 @@ export default function ImageModal({ alt, className, src, title, loading }: Prop
                           as="h3"
                           className="text-lg font-medium leading-6 text-gray-900"
                         >
-                          {title}
+                          {figure?.title ?? title}
                         </Dialog.Title>
                       )}
                       <div className="mt-2">
                         <img
                           className="mx-auto"
-                          src={src}
-                          alt={alt}
-                          title={title}
+                          src={figure ? `images/${figure.chapter}/${figure.fileName}` : src}
+                          alt={figure?.altText ?? alt}
+                          title={figure?.title ?? title}
                           loading={loading ?? "lazy"}
                         />
                       </div>

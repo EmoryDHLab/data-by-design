@@ -1,7 +1,5 @@
-import { useContext } from "react";
-import { ChapterContext } from "~/chapterContext";
 import type { ReactNodeLike } from "prop-types";
-import type { ChapterFigure } from "~/figureType";
+import type { ChapterFigure } from "~/types/figureType";
 import ImageModal from "~/components/layout/ImageModal";
 
 interface Props {
@@ -17,42 +15,37 @@ export default function FigureObj({
   children,
   className,
 }: Props) {
-  const { chapter } = useContext(ChapterContext);
 
   return (
-    <div className={`flex justify-center `}>
-      <figure className={`${className ?? ""}`}>
-        {figures ? (
-          figures.map((image, index) => (
-            <ImageModal
-              className="p-2"
-              key={index}
-              src={image.src}
-              alt={image.alt}
-            />
-          ))
-        ) : (
+    <figure className={`grid grid-cols-1 place-items-center md:ml-24 ${className ?? ""}`}>
+      {figures ? (
+        figures.map((image, index) => (
           <ImageModal
-            src={`/images/${chapter}/${figure.fileName}`}
-            alt={figure.altText ?? ""}
-            title={figure.title ?? ""}
+            className="p-2"
+            key={figure.fileName}
+            src={`/images/${figure.chapter}/${figure.fileName}`}
+            alt={image.altText}
           />
-        )}
-        <figcaption className="font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
-          <span
+        ))
+      ) : (
+        <ImageModal
+          figure={figure}
+        />
+      )}
+      <figcaption className="font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
+        <span
+          dangerouslySetInnerHTML={{
+            __html: figure.caption,
+          }}
+        />
+        {figure.creditLine &&
+          <span className="pl-1"
             dangerouslySetInnerHTML={{
-              __html: figure.caption,
+              __html: figure.creditLine,
             }}
           />
-          {figure.creditLine &&
-            <span className="pl-1"
-              dangerouslySetInnerHTML={{
-                __html: figure.creditLine,
-              }}
-            />
-          }
-        </figcaption>
-      </figure>
-    </div>
+        }
+      </figcaption>
+    </figure>
   );
 }

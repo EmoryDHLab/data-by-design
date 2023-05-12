@@ -17,11 +17,17 @@ import BrooksChart from "~/components/brooks/BrooksChart";
 import SeraphiqueTour from "~/components/brooks/SeraphiqueTour";
 import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
+import Consent from "~/components/Consent";
+import FigureObj from "~/components/layout/FigureObj";
+
+import figures from "~/data/figures.json";
+console.log("🚀 ~ file: brooks.tsx:691 ~ BrooksPage ~ :", figures["6-stream.png"])
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
   const [docHeightState, setDocHeightState] = useState<number>(0);
-  const [requireConsentState, setRequireConsentState] = useState<boolean>(true);
+  const [hideSensitiveState, setHideSensitiveState] = useState<boolean>(true);
+
 
   return (
     <ChapterContext.Provider
@@ -37,8 +43,8 @@ export default function BrooksPage() {
         setHoverState,
         docHeightState,
         setDocHeightState,
-        requireConsentState,
-        setRequireConsentState,
+        hideSensitiveState,
+        setHideSensitiveState,
       }}
     >
       <ChapterTitle
@@ -46,9 +52,9 @@ export default function BrooksPage() {
         subtitle="The Brooks / Diagram of a Slave Ship"
       />
 
-      {/* <Consent> */}
+      <Consent />
 
-      <CenteredLayout>
+      <CenteredLayout className="top-0">
         <p>
           Before there are data, there are people. People who offer up their
           lives as data -- or whose lives become data without consent.
@@ -290,9 +296,8 @@ export default function BrooksPage() {
             seeks to depict.
           </p>
         </Column>
-        <Column className="md:ml-12">
-          {/* <Figure src="/images/brooks/2-1468px-Plan.jpeg" alt=""></Figure> */}
-          <SeraphiqueTour />
+        <Column shouldPin>
+          <SeraphiqueTour image={figures["2-1468px-Plan.jpeg"]} />
         </Column>
       </TwoColumnLayout>
 
@@ -449,8 +454,8 @@ export default function BrooksPage() {
             <InlineFootnote index={20} />
           </p>
         </Column>
-        <Column shouldPin={true} className="md:ml-12">
-          <Figure src="/images/brooks/4-description-1789.jpg" alt=""></Figure>
+        <Column shouldPin>
+          <FigureObj figure={figures["4-description-1789.jpg"]} />
         </Column>
       </TwoColumnLayout>
 
@@ -588,10 +593,7 @@ export default function BrooksPage() {
           of data visualization.
         </p>
 
-        <Figure
-          src="/images/brooks/5-FoE_Clarkson_The history of the rise_0.jpeg"
-          alt=""
-        />
+        <FigureObj figure={figures["5-The_history_of_the_rise.jpg"]} />
 
         <p>
           This image, a so-called stream chart that Clarkson included in his
@@ -684,12 +686,9 @@ export default function BrooksPage() {
           <InlineFootnote index={32} />
         </Column>
         <Column>
-          <Figure src="/images/brooks/7-Bell.jpeg" alt="">
-            Strass's original (David Rumsey).
-          </Figure>
-          <Figure src="/images/brooks/6-stream.png" alt="">
-            William Bell translation (CoT).
-          </Figure>
+
+          <FigureObj figure={figures["7-Bell.jpeg"]} />
+          <FigureObj figure={figures["6-stream.png"]} />
         </Column>
       </TwoColumnLayout>
 
@@ -723,8 +722,8 @@ export default function BrooksPage() {
             boundedness of the totalizing western view. Concluding line TK.
           </p>
         </Column>
-        <Column className="md:ml-12">
-          <Figure src="/images/brooks/8-history.png" alt="" />
+        <Column>
+          <Figure className="ml-24" src="/images/brooks/8-history.png" alt="" />
         </Column>
       </TwoColumnLayout>
       <ChapterSectionTitle title="Diagramming the Present" />
@@ -746,8 +745,8 @@ export default function BrooksPage() {
             in a political cause.
           </p>
         </Column>
-        <Column className="md:ml-12">
-          <Figure src="/images/brooks/9-isotype.png" alt="" />
+        <Column>
+          <FigureObj figure={figures["9-isotype.png"]} />
         </Column>
       </TwoColumnLayout>
 

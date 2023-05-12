@@ -144,6 +144,8 @@ module.exports = {
     "fill-gray-300",
     "fill-gray-50",
     "text-red-800",
-    "text-lime-500"
+    "text-lime-500",
+    "top-12",
+    "top-24",
   ],
 };
