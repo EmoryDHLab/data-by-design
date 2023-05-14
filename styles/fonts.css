@@ -23,7 +23,7 @@
     font-family: "VTC Du Bois";
     src: url("/fonts/VTCDubois/VTCDuBois-Bold.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-Bold.woff2") format("woff2");
-    font-weight: bolder;
+    font-weight: bold;
     font-style: normal;
     font-feature-settings: 'ss06' on;
 }

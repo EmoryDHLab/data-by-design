@@ -90,17 +90,17 @@ export default function Index() {
                   by {selectedImage.ARTIST} ({selectedImage.YEAR})
                 </div>
               </div>
-              <div className="  py-2 w-5/6 sm:text-base sm:w-full text-sm">
-                {/* <span>{selectedImage.CREDIT} </span> */}
-                <br></br>
-                {/* <span>{selectedImage.DIGITIZED}</span> */}
+              <div className="  py-2 w-5/6 text-stone-400 sm:text-sm sm:w-full text-sm">
+                <span>{selectedImage.CREDIT} </span>
+
+                <span>{selectedImage.DIGITIZED}</span>
               </div>
-              <Link
+              {/* <Link
                 to={`/chapters/${selectedImage.CHAPTER}`}
                 className="text-base font-dubois  pt-6"
               >
                 GO TO CHAPTER →
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
