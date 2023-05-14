@@ -9,6 +9,7 @@ export default function ChapterCardGrid() {
       <div className="grid sm:grid-cols-2 grid-cols-1 sm:grid-rows-3">
         <ChapterCard
           to="/chapters/brooks"
+          status="IN PROGRESS"
           className="cardBrooks bg-black hover:text-white"
           title="Every Datapoint a Person"
           subtitle="Diagram of a Slave Ship"
@@ -18,6 +19,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/playfair"
+          status=""
           className="cardPlayfair bg-black hover:text-white"
           title="What Visualization Reveals"
           subtitle="William Playfair's Time-Series Charts"
@@ -27,6 +29,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/shanawdithit"
+          status="COMING SOON"
           className="cardShanawdithit bg-black hover:text-white"
           title="Narratives of Possession"
           subtitle="Shanawdithit’s Narrative Maps"
@@ -36,6 +39,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/peabody"
+          status=""
           className="cardPeabody bg-black hover:text-white"
           title="The Work of Knowledge"
           subtitle="Elizabeth Palmer Peabody’s Chronological Grids"
@@ -45,6 +49,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/dubois"
+          status=""
           className="cardDubois bg-black hover:text-white"
           title="Between Data and Truth"
           subtitle="W. E. B. Du Bois’s “Data Portraits”"
@@ -54,12 +59,13 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/labor"
+          status="COMING SOON"
           className="cardLabour bg-black hover:text-white"
           title="The Process is the Product"
           subtitle="The Making of Data by Design"
         >
-          Any digital project is the work of many hands. How can this labor be 
-          visualized? What labor remains out of sight? 
+          Any digital project is the work of many hands. How can this labor be
+          visualized? What labor remains out of sight?
         </ChapterCard>
       </div>
     </div>
