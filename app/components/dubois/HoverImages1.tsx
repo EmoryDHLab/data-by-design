@@ -27,7 +27,7 @@ export default function HoverImages1() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="border-duboisPrimaryHalfOpacity border-[50px] max-w-xl overflow-hidden">
+      <div className="border-duboisPrimaryHalfOpacity max-w-xl overflow-hidden">
         <ImageModal src={imageSource} alt="" />
       </div>
     </div>
