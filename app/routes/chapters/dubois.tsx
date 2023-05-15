@@ -257,7 +257,7 @@ export default function DuboisChapter() {
             </p>
           </div>
         </Column>
-        <Column shouldPin={true}>
+        <Column shouldPin={true} className="p-10">
           <HoverImages1 />
           <div className="font-dubois text-center mt-10 w-5/6">
             <p>
@@ -420,7 +420,7 @@ export default function DuboisChapter() {
             </span>
           </p>
         </Column>
-        <Column shouldPin={true}>
+        <Column shouldPin={true} className="p-10">
           <HoverImages2 />
           {/* Comment: Look at scroll for both of these. Might be better to ultimately make it one image that changes */}
         </Column>
