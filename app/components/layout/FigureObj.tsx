@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import type { ReactNodeLike } from "prop-types";
 import type { ChapterFigure } from "~/types/figureType";
 import ImageModal from "~/components/layout/ImageModal";
@@ -15,9 +16,12 @@ export default function FigureObj({
   children,
   className,
 }: Props) {
+  const figureRef = useRef();
+
+  const inColumn = figureRef.current?.parentElement.classList.contains('md:bias-1/2');
 
   return (
-    <figure className={`grid grid-cols-1 place-items-center md:ml-24 ${className ?? ""}`}>
+    <figure ref={figureRef} className={`grid grid-cols-1 place-items-center ${inColumn ? "md:ml-24" : ""} ${className ?? ""}`}>
       {figures ? (
         figures.map((image, index) => (
           <ImageModal
