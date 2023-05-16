@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { QuizContext } from "../PeabodyQuiz";
+import { useContext, useEffect, useState } from "react";
+import { QuizContext } from "./QuizContext";
 import QuizEventSquare from "./QuizEventSquare";
 import { getYearXFromIndex, getYearYFromIndex } from "~/components/peabody/peabodyUtils";
 import { numberRange } from "~/utils";
@@ -22,6 +22,7 @@ export default function QuizYearSquare({
   index,
   year
 }: Props) {
+  const [interactiveOptions, setInteractiveOptions] = useState<object>({});
   const x = getYearXFromIndex(index, YEAR_WIDTH) + 165;
   const y = getYearYFromIndex(index, YEAR_WIDTH) + 25;
   const {
@@ -32,6 +33,19 @@ export default function QuizYearSquare({
 
   const yearEvents = centuryEvents.filter(event => event.year == year);
 
+  useEffect(() => {
+    if (currentStepCount === 2 && !selectedYears.includes(year)) {
+      setInteractiveOptions({
+        role: "button",
+        tabIndex: 0,
+        onClick: () => handleYearClick(year),
+        onKeyUp: ({ key }) => { if (key === "Enter") handleYearClick(year); }
+      });
+    } else {
+      setInteractiveOptions({});
+    }
+  }, [setInteractiveOptions, currentStepCount, handleYearClick, year, selectedYears]);
+
   return (
     <svg
       viewBox="0 0 90 90"
@@ -39,11 +53,8 @@ export default function QuizYearSquare({
       height={height}
       x={x}
       y={y}
-      role={currentStepCount === 2 ? "button" : ""}
-      tabIndex={currentStepCount === 2 ? 0 : -1}
-      onClick={() => handleYearClick(year)}
-      onKeyUp={({ key }) => { if (key === "Enter") handleYearClick(year); }}
-      className="fill-gray-300"
+      className={selectedYears.includes(year) && currentStepCount === 2 ? "cursor-not-allowed" : ""}
+      {...interactiveOptions}
     >
       <rect width={90} height={90} className="fill-peabodyChartBackground" />
       <line x1={30} x2={30} y1={0} y2={90} className="stroke-gray-400" strokeWidth={2} strokeOpacity={0.25} />

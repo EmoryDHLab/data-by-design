@@ -1,7 +1,11 @@
 import { useContext } from "react";
-import { QuizContext } from "../PeabodyQuiz";
+import { QuizContext } from "./QuizContext";
 
-export default function QuizConclusion({ className }) {
+interface Props {
+  className: string;
+}
+
+export default function QuizConclusion({ className }: Props) {
   const { setCurrentStepCount } = useContext(QuizContext);
 
   return (

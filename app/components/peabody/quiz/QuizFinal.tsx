@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { QuizContext } from "../PeabodyQuiz";
+import { QuizContext } from "./QuizContext";
 
 export default function QuizFinal() {
   const { currentStepCount } = useContext(QuizContext);

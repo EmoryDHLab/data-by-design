@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { QuizContext } from "../PeabodyQuiz";
+import { QuizContext } from "./QuizContext";
 
 export default function QuizFeedback() {
   const { feedback, setFeedback, currentStepCount } = useContext(QuizContext);

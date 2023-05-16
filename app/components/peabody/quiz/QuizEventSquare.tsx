@@ -4,7 +4,7 @@ import {
   POLYGONS,
 } from "~/components/peabody/peabodyUtils";
 import { useContext, useEffect, useRef, useState  } from "react";
-import { QuizContext } from "../PeabodyQuiz";
+import { QuizContext } from "./QuizContext";
 import eventData from "~/data/peabody/eventData.json";
 
 interface Props {
@@ -24,21 +24,52 @@ export default function RecreatedEventSquare({
   yearEvents,
   isVertical,
 }: Props) {
-
   const {
-    focusedCategory,
-    setFocusedCategory,
-    selectedCategories,
-    currentStepCount,
+    allowOption,
     currentStep,
+    currentStepCount,
+    focusedCategory,
     handleCategoryClick,
+    selectedCategories,
+    setFocusedCategory,
   } = useContext(QuizContext);
 
   const [squareEvent, setSquareEvent] = useState<object | undefined>(undefined);
   const [eventPolygons, setEventPolygons] = useState<array>([]);
   const [polygonOpacity, setPolygonOpacity] = useState<float>(0.0);
+  const [interactiveOptions, setInteractiveOptions] = useState<object>({});
+  const [isOption, setIsOption] = useState<boolean>(allowOption(index));
+
   const eventColors = useRef<string[]>([]);
   const polygonTransform = useRef<objects | undefined>(undefined);
+
+  useEffect(() => {
+    setIsOption(allowOption(index));
+  }, [setIsOption, currentStepCount, selectedCategories, index, allowOption]);
+
+  useEffect(() => {
+    if (
+      currentStepCount > 2 &&
+      currentStepCount < 7 &&
+      isOption &&
+      year === 1644
+    ) {
+      setInteractiveOptions({
+        role: "button",
+        tabIndex: 0,
+        onClick: () => handleCategoryClick(index),
+        onKeyUp: ({ key }) => { if (key === "Enter") handleCategoryClick(index) },
+        onMouseEnter: () => setFocusedCategory(index),
+        onMouseLeave: () => setFocusedCategory(undefined),
+        onFocus: () => setFocusedCategory(index),
+        onBlur: () => setFocusedCategory(undefined),
+        className: "focus:outline-none focus:ring-0 cursor-pointer",
+      });
+    }
+    else {
+      setInteractiveOptions({});
+    }
+  }, [setInteractiveOptions, index, allowOption, currentStepCount, year, setFocusedCategory, handleCategoryClick, isOption]);
 
   useEffect(() => {
     if (
@@ -110,24 +141,8 @@ export default function RecreatedEventSquare({
       height={30}
       x={getEventXFromIndex(index)}
       y={getEventYFromIndex(index)}
-      className="w-full h-auto "
-      role={(currentStepCount > 2 && currentStepCount < 7) && year === 1644 ? "button" : ""}
-      tabIndex={(currentStepCount > 2 && currentStepCount < 7) && year === 1644 ? 0 : -1}
-      onClick={() => handleCategoryClick(index)}
-      onKeyUp={({ key }) => { if (key === "Enter") handleCategoryClick(index) }}
-      onMouseEnter={() => {
-        if (year === 1644) setFocusedCategory(index);
-      }}
-      onMouseLeave={() => {
-        if (year === 1644) setFocusedCategory(undefined);
-      }}
-      onFocus={() => {
-        if (year === 1644) setFocusedCategory(index);
-      }}
-      onBlur={() => {
-        if (year === 1644) setFocusedCategory(undefined);
-      }}
-      className="focus:outline-none focus:ring-0"
+      className={`w-full h-auto ${isOption ? "" : "cursor-not-allowed"}`}
+      {...interactiveOptions}
     >
       {(currentStepCount >= 3 && currentStepCount < 8 && year === 1644) &&
       <>

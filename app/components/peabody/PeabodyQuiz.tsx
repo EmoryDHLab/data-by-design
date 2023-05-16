@@ -1,6 +1,6 @@
-import { createContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import QuizConclusion from "./quiz/QuizConclusion";
-import QuizEventCategories from "./quiz/QuizEventCategories";
+import QuizEventCategoryList from "./quiz/QuizEventCategoryList";
 import QuizFeedback from "./quiz/QuizFeedback";
 import QuizInstructions from "./quiz/QuizInstructions";
 import QuizIntro from "./quiz/QuizIntro";
@@ -9,14 +9,15 @@ import QuizSelectActors from "./quiz/QuizSelectActors";
 import QuizSquare from "./quiz/QuizSquare";
 import { quizSteps } from "./quiz/quizSteps";
 import eventData from "~/data/peabody/eventData.json";
-import type { QuizStep } from "~/types/peabody";
 import QuizFinal from "./quiz/QuizFinal";
+import { QuizContext } from "./quiz/QuizContext";
+import type { QuizStep } from "~/types/peabody";
 
-export const QuizContext = createContext({
-  clearSquares: 0,
-  currentCentury: 1500,
-  currentStep: undefined
-});
+// export const QuizContext = createContext({
+//   clearSquares: 0,
+//   currentCentury: 1500,
+//   currentStep: undefined
+// });
 
 
 export default function PeabodyQuiz() {
@@ -107,13 +108,25 @@ export default function PeabodyQuiz() {
         correct: true
       });
     } else if (!currentStep.solvedEvents.includes(selected)) {
-        setSelectedCategories([selected, ...selectedCategories])
-
+        setSelectedCategories([selected, ...selectedCategories]);
     }
+  };
+
+  const allowOption = (index: number) => {
+    if (currentStepCount > 2 && currentStepCount < 7) {
+      if (
+        selectedCategories.includes(index) ||
+        currentStep.solvedEvents.includes(index)
+      ) {
+        return false;
+      }
+    }
+    return true;
   };
 
   return (
     <QuizContext.Provider value={{
+      allowOption,
       currentStep,
       currentStepCount,
       setCurrentStepCount,
@@ -121,14 +134,12 @@ export default function PeabodyQuiz() {
       setFocusedCategory,
       handleCategoryClick,
       selectedCategories,
-      setSelectedCategories,
       selectedYears,
-      setSelectedYears,
       handleYearClick,
       feedback,
       setFeedback
     }}>
-      <section className="bg-black w-full h-[125vh]">
+      <section className="bg-black w-full h-[200vh]">
         <svg ref={quizRef} viewBox="0 0 300 200" className="h-screen m-auto w-11/12 sticky top-0">
           {currentStepCount <= 1 &&
             <QuizIntro className={`transition-all duration-1000 ${currentStepCount > 0 ? "-translate-x-full" : ""}`} />
@@ -146,7 +157,7 @@ export default function PeabodyQuiz() {
             <QuizSquare />
           </g>
 
-         <g className={`${currentStepCount === 0 ? "hidden translate-x-full" : ""} ${currentStepCount >= 2 && currentStepCount < 8 ? "-translate-x-8 translate-y-2 scale-75 " : ""} ${currentStepCount >= 7 ? "-translate-x-full" : ""} ${currentStepCount === 8 ? "hidden" : ""} transition-all duration-1000`}>
+         <g className={`${currentStepCount === 0 ? "hidden translate-x-full" : ""} ${currentStepCount >= 2 && currentStepCount < 8 ? "-translate-x-8 translate-y-2 scale-75 opacity-100" : ""} ${currentStepCount >= 7 ? "-translate-x-full opacity-0" : ""} transition-all duration-1000`}>
             <text
               x={60}
               y={41}
@@ -161,7 +172,9 @@ export default function PeabodyQuiz() {
 
             <g className={` transition-all duration-700 delay-100`}>
               <QuizSelectActors />
-              <QuizEventCategories />
+              {(currentStepCount > 1 && currentStepCount < 9) && (
+                <QuizEventCategoryList />
+              )}
             </g>
           </g>
 
@@ -169,7 +182,7 @@ export default function PeabodyQuiz() {
 
           <QuizNav />
 
-          <text x={280} y={215} fill="white" fontSize={3}>{currentStepCount} of 9</text>
+          <text x={280} y={205} fill="white" fontSize={3}>{currentStepCount} of 9</text>
         </svg>
       </section>
       <section ref={endRef}>&nbsp;</section>

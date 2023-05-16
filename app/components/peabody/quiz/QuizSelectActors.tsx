@@ -1,22 +1,28 @@
 import { useContext, useEffect, useState } from "react";
-import { QuizContext } from "../PeabodyQuiz";
-import eventData from "~/data/peabody/eventData.json";
+import { QuizContext } from "./QuizContext";
 import QuizActorButton from "./QuizActorButton";
 
-const quizActors = ["England", "Americas"];
+const quizActors = ["England", "France", "Americas", "Sweden", "Holland"];
+const correctActors = ["England", "Americas"];
+const fillColors = {
+    England: "rgb(119,43,21)",
+    France: "rgb(60,100,100)",
+    Americas: "rgb(222,145,49)",
+    Holland: "rgb(68,108,73)",
+    Sweden: "rgb(217,182,17)",
+  };
 
 export default function QuizSelectActors() {
   const { currentStep, currentStepCount, setCurrentStepCount, setFeedback } = useContext(QuizContext);
   const [solvedActors, setSolvedActors] = useState<array>([]);
   const [selectedActors, setSelectedActors] = useState<array>([]);
-  const [active, setActive] = useState<string|undefined>(undefined);
 
   useEffect(() => {
     if (currentStepCount <= 1) {
       setSolvedActors([]);
       setSelectedActors([]);
     } else {
-      setSolvedActors(quizActors);
+      setSolvedActors(correctActors);
     }
   }, [currentStepCount, setSolvedActors, setSelectedActors]);
 
@@ -48,24 +54,24 @@ export default function QuizSelectActors() {
     }
   };
 
-  const buttonBorder = (actor) => {
-    if (solvedActors.includes(actor)) return 0.5;
-    if ( active === actor) return 1.0;
-    return 0;
-  }
+  // const buttonBorder = (actor) => {
+  //   if (solvedActors.includes(actor)) return 0.5;
+  //   if ( active === actor) return 1.0;
+  //   return 0;
+  // }
 
-  const buttonOpacity = (actor) => {
-    if (selectedActors.includes(actor)) return 0.5;
-    if (solvedActors.includes(actor) || active === actor) return 1.0;
-    return 0.75;
-  }
+  // const buttonOpacity = (actor) => {
+  //   if (selectedActors.includes(actor)) return 0.5;
+  //   if (solvedActors.includes(actor) || active === actor) return 1.0;
+  //   return 0.75;
+  // }
 
   return (
     <g
       className={`transition-all duration-1000`}
     >
-      {eventData.actors["1600"].map((actor, index) => {
-        if ((currentStepCount > 1 && quizActors.includes(actor)) || currentStepCount == 1) {
+      {quizActors.map((actor, index) => {
+        if ((currentStepCount > 1 && correctActors.includes(actor)) || currentStepCount == 1) {
           const x = 60 + (index * 28);
           const y = 66
           return (
@@ -74,15 +80,13 @@ export default function QuizSelectActors() {
               x={x}
               y={y}
               actor={actor}
-              opacity={buttonOpacity(actor)}
-              border={buttonBorder(actor)}
+              // opacity={buttonOpacity(actor)}
+              // border={buttonBorder(actor)}
               selectActor={selectActor}
-              setActive={setActive}
-              fill={eventData.actorColors[actor]}
+              fillColor={fillColors[actor]}
               disable={selectedActors.includes(actor)}
               solvedActors={solvedActors}
               selectedActors={selectedActors}
-              active={active}
             />
           )
         }
