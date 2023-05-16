@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { QuizContext } from "../PeabodyQuiz";
+import { QuizContext } from "./QuizContext";
 
 const x = 212;
-const y = 190;
+const y = 180;
 const side = 20;
 
 export default function QuizNav() {
