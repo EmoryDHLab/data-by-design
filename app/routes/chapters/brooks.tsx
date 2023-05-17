@@ -21,7 +21,6 @@ import Consent from "~/components/Consent";
 import FigureObj from "~/components/layout/FigureObj";
 
 import figures from "~/data/figures.json";
-console.log("🚀 ~ file: brooks.tsx:691 ~ BrooksPage ~ :", figures["6-stream.png"])
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -681,9 +680,10 @@ export default function BrooksPage() {
           <PullQuote
             title="The study of chronology has been much facilitated by making space represent time, and a line of proportional length and in a suitable position, the life of a man, by means of which the men of past ages appear as it were before us in their proper time and place."
             subtitle='In the first edition of his Commerical and Political Atlas, Playfair cites the work of Joseph Priestley, the author of several famed chronological charts, "as a direct predecessor to his own line graphs and bar charts.'
-          />
-          <InlineFootnote index={31} />
-          <InlineFootnote index={32} />
+          >
+            <InlineFootnote index={31} />
+            <InlineFootnote index={32} />
+          </PullQuote>
         </Column>
         <Column>
 
@@ -722,7 +722,7 @@ export default function BrooksPage() {
             boundedness of the totalizing western view. Concluding line TK.
           </p>
         </Column>
-        <Column>
+        <Column shouldPin>
           <Figure className="ml-24" src="/images/brooks/8-history.png" alt="" />
         </Column>
       </TwoColumnLayout>
