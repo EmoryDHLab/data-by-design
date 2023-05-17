@@ -28,12 +28,12 @@ const tourLocations = {
     mask: { x: 0, y: 0, h: 70, w: 50}
   },
   shackledMen: {
-    transform: "scale-[10] translate-x-[18rem] -translate-y-[19.5rem] rotate-90",
-    mask: { x: 32.5, y: 0, h: 70, w: 2.5}
+    transform: "scale-[11] -translate-x-[17.5rem] -translate-y-[16rem]",
+    mask: { x: 0, y: 0, h: 70, w: 50}
   },
   nursingMother: {
-    transform: "scale-[14] -translate-x-[23.75rem] -translate-y-[9rem]",
-    mask: { x: 28.3, y: 11.35, h: 2, w: 1}
+    transform: "scale-[28] -translate-x-[49rem] -translate-y-[19.5rem]",
+    mask: { x: 0, y: 0, h: 70, w: 50}
   }
 };
 
