@@ -115,11 +115,7 @@ export default function BrooksScrollytell() {
             <div
               key={index}
               data-step={index}
-              className={`pointer-events-none step text-xl content-center p-5 md:px-20 relative ${
-                index + 1 === triggers.length
-                  ? "md:h-[50vh]"
-                  : "h-screen"
-              } text-${accentTextColor}`}
+              className={`pointer-events-none step text-xl content-center p-5 md:px-20 relative h-screen text-${accentTextColor}`}
             >
               <p className="bg-brooksSecondary-translucent p-3 md:p-12 w-9/12">
                 {trigger}
