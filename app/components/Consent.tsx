@@ -49,7 +49,7 @@ export default function Consent() {
           colorOff={accentColor}
           screenReaderMsg="Consent to descriptions of images of slavery."
         />
-        <span className="ml-2">Hide sensitive images</span>
+        <span className="ml-4">Hide sensitive images</span>
       </p>
     </div>
   );
