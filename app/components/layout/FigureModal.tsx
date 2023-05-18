@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import type { ChapterFigure } from "~/types/figureType";
 
@@ -10,25 +10,40 @@ interface Props {
   title?: string;
   className?: string;
   loading?: boolean;
+  hide?: boolean;
 }
 
-export default function ImageModal({ figure, alt, className, src, title, loading }: Props) {
+export default function FigureModal({ children, figure, loading, hide }: Props) {
   const [open, setOpen] = useState(false);
+  const [interactiveOptions, setInteractiveOptions] = useState<object>({});
+  const figureRef = useRef();
+  const inColumn = figureRef.current?.parentElement.classList.contains('md:bias-1/2');
+
+    useEffect(() => {
+    if (!hide) {
+      setInteractiveOptions({
+        onClick: () => setOpen(open => !open),
+        onKeyDown: ({ key }) => { if (key === "Enter") setOpen(open => !open) },
+        role: "button",
+        tabIndex: 0,
+      });
+    } else {
+      setInteractiveOptions({});
+    }
+  }, [hide, figure, setOpen, setInteractiveOptions]);
+
 
   return (
-    <>
-      <img
-        role="button"
-        src={figure ? `/images/${figure.chapter}/${figure.fileName}` : src}
-        alt={figure?.altText ?? alt}
-        title={figure?.title ?? title}
-        className={className}
-        loading={loading ?? "lazy"}
-        onClick={() => setOpen(true)}
-        onLoad={() => setDocHeightState(docHeightState => docHeightState + 1)}
-      />
+    <figure
+      ref={figureRef}
+      className={inColumn ? "md:ml-24" : ""}
+      {...interactiveOptions}
+    >
+
+      {children}
+
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={setOpen}>
+        <Dialog as="div" className="relative z-50 modal" onClose={setOpen} role="dialog">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -55,20 +70,22 @@ export default function ImageModal({ figure, alt, className, src, title, loading
                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white p-6 md:px-4 md:pt-5 md:pb-4 text-left shadow-xl transition-all my-8 md:my-0 w-screen md:w-auto max-w-4xl md:max-w-auto">
                   <div>
                     <div className=" text-center mt-5 md:mt-0">
-                      {title && (
+                      {figure.title && (
                         <Dialog.Title
                           as="h3"
                           className="text-lg font-medium leading-6 text-gray-900"
-                        >
-                          {figure?.title ?? title}
-                        </Dialog.Title>
+                          dangerouslySetInnerHTML={{
+                            __html: figure.title,
+                          }}
+                        />
+
                       )}
                       <div className="mt-2">
                         <img
-                          className="mx-auto"
+                          className="mx-auto max-h-[80vh]"
                           src={figure ? `/images/${figure.chapter}/${figure.fileName}` : src}
-                          alt={figure?.altText ?? alt}
-                          title={figure?.title ?? title}
+                          alt={figure?.altText}
+                          title={figure?.title}
                           loading={loading ?? "lazy"}
                         />
                       </div>
@@ -89,6 +106,6 @@ export default function ImageModal({ figure, alt, className, src, title, loading
           </div>
         </Dialog>
       </Transition.Root>
-    </>
+    </figure>
   );
 }

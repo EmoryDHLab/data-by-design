@@ -21,6 +21,7 @@ import Consent from "~/components/Consent";
 import FigureObj from "~/components/layout/FigureObj";
 
 import figures from "~/data/figures.json";
+import ClarksonTour from "~/components/brooks/ClarksonTour";
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -251,7 +252,7 @@ export default function BrooksPage() {
             </HoverText>
             , is shocking in its attempt at realism. The captives here are each
             individually drawn, depicted lying on their sides.{" "}
-            <HoverText hoverState="naked">
+            <HoverText hoverState="nakedPeople">
               Most are naked, but several are clothed
             </HoverText>
             . The{" "}
@@ -328,9 +329,15 @@ export default function BrooksPage() {
             authority."
             <InlineFootnote index={9} />
             Drawing from the conventions of naval architecture, which were by
-            that time strongly established, Clarkson created a series of
-            cross-sections that showed each deck from above and from the
-            side—cross-sections that, like the Plymouth Committee's "Plan,"
+            that time strongly established, Clarkson created{" "}
+            <HoverText hoverState="clarksonCrossSections">
+              a series of cross-sections
+            </HoverText>
+            {" "}that showed each deck from above and from the{" "}
+            <HoverText hoverState="sideView">
+              side—cross-sections
+            </HoverText>
+            {" "}that, like the Plymouth Committee's "Plan,"
             included human figures intended to indicate how the captives were
             confined. The result was a set of schematics that carried with them
             the connotations of accuracy and precision that were associated with
@@ -341,8 +348,11 @@ export default function BrooksPage() {
           <p>
             Clarkson's revised chart, entitled "Description of a Slave Ship,"
             was—like the original "Plan,"--accompanied by explanatory text. In
-            addition to the text, Clarkson also included a set of tables
-            intended to reinforce the factual nature of the evidence visualized
+            addition to the text, Clarkson also included a{" "}
+            <HoverText hoverState="clarksonTables">
+              set of tables
+            </HoverText>
+            {" "}intended to reinforce the factual nature of the evidence visualized
             above. The tables included measurements of the actual ship, along
             with a scale that indicated how they corresponded to the image; as
             well as several small tables that presented information about the
@@ -454,7 +464,7 @@ export default function BrooksPage() {
           </p>
         </Column>
         <Column shouldPin>
-          <FigureObj figure={figures["4-description-1789.jpg"]} />
+          <ClarksonTour image={figures["4-description-1789.jpg"]} />
         </Column>
       </TwoColumnLayout>
 

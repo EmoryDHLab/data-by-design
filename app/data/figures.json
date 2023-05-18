@@ -2606,7 +2606,7 @@
     "artist": "Otto and Marie Neurath",
     "caption": "A 1935 diagram created by Otto and Marie Neurath, inventors of the ISOTYPE system, which depicts a version of the slave ship diagram alongside their isotype icons for enslaved people.",
     "altText": null,
-    "sensitive": false,
+    "sensitive": true,
     "creditLine": "Mundaneum Institute in The Hague, Wereldverkeer, 1935. Otto and Marie Neurath Isotype Collection, University of Reading.",
     "digitizedLine": "Digitized by the Otto and Marie Neurath Isotype Collection, University of Reading.",
     "source": "Mundaneum Institute in The Hague, Wereldverkeer, 1935. Otto and Marie Neurath Isotype Collection, University of Reading.",
