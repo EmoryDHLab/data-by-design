@@ -109,6 +109,9 @@ module.exports = {
   },
   safelist: [
     "bg-brooksPrimary",
+    "border-brooksPrimary",
+    "stroke-brooksPrimary",
+    "fill-brooksSecondary",
     "bg-brooksSecondary",
     "bg-brooksPrimary-translucent",
     "bg-brooksSecondary-translucent",

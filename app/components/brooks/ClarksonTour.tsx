@@ -5,70 +5,50 @@ import type { ChapterFigure } from '~/types/figureType';
 import FigureModal from '../layout/FigureModal';
 
 const tourLocations = {
-  hold: {
+  clarksonCrossSections: {
     transform: "",
-    mask: { x: 24, y: 8, h: 32, w: 12}
+    mask: { x: 0, y: 17, h: 20, w: 50}
   },
-  crossSections: {
+  sideView: {
     transform: "",
-    mask: { x: 0, y: 8, h: 32, w: 50}
+    mask: { x: 0, y: 6, h: 11, w: 50}
   },
-  watercolor: {
+  clarksonTables: {
     transform: "",
-    mask: { x: 0, y: 40, h: 17, w: 50}
+    mask: { x: 0, y: 37, h: 23, w: 50}
   },
-  tables: {
-    transform: "",
-    mask: { x: 0, y: 57, h: 15, w: 50}
-  },
-  nonhumanCargo: {
-    transform: "scale-[8] -translate-x-[13.55rem] -translate-y-[14.25rem]",
-    mask: { x: 0, y: 0, h: 69, w: 50}
-  },
-  nakedPeople: {
-    transform: "scale-[11] -translate-x-[19rem] -translate-y-[14.75rem]",
-    mask: { x: 0, y: 0, h: 69, w: 50}
-  },
-  shackledMen: {
-    transform: "scale-[11] -translate-x-[17.5rem] -translate-y-[16rem]",
-    mask: { x: 0, y: 0, h: 69, w: 50}
-  },
-  nursingMother: {
-    transform: "scale-[28] -translate-x-[49rem] -translate-y-[19.5rem]",
-    mask: { x: 0, y: 0, h: 69, w: 50}
-  }
-};
+}
 
 interface Props {
   image: ChapterFigure;
 };
 
-export default function SeraphiqueTour({ image }: Props) {
+function ClarksonTour({ image }: Props) {
   const { hoverState, hideSensitiveState, accentColor, backgroundColor } = useContext(ChapterContext);
 
   return (
     <FigureModal figure={image} hide={hideSensitiveState}>
       <p id={image.fileName} className='sr-only'>{image.caption}</p>
       <svg
-        viewBox="0 0 50 69"
+        viewBox="0 0 50 63"
         role="img"
         aria-labelledby={image.fileName}
         className={`drop-shadow-lg bg-${accentColor}`}
       >
-        <mask id="seraphique">
-          <rect x={0} y={0} width={50} height={69} fill="white" fillOpacity={0.3} />
+        <mask id="clarkston">
+          <rect x={0} y={0} width={50} height={63} fill="white" fillOpacity={0.2} />
           <rect
             className={`duration-1000 transition-all z-10`}
             x={tourLocations[hoverState]?.mask.x ?? 0}
             y={tourLocations[hoverState]?.mask.y ?? 0}
             width={tourLocations[hoverState]?.mask.w ?? 50}
-            height={tourLocations[hoverState]?.mask.h ?? 69}
+            height={tourLocations[hoverState]?.mask.h ?? 63}
             fill="white"
           />
         </mask>
         <g>
           <image
-            mask="url(#seraphique)"
+            mask="url(#clarkston)"
             role="presentation"
             href={`/images/${image.chapter}/${image.fileName}`}
             width="100%"
@@ -81,9 +61,8 @@ export default function SeraphiqueTour({ image }: Props) {
               <rect
                 x={0}
                 y={0}
-                height={69}
+                height={63}
                 width={50}
-                fill="#D9D9D9"
                 strokeWidth={1}
                 className={`stroke-${backgroundColor} fill-${accentColor}`}
               />
@@ -100,5 +79,7 @@ export default function SeraphiqueTour({ image }: Props) {
         </g>
       </svg>
     </FigureModal>
-  )
+  );
 }
+
+export default ClarksonTour;

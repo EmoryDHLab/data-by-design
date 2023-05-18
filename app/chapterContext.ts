@@ -13,9 +13,12 @@ export type HoverState =
   | "watercolor"
   | "tables"
   | "nonhumanCargo"
-  | "naked"
+  | "nakedPeople"
   | "shackledMen"
   | "nursingMother"
+  | "crossSections"
+  | "sideView"
+  | "tableSet"
   | undefined;
 
 interface IChapterContext {
