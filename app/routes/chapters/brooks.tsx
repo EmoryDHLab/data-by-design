@@ -297,7 +297,7 @@ export default function BrooksPage() {
           </p>
         </Column>
         <Column shouldPin>
-          <SeraphiqueTour image={figures["2-1468px-Plan.jpeg"]} />
+          <SeraphiqueTour figure={figures["2-1468px-Plan.jpeg"]} />
         </Column>
       </TwoColumnLayout>
 
@@ -464,7 +464,7 @@ export default function BrooksPage() {
           </p>
         </Column>
         <Column shouldPin>
-          <ClarksonTour image={figures["4-description-1789.jpg"]} />
+          <ClarksonTour figure={figures["4-description-1789.jpg"]} />
         </Column>
       </TwoColumnLayout>
 

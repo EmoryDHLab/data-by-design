@@ -10,6 +10,7 @@ import RecreationCovid from "~/components/playfair/RecreationCovid";
 import StackedChart from "~/components/playfair/StackedChart";
 import CombChart from "~/components/playfair/CombChart";
 import Figure from "~/components/layout/Figure";
+import FigureObj from "~/components/layout/FigureObj";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import PlayfairScrollytell from "~/components/playfair/PlayfairScrollytell";
 import Footer from "~/components/Footer";
@@ -17,6 +18,7 @@ import InlineFootnote from "~/components/InlineFootnote";
 import { playfairFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import Quotation from "~/components/Quotation";
+import figures from "~/data/figures/playfair.json";
 
 export default function PlayfairPage() {
   const [docHeightState, setDocHeightState] = useState<number>(0);
@@ -24,6 +26,7 @@ export default function PlayfairPage() {
   return (
     <ChapterContext.Provider
       value={{
+        chapter: "playfair",
         backgroundColor: "playfairPrimary",
         primaryTextColor: "white",
         accentColor: "playfairPrimary",
@@ -137,42 +140,20 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column shouldPin={true}>
-          <Figure
+          <FigureObj
             className="ml-0 md:ml-12"
-            src="/images/playfair/1-northamerica.jpg"
-            alt=""
-          >
-            William Playfair's chart of "Exports &amp; Imports to and from all
-            of North America," published in the third edition of the{" "}
-            <cite> Commercial and Political Atlas</cite> (1801). Image courtesy
-            of the Library Company of Philadelphia.
-          </Figure>
+            figure={figures['1-northamerica']}
+          />
 
-          <Figure
+          <FigureObj
             className="ml-0 md:ml-12"
-            src="/images/playfair/2-wheat.jpg"
-            alt=""
-          >
-            Playfair's "Chart Showing at One View the Price of the Quarter of
-            Wheat, &amp; Wages of Labour by the Week, from the Year 1565 to
-            1821," published in 1822. The chart's representation of the price of
-            wheat is among the first bar charts presently known. (The bar charts
-            included in the <cite> Commercial and Political Atlas</cite> are
-            believed to be the first). Image courtesy of Wikimedia Commons."
-          </Figure>
+            figure={figures["2-wheat"]}
+          />
 
-          <Figure
+          <FigureObj
             className="ml-0 md:ml-12"
-            src="/images/playfair/3-pie.jpg"
-            alt=""
-          >
-            Playfair's "Chart Representing the Extent, Population &amp;
-            Revenues, of the Principal Nations in Europe, after the Division of
-            Poland &amp; Treaty of Luneville," published in the{" "}
-            <cite>Statistical Breviary</cite>
-            (1801). The pie charts included in this volume are considered the
-            first presently known. Image courtesy of Wikimedia Commons.
-          </Figure>
+            figure={figures["3-pie"]}
+          />
         </Column>
       </TwoColumnLayout>
       <ChapterSectionTitle title="The Value of Visual Knowledge" />
@@ -243,12 +224,13 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column className="md:ml-12" shouldPin={true}>
-          <Figure src="/images/playfair/chart-1787.jpg" alt="">
+          <FigureObj figure={figures["chart-1787"]} />
+          {/* <Figure src="/images/playfair/.jpg" alt="">
             The data on "America" included in the second edition of The
             Commercial and Political Atlas (1787), on the recommendation of
             James Watt. Image courtesy of the Library Company of Philadelphia,{" "}
             <a href="http://www.librarycompany.org">www.librarycompany.org</a>
-          </Figure>
+          </Figure> */}
         </Column>
       </TwoColumnLayout>
       <PlayfairScrollytell />
@@ -517,16 +499,18 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column className="md:ml-12">
-          <Figure src="/images/playfair/6-snow.jpg" alt="">
+          <FigureObj figure={figures["6-snow"]} />
+          {/* <Figure src="/images/playfair/jpg" alt="">
             The map created by John Snow in 1854 that shows how Cholera cases
             are clustered around the town's water pump. Image courtesy of
             Wikimedia Commons.
-          </Figure>
-          <Figure src="/images/playfair/7-nightingale.jpg" alt="">
+          </Figure> */}
+          <FigureObj figure={figures["7-nightingale"]} />
+          {/* <Figure src="/images/playfair/.jpg" alt="">
             The coxcomb chart created by Florence Nightingale in 1858 which
             emphasizes the number of (preventable) British military deaths due
             to poor sanitation. Image courtesy of Wikimedia Commons.
-          </Figure>
+          </Figure> */}
         </Column>
       </TwoColumnLayout>
       <FullBleed>

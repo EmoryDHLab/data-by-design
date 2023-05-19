@@ -979,9 +979,9 @@
     "chapter": "dubois",
     "timeline": true
   },
-  "ch5-08a-population.jpg": {
+  "ch5-08a-population.png": {
     "chapterTitle": "Du Bois",
-    "fileName": "ch5-08a-population.jpg",
+    "fileName": "ch5-08a-population.png",
     "title": "Growth of the elements of the population: 1790 to 1890",
     "artist": "Henry Gannett",
     "caption": "Growth of the elements of the population: 1790 to 1890",
@@ -995,7 +995,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1898,
-    "fileType": "jpg",
+    "fileType": "png",
     "chapter": "dubois",
     "timeline": true
   },

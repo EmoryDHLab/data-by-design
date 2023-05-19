@@ -25,7 +25,7 @@ export default function ImageModal({ figure, alt, className, src, title, loading
         className={className}
         loading={loading ?? "lazy"}
         onClick={() => setOpen(true)}
-        onLoad={() => setDocHeightState(docHeightState => docHeightState + 1)}
+        // onLoad={() => setDocHeightState(docHeightState => docHeightState + 1)}
       />
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={setOpen}>
