@@ -57,7 +57,7 @@ export default function ChapterDropdown({ children }) {
       >
         {CHAPTERS.map((chapter, index) => (
           <li
-            key={index}
+            key={`chapter-link-${chapter.title}`}
             onBlur={() => setIsDropdownVisible(index !== CHAPTERS.length - 1)}
             className="bg-black text-lg hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5"
             tabIndex={index + 1}

@@ -11,8 +11,8 @@ export default function FootnotesList({ footnotes }: Props) {
         FOOTNOTES
       </h3>
       <ol className="space-y-5 text-xs list-decimal">
-        {footnotes.map((footnote, index) => (
-          <li key={index}>{footnote}</li>
+        {footnotes.map((footnote) => (
+          <li key={`fn-list-${footnote.key}`}>{footnote}</li>
         ))}
       </ol>
     </div>

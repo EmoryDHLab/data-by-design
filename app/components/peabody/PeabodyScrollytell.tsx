@@ -35,11 +35,11 @@ export default function Scrollytell() {
           {TutorialTriggers.map((trigger, index) => {
             return (
               <div
-                key={index}
+                key={trigger.key}
                 data-step={index}
                 className={`step text-xl content-center p-5 md:px-20 ${
-                  index + 1 === TutorialTriggers.length || index == 0
-                    ? `${index !== 0 ? "h-[65vh]" : ""} md:h-[60vh]`
+                  index == 0
+                    ? "md:h-[60vh]"
                     : "h-screen"
                 } text-${primaryTextColor}`}
               >

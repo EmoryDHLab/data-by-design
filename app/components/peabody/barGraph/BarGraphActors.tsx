@@ -15,10 +15,10 @@ export default function BarGraphActors() {
 
   return (
     <div className="flex">
-      {currentActors.map((actor, index) => {
+      {currentActors.map((actor) => {
         return (
           <PeabodyActors
-            key={index}
+            key={`bg-${actor}`}
             actor={actor}
             className={`mr-0 md:mr-4 ${
               activeEvent?.event?.actors?.includes(actor)

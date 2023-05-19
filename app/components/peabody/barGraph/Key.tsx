@@ -33,7 +33,7 @@ export function Key() {
         {eventData.eventTypes.map((type, index) => {
           return (
             <li
-              key={index}
+              key={`bg-e-type-${type}`}
               className={`text-${
                 activeEvent?.type === index + 1 ? "peabodyOrange" : "white"
               }`}

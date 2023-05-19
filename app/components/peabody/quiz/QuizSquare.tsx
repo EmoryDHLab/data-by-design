@@ -100,7 +100,7 @@ export default function QuizSquare() {
         />
         {[...numberRange( 1601,  1700)].map((year, index) => {
           return (
-              <QuizYearSquare index={index} year={year} key={index} />
+              <QuizYearSquare index={index} year={year} key={`quiz-year-${year}`} />
           );
         })}
       </g>

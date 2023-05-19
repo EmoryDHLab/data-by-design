@@ -4,59 +4,59 @@ import { ChapterContext } from "~/chapterContext";
 import ScrollytellWrapper from "../ScrollytellWrapper";
 
 const triggers = [
-  <></>,
-  <>
+  <span key="7e80c3fc"></span>,
+  <span key="6830c50a">
     The table in the first edition of the <cite>Atlas</cite> includes data only
     for the years between 1770 and 1782.
-  </>,
-  <>
+  </span>,
+  <span key="8ceb9cdd">
     Playfair nevertheless plotted data lines for the full range of years between
     1700 and 1780.
-  </>,
-  <>
+  </span>,
+  <span key="8e121b42">
     He shaded the area between the two data lines in order to illustrate the
     balance of trade between the two nations. Stippled dots indicate periods of
     time when the amount of imports from North America to England exceeded the
     amount of exports from England to North America. Diagonal lines indicate the
     times when exports from England to North America exceed imports.
-  </>,
-  <>
+  </span>,
+  <span key="585d79be">
     While Playfair includes both major and minor gridlines along the y-axis of
     the chart, in the version included in the first edition of the{" "}
     <cite>Atlas</cite> Playfair includes minor gridlines along the x-axis only
     for the twelve years for which he possesses tabular data.
-  </>,
-  <>
+  </span>,
+  <span key="dab6327f">
     In the third edition of the <cite>Atlas</cite> these minor gridlines
     disappear--along with the data tables.
-  </>,
-  <>
+  </span>,
+  <span key="55b81857">
     While Playfair extends the endpoint of the x-axis to 1800, what was then the
     present, the datalines become less precise. As he plots the lines of imports
     and exports, they become smoother--as improved engraving technique, or of
     his desire to convey a more general impression of the economic picture, or
     both.
-  </>,
-  <>
+  </span>,
+  <span key="56df66b8">
     In the third edition of the <cite>Atlas</cite> Playfair also made
     significant improvements to the charts' design. He replaced the hachure and
     stippled dots employed in the second edition to indicate the difference
     between the periods of trade in favor of and against England with
     hand-stained color
-  </>,
-  <>
+  </span>,
+  <span key="f42f4caa">
     He (or more likely, the master-engraver Neele) also placed the titles in
     oval superimposed upon the chart, rather than above, and decided to remove
     the explanatory notes about the charts' scale.
-  </>,
-  <>
+  </span>,
+  <span key="90ddd171">
     He labeled the axes and modified the scale markers of the charts—each of
     which also improved legibility.
-  </>,
-  <>
+  </span>,
+  <span key="a74c7264">
     The overall effect was to solidify the impact "simple impression" that he
     envisioned from the start.
-  </>,
+  </span>,
 ];
 
 export default function PlayfairScrollytell() {
@@ -75,7 +75,7 @@ export default function PlayfairScrollytell() {
           {triggers.map((trigger, index) => {
             return (
               <div
-                  key={index}
+                  key={trigger.key}
                   data-step={index}
                   className={`step text-xl content-center p-5 md:px-20 ${
                     index + 1 === triggers.length || index == 0

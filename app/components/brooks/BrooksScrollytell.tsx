@@ -4,12 +4,12 @@ import ScrollytellWrapper from "../ScrollytellWrapper";
 import { EyeSlashIcon } from '@heroicons/react/24/outline'
 
 const triggers = [
-  <>Elford's "Plan" divides the ship's hold into six distinct areas.</>,
-  <>The largest area, in the bow of the ship, and which occupies the entire right half of the diagram, is labeled the "Men's room," and depicts 120 male bodies in four rows of 30.</>,
-  <>In the middle is a narrow column labeled "Boy's room" and depicts smaller male figures in six rows of 12.</>,
-  <>To the left is the larger "Women's room," depicting figures the same size as the men, but with breasts, in four rows of 21 figures representing 84 women total.</>,
-  <>And at the stern, in the center, the "Girls room," the figures shorter and squatter than the boys, arranged in three rows of ten. These "scaled inequalities," as Hortense Spillers describes the layout, represented COMPLETE.</>,
-  <>Certain visual features help the plan achieve its impact. Most immediate is how the 297 figures, what Marcus Wood describes as a "mass of black human flesh," are set against the clean lines that indicate the bounds of the ship. The labels of each area, engraved in neat script, underscore the reduction in complexity that is intended by the diagram. Wood describes the design of the Plan in terms of an "awful rigor," underscoring how the "formality" of the figures "appears to deny [their] flesh and blood presence." But for Elford, this abstraction was perhaps part of the point.</>,
+  <span key="07226c6e">Elford's "Plan" divides the ship's hold into six distinct areas.</span>,
+  <span key="a400ea46">The largest area, in the bow of the ship, and which occupies the entire right half of the diagram, is labeled the "Men's room," and depicts 120 male bodies in four rows of 30.</span>,
+  <span key="e6184ce7">In the middle is a narrow column labeled "Boy's room" and depicts smaller male figures in six rows of 12.</span>,
+  <span key="aebd268b">To the left is the larger "Women's room," depicting figures the same size as the men, but with breasts, in four rows of 21 figures representing 84 women total.</span>,
+  <span key="b1f566ad">And at the stern, in the center, the "Girls room," the figures shorter and squatter than the boys, arranged in three rows of ten. These "scaled inequalities," as Hortense Spillers describes the layout, represented COMPLETE.</span>,
+  <span key="d90523c5">Certain visual features help the plan achieve its impact. Most immediate is how the 297 figures, what Marcus Wood describes as a "mass of black human flesh," are set against the clean lines that indicate the bounds of the ship. The labels of each area, engraved in neat script, underscore the reduction in complexity that is intended by the diagram. Wood describes the design of the Plan in terms of an "awful rigor," underscoring how the "formality" of the figures "appears to deny [their] flesh and blood presence." But for Elford, this abstraction was perhaps part of the point.</span>,
 ];
 
 const strokeColor = "#8C20E1";
@@ -113,7 +113,7 @@ export default function BrooksScrollytell() {
         {triggers.map((trigger, index) => {
           return (
             <div
-              key={index}
+              key={`brooks-trigger-${trigger.key}`}
               data-step={index}
               className={`pointer-events-none step text-xl content-center p-5 md:px-20 relative h-screen text-${accentTextColor}`}
             >
