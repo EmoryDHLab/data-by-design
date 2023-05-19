@@ -10,6 +10,7 @@ import RecreationCovid from "~/components/playfair/RecreationCovid";
 import StackedChart from "~/components/playfair/StackedChart";
 import CombChart from "~/components/playfair/CombChart";
 import Figure from "~/components/layout/Figure";
+import FigureObj from "~/components/layout/FigureObj";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import PlayfairScrollytell from "~/components/playfair/PlayfairScrollytell";
 import Footer from "~/components/Footer";
@@ -18,6 +19,7 @@ import { playfairFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import Quotation from "~/components/Quotation";
 import ChapterBody from "~/components/layout/ChapterBody";
+import figures from "~/data/figures/playfair.json";
 
 export default function PlayfairPage() {
   const [docHeightState, setDocHeightState] = useState<number>(0);
@@ -84,6 +86,7 @@ export default function PlayfairPage() {
   return (
     <ChapterContext.Provider
       value={{
+        chapter: "playfair",
         backgroundColor: "playfairPrimary",
         primaryTextColor: "white",
         accentColor: "playfairSecondary",
@@ -249,6 +252,20 @@ export default function PlayfairPage() {
               first presently known. Image courtesy of Wikimedia Commons.
             </Figure>
           </span>
+          <FigureObj
+            className="ml-0 md:ml-12"
+            figure={figures['1-northamerica']}
+          />
+
+          <FigureObj
+            className="ml-0 md:ml-12"
+            figure={figures["2-wheat"]}
+          />
+
+          <FigureObj
+            className="ml-0 md:ml-12"
+            figure={figures["3-pie"]}
+          />
         </Column>
       </TwoColumnLayout>
       <ChapterSectionTitle title="The Value of Visual Knowledge" />
@@ -333,6 +350,13 @@ export default function PlayfairPage() {
               <a href="http://www.librarycompany.org">www.librarycompany.org</a>
             </Figure>
           </span>
+          <FigureObj figure={figures["chart-1787"]} />
+          {/* <Figure src="/images/playfair/.jpg" alt="">
+            The data on "America" included in the second edition of The
+            Commercial and Political Atlas (1787), on the recommendation of
+            James Watt. Image courtesy of the Library Company of Philadelphia,{" "}
+            <a href="http://www.librarycompany.org">www.librarycompany.org</a>
+          </Figure> */}
         </Column>
       </TwoColumnLayout>
       <span
@@ -638,6 +662,18 @@ export default function PlayfairPage() {
               to poor sanitation. Image courtesy of Wikimedia Commons.
             </Figure>
           </span>
+          <FigureObj figure={figures["6-snow"]} />
+          {/* <Figure src="/images/playfair/jpg" alt="">
+            The map created by John Snow in 1854 that shows how Cholera cases
+            are clustered around the town's water pump. Image courtesy of
+            Wikimedia Commons.
+          </Figure> */}
+          <FigureObj figure={figures["7-nightingale"]} />
+          {/* <Figure src="/images/playfair/.jpg" alt="">
+            The coxcomb chart created by Florence Nightingale in 1858 which
+            emphasizes the number of (preventable) British military deaths due
+            to poor sanitation. Image courtesy of Wikimedia Commons.
+          </Figure> */}
         </Column>
       </TwoColumnLayout>
       <FullBleed>

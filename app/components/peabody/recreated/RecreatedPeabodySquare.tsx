@@ -5,7 +5,7 @@ import type {
   HighlightedElement,
   SquareData,
 } from "~/components/peabody/peabodyUtils";
-import { Dispatch, SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from "react";
 
 interface Props {
   setHighlightedElement: Dispatch<

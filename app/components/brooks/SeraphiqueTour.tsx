@@ -40,19 +40,19 @@ const tourLocations = {
 };
 
 interface Props {
-  image: ChapterFigure;
+  figure: ChapterFigure;
 };
 
-export default function SeraphiqueTour({ image }: Props) {
+export default function SeraphiqueTour({ figure }: Props) {
   const { hoverState, hideSensitiveState, accentColor, backgroundColor } = useContext(ChapterContext);
 
   return (
-    <FigureModal figure={image} hide={hideSensitiveState}>
-      <p id={image.fileName} className='sr-only'>{image.caption}</p>
+    <FigureModal figure={figure} hide={hideSensitiveState}>
+      <p id={figure.fileName} className='sr-only'>{figure.caption}</p>
       <svg
         viewBox="0 0 50 69"
         role="img"
-        aria-labelledby={image.fileName}
+        aria-labelledby={figure.fileName}
         className={`drop-shadow-lg bg-${accentColor}`}
       >
         <mask id="seraphique">
@@ -70,7 +70,7 @@ export default function SeraphiqueTour({ image }: Props) {
           <image
             mask="url(#seraphique)"
             role="presentation"
-            href={`/images/${image.chapter}/${image.fileName}`}
+            href={`/images/${figure.chapter}/${figure.fileName}`}
             width="100%"
             className={`duration-1000 transition-transform ${tourLocations[hoverState]?.transform ?? ""}`}
           />
@@ -99,6 +99,20 @@ export default function SeraphiqueTour({ image }: Props) {
           )}
         </g>
       </svg>
+      <figcaption className="font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
+        <span
+          dangerouslySetInnerHTML={{
+            __html: figure.caption,
+          }}
+        />
+        {figure.creditLine &&
+          <span className="pl-1"
+            dangerouslySetInnerHTML={{
+              __html: figure.creditLine,
+            }}
+          />
+        }
+      </figcaption>
     </FigureModal>
-  )
-}
+  );
+};
