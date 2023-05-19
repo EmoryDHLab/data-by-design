@@ -48,15 +48,9 @@ export default function Consent() {
           colorOn={backgroundColor}
           colorOff={accentColor}
           screenReaderMsg="Consent to descriptions of images of slavery."
-        />
-        <span
-          className="ml-4"
-          role="button"
-          onClick={() => setHideSensitiveState(!hideSensitiveState)}
-          tabIndex={0}
         >
           Hide sensitive images
-        </span>
+        </Toggle>
       </p>
     </div>
   );
