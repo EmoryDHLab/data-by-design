@@ -9,7 +9,7 @@ export default function Navbar() {
           <Link to="/">DxD</Link>
         </li>
         <li className="inline-block font-dubois text-sm tracking-wider">
-          <ChapterDropdown>CHAPTERS</ChapterDropdown>
+          <ChapterDropdown />
         </li>
         <li className="inline-block">
           <Link to="/about" className="font-dubois text-sm tracking-wider">
