@@ -32,7 +32,7 @@ export default function Figure({
           images.map((image, index) => (
             <ImageModal
               className={classNames("p-2", imageClassName)}
-              key={index}
+              key={`fig-${image.src}`}
               src={image.src}
               alt={image.alt}
             />

@@ -37,7 +37,7 @@ export default function RecreatedSquare() {
         <rect className="fill-peabodyOrange" x="0" width="100" height="99" />
         {[...numberRange(currentCentury + 1, currentCentury + 100)].map((year, index) => {
           return (
-            <g key={index}>
+            <g key={`bg-re-year-${currentCentury + index + 1}`}>
               <RecreatedYearSquare
                 index={index}
                 year={currentCentury + index + 1}

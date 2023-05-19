@@ -90,7 +90,7 @@ export default function QuizSelectActors() {
             />
           )
         }
-        return <g key={index}></g>
+        return <g key={`quiz-${actor}`}></g>
       })}
     </g>
   );

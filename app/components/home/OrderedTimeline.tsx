@@ -95,6 +95,7 @@ export default function OrderedTimeline({
     <div
       ref={sliderRef}
       className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5"
+      role="button"
       onMouseDown={({ pageX }) => mouseDown(pageX)}
       onMouseUp={() => setMouseIsDown(false)}
       onMouseMove={(event) => mouseMove(event)}
@@ -114,11 +115,13 @@ export default function OrderedTimeline({
                 selectedImage.FILE_NAME === image.FILE_NAME;
               return (
                 <img
+                  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
                   role="button"
-                  key={index}
+                  key={`otl-${image.FILE_NAME}`}
                   tabIndex={0}
                   onClick={() => updateSelected(image)}
                   onFocus={() => setSelectedImage(image)}
+                  onKeyUp={() => setSelectedImage(image)}
                   className={classNames(
                     "absolute w-[150px]",
                     isSelected && "border-4 border-red-500",
