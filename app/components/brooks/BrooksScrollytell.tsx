@@ -1,7 +1,9 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ScrollytellWrapper from "../ScrollytellWrapper";
 import { EyeSlashIcon } from '@heroicons/react/24/outline'
+import Areas from "./elford/Areas";
+import { paths } from "./elford/paths";
 
 const triggers = [
   <span key="07226c6e">Elford's "Plan" divides the ship's hold into six distinct areas.</span>,
@@ -12,12 +14,37 @@ const triggers = [
   <span key="d90523c5">Certain visual features help the plan achieve its impact. Most immediate is how the 297 figures, what Marcus Wood describes as a "mass of black human flesh," are set against the clean lines that indicate the bounds of the ship. The labels of each area, engraved in neat script, underscore the reduction in complexity that is intended by the diagram. Wood describes the design of the Plan in terms of an "awful rigor," underscoring how the "formality" of the figures "appears to deny [their] flesh and blood presence." But for Elford, this abstraction was perhaps part of the point.</span>,
 ];
 
-const strokeColor = "#8C20E1";
-
 export default function BrooksScrollytell() {
   const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<float>(0.0);
+  const [focusShapeSize, setFocusShapeSize] = useState<object>({ x: 510, y: 130, width: 0, height: 0 });
   const steps = useRef<HTMLDivElement | undefined>(undefined);
+
+  useEffect(() => {
+    switch(true) {
+      case (scrollProgress  < 0.5):
+        setFocusShapeSize({ x: 510, y: 130, width: 0, height: 0 });
+        break;
+      // Men
+      case (scrollProgress >= 0.5 && scrollProgress < 1.5):
+        setFocusShapeSize({ x: 380, y: 0, width: 265, height: 291 });
+        break;
+      // Boys
+      case (scrollProgress >= 1.5 && scrollProgress < 2.5):
+        setFocusShapeSize({ x: 300, y: 0, width: 85, height: 291 });
+        break;
+      // Women
+      case (scrollProgress >= 2.5 && scrollProgress < 3.5):
+         setFocusShapeSize({ x: 155, y: 0, width: 150, height: 291 });
+         break;
+      // Girls
+      case (scrollProgress >= 3.5 && scrollProgress < 4.5):
+        setFocusShapeSize({ x: 95, y: 105, width: 62, height: 80 });
+        break;
+    default:
+        setFocusShapeSize({ x: 25, y: 25, width: 618, height: 291 });
+    }
+  }, [scrollProgress, setFocusShapeSize]);
 
   return (
     <ScrollytellWrapper scrollProgress={scrollProgress} setScrollProgress={setScrollProgress} triggers={triggers} steps={steps}>
@@ -38,71 +65,36 @@ export default function BrooksScrollytell() {
               {(hideSensitiveState) && (
                 <g>
                   <path
-                    fillOpacity={1}
+                    className="transition-opacity duration-1000"
+                    fillOpacity={1.0}
                     stroke="rgb(28 24 23)"
-                    strokeWidth={3}
-                    fill="#D9D9D9"
-                    d="m95.9,92.31c-.78.11-1.36.77-1.36,1.56v107.25c0,.33.25.61.58.64,19.3,1.43,509.92,56.12,547.76-64.76,2.1-122.28-516.65-48.81-546.99-44.69Z"
+                    strokeWidth={scrollProgress > 4.5 ? 3 : 0}
+                    fill={scrollProgress > 4.5 ? "#D9D9D9" : "#db882a"}
+                    d={paths.outline}
                   />
-
-                    <EyeSlashIcon stroke={strokeColor} strokeOpacity={0.75} className="w-1 h-1" height={80} y="33%" />
-
+                    <EyeSlashIcon stroke="rgb(28 24 23)" strokeOpacity={0.75} className="w-1 h-1" height={80} y="33%" />
                 </g>
               )}
 
-              <g className={`transition-opacity duration-1000 opacity-${scrollProgress >= 4.5 ? 0 : 100}`}>
-                {/* Ship Outline */}
+              <g className={`transition-all duration-1000 opacity-${scrollProgress >= 4.5 ? 0 : 100}`}>
+                <mask id="ship">
+                  <path d={paths.outline} fill="white" />
+                  <rect {...focusShapeSize} fill="black" className="transition-all duration-1000" />
+                </mask>
                 <path
-                  fillOpacity={1}
-                  stroke="rgb(28 24 23)"
-                  strokeWidth={3}
+                  strokeWidth={0}
                   fill="#D9D9D9"
-                  d="m95.9,92.31c-.78.11-1.36.77-1.36,1.56v107.25c0,.33.25.61.58.64,19.3,1.43,509.92,56.12,547.76-64.76,2.1-122.28-516.65-48.81-546.99-44.69Z"
+                  mask="url(#ship)"
+                  d={paths.outline}
                 />
-
-                {/* Men's Area */}
                 <path
-                  className="transition-all duration-1000"
-                  fillOpacity={scrollProgress >= 0.25 && scrollProgress < 1.25 ? 1 : 0}
-                  fill="#db882a"
                   stroke="rgb(28 24 23)"
                   strokeWidth={3}
-                  strokeOpacity={scrollProgress < 0.25 || (scrollProgress >= 0.25 && scrollProgress < 1.25) ? 1 : 0}
-                  d="m383.29,67.26l1.07,147.61c326.39,3.62,357.58-168.16-1.07-147.61Z"
+                  fillOpacity={0}
+                  d={paths.outline}
                 />
-
-                {/* Boys' Area */}
-                <path
-                  className="transition-all duration-1000"
-                  fillOpacity={scrollProgress >= 1.25 && scrollProgress <= 2.25 ? 1 : 0}
-                  fill="#db882a"
-                  stroke="rgb(28 24 23)"
-                  strokeWidth={3}
-                  strokeOpacity={scrollProgress < 0.25 || (scrollProgress >= 1.25 && scrollProgress <= 2.25) ? 1 : 0}
-                  d="m383.29,67.26c-27.7.79-55.54,2.18-79.96,4.02l1.79,143.58c25.37.7,52.29.65,79.43.02l-1.25-147.61Z"
-                />
-
-                {/* Women's Area */}
-                <path
-                  className="transition-all duration-1000"
-                  fillOpacity={scrollProgress >= 2.25 && scrollProgress <= 3.25 ? 1 : 0}
-                  fill="#db882a"
-                  stroke="rgb(28 24 23)"
-                  strokeWidth={3}
-                  strokeOpacity={scrollProgress < 0.25 || (scrollProgress >= 2.25 && scrollProgress <= 3.25) ? 1 : 0}
-                  d="m305.69,214.43l-1.94-143.34c-46.9,3.04-99.95,7.99-147.1,13.47.13,43.26.24,82.22.36,122.71,44.44,3.8,100.35,6.05,148.68,7.16Z"
-                />
-
-                {/* Girls' Area */}
-                <polygon
-                  className="transition-all duration-1000"
-                  fillOpacity={scrollProgress >= 3.25 && scrollProgress <= 4.25 ? 1 : 0}
-                  fill="#db882a"
-                  stroke="rgb(28 24 23)"
-                  strokeWidth={3}
-                  strokeOpacity={scrollProgress < 0.25 || (scrollProgress >= 3.25 && scrollProgress <= 4.25) ? 1 : 0}
-                  points="156.65 104.75 94.54 108.98 94.54 181.85 156.65 182.85 156.65 104.75"
-                />
+                <Areas strokeOpacity={scrollProgress < 0.25 ? 1.0 : 0.0} />
+                <rect {...focusShapeSize} fillOpacity={0} mask="url(#ship)" className="transition-all duration-1000" strokeWidth={3} strokeOpacity={1.0} stroke="rgb(28 24 23)" />
               </g>
             </svg>
             <figcaption></figcaption>
