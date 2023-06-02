@@ -22,19 +22,19 @@ const tourLocations = {
     mask: { x: 0, y: 57, h: 15, w: 50}
   },
   nonhumanCargo: {
-    transform: "scale-[8] -translate-x-[13.55rem] -translate-y-[14.25rem]",
+    transform: "scale-[8] -translate-x-[216.8px] -translate-y-[228px]",
     mask: { x: 0, y: 0, h: 69, w: 50}
   },
   nakedPeople: {
-    transform: "scale-[11] -translate-x-[19rem] -translate-y-[14.75rem]",
+    transform: "scale-[11] -translate-x-[304px] -translate-y-[236px]",
     mask: { x: 0, y: 0, h: 69, w: 50}
   },
   shackledMen: {
-    transform: "scale-[11] -translate-x-[17.5rem] -translate-y-[16rem]",
+    transform: "scale-[11] -translate-x-[280px] -translate-y-[256px]",
     mask: { x: 0, y: 0, h: 69, w: 50}
   },
   nursingMother: {
-    transform: "scale-[28] -translate-x-[49rem] -translate-y-[19.5rem]",
+    transform: "scale-[28] -translate-x-[784px] -translate-y-[312px]",
     mask: { x: 0, y: 0, h: 69, w: 50}
   }
 };
