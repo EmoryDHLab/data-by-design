@@ -1,6 +1,6 @@
 {
   "2-wheat": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "2-wheat.png",
     "title": "Chart Showing at One View the Price of the Quarter of Wheat, & Wages of Labour by the Week, from the Year 1565 to 1821",
     "artist": "William Playfair",
@@ -18,7 +18,7 @@
     "file_type": ".png"
   },
   "3-pie": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "3-pie.jpg",
     "title": "Chart Representing the Extent, Population & Revenues, of the Principal Nations in Europe, after the Division of Poland & Treaty of Luneville",
     "artist": "William Playfair",
@@ -36,7 +36,7 @@
     "file_type": ".jpg"
   },
   "1-northamerica": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "1-northamerica.jpg",
     "title": "Exports & Imports to and from all North-America",
     "artist": "William Playfair",
@@ -54,7 +54,7 @@
     "file_type": ".jpg"
   },
   "table-1787": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "table-1787.jpg",
     "title": "Plate V. America.",
     "artist": "William Playfair",
@@ -72,7 +72,7 @@
     "file_type": ".jpg"
   },
   "chart-1787": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "chart-1787.jpg",
     "title": "Imports and Exports to and from North America from 1700 to 1786",
     "artist": "William Playfair",
@@ -90,7 +90,7 @@
     "file_type": ".jpg"
   },
   "5-minard": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "5-minard.png",
     "title": "Carte Figurative des pertes successives en hommes de l'armée française dans la campagne de Russie 1812-1813",
     "artist": "Charles Minard",
@@ -108,7 +108,7 @@
     "file_type": ".png"
   },
   "8-lyra": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "8-lyra.png",
     "title": "Screenshot of Playfair's chart of wheat vs. wages created using Lyra, a visualization platform.",
     "artist": "Arvind Satyanarayan and Jeffrey Heer",
@@ -125,7 +125,7 @@
     "file_type": ".png"
   },
   "9-protovis": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "9-protovis.png",
     "title": "Screenshot of Playfair's chart of wheat vs. wages created using Protovis, an early JavaScript visualization library.",
     "artist": "Mike Bostock",
@@ -142,7 +142,7 @@
     "file_type": ".png"
   },
   "10-Camoes": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "10-Camoes.png",
     "title": "Screenshot of Playfair's chart of wheat vs. wages created using Microsoft Excel.",
     "artist": "Jorge Camoes",
@@ -159,7 +159,7 @@
     "file_type": ".png"
   },
   "6-snow": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "6-snow.jpg",
     "title": "Untitled, from \"Report on the cholera outbreak in the Parish of St. James, Westminster, during the autumn of 1854\"",
     "artist": "John Snow",
@@ -177,7 +177,7 @@
     "file_type": ".jpg"
   },
   "7-nightingale": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "7-nightingale.jpg",
     "title": "Diagram of the causes of mortality in the army in the East",
     "artist": "Florence Nightingale",
@@ -195,7 +195,7 @@
     "file_type": ".jpg"
   },
   "jevons": {
-    "chapter": "Playfair",
+    "chapter": "playfair",
     "fileName": "jevons.png",
     "title": "Untitled, from The Principles of Science, Book IV",
     "artist": "William Staney Jevons",
