@@ -30,9 +30,10 @@ export default function Toggle({
       >
         <span className="sr-only">{screenReaderMsg}</span>
         <span
+          aria-hidden="true"
           className={`${
-            checked ? `translate-x-6 bg-white` : `translate-x-1 bg-${colorOn}`
-          } inline-block h-4 w-4 transform rounded-full transition`}
+            checked ? `translate-x-[24px] bg-white` : `translate-x-[4px] bg-${colorOn}`
+          } pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
         />
       </Switch>
       <Switch.Label className="ml-4">
