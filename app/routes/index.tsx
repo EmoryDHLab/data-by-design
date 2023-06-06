@@ -7,9 +7,9 @@ import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import timelineImages from "~/data/timelineImages.json";
 import { useState } from "react";
-import { Image, TimelineType } from "~/components/home/timelineUtils";
+import type { Image} from "~/components/home/timelineUtils";
+import { TimelineType } from "~/components/home/timelineUtils";
 import Figure from "~/components/layout/Figure";
-import { Link } from "@remix-run/react";
 
 export default function Index() {
   const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
@@ -39,7 +39,7 @@ export default function Index() {
             <br /> of Data Visualization
             <br />
             <span className="pt-5">1786-1900</span>
-            <div className="pt-10">
+            <div className="pt-10 hidden md:block">
               <button
                 onClick={() => {
                   setTimelineType(TimelineType.Draggable);
@@ -74,7 +74,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center p-10 pb-5 pt-20 sm:w-1/4">
+        <div className="hidden md:flex flex-col items-center p-10 pb-5 pt-20 sm:w-1/4">
           <div className="flex flex-col items-center">
             <Figure
               className="sm:w-3/5 sm:w-full pt-10"
