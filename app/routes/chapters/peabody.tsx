@@ -777,7 +777,7 @@ export default function PeabodyPage() {
       </CenteredLayout>
 
       <TwoColumnLayout>
-        <Column>
+        <Column shouldPin={true}>
           <p>
             The tedious, time-intensive nature of the Floor Chart project
             provides another path of connection back to the original mural
@@ -858,7 +858,7 @@ export default function PeabodyPage() {
             <InlineFootnote index={38}></InlineFootnote>
           </p>
         </Column>
-        <Column shouldPin={true}>
+        <Column>
           <LEDChart />
         </Column>
       </TwoColumnLayout>

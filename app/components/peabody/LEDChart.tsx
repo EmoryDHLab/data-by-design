@@ -4,8 +4,7 @@ import { ScrollytellContext } from "~/scrollytellContext";
 import { numberRange } from "~/utils";
 
 const initialY = 0;
-const initialX = 12.5;
-const offset = 7;
+const offset = 9;
 const maxTop = 10;
 
 export default function LEDChart({ children }) {
@@ -81,21 +80,29 @@ export default function LEDChart({ children }) {
         debug={false}
         scrollOffset={1}
       >
-        <div ref={parentRef} className="">
-          <figure className="sticky top-0">
-              <svg viewBox="0 0 75 125">
+        <div ref={parentRef}>
+          <figure className="sticky top-16 text-center md:ml-24">
+              <svg viewBox="0 0 50 105" className="w-full h-[75vh] md:h-full">
                 <g>
-                  <image className="transition-all duration-1000" x={initialX} y={layer9Y} width={50} height={50} href="/images/peabody/illustration/9.png" />
-                  <image className="transition-all duration-1000" x={initialX} y={layer8Y} width={50} height={50} href="/images/peabody/illustration/8.png" />
-                  <image className="transition-all duration-1000" x={initialX} y={layer7Y} width={50} height={50} href="/images/peabody/illustration/7.png" />
-                  <image className="transition-all duration-1000" x={initialX} y={layer6Y} width={50} height={50} href="/images/peabody/illustration/6.png" />
-                  <image className="transition-all duration-1000" x={initialX} y={layer5Y} width={50} height={50} href="/images/peabody/illustration/5.png" />
-                  <image className="transition-all duration-1000" x={initialX} y={layer4Y} width={50} height={50} href="/images/peabody/illustration/4.png" />
-                  <image className="transition-all duration-1000" x={initialX} y={layer3Y} width={50} height={50} href="/images/peabody/illustration/3.png" />
-                  <image className="transition-all duration-1000" x={initialX} y={layer2Y} width={50} height={50} href="/images/peabody/illustration/2.png" />
-                  <image className="transition-all duration-1000" x={initialX} y={layer1Y} width={50} height={50} href="/images/peabody/illustration/1.png" />
+                  <image className="transition-all duration-700" x={0} y={layer9Y} width={50} height={30} href="/images/peabody/illustration/9.png" />
+                  <image className="transition-all duration-700" x={0} y={layer8Y} width={50} height={30} href="/images/peabody/illustration/8.png" />
+                  <image className="transition-all duration-700" x={0} y={layer7Y} width={50} height={30} href="/images/peabody/illustration/7.png" />
+                  <image className="transition-all duration-700" x={0} y={layer6Y} width={50} height={30} href="/images/peabody/illustration/6.png" />
+                  <image className="transition-all duration-700" x={0} y={layer5Y} width={50} height={30} href="/images/peabody/illustration/5.png" />
+                  <image className="transition-all duration-700" x={0} y={layer4Y} width={50} height={30} href="/images/peabody/illustration/4.png" />
+                  <image className="transition-all duration-700" x={0} y={layer3Y} width={50} height={30} href="/images/peabody/illustration/3.png" />
+                  <image className="transition-all duration-700" x={0} y={layer2Y} width={50} height={30} href="/images/peabody/illustration/2.png" />
+                  <image className="transition-all duration-700" x={0} y={layer1Y} width={50} height={30} href="/images/peabody/illustration/1.png" />
                 </g>
               </svg>
+              <figcaption className="font-dubois mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
+                Women's work of various forms has much to contribute to larger
+                narratives about the development of most scholarly disciplines and
+                professional fields. A final example helps to underscore this point:
+                most contemporary viewers, when seeing Peabody's charts for the
+                first time, observe that they look like paintings by Piet Mondrian,
+                the famous Dutch modernist.
+              </figcaption>
           </figure>
           <div ref={stepsRef} className="relative">
             {[...numberRange(0, 8)].map((trigger) => {
@@ -103,7 +110,7 @@ export default function LEDChart({ children }) {
                 <div
                   key={trigger}
                   data-step={trigger}
-                  className="led-chart-step h-[12vh]"
+                  className="led-chart-step h-96 md:h-[50vh]"
                 ></div>
               )
             })}
