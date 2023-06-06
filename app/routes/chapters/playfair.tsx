@@ -328,9 +328,11 @@ export default function PlayfairPage() {
           the data that, through visualization, could become knowledge of a new
           kind.
         </p>
+      </CenteredLayout>
 
-        <ChapterSectionTitle title="The Politics of Playfair's Charts" />
+      <ChapterSectionTitle title="The Politics of Playfair's Charts" />
 
+      <CenteredLayout>
         <Figure src="/images/playfair/5-minard.png" alt="">
           Charles Minard's 1869 chart of Napoleon's failed Russia campaign.
           Image courtesy of Wikimedia Commons.
@@ -616,13 +618,13 @@ export default function PlayfairPage() {
             which look roughly the same, tell us about the assumptions embedded
             in their form? To be sure, there are specific trends that can be
             discerned from each dataset—in the case of{" "}
-            <a href=""> deaths from Covid-19</a>, the waves of infection, and
+            deaths from Covid-19, the waves of infection, and
             the comparative response between the US and the UK
             <InlineFootnote index={28} />; in the case of{" "}
-            <a href="">comparative income levels</a>, the increasingly tenacious
+            comparative income levels, the increasingly tenacious
             grip of global neoliberalism
             <InlineFootnote index={29} />; and in the case of
-            <a href="">women representatives in government</a>, how much more
+            women representatives in government, how much more
             work is to be done.
             <InlineFootnote index={30} />
             But these are all general trends. How are we to be prompted to think
