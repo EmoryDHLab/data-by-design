@@ -24,7 +24,7 @@ export default function ChapterSectionTitle({ title }: Props) {
         className={`bg-${accentColor} hover:bg-${accentColor}-translucent p-4 font-dubois text-xl lg:text-2xl flex justify-center items-center text-${accentTextColor}`}
       >
         <Hyperlink visibility={!isHovered ? "hidden" : ""} />{" "}
-        <span className="px-4">{title}</span>
+        <span className="px-4 text-center">{title}</span>
       </a>
     </CenteredLayout>
   );
