@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef } from "react";
 import scrollama from "scrollama";
 import type { ScrollamaInstance } from "scrollama";
 import { ChapterContext } from "~/chapterContext";
+import { useWindowSize } from "~/hooks";
 
 interface Props {
   scrollProgress : float;
@@ -38,9 +39,10 @@ export default function ScrollytellWrapper({
   threshold,
   widthClass
 }: Props) {
-  const { accentColor, docHeightState } = useContext(ChapterContext);
+  const { accentColor } = useContext(ChapterContext);
   const scrollerRef = useRef<ScrollamaInstance>(scrollama());
   const scrollerElementRef = useRef<HTMLDivElement | undefined>(undefined);
+  const windowSize = useWindowSize();
 
   useEffect(() => {
     if (steps.current?.children.length !== triggers.length) return;
@@ -77,14 +79,14 @@ export default function ScrollytellWrapper({
   ]);
 
   useEffect(() => {
+    console.log("🚀 ~ file: ScrollytellWrapper.tsx:82 ~ useEffect ~ resize:")
     scrollerRef.current?.resize();
-  }, [docHeightState, scrollerRef, scrollerElementRef]);
+  }, [windowSize, scrollerRef, scrollerElementRef]);
 
   return (
     <div
       ref={scrollerElementRef}
       className={`bg-${bgColor ?? accentColor} ${widthClass ?? "w-screen"} ${className ?? ""}`}
-      tabIndex={0}
     >
       {children }
     </div>
