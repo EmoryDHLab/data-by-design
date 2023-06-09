@@ -70,7 +70,7 @@ export default function SeraphiqueTour({ figure }: Props) {
           <image
             mask="url(#seraphique)"
             role="presentation"
-            href={`/images/${figure.chapter}/${figure.fileName}`}
+            href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
             width="100%"
             className={`duration-1000 transition-transform ${tourLocations[hoverState]?.transform ?? ""}`}
           />

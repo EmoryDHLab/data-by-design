@@ -38,7 +38,7 @@ function ClarksonTour({ figure }: Props) {
         <mask id="clarkston">
           <rect x={0} y={0} width={50} height={63} fill="white" fillOpacity={0.2} />
           <rect
-            className={`duration-1000 transition-all z-10`}
+            className="duration-1000 transition-all z-10"
             x={tourLocations[hoverState]?.mask.x ?? 0}
             y={tourLocations[hoverState]?.mask.y ?? 0}
             width={tourLocations[hoverState]?.mask.w ?? 50}
@@ -50,7 +50,7 @@ function ClarksonTour({ figure }: Props) {
           <image
             mask="url(#clarkston)"
             role="presentation"
-            href={`/images/${figure.chapter}/${figure.fileName}`}
+            href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
             width="100%"
             className={`duration-1000 transition-transform ${tourLocations[hoverState]?.transform ?? ""}`}
           />

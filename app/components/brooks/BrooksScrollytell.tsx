@@ -87,17 +87,22 @@ export default function BrooksScrollytell() {
 
   return (
     <ScrollytellContext.Provider value={{ scrollProgress }}>
-      <ScrollytellWrapper scrollProgress={scrollProgress} setScrollProgress={setScrollProgress} triggers={triggers} steps={steps}>
+      <ScrollytellWrapper
+      scrollProgress={scrollProgress}
+      setScrollProgress={setScrollProgress}
+      triggers={triggers}
+      steps={steps}
+      className="w-screen"
+    >
         <div
           className="cursor-pointer sticky pt-16 md:pt-0 top-0 h-screen grid grid-cols-1 md:content-end order-first"
         >
           <div className="text-3xl relative md:top-[calc(100vh-40rem)] ml-4 text-black hidden md:block" tabIndex={-1}>↓</div>
           <div className="mb-6">
-            <div className="w-11/12 m-auto"
-            >
+            <div className="w-11/12 m-auto">
               <svg viewBox="0 0 713.52 291.12" className="w-full md:h-full">
                 <image
-                  href="/images/brooks/LSF_Volume H_85_Plan_of_an_African_slave_ship.jpg"
+                  href="/images/brooks/LSF_Volume-H_85_Plan_of_an_African_slave_ship.jpg"
                   width="2973" height="1213" transform="scale(.24)"
                   x={0}
                   y={-0.45}
