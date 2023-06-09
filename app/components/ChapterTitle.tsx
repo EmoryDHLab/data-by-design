@@ -9,7 +9,7 @@ export default function ChapterTitle({ title, subtitle }: Props) {
   return (
     <div
       id={spacesToHyphens(title)}
-      className="root bg-black h-screen md:h-80 flex flex-col justify-center items-center w-screen"
+      className="root bg-black h-screen md:h-80 flex flex-col justify-center items-center w-full"
     >
       <div className="text text-white text-center my-5">
         <h1 className="font-duboisWide text-3xl  my-10 md:my-10 md:text-5xl">
