@@ -9,7 +9,6 @@ import FullBleed from "~/components/layout/FullBleed";
 import RecreationCovid from "~/components/playfair/RecreationCovid";
 import StackedChart from "~/components/playfair/StackedChart";
 import CombChart from "~/components/playfair/CombChart";
-import Figure from "~/components/layout/Figure";
 import FigureObj from "~/components/layout/FigureObj";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import PlayfairScrollytell from "~/components/playfair/PlayfairScrollytell";
@@ -266,6 +265,10 @@ export default function PlayfairPage() {
             className="ml-0 md:ml-12"
             figure={figures["3-pie"]}
           />
+        <Column shouldPin>
+          <FigureObj figure={figures['1-northamerica']} />
+          <FigureObj figure={figures["2-wheat"]} />
+          <FigureObj figure={figures["3-pie"]} />
         </Column>
       </TwoColumnLayout>
       <ChapterSectionTitle title="The Value of Visual Knowledge" />
@@ -475,10 +478,7 @@ export default function PlayfairPage() {
       <ChapterSectionTitle title="The Politics of Playfair's Charts" />
 
       <CenteredLayout>
-        <Figure src="/images/playfair/5-minard.png" alt="">
-          Charles Minard's 1869 chart of Napoleon's failed Russia campaign.
-          Image courtesy of Wikimedia Commons.
-        </Figure>
+        <FigureObj figure={figures["5-minard"]} />
         <p>
           Playfair created his charts in an era of intense political change. At
           the time that he released the third and most widely circulated edition
@@ -663,18 +663,9 @@ export default function PlayfairPage() {
               to poor sanitation. Image courtesy of Wikimedia Commons.
             </Figure>
           </span>
+        <Column>
           <FigureObj figure={figures["6-snow"]} />
-          {/* <Figure src="/images/playfair/jpg" alt="">
-            The map created by John Snow in 1854 that shows how Cholera cases
-            are clustered around the town's water pump. Image courtesy of
-            Wikimedia Commons.
-          </Figure> */}
           <FigureObj figure={figures["7-nightingale"]} />
-          {/* <Figure src="/images/playfair/.jpg" alt="">
-            The coxcomb chart created by Florence Nightingale in 1858 which
-            emphasizes the number of (preventable) British military deaths due
-            to poor sanitation. Image courtesy of Wikimedia Commons.
-          </Figure> */}
         </Column>
       </TwoColumnLayout>
       <FullBleed>
@@ -786,6 +777,10 @@ export default function PlayfairPage() {
             Mike Bostock; the same chart recreated in Microsoft Excel by Jorge
             Camoes. Screenshots by Lauren Klein.
           </Figure>
+        <Column>
+          <FigureObj figure={figures["8-lyra"]} />
+          <FigureObj figure={figures["9-protovis"]} />
+          <FigureObj figure={figures["10-Camoes"]} />
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>
@@ -845,7 +840,7 @@ export default function PlayfairPage() {
       </CenteredLayout>
       <ChapterSectionTitle title="What Visualization Does Not Reveal" />
       <TwoColumnLayout>
-        <Column shouldPin={true}>
+        <Column>
           <p>
             ​​Playfair clearly longed to be recognized for his graphical
             innovations. In 1787, one year after the initial publication of the{" "}
@@ -916,21 +911,8 @@ export default function PlayfairPage() {
             </p>
           </div>
         </Column>
-        <Column className="md:ml-12">
-          <Figure src="/images/playfair/jevons.png" alt="">
-            Jevons's illustration of the benefits of the{" "}
-            <q>graphical method,</q> in which{" "}
-            <em className="italic">
-              <q>
-                it becomes possible to trace a line among the points which will
-                approximate to the true law more nearly than the points
-                themselves.
-              </q>
-            </em>{" "}
-            <br></br>
-            Image Courtesy of Google Books. <br></br>Digitized by Harvard
-            University.
-          </Figure>
+        <Column shouldPin>
+          <FigureObj figure={figures["jevons"]} />
         </Column>
       </TwoColumnLayout>
       </ChapterBody>

@@ -20,7 +20,7 @@ import HoverText from "~/components/HoverText";
 import Consent from "~/components/Consent";
 import FigureObj from "~/components/layout/FigureObj";
 
-import figures from "~/data/figures.json";
+import figures from "~/data/figures/brooks.json";
 import ClarksonTour from "~/components/brooks/ClarksonTour";
 
 export default function BrooksPage() {
@@ -297,7 +297,7 @@ export default function BrooksPage() {
           </p>
         </Column>
         <Column shouldPin>
-          <SeraphiqueTour figure={figures["2-1468px-Plan.jpeg"]} />
+          <SeraphiqueTour figure={figures["2-1468px-Plan"]} />
         </Column>
       </TwoColumnLayout>
 
@@ -464,7 +464,7 @@ export default function BrooksPage() {
           </p>
         </Column>
         <Column shouldPin>
-          <ClarksonTour figure={figures["4-description-1789.jpg"]} />
+          <ClarksonTour figure={figures["4-description-1789"]} />
         </Column>
       </TwoColumnLayout>
 
@@ -602,7 +602,7 @@ export default function BrooksPage() {
           of data visualization.
         </p>
 
-        <FigureObj figure={figures["5-The_history_of_the_rise.jpg"]} />
+        <FigureObj figure={figures["5-The_history_of_the_rise"]} />
 
         <p>
           This image, a so-called stream chart that Clarkson included in his
@@ -697,8 +697,8 @@ export default function BrooksPage() {
         </Column>
         <Column>
 
-          <FigureObj figure={figures["7-Bell.jpeg"]} />
-          <FigureObj figure={figures["6-stream.png"]} />
+          <FigureObj figure={figures["7-Bell"]} />
+          <FigureObj figure={figures["6-stream"]} />
         </Column>
       </TwoColumnLayout>
 
@@ -756,7 +756,7 @@ export default function BrooksPage() {
           </p>
         </Column>
         <Column>
-          <FigureObj figure={figures["9-isotype.png"]} />
+          <FigureObj figure={figures["9-isotype"]} />
         </Column>
       </TwoColumnLayout>
 

@@ -13,7 +13,7 @@ interface Props {
   hide?: boolean;
 }
 
-export default function FigureModal({ children, figure, loading, hide }: Props) {
+export default function FigureModal({ children, figure, loading, hide, className }: Props) {
   const [open, setOpen] = useState(false);
   const [interactiveOptions, setInteractiveOptions] = useState<object>({});
   const figureRef = useRef();
@@ -36,7 +36,7 @@ export default function FigureModal({ children, figure, loading, hide }: Props) 
   return (
     <figure
       ref={figureRef}
-      className={inColumn ? "md:ml-24" : ""}
+      className={`${inColumn ? "md:ml-24" : ""} ${className ?? ""}`}
       {...interactiveOptions}
     >
 
@@ -80,15 +80,17 @@ export default function FigureModal({ children, figure, loading, hide }: Props) 
                         />
 
                       )}
-                      <div className="mt-2">
+                      <picture className="mt-2">
+                        <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
+                        <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
                         <img
                           className="mx-auto max-h-[80vh]"
-                          src={figure ? `/images/${figure.chapter}/${figure.fileName}` : src}
+                          src={figure ? `/images/${figure.chapter}/${figure.fileName}.jpg` : src}
                           alt={figure?.altText}
                           title={figure?.title}
                           loading={loading ?? "lazy"}
                         />
-                      </div>
+                      </picture>
                     </div>
                   </div>
                   <div className="mt-6 md:mt-5 flex flex-col items-center">
