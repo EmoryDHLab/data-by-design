@@ -36,13 +36,13 @@ export default function PeabodyActors({ actor, className, century, handleClick, 
     <>
       {eventData.actors[century].map((actor, index) => {
         return (
-          <span
+          <div
             key={`actor-${actor}`}
             className={`font-normal bg-${actor} text-${textColor(actor)} p-2 border-2  ${highlight?.includes(actor) ? "border-white": "border-black"}`}
             {...interactiveOptions}
           >
             {actor}
-          </span>
+          </div>
         );
       })}
     </>

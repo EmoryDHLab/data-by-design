@@ -76,7 +76,7 @@ export default function LEDChart({ children }) {
         bgColor="none"
         parent={parentRef.current}
         threshold={4}
-        widthClass="w-full"
+        className="w-full grid-wrapper"
         debug={false}
         scrollOffset={1}
       >

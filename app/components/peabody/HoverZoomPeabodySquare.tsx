@@ -1,30 +1,99 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
-import ImageModal from "~/components/layout/ImageModal";
+import type { ChapterFigure } from "~/types/figureType";
+import { Caption } from "../layout/FigureObj";
+import FigureModal from "../layout/FigureModal";
 
-export default function HoverZoomPeabodySquare() {
+interface Props {
+  figure: ChapterFigure;
+}
+
+export default function HoverZoomPeabodySquare({ figure }: Props) {
   const { hoverState } = useContext(ChapterContext);
   return (
-    <div className="relative">
-      <ImageModal
-        className="border-peabodyPrimaryHalfOpacity border-[50px]"
-        src="/images/peabody/1600s.jpg"
-      />
-      {hoverState === "Jamestown" && (
-        <div className="absolute top-[65px] left-[230px] w-[32px] h-[32px] border-black border-2">
-          <div className="border-white border-2 h-full w-full" />
-        </div>
-      )}
-      {hoverState === "Plymouth" && (
-        <div className="absolute top-[90px] left-[309px] w-[32px] h-[32px] border-black border-2">
-          <div className="border-white border-2 h-full w-full" />
-        </div>
-      )}
-      {hoverState === "FirstEnslavedAfricans" && (
-        <div className="absolute top-[100px] left-[328px] w-[13px] h-[13px] border-black border">
-          <div className="border-white border-t-[1.5px] border-b-[1.5px] border-l-[1.5px] border-r-[1.5px] h-full w-full" />
-        </div>
-      )}
-    </div>
+    // <>
+    //   <FigureObj figure={figure} className="absolute top-0 left-0 hidden md:block z-5" />
+    // </>
+    <FigureModal figure={figure} className="hidden md:block">
+      <p id={figure.fileName} className='sr-only'>{figure.caption}</p>
+      <svg
+        viewBox="0 0 244.56 242.88"
+        role="img"
+        aria-labelledby={figure.filename}
+      >
+        <image
+          role="presentation"
+          href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+          width="100%"
+        />
+        {hoverState === "Jamestown" && (
+          <g>
+            <rect
+              x={142}
+              y={9}
+              width={31}
+              height={31}
+              fill="none"
+              stroke="black"
+              strokeWidth={3}
+            />
+            <rect
+              x={145}
+              y={13}
+              width={25}
+              height={25}
+              fill="none"
+              stroke="gold"
+              strokeWidth={3}
+            />
+          </g>
+        )}
+        {hoverState === "Plymouth" && (
+          <g>
+            <rect
+              x={205}
+              y={30}
+              width={31}
+              height={31}
+              fill="none"
+              stroke="black"
+              strokeWidth={3}
+            />
+            <rect
+              x={208}
+              y={33}
+              width={25}
+              height={25}
+              fill="none"
+              stroke="gold"
+              strokeWidth={3}
+            />
+          </g>
+        )}
+        {hoverState === "FirstEnslavedAfricans" && (
+          <g>
+            <rect
+              x={221}
+              y={39}
+              width={14}
+              height={14}
+              fill="none"
+              stroke="black"
+              strokeWidth={2}
+            />
+            <rect
+              x={223}
+              y={41}
+              width={10}
+              height={10}
+              fill="none"
+              stroke="gold"
+              strokeWidth={2}
+            />
+          </g>
+        )}
+      </svg>
+      <Caption figure={figure} />
+    </FigureModal>
   );
 }

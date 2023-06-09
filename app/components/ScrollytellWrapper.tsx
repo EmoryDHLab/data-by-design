@@ -79,14 +79,13 @@ export default function ScrollytellWrapper({
   ]);
 
   useEffect(() => {
-    console.log("🚀 ~ file: ScrollytellWrapper.tsx:82 ~ useEffect ~ resize:")
     scrollerRef.current?.resize();
   }, [windowSize, scrollerRef, scrollerElementRef]);
 
   return (
     <div
       ref={scrollerElementRef}
-      className={`bg-${bgColor ?? accentColor} ${widthClass ?? "w-screen"} ${className ?? ""}`}
+      className={`bg-${bgColor ?? accentColor} ${className ?? ""}`}
     >
       {children }
     </div>
