@@ -27,11 +27,11 @@ export default function AboutPage() {
             <p className="pt-16">
               {" "}
               <p className="pb-4">
-                <span className="font-dubois"> Credits Citation </span>
+                <span className="font-dubois"> Citation </span>
                 <p>
                   <cite className="select-all">
                     L. Klein, T. Sharma, J. Varner, N. Yang, D. Jutan, J. Fu, A.
-                    Mola, Z. Fang, S. Li, M. Adams, Y. Li, and S. Munro. Data by
+                    Mola, S. Li, M. Adams, Z. Fang, Y. Li, and S. Munro. Data by
                     Design. 2023 public beta.
                   </cite>
                 </p>
@@ -40,7 +40,6 @@ export default function AboutPage() {
                 <p className="font-dubois"> Code </p>
                 https://github.com/EmoryDHLab/data-by-design
               </p>
-              <p className="font-dubois"> © 2023 </p>
             </p>
           </Column>
           <Column className="px-3">
@@ -101,10 +100,7 @@ export default function AboutPage() {
               <p className="py-2">
                 <span className="font-medium"> Anna Mola </span>(Emory, BA ‘22,
                 Computer Science and Visual Arts) built the components of the
-                Playfair chapter for the project’s alpha version. Zhou Fang
-                (Emory BA ‘22, Quantitative Sciences) built the image browser
-                component of the Du Bois chapter for the project’s alpha
-                version.
+                Playfair chapter for the project’s alpha version. 
               </p>{" "}
               <p className="py-2">
                 <span className="font-medium"> Shiyao Li </span> (Emory, PhD
@@ -113,13 +109,26 @@ export default function AboutPage() {
               </p>{" "}
               <p className="py-2">
                 <span className="font-medium"> Margy Adams </span> (Emory, PhD
-                ‘25, English) wrote the alt-text for the project site.
+                ‘25, English) wrote the alt-text for the project site, and 
+                contributed research and ideas to the Brooks chapter.
               </p>{" "}
+              <p className="py-2">
+                <span className="font-medium"> Zhou Fang </span> (Emory BA ‘22, 
+                Quantitative Sciences) built the image browser component of the 
+                Du Bois chapter for the project’s alpha version.
+              </p>
               <p className="py-2">
                 <span className="font-medium"> Yang Li </span> (Emory, Center
                 for Digital Scholarship) built the chapter navigation component
-                for the project site. Silas Munro (Polymode) created the initial
-                design concept for the site.
+                for the project site. 
+              </p>
+              <p className="py-2">
+                <span className="font-medium"> Silas Munro </span> (Polymode) 
+                created the initial design concept for the site.
+              </p>
+              <p className="py-2"> Also at Polymode, <span className="font-medium">
+                Edgar Casarin</span> and <span className="font-medium">Brian 
+                Johnson</span> contributed valuable ideas and feedback.
               </p>
             </span>
           </Column>
@@ -140,19 +149,17 @@ export default function AboutPage() {
               <Column className="pr-18">
                 <p>
                   <p>
-                    <span className="font-dubois"> Credits Citation </span>
+                    <span className="font-dubois"> Citation </span>
                     <p>
                       <cite className="select-all">
                         L. Klein, T. Sharma, D. Jutan, N. Yang, J. Fu, A. Mola,
-                        Z. Fang, and S. Monro.
-                        <cite>Data by Design.</cite> 2023 alpha.
+                        Z. Fang, and S. Monro. <cite>Data by Design.</cite> 2023 alpha.
                       </cite>
                     </p>
                     <p>
                       <p className="font-dubois  pt-5"> Code </p>
                       https://github.com/EmoryDHLab/2021-data-by-design
                     </p>
-                    <p className="font-dubois"> © 2023 </p>
                   </p>
 
                   <p>
@@ -164,7 +171,7 @@ export default function AboutPage() {
                     Lauren Klein
                   </p>
                   <p>
-                    <p className="font-dubois pt-5 uppercase"> Designer: </p>
+                    <p className="font-dubois pt-5 uppercase"> Designers: </p>
                     Tanvi Sharma (NYU, MS Interactive Design and Media ‘23),
                     <p>Silas Monro (Polymode)</p>
                   </p>
@@ -239,7 +246,6 @@ export default function AboutPage() {
                     <p className="font-dubois"> Code </p>
                     https://github.com/EmoryDHLab/2020-data-by-design
                   </p>
-                  <p className="font-dubois"> © 2023 </p>
                 </p>
                 <p>
                   <p>
