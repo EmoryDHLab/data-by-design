@@ -11,7 +11,7 @@ function Picture({ figure, className }: Props) {
   const { hide } = useContext(ChapterContext);
 
   return (
-    <picture>
+    <picture id={figure.fileName}>
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
       <img

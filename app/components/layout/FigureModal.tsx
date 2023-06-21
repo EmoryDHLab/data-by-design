@@ -17,7 +17,7 @@ export default function FigureModal({ children, figure, loading, hide, className
   const [open, setOpen] = useState(false);
   const [interactiveOptions, setInteractiveOptions] = useState<object>({});
   const figureRef = useRef();
-  const inColumn = figureRef.current?.parentElement.classList.contains('md:bias-1/2');
+  const inColumn = figureRef.current?.parentElement.classList.contains('md:bias-1/2') || figureRef.current?.parentElement.tagName === "SPAN";
 
     useEffect(() => {
     if (!hide) {
@@ -31,7 +31,6 @@ export default function FigureModal({ children, figure, loading, hide, className
       setInteractiveOptions({});
     }
   }, [hide, figure, setOpen, setInteractiveOptions]);
-
 
   return (
     <figure
