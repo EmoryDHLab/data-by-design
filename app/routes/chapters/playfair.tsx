@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -22,68 +22,73 @@ import figures from "~/data/figures/playfair.json";
 
 export default function PlayfairPage() {
   const [docHeightState, setDocHeightState] = useState<number>(0);
+  const [anchorsState, setAnchorsState] = useState<array>([]);
 
-  const anchors = {
-    chartOne: {
-      type: "figure",
-      ref: useRef(),
-      figure: figures['1-northamerica'],
-    },
-    chartTwo: {
-      type: "figure",
-      ref: useRef(),
-      figure: figures["2-wheat"],
-    },
-    chartThree: {
-      type: "figure",
-      ref: useRef(),
-      figure: figures["3-pie"],
-    },
-    chartFour: {
-      type: "figure",
-      ref: useRef()
-    },
-    scrollytellOne: {
-      type: "scrollytell",
-      ref: useRef()
-    },
-    chartFive: {
-      type: "figure",
-      ref: useRef()
-    },
-    chartSix: {
-      type: "figure",
-      ref: useRef()
-    },
-    chartSeven: {
-      type: "figure",
-      ref: useRef()
-    },
-    viz1: {
-      type: "visualization",
-      ref: useRef()
-    },
-    chart8: {
-      type: "figure",
-      ref: useRef()
-    },
-    chart9: {
-      type: "figure",
-      ref: useRef()
-    },
-    chart10: {
-      type: "figure",
-      ref: useRef()
-    },
-    chart11: {
-      type: "figure",
-      ref: useRef()
-    },
-    viz2: {
-      type: "visualization",
-      ref: useRef()
-    }
-  }
+  // const anchors = {
+  //   chartOne: {
+  //     type: "figure",
+  //     ref: useRef(),
+  //     figure: figures['1-northamerica'],
+  //   },
+  //   chartTwo: {
+  //     type: "figure",
+  //     ref: useRef(),
+  //     figure: figures["2-wheat"],
+  //   },
+  //   chartThree: {
+  //     type: "figure",
+  //     ref: useRef(),
+  //     figure: figures["3-pie"],
+  //   },
+  //   chartFour: {
+  //     type: "figure",
+  //     ref: useRef()
+  //   },
+  //   scrollytellOne: {
+  //     type: "scrollytell",
+  //     ref: useRef()
+  //   },
+  //   chartFive: {
+  //     type: "figure",
+  //     ref: useRef()
+  //   },
+  //   chartSix: {
+  //     type: "figure",
+  //     ref: useRef()
+  //   },
+  //   chartSeven: {
+  //     type: "figure",
+  //     ref: useRef()
+  //   },
+  //   viz1: {
+  //     type: "visualization",
+  //     ref: useRef()
+  //   },
+  //   chart8: {
+  //     type: "figure",
+  //     ref: useRef()
+  //   },
+  //   chart9: {
+  //     type: "figure",
+  //     ref: useRef()
+  //   },
+  //   chart10: {
+  //     type: "figure",
+  //     ref: useRef()
+  //   },
+  //   chart11: {
+  //     type: "figure",
+  //     ref: useRef()
+  //   },
+  //   viz2: {
+  //     type: "visualization",
+  //     ref: useRef()
+  //   }
+  // }
+
+  useEffect(() => {
+    console.log("🚀 ~ file: playfair.tsx:92 ~ PlayfairPage ~ anchorsState:", anchorsState)
+  }, [anchorsState]);
 
   return (
     <ChapterContext.Provider
@@ -97,13 +102,20 @@ export default function PlayfairPage() {
         footnotes: playfairFootnotes,
         docHeightState,
         setDocHeightState,
+        anchorsState,
+        setAnchorsState,
       }}
     >
       <ChapterTitle
         title="Visualization as Argument"
         subtitle="William Playfair's Time-Series Charts"
       />
-      <ChapterBody anchors={anchors}>
+      {/*
+        TODO: Pass a set state func to ChapterBody to pass a ref up
+        for the .content-body div. Add that to the chapter context
+        for use in calculating spacing for chapter nav icons.
+      */}
+      <ChapterBody>
       <TwoColumnLayout>
         <Column>
           <p className="first-paragraph">
@@ -203,26 +215,9 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column shouldPin>
-          <span
-            ref={anchors.chartOne.ref}
-            id="chartOne"
-          >
           <FigureObj figure={figures['1-northamerica']} />
-          </span>
-
-          <span
-            ref={anchors.chartTwo.ref}
-            id="chartTwo"
-          >
-            <FigureObj figure={figures["2-wheat"]} />
-          </span>
-
-          <span
-            ref={anchors.chartThree.ref}
-            id="chartThree"
-          >
-            <FigureObj figure={figures["3-pie"]} />
-          </span>
+          <FigureObj figure={figures["2-wheat"]} />
+          <FigureObj figure={figures["3-pie"]} />
         </Column>
       </TwoColumnLayout>
       <ChapterSectionTitle title="The Value of Visual Knowledge" />
@@ -293,20 +288,10 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column shouldPin>
-          <span
-            ref={anchors.chartFour.ref}
-            id="chartFour"
-          >
-            <FigureObj figure={figures["chart-1787"]} />
-          </span>
+          <FigureObj figure={figures["chart-1787"]} />
         </Column>
       </TwoColumnLayout>
-      <span
-        ref={anchors.scrollytellOne.ref}
-        id="scrollytellOne"
-      >
-        <PlayfairScrollytell />
-      </span>
+      <PlayfairScrollytell />
       <CenteredLayout>
         <p>
           Clearly, for Playfair, his lack of data was not of concern. His
@@ -406,12 +391,7 @@ export default function PlayfairPage() {
       <ChapterSectionTitle title="The Politics of Playfair's Charts" />
 
       <CenteredLayout>
-        <span
-          ref={anchors.chartFive.ref}
-          id="chartFive"
-        >
-          <FigureObj figure={figures["5-minard"]} />
-        </span>
+        <FigureObj figure={figures["5-minard"]} />
         <p>
           Playfair created his charts in an era of intense political change. At
           the time that he released the third and most widely circulated edition
@@ -576,18 +556,8 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column shouldPin>
-          <span
-            ref={anchors.chartSix.ref}
-            id="chartSix"
-          >
-            <FigureObj figure={figures["6-snow"]} />
-          </span>
-          <span
-            ref={anchors.chartSeven.ref}
-            id="chartSeven"
-          >
-            <FigureObj figure={figures["7-nightingale"]} />
-          </span>
+          <FigureObj figure={figures["6-snow"]} />
+          <FigureObj figure={figures["7-nightingale"]} />
         </Column>
       </TwoColumnLayout>
       <FullBleed>
@@ -609,7 +579,7 @@ export default function PlayfairPage() {
           web, according to any conceivable form.
         </p>
 
-        <p className="my-6 md:my-12 w-full h-full" ref={anchors.viz1.ref} id="viz1">
+        <p className="my-6 md:my-12 w-full h-full" id="viz1">
           <span className="col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 mt-6 flex flex-row">
             <svg viewBox="0 0 100 50">
               <rect width="64%" height="100%" fill="#F3ECCB" />
@@ -664,24 +634,9 @@ export default function PlayfairPage() {
           </p>
         </Column>
         <Column>
-          <span
-            ref={anchors.chart8.ref}
-            id="chart8"
-          >
-            <FigureObj figure={figures["8-lyra"]} />
-          </span>
-          <span
-            ref={anchors.chart9.ref}
-            id="chart9"
-          >
-            <FigureObj figure={figures["9-protovis"]} />
-          </span>
-          <span
-            ref={anchors.chart10.ref}
-            id="chart10"
-          >
-            <FigureObj figure={figures["10-Camoes"]} />
-          </span>
+          <FigureObj figure={figures["8-lyra"]} />
+          <FigureObj figure={figures["9-protovis"]} />
+          <FigureObj figure={figures["10-Camoes"]} />
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>
@@ -719,7 +674,7 @@ export default function PlayfairPage() {
             their answers are not conveyed—or nor are the questions even
             prompted—by the simple view presented through Playfair's form.
           </p>
-          <p className="my-6 md:my-12" ref={anchors.viz2.ref} id="viz2">
+          <p className="my-6 md:my-12" id="viz2">
             <RecreationCovid />
           </p>
           <p>
@@ -813,12 +768,7 @@ export default function PlayfairPage() {
           </div>
         </Column>
         <Column shouldPin>
-          <span
-            ref={anchors.chart11.ref}
-            id="chart11"
-          >
-            <FigureObj figure={figures["jevons"]} />
-          </span>
+          <FigureObj figure={figures["jevons"]} />
         </Column>
       </TwoColumnLayout>
       </ChapterBody>

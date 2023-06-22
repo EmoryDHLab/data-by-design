@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { EyeSlashIcon } from '@heroicons/react/24/outline'
 import { ChapterContext } from "~/chapterContext";
 import FigureModal from "./FigureModal";
@@ -34,38 +34,53 @@ export default function FigureObj({
   children,
   figureTransforms,
 }: Props) {
-  const { hideSensitiveState, accentColor, backgroundColor } = useContext(ChapterContext);
+  const { hideSensitiveState, accentColor, backgroundColor, setAnchorsState } = useContext(ChapterContext);
   const [hide, setHide] = useState<boolean>(hideSensitiveState && figure.sensitive);
+  const figRef = useRef();
+  useEffect(() => {
+
+  }, []);
 
   useEffect(() => {
     setHide(hideSensitiveState && figure.sensitive);
   }, [setHide, hideSensitiveState, figure]);
 
-  if (figures) {
-    return (
-      <figure className={className ?? ""}>
-        {figures.map((figure) => {
-          return (
-            <FigureModal key={figure.fileName} figure={figure}>
-              <Picture figure={figure} />
-            </FigureModal>
-          )
-        })}
-        <Caption figure={figures[0]} />
-      </figure>
-    );
-  }
+  useEffect(() => {
+    if (!figure) return;
+    setAnchorsState(anchors => [...anchors, { ref: figRef, type: "figure", figure }]);
+  }, [figure, setAnchorsState]);
+
+  useEffect(() => {
+    if (!figures) return;
+    setAnchorsState(anchors => [...anchors, { ref: figRef, type: "figureStack", figure: figures[0] }]);
+  }, [figures, setAnchorsState]);
 
   return (
-    <FigureModal figure={figure} hide={hide} className={className}>
-      <section className={`grid grid-cols-1 place-items-center border-${hide ? "4" : "0"} border-${backgroundColor} bg-${accentColor}`}>
-        <EyeSlashIcon
-          className={`h-36 absolute my-auto mx-auto transition-[stroke-opacity] stroke-${backgroundColor}`}
-          strokeOpacity={hide ? 0.75 : 0}
-        />
-      </section>
-      <Picture figure={figure} />
-      <Caption figure={figure} />
-    </FigureModal>
+    <div ref={figRef} id={figure?.fileName ?? figures[0].fileName}>
+      {figures &&
+        <figure className={className ?? ""}>
+          {figures.map((figure) => {
+            return (
+              <FigureModal key={figure.fileName} figure={figure}>
+                <Picture figure={figure} />
+              </FigureModal>
+            )
+          })}
+          <Caption figure={figures[0]} />
+        </figure>
+      }
+      {figure &&
+        <FigureModal figure={figure} hide={hide} className={className}>
+          <section className={`grid grid-cols-1 place-items-center border-${hide ? "4" : "0"} border-${backgroundColor} bg-${accentColor}`}>
+            <EyeSlashIcon
+              className={`h-36 absolute my-auto mx-auto transition-[stroke-opacity] stroke-${backgroundColor}`}
+              strokeOpacity={hide ? 0.75 : 0}
+            />
+          </section>
+          <Picture figure={figure} />
+          <Caption figure={figure} />
+        </FigureModal>
+      }
+    </div>
   );
 };
