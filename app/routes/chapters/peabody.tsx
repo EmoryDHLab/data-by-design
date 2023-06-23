@@ -49,7 +49,7 @@ export default function PeabodyPage() {
         title="The Work of Knowledge"
         subtitle="Elizabeth Palmer Peabody's Chronological Grids"
       />
-      <TwoColumnLayout className="w-full md:w-auto">
+      <TwoColumnLayout>
         <Column shouldPin={true}>
           <p className="first-paragraph">
             Elizabeth Palmer Peabody was born in Massachusetts in 1804. Today,
