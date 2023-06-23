@@ -15,13 +15,15 @@ import FullBleed from "~/components/layout/FullBleed";
 import FootnotesList from "~/components/FootnotesList";
 import Figure from "~/components/layout/Figure";
 
+import SlideShow from "~/components/layout/SlideShow";
+import figures from "~/data/figures/dubois.json";
+
 import ImageModal from "~/components/layout/ImageModal";
 import Quotation from "~/components/Quotation";
 import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
 import HoverImages1 from "~/components/dubois/HoverImages1";
 import HoverImages2 from "~/components/dubois/HoverImages2";
-import PhotographChart from "~/components/dubois/PhotographChart";
 
 import ImageCaption from "~/components/ImageCaption";
 
@@ -550,7 +552,10 @@ export default function DuboisChapter() {
           </span>
         </p>
       </CenteredLayout>
-      <PhotographChart></PhotographChart>
+      <SlideShow
+        className="block text-white bg-black w-full py-10"
+        figures={[figures["fig1"], figures["fig2"], figures["fig3"]]}
+      />
       <CenteredLayout>
         <p>
           <span className="font-normal">
