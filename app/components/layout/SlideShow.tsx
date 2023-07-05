@@ -1,14 +1,14 @@
 import Carousel from "nuka-carousel";
-import FigureObj from './FigureObj';
-import CenteredLayout from "./CenteredLayout";
+import { useDeviceContext } from "~/hooks";
 
-const renderBottomLeftControls = ({
+const leftControls = ({
   previousDisabled,
   previousSlide,
 }) => {
   return (
-    <div className="ml-16">
+    <div className="ml-16 md:ml-32 lg:ml-64 text-2xl md:text-6xl">
       <button
+        aria-label="Navigate to previous figure"
         type="button"
         disabled={previousDisabled}
         onClick={previousSlide}
@@ -20,13 +20,14 @@ const renderBottomLeftControls = ({
   );
 };
 
-const renderBottomRightControls = ({
+const rightControls = ({
   nextDisabled,
   nextSlide,
 }) => {
   return (
-    <div className="mr-16">
+    <div className="mr-16 md:mr-32 lg:mr-64 text-2xl md:text-6xl">
       <button
+        aria-label="Navigate to next figure"
         type="button"
         disabled={nextDisabled}
         onClick={nextSlide}
@@ -40,19 +41,21 @@ const renderBottomRightControls = ({
 
 
 const SlideShow = ({ figures, className, children }) => {
+  const { isMobile, isDesktop } = useDeviceContext();
+
   return (
     <section className={`mx-auto ${className ?? ""}`}>
       <Carousel
-        renderCenterLeftControls={<></>}
-        renderCenterRightControls={<></>}
+        renderCenterLeftControls={isDesktop ? leftControls : ""}
+        renderCenterRightControls={isDesktop ? rightControls : ""}
         renderBottomCenterControls={<></>}
-        renderBottomLeftControls={renderBottomLeftControls}
-        renderBottomRightControls={renderBottomRightControls}
+        renderBottomLeftControls={isMobile ? leftControls : ""}
+        renderBottomRightControls={isMobile ? rightControls : ""}
         wrapAround
       >
         {figures?.map((figure) => {
           return (
-            <figure key={figure.fileName} className="w-full text-center">
+            <figure key={figure.fileName} className="text-center">
               <picture>
                 <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
                 <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
@@ -63,9 +66,11 @@ const SlideShow = ({ figures, className, children }) => {
                   title={figure.title}
                 />
               </picture>
-              <figcaption className="font-dubois mt-3 w-1/2 mx-auto">
-                {figure.caption}
-              </figcaption>
+              <figcaption className="font-dubois mt-3 w-1/2 mx-auto"
+                dangerouslySetInnerHTML={{
+                  __html: figure.caption,
+                }}
+              />
             </figure>
           )
         })}
