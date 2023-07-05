@@ -554,7 +554,7 @@ export default function DuboisChapter() {
       </CenteredLayout>
       <SlideShow
         className="block text-white bg-black w-full py-10"
-        figures={[figures["fig1"], figures["fig2"], figures["fig3"]]}
+        figures={[figures["ch5-03-georgia"], figures["ch5-03-georgia"], figures["ch5-03-georgia"]]}
       />
       <CenteredLayout>
         <p>
