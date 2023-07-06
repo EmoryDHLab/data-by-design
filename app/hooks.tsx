@@ -14,8 +14,8 @@ export function useWindowSize() {
     function handleResize() {
       // Set window width/height to state
       setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: window.outerWidth,
+        height: window.outerHeight,
       });
     }
 
@@ -38,6 +38,7 @@ export function useDeviceContext() {
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
   useEffect(() => {
+    console.log("🚀 ~ file: hooks.tsx:42 ~ useEffect ~ width:", width)
     if (width <= parseInt(tailwindConfig.theme.screens.sm)) {
       setIsMobile(true);
       setIsDesktop(false);

@@ -89,17 +89,19 @@ export default function PeabodyPage() {
         </Column>
         <Column shouldPin>
           <PromotionalTourMap />
-          <SlideShow
-            className="block md:hidden bg-peabodyPrimary w-full py-10"
-            figures={[
-              figures["railroadscaled"],
-              figures["rochester"],
-              figures["louisville"],
-              figures["richmond"],
-            ]}
-          />
         </Column>
       </TwoColumnLayout>
+
+      <SlideShow
+        className="block md:hidden bg-peabodyPrimary w-full py-10"
+        figures={[
+          figures["railroadscaled"],
+          figures["rochester"],
+          figures["louisville"],
+          figures["richmond"],
+        ]}
+      />
+
       <PullQuote
         title="Peabody designed her charts to be abstract rather than intuitive;"
         subtitle="to promote sustained reflection rather than immediate insight. "
