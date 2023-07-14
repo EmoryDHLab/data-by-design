@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { QuizContext } from "./QuizContext";
+import { useDeviceContext } from "~/hooks";
 
 interface Props {
   index: number;
@@ -21,7 +22,9 @@ export default function QuizEventCategoryItem({ index, type, unused }: Props) {
   } = useContext(QuizContext);
 
   const [interactiveOptions, setInteractiveOptions] = useState<object>({});
+  const [mobileClassNames, setMobileClassNames] = useState<string | undefined>(undefined);
   const [isOption, setIsOption] = useState<boolean>(allowOption(index));
+  const { isMobile, isDesktop } = useDeviceContext();
 
   useEffect(() => {
     setIsOption(allowOption(index));
@@ -42,14 +45,14 @@ export default function QuizEventCategoryItem({ index, type, unused }: Props) {
           onMouseLeave: () => setFocusedCategory(undefined),
           onFocus: () => setFocusedCategory(index),
           onBlur: () => setFocusedCategory(undefined),
-          className: `${defaultClassNames} cursor-pointer`,
+          className: `${defaultClassNames} cursor-pointer hidden md:block`,
         });
       } else {
         setInteractiveOptions({
           fill: "gray",
           fillOpacity: 0.5,
           textDecoration: currentStep.solvedEvents.includes(index) ? "" : "line-through",
-          className: `${defaultClassNames} cursor-not-allowed`,
+          className: `${defaultClassNames} cursor-not-allowed hidden md:block`,
         });
       }
     } else if (currentStepCount === 7) {
@@ -73,14 +76,42 @@ export default function QuizEventCategoryItem({ index, type, unused }: Props) {
     unused,
   ]);
 
+  useEffect(() => {
+    if (currentStepCount > 2 && currentStepCount < 7) {
+      if (isOption) {
+        setMobileClassNames();
+      } else {
+        setMobileClassNames('text-gray-500');
+      }
+    }  else if (currentStepCount === 7) {
+      if (unused) {
+        setMobileClassNames('opacity-0 h-0');
+      } else {
+        setMobileClassNames(undefined);
+      }
+    }
+  }, [currentStepCount, isOption]);
+
+  if (isMobile) {
+    return (
+      <li className={mobileClassNames}>
+        {type} {isOption}
+      </li>
+    );
+  } else if (isDesktop) {
+    return (
+      <tspan
+        fontSize={6}
+        x={60}
+        dy={10}
+        {...interactiveOptions}
+      >
+        {index + 1}. {type}
+      </tspan>
+    );
+  }
+
   return (
-    <tspan
-      fontSize={6}
-      x={60}
-      dy={10}
-      {...interactiveOptions}
-    >
-      {index + 1}. {type}
-    </tspan>
+    <span>{type}</span>
   );
 }

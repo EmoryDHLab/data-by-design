@@ -16,15 +16,19 @@ const centuryEvents = getCenturyEvents(1600);
 interface Props {
   index: number;
   year: number;
+  defaultX: number;
+  defaultY: number;
 }
 
 export default function QuizYearSquare({
   index,
-  year
+  year,
+  defaultX,
+  defaultY
 }: Props) {
   const [interactiveOptions, setInteractiveOptions] = useState<object>({});
-  const x = getYearXFromIndex(index, YEAR_WIDTH) + 165;
-  const y = getYearYFromIndex(index, YEAR_WIDTH) + 25;
+  const x = getYearXFromIndex(index, YEAR_WIDTH) + defaultX;
+  const y = getYearYFromIndex(index, YEAR_WIDTH) + defaultY;
   const {
     currentStepCount,
     selectedYears,

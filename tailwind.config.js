@@ -155,5 +155,11 @@ module.exports = {
     "text-lime-500",
     "top-12",
     "top-24",
+    "md:scale-0",
+    "h-0",
+    "h-24",
+    "h-48",
+    "h-2/5",
+    "h-20",
   ],
 };

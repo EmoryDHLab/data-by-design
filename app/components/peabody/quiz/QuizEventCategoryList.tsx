@@ -1,26 +1,57 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { QuizContext } from "./QuizContext";
 import eventData from "~/data/peabody/eventData.json";
 import QuizEventCategoryItem from "./QuizEventCategoryItem";
+import { useDeviceContext } from "~/hooks";
 
 const unusedCategories = [3, 4, 6, 7, 8];
 
 export default function QuizEventCategoryList() {
-  const {
-    currentStepCount,
-    setCurrentStepCount,
-  } = useContext(QuizContext);
+  const { currentStepCount, setCurrentStepCount } = useContext(QuizContext);
+  const { isMobile, isDesktop } = useDeviceContext();
+  const [mobileHeight, setMobileHeight] = useState<string | undefined>('h-0');
 
-  return (
+  useEffect(() => {
+    if (isDesktop) return;
+    if (currentStepCount > 2 && currentStepCount < 7) return setMobileHeight("h-48");
+    if (currentStepCount == 7) return setMobileHeight("h-24");
+    return setMobileHeight("h-0");
+  }, [currentStepCount, setMobileHeight, isDesktop]);
+
+  if (isMobile) {
+    return (
+      <ol
+        className={`md:hidden list-decimal list-inside ml-4 text-sm overflow-y-hidden transition-[height] duration-1000 ${mobileHeight}`}
+      >
+        {eventData.eventTypes.map((type, index) => {
+          return (
+            <QuizEventCategoryItem
+              key={`mobile-${type}`}
+              index={index}
+              type={type}
+              unused={unusedCategories.includes(index)}
+            />
+          )
+        })}
+      </ol>
+    )
+  } else if (isDesktop) {
+    return (
       <text
         fill="white"
         x={60}
         y={85}
         fillOpacity={0}
-        >
+        className="hidden md:block"
+      >
         {eventData.eventTypes.map((type, index) => {
           return (
-            <QuizEventCategoryItem key={type} index={index} type={type} unused={unusedCategories.includes(index)} />
+            <QuizEventCategoryItem
+              key={type}
+              index={index}
+              type={type}
+              unused={unusedCategories.includes(index)}
+            />
           );
         })}
         <tspan
@@ -40,5 +71,8 @@ export default function QuizEventCategoryList() {
           <tspan dx={2} className="font-icons">b</tspan>
         </tspan>
       </text>
-  );
+    );
+  }
+
+  return <></>
 };

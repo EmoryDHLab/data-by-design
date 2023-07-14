@@ -1,12 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { QuizContext } from "./QuizContext";
+import { useDeviceContext } from "~/hooks";
 
-const x = 212;
-const y = 180;
 const side = 20;
 
 export default function QuizNav() {
   const { currentStepCount, setCurrentStepCount } = useContext(QuizContext);
+  const [x, setX] = useState(212);
+  const [y, setY] = useState(180);
+  const { isMobile } = useDeviceContext();
+
+  useEffect(() => {
+    setX(isMobile ? 0 : 212);
+    setY(isMobile ? 10 : 180);
+  }, [isMobile]);
+
   return (
     <g role="navigation">
       <rect x={x - 2} y={y - 2} height={side + 2} width={side * 4 + 2} rx={5} fill="#1c1817" fillOpacity={0.7} />

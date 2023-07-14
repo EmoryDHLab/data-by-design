@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { QuizContext } from "./QuizContext";
 import QuizActorButton from "./QuizActorButton";
+import { useDeviceContext } from "~/hooks";
 
 const quizActors = ["England", "France", "Americas", "Sweden", "Holland"];
 const correctActors = ["England", "Americas"];
@@ -14,8 +15,18 @@ const fillColors = {
 
 export default function QuizSelectActors() {
   const { currentStep, currentStepCount, setCurrentStepCount, setFeedback } = useContext(QuizContext);
+  const [actors, setActors] = useState(quizActors);
   const [solvedActors, setSolvedActors] = useState<array>([]);
   const [selectedActors, setSelectedActors] = useState<array>([]);
+  const [startX, setStartX] = useState<number>(60);
+  const [startY, setStartY] = useState<number>(66);
+  const { isMobile } = useDeviceContext();
+
+  useEffect(() => {
+    setStartX(isMobile ? 0 : 60);
+    setStartY(isMobile ? 0 : 66);
+    setActors(isMobile ? quizActors.slice(0, -1) : quizActors);
+  }, [isMobile]);
 
   useEffect(() => {
     if (currentStepCount <= 1) {
@@ -70,10 +81,10 @@ export default function QuizSelectActors() {
     <g
       className={`transition-all duration-1000`}
     >
-      {quizActors.map((actor, index) => {
+      {actors.map((actor, index) => {
         if ((currentStepCount > 1 && correctActors.includes(actor)) || currentStepCount == 1) {
-          const x = 60 + (index * 28);
-          const y = 66
+          const x = startX + (index * 28);
+          const y = startY;
           return (
             <QuizActorButton
               key={`quiz-${actor}`}

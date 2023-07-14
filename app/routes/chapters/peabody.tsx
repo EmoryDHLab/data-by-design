@@ -20,7 +20,7 @@ import PeabodySandbox from "~/components/peabody/PeabodySandbox";
 import FootnotesList from "~/components/FootnotesList";
 import Scrollytell from "~/components/peabody/PeabodyScrollytell";
 import Quotation from "~/components/Quotation";
-import PeabodyQuiz from "~/components/peabody/PeabodyQuiz";
+import Quiz from "~/components/peabody/quiz/Quiz";
 import PeabodyBarGraph from "~/components/peabody/PeabodyBarGraph";
 import LEDChart from "~/components/peabody/LEDChart";
 import figures from "~/data/figures/peabody.json";
@@ -431,7 +431,7 @@ export default function PeabodyPage() {
         </Column>
       </TwoColumnLayout>
 
-      <PeabodyQuiz />
+      <Quiz />
 
       <TwoColumnLayout className="pt-20">
         <Column>
