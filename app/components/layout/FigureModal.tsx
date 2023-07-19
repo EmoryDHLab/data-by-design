@@ -36,7 +36,7 @@ export default function FigureModal({ children, figure, loading, hide, className
   return (
     <figure
       ref={figureRef}
-      className={`${inColumn ? "md:ml-24" : ""} ${className ?? ""}`}
+      className={`${inColumn ? "md:ml-24" : "md:mt-8"} ${className ?? ""}`}
       {...interactiveOptions}
     >
 

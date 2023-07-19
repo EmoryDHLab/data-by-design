@@ -34,10 +34,10 @@ function DoubleSlideShow() {
     >
       {figureGroups?.map((group) => {
         return (
-          <figure key={`double-group-${group.figures[0].fileName}`} className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center mx-24 md:mx-44 lg:mx-80">
+          <figure key={`double-group-${group.figures[0].fileName}`} className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center mx-24 md:mx-44 lg:mx-80 items-center">
             {group.figures.map((figure) => {
               return (
-                <FigureModal key={`double-fig-${figure.fileName}`} figure={figure} className="md:my-auto">
+                <FigureModal key={`double-fig-${figure.fileName}`} figure={figure}>
                   <picture>
                     <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
                     <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />

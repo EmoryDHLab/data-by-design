@@ -15,7 +15,7 @@ export default function StudentChartTwo() {
         </p>
       </div>
       <div className="flex items-center justify-between p-10 font-duboisNarrow">
-        <p className="2xl:text-[16px] text-md uppercase w-96">
+        <p className="2xl:text-[16px] text-md uppercase w-1/3 md:w-96">
           prepared and executed by
           <br />
           tanvi sharma, anna mola,

@@ -1,35 +1,54 @@
-import { classNames } from "~/utils";
-import { useContext } from "react";
+import Carousel from "nuka-carousel";
+import FigureObj from "../layout/FigureObj";
+import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
-import ImageModal from "~/components/layout/ImageModal";
+import figures from "~/data/figures/dubois.json";
+
+const FIGURES = [
+  figures["ch5-03-georgia"],
+  figures["ch5-04a-city"],
+  figures["ch5-04b-illiteracy"],
+  figures["ch5-04c-owners"],
+  figures["ch5-06a-letter"],
+]
 
 export default function HoverImages1() {
   const { hoverState } = useContext(ChapterContext);
-  let imageSource = "/images/dubois/ch5-03-georgia.png";
+  const [currentHover, setCurrentHover] = useState<number>(0);
 
-  if (hoverState === "City") {
-    imageSource = "/images/dubois/ch5-04a-city.png";
-  }
-
-  if (hoverState === "Illiteracy") {
-    imageSource = "/images/dubois/ch5-04b-illiteracy.png";
-  }
-
-  if (hoverState === "Owners") {
-    imageSource = "/images/dubois/ch5-04c-owners.png";
-  }
-
-  if (hoverState === "Value") {
-    imageSource = "/images/dubois/ch5-06a-letter.png";
-  }
-
-  // —————————————————
+  useEffect(() => {
+    switch (hoverState) {
+      case "City":
+        setCurrentHover(1);
+        break;
+      case "Illiteracy":
+        setCurrentHover(2);
+        break;
+      case "Owners":
+        setCurrentHover(3);
+        break;
+        case "Value":
+          setCurrentHover(4);
+          break;
+        default:
+        setCurrentHover(0);
+    }
+  }, [hoverState, setCurrentHover]);
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="border-duboisPrimaryHalfOpacity max-w-xl overflow-hidden">
-        <ImageModal src={imageSource} alt="" />
-      </div>
+    <div className="ml-24 hidden md:block">
+      <Carousel
+        withoutControls
+        slideIndex={currentHover}
+        swiping={false}
+        animation="fade"
+      >
+        {FIGURES.map((figure) => {
+          return (
+            <FigureObj key={figure.fileName} figure={figure} className="w-full" />
+          )
+        })}
+      </Carousel>
     </div>
   );
 }

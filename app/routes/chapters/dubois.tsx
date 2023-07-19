@@ -1,4 +1,3 @@
-import Carousel from "nuka-carousel";
 import ChapterTitle from "~/components/ChapterTitle";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import InlineFootnote from "~/components/InlineFootnote";
@@ -11,15 +10,11 @@ import { useState } from "react";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
-import FullBleed from "~/components/layout/FullBleed";
 
 import FootnotesList from "~/components/FootnotesList";
-import Figure from "~/components/layout/Figure";
 
-import SlideShow from "~/components/layout/SlideShow";
 import figures from "~/data/figures/dubois.json";
 
-import ImageModal from "~/components/layout/ImageModal";
 import Quotation from "~/components/Quotation";
 import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
@@ -28,6 +23,8 @@ import HoverImages2 from "~/components/dubois/HoverImages2";
 
 import ImageCaption from "~/components/ImageCaption";
 import DoubleSlideShow from "~/components/dubois/DoubleSlideShow";
+import FigureObj from "~/components/layout/FigureObj";
+import SlideShow from "~/components/layout/SlideShow";
 
 export default function DuboisChapter() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -51,7 +48,6 @@ export default function DuboisChapter() {
         title="Between Data and Truth"
         subtitle="W.E.B. Du Bois’s “Data Portraits”"
       />
-      {/* <div className="leading-7"> */}
       <CenteredLayout>
         <p className="first-paragraph">
           October 4th, 1899, was the first day of the fall term at Atlanta
@@ -93,14 +89,8 @@ export default function DuboisChapter() {
           <InlineFootnote index={3}></InlineFootnote>
         </p>
       </CenteredLayout>
-      {/* Question: Is this the correct use of Full Bleed here? Does it have to be a child of CenteredLayou*/}
-      <FullBleed>
-        <ImageModal
-          src="/images/dubois/ch5-01-phila.png"
-          alt=""
-          loading="lazy"
-        />
-      </FullBleed>
+
+      <FigureObj figure={figures["ch5-01-phila"]} className="mx-2 md:mx-12 text-sm md:text-base" />
 
       <CenteredLayout>
         <ImageCaption>
@@ -183,9 +173,8 @@ export default function DuboisChapter() {
       <DocumentViewer />
 
       <TwoColumnLayout>
-        <Column className="px-10">
-          <div className="leading-7">
-            <span className="font-normal" style={{ color: "rgb(41, 41, 41)" }}>
+        <Column>
+            <p>
               The first chart of <cite>The Georgia Negro </cite>
               series, which functions as its title page, makes clear how Du Bois
               understood the twofold purpose of the project. Below a pair of
@@ -196,92 +185,82 @@ export default function DuboisChapter() {
               a single typical state of the United States.” The second advances
               the argument of the series: “The problem of the 20 the century is
               the problem of the color line.”
-            </span>
+            </p>
             <p>
-              <span>
                 These words would reappear several years later in
                 <cite>The Souls of Black Folk </cite> (19n03), where they would
                 become “perhaps Du Bois’s most famous indictment of the
                 centrality of race and racism to modern American sociopolitical
                 life,” as architectural historian Mabel O. Wilson explains.
                 <InlineFootnote index={7}></InlineFootnote>
-              </span>
-              <span>But Du Bois mounts the same case through his charts. </span>
-              <span className="font-normal">
+              But Du Bois mounts the same case through his charts.
                 Both through his choices about what data to visualize, and about
                 how to visualize them, Du Bois advances a clear argument about
                 the nation’s Black citizens: not only about the{" "}
-              </span>
-              <span>
                 progress that the nation’s Black citizens had made up to that
                 date, but also about the extent of the challenges that remained
                 to be addressed.{" "}
-              </span>
             </p>
-            <p className="pt-10">
-              <span>
-                While the first several charts in the series make use of
-                familiar visual forms&mdash;maps, bar charts, and line
-                graphs&mdash;in order to introduce the exhibition’s
-                international viewership to the state of Georgia and its
-                significance as an object of study, the visual style shifts to
-                altogether new terrain once the focus on Georgia’s Black
-                residents has been established.{" "}
-                <HoverText hoverState="City" className="font-medium">
-                  In his comparative representation of the places where
-                  Georgia’s Black citizens reside, for example, Du Bois brings
-                  together aspects of the bar chart and the line chart along
-                  with a new form of spiral graph{" "}
-                </HoverText>
-                in order to give animacy to the presence of Black people in each
-                of type of locale.{" "}
-                <HoverText hoverState="Illiteracy" className="font-medium">
-                  In a later chart, which documents the decrease in illiteracy
-                  rates in the years between 1860 and 1900,
-                </HoverText>{" "}
-                Du Bois makes use of what graphic designer Silas Munro describes
-                as a “lattice-like arrangement,” in which an otherwise standard
-                bar is folded at a right angle in order to further accentuate
-                the decreasing rate of illiteracy. Du Bois elaborates upon this
-                technique in a{" "}
-                <HoverText hoverState="Owners" className="font-medium">
-                  later chart, which compares the numbers of Black property
-                  owners, and the value of their properties, in two Georgia
-                  cities.
-                </HoverText>{" "}
-                Another unique chart in this series, which{" "}
-                <HoverText hoverState="Value" className="font-medium">
-                  plots the “assessed value of household and kitchen furniture”
-                  owned by Black Georgians, takes the standard bar chart and
-                  bends it into a spiral, concentrating the viewer’s focus on
-                  the cumulative value of the population’s material possessions
-                  in addition to its growth in time.
-                </HoverText>
-              </span>
+            <p>
+              While the first several charts in the series make use of
+              familiar visual forms&mdash;maps, bar charts, and line
+              graphs&mdash;in order to introduce the exhibition’s
+              international viewership to the state of Georgia and its
+              significance as an object of study, the visual style shifts to
+              altogether new terrain once the focus on Georgia’s Black
+              residents has been established.{" "}
+              <HoverText hoverState="City" className="font-medium">
+                In his comparative representation of the places where
+                Georgia’s Black citizens reside, for example, Du Bois brings
+                together aspects of the bar chart and the line chart along
+                with a new form of spiral graph{" "}
+              </HoverText>
+              in order to give animacy to the presence of Black people in each
+              of type of locale.{" "}
+              <HoverText hoverState="Illiteracy" className="font-medium">
+                In a later chart, which documents the decrease in illiteracy
+                rates in the years between 1860 and 1900,
+              </HoverText>{" "}
+              Du Bois makes use of what graphic designer Silas Munro describes
+              as a “lattice-like arrangement,” in which an otherwise standard
+              bar is folded at a right angle in order to further accentuate
+              the decreasing rate of illiteracy. Du Bois elaborates upon this
+              technique in a{" "}
+              <HoverText hoverState="Owners" className="font-medium">
+                later chart, which compares the numbers of Black property
+                owners, and the value of their properties, in two Georgia
+                cities.
+              </HoverText>{" "}
+              Another unique chart in this series, which{" "}
+              <HoverText hoverState="Value" className="font-medium">
+                plots the “assessed value of household and kitchen furniture”
+                owned by Black Georgians, takes the standard bar chart and
+                bends it into a spiral, concentrating the viewer’s focus on
+                the cumulative value of the population’s material possessions
+                in addition to its growth in time.
+              </HoverText>
             </p>
-          </div>
         </Column>
         <Column shouldPin={true} className="p-10">
           <HoverImages1 />
-          <div className="font-dubois text-center mt-10 w-5/6">
-            <p>
-              <span>Above: The introductory image of </span>
-              <cite>The Georgia Negro: A Social Study, </cite>
-              <span>
-                the first set of charts included in the Paris Exposition. Image
-                courtesy of the Library of Congress, Prints &amp; Photographs
-                Division,{" "}
-              </span>
-              <span>LC-DIG-ppmsca-33863.</span>
-            </p>
-          </div>
         </Column>
       </TwoColumnLayout>
+
+      <SlideShow
+        className="block md:hidden bg-duboisPrimary w-full py-10"
+        figures={[
+          figures["ch5-03-georgia"],
+          figures["ch5-04a-city"],
+          figures["ch5-04b-illiteracy"],
+          figures["ch5-04c-owners"],
+          figures["ch5-06a-letter"],
+         ]}
+      />
 
       <ChapterSectionTitle title="A Visual Method of Making History" />
 
       <TwoColumnLayout>
-        <Column className="px-10">
+        <Column>
           <p>
             As the series unfolds, so too does its argument about the progress
             of the state’s Black citizens, and it does so in a way in which the
@@ -320,115 +299,114 @@ export default function DuboisChapter() {
           </p>
 
           <p>
-            <span>
-              An unnamed interlocutor in this series is the US Federal
-              Government, which for each of the three previous national
-              censuses, had created a “statistical atlas” that visualized the
-              data that had been collected. The most recent atlas, based on the
-              results of the 1890 Census, had been published only two years
-              earlier, in 1898. Most famous today for its visual depiction of
-              the closing of the American frontier, in its own time the atlas
-              was motivated by a more academic goal: “popularizing and extending
-              the study of statistics.”
-              <InlineFootnote index={8}></InlineFootnote>
-            </span>
+            An unnamed interlocutor in this series is the US Federal
+            Government, which for each of the three previous national
+            censuses, had created a “statistical atlas” that visualized the
+            data that had been collected. The most recent atlas, based on the
+            results of the 1890 Census, had been published only two years
+            earlier, in 1898. Most famous today for its visual depiction of
+            the closing of the American frontier, in its own time the atlas
+            was motivated by a more academic goal: “popularizing and extending
+            the study of statistics.”
+            <InlineFootnote index={8}></InlineFootnote>
           </p>
           <p>
-            <span>
-              The 409 maps and diagrams began, as Du Bois’s did, by introducing
-              viewers to{" "}
-              <HoverText hoverState="Map" className="font-medium">
-                the population of the United States.
-              </HoverText>{" "}
-              Through by-then standard bar charts, pie charts, and line graphs,
-              as well as its own creative use of pattern and visual form, the
-              Atlas included, for example, a{" "}
-              <HoverText hoverState="Populations" className="font-medium">
-                prototypal bump chart that ranked each state according to its
-                population;
-              </HoverText>{" "}
-              a map that illustrated{" "}
-              <HoverText hoverState="Gender" className="font-medium">
-                {" "}
-                the spatial distribution of the nation’s male population; and
-                another that illustrated{" "}
-              </HoverText>{" "}
-              <HoverText hoverState="Race" className="font-medium">
-                the spatial distribution of the nation’s Black population.
-              </HoverText>{" "}
-              <HoverText hoverState="Race-Distribution" className="font-medium">
-                (Another chart used area charts in small multiples in order
-                compare certain state’s Black and white populations).
-              </HoverText>{" "}
-              And while race was certainly of concern in the census; indeed,
-              race remains one of the lighting rod issues of the census, even
-              today&mdash;it was not the <cite>Statistical Atlas’s </cite>
-              main concern. Indeed, after a series of charts early in the atlas
-              that visualized the nation’s Black population, the focus of the
-              atlas shifts,
-              <HoverText hoverState="Foreign" className="font-medium">
-                {" "}
-                turning first to the nation’s immigrant population{" "}
-              </HoverText>{" "}
-              before expanding outward to consider other features altogether:
-              <HoverText hoverState="Age-Sex" className="font-medium">
-                {" "}
-                the population’s age and gender breakdown,
-              </HoverText>{" "}
-              <HoverText hoverState="Religion" className="font-medium">
-                its religion,
-              </HoverText>{" "}
-              <HoverText hoverState="Occupation" className="font-medium">
-                the occupations of its inhabitants, and more.
-              </HoverText>
-            </span>{" "}
+            The 409 maps and diagrams began, as Du Bois’s did, by introducing
+            viewers to{" "}
+            <HoverText hoverState="Map" className="font-medium">
+              the population of the United States.
+            </HoverText>{" "}
+            Through by-then standard bar charts, pie charts, and line graphs,
+            as well as its own creative use of pattern and visual form, the
+            Atlas included, for example, a{" "}
+            <HoverText hoverState="Populations" className="font-medium">
+              prototypal bump chart that ranked each state according to its
+              population;
+            </HoverText>{" "}
+            a map that illustrated{" "}
+            <HoverText hoverState="Gender" className="font-medium">
+              {" "}
+              the spatial distribution of the nation’s male population; and
+              another that illustrated{" "}
+            </HoverText>{" "}
+            <HoverText hoverState="Race" className="font-medium">
+              the spatial distribution of the nation’s Black population.
+            </HoverText>{" "}
+            <HoverText hoverState="Race-Distribution" className="font-medium">
+              (Another chart used area charts in small multiples in order
+              compare certain state’s Black and white populations).
+            </HoverText>{" "}
+            And while race was certainly of concern in the census; indeed,
+            race remains one of the lighting rod issues of the census, even
+            today&mdash;it was not the <cite>Statistical Atlas’s </cite>
+            main concern. Indeed, after a series of charts early in the atlas
+            that visualized the nation’s Black population, the focus of the
+            atlas shifts,
+            <HoverText hoverState="Foreign" className="font-medium">
+              {" "}
+              turning first to the nation’s immigrant population{" "}
+            </HoverText>{" "}
+            before expanding outward to consider other features altogether:
+            <HoverText hoverState="Age-Sex" className="font-medium">
+              {" "}
+              the population’s age and gender breakdown,
+            </HoverText>{" "}
+            <HoverText hoverState="Religion" className="font-medium">
+              its religion,
+            </HoverText>{" "}
+            <HoverText hoverState="Occupation" className="font-medium">
+              the occupations of its inhabitants, and more.
+            </HoverText>
           </p>
 
           <p>
-            <span>Du Bois was clearly influenced by the </span>
-            <span>Atlas</span>
-            <span>
-              . Several of the diagrams created for the Paris Exposition
-              precisely mirror the form of those created for the{" "}
-            </span>
-            <span>Atlas</span>
-            <span>
-              . Du Bois’s graduated area chart of “The Amalgamation of White and
-              Black elements of the Population in the United States,” for
-              example, takes the same visual form as the chart in the{" "}
-            </span>
-            <span>Atlas</span>
-            <span>
-              {" "}
-              depicting “Growth of the Elements of the Population: 1790-1890.”
-              Similarly, the combined area and bar chart form that Du Bois ¸
-              employs for his chart of “Conjugal Condition of American Negroes
-              according to Age Periods” is the very same as the chart in the{" "}
-            </span>
-            <span>Atlas</span>
-            <span>
-              {" "}
-              depicting “Conjugal Condition of the Population by Age and Sex, in
-              proportion to the total number of each group.” The notable
-              difference within each pair is, of course, Du Bois’s focus on the
-              Black population alone. And for Du Bois, this focus was the point:
-              the nation’s Black population was itself diverse, and it was
-              thriving. By adopting the visual typologies of the{" "}
-            </span>
-            <span>Statistical Atlas </span>
-            <span>
-              in order to make his claims, Du Bois underscores his textual
-              argument about the “small nation of people” within the larger
-              United States by creating a national statistical atlas of their
-              own.
-            </span>
+            Du Bois was clearly influenced by the Atlas. Several of the diagrams
+            created for the Paris Exposition precisely mirror the form of those
+            created for the Atlas. Du Bois’s graduated area chart of “The Amalgamation
+            of White and Black elements of the Population in the United States,” for
+            example, takes the same visual form as the chart in the Atlas
+            depicting “Growth of the Elements of the Population: 1790-1890.”
+            Similarly, the combined area and bar chart form that Du Bois ¸
+            employs for his chart of “Conjugal Condition of American Negroes
+            according to Age Periods” is the very same as the chart in the
+            Atlas depicting “Conjugal Condition of the Population by Age and Sex, in
+            proportion to the total number of each group.” The notable
+            difference within each pair is, of course, Du Bois’s focus on the
+            Black population alone. And for Du Bois, this focus was the point:
+            the nation’s Black population was itself diverse, and it was
+            thriving. By adopting the visual typologies of the Statistical Atlas
+            in order to make his claims, Du Bois underscores his textual
+            argument about the “small nation of people” within the larger
+            United States by creating a national statistical atlas of their
+            own.
           </p>
         </Column>
-        <Column shouldPin={true} className="p-10">
+        <Column shouldPin={true}>
           <HoverImages2 />
           {/* Comment: Look at scroll for both of these. Might be better to ultimately make it one image that changes */}
         </Column>
       </TwoColumnLayout>
+
+      <SlideShow
+        className="block md:hidden bg-duboisPrimary w-full py-10"
+        figures={[
+          figures["ch5-05a-countries"],
+          figures["ch5-05a-countries"],
+          figures["ch5-05b-occupations"],
+          figures["ch5-05c-freedom"],
+          figures["ch5-05d-newspapers"],
+          figures["ch5-06b-map"],
+          figures["ch5-04d-value"],
+          figures["ch5-07a-populations"],
+          figures["ch5-07b-gender"],
+          figures["ch5-07c-race"],
+          figures["ch5-07d-race-distrib"],
+          figures["ch5-07e-foreign"],
+          figures["ch5-07f-age-sex"],
+          figures["ch5-07g-religion"],
+          figures["ch5-07h-occupation"],
+        ]}
+      />
 
       <ChapterSectionTitle title="Between Chart and Photograph" />
       <CenteredLayout>
@@ -466,19 +444,7 @@ export default function DuboisChapter() {
           </span>
         </p>
 
-        <ImageModal
-          src="/images/dubois/ch5-09-exhibit.png"
-          alt=""
-          loading="lazy"
-          width="100%"
-        />
-
-        <ImageCaption className="text-center mt-10 ml-16 w-5/6">
-          Above: A photo of the “Exposition des Nègres D'Amérique” as it was
-          installed at the 1900 Exposition Universelle in Paris. Image courtesy
-          of the Library of Congress, Prints &amp; Photographs Division,
-          LC-DIG-ppmsca-08994 .
-        </ImageCaption>
+        <FigureObj figure={figures["ch5-09-exhibit"]} />
 
         <p>
           <span className="font-normal">
@@ -691,29 +657,7 @@ export default function DuboisChapter() {
           <span> </span>
           <span>the photographs together, to put on public display.</span>
         </p>
-        <div className="flex flex-col items-center middle-full">
-          <div>
-            <ImageModal
-              src="/images/dubois/ch5-11-property.png"
-              alt=""
-              loading="lazy"
-              width="100%"
-            />
-          </div>
-          <div className="caption text-center mt-10 w-5/6">
-            <p>
-              <span>
-                Above: Plate 22, “Assessed Valuation of All Taxable Property
-                Owned by Georgia Negroes,” which depicts (among other things) a
-                red ray cutting through the history of Black property ownership.
-                Image courtesy of the Library of Congress, Prints &amp;
-                Photographs Division,{" "}
-              </span>
-              <span>LC-DIG-ppmsca-33884</span>
-              <span>.</span>
-            </p>
-          </div>
-        </div>
+        <FigureObj figure={figures["ch5-11-property"]} />
       </CenteredLayout>
       <ChapterSectionTitle title="Education, Collaboration, and Credit" />
       <TwoColumnLayout>
@@ -769,20 +713,7 @@ export default function DuboisChapter() {
           </p>
         </Column>
         <Column className="md:ml-12">
-          <Figure
-            images={[
-              {
-                src: "/images/dubois/ch5-12-series.png",
-                alt: "",
-              },
-            ]}
-          >
-            Above: The title image of the second set of charts prepared for the
-            Paris Exposition, “A Series of Statistical Charts Illustrating the
-            Condition of the Descendants of Former African Slaves Now Resident
-            in the United States of America.” Image courtesy of the Library of
-            Congress, Prints &amp; Photographs Division, LC-DIG-ppmsca-08994.
-          </Figure>
+          <FigureObj figure={figures["ch5-12-series"]} />
         </Column>
       </TwoColumnLayout>
 
@@ -849,21 +780,8 @@ export default function DuboisChapter() {
             </span>
           </p>
         </Column>
-        <Column className="md:ml-12">
-          <Figure
-            images={[
-              {
-                src: "/images/dubois/ch5-14-rogers.png",
-                alt: "",
-              },
-            ]}
-          >
-            Above: The page in the Atlanta University Bulletin that records the
-            current occupations of AU alumni. Also note the number of alumni
-            working as teachers&mdash;Rogers’s eventual employ as well. Image
-            courtesy of the Archives Research Center, Digital Commons @ Robert
-            W. Woodruff Library, Atlanta University Center
-          </Figure>
+        <Column shouldPin>
+          <FigureObj figure={figures["ch5-14-rogers"]} />
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>

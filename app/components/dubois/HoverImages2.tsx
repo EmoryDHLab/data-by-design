@@ -1,65 +1,94 @@
-import { classNames } from "~/utils";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
-import ImageModal from "~/components/layout/ImageModal";
+import Carousel from "nuka-carousel";
+import FigureObj from "../layout/FigureObj";
+import figures from "~/data/figures/dubois.json";
+
+const FIGURES = [
+  figures["ch5-05a-countries"],
+  figures["ch5-05a-countries"],
+  figures["ch5-05b-occupations"],
+  figures["ch5-05c-freedom"],
+  figures["ch5-05d-newspapers"],
+  figures["ch5-06b-map"],
+  figures["ch5-04d-value"],
+  figures["ch5-07a-populations"],
+  figures["ch5-07b-gender"],
+  figures["ch5-07c-race"],
+  figures["ch5-07d-race-distrib"],
+  figures["ch5-07e-foreign"],
+  figures["ch5-07f-age-sex"],
+  figures["ch5-07g-religion"],
+  figures["ch5-07h-occupation"],
+];
 
 export default function HoverImages2() {
   const { hoverState } = useContext(ChapterContext);
-  let imageSource = "/images/dubois/ch5-05a-countries.png";
+  const [currentHover, setCurrentHover] = useState<number>(0);
 
-  if (hoverState === "Countries") {
-    imageSource = "/images/dubois/ch5-05a-countries.png";
-  }
-
-  if (hoverState === "Occupations") {
-    imageSource = "/images/dubois/ch5-05b-occupations.png";
-  }
-
-  if (hoverState === "Freedom") {
-    imageSource = "/images/dubois/ch5-05c-freedom.png";
-  }
-
-  if (hoverState === "Newspapers") {
-    imageSource = "/images/dubois/ch5-05d-newspapers.png";
-  }
-
-  if (hoverState === "Letter") {
-    imageSource = "/images/dubois/ch5-06b-map.png";
-  }
-  if (hoverState === "Map") {
-    imageSource = "/images/dubois/ch5-04d-value.png";
-  }
-  if (hoverState === "Populations") {
-    imageSource = "/images/dubois/ch5-07a-populations.png";
-  }
-  if (hoverState === "Gender") {
-    imageSource = "/images/dubois/ch5-07b-gender.png";
-  }
-  if (hoverState === "Race") {
-    imageSource = "/images/dubois/ch5-07c-race.png";
-  }
-  if (hoverState === "Race-Distribution") {
-    imageSource = "/images/dubois/ch5-07d-race-distrib.png";
-  }
-  if (hoverState === "Foreign") {
-    imageSource = "/images/dubois/ch5-07e-foreign.png";
-  }
-  if (hoverState === "Age-Sex") {
-    imageSource = "/images/dubois/ch5-07f-age-sex.png";
-  }
-
-  if (hoverState === "Religion") {
-    imageSource = "/images/dubois/ch5-07g-religion.png";
-  }
-  if (hoverState === "Occupation") {
-    imageSource = "/images/dubois/ch5-07h-occupation.png";
-  }
+  useEffect(() => {
+    switch (hoverState) {
+      case "Countries":
+        setCurrentHover(1);
+        break;
+      case "Occupations":
+        setCurrentHover(2);
+        break;
+      case "Freedom":
+        setCurrentHover(3);
+        break;
+      case "Newspapers":
+        setCurrentHover(4);
+        break;
+      case "Letter":
+        setCurrentHover(5);
+        break;
+      case "Map":
+        setCurrentHover(6);
+        break;
+      case "Populations":
+        setCurrentHover(7);
+        break;
+      case "Gender":
+        setCurrentHover(8);
+        break;
+      case "Race":
+        setCurrentHover(9);
+        break;
+      case "Race-Distribution":
+        setCurrentHover(10);
+        break;
+      case "Foreign":
+        setCurrentHover(11);
+        break;
+      case "Age-Sex":
+        setCurrentHover(12);
+        break;
+      case "Religion":
+        setCurrentHover(13);
+        break;
+      case "Occupation":
+        setCurrentHover(14);
+        break;
+      default:
+        setCurrentHover(0);
+    }
+  }, [hoverState]);
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="border-duboisPrimaryHalfOpacity pt-10 max-w-xl overflow-hidden">
-        <ImageModal src={imageSource} alt="" />
-      </div>
+    <div className="ml-24 hidden md:block max-w-3xl">
+      <Carousel
+        withoutControls
+        slideIndex={currentHover}
+        swiping={false}
+        animation="fade"
+      >
+        {FIGURES.map((figure) => {
+          return (
+            <FigureObj key={figure.fileName} figure={figure} className="w-full" />
+          )
+        })}
+      </Carousel>
     </div>
   );
 }

@@ -15,8 +15,8 @@ export default function StudentChartOne() {
           bois's research.
         </p>
       </div>
-      <div className="flex justify-between items-center p-10 font-duboisNarrow">
-        <p className="2xl:text-[16px] text-md text-center uppercase w-96">
+      <div className="flex flex-col md:flex-row justify-between items-center p-10 font-duboisNarrow">
+        <p className="2xl:text-[16px] text-md text-center uppercase md:w-96">
           prepared and executed by
           <br />
           tanvi sharma, anna mola,
