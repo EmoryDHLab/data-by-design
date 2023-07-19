@@ -1,3 +1,4 @@
+import Carousel from "nuka-carousel";
 import ChapterTitle from "~/components/ChapterTitle";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import InlineFootnote from "~/components/InlineFootnote";
@@ -26,6 +27,7 @@ import HoverImages1 from "~/components/dubois/HoverImages1";
 import HoverImages2 from "~/components/dubois/HoverImages2";
 
 import ImageCaption from "~/components/ImageCaption";
+import DoubleSlideShow from "~/components/dubois/DoubleSlideShow";
 
 export default function DuboisChapter() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -552,10 +554,11 @@ export default function DuboisChapter() {
           </span>
         </p>
       </CenteredLayout>
-      <SlideShow
-        className="block text-white bg-black w-full py-10"
-        figures={[figures["ch5-03-georgia"], figures["ch5-03-georgia"], figures["ch5-03-georgia"]]}
-      />
+
+      <section className="text-white bg-black w-full py-10">
+        <DoubleSlideShow />
+      </section>
+
       <CenteredLayout>
         <p>
           <span className="font-normal">

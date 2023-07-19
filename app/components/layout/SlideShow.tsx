@@ -1,7 +1,7 @@
 import Carousel from "nuka-carousel";
 import { useDeviceContext } from "~/hooks";
 
-const leftControls = ({
+export const leftControls = ({
   previousDisabled,
   previousSlide,
 }) => {
@@ -20,7 +20,7 @@ const leftControls = ({
   );
 };
 
-const rightControls = ({
+export const rightControls = ({
   nextDisabled,
   nextSlide,
 }) => {
@@ -42,7 +42,6 @@ const rightControls = ({
 
 const SlideShow = ({ figures, className, children }) => {
   const { isMobile, isDesktop } = useDeviceContext();
-  console.log("🚀 ~ file: SlideShow.tsx:45 ~ SlideShow ~ isMobile, isDesktop:", isMobile, isDesktop)
 
   return (
     <section className={`mx-auto ${className ?? ""}`}>
