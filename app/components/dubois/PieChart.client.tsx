@@ -1,5 +1,6 @@
 import { Circle } from "~/components/dubois/Circle";
 import { useEffect } from "react";
+import { useDeviceContext } from "~/hooks";
 import p5 from "p5";
 import type { Student, StudentData } from "~/components/dubois/types";
 
@@ -139,6 +140,8 @@ function pieChart(p5: p5, studentData: StudentData, diameter: number) {
 }
 
 export default function PieChart({ studentData }: Props) {
+  const { isMobile } = useDeviceContext();
+
   useEffect(() => {
     function script(p5: p5) {
       let circles: Circle[] = [];
@@ -147,8 +150,8 @@ export default function PieChart({ studentData }: Props) {
         //   width: 40vw
         //   maxWidth: 500px;
         p5.createCanvas(
-          Math.min(p5.windowWidth * 0.4, 500),
-          Math.min(p5.windowWidth * 0.4, 500)
+          Math.min(isMobile ? p5.windowWidth - 100 : p5.windowWidth * 0.4, 500),
+          Math.min(isMobile ? p5.windowWidth - 100 : p5.windowWidth * 0.4, 500)
         ).parent("pieChart");
 
         placeCategories(p5, studentData, circles);
@@ -194,7 +197,11 @@ export default function PieChart({ studentData }: Props) {
         p5.redraw();
       };
     }
-    new p5(script);
-  }, [studentData]);
-  return <div id="pieChart" />;
+    const p5Copy = new p5(script);
+
+    return () => {
+      p5Copy.remove();
+    }
+  }, [studentData, isMobile]);
+  return <div id="pieChart" className="flex justify-center md:items-center" />;
 }

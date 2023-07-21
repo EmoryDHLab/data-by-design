@@ -1,5 +1,6 @@
 import { classNames } from "~/utils";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useDeviceContext } from "~/hooks";
 import StudentChartOne from "~/components/dubois/StudentChartOne";
 import StudentChartTwo from "~/components/dubois/StudentChartTwo";
 import StudentChartThree from "~/components/dubois/StudentChartThree";
@@ -19,27 +20,42 @@ const charts: { [key in Chart]: () => ReactNodeLike } = {
 
 export function StudentChart() {
   const [activeChart, setActiveChart] = useState<Chart>(Chart.One);
+  const [yOffset, setYOffset] = useState<number>(-120);
+  const { isMobile } = useDeviceContext();
+  const containerRef = useRef();
+
   const ChartComponent = charts[activeChart] || null;
+
+  useEffect(() => {
+    setYOffset(isMobile ? -80 : -120);
+  }, [isMobile]);
+
+  const switchChart = (chart) => {
+    setActiveChart(chart);
+    const position = containerRef.current?.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: position, behavior: 'smooth' });
+  }
+
   return (
-    <div className="flex flex-col items-center max-w-[800px] ">
-      <span>
+    <div className="flex flex-col items-center">
+      <nav className="sticky top-9 md:top-12 w-full bg-offwhite text-center py-2 z-10 border-b-4 border-duboisSecondary">
         <button
           onClick={() => {
-            setActiveChart(Chart.One);
+            switchChart(Chart.One);
           }}
           className={classNames(
-            "cut-corners p-2 uppercase font-dubois",
+            "cut-corners p-2 uppercase font-dubois md:mx-2 text-sm md:text-base",
             activeChart === Chart.One ? "bg-duboisSecondary" : "bg-white"
           )}
         >
           Chart One
-        </button>{" "}
+        </button>
         <button
           onClick={() => {
-            setActiveChart(Chart.Two);
+            switchChart(Chart.Two);
           }}
           className={classNames(
-            "cut-corners p-2 uppercase font-dubois",
+            "cut-corners p-2 uppercase font-dubois md:mx-2 text-sm md:text-base",
             activeChart === Chart.Two ? "bg-duboisSecondary" : "bg-white"
           )}
         >
@@ -47,17 +63,19 @@ export function StudentChart() {
         </button>{" "}
         <button
           onClick={() => {
-            setActiveChart(Chart.Three);
+            switchChart(Chart.Three);
           }}
           className={classNames(
-            "cut-corners p-2 uppercase font-dubois",
+            "cut-corners p-2 uppercase font-dubois md:mx-2 text-sm md:text-base",
             activeChart === Chart.Three ? "bg-duboisSecondary" : "bg-white"
           )}
         >
           Chart Three
         </button>
-      </span>
-      <ChartComponent />
+      </nav>
+      <section ref={containerRef}>
+        <ChartComponent />
+      </section>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { ReactNodeLike } from "prop-types";
+import type { ReactNodeLike } from "prop-types";
 
 interface Props {
   children: ReactNodeLike;
@@ -13,7 +13,9 @@ export default function CenteredLayout({
 }: Props) {
   return (
     <div
-      className={`grid-wrapper mx-12 md:mx-24 md:py-5 ${className ?? ""}`}
+      className={
+        `flex-none md:flex md:flex-col justify-between mx-12 md:mx-24 lg:mx-48 xl:mx-64 2xl:mx-80 ${className ?? ""}`
+      }
       {...props}
     >
       {children}

@@ -1,4 +1,5 @@
 import Carousel from "nuka-carousel";
+import { useDeviceContext } from "~/hooks";
 import { leftControls, rightControls } from "../layout/SlideShow";
 import figures from "~/data/figures/dubois.json";
 import FigureModal from "../layout/FigureModal";
@@ -6,30 +7,32 @@ import FigureModal from "../layout/FigureModal";
 const figureGroups = [
   {
     figures: [figures["service-pnp-cph-3"], figures["925"]],
-    caption: "group one"
+    caption: "Side-by-side of photograph of African American men, women and children outside of church and chart of Statistics of Negro Church Organizations."
   },
   {
     figures: [figures["service-pnp-cph-4"], figures["ch5-05d-newspapers"]],
-    caption: "group two"
+    caption: "Side-by-side of photograph of Press room of the Planet newspaper, Richmond, Virginia and chart of American Negro newspapers and periodicals."
   },
   {
     figures: [figures["service-pnp-cph-1"], figures["888"]],
-    caption: "group three"
+    caption: "Side-by-side of photograph Portrait of African American Carpenters union, Jacksonville, Florida and chart of Occupations of Georgia Negroes."
   },
   {
     figures: [figures["service-pnp-cph-2"], figures["879"]],
-    caption: "group four"
+    caption: "Side-by-side of photograph Extempo club of Fisk University, Nashville, Tenn. and chart of Number of Negro students taking the various courses of study offered in Georgia schools."
   }
 ]
 
 function DoubleSlideShow() {
+  const { isMobile, isDesktop } = useDeviceContext();
+
   return (
     <Carousel
-      renderCenterLeftControls={<></>}
-      renderCenterRightControls={<></>}
+      renderCenterLeftControls={isMobile ? leftControls : <></>}
+      renderCenterRightControls={isMobile ? rightControls : <></>}
       renderBottomCenterControls={<></>}
-      renderBottomLeftControls={leftControls}
-      renderBottomRightControls={rightControls}
+      renderBottomLeftControls={isDesktop ? leftControls : <></>}
+      renderBottomRightControls={isDesktop ? rightControls : <></>}
       wrapAround
     >
       {figureGroups?.map((group) => {
@@ -42,7 +45,7 @@ function DoubleSlideShow() {
                     <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
                     <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
                     <img
-                      className="mx-auto"
+                      className="mx-auto max-h-[66vh]"
                       src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
                       alt={figure.altText}
                       title={figure.title}
@@ -51,7 +54,7 @@ function DoubleSlideShow() {
                 </FigureModal>
               )
             })}
-            <figcaption className="font-dubois mt-3 w-1/2 mx-auto md:col-span-2"
+            <figcaption className="font-dubois mt-3 md:w-1/2 mx-auto md:col-span-2"
               dangerouslySetInnerHTML={{
                 __html: group.caption,
               }}

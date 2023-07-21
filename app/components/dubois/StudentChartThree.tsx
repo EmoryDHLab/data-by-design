@@ -1,3 +1,9 @@
 export default function StudentChartThree() {
-  return <div></div>;
+  return (
+    <>
+      <p className="leading-8 tracking-wider">
+        COMING SOON
+      </p>
+    </>
+  );
 }

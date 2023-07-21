@@ -5,51 +5,44 @@ import PieChart from "~/components/dubois/PieChart.client";
 
 export default function StudentChartTwo() {
   return (
-    <div>
-      <div className="mt-6 flex flex-col font-duboisWide uppercase">
-        <p className="font-bold xl:text-xl 2xl:text-2xl text-lg text-center">
-          a series of statistical charts, illustrating details about the
-          graduates of atlanta university, and other black college graduates in
-          the united states, who contributed their knowledge, labor, and data to
-          du bois’s research program.
-        </p>
-      </div>
-      <div className="flex items-center justify-between p-10 font-duboisNarrow">
-        <p className="2xl:text-[16px] text-md uppercase w-1/3 md:w-96">
-          prepared and executed by
-          <br />
-          tanvi sharma, anna mola,
-          <br />
-          nicholas yang, and lauren klein
-          <br />
-          under the auspices of <br />
-          the digital humanities lab <br />
-          emory university, atlanta, ga. <br />
-          united states of america
-        </p>
-        <div className="w-2/5 flex flex-col items-center">
-          <USAMap />
-        </div>
-      </div>
-      <div className="flex flex-col items-center font-duboisNarrow uppercase text-center 2xl:text-2xl text-lg mt-8">
-        <p className="m-6 font-bold w-4/5">
+    <>
+      <p className="font-bold text-lg md:text-xl 2xl:text-2xl text-center font-duboisWide uppercase">
+        a series of statistical charts, illustrating details about the
+        graduates of atlanta university, and other black college graduates in
+        the united states, who contributed their knowledge, labor, and data to
+        du bois's research program.
+      </p>
+      <section className="flex flex-col md:flex-row font-duboisNarrow">
+      <ul className="text-base md:text-xl text-md text-center uppercase my-6 md:my-0">
+          <li className="md:mt-3">prepared and executed by</li>
+          <li className="md:mt-3">tanvi sharma, anna mola,</li>
+          <li className="md:mt-3">nicholas yang, and lauren klein</li>
+          <li className="md:mt-3">under the auspices of</li>
+          <li className="md:mt-3">the digital humanities lab</li>
+          <li className="md:mt-3">emory university, atlanta, ga.</li>
+          <li className="md:mt-3">united states of america</li>
+        </ul>
+        <USAMap />
+      </section>
+      <section className="mt-6 font-dubois uppercase text-center text-lg">
+        <p>
           the previous chart visualized all 330 graduates of atlanta university
           as of 1898. in 1910, du bois and his students undertook a larger study
           of black college graduates across the entire united states.
-        </p>{" "}
-        <p className="m-6 font-bold">
+        </p>
+        <p>
           this chart visualizes the names, occupations, and present locations
           (when known) of the 163 college graduates of atlanta university who
           were included in the 1910 study, as determined by the 1909-1910
           catalogue of the officers and students of atlanta university.
         </p>
-      </div>
-      <div className="flex justify-between my-20">
+      </section>
+      <section className="md:flex md:justify-center md:space-x-16 lg:space-x-24 mt-12">
         <Legend categories={studentData.categories} />
         <PieChart studentData={studentData} />
-      </div>
-      <div className="mt-6 font-dubois uppercase">
-        <p className="text-center">
+      </section>
+      <section className="mt-6 mx-4 md:mx-auto font-dubois uppercase text-justify md:text-lg leading-8">
+      <p className="leading-8 tracking-wider">
           this visualization attempts to honor the 3856 black college graduates
           from across the united states whose lives were behind the data
           included in the 1910 atlanta university study, the college-bred negro
@@ -66,7 +59,7 @@ export default function StudentChartTwo() {
           graduates of the other 140 colleges included in the study whose names
           were not recorded as data.
         </p>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

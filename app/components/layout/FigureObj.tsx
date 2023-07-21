@@ -11,6 +11,7 @@ interface Props {
   figure: ChapterFigure;
   figures: array[ChapterFigure];
   className?: string;
+  captionClassName?: string;
   loading?: string;
   figureTransforms?: string;
 }
@@ -33,6 +34,7 @@ export default function FigureObj({
   loading,
   children,
   figureTransforms,
+  captionClassName,
 }: Props) {
   const { hideSensitiveState, accentColor, backgroundColor } = useContext(ChapterContext);
   const [hide, setHide] = useState<boolean>(hideSensitiveState && figure.sensitive);
@@ -65,7 +67,7 @@ export default function FigureObj({
         />
       </section>
       <Picture figure={figure} />
-      <Caption figure={figure} />
+      <Caption figure={figure} className={captionClassName} />
     </FigureModal>
   );
 };
