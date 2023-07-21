@@ -17,14 +17,15 @@ export default function ChapterSectionTitle({ title }: Props) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       id={id}
-      className="py-5 md:my-5 md:py-20 w-full"
+      className={`bg-${accentColor} w-8/12 md:my-12`}
+      role="button"
     >
       <a
         href={`#${id}`}
-        className={`bg-${accentColor} hover:bg-${accentColor}-translucent p-4 font-dubois text-xl lg:text-2xl flex justify-center items-center text-${accentTextColor}`}
+        className={`hover:bg-${accentColor}-translucent p-4 font-dubois text-xl lg:text-2xl flex justify-center items-center text-${accentTextColor}`}
       >
-        <Hyperlink visibility={!isHovered ? "hidden" : ""} />{" "}
-        <span className="px-4 text-center">{title}</span>
+        <Hyperlink className="md:mr-4 hidden md:block" visibility={isHovered ? "" : "hidden"} />
+        <span className="text-center">{title}</span>
       </a>
     </CenteredLayout>
   );
