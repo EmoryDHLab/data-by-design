@@ -4,7 +4,7 @@ import { ChapterContext } from "~/chapterContext";
 export default function Footer() {
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   return (
-    <footer>
+    <footer className="mt-8">
       <div
         className={`grid sm:grid-cols-12 sm:gap-x-6 p-10 pt-20 bg-${backgroundColor} text-${primaryTextColor}`}
       >
