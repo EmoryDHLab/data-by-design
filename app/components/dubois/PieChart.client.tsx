@@ -145,13 +145,14 @@ export default function PieChart({ studentData }: Props) {
   useEffect(() => {
     function script(p5: p5) {
       let circles: Circle[] = [];
+
+      // The p5.windowWidth does not seem to reliable when the window is resized.
+      const pieSize = Math.min(isMobile ? window.innerWidth - 100 : window.innerWidth * 0.4, 500)
+
       p5.setup = function () {
-        // Equivalent of
-        //   width: 40vw
-        //   maxWidth: 500px;
         p5.createCanvas(
-          Math.min(isMobile ? p5.windowWidth - 100 : p5.windowWidth * 0.4, 500),
-          Math.min(isMobile ? p5.windowWidth - 100 : p5.windowWidth * 0.4, 500)
+          pieSize,
+          pieSize
         ).parent("pieChart");
 
         placeCategories(p5, studentData, circles);
@@ -186,17 +187,8 @@ export default function PieChart({ studentData }: Props) {
           ball.released();
         });
       };
-      p5.windowResized = function () {
-        p5.resizeCanvas(
-          Math.min(p5.windowWidth * 0.4, 500),
-          Math.min(p5.windowWidth * 0.4, 500)
-        );
-        circles = [];
-
-        placeCategories(p5, studentData, circles);
-        p5.redraw();
-      };
     }
+
     const p5Copy = new p5(script);
 
     return () => {
