@@ -21,7 +21,7 @@ import Consent from "~/components/Consent";
 import FigureObj from "~/components/layout/FigureObj";
 
 import figures from "~/data/figures/brooks.json";
-import ClarksonTour from "~/components/brooks/ClarksonTour";
+import ClarksonScrollytell from "~/components/brooks/ClarksonScrollytell";
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -306,7 +306,7 @@ export default function BrooksPage() {
       />
 
       <TwoColumnLayout>
-        <Column>
+        <Column shouldPin>
           <p>
             Independent of the Parrey report on which Elford based his "Plan,"
             William Clarkston also pursued his own research—again, both
@@ -329,144 +329,118 @@ export default function BrooksPage() {
             authority."
             <InlineFootnote index={9} />
             Drawing from the conventions of naval architecture, which were by
-            that time strongly established, Clarkson created{" "}
-            <HoverText hoverState="clarksonCrossSections">
-              a series of cross-sections
-            </HoverText>
-            {" "}that showed each deck from above and from the{" "}
-            <HoverText hoverState="sideView">
-              side—cross-sections
-            </HoverText>
-            {" "}that, like the Plymouth Committee's "Plan,"
-            included human figures intended to indicate how the captives were
-            confined. The result was a set of schematics that carried with them
-            the connotations of accuracy and precision that were associated with
-            the naval diagrams of the time, and yet also enlisted what Ian
-            Baucom characterizes as a "sympathetic grammar" intended to draw
-            those who viewed the chart to the antislavery cause.
-          </p>
-          <p>
-            Clarkson's revised chart, entitled "Description of a Slave Ship,"
-            was—like the original "Plan,"--accompanied by explanatory text. In
-            addition to the text, Clarkson also included a{" "}
-            <HoverText hoverState="clarksonTables">
-              set of tables
-            </HoverText>
-            {" "}intended to reinforce the factual nature of the evidence visualized
-            above. The tables included measurements of the actual ship, along
-            with a scale that indicated how they corresponded to the image; as
-            well as several small tables that presented information about the
-            number of captives that had actually been held on the ship, as well
-            as a comparison between the number of actual captives and those
-            pictured on the diagram, making clear that while the image is
-            informed by data, it is not a direct representation of those numbers
-            and lives.
-          </p>
-          <p>
-            Finley makes the case that the diagram was intended to be viewed in
-            relation to the text, pointing to how each figure is labeled with a
-            number that corresponds to a place in the text. "Each is incomplete
-            without the other," she explains. "Once having moved from the
-            visuals to the text, these two aspects of the broadside virtually
-            require the individual reader to move back and forth between these
-            two elements."
-            <InlineFootnote index={10} />
-          </p>
-          <p>
-            At this juncture one point becomes important to underscore: these
-            "readers," like the figures themselves, had a definitive race: they
-            were white readers whose own lives were far removed from the actual
-            experience of being enslaved. Indeed, Clarkson had a very clear
-            audience in mind with his design of the "Description": the Members
-            of Parliament--which included one of the London Committee's own
-            members, William Wilberforce--who were scheduled to vote on a motion
-            to abolish the slave trade in several weeks' time. Wilberforce
-            believed, and even said as much, that if the MPs "could actually see
-            one thousandth part of the evils of that practice which they have,
-            for so many years, under one pretense or another, been prevailed on
-            to suffer to be continued," that they would quickly come around to
-            the abolitionist cause.
-            <InlineFootnote index={11} />
-            Thus the "Description" can be viewed, according to Finley, as a
-            "necessary weapon"--one which restages the violence of the slave
-            trade in its attempt to give that violence visual form.
-            <InlineFootnote index={12} />
-          </p>
-          <p>
-            The viewers intended to be affected by this image were white
-            abolitionists, and the response that was intended was one of
-            imaginative, sympathetic response. Clarkson himself frames the value
-            of the image in these terms, recalling how "No one saw it but he was
-            impressed. It spoke to him in a language, which was at once
-            intelligible and irresistible. It brought forth tears of sympathy in
-            behalf of the sufferers, and it fixed their sufferings in his
-            heart."
-            <InlineFootnote index={13} />
-            Here, Ian Baucom argues, Clarkson mobilizes the ideas of the
-            Scottish Enlightment as he enlists the "facts" of the slave trade in
-            the interest of engaging the "otherwise disinterested spectator in
-            the sufferings of an actually unseen other."
-            <InlineFootnote index={14} />
-            But for this transformation to take place, the viewer would be
-            required to enlist their own imagination in imagining the suffering
-            of others. As Finley explains, "The image is a starting point for
-            the viewer - a point of reference while the text enables the reader
-            to elaborate on the image in her mind."
-            <InlineFootnote index={15} />
-          </p>
-          <p>
-            But there is a second set of people less explicitly, but no less
-            clearly engaged by the "Description": those whose lives the
-            abolitionists intended to represent. The sociologist Simone Browne
-            emphasizes this point in her own analysis of the "Description,"
-            underscoring how the original "vantage point was meant to be that of
-            the predominantly white and male abolitionists and lawmakers."
-            Browne connects the "Description" to Donna Haraway's critique of
-            visualization as manufacturing a "view from nowhere," a view that is
-            "always unmarked, and therefore already markedly white and male, and
-            one that claims a power to 'represent while escaping
-            representation.'" <InlineFootnote index={16} />
-            Browne continues: "What this visual representation of the slave ship
-            points to is the primacy given in these abolitionist texts to white
-            gazes and vantage points to the trauma of slavery, where the tiny
-            black figures are made to seem androgynous, interchangeable, and
-            replicable." <InlineFootnote index={17} />
-            Gordon Wood elaborates this point: "This image supports an
-            abolitionist cultural agenda which dictated that slaves were to be
-            visualized in a manner which emphasized their total passivity and
-            prioritized their status as helpless victims."{" "}
-            <InlineFootnote index={18} /> Bernier also lends her support to this
-            interpretation: "Working not to humanize but to propagandize black
-            subjects bought and sold into slavery, the iconographic emphasis
-            across these broadsides betrays a white British commitment to
-            exposing slavery's atrocities by imagining black women, men, and
-            children not as individualized subjects but as unindividualized
-            objects defined solely by their incarceration on board a slave ship
-            whose physical dimensions alone were considered sufficient to offer
-            visual confirmation of the atrocities of the trade."{" "}
-            <InlineFootnote index={19} />
-          </p>
-          <p>
-            The sole evidence of the agency of the enslaved are, as some have
-            observed, the shackles that bind the arms of the men. The shackles
-            point to the potetial for insurrection—a point underscored in the
-            accompanying text. And yet even in their inclusion they also
-            exclude: only the men are shackeled, even as women just as often
-            contributed to planning the insurrections on the ships. And with
-            respect to Spillers's "scaled inequalities," Clarkson is not immune.
-            Whether as a commentary on the "objectified status of the black
-            female body and the history of rape and sexual abuse to which black
-            female slaves were subjected by their white male captors," or
-            because of his own racist perceptions about the sexuality of Black
-            women, Clarkson depicts the women on the ship in exaggerated sexual
-            form.
-            <InlineFootnote index={20} />
+            that time strongly established.
           </p>
         </Column>
-        <Column shouldPin>
-          <ClarksonTour figure={figures["4-description-1789"]} />
+        <Column>
+          <FigureObj figure={figures["4-description-1789"]} />
         </Column>
       </TwoColumnLayout>
+
+      <ClarksonScrollytell />
+
+      <CenteredLayout>
+        <p>
+          Finley makes the case that the diagram was intended to be viewed in
+          relation to the text, pointing to how each figure is labeled with a
+          number that corresponds to a place in the text. "Each is incomplete
+          without the other," she explains. "Once having moved from the
+          visuals to the text, these two aspects of the broadside virtually
+          require the individual reader to move back and forth between these
+          two elements."
+          <InlineFootnote index={10} />
+        </p>
+        <p>
+          At this juncture one point becomes important to underscore: these
+          "readers," like the figures themselves, had a definitive race: they
+          were white readers whose own lives were far removed from the actual
+          experience of being enslaved. Indeed, Clarkson had a very clear
+          audience in mind with his design of the "Description": the Members
+          of Parliament--which included one of the London Committee's own
+          members, William Wilberforce--who were scheduled to vote on a motion
+          to abolish the slave trade in several weeks' time. Wilberforce
+          believed, and even said as much, that if the MPs "could actually see
+          one thousandth part of the evils of that practice which they have,
+          for so many years, under one pretense or another, been prevailed on
+          to suffer to be continued," that they would quickly come around to
+          the abolitionist cause.
+          <InlineFootnote index={11} />
+          Thus the "Description" can be viewed, according to Finley, as a
+          "necessary weapon"--one which restages the violence of the slave
+          trade in its attempt to give that violence visual form.
+          <InlineFootnote index={12} />
+        </p>
+        <p>
+          The viewers intended to be affected by this image were white
+          abolitionists, and the response that was intended was one of
+          imaginative, sympathetic response. Clarkson himself frames the value
+          of the image in these terms, recalling how "No one saw it but he was
+          impressed. It spoke to him in a language, which was at once
+          intelligible and irresistible. It brought forth tears of sympathy in
+          behalf of the sufferers, and it fixed their sufferings in his
+          heart."
+          <InlineFootnote index={13} />
+          Here, Ian Baucom argues, Clarkson mobilizes the ideas of the
+          Scottish Enlightment as he enlists the "facts" of the slave trade in
+          the interest of engaging the "otherwise disinterested spectator in
+          the sufferings of an actually unseen other."
+          <InlineFootnote index={14} />
+          But for this transformation to take place, the viewer would be
+          required to enlist their own imagination in imagining the suffering
+          of others. As Finley explains, "The image is a starting point for
+          the viewer - a point of reference while the text enables the reader
+          to elaborate on the image in her mind."
+          <InlineFootnote index={15} />
+        </p>
+        <p>
+          But there is a second set of people less explicitly, but no less
+          clearly engaged by the "Description": those whose lives the
+          abolitionists intended to represent. The sociologist Simone Browne
+          emphasizes this point in her own analysis of the "Description,"
+          underscoring how the original "vantage point was meant to be that of
+          the predominantly white and male abolitionists and lawmakers."
+          Browne connects the "Description" to Donna Haraway's critique of
+          visualization as manufacturing a "view from nowhere," a view that is
+          "always unmarked, and therefore already markedly white and male, and
+          one that claims a power to 'represent while escaping
+          representation.'" <InlineFootnote index={16} />
+          Browne continues: "What this visual representation of the slave ship
+          points to is the primacy given in these abolitionist texts to white
+          gazes and vantage points to the trauma of slavery, where the tiny
+          black figures are made to seem androgynous, interchangeable, and
+          replicable." <InlineFootnote index={17} />
+          Gordon Wood elaborates this point: "This image supports an
+          abolitionist cultural agenda which dictated that slaves were to be
+          visualized in a manner which emphasized their total passivity and
+          prioritized their status as helpless victims."{" "}
+          <InlineFootnote index={18} /> Bernier also lends her support to this
+          interpretation: "Working not to humanize but to propagandize black
+          subjects bought and sold into slavery, the iconographic emphasis
+          across these broadsides betrays a white British commitment to
+          exposing slavery's atrocities by imagining black women, men, and
+          children not as individualized subjects but as unindividualized
+          objects defined solely by their incarceration on board a slave ship
+          whose physical dimensions alone were considered sufficient to offer
+          visual confirmation of the atrocities of the trade."{" "}
+          <InlineFootnote index={19} />
+        </p>
+        <p>
+          The sole evidence of the agency of the enslaved are, as some have
+          observed, the shackles that bind the arms of the men. The shackles
+          point to the potetial for insurrection—a point underscored in the
+          accompanying text. And yet even in their inclusion they also
+          exclude: only the men are shackeled, even as women just as often
+          contributed to planning the insurrections on the ships. And with
+          respect to Spillers's "scaled inequalities," Clarkson is not immune.
+          Whether as a commentary on the "objectified status of the black
+          female body and the history of rape and sexual abuse to which black
+          female slaves were subjected by their white male captors," or
+          because of his own racist perceptions about the sexuality of Black
+          women, Clarkson depicts the women on the ship in exaggerated sexual
+          form.
+          <InlineFootnote index={20} />
+        </p>
+      </CenteredLayout>
 
       {/* What does it mean that we can see these details in the bodies, but not the faces? Thus "Because of its crudeness, this image has a dialectical power at the spectator oscillates between these different possible frames and responses to the image." 40 Browne, "It gets a little tricky…" // COME BACK TO EQUIANO HERE, TENSION IN VISIT; SIGNIFICANCE THAT HE'D PUBLISH HIS OWN NARRATIVE A FEW MONTHS LATER // OR MAYBE END W/ VISUALIZATION OF SLAVE SHIP REBELLIONS, VIZ. CHARTS IN ESSAYS IN BROOKS FOLDER. Ideas for this:
           Empty ship divided into parts to show # of rebellions, # of ppl
