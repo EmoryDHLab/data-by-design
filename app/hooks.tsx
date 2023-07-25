@@ -38,7 +38,6 @@ export function useDeviceContext() {
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log("🚀 ~ file: hooks.tsx:42 ~ useEffect ~ width:", width)
     if (!width) return;
     if (width <= parseInt(tailwindConfig.theme.screens.sm)) {
       setIsMobile(true);
