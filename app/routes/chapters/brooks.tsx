@@ -21,13 +21,12 @@ import Consent from "~/components/Consent";
 import FigureObj from "~/components/layout/FigureObj";
 
 import figures from "~/data/figures/brooks.json";
-import ClarksonScrollytell from "~/components/brooks/ClarksonScrollytell";
+import ClarksonSideBySideScrollytell from "~/components/brooks/ClarksonSideBySideScrollytell";
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
   const [docHeightState, setDocHeightState] = useState<number>(0);
   const [hideSensitiveState, setHideSensitiveState] = useState<boolean>(true);
-
 
   return (
     <ChapterContext.Provider
@@ -337,7 +336,7 @@ export default function BrooksPage() {
         </Column>
       </TwoColumnLayout>
 
-      <ClarksonScrollytell />
+      <ClarksonSideBySideScrollytell />
 
       <CenteredLayout>
         <p>

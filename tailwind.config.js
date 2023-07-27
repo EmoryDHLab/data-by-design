@@ -162,6 +162,7 @@ module.exports = {
     "h-2/5",
     "h-20",
     "h-[80vh]",
+    "h-[125vh]",
     "grid-rows-1",
   ],
 };

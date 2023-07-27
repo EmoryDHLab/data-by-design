@@ -88,12 +88,12 @@ export default function BrooksScrollytell() {
   return (
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
-      scrollProgress={scrollProgress}
-      setScrollProgress={setScrollProgress}
-      triggers={triggers}
-      steps={steps}
-      className="w-screen"
-    >
+        scrollProgress={scrollProgress}
+        setScrollProgress={setScrollProgress}
+        triggers={triggers}
+        steps={steps}
+        className="w-screen"
+      >
         <div
           className="cursor-pointer sticky pt-16 md:pt-0 top-0 h-screen grid grid-cols-1 md:content-end order-first"
         >
