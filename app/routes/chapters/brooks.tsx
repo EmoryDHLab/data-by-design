@@ -13,7 +13,6 @@ import Quotation from "~/components/Quotation";
 import InlineFootnote from "~/components/InlineFootnote";
 import BrooksScrollytell from "~/components/brooks/BrooksScrollytell";
 import FootnotesList from "~/components/FootnotesList";
-import BrooksChart from "~/components/brooks/BrooksChart";
 import SeraphiqueTour from "~/components/brooks/SeraphiqueTour";
 import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
@@ -22,6 +21,8 @@ import FigureObj from "~/components/layout/FigureObj";
 
 import figures from "~/data/figures/brooks.json";
 import ClarksonSideBySideScrollytell from "~/components/brooks/ClarksonSideBySideScrollytell";
+import { ClientOnly } from "remix-utils";
+import Voyages from "~/components/brooks/voyages/Voyages.client";
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -789,16 +790,16 @@ export default function BrooksPage() {
           the data, and insist on connecting numbers back to their richly lived
           lives?
         </p>
-        <p>ENDING VIS HERE, BLACK DATA, COVIDBLACK, SOMETHING HERE???</p>
-        {/* Runover
-
-            "A violence of enslavement and a violence of abstraction developed together and reinforced each other," he further declares. // enslavement and abstraction developed together */}
+        {/* Runover "A violence of enslavement and a violence of abstraction developed together and reinforced each other," he further declares. // enslavement and abstraction developed together */}
       </CenteredLayout>
-      <BrooksChart />
+
+      <ClientOnly>
+        {() => <Voyages />}
+      </ClientOnly>
+
       <CenteredLayout>
         <FootnotesList footnotes={brooksFootnotes} />
       </CenteredLayout>
-      {/* </Consent> */}
       <Footer />
     </ChapterContext.Provider>
   );
