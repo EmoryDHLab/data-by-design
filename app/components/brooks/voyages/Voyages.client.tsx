@@ -4,6 +4,7 @@ import p5 from "p5";
 import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
 import Toggle from "~/components/Toggle";
+import Slider from "./Slider";
 
 const MIN_YEAR = 1565;
 const MAX_YEAR = 1858;
@@ -12,17 +13,14 @@ function Voyages() {
   const windowSize = useWindowSize();
   const voyageTable = useRef();
   const colorTable = useRef();
-  const sliderLower = useRef();
-  const sliderUpper = useRef();
-  const sliderTextLower = useRef();
-  const sliderTextUpper = useRef();
   const p5Ref = useRef();
   const voyages = useRef([]);
   const filteredVoyages = useRef([]);
   const showAllRef = useRef<boolean>(false);
   const [showAllState, setShowAllState] = useState<boolean>(false);
-
   const [startYear, setStartYear] = useState<number>(MIN_YEAR);
+  const [endYear, setEndYear] = useState<number>(MIN_YEAR + 20);
+  const [yearRange, setYearRange] = useState<array>([MIN_YEAR, MIN_YEAR + 20]);
   const [width, setWidth] = useState<number | undefined>(window.outerWidth - 100);
   const [height, setHeight] = useState<number | undefined>(window.outerHeight / 3);
 
@@ -30,6 +28,23 @@ function Voyages() {
     setWidth(windowSize.width - 100);
     setHeight(windowSize.height / 3);
   }, [windowSize]);
+
+  useEffect(() => {
+    if (!p5Ref.current) return;
+    filteredVoyages.current = voyages.current.filter(obj => obj.year >= yearRange[0] && obj.year <= yearRange[1]);
+    filteredVoyages.current.forEach((filteredVoyage) => {
+      filteredVoyage.updateMinMax(
+        filteredVoyages.current.reduce((min, obj) => (obj.dur < min ? obj.dur : min), filteredVoyages.current[0].dur),
+        filteredVoyages.current.reduce((max, obj) => (obj.dur > max ? obj.dur : max), filteredVoyages.current[0].dur),
+        filteredVoyages.current.reduce((min, obj) => (obj.totalEmbarked < min ? obj.totalEmbarked : min), filteredVoyages.current[0].totalEmbarked),
+        filteredVoyages.current.reduce((max, obj) => (obj.totalEmbarked > max ? obj.totalEmbarked : max), filteredVoyages.current[0].totalEmbarked),
+        yearRange[0],
+        yearRange[1]
+      );
+    });
+    p5Ref.current.redraw();
+    // play();
+  }, [yearRange]);
 
   const toggleFunction = () => {
     showAllRef.current = !showAllRef.current;
@@ -39,52 +54,10 @@ function Voyages() {
 
   useEffect(() => {
     const initP5 = (p5: p5) => {
-      voyages.current.current = []; // The array containing all the voyages
+      voyages.current = []; // The array containing all the voyages
+      filteredVoyages.current = [];
       let t = 0;  // Transition parameter
       let nonResistanceStrokeWidth = 0; //the stroke width of non-resistance voyages curves
-
-      filteredVoyages.current = [];
-
-      const slideText = () => {
-        const progress = Math.floor(
-          ((sliderLower.current.value() - MIN_YEAR) * 100) / ((MAX_YEAR - 10) - MIN_YEAR)
-        );
-        sliderTextLower.current.style('left', `${(sliderLower.current.width - sliderTextLower.current.elt.clientWidth) * (progress / 100)}px`);
-        sliderTextUpper.current.style('left', `${(sliderUpper.current.width - sliderTextUpper.current.elt.clientWidth) * (progress / 100) + ((sliderUpper.current.width * 0.1) - 26)}px`);
-      }
-
-      const triggerTransformLower = () => {
-        slideText();
-        sliderUpper.current.value(sliderLower.current.value() + 10);
-        setStartYear(sliderLower.current.value());
-        filteredVoyages.current = voyages.current.filter(obj => obj.year >= sliderLower.current.value() && obj.year <= sliderUpper.current.value());
-        filteredVoyages.current.forEach((filteredVoyage) => {
-          filteredVoyage.updateMinMax(
-            filteredVoyages.current.reduce((min, obj) => (obj.dur < min ? obj.dur : min), filteredVoyages.current[0].dur),
-            filteredVoyages.current.reduce((max, obj) => (obj.dur > max ? obj.dur : max), filteredVoyages.current[0].dur),
-            filteredVoyages.current.reduce((min, obj) => (obj.totalEmbarked < min ? obj.totalEmbarked : min), filteredVoyages.current[0].totalEmbarked),
-            filteredVoyages.current.reduce((max, obj) => (obj.totalEmbarked > max ? obj.totalEmbarked : max), filteredVoyages.current[0].totalEmbarked),
-          );
-        });
-        p5.redraw();
-      }
-
-      const triggerTransformUpper = () => {
-        slideText();
-        sliderLower.current.value(sliderUpper.current.value() - 10);
-        setStartYear(sliderLower.current.value());
-        filteredVoyages.current = voyages.current.filter(obj => obj.year >= sliderLower.current.value() && obj.year <= sliderUpper.current.value());
-        filteredVoyages.current.forEach((filteredVoyage) => {
-          filteredVoyage.updateMinMax(
-            filteredVoyages.current.reduce((min, obj) => (obj.dur < min ? obj.dur : min), filteredVoyages.current[0].dur),
-            filteredVoyages.current.reduce((max, obj) => (obj.dur > max ? obj.dur : max), filteredVoyages.current[0].dur),
-            filteredVoyages.current.reduce((min, obj) => (obj.totalEmbarked < min ? obj.totalEmbarked : min), filteredVoyages.current[0].totalEmbarked),
-            filteredVoyages.current.reduce((max, obj) => (obj.totalEmbarked > max ? obj.totalEmbarked : max), filteredVoyages.current[0].totalEmbarked),
-          );
-        });
-
-        p5.redraw();
-      }
 
       //preload the voyage data and color data
       p5.preload = () => {
@@ -97,33 +70,6 @@ function Voyages() {
           width,
           height
         ).parent("voyageContainer");
-
-        //define the double slider
-        sliderLower.current = p5.createSlider(MIN_YEAR, MAX_YEAR - 10, MIN_YEAR, 1).parent("voyageControls");
-        sliderUpper.current = p5.createSlider(MIN_YEAR + 10, MAX_YEAR, MIN_YEAR + 10, 1).parent("voyageControls");
-
-        //set the width of the slider
-        sliderLower.current.style('width', (width - (width * 0.1)) + 'px');
-        sliderUpper.current.style('width', (width - (width * 0.1)) + 'px');
-        sliderUpper.current.style('left', (width * 0.1) + 'px');
-
-        //add dragging events to both sides of the slider
-        sliderLower.current.input(triggerTransformLower)
-        sliderUpper.current.input(triggerTransformUpper)
-
-        sliderTextLower.current = p5.createSpan().parent("#slider-labels");
-        sliderTextUpper.current = p5.createSpan().parent("#slider-labels");
-
-        sliderTextLower.current.style('font-size', '1rem');
-        sliderTextLower.current.style('margin-left', "0%")
-        sliderTextLower.current.style('color', 'white');
-        sliderTextLower.current.style('position', "relative");
-        sliderTextUpper.current.style('font-size', '1rem');
-        sliderTextUpper.current.style('color', 'white');
-        sliderTextUpper.current.style('color', 'white');
-        sliderTextUpper.current.style('position', "relative");
-        sliderTextUpper.current.style('left', `${(sliderUpper.current.width * 0.1) - 26}px`);
-
 
         let voyageRows = voyageTable.current.rows.filter((r) =>
           r.getNum("year_of_arrival_at_port_of_disembarkation") >= MIN_YEAR &&
@@ -149,8 +95,8 @@ function Voyages() {
               row.getNum("derived_duration"),
               colorTable.current,
               Math.floor(Math.random() * (MAX_YEAR - MIN_YEAR) + MIN_YEAR),
-              sliderLower.current,
-              sliderUpper.current,
+              yearRange[0],
+              yearRange[1],
               minEmbark,
               maxEmbark,
               height,
@@ -164,7 +110,7 @@ function Voyages() {
         });
 
         //filter the voyages out based on the values on the slider.
-        filteredVoyages.current = voyages.current.filter(obj => obj.year >= sliderLower.current.value() && obj.year <= sliderUpper.current.value());
+        filteredVoyages.current = voyages.current.filter(obj => obj.year >= yearRange[0] && obj.year <= yearRange[1]);
       };
 
       //The  main visualization
@@ -185,9 +131,6 @@ function Voyages() {
             filteredVoyages.current[index].show();
           }
         }
-
-        sliderTextLower.current.html(`${sliderLower.current.value()}`);
-        sliderTextUpper.current.html(`${sliderUpper.current.value()}`);
 
         if (!showAllRef.current || t >= 1) {
           p5.noLoop();
@@ -221,15 +164,11 @@ function Voyages() {
         </section>
         <section id="voyageContainer"></section>
         { width &&
-          <Axis width={width} height={height} start={startYear} end={startYear + 10} />
+          <Axis width={width} height={height} yearRange={yearRange} />
         }
-        <section id="slider-labels" className="flex items-start w-11/12">
-        </section>
         <section id="voyageControls" className="w-11/12 h-8 multi-range"></section>
-        <section className="flex w-11/12">
-          <p className="flex-none mt-0 mb-4">{MIN_YEAR}</p>
-          <p className="grow mt-0 mb-4"></p>
-          <p className="flex-none mt-0 mb-4">{MAX_YEAR}</p>
+        <section>
+          <Slider width={width} yearRange={yearRange} setYearRange={setYearRange} />
         </section>
       </div>
     </section>

@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import * as d3 from "d3";
 
-function Axis({ width, height, start, end }) {
+function Axis({ width, height, yearRange }) {
 
   useEffect(() => {
     const xScale = d3.scaleLinear()
-                   .domain([start, end])
+                   .domain(yearRange)
                    .range([0, width]);
 
     // Create axis
@@ -25,8 +25,8 @@ function Axis({ width, height, start, end }) {
       .attr("transform", `translate(50,20)`)
       .style("font-size", "1.25rem")
       .style('color', 'white')
-      .call(xAxis)
-  }, [start, end, width]);
+      .call(xAxis);
+  }, [yearRange, width]);
 
   return (
     <section id="axis-container">

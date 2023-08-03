@@ -11,8 +11,8 @@ class VoyageYear {
     dur,
     colorTable,
     shape_seed,
-    slider_lower,
-    slider_upper,
+    minYear,
+    maxYear,
     minEmbark,
     maxEmbark,
     height,
@@ -30,8 +30,8 @@ class VoyageYear {
     this.p = Math.floor(Math.random() * 676);
     this.r = r // was count needed?
     this.year = yr
-    this.distance_left = 10
-    this.distance_right = 10
+    this.distanceLeft = 10
+    this.distanceRight = 10
     this.isResistance = if_resis == 1
     this.dur = dur
     this.alpha = 100 // needed?
@@ -39,8 +39,8 @@ class VoyageYear {
     this.selected = 1; // needed?
     this.colorTable = colorTable;
     this.shape_seed = shape_seed;
-    this.slider_lower = slider_lower;
-    this.slider_upper = slider_upper;
+    this.minYear = minYear;
+    this.maxYear = maxYear;
     this.minEmbark = minEmbark;
     this.maxEmbark = maxEmbark;
     this.height = height;
@@ -57,41 +57,37 @@ class VoyageYear {
     this.shape_seed = shape_seed;
   }
 
-  updateMinMax(minDuration, maxDuration, minEmbark, maxEmbark) {
+  updateMinMax(minDuration, maxDuration, minEmbark, maxEmbark, minYear, maxYear) {
     this.minEmbark = minEmbark;
     this.maxEmbark = maxEmbark;
     this.minDuration = minDuration;
     this.maxDuration = maxDuration;
-  }
-
-  set_sw(sw){
-    this.sw = sw
-  }
-
-  set_selected(){
-    if(this.year >= start_year && this.year <= end_year){
-      this.selected = 1;
-    }else{
-      this.selected = 1;
-    }
+    this.minYear = minYear;
+    this.maxYear = maxYear;
   }
 
   show(){
     this.p5.randomSeed(this.shape_seed);
-    let voy_height = this.p5.map(this.totalEmbarked, this.minEmbark, this.maxEmbark, 0, this.height);
-    let rat = voy_height / this.height;
-    voy_height = this.height;
-    let yStart = -voy_height / 2;
+    let voyageHeight = this.p5.map(
+      this.totalEmbarked,
+      this.minEmbark,
+      this.maxEmbark,
+      0,
+      this.height
+    );
+    let rat = voyageHeight / this.height;
+    voyageHeight = this.height;
+    let yStart = - voyageHeight / 2;
     this.p5.push();
     this.p5.translate(
       this.p5.map(
         this.year,
-        this.slider_lower.value(),
-        this.slider_upper.value(),
+        this.minYear,
+        this.maxYear,
         40,
         this.width
       ),
-      voy_height / 2
+      voyageHeight / 2
     );
 
     // Add color
@@ -117,8 +113,8 @@ class VoyageYear {
     let max_ol = 300
     let max_width = 30
     let curveSeed = [this.dur, this.minDuration, this.maxDuration, 0, max_ol];
-    let lower = -this.distance_left - this.p5.map(...curveSeed);
-    let upper = this.distance_right + this.p5.map(...curveSeed);
+    let lower = -this.distanceLeft - this.p5.map(...curveSeed);
+    let upper = this.distanceRight + this.p5.map(...curveSeed);
     let c1 = this.p5.random(lower, upper);
     let c2 = this.p5.random(lower, upper);
     let c3 = this.p5.random(lower, upper);
@@ -130,19 +126,19 @@ class VoyageYear {
     this.p5.beginShape();
     this.p5.curveVertex(c6, yStart - 300 * rat);
     this.p5.curveVertex(c5, yStart - 300 * rat);
-    this.p5.curveVertex(c1, yStart + (voy_height / 5) * 1);
-    this.p5.curveVertex(c2, yStart + (voy_height / 5) * 2);
-    this.p5.curveVertex(c3, yStart + (voy_height / 5) * 3);
-    this.p5.curveVertex(c4, yStart + (voy_height / 5) * 4);
-    this.p5.curveVertex(c7, voy_height / 2 + 500 * rat);
+    this.p5.curveVertex(c1, yStart + (voyageHeight / 5) * 1);
+    this.p5.curveVertex(c2, yStart + (voyageHeight / 5) * 2);
+    this.p5.curveVertex(c3, yStart + (voyageHeight / 5) * 3);
+    this.p5.curveVertex(c4, yStart + (voyageHeight / 5) * 4);
+    this.p5.curveVertex(c7, voyageHeight / 2 + 500 * rat);
 
     let vertexLower = this.p5.map(this.totalEmbarked * (1 - this.mr), this.minEmbark, this.maxEmbark, 0, max_width);
     let vertexUpper = this.p5.map(this.totalEmbarked, this.minEmbark, this.maxEmbark, 0, max_width);
-    this.p5.curveVertex(c7 + this.p5.random(vertexLower, vertexUpper), voy_height / 2 + 500 * rat);
-    this.p5.curveVertex(c4 + this.p5.random(vertexLower, vertexUpper), yStart + (voy_height / 5) * 4);
-    this.p5.curveVertex(c3 + this.p5.random(vertexLower, vertexUpper), yStart + (voy_height / 5) * 3);
-    this.p5.curveVertex(c2 + this.p5.random(vertexLower, vertexUpper), yStart + (voy_height / 5) * 2);
-    this.p5.curveVertex(c1 + this.p5.random(vertexLower, vertexUpper), yStart + (voy_height / 5) * 1);
+    this.p5.curveVertex(c7 + this.p5.random(vertexLower, vertexUpper), voyageHeight / 2 + 500 * rat);
+    this.p5.curveVertex(c4 + this.p5.random(vertexLower, vertexUpper), yStart + (voyageHeight / 5) * 4);
+    this.p5.curveVertex(c3 + this.p5.random(vertexLower, vertexUpper), yStart + (voyageHeight / 5) * 3);
+    this.p5.curveVertex(c2 + this.p5.random(vertexLower, vertexUpper), yStart + (voyageHeight / 5) * 2);
+    this.p5.curveVertex(c1 + this.p5.random(vertexLower, vertexUpper), yStart + (voyageHeight / 5) * 1);
     this.p5.curveVertex(c5 + this.p5.random(vertexLower, vertexUpper), yStart - 300 * rat);
     this.p5.curveVertex(c6 + this.p5.random(vertexLower, vertexUpper), yStart - 300 * rat);
     this.p5.endShape(this.p5.CLOSE);
