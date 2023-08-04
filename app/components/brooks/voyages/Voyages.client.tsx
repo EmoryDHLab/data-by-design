@@ -5,21 +5,19 @@ import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
 import Toggle from "~/components/Toggle";
 import Slider from "./Slider";
+import voyageData from "~/data/brooks/voyages.json";
+import colors from "~/data/brooks/colors.json";
 
 const MIN_YEAR = 1565;
 const MAX_YEAR = 1858;
 
 function Voyages() {
   const windowSize = useWindowSize();
-  const voyageTable = useRef();
-  const colorTable = useRef();
   const p5Ref = useRef();
   const voyages = useRef([]);
   const filteredVoyages = useRef([]);
   const showAllRef = useRef<boolean>(false);
   const [showAllState, setShowAllState] = useState<boolean>(false);
-  const [startYear, setStartYear] = useState<number>(MIN_YEAR);
-  const [endYear, setEndYear] = useState<number>(MIN_YEAR + 20);
   const [yearRange, setYearRange] = useState<array>([MIN_YEAR, MIN_YEAR + 20]);
   const [width, setWidth] = useState<number | undefined>(window.outerWidth - 100);
   const [height, setHeight] = useState<number | undefined>(window.outerHeight / 3);
@@ -34,8 +32,8 @@ function Voyages() {
     filteredVoyages.current = voyages.current.filter(obj => obj.year >= yearRange[0] && obj.year <= yearRange[1]);
     filteredVoyages.current.forEach((filteredVoyage) => {
       filteredVoyage.updateMinMax(
-        filteredVoyages.current.reduce((min, obj) => (obj.dur < min ? obj.dur : min), filteredVoyages.current[0].dur),
-        filteredVoyages.current.reduce((max, obj) => (obj.dur > max ? obj.dur : max), filteredVoyages.current[0].dur),
+        filteredVoyages.current.reduce((min, obj) => (obj.duration < min ? obj.duration : min), filteredVoyages.current[0].duration),
+        filteredVoyages.current.reduce((max, obj) => (obj.duration > max ? obj.duration : max), filteredVoyages.current[0].duration),
         filteredVoyages.current.reduce((min, obj) => (obj.totalEmbarked < min ? obj.totalEmbarked : min), filteredVoyages.current[0].totalEmbarked),
         filteredVoyages.current.reduce((max, obj) => (obj.totalEmbarked > max ? obj.totalEmbarked : max), filteredVoyages.current[0].totalEmbarked),
         yearRange[0],
@@ -43,12 +41,11 @@ function Voyages() {
       );
     });
     p5Ref.current.redraw();
-    // play();
   }, [yearRange]);
 
   const toggleFunction = () => {
-    showAllRef.current = !showAllRef.current;
     setShowAllState(showAll => !showAll);
+    showAllRef.current = !showAllRef.current;
     p5Ref.current.redraw();
   }
 
@@ -56,14 +53,8 @@ function Voyages() {
     const initP5 = (p5: p5) => {
       voyages.current = []; // The array containing all the voyages
       filteredVoyages.current = [];
-      let t = 0;  // Transition parameter
+      let lerpAmount = 0;  // Transition parameter
       let nonResistanceStrokeWidth = 0; //the stroke width of non-resistance voyages curves
-
-      //preload the voyage data and color data
-      p5.preload = () => {
-        voyageTable.current = p5.loadTable("/data/p5_vis_4_all.csv","csv","header");
-        colorTable.current = p5.loadTable("/data/colors.csv", "csv", "header");
-      };
 
       p5.setup = () => {
         p5.createCanvas(
@@ -71,40 +62,29 @@ function Voyages() {
           height
         ).parent("voyageContainer");
 
-        let voyageRows = voyageTable.current.rows.filter((r) =>
-          r.getNum("year_of_arrival_at_port_of_disembarkation") >= MIN_YEAR &&
-          r.getNum("year_of_arrival_at_port_of_disembarkation") <= MAX_YEAR
-        );
-        let avgEmbarks = voyageRows.map((row) => row.getNum("total_embarked_18"));
-        let durations = voyageRows.map((row) => row.getNum("derived_duration"));
-        const minEmbark = p5.min(...avgEmbarks);
-        const maxEmbark = p5.max(...avgEmbarks);
-        const minDuration = p5.min(...durations);
-        const maxDuration = p5.max(...durations);
-        voyageRows.forEach((row) => {
+        voyageData.forEach((voyage) => {
+          const rgb = [
+            colors.reds[Math.floor(Math.random() * colors.reds.length)],
+            colors.greens[Math.floor(Math.random() * colors.greens.length)],
+            colors.blues[Math.floor(Math.random() * colors.blues.length)],
+          ];
+
           voyages.current.push(
             new VoyageYear(
               p5,
-              row.getString("voyage_id"),
-              row.getNum("total_embarked_18"),
-              row.getNum("mortality_rate"),
-              225,
-              0, // placeholder for "r"
-              row.getNum("year_of_arrival_at_port_of_disembarkation"),
-              row.getNum("if_res"),
-              row.getNum("derived_duration"),
-              colorTable.current,
-              Math.floor(Math.random() * (MAX_YEAR - MIN_YEAR) + MIN_YEAR),
+              voyage.id,
+              voyage.totalPeople,
+              voyage.mortalityRate,
+              voyage.year,
+              voyage.resistanceReported,
+              voyage.duration,
+              rgb,
               yearRange[0],
               yearRange[1],
-              minEmbark,
-              maxEmbark,
               height,
               width,
-              minDuration,
-              maxDuration,
               nonResistanceStrokeWidth,
-              t
+              lerpAmount
             )
           )
         });
@@ -116,15 +96,15 @@ function Voyages() {
       //The  main visualization
       p5.draw = () => {
         p5.background(28, 24, 23);
-        if(t < 1 && showAllRef.current){
-          t += 0.01;
+        if(lerpAmount < 1 && showAllRef.current){
+          lerpAmount += 0.01;
           nonResistanceStrokeWidth += 0.005;
         }
 
         for (const index in filteredVoyages.current) {
           if (showAllRef.current || filteredVoyages.current[index].isResistance) {
             filteredVoyages.current[index].updateTransition(
-              t,
+              lerpAmount,
               nonResistanceStrokeWidth,
               filteredVoyages.current[index].year
             );
@@ -132,7 +112,7 @@ function Voyages() {
           }
         }
 
-        if (!showAllRef.current || t >= 1) {
+        if (!showAllRef.current || lerpAmount >= 1) {
           p5.noLoop();
         } else {
           p5.loop();

@@ -90,17 +90,15 @@ function Slider({ width, setYearRange, yearRange }) {
             sliderWidth={sliderWidth}
             setSliderWidth={setSliderWidth}
             maxX={maxX.current}
+            year={yearRange[0]}
             start
-          >
-            {yearRange[0]}
-          </SliderHandle>
+          />
           <SliderHandle
             sliderWidth={sliderWidth}
             setSliderWidth={setSliderWidth}
             maxX={maxX.current}
-          >
-            {yearRange[1]}
-          </SliderHandle>
+            year={yearRange[1]}
+          />
         </SliderJoin>
       </g>
     </svg>

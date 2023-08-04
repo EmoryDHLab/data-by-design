@@ -1,17 +1,45 @@
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, children }) {
+function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }) {
   const circleRef = useRef();
+
+  const updateStart = (newX) => {
+    if (newX >= 0 && newX < sliderWidth[1] - 44) {
+      setSliderWidth([newX, sliderWidth[1]]);
+    } else if (newX < 0) {
+      setSliderWidth([0, sliderWidth[1]]);
+    }
+  };
+
+  const updateEnd = (newX) => {
+    if (newX <= maxX + 1 && newX > sliderWidth[0] + 44) {
+      setSliderWidth([sliderWidth[0], newX]);
+    } else {
+      setSliderWidth([sliderWidth[0], maxX]);
+    }
+  };
 
   const drag = (event) => {
     if (start) {
-      if (event.x >= 0 && event.x < sliderWidth[1] - 44) {
-        setSliderWidth([event.x, sliderWidth[1]]);
-      }
+      updateStart(event.x);
     } else {
-      if (event.x <= maxX + 1 && event.x > sliderWidth[0] + 44) {
-        setSliderWidth([sliderWidth[0], event.x]);
+      updateEnd(event.x);
+    }
+  };
+
+  const keyDown = ({ key }) => {
+    if (key === "ArrowRight") {
+      if (start) {
+        updateStart(sliderWidth[0] + 44);
+      } else {
+        updateEnd(sliderWidth[1] + 44);
+      }
+    } else if (key === "ArrowLeft") {
+      if (start) {
+        updateStart(sliderWidth[0] - 44);
+      } else {
+        updateEnd(sliderWidth[1] - 44);
       }
     }
   };
@@ -35,15 +63,15 @@ function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, children }) {
         fill="white"
         fontSize={20}
       >
-        <>
-          {children}
-        </>
+        {`${year}`}
       </text>
       <circle
         cy={0}
         cx={start ? sliderWidth[0] : sliderWidth[1]}
         r={8}
+        tabIndex={0}
         fill="white"
+        onKeyDown={keyDown}
       />
       <circle
         cy={0}

@@ -4,7 +4,6 @@ import * as d3 from "d3";
 function SliderJoin({ sliderWidth, setSliderWidth, yearRange, maxX, children }) {
   const rectRef = useRef();
   const offset = useRef(0);
-  const tenYearScaled = 87;
 
   const dragStart = (event) => {
     offset.current = event.x - sliderWidth[0];
@@ -23,22 +22,31 @@ function SliderJoin({ sliderWidth, setSliderWidth, yearRange, maxX, children }) 
     if (type !== "keydown") return;
 
     if (key === "ArrowRight") {
-      let newStart = sliderWidth[0] + tenYearScaled;
-      let newEnd = Math.ceil(sliderWidth[1] + tenYearScaled);
-      if (newEnd > maxX) {
-        newStart = sliderWidth[0];
-        newEnd = maxX;
+      const newRightX = sliderWidth[1] + (sliderWidth[1] - sliderWidth[0]);
+      if (newRightX <= maxX) {
+        setSliderWidth([
+          sliderWidth[1],
+          newRightX
+        ]);
+      } else {
+        setSliderWidth([
+          sliderWidth[0] + (maxX - sliderWidth[1]),
+          maxX
+        ]);
       }
-      setSliderWidth([newStart, newEnd]);
     } else if (key === "ArrowLeft") {
-      let newStart = sliderWidth[0] - tenYearScaled;
-      let newEnd = Math.ceil(sliderWidth[1] - tenYearScaled);
-      if (newStart < 0) {
-        newStart = 0;
-        newEnd = sliderWidth[1];
+      const newLeftX = sliderWidth[0] - (sliderWidth[1] - sliderWidth[0]);
+      if (newLeftX >= 0) {
+        setSliderWidth([
+          newLeftX,
+          sliderWidth[0]
+        ]);
+      } else {
+        setSliderWidth([
+          0,
+          sliderWidth[1] - sliderWidth[0]
+        ]);
       }
-      setSliderWidth([newStart, newEnd]);
-
     }
   };
 
