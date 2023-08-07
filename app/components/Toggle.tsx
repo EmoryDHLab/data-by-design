@@ -18,15 +18,18 @@ export default function Toggle({
   colorOn,
   colorOff,
   screenReaderMsg,
+  className,
 }: Props) {
   return (
     <Switch.Group>
       <Switch
         checked={checked}
         onChange={onChange}
+        onKeyDown={({ key }) => { if (key === "Enter") onChange() }}
+        tabIndex={0}
         className={`bg-${
           checked ? colorOn : colorOff
-        } relative inline-flex h-6 w-11 items-center rounded-full outline outline-2 outline-white`}
+        } relative inline-flex h-6 w-11 items-center rounded-full outline outline-2 outline-white ${className ?? ""}`}
       >
         <span className="sr-only">{screenReaderMsg}</span>
         <span
