@@ -8,8 +8,7 @@ import Slider from "./Slider";
 import voyageData from "~/data/brooks/voyages.json";
 import colors from "~/data/brooks/colors.json";
 
-const MIN_YEAR = 1565;
-const MAX_YEAR = 1858;
+const INITIAL_YEAR_RANGE = [1565, 1585];
 
 function Voyages() {
   const windowSize = useWindowSize();
@@ -18,7 +17,7 @@ function Voyages() {
   const filteredVoyages = useRef([]);
   const showAllRef = useRef<boolean>(false);
   const [showAllState, setShowAllState] = useState<boolean>(false);
-  const [yearRange, setYearRange] = useState<array>([MIN_YEAR, MIN_YEAR + 20]);
+  const [yearRange, setYearRange] = useState<array>(INITIAL_YEAR_RANGE);
   const [width, setWidth] = useState<number | undefined>(window.outerWidth - 100);
   const [height, setHeight] = useState<number | undefined>(window.outerHeight / 3);
 
@@ -79,8 +78,8 @@ function Voyages() {
               voyage.resistanceReported,
               voyage.duration,
               rgb,
-              yearRange[0],
-              yearRange[1],
+              INITIAL_YEAR_RANGE[0],
+              INITIAL_YEAR_RANGE[1],
               height,
               width,
               nonResistanceStrokeWidth,
@@ -90,7 +89,7 @@ function Voyages() {
         });
 
         //filter the voyages out based on the values on the slider.
-        filteredVoyages.current = voyages.current.filter(obj => obj.year >= yearRange[0] && obj.year <= yearRange[1]);
+        filteredVoyages.current = voyages.current.filter(obj => obj.year >= INITIAL_YEAR_RANGE[0] && obj.year <= INITIAL_YEAR_RANGE[1]);
       };
 
       //The  main visualization
@@ -138,6 +137,7 @@ function Voyages() {
           <Toggle
             checked={showAllState}
             onChange={toggleFunction}
+            className="focus:outline-brooksPrimary"
           >
             Show non-resistance voyages
           </Toggle>

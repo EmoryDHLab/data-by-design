@@ -4,53 +4,56 @@ import * as d3 from "d3";
 function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }) {
   const circleRef = useRef();
 
-  const updateStart = (newX) => {
-    if (newX >= 0 && newX < sliderWidth[1] - 44) {
-      setSliderWidth([newX, sliderWidth[1]]);
-    } else if (newX < 0) {
-      setSliderWidth([0, sliderWidth[1]]);
-    }
-  };
-
-  const updateEnd = (newX) => {
-    if (newX <= maxX + 1 && newX > sliderWidth[0] + 44) {
-      setSliderWidth([sliderWidth[0], newX]);
-    } else {
-      setSliderWidth([sliderWidth[0], maxX]);
-    }
-  };
-
-  const drag = (event) => {
-    if (start) {
-      updateStart(event.x);
-    } else {
-      updateEnd(event.x);
-    }
-  };
-
-  const keyDown = ({ key }) => {
-    if (key === "ArrowRight") {
-      if (start) {
-        updateStart(sliderWidth[0] + 44);
-      } else {
-        updateEnd(sliderWidth[1] + 44);
-      }
-    } else if (key === "ArrowLeft") {
-      if (start) {
-        updateStart(sliderWidth[0] - 44);
-      } else {
-        updateEnd(sliderWidth[1] - 44);
-      }
-    }
-  };
-
   useEffect(() => {
+    const updateStart = (newX) => {
+      if (newX >= 0 && newX < sliderWidth[1] - 44) {
+        setSliderWidth([newX, sliderWidth[1]]);
+      } else if (newX < 0) {
+        setSliderWidth([0, sliderWidth[1]]);
+      }
+    };
+
+    const updateEnd = (newX) => {
+      if (newX <= maxX + 1 && newX > sliderWidth[0] + 44) {
+        setSliderWidth([sliderWidth[0], newX]);
+      } else {
+        setSliderWidth([sliderWidth[0], maxX]);
+      }
+    };
+
+    const keyDown = ({ key }) => {
+      if (key === "ArrowRight") {
+        if (start) {
+          updateStart(sliderWidth[0] + 44);
+        } else {
+          updateEnd(sliderWidth[1] + 44);
+        }
+      } else if (key === "ArrowLeft") {
+        if (start) {
+          updateStart(sliderWidth[0] - 44);
+        } else {
+          updateEnd(sliderWidth[1] - 44);
+        }
+      }
+    };
+
+    const drag = (event) => {
+      if (start) {
+        updateStart(event.x);
+      } else {
+        updateEnd(event.x);
+      }
+    };
+
     d3.select(circleRef.current)
       .call(
         d3.drag()
           .on("drag", drag)
-      );
-  });
+      )
+      .select("circle")
+      .on("keydown", keyDown);
+
+    }, [start, setSliderWidth, maxX, sliderWidth]);
 
   return (
     <g
@@ -71,7 +74,6 @@ function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }) {
         r={8}
         tabIndex={0}
         fill="white"
-        onKeyDown={keyDown}
       />
       <circle
         cy={0}

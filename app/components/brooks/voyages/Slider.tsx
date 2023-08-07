@@ -7,9 +7,20 @@ function Slider({ width, setYearRange, yearRange }) {
   const svgRef = useRef();
   const scaleRef = useRef();
   const maxX = useRef();
+
   // Just a ref so it can be used in the initial effect.
-  const yearRangeRef = useRef(yearRange);
+  const initialYearRange = useRef(yearRange);
   const [sliderWidth, setSliderWidth] = useState<array>([0, 0]);
+
+  const handleClick = ({ clientX }) => {
+    const newX = clientX - 50; // Minus 50 to account for the transformed position.
+    const previousDiff = sliderWidth[1] - sliderWidth[0];
+    const newStart = newX;
+    const newEnd = Math.ceil((newX) + previousDiff);
+    if (newStart >= 0 && newEnd <= maxX.current + 1) {
+      setSliderWidth([newStart, newEnd]);
+    }
+  }
 
   useEffect(() => {
     const startYear = Math.floor(scaleRef.current?.invert(sliderWidth[0]));
@@ -18,17 +29,12 @@ function Slider({ width, setYearRange, yearRange }) {
   }, [sliderWidth, setYearRange]);
 
   useEffect(() => {
-    yearRangeRef.current = yearRange;
-  }, [yearRange]);
-
-  useEffect(() => {
     if (isNaN(width)) return;
 
     const svg = d3.select(svgRef.current)
                   .attr("width", width + 100)
                   .attr("height", 100)
-                  .attr("class", "cursor-pointer")
-                  // .on("click", drag);
+                  .attr("class", "cursor-pointer");
 
     const scale = d3.scaleLinear()
                     .domain([1565, 1858])
@@ -62,8 +68,8 @@ function Slider({ width, setYearRange, yearRange }) {
 
     scaleRef.current = scale;
     setSliderWidth([
-      scale(yearRangeRef.current[0]),
-      scale(yearRangeRef.current[1])
+      scale(initialYearRange.current[0]),
+      scale(initialYearRange.current[1])
     ]);
 
     maxX.current = scale(1858);
@@ -74,7 +80,10 @@ function Slider({ width, setYearRange, yearRange }) {
   }, [width]);
 
   return (
-    <svg ref={svgRef}>
+    <svg
+      ref={svgRef}
+      onClick={handleClick}
+    >
       <g id="scales"></g>
       <g
         transform="translate(50,40)"

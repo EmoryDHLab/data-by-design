@@ -5,19 +5,6 @@ function SliderJoin({ sliderWidth, setSliderWidth, yearRange, maxX, children }) 
   const rectRef = useRef();
   const offset = useRef(0);
 
-  const dragStart = (event) => {
-    offset.current = event.x - sliderWidth[0];
-  };
-
-  const drag = (event) => {
-    const previousDiff = sliderWidth[1] - offset.current - sliderWidth[0];
-    const newStart = event.x - offset.current;
-    const newEnd = Math.ceil(event.x + previousDiff);
-    if (newStart >= 0 && newEnd <= maxX + 1) {
-      setSliderWidth([newStart, newEnd]);
-    }
-  };
-
   const keyDown = ({ key, type }) => {
     if (type !== "keydown") return;
 
@@ -51,13 +38,26 @@ function SliderJoin({ sliderWidth, setSliderWidth, yearRange, maxX, children }) 
   };
 
   useEffect(() => {
+    const dragStart = (event) => {
+      offset.current = event.x - sliderWidth[0];
+    };
+
+    const drag = (event) => {
+      const previousDiff = sliderWidth[1] - offset.current - sliderWidth[0];
+      const newStart = event.x - offset.current;
+      const newEnd = Math.ceil(event.x + previousDiff);
+      if (newStart >= 0 && newEnd <= maxX + 1) {
+        setSliderWidth([newStart, newEnd]);
+      }
+    };
+
     d3.select(rectRef.current)
       .call(
         d3.drag()
           .on("start", dragStart)
           .on("drag", drag)
       );
-  });
+  }, [maxX, sliderWidth, setSliderWidth]);
 
   return (
     <>
