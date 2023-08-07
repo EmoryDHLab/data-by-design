@@ -26,6 +26,11 @@ export default function ChapterSectionTitle({ title }: Props) {
       >
         <Hyperlink className="md:mr-4 hidden md:block" visibility={isHovered ? "" : "hidden"} />
         <span className="text-center">{title}</span>
+        <span
+          className="md:ml-4 md:w-9 hidden md:block"
+        >{" "}
+      </span>
+
       </a>
     </CenteredLayout>
   );
