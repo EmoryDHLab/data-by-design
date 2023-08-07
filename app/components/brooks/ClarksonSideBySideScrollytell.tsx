@@ -109,12 +109,13 @@ function ClarksonSideBySideScrollytell() {
         className="w-screen"
       >
         <section
-          className={`md:flex justify-between`}
+          className={`flex flex-col md:flex-row justify-between`}
         >
-          <div className="sticky p-8 top-16 md:top-0 h-[90vh] mt-16 md:my-32 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last md:pb-[60px]">
+          <section className="sticky p-8 md:p-0 top-16 h-min mt-16 bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
             <svg
               viewBox={`0 0 ${width} ${height}`}
-              className={`md:my-32 w-full`}
+              // className={`md:my-32 w-full`}
+              className="max-h-[80vh] md:my-16 mx-auto"
             >
               <image
                 href="/images/brooks/4-description-1789.jpg"
@@ -129,15 +130,14 @@ function ClarksonSideBySideScrollytell() {
                   width={width}
                   height={height}
                   fill="#D9D9D9"
-                  stroke-width={20}
-                  class="stroke-brooksPrimary fill-brooksSecondary"
+                  strokeWidth={20}
+                  className="stroke-brooksPrimary fill-brooksSecondary"
                 ></rect>
                 <EyeSlashIcon
-                  class="stroke-brooksPrimary"
                   strokeOpacity={0.75}
-                  className="w-1 h-1"
                   height={800}
                   y="33%"
+                  className="w-1 h-1 stroke-brooksPrimary"
                 />
               </g>
               <defs>
@@ -177,8 +177,8 @@ function ClarksonSideBySideScrollytell() {
               </g>
             </svg>
             <figcaption></figcaption>
-            <div className={`text-3xl relative md:bottom-0 ml-4 text-black hidden md:${scrollProgress >= 13.5 ? "hidden" : "block"}`} tabIndex={-1}>↓</div>
-          </div>
+            {/* <div className={`text-3xl relative md:bottom-0 ml-4 text-black hidden md:${scrollProgress >= 13.5 ? "hidden" : "block"}`} tabIndex={-1}>↓</div> */}
+          </section>
           <section ref={steps} className="bias-full w-full md:bias-1/2 md:w-2/5 relative">
             {triggers.map((trigger, index) => {
               return (
