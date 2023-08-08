@@ -1,7 +1,13 @@
 import { useEffect } from "react";
 import * as d3 from "d3";
 
-function Axis({ width, height, yearRange }) {
+interface Props {
+  width: number;
+  height: number;
+  yearRange: Array<number>;
+}
+
+function Axis({ width, height, yearRange }: Props) {
 
   useEffect(() => {
     const xScale = d3.scaleLinear()
