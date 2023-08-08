@@ -17,12 +17,12 @@ const triggers = [
 
 export default function BrooksScrollytell() {
   const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
-  const [scrollProgress, setScrollProgress] = useState<float>(0.0);
+  const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [focusShapeSize, setFocusShapeSize] = useState<object>({ x: 645, y: 130, width: 0, height: 0 });
   const [fadeShapeSize, setFadeShapeSize] = useState<object>({ x: 380, y: 0, width: 0, height: 291 });
   const [fadeBorder, setFadeBorder] = useState<string>("m380,66 l0,150");
-  const [fadeOpacity, setFadeOpacity] = useState<float>(0.0);
-  const steps = useRef<HTMLDivElement | undefined>(undefined);
+  const [fadeOpacity, setFadeOpacity] = useState<number>(0.0);
+  const steps = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     switch(true) {
@@ -88,7 +88,7 @@ export default function BrooksScrollytell() {
   return (
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
-        scrollProgress={scrollProgress}
+        // scrollProgress={scrollProgress}
         setScrollProgress={setScrollProgress}
         triggers={triggers}
         steps={steps}
@@ -183,7 +183,10 @@ export default function BrooksScrollytell() {
             </div>
           </div>
         </div>
-        <div className="relative translate-y-[calc(-100vh+120px)] pointer-events-none md:mt-96" ref={steps}>
+        <div
+          ref={steps}
+          className="relative translate-y-[calc(-100vh+120px)] pointer-events-none md:mt-96"
+        >
           {triggers.map((trigger, index) => {
             return (
               <div
@@ -201,4 +204,4 @@ export default function BrooksScrollytell() {
       </ScrollytellWrapper>
     </ScrollytellContext.Provider>
   )
-};
+}

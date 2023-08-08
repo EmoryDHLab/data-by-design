@@ -4,9 +4,9 @@ import type { Dispatch, SetStateAction, RefObject } from "react";
 
 interface IScrollytellContext {
   scrollProgress: number;
-  setScrollProgress: Dispatch<SetStateAction<number>>;
-  setTriggers: Dispatch<SetStateAction<Array<RefObject<HTMLDivElement>>>>;
-  steps: RefObject<HTMLDivElement> | undefined;
+  setScrollProgress?: Dispatch<SetStateAction<number>>;
+  setTriggers?: Dispatch<SetStateAction<Array<RefObject<HTMLDivElement>>>>;
+  steps?: RefObject<HTMLDivElement> | undefined;
 }
 
 export const ScrollytellContext = createContext<IScrollytellContext>({

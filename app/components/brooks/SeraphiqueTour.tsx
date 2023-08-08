@@ -1,10 +1,27 @@
 import { EyeSlashIcon } from '@heroicons/react/24/outline'
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
-import type { ChapterFigure } from '~/types/figureType';
+import type { Figure } from '~/types/figureType';
 import FigureModal from '../layout/FigureModal';
 
-const tourLocations = {
+type MaskType = {
+  x: number;
+  y: number;
+  h: number;
+  w: number;
+}
+
+type TourLocation = {
+  transform: string;
+  mask: MaskType;
+}
+
+type TourLocations = {
+  [key: string]: TourLocation;
+}
+
+
+const tourLocations: TourLocations = {
   hold: {
     transform: "",
     mask: { x: 24, y: 8, h: 32, w: 12}
@@ -40,8 +57,8 @@ const tourLocations = {
 };
 
 interface Props {
-  figure: ChapterFigure;
-};
+  figure: Figure;
+}
 
 export default function SeraphiqueTour({ figure }: Props) {
   const { hoverState, hideSensitiveState, accentColor, backgroundColor } = useContext(ChapterContext);
@@ -59,10 +76,10 @@ export default function SeraphiqueTour({ figure }: Props) {
           <rect x={0} y={0} width={50} height={69} fill="white" fillOpacity={0.3} />
           <rect
             className={`duration-1000 transition-all z-10`}
-            x={tourLocations[hoverState]?.mask.x ?? 0}
-            y={tourLocations[hoverState]?.mask.y ?? 0}
-            width={tourLocations[hoverState]?.mask.w ?? 50}
-            height={tourLocations[hoverState]?.mask.h ?? 69}
+            x={tourLocations[hoverState ?? ""]?.mask.x ?? 0}
+            y={tourLocations[hoverState ?? ""]?.mask.y ?? 0}
+            width={tourLocations[hoverState ?? ""]?.mask.w ?? 50}
+            height={tourLocations[hoverState ?? ""]?.mask.h ?? 69}
             fill="white"
           />
         </mask>
@@ -72,7 +89,7 @@ export default function SeraphiqueTour({ figure }: Props) {
             role="presentation"
             href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
             width="100%"
-            className={`duration-1000 transition-transform ${tourLocations[hoverState]?.transform ?? ""}`}
+            className={`duration-1000 transition-transform ${tourLocations[hoverState ?? ""]?.transform ?? ""}`}
           />
         </g>
         <g>
@@ -102,7 +119,7 @@ export default function SeraphiqueTour({ figure }: Props) {
       <figcaption className="font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
         <span
           dangerouslySetInnerHTML={{
-            __html: figure.caption,
+            __html: figure.caption ?? "",
           }}
         />
         {figure.creditLine &&
@@ -115,4 +132,4 @@ export default function SeraphiqueTour({ figure }: Props) {
       </figcaption>
     </FigureModal>
   );
-};
+}

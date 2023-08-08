@@ -1,25 +1,24 @@
 import { useContext, useEffect, useRef } from "react";
 import scrollama from "scrollama";
-import type { ScrollamaInstance } from "scrollama";
 import { ChapterContext } from "~/chapterContext";
 import { useWindowSize } from "~/hooks";
+import type { DecimalType, ScrollamaInstance } from "scrollama";
+import type { Dispatch, SetStateAction, ReactNode, MutableRefObject } from "react";
 
 interface Props {
-  scrollProgress : float;
-  setScrollProgress: Dispatch<SetStateAction<float>>;
-  setCurrentStep: Dispatch<SetStateAction<number>>;
-  children: ReactNodeLike;
-  container?: useRef<HTMLDivElement<undefined>>;
-  parent?: useRef<HTMLDivElement<undefined>>;
-  steps: useRef<HTMLDivElement<undefined>>;
-  triggers: Array;
+  setScrollProgress: Dispatch<SetStateAction<number>>;
+  setCurrentStep?: Dispatch<SetStateAction<number>>;
+  children: ReactNode;
+  container?: ReactNode;
+  parent?: ReactNode;
+  steps: MutableRefObject<any>;
+  triggers: Array<ReactNode>;
   className?: string;
   stepClassName?: string;
-  widthClass?: string;
   bgColor?: string;
   debug?: boolean;
-  scrollOffset?: float|string;
-  threshold?: number;
+  scrollOffset?: DecimalType;
+  threshold?: 1|2|3|4;
 }
 
 export default function ScrollytellWrapper({
@@ -28,7 +27,6 @@ export default function ScrollytellWrapper({
   parent,
   steps,
   triggers,
-  scrollProgress,
   setScrollProgress,
   setCurrentStep,
   className,
@@ -36,18 +34,18 @@ export default function ScrollytellWrapper({
   bgColor,
   debug,
   scrollOffset,
-  threshold,
-  widthClass
+  threshold=4,
 }: Props) {
   const { accentColor } = useContext(ChapterContext);
   const scrollerRef = useRef<ScrollamaInstance>(scrollama());
-  const scrollerElementRef = useRef<HTMLDivElement | undefined>(undefined);
+  const scrollerElementRef = useRef<HTMLElement>(null);
   const windowSize = useWindowSize();
 
   useEffect(() => {
-    if (steps.current?.children.length !== triggers.length) return;
+    if (steps?.current?.children.length !== triggers.length) return;
     scrollerRef.current
       .setup({
+        // @ts-ignore may be a Scrollama bug. offset does allow strings.
         offset: scrollOffset ?? "60px",
         step: stepClassName ?? ".step",
         progress: true,
@@ -83,11 +81,11 @@ export default function ScrollytellWrapper({
   }, [windowSize, scrollerRef, scrollerElementRef]);
 
   return (
-    <div
+    <section
       ref={scrollerElementRef}
       className={`bg-${bgColor ?? accentColor} ${className ?? ""}`}
     >
       {children }
-    </div>
+    </section>
   )
-};
+}
