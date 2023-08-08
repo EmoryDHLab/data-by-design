@@ -22,19 +22,20 @@ export type HoverState =
   | undefined;
 
 interface IChapterContext {
-  backgroundColor: string;
-  accentColor: string;
-  accentTextColor: string;
-  primaryTextColor: string;
-  hoverState: HoverState;
-  setHoverState: Dispatch<SetStateAction<HoverState>>;
-  footnotes: ReactNode[];
-  footnoteTextColor: string;
-  docHeightState: number;
-  setDocHeightState: Dispatch<SetStateAction<number>>;
-  requireConsentState: boolean;
-  setRequireConsentState: Dispatch<SetStateAction<boolean>>;
-  figures: object|undefined;
+  backgroundColor?: string;
+  accentColor?: string;
+  accentTextColor?: string;
+  primaryTextColor?: string;
+  hoverState?: HoverState;
+  setHoverState?: Dispatch<SetStateAction<HoverState>>;
+  footnotes: Array<ReactNode>;
+  footnoteTextColor?: string;
+  docHeightState?: number;
+  setDocHeightState?: Dispatch<SetStateAction<number>>;
+  figures?: object|undefined;
+  disclosure?: boolean|undefined
+  hideSensitiveState?: boolean|undefined;
+  setHideSensitiveState?: Dispatch<SetStateAction<boolean>>;
 }
 
 const ChapterContext = createContext<IChapterContext>({
@@ -54,8 +55,8 @@ const ChapterContext = createContext<IChapterContext>({
     );
   },
   footnotes: [],
-  requireConsent: false,
   figures: undefined,
+  hideSensitiveState: false,
 });
 
 ChapterContext.displayName = "ChapterContext";

@@ -1,27 +1,49 @@
+import type p5 from "p5";
+import type { Voyage } from "~/types/voyage";
+
 class VoyageYear {
+  p5: p5;
+  distanceLeft: number;
+  distanceRight: number;
+  shapeSeed: number;
+  minEmbark: number;
+  maxEmbark: number;
+  minDuration: number;
+  maxDuration: number;
+  id: number;
+  totalPeople: number;
+  year: number;
+  duration: number;
+  mortalityRate: number;
+  resistanceReported: boolean;
+  lerpAmount: number;
+  rgb: Array<number>;
+  minYear: number;
+  maxYear: number;
+  height: number;
+  width: number;
+  nonResistanceStrokeWidth: number;
+
   constructor(
-    p5,
-    vid,
-    totalEmbarked,
-    mortalityRate,
-    year,
-    resistanceReported,
-    duration,
-    rgb,
-    minYear,
-    maxYear,
-    height,
-    width,
-    nonResistanceStrokeWidth,
-    lerpAmount,
+    p5: p5,
+    voyage: Voyage,
+    rgb: Array<number>,
+    minYear: number,
+    maxYear: number,
+    height: number,
+    width: number,
+    nonResistanceStrokeWidth: number,
+    lerpAmount: number,
   ) {
     this.p5 = p5;
-    this.vid = vid;
-    this.totalEmbarked = totalEmbarked;
-    this.mortalityRate = mortalityRate;
-    this.year = year
-    this.isResistance = resistanceReported;
-    this.duration = duration;
+    ({
+      id: this.id,
+      totalPeople: this.totalPeople,
+      mortalityRate: this.mortalityRate,
+      year: this.year,
+      resistanceReported: this.resistanceReported,
+      duration: this.duration,
+    } = voyage);
     this.rgb = rgb;
     this.minYear = minYear;
     this.maxYear = maxYear;
@@ -39,13 +61,24 @@ class VoyageYear {
     this.maxDuration = 273369600;
   }
 
-  updateTransition(lerpAmount, nonResistanceStrokeWidth, shapeSeed) {
+  updateTransition(
+    lerpAmount: number,
+    nonResistanceStrokeWidth: number,
+    shapeSeed: number
+  ) {
     this.lerpAmount = lerpAmount;
     this.nonResistanceStrokeWidth = nonResistanceStrokeWidth;
     this.shapeSeed = shapeSeed;
   }
 
-  updateMinMax(minDuration, maxDuration, minEmbark, maxEmbark, minYear, maxYear) {
+  updateMinMax(
+    minDuration: number,
+    maxDuration: number,
+    minEmbark: number,
+    maxEmbark: number,
+    minYear: number,
+    maxYear: number
+  ) {
     this.minEmbark = minEmbark;
     this.maxEmbark = maxEmbark;
     this.minDuration = minDuration;
@@ -57,15 +90,15 @@ class VoyageYear {
   show(){
     this.p5.randomSeed(this.shapeSeed);
     let voyageHeight = this.p5.map(
-      this.totalEmbarked,
+      this.totalPeople,
       this.minEmbark,
       this.maxEmbark,
       0,
       this.height
     );
-    let rat = voyageHeight / this.height;
+    const rat = voyageHeight / this.height;
     voyageHeight = this.height;
-    let yStart = - voyageHeight / 2;
+    const yStart = - voyageHeight / 2;
     this.p5.push();
     this.p5.translate(
       this.p5.map(
@@ -79,39 +112,42 @@ class VoyageYear {
     );
 
     // Add color
-    if (this.isResistance) {
+    if (this.resistanceReported) {
       this.p5.strokeWeight(0.5)
-      this.p5.fill(...this.rgb, 200);
+      this.p5.fill([...this.rgb, 200]);
     } else {
       this.p5.strokeWeight(this.nonResistanceStrokeWidth);
       this.p5.fill(
         this.p5.lerpColor(
-          this.p5.color(...this.rgb, 0),
-          this.p5.color(...this.rgb, 200),
+          this.p5.color([...this.rgb, 0]),
+          this.p5.color([...this.rgb, 200]),
           this.lerpAmount
         )
       );
     }
 
     //setting the maximum overlapping, width of each voyage vis
-    let max_ol = 300
-    let max_width = 30
-    let curveSeed = [
+    const maxOl = 300
+    const maxWidth = 30
+    const curveSeed = [
       this.duration,
       this.minDuration,
       this.maxDuration,
       0,
-      max_ol
+      maxOl
     ];
-    let lower = -this.distanceLeft - this.p5.map(...curveSeed);
-    let upper = this.distanceRight + this.p5.map(...curveSeed);
-    let c1 = this.p5.random(lower, upper);
-    let c2 = this.p5.random(lower, upper);
-    let c3 = this.p5.random(lower, upper);
-    let c4 = this.p5.random(lower, upper);
-    let c5 = this.p5.random(lower, upper);
-    let c6 = this.p5.random(lower, upper);
-    let c7 = this.p5.random(lower, upper);
+
+    // @ts-ignore
+    const lower = -this.distanceLeft - this.p5.map(...curveSeed);
+    // @ts-ignore
+    const upper = this.distanceRight + this.p5.map(...curveSeed);
+    const c1 = this.p5.random(lower, upper);
+    const c2 = this.p5.random(lower, upper);
+    const c3 = this.p5.random(lower, upper);
+    const c4 = this.p5.random(lower, upper);
+    const c5 = this.p5.random(lower, upper);
+    const c6 = this.p5.random(lower, upper);
+    const c7 = this.p5.random(lower, upper);
 
     this.p5.beginShape();
     this.p5.curveVertex(c6, yStart - 300 * rat);
@@ -122,8 +158,8 @@ class VoyageYear {
     this.p5.curveVertex(c4, yStart + (voyageHeight / 5) * 4);
     this.p5.curveVertex(c7, voyageHeight / 2 + 500 * rat);
 
-    let vertexLower = this.p5.map(this.totalEmbarked * (1 - this.mortalityRate), this.minEmbark, this.maxEmbark, 0, max_width);
-    let vertexUpper = this.p5.map(this.totalEmbarked, this.minEmbark, this.maxEmbark, 0, max_width);
+    const vertexLower = this.p5.map(this.totalPeople * (1 - this.mortalityRate), this.minEmbark, this.maxEmbark, 0, maxWidth);
+    const vertexUpper = this.p5.map(this.totalPeople, this.minEmbark, this.maxEmbark, 0, maxWidth);
     this.p5.curveVertex(c7 + this.p5.random(vertexLower, vertexUpper), voyageHeight / 2 + 500 * rat);
     this.p5.curveVertex(c4 + this.p5.random(vertexLower, vertexUpper), yStart + (voyageHeight / 5) * 4);
     this.p5.curveVertex(c3 + this.p5.random(vertexLower, vertexUpper), yStart + (voyageHeight / 5) * 3);
@@ -134,6 +170,6 @@ class VoyageYear {
     this.p5.endShape(this.p5.CLOSE);
     this.p5.pop();
   }
-};
+}
 
 export default VoyageYear;

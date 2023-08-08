@@ -1,6 +1,7 @@
-import { useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { useWindowSize } from "~/hooks";
 import p5 from "p5";
+import { ChapterContext } from "~/chapterContext";
 import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
 import Toggle from "~/components/Toggle";
@@ -12,18 +13,21 @@ const INITIAL_YEAR_RANGE = [1565, 1585];
 
 function Voyages() {
   const windowSize = useWindowSize();
-  const p5Ref = useRef();
-  const voyages = useRef([]);
-  const filteredVoyages = useRef([]);
+  const { backgroundColor } = useContext(ChapterContext);
+  const p5Ref = useRef<p5 | undefined>();
+  const voyages = useRef<Array<VoyageYear>>([]);
+  const filteredVoyages = useRef<Array<VoyageYear>>([]);
   const showAllRef = useRef<boolean>(false);
   const [showAllState, setShowAllState] = useState<boolean>(false);
-  const [yearRange, setYearRange] = useState<array>(INITIAL_YEAR_RANGE);
-  const [width, setWidth] = useState<number | undefined>(window.outerWidth - 100);
-  const [height, setHeight] = useState<number | undefined>(window.outerHeight / 3);
+  const [yearRange, setYearRange] = useState<number[]>(INITIAL_YEAR_RANGE);
+  const [width, setWidth] = useState<number>(window.outerWidth - 100);
+  const [height, setHeight] = useState<number>(window.outerHeight / 3);
 
   useEffect(() => {
-    setWidth(windowSize.width - 100);
-    setHeight(windowSize.height / 3);
+    if (windowSize.width && windowSize.height) {
+      setWidth(windowSize.width - 100);
+      setHeight(windowSize.height / 3);
+    }
   }, [windowSize]);
 
   useEffect(() => {
@@ -33,8 +37,8 @@ function Voyages() {
       filteredVoyage.updateMinMax(
         filteredVoyages.current.reduce((min, obj) => (obj.duration < min ? obj.duration : min), filteredVoyages.current[0].duration),
         filteredVoyages.current.reduce((max, obj) => (obj.duration > max ? obj.duration : max), filteredVoyages.current[0].duration),
-        filteredVoyages.current.reduce((min, obj) => (obj.totalEmbarked < min ? obj.totalEmbarked : min), filteredVoyages.current[0].totalEmbarked),
-        filteredVoyages.current.reduce((max, obj) => (obj.totalEmbarked > max ? obj.totalEmbarked : max), filteredVoyages.current[0].totalEmbarked),
+        filteredVoyages.current.reduce((min, obj) => (obj.totalPeople < min ? obj.totalPeople : min), filteredVoyages.current[0].totalPeople),
+        filteredVoyages.current.reduce((max, obj) => (obj.totalPeople > max ? obj.totalPeople : max), filteredVoyages.current[0].totalPeople),
         yearRange[0],
         yearRange[1]
       );
@@ -45,7 +49,7 @@ function Voyages() {
   const toggleFunction = () => {
     setShowAllState(showAll => !showAll);
     showAllRef.current = !showAllRef.current;
-    p5Ref.current.redraw();
+    p5Ref.current?.redraw();
   }
 
   useEffect(() => {
@@ -71,12 +75,7 @@ function Voyages() {
           voyages.current.push(
             new VoyageYear(
               p5,
-              voyage.id,
-              voyage.totalPeople,
-              voyage.mortalityRate,
-              voyage.year,
-              voyage.resistanceReported,
-              voyage.duration,
+              voyage,
               rgb,
               INITIAL_YEAR_RANGE[0],
               INITIAL_YEAR_RANGE[1],
@@ -101,7 +100,7 @@ function Voyages() {
         }
 
         for (const index in filteredVoyages.current) {
-          if (showAllRef.current || filteredVoyages.current[index].isResistance) {
+          if (showAllRef.current || filteredVoyages.current[index].resistanceReported) {
             filteredVoyages.current[index].updateTransition(
               lerpAmount,
               nonResistanceStrokeWidth,
@@ -126,7 +125,7 @@ function Voyages() {
     const p5Copy = p5Ref.current;
 
     return () => {
-      p5Copy.remove();
+      p5Copy?.remove();
     }
   }, [width, height]);
 
@@ -137,7 +136,7 @@ function Voyages() {
           <Toggle
             checked={showAllState}
             onChange={toggleFunction}
-            className="focus:outline-brooksPrimary"
+            colorOn={backgroundColor}
           >
             Show non-resistance voyages
           </Toggle>

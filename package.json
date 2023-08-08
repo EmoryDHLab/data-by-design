@@ -6,7 +6,8 @@
     "build:css": "tailwindcss -m -i ./app/styles/app.css -o styles/generated-app.css",
     "dev:css": "tailwindcss -w -i ./app/styles/app.css -o styles/generated-app.css",
     "dev": "concurrently 'npm run dev:css' 'remix dev'",
-    "start": "cross-env NODE_ENV=production netlify dev"
+    "start": "cross-env NODE_ENV=production netlify dev",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
@@ -30,8 +31,11 @@
     "@remix-run/eslint-config": "^1.7.2",
     "@remix-run/serve": "^1.7.2",
     "@types/d3": "^7.4.0",
+    "@types/p5": "^1.6.2",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
     "autoprefixer": "^10.4.12",
     "concurrently": "^7.4.0",
     "eslint": "^8.23.1",

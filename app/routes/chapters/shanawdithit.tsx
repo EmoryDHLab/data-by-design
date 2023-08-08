@@ -11,7 +11,7 @@ export default function ShanawdithitPage() {
           backgroundColor: "shanawdithitPrimary",
           primaryTextColor: "white",
           accentColor: "shanawdithitPrimary",
-          footnoteColor: "shanawdithitPrimary",
+          footnoteTextColor: "shanawdithitPrimary",
         }}
       >
         <ChapterTitle

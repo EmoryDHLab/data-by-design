@@ -1,29 +1,29 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import type { ChapterFigure } from "~/types/figureType";
+import type { Figure } from "~/types/figureType";
+import type { ReactNode } from "react";
 
 interface Props {
-  figure?: ChapterFigure;
-  title?: string;
-  sr?: string;
+  figure?: Figure;
+  src?: string;
   alt?: string;
-  title?: string;
   className?: string;
-  loading?: boolean;
+  loading?: "eager" | "lazy";
   hide?: boolean;
+  children?: ReactNode;
 }
 
-export default function FigureModal({ children, figure, loading, hide, className }: Props) {
+export default function FigureModal({ children, src, figure, loading, hide, className }: Props) {
   const [open, setOpen] = useState(false);
   const [interactiveOptions, setInteractiveOptions] = useState<object>({});
-  const figureRef = useRef();
-  const inColumn = figureRef.current?.parentElement.classList.contains('md:bias-1/2');
+  const figureRef = useRef<HTMLElement>(null);
+  const inColumn = figureRef.current?.parentElement?.classList.contains('md:bias-1/2');
 
     useEffect(() => {
     if (!hide) {
       setInteractiveOptions({
         onClick: () => setOpen(open => !open),
-        onKeyDown: ({ key }) => { if (key === "Enter") setOpen(open => !open) },
+        onKeyDown: ({ key }: { key: string }) => { if (key === "Enter") setOpen(open => !open) },
         role: "button",
         tabIndex: 0,
       });
@@ -43,7 +43,7 @@ export default function FigureModal({ children, figure, loading, hide, className
       {children}
 
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-50 modal" onClose={setOpen} role="dialog">
+        <Dialog as="div" className="relative z-50 modal" onClose={setOpen}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -70,7 +70,7 @@ export default function FigureModal({ children, figure, loading, hide, className
                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white p-6 md:px-4 md:pt-5 md:pb-4 text-left shadow-xl transition-all my-8 md:my-0 w-screen md:w-auto max-w-4xl md:max-w-auto">
                   <div>
                     <div className=" text-center mt-5 md:mt-0">
-                      {figure.title && (
+                      {figure?.title && (
                         <Dialog.Title
                           as="h3"
                           className="text-lg font-medium leading-6 text-gray-900"
@@ -81,8 +81,8 @@ export default function FigureModal({ children, figure, loading, hide, className
 
                       )}
                       <picture className="mt-2">
-                        <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
-                        <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
+                        <source srcSet={`/images/${figure?.chapter}/${figure?.fileName}.webp`} />
+                        <source srcSet={`/images/${figure?.chapter}/${figure?.fileName}.jpg`} />
                         <img
                           className="mx-auto max-h-[80vh]"
                           src={figure ? `/images/${figure.chapter}/${figure.fileName}.jpg` : src}

@@ -1,4 +1,12 @@
 {
-  "plugins": ["jsx-a11y"],
-  "extends": ["@remix-run/eslint-config", "@remix-run/eslint-config/node", "plugin:jsx-a11y/recommended"]
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "jsx-a11y"
+  ],
+  "extends": [
+    "@remix-run/eslint-config",
+    "@remix-run/eslint-config/node",
+    "plugin:jsx-a11y/recommended"
+  ]
 }

@@ -2,26 +2,26 @@ import { useContext, useEffect, useState } from "react";
 import { EyeSlashIcon } from '@heroicons/react/24/outline'
 import { ChapterContext } from "~/chapterContext";
 import FigureModal from "./FigureModal";
-import type { ReactNodeLike } from "prop-types";
-import type { ChapterFigure } from "~/types/figureType";
+import type { Figure } from "~/types/figureType";
 import Picture from "./Picture";
+import type { ReactNode } from "react";
 
 interface Props {
-  children?: ReactNodeLike;
-  figure: ChapterFigure;
-  figures: array[ChapterFigure];
+  children?: ReactNode;
+  figure?: Figure;
+  figures?: Array<Figure>;
   className?: string;
   captionClassName?: string;
   loading?: string;
   figureTransforms?: string;
 }
 
-export const Caption = ({ figure, className }) => {
+export const Caption = ({ figure, className }: Props) => {
   return (
     <figcaption
       className={`font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full ${className ?? ""}`}
       dangerouslySetInnerHTML={{
-        __html: `<p>${figure.caption}<p>${figure.creditLine ? `<p>${figure.creditLine}</p>` : ""}`,
+        __html: `<p>${figure?.caption}<p>${figure?.creditLine ? `<p>${figure?.creditLine}</p>` : ""}`,
       }}
     />
   )
@@ -37,10 +37,10 @@ export default function FigureObj({
   captionClassName,
 }: Props) {
   const { hideSensitiveState, accentColor, backgroundColor } = useContext(ChapterContext);
-  const [hide, setHide] = useState<boolean>(hideSensitiveState && figure.sensitive);
+  const [hide, setHide] = useState<boolean>(Boolean(hideSensitiveState && figure?.sensitive));
 
   useEffect(() => {
-    setHide(hideSensitiveState && figure.sensitive);
+    setHide(Boolean(hideSensitiveState && figure?.sensitive));
   }, [setHide, hideSensitiveState, figure]);
 
   if (figures) {
@@ -48,7 +48,7 @@ export default function FigureObj({
       <figure className={className ?? ""}>
         {figures.map((figure) => {
           return (
-            <FigureModal key={figure.fileName} figure={figure}>
+            <FigureModal key={`${figure.fileName}`} figure={figure}>
               <Picture figure={figure} />
             </FigureModal>
           )
@@ -70,4 +70,4 @@ export default function FigureObj({
       <Caption figure={figure} className={captionClassName} />
     </FigureModal>
   );
-};
+}

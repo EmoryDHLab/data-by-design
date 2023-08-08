@@ -3,10 +3,10 @@ import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 
 interface Props {
-  number: number;
-  children: ReactNodeLike;
-  bgOverride: string;
-  textOverride: string;
+  index: number;
+  children?: ReactNodeLike;
+  bgOverride?: string;
+  textOverride?: string;
 }
 
 export default function InlineFootnote({ index, bgOverride, textOverride }: Props) {
@@ -15,6 +15,7 @@ export default function InlineFootnote({ index, bgOverride, textOverride }: Prop
   const [isTextVisible, setIsTextVisible] = useState(false);
 
   useEffect(() => {
+    if (!setDocHeightState) return;
     setDocHeightState(docHeightState => docHeightState + 1);
   }, [isTextVisible, setDocHeightState]);
 

@@ -1,4 +1,4 @@
-node_modules
+node_modules*
 
 /.cache
 /public/build
@@ -7,5 +7,5 @@ node_modules
 .idea
 .DS_Store
 .vercel
-/api
+/api*
 /styles/generated-app.css

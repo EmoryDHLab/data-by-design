@@ -49,11 +49,10 @@ export default function Consent() {
           colorOn={backgroundColor}
           colorOff={accentColor}
           screenReaderMsg="Consent to descriptions of images of slavery."
-          className={`focus:outline-black`}
         >
           Show sensitive images
         </Toggle>
       </p>
     </div>
   );
-};
+}

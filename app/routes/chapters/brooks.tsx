@@ -6,7 +6,6 @@ import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
-import Figure from "~/components/layout/Figure";
 import Footer from "~/components/Footer";
 import { brooksFootnotes } from "~/footnotes";
 import Quotation from "~/components/Quotation";
@@ -707,7 +706,8 @@ export default function BrooksPage() {
           </p>
         </Column>
         <Column shouldPin>
-          <Figure className="ml-24" src="/images/brooks/8-history.png" alt="" />
+          {/* <Figure className="ml-24" src="/images/brooks/8-history.webp" alt="" /> */}
+          <FigureObj figure={figures["ch4-14-priestley-new-chart"]} />
         </Column>
       </TwoColumnLayout>
       <ChapterSectionTitle title="Diagramming the Present" />

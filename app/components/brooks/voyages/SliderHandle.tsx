@@ -1,11 +1,25 @@
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
+import type { Dispatch, SetStateAction } from "react";
 
-function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }) {
-  const circleRef = useRef();
+interface Props {
+  sliderWidth: Array<number>;
+  setSliderWidth: Dispatch<SetStateAction<Array<number>>>;
+  maxX: number;
+  year: number;
+  start?: boolean;
+}
+
+interface EventProps {
+  x: number;
+  key: string;
+}
+
+function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }: Props) {
+  const circleRef = useRef<SVGCircleElement>(null);
 
   useEffect(() => {
-    const updateStart = (newX) => {
+    const updateStart = (newX: number) => {
       if (newX >= 0 && newX < sliderWidth[1] - 44) {
         setSliderWidth([newX, sliderWidth[1]]);
       } else if (newX < 0) {
@@ -13,7 +27,7 @@ function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }) {
       }
     };
 
-    const updateEnd = (newX) => {
+    const updateEnd = (newX: number) => {
       if (newX <= maxX + 1 && newX > sliderWidth[0] + 44) {
         setSliderWidth([sliderWidth[0], newX]);
       } else {
@@ -21,7 +35,7 @@ function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }) {
       }
     };
 
-    const keyDown = ({ key }) => {
+    const keyDown = ({ key }: EventProps) => {
       if (key === "ArrowRight") {
         if (start) {
           updateStart(sliderWidth[0] + 44);
@@ -37,16 +51,17 @@ function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }) {
       }
     };
 
-    const drag = (event) => {
+    const drag = ({ x }: EventProps) => {
       if (start) {
-        updateStart(event.x);
+        updateStart(x);
       } else {
-        updateEnd(event.x);
+        updateEnd(x);
       }
     };
 
     d3.select(circleRef.current)
       .call(
+        // @ts-ignore
         d3.drag()
           .on("drag", drag)
       )

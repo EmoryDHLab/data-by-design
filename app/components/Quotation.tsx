@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface Props {
   quote: ReactNode;
-  byline: string;
+  byline?: string;
 }
 
 export default function Quotation({ quote, byline }: Props) {
