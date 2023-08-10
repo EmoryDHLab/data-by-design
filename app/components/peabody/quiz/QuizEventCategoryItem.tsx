@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { QuizContext } from "./QuizContext";
 import { useDeviceContext } from "~/hooks";
+import type { PeabodySquare } from "~/types/peabody";
 
 interface Props {
   index: number;
   type: string;
   unused: boolean;
-};
+}
 
 const defaultClassNames = "transition-[fill-opacity] duration-1000";
 
@@ -40,10 +41,10 @@ export default function QuizEventCategoryItem({ index, type, unused }: Props) {
           textDecoration: focusedCategory === index ? "underline" : "",
           fillOpacity: 1.0,
           onClick: () => handleCategoryClick(index),
-          onKeyUp: ({ key }) => { if (key === "Enter") handleCategoryClick(index) },
-          onMouseEnter: () => setFocusedCategory(index),
+          onKeyUp: ({ key }: { key: string }) => { if (key === "Enter") handleCategoryClick(index) },
+          onMouseEnter: () => setFocusedCategory((index as PeabodySquare)),
           onMouseLeave: () => setFocusedCategory(undefined),
-          onFocus: () => setFocusedCategory(index),
+          onFocus: () => setFocusedCategory((index as PeabodySquare)),
           onBlur: () => setFocusedCategory(undefined),
           className: `${defaultClassNames} cursor-pointer hidden md:block`,
         });
@@ -51,7 +52,7 @@ export default function QuizEventCategoryItem({ index, type, unused }: Props) {
         setInteractiveOptions({
           fill: "gray",
           fillOpacity: 0.5,
-          textDecoration: currentStep.solvedEvents.includes(index) ? "" : "line-through",
+          textDecoration: currentStep?.solvedEvents.includes((index as PeabodySquare)) ? "" : "line-through",
           className: `${defaultClassNames} cursor-not-allowed hidden md:block`,
         });
       }
@@ -79,7 +80,7 @@ export default function QuizEventCategoryItem({ index, type, unused }: Props) {
   useEffect(() => {
     if (currentStepCount > 2 && currentStepCount < 7) {
       if (isOption) {
-        setMobileClassNames();
+        setMobileClassNames(undefined);
       } else {
         setMobileClassNames('text-gray-500');
       }
@@ -90,7 +91,7 @@ export default function QuizEventCategoryItem({ index, type, unused }: Props) {
         setMobileClassNames(undefined);
       }
     }
-  }, [currentStepCount, isOption]);
+  }, [currentStepCount, isOption, unused]);
 
   if (isMobile) {
     return (

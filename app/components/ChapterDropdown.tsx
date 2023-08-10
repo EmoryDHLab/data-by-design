@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Link } from "@remix-run/react";
 import { Menu, Transition } from "@headlessui/react";
+import type { ReactNode } from "react";
 
 const CHAPTERS = [
   {
@@ -29,7 +30,7 @@ const CHAPTERS = [
   },
 ]
 
-export default function ChapterDropdown({ children }) {
+export default function ChapterDropdown({ children }: { children: ReactNode }) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -70,4 +71,4 @@ export default function ChapterDropdown({ children }) {
         </Transition>
     </Menu>
   );
-};
+}

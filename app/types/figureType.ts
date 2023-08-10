@@ -1,19 +1,19 @@
 export type Figure = {
   chapter: string;
   fileName: string;
-  title: string|undefined;
-  artist: string|undefined;
-  caption: string|undefined;
-  altText: string|undefined;
-  sensitive: boolean|string|undefined;
-  creditLine: string|undefined;
-  digitizedLine: string|undefined;
-  source: string|undefined;
-  sourceUrl: string|undefined;
-  fee: boolean|string|undefined;
-  notes: string|undefined;
-  frontPage: boolean|string|undefined;
-  year: number|string|undefined;
+  title: string|undefined|null;
+  artist: string|undefined|null;
+  caption: string|undefined|null;
+  altText: string|undefined|null;
+  sensitive: boolean|string|undefined|null;
+  creditLine: string|undefined|null;
+  digitizedLine: string|undefined|null;
+  source: string|undefined|null;
+  sourceUrl: string|undefined|null;
+  fee: boolean|string|undefined|null;
+  notes: string|undefined|null;
+  frontPage: boolean|string|undefined|null;
+  year: number|string|undefined|null;
 }
 // export type ChapterFigure = {
 //   [key: string]: Figure;

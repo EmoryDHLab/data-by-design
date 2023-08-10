@@ -12,7 +12,7 @@ export default function FootnotesList({ footnotes }: Props) {
       </h3>
       <ol className="space-y-5 text-xs list-decimal">
         {footnotes.map((footnote) => (
-          <li key={`fn-list-${footnote.key}`}>{footnote}</li>
+          <li key={`fn-list-${footnotes.indexOf(footnote)}`}>{footnote}</li>
         ))}
       </ol>
     </div>

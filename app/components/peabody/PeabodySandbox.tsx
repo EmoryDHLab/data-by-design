@@ -2,29 +2,55 @@ import { EditablePeabodySquare } from "~/components/peabody/EditablePeabodySquar
 import { useState } from "react";
 import { classNames } from "~/utils";
 
-const actorColors = [
-  "rgb(119,43,21)",
-  "rgb(222,145,49)",
-  "rgb(60,100,100)",
-  "rgb(68,108,73)",
-  "rgb(217,182,17)",
-  "rgb(209,42,5)",
+type Color = { label: string, rgb: string }
+
+type Colors = Array<Color>
+
+const actorColors: Colors = [
+  {
+    label: "brown",
+    rgb: "rgb(119,43,21)",
+  },
+  {
+    label: "orange",
+    rgb: "rgb(222,145,49)",
+  },
+  {
+    label: "blue",
+    rgb: "rgb(60,100,100)",
+  },
+  {
+    label: "green",
+    rgb: "rgb(68,108,73)",
+  },
+  {
+    label: "yellow",
+    rgb: "rgb(217,182,17)",
+  },
+  {
+    label: "red",
+    rgb: "rgb(209,42,5)",
+  },
 ];
 
 export default function PeabodySandbox() {
-  const [currentColor, setCurrentColor] = useState(actorColors[0]);
+  const [currentColor, setCurrentColor] = useState<Color>(actorColors[0]);
   return (
     <div className="w-full bg-black py-10 flex flex-col items-center">
       <div className="flex justify-around w-1/2 py-10">
         {actorColors.map((color) => (
           <span
-            key={color}
+            tabIndex={0}
+            role="button"
+            aria-labelledby={`Select ${color.label}`}
+            key={color.rgb}
             onClick={() => setCurrentColor(color)}
+            onKeyUp={({ key }: { key: string }) => { if (key === "Enter") { setCurrentColor(color)} } }
             className={classNames(
               "w-5 h-5",
-              currentColor === color && "border"
+              currentColor.rgb === color.rgb && "border"
             )}
-            style={{ backgroundColor: color }}
+            style={{ backgroundColor: color.rgb }}
           />
         ))}
       </div>

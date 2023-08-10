@@ -1,15 +1,12 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { QuizContext } from "./QuizContext";
-import type { Dispatch, SetStateAction } from "react";
 import type { PeabodyActor } from "~/types/peabody";
 
 interface Props {
-  active: boolean;
   actor: PeabodyActor;
-  border: float;
   disable: boolean;
   fillColor: string;
-  selectActor: Dispatch<SetStateAction<PeabodyActor>>;
+  selectActor: Function;
   selectedActors: PeabodyActor[];
   solvedActors: PeabodyActor[];
   x: number;
@@ -18,7 +15,6 @@ interface Props {
 
 export default function QuizActorButton({
   actor,
-  border,
   disable,
   fillColor,
   selectActor,
@@ -28,7 +24,7 @@ export default function QuizActorButton({
   y,
 }: Props) {
   const { currentStepCount } = useContext(QuizContext);
-  const buttonRef = useRef();
+  const buttonRef = useRef<SVGGElement>(null);
   const [active, setActive] = useState<boolean>(false);
   const [selected, setSelected] = useState<boolean>(false);
   const [rectStyle, setRectStyle] = useState<object>({});
@@ -40,13 +36,13 @@ export default function QuizActorButton({
 
   useEffect(() => {
     if (currentStepCount >= 2 || currentStepCount < 1) {
-      buttonRef.current.blur();
+      buttonRef.current?.blur();
       setActive(false);
     }
   }, [currentStepCount, setActive]);
 
   useEffect(() => {
-    if (disable) buttonRef.current.blur();
+    if (disable) buttonRef.current?.blur();
   }, [disable]);
 
   useEffect(() => {
@@ -68,15 +64,14 @@ export default function QuizActorButton({
       tabIndex={currentStepCount === 1 ? 0 : -1}
       onClick={() => selectActor(actor)}
       onKeyUp={({ key }) => { if (key === "Enter" || key === "Space") selectActor(actor) }}
-      onMouseEnter={setActive}
+      onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
-      onFocus={setActive}
-      onBlur={setActive}
+      onFocus={() => setActive(true)}
+      onBlur={() => setActive(false)}
       role={currentStepCount === 1 ? "button" : ""}
       className={`focus:outline-none transition-all duration-700 ${currentStepCount > 1 && actor === "Americas" ? "-translate-x-7" : ""}`}
     >
       <svg
-        // viewBox="0 0 60 30"
         width={26}
         height={14}
         x={x}
@@ -84,7 +79,7 @@ export default function QuizActorButton({
         className="border border-2 border-white bg-white"
       >
         <filter id={`shadow-${actor}`}>
-          <feDropShadow dx="0.2" dy="0.4" stdDeviation="0.2" floodColor="#acacac" />
+          <feDropShadow dx={0.2} dy={0.4} stdDeviation={0.2} floodColor="#acacac" />
         </filter>
         <rect
           width={24}
@@ -109,18 +104,11 @@ export default function QuizActorButton({
             fontSize={5}
             textAnchor="middle"
             dominantBaseline="middle"
-            // className={active ? "underline" : ""}
             {...textStyle}
           >
             {actor}
           </text>
         </svg>
-        {/* {disable &&
-          <>
-            <line x1={0} x2={24} y1={0} y2={12} stroke="white" strokeWidth={0.5}/>
-            <line x1={0} x2={24} y1={12} y2={0} stroke="white" strokeWidth={0.5}/>
-          </>
-        } */}
       </svg>
     </g>
   );

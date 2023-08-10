@@ -1,8 +1,14 @@
 import { useContext } from "react";
 import { QuizContext } from "./QuizContext";
 import { useDeviceContext } from "~/hooks";
+import type { ReactNode } from "react";
 
-const InstructionsContent = ({ className, children }) => {
+interface Props {
+  className: string;
+  children: ReactNode;
+}
+
+const InstructionsContent = ({ className, children }: Props) => {
   const { isMobile, isDesktop } = useDeviceContext();
 
   if (isMobile) {
@@ -91,4 +97,4 @@ export default function QuizInstructions() {
       </InstructionsContent>
     </svg>
   );
-};
+}

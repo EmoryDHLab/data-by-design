@@ -23,12 +23,12 @@ const height = 2534;
 
 function ClarksonSideBySideScrollytell() {
   const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
-  const [scrollProgress, setScrollProgress] = useState<float>(0.0);
+  const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [focusShapeSize, setFocusShapeSize] = useState<object>({ x: 0, y: 0, width, height });
   const [zoom, setZoom] = useState<number>(1);
   const [xOffset, setXOffset] = useState<number>(0);
   const [yOffset, setYOffset] = useState<number>(0);
-  const steps = useRef<HTMLDivElement | undefined>(undefined);
+  const steps = useRef<HTMLDivElement>(null);
 
   const minScrollProgress = 6.5;
 
@@ -102,7 +102,6 @@ function ClarksonSideBySideScrollytell() {
   return (
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
-        scrollProgress={scrollProgress}
         setScrollProgress={setScrollProgress}
         triggers={triggers}
         steps={steps}
@@ -115,7 +114,7 @@ function ClarksonSideBySideScrollytell() {
             <svg
               viewBox={`0 0 ${width} ${height}`}
               // className={`md:my-32 w-full`}
-              className="max-h-[80vh] md:my-16 mx-auto"
+              className="max-h-[80vh] md:my-16 mx-auto drop-shadow-2xl"
             >
               <image
                 href="/images/brooks/4-description-1789.jpg"
@@ -198,6 +197,6 @@ function ClarksonSideBySideScrollytell() {
       </ScrollytellWrapper>
     </ScrollytellContext.Provider>
   )
-};
+}
 
 export default ClarksonSideBySideScrollytell;

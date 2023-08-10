@@ -1,3 +1,4 @@
+// DEPRECATED!! Use FigureModal!!
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import type { ChapterFigure } from "~/types/figureType";

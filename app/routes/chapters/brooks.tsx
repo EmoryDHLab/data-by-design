@@ -706,7 +706,6 @@ export default function BrooksPage() {
           </p>
         </Column>
         <Column shouldPin>
-          {/* <Figure className="ml-24" src="/images/brooks/8-history.webp" alt="" /> */}
           <FigureObj figure={figures["ch4-14-priestley-new-chart"]} />
         </Column>
       </TwoColumnLayout>

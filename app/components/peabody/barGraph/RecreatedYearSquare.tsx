@@ -7,6 +7,7 @@ import {
 } from "~/components/peabody/peabodyUtils";
 import RecreatedEventSquare from "./RecreatedEventSquare";
 import { numberRange } from "~/utils";
+import type { PeabodyEvent } from "~/types/peabody";
 
 interface Props {
   index: number;
@@ -18,16 +19,16 @@ export default function RecreatedYearSquare({
   year,
 }: Props) {
   const { currentCenturyEvents } = useContext(BarGraphContext);
-  const [yearEvents, setYearEvents] = useState(undefined);
+  const [yearEvents, setYearEvents] = useState<Array<PeabodyEvent>>([]);
   const [isFull, setIsFull] = useState<boolean>(false);
 
   useEffect(() => {
-    setYearEvents(currentCenturyEvents.filter(event => event.year === year));
+    setYearEvents(currentCenturyEvents.filter(event => event?.year === year));
   }, [setYearEvents, currentCenturyEvents, year]);
 
   useEffect(() => {
-    const squares = yearEvents?.flatMap(event => event.squares);
-    setIsFull(squares?.length === 9 || squares?.includes("full"));
+    const squares = yearEvents?.flatMap(event => event?.squares);
+    setIsFull(Boolean(squares?.length === 9 || squares?.includes("full")));
   }, [setIsFull, yearEvents]);
 
   return (

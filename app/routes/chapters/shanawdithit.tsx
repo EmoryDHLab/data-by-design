@@ -2,7 +2,7 @@ import { ChapterContext } from "~/chapterContext";
 import ChapterTitle from "~/components/ChapterTitle";
 import Footer from "~/components/Footer";
 import CenteredLayout from "~/components/layout/CenteredLayout";
-
+import { shanawdithitFootnotes } from "~/footnotes";
 
 export default function ShanawdithitPage() {
   return (
@@ -12,6 +12,7 @@ export default function ShanawdithitPage() {
           primaryTextColor: "white",
           accentColor: "shanawdithitPrimary",
           footnoteTextColor: "shanawdithitPrimary",
+          footnotes: shanawdithitFootnotes,
         }}
       >
         <ChapterTitle

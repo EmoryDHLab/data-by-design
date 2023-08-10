@@ -7,6 +7,7 @@ interface IScrollytellContext {
   setScrollProgress?: Dispatch<SetStateAction<number>>;
   setTriggers?: Dispatch<SetStateAction<Array<RefObject<HTMLDivElement>>>>;
   steps?: RefObject<HTMLDivElement> | undefined;
+  setHighlightedSquare?: Dispatch<SetStateAction<object | undefined>>;
 }
 
 export const ScrollytellContext = createContext<IScrollytellContext>({

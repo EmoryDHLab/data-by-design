@@ -1,21 +1,22 @@
 import { createContext } from "react";
-import type { PeabodySquare, QuizStepCount, QuizStep, QuizFeedback } from "~/types/peabody";
+import type { PeabodySquare, QuizStepCount, QuizStep, QuizFeedbackType } from "~/types/peabody";
 import type { Dispatch, SetStateAction } from "react";
 
+
 interface IQuizContext {
-  allowOption(index: number): boolean;
+  allowOption: Function;
   currentStep: QuizStep | undefined;
   currentStepCount: QuizStepCount;
   setCurrentStepCount: Dispatch<SetStateAction<QuizStepCount>>;
   focusedCategory: PeabodySquare;
   setFocusedCategory: Dispatch<SetStateAction<PeabodySquare | undefined>>;
-  handleCategoryClick(selected: PeabodySquare): undefined;
-  selectedCategories: PeabodySquare[];
+  handleCategoryClick: Function;
+  selectedCategories: Array<PeabodySquare>;
   selectedYears: number[];
-  handleYearClick(year: number): undefined;
-  feedback: QuizFeedback;
-  setFeedback: Dispatch<SetStateAction<QuizFeedback>>;
-};
+  handleYearClick: Function;
+  feedback: QuizFeedbackType;
+  setFeedback: Dispatch<SetStateAction<QuizFeedbackType>>;
+}
 
 
 export const QuizContext = createContext<IQuizContext>({
@@ -23,11 +24,12 @@ export const QuizContext = createContext<IQuizContext>({
   currentStep: undefined,
   currentStepCount: 0,
   setCurrentStepCount: (_: SetStateAction<QuizStepCount>) => {},
-  focusedCategory: 0,
-  setFocusedCategory: (_: SetStateAction<QuizStepCount>) => {},
+  focusedCategory: undefined,
+  setFocusedCategory: (_: SetStateAction<PeabodySquare>) => undefined,
   handleCategoryClick: (selected: number) => {},
   selectedCategories: [],
   selectedYears: [],
   handleYearClick: (year: number) => {},
   feedback: { message: "", correct: true },
+  setFeedback: (_: SetStateAction<QuizFeedbackType>) => ""
 });

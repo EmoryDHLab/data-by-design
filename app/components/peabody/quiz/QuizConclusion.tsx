@@ -15,11 +15,7 @@ const ConclusionContent = () => {
   );
 }
 
-interface Props {
-  className: string;
-}
-
-export default function QuizConclusion({ className }: Props) {
+export default function QuizConclusion({ className }: { className?: string }) {
   const { setCurrentStepCount } = useContext(QuizContext);
   const { isDesktop, isMobile } = useDeviceContext();
 
@@ -52,7 +48,6 @@ export default function QuizConclusion({ className }: Props) {
           onKeyUp={({ key }) => { if (key === "Enter" || key === "Space") setCurrentStepCount(9) }}
           fontSize={10}
           className="font-duboisLightNarrow italic focus:outline-none focus:underline hover:underline"
-          tabIndex={0}
         >
           FINISH
           <tspan dx={2} className="font-icons">b</tspan>

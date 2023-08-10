@@ -1,4 +1,26 @@
-export default function FancyButton({ action, outlineColor, children, width, height, fontSize, x, y }) {
+import type { Dispatch, ReactNode, SetStateAction } from "react";
+
+interface Props {
+  action: Dispatch<SetStateAction<any>>;
+  outlineColor: string;
+  children: ReactNode;
+  width?: number;
+  height?: number;
+  fontSize?: number;
+  x?: number;
+  y?:number;
+}
+
+export default function FancyButton({
+  action,
+  outlineColor,
+  children,
+  width,
+  height,
+  fontSize,
+  x,
+  y
+}: Props) {
   return (
     <svg
       onClick={action}

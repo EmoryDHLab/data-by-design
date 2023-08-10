@@ -1,54 +1,52 @@
 import { useContext, useRef } from "react";
 import { ScrollytellContext } from "~/scrollytellContext";
-
 import {
   getEventXFromIndex,
   getEventYFromIndex,
   POLYGONS,
 } from "~/components/peabody/peabodyUtils";
-
 import Events from "~/data/peabody/1600sEvents.json";
+import type { Dispatch, SetStateAction } from "react";
+import type { PeabodyEvent } from "~/types/peabody";
 
 interface Props {
   eventIndex: number;
-  active: boolean;
   year: number;
-  mouseEnter:  Dispatch<SetStateAction<object>>;
-  mouseLeave:  Dispatch<SetStateAction<undefined>>;
-  yearEvent: object;
-  highlightedElement: object;
-  shouldHighlight: boolean;
+  mouseEnter?:  Dispatch<SetStateAction<object>>;
+  mouseLeave?:  Dispatch<SetStateAction<undefined>>;
+  yearEvent: PeabodyEvent;
+}
+
+type ActorColors = {
+  [key: string]: string
 }
 
 export default function TutorialEventSquare({
   eventIndex,
-  active,
   year,
   yearEvent,
-  highlightedElement,
-  shouldHighlight,
 }: Props) {
-  const eventColors = useRef<string|undefined>(undefined);
-  eventColors.current = yearEvent?.actors.map(actor => Events.actorColors[actor]);
+  const eventColors = useRef<Array<string>>([]);
+  eventColors.current = yearEvent?.actors.map(actor => (Events.actorColors as ActorColors)[actor]) || [];
 
   const { scrollProgress, setHighlightedSquare } = useContext(ScrollytellContext);
 
   const polygons = [];
 
-  if (yearEvent?.actors.length > 1) {
+  if (yearEvent?.actors && yearEvent.actors.length > 1) {
     if (yearEvent?.squares === "full") {
       switch (eventIndex) {
         case 0:
         case 1:
         case 3:
           polygons.push(...POLYGONS[0]);
-          eventColors.current = [Events.actorColors[yearEvent.actors[0]]];
+          eventColors.current = [(Events.actorColors as ActorColors)[yearEvent.actors[0]]];
           break;
         case 5:
         case 7:
         case 8:
           polygons.push(...POLYGONS[0]);
-          eventColors.current = [Events.actorColors[yearEvent.actors[1]]];
+          eventColors.current = [(Events.actorColors as ActorColors)[yearEvent.actors[1]]];
           break;
         default:
           polygons.push(...POLYGONS[yearEvent?.actors.length - 1]);
@@ -69,8 +67,8 @@ export default function TutorialEventSquare({
         height="30"
         x={getEventXFromIndex(eventIndex)}
         y={getEventYFromIndex(eventIndex)}
-        onMouseEnter={() => setHighlightedSquare({yearEvent, square: eventIndex + 1})}
-        onMouseLeave={() => setHighlightedSquare(undefined)}
+        onMouseEnter={() => { if (setHighlightedSquare) setHighlightedSquare({yearEvent, square: eventIndex + 1})}}
+        onMouseLeave={() => { if (setHighlightedSquare) setHighlightedSquare(undefined)}}
       >
         <defs>
           <pattern width="5" height="10" patternUnits="userSpaceOnUse">
@@ -101,10 +99,10 @@ export default function TutorialEventSquare({
                   scrollProgress >= 12.25 ? 100 : 0
                 }`
               }
-              stroke={eventColors.current[i] ?? "gold"}
+              stroke={eventColors?.current[i] ?? "gold"}
               strokeWidth={0.5}
               points={p}
-              fill={eventColors.current[i]}
+              fill={eventColors?.current[i]}
               fillOpacity={1}
             />
           );
@@ -115,7 +113,7 @@ export default function TutorialEventSquare({
         y={getEventYFromIndex(eventIndex) + 22}
         fill={year === 1615 && scrollProgress >= 3.25 && eventIndex === 4 ? "white" : "black"}
         className="number pointer-events-none"
-        opacity={(active && scrollProgress < 5) || (shouldHighlight && scrollProgress >= 2.25 && scrollProgress < 4.25) ? 1 : 0}
+        opacity={(year === 1615 && scrollProgress >= 2.25 && scrollProgress < 4.25) ? 1 : 0}
       >
         {eventIndex + 1}
       </text>

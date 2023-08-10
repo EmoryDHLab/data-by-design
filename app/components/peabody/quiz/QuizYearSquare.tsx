@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { QuizContext } from "./QuizContext";
 import QuizEventSquare from "./QuizEventSquare";
-import { getYearXFromIndex, getYearYFromIndex } from "~/components/peabody/peabodyUtils";
+import { getYearXFromIndex, getYearYFromIndex, getCenturyEvents } from "~/components/peabody/peabodyUtils";
 import { numberRange } from "~/utils";
-import { getCenturyEvents } from "../peabodyUtils";
 
 const YEAR_WIDTH = 11.6;
 const width = YEAR_WIDTH - YEAR_WIDTH / 48;
@@ -35,7 +34,7 @@ export default function QuizYearSquare({
     handleYearClick
   } = useContext(QuizContext);
 
-  const yearEvents = centuryEvents.filter(event => event.year == year);
+  const yearEvents = centuryEvents.filter(event => event?.year == year);
 
   useEffect(() => {
     if (currentStepCount === 2 && !selectedYears.includes(year)) {
@@ -43,7 +42,7 @@ export default function QuizYearSquare({
         role: "button",
         tabIndex: 0,
         onClick: () => handleYearClick(year),
-        onKeyUp: ({ key }) => { if (key === "Enter") handleYearClick(year); }
+        onKeyUp: ({ key }: { key: string }) => { if (key === "Enter") handleYearClick(year); }
       });
     } else {
       setInteractiveOptions({});
@@ -100,6 +99,7 @@ export default function QuizYearSquare({
             year={year}
             absoluteIndex={absoluteIndex}
             yearEvents={yearEvents}
+            isVertical={false}
           />
         )
       })}

@@ -1,3 +1,10 @@
+export type PolygonTransform =
+  | {
+    transform: string
+    transformOrigin: string
+  }
+  | {}
+
 export type PeabodyCentury =
   | 1500
   | 1600
@@ -14,8 +21,10 @@ export type PeabodySquare =
   | 7
   | 8
   | 9
+  | "full"
 
 export type QuizStepCount =
+  | 0
   | 1
   | 2
   | 3
@@ -36,20 +45,34 @@ export type PeabodyActor =
   | "Native"
   | "Mexico";
 
-export type PeabodyEvent = {
-  year: number,
-  event: string,
-  squares: PeabodySquare[],
-  actors: PeabodyActor[]
-};
+export type PeabodyEvent =
+  | {
+      event: string;
+      year: PeabodyCentury | number;
+      squares: Array<PeabodySquare> | "full" | undefined;
+      actors: Array<string>;
+      transform?: Array<number | string>;
+    }
+  | undefined;
+
+export type ActivePeabodyEvent =
+  | {
+    event: PeabodyEvent;
+    type: number;
+    absoluteIndex?: number;
+  }
+  | undefined;
 
 export type QuizStep = {
-  solvedEvents: PeabodySquare[],
-  currentEvent: PeabodyEvent,
-  instructions: string
+  solvedEvents: Array<PeabodySquare>,
+  stepEvent: PeabodyEvent,
+  instructions: string,
+  notes: string
 };
 
-export type QuizFeedback = {
-  message: string,
-  correct: boolean,
-};
+export type QuizFeedbackType =
+ | {
+    message: string,
+    correct: boolean,
+  }
+ | undefined;

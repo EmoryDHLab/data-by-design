@@ -2,10 +2,22 @@ import { useContext, useEffect, useState } from "react";
 import { QuizContext } from "./QuizContext";
 import { useDeviceContext } from "~/hooks";
 
-function QuizSquareMask({ defaultX, defaultY }) {
+interface Props {
+  defaultX: number;
+  defaultY: number;
+}
+
+type TInitialMask = {
+  x: number,
+  y: number,
+  w: number,
+  h: number,
+}
+
+function QuizSquareMask({ defaultX, defaultY }: Props) {
   const { currentStepCount } = useContext(QuizContext);
   const { isMobile } = useDeviceContext();
-  const [initialMask, setInitialMask] = useState<object>({
+  const [initialMask, setInitialMask] = useState<TInitialMask>({
     x: defaultX, y: defaultY, h: 125, w: 125
   });
 
@@ -31,7 +43,6 @@ function QuizSquareMask({ defaultX, defaultY }) {
       />
 
       <rect
-        className="scrollytell-shape-focus"
         x={initialMask.x}
         y={initialMask.y}
         width={initialMask.w}

@@ -5,11 +5,11 @@ import { useDeviceContext } from "~/hooks";
 export default function QuizFeedback() {
   const { feedback, setFeedback, currentStepCount } = useContext(QuizContext);
   const [show, setShow] = useState<boolean>(false);
-  const timeout = useRef(undefined);
+  const timeout = useRef<any>(undefined);
   const { isMobile } = useDeviceContext();
 
   useEffect(() => {
-    if (!feedback.message) return;
+    if (!feedback?.message) return;
     clearTimeout(timeout.current);
     setShow(true);
     timeout.current = setTimeout(() => {
@@ -24,10 +24,10 @@ export default function QuizFeedback() {
         transition-all duration-700 tracking-widest
         text-center absolute top-0 bg-black z-10
         ${show ? "opacity-100 w-full px-3 pb-3 h-20": "opacity-0 px-0 pb-0 h-0"}
-        text-${feedback.correct ? "green-400" : "red-600"}
+        text-${feedback?.correct ? "green-400" : "red-600"}
       `}
       >
-        {feedback.message ?? " "}
+        {feedback?.message ?? " "}
       </span>
     )
   }
@@ -45,12 +45,12 @@ export default function QuizFeedback() {
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        fill={feedback.correct ? "green" : "red"}
+        fill={feedback?.correct ? "green" : "red"}
         fontFamily="VTC Du Bois Narrow, serif"
         fontStyle="italic"
         className={`transition-opacity duration-700 tracking-widest opacity-${show ? "100": "0"}`}
       >
-        {feedback.message}
+        {feedback?.message}
       </text>
     </svg>
   )

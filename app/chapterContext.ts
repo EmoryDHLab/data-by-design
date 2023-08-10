@@ -19,6 +19,23 @@ export type HoverState =
   | "crossSections"
   | "sideView"
   | "tableSet"
+  | "City"
+  | "Value"
+  | "Owners"
+  | "Illiteracy"
+  | "Countries"
+  | "Occupations"
+  | "Freedom"
+  | "Newspapers"
+  | "Gender"
+  | "Race"
+  | "Race-Distribution"
+  | "Foreign"
+  | "Age-Sex"
+  | "Populations"
+  | "Religion"
+  | "Occupation"
+  | "Map"
   | undefined;
 
 interface IChapterContext {
@@ -36,6 +53,7 @@ interface IChapterContext {
   disclosure?: boolean|undefined
   hideSensitiveState?: boolean|undefined;
   setHideSensitiveState?: Dispatch<SetStateAction<boolean>>;
+  hide?: boolean;
 }
 
 const ChapterContext = createContext<IChapterContext>({

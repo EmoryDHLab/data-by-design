@@ -9,7 +9,6 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import FullBleed from "~/components/layout/FullBleed";
-import Figure from "~/components/layout/Figure";
 import Footer from "~/components/Footer";
 import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import HoverText from "~/components/HoverText";
@@ -420,14 +419,8 @@ export default function PeabodyPage() {
             visualizations that they would then study.
           </p>
         </Column>
-        <Column className="md:ml-12">
-          <Figure src="/images/ch4-blank-chart.webp" alt="">
-            A blank chart from{" "}
-            <cite>Blank Centuries for Monographs of History</cite>
-            (1870), the workbook that Peabody printed to accompany her history
-            textbooks. Courtesy of the American Antiquarian Society. Photo by
-            Lauren Klein.
-          </Figure>
+        <Column>
+          <FigureObj figure={figures["ch4-blank-chart"]} />
         </Column>
       </TwoColumnLayout>
 
@@ -523,56 +516,27 @@ export default function PeabodyPage() {
             <InlineFootnote index={23}></InlineFootnote>
           </p>
         </Column>
-        <Column className="md:ml-12" shouldPin={true}>
-          <Figure
-            className="grid grid-cols-2 md:grid-cols-4 gap-2"
-            images={[
-              {
-                src: "/images/ch4-5.webp",
-                alt: "",
-              },
-              {
-                src: "/images/ch4-6.webp",
-                alt: "",
-              },
-              {
-                src: "/images/ch4-7.webp",
-                alt: "",
-              },
-              {
-                src: "/images/ch4-8.webp",
-                alt: "",
-              },
-              {
-                src: "/images/ch4-9.webp",
-                alt: "",
-              },
-              {
-                src: "/images/ch4-10.webp",
-                alt: "",
-              },
-              {
-                src: "/images/ch4-11.webp",
-                alt: "",
-              },
-              {
-                src: "/images/ch4-12.webp",
-                alt: "",
-              },
+        <Column shouldPin={true}>
+          <FigureObj
+            className="grid grid-cols-2 md:grid-cols-4 gap-2 md:ml-12"
+            figures={[
+              figures["ch4-5"],
+              figures["ch4-6"],
+              figures["ch4-7"],
+              figures["ch4-8"],
+              figures["ch4-9"],
+              figures["ch4-10"],
+              figures["ch4-11"],
+              figures["ch4-12"],
             ]}
-          >
-            Images of student-created charts from a copy of
-            <cite>The Polish-American System</cite> housed at the American
-            Antiquarian Society. Courtesy of the American Antiquarian Society.
-            Photos by Lauren Klein.
-          </Figure>
+            groupCaption="<p><cite>The Polish-American System</cite>
+              housed at the American Antiquarian Society. Courtesy
+              of the American Antiquarian Society. Photos by Lauren Klein.</p>"
+          />
         </Column>
       </TwoColumnLayout>
       <CenteredLayout>
-        <Figure className="full-bleed" src="/images/ch4-13-willard.jpg" alt="">
-          Emma Willard's perspectival <cite>Temple of Time</cite> (1846). Image
-          courtesy of the David Rumsey Map Collection, Cartography Associates.
-        </Figure>
+        <FigureObj figure={figures["ch4-13-willard"]} />
         <p>
           While sharply divergent from Peabody's charts in terms of aesthetics,
           Peabody nevertheless identified Willard as a major source of
@@ -687,30 +651,26 @@ export default function PeabodyPage() {
           </p>
         </Column>
         <Column className="md:ml-12" shouldPin={true}>
-          <Figure
-            className="grid grid-cols-2 items-center middle-full gap-x-4"
-            images={[
-              {
-                src: "/images/ch4-clarke1.webp",
-                alt: "",
-              },
-              {
-                src: "/images/ch4-clarke2.webp",
-                alt: "",
-              },
+          {/*
+            TODO: Originally this used images found at:
+            /images/ch4-clark1.webp and /images/ch4-clark2.webp
+            The above clark2 is actually clark1.
+            figures["ch4-clark2"] looks like a photo of a damaged
+            chart.
+          */}
+          <FigureObj
+            className="grid grid-cols-2 gap-4 md:ml-12"
+            figures={[
+              figures["ch4-clarke1"],
+              figures["ch4-clarke1"]
             ]}
-          >
-            <p>
-              <strong>Left:</strong> One of the timelines created by Anne Laura
-              Clarke, as explored by Granville Ganter in his essay on Clarke's
-              traveling lectures.
-            </p>
-            <p>
-              <strong>Right:</strong> Another timeline as it was first
+            groupCaption="<p><strong>Left:</strong> One of the timelines
+              created by Anne Laura Clarke, as explored by Granville
+              Ganter in his essay on Clarke's traveling lectures.</p>
+              <p><strong>Right:</strong> Another timeline as it was first
               encountered by Ganter. Photos by Granville Ganter. Courtesy of
-              Granville Ganter.
-            </p>
-          </Figure>
+              Granville Ganter.</p>"
+          />
         </Column>
       </TwoColumnLayout>
       <TwoColumnLayout>
@@ -760,28 +720,20 @@ export default function PeabodyPage() {
             fatigue, of any large-scale project that is made by human hands.
           </p>
         </Column>
-        <Column className="md:ml-12">
-          <Figure
-            className="grid grid-cols-2 items-center middle-full gap-x-4"
-            images={[
-              {
-                src: "/images/ch4-15a-fc-left.png",
-                alt: "",
-              },
-              {
-                src: "/images/ch4-15b-fc-right.png",
-                alt: "",
-              },
+        <Column>
+          <FigureObj
+            figures={[
+              figures["ch4-15-fc-touch"],
+              figures["ch4-16-fc-led-boards"],
+              figures["ch4-18-rendering"]
             ]}
-          ></Figure>
-          <Figure src="/images/ch4-17-leds.webp" alt="" />
-          <Figure src="/images/ch4-18-rendering.webp" alt="">
-            The layers of the touch interface, built with copper tape and a foam
-            spacer; the assembled touch interface; a view of the modular circuit
-            boards for communicating with the LEDs; a rendering of the completed
-            Floor Chart; the LEDs displayed on top of the quilted chart. Photos
-            by Lauren Klein.
-          </Figure>
+            className="md:ml-12"
+            groupCaption="<p>The layers of the touch interface, built with copper
+              tape and a foam spacer; the assembled touch interface; a view of
+              the modular circuit boards for communicating with the LEDs; a
+              rendering of the completed Floor Chart; the LEDs displayed on top
+              of the quilted chart. Photos by Lauren Klein.</p>"
+        />
         </Column>
       </TwoColumnLayout>
 
@@ -882,32 +834,20 @@ export default function PeabodyPage() {
       </TwoColumnLayout>
 
       <CenteredLayout>
-        <Figure
+        <FigureObj
           className="grid grid-cols-2 items-center middle-full gap-x-4"
-          images={[
-            {
-              src: "/images/ch4-19-rachel-carey-george.webp",
-              alt: "",
-            },
-            {
-              src: "/images/ch4-20-gbq-q030-06.webp",
-              alt: "",
-            },
+          figures={[
+            figures["ch4-19-rachel-carey-george"],
+            figures["ch4-20-gbq-q030-06"],
           ]}
-        >
-          <p>
-            <strong>Left:</strong> "Housetop," by Rachel Carey George, ca. 1935.
-          </p>
-          <p>
-            <strong>Right:</strong> "Housetop" variation, design by Mary Lee
+          groupCaption='<p><strong>Left:</strong> "Housetop," by Rachel
+            Carey George, ca. 1935.</p>
+            <p><strong>Right:</strong> "Housetop" variation, design by Mary Lee
             Bendolph. 1998, quilted by Essie Bendolph Pettaway, 2001. Photos
-            courtesy of Tinwood Media.
-          </p>
-          <p>
-            <em>Permissions pending.</em>
-          </p>
-        </Figure>
-        <p>
+            courtesy of Tinwood Media.</p>
+            <p><em>Permissions pending.</em></p>'
+        />
+                  <p>
           Pictured above are two quilts from the area of Alabama known as Gee's
           Bend, a small, rural Black community, 35 miles south of Selma, that
           can trace its roots to a cotton plantation that was established there

@@ -6,13 +6,13 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import FullBleed from "~/components/layout/FullBleed";
 
-import Figure from "~/components/layout/Figure";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 
 import Footer from "~/components/Footer";
-import InlineFootnote from "~/components/InlineFootnote";
 import { playfairFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
+import playfairFigures from "~/data/figures/playfair.json";
+import FigureObj from "~/components/layout/FigureObj";
 
 export default function IntroPage() {
   const [docHeightState, setDocHeightState] = useState<number>(0);
@@ -81,24 +81,11 @@ export default function IntroPage() {
       </FullBleed>
 
       <TwoColumnLayout>
-        <div className="h-full  bias-full md:bias-1/2 md:w-1/3 md: py-5 my-6 md:my-0 md:mr-5">
-          <Figure className="" src="/images/playfair/1-northamerica.jpg" alt="">
-            Image of old quipu. Image of "Border Quipu."
-          </Figure>
-
-          <Figure className="" src="/images/playfair/2-wheat.jpg" alt="">
-            Image of two-row wampum belt
-          </Figure>
-
-          <Figure className="" src="/images/playfair/3-pie.jpg" alt="">
-            Playfair's "Chart Representing the Extent, Population &amp;
-            Revenues, of the Principal Nations in Europe, after the Division of
-            Poland &amp; Treaty of Luneville," published in the{" "}
-            <cite>Statistical Breviary</cite>
-            (1801). The pie charts included in this volume are considered the
-            first presently known. Image courtesy of Wikimedia Commons.
-          </Figure>
-        </div>
+        <Column>
+          <FigureObj figure={playfairFigures["1-northamerica"]} />
+          <FigureObj figure={playfairFigures["2-wheat"]} />
+          <FigureObj figure={playfairFigures["3-pie"]} />
+        </Column>
         <Column className="ml-0 md:w-2/3 md:ml-10">
           <p>
             But before moving any further, it’s important to make clear that

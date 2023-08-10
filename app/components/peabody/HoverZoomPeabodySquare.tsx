@@ -1,25 +1,22 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
-import type { ChapterFigure } from "~/types/figureType";
+import type { Figure } from "~/types/figureType";
 import { Caption } from "../layout/FigureObj";
 import FigureModal from "../layout/FigureModal";
 
 interface Props {
-  figure: ChapterFigure;
+  figure: Figure;
 }
 
 export default function HoverZoomPeabodySquare({ figure }: Props) {
   const { hoverState } = useContext(ChapterContext);
   return (
-    // <>
-    //   <FigureObj figure={figure} className="absolute top-0 left-0 hidden md:block z-5" />
-    // </>
     <FigureModal figure={figure} className="hidden md:block">
       <p id={figure.fileName} className='sr-only'>{figure.caption}</p>
       <svg
         viewBox="0 0 244.56 242.88"
         role="img"
-        aria-labelledby={figure.filename}
+        aria-labelledby={figure.fileName ?? ""}
       >
         <image
           role="presentation"

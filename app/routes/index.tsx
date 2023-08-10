@@ -23,6 +23,7 @@ export default function Index() {
       value={{
         backgroundColor: "playfairPrimary",
         primaryTextColor: "white",
+        footnotes: []
       }}
     >
       <div className="sm:flex bg-black text-white pt-10 sm:pt-5">

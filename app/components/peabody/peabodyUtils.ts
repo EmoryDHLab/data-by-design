@@ -1,21 +1,22 @@
 import eventData from "~/data/peabody/eventData.json";
+import type { PeabodyEvent } from "~/types/peabody";
 
-export function getEventXFromIndex(index: number, size: float) {
+export function getEventXFromIndex(index: number, size?: number) {
   return (index % 3) * (size ?? 30);
 }
 
-export function getEventYFromIndex(index: number, size: float) {
+export function getEventYFromIndex(index: number, size?: number) {
   return Math.floor(index / 3) * (size ?? 30);
 }
 
 export const YEAR_WIDTH = 9;
 
-export function getYearXFromIndex(index: number, width: float) {
+export function getYearXFromIndex(index: number, width?: number) {
   let column = index % 10;
   return 3 + column * (width ?? YEAR_WIDTH) + (column > 4 ? 3 : 0);
 }
 
-export function getYearYFromIndex(index: number, width: float) {
+export function getYearYFromIndex(index: number, width?: number) {
   let row = Math.floor(index / 10);
   return 3 + row * (width ?? YEAR_WIDTH) + (row > 4 ? 3 : 0);
 }
@@ -64,16 +65,16 @@ export const POLYGONS = [
   THREE_POLYGONS_SPLIT,
 ];
 
-export const getCenturyEvents = ((century) => {
-  return Object.keys(eventData.events).map((year) => {
-    if (year >= century + 1 && year <= century + 100) {
-        return eventData.events[year].flat();
+export const getCenturyEvents = ((century: number) => {
+  return (Object.keys(eventData.events).map((year) => {
+    if (parseInt(year) >= century + 1 && parseInt(year) <= century + 100) {
+        return (eventData.events as {[key: string]: Array<PeabodyEvent | {}>})[year].flat();
     }
     return undefined;
-  }).filter(Boolean).flat();
+  }) as Array<PeabodyEvent>).filter(Boolean).flat();
 });
 
-export const strokeDasharray = (index, isVertical) => {
+export const strokeDasharray = (index: number, isVertical: boolean = false) => {
   if (isVertical) {
     switch(index) {
       case 8:

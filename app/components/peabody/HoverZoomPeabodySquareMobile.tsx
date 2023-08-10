@@ -1,11 +1,14 @@
 import SlideShow from "../layout/SlideShow";
-import type { ChapterFigure } from "~/types/figureType";
+import type { Figure } from "~/types/figureType";
+import type { ReactNode } from "react";
 
 interface Props {
-  figure: ChapterFigure;
+  figure: Figure;
+  className?: string;
+  children?: ReactNode;
 }
 
-export const Caption = ({ children }) => {
+export const Caption = ({ children }: {children: ReactNode}) => {
   return (
     <figcaption
       className="font-dubois text-center my-3 w-3/4 mx-auto"
@@ -14,7 +17,6 @@ export const Caption = ({ children }) => {
     </figcaption>
   )
 }
-
 
 const Image = ({ figure, className, children }: Props) => {
   return(
@@ -35,7 +37,7 @@ const Image = ({ figure, className, children }: Props) => {
 }
 
 
-export default function HoverZoomPeabodySquareMobile({ figures }: Props) {
+export default function HoverZoomPeabodySquareMobile({ figures }: { figures: Array<Figure>}) {
   return (
     <SlideShow
       className="block md:hidden bg-peabodyPrimary w-full py-10"

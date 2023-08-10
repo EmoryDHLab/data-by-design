@@ -2,7 +2,7 @@ import { useContext } from "react"
 import BarGraphContext from "./BarGraphContext";
 import { numberRange } from "~/utils";
 
-const textOffset = (index) => {
+const textOffset = (index: number) => {
   if (index === 1) return 0;
   if (index === 100) return 291;
   return index * 3 - 6;

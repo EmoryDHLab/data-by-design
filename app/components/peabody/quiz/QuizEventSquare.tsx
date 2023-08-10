@@ -6,6 +6,7 @@ import {
 import { useContext, useEffect, useRef, useState  } from "react";
 import { QuizContext } from "./QuizContext";
 import eventData from "~/data/peabody/eventData.json";
+import type { PeabodyEvent, PeabodySquare, PolygonTransform } from "~/types/peabody";
 
 interface Props {
   // Index in total peabody square, so 0..99
@@ -13,7 +14,7 @@ interface Props {
   // Index in year square, so 0..8
   index: number;
   year: number;
-  yearEvents: object | undefined;
+  yearEvents: Array<PeabodyEvent>;
   isVertical: boolean;
 }
 
@@ -34,14 +35,14 @@ export default function RecreatedEventSquare({
     setFocusedCategory,
   } = useContext(QuizContext);
 
-  const [squareEvent, setSquareEvent] = useState<object | undefined>(undefined);
-  const [eventPolygons, setEventPolygons] = useState<array>([]);
-  const [polygonOpacity, setPolygonOpacity] = useState<float>(0.0);
+  const [squareEvent, setSquareEvent] = useState<PeabodyEvent | undefined>(undefined);
+  const [eventPolygons, setEventPolygons] = useState<Array<string>>([]);
+  const [polygonOpacity, setPolygonOpacity] = useState<number>(0.0);
   const [interactiveOptions, setInteractiveOptions] = useState<object>({});
   const [isOption, setIsOption] = useState<boolean>(allowOption(index));
 
-  const eventColors = useRef<string[]>([]);
-  const polygonTransform = useRef<objects | undefined>(undefined);
+  const eventColors = useRef<Array<string>>([]);
+  const polygonTransform = useRef<PolygonTransform | undefined>(undefined);
 
   useEffect(() => {
     setIsOption(allowOption(index));
@@ -58,10 +59,10 @@ export default function RecreatedEventSquare({
         role: "button",
         tabIndex: 0,
         onClick: () => handleCategoryClick(index),
-        onKeyUp: ({ key }) => { if (key === "Enter") handleCategoryClick(index) },
-        onMouseEnter: () => setFocusedCategory(index),
+        onKeyUp: ({ key }: { key: string }) => { if (key === "Enter") handleCategoryClick(index) },
+        onMouseEnter: () => setFocusedCategory((index as PeabodySquare)),
         onMouseLeave: () => setFocusedCategory(undefined),
-        onFocus: () => setFocusedCategory(index),
+        onFocus: () => setFocusedCategory((index as PeabodySquare)),
         onBlur: () => setFocusedCategory(undefined),
         className: "focus:outline-none focus:ring-0 cursor-pointer",
       });
@@ -76,7 +77,7 @@ export default function RecreatedEventSquare({
       (
         currentStepCount <= 8 &&
         year === 1644 &&
-        currentStep.solvedEvents.includes(index)
+        currentStep?.solvedEvents.includes((index as PeabodySquare))
       ) ||
       currentStepCount >= 8
     ) {
@@ -89,13 +90,13 @@ export default function RecreatedEventSquare({
   useEffect(() => {
     setSquareEvent(
       yearEvents?.find(
-        event => event.squares.includes(index + 1) || event.squares === "full"
+        event => (event?.squares as Array<number>).includes(index + 1) || event?.squares === "full"
       )
     );
   }, [setSquareEvent, yearEvents, index]);
 
   useEffect(() => {
-    eventColors.current = squareEvent?.actors.map(actor => eventData.actorColors[actor]);
+    eventColors.current = squareEvent?.actors.map(actor => (eventData?.actorColors as {[key: string]: string})[actor]) || [];
 
     polygonTransform.current = squareEvent?.transform
                                 ? {
@@ -106,20 +107,20 @@ export default function RecreatedEventSquare({
 
     const polygons = [];
 
-    if (squareEvent?.actors?.length > 1) {
+    if (squareEvent?.actors && squareEvent?.actors?.length > 1) {
       if (squareEvent?.squares === "full") {
         switch (index) {
           case 0:
           case 1:
           case 3:
             polygons.push(...POLYGONS[0]);
-            eventColors.current = [eventData.actorColors[squareEvent.actors[0]]];
+            eventColors.current = [(eventData.actorColors as {[key: string]: string})[squareEvent.actors[0]]];
             break;
           case 5:
           case 7:
           case 8:
             polygons.push(...POLYGONS[0]);
-            eventColors.current = [eventData.actorColors[squareEvent.actors[1]]];
+            eventColors.current = [(eventData.actorColors as {[key: string]: string})[squareEvent.actors[1]]];
             break;
           default:
             polygons.push(...POLYGONS[squareEvent?.actors.length - 1]);
@@ -157,7 +158,7 @@ export default function RecreatedEventSquare({
           {index + 1}
         </text>
 
-        {selectedCategories.includes(index) &&
+        {selectedCategories.includes((index as PeabodySquare)) &&
           <>
             <line x1={0} x2={30} y1={0} y2={30} className="stroke-red-400" strokeWidth={3}/>
             <line x1={30} x2={0} y1={0} y2={30} className="stroke-red-400" strokeWidth={3}/>
@@ -181,8 +182,8 @@ export default function RecreatedEventSquare({
               <polygon
                 key={i}
                 points={p}
-                fill={eventColors.current[i]}
-                stroke={eventColors.current[i]}
+                fill={eventColors?.current[i] ?? ""}
+                stroke={eventColors?.current[i] ?? ""}
                 strokeWidth={0.5}
                 strokeOpacity={polygonOpacity}
                 style={polygonTransform.current}

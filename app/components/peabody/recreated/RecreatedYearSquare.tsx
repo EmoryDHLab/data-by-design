@@ -1,13 +1,12 @@
 import {
   getYearXFromIndex,
   getYearYFromIndex,
-  HighlightedElement,
   YEAR_WIDTH,
-  YearSquare,
 } from "~/components/peabody/peabodyUtils";
 import RecreatedEventSquare from "~/components/peabody/recreated/RecreatedEventSquare";
 import { numberRange } from "~/utils";
-import { Dispatch, SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import type { HighlightedElement, YearSquare } from "~/components/peabody/peabodyUtils";
 
 interface Props {
   index: number;

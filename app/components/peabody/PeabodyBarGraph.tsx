@@ -8,14 +8,16 @@ import Timeline from "./barGraph/Timeline";
 import { getCenturyEvents } from "./peabodyUtils";
 import BarGraphContext from "./barGraph/BarGraphContext";
 import BarGraphActors from "./barGraph/BarGraphActors";
+import type { PeabodyEvent, ActivePeabodyEvent } from "~/types/peabody";
+
 const centuries = [1500, 1600, 1700, 1800];
 
 export default function PeabodyBarGraph() {
   const [currentCentury, setCurrentCentury] = useState(centuries[2]);
-  const [currentCenturyEvents, setCurrentCenturyEvents] = useState(
-    getCenturyEvents(centuries[2])
+  const [currentCenturyEvents, setCurrentCenturyEvents] = useState<Array<PeabodyEvent>>(
+    getCenturyEvents(1700)
   );
-  const [activeEvent, setActiveEvent] = useState<object | undefined>(undefined);
+  const [activeEvent, setActiveEvent] = useState<ActivePeabodyEvent | undefined>(undefined);
 
   useEffect(() => {
     setCurrentCenturyEvents(getCenturyEvents(currentCentury));

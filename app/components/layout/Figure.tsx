@@ -1,3 +1,4 @@
+// DEPRECATED!!! Use FigureObj!!
 import type { ReactNodeLike } from "prop-types";
 import ImageModal from "~/components/layout/ImageModal";
 import { classNames } from "~/utils";

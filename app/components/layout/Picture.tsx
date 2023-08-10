@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
-import type { ChapterFigure } from "~/types/figureType";
+import type { Figure } from "~/types/figureType";
 
 interface Props {
-  figure: ChapterFigure;
+  figure: Figure;
   className?: string;
 }
 
@@ -17,8 +17,8 @@ function Picture({ figure, className }: Props) {
       <img
         className={`drop-shadow-lg transition-opacity opacity-${hide ? "0" : "100"} ${className ?? ""}`}
         src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
-        alt={figure.altText}
-        title={figure.title}
+        alt={figure.altText ?? ""}
+        title={figure.title ?? ""}
         draggable={!hide}
       />
     </picture>

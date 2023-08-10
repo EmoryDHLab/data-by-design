@@ -86,8 +86,8 @@ export default function FigureModal({ children, src, figure, loading, hide, clas
                         <img
                           className="mx-auto max-h-[80vh]"
                           src={figure ? `/images/${figure.chapter}/${figure.fileName}.jpg` : src}
-                          alt={figure?.altText}
-                          title={figure?.title}
+                          alt={figure?.altText ?? ""}
+                          title={figure?.title ?? ""}
                           loading={loading ?? "lazy"}
                         />
                       </picture>

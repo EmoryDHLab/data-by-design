@@ -17,7 +17,7 @@ const IntroText = () => {
   );
 };
 
-export default function QuizIntro({ className }) {
+export default function QuizIntro({ className }: { className?: string }) {
   const { setCurrentStepCount } = useContext(QuizContext);
   const { isMobile, isDesktop } = useDeviceContext();
 
@@ -48,7 +48,6 @@ export default function QuizIntro({ className }) {
           onKeyUp={({ key }) => { if (key === "Enter" || key === "Space") setCurrentStepCount(1) }}
           fontSize={10}
           className="font-duboisLightNarrow italic focus:outline-none focus:underline hover:underline"
-          tabIndex={0}
         >
           BEGIN
           <tspan dx={2} className="font-icons">b</tspan>

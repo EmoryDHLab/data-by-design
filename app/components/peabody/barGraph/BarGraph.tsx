@@ -3,7 +3,7 @@ import BarGraphContext from "./BarGraphContext";
 import { numberRange } from "~/utils";
 import BarGraphYears from "./BarGraphYears";
 
-export default function BarGraph({ yearIndex }) {
+export default function BarGraph() {
   const { currentCentury } = useContext(BarGraphContext);
 
   return (

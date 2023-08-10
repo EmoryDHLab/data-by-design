@@ -11,21 +11,21 @@ import { quizSteps } from "./quizSteps";
 import eventData from "~/data/peabody/eventData.json";
 import QuizFinal from "./QuizFinal";
 import { QuizContext } from "./QuizContext";
-import type { QuizStep } from "~/types/peabody";
+import type { QuizStep, QuizStepCount, PeabodySquare, QuizFeedbackType } from "~/types/peabody";
 import QuizSquareMask from "./QuizSquareMask";
 
 export default function Quiz() {
-  const [currentStep, setCurrentStep] = useState<QuizStep>(quizSteps[0]);
-  const [currentStepCount, setCurrentStepCount] = useState<number>(0);
-  const [selectedCategories, setSelectedCategories] = useState<array>([]);
-  const [selectedYears, setSelectedYears] = useState<array>([]);
-  const [focusedCategory, setFocusedCategory] = useState<number|undefined>(undefined);
-  const [feedback, setFeedback] = useState<object>({});
-  const quizRef = useRef();
-  const endRef = useRef();
+  const [currentStep, setCurrentStep] = useState<QuizStep>((quizSteps as Array<QuizStep>)[0]);
+  const [currentStepCount, setCurrentStepCount] = useState<QuizStepCount>(0);
+  const [selectedCategories, setSelectedCategories] = useState<Array<PeabodySquare>>([]);
+  const [selectedYears, setSelectedYears] = useState<Array<number>>([]);
+  const [focusedCategory, setFocusedCategory] = useState<PeabodySquare>(undefined);
+  const [feedback, setFeedback] = useState<QuizFeedbackType>(undefined);
+  const quizRef = useRef<SVGSVGElement>(null);
+  const endRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (currentStepCount > 0 && currentStepCount < 9) quizRef.current.scrollIntoView({ behavior: "smooth" });
+    if (currentStepCount > 0 && currentStepCount < 9 && quizRef.current) quizRef.current.scrollIntoView({ behavior: "smooth" });
   }, [currentStepCount]);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function Quiz() {
         correct: false
       });
 
-      setCurrentStepCount(currentStepCount => currentStepCount + 1);
+      setCurrentStepCount((currentStepCount => (currentStepCount + 1 as QuizStepCount)));
       setSelectedYears([]);
     }
   }, [setCurrentStepCount, selectedYears, setSelectedYears, currentStepCount]);
@@ -48,23 +48,23 @@ export default function Quiz() {
   useEffect(() => {
     if (selectedCategories.length >= 3) {
       setFeedback({
-        message: `${currentStep.stepEvent.event.replace(/ \[.*\]/, '')} was categorized as ${eventData.eventTypes[currentStep.stepEvent.squares[0] - 1]}`,
+        message: `${currentStep?.stepEvent?.event.replace(/ \[.*\]/, '')} was categorized as ${eventData.eventTypes[(currentStep.stepEvent?.squares as Array<number>)[0] - 1]}`,
         correct: false
       });
-      setCurrentStepCount(currentStepCount => currentStepCount + 1);
+      setCurrentStepCount(currentStepCount => (currentStepCount + 1 as QuizStepCount));
     }
 
   }, [selectedCategories, currentStep, setFeedback]);
 
   useEffect(() => {
-    setCurrentStep(quizSteps[currentStepCount]);
+    setCurrentStep((quizSteps as Array<QuizStep>)[currentStepCount]);
     setSelectedCategories([])
-    if (currentStepCount === 9) endRef.current.scrollIntoView({ block: "end", behavior: "smooth" });
+    if (currentStepCount === 9 && endRef.current) endRef.current.scrollIntoView({ block: "end", behavior: "smooth" });
   }, [currentStepCount, setCurrentStep, setSelectedCategories]);
 
-  const handleYearClick = (year) => {
+  const handleYearClick = (year: number) => {
     if (year === 1644 && currentStepCount === 2) {
-      setCurrentStepCount(currentStepCount => currentStepCount + 1);
+      setCurrentStepCount(currentStepCount => (currentStepCount + 1 as QuizStepCount));
       setSelectedYears([]);
       setFeedback({
         message: `YES it was 1644. Now select how Peabody would categorize ${quizSteps[2].stepEvent.event}`,
@@ -76,7 +76,7 @@ export default function Quiz() {
   }
 
   // Called when an event square or category is selected
-  const handleCategoryClick = (selected) => {
+  const handleCategoryClick = (selected: number) => {
     if (currentStepCount === 3 && selected == 0) {
       setCurrentStepCount(4);
       setFeedback({
@@ -101,16 +101,16 @@ export default function Quiz() {
         message: "All done!",
         correct: true
       });
-    } else if (!currentStep.solvedEvents.includes(selected)) {
-        setSelectedCategories([selected, ...selectedCategories]);
+    } else if (!(currentStep.solvedEvents as Array<number>).includes(selected)) {
+        setSelectedCategories([(selected as PeabodySquare), ...selectedCategories]);
     }
   };
 
-  const allowOption = (index: number) => {
+  const allowOption = (index: PeabodySquare) => {
     if (currentStepCount > 2 && currentStepCount < 7) {
       if (
         selectedCategories.includes(index) ||
-        currentStep.solvedEvents.includes(index)
+        (currentStep.solvedEvents as Array<PeabodySquare>).includes(index)
       ) {
         return false;
       }
@@ -151,7 +151,7 @@ export default function Quiz() {
             <QuizSquare defaultX={165} defaultY={25} />
           </g>
 
-         <g className={`${currentStepCount === 0 ? "hidden translate-x-full" : ""} ${currentStepCount >= 2 && currentStepCount < 8 ? "-translate-x-8 translate-y-2 scale-75 opacity-100" : ""} ${currentStepCount >= 7 ? "-translate-x-full opacity-0" : ""} transition-all duration-1000`}>
+         <g className={`${currentStepCount === 0 ? "hidden translate-x-full" : ""} ${currentStepCount >= 2 && currentStepCount < 8 ? "-translate-x-8 translate-y-2 scale-75 opacity-100" : ""} ${currentStepCount >= 8 ? "-translate-x-full opacity-0" : ""} transition-all duration-1000`}>
             <text
               x={60}
               y={41}
@@ -161,7 +161,7 @@ export default function Quiz() {
               EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
             </text>
             <text x={60} y={55} fontSize={12} fill="white" fontFamily="VTC Du Bois, serif">
-              {currentStep.stepEvent.event.replace(/ \[.*\]/, '')}
+              {currentStep?.stepEvent?.event.replace(/ \[.*\]/, '')}
             </text>
 
             <g className={` transition-all duration-700 delay-100`}>
@@ -208,7 +208,7 @@ export default function Quiz() {
           <section className={`grid place-content-start text-white transition-opacity duration-1000 ${currentStepCount > 0 && currentStepCount < 8 ? "opacity-100" : "opacity-0 h-0"}`}>
             <p className="ml-3 mb-0 text-sm">EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4</p>
             <p className="mx-3 my-0 text-2xl">
-              {currentStep.stepEvent.event.replace(/ \[.*\]/, '')}
+              {currentStep?.stepEvent?.event.replace(/ \[.*\]/, '')}
             </p>
           </section>
 

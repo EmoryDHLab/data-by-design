@@ -25,7 +25,6 @@ export default function PlayfairPage() {
   return (
     <ChapterContext.Provider
       value={{
-        chapter: "playfair",
         backgroundColor: "playfairPrimary",
         primaryTextColor: "white",
         accentColor: "playfairPrimary",
@@ -213,12 +212,6 @@ export default function PlayfairPage() {
         </Column>
         <Column className="md:ml-12" shouldPin={true}>
           <FigureObj figure={figures["chart-1787"]} />
-          {/* <Figure src="/images/playfair/.jpg" alt="">
-            The data on "America" included in the second edition of The
-            Commercial and Political Atlas (1787), on the recommendation of
-            James Watt. Image courtesy of the Library Company of Philadelphia,{" "}
-            <a href="http://www.librarycompany.org">www.librarycompany.org</a>
-          </Figure> */}
         </Column>
       </TwoColumnLayout>
       <PlayfairScrollytell />

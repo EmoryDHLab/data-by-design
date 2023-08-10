@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { QuizContext } from "./QuizContext";
 import { useDeviceContext } from "~/hooks";
+import type { QuizStepCount } from "~/types/peabody";
 
 const side = 20;
 
@@ -23,8 +24,7 @@ export default function QuizNav() {
         x={x}
         width={side}
         height={side}
-        className="font-duboisLightNarrow italic focus:outline-none focus:underline hover:underline"
-
+        // className="font-duboisLightNarrow italic focus:outline-none focus:underline hover:underline"
         className={`focus:outline-none ${currentStepCount === 0 ? "opacity-50 cursor-not-allowed" : "opacity-75 hover:opacity-100 focus:opacity-100"}`}
         tabIndex={currentStepCount > 0 ? 0 : -1}
         role={currentStepCount > 0 ? "button" : ""}
@@ -64,7 +64,7 @@ export default function QuizNav() {
         role={currentStepCount > 0 ? "button" : ""}
         aria-roledescription="Button to restart the quiz."
         onClick={() => {
-          if (currentStepCount > 0) setCurrentStepCount( currentStepCount - 1);
+          if (currentStepCount > 0) setCurrentStepCount((currentStepCount - 1 as QuizStepCount));
         }}
         onKeyUp={({ key }) => {
           if (key === "Enter" && currentStepCount > 0) setCurrentStepCount(0);
@@ -101,7 +101,7 @@ export default function QuizNav() {
         role={currentStepCount < 9 ? "button" : ""}
         aria-roledescription="Button to restart the quiz."
         onClick={() => {
-          if (currentStepCount < 9) setCurrentStepCount( currentStepCount + 1);
+          if (currentStepCount < 9) setCurrentStepCount((currentStepCount + 1 as QuizStepCount));
         }}
         onKeyUp={({ key }) => {
           if (key === "Enter" && currentStepCount < 9) setCurrentStepCount(0);
@@ -162,4 +162,4 @@ export default function QuizNav() {
       </svg>
     </g>
   );
-};
+}

@@ -8,6 +8,8 @@ import {
   YEAR_WIDTH,
 } from "~/components/peabody/peabodyUtils";
 
+import type { PeabodyEvent } from "~/types/peabody";
+
 interface Props {
   index: number;
   year: number;
@@ -15,17 +17,17 @@ interface Props {
 
 export default function OverlaidYearSquare({ index, year }: Props) {
   const { currentCenturyEvents } = useContext(BarGraphContext);
-  const [yearEvents, setYearEvents] = useState(undefined);
+  const [yearEvents, setYearEvents] = useState<Array<PeabodyEvent>>(currentCenturyEvents);
   const [isFull, setIsFull] = useState<boolean>(false);
 
   useEffect(() => {
-    setYearEvents(currentCenturyEvents.filter(event => event.year === year));
-  }, [setYearEvents, currentCenturyEvents, year]);
+    setYearEvents(currentCenturyEvents.filter(event => event?.year === year));
+  }, [currentCenturyEvents, year]);
 
   useEffect(() => {
-    const squares = yearEvents?.flatMap(event => event.squares);
-    setIsFull(squares?.length === 9 || squares?.includes("full"));
-  }, [setIsFull, yearEvents]);
+    const someSquares = yearEvents?.flatMap(event => event?.squares) || [];
+    setIsFull(someSquares.length === 9 || someSquares.includes("full"));
+  }, [yearEvents]);
 
   return (
     <svg

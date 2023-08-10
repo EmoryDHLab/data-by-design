@@ -1,7 +1,7 @@
-import { ReactNodeLike } from "prop-types";
+import type { ReactNode } from "react";
 
 interface Props {
-  children: ReactNodeLike;
+  children: ReactNode;
   className?: string;
 }
 

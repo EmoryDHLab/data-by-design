@@ -1,60 +1,37 @@
 import { createContext } from "react";
 import type { Dispatch, SetStateAction } from "react";
+import type { ActivePeabodyEvent, PeabodyEvent } from "~/types/peabody";
 
-type PeabodyCentury =
+export type PeabodyCentury =
   | 1500
   | 1600
   | 1700
   | 1800;
 
-type PeabodySquare =
-  | 1
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6
-  | 7
-  | 8
-  | 9
-
-type PeabodyActor =
-  | "England"
-  | "France"
-  | "Americas"
-  | "Holland"
-  | "Sweden"
-  | "Spain"
-  | "Native"
-  | "Mexico";
-
-type PeabodyEvent =
-  | {
-      event: string;
-      year: PeabodyCentury;
-      squares: PeabodySquare[] | "full";
-      actors: PeabodyActor[];
-    }
-  | undefined;
-
-type ActivePeabodyEvent =
-  | {
-    event: PeabodyEvent;
-    type: number;
-    absoluteIndex: number;
-  }
-  | undefined;
-
 interface IBarGraphContext {
-  currentCentury: PeabodyCentury;
-  setCurrentCentury: Dispatch<SetStateAction<PeabodyCentury>>;
-  currentCenturyEvents: object[];
-  setCurrentCenturyEvents: Dispatch<SetStateAction<array>>;
-  activeEvent: ActivePeabodyEvent;
-  setActiveEvent: Dispatch<SetStateAction<ActivePeabodyEvent>>;
-  centuries: PeabodyCentury[]
+  currentCentury: PeabodyCentury | number;
+  setCurrentCentury: Dispatch<SetStateAction<PeabodyCentury | number>>;
+  currentCenturyEvents: Array<PeabodyEvent>;
+  setCurrentCenturyEvents: Dispatch<SetStateAction<Array<PeabodyEvent>>>;
+  activeEvent: ActivePeabodyEvent | undefined;
+  setActiveEvent: Dispatch<SetStateAction<ActivePeabodyEvent | undefined>>;
+  centuries: Array<number>
 }
 
-const BarGraphContext = createContext<IBarGraphContext>({});
+const BarGraphContext = createContext<IBarGraphContext>({
+  currentCentury: 1700,
+  setCurrentCentury: (_: SetStateAction<PeabodyCentury | number>) => {
+    console.error("setCurrentCentury not implemented. Did you pass it to context?");
+  },
+  currentCenturyEvents: [],
+  setCurrentCenturyEvents: (_: SetStateAction<Array<PeabodyEvent>>) => {
+    console.error("setCurrentCenturyEvents not implemented. Did you pass it to context?");
+  },
+  activeEvent: undefined,
+  setActiveEvent: (_: SetStateAction<ActivePeabodyEvent>) => {
+    console.error("setActiveEvent not implemented. Did you pass it to context?");
+  },
+  centuries: [],
+});
 
 export default BarGraphContext;

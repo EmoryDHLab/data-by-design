@@ -6,7 +6,7 @@ import type {
 } from "~/components/peabody/peabodyUtils";
 
 interface Props {
-  currentColor: string;
+  currentColor: { label: string, rgb: string};
 }
 
 export function EditablePeabodySquare({ currentColor }: Props) {
@@ -25,15 +25,15 @@ export function EditablePeabodySquare({ currentColor }: Props) {
     }
     const eventColors = squareColors[yearIndex][eventIndex];
     if (eventColors) {
-      if (eventColors.includes(currentColor)) {
+      if (eventColors.includes(currentColor.rgb)) {
         squareColors[yearIndex][eventIndex] = eventColors.filter(
-          (color) => color !== currentColor
+          (color) => color !== currentColor.rgb
         );
       } else {
-        squareColors[yearIndex][eventIndex].push(currentColor);
+        squareColors[yearIndex][eventIndex].push(currentColor.rgb);
       }
     } else {
-      squareColors[yearIndex][eventIndex] = [currentColor];
+      squareColors[yearIndex][eventIndex] = [currentColor.rgb];
     }
 
     setSquareColors([...squareColors]);

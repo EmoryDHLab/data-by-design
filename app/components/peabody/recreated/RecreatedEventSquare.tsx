@@ -1,10 +1,10 @@
 import {
   getEventXFromIndex,
   getEventYFromIndex,
-  HighlightedElement,
   POLYGONS,
 } from "~/components/peabody/peabodyUtils";
-import { Dispatch, SetStateAction, useState } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import type { HighlightedElement } from "~/components/peabody/peabodyUtils";
 
 interface Props {
   // Index in total peabody square, so 0..99
@@ -17,7 +17,7 @@ interface Props {
   >;
   handleClick?: (index: number) => void;
   eventSquareColors: string[] | null;
-  className: string | null;
+  className?: string | null;
 }
 
 export default function RecreatedEventSquare({
@@ -37,7 +37,7 @@ export default function RecreatedEventSquare({
         height="30"
         x={getEventXFromIndex(index)}
         y={getEventYFromIndex(index)}
-        onClick={() => handleClick(absoluteIndex)}
+        onClick={() => { if (handleClick) handleClick(absoluteIndex)}}
         viewBox="0 0 30 30"
         className={className ?? ""}
       >
@@ -71,7 +71,7 @@ export default function RecreatedEventSquare({
     <svg
       width="30"
       height="30"
-      onClick={() => handleClick(absoluteIndex)}
+      onClick={() => { if (handleClick) handleClick(absoluteIndex)}}
       x={getEventXFromIndex(index)}
       y={getEventYFromIndex(index)}
       viewBox="0 0 30 30"

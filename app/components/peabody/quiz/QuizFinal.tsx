@@ -37,4 +37,4 @@ export default function QuizFinal() {
       </text>
     </svg>
   );
-};
+}

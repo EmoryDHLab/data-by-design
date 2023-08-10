@@ -801,7 +801,7 @@ export const brooksFootnotes = [
   //37
   <span key="f1a4e3f8">Ref DF</span>,
 ];
-export const mapsFootnotes = [
+export const shanawdithitFootnotes = [
   //1
   <span key="03f8cc84"></span>,
   //2

@@ -770,7 +770,7 @@ export default function DuboisChapter() {
       <CenteredLayout>
         <FootnotesList footnotes={duboisFootnotes} />
       </CenteredLayout>
-      <Footer backgroundColor="bg-duboisPrimary" textColor="text-white" />
+      <Footer />
     </ChapterContext.Provider>
   );
 }

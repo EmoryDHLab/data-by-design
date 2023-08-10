@@ -2,22 +2,23 @@ import { useContext, useEffect, useState } from "react";
 import { QuizContext } from "./QuizContext";
 import QuizActorButton from "./QuizActorButton";
 import { useDeviceContext } from "~/hooks";
+import type { PeabodyActor, QuizStepCount } from "~/types/peabody";
 
 const quizActors = ["England", "France", "Americas", "Sweden", "Holland"];
-const correctActors = ["England", "Americas"];
-const fillColors = {
+const correctActors = (["England", "Americas"] as Array<PeabodyActor>);
+const fillColors = ({
     England: "rgb(119,43,21)",
     France: "rgb(60,100,100)",
     Americas: "rgb(222,145,49)",
     Holland: "rgb(68,108,73)",
     Sweden: "rgb(217,182,17)",
-  };
+  } as { [key in PeabodyActor]: string });
 
 export default function QuizSelectActors() {
   const { currentStep, currentStepCount, setCurrentStepCount, setFeedback } = useContext(QuizContext);
   const [actors, setActors] = useState(quizActors);
-  const [solvedActors, setSolvedActors] = useState<array>([]);
-  const [selectedActors, setSelectedActors] = useState<array>([]);
+  const [solvedActors, setSolvedActors] = useState<Array<PeabodyActor>>([]);
+  const [selectedActors, setSelectedActors] = useState<Array<PeabodyActor>>([]);
   const [startX, setStartX] = useState<number>(60);
   const [startY, setStartY] = useState<number>(66);
   const { isMobile } = useDeviceContext();
@@ -37,19 +38,19 @@ export default function QuizSelectActors() {
     }
   }, [currentStepCount, setSolvedActors, setSelectedActors]);
 
-  const selectActor = (actor) => {
+  const selectActor = (actor: PeabodyActor) => {
     if (currentStepCount !== 1) return;
 
     if (selectedActors.includes(actor) || solvedActors.includes(actor)) return;
 
-    if (currentStep.stepEvent.actors.includes(actor)) {
+    if (currentStep?.stepEvent?.actors.includes(actor)) {
       if (solvedActors.length < 1) {
         setFeedback({
           message: "Great! Click the second actor that was involved.",
           correct: true
         });
       } else if (solvedActors.length === 1) {
-        setCurrentStepCount(currentStepCount => currentStepCount + 1);
+        setCurrentStepCount(currentStepCount => (currentStepCount + 1 as QuizStepCount));
         setFeedback({
           message: "Well done. Now, click the year the when Powhatan attacked Virginia.",
           correct: true
@@ -65,24 +66,12 @@ export default function QuizSelectActors() {
     }
   };
 
-  // const buttonBorder = (actor) => {
-  //   if (solvedActors.includes(actor)) return 0.5;
-  //   if ( active === actor) return 1.0;
-  //   return 0;
-  // }
-
-  // const buttonOpacity = (actor) => {
-  //   if (selectedActors.includes(actor)) return 0.5;
-  //   if (solvedActors.includes(actor) || active === actor) return 1.0;
-  //   return 0.75;
-  // }
-
   return (
     <g
       className={`transition-all duration-1000`}
     >
       {actors.map((actor, index) => {
-        if ((currentStepCount > 1 && correctActors.includes(actor)) || currentStepCount == 1) {
+        if ((currentStepCount > 1 && correctActors.includes((actor as PeabodyActor))) || currentStepCount == 1) {
           const x = startX + (index * 28);
           const y = startY;
           return (
@@ -90,12 +79,10 @@ export default function QuizSelectActors() {
               key={`quiz-${actor}`}
               x={x}
               y={y}
-              actor={actor}
-              // opacity={buttonOpacity(actor)}
-              // border={buttonBorder(actor)}
+              actor={(actor as PeabodyActor)}
               selectActor={selectActor}
-              fillColor={fillColors[actor]}
-              disable={selectedActors.includes(actor)}
+              fillColor={fillColors[(actor as PeabodyActor)]}
+              disable={selectedActors.includes((actor as PeabodyActor))}
               solvedActors={solvedActors}
               selectedActors={selectedActors}
             />

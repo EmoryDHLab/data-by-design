@@ -10,9 +10,9 @@ interface Props {
   setCurrentStep?: Dispatch<SetStateAction<number>>;
   children: ReactNode;
   container?: ReactNode;
-  parent?: ReactNode;
+  parent?: ReactNode | HTMLElement;
   steps: MutableRefObject<any>;
-  triggers: Array<ReactNode>;
+  triggers: Array<ReactNode> | HTMLCollection;
   className?: string;
   stepClassName?: string;
   bgColor?: string;

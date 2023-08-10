@@ -7,22 +7,18 @@ import ScrollytellWrapper from "../ScrollytellWrapper";
 
 export default function Scrollytell() {
   const [ scrollProgress, setScrollProgress ] = useState(0.0);
-  const [ highlightedSquare, setHighlightedSquare ] = useState(undefined);
   const { primaryTextColor } = useContext(ChapterContext);
-  const steps = useRef(undefined);
+  const steps = useRef<HTMLElement>(null);
 
   return (
     <ScrollytellContext.Provider
       value={{
         scrollProgress,
         setScrollProgress,
-        highlightedSquare,
-        setHighlightedSquare,
       }}
     >
       <ScrollytellWrapper
         className={`md:flex justify-between`}
-        scrollProgress={scrollProgress}
         setScrollProgress={setScrollProgress}
         triggers={TutorialTriggers}
         steps={steps}
@@ -31,7 +27,7 @@ export default function Scrollytell() {
           <div className="text-3xl relative top-[calc(100vh-120px)] left-[calc(-50vw+6rem)] hidden md:block">↓</div>
           <Tutorial />
         </div>
-        <div ref={steps} className="bias-full md:bias-1/2 md:w-1/2 relative z-10">
+        <section ref={steps} className="bias-full md:bias-1/2 md:w-1/2 relative z-10">
           {TutorialTriggers.map((trigger, index) => {
             return (
               <div
@@ -47,7 +43,7 @@ export default function Scrollytell() {
               </div>
             );
           })}
-        </div>
+        </section>
       </ScrollytellWrapper>
     </ScrollytellContext.Provider>
   )

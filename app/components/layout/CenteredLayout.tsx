@@ -1,7 +1,7 @@
-import type { ReactNodeLike } from "prop-types";
+import type { ReactNode, ComponentPropsWithoutRef } from "react";
 
-interface Props {
-  children: ReactNodeLike;
+interface Props extends ComponentPropsWithoutRef<"section"> {
+  children: ReactNode;
   className?: string;
 }
 
@@ -12,13 +12,13 @@ export default function CenteredLayout({
   ...props
 }: Props) {
   return (
-    <div
+    <section
       className={
         `flex-none md:flex md:flex-col justify-between mx-12 md:mx-24 lg:mx-48 xl:mx-64 2xl:mx-80 ${className ?? ""}`
       }
       {...props}
     >
       {children}
-    </div>
+    </section>
   );
 }
