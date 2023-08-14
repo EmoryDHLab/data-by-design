@@ -1,19 +1,16 @@
 export default function USAMap() {
   return (
-    <section className="w-full md:w-8/12 mb-6 md:px-6">
-      <figure>
-        <picture>
-          <source srcSet={`/images/dubois/map.webp`} />
-          <source srcSet={`/images/dubois/map.jpg`} />
-          <img
-            className={`drop-shadow-lg`}
-            src={`/images/dubois/map.jpg`}
-            alt=""
-            title=""
-            draggable=""
-          />
-        </picture>
-      </figure>
+      <figure className="w-full md:w-8/12 mb-6 md:px-6">
+      <picture>
+        <source srcSet={`/images/dubois/map.webp`} />
+        <source srcSet={`/images/dubois/map.jpg`} />
+        <img
+          className={`drop-shadow-lg`}
+          src={`/images/dubois/map.jpg`}
+          alt=""
+          title=""
+        />
+      </picture>
       <p className="flex items-center justify-center font-dubois uppercase mt-0">
         <svg width="203" height="23" viewBox="0 0 208 28" fill="none">
           <path
@@ -23,6 +20,6 @@ export default function USAMap() {
           <text x={32} y={22} fill="black" fontSize={20}>Atlanta University</text>
         </svg>
       </p>
-    </section>
+    </figure>
   );
 }

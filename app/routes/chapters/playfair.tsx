@@ -43,7 +43,7 @@ export default function PlayfairPage() {
         <Column>
           <p className="first-paragraph">
             One can only imagine the choice words exclaimed by the Scottish
-            political economist" William Playfair (1759 – 1823) when he
+            political economist" William Playfair (1759 - 1823) when he
             recognized the error that he had inadvertently engraved into the
             tail end of the data line on his chart of "Exports &amp; Imports to
             and from all of North America." Engraving was—and still is—an
@@ -64,9 +64,9 @@ export default function PlayfairPage() {
             charts, and time series graphs are frequently heralded as the first
             of their kind. In the opening lines of{" "}
             <cite>The Visual Display of Quantitative Information</cite>, Edward
-            Tufte describes Playfair's work as "remarkable."
-            <InlineFootnote index={0} />
-            And most other histories of visualization have followed suit.
+            Tufte describes Playfair's work as <q>remarkable.</q>
+            <InlineFootnote index={0} /> And most other histories of visualization
+            have followed suit.
             <InlineFootnote index={1} />
             But in his own time, Playfair remained "largely unacknowledged" for
             his contributions.
@@ -84,8 +84,8 @@ export default function PlayfairPage() {
             <InlineFootnote index={4} />
           </p>
           <p>
-            To produce a copperplate engraving such as the one employed to print
-            "Exports &amp; Imports to and from all of North America," a thin
+            To produce a copperplate engraving such as the one employed to
+            print <cite>Exports &amp; Imports to and from all of North America,</cite> a thin
             copper plate is first coated with a ground: a layer of wax, varnish,
             chalk, or soot. Using a stylus, the engraver traces an outline of
             the design in mirror image into the ground. The wax (or equivalent)
@@ -223,7 +223,7 @@ export default function PlayfairPage() {
           first perceived by the senses and then processed by the mind.
           <InlineFootnote index={10} />
           More specifically, Playfair advances a belief in the role of sensory
-          perception, ​​and of vision in particular—in prompting a particular
+          perception, and of vision in particular—in prompting a particular
           form of crystalizing insight that can lead to new knowledge:{" "}
           <q>On inspecting any one of these Charts attentively,</q> Playfair
           himself explains,{" "}
@@ -266,11 +266,9 @@ export default function PlayfairPage() {
           allowing people to{" "}
           <q>understand complex processes so as to support better decisions.</q>
           <InlineFootnote index={13} />
-          ​​Intoning the lessons of his own influential textbook,
-          <cite>
-            Readings in Information Visualization: Using Vision to Think
-          </cite>
-          , coauthored with Stuart Card and Jock Mackinlay, Shneiderman insists
+          Intoning the lessons of his own influential textbook, <cite>Readings
+          in Information Visualization: Using Vision to Think</cite>,
+          coauthored with Stuart Card and Jock Mackinlay, Shneiderman insists
           that <q>the purpose of data visualization is insight.</q>
           <InlineFootnote index={14} />
           And while acknowledging that both{" "}

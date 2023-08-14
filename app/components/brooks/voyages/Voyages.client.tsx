@@ -132,7 +132,7 @@ function Voyages() {
   return (
     <section className="bg-black w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
-        <section className="flex items-start w-11/12 mb-6">
+        <div className="flex items-start w-11/12 mb-6">
           <Toggle
             checked={showAllState}
             onChange={toggleFunction}
@@ -140,15 +140,15 @@ function Voyages() {
           >
             Show non-resistance voyages
           </Toggle>
-        </section>
-        <section id="voyageContainer"></section>
+        </div>
+        <div id="voyageContainer"></div>
         { width &&
           <Axis width={width} height={height} yearRange={yearRange} />
         }
-        <section id="voyageControls" className="w-11/12 h-8 multi-range"></section>
-        <section>
+        <div id="voyageControls" className="w-11/12 h-8 multi-range"></div>
+        <div>
           <Slider width={width} yearRange={yearRange} setYearRange={setYearRange} />
-        </section>
+        </div>
       </div>
     </section>
   );

@@ -19,10 +19,10 @@ export default function Quiz() {
   const [currentStepCount, setCurrentStepCount] = useState<QuizStepCount>(0);
   const [selectedCategories, setSelectedCategories] = useState<Array<PeabodySquare>>([]);
   const [selectedYears, setSelectedYears] = useState<Array<number>>([]);
-  const [focusedCategory, setFocusedCategory] = useState<PeabodySquare>(undefined);
+  const [focusedCategory, setFocusedCategory] = useState<PeabodySquare>();
   const [feedback, setFeedback] = useState<QuizFeedbackType>(undefined);
   const quizRef = useRef<SVGSVGElement>(null);
-  const endRef = useRef<HTMLElement>(null);
+  const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (currentStepCount > 0 && currentStepCount < 9 && quizRef.current) quizRef.current.scrollIntoView({ behavior: "smooth" });
@@ -181,9 +181,9 @@ export default function Quiz() {
       </section>
 
       {/* MOBILE */}
-      <section className="bg-black h-[200vh] relative w-full md:hidden">
-        <section className={`flex flex-col h-screen sticky top-12 transition-opacity duration-1000 ${currentStepCount == 0 ? "opacity-100" : "opacity-100"}`}>
-          <section className={`absolute h-1/4 mx-12 items-center justify-center top-12 transition-all duration-1000 ${currentStepCount > 0 ? "opacity-0 h-0 pointer-events-none" : "opacity-100"}`}>
+      <div className="bg-black h-[200vh] relative w-full md:hidden">
+        <div className={`flex flex-col h-screen sticky top-12 transition-opacity duration-1000 ${currentStepCount == 0 ? "opacity-100" : "opacity-100"}`}>
+          <div className={`absolute h-1/4 mx-12 items-center justify-center top-12 transition-all duration-1000 ${currentStepCount > 0 ? "opacity-0 h-0 pointer-events-none" : "opacity-100"}`}>
             <QuizIntro />
             <button
               className="font-duboisLightNarrow italic text-white focus:outline-none focus:underline hover:underline text-3xl my-6"
@@ -193,32 +193,32 @@ export default function Quiz() {
               BEGIN
               <span className="font-icons ml-4">b</span>
             </button>
-          </section>
+          </div>
 
-          <section className={`transition-all duration-1000 ${currentStepCount == 8 ? "opacity-100 h-64 mx-12 mb-10" : "opacity-0 h-0 pointer-events-none"}`}>
+          <div className={`transition-all duration-1000 ${currentStepCount == 8 ? "opacity-100 h-64 mx-12 mb-10" : "opacity-0 h-0 pointer-events-none"}`}>
             <QuizConclusion />
-          </section>
-          <section className="grid place-content-center pointer-events-none">
+          </div>
+          <div className="grid place-content-center pointer-events-none">
             <QuizFeedback />
-          </section>
-          <section className="grid place-content-center text-white">
+          </div>
+          <div className="grid place-content-center text-white">
             <QuizInstructions />
-          </section>
+          </div>
 
-          <section className={`grid place-content-start text-white transition-opacity duration-1000 ${currentStepCount > 0 && currentStepCount < 8 ? "opacity-100" : "opacity-0 h-0"}`}>
+          <div className={`grid place-content-start text-white transition-opacity duration-1000 ${currentStepCount > 0 && currentStepCount < 8 ? "opacity-100" : "opacity-0 h-0"}`}>
             <p className="ml-3 mb-0 text-sm">EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4</p>
             <p className="mx-3 my-0 text-2xl">
               {currentStep?.stepEvent?.event.replace(/ \[.*\]/, '')}
             </p>
-          </section>
+          </div>
 
-          <section className={`grid place-content-center text-white ml-4 mt-4 transition-opacity duration-100 ${currentStepCount > 0 && currentStepCount < 8 ? "opacity-100" : "opacity-0 h-0"}`}>
+          <div className={`grid place-content-center text-white ml-4 mt-4 transition-opacity duration-100 ${currentStepCount > 0 && currentStepCount < 8 ? "opacity-100" : "opacity-0 h-0"}`}>
             <svg viewBox="0 0 120 20" className="w-full h-full">
               <QuizSelectActors />
             </svg>
-          </section>
+          </div>
 
-          <section className={`grid place-content-start text-white transition-opacity duration-600 ${currentStepCount > 2 && currentStepCount < 8 ? "opacity-100" : "opacity-0"}`}>
+          <div className={`grid place-content-start text-white transition-opacity duration-600 ${currentStepCount > 2 && currentStepCount < 8 ? "opacity-100" : "opacity-0"}`}>
             <QuizEventCategoryList />
             {currentStepCount == 7 &&
               <div
@@ -231,23 +231,23 @@ export default function Quiz() {
                 CONTINUE <span className="font-icons">b</span>
               </div>
             }
-          </section>
+          </div>
 
-          <section className={`text-white transition-all duration-1000 opacity-${currentStepCount > 1 ? 100 : 0} h-${currentStepCount < 3 ? "2/5" : "1/4"} ${currentStepCount == 9 ? "mt-16" : ""}`}>
+          <div className={`text-white transition-all duration-1000 opacity-${currentStepCount > 1 ? 100 : 0} h-${currentStepCount < 3 ? "2/5" : "1/4"} ${currentStepCount == 9 ? "mt-16" : ""}`}>
             <svg viewBox="0 0 125 125" className="w-full h-full">
               <QuizSquareMask defaultX={0} defaultY={0} />
               <QuizSquare defaultX={0} defaultY={0} />
             </svg>
-          </section>
+          </div>
 
           {/* QUIZ NAV */}
-          <section className={`grid place-content-center text-white transition-opacity duration-1000 ${currentStepCount > 0 && currentStepCount < 8 ? "opacity-100" : "opacity-0 pointer-events-none h-0"}`}>
+          <div className={`grid place-content-center text-white transition-opacity duration-1000 ${currentStepCount > 0 && currentStepCount < 8 ? "opacity-100" : "opacity-0 pointer-events-none h-0"}`}>
             <svg viewBox="0 0 80 100" className="w-full h-full mx-auto">
               <QuizNav />
             </svg>
-          </section>
+          </div>
 
-          <section className={`grid place-content-center text-white text-2xl text-center font-duboisLightNarrow transition-opacity duration-1000 ${currentStepCount == 8 ? "opacity-100" : "opacity-0 pointer-events-none h-0"}`}>
+          <div className={`grid place-content-center text-white text-2xl text-center font-duboisLightNarrow transition-opacity duration-1000 ${currentStepCount == 8 ? "opacity-100" : "opacity-0 pointer-events-none h-0"}`}>
             <p className="m-0">
               <button
                 className="focus:outline-none italic focus:underline hover:underline my-6"
@@ -258,10 +258,10 @@ export default function Quiz() {
                 <span className="font-icons mr-2">b</span>
               </button>
             </p>
-          </section>
+          </div>
 
 
-          <section className={`grid place-content-center text-white text-2xl text-center font-duboisLightNarrow transition-opacity duration-1000 ${currentStepCount == 9 ? "opacity-100" : "opacity-0 pointer-events-none h-0"}`}>
+          <div className={`grid place-content-center text-white text-2xl text-center font-duboisLightNarrow transition-opacity duration-1000 ${currentStepCount == 9 ? "opacity-100" : "opacity-0 pointer-events-none h-0"}`}>
             <p className="m-0">
               <button
                 className="focus:outline-none focus:underline hover:underline my-6"
@@ -278,13 +278,13 @@ export default function Quiz() {
             <p className="m-0 motion-safe:animate-[bounce_2.5s_ease-in-out_infinite]">
               <span className="font-icons text-5xl">t</span>
             </p>
-          </section>
+          </div>
 
-        </section>
-      </section>
+        </div>
+      </div>
       {/* END MOBILE */}
 
-      <section ref={endRef}>&nbsp;</section>
+      <div ref={endRef}>&nbsp;</div>
     </QuizContext.Provider>
   );
 }

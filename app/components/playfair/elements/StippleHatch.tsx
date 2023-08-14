@@ -1,4 +1,4 @@
-export default function StippleHatch({ opacity }) {
+export default function StippleHatch({ opacity }: { opacity: number }) {
   return (
     <g opacity={opacity}>
       <g transform="scale(0.106, 0.09) translate(28,155)">

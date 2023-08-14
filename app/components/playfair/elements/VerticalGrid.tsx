@@ -1,8 +1,8 @@
 interface Props {
-  xValue: float;
+  xValue: number;
   offset: number;
-  opacity: float;
-  text: string;
+  opacity?: number;
+  text: string | number;
 }
 
 export default function VerticalGrid({ xValue, offset, opacity, text }: Props) {

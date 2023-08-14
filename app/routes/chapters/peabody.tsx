@@ -189,7 +189,7 @@ export default function PeabodyPage() {
 
       <TwoColumnLayout className="w-full md:w-auto">
         <Column>
-          <section className="mx-12 md:mx-0 w-fit md:w-full">
+          <div className="mx-12 md:mx-0 w-fit md:w-full">
             <p>
               In <cite>The Polish-American System of Chronology</cite>, Peabody
               covers a tremendous expanse of time: the period between 2500 BCE
@@ -208,13 +208,13 @@ export default function PeabodyPage() {
               match each item in the list of events that concluded the chapter
               with its visual representation on the corresponding chart.
             </p>
-          </section>
+          </div>
 
           <HoverZoomPeabodySquareMobile
             figures={[figures["fig2-1600s-rect"], figures["1620"]]}
           />
 
-          <section className="mx-12 md:mx-0 w-fit md:w-auto">
+          <div className="mx-12 md:mx-0 w-fit md:w-auto">
             <p>
               For example, by cross-referencing the table of events of the
               seventeenth century, pictured just below, to its corresponding
@@ -311,7 +311,7 @@ export default function PeabodyPage() {
               to know Blackness firsthand—about the "asymmetrically connected
               knowledge systems" that structure all of our work.
             </p>
-          </section>
+          </div>
         </Column>
         <Column className="md:ml-12" shouldPin={true}>
           <HoverZoomPeabodySquare figure={figures["fig2-1600s-rect"]} />
@@ -467,7 +467,9 @@ export default function PeabodyPage() {
           </p>
           <PullQuote
             title="By prompting her students to create new narratives of the past, "
-            subtitle="they would also imagine alternative possible futures. "
+            subtitle="they would also imagine alternative possible futures."
+            className="md:px-4 py-10 md:my-6"
+            width="w-[initial]"
           />
           <p>
             Her goal with the <cite>Polish-American System</cite>
@@ -529,9 +531,9 @@ export default function PeabodyPage() {
               figures["ch4-11"],
               figures["ch4-12"],
             ]}
-            groupCaption="<p><cite>The Polish-American System</cite>
+            groupCaption={<p><cite>The Polish-American System</cite>
               housed at the American Antiquarian Society. Courtesy
-              of the American Antiquarian Society. Photos by Lauren Klein.</p>"
+              of the American Antiquarian Society. Photos by Lauren Klein.</p>}
           />
         </Column>
       </TwoColumnLayout>
@@ -662,14 +664,14 @@ export default function PeabodyPage() {
             className="grid grid-cols-2 gap-4 md:ml-12"
             figures={[
               figures["ch4-clarke1"],
-              figures["ch4-clarke1"]
+              figures["ch4-clarke2"]
             ]}
-            groupCaption="<p><strong>Left:</strong> One of the timelines
+            groupCaption={<><p><strong>Left:</strong> One of the timelines
               created by Anne Laura Clarke, as explored by Granville
               Ganter in his essay on Clarke's traveling lectures.</p>
               <p><strong>Right:</strong> Another timeline as it was first
               encountered by Ganter. Photos by Granville Ganter. Courtesy of
-              Granville Ganter.</p>"
+              Granville Ganter.</p></>}
           />
         </Column>
       </TwoColumnLayout>
@@ -728,11 +730,11 @@ export default function PeabodyPage() {
               figures["ch4-18-rendering"]
             ]}
             className="md:ml-12"
-            groupCaption="<p>The layers of the touch interface, built with copper
+            groupCaption={<p>The layers of the touch interface, built with copper
               tape and a foam spacer; the assembled touch interface; a view of
               the modular circuit boards for communicating with the LEDs; a
               rendering of the completed Floor Chart; the LEDs displayed on top
-              of the quilted chart. Photos by Lauren Klein.</p>"
+              of the quilted chart. Photos by Lauren Klein.</p>}
         />
         </Column>
       </TwoColumnLayout>
@@ -840,12 +842,12 @@ export default function PeabodyPage() {
             figures["ch4-19-rachel-carey-george"],
             figures["ch4-20-gbq-q030-06"],
           ]}
-          groupCaption='<p><strong>Left:</strong> "Housetop," by Rachel
+          groupCaption={<><p><strong>Left:</strong> "Housetop," by Rachel
             Carey George, ca. 1935.</p>
             <p><strong>Right:</strong> "Housetop" variation, design by Mary Lee
             Bendolph. 1998, quilted by Essie Bendolph Pettaway, 2001. Photos
             courtesy of Tinwood Media.</p>
-            <p><em>Permissions pending.</em></p>'
+            <p><em>Permissions pending.</em></p></>}
         />
                   <p>
           Pictured above are two quilts from the area of Alabama known as Gee's

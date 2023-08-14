@@ -11,15 +11,15 @@ import { Paths } from "./scrollytellElements/Paths";
 const height = 44;
 const width = 94;
 const innerGridWidth = (width / 11) * 10 + 3;
-const maxOn = (prop) => Math.max(...playfairData.map((d) => d[prop]));
-const maxImport = maxOn("Imports");
-const maxExport = maxOn("Exports");
+const maxImport = 3300000; // Math.max(...playfairData.map((d: PlayfairData) => d.Imports))
+const maxExport = 4900000; // Math.max(...playfairData.map((d: PlayfairData) => d.Exports))
 const maxY = Math.max(maxImport, maxExport + 1_000_000);
 const interval = 200000;
 
+const xScaleDomain = [1700, 1800]; // d3.extent(playfairData.map(d => d.Years))
 const xScale = d3.scaleLinear()
                  .range([0, (width / 11) * 10])
-                 .domain(d3.extent(playfairData.map(d => d.Years)));
+                 .domain(xScaleDomain);
 
 const yScale = d3.scaleLinear()
                  .range([height, 0])
@@ -43,7 +43,7 @@ const scatterExport = playfairData.map((d) => ({
   y: d.Exports,
 })).slice(8, 21);
 
-const formatYValue = (value) => {
+const formatYValue = (value: number) => {
   if (value < interval || value >= 6_000_000) return ' ';
   if (value === interval) return '200,000';
   if (value < 1_000_000) return value / 100_000;
@@ -53,13 +53,13 @@ const formatYValue = (value) => {
   return value / 1_000_000;
 };
 
-const scaleMapper = (sOut, sIn) => {
+const scaleMapper = (sOut: Array<number>, sIn: Array<number>) => {
   const m = (1.0 * sOut[1] - sOut[0]) / (sIn[1] - sIn[0]);
-  return (x) => sOut[0] + m * (x - sIn[0]);
+  return (x: number) => sOut[0] + m * (x - sIn[0]);
 };
 
-export default function Recreation({ scrollProgress }) {
-  const transitionInOut = (arrayIn, arrayOut) => {
+export default function Recreation({ scrollProgress }: { scrollProgress: number }) {
+  const transitionInOut = (arrayIn: Array<number>, arrayOut: Array<number>) => {
     let progToOpacityIn = scaleMapper([0.0, 1.0], arrayIn);
     let progToOpacityOut = scaleMapper([1.0, 0.0], arrayOut);
     if (scrollProgress <= arrayIn[0]) {
@@ -69,9 +69,10 @@ export default function Recreation({ scrollProgress }) {
     } else if (scrollProgress > arrayOut[0] && scrollProgress <= arrayOut[1]) {
       return progToOpacityOut(scrollProgress);
     }
+    return 0;
   };
 
-  const transitionIn = (array) => {
+  const transitionIn = (array: Array<number>) => {
     if (scrollProgress <= array[0]) {
       return 0;
     } else if (scrollProgress > array[0] && scrollProgress <= array[1]) {

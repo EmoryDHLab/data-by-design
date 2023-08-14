@@ -35,9 +35,9 @@ function Axis({ width, height, yearRange }: Props) {
   }, [yearRange, width]);
 
   return (
-    <section id="axis-container">
-      <section id="x-axis"></section>
-    </section>
+    <div id="axis-container">
+      <div id="x-axis"></div>
+    </div>
   );
 }
 

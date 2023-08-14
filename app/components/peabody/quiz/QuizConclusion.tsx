@@ -25,34 +25,36 @@ export default function QuizConclusion({ className }: { className?: string }) {
     )
   } else if (isDesktop) {
     return (
-      <g className={className}>
-        <foreignObject
-          x={10}
-          y={20}
-          width={150}
-          height={200}
-        >
-          <section className="text-white">
-            <ConclusionContent />
-          </section>
-        </foreignObject>
-        <text
-          y={140}
-          x={10}
-          width={20}
-          height={20}
-          fill="white"
-          role="button"
-          tabIndex={0}
-          onClick={() => setCurrentStepCount(9)}
-          onKeyUp={({ key }) => { if (key === "Enter" || key === "Space") setCurrentStepCount(9) }}
-          fontSize={10}
-          className="font-duboisLightNarrow italic focus:outline-none focus:underline hover:underline"
-        >
-          FINISH
-          <tspan dx={2} className="font-icons">b</tspan>
-        </text>
-      </g>
+      <svg>
+        <g className={className}>
+          <foreignObject
+            x={10}
+            y={20}
+            width={150}
+            height={200}
+          >
+            <div className="text-white">
+              <ConclusionContent />
+            </div>
+          </foreignObject>
+          <text
+            y={140}
+            x={10}
+            width={20}
+            height={20}
+            fill="white"
+            role="button"
+            tabIndex={0}
+            onClick={() => setCurrentStepCount(9)}
+            onKeyUp={({ key }) => { if (key === "Enter" || key === "Space") setCurrentStepCount(9) }}
+            fontSize={10}
+            className="font-duboisLightNarrow italic focus:outline-none focus:underline hover:underline"
+          >
+            FINISH
+            <tspan dx={2} className="font-icons">b</tspan>
+          </text>
+        </g>
+      </svg>
     );
   }
 }

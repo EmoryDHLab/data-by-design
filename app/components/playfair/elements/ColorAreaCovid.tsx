@@ -1,8 +1,8 @@
-export default function ColorAreaCovid(props) {
+export default function ColorAreaCovid({ area }: { area: string }) {
   return (
     <g>
       <path
-        d={props.area}
+        d={area}
         fill="#3e6620"
         clipPath="url(#covid1)"
         opacity="0.4"

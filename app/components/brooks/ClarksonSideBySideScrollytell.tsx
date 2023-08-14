@@ -107,10 +107,10 @@ function ClarksonSideBySideScrollytell() {
         steps={steps}
         className="w-screen"
       >
-        <section
+        <div
           className={`flex flex-col md:flex-row justify-between`}
         >
-          <section className="sticky p-8 md:p-0 top-16 h-min mt-16 bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
+          <div className="sticky p-8 md:p-0 top-16 h-min mt-16 bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
             <svg
               viewBox={`0 0 ${width} ${height}`}
               // className={`md:my-32 w-full`}
@@ -177,8 +177,8 @@ function ClarksonSideBySideScrollytell() {
             </svg>
             <figcaption></figcaption>
             {/* <div className={`text-3xl relative md:bottom-0 ml-4 text-black hidden md:${scrollProgress >= 13.5 ? "hidden" : "block"}`} tabIndex={-1}>↓</div> */}
-          </section>
-          <section ref={steps} className="bias-full w-full md:bias-1/2 md:w-2/5 relative">
+          </div>
+          <div ref={steps} className="bias-full w-full md:bias-1/2 md:w-2/5 relative">
             {triggers.map((trigger, index) => {
               return (
                 <div
@@ -192,8 +192,8 @@ function ClarksonSideBySideScrollytell() {
                 </div>
               )
             })}
-          </section>
-        </section>
+          </div>
+        </div>
       </ScrollytellWrapper>
     </ScrollytellContext.Provider>
   )

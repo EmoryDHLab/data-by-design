@@ -22,7 +22,7 @@ export function StudentChart() {
   const [activeChart, setActiveChart] = useState<Chart>(Chart.One);
   const [yOffset, setYOffset] = useState<number>(-120);
   const { isMobile } = useDeviceContext();
-  const containerRef = useRef();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const ChartComponent = charts[activeChart] || null;
 
@@ -30,14 +30,15 @@ export function StudentChart() {
     setYOffset(isMobile ? -80 : -120);
   }, [isMobile]);
 
-  const switchChart = (chart) => {
+  const switchChart = (chart: Chart) => {
     setActiveChart(chart);
-    const position = containerRef.current?.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    const containerOffset = containerRef.current?.getBoundingClientRect().top
+    const position = containerOffset ? containerOffset + window.scrollY + yOffset : window.scrollY + yOffset;
     window.scrollTo({ top: position, behavior: 'smooth' });
   }
 
   return (
-    <div className="flex flex-col items-center">
+    <section className="flex flex-col items-center">
       <nav className="sticky top-9 md:top-12 w-full bg-offwhite text-center py-2 z-10 border-b-4 border-duboisSecondary">
         <button
           onClick={() => {
@@ -73,9 +74,9 @@ export function StudentChart() {
           Chart Three
         </button>
       </nav>
-      <section ref={containerRef}>
+      <div ref={containerRef}>
         <ChartComponent />
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

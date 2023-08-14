@@ -1,16 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import {useContext, useEffect, useState } from "react";
 import { EyeSlashIcon } from '@heroicons/react/24/outline'
 import { ChapterContext } from "~/chapterContext";
 import FigureModal from "./FigureModal";
 import type { Figure } from "~/types/figureType";
 import Picture from "./Picture";
+import type { ReactElement } from "react";
 
 interface Props {
   figure?: Figure;
   figures?: Array<Figure>;
   className?: string;
   captionClassName?: string;
-  groupCaption?: string;
+  groupCaption?: ReactElement;
 }
 
 export const Caption = ({ figure, className }: Props) => {
@@ -40,7 +41,7 @@ export default function FigureObj({
 
   if (figures) {
     return (
-      <section className={className ?? ""}>
+      <div className={className ?? ""}>
         {figures.map((figure) => {
           return (
             <FigureModal key={`${figure.fileName}`} figure={figure}>
@@ -51,25 +52,24 @@ export default function FigureObj({
         {groupCaption &&
           <figcaption
             className={`font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full ${captionClassName ?? ""}`}
-            dangerouslySetInnerHTML={{
-              __html: `<section>${groupCaption}</section>`,
-            }}
-          />
+          >
+            {groupCaption}
+          </figcaption>
         }
         {!groupCaption &&
           <Caption figure={figures[0]} />
         }
-      </section>
+      </div>
     );
   } else if (figure) {
     return (
       <FigureModal figure={figure} hide={hide} className={className}>
-        <section className={`grid grid-cols-1 place-items-center border-${hide ? "4" : "0"} border-${backgroundColor} bg-${accentColor}`}>
+        <div className={`grid grid-cols-1 place-items-center border-${hide ? "4" : "0"} border-${backgroundColor} bg-${accentColor}`}>
           <EyeSlashIcon
             className={`h-36 absolute my-auto mx-auto transition-[stroke-opacity] stroke-${backgroundColor}`}
             strokeOpacity={hide ? 0.75 : 0}
           />
-        </section>
+        </div>
         <Picture figure={figure} />
         <Caption figure={figure} className={captionClassName} />
       </FigureModal>

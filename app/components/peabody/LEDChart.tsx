@@ -8,8 +8,8 @@ const offset = 9;
 const maxTop = 10;
 
 export default function LEDChart() {
-  const parentRef = useRef<HTMLElement>(null);
-  const stepsRef = useRef<HTMLElement>(null);
+  const parentRef = useRef<HTMLDivElement>(null);
+  const stepsRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [layer1Y, setLayer1Y] = useState<number>(initialY);
@@ -79,7 +79,7 @@ export default function LEDChart() {
         debug={false}
         scrollOffset={1}
       >
-        <section ref={parentRef}>
+        <div ref={parentRef}>
           <figure className="sticky top-16 text-center md:ml-24">
               <svg viewBox="0 0 50 105" className="w-full h-[75vh] md:h-full">
                 <g>
@@ -103,7 +103,7 @@ export default function LEDChart() {
                 the famous Dutch modernist.
               </figcaption>
           </figure>
-          <section ref={stepsRef} className="relative">
+          <div ref={stepsRef} className="relative">
             {[...numberRange(0, 8)].map((trigger) => {
               return (
                 <div
@@ -113,8 +113,8 @@ export default function LEDChart() {
                 ></div>
               )
             })}
-          </section>
-        </section>
+          </div>
+        </div>
       </ScrollytellWrapper>
     </ScrollytellContext.Provider>
   )

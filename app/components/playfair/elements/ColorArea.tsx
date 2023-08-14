@@ -1,4 +1,4 @@
-export default function ColorArea({ opacity }) {
+export default function ColorArea({ opacity }: { opacity: number }) {
   return (
     <g opacity={opacity}>
     <g transform="scale(0.22, 0.195) translate(14,58)">

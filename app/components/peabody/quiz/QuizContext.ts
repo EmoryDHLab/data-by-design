@@ -8,7 +8,7 @@ interface IQuizContext {
   currentStep: QuizStep | undefined;
   currentStepCount: QuizStepCount;
   setCurrentStepCount: Dispatch<SetStateAction<QuizStepCount>>;
-  focusedCategory: PeabodySquare;
+  focusedCategory: PeabodySquare | undefined;
   setFocusedCategory: Dispatch<SetStateAction<PeabodySquare | undefined>>;
   handleCategoryClick: Function;
   selectedCategories: Array<PeabodySquare>;
@@ -25,7 +25,7 @@ export const QuizContext = createContext<IQuizContext>({
   currentStepCount: 0,
   setCurrentStepCount: (_: SetStateAction<QuizStepCount>) => {},
   focusedCategory: undefined,
-  setFocusedCategory: (_: SetStateAction<PeabodySquare>) => undefined,
+  setFocusedCategory: (_: SetStateAction<PeabodySquare | undefined>) => undefined,
   handleCategoryClick: (selected: number) => {},
   selectedCategories: [],
   selectedYears: [],

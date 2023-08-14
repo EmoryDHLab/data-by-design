@@ -8,7 +8,7 @@ import ScrollytellWrapper from "../ScrollytellWrapper";
 export default function Scrollytell() {
   const [ scrollProgress, setScrollProgress ] = useState(0.0);
   const { primaryTextColor } = useContext(ChapterContext);
-  const steps = useRef<HTMLElement>(null);
+  const steps = useRef<HTMLDivElement>(null);
 
   return (
     <ScrollytellContext.Provider
@@ -27,7 +27,7 @@ export default function Scrollytell() {
           <div className="text-3xl relative top-[calc(100vh-120px)] left-[calc(-50vw+6rem)] hidden md:block">↓</div>
           <Tutorial />
         </div>
-        <section ref={steps} className="bias-full md:bias-1/2 md:w-1/2 relative z-10">
+        <div ref={steps} className="bias-full md:bias-1/2 md:w-1/2 relative z-10">
           {TutorialTriggers.map((trigger, index) => {
             return (
               <div
@@ -43,7 +43,7 @@ export default function Scrollytell() {
               </div>
             );
           })}
-        </section>
+        </div>
       </ScrollytellWrapper>
     </ScrollytellContext.Provider>
   )

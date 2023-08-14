@@ -1,4 +1,26 @@
-export default function OvalTitle({ color, ellipse, opacity, topText, midText, botText }) {
+type Ellipse = {
+  cx: number,
+  cy: number,
+  rx: number,
+  ry: number,
+}
+
+type Text = {
+  text: string,
+  x: number,
+  y: number
+}
+
+interface Props {
+  color: string;
+  ellipse: Ellipse;
+  opacity: number;
+  topText: Text;
+  midText: Text;
+  botText: Text;
+}
+
+export default function OvalTitle({ color, ellipse, opacity, topText, midText, botText }: Props) {
   return (
     <g opacity={opacity}>
       <ellipse

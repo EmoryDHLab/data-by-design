@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 import { QuizContext } from "./QuizContext";
 import { useDeviceContext } from "~/hooks";
 
@@ -27,32 +27,34 @@ export default function QuizIntro({ className }: { className?: string }) {
     )
   } else if (isDesktop) {
     return (
-      <g className={`hidden md:block ${className}`}>
-        <foreignObject
-          x={50}
-          y={20}
-          width={200}
-          height={100}
-        >
-          <IntroText />
-        </foreignObject>
-        <text
-          y={120}
-          x={50}
-          width={20}
-          height={20}
-          fill="white"
-          role="button"
-          tabIndex={0}
-          onClick={() => setCurrentStepCount(1)}
-          onKeyUp={({ key }) => { if (key === "Enter" || key === "Space") setCurrentStepCount(1) }}
-          fontSize={10}
-          className="font-duboisLightNarrow italic focus:outline-none focus:underline hover:underline"
-        >
-          BEGIN
-          <tspan dx={2} className="font-icons">b</tspan>
-        </text>
-      </g>
+      <svg>
+        <g className={`hidden md:block ${className}`}>
+          <foreignObject
+            x={50}
+            y={20}
+            width={200}
+            height={100}
+          >
+            <IntroText />
+          </foreignObject>
+          <text
+            y={120}
+            x={50}
+            width={20}
+            height={20}
+            fill="white"
+            role="button"
+            tabIndex={0}
+            onClick={() => setCurrentStepCount(1)}
+            onKeyUp={({ key }) => { if (key === "Enter" || key === "Space") setCurrentStepCount(1) }}
+            fontSize={10}
+            className="font-duboisLightNarrow italic focus:outline-none focus:underline hover:underline"
+          >
+            BEGIN
+            <tspan dx={2} className="font-icons">b</tspan>
+          </text>
+        </g>
+      </svg>
     );
   }
 

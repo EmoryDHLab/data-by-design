@@ -9,8 +9,8 @@ export default function RecreationCovid() {
   const height = 44;
   const width = 94;
   const innerGridWidth = (94 / 11) * 10 + 3;
-  const maxUK = Math.max(...perCapitaCovidData.map(d => d.ukDeaths));
-  const maxUS = Math.max(...perCapitaCovidData.map(d => d.usDeaths));
+  const maxUK = 1006.53; // Math.max(...perCapitaCovidData.map(d => d.ukDeaths))
+  const maxUS = 920.97; //Math.max(...perCapitaCovidData.map(d => d.usDeaths))
   const yValues = Array.from({ length: Math.floor(Math.max(maxUK, maxUS) / 50 )}, (_, n) => (n + 1) * 50);
   const yValueHighlights = Array.from({ length: 4}, (_, n) => ( n + 1) * 250);
   const xValues = Array.from({ length: Math.floor(perCapitaCovidData.length / 30 )}, (_, n) => (n + 1) * 30);
@@ -116,7 +116,7 @@ export default function RecreationCovid() {
                   yValue={yScale(yValue)}
                   text={yValue}
                   innerWidth={innerGridWidth}
-                  opacity={yValueHighlights.includes(yValue) ? "0.4" : "0.2"}
+                  opacity={yValueHighlights.includes(yValue) ? 0.4 : 0.2}
                 />
               )
             })}
@@ -129,6 +129,7 @@ export default function RecreationCovid() {
               topText={topText}
               midText={midText}
               botText={botText}
+              opacity={1}
             />
             <rect
               fill="transparent"

@@ -13,19 +13,46 @@ export default function StackedChart() {
   const topText = { text: "EXPORTS & IMPORTS", x: 6, y: 12 };
   const midText = { text: "to and from all", x: 14, y: 15.5 };
   const botText = { text: "NORTH AMERICA", x: 7, y: 19 };
+  const maxY = 8200000; //Math.max(...playfairData.map(d => d.Imports + d.Exports));
+  const maxYear = 1800; //Math.max(...playfairData.map(d => d.Years));
+  const minYear = 1700; //Math.min(...playfairData.map(d => d.Years));
+  // const xValues = Array.from({ length: 11}, (_, n) => n * 10 + 1700);
+  const xValues = [
+    1700,
+    1710,
+    1720,
+    1730,
+    1740,
+    1750,
+    1760,
+    1770,
+    1780,
+    1790,
+    1800
+  ];
 
-  // const maxImport = Math.max(...playfairData.map(d => d.Imports));
-  // const minImport = Math.min(...playfairData.map(d => d.Imports));
-  // const maxExport = Math.max(...playfairData.map(d => d.Exports));
-  // const minExport = Math.min(...playfairData.map(d => d.Exports));
+  // const yValues = Array.from({ length: (maxY + interval) / interval}, (_, n) => n * interval);
+  const yValues = [
+    0,
+    500000,
+    1000000,
+    1500000,
+    2000000,
+    2500000,
+    3000000,
+    3500000,
+    4000000,
+    4500000,
+    5000000,
+    5500000,
+    6000000,
+    6500000,
+    7000000,
+    7500000,
+    8000000
+  ];
 
-  const maxY = Math.max(...playfairData.map(d => d.Imports + d.Exports));
-  const maxYear = Math.max(...playfairData.map(d => d.Years));
-  const minYear = Math.min(...playfairData.map(d => d.Years));
-  const xValues = Array.from({ length: 11}, (_, n) => n * 10 + 1700);
-  const yValues = Array.from({ length: (maxY + interval) / interval}, (_, n) => n * interval);
-
-  const readableYValue = (value) => {
+  const readableYValue = (value: number) => {
     if (value === 0 ) return " ";
 
     if (value === interval ) return interval;
@@ -138,7 +165,7 @@ export default function StackedChart() {
             yValue={yScale(yValue)}
             text={readableYValue(yValue)}
             innerWidth={innerGridWidth - 2}
-            opacity={index % 2 === 0 ? "0.4" : "0.2"}
+            opacity={index % 2 === 0 ? 0.4 : 0.2}
           />
         )
       })}
@@ -148,6 +175,7 @@ export default function StackedChart() {
         topText={topText}
         midText={midText}
         botText={botText}
+        opacity={0}
       />
 
       <rect

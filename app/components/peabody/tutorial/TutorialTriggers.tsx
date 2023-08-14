@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import InlineFootnote from "~/components/InlineFootnote";
 import PeabodyActors from "../PeabodyActors";
 import eventData from "~/data/peabody/eventData.json";
@@ -151,23 +152,23 @@ const Key = function () {
 };
 
 const TutorialTriggers = [
-  <section key={"2c8354f7"}></section>,
+  <p key={"2c8354f7"}></p>,
 
-  <section key={"6f989444"}>
+  <Fragment key={"6f989444"}>
     <p className="bg-[#9ae4c1cc] px-4 md:p-0">
       Peabody's version of Bem's system borrows the idea of a numbered grid, with
       each year in a century marked out in its own box.
     </p>
-  </section>,
+  </Fragment>,
 
-  <section key={"33dfea32"}>
+  <Fragment key={"33dfea32"}>
     <p className="bg-[#9ae4c1cc] px-4 md:p-0">
       She also borrows the idea of subdividing each box, so that each of the nine
       interior squares corresponds to a particular type of historical event.
     </p>
-  </section>,
+  </Fragment>,
 
-  <section key={"e4503b65"}>
+  <Fragment key={"e4503b65"}>
     <p className="bg-[#9ae4c1cc] px-4 md:p-0 mb-0 pb-2 md:pb-0">
       In the Polish-American System, as in Bem's, the top left corner is the
       space for wars, battles, and sieges; in the top middle is the space for
@@ -176,9 +177,9 @@ const TutorialTriggers = [
     </p>
     <Key />
     <p className="h-64 md:h-auto"></p>
-  </section>,
+  </Fragment>,
 
-  <section key={"52553732"}>
+  <Fragment key={"52553732"}>
     <p className="bg-[#9ae4c1cc] px-4 md:p-0 mb-0">
       The events are also color-coded, indicating the various countries involved
       in a particular event. On this point, Peabody makes special note that she
@@ -189,9 +190,9 @@ const TutorialTriggers = [
     <div className="flex flex-wrap text-sm mt-6 gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0 mt-0 md:mt-4">
       <PeabodyActors century={1600} />
     </div>
-  </section>,
+  </Fragment>,
 
-  <section key={"8ffd6ede"}>
+  <Fragment key={"8ffd6ede"}>
     <p className="bg-[#9ae4c1cc] px-4 pb-4 md:p-0 mb-0">
       Shapes that take up the entire box indicate an event of such magnitude or
       complexity that the other events in that same year hardly matter.
@@ -202,9 +203,9 @@ const TutorialTriggers = [
     <div className="flex flex-wrap text-sm mt-6 gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0 mt-0">
       <PeabodyActors actor="England" />
     </div>
-  </section>,
+  </Fragment>,
 
-  <section key={"0d3e2774"}>
+  <Fragment key={"0d3e2774"}>
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mb-0 pb-2 md:pb-4">
       Events inform each other. Here we see Pilgrims settling Plymouth in 1920.
     </p>
@@ -214,9 +215,9 @@ const TutorialTriggers = [
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mt-0 md:mt-4 pt-4 text-sm">
       <PeabodyActors actor="England" /> <PeabodyActors actor="Holland" className="opacity-75 text-black" />
     </p>
-  </section>,
+  </Fragment>,
 
-  <section key={"9b41ae5d"}>
+  <Fragment key={"9b41ae5d"}>
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mb-0 pb-2 md:pb-4">
       It also marks the first slaves in being brought to Jamestown, Virginia (20 brought on a Dutch ship).
     </p>
@@ -226,18 +227,18 @@ const TutorialTriggers = [
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mt-0 md:mt-4 pt-4 text-sm">
       <PeabodyActors actor="England" className="opacity-75 text-black" /> <PeabodyActors actor="Holland" />
     </p>
-  </section>,
+  </Fragment>,
 
-  <section key={"25c869c2"}>
+  <Fragment key={"25c869c2"}>
     <p className="bg-[#9ae4c1cc] px-4 md:px-0 md:py-2 my-0">
       Peabody also uses diagonals to show an event being shared by 2 countries (or more).
     </p>
     <div className="flex flex-wrap text-sm mt-6 gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0 mt-0">
       <PeabodyActors actor="England" /> <PeabodyActors actor="Americas" /> <PeabodyActors actor="Holland" />
     </div>
-  </section>,
+  </Fragment>,
 
-  <section key={"fd6e81bb"}>
+  <Fragment key={"fd6e81bb"}>
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mb-0 pb-2 md:pb-4">
       Here we see the Jamestown Massacre.
     </p>
@@ -247,9 +248,9 @@ const TutorialTriggers = [
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mt-0 md:mt-4 pt-4 text-sm">
       <PeabodyActors actor="England" /> <PeabodyActors actor="Americas" />
     </p>
-  </section>,
+  </Fragment>,
 
-  <section key={"01f4d21b"}>
+  <Fragment key={"01f4d21b"}>
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mb-0 pb-2 md:pb-4">
       Assault on Powhatan Settlements.
     </p>
@@ -259,9 +260,9 @@ const TutorialTriggers = [
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mt-0 md:mt-4 pt-4 text-sm">
       <PeabodyActors actor="England" /> <PeabodyActors actor="Americas" />
     </p>
-  </section>,
+  </Fragment>,
 
-  <section key={"0291a8ab"}>
+  <Fragment key={"0291a8ab"}>
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mb-0 pb-2 md:pb-4">
       "Indians are conquered."
     </p>
@@ -271,9 +272,9 @@ const TutorialTriggers = [
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mt-0 md:mt-4 pt-4 text-sm">
       <PeabodyActors actor="Americas" />
     </p>
-  </section>,
+  </Fragment>,
 
-  <section key={"615d61e0"}>
+  <Fragment key={"615d61e0"}>
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mb-0 pb-2 md:pb-4">
       And the death of Pocahontas.
     </p>
@@ -283,9 +284,9 @@ const TutorialTriggers = [
     <p className="bg-[#9ae4c1cc] pl-4 md:pl-0 mt-0 md:mt-4 pt-4 text-sm">
       <PeabodyActors actor="Holland" />
     </p>
-  </section>,
+  </Fragment>,
 
-  <section key={"6f6c2b69"} className="h-[50vh] md:h-auto"></section>
+  <p key={"6f6c2b69"} className="h-[50vh] md:h-auto"></p>
 ];
 
 export default TutorialTriggers;
