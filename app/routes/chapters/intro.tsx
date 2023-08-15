@@ -4,7 +4,6 @@ import { ChapterContext } from "~/chapterContext";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
-import FullBleed from "~/components/layout/FullBleed";
 
 import CenteredLayout from "~/components/layout/CenteredLayout";
 
@@ -70,15 +69,14 @@ export default function IntroPage() {
           seen before or since.{" "}
         </p>
       </CenteredLayout>
-      <FullBleed>
-        <PullQuote
-          title="Playfair's goal was not accuracy but inspiration."
-          subtitle="His intent was to produce a visual impression — one
-                      inspired by the data, but not a direct
-                      representation of it — that would, in turn, prompt
-                      the insights that lead to new knowledge."
-        />
-      </FullBleed>
+
+      <PullQuote
+        title="Playfair's goal was not accuracy but inspiration."
+        subtitle="His intent was to produce a visual impression — one
+                    inspired by the data, but not a direct
+                    representation of it — that would, in turn, prompt
+                    the insights that lead to new knowledge."
+      />
 
       <TwoColumnLayout>
         <Column>

@@ -8,7 +8,6 @@ import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
-import FullBleed from "~/components/layout/FullBleed";
 import Footer from "~/components/Footer";
 import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import HoverText from "~/components/HoverText";
@@ -318,15 +317,13 @@ export default function PeabodyPage() {
         </Column>
       </TwoColumnLayout>
 
+      <PullQuote
+        title="Our ways of knowing—about science, about history,
+                          or about any other phenomena in the world—"
+        subtitle="are overdetermined by the asymmetrically connected
+                          (and constructed) systems that shape them."
+      />
       <CenteredLayout>
-        <FullBleed>
-          <PullQuote
-            title="Our ways of knowing—about science, about history,
-                              or about any other phenomena in the world—"
-            subtitle="are overdetermined by the asymmetrically connected
-                              (and constructed) systems that shape them."
-          />
-        </FullBleed>
         <p>
           Indeed, our ways of knowing—about science, about history, or about any
           other phenomena in the world—are overdetermined by the asymmetrically
@@ -468,8 +465,6 @@ export default function PeabodyPage() {
           <PullQuote
             title="By prompting her students to create new narratives of the past, "
             subtitle="they would also imagine alternative possible futures."
-            className="md:px-4 py-10 md:my-6"
-            width="w-[initial]"
           />
           <p>
             Her goal with the <cite>Polish-American System</cite>
@@ -739,14 +734,10 @@ export default function PeabodyPage() {
         </Column>
       </TwoColumnLayout>
 
-      <CenteredLayout>
-        <FullBleed>
-          <PullQuote
-            title="Who else are we missing"
-            subtitle="when we fail to include examples like these in the stories we tell about the emergence of data visualization? "
-          />
-        </FullBleed>
-      </CenteredLayout>
+      <PullQuote
+        title="Who else are we missing"
+        subtitle="when we fail to include examples like these in the stories we tell about the emergence of data visualization? "
+      />
 
       <TwoColumnLayout>
         <Column shouldPin={true}>

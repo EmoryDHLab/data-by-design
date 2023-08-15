@@ -663,9 +663,21 @@ export default function BrooksPage() {
           <PullQuote
             title="The study of chronology has been much facilitated by making space represent time, and a line of proportional length and in a suitable position, the life of a man, by means of which the men of past ages appear as it were before us in their proper time and place."
             subtitle='In the first edition of his Commerical and Political Atlas, Playfair cites the work of Joseph Priestley, the author of several famed chronological charts, "as a direct predecessor to his own line graphs and bar charts.'
+            // className="md:px-4 py-10 md:my-6"
+            // width="w-[initial]"
           >
-            <InlineFootnote index={31} />
-            <InlineFootnote index={32} />
+            <InlineFootnote
+              index={31}
+              bgOverride="white"
+              superscriptOverride="brooksPrimary"
+              textOverride="white"
+            />
+            <InlineFootnote
+              index={32}
+              bgOverride="white"
+              superscriptOverride="brooksPrimary"
+              textOverride="white"
+            />
           </PullQuote>
         </Column>
         <Column>

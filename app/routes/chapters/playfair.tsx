@@ -5,7 +5,6 @@ import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
-import FullBleed from "~/components/layout/FullBleed";
 import RecreationCovid from "~/components/playfair/RecreationCovid";
 import StackedChart from "~/components/playfair/StackedChart";
 import CombChart from "~/components/playfair/CombChart";
@@ -283,15 +282,14 @@ export default function PlayfairPage() {
           <InlineFootnote index={15} />
         </p>
       </CenteredLayout>
-      <FullBleed>
-        <PullQuote
-          title="Playfair's goal was not accuracy but inspiration."
-          subtitle="His intent was to produce a visual impression—one
-                      inspired by the data, but not a direct
-                      representation of it—that would, in turn, prompt
-                      the insights that lead to new knowledge."
-        />
-      </FullBleed>
+
+      <PullQuote
+        title="Playfair's goal was not accuracy but inspiration."
+        subtitle="His intent was to produce a visual impression—one
+                    inspired by the data, but not a direct
+                    representation of it—that would, in turn, prompt
+                    the insights that lead to new knowledge."
+      />
 
       <CenteredLayout>
         <p className="pb-12">
@@ -312,7 +310,7 @@ export default function PlayfairPage() {
       <ChapterSectionTitle title="The Politics of Playfair's Charts" />
 
       <CenteredLayout>
-        <FigureObj figure={figures["5-minard"]} />
+        <FigureObj figure={figures["5-minard"]} className="mt-8" />
         <p>
           Playfair created his charts in an era of intense political change. At
           the time that he released the third and most widely circulated edition
@@ -332,129 +330,127 @@ export default function PlayfairPage() {
           <InlineFootnote index={16} />
         </p>
 
-        <div>
-          <p>
-            Playfair understood his work as an active political intervention: a
-            means of countering the instability that the so-called Age of
-            Revolutions had brought about. Playfair was openly unsure about what
-            the future might hold. In the preface to the third edition of the{" "}
-            <cite>Atlas</cite>, he speculates that{" "}
-            <q>
-              Europe may probably be convulsed with war for fifty years to come,
-            </q>{" "}
-            and professes uncertainty about whether he is witnessing the end of
-            European cultural and economic dominance, or whether its{" "}
-            <q>"art and commerce"</q> will prevail.
-            <InlineFootnote index={17} />
-            But regardless of the outcome—or, I would contend, precisely{" "}
-            <em>because</em> of the uncertainty of the outcome—Playfair
-            identifies tremendous value in the clarity of perspective produced
-            by his charts. As he explains:
-          </p>
+        <p>
+          Playfair understood his work as an active political intervention: a
+          means of countering the instability that the so-called Age of
+          Revolutions had brought about. Playfair was openly unsure about what
+          the future might hold. In the preface to the third edition of the{" "}
+          <cite>Atlas</cite>, he speculates that{" "}
+          <q>
+            Europe may probably be convulsed with war for fifty years to come,
+          </q>{" "}
+          and professes uncertainty about whether he is witnessing the end of
+          European cultural and economic dominance, or whether its{" "}
+          <q>"art and commerce"</q> will prevail.
+          <InlineFootnote index={17} />
+          But regardless of the outcome—or, I would contend, precisely{" "}
+          <em>because</em> of the uncertainty of the outcome—Playfair
+          identifies tremendous value in the clarity of perspective produced
+          by his charts. As he explains:
+        </p>
 
-          <Quotation
-            quote={
-              <>
-                <span>
-                  If [a future of war] turns out so, a picture of the past will
-                  be a valuable thing, if, on the contrary, commerce should
-                  still continue its progress, this will make the first part of
-                  a great whole, which, when completed on some future day, will
-                  be a most valuable work.
-                </span>
-              </>
-            }
-            byline=" William Playfair, p. iv."
-          ></Quotation>
+        <Quotation
+          quote={
+            <>
+              <span>
+                If [a future of war] turns out so, a picture of the past will
+                be a valuable thing, if, on the contrary, commerce should
+                still continue its progress, this will make the first part of
+                a great whole, which, when completed on some future day, will
+                be a most valuable work.
+              </span>
+            </>
+          }
+          byline=" William Playfair, p. iv."
+        ></Quotation>
 
-          <p>attr</p>
-          <p>
-            From these lines, it would seem that Playfair believes that his
-            "simple and complete" images can not only capture the instability of
-            his time, but also guard against the uncertainty of the future.
-            <InlineFootnote index={19} />
-            His goal is to cut through complexity, guided by a belief that less
-            detail—and not more—is what will enable more useful and enduring
-            knowledge.
-          </p>
-          <p>
-            But a pair of questions remains: for whom is this knowledge truly
-            useful, and for what reasons is it necessary that this particular
-            <q>picture of the past</q> endure? As Playfair elaborates the
-            impetus behind the <q>form and manner</q> of his charts, he makes
-            clear that his intended audience is not <q>any person</q> in the
-            world, but rather, the narrower world of{" "}
-            <q>men of high rank, or active business</q>
-            <InlineFootnote index={20} />
-            These men, he continues,{" "}
-            <q>
-              can only pay attention to general outlines; nor is attention to
-              particulars of use.
-            </q>
-            <InlineFootnote index={21} />
-          </p>
-          <p>
-            Their concerns are not with complexity, or with individual impact,
-            because their rank and resources shield them from any personal
-            fallout from the events represented through the charts. The
-            knowledge that is recorded and visualized in the <cite>Atlas</cite>{" "}
-            is valuable to them precisely because it is clear and efficient, and
-            because it allows them to ignore any details that might otherwise
-            cloud their view. The result of this picture of the past is a
-            further consolidation of political and economic power, a result
-            which directly follows from the consolidating design of the charts.
-          </p>
+        <p>attr</p>
+        <p>
+          From these lines, it would seem that Playfair believes that his
+          "simple and complete" images can not only capture the instability of
+          his time, but also guard against the uncertainty of the future.
+          <InlineFootnote index={19} />
+          His goal is to cut through complexity, guided by a belief that less
+          detail—and not more—is what will enable more useful and enduring
+          knowledge.
+        </p>
+        <p>
+          But a pair of questions remains: for whom is this knowledge truly
+          useful, and for what reasons is it necessary that this particular
+          <q>picture of the past</q> endure? As Playfair elaborates the
+          impetus behind the <q>form and manner</q> of his charts, he makes
+          clear that his intended audience is not <q>any person</q> in the
+          world, but rather, the narrower world of{" "}
+          <q>men of high rank, or active business</q>
+          <InlineFootnote index={20} />
+          These men, he continues,{" "}
+          <q>
+            can only pay attention to general outlines; nor is attention to
+            particulars of use.
+          </q>
+          <InlineFootnote index={21} />
+        </p>
+        <p>
+          Their concerns are not with complexity, or with individual impact,
+          because their rank and resources shield them from any personal
+          fallout from the events represented through the charts. The
+          knowledge that is recorded and visualized in the <cite>Atlas</cite>{" "}
+          is valuable to them precisely because it is clear and efficient, and
+          because it allows them to ignore any details that might otherwise
+          cloud their view. The result of this picture of the past is a
+          further consolidation of political and economic power, a result
+          which directly follows from the consolidating design of the charts.
+        </p>
+      </CenteredLayout>
 
-          <FullBleed>
-            <PullQuote
-              title="For whom is this knowledge truly useful"
-              subtitle='and for what reasons is it necessary that this particular "picture of the past" endure?'
-            />
-          </FullBleed>
+      <PullQuote
+        title="For whom is this knowledge truly useful"
+        subtitle='and for what reasons is it necessary that this particular "picture of the past" endure?'
+      />
 
-          <p>
-            To be sure, very few of the myriad people who employ time-series
-            charts today do so with a stated aim of consolidating political or
-            economic power. In fact, time-series charts are among the most
-            ubiquitous visual typologies in circulation today. But as a
-            consideration of Playfair's writing about his charts makes clear,
-            they carry very specific ideas about the uses of visualization, as
-            well as about the specific people who are intended to make use of
-            them.
-          </p>
-          <p>
-            ​​Playfair's import-export charts advance a belief in what can be
-            gained by the <q>big picture</q> view without registering any
-            concern about what might be lost in the details, or about who might
-            be impacted by that missing information.
-            <InlineFootnote index={22} />
-            The boldly colored data lines, enhanced by the hand-tinting that
-            shades the areas between them, and set against the stark black
-            gridlines, emblematize the graphical authority that theorists such
-            as Tufte identify as among data visualization's greatest
-            affordances. The ornate title and formal frame—design choices made
-            by Playfair or in consultation with the images' engraver, Samuel
-            Neele—further reinforce the impression of an encounter with an
-            authoritative image of enduring significance. As viewers, we are not
-            prompted to question the data that we see visualized on the chart,
-            nor are we pushed to extend our inquiry beyond its{" "}
-            <q>big picture</q>
-            view.
-          </p>
-          <p>
-            While we are no longer living in the Age of Revolutions, we
-            nonetheless continue to face social and political crises of
-            significant stakes. What has been shown by several of the most
-            pressing of these—the ongoing coronavirus pandemic and the unfolding
-            of climate change, to name just two—is that data visualization will
-            continue to play a prominent role in communicating information and
-            in shaping the terms of public debate. As such, it behooves us, as
-            visualization designers and researchers ourselves, to be better
-            trained to see the politics of knowledge production that are
-            embedded in the visualizations we design, so that they can achieve
-            their intended use.
-          </p>
-        </div>
+      <CenteredLayout>
+        <p>
+          To be sure, very few of the myriad people who employ time-series
+          charts today do so with a stated aim of consolidating political or
+          economic power. In fact, time-series charts are among the most
+          ubiquitous visual typologies in circulation today. But as a
+          consideration of Playfair's writing about his charts makes clear,
+          they carry very specific ideas about the uses of visualization, as
+          well as about the specific people who are intended to make use of
+          them.
+        </p>
+        <p>
+          Playfair's import-export charts advance a belief in what can be
+          gained by the <q>big picture</q> view without registering any
+          concern about what might be lost in the details, or about who might
+          be impacted by that missing information.
+          <InlineFootnote index={22} />
+          The boldly colored data lines, enhanced by the hand-tinting that
+          shades the areas between them, and set against the stark black
+          gridlines, emblematize the graphical authority that theorists such
+          as Tufte identify as among data visualization's greatest
+          affordances. The ornate title and formal frame—design choices made
+          by Playfair or in consultation with the images' engraver, Samuel
+          Neele—further reinforce the impression of an encounter with an
+          authoritative image of enduring significance. As viewers, we are not
+          prompted to question the data that we see visualized on the chart,
+          nor are we pushed to extend our inquiry beyond its{" "}
+          <q>big picture</q>
+          view.
+        </p>
+        <p>
+          While we are no longer living in the Age of Revolutions, we
+          nonetheless continue to face social and political crises of
+          significant stakes. What has been shown by several of the most
+          pressing of these—the ongoing coronavirus pandemic and the unfolding
+          of climate change, to name just two—is that data visualization will
+          continue to play a prominent role in communicating information and
+          in shaping the terms of public debate. As such, it behooves us, as
+          visualization designers and researchers ourselves, to be better
+          trained to see the politics of knowledge production that are
+          embedded in the visualizations we design, so that they can achieve
+          their intended use.
+        </p>
       </CenteredLayout>
       <ChapterSectionTitle title="Playfair's Argument in the Present" />
       <TwoColumnLayout>
@@ -481,12 +477,12 @@ export default function PlayfairPage() {
           <FigureObj figure={figures["7-nightingale"]} />
         </Column>
       </TwoColumnLayout>
-      <FullBleed>
-        <PullQuote
-          title="Playfair's charts are most forceful today — "
-          subtitle="for advancing an argument about the uses of visualization itself."
-        />
-      </FullBleed>
+
+      <PullQuote
+        title="Playfair's charts are most forceful today — "
+        subtitle="for advancing an argument about the uses of visualization itself."
+      />
+
       <CenteredLayout>
         <p>
           Consider the process of recreating one of Playfair's charts with

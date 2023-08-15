@@ -113,6 +113,7 @@ module.exports = {
     "bg-brooksPrimary",
     "border-brooksPrimary",
     "stroke-brooksPrimary",
+    "text-brooksPrimary",
     "fill-brooksSecondary",
     "bg-brooksSecondary",
     "bg-brooksPrimary-translucent",

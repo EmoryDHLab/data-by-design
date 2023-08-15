@@ -6,10 +6,11 @@ interface Props {
   index: number;
   children?: ReactNodeLike;
   bgOverride?: string;
+  superscriptOverride?: string;
   textOverride?: string;
 }
 
-export default function InlineFootnote({ index, bgOverride, textOverride }: Props) {
+export default function InlineFootnote({ index, bgOverride, superscriptOverride, textOverride }: Props) {
   const { backgroundColor, primaryTextColor, footnoteTextColor, footnotes, setDocHeightState, } =
     useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
@@ -23,7 +24,7 @@ export default function InlineFootnote({ index, bgOverride, textOverride }: Prop
     <span>
       <button
         onClick={() => setIsTextVisible(!isTextVisible)}
-        className={`footnote mr-2 bg-${bgOverride ?? backgroundColor} text-${textOverride ?? primaryTextColor}`}
+        className={`footnote mr-2 bg-${bgOverride ?? backgroundColor} text-${superscriptOverride ?? primaryTextColor}`}
       >
         {index + 1}
       </button>

@@ -185,7 +185,7 @@ const TutorialTriggers = [
       in a particular event. On this point, Peabody makes special note that she
       employs "a somewhat different, and, as it seems to me, a more expressive
       distribution of colors."
-      <InlineFootnote index={7} bgOverride="white" textOverride="offblack" />
+      <InlineFootnote index={7} bgOverride="white" superscriptOverride="offblack" />
     </p>
     <div className="flex flex-wrap text-sm mt-6 gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0 mt-0 md:mt-4">
       <PeabodyActors century={1600} />
