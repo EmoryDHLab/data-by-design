@@ -132,6 +132,7 @@ module.exports = {
     "bg-peabodyPrimary-translucent",
     "transition-opacity",
     "opacity-0",
+    "opacity-10",
     "opacity-100",
     "duration-700",
     "text-offblack",

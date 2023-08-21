@@ -171,22 +171,23 @@ export default function PieChart({ studentData }: Props) {
         circles.forEach((ball) => {
           ball.mouseOn();
         });
+        // p5.noLoop();
       };
       p5.mousePressed = function () {
         circles.forEach((ball) => {
           ball.pressed();
         });
       };
-      p5.mouseDragged = function () {
-        circles.forEach((ball) => {
-          ball.update();
-        });
-      };
-      p5.mouseReleased = function () {
-        circles.forEach((ball) => {
-          ball.released();
-        });
-      };
+      // p5.mouseDragged = function () {
+      //   circles.forEach((ball) => {
+      //     ball.update();
+      //   });
+      // };
+      // p5.mouseReleased = function () {
+      //   circles.forEach((ball) => {
+      //     ball.released();
+      //   });
+      // };
     }
 
     const p5Copy = new p5(script);

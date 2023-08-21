@@ -14,3 +14,9 @@ export interface Student {
   location: string;
   year: number;
 }
+
+export interface ResponseData {
+  id: string;
+  gender: string;
+  lines: Array<string>;
+}
