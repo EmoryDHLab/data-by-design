@@ -10,6 +10,7 @@ interface Props {
   figure?: Figure;
   figures?: Array<Figure>;
   className?: string;
+  imageClassName?: string;
   captionClassName?: string;
   groupCaption?: ReactElement;
 }
@@ -30,7 +31,8 @@ export default function FigureObj({
   figures,
   className,
   captionClassName,
-  groupCaption
+  groupCaption,
+  imageClassName,
 }: Props) {
   const { hideSensitiveState, accentColor, backgroundColor } = useContext(ChapterContext);
   const [hide, setHide] = useState<boolean>(Boolean(hideSensitiveState && figure?.sensitive));
@@ -70,7 +72,7 @@ export default function FigureObj({
             strokeOpacity={hide ? 0.75 : 0}
           />
         </div>
-        <Picture figure={figure} />
+        <Picture figure={figure} className={imageClassName} />
         <Caption figure={figure} className={captionClassName} />
       </FigureModal>
     );

@@ -169,5 +169,43 @@
     "year": 1935,
     "chapter": "brooks",
     "timeline": true
+  },
+  "all-resistance-voyages": {
+    "chapterTitle": "Brooks",
+    "fileName": "all-resistance-voyages",
+    "title": "",
+    "artist": "",
+    "caption": "These are all the resistance voyages.",
+    "altText": "",
+    "sensitive": false,
+    "creditLine": "",
+    "digitizedLine": "",
+    "source": "",
+    "sourceUrl": "",
+    "fee": false,
+    "notes": "",
+    "frontPage": false,
+    "year": 2023,
+    "chapter": "brooks",
+    "timeline": false
+  },
+  "voyage-example": {
+    "chapterTitle": "Brooks",
+    "fileName": "voyage-example",
+    "title": "",
+    "artist": "",
+    "caption": "",
+    "altText": "",
+    "sensitive": false,
+    "creditLine": "",
+    "digitizedLine": "",
+    "source": "",
+    "sourceUrl": "",
+    "fee": false,
+    "notes": "",
+    "frontPage": false,
+    "year": 2023,
+    "chapter": "brooks",
+    "timeline": false
   }
 }

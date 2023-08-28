@@ -22,6 +22,11 @@ import figures from "~/data/figures/brooks.json";
 import ClarksonSideBySideScrollytell from "~/components/brooks/ClarksonSideBySideScrollytell";
 import { ClientOnly } from "remix-utils";
 import Voyages from "~/components/brooks/voyages/Voyages.client";
+import VoyageExample from "~/components/brooks/voyages/VoyageExample";
+import ResistanceVoyages from "~/components/brooks/voyages/ResistanceVoyages.client";
+import ResistanceVoyages1756 from "~/components/brooks/voyages/ResistanceVoyages1756.client";
+import AllVoyages1756 from "~/components/brooks/voyages/AllVoyages1756.client";
+import AllVoyages from "~/components/brooks/voyages/AllVoyages.client";
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -804,8 +809,64 @@ export default function BrooksPage() {
         {/* Runover "A violence of enslavement and a violence of abstraction developed together and reinforced each other," he further declares. // enslavement and abstraction developed together */}
       </CenteredLayout>
 
+      <TwoColumnLayout className="items-end">
+        <Column>
+          <p className="">
+            in the data set we are consilting theres a bunch of
+            voyages from 1565 to 1858.
+          </p>
+        </Column>
+          <Column>
+            <figure>
+              <VoyageExample />
+            </figure>
+          </Column>
+      </TwoColumnLayout>
+
+      <FigureObj
+        figure={figures["all-resistance-voyages"]}
+        imageClassName="w-screen drop-shadow-none"
+        captionClassName="mx-12"
+      />
+
+      <p>
+        -- Only voyages with resistance reported and year range interaction. --
+      </p>
+
+      <ClientOnly>
+        {() => <ResistanceVoyages />}
+      </ClientOnly>
+
+      <p>
+        -- Voyages with resistance reported from 1756-1766 with no interaction. --
+      </p>
+
+      <ClientOnly>
+        {() => <ResistanceVoyages1756 />}
+      </ClientOnly>
+
+      <p>
+        -- All voyages from 1756-1766 with voyages without resistance reported in grayscale and no interaction. --
+      </p>
+
+      <ClientOnly>
+        {() => <AllVoyages1756 />}
+      </ClientOnly>
+
+      <p>
+       -- Toggle to show voyages without resistance reported in grayscale with year range interaction. --
+      </p>
+
       <ClientOnly>
         {() => <Voyages />}
+      </ClientOnly>
+
+      <p>
+        -- Show all voyages in full color with no toggle with year range interaction. --
+      </p>
+
+      <ClientOnly>
+        {() => <AllVoyages />}
       </ClientOnly>
 
       <CenteredLayout>

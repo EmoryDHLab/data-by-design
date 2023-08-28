@@ -79,7 +79,7 @@ function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }: Props)
         x={start ? sliderWidth[0] - 20 : sliderWidth[1] - 20}
         y={-18}
         fill="white"
-        fontSize={20}
+        fontSize={15}
       >
         {`${year}`}
       </text>

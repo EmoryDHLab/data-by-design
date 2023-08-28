@@ -1,42 +1,46 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
 interface Props {
   width: number;
-  height: number;
+  color?: string;
   yearRange: Array<number>;
+  widthAdjustment?: number | undefined;
 }
 
-function Axis({ width, height, yearRange }: Props) {
+function Axis({ width, color, yearRange, widthAdjustment=0 }: Props) {
+  const axisContainerRef = useRef<HTMLDivElement>(null);
+  const axisRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     const xScale = d3.scaleLinear()
                    .domain(yearRange)
-                   .range([0, width]);
+                   .range([0, width + widthAdjustment || 0]);
 
     // Create axis
     const xAxis = d3.axisBottom(xScale).ticks(10, "d");
 
     // Remove previous axis
-    d3.select("#x-axis").remove();
+    d3.select(axisRef.current).select("g").remove();
 
     // Append new axis
-    d3.select("#axis-container")
-      .append("svg")
-      .attr("id", "x-axis")
+    d3.select(axisRef.current)
+      // .append("svg")
+      // .attr("id", "x-axis")
       .attr("width", width + 100)
       .attr("height", 75)
-      .attr("fill", "white")
+      .attr("fill", color ?? "white")
       .append("g")
-      .attr("transform", `translate(50,20)`)
+      .attr("transform", `translate(${widthAdjustment > 0 ? widthAdjustment : 50},20)`)
       .style("font-size", "1.25rem")
-      .style('color', 'white')
+      .style('color', color ?? 'white')
       .call(xAxis);
-  }, [yearRange, width]);
+  }, [yearRange, width, color, widthAdjustment]);
 
   return (
-    <div id="axis-container">
-      <div id="x-axis"></div>
+    <div ref={axisContainerRef}>
+      {/* <div id="x-axis"></div> */}
+      <svg ref={axisRef}></svg>
     </div>
   );
 }

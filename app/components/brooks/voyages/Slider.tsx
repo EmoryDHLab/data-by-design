@@ -11,7 +11,8 @@ interface Props {
 }
 
 function Slider({ width, setYearRange, yearRange }: Props) {
-  const svgRef = useRef<SVGSVGElement>(null);
+  const containerRef = useRef<SVGSVGElement>(null);
+  const sliderRef = useRef<SVGGElement>(null);
   const scaleRef = useRef<any>(null);
   const maxX = useRef<number>(0);
 
@@ -41,7 +42,7 @@ function Slider({ width, setYearRange, yearRange }: Props) {
     if (isNaN(width)) return;
 
     // @ts-ignore
-    const svg = d3.select(svgRef.current)
+    const svg = d3.select(containerRef.current)
                   .attr("width", width + 100)
                   .attr("height", 100)
                   .attr("class", "cursor-pointer");
@@ -62,7 +63,7 @@ function Slider({ width, setYearRange, yearRange }: Props) {
                        .tickFormat((d) => d);
 
 
-    svg.select("#scales")
+    d3.select(sliderRef.current)
        .append("g")
        .attr("class", "scale")
        .attr("transform", `translate(50,40)`)
@@ -71,7 +72,8 @@ function Slider({ width, setYearRange, yearRange }: Props) {
         // @ts-ignore
        .call(axisEnds);
 
-    svg.select("#scales")
+
+    d3.select(sliderRef.current)
        .append("g")
        .attr("class", "scale")
        .attr("transform", `translate(50,40)`)
@@ -95,10 +97,10 @@ function Slider({ width, setYearRange, yearRange }: Props) {
 
   return (
     <svg
-      ref={svgRef}
+      ref={containerRef}
       onClick={handleClick}
     >
-      <g id="scales"></g>
+      <g ref={sliderRef}></g>
       <g
         transform="translate(50,40)"
         className="cursor-ew-resize"
