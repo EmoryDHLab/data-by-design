@@ -15,12 +15,12 @@ function AllVoyages() {
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
   const [yearRange, setYearRange] = useState<number[]>(INITIAL_YEAR_RANGE);
-  const [width, setWidth] = useState<number>(window.outerWidth - 100);
+  const [width, setWidth] = useState<number>(window.outerWidth * 0.85);
   const [height, setHeight] = useState<number>(window.outerHeight * 0.45);
 
   useEffect(() => {
     if (windowSize.width && windowSize.height) {
-      setWidth(windowSize.width - 100);
+      setWidth(windowSize.width * 0.85);
       setHeight(windowSize.height * 0.45);
     }
   }, [windowSize]);
@@ -50,7 +50,7 @@ function AllVoyages() {
 
       p5.setup = () => {
         p5.createCanvas(
-          width + 20000,
+          width,
           height
         ).parent("allVoyageContainer");
 
@@ -144,7 +144,7 @@ function AllVoyages() {
         <div>
           <Slider width={width} yearRange={yearRange} setYearRange={setYearRange} />
         </div>
-        <div id="allVoyageContainer" className="w-screen"></div>
+        <div id="allVoyageContainer"></div>
         { width &&
           <Axis width={width} yearRange={yearRange} />
         }
