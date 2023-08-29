@@ -32,7 +32,7 @@ function AllVoyages1756() {
 
       p5.setup = () => {
         p5.createCanvas(
-          width + 100,
+          width,
           height
         ).parent("allVoyageContainer1756");
 
@@ -113,11 +113,11 @@ function AllVoyages1756() {
   }, [width, height]);
 
   return (
-    <section className="w-full">
+    <section className="w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
-        <div id="allVoyageContainer1756" className=""></div>
+        <div id="allVoyageContainer1756"></div>
         { width &&
-          <Axis width={width} color="black" yearRange={INITIAL_YEAR_RANGE} widthAdjustment={20} />
+          <Axis width={width} color="black" yearRange={INITIAL_YEAR_RANGE} />
         }
       </div>
     </section>

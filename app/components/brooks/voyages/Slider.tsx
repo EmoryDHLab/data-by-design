@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useDeviceContext } from "~/hooks";
 import * as d3 from "d3";
 import SliderHandle from "./SliderHandle";
 import SliderJoin from "./SliderJoin";
@@ -15,6 +16,7 @@ function Slider({ width, setYearRange, yearRange }: Props) {
   const sliderRef = useRef<SVGGElement>(null);
   const scaleRef = useRef<any>(null);
   const maxX = useRef<number>(0);
+  const { isDesktop } = useDeviceContext();
 
   // Just a ref so it can be used in the initial effect.
   const initialYearRange = useRef(yearRange);
@@ -53,13 +55,13 @@ function Slider({ width, setYearRange, yearRange }: Props) {
                     .clamp(true);
 
     const fullAxis = d3.axisBottom(scale)
-                       .ticks(10, "d")
+                       .ticks(isDesktop ? 20 : 5, "d")
                        .tickSize(20);
 
     // @ts-ignore
     const axisEnds = d3.axisBottom(scale)
                        .tickSize(20)
-                       .tickValues([1565, 1858])
+                       .tickValues(isDesktop ? [1565, 1858] : [1565])
                        .tickFormat((d) => d);
 
 
@@ -93,7 +95,7 @@ function Slider({ width, setYearRange, yearRange }: Props) {
     return () => {
       svg.selectAll(".scale").remove();
     }
-  }, [width]);
+  }, [width, isDesktop]);
 
   return (
     <svg
@@ -111,19 +113,23 @@ function Slider({ width, setYearRange, yearRange }: Props) {
           yearRange={yearRange}
           maxX={maxX.current}
         >
-          <SliderHandle
-            sliderWidth={sliderWidth}
-            setSliderWidth={setSliderWidth}
-            maxX={maxX.current}
-            year={yearRange[0]}
-            start
-          />
-          <SliderHandle
-            sliderWidth={sliderWidth}
-            setSliderWidth={setSliderWidth}
-            maxX={maxX.current}
-            year={yearRange[1]}
-          />
+          {isDesktop &&
+            <>
+              <SliderHandle
+                sliderWidth={sliderWidth}
+                setSliderWidth={setSliderWidth}
+                maxX={maxX.current}
+                year={yearRange[0]}
+                start
+              />
+              <SliderHandle
+                sliderWidth={sliderWidth}
+                setSliderWidth={setSliderWidth}
+                maxX={maxX.current}
+                year={yearRange[1]}
+              />
+            </>
+          }
         </SliderJoin>
       </g>
     </svg>

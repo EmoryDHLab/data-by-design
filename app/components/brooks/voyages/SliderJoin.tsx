@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
 import * as d3 from "d3";
+import { useEffect, useRef } from "react";
+import { useDeviceContext } from "~/hooks";
 import type { Dispatch, SetStateAction, ReactNode } from "react";
 
 interface Props {
@@ -24,7 +25,9 @@ function SliderJoin({
   children
 }: Props) {
   const rectRef = useRef<SVGRectElement>(null);
+  const circleRef = useRef<SVGCircleElement>(null);
   const offset = useRef<number>(0);
+  const { isDesktop } = useDeviceContext();
 
   const keyDown = ({ key, type }: EventProps) => {
     if (type !== "keydown") return;
@@ -59,12 +62,12 @@ function SliderJoin({
   };
 
   useEffect(() => {
-    const dragStart = ({ x }: EventProps) => {
+    const dragRectStart = ({ x }: EventProps) => {
       if (!x) return;
       offset.current = x - sliderWidth[0];
     };
 
-    const drag = ({ x }: EventProps) => {
+    const dragRect = ({ x }: EventProps) => {
       if (!x) return;
       const previousDiff = sliderWidth[1] - offset.current - sliderWidth[0];
       const newStart = x - offset.current;
@@ -74,30 +77,68 @@ function SliderJoin({
       }
     };
 
-    d3.select(rectRef.current)
+    const dragCircle = ({ x }: EventProps) => {
+      console.log("🚀 ~ file: SliderJoin.tsx:82 ~ dragCircle ~ x:", x, sliderWidth)
+      if (!x) return;
+
+      if (x >= 0 && x <= maxX + 1) {
+        if (x > sliderWidth[0]) {
+          setSliderWidth([Math.floor(sliderWidth[0] + x), x + 10]);
+        } else {
+          setSliderWidth([Math.floor(sliderWidth[0] - x), x + 10]);
+        }
+      }
+    }
+
+    if (isDesktop) {
+      d3.select(rectRef.current)
+        .call(
+          // @ts-ignore
+          d3.drag()
+            .on("start", dragRectStart)
+            .on("drag", dragRect)
+        );
+    } else {
+      d3.select(circleRef.current)
       .call(
         // @ts-ignore
         d3.drag()
-          .on("start", dragStart)
-          .on("drag", drag)
+          .on("drag", dragCircle)
+          .on("end", dragCircle)
       );
-  }, [maxX, sliderWidth, setSliderWidth]);
+    }
+
+  }, [maxX, sliderWidth, setSliderWidth, isDesktop]);
+
+  if (isDesktop) {
+    return (
+      <>
+        <rect
+          ref={rectRef}
+          x={sliderWidth[0]}
+          y={-8}
+          height={16}
+          width={sliderWidth[1] - sliderWidth[0]}
+          fill="#E0DCF2"
+          tabIndex={0}
+          onKeyDown={keyDown}
+        />
+        {children}
+      </>
+    );
+  }
 
   return (
     <>
-      <rect
-        ref={rectRef}
-        x={sliderWidth[0]}
-        y={-8}
-        height={16}
-        width={sliderWidth[1] - sliderWidth[0]}
-        fill="#E0DCF2"
-        tabIndex={0}
-        onKeyDown={keyDown}
+      <circle
+        ref={circleRef}
+        cy={0}
+        cx={sliderWidth[0]}
+        r={8}
+        fill="white"
       />
-      {children}
     </>
-  );
+  )
 }
 
 export default SliderJoin;

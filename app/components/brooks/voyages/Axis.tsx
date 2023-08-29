@@ -1,5 +1,6 @@
-import { useEffect, useRef } from "react";
 import * as d3 from "d3";
+import { useEffect, useRef } from "react";
+import { useDeviceContext, useWindowSize } from "~/hooks";
 
 interface Props {
   width: number;
@@ -11,6 +12,8 @@ interface Props {
 function Axis({ width, color, yearRange, widthAdjustment=0 }: Props) {
   const axisContainerRef = useRef<HTMLDivElement>(null);
   const axisRef = useRef<SVGSVGElement>(null);
+  const { isDesktop } = useDeviceContext();
+  const windowSize = useWindowSize();
 
   useEffect(() => {
     const xScale = d3.scaleLinear()
@@ -18,7 +21,7 @@ function Axis({ width, color, yearRange, widthAdjustment=0 }: Props) {
                    .range([0, width + widthAdjustment || 0]);
 
     // Create axis
-    const xAxis = d3.axisBottom(xScale).ticks(10, "d");
+    const xAxis = d3.axisBottom(xScale).ticks(isDesktop ? 10 : 5, "d");
 
     // Remove previous axis
     d3.select(axisRef.current).select("g").remove();
@@ -35,7 +38,7 @@ function Axis({ width, color, yearRange, widthAdjustment=0 }: Props) {
       .style("font-size", "1.25rem")
       .style('color', color ?? 'white')
       .call(xAxis);
-  }, [yearRange, width, color, widthAdjustment]);
+  }, [yearRange, width, color, widthAdjustment, isDesktop, windowSize]);
 
   return (
     <div ref={axisContainerRef}>

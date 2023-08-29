@@ -21,7 +21,7 @@ function VoyagesCompare() {
   return (
     <section className=" w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
-        <div className="bg-black sticky top-24">
+        <div className="bg-black sticky top-20 md:top-24">
           <Slider width={width} yearRange={yearRange} setYearRange={setYearRange} />
         </div>
         <div>
