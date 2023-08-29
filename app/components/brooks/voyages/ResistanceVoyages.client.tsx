@@ -3,18 +3,16 @@ import { useWindowSize } from "~/hooks";
 import p5 from "p5";
 import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
-import Slider from "./Slider";
 import voyageData from "~/data/brooks/voyages.json";
 import { randomColor, voyageConstants } from "./utils";
 
 const INITIAL_YEAR_RANGE = [1565, 1575];
 
-function ResistanceVoyages() {
+function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
   const windowSize = useWindowSize();
   const p5Ref = useRef<p5 | undefined>();
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
-  const [yearRange, setYearRange] = useState<number[]>(INITIAL_YEAR_RANGE);
   const [width, setWidth] = useState<number>(window.outerWidth - 100);
   const [height, setHeight] = useState<number>(window.outerHeight * 0.45);
 
@@ -112,8 +110,8 @@ function ResistanceVoyages() {
 
       //The  main visualization
       p5.draw = () => {
-        // p5.background(250, 241, 233);
-        p5.background(28, 24, 23);
+        p5.background(250, 241, 233);
+        // p5.background(28, 24, 23);
 
         for (const index in filteredVoyages.current) {
           if (filteredVoyages.current[index].resistanceReported) {
@@ -142,15 +140,12 @@ function ResistanceVoyages() {
   }, [width, height]);
 
   return (
-    <section className="bg-black w-screen">
+    <section className="w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
         <div id="resistanceVoyageContainer" className="w-screen"></div>
         { width &&
-          <Axis width={width} yearRange={yearRange} />
+          <Axis width={width} color="black" yearRange={yearRange} />
         }
-        <div>
-          <Slider width={width} yearRange={yearRange} setYearRange={setYearRange} />
-        </div>
       </div>
     </section>
   );

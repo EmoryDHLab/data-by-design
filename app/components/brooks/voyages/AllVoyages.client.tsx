@@ -141,13 +141,13 @@ function AllVoyages() {
   return (
     <section className="bg-black w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
+        <div>
+          <Slider width={width} yearRange={yearRange} setYearRange={setYearRange} />
+        </div>
         <div id="allVoyageContainer" className="w-screen"></div>
         { width &&
           <Axis width={width} yearRange={yearRange} />
         }
-        <div>
-          <Slider width={width} yearRange={yearRange} setYearRange={setYearRange} />
-        </div>
       </div>
     </section>
   );

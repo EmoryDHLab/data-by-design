@@ -1,25 +1,24 @@
-import { useContext, useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useWindowSize } from "~/hooks";
 import p5 from "p5";
-import { ChapterContext } from "~/chapterContext";
+// import { ChapterContext } from "~/chapterContext";
 import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
-import Toggle from "~/components/Toggle";
-import Slider from "./Slider";
+// import Toggle from "~/components/Toggle";
+// import Slider from "./Slider";
 import voyageData from "~/data/brooks/voyages.json";
 import { randomColor, voyageConstants } from "./utils";
 
 const INITIAL_YEAR_RANGE = [1565, 1575];
 
-function Voyages() {
+function Voyages({ yearRange }: { yearRange: Array<number>}) {
   const windowSize = useWindowSize();
-  const { backgroundColor } = useContext(ChapterContext);
+  // const { backgroundColor } = useContext(ChapterContext);
   const p5Ref = useRef<p5 | undefined>();
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
-  const showAllRef = useRef<boolean>(false);
-  const [showAllState, setShowAllState] = useState<boolean>(false);
-  const [yearRange, setYearRange] = useState<number[]>(INITIAL_YEAR_RANGE);
+  const showAllRef = useRef<boolean>(true);
+  // const [showAllState, setShowAllState] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(window.outerWidth - 100);
   const [height, setHeight] = useState<number>(window.outerHeight * 0.45);
 
@@ -46,11 +45,11 @@ function Voyages() {
     p5Ref.current.redraw();
   }, [yearRange]);
 
-  const toggleFunction = () => {
-    setShowAllState(showAll => !showAll);
-    showAllRef.current = !showAllRef.current;
-    p5Ref.current?.redraw();
-  }
+  // const toggleFunction = () => {
+  //   setShowAllState(showAll => !showAll);
+  //   showAllRef.current = !showAllRef.current;
+  //   p5Ref.current?.redraw();
+  // }
 
   useEffect(() => {
     const initP5 = (p5: p5) => {
@@ -122,8 +121,8 @@ function Voyages() {
 
       //The  main visualization
       p5.draw = () => {
-        // p5.background(250, 241, 233);
-        p5.background(28, 24, 23);
+        p5.background(250, 241, 233);
+        // p5.background(28, 24, 23);
         if(lerpAmount < 1 && showAllRef.current){
           lerpAmount += 0.01;
           nonResistanceStrokeWidth += 0.005;
@@ -160,24 +159,21 @@ function Voyages() {
   }, [width, height]);
 
   return (
-    <section className="bg-black w-screen">
+    <section className="w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
         <div className="flex items-start w-11/12 mb-6">
-          <Toggle
+          {/* <Toggle
             checked={showAllState}
             onChange={toggleFunction}
             colorOn={backgroundColor}
           >
             Show non-resistance voyages
-          </Toggle>
+          </Toggle> */}
         </div>
         <div id="voyageContainer" className="w-screen"></div>
         { width &&
-          <Axis width={width} yearRange={yearRange} />
+          <Axis width={width} color="black" yearRange={yearRange} />
         }
-        <div>
-          <Slider width={width} yearRange={yearRange} setYearRange={setYearRange} />
-        </div>
       </div>
     </section>
   );
