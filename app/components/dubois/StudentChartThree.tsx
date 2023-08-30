@@ -15,15 +15,15 @@ export default function StudentChartThree() {
        Atlanta University, and other black college graduates in the united states,
        who contributed their knowledge, labor, and data to Du Bois's research program.
       </p>
-      <div className="flex flex-col md:flex-row md:flex-wrap font-duboisNarrow text-base md:text-xl text-md text-center uppercase md:mt-8">
+      <div className="flex flex-col md:flex-row md:flex-wrap font-duboisNarrow text-base text-md text-center uppercase md:mt-8">
         <ul className="my-6 md:my-0 md:w-1/3">
-          <li className="md:mt-1">prepared and executed by</li>
-          <li className="md:mt-1">tanvi sharma, anna mola,</li>
-          <li className="md:mt-1">jay varner, and lauren klein</li>
-          <li className="md:mt-1">under the auspices of</li>
-          <li className="md:mt-1">the digital humanities lab</li>
-          <li className="md:mt-1">emory university, atlanta, ga.</li>
-          <li className="md:mt-1">united states of america</li>
+          <li>prepared and executed by</li>
+          <li>tanvi sharma, anna mola,</li>
+          <li>jay varner, and lauren klein</li>
+          <li>under the auspices of</li>
+          <li>the digital humanities lab</li>
+          <li>emory university, atlanta, ga.</li>
+          <li>united states of america</li>
         </ul>
         <div className="md:w-2/3">
           <p className="md:mt-0">
@@ -221,7 +221,7 @@ export default function StudentChartThree() {
           })}
         </svg>
       </figure>
-      <p className="font-duboisNarrow text-base md:text-xl text-md text-center uppercase">
+      <p className="mx-4 md:mx-auto font-dubois uppercase text-justify tracking-wider">
         This visualization attempts to further humanize the data associated with the 3856
         Black college graduates whose lives were recorded as data in the Atlanta University
         Study of 1910, entitled The College-Bred Negro American. As part of this study, these

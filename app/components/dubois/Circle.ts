@@ -47,8 +47,8 @@ export class Circle {
 
       let textWidth = 0;
       const lineWidths = this.text
-        .split("\n")
-        .map((line) => this.p5.textWidth(line));
+      .split("\n")
+      .map((line) => this.p5.textWidth(line));
       for (const width of lineWidths) {
         if (width > textWidth) {
           textWidth = width;
@@ -58,8 +58,8 @@ export class Circle {
       const height = 55;
       const mouseX = this.p5.mouseX;
       const mouseY = this.p5.mouseY;
-      const x = mouseX + width > 490 ? mouseX - width : mouseX;
-      const y = mouseY + height > 490 ? mouseY - height : mouseY;
+      const x = mouseX + width > (this.p5.width) ? mouseX - width : mouseX;
+      const y = mouseY + height > (this.p5.width) ? mouseY - height : mouseY;
 
       // Drawing the text box with the cut corners
       this.p5.beginShape();
@@ -75,7 +75,7 @@ export class Circle {
 
       this.p5.fill("black");
       this.p5.noStroke();
-      this.p5.textSize(16);
+      this.p5.textSize(12);
       this.p5.text(this.text, x + 10, y + 10);
     } else {
       this.rollover = false;
@@ -157,7 +157,7 @@ export class Circle {
   }
 
   withinBounds() {
-    let wWidth = Math.min(this.p5.width, 500);
+    let wWidth = this.p5.width;
 
     const dx = this.x - this.p5.width / 2;
     const dy = this.y - this.p5.width / 2;

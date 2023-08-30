@@ -1,10 +1,13 @@
+import { ClientOnly } from "remix-utils";
+import { useDeviceContext } from "~/hooks";
 import PieChart from "~/components/dubois/PieChart.client";
 import studentData from "~/data/dubois/studentChartOne.json";
-import { ClientOnly } from "remix-utils";
 import Legend from "~/components/dubois/Legend";
 import USAMap from "./USAMap";
 
 export default function StudentChartOne() {
+  const { isDesktop } = useDeviceContext();
+
   return (
     <>
       <p className="font-bold text-lg md:text-xl 2xl:text-2xl text-center font-duboisWide uppercase">
@@ -13,19 +16,19 @@ export default function StudentChartOne() {
         the united states, who contributed data, knowledge, and labor to du
         bois's research.
       </p>
-      <div className="flex flex-col md:flex-row font-duboisNarrow">
-        <ul className="text-base md:text-xl text-md text-center uppercase my-6 md:my-0">
-          <li className="md:mt-3">prepared and executed by</li>
-          <li className="md:mt-3">tanvi sharma, anna mola,</li>
-          <li className="md:mt-3">nicholas yang, and lauren klein</li>
-          <li className="md:mt-3">under the auspices of</li>
-          <li className="md:mt-3">the digital humanities lab</li>
-          <li className="md:mt-3">emory university, atlanta, ga.</li>
-          <li className="md:mt-3">united states of america</li>
+      <div className="flex flex-col md:flex-row font-duboisNarrow md:justify-center md:space-x-10">
+        <ul className="text-base text-md text-center uppercase my-6 md:my-0">
+          <li>prepared and executed by</li>
+          <li>tanvi sharma, anna mola,</li>
+          <li>nicholas yang, and lauren klein</li>
+          <li>under the auspices of</li>
+          <li>the digital humanities lab</li>
+          <li>emory university, atlanta, ga.</li>
+          <li>united states of america</li>
         </ul>
         <USAMap />
       </div>
-      <div className="mt-6 font-dubois uppercase text-center text-lg">
+      <div className="mt-6 font-dubois uppercase text-center">
         <p>
           The original chart visualized the occupations of the 330 black
           americans who had graduated from atlanta university as of 1898,
@@ -39,12 +42,13 @@ export default function StudentChartOne() {
           residence.
         </p>
       </div>
-      <div className="md:flex md:justify-center md:space-x-16 lg:space-x-24 mt-12">
-        <Legend categories={studentData.categories} />
-        <ClientOnly>{() => <PieChart studentData={studentData} />}</ClientOnly>
+      <div className="flex flex-col md:flex-row md:justify-center md:space-x-16 lg:space-x-24">
+        <Legend categories={isDesktop ? studentData.categories.slice(0,4) : studentData.categories.slice(0,3)} />
+        <ClientOnly>{() => <PieChart studentData={studentData} className="order-last md:order-none" />}</ClientOnly>
+        <Legend categories={isDesktop ? studentData.categories.slice(4) : studentData.categories.slice(3)} reverse />
       </div>
-      <div className="mt-6 mx-4 md:mx-auto font-dubois uppercase text-justify md:text-lg leading-8">
-        <p className="leading-8 tracking-wider">
+      <div className="mx-4 md:mx-auto font-dubois uppercase text-justify">
+        <p className="tracking-wider">
           This visualization attempts to honor the graduates of Atlanta
           University whose lives were behind the data of Du Bois's original pie
           chart, as well as the Atlanta University students who themselves

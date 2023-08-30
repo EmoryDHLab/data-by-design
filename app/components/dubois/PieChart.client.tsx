@@ -6,6 +6,7 @@ import type { Student, StudentData } from "~/components/dubois/types";
 
 interface Props {
   studentData: StudentData;
+  className?: string;
 }
 
 const OFFSET = Math.PI * 1.1;
@@ -118,7 +119,7 @@ function placeCategories(p5: p5, studentData: StudentData, circles: Circle[]) {
 function pieChart(p5: p5, studentData: StudentData, diameter: number) {
   let lastAngle = OFFSET;
   const { count, categories } = studentData;
-  const padding = 20;
+  const padding = 100;
 
   for (const { color, students } of categories) {
     const angle = (students.length / count) * Math.PI * 2;
@@ -139,7 +140,7 @@ function pieChart(p5: p5, studentData: StudentData, diameter: number) {
   }
 }
 
-export default function PieChart({ studentData }: Props) {
+export default function PieChart({ studentData, className }: Props) {
   const { isMobile } = useDeviceContext();
 
   useEffect(() => {
@@ -147,12 +148,12 @@ export default function PieChart({ studentData }: Props) {
       let circles: Circle[] = [];
 
       // The p5.windowWidth does not seem to reliable when the window is resized.
-      const pieSize = Math.min(isMobile ? window.innerWidth - 100 : window.innerWidth * 0.4, 500)
+      const pieSize = Math.min(isMobile ? window.innerWidth - 100 : window.innerHeight * 0.25)
 
       p5.setup = function () {
         p5.createCanvas(
-          pieSize,
-          pieSize
+          pieSize + 100,
+          pieSize + 100
         ).parent("pieChart");
 
         placeCategories(p5, studentData, circles);
@@ -196,5 +197,6 @@ export default function PieChart({ studentData }: Props) {
       p5Copy.remove();
     }
   }, [studentData, isMobile]);
-  return <div id="pieChart" className="flex justify-center md:items-center" />;
+
+  return <div id="pieChart" className={`flex justify-center md:items-center ${className ?? ""}`} />;
 }
