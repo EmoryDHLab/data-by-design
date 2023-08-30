@@ -100,7 +100,8 @@ function AllVoyages() {
               nonResistanceStrokeWidth,
               lerpAmount,
               curveSeeds,
-              vertexSeeds
+              vertexSeeds,
+              true
             )
           )
         });
@@ -111,8 +112,8 @@ function AllVoyages() {
 
       //The  main visualization
       p5.draw = () => {
-        // p5.background(250, 241, 233);
-        p5.background(28, 24, 23);
+        p5.background(250, 241, 233);
+        // p5.background(28, 24, 23);
 
         for (const index in filteredVoyages.current) {
           filteredVoyages.current[index].updateTransition(
@@ -139,14 +140,14 @@ function AllVoyages() {
   }, [width, height]);
 
   return (
-    <section className="bg-black w-screen">
+    <section className="w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
-        <div>
+        <div className="bg-black mb-3">
           <Slider width={width} yearRange={yearRange} setYearRange={setYearRange} />
         </div>
         <div id="allVoyageContainer"></div>
         { width &&
-          <Axis width={width} yearRange={yearRange} />
+          <Axis width={width} yearRange={yearRange} color="black" />
         }
       </div>
     </section>

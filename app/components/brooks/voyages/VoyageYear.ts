@@ -35,6 +35,7 @@ class VoyageYear {
   nonResistanceStrokeWidth: number;
   curveSeed: Seed;
   vertexSeed: Seed;
+  allEqual: boolean;
 
   constructor(
     p5: p5,
@@ -47,7 +48,8 @@ class VoyageYear {
     nonResistanceStrokeWidth: number,
     lerpAmount: number,
     curveSeed: Seed,
-    vertexSeed: Seed
+    vertexSeed: Seed,
+    allEqual: boolean = false
   ) {
     this.p5 = p5;
     ({
@@ -67,6 +69,7 @@ class VoyageYear {
     this.lerpAmount = lerpAmount;
     this.curveSeed = curveSeed;
     this.vertexSeed = vertexSeed;
+    this.allEqual = allEqual;
 
     this.distanceLeft = 10;
     this.distanceRight = 10;
@@ -128,42 +131,22 @@ class VoyageYear {
     );
 
     // Add color
-    if (!this.resistanceReported) {
-      this.p5.strokeWeight(this.nonResistanceStrokeWidth);
-      this.p5.fill(
-        this.p5.lerpColor(
-          this.p5.color([...this.rgb]),
-          this.p5.color([...this.rgb]),
-          this.lerpAmount
-        )
-      );
-    } else {
+    if (this.resistanceReported || this.allEqual) {
       this.p5.strokeWeight(0.5)
       this.p5.fill([...this.rgb, 200]);
+    } else {
+      this.p5.strokeWeight(this.nonResistanceStrokeWidth);
+      this.p5.strokeWeight(1);
+      this.p5.stroke([...this.rgb])
+      this.p5.noFill();
+      // this.p5.fill(
+      //   this.p5.lerpColor(
+      //     this.p5.color([...this.rgb]),
+      //     this.p5.color([...this.rgb]),
+      //     this.lerpAmount
+      //   )
+      // );
     }
-
-    //setting the maximum overlapping, width of each voyage vis
-    // const maxOl = 300
-    // const maxWidth = 30
-    // const curveSeed = [
-    //   this.duration,
-    //   this.minDuration,
-    //   this.maxDuration,
-    //   0,
-    //   maxOl
-    // ];
-
-    // // @ts-ignore
-    // const lower = -this.distanceLeft - this.p5.map(...curveSeed);
-    // // @ts-ignore
-    // const upper = this.distanceRight + this.p5.map(...curveSeed);
-    // const c1 = 0;
-    // const c2 = this.p5.random(lower, upper);
-    // const c3 = this.p5.random(lower, upper);
-    // const c4 = this.p5.random(lower, upper);
-    // const c5 = this.p5.random(lower, upper);
-    // const c6 = this.p5.random(lower, upper);
-    // const c7 = 0;
 
     this.p5.beginShape();
     this.p5.curveVertex(this.curveSeed.c6, yStart - 300 * rat);
@@ -174,8 +157,6 @@ class VoyageYear {
     this.p5.curveVertex(this.curveSeed.c4, yStart + (voyageHeight / 5) * 4);
     this.p5.curveVertex(this.curveSeed.c7, voyageHeight / 2 + 500 * rat);
 
-    // const vertexLower = this.p5.map(this.totalPeople * (1 - this.mortalityRate), this.minEmbark, this.maxEmbark, 0, maxWidth);
-    // const vertexUpper = this.p5.map(this.totalPeople, this.minEmbark, this.maxEmbark, 0, maxWidth);
     this.p5.curveVertex(this.curveSeed.c7 + this.vertexSeed.c7, voyageHeight / 2 + 500 * rat);
     this.p5.curveVertex(this.curveSeed.c4 + this.vertexSeed.c4, yStart + (voyageHeight / 5) * 4);
     this.p5.curveVertex(this.curveSeed.c3 + this.vertexSeed.c3, yStart + (voyageHeight / 5) * 3);
