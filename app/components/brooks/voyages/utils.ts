@@ -1,13 +1,16 @@
-import colors from "~/data/brooks/colors.json";
-import grays from "~/data/brooks/grays.json";
+const grays: number[] = [93, 100, 107, 114, 121, 129, 137, 145, 153, 162, 171, 180, 190, 200, 210, 221, 232];
+
+const colors = [
+  [86, 146, 138],
+  [238, 201, 159],
+  [238, 201, 159],
+  [58, 15, 49],
+  [77, 76, 132]
+]
 
 export const randomColor = (fullColor: boolean) => {
   if (fullColor) {
-    return [
-      colors.reds[Math.floor(Math.random() * colors.reds.length)],
-      colors.greens[Math.floor(Math.random() * colors.greens.length)],
-      colors.blues[Math.floor(Math.random() * colors.blues.length)],
-    ];
+    return colors[Math.floor(Math.random() * colors.length)];
   }
 
   const tone = grays[Math.floor(Math.random() * grays.length)];

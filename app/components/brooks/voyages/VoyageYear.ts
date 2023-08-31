@@ -60,6 +60,7 @@ class VoyageYear {
       resistanceReported: this.resistanceReported,
       duration: this.duration,
     } = voyage);
+
     this.rgb = rgb;
     this.minYear = minYear;
     this.maxYear = maxYear;
@@ -132,13 +133,14 @@ class VoyageYear {
 
     // Add color
     if (this.resistanceReported || this.allEqual) {
-      this.p5.strokeWeight(0.5)
-      this.p5.fill([...this.rgb, 200]);
+      this.p5.strokeWeight(0.5);
+      // this.p5.colorMode(this.p5.RGB);
+      this.p5.fill(`rgba(${[...this.rgb, 0.6]})`);
     } else {
       this.p5.strokeWeight(this.nonResistanceStrokeWidth);
       this.p5.strokeWeight(1);
       this.p5.stroke([...this.rgb])
-      this.p5.noFill();
+      this.p5.fill([250, 241, 233]);
       // this.p5.fill(
       //   this.p5.lerpColor(
       //     this.p5.color([...this.rgb]),
