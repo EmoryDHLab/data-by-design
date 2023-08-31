@@ -35,7 +35,7 @@ export const map = (n: number, start1: number, stop1: number, start2: number, st
 
 export const chapterMeta = (chapter: ChapterTitle) => {
   const metaData: TChapterMeta = chapterMetaData;
-  const hostName: string = "https://dev.databydesign.io";
+  const hostName: string = "https://dev.dataxdesign.io";
   const imageUrl: string = `${hostName}/${chapterMetaData[chapter].image}`;
   return [
     { title: `${metaData[chapter].title}: ${metaData[chapter].subtitle}` },
