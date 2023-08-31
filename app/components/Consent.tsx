@@ -16,7 +16,8 @@ export default function Consent() {
   const containerRef = useRef<HTMLElement>(null);
 
   try {
-  useEffect(() => {
+    useEffect(() => {
+    console.log("🚀 ~ file: Consent.tsx:17 ~ Consent ~ containerRef:", containerRef)
       const observer = new IntersectionObserver(
         ([record]) => {
           console.log("🚀 ~ file: Consent.tsx:22 ~ useEffect ~ record:", record)
@@ -26,7 +27,7 @@ export default function Consent() {
           } else {
             setSmall(false)
           }
-      }, { threshold: [1], root: null });
+      }, { threshold: [1], root: null, rootMargin: "0px" });
 
       const observee = containerRef.current?.nextElementSibling?.firstElementChild;
 
