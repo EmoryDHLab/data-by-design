@@ -17,6 +17,12 @@ import { playfairFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import Quotation from "~/components/Quotation";
 import figures from "~/data/figures/playfair.json";
+import { chapterMeta } from "~/utils";
+import type { V2_MetaFunction } from "@remix-run/node";
+
+export const meta: V2_MetaFunction = () => {
+  return chapterMeta("playfair");
+}
 
 export default function PlayfairPage() {
   const [docHeightState, setDocHeightState] = useState<number>(0);

@@ -24,6 +24,12 @@ import HoverImages2 from "~/components/dubois/HoverImages2";
 import DoubleSlideShow from "~/components/dubois/DoubleSlideShow";
 import FigureObj from "~/components/layout/FigureObj";
 import SlideShow from "~/components/layout/SlideShow";
+import { chapterMeta } from "~/utils";
+import type { V2_MetaFunction } from "@remix-run/node";
+
+export const meta: V2_MetaFunction = () => {
+  return chapterMeta("dubois");
+}
 
 export default function DuboisChapter() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);

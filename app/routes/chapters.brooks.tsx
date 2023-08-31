@@ -26,6 +26,12 @@ import ResistanceVoyages1756 from "~/components/brooks/voyages/ResistanceVoyages
 import AllVoyages1756 from "~/components/brooks/voyages/AllVoyages1756.client";
 import AllVoyages from "~/components/brooks/voyages/AllVoyages.client";
 import VoyagesCompare from "~/components/brooks/voyages/VoyagesCompare";
+import { chapterMeta } from "~/utils";
+import type { V2_MetaFunction } from "@remix-run/node";
+
+export const meta: V2_MetaFunction = () => {
+  return chapterMeta("brooks");
+}
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);

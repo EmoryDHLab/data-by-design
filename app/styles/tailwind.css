@@ -45,7 +45,7 @@
 .cardShanawdithit:focus {
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/ch4-13-willard.jpg") center;
+    url("/images/peabody/ch4-13-willard.jpg") center;
 }
 
 .cardDubois:hover,
@@ -59,7 +59,7 @@
 .cardLabour:focus {
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/railroadscaled.jpg") center;
+    url("/images/peabody/railroadscaled.jpg") center;
 }
 
 .grid-wrapper {

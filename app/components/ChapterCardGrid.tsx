@@ -32,7 +32,7 @@ export default function ChapterCardGrid() {
           status="COMING SOON"
           className="cardShanawdithit bg-black hover:text-white"
           title="Narratives of Possession"
-          subtitle="Shanawdithit’s Narrative Maps"
+          subtitle="Shanawdithit's Narrative Maps"
         >
           Maps can create nations and contest them. <br />
           How have maps been used to document multiple pasts?
@@ -42,7 +42,7 @@ export default function ChapterCardGrid() {
           status=""
           className="cardPeabody bg-black hover:text-white"
           title="The Work of Knowledge"
-          subtitle="Elizabeth Palmer Peabody’s Chronological Grids"
+          subtitle="Elizabeth Palmer Peabody's Chronological Grids"
         >
           We have come to believe that data visualizations should be clear and
           efficient. Is there value in designs that make us pause and reflect?
@@ -52,7 +52,7 @@ export default function ChapterCardGrid() {
           status=""
           className="cardDubois bg-black hover:text-white"
           title="Between Data and Truth"
-          subtitle="W. E. B. Du Bois’s “Data Portraits”"
+          subtitle="W. E. B. Du Bois's “Data Portraits”"
         >
           How can data visualization bear witness to oppression? How can it hold
           space for what cannot be conveyed through data alone?

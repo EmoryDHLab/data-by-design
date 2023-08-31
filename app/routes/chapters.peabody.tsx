@@ -24,6 +24,12 @@ import LEDChart from "~/components/peabody/LEDChart";
 import figures from "~/data/figures/peabody.json";
 import FigureObj from "~/components/layout/FigureObj";
 import HoverZoomPeabodySquareMobile from "~/components/peabody/HoverZoomPeabodySquareMobile";
+import { chapterMeta } from "~/utils";
+import type { V2_MetaFunction } from "@remix-run/node";
+
+export const meta: V2_MetaFunction = () => {
+  return chapterMeta("peabody");
+}
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);

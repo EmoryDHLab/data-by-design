@@ -2,19 +2,19 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "npm run build:css && remix build",
+    "build": "remix build",
     "build:css": "tailwindcss -m -i ./app/styles/app.css -o styles/generated-app.css",
     "dev:css": "tailwindcss -w -i ./app/styles/app.css -o styles/generated-app.css",
-    "dev": "concurrently 'npm run dev:css' 'remix dev'",
+    "dev": "remix dev",
     "start": "cross-env NODE_ENV=production netlify dev",
     "typecheck": "tsc"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
-    "@remix-run/node": "^1.7.2",
-    "@remix-run/react": "^1.7.2",
-    "@remix-run/vercel": "^1.7.2",
+    "@remix-run/node": "^1.19.3",
+    "@remix-run/react": "^1.19.3",
+    "@remix-run/vercel": "^1.19.3",
     "cross-env": "^7.0.3",
     "d3": "^7.6.1",
     "intersection-observer": "^0.12.2",
@@ -27,9 +27,9 @@
     "scrollama": "^3.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.7.2",
-    "@remix-run/eslint-config": "^1.7.2",
-    "@remix-run/serve": "^1.7.2",
+    "@remix-run/dev": "^1.19.3",
+    "@remix-run/eslint-config": "^1.19.3",
+    "@remix-run/serve": "^1.19.3",
     "@types/d3": "^7.4.0",
     "@types/p5": "^1.6.2",
     "@types/react": "^18.0.15",

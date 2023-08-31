@@ -4,6 +4,7 @@ module.exports = {
   postcss: true,
   serverBuildTarget: "vercel",
   server: process.env.NODE_ENV === "development" ? undefined : "./server.js",
+  serverModuleFormat: 'cjs',
   serverDependenciesToBundle: [
     "react-dnd",
     "react-dnd-html5-backend",
@@ -43,9 +44,18 @@ module.exports = {
     "d3-timer",
     "d3-transition",
     "d3-zoom",
-    "delaunator"
+    "delaunator",
+    "robust-predicates"
   ],
   ignoredRouteFiles: ["**/.*"],
+  future: {
+    v2_errorBoundary: true,
+    v2_normalizeFormMethod: true,
+    v2_meta: true,
+    v2_headers: true,
+    v2_routeConvention: true,
+    v2_dev: true
+  },
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: ".netlify/functions-internal/server.js",

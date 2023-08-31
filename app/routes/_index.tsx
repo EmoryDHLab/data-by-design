@@ -75,10 +75,10 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="hidden md:flex flex-col items-center p-10 pb-5 pt-20 sm:w-1/4">
+        <div className="hidden md:flex flex-col items-center p-10 pb-5 pt-20 w-1/4 basis-3/4">
           <div className="flex flex-col items-center">
             <Figure
-              className="sm:w-3/5 sm:w-full pt-10"
+              className="pt-10"
               imageClassName="max-h-96"
               src={`/images/${selectedImage.CHAPTER}/${selectedImage.FILE_NAME}`}
               alt={selectedImage.ALT_TEXT}
