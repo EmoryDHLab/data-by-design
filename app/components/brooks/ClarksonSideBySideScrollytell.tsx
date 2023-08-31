@@ -114,7 +114,7 @@ function ClarksonSideBySideScrollytell() {
             <svg
               viewBox={`0 0 ${width} ${height}`}
               // className={`md:my-32 w-full`}
-              className="max-h-[80vh] md:my-16 mx-auto drop-shadow-2xl"
+              className="max-h-[80vh] max-w-[90%] md:my-16 mx-auto drop-shadow-2xl"
             >
               <image
                 href="/images/brooks/4-description-1789.jpg"
