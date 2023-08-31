@@ -19,6 +19,7 @@ export default function Consent() {
     try {
       const observer = new IntersectionObserver(
         ([record]) => {
+          console.log("🚀 ~ file: Consent.tsx:22 ~ useEffect ~ record:", record)
           const { intersectionRatio } = record;
           if (intersectionRatio < 1) {
             setSmall(true)
