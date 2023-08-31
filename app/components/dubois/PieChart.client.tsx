@@ -1,6 +1,6 @@
 import { Circle } from "~/components/dubois/Circle";
 import { useEffect } from "react";
-import { useDeviceContext } from "~/hooks";
+import { useDeviceContext, useWindowSize } from "~/hooks";
 import p5 from "p5";
 import type { Student, StudentData } from "~/components/dubois/types";
 
@@ -142,13 +142,14 @@ function pieChart(p5: p5, studentData: StudentData, diameter: number) {
 
 export default function PieChart({ studentData, className }: Props) {
   const { isMobile } = useDeviceContext();
+  const { height } = useWindowSize();
 
   useEffect(() => {
     function script(p5: p5) {
       let circles: Circle[] = [];
 
       // The p5.windowWidth does not seem to reliable when the window is resized.
-      const pieSize = Math.min(isMobile ? window.innerWidth - 100 : window.innerHeight * 0.25)
+      const pieSize = isMobile ? window.innerWidth - 100 : Math.min(350, window.innerHeight * 0.2);
 
       p5.setup = function () {
         p5.createCanvas(
@@ -196,7 +197,7 @@ export default function PieChart({ studentData, className }: Props) {
     return () => {
       p5Copy.remove();
     }
-  }, [studentData, isMobile]);
+  }, [studentData, isMobile, height]);
 
   return <div id="pieChart" className={`flex justify-center md:items-center ${className ?? ""}`} />;
 }

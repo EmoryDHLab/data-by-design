@@ -1,465 +1,89 @@
 import { useState } from "react";
 import { classNames } from "~/utils";
-import ImageModal from "~/components/layout/ImageModal";
+import figures from "~/data/figures/dubois.json";
+import Picture from "../layout/Picture";
+import FigureObj from "../layout/FigureObj";
+import type { Figure as FigureType } from "~/types/figureType";
 
-const imageSets = [
-  {
-    images: [
-      {
-        src: "/images/dubois/863.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33863.",
-        text: "The Georgia Negro: A Social Study",
-      },
-      {
-        src: "/images/dubois/864.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33864.",
-        text: `Relative Negro population of the states of the United States.`,
-        date: "1900",
-      },
-      {
-        src: "/images/dubois/865.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33865.",
-        text: "The states of the United States according to their Negro population.",
-      },
-      {
-        src: "/images/dubois/866.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33866.",
-        text: "Negro population of Georgia.",
-      },
-      {
-        src: "/images/dubois/867.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33867.",
-        text: "Negro population of Georgia by counties. 1890.",
-      },
-      {
-        src: "/images/dubois/868.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33868.",
-        text: "Negro population of Georgia by counties.",
-      },
-      {
-        src: "/images/dubois/869.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33869.",
-        text: "Comparative increase of white and colored population of Georgia.",
-      },
-      {
-        src: "/images/dubois/870.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33870.",
-        text: "Migration of Negroes. 1890.",
-      },
-      {
-        src: "/images/dubois/871.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33871.",
-        text: "Age distribution of Georgia Negroes compared with France.",
-      },
-      {
-        src: "/images/dubois/872.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33872.",
-        text: "Conjugal condition.",
-      },
-      {
-        src: "/images/dubois/873.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33873.",
-        text: "City and Rural Population. 1890.",
-      },
-      {
-        src: "/images/dubois/874.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33874.",
-        text: "Slaves and free Negroes.",
-      },
-      {
-        src: "/images/dubois/875.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33875.",
-        text: "Race amalgamation in Georgia based on a study of 40,000 individuals of Negro descent.",
-      },
-      {
-        src: "/images/dubois/876.jpeg",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33876.",
-        text: "Illiteracy.",
-      },
-      {
-        src: "/images/dubois/877.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33877.",
-        text: "Negro children enrolled in the public schools.",
-      },
-      {
-        src: "/images/dubois/878.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33878.",
-        text: "Negro teachers in Georgia public schools.",
-      },
-      {
-        src: "/images/dubois/879.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33879.",
-        text: "Number of Negro students taking the various courses of study offered in Georgia schools.",
-      },
-      {
-        src: "/images/dubois/880.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33880.",
-        text: "Value of land owned by Georgia Negroes.",
-      },
-      {
-        src: "/images/dubois/881.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33881.",
-        text: "Acres of land owned by Negroes in Georgia.",
-      },
-      {
-        src: "/images/dubois/882.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33882.",
-        text: "Land owned by Negroes in Georgia, U.S.A. 1870-1900.",
-      },
-      {
-        src: "/images/dubois/883.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33883.",
-        text: "Valuation of town and city property owned by Georgia Negroes.",
-      },
-      {
-        src: "/images/dubois/884.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33884.",
-        text: "Assessed Valuation of All Taxable Property Owned by Georgia Negroes.",
-      },
-      {
-        src: "/images/dubois/885.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33885.",
-        text: "Negro property in two cities of Georgia.",
-      },
-      {
-        src: "/images/dubois/886.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33886.",
-        text: "Value of farming tools.",
-      },
-      {
-        src: "/images/dubois/887.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33887.",
-        text: "Assessed Value of Household and Kitchen Furniture Owned by Georgia Negroes.",
-      },
-      {
-        src: "/images/dubois/888.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33888.",
-        text: "Occupations of Georgia Negroes. Males over 10.",
-      },
-      {
-        src: "/images/dubois/889.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33889.",
-        text: "Occupations of Negroes and whites in Georgia.",
-      },
-      {
-        src: "/images/dubois/890.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33890.",
-        text: "Occupations.",
-      },
-      {
-        src: "/images/dubois/891.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33891.",
-        text: "Occupations and income.",
-      },
-      {
-        src: "/images/dubois/892.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33892.",
-        text: "Condition of 300 Negro farm tenants after 1 year's toil, 1898.",
-      },
-      {
-        src: "/images/dubois/893.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33893.",
-        text: "Income and expenditure of 150 Negro families in Atlanta, Ga., U.S.A.",
-      },
-      {
-        src: "/images/dubois/894.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33894.",
-        text: "Family budgets.",
-      },
-      {
-        src: "/images/dubois/895.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33895.",
-        text: "Family budgets.",
-      },
-      {
-        src: "/images/dubois/896.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33896.",
-        text: "Albany, Dougherty County, Ga. Distribution of 2,500 Negro inhabitants.",
-      },
-      {
-        src: "/images/dubois/897.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33897.",
-        text: "McIntosh County, Georgia.",
-      },
-      {
-        src: "/images/dubois/898.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33898.",
-        text: "Darien, McIntosh Co., GA",
-      },
+type ImageSet = {
+  [key: string]: FigureType[]
+}
+
+const imageSets: ImageSet = {
+  setOne: [
+      figures["863"],
+      figures["864"],
+      figures["865"],
+      figures["866"],
+      figures["867"],
+      figures["868"],
+      figures["869"],
+      figures["870"],
+      figures["871"],
+      figures["872"],
+      figures["873"],
+      figures["874"],
+      figures["875"],
+      figures["876"],
+      figures["877"],
+      figures["878"],
+      figures["879"],
+      figures["880"],
+      figures["881"],
+      figures["882"],
+      figures["883"],
+      figures["884"],
+      figures["885"],
+      figures["886"],
+      figures["887"],
+      figures["888"],
+      figures["889"],
+      figures["890"],
+      figures["891"],
+      figures["892"],
+      figures["893"],
+      figures["894"],
+      figures["895"],
+      figures["896"],
+      figures["897"],
+      figures["898"],
     ],
-  },
-  {
-    images: [
-      {
-        src: "/images/dubois/899.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33899.",
-        text: "A series of statistical charts illustrating the condition of the descendants of former African slaves now in residence in the United States of America",
-      },
-      {
-        src: "/images/dubois/900.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33900.",
-        text: "Distribution of Negroes in the United States.",
-      },
-      {
-        src: "/images/dubois/901.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33901.",
-        text: "Increase of the Negro population in the United States of America",
-      },
-      {
-        src: "/images/dubois/902.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33902.",
-        text: "Comparative rate of increase of the white and Negro elements of the population of the United States",
-      },
-      {
-        src: "/images/dubois/903.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33903.",
-        text: "Negro Population in the United States Compared with the Total Popuation of Other Countries.",
-      },
-      {
-        src: "/images/dubois/904.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33904.",
-        text: "Proportion of Negroes in the total population of the United States",
-      },
-      {
-        src: "/images/dubois/905.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33905.",
-        text: "Occupations in which American Negroes are engaged",
-      },
-      {
-        src: "/images/dubois/906.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33906.",
-        text: "Proportion of Whites and Negroes in the different classes of occupation in the United States",
-      },
-      {
-        src: "/images/dubois/907.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33907.",
-        text: "Occupations in which 10,000 or more American Negroes are engaged",
-      },
-      {
-        src: "/images/dubois/908.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33908.",
-        text: "Number of Negro teachers in the public schools of the United States",
-      },
-      {
-        src: "/images/dubois/909.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33909.",
-        text: "Illiteracy of the American Negroes compared with that of other nations.",
-      },
-      {
-        src: "/images/dubois/910.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33910.",
-        text: "Enrollment in the Negro common schools of the former slave states of the United States.",
-      },
-      {
-        src: "/images/dubois/911.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33911.",
-        text: "Proportion of total Negro children of school age who are enrolled in the public schools.",
-      },
-      {
-        src: "/images/dubois/912.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33912.",
-        text: "The Rise of the Negroes from Slavery to Freedom in One Generation",
-      },
-      {
-        src: "/images/dubois/913.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33913.",
-        text: "Proportion of freemen and slaves among American Negroes.",
-      },
-      {
-        src: "/images/dubois/914.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33914.",
-        text: "City and rural population among American Negroes in the former slave states.",
-      },
-      {
-        src: "/images/dubois/915.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33915.",
-        text: "Conjugal condition of American Negroes according to age periods.",
-      },
-      {
-        src: "/images/dubois/916.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33916.",
-        text: "The Amalgamation of the White and Black elements of the population in the United States.",
-      },
-      {
-        src: "/images/dubois/917.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33917.",
-        text: "Assessed value of property owned by Negroes in three states of the United States.",
-      },
-      {
-        src: "/images/dubois/918.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33918.",
-        text: "Negro landholders in various states of the United States.",
-      },
-      {
-        src: "/images/dubois/919.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33919.",
-        text: "Negro business men in the United States.",
-      },
-      {
-        src: "/images/dubois/920.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33920.",
-        text: "Pauperism among American Negroes.",
-      },
-      {
-        src: "/images/dubois/921.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33921.",
-        text: "Mortality of American Negroes.",
-      },
-      {
-        src: "/images/dubois/922.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33922.",
-        text: "Crime among American Negroes.",
-      },
-      {
-        src: "/images/dubois/923.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33923.",
-        text: "American Negro newspapers and periodicals.",
-      },
-      {
-        src: "/images/dubois/924.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33924.",
-        text: "Religion of American Negroes.",
-      },
-      {
-        src: "/images/dubois/925.png",
-        credit1: "Image courtesy of the Library of Congress,",
-        credit2: "Prints & Photographs Division,",
-        credit3: "LC-DIG-ppmsca-33925.",
-        text: "Statistics of Negro church organizations.",
-      },
+    setTwo: [
+      figures["899"],
+      figures["900"],
+      figures["901"],
+      figures["902"],
+      figures["903"],
+      figures["904"],
+      figures["905"],
+      figures["906"],
+      figures["907"],
+      figures["908"],
+      figures["909"],
+      figures["910"],
+      figures["911"],
+      figures["912"],
+      figures["913"],
+      figures["914"],
+      figures["915"],
+      figures["916"],
+      figures["917"],
+      figures["918"],
+      figures["919"],
+      figures["920"],
+      figures["921"],
+      figures["922"],
+      figures["923"],
+      figures["924"],
+      figures["925"],
     ],
-  },
-];
+  }
 
 export default function DocumentViewer() {
-  const [selectedSet, setSelectedSet] = useState(0);
+  const [selectedSet, setSelectedSet] = useState<string>('setOne');
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const selectedImage = imageSets[selectedSet].images[selectedImageIndex];
+  const selectedImage: FigureType = imageSets[selectedSet][selectedImageIndex];
 
   return (
     <div className="py-10 my-10 bg-black w-full flex flex-col items-center pb-10">
@@ -467,93 +91,88 @@ export default function DocumentViewer() {
         <div className="py-10 px-5 flex flex-col items-center w-1/6 space-y-5">
           <button
             onClick={() => {
-              setSelectedSet(0);
+              setSelectedSet('setOne');
             }}
           >
-            {selectedSet === 0 ? (
+            {selectedSet === 'setOne' ? (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/dubois/stack1.png" />
-                <img className="w-full" src="/images/dubois/set1.png" />
+                <img src="/images/dubois/stack1.png" alt="" />
+                <img className="w-full" src="/images/dubois/set1.png" alt="" />
               </div>
             ) : (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/dubois/eyeframe.png" />
-                <img className="w-full" src="/images/dubois/set1.png" />
+                <img src="/images/dubois/eyeframe.png" alt="" />
+                <img className="w-full" src="/images/dubois/set1.png" alt="" />
               </div>
             )}
           </button>
-          <button onClick={() => setSelectedSet(1)}>
-            {selectedSet === 1 ? (
+          <button onClick={() => setSelectedSet('setTwo')}>
+            {selectedSet === 'setTwo' ? (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/dubois/stack2.png" />
-                <img className="w-full" src="/images/dubois/set2.png" />
+                <img src="/images/dubois/stack2.png" alt="" />
+                <img className="w-full" src="/images/dubois/set2.png" alt="" />
               </div>
             ) : (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/dubois/eyeframe.png" />
-                <img className="w-full" src="/images/dubois/set2.png" />
+                <img src="/images/dubois/eyeframe.png" alt="" />
+                <img className="w-full" src="/images/dubois/set2.png" alt="" />
               </div>
             )}
           </button>
         </div>
         <div>
           <div className="grid grid-cols-4 md:grid-cols-9 gap-8 py-5 px-20">
-            {imageSets[selectedSet].images.map(({ src }, index) => (
-              <img
-                key={src}
-                src={src}
+            {imageSets[selectedSet].map((figure, index) => (
+              <button
+                key={`doc-viewer-${figure.fileName}`}
+                aria-label={`Select ${figure.fileName}`}
                 onClick={() => {
                   setSelectedImageIndex(index);
                 }}
-                className={classNames(
-                  index === selectedImageIndex &&
-                    "p-1 hover:border-white-700 border-solid border-white border-2 rounded-md",
-                  "max-w-[70px]"
-                )}
-              />
+              >
+                <Picture
+                  figure={figure}
+                  className={classNames(
+                    index === selectedImageIndex &&
+                      "p-1 hover:border-white-700 border-solid border-white border-2 rounded-md",
+                    "max-w-[70px]"
+                  )}
+                />
+              </button>
             ))}
           </div>
           <div className="flex flex-col items-center">
-            <ImageModal src={selectedImage.src} className="max-w-xs" />
+            <FigureObj figure={selectedImage as FigureType} className="max-w-xs text-white" />
             <div className="flex text-white justify-around w-full">
               <button
+                aria-label="Select previous image"
                 onClick={() => {
                   setSelectedImageIndex(
                     (i) =>
-                      (i + imageSets[selectedSet].images.length - 1) %
-                      imageSets[selectedSet].images.length
+                      (i + imageSets[selectedSet].length - 1) %
+                      imageSets[selectedSet].length
                   );
                 }}
               >
                 <img
                   className="w-[27.5px] h-[19.5px] mt-5"
                   src="/images/dubois/leftarrow.png"
+                  alt=""
                 />
               </button>
-              <div className="text-center font-dubois  w-100">
-                <p className="my-2 uppercase text-white-600 text-lg mt-5">
-                  {selectedImage?.text}
-                </p>
-                <p className="text-white-600 my-1 text-sm text-center">
-                  {selectedImage?.credit1}
-                </p>
-                <p className="text-white-600 my-1  text-sm text-center">
-                  {selectedImage?.credit2}
-                </p>
-                <p className="text-white-600 my-1  text-sm">
-                  {selectedImage?.credit3}
-                </p>
-              </div>
+
               <button
+                aria-label="Select next image"
                 onClick={() => {
                   setSelectedImageIndex(
-                    (i) => (i + 1) % imageSets[selectedSet].images.length
+                    (i) => (i + 1) % imageSets[selectedSet].length
                   );
                 }}
               >
                 <img
                   className="w-[27.5px] h-[19.5px] mt-5"
                   src="/images/dubois/rightarrow.png"
+                  alt=""
                 />
               </button>
             </div>

@@ -22,7 +22,7 @@ export default function Legend({ categories, reverse, className }: Props) {
                 border: "1px solid black",
               }}
             />
-            <p className={`md:text-xl ${reverse && isDesktop ? "flex-1 text-right mr-2" : "md:ml-1"}`}>{category.displayName}</p>
+            <p className={`md:text-lg ${reverse && isDesktop ? "flex-1 text-right mr-2" : "md:ml-1"}`}>{category.displayName}</p>
           </div>
         ))}
       </div>
