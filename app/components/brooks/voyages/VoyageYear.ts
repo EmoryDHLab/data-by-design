@@ -140,7 +140,7 @@ class VoyageYear {
       this.p5.strokeWeight(this.nonResistanceStrokeWidth);
       this.p5.strokeWeight(1);
       this.p5.stroke([...this.rgb])
-      this.p5.fill([250, 241, 233]);
+      this.p5.fill("rgba(250, 241, 233, 0.6)");
       // this.p5.fill(
       //   this.p5.lerpColor(
       //     this.p5.color([...this.rgb]),

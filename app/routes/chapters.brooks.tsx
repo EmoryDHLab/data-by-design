@@ -830,7 +830,7 @@ export default function BrooksPage() {
 
       <FigureObj
         figure={figures["all-resistance-voyages"]}
-        imageClassName="w-screen drop-shadow-none"
+        imageClassName="drop-shadow-none"
         captionClassName="mx-12"
       />
 
@@ -839,21 +839,6 @@ export default function BrooksPage() {
       </p>
 
       <VoyagesCompare />
-
-      {/* <ClientOnly>
-        {() => <ResistanceVoyages />}
-      </ClientOnly>
-
-      <p>
-       -- Toggle to show voyages without resistance reported in grayscale with year range interaction. --
-      </p>
-
-      <ClientOnly>
-        {() => <Voyages />}
-      </ClientOnly>
-      <p>
-        -- Voyages with resistance reported from 1756-1766 with no interaction. --
-      </p> */}
 
       <ClientOnly>
         {() => <ResistanceVoyages1756 />}
