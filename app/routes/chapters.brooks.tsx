@@ -61,7 +61,7 @@ export default function BrooksPage() {
         subtitle="The Brooks / Diagram of a Slave Ship"
       />
 
-      <Consent />
+      {/* <Consent /> */}
 
       <CenteredLayout className="top-0">
         <p>
