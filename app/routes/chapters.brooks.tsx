@@ -15,7 +15,7 @@ import FootnotesList from "~/components/FootnotesList";
 import SeraphiqueTour from "~/components/brooks/SeraphiqueTour";
 import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
-import Consent from "~/components/Consent";
+import Consent from "~/components/Consent.client";
 import FigureObj from "~/components/layout/FigureObj";
 
 import figures from "~/data/figures/brooks.json";
@@ -61,7 +61,9 @@ export default function BrooksPage() {
         subtitle="The Brooks / Diagram of a Slave Ship"
       />
 
-      <Consent />
+      <ClientOnly>
+        { () => <Consent /> }
+      </ClientOnly>
 
       <CenteredLayout className="top-0">
         <p>
