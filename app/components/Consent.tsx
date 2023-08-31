@@ -15,8 +15,8 @@ export default function Consent() {
 
   const containerRef = useRef<HTMLElement>(null);
 
+  try {
   useEffect(() => {
-    try {
       const observer = new IntersectionObserver(
         ([record]) => {
           console.log("🚀 ~ file: Consent.tsx:22 ~ useEffect ~ record:", record)
@@ -35,11 +35,11 @@ export default function Consent() {
       return () => {
         observer.disconnect();
       }
-    } catch (error) {
-      console.log("🚀 ~ file: Consent.tsx:38 ~ useEffect ~ error:", error)
-    }
 
-  }, [setSmall, docHeightState]);
+    }, [setSmall, docHeightState]);
+  } catch (error) {
+    console.log("🚀 ~ file: Consent.tsx:38 ~ useEffect ~ error:", error)
+  }
 
   if (setHideSensitiveState) {
     return (
