@@ -15,32 +15,26 @@ export default function Consent() {
 
   const containerRef = useRef<HTMLElement>(null);
 
-  try {
-    useEffect(() => {
-    console.log("🚀 ~ file: Consent.tsx:17 ~ Consent ~ containerRef:", containerRef)
-      const observer = new IntersectionObserver(
-        ([record]) => {
-          console.log("🚀 ~ file: Consent.tsx:22 ~ useEffect ~ record:", record)
-          const { intersectionRatio } = record;
-          if (intersectionRatio < 1) {
-            setSmall(true)
-          } else {
-            setSmall(false)
-          }
-      }, { threshold: [1], root: null, rootMargin: "0px" });
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([record]) => {
+        const { intersectionRatio } = record;
+        if (intersectionRatio < 1) {
+          setSmall(true)
+        } else {
+          setSmall(false)
+        }
+    }, { threshold: [1], root: null, rootMargin: "0px" });
 
-      const observee = containerRef.current?.nextElementSibling?.firstElementChild;
+    const observee = containerRef.current?.nextElementSibling?.firstElementChild;
 
-      if (observee) observer.observe(observee);
+    if (observee) observer.observe(observee);
 
-      return () => {
-        observer.disconnect();
-      }
+    return () => {
+      observer.disconnect();
+    }
 
-    }, [setSmall, docHeightState]);
-  } catch (error) {
-    console.log("🚀 ~ file: Consent.tsx:38 ~ useEffect ~ error:", error)
-  }
+  }, [setSmall, docHeightState]);
 
   if (setHideSensitiveState) {
     return (
