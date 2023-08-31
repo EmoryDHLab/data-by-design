@@ -1,11 +1,11 @@
 export default function USAMap() {
   return (
-      <figure className="w-full md:w-8/12 mb-6 md:px-6">
+      <figure className="w-full md:w-auto">
       <picture>
         <source srcSet={`/images/dubois/map.webp`} />
         <source srcSet={`/images/dubois/map.jpg`} />
         <img
-          className={`drop-shadow-lg`}
+          className="drop-shadow-lg mx-auto"
           src={`/images/dubois/map.jpg`}
           alt=""
           title=""
