@@ -38,6 +38,8 @@ export const chapterMeta = (chapter: ChapterTitle) => {
   const hostName: string = "https://dev.dataxdesign.io";
   const imageUrl: string = `${hostName}/${chapterMetaData[chapter].image}`;
   return [
+    { charset: "utf-8" },
+    { viewport: "width=device-width,initial-scale=1" },
     { title: `${metaData[chapter].title}: ${metaData[chapter].subtitle}` },
     { name: "og:title", content: `${chapterMetaData[chapter].title}: ${chapterMetaData[chapter].subtitle}` },
     { name: "twitter:title", content: `${chapterMetaData[chapter].title}: ${chapterMetaData[chapter].subtitle}` },
