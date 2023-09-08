@@ -1,12 +1,32 @@
-import { useState } from "react";
-import Response from "./chartThree/Response";
+import { useEffect, useState } from "react";
+// import * as d3 from "d3";
+// import Response from "./chartThree/Response";
 import responseData from "~/data/dubois/student-responses.json";
+import ResponseV2 from "./chartThree/ResponseV2";
+import { random } from "~/utils";
+import ResponseDot from "./chartThree/ResponseDot";
 
 export default function StudentChartThree() {
-  const [hasUnraveled, setHasUnraveled] = useState<boolean>(false);
-  const [dropZoneActive, setDropZoneActive] = useState<boolean>(false);
-  const [activeColor, setActiveColor] = useState<string | undefined>(undefined);
+  // const [hasUnraveled, setHasUnraveled] = useState<boolean>(false);
+  // const [dropZoneActive, setDropZoneActive] = useState<boolean>(false);
+  // const [activeColor, setActiveColor] = useState<string | undefined>(undefined);
   const [activeResponse, setActiveResponse] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    // const handleZoom = ({ transform }: { transform: { k: number, x: number, y: number }}) => {
+    //   d3.select("#chart-3 g")
+    //     .attr('transform', transform.toString());
+    // }
+
+    // let zoom: any = d3.zoom()
+    //               .on('zoom', handleZoom);
+
+    // d3.select("#chart-3").call(zoom);
+
+    return () => {
+      setActiveResponse(undefined);
+    }
+  }, []);
 
   return (
     <>
@@ -46,179 +66,270 @@ export default function StudentChartThree() {
           id="chart-3"
           viewBox={`0, 0, 200, 200`}
           className="w-full"
-        >
-          <text
-            x={25}
-            y={4}
-            fontSize={4}
-            fontFamily="VTC Du Bois, serif"
-            className="font-bold uppercase"
-            textAnchor="middle"
+          onKeyUp={({ key }) => { if (key === 'Escape') setActiveResponse(undefined) }}
           >
-            <tspan>Reports of early life</tspan>
-            <tspan x={25} dy={4}>and training</tspan>
-          </text>
-
-          <text
-            x={165}
-            y={4}
-            fontSize={4}
-            fontFamily="VTC Du Bois, serif"
-            className="font-bold uppercase"
-            textAnchor="middle"
-          >
-            <tspan>How shall you educate your</tspan>
-            <tspan
-            x={165}
-            dy={4}
+          <g>
+            <text
+              x={50}
+              y={4}
+              fontSize={4}
+              fontFamily="VTC Du Bois, serif"
+              className="font-bold uppercase"
+              textAnchor="middle"
             >
-              children
-            <tspan
-              dx={1}
-              // x={150}
-              fontFamily="VTC Du Bois Narrow, serif"
+              <tspan>Reports of early life</tspan>
+              <tspan x={50} dy={4}>and training</tspan>
+            </text>
+            <text
+              x={150}
+              y={4}
+              fontSize={4}
+              fontFamily="VTC Du Bois, serif"
+              className="font-bold uppercase"
+              textAnchor="middle"
             >
-              (i.e., to a trade in,
-            </tspan>
-            </tspan>
-            <tspan
+              <tspan>How shall you educate your</tspan>
+              <tspan
+              x={150}
               dy={4}
-              x={165}
-              fontFamily="VTC Du Bois Narrow, serif"
+              >
+                children
+              <tspan
+                dx={1}
+                // x={150}
+                fontFamily="VTC Du Bois Narrow, serif"
+              >
+                (i.e., to a trade in,
+              </tspan>
+              </tspan>
+              <tspan
+                dy={4}
+                x={150}
+                fontFamily="VTC Du Bois Narrow, serif"
+              >
+                college, in a profession, etc.)
+              </tspan>
+            </text>
+            <text
+              x={50}
+              y={100}
+              fontSize={4}
+              fontFamily="VTC Du Bois, serif"
+              className="uppercase"
+              textAnchor="middle"
             >
-              college, in a profession, etc.)
-            </tspan>
-          </text>
-
-          <text
-            x={40}
-            y={180}
-            fontSize={4}
-            fontFamily="VTC Du Bois, serif"
-            className="uppercase"
-            textAnchor="middle"
-          >
-            <tspan x={40}>Briefly, what is your present practical</tspan>
-            <tspan x={40} dy={4}>philosophy in regard to the negro race</tspan>
-            <tspan x={40} dy={4}>in America?</tspan>
-          </text>
-
-          <text
-            x={170}
-            y={180}
-            fontSize={4}
-            fontFamily="VTC Du Bois, serif"
-            className="uppercase"
-            textAnchor="middle"
-          >
-            <tspan>What have been your chief</tspan>
-            <tspan
-              x={170}
-              dy={4}
+              <tspan x={50}>Briefly, what is your present practical</tspan>
+              <tspan x={50} dy={4}>philosophy in regard to the negro race</tspan>
+              <tspan x={50} dy={4}>in America?</tspan>
+            </text>
+            <text
+              x={150}
+              y={100}
+              fontSize={4}
+              fontFamily="VTC Du Bois, serif"
+              className="uppercase"
+              textAnchor="middle"
             >
-              hinderances?
-            </tspan>
-            <tspan
-              dy={4}
-              x={170}
-              fontFamily="VTC Du Bois Narrow, serif"
-            >
-              (i.e., how has prejudice or,
-            </tspan>
-            <tspan
-              dy={4}
-              x={170}
-              fontFamily="VTC Du Bois Narrow, serif"
-            >
-              lack of opportunity worked)
-            </tspan>
-            <tspan
-              dy={4}
-              x={170}
-              fontFamily="VTC Du Bois Narrow, serif"
-            >
-              in your case?)
-            </tspan>
-          </text>t
-
-          <circle
-            cx={100}
-            cy={100}
-            r={50}
-            fill={activeColor ?? "none"}
-            fillOpacity={dropZoneActive ? 0.5 : 0}
-            stroke="#000"
-            strokeOpacity={hasUnraveled ? 0.25 : 1}
-            className="transition-all duration-1000"
-          />
-          {responseData.elt.map((response, index) => {
-            return (
-              <Response
-                key={response.id}
-                setHasUnraveled={setHasUnraveled}
-                setDropZoneActive={setDropZoneActive}
-                setActiveColor={setActiveColor}
-                setActiveResponse={setActiveResponse}
-                activeResponse={activeResponse}
-                response={response}
-                color="#D92944"
-                responseIndex={index}
-                type="elt"
-                hasUnraveled={hasUnraveled}
-              />
-             )
-           })}
-          {responseData.cedu.map((response, index) => {
-            return (
-              <Response
-                key={response.id}
-                setHasUnraveled={setHasUnraveled}
-                setDropZoneActive={setDropZoneActive}
-                setActiveColor={setActiveColor}
-                setActiveResponse={setActiveResponse}
-                activeResponse={activeResponse}
-                response={response}
-                color="#9AE4C1"
-                responseIndex={index}
-                type="cedu"
-                hasUnraveled={hasUnraveled}
-              />
-            )
-          })}
-          {responseData.hind.map((response, index) => {
-            return (
-              <Response
-                key={response.id}
-                setHasUnraveled={setHasUnraveled}
-                setDropZoneActive={setDropZoneActive}
-                setActiveColor={setActiveColor}
-                setActiveResponse={setActiveResponse}
-                activeResponse={activeResponse}
-                response={response}
-                color="#FEC313"
-                responseIndex={index}
-                type="hind"
-                hasUnraveled={hasUnraveled}
-              />
-            )
-          })}
-          {responseData.pl.map((response, index) => {
-            return (
-              <Response
-                key={response.id}
-                setHasUnraveled={setHasUnraveled}
-                setDropZoneActive={setDropZoneActive}
-                setActiveColor={setActiveColor}
-                setActiveResponse={setActiveResponse}
-                activeResponse={activeResponse}
-                response={response}
-                color="#3B6FE0"
-                responseIndex={index}
-                type="pl"
-                hasUnraveled={hasUnraveled}
-              />
-            )
-          })}
+              <tspan>What have been your chief</tspan>
+              <tspan
+                x={150}
+                dy={4}
+              >
+                hinderances?
+              </tspan>
+              <tspan
+                dy={4}
+                x={150}
+                fontFamily="VTC Du Bois Narrow, serif"
+              >
+                (i.e., how has prejudice or,
+              </tspan>
+              <tspan
+                dy={4}
+                x={150}
+                fontFamily="VTC Du Bois Narrow, serif"
+              >
+                lack of opportunity worked)
+              </tspan>
+              <tspan
+                dy={4}
+                x={150}
+                fontFamily="VTC Du Bois Narrow, serif"
+              >
+                in your case?)
+              </tspan>
+            </text>
+            {/* <circle
+              cx={100}
+              cy={100}
+              r={50}
+              fill={activeColor ?? "none"}
+              fillOpacity={dropZoneActive ? 0.5 : 0}
+              stroke="#000"
+              strokeOpacity={hasUnraveled ? 0.25 : 1}
+              className="transition-all duration-1000"
+            /> */}
+            {/* <ResponseV2 response={responseData.elt[0]} /> */}
+            {responseData.elt.map((response) => {
+              if (response.x === 0 && response.y === 0) {
+                response.x = random(5, 98);
+                response.y = random(15, 90);
+              }
+              return (
+                <ResponseDot
+                  key={response.id}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#D92944"
+                />
+              )
+            })}
+            {responseData.hind.map((response) => {
+              if (response.x === 0 && response.y === 0) {
+                response.x = random(102, 197.5);
+                response.y = random(120, 195);
+              }
+              return (
+                <ResponseDot
+                  key={response.id}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#FEC313"
+                />
+              )
+            })}
+            {responseData.cedu.map((response) => {
+              if (response.x === 0 && response.y === 0) {
+                response.x = random(102, 197.5);
+                response.y = random(20, 90);
+              }
+              return (
+                <ResponseDot
+                  key={response.id}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#9AE4C1"
+                />
+              )
+            })}
+            {responseData.pl.map((response) => {
+              if (response.x === 0 && response.y === 0) {
+                response.x = random(5, 98);
+                response.y = random(110, 195);
+              }
+              return (
+                <ResponseDot
+                  key={response.id}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#3B6FE0"
+                />
+              )
+            })}
+            {responseData.elt.map((response) => {
+              return (
+                <ResponseV2
+                  key={response.id}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#D92944"
+                  textColor="white"
+                />
+              )
+            })}
+            {responseData.hind.map((response) => {
+              return (
+                <ResponseV2
+                  key={response.id}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#FEC313"
+                  textColor="black"
+                />
+              )
+            })}
+            {responseData.cedu.map((response) => {
+              return (
+                <ResponseV2
+                  key={response.id}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#9AE4C1"
+                  textColor="black"
+                />
+              )
+            })}
+            {responseData.pl.map((response) => {
+              return (
+                <ResponseV2
+                  key={response.id}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#3B6FE0"
+                  textColor="white"
+                />
+              )
+            })}
+            {/* {responseData.cedu.map((response, index) => {
+              return (
+                <Response
+                  key={response.id}
+                  setHasUnraveled={setHasUnraveled}
+                  setDropZoneActive={setDropZoneActive}
+                  setActiveColor={setActiveColor}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#9AE4C1"
+                  responseIndex={index}
+                  type="cedu"
+                  hasUnraveled={hasUnraveled}
+                />
+              )
+            })}
+            {responseData.hind.map((response, index) => {
+              return (
+                <Response
+                  key={response.id}
+                  setHasUnraveled={setHasUnraveled}
+                  setDropZoneActive={setDropZoneActive}
+                  setActiveColor={setActiveColor}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#FEC313"
+                  responseIndex={index}
+                  type="hind"
+                  hasUnraveled={hasUnraveled}
+                />
+              )
+            })}
+            {responseData.pl.map((response, index) => {
+              return (
+                <Response
+                  key={response.id}
+                  setHasUnraveled={setHasUnraveled}
+                  setDropZoneActive={setDropZoneActive}
+                  setActiveColor={setActiveColor}
+                  setActiveResponse={setActiveResponse}
+                  activeResponse={activeResponse}
+                  response={response}
+                  color="#3B6FE0"
+                  responseIndex={index}
+                  type="pl"
+                  hasUnraveled={hasUnraveled}
+                />
+              )
+            })} */}
+          </g>
         </svg>
       </figure>
       <p className="mx-4 md:mx-auto font-dubois uppercase text-justify tracking-wider">

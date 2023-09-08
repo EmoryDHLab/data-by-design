@@ -1,571 +1,842 @@
 {
   "elt": [
     {
-      "id": "b41b74ba",
+      "id": "51f0d3d2",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was carefully reared by parents who had been slaves, attended",
-        "public schools, removed to Ohio and attended high school."
+        "I was carefully reared by parents who",
+        "had been slaves, attended public schools,",
+        "removed to Ohio and attended high school."
       ]
     },
     {
-      "id": "77fe8906",
+      "id": "25446fbf",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "\"I was born and reared on a cotton farm. My early training was such as could be",
-        "received in an ex-slave home and three-months-in-the year school. Mother and father",
-        "were honest tho unlettered and strove to make the best of their opportunities and left",
-        "that impression upon their children. Best of all, I was reared in a Christian home."
+        "I was born and reared on a cotton farm. My early",
+        "training was such as could be received in an",
+        "ex-slave home and three-months-in-the year school.",
+        "Mother and father were honest tho unlettered and",
+        "strove to make the best of their opportunities",
+        "and left that impression upon their children.",
+        "Best of all, I was reared in a Christian home."
       ]
     },
     {
-      "id": "ca88f999",
+      "id": "61063fbd",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "\"I went from Virginia to Vermont December 23, 1863. I worked on the farm nine months",
-        "during the year and attended common school three months. I did this till 1872. I then went",
-        "to Andover, Massachusetts, March 7, 1872. Attended Phillips Andover Academy from 1872 to",
-        "1875; then to Middlebury College, Vermont, 1875 to 1880; Boston University, 1880 to 1883."
+        "I went from Virginia to Vermont December 23,",
+        "1863. I worked on the farm nine months during",
+        "the year and attended common school three",
+        "months. I did this till 1872. I then went to",
+        "Andover, Massachusetts, March 7, 1872. Attended",
+        "Phillips Andover Academy from 1872 to 1875;",
+        "then to Middlebury College, Vermont, 1875",
+        "to 1880; Boston University, 1880 to 1883."
       ]
     },
     {
-      "id": "9e96aace",
+      "id": "695d7384",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "My early life was spent on the farm. My early training was two months of public school",
-        "each year and studying at night by lightwood knots. I went from this to the graded",
-        "school of Wilson, North Carolina, and from there to Lincoln University, Pennsylvania."
+        "My early life was spent on the farm. My",
+        "early training was two months of public",
+        "school each year and studying at night by",
+        "lightwood knots. I went from this to the graded",
+        "school of Wilson, North Carolina, and from",
+        "there to Lincoln University, Pennsylvania."
       ]
     },
     {
-      "id": "bfa6543f",
+      "id": "73de8699",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born of poor, hard-working parents and was left an orphan at eleven years.",
-        "I went to night school in the town where I was being reared by a family of white",
-        "people who were the ex-owners of my parents. I entered school as a day student at",
-        "age of seventeen, completed the academic course at twenty and then went to college."
+        "I was born of poor, hard-working parents and was",
+        "left an orphan at eleven years. I went to night",
+        "school in the town where I was being reared by",
+        "a family of white people who were the ex-owners",
+        "of my parents. I entered school as a day student",
+        "at age of seventeen, completed the academic",
+        "course at twenty and then went to college."
       ]
     },
     {
-      "id": "ac7632f9",
+      "id": "f3c832c8",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "Being born a slave, my early training was quite meagre until I was eleven or twelve",
-        "years old, having simply learned to read and spell well up to my twelfth year. My",
-        "literary training was obtained in Tennessee, to which I was brought in very early life."
+        "Being born a slave, my early training was",
+        "quite meagre until I was eleven or twelve",
+        "years old, having simply learned to read",
+        "and spell well up to my twelfth year. My",
+        "literary training was obtained in Tennessee,",
+        "to which I was brought in very early life."
       ]
     },
     {
-      "id": "fcae1078",
+      "id": "811f8fc2",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "My early life was one of poverty and longing for better things."
+        "My early life was one of poverty",
+        "and longing for better things."
       ]
     },
     {
-      "id": "080ff649",
+      "id": "3be86616",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born on a farm and remained there until I was well up in age. I have chopped",
-        "cotton, worked corn, pulled hay, because I had no scythe to cut it, peddled wood at the",
-        "Fayetteville, North Carolina, market many a winter with no shoes on and clothing extremely",
-        "scarce. . . . My life was one of struggle from the time I could remember but in the future",
-        "I saw a star of hope and pushed in that direction every time I saw an opportunity to",
-        "advance. I went to a country school in a log house in Cumberland county, North Carolina.",
-        "I went to Wilmington to live and there went to night school four or five months."
+        "I was born on a farm and remained there until",
+        "I was well up in age. I have chopped cotton,",
+        "worked corn, pulled hay, because I had no scythe",
+        "to cut it, peddled wood at the Fayetteville,",
+        "North Carolina, market many a winter with no",
+        "shoes on and clothing extremely scarce. . . . My",
+        "life was one of struggle from the time I could",
+        "remember but in the future I saw a star of hope",
+        "and pushed in that direction every time I saw",
+        "an opportunity to advance. I went to a country",
+        "school in a log house in Cumberland county,",
+        "North Carolina. I went to Wilmington to live and",
+        "there went to night school four or five months."
       ]
     },
     {
-      "id": "8c6077ae",
+      "id": "db6af48b",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "My father deserted home when I was about five years old. My mother died",
-        "when I was twelve years old, leaving me in the care of an illiterate foster",
-        "mother. She was very kind to me and did laundry work that I might be allowed",
-        "to attend school. I finished the public school course in 1895. In the summer",
-        "of 1896 I went to Rhode Island to work. From that time until I finished",
-        "school in 1905 1 paid my own expenses by doing hotel work in summer."
+        "My father deserted home when I was about",
+        "five years old. My mother died when I was",
+        "twelve years old, leaving me in the care of",
+        "an illiterate foster mother. She was very",
+        "kind to me and did laundry work that I might",
+        "be allowed to attend school. I finished the",
+        "public school course in 1895. In the summer of",
+        "1896 I went to Rhode Island to work. From that",
+        "time until I finished school in 1905 1 paid my",
+        "own expenses by doing hotel work in summer."
       ]
     },
     {
-      "id": "5dd314f5",
+      "id": "ff550649",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born a slave. I learned the alphabet in 1868 near",
-        "Nashville, Tennessee, and graduated from college in 1878."
+        "I was born a slave. I learned the alphabet",
+        "in 1868 near Nashville, Tennessee,",
+        "and graduated from college in 1878."
       ]
     },
     {
-      "id": "15d386c2",
+      "id": "b6db45be",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "Early life on a plantation amid surroundings incident to",
-        "slave life. Attended public school more or less irregularly."
+        "Early life on a plantation amid surroundings",
+        "incident to slave life. Attended public",
+        "school more or less irregularly."
       ]
     },
     {
-      "id": "5af88008",
+      "id": "32a2af70",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was a slave until eleven years of age. I learned the bricklayer's trade. I entered",
-        "college in l875.\" \"I was born in the country, worked on farm till eighteen years old, then",
-        "worked for railroad three years. I went to school about four months before I was twenty."
+        "I was a slave until eleven years of age. I",
+        "learned the bricklayer's trade. I entered",
+        "college in l875. I was born in the country,",
+        "worked on farm till eighteen years old, then",
+        "worked for railroad three years. I went to",
+        "school about four months before I was twenty."
       ]
     },
     {
-      "id": "07ed5d56",
+      "id": "388f750d",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I passed my early life on the farm near the town of Franklinton, North",
-        "Carolina, and was trained in the Christian Institute and Albion Academy.",
-        "I never had the support of a father but was obedient to the direction",
-        "of a loving mother to whom I owe all I am and all I hope to be."
+        "I passed my early life on the farm near the",
+        "town of Franklinton, North Carolina, and was",
+        "trained in the Christian Institute and Albion",
+        "Academy. I never had the support of a father but",
+        "was obedient to the direction of a loving mother",
+        "to whom I owe all I am and all I hope to be."
       ]
     },
     {
-      "id": "4fe7d9a1",
+      "id": "be53f7b3",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I worked on a farm and attended rural schools until",
-        "I was sixteen and then entered Fisk University."
+        "I worked on a farm and attended",
+        "rural schools until I was sixteen",
+        "and then entered Fisk University."
       ]
     },
     {
-      "id": "79c26ae2",
+      "id": "bf2edb7d",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born a slave and was freed by the Emancipation Proclamation of Abraham Lincoln."
+        "I was born a slave and was freed by the",
+        "Emancipation Proclamation of Abraham Lincoln."
       ]
     },
     {
-      "id": "e7da44d9",
+      "id": "9dcc69d0",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I went to a private school when quite young. My father and mother died when I was",
-        "nine years old. I lived then with white people, working for my board and clothes",
-        "several years. While there I lacked one year of completing the high school course. I",
-        "went from there to Lincoln Institute and completed the two years' Normal course. From",
-        "Lincoln Institute I went to Fisk University and completed the bachelor of arts course."
+        "I went to a private school when quite young.",
+        "My father and mother died when I was nine years",
+        "old. I lived then with white people, working for",
+        "my board and clothes several years. While there",
+        "I lacked one year of completing the high school",
+        "course. I went from there to Lincoln Institute",
+        "and completed the two years' Normal course. From",
+        "Lincoln Institute I went to Fisk University",
+        "and completed the bachelor of arts course."
       ]
     },
     {
-      "id": "308ac7f8",
+      "id": "2ffd7618",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born on a sugar plantation; spent early life as a",
-        "farmer. I had some advantages of public school instruction."
+        "I was born on a sugar plantation; spent",
+        "early life as a farmer. I had some",
+        "advantages of public school instruction."
       ]
     },
     {
-      "id": "3c6e1073",
+      "id": "65e8b2e6",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I assisted my father on the farm and in his winter work as the town butcher during",
-        "school vacations in the summer and on Saturdays. I attended the public schools",
-        "of Macon, Mississippi, during their sessions of nine months. I was taught first",
-        "by those whites who came from the North as teachers during the seventies; then",
-        "by Fisk and Rust University graduates until I came to Fisk in 1887. I pushed my",
-        "own way forward mostly, i. e. with the occasional lift my father would give when",
-        "I called upon him, which I reluctantly did as he evidently had succeeded some in",
-        "his teaching of self-reliance-not running up the white flag upon every occasion."
+        "I assisted my father on the farm and in his",
+        "winter work as the town butcher during school",
+        "vacations in the summer and on Saturdays. I",
+        "attended the public schools of Macon, Mississippi,",
+        "during their sessions of nine months. I was",
+        "taught first by those whites who came from the",
+        "North as teachers during the seventies; then by",
+        "Fisk and Rust University graduates until I came",
+        "to Fisk in 1887. I pushed my own way forward",
+        "mostly, i. e. with the occasional lift my father",
+        "would give when I called upon him, which I",
+        "reluctantly did as he evidently had succeeded",
+        "some in his teaching of self-reliance-not",
+        "running up the white flag upon every occasion."
       ]
     },
     {
-      "id": "47585da1",
+      "id": "0304b505",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born on my father's farm in the traditional log cabin.",
-        "Early training was received in the country public school."
+        "I was born on my father's farm in the",
+        "traditional log cabin. Early training was",
+        "received in the country public school."
       ]
     },
     {
-      "id": "5f18e2d2",
+      "id": "cc219bd6",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "My childhood and youth were spent in Atlanta. Most of my time I was working to",
-        "help support my family. Now and then I went to night school and the summer country",
-        "school. In 1876 1 got desperate and broke away from my family and entered Storr's",
-        "School. Finishing there in the spring of 1877, in the fall of the same year I",
-        "entered Atlanta University and there I remained till I was graduated in 1884."
+        "My childhood and youth were spent in Atlanta.",
+        "Most of my time I was working to help support",
+        "my family. Now and then I went to night school",
+        "and the summer country school. In 1876 1 got",
+        "desperate and broke away from my family and",
+        "entered Storr's School. Finishing there in",
+        "the spring of 1877, in the fall of the same",
+        "year I entered Atlanta University and there",
+        "I remained till I was graduated in 1884."
       ]
     },
     {
-      "id": "7fbba9bb",
+      "id": "28b5fb19",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was eighteen months old, the youngest of six children, when my Father died. My",
-        "mother was left with a home and six children too young to work. Having nothing left",
-        "me and with brothers and sisters to be supported by my mother, my early life was one",
-        "of denial. I had the necessary things of life-nothing else. When I became old enough",
-        "to work I secured a route on an afternoon paper and sold papers Sunday mornings. I",
-        "did this all the time I was attending school in this city, making from one and a",
-        "half to three and a half dollars per week. My people were free, able to read and",
-        "write, and with a knowledge of refinement above the average, therefore my home",
-        "surroundings were above the average. I had a good training along religious lines."
+        "I was eighteen months old, the youngest of six",
+        "children, when my Father died. My mother was",
+        "left with a home and six children too young to",
+        "work. Having nothing left me and with brothers",
+        "and sisters to be supported by my mother, my",
+        "early life was one of denial. I had the necessary",
+        "things of life-nothing else. When I became old",
+        "enough to work I secured a route on an afternoon",
+        "paper and sold papers Sunday mornings. I did",
+        "this all the time I was attending school in this",
+        "city, making from one and a half to three and",
+        "a half dollars per week. My people were free,",
+        "able to read and write, and with a knowledge",
+        "of refinement above the average, therefore my",
+        "home surroundings were above the average. I",
+        "had a good training along religious lines."
       ]
     },
     {
-      "id": "ec38396c",
+      "id": "39206511",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "During vacations and holidays I worked in the shop with my father",
-        "who was a wheelwright and wagon and carriage builder. I worked",
-        "some with an uncle on the farm when work in the shop was slack."
+        "During vacations and holidays I worked",
+        "in the shop with my father who was a",
+        "wheelwright and wagon and carriage",
+        "builder. I worked some with an uncle on",
+        "the farm when work in the shop was slack."
       ]
     },
     {
-      "id": "6b8e38e2",
+      "id": "22def41d",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born in slavery and came into freedom under the terms of Lincoln's",
-        "Emancipation Proclamation. While a slave I did various kinds of light work for my",
-        "master's family or for other white people to whom I was often hired. From 1x65",
-        "to 1867 I tried to help my mother support her large family of children. From",
-        "1867 to 1880 I was in school in Atlanta, Georgia, and Andover, Massachusetts."
+        "I was born in slavery and came into freedom under",
+        "the terms of Lincoln's Emancipation Proclamation.",
+        "While a slave I did various kinds of light work",
+        "for my master's family or for other white people",
+        "to whom I was often hired. From 1x65 to 1867 I",
+        "tried to help my mother support her large family",
+        "of children. From 1867 to 1880 I was in school in",
+        "Atlanta, Georgia, and Andover, Massachusetts."
       ]
     },
     {
-      "id": "a6fca392",
+      "id": "569d5205",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "Beginning at the age of six I attended the country district school,",
-        "terms averaging about two and one-half months per year. I worked on farm",
-        "with my father until I was fifteen; then a few months on the railroad;",
-        "but my chief work up to the age of twenty-one was in tobacco factories."
+        "Beginning at the age of six I attended the",
+        "country district school, terms averaging about two",
+        "and one-half months per year. I worked on farm",
+        "with my father until I was fifteen; then a few",
+        "months on the railroad; but my chief work up to",
+        "the age of twenty-one was in tobacco factories."
       ]
     },
     {
-      "id": "f59ad26a",
+      "id": "177d021c",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I worked at any and all kinds of common work, such as waiting",
-        "table and barber shop porter, attending the common schools and",
-        "also taking advantage of such private schools as were offered."
+        "I worked at any and all kinds of common",
+        "work, such as waiting table and barber",
+        "shop porter, attending the common",
+        "schools and also taking advantage of",
+        "such private schools as were offered."
       ]
     },
     {
-      "id": "646c06ae",
+      "id": "b05207b8",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was sixteen when the war closed. I learned to read and write in night school in Albany,",
-        "Georgia, in 1866. I plowed all day and walked a mile and a half a t night to school."
+        "I was sixteen when the war closed. I learned",
+        "to read and write in night school in Albany,",
+        "Georgia, in 1866. I plowed all day and walked",
+        "a mile and a half a t night to school."
       ]
     },
     {
-      "id": "6d7b22fb",
+      "id": "56d9bbe0",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born a slave on a farm in Franklin county, Virginia. When I was",
-        "eight years old I walked with my parents to Kanawha county, West Virginia,",
-        "a distance of two hundred and fifty miles, in the month of March. My father",
-        "died when I was twelve. I never attended school until after that time."
+        "I was born a slave on a farm in Franklin county,",
+        "Virginia. When I was eight years old I walked with",
+        "my parents to Kanawha county, West Virginia, a",
+        "distance of two hundred and fifty miles, in the",
+        "month of March. My father died when I was twelve.",
+        "I never attended school until after that time."
       ]
     },
     {
-      "id": "32c2a59e",
+      "id": "6620ca43",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was a slave until I reached the age of thirteen years. I was taken from my",
-        "parents a t ten years of age. I have been compelled to support myself since 1865.",
-        "1 had about nine months of schooling before reaching the age of twenty-one years.",
-        "I have received most of my education since I became twenty-one years of age."
+        "I was a slave until I reached the age of",
+        "thirteen years. I was taken from my parents a",
+        "t ten years of age. I have been compelled to",
+        "support myself since 1865. 1 had about nine",
+        "months of schooling before reaching the age of",
+        "twenty-one years. I have received most of my",
+        "education since I became twenty-one years of age."
       ]
     },
     {
-      "id": "3f538c3d",
+      "id": "1ccc06d5",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born and reared on a farm, attended the country schools during my boyhood",
-        "days. I have done all kinds of laboring work, both on the farm and on the railroad.",
-        "I acted as a clerk in a supply department at a summer resort for eighteen",
-        "years during summer vacations while a student and since I have been teaching."
+        "I was born and reared on a farm, attended the",
+        "country schools during my boyhood days. I have",
+        "done all kinds of laboring work, both on the",
+        "farm and on the railroad. I acted as a clerk",
+        "in a supply department at a summer resort for",
+        "eighteen years during summer vacations while",
+        "a student and since I have been teaching."
       ]
     },
     {
-      "id": "e237390d",
+      "id": "dff95b7a",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was brought up on a farm with no chance to educate myself. I had",
-        "to work for what I could eat and wear, having no one to help me in",
-        "life. Father was dead; mother could not help me because she was not",
-        "able. I had no chance to go to school until I was nineteen years old."
+        "I was brought up on a farm with no chance to",
+        "educate myself. I had to work for what I could",
+        "eat and wear, having no one to help me in life.",
+        "Father was dead; mother could not help me",
+        "because she was not able. I had no chance to",
+        "go to school until I was nineteen years old."
       ]
     },
     {
-      "id": "6b292837",
+      "id": "17e715a8",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I jobbed around in summer and attended winter school, maintained by my",
-        "parents; taught generally by students from Oberlin College. I was hired out",
-        "as house-boy for a while; carried clothes back and forth as my mother took",
-        "in washing. I was naturally studious. I studied Latin and Algebra myself. I",
-        "went to Louisville, Kentucky, before the war and assisted my brother-in-law in",
-        "teaching free Negro children and slaves who could get a permit. From there I",
-        "went to Ohio University, Athens, Ohio, in 1849 and graduated there in 1853."
+        "I jobbed around in summer and attended winter",
+        "school, maintained by my parents; taught",
+        "generally by students from Oberlin College.",
+        "I was hired out as house-boy for a while;",
+        "carried clothes back and forth as my mother",
+        "took in washing. I was naturally studious.",
+        "I studied Latin and Algebra myself. I went",
+        "to Louisville, Kentucky, before the war and",
+        "assisted my brother-in-law in teaching free Negro",
+        "children and slaves who could get a permit.",
+        "From there I went to Ohio University, Athens,",
+        "Ohio, in 1849 and graduated there in 1853."
       ]
     },
     {
-      "id": "344cf7b6",
+      "id": "65fa5b5b",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was educated largely by my own efforts, being",
-        "left an orphan in the state of Vermont after 1865."
+        "I was educated largely by my own",
+        "efforts, being left an orphan in",
+        "the state of Vermont after 1865."
       ]
     },
     {
-      "id": "6c597f75",
+      "id": "60837b1b",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "My mother died when I was six months old, father when I was seven years old.",
-        "Between the city and country I lived, survived and did not perish. At the",
-        "age of nineteen I was janitor of graded school in Durham, North Carolina. I",
-        "received ten dollars per month and my schooling. At the end of the school",
-        "term I passed the fourth grade, the proudest boy in the world. I clerked",
-        "in store that summer and in the fall I entered Fisk with a vim to win."
+        "My mother died when I was six months old,",
+        "father when I was seven years old. Between",
+        "the city and country I lived, survived and",
+        "did not perish. At the age of nineteen I was",
+        "janitor of graded school in Durham, North",
+        "Carolina. I received ten dollars per month and",
+        "my schooling. At the end of the school term I",
+        "passed the fourth grade, the proudest boy in",
+        "the world. I clerked in store that summer and",
+        "in the fall I entered Fisk with a vim to win."
       ]
     },
     {
-      "id": "ef81dead",
+      "id": "3b442142",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born a slave. I was bound out for four years. I was taught at nights",
-        "by the daughters of the man to whom I was apprenticed for four years.",
-        "Lived and worked on farm most of the time till nineteen years of age."
+        "I was born a slave. I was bound out for four",
+        "years. I was taught at nights by the daughters",
+        "of the man to whom I was apprenticed for",
+        "four years. Lived and worked on farm most",
+        "of the time till nineteen years of age."
       ]
     },
     {
-      "id": "fa8abbd3",
+      "id": "c16787f5",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born a slave and left an orphan. I was sent adrift empty hand",
-        "without parents or guardian. I began education in night school. I entered",
-        "day school under Quakers at age of seventeen. I attended two months during",
-        "session for four years. Meanwhile I continued to burn the midnight oil. I",
-        "became clerk, bookkeeper, deputy sheriff, policeman, public school teacher."
+        "I was born a slave and left an orphan. I was",
+        "sent adrift empty hand without parents or",
+        "guardian. I began education in night school.",
+        "I entered day school under Quakers at age of",
+        "seventeen. I attended two months during session",
+        "for four years. Meanwhile I continued to burn",
+        "the midnight oil. I became clerk, bookkeeper,",
+        "deputy sheriff, policeman, public school teacher."
       ]
     },
     {
-      "id": "6d796ba3",
+      "id": "d18a2e80",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I attended public schools of Augusta, Georgia, and worked between",
-        "times as a newspaper carrier and later on as a printer. I was graduated",
-        "from Ware High School in 1886 and then entered Atlanta University."
+        "I attended public schools of Augusta,",
+        "Georgia, and worked between times as a",
+        "newspaper carrier and later on as a printer.",
+        "I was graduated from Ware High School in",
+        "1886 and then entered Atlanta University."
       ]
     },
     {
-      "id": "6eeb2f45",
+      "id": "d68ba7c7",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I grew up on a farm with a 'scrapped up' education in",
-        "fitful public and private schools and private instruction."
+        "I grew up on a farm with a 'scrapped",
+        "up' education in fitful public and",
+        "private schools and private instruction."
       ]
     },
     {
-      "id": "56800b25",
+      "id": "1d5ade4d",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "My early life and training was that of the ordinary youth of our race: one of a large",
-        "family of children, on a little farm, a few months' attendance every year at public",
-        "schools until large enough to work. At the age of twenty I left for the North and by",
-        "hard work by day and private study by night I prepared to enter Lincoln University."
+        "My early life and training was that of the",
+        "ordinary youth of our race: one of a large",
+        "family of children, on a little farm, a few",
+        "months' attendance every year at public",
+        "schools until large enough to work. At the",
+        "age of twenty I left for the North and by",
+        "hard work by day and private study by night",
+        "I prepared to enter Lincoln University."
       ]
     },
     {
-      "id": "765fbdc4",
+      "id": "a2a45e6e",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born a slave and was a farm boy until twenty-four years old."
+        "I was born a slave and was a farm",
+        "boy until twenty-four years old."
       ]
     },
     {
-      "id": "96ffe8a4",
+      "id": "42c897c9",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was born in the country in Missouri. Up to nine years of age I had no",
-        "schooling. I learned my A, B, C's from the Bible in my tenth year. I had",
-        "two terms of school, one three months, one five months in Missouri. My",
-        "family emigrated to Nebraska when I was in my twelfth year. Farmed there",
-        "and finished common and high school at Seward, Seward county, Nebraska."
+        "I was born in the country in Missouri. Up to",
+        "nine years of age I had no schooling. I learned",
+        "my A, B, C's from the Bible in my tenth year. I",
+        "had two terms of school, one three months, one",
+        "five months in Missouri. My family emigrated",
+        "to Nebraska when I was in my twelfth year.",
+        "Farmed there and finished common and high",
+        "school at Seward, Seward county, Nebraska."
       ]
     },
     {
-      "id": "c48df9f7",
+      "id": "b6332b43",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "I was a farm boy until twenty-four years of age. I was born a slave."
+        "I was a farm boy until twenty-four",
+        "years of age. I was born a slave."
       ]
     },
     {
-      "id": "1d7c8c91",
+      "id": "fc83324d",
+      "x": 0,
+      "y": 0,
       "gender": "Men",
       "lines": [
-        "Sea life for eight or ten years. I traveled much. I attended district school",
-        "in Massachusetts in winter. My academic training was received at Pierce",
-        "Academy, Middleboro, Massachusetts; college work at Atlanta University."
+        "Sea life for eight or ten years. I traveled",
+        "much. I attended district school in Massachusetts",
+        "in winter. My academic training was received",
+        "at Pierce Academy, Middleboro, Massachusetts;",
+        "college work at Atlanta University."
       ]
     },
     {
-      "id": "1b99d059",
+      "id": "4c2151a0",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "\"I attended public school in a rural district until sixteen years old. I then went to a",
-        "small town and entered graded school. I made a good average with attendance daily the",
-        "first term and was promoted. The next term I became tutor. My parents being dead my",
-        "teachers became interested in me and made it possible for me to enter college in 1893."
+        "I attended public school in a rural district",
+        "until sixteen years old. I then went to a",
+        "small town and entered graded school. I made",
+        "a good average with attendance daily the",
+        "first term and was promoted. The next term",
+        "I became tutor. My parents being dead my",
+        "teachers became interested in me and made it",
+        "possible for me to enter college in 1893."
       ]
     },
     {
-      "id": "1492e2be",
+      "id": "570c07d8",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "I was reared on the farm until old enough to earn wages; then I was",
-        "hired out until about twenty years old, when I entered school for the",
-        "first time. Steady work and interested parties put me thru school."
+        "I was reared on the farm until old enough",
+        "to earn wages; then I was hired out until",
+        "about twenty years old, when I entered",
+        "school for the first time. Steady work and",
+        "interested parties put me thru school."
       ]
     },
     {
-      "id": "3e6ead97",
+      "id": "d3d2cbba",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "I was reared on a farm. My parents were poor yet they kept me",
-        "supplied with books and saw to it that I attended our rural school",
-        "regularly. At the age of fourteen I entered Tougaloo University."
+        "I was reared on a farm. My parents were poor yet",
+        "they kept me supplied with books and saw to it",
+        "that I attended our rural school regularly. At the",
+        "age of fourteen I entered Tougaloo University."
       ]
     },
     {
-      "id": "728529e5",
+      "id": "cf397449",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "I was reared on a large farm owned by my father, who was one of the most extensive",
-        "cotton planters in Ouachita Parish. My parents were not educated but both could",
-        "read and write; and knowing the advantage of an education they spent a fortune in",
-        "educating their children, giving thirteen-all who did not die in early childhood-a",
-        "fair English training. When I was nine years of age they employed a tutor in the",
-        "home to prepare me to be sent off to school, since educational advantages for",
-        "Negroes were so poor in that part of the state. The next year I entered Straight."
+        "I was reared on a large farm owned by my",
+        "father, who was one of the most extensive cotton",
+        "planters in Ouachita Parish. My parents were",
+        "not educated but both could read and write; and",
+        "knowing the advantage of an education they spent",
+        "a fortune in educating their children, giving",
+        "thirteen-all who did not die in early childhood-a",
+        "fair English training. When I was nine years of",
+        "age they employed a tutor in the home to prepare",
+        "me to be sent off to school, since educational",
+        "advantages for Negroes were so poor in that part",
+        "of the state. The next year I entered Straight."
       ]
     },
     {
-      "id": "0da35ee3",
+      "id": "101e94e1",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "I was born in a cabin and attended a country school."
+        "I was born in a cabin and",
+        "attended a country school."
       ]
     },
     {
-      "id": "13217434",
+      "id": "7112f4ed",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "The child of a college-bred mother and fairly intelligent father, my home life and early",
-        "training were good; I had every opportunity and encouragement to acquire an education."
+        "The child of a college-bred mother and fairly",
+        "intelligent father, my home life and early",
+        "training were good; I had every opportunity",
+        "and encouragement to acquire an education."
       ]
     },
     {
-      "id": "eb7687d9",
+      "id": "43569bec",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "I had a good home and intelligent parents, who were free people before the war, hence",
-        "I enjoyed some educational advantages before the Civil War. My father was a barber",
-        "and a lawyer, the first colored man admitted to the bar in Tennessee. My mother was a",
-        "skilled dressmaker who served for Mrs. President Polk and others high in social life."
+        "I had a good home and intelligent parents,",
+        "who were free people before the war, hence I",
+        "enjoyed some educational advantages before",
+        "the Civil War. My father was a barber and a",
+        "lawyer, the first colored man admitted to the",
+        "bar in Tennessee. My mother was a skilled",
+        "dressmaker who served for Mrs. President",
+        "Polk and others high in social life."
       ]
     },
     {
-      "id": "02fbe8fd",
+      "id": "06fa6876",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "I attended the public school of Oberlin, Ohio, for two years. We moved South in",
-        "1883. From then I was taught in the home until I went off to school in 1890."
+        "I attended the public school of Oberlin,",
+        "Ohio, for two years. We moved South in",
+        "1883. From then I was taught in the home",
+        "until I went off to school in 1890."
       ]
     },
     {
-      "id": "63016f8e",
+      "id": "b46aaa1b",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "I was a pupil in the public school of Gainesville, Florida, until about sixteen",
-        "years of age. Then I entered the State Normal School at Tallahassee, Florida, from",
-        "which I graduated in 1902. While a student at Tallahassee I taught each summer",
-        "in rural schools. During each school year I earned my board entirely by services",
-        "rendered in the president's family. After graduating I taught two consecutive",
-        "terms in city schools and in 1904 spent the summer studying at the University",
-        "of Chicago. In the fall of 1904 1 returned South and entered Clark University."
+        "I was a pupil in the public school of",
+        "Gainesville, Florida, until about sixteen years",
+        "of age. Then I entered the State Normal School at",
+        "Tallahassee, Florida, from which I graduated in",
+        "1902. While a student at Tallahassee I taught each",
+        "summer in rural schools. During each school year",
+        "I earned my board entirely by services rendered",
+        "in the president's family. After graduating I",
+        "taught two consecutive terms in city schools",
+        "and in 1904 spent the summer studying at the",
+        "University of Chicago. In the fall of 1904 1",
+        "returned South and entered Clark University."
       ]
     },
     {
-      "id": "c018f243",
+      "id": "27d542df",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "I was educated in Iowa. I earned my way thru the University."
+        "I was educated in Iowa. I earned",
+        "my way thru the University."
       ]
     },
     {
-      "id": "804c2abf",
+      "id": "50f25ede",
+      "x": 0,
+      "y": 0,
       "gender": "Women",
       "lines": [
-        "My father was a man of fair education; mother not formally educated but a great reader",
-        "from her youth up. Both were actively interested in the education of their children."
+        "My father was a man of fair education;",
+        "mother not formally educated but a great",
+        "reader from her youth up. Both were actively",
+        "interested in the education of their children."
       ]
     }
   ],
   "cedu": [
     {
-      "id": "e4295037",
+      "id": "203696ab",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "It is my present intention to give my boys a full university training in order that they",
-        "may be equipped to take high rank in whatever calling or profession they may choose."
+        "It is my present intention to give my boys a",
+        "full university training in order that they",
+        "may be equipped to take high rank in whatever",
+        "calling or profession they may choose."
       ]
     },
     {
-      "id": "42a10c44",
+      "id": "aac356f0",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I believe in educating the child to make the best",
-        "citizen; a college education to those who will take it."
+        "I believe in educating the child",
+        "to make the best citizen; a college",
+        "education to those who will take it."
       ]
     },
     {
-      "id": "19667611",
+      "id": "9d9f0704",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "In obedience to their inclinations and gifts and without prejudice for or against",
-        "any particular training. Technical, agricultural, mercantile, professional training",
-        "are of equal importance if preparation and research are sufficient, there being",
-        "urgent need for real high grade leadership in every avenue for the Negro. If then any",
-        "offspring from my household manifest special taste for and high merit in any worthy",
-        "line, I shall only ask God to enable me to assist them to the highest in that line."
+        "In obedience to their inclinations and gifts",
+        "and without prejudice for or against any",
+        "particular training. Technical, agricultural,",
+        "mercantile, professional training are of equal",
+        "importance if preparation and research are",
+        "sufficient, there being urgent need for real",
+        "high grade leadership in every avenue for the",
+        "Negro. If then any offspring from my household",
+        "manifest special taste for and high merit in",
+        "any worthy line, I shall only ask God to enable",
+        "me to assist them to the highest in that line."
       ]
     },
     {
-      "id": "7c12d4fa",
+      "id": "64ecd399",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "First public school, secondly college, third university, then if",
-        "possible provide for her to study abroad. I shall teach the importance",
-        "of attainment of the highest possible type of culture and refinement and",
-        "the importance of possessing something that people who have money want."
+        "First public school, secondly college, third",
+        "university, then if possible provide for her to",
+        "study abroad. I shall teach the importance of",
+        "attainment of the highest possible type of culture",
+        "and refinement and the importance of possessing",
+        "something that people who have money want."
       ]
     },
     {
-      "id": "4b20c87f",
+      "id": "0613f94c",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I have but one daughter. I plan to give her a college",
-        "education in southern, eastern and European institutions."
+        "I have but one daughter. I plan to give",
+        "her a college education in southern,",
+        "eastern and European institutions."
       ]
     },
     {
-      "id": "6a20193a",
+      "id": "eb45efad",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I am striving to be in shape to give my children a thoro, practical",
-        "education which will best fit them for the daily pursuits of life."
+        "I am striving to be in shape to give my children",
+        "a thoro, practical education which will best",
+        "fit them for the daily pursuits of life."
       ]
     },
     {
-      "id": "1a3fa4be",
+      "id": "30403397",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
         "I shall endeavor to give that training which in",
@@ -573,7 +844,9 @@
       ]
     },
     {
-      "id": "e1b3c4eb",
+      "id": "a781632b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
         "I want my daughter to make music her specialty",
@@ -581,220 +854,316 @@
       ]
     },
     {
-      "id": "28336323",
+      "id": "cbd1ed64",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Each is to receive a t least a normal and academic education. Two or",
-        "three may take the university course, one in music, one in theology."
+        "Each is to receive a t least a normal and",
+        "academic education. Two or three may take the",
+        "university course, one in music, one in theology."
       ]
     },
     {
-      "id": "c0ed1272",
+      "id": "7511862a",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "It is my intention to give them the very best education that they can assimilate."
+        "It is my intention to give them the very",
+        "best education that they can assimilate."
       ]
     },
     {
-      "id": "997547f2",
+      "id": "cef0447d",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I desire to have them brought up at a school such as Fisk after they have reached puberty",
-        "and later at a northern university. But first of all I shall teach them the fundamentals",
-        "of politeness, hygiene, and the art of doing work assigned them smoothly and with polish."
+        "I desire to have them brought up at a school",
+        "such as Fisk after they have reached puberty",
+        "and later at a northern university. But first",
+        "of all I shall teach them the fundamentals",
+        "of politeness, hygiene, and the art of doing",
+        "work assigned them smoothly and with polish."
       ]
     },
     {
-      "id": "1e4b68fa",
+      "id": "f8a22b45",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The education of my children will probably depend largely upon their own wishes but I",
-        "should like them to receive training equivalent to the four years' college course at",
-        "Atlanta University and professional or special training for some particular line of work."
+        "The education of my children will probably",
+        "depend largely upon their own wishes but I",
+        "should like them to receive training equivalent",
+        "to the four years' college course at Atlanta",
+        "University and professional or special",
+        "training for some particular line of work."
       ]
     },
     {
-      "id": "639a470b",
+      "id": "5b4fde1d",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "If 1 should be so fortunate as to have any children I would send",
-        "them to Phillips Exeter, Harvard and Lawrence Scientific School."
+        "If 1 should be so fortunate as to have any",
+        "children I would send them to Phillips Exeter,",
+        "Harvard and Lawrence Scientific School."
       ]
     },
     {
-      "id": "d16ca28a",
+      "id": "c11e80da",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Some in trade, some in college and some in a profession. One is already",
-        "a dressmaker, another is a trained nurse and still another has finished",
-        "in theology and is doing good pastoral work at Albany, Georgia."
+        "Some in trade, some in college and some in",
+        "a profession. One is already a dressmaker,",
+        "another is a trained nurse and still another",
+        "has finished in theology and is doing",
+        "good pastoral work at Albany, Georgia."
       ]
     },
     {
-      "id": "03c5c13c",
+      "id": "aeda6857",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I expect to send my boys thru college and my daughter thru a normal training school."
+        "I expect to send my boys thru college and",
+        "my daughter thru a normal training school."
       ]
     },
     {
-      "id": "8666bd06",
+      "id": "049a1722",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I propose to give them as complete an education as they can receive."
+        "I propose to give them as complete",
+        "an education as they can receive."
       ]
     },
     {
-      "id": "b20250c5",
+      "id": "51c83e0e",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "As their talent seems to indicate. The best is none too good.",
-        "Broadly as men and as American citizens and not narrowly as Negroes."
+        "As their talent seems to indicate. The best",
+        "is none too good. Broadly as men and as",
+        "American citizens and not narrowly as Negroes."
       ]
     },
     {
-      "id": "6b34f402",
+      "id": "1c483885",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I don\u2019t know as to a trade or a profession but most certainly I shall",
-        "give my boy a college education and my daughter a good normal training."
+        "I don\u2019t know as to a trade or a profession but",
+        "most certainly I shall give my boy a college",
+        "education and my daughter a good normal training."
       ]
     },
     {
-      "id": "c5bcbe9a",
+      "id": "0e5b564f",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "College and technical as far as my influence can bring",
-        "this about; ultimately, of course, the child must decide."
+        "College and technical as far as my",
+        "influence can bring this about; ultimately,",
+        "of course, the child must decide."
       ]
     },
     {
-      "id": "05f88109",
+      "id": "1a995e47",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "This would depend largely upon the natural tendency of the children but my desire",
-        "would be for them to have a college education and, if passible, for the boys to take a",
-        "profession afterwards. Both boys and girls should work at some trade during vacation",
-        "seasons while in public school as I believe no boy or girl should be permitted to",
-        "grow up without leaning how to do some kind of work proficiently with the hands."
+        "This would depend largely upon the natural",
+        "tendency of the children but my desire would",
+        "be for them to have a college education and,",
+        "if passible, for the boys to take a profession",
+        "afterwards. Both boys and girls should work at",
+        "some trade during vacation seasons while in public",
+        "school as I believe no boy or girl should be",
+        "permitted to grow up without leaning how to do",
+        "some kind of work proficiently with the hands."
       ]
     },
     {
-      "id": "b51633e1",
+      "id": "20c9b831",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I favor college education because then they are better prepared",
-        "to succeed; then to his trade or profession well equipped."
+        "I favor college education because then",
+        "they are better prepared to succeed; then",
+        "to his trade or profession well equipped."
       ]
     },
     {
-      "id": "66c26a0e",
+      "id": "26c4672e",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I shall give them a higher Christian literary education as a foundation",
-        "and allow them afterwards to study any trade or profession they may wish."
+        "I shall give them a higher Christian",
+        "literary education as a foundation and",
+        "allow them afterwards to study any",
+        "trade or profession they may wish."
       ]
     },
     {
-      "id": "d3f73c52",
+      "id": "e001496f",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
         "I shall educate my girls to be school teachers."
       ]
     },
     {
-      "id": "921e420c",
+      "id": "d9868013",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I am giving my son academic and professional and my daughter academic and trade."
+        "I am giving my son academic and professional",
+        "and my daughter academic and trade."
       ]
     },
     {
-      "id": "7b2a76a1",
+      "id": "e8629b2e",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "In the way that shall best fit them as individuals to be of greatest service",
-        "to themselves and to others. I desire them to have a three-fold education."
+        "In the way that shall best fit them as",
+        "individuals to be of greatest service",
+        "to themselves and to others. I desire",
+        "them to have a three-fold education."
       ]
     },
     {
-      "id": "845acfd4",
+      "id": "6b5e8af7",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Train their early years in some form of handicraft or trade; give",
-        "them a college course in an institution for Negroes; and the boys a",
-        "professional course in one of the best schools without regard to color."
+        "Train their early years in some form of",
+        "handicraft or trade; give them a college",
+        "course in an institution for Negroes; and",
+        "the boys a professional course in one of",
+        "the best schools without regard to color."
       ]
     },
     {
-      "id": "514e0491",
+      "id": "2ac3c0d3",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I will try to educate my children according to their inclinations. I am not",
-        "partial; to any kind of education which fits men and women for true service."
+        "I will try to educate my children",
+        "according to their inclinations. I am not",
+        "partial; to any kind of education which",
+        "fits men and women for true service."
       ]
     },
     {
-      "id": "cb960c0c",
+      "id": "bc2e948d",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "For profession if they show inclination and ability sufficient to",
-        "indicate that they will be successful in such work. For trades or",
-        "business if they show special adaptability for that class of work."
+        "For profession if they show inclination",
+        "and ability sufficient to indicate that",
+        "they will be successful in such work. For",
+        "trades or business if they show special",
+        "adaptability for that class of work."
       ]
     },
     {
-      "id": "51922a7b",
+      "id": "543126c6",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I would give him a broad and comprehensive college training",
-        "and leave it to his own inclination as to trade or profession."
+        "I would give him a broad and comprehensive",
+        "college training and leave it to his own",
+        "inclination as to trade or profession."
       ]
     },
     {
-      "id": "d5cb70c5",
+      "id": "73640ee2",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I shall endeavor to study the aptitude of the child. If he or she is",
-        "best fitted for an industrial life or a profession I desire to root",
-        "that industry or profession into a fertile, college-trained brain"
+        "I shall endeavor to study the aptitude",
+        "of the child. If he or she is best fitted",
+        "for an industrial life or a profession I",
+        "desire to root that industry or profession",
+        "into a fertile, college-trained brain"
       ]
     },
     {
-      "id": "8790b593",
+      "id": "f8d42885",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Boys to a trade or a profession, according to their respective inclinations",
-        "and apparent adaptability. Girls in college and domestic science."
+        "Boys to a trade or a profession,",
+        "according to their respective inclinations",
+        "and apparent adaptability. Girls",
+        "in college and domestic science."
       ]
     },
     {
-      "id": "d1f28e53",
+      "id": "d710bca7",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Some trade along with their preparatory training. College course, a part of which",
-        "shall be in some Christian institution. Their professional training shall be the",
-        "outgrowth of their natural adaptation together with the aid and direction of parents.",
-        "Intend to make teachers of some of them. The boys wish to be scientific farmers."
+        "Some trade along with their preparatory training.",
+        "College course, a part of which shall be in",
+        "some Christian institution. Their professional",
+        "training shall be the outgrowth of their natural",
+        "adaptation together with the aid and direction",
+        "of parents. Intend to make teachers of some of",
+        "them. The boys wish to be scientific farmers."
       ]
     },
     {
-      "id": "a9c23ed2",
+      "id": "32798f85",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "In college and in the ministry with some industrial training,",
-        "with the hope that he may become a missionary to Africa."
+        "In college and in the ministry with some",
+        "industrial training, with the hope that",
+        "he may become a missionary to Africa."
       ]
     },
     {
-      "id": "584d59ab",
+      "id": "644e6f6a",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Intend to make a dentist of my boy and a musician of my girl."
+        "Intend to make a dentist of my",
+        "boy and a musician of my girl."
       ]
     },
     {
-      "id": "85073380",
+      "id": "6bf86c85",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
         "Hope to have them learn trade, go thru one of",
@@ -802,83 +1171,120 @@
       ]
     },
     {
-      "id": "2b168467",
+      "id": "31355b99",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Boy, to trade or medicine; girl, to domestic science and music."
+        "Boy, to trade or medicine; girl,",
+        "to domestic science and music."
       ]
     },
     {
-      "id": "8854ca22",
+      "id": "478cc6cf",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I am striving to give my children a thoro practical education",
-        "which will best fit them for the daily pursuits of life."
+        "I am striving to give my children a thoro",
+        "practical education which will best fit",
+        "them for the daily pursuits of life."
       ]
     }
   ],
   "hind": [
     {
-      "id": "42cd892d",
+      "id": "6fd267f4",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice has all along hindered me in getting what I have merited. On the other",
-        "hand, it has been a negative good, doing for me what some measure what a rough",
-        "sea does for a mariner: bringing out whatever of good stuff there is in me."
+        "Prejudice has all along hindered me in",
+        "getting what I have merited. On the other",
+        "hand, it has been a negative good, doing",
+        "for me what some measure what a rough",
+        "sea does for a mariner: bringing out",
+        "whatever of good stuff there is in me."
       ]
     },
     {
-      "id": "e40c8a7a",
+      "id": "f99df81d",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "My chief hindrance has been a lack of funds. I have always had to hustle for",
-        "what I have attained and having become accustomed to it I hardly consider that a",
-        "hindrance now. I have found a certain amount of prejudice everywhere I have been but",
-        "I have also found that ambition and energy with integrity can override prejudice."
+        "My chief hindrance has been a lack of funds.",
+        "I have always had to hustle for what I have",
+        "attained and having become accustomed to it I",
+        "hardly consider that a hindrance now. I have",
+        "found a certain amount of prejudice everywhere I",
+        "have been but I have also found that ambition and",
+        "energy with integrity can override prejudice."
       ]
     },
     {
-      "id": "418399fe",
+      "id": "b420a2d0",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I have no reason to complain. While opportunities for the young Negro are",
-        "fewer than for the young white man in this country, the young men of our race",
-        "are neglecting opportunities which would seem golden to the young men of other",
-        "lands.\" ' \"I find that a desire to work, when 'based on a good foundation,",
-        "educational and moral, is appreciated and encouraged by all classes of people."
+        "I have no reason to complain. While opportunities",
+        "for the young Negro are fewer than for the young",
+        "white man in this country, the young men of our",
+        "race are neglecting opportunities which would seem",
+        "golden to the young men of other lands. ' I",
+        "find that a desire to work, when 'based on a good",
+        "foundation, educational and moral, is appreciated",
+        "and encouraged by all classes of people."
       ]
     },
     {
-      "id": "d29710b7",
+      "id": "835cd1d1",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "My chief hindrance has been a lack of capital with which to carry out my",
-        "plans. Prejudice cuts very little figure in the business world if you have what",
-        "the white man wants or if he can use you in any way. He will look you up."
+        "My chief hindrance has been a lack of capital",
+        "with which to carry out my plans. Prejudice",
+        "cuts very little figure in the business world",
+        "if you have what the white man wants or if he",
+        "can use you in any way. He will look you up."
       ]
     },
     {
-      "id": "d2403917",
+      "id": "a70c97e4",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I think sometimes people of our own race who are in position to do so throw obstacles",
-        "in your way of progress. I think to a certain extent I have been such a victim."
+        "I think sometimes people of our own race",
+        "who are in position to do so throw obstacles",
+        "in your way of progress. I think to a",
+        "certain extent I have been such a victim."
       ]
     },
     {
-      "id": "b26f6b08",
+      "id": "b2382504",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "In getting into close, vital relation with my people in order to be of real",
-        "service.\" 1 \"I could say poverty; but it has been the spur that made me move",
-        "when I would have fallen by the wayside. Prejudice and lack of opportunity:",
-        "I cannot be harsh on either. Where prejudice existed I strove to soften by",
-        "acquaintance and have never failed. Opportunity: so far I have always been",
-        "able to be ready when it made its appearance to step in and get my share."
+        "In getting into close, vital relation with my",
+        "people in order to be of real service. 1 I",
+        "could say poverty; but it has been the spur",
+        "that made me move when I would have fallen by",
+        "the wayside. Prejudice and lack of opportunity:",
+        "I cannot be harsh on either. Where prejudice",
+        "existed I strove to soften by acquaintance",
+        "and have never failed. Opportunity: so far I",
+        "have always been able to be ready when it made",
+        "its appearance to step in and get my share."
       ]
     },
     {
-      "id": "e41086f0",
+      "id": "9ed8afae",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
         "Poor salary. Prejudice on account of progress",
@@ -886,151 +1292,218 @@
       ]
     },
     {
-      "id": "e7d13f76",
+      "id": "a105e3d2",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice has militated against increase of salary in service of city."
+        "Prejudice has militated against",
+        "increase of salary in service of city."
       ]
     },
     {
-      "id": "131a934a",
+      "id": "ea493d89",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice has been a great hindrance but not any more so than is usual",
-        "with colored people. My greatest hindrance has been lack of opportunity",
-        "as I have had to meet heavy obligations since leaving school."
+        "Prejudice has been a great hindrance but",
+        "not any more so than is usual with colored",
+        "people. My greatest hindrance has been",
+        "lack of opportunity as I have had to meet",
+        "heavy obligations since leaving school."
       ]
     },
     {
-      "id": "82c6bb8e",
+      "id": "bc2ccc90",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Lack of opportunity thru prejudice both among the more ignorant of my race as",
-        "well as among the white people has been a great hindrance to my advancement.",
-        "I have never been able to receive pay adequate to my qualifications."
+        "Lack of opportunity thru prejudice both among",
+        "the more ignorant of my race as well as among",
+        "the white people has been a great hindrance",
+        "to my advancement. I have never been able to",
+        "receive pay adequate to my qualifications."
       ]
     },
     {
-      "id": "ab8580b8",
+      "id": "e302bf00",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Southern prejudice has helped rather than hindered me."
+        "Southern prejudice has helped",
+        "rather than hindered me."
       ]
     },
     {
-      "id": "4316ae1a",
+      "id": "f8296c95",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice has been a great hindrance. The things which would tend to",
-        "advancement for white men have been overlooked in my case on account of color."
+        "Prejudice has been a great hindrance. The things",
+        "which would tend to advancement for white men have",
+        "been overlooked in my case on account of color."
       ]
     },
     {
-      "id": "8cdc2fd7",
+      "id": "4153d9d2",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The same every colored man meets. Menial positions; poor pay as a teacher;",
-        "fidelity to my race, which led me to decline a high position on a railroad",
-        "in Georgia which I could have had by passing for white. I could get only",
-        "about two-thirds the salary paid to a white teacher of the same grade."
+        "The same every colored man meets. Menial",
+        "positions; poor pay as a teacher; fidelity",
+        "to my race, which led me to decline a high",
+        "position on a railroad in Georgia which",
+        "I could have had by passing for white. I",
+        "could get only about two-thirds the salary",
+        "paid to a white teacher of the same grade."
       ]
     },
     {
-      "id": "3b106382",
+      "id": "6a8d6e6b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "While I have no great complaint to make, I think perhaps my life would have",
-        "been larger and far different but for my color, tho the fact that 1 was",
-        "elected to public office in a white community shows that I have escaped much",
-        "of the race prejudice with which the race has to contend. \"The lack of money",
-        "has been one of the drawbacks in my case. I never allowed prejudice to worry",
-        "me. I always attended to my own business and let other people do the same."
+        "While I have no great complaint to make, I",
+        "think perhaps my life would have been larger",
+        "and far different but for my color, tho the",
+        "fact that 1 was elected to public office in a",
+        "white community shows that I have escaped much",
+        "of the race prejudice with which the race has",
+        "to contend. The lack of money has been one",
+        "of the drawbacks in my case. I never allowed",
+        "prejudice to worry me. I always attended to my",
+        "own business and let other people do the same."
       ]
     },
     {
-      "id": "158afa28",
+      "id": "a078ff33",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "My opportunities have been very good. I have often",
-        "been able to cross the bounds set by prejudice."
+        "My opportunities have been very",
+        "good. I have often been able to",
+        "cross the bounds set by prejudice."
       ]
     },
     {
-      "id": "3aee2428",
+      "id": "33ca4fde",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I have not had access to hospital and clinical facilities",
-        "to keep up and perfect myself in my professional work."
+        "I have not had access to hospital and",
+        "clinical facilities to keep up and",
+        "perfect myself in my professional work."
       ]
     },
     {
-      "id": "496b3b89",
+      "id": "2bfe7243",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice has hindered me from becoming head physician",
-        "here. I am eldest in point of location here."
+        "Prejudice has hindered me from",
+        "becoming head physician here. I am",
+        "eldest in point of location here."
       ]
     },
     {
-      "id": "2625a661",
+      "id": "c8cfa05b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I have never allowed prejudice to crush me. With me it has been more of a stimulus.",
-        "It is an awful fact and works with a maliciousness that is willful and premeditated",
-        "but it is wanting in substance; it is not founded on the rock of reason and truth. It",
-        "is unthinking and blind and will, therefore, ultimately work its own destruction."
+        "I have never allowed prejudice to crush me.",
+        "With me it has been more of a stimulus. It is an",
+        "awful fact and works with a maliciousness that",
+        "is willful and premeditated but it is wanting in",
+        "substance; it is not founded on the rock of reason",
+        "and truth. It is unthinking and blind and will,",
+        "therefore, ultimately work its own destruction."
       ]
     },
     {
-      "id": "b1121d58",
+      "id": "c1fa5cf0",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Chief hindrance perhaps is my desire to always draw salary rather than take",
-        "chance in business. Prejudice has made me less prominent as an engineer, kept",
-        "from me good paying positions and forced me to accept less pay for the same",
-        "work. All of my classmates who are white are drawing larger salaries than I."
+        "Chief hindrance perhaps is my desire to",
+        "always draw salary rather than take chance in",
+        "business. Prejudice has made me less prominent",
+        "as an engineer, kept from me good paying",
+        "positions and forced me to accept less pay for",
+        "the same work. All of my classmates who are",
+        "white are drawing larger salaries than I."
       ]
     },
     {
-      "id": "4ce8d471",
+      "id": "b0048c27",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Doing same or more work for less money than my white comrades.",
-        "No incentive to be anything better than what I am. Difficulty in",
-        "obtaining promotion over white competitors or even along with them."
+        "Doing same or more work for less money than my",
+        "white comrades. No incentive to be anything better",
+        "than what I am. Difficulty in obtaining promotion",
+        "over white competitors or even along with them."
       ]
     },
     {
-      "id": "d485aecf",
+      "id": "69aaac1a",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice among colored people against their own college men is a hindrance."
+        "Prejudice among colored people against",
+        "their own college men is a hindrance."
       ]
     },
     {
-      "id": "39663f65",
+      "id": "c39a1b26",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I have gone steadily on and have done whatever has been my duty so far as I have",
-        "been able to see my duty. I have not been directly hindered in my work, hence",
-        "prejudice has hindered me in a general way in proportion as it has impeded my race."
+        "I have gone steadily on and have done whatever",
+        "has been my duty so far as I have been able to see",
+        "my duty. I have not been directly hindered in my",
+        "work, hence prejudice has hindered me in a general",
+        "way in proportion as it has impeded my race."
       ]
     },
     {
-      "id": "e72fbf9f",
+      "id": "e1ed9329",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I have succeeded fairly well in my profession but have been prevented from reaching",
-        "that prominence in it which I might have otherwise reached by the awful race prejudice",
-        "that exists here as elsewhere. Then the colored lawyer does not have the stimulus",
-        "to exertion the white lawyer has because he knows the honors and emoluments of the",
-        "profession are denied him because of his race. No matter what his excellence or fitness",
-        "he can never reach the bench or have retainers from large corporations. The truth is",
-        "that the colored lawyer to succeed at all must be far beyond the average white lawyer."
+        "I have succeeded fairly well in my profession",
+        "but have been prevented from reaching that",
+        "prominence in it which I might have otherwise",
+        "reached by the awful race prejudice that exists",
+        "here as elsewhere. Then the colored lawyer does",
+        "not have the stimulus to exertion the white lawyer",
+        "has because he knows the honors and emoluments",
+        "of the profession are denied him because of",
+        "his race. No matter what his excellence or",
+        "fitness he can never reach the bench or have",
+        "retainers from large corporations. The truth",
+        "is that the colored lawyer to succeed at all",
+        "must be far beyond the average white lawyer."
       ]
     },
     {
-      "id": "7949be60",
+      "id": "69f10d16",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
         "Prejudice circumscribed the sphere of activities",
@@ -1038,27 +1511,38 @@
       ]
     },
     {
-      "id": "9ad68295",
+      "id": "7bf5e6f1",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Race prejudice has undoubtedly lessened my opportunities but on the other",
-        "hand has served indirectly to make me use such opportunities as I have",
-        "had to a better advantage than I would otherwise have done possibly."
+        "Race prejudice has undoubtedly lessened my",
+        "opportunities but on the other hand has served",
+        "indirectly to make me use such opportunities",
+        "as I have had to a better advantage than",
+        "I would otherwise have done possibly."
       ]
     },
     {
-      "id": "bc927499",
+      "id": "b20eda94",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Lack of means to procure needed facilities to carry out and plan my line",
-        "of work for myself and for my pupils. A desire on the part of school",
-        "boards to restrict us in our efforts to secure a sufficient number of, and",
-        "capable, efficient teachers, well equipped laboratories and libraries. I",
-        "taught physics and chemistry in a laboratory in --- furnished by ourselves."
+        "Lack of means to procure needed facilities to",
+        "carry out and plan my line of work for myself",
+        "and for my pupils. A desire on the part of",
+        "school boards to restrict us in our efforts to",
+        "secure a sufficient number of, and capable,",
+        "efficient teachers, well equipped laboratories",
+        "and libraries. I taught physics and chemistry",
+        "in a laboratory in --- furnished by ourselves."
       ]
     },
     {
-      "id": "0b1846c7",
+      "id": "8c6e32d0",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
         "In some places silent opposition to Negro college",
@@ -1066,149 +1550,219 @@
       ]
     },
     {
-      "id": "151644cf",
+      "id": "1329746e",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice is always present but I have found far more opportunity than prejudice, i. e.",
-        "prejudice that hindered in any vital sense. The greatest hindrance is the indifference",
-        "of my own people to the necessity for unity and increased, well-directed activity.",
-        "Prejudice has made me work harder and so has proved many times a blessing in disguise."
+        "Prejudice is always present but I have found",
+        "far more opportunity than prejudice, i. e.",
+        "prejudice that hindered in any vital sense.",
+        "The greatest hindrance is the indifference",
+        "of my own people to the necessity for unity",
+        "and increased, well-directed activity.",
+        "Prejudice has made me work harder and so has",
+        "proved many times a blessing in disguise."
       ]
     },
     {
-      "id": "a4bd4253",
+      "id": "ec36b11b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "It is my belief that prejudice is a spur to serious",
-        "endeavor on the part of intelligent colored men."
+        "It is my belief that prejudice is",
+        "a spur to serious endeavor on the",
+        "part of intelligent colored men."
       ]
     },
     {
-      "id": "38c3021e",
+      "id": "09e90614",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice and proscription have operated to my disadvantage",
-        "to the extent of cooling ardor and chilling aspiration."
+        "Prejudice and proscription have operated",
+        "to my disadvantage to the extent of",
+        "cooling ardor and chilling aspiration."
       ]
     },
     {
-      "id": "5479f165",
+      "id": "4b0011a1",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice and lack of opportunity have retarded my progress but by industry,",
-        "economy, conservatism and perseverance I have in a measure overcome them."
+        "Prejudice and lack of opportunity have",
+        "retarded my progress but by industry,",
+        "economy, conservatism and perseverance",
+        "I have in a measure overcome them."
       ]
     },
     {
-      "id": "d6ddf90e",
+      "id": "dc1ed03b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice against the higher education of Negroes."
+        "Prejudice against the higher",
+        "education of Negroes."
       ]
     },
     {
-      "id": "63f168c4",
+      "id": "42e9f0dd",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice denies us the privilege of enjoying the confidence and association of",
-        "many superior minds. It has denied me the opportunity to enjoy or be benefited",
-        "by the large number of programs and meetings of a public or semi-public",
-        "nature where a great deal of information and inspiration may be obtained."
+        "Prejudice denies us the privilege of enjoying",
+        "the confidence and association of many superior",
+        "minds. It has denied me the opportunity to",
+        "enjoy or be benefited by the large number",
+        "of programs and meetings of a public or",
+        "semi-public nature where a great deal of",
+        "information and inspiration may be obtained."
       ]
     },
     {
-      "id": "e890fd20",
+      "id": "151911f2",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "My chief hindrance has been lack of opportunity. There is not enough business",
-        "among colored people to employ their young men and women when they finish school."
+        "My chief hindrance has been lack of",
+        "opportunity. There is not enough business",
+        "among colored people to employ their young",
+        "men and women when they finish school."
       ]
     },
     {
-      "id": "f3109daf",
+      "id": "cc8a0df7",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "It is hard to specify the ways in which prejudice has worked against",
-        "one. No man who has been hampered by or has been compelled to contend",
-        "against prejudice has been able to reach his best and biggest self."
+        "It is hard to specify the ways in which",
+        "prejudice has worked against one. No man who",
+        "has been hampered by or has been compelled",
+        "to contend against prejudice has been",
+        "able to reach his best and biggest self."
       ]
     },
     {
-      "id": "2d897a42",
+      "id": "585d18f5",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice has been from the very beginning the chief hindrance in my life.",
-        "I have been turned from printing establishments because of objection to my",
-        "color. I have been engaged for clerical work and then discharged when my color",
-        "became known. I t has operated against me in oratorical contests at college."
+        "Prejudice has been from the very beginning",
+        "the chief hindrance in my life. I have been",
+        "turned from printing establishments because",
+        "of objection to my color. I have been engaged",
+        "for clerical work and then discharged when",
+        "my color became known. I t has operated",
+        "against me in oratorical contests at college."
       ]
     },
     {
-      "id": "d5185f81",
+      "id": "3da4ea81",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I cannot complain of lack of opportunity. I find the old",
-        "adage holds true: Where there is a will there is a way."
+        "I cannot complain of lack of opportunity.",
+        "I find the old adage holds true: Where",
+        "there is a will there is a way."
       ]
     },
     {
-      "id": "0bdc9f9d",
+      "id": "bc849523",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice has been no barrier when it came to",
-        "acquiring property, but if often crushes my spirit."
+        "Prejudice has been no barrier when",
+        "it came to acquiring property,",
+        "but if often crushes my spirit."
       ]
     },
     {
-      "id": "9d7fcd84",
+      "id": "81322681",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "In my estimation my chief hindrance has been that I have never had all the equipment",
-        "which I felt should be mine to make the greatest possible success in the tasks which have",
-        "been mine. Tho measurably successful in all my career I have so often felt the need of",
-        "more mastery over the immediate problems of business. Prejudice has had to do with my life",
-        "and experience as with others. Promotions which would have been given freely and early to",
-        "a man of another racial identity, I have had to labor long for. Yet in all fairness I must",
-        "say that whereas prejudice, damnable and low, is continually operating against me, yet I",
-        "have won so far. I have got what I went after, after a fight nevertheless, yet got it."
+        "In my estimation my chief hindrance has been",
+        "that I have never had all the equipment which I",
+        "felt should be mine to make the greatest possible",
+        "success in the tasks which have been mine. Tho",
+        "measurably successful in all my career I have",
+        "so often felt the need of more mastery over the",
+        "immediate problems of business. Prejudice has had",
+        "to do with my life and experience as with others.",
+        "Promotions which would have been given freely",
+        "and early to a man of another racial identity, I",
+        "have had to labor long for. Yet in all fairness",
+        "I must say that whereas prejudice, damnable",
+        "and low, is continually operating against me,",
+        "yet I have won so far. I have got what I went",
+        "after, after a fight nevertheless, yet got it."
       ]
     },
     {
-      "id": "99ef07e1",
+      "id": "9b7f2078",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I cannot buy or rent respectable property without the greatest embarrassment",
-        "and sometimes not even then. This gives a set-back to my dignity and influence."
+        "I cannot buy or rent respectable property",
+        "without the greatest embarrassment and",
+        "sometimes not even then. This gives a",
+        "set-back to my dignity and influence."
       ]
     },
     {
-      "id": "29bc3624",
+      "id": "f9e29b5d",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice has closed several doors of opportunity along the line",
-        "of educational advantages; was responsible for a low wage some",
-        "years; and caused much embarrassment in ways whose name is legion."
+        "Prejudice has closed several doors of opportunity",
+        "along the line of educational advantages; was",
+        "responsible for a low wage some years; and caused",
+        "much embarrassment in ways whose name is legion."
       ]
     },
     {
-      "id": "48000528",
+      "id": "4bfd0198",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "My chief hindrance has been the treachery and vanity of the namby-pamby Negro. To",
-        "put it another way my chief hindrance has been my inability to play the hypocrite."
+        "My chief hindrance has been the treachery",
+        "and vanity of the namby-pamby Negro. To",
+        "put it another way my chief hindrance has",
+        "been my inability to play the hypocrite."
       ]
     },
     {
-      "id": "28efb83f",
+      "id": "ea23e63b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice is the chief hindrance in the way of all college-bred Negro men who",
-        "want to make the most of life. Prejudice, I think, has made me suspicious of all",
-        "white people, sometimes with injustice to them, I fear, and with injury to myself."
+        "Prejudice is the chief hindrance in the",
+        "way of all college-bred Negro men who",
+        "want to make the most of life. Prejudice,",
+        "I think, has made me suspicious of all",
+        "white people, sometimes with injustice to",
+        "them, I fear, and with injury to myself."
       ]
     },
     {
-      "id": "4d61adfb",
+      "id": "d59f5b23",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
         "My chief hindrance is that I am deprived of",
@@ -1216,767 +1770,1155 @@
       ]
     },
     {
-      "id": "04c18275",
+      "id": "655fb996",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I feel that only half the measure of the possibilities of my career",
-        "has been filled because prejudice has been a handicap to the full and",
-        "free prosecution of my professional labors. Most of the Negros believe",
-        "that to succeed in our efforts they must have a white advocate."
+        "I feel that only half the measure of the",
+        "possibilities of my career has been filled because",
+        "prejudice has been a handicap to the full and",
+        "free prosecution of my professional labors.",
+        "Most of the Negros believe that to succeed in",
+        "our efforts they must have a white advocate."
       ]
     },
     {
-      "id": "18cd68b4",
+      "id": "42f29df9",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "There is in this community a kindly growing sentiment on the part of the",
-        "whites toward colored people and so prejudice does not interrupt much.",
-        "My chief hindrance is due to the fact that it is difficult to get my own",
-        "people to appreciate in a large way our opportunities for growth and power."
+        "There is in this community a kindly growing",
+        "sentiment on the part of the whites toward colored",
+        "people and so prejudice does not interrupt much.",
+        "My chief hindrance is due to the fact that it is",
+        "difficult to get my own people to appreciate in a",
+        "large way our opportunities for growth and power."
       ]
     },
     {
-      "id": "e724b68a",
+      "id": "20f525cb",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Lack of confidence among our people to intrust their business with one another and",
-        "to do business with each other generally. I might term it \u2018race pride.\u2019 I think it",
-        "is due more to absolute ignorance. However, we are coming to a better understanding",
-        "of each other and business confidence in each other is being developed both on",
-        "account of oppression and prejudice and the preaching of self-help among ourselves."
+        "Lack of confidence among our people to intrust",
+        "their business with one another and to do",
+        "business with each other generally. I might",
+        "term it \u2018race pride.\u2019 I think it is due more to",
+        "absolute ignorance. However, we are coming to a",
+        "better understanding of each other and business",
+        "confidence in each other is being developed",
+        "both on account of oppression and prejudice and",
+        "the preaching of self-help among ourselves."
       ]
     },
     {
-      "id": "82e4c935",
+      "id": "7d2c28ad",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice and lack of opportunity have been at once my handicap and my",
-        "constant stimulant. Daily experience with them has kept me keyed up to",
-        "constant exertion and the doing of my best. Expecting no quarter i t has been",
-        "with me a fight to the finish and a point of manhood and honor to succeed."
+        "Prejudice and lack of opportunity have",
+        "been at once my handicap and my constant",
+        "stimulant. Daily experience with them has",
+        "kept me keyed up to constant exertion and the",
+        "doing of my best. Expecting no quarter i t",
+        "has been with me a fight to the finish and",
+        "a point of manhood and honor to succeed."
       ]
     },
     {
-      "id": "8f4a40a3",
+      "id": "0af3c18c",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Lack of proper aspiration among the masses. Failure of the people - to",
-        "appreciate real ability. Jealousy and prejudice among certain leaders."
+        "Lack of proper aspiration among the",
+        "masses. Failure of the people - to",
+        "appreciate real ability. Jealousy and",
+        "prejudice among certain leaders."
       ]
     },
     {
-      "id": "f01db8b7",
+      "id": "82147b0e",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "My greatest hindrance was lack of public school opportunity",
-        "early in life. A lot of good time was lost in those days."
+        "My greatest hindrance was lack of public",
+        "school opportunity early in life. A lot",
+        "of good time was lost in those days."
       ]
     },
     {
-      "id": "2b358883",
+      "id": "8e31cb9d",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice hinders a man all the time and everywhere in doing a man's",
-        "work. No man can do his best while hampered by senseless prejudice."
+        "Prejudice hinders a man all the time and",
+        "everywhere in doing a man's work. No man can do",
+        "his best while hampered by senseless prejudice."
       ]
     },
     {
-      "id": "c5e69229",
+      "id": "75cfe568",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice of ignorant blacks as well as whites does a great",
-        "deal to hinder. The uneducated black is very jealous of his",
-        "educated brother and will do lots to hinder his progress."
+        "Prejudice of ignorant blacks as well as whites",
+        "does a great deal to hinder. The uneducated",
+        "black is very jealous of his educated brother",
+        "and will do lots to hinder his progress."
       ]
     },
     {
-      "id": "3211dab8",
+      "id": "40064e56",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "In my work I have felt perhaps more than anything else the",
-        "prohibition from public library facilities in such a city as Atlanta."
+        "In my work I have felt perhaps more than",
+        "anything else the prohibition from public",
+        "library facilities in such a city as Atlanta."
       ]
     },
     {
-      "id": "48e22549",
+      "id": "1da23100",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice has played so small a part that it can be considered a negligible",
-        "quantity. Perhaps I have not followed the paths in which one would meet",
-        "it so keenly. My chief hindrance has possibly come from within: the",
-        "ignorance of the big opportunities that await the average young Negro man",
-        "of education and energy in the business world provided he works eternally."
+        "Prejudice has played so small a part that",
+        "it can be considered a negligible quantity.",
+        "Perhaps I have not followed the paths in which",
+        "one would meet it so keenly. My chief hindrance",
+        "has possibly come from within: the ignorance of",
+        "the big opportunities that await the average",
+        "young Negro man of education and energy in the",
+        "business world provided he works eternally."
       ]
     },
     {
-      "id": "e02c1fa7",
+      "id": "46589967",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "A very limited field to choose positions from, as compared to many of my white",
-        "fellow students whose academic standing was below mine. Social conditions in",
-        "my home state shut me out of the career I would have naturally sought there."
+        "A very limited field to choose positions from,",
+        "as compared to many of my white fellow students",
+        "whose academic standing was below mine. Social",
+        "conditions in my home state shut me out of the",
+        "career I would have naturally sought there."
       ]
     },
     {
-      "id": "81129cfc",
+      "id": "b7eea184",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Prejudice has made me fight the harder to overcome the disabilities",
-        "of caste. I t has kept me alive and made me yearn to accomplish",
-        "something, nerved me to live and endure suffering and sorrow of any",
-        "kind in order to see the ultimate triumph of righteous civic ideals."
+        "Prejudice has made me fight the harder to",
+        "overcome the disabilities of caste. I t has",
+        "kept me alive and made me yearn to accomplish",
+        "something, nerved me to live and endure suffering",
+        "and sorrow of any kind in order to see the",
+        "ultimate triumph of righteous civic ideals."
       ]
     },
     {
-      "id": "cf305dbf",
+      "id": "a0710572",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Rather difficult to answer as I have worked all the while under conditions that I",
-        "saw little hope of changing hence gave little thot to what I might have done under",
-        "different conditions. I feel sure the lack of opportunity for full exercise of ability",
-        "in certain lines has, perhaps in some cases unconsciously, served to stifle ambition",
-        "and prevent activity that might have been useful to communities in which I have",
-        "lived. In some instances I think prejudice has nerved me to more persistent effort."
+        "Rather difficult to answer as I have worked all",
+        "the while under conditions that I saw little",
+        "hope of changing hence gave little thot to what",
+        "I might have done under different conditions.",
+        "I feel sure the lack of opportunity for full",
+        "exercise of ability in certain lines has, perhaps",
+        "in some cases unconsciously, served to stifle",
+        "ambition and prevent activity that might have",
+        "been useful to communities in which I have",
+        "lived. In some instances I think prejudice",
+        "has nerved me to more persistent effort."
       ]
     },
     {
-      "id": "42bb563a",
+      "id": "96c91b8e",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The color line has prevented a chance for scientific and literary work."
+        "The color line has prevented a chance",
+        "for scientific and literary work."
       ]
     },
     {
-      "id": "0bc273dc",
+      "id": "b13b68ec",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Race prejudice prevents me being retained as counsel where otherwise I would be",
-        "employed. It keeps away the most remunerative class of business. It compels me to accept",
-        "a smaller fee for work done and services rendered than would otherwise be the case. It",
-        "often causes me to contest in court for fees after they have been earned, when but for",
-        "the \u2018previous condition of servitude\u2019 of my ancestors said fees would be cheerfully",
-        "paid. No one is able to estimate the damage inflicted upon him by the forces which make",
-        "for ostracism and which impose a perennial and continued boycott because of race."
+        "Race prejudice prevents me being retained as",
+        "counsel where otherwise I would be employed.",
+        "It keeps away the most remunerative class of",
+        "business. It compels me to accept a smaller fee",
+        "for work done and services rendered than would",
+        "otherwise be the case. It often causes me to",
+        "contest in court for fees after they have been",
+        "earned, when but for the \u2018previous condition",
+        "of servitude\u2019 of my ancestors said fees would",
+        "be cheerfully paid. No one is able to estimate",
+        "the damage inflicted upon him by the forces",
+        "which make for ostracism and which impose a",
+        "perennial and continued boycott because of race."
       ]
     },
     {
-      "id": "a6d5b040",
+      "id": "3b065c71",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "1. Prejudice which debars me from work in institutions for which my training",
-        "fits me. 2. Superficially trained Negroes who, like the dog in the manger, have",
-        "ever tried to hinder my progress. 3. The false notion that the Negro scholar",
-        "does not deserve as much pay for intellectual work as a white man does for the",
-        "same work. 4. Poor salary which has made it necessary for me to abandon many",
-        "of my researches at an early stage. Indeed what little I have accomplished has",
-        "been at the expense of the comforts and often of the necessities of life."
+        "1. Prejudice which debars me from work in",
+        "institutions for which my training fits me. 2.",
+        "Superficially trained Negroes who, like the",
+        "dog in the manger, have ever tried to hinder",
+        "my progress. 3. The false notion that the",
+        "Negro scholar does not deserve as much pay for",
+        "intellectual work as a white man does for the",
+        "same work. 4. Poor salary which has made it",
+        "necessary for me to abandon many of my researches",
+        "at an early stage. Indeed what little I have",
+        "accomplished has been at the expense of the",
+        "comforts and often of the necessities of life."
       ]
     }
   ],
   "pl": [
     {
-      "id": "61833e44",
+      "id": "f06decb7",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The hope of the Negro is a Christian education of heart, head and hand."
+        "The hope of the Negro is a Christian",
+        "education of heart, head and hand."
       ]
     },
     {
-      "id": "843500d1",
+      "id": "d27ccb23",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "In my opinion the Negro needs nothing so much as to be let alone. He wants not special",
-        "attention either in the legislative hall or out. He wants to be treated and regarded as",
-        "an American citizen in fact. He asks for no more than he merits but he wants all he does",
-        "merit. To reach this point he must contend for all the term implies. Life is a battle and",
-        "every man must be a fighter. Playing the baby-act will not accomplish anything. Brave men",
-        "will not only suffer hardships in maintaining their rights but will face dangers. Long",
-        "since I came to the conclusion that right living on our part would not alone solve the",
-        "problem. It is not the worthless, ignorant spendthrift among us that arouses the white",
-        "man\u2019s opposition, repression, oppression, and prejudice. That class knows \u2018his place.\u2019"
+        "In my opinion the Negro needs nothing so",
+        "much as to be let alone. He wants not special",
+        "attention either in the legislative hall or",
+        "out. He wants to be treated and regarded as an",
+        "American citizen in fact. He asks for no more",
+        "than he merits but he wants all he does merit.",
+        "To reach this point he must contend for all the",
+        "term implies. Life is a battle and every man",
+        "must be a fighter. Playing the baby-act will not",
+        "accomplish anything. Brave men will not only",
+        "suffer hardships in maintaining their rights",
+        "but will face dangers. Long since I came to the",
+        "conclusion that right living on our part would not",
+        "alone solve the problem. It is not the worthless,",
+        "ignorant spendthrift among us that arouses the",
+        "white man\u2019s opposition, repression, oppression,",
+        "and prejudice. That class knows \u2018his place.\u2019"
       ]
     },
     {
-      "id": "e89c85d2",
+      "id": "acf9ba0f",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I have an abiding hope for the future of the race. But great suffering and loss are in",
-        "store for the race thru error. There is an attempt in a large part of the country to",
-        "establish a caste system of education for the Negro. . . . . In the state institutions",
-        "they are taking out the higher studies and promoting mediocre men and women, paying them",
-        "in proportion much larger salaries than they are paying college-bred Negro teachers."
+        "I have an abiding hope for the future of the",
+        "race. But great suffering and loss are in store",
+        "for the race thru error. There is an attempt in",
+        "a large part of the country to establish a caste",
+        "system of education for the Negro. . . . . In the",
+        "state institutions they are taking out the higher",
+        "studies and promoting mediocre men and women,",
+        "paying them in proportion much larger salaries",
+        "than they are paying college-bred Negro teachers."
       ]
     },
     {
-      "id": "9117ffff",
+      "id": "9b0aee45",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I firmly believe that the destiny of the American Negro lies largely in his own",
-        "hands. I have never yet seen a self-respecting, honest and industrious Negro, educated",
-        "or uneducated, who did not have the respect and good-will of the better class of",
-        "whites with whom he comes in contact. . . . I believe that we as individuals must",
-        "take as our weapons honesty, industry and economy and wage a war against prejudice."
+        "I firmly believe that the destiny of the",
+        "American Negro lies largely in his own hands. I",
+        "have never yet seen a self-respecting, honest",
+        "and industrious Negro, educated or uneducated,",
+        "who did not have the respect and good-will of",
+        "the better class of whites with whom he comes in",
+        "contact. . . . I believe that we as individuals",
+        "must take as our weapons honesty, industry and",
+        "economy and wage a war against prejudice."
       ]
     },
     {
-      "id": "3166a2c1",
+      "id": "657cae19",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro race in America is fortunate. The country is still far from being",
-        "developed or crowded. Tho race prejudice is rampant it is still too weak to",
-        "suppress any class which has the determination to rise. There is still plenty of",
-        "room. Less complaint and more effort will pull us up with the dominant class.",
-        "We should seek and develop all the thinly settled parts of this country."
+        "The Negro race in America is fortunate. The",
+        "country is still far from being developed",
+        "or crowded. Tho race prejudice is rampant",
+        "it is still too weak to suppress any class",
+        "which has the determination to rise. There",
+        "is still plenty of room. Less complaint and",
+        "more effort will pull us up with the dominant",
+        "class. We should seek and develop all the",
+        "thinly settled parts of this country."
       ]
     },
     {
-      "id": "4824a647",
+      "id": "55fe7d2e",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro must continue to contend for all the rights, privileges, and",
-        "opportunities accorded other American citizens. He must be unyielding this respect.",
-        "He ought to ally himself with any political party that will further these ends."
+        "The Negro must continue to contend for all the",
+        "rights, privileges, and opportunities accorded",
+        "other American citizens. He must be unyielding",
+        "this respect. He ought to ally himself with any",
+        "political party that will further these ends."
       ]
     },
     {
-      "id": "0b4e323e",
+      "id": "137e9fc2",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I feel that the Negro has many reasons to be hopeful. Of course there are many things",
-        "that are deplorable; but on the other hand there are so many opportunities already open to",
-        "us that we do not take advantage of that we would do well to spend less time in finding",
-        "fault and use that time preparing ourselves for larger activities and more usefulness."
+        "I feel that the Negro has many reasons to be",
+        "hopeful. Of course there are many things that",
+        "are deplorable; but on the other hand there",
+        "are so many opportunities already open to",
+        "us that we do not take advantage of that we",
+        "would do well to spend less time in finding",
+        "fault and use that time preparing ourselves",
+        "for larger activities and more usefulness."
       ]
     },
     {
-      "id": "ecef1565",
+      "id": "bb72aa9d",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "My own confident hope is that there will be ultimately",
-        "a satisfactory issue to all present race difficulties."
+        "My own confident hope is that there",
+        "will be ultimately a satisfactory issue",
+        "to all present race difficulties."
       ]
     },
     {
-      "id": "21c065b9",
+      "id": "4173da98",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I regard it as essential that political privileges be granted to men regardless of",
-        "color, the same qualifications demanded of all in an absolutely impartial manner. 1",
-        "regard education as indispensable and believe in equal facilities for it. . . . .",
-        "The problem of the American Negro is difficult to solve upon a basis of perpetual",
-        "segregation. It is particularly desirable that there shall be no segregation in the",
-        "higher institutions of learning. Industrial and manual activities should be elements",
-        "in the course of study for colored people as for all people but not the only elements",
-        "nor even the principal ones. I think that the colored people should be stimulated to",
-        "acquire property and to become fixed in their communities. In order that this may happen",
-        "it is necessary to secure for the Negro greater protection of life and property."
+        "I regard it as essential that political",
+        "privileges be granted to men regardless of color,",
+        "the same qualifications demanded of all in an",
+        "absolutely impartial manner. 1 regard education",
+        "as indispensable and believe in equal facilities",
+        "for it. . . . . The problem of the American Negro",
+        "is difficult to solve upon a basis of perpetual",
+        "segregation. It is particularly desirable that",
+        "there shall be no segregation in the higher",
+        "institutions of learning. Industrial and manual",
+        "activities should be elements in the course of",
+        "study for colored people as for all people but",
+        "not the only elements nor even the principal",
+        "ones. I think that the colored people should be",
+        "stimulated to acquire property and to become",
+        "fixed in their communities. In order that this",
+        "may happen it is necessary to secure for the",
+        "Negro greater protection of life and property."
       ]
     },
     {
-      "id": "5505f4bb",
+      "id": "a61b4e05",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "With education and the right to vote\u2014for both of which the Negro must",
-        "work and fight daily\u2014he will win the place which is his here in America."
+        "With education and the right to vote\u2014for both",
+        "of which the Negro must work and fight daily\u2014he",
+        "will win the place which is his here in America."
       ]
     },
     {
-      "id": "62878225",
+      "id": "3c5b0b35",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Persistent, definite and determined effort along all legitimate",
-        "lines of education, coupled with an all-controlling desire to stick",
-        "to the right, will not only win for the Negro the respect of America",
-        "but will give him a place immortal in the history of the world."
+        "Persistent, definite and determined effort",
+        "along all legitimate lines of education, coupled",
+        "with an all-controlling desire to stick to",
+        "the right, will not only win for the Negro",
+        "the respect of America but will give him a",
+        "place immortal in the history of the world."
       ]
     },
     {
-      "id": "95491e9b",
+      "id": "7e8e760d",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Educate him in the highest and best way possible so as to enable him to",
-        "successfully compete with every other element of Americanism in every walk of life."
+        "Educate him in the highest and best way",
+        "possible so as to enable him to successfully",
+        "compete with every other element of",
+        "Americanism in every walk of life."
       ]
     },
     {
-      "id": "c07e327e",
+      "id": "92b7694a",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The accumulation of property will do more to relieve the American Negro of many",
-        "hardships and disadvantages than any other agency. This should not be the case but it",
-        "is. The ability to think well (generally the result of thoro training) should outrank",
-        "the ability to live well (the result of accumulated wealth). First train the mind;",
-        "then in order to be highly regarded by Americans own some of the world\u2019s goods."
+        "The accumulation of property will do more to",
+        "relieve the American Negro of many hardships",
+        "and disadvantages than any other agency. This",
+        "should not be the case but it is. The ability",
+        "to think well (generally the result of thoro",
+        "training) should outrank the ability to live well",
+        "(the result of accumulated wealth). First train",
+        "the mind; then in order to be highly regarded",
+        "by Americans own some of the world\u2019s goods."
       ]
     },
     {
-      "id": "c8231b17",
+      "id": "2957fb39",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro race would be much stronger if there were more who could see the benefit",
-        "of a college education, be it in the professional line or in trade. I think the",
-        "higher education of the Negro race will tend towards reducing race prejudice."
+        "The Negro race would be much stronger if there",
+        "were more who could see the benefit of a college",
+        "education, be it in the professional line or in",
+        "trade. I think the higher education of the Negro",
+        "race will tend towards reducing race prejudice."
       ]
     },
     {
-      "id": "b88becc9",
+      "id": "75508ec8",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "1. The Negro must be an active voter. 2. He must be encouraged to engage in what he is",
-        "by nature fitted to follow, this not to be determined by one man or set of men but by the",
-        "individual. 3. He should study the conditions of his community and enter such activities",
-        "as he can. He should strive to establish himself in every line of business possible. 4. He",
-        "should study mining and manufacturing. He should become an intelligent farmer, vegetable",
-        "raiser and cotton producer. 5. He should be more thoroly grounded in mechanics that he",
-        "may become an inventor. Our colleges could look out for this. There should be no cheap",
-        "course in mechanics. 6. Our schools and other institutions should teach everything that",
-        "is necessary to make the pupils serviceable and life enjoyable. 7. The Negro should be",
-        "urged to content peaceably and earnestly for everything that is needed to make him a man."
+        "1. The Negro must be an active voter. 2. He must",
+        "be encouraged to engage in what he is by nature",
+        "fitted to follow, this not to be determined by",
+        "one man or set of men but by the individual. 3.",
+        "He should study the conditions of his community",
+        "and enter such activities as he can. He should",
+        "strive to establish himself in every line of",
+        "business possible. 4. He should study mining and",
+        "manufacturing. He should become an intelligent",
+        "farmer, vegetable raiser and cotton producer. 5.",
+        "He should be more thoroly grounded in mechanics",
+        "that he may become an inventor. Our colleges",
+        "could look out for this. There should be no",
+        "cheap course in mechanics. 6. Our schools and",
+        "other institutions should teach everything that",
+        "is necessary to make the pupils serviceable",
+        "and life enjoyable. 7. The Negro should be",
+        "urged to content peaceably and earnestly for",
+        "everything that is needed to make him a man."
       ]
     },
     {
-      "id": "e1f05ba5",
+      "id": "d128aa4b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro is passing through a critical period of his existence in American and no one",
-        "can say with certainty what the result will be. To my mind, however, it is clear that",
-        "he will come out with a loss of political power and interest, but greatly strengthened",
-        "in wealth, intelligence, and manhood which will ultimately force political recognition",
-        "and consideration and the full enjoyment of civil rights. The Negro is undergoing",
-        "a refining and hardening process which tho humiliating and painful will in the end",
-        "make him stronger and better and will prove a blessing to him and to his posterity."
+        "The Negro is passing through a critical period",
+        "of his existence in American and no one can",
+        "say with certainty what the result will be.",
+        "To my mind, however, it is clear that he will",
+        "come out with a loss of political power and",
+        "interest, but greatly strengthened in wealth,",
+        "intelligence, and manhood which will ultimately",
+        "force political recognition and consideration",
+        "and the full enjoyment of civil rights. The",
+        "Negro is undergoing a refining and hardening",
+        "process which tho humiliating and painful will",
+        "in the end make him stronger and better and will",
+        "prove a blessing to him and to his posterity."
       ]
     },
     {
-      "id": "c55548b9",
+      "id": "1eaecf5d",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "If the Negro is given protection and an equal opportunity",
-        "in the industrial world he will succeed as a race."
+        "If the Negro is given protection and",
+        "an equal opportunity in the industrial",
+        "world he will succeed as a race."
       ]
     },
     {
-      "id": "3c2318d7",
+      "id": "e186fc24",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I think that with better rural schools, longer terms, better teachers, a more",
-        "practical education for the masses and a higher and more thoro education for",
-        "the leaders, more effective and aggressive religious training with a practical",
-        "religion that we live and not simply talk and shout, we shall ultimately",
-        "build for ourselves character and accumulate wealth, a combination which",
-        "merits and demands respect. This done the future will take care of itself."
+        "I think that with better rural schools, longer",
+        "terms, better teachers, a more practical",
+        "education for the masses and a higher and more",
+        "thoro education for the leaders, more effective",
+        "and aggressive religious training with a",
+        "practical religion that we live and not simply",
+        "talk and shout, we shall ultimately build for",
+        "ourselves character and accumulate wealth, a",
+        "combination which merits and demands respect.",
+        "This done the future will take care of itself."
       ]
     },
     {
-      "id": "e97d2dbf",
+      "id": "295e6f08",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I believe the Negro should secure all the training the American school system,",
-        "public and private, can give. He should then enter some occupation, business or",
-        "professional, for which he seems fitted individually regardless of tradition or",
-        "prejudice. AS he labors he should link himself to every movement for the betterment",
-        "of the social and economic life of the community in which he casts his lot. He should",
-        "preserve a manly, courageous attitude on all questions pertaining to the Suture of his",
-        "race to the end that the traditional ideals of his people become a significant and",
-        "serviceable factor in American civilization. He must seek to show that his uplift,",
-        "political, social and religious, is necessary to the progress of all America."
+        "I believe the Negro should secure all the",
+        "training the American school system, public and",
+        "private, can give. He should then enter some",
+        "occupation, business or professional, for which",
+        "he seems fitted individually regardless of",
+        "tradition or prejudice. AS he labors he should",
+        "link himself to every movement for the betterment",
+        "of the social and economic life of the community",
+        "in which he casts his lot. He should preserve",
+        "a manly, courageous attitude on all questions",
+        "pertaining to the Suture of his race to the",
+        "end that the traditional ideals of his people",
+        "become a significant and serviceable factor in",
+        "American civilization. He must seek to show that",
+        "his uplift, political, social and religious,",
+        "is necessary to the progress of all America."
       ]
     },
     {
-      "id": "217e1ef8",
+      "id": "cafae12e",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro should occupy and improve every worthy position attainable. In a manly and",
-        "honorable way he should protest against any racial discrimination shown against him.",
-        "He should study carefully his white neighbor and strive in every honest way to live in",
-        "harmony with him. He should qualify himself politically as well as otherwise and become",
-        "interested in all questions affecting humanity in general and himself in particular."
+        "The Negro should occupy and improve every worthy",
+        "position attainable. In a manly and honorable",
+        "way he should protest against any racial",
+        "discrimination shown against him. He should study",
+        "carefully his white neighbor and strive in every",
+        "honest way to live in harmony with him. He should",
+        "qualify himself politically as well as otherwise",
+        "and become interested in all questions affecting",
+        "humanity in general and himself in particular."
       ]
     },
     {
-      "id": "d28efaea",
+      "id": "c627d6cf",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The ideal must be reached after: not on the basis of color or race or any such physical",
-        "divisions or distinctions, but on the basis of humanity. Only by the way of frank, full,",
-        "free opportunities can we hope for the ideal. The Negro American must he accorded absolute",
-        "social and political equality and all the rights guaranteed under a pure democracy."
+        "The ideal must be reached after: not on the",
+        "basis of color or race or any such physical",
+        "divisions or distinctions, but on the basis",
+        "of humanity. Only by the way of frank, full,",
+        "free opportunities can we hope for the ideal.",
+        "The Negro American must he accorded absolute",
+        "social and political equality and all the",
+        "rights guaranteed under a pure democracy."
       ]
     },
     {
-      "id": "6e89ccea",
+      "id": "296d2981",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "All kinds of activities are essential to the growth and proper",
-        "development of a people. Diversification in education and pursuit is",
-        "necessary if a people is to be of the highest good to the country."
+        "All kinds of activities are essential to",
+        "the growth and proper development of a",
+        "people. Diversification in education and",
+        "pursuit is necessary if a people is to",
+        "be of the highest good to the country."
       ]
     },
     {
-      "id": "def2cc3a",
+      "id": "a7a6b2b0",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Strong, well-trained leadership for the masses. Educational opportunities unrestricted",
-        "for all as the case may demand. Retention of the right of suffrage and the display",
-        "of more independence in the matter of voting. A better trained ministry to inculcate",
-        "sound moral teaching. The organizing in cities of clubs for civic improvement and",
-        "for demanding better grammar school training for Negro children and for teaching",
-        "the masses, as far as possible, the proper meaning and duties of citizenship."
+        "Strong, well-trained leadership for the",
+        "masses. Educational opportunities unrestricted",
+        "for all as the case may demand. Retention of",
+        "the right of suffrage and the display of more",
+        "independence in the matter of voting. A better",
+        "trained ministry to inculcate sound moral",
+        "teaching. The organizing in cities of clubs",
+        "for civic improvement and for demanding better",
+        "grammar school training for Negro children and",
+        "for teaching the masses, as far as possible,",
+        "the proper meaning and duties of citizenship."
       ]
     },
     {
-      "id": "9f409296",
+      "id": "34a5649e",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Encouraging business enterprises. Vigorously opposing the doctrine of",
-        "servility and submission-but not service. Co-operation as far as possible and",
-        "wherever warranted with fair and right-minded whites for civic improvement."
+        "Encouraging business enterprises. Vigorously",
+        "opposing the doctrine of servility and",
+        "submission-but not service. Co-operation as far",
+        "as possible and wherever warranted with fair",
+        "and right-minded whites for civic improvement."
       ]
     },
     {
-      "id": "2f1135a3",
+      "id": "5f27b55c",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "If the Negro is given a chance and equal rights as a citizen -he will eventually",
-        "climb as high and accomplish as much as any race or people has accomplished. A",
-        "college training is not had for him nor does it unfit him for usefulness as is often",
-        "said; but he is better able to meet the demands and responsibilities of the times."
+        "If the Negro is given a chance and equal rights",
+        "as a citizen -he will eventually climb as high",
+        "and accomplish as much as any race or people",
+        "has accomplished. A college training is not had",
+        "for him nor does it unfit him for usefulness as",
+        "is often said; but he is better able to meet",
+        "the demands and responsibilities of the times."
       ]
     },
     {
-      "id": "ed7a8778",
+      "id": "7ed5d13b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "In spite of the evidences of prejudice everywhere in our country, I believe",
-        "that the Negro will some day become a big factor in the political life of",
-        "the nation and occupy an enviable place in the economic development of the",
-        "United States. He has already made a marvelous record-a record that should",
-        "give every man with Negro blood in his veins the highest hope for the future."
+        "In spite of the evidences of prejudice everywhere",
+        "in our country, I believe that the Negro will",
+        "some day become a big factor in the political",
+        "life of the nation and occupy an enviable place",
+        "in the economic development of the United States.",
+        "He has already made a marvelous record-a record",
+        "that should give every man with Negro blood in",
+        "his veins the highest hope for the future."
       ]
     },
     {
-      "id": "450c30a6",
+      "id": "9bf0799b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "1 believe that the American Negro must live and die in America. Africa is",
-        "not his home for he would be an absolute stranger there. I believe in the",
-        "ultimate triumph of right. I believe that we will receive our rights and be",
-        "given full citizenship when we as a people demand the same 3rd not until then."
+        "1 believe that the American Negro must live",
+        "and die in America. Africa is not his home",
+        "for he would be an absolute stranger there.",
+        "I believe in the ultimate triumph of right.",
+        "I believe that we will receive our rights",
+        "and be given full citizenship when we as a",
+        "people demand the same 3rd not until then."
       ]
     },
     {
-      "id": "27c9aab6",
+      "id": "70e1a2b2",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "If the Negro will be wise and educate himself in the trades and the professions,",
-        "get homes and own land and build up a strong moral character, he will",
-        "eventually come into his own and be fully recognized as an American citizen."
+        "If the Negro will be wise and educate himself",
+        "in the trades and the professions, get homes and",
+        "own land and build up a strong moral character,",
+        "he will eventually come into his own and be",
+        "fully recognized as an American citizen."
       ]
     },
     {
-      "id": "e45d22d3",
+      "id": "243c0ecc",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro must work and fight and fight and work. He must scorn peace earned",
-        "at the price of his self-respect. He must deport. himself as a man and he",
-        "must insist on being treated as a man in America. Much time must be given",
-        "to the bettering of his environment so that he can will to his children far",
-        "better surroundings than he himself has inherited. Finally, he must cultivate",
-        "more of the religion of self-respect and less of the religion of fear."
+        "The Negro must work and fight and fight and",
+        "work. He must scorn peace earned at the price",
+        "of his self-respect. He must deport. himself as",
+        "a man and he must insist on being treated as a",
+        "man in America. Much time must be given to the",
+        "bettering of his environment so that he can",
+        "will to his children far better surroundings",
+        "than he himself has inherited. Finally,",
+        "he must cultivate more of the religion of",
+        "self-respect and less of the religion of fear."
       ]
     },
     {
-      "id": "3de61c59",
+      "id": "ea231482",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro should be given every opportunity and encouraged to get the very best",
-        "education possible-college education in every possible caw before entering a professional",
-        "school. I think Negroes should enter professions and trades, after college, after",
-        "tastes lead them and wherever there is likely to be a demand for such professions",
-        "and trades. They should own homes and acquire additional property as much as they",
-        "can. They should have a better educated ministry and more thoroly trained teachers."
+        "The Negro should be given every opportunity",
+        "and encouraged to get the very best education",
+        "possible-college education in every possible",
+        "caw before entering a professional school. I",
+        "think Negroes should enter professions and",
+        "trades, after college, after tastes lead them",
+        "and wherever there is likely to be a demand for",
+        "such professions and trades. They should own",
+        "homes and acquire additional property as much",
+        "as they can. They should have a better educated",
+        "ministry and more thoroly trained teachers."
       ]
     },
     {
-      "id": "70a14843",
+      "id": "7bc3811b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I think that full political rights and a more modified social code may be inaugurated",
-        "in the future. These higher attainments are not possible until the Negro catches the",
-        "true spirit of the commercial age in which he lives and lays an economic substructure",
-        "as his foundation. We must produce a substantial capitalist class. Such a state of",
-        "economy admits of a leisure class. If this leisure class is composed of persons who are",
-        "cultured, thrifty and energetic I see no reason why full, political rights should not",
-        "be attained and a widely modified social code substituted for the sham of ignorance",
-        "under which we are now living. I think education can help ameliorate conditions."
+        "I think that full political rights and a more",
+        "modified social code may be inaugurated in the",
+        "future. These higher attainments are not possible",
+        "until the Negro catches the true spirit of the",
+        "commercial age in which he lives and lays an",
+        "economic substructure as his foundation. We",
+        "must produce a substantial capitalist class.",
+        "Such a state of economy admits of a leisure",
+        "class. If this leisure class is composed",
+        "of persons who are cultured, thrifty and",
+        "energetic I see no reason why full, political",
+        "rights should not be attained and a widely",
+        "modified social code substituted for the sham",
+        "of ignorance under which we are now living. I",
+        "think education can help ameliorate conditions."
       ]
     },
     {
-      "id": "a4e25d23",
+      "id": "50adfba2",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "A leadership more broadly educated. An intelligent and consistent agitation for the",
-        "securing of our citizenship rights. A manly stand in all things pertaining to civil,",
-        "social and moral questions. A right-about-face with regard to the matter of the",
-        "education of the youth of our race; that is, less industrialism and more intelligence."
+        "A leadership more broadly educated. An",
+        "intelligent and consistent agitation for the",
+        "securing of our citizenship rights. A manly",
+        "stand in all things pertaining to civil,",
+        "social and moral questions. A right-about-face",
+        "with regard to the matter of the education",
+        "of the youth of our race; that is, less",
+        "industrialism and more intelligence."
       ]
     },
     {
-      "id": "e11670bb",
+      "id": "180d8f4d",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I most strenuously urge that our people, all of them, get the best possible",
-        "training in the best colleges and universities of the country and affiliate",
-        "with all the forces and organizations making for the moral and religious",
-        "development of all the people. In the meantime, I would add, encourage in every",
-        "way possible all the organizations for the material growth of the country."
+        "I most strenuously urge that our people,",
+        "all of them, get the best possible training",
+        "in the best colleges and universities of the",
+        "country and affiliate with all the forces",
+        "and organizations making for the moral and",
+        "religious development of all the people.",
+        "In the meantime, I would add, encourage in",
+        "every way possible all the organizations",
+        "for the material growth of the country."
       ]
     },
     {
-      "id": "3d5e7b6d",
+      "id": "73f8c1e4",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Undoubtedly prejudice is increasing rather than diminishing. This has been brought to",
-        "our minds more forcibly by the passage of the 'grandfather clause' amendment to the",
-        "constitution of this state. We who are here in Oklahoma feel that colonization has brought",
-        "it about as much as anything. Wherever our people congregate in large numbers there very",
-        "soon begins the agitation for disfranchisement. Were it possible for the race to be widely",
-        "diffused over the United States, so that they might acquire wealth like the so-called",
-        "superior race, and be found only a few in any one place, there would be no race problem."
+        "Undoubtedly prejudice is increasing rather than",
+        "diminishing. This has been brought to our minds",
+        "more forcibly by the passage of the 'grandfather",
+        "clause' amendment to the constitution of this",
+        "state. We who are here in Oklahoma feel that",
+        "colonization has brought it about as much as",
+        "anything. Wherever our people congregate in large",
+        "numbers there very soon begins the agitation for",
+        "disfranchisement. Were it possible for the race",
+        "to be widely diffused over the United States, so",
+        "that they might acquire wealth like the so-called",
+        "superior race, and be found only a few in any",
+        "one place, there would be no race problem."
       ]
     },
     {
-      "id": "7fe6de6a",
+      "id": "5d3a101c",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I believe that the acquirement of education and wealth, the teaching of a",
-        "saner and purer religion, performance of duties and a demand for all our",
-        "rights under the law will bring a brighter day for the Negro in America."
+        "I believe that the acquirement of education",
+        "and wealth, the teaching of a saner and purer",
+        "religion, performance of duties and a demand",
+        "for all our rights under the law will bring",
+        "a brighter day for the Negro in America."
       ]
     },
     {
-      "id": "e8f7fad3",
+      "id": "f9b0f3a9",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I believe that education coupled with a good moral and religious training",
-        "will be the main factor in the solution of the Negro problem in America."
+        "I believe that education coupled with",
+        "a good moral and religious training",
+        "will be the main factor in the solution",
+        "of the Negro problem in America."
       ]
     },
     {
-      "id": "ff7bf36f",
+      "id": "fa36cc94",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I am rather an enthusiast on the return of a goodly portion of the Negroes to Africa as a",
-        "final solution, by his voluntary and gradual move as he realizes that he can hardly expect",
-        "to attain to a full measure of citizenship in all that the word implies in this country."
+        "I am rather an enthusiast on the return of a",
+        "goodly portion of the Negroes to Africa as a",
+        "final solution, by his voluntary and gradual",
+        "move as he realizes that he can hardly expect",
+        "to attain to a full measure of citizenship in",
+        "all that the word implies in this country."
       ]
     },
     {
-      "id": "69d89f1e",
+      "id": "79d911b4",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro will ever remain in America. Citizenship and opportunity will",
-        "increase as the Negro grows in stability, wealth and intelligence. Prejudice",
-        "will be forced to abate as slavery recedes and the Negro acquires independence."
+        "The Negro will ever remain in America.",
+        "Citizenship and opportunity will increase as the",
+        "Negro grows in stability, wealth and intelligence.",
+        "Prejudice will be forced to abate as slavery",
+        "recedes and the Negro acquires independence."
       ]
     },
     {
-      "id": "cbbf31b4",
+      "id": "b34a880e",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I believe that as the Negro and the white man are educated up to the truth",
-        "of the legal equality of all men under our American government each will",
-        "come to see that all must enjoy the same privileges. Neither is yet equal to",
-        "the occasion. There are few Negroes who are aggressive and demand, and a few",
-        "philanthropic whites who acknowledge and concede equal opportunities for all men."
+        "I believe that as the Negro and the white",
+        "man are educated up to the truth of the",
+        "legal equality of all men under our American",
+        "government each will come to see that all",
+        "must enjoy the same privileges. Neither is",
+        "yet equal to the occasion. There are few",
+        "Negroes who are aggressive and demand, and a",
+        "few philanthropic whites who acknowledge and",
+        "concede equal opportunities for all men."
       ]
     },
     {
-      "id": "270756a9",
+      "id": "07db7fd0",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro is growing more assertive and manly. Every day gives us new evidences of",
-        "the fact that he is becoming more appreciative of -his right to life, liberty and",
-        "property. He is beginning to meet imposition with opposition, even with his life."
+        "The Negro is growing more assertive and",
+        "manly. Every day gives us new evidences",
+        "of the fact that he is becoming more",
+        "appreciative of -his right to life, liberty and",
+        "property. He is beginning to meet imposition",
+        "with opposition, even with his life."
       ]
     },
     {
-      "id": "0fa4be67",
+      "id": "647c8cec",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro needs leaders and instructors who will teach that he is a",
-        "man and therefore must have all the aids to the better life and good",
-        "citizenship that other men require; that to become a citizen in the true",
-        "sense he must enjoy the same opportunities and benefits as other citizens."
+        "The Negro needs leaders and instructors who",
+        "will teach that he is a man and therefore must",
+        "have all the aids to the better life and good",
+        "citizenship that other men require; that to become",
+        "a citizen in the true sense he must enjoy the same",
+        "opportunities and benefits as other citizens."
       ]
     },
     {
-      "id": "4669aa21",
+      "id": "0daa9ae8",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro must measure up to the standard of a man in all respects if he hopes to",
-        "gain what other races have gained. Hence he must be impressed with the necessity of",
-        "preparing himself. The young Negro must be inspired with reminders of what other",
-        "Negroes have accomplished. He must he taught not to close the door of hope upon",
-        "himself, even in thot He must be made to feel that competency must win, has won."
+        "The Negro must measure up to the standard of a",
+        "man in all respects if he hopes to gain what other",
+        "races have gained. Hence he must be impressed",
+        "with the necessity of preparing himself. The",
+        "young Negro must be inspired with reminders",
+        "of what other Negroes have accomplished. He",
+        "must he taught not to close the door of hope",
+        "upon himself, even in thot He must be made",
+        "to feel that competency must win, has won."
       ]
     },
     {
-      "id": "0c8088be",
+      "id": "cd37f0d7",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "To me, the outlook for the Negro race in America is bright or dark owing to",
-        "the deportment of the Negro himself. If he will make use of the opportunities",
-        "he has in educating himself, saving his money, acquiring property and in",
-        "being a law-abiding citizen there is no law that can successfully stop him."
+        "To me, the outlook for the Negro race in America",
+        "is bright or dark owing to the deportment",
+        "of the Negro himself. If he will make use",
+        "of the opportunities he has in educating",
+        "himself, saving his money, acquiring property",
+        "and in being a law-abiding citizen there",
+        "is no law that can successfully stop him."
       ]
     },
     {
-      "id": "956a32fd",
+      "id": "6208dea4",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Let him cease to be a cringing suppliant; assert his manhood intelligently;",
-        "speak out against unjust discrimination and laws that affect him; demand",
-        "a competent leadership in pulpit, school training and politics; give his",
-        "children the highest possible training and repudiate the stigma of being",
-        "fit only for the workshop; demand the rights guaranteed to citizens by the",
-        "Constitution; get property; migrate from the South to all parts of the country."
+        "Let him cease to be a cringing suppliant;",
+        "assert his manhood intelligently; speak out",
+        "against unjust discrimination and laws that",
+        "affect him; demand a competent leadership in",
+        "pulpit, school training and politics; give his",
+        "children the highest possible training and",
+        "repudiate the stigma of being fit only for the",
+        "workshop; demand the rights guaranteed to citizens",
+        "by the Constitution; get property; migrate",
+        "from the South to all parts of the country."
       ]
     },
     {
-      "id": "751b628a",
+      "id": "57b6752f",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro came to America not by his own volition and is here to stay. I believe",
-        "he should contend for all his rights as an American citizen and enter all lines of",
-        "competition with the other races in this country.'' \"The Negro in America should be",
-        "educated just as any other race in America One phase of education should not be too",
-        "much emphasized above another. All phases are necessary for the highest realization",
-        "of any race. Negroes should demand their rights. It is nonsense to expect perfect",
-        "harmony between two races so situated as the Negroes and whites of America. The day",
-        "which brings perfect harmony in America must bring at the same time amalgamation."
+        "The Negro came to America not by his own volition",
+        "and is here to stay. I believe he should contend",
+        "for all his rights as an American citizen and",
+        "enter all lines of competition with the other",
+        "races in this country.'' The Negro in America",
+        "should be educated just as any other race in",
+        "America One phase of education should not be too",
+        "much emphasized above another. All phases are",
+        "necessary for the highest realization of any",
+        "race. Negroes should demand their rights. It is",
+        "nonsense to expect perfect harmony between two",
+        "races so situated as the Negroes and whites of",
+        "America. The day which brings perfect harmony in",
+        "America must bring at the same time amalgamation."
       ]
     },
     {
-      "id": "e21d84f6",
+      "id": "e1cf397a",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Persecution is a friend of progress. The very things that are denied us we",
-        "shall still want-and we shall supply them ourselves. Whatever community tries",
-        "to keep the Negro down must stay there with him. The two things indispensable",
-        "to the Negro's advance are money and education, both of which things are being",
-        "slowly but surely acquired by individuals and by Negro communities. . . . .",
-        "I have no doubt that prejudice is growing but I do believe it is a jealous",
-        "prejudice and an outgrowth of the desire to keep the Negro in a slave's position."
+        "Persecution is a friend of progress. The",
+        "very things that are denied us we shall still",
+        "want-and we shall supply them ourselves.",
+        "Whatever community tries to keep the Negro",
+        "down must stay there with him. The two things",
+        "indispensable to the Negro's advance are money",
+        "and education, both of which things are being",
+        "slowly but surely acquired by individuals and",
+        "by Negro communities. . . . . I have no doubt",
+        "that prejudice is growing but I do believe it",
+        "is a jealous prejudice and an outgrowth of the",
+        "desire to keep the Negro in a slave's position."
       ]
     },
     {
-      "id": "04bb78c9",
+      "id": "3f5180fc",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "I believe that the ultimate solution of the race problem is amalgamation."
+        "I believe that the ultimate solution",
+        "of the race problem is amalgamation."
       ]
     },
     {
-      "id": "12c20fa4",
+      "id": "b647e76f",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "We ought now to have all the rights and privileges which are guaranteed",
-        "by the Federal Constitution. We must agitate and fight to the last ditch",
-        "for them. Nothing is worth having if it is not worth fighting for."
+        "We ought now to have all the rights and",
+        "privileges which are guaranteed by the Federal",
+        "Constitution. We must agitate and fight to",
+        "the last ditch for them. Nothing is worth",
+        "having if it is not worth fighting for."
       ]
     },
     {
-      "id": "c2140e29",
+      "id": "2c293868",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "With the highest possible training, the acquisition of property and the",
-        "launching out into all kinds of business enterprises, the Negro in America",
-        "will succeed and become a mighty power in the affairs of this country."
+        "With the highest possible training, the",
+        "acquisition of property and the launching out",
+        "into all kinds of business enterprises, the",
+        "Negro in America will succeed and become a",
+        "mighty power in the affairs of this country."
       ]
     },
     {
-      "id": "cdfe3d32",
+      "id": "a52fe8ea",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "Industry, economy, obedience to all just laws-in short, the same principles",
-        "which are helpful to any other race; morality, wealth and education being",
-        "big factors in the solution of our problem; business enterprises of",
-        "various kinds which will give employment to the average boy and girl of",
-        "our race, allowing him to aspire to the highest place in the business."
+        "Industry, economy, obedience to all just",
+        "laws-in short, the same principles which are",
+        "helpful to any other race; morality, wealth and",
+        "education being big factors in the solution of",
+        "our problem; business enterprises of various",
+        "kinds which will give employment to the average",
+        "boy and girl of our race, allowing him to",
+        "aspire to the highest place in the business."
       ]
     },
     {
-      "id": "79ef8945",
+      "id": "0569450b",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro needs simply the proper training and a fair chance in the business",
-        "world along with a square deal before the law and he will find a way or make",
-        "one along by the side of America's best citizens. We must insist on a thoro",
-        "education however. No limited education in any particular will suffice."
+        "The Negro needs simply the proper training",
+        "and a fair chance in the business world along",
+        "with a square deal before the law and he will",
+        "find a way or make one along by the side",
+        "of America's best citizens. We must insist",
+        "on a thoro education however. No limited",
+        "education in any particular will suffice."
       ]
     },
     {
-      "id": "1782cb69",
+      "id": "803f7edb",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negroes in America will never, develop to the extent of their",
-        "capacity, will never become a great people, not even a free people,",
-        "until they have political rights equal to the white race. The man who",
-        "has no political rights has no way of protecting himself and family."
+        "The Negroes in America will never, develop",
+        "to the extent of their capacity, will never",
+        "become a great people, not even a free people,",
+        "until they have political rights equal to the",
+        "white race. The man who has no political rights",
+        "has no way of protecting himself and family."
       ]
     },
     {
-      "id": "526c4b8d",
+      "id": "5cb0c430",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "While he must give all due attention to his duties, the Negro must not so act",
-        "now or at any time as to give the impression that he is satisfied to give up",
-        "even temporarily any of the rights that belong to him as a man. In the present",
-        "swift revolving scheme of industrial America, the right to vote is paramount."
+        "While he must give all due attention to his",
+        "duties, the Negro must not so act now or at",
+        "any time as to give the impression that he is",
+        "satisfied to give up even temporarily any of",
+        "the rights that belong to him as a man. In the",
+        "present swift revolving scheme of industrial",
+        "America, the right to vote is paramount."
       ]
     },
     {
-      "id": "2a36baf2",
+      "id": "125b45de",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negroes ought to have every right guaranteed by the Constitution",
-        "of the United States. We are American citizens and should accept no",
-        "treatment that does not apply equally to every other American citizen."
+        "The Negroes ought to have every right",
+        "guaranteed by the Constitution of the United",
+        "States. We are American citizens and should",
+        "accept no treatment that does not apply",
+        "equally to every other American citizen."
       ]
     },
     {
-      "id": "87f431b2",
+      "id": "82356194",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The masses should be trained in such a way as to know well their rights and",
-        "duties as citizens and should be urged to faithfully perform their duties and",
-        "quietly, firmly, persistently demand their rights. . . . . The Negro men who",
-        "are really qualified to speak should take a bold, manly stand for the race."
+        "The masses should be trained in such a way",
+        "as to know well their rights and duties as",
+        "citizens and should be urged to faithfully",
+        "perform their duties and quietly, firmly,",
+        "persistently demand their rights. . . . . The",
+        "Negro men who are really qualified to speak",
+        "should take a bold, manly stand for the race."
       ]
     },
     {
-      "id": "42d7b37a",
+      "id": "58c71546",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The future of the Negro in this country will depend upon the kind of",
-        "training given to the Negro youth. The same kind of training which has",
-        "made other races great is also necessary to make the Negro race great."
+        "The future of the Negro in this country will",
+        "depend upon the kind of training given to",
+        "the Negro youth. The same kind of training",
+        "which has made other races great is also",
+        "necessary to make the Negro race great."
       ]
     },
     {
-      "id": "26cc2e97",
+      "id": "ecbedc47",
+      "x": 0,
+      "y": 0,
       "gender": "Unknown",
       "lines": [
-        "The Negro must become a part of all the life about him. He must become Americanized",
-        "in the best and largest sense. He should be led out of the consciousness that he",
-        "must have anything less than other citizens enjoy. All kinds of education, all forms",
-        "of wealth and a knowledge of the ways of the American world are his needs for this",
-        "achievement. Each one of us must refuse to turn from any avenue of life because",
-        "other men think it is nut for Negroes. We must work, think and live independent",
-        "of the dictates of those who regard us as less than other men. The best of us",
-        "should give of our means, our time and ourselves to leaven the whole. College-bred",
-        "Negroes should live these ideas among the masses and teach them to their children."
+        "The Negro must become a part of all the life",
+        "about him. He must become Americanized in the best",
+        "and largest sense. He should be led out of the",
+        "consciousness that he must have anything less than",
+        "other citizens enjoy. All kinds of education, all",
+        "forms of wealth and a knowledge of the ways of the",
+        "American world are his needs for this achievement.",
+        "Each one of us must refuse to turn from any avenue",
+        "of life because other men think it is nut for",
+        "Negroes. We must work, think and live independent",
+        "of the dictates of those who regard us as less",
+        "than other men. The best of us should give of our",
+        "means, our time and ourselves to leaven the whole.",
+        "College-bred Negroes should live these ideas among",
+        "the masses and teach them to their children."
       ]
     }
   ]

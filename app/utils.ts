@@ -16,7 +16,9 @@ export const spacesToHyphens = (str: string) => {
 }
 
 export const random = (min: number, max: number) => {
-  return Math.floor(Math.random() * (min - max) + min);
+  min = Math.floor(min);
+  max = Math.floor(max) - min;
+  return Math.floor(Math.random() * max + min);
 }
 
 // Stolen from p5
