@@ -42,17 +42,8 @@ function ResponseV2({ response, activeResponse, setActiveResponse, color, textCo
     if (isCollapsed) {
       pathRef.current?.attr("d", wadRef.current);
 
-      textPathRef.current
-                 ?.attr("textLength", 258)
-                 .transition(d3.transition().duration(700))
-                 .attr("textLength", 0);
-
-      textPathRef.current
-                 ?.attr("fill-opacity", 1)
-                 .transition(d3.transition().delay(300))
-                 .attr("fill-opacity", 0);
-
-      // buttonRef.current?.attr("height", 0);
+      textRef.current?.transition().duration(700).attr("textLength", 0);
+      textPathRef.current?.transition().delay(300).attr("fill-opacity", 0);
 
       d3.selectAll(`.button-text-${response.id}`)
         .attr("fill-opacity", 0);
@@ -74,7 +65,7 @@ function ResponseV2({ response, activeResponse, setActiveResponse, color, textCo
         .transition().duration(100).attr("height", 85)
         .transition().duration(100).attr("fill-opacity", 1)
 
-      textPathRef.current
+      textRef.current
         ?.transition().duration(700).delay(100).attr("textLength", 258);
 
       textPathRef.current?.attr("fill-opacity", 1);
@@ -108,10 +99,10 @@ function ResponseV2({ response, activeResponse, setActiveResponse, color, textCo
       containerRef.current?.node()?.focus();
       contentRef.current?.attr("font-size", 5);
 
-      const tSpans: any[] = d3.selectAll(`tSpan.line-${response.id}`).nodes() || [undefined];
+      const tSpans: any[] = d3.selectAll(`.line-${response.id}`).nodes() || [undefined];
 
       const boxWidth = Math.max(
-        ...tSpans.map((textSpan) => textSpan?.textLength.baseVal.value)
+        ...tSpans.map((textSpan) => textSpan?.getBBox().width)
       );
 
       const boxHeight = 7 * response.lines.length;
@@ -213,7 +204,6 @@ function ResponseV2({ response, activeResponse, setActiveResponse, color, textCo
     wadLengthRef.current = pathRef.current?.node()?.getTotalLength() || sentence.length * 2;
     textPathRef.current
       ?.attr("xlink:href", `#path-${response.id}`)
-      .attr("textLength", 120)
       .text(sentence);
 
   }, [response]);
@@ -242,14 +232,13 @@ function ResponseV2({ response, activeResponse, setActiveResponse, color, textCo
         strokeWidth={8}
         strokeOpacity={0}
       />
-      <text id={`text-${response.id}`} fill={textColor}>
+      <text id={`text-${response.id}`} fill={textColor} textLength={0}>
         <textPath
           id={`text-path-${response.id}`}
           fontFamily="VTC Du Bois Narrow, serif"
           className={`font-bold text-${textColor}`}
           fontSize={5}
           fillOpacity={1}
-          textLength={0}
           onClick={() => setActiveResponse(undefined)}
         >
         </textPath>
@@ -308,6 +297,7 @@ function ResponseV2({ response, activeResponse, setActiveResponse, color, textCo
         fill={textColor}
         fillOpacity={0}
         textAnchor="middle"
+        dominantBaseline="middle"
         onClick={() => setActiveResponse(undefined)}
       >
         {response.lines.map((line, index) => {
@@ -315,7 +305,7 @@ function ResponseV2({ response, activeResponse, setActiveResponse, color, textCo
             <tspan
               key={`line-${response.id}-${line.slice(1,15).replace(' ', '')}-${line.length}`}
               className={`line-${response.id}`}
-              x={x.current}
+              x={boxX.current}
               dy={index > 0 ? 7 : 3}
             >
               {line}
