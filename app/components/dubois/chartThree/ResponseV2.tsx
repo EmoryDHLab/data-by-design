@@ -103,21 +103,21 @@ function ResponseV2({ response, activeResponse, setActiveResponse, color, textCo
 
       const boxWidth = Math.max(
         ...tSpans.map((textSpan) => textSpan?.getBBox().width)
-      );
+        );
 
-      const boxHeight = 7 * response.lines.length;
+        const boxHeight = 7 * response.lines.length;
 
-      if (x.current + boxWidth > 200) {
+        if (x.current + boxWidth > 200) {
         const leftOffSet = (x.current + boxWidth) - 180;
         boxX.current =  x.current - leftOffSet;
       }
+
+      d3.selectAll(`.line-${response.id}`).attr("x", boxWidth / 2 + boxX.current + 5);
 
       if (y.current + boxHeight > 200) {
         const bottomOffset = (y.current + boxHeight) - 200;
         boxY.current = y.current - bottomOffset;
       }
-
-      d3.selectAll(`.line-${response.id}`).attr("x", boxWidth / 2 + boxX.current + 5);
 
       containerRef.current
         ?.transition().duration(300).attr("width", Math.max(...response.lines.map((l) => l.length)) * 2.65)
@@ -305,7 +305,6 @@ function ResponseV2({ response, activeResponse, setActiveResponse, color, textCo
             <tspan
               key={`line-${response.id}-${line.slice(1,15).replace(' ', '')}-${line.length}`}
               className={`line-${response.id}`}
-              x={boxX.current}
               dy={index > 0 ? 7 : 3}
             >
               {line}
