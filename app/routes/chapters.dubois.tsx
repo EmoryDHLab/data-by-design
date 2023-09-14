@@ -2,7 +2,6 @@ import ChapterTitle from "~/components/ChapterTitle";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import InlineFootnote from "~/components/InlineFootnote";
 import DocumentViewer from "~/components/dubois/DocumentViewer";
-import { StudentChart } from "~/components/dubois/StudentChart";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import { duboisFootnotes } from "~/footnotes";
@@ -26,6 +25,7 @@ import FigureObj from "~/components/layout/FigureObj";
 import SlideShow from "~/components/layout/SlideShow";
 import { chapterMeta } from "~/utils";
 import type { V2_MetaFunction } from "@remix-run/node";
+import StudentChartV2 from "~/components/dubois/StudentChartV2";
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("dubois");
@@ -714,9 +714,11 @@ export default function DuboisChapter() {
         </p>
       </CenteredLayout>
 
-     <CenteredLayout className="mx-4">
+     {/* <CenteredLayout className="mx-4">
        <StudentChart />
-     </CenteredLayout>
+     </CenteredLayout> */}
+
+     <StudentChartV2 figure={figures["ch5-12-series"]} />
 
       <ChapterSectionTitle title="Visualization as Witness and as Testimony" />
       <CenteredLayout>

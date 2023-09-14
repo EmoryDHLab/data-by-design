@@ -1,7 +1,7 @@
+import p5 from "p5";
 import { Circle } from "~/components/dubois/Circle";
 import { useEffect } from "react";
 import { useDeviceContext, useWindowSize } from "~/hooks";
-import p5 from "p5";
 import type { Student, StudentData } from "~/components/dubois/types";
 
 interface Props {
@@ -119,7 +119,7 @@ function placeCategories(p5: p5, studentData: StudentData, circles: Circle[]) {
 function pieChart(p5: p5, studentData: StudentData, diameter: number) {
   let lastAngle = OFFSET;
   const { count, categories } = studentData;
-  const padding = 100;
+  const padding = 15;
 
   for (const { color, students } of categories) {
     const angle = (students.length / count) * Math.PI * 2;
@@ -169,8 +169,6 @@ export default function PieChart({ studentData, className }: Props) {
           ball.collide();
           ball.wiggle();
           ball.withinBounds();
-        });
-        circles.forEach((ball) => {
           ball.mouseOn();
         });
         // p5.noLoop();
