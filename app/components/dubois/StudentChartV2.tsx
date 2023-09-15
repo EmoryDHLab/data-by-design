@@ -9,9 +9,9 @@ const StudentChartV2 = ({ figure }: { figure: Figure }) => {
   const [currentChart, setCurrentChart] = useState<string>("original");
 
   return (
-    <section className="w-full bg-black grid grid-cols-4">
+    <section className="w-full bg-black grid grid-cols-4 justify-items-center">
       <nav className="">
-        <ul className="m-8">
+        <ul className="my-8">
         <li className="my-4">
             <button
               className={`${currentChart === "original" ? "bg-duboisSecondary" : "bg-white"} cut-corners p-2 uppercase font-dubois md:mx-2 text-sm md:text-base w-full`}
@@ -49,7 +49,7 @@ const StudentChartV2 = ({ figure }: { figure: Figure }) => {
       <div className="col-span-3 m-6">
           <div className="bg-offwhite text-black py-2 px-10">
             {currentChart === "original" &&
-              <FigureObj figure={figure} />
+              <FigureObj figure={figure} imageClassName="m-auto" />
             }
             {currentChart === "one" &&
               <StudentChartOne />
