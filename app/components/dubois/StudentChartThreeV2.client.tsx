@@ -213,36 +213,30 @@ const StudentChartThreeV2 = () => {
 
   return (
     <>
-            <p className="font-bold text-lg md:text-xl 2xl:text-2xl text-center font-duboisWide uppercase">
-       A series of statistical charts, illustrating details about the graduates of
-       Atlanta University, and other black college graduates in the united states,
-       who contributed their knowledge, labor, and data to Du Bois's research program.
+      <p className="font-bold text-lg md:text-xl 2xl:text-2xl text-center font-duboisWide uppercase">
+        A CHART ILLUSTRATING THE WORDS OF THE BLACK COLLEGE GRADUATES FROM ACROSS THE UNITED STATES
+        WHO CONTRIBUTED TO DU BOIS’S RESEARCH.
       </p>
       <div className="flex flex-col md:flex-row md:flex-wrap font-duboisNarrow text-base text-md text-center uppercase md:mt-8">
         <ul className="my-6 md:my-0 md:w-1/3">
-          <li>prepared and executed by</li>
-          <li>tanvi sharma, anna mola,</li>
-          <li>and lauren klein</li>
-          <li>under the auspices of</li>
-          <li>the digital humanities lab</li>
-          <li>emory university, atlanta, ga.</li>
-          <li>united states of america</li>
+          <li>Prepared and executed by, Tanvi Sharma,</li>
+          <li>Anna Mola, Nicholas Yang, and Lauren Klein</li>
+          <li>Under the Auspices of the </li>
+          <li>Digital Humanities Lab</li>
+          <li>Emory University, Atlanta, GA.</li>
+          <li>United States of America</li>
         </ul>
-        <div className="md:w-2/3">
-          <p className="md:mt-0">
-            The previous chart visualized information about the 163 college graduates of
-            Atlanta University, as of 1909, in the context of the 3856 total Black college
-            graduates in the entire United States.
+        <div className="md:w-2/3 md:mb-8">
+          <p>
+            The previous chart visualized information about the graduates of Atlanta
+            University in the context of the total number of Black college graduates
+            in the United States as of 1909.
           </p>
-          <p className="md:mt-8">
-            As part of the 1910 Atlanta University Study, The College-Bred Negro American,
-            these same 3856 Black college graduates were surveyed about their lives. This
-            chart visualizes their words.
+          <p>
+            As part of <cite>The College-Bred Negro American</cite>, these same college
+            graduates were surveyed about their lives. This chart visualizes their words.
           </p>
         </div>
-        <p className="md:m-8 text-center w-full">
-          if you want a more comprehensive look check out the archive.
-        </p>
       </div>
 
       <div className="relative m-auto" style={{ width: `${p5Ref.current?.width}px`}}>
@@ -418,18 +412,18 @@ const StudentChartThreeV2 = () => {
           </svg>
         }
       </div>
-      <p className="mx-4 md:mx-auto font-dubois uppercase text-justify tracking-wider">
-        This visualization attempts to further humanize the data associated with the 3856
-        Black college graduates whose lives were recorded as data in the Atlanta University
-        Study of 1910, entitled The College-Bred Negro American. As part of this study, these
-        3856 graduates were sent a survey which, among a range of questions about their lives
-        and accomplishments, included four questions that encouraged long-form response: their
-        thoughts on their own “early life and training,” their plans to educate their children,
-        the “chief hindrances” they had faced, and their “present practical philosophy in regard
-        to the Negro race in America”--abbreviated in the published study as “philosophy of
-        life.” About 800 responses to the survey were received; these are the responses published
-        in the 1910 Study.
-      </p>
+      <div className="mx-4 md:mx-auto font-dubois uppercase text-justify tracking-wider">
+        <p>
+          This visualization enriches the data associated with the 3,856 Black college
+          graduates who were documented in <cite>The College-Bred Negro American</cite>. As part of
+          the study, they were also asked to provide written responses to four questions:
+          their thoughts on their own "early life and training," their plans to educate
+          their children, the "chief hindrances" they had faced, and their “present practical
+          philosophy in regard to the Negro race in America,” abbreviated in the study as
+          "philosophy of life." About 800 responses to the survey were received, a selection
+          of which were published.
+        </p>
+      </div>
     </>
   );
 }
