@@ -18,6 +18,7 @@ export interface Student {
 export interface ResponseData {
   id: string;
   gender: string;
+  selection: string;
   lines: Array<string>;
   x: number;
   y: number;

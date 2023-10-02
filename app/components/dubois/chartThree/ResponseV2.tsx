@@ -102,21 +102,18 @@ function ResponseV2({
     knotRef.current = d3.line().curve(d3.curveNatural)(knot);
 
 
-    const sentences = response.lines.join('').split('.');
-    const sentence = sentences[d3.randomInt(0, sentences.length - 1)()] + '.';
-
     // const knot: Array<[number, number]> = [[x, y]];
-    // Array.from({ length: Math.ceil(sentence.length / 6)}).forEach((chunk) => {
+    // Array.from({ length: Math.ceil(response.selection.length / 6)}).forEach((chunk) => {
     //   knot.push([d3.randomInt(x, x + 50)(), d3.randomInt(y - 20, y + 40)()]);
     // });
 
     // const line = d3.line().curve(d3.curveNatural);
 
     pathRef.current?.attr('d', wadRef.current);
-    wadLengthRef.current = pathRef.current?.node()?.getTotalLength() || sentence.length * 2;
+    wadLengthRef.current = pathRef.current?.node()?.getTotalLength() || response.selection.length * 2;
     textPathRef.current
       ?.attr("xlink:href", `#path-${response.id}`)
-      .text(sentence);
+      .text(response.selection);
 
   }, [response, x, y, canvasHeight, canvasWidth]);
 
@@ -325,9 +322,10 @@ function ResponseV2({
               key={`line-${response.id}-${line.slice(1,15).replace(' ', '')}-${line.length}`}
               className={`line-${response.id}`}
               dy={index > 0 ? 20 : 10}
-            >
-              {line}
-            </tspan>
+              dangerouslySetInnerHTML={{
+                __html: line,
+              }}
+            />
           )
         })}
       </text>
