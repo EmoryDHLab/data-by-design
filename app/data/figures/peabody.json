@@ -15,8 +15,7 @@
     "notes": null,
     "frontPage": false,
     "year": null,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "rochester": {
     "chapterTitle": "Peabody",
@@ -34,8 +33,7 @@
     "notes": null,
     "year": null,
     "frontPage": false,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   },
   "richmond": {
     "chapterTitle": "Peabody",
@@ -53,8 +51,7 @@
     "notes": null,
     "year": null,
     "frontPage": false,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   },
   "louisville": {
     "chapterTitle": "Peabody",
@@ -72,8 +69,7 @@
     "notes": null,
     "year": null,
     "frontPage": false,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   },
   "1620": {
     "chapterTitle": "Peabody",
@@ -91,12 +87,11 @@
     "notes": null,
     "year": null,
     "frontPage": false,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   },
-  "ch4-14-priestly-new-chart": {
+  "ch4-14-priestley-new-chart": {
     "chapterTitle": "Peabody",
-    "fileName": "ch4-14-priestly-new-chart",
+    "fileName": "ch4-14-priestley-new-chart",
     "title": "A New Chart of History",
     "artist": "Joseph Priestley",
     "caption": "Joseph Priestley’ s widely circulated New Chart of History (1769).",
@@ -110,8 +105,7 @@
     "notes": "Same image appears in Brooks chapter, so don't include here b/c it's a duplicate.",
     "frontPage": false,
     "year": 1769,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   },
   "ch4-clarke1": {
     "chapterTitle": "Peabody",
@@ -129,8 +123,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1823,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-13-willard": {
     "chapterTitle": "Peabody",
@@ -148,8 +141,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1846,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "railroadscaled": {
     "chapterTitle": "Peabody",
@@ -167,8 +159,7 @@
     "notes": null,
     "frontPage": false,
     "year": 1850,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   },
   "ch4-5": {
     "chapterTitle": "Peabody",
@@ -186,8 +177,7 @@
     "notes": "adapted from chapter description",
     "frontPage": true,
     "year": 1850,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-6": {
     "chapterTitle": "Peabody",
@@ -205,8 +195,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1850,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-7": {
     "chapterTitle": "Peabody",
@@ -224,8 +213,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1850,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-8": {
     "chapterTitle": "Peabody",
@@ -243,8 +231,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1850,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-9": {
     "chapterTitle": "Peabody",
@@ -262,8 +249,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1850,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-10": {
     "chapterTitle": "Peabody",
@@ -281,8 +267,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1850,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-11": {
     "chapterTitle": "Peabody",
@@ -300,8 +285,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1850,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-12": {
     "chapterTitle": "Peabody",
@@ -319,8 +303,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1850,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "fig1-1500s-rect": {
     "chapterTitle": "Peabody",
@@ -338,8 +321,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1856,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "fig2-1600s-rect": {
     "chapterTitle": "Peabody",
@@ -357,8 +339,7 @@
     "notes": "\"An interactive breakdown of this chart is located below\" or something like that? (Wondering how/where to do alt-text for the interactive part--OR if it should be there during the walk-through engagement)",
     "frontPage": true,
     "year": 1856,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "fig3-1700s-rect": {
     "chapterTitle": "Peabody",
@@ -376,8 +357,7 @@
     "notes": "do we know what the number 1 and letters mean in this chart?",
     "frontPage": true,
     "year": 1856,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "fig4-1800s-rect": {
     "chapterTitle": "Peabody",
@@ -395,8 +375,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1856,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-blank-chart": {
     "chapterTitle": "Peabody",
@@ -414,8 +393,7 @@
     "notes": null,
     "frontPage": false,
     "year": 1870,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   },
   "ch4-19-rachel-carey-george": {
     "chapterTitle": "Peabody",
@@ -433,8 +411,7 @@
     "notes": "Need to pay via ARS when ready",
     "frontPage": true,
     "year": 1935,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-20-gbq-q030-06": {
     "chapterTitle": "Peabody",
@@ -452,8 +429,7 @@
     "notes": "THESE IMAGES OF QUILTS ARE IN THE DU BOIS CHP ATM --> UNDER \"BTWN CHART AND PHOTOGRAPH\" SECTION; Need to pay via ARS when ready",
     "frontPage": true,
     "year": 1998,
-    "chapter": "peabody",
-    "timeline": true
+    "chapter": "peabody"
   },
   "ch4-15-fc-touch": {
     "chapterTitle": "Peabody",
@@ -471,8 +447,7 @@
     "notes": null,
     "frontPage": false,
     "year": 2018,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   },
   "ch4-16-fc-led-boards": {
     "chapterTitle": "Peabody",
@@ -490,8 +465,7 @@
     "notes": "Alt-text in the first image of the set",
     "frontPage": false,
     "year": 2018,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   },
   "ch4-17-leds": {
     "chapterTitle": "Peabody",
@@ -509,8 +483,7 @@
     "notes": null,
     "frontPage": false,
     "year": 2018,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   },
   "ch4-18-rendering": {
     "chapterTitle": "Peabody",
@@ -528,7 +501,6 @@
     "notes": null,
     "frontPage": true,
     "year": 2018,
-    "chapter": "peabody",
-    "timeline": false
+    "chapter": "peabody"
   }
 }

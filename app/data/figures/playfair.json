@@ -15,8 +15,7 @@
     "notes": null,
     "frontPage": false,
     "year": null,
-    "chapter": "playfair",
-    "timeline": false
+    "chapter": "playfair"
   },
   "9-protovis": {
     "chapterTitle": "Playfair",
@@ -34,8 +33,7 @@
     "notes": null,
     "frontPage": false,
     "year": null,
-    "chapter": "playfair",
-    "timeline": false
+    "chapter": "playfair"
   },
   "10-Camoes": {
     "chapterTitle": "Playfair",
@@ -53,8 +51,7 @@
     "notes": null,
     "frontPage": false,
     "year": null,
-    "chapter": "playfair",
-    "timeline": false
+    "chapter": "playfair"
   },
   "table-1787": {
     "chapterTitle": "Playfair",
@@ -72,8 +69,7 @@
     "notes": "title confusion with one below??",
     "frontPage": false,
     "year": 1787,
-    "chapter": "playfair",
-    "timeline": false
+    "chapter": "playfair"
   },
   "chart-1787": {
     "chapterTitle": "Playfair",
@@ -91,8 +87,7 @@
     "notes": "Include original chart on front page. Requested high-res scan from LCP 12/25.",
     "frontPage": true,
     "year": 1787,
-    "chapter": "playfair",
-    "timeline": true
+    "chapter": "playfair"
   },
   "3-pie": {
     "chapterTitle": "Playfair",
@@ -110,8 +105,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1801,
-    "chapter": "playfair",
-    "timeline": true
+    "chapter": "playfair"
   },
   "1-northamerica": {
     "chapterTitle": "Playfair",
@@ -129,8 +123,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1801,
-    "chapter": "playfair",
-    "timeline": true
+    "chapter": "playfair"
   },
   "2-wheat": {
     "chapterTitle": "Playfair",
@@ -148,8 +141,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1821,
-    "chapter": "playfair",
-    "timeline": true
+    "chapter": "playfair"
   },
   "6-snow": {
     "chapterTitle": "Playfair",
@@ -167,8 +159,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1855,
-    "chapter": "playfair",
-    "timeline": true
+    "chapter": "playfair"
   },
   "7-nightingale": {
     "chapterTitle": "Playfair",
@@ -186,8 +177,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1858,
-    "chapter": "playfair",
-    "timeline": true
+    "chapter": "playfair"
   },
   "5-minard": {
     "chapterTitle": "Playfair",
@@ -205,8 +195,7 @@
     "notes": null,
     "frontPage": true,
     "year": 1869,
-    "chapter": "playfair",
-    "timeline": true
+    "chapter": "playfair"
   },
   "jevons": {
     "chapterTitle": "Playfair",
@@ -224,7 +213,6 @@
     "notes": "Maybe replace w/ a better image?",
     "frontPage": true,
     "year": 1874,
-    "chapter": "playfair",
-    "timeline": true
+    "chapter": "playfair"
   }
 }
