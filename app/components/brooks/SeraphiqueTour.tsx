@@ -1,7 +1,7 @@
 import { EyeSlashIcon } from '@heroicons/react/24/outline'
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
-import type { Figure } from '~/types/figureType';
+import type { TFigure } from '~/types/figureType';
 import FigureModal from '../layout/FigureModal';
 
 type MaskType = {
@@ -57,7 +57,7 @@ const tourLocations: TourLocations = {
 };
 
 interface Props {
-  figure: Figure;
+  figure: TFigure;
 }
 
 export default function SeraphiqueTour({ figure }: Props) {

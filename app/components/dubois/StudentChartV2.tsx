@@ -2,10 +2,10 @@ import { useState } from "react";
 import StudentChartOne from "./StudentChartOne";
 import StudentChartThreeV2 from "./StudentChartThreeV2.client";
 import StudentChartTwo from "./StudentChartTwo";
-import type { Figure } from "~/types/figureType";
+import type { TFigure } from "~/types/figureType";
 import FigureObj from "../layout/FigureObj";
 
-const StudentChartV2 = ({ figure }: { figure: Figure }) => {
+const StudentChartV2 = ({ figure }: { figure: TFigure }) => {
   const [currentChart, setCurrentChart] = useState<string>("original");
 
   return (
