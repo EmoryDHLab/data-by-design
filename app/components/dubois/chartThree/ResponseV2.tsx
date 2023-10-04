@@ -319,7 +319,7 @@ function ResponseV2({
         {response.lines.map((line, index) => {
           return (
             <tspan
-              key={`line-${response.id}-${line.slice(1,15).replace(' ', '')}-${line.length}`}
+              key={`line-${response.id}-${response.lines.indexOf(line)}`}
               className={`line-${response.id}`}
               dy={index > 0 ? 20 : 10}
               dangerouslySetInnerHTML={{
