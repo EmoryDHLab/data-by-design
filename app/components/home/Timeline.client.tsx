@@ -1,13 +1,14 @@
 import DraggableTimeline from "~/components/home/DraggableTimeline";
 import OrderedTimeline from "~/components/home/OrderedTimeline";
 import type { Dispatch, SetStateAction } from "react";
-import type { Image} from "~/components/home/timelineUtils";
+// import type { Image} from "~/components/home/timelineUtils";
+import type { TFigure } from "~/types/figureType";
 import { TimelineType } from "~/components/home/timelineUtils";
 
 interface Props {
   timelineType: TimelineType;
-  selectedImage: Image;
-  setSelectedImage: Dispatch<SetStateAction<Image>>;
+  selectedImage: TFigure;
+  setSelectedImage: Dispatch<SetStateAction<TFigure>>;
   shouldShuffle: boolean;
 }
 

@@ -1,8 +1,8 @@
-import imageData from "~/data/timelineImages.json";
+import imageData from "~/data/figures/timeLine.json";
 import { useWindowSize } from "~/hooks";
-import { createRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { Image } from "~/components/home/timelineUtils";
+import type { TFigure } from "~/types/figureType";
 
 interface TimelineState {
   imageSliceStart: number;
@@ -10,13 +10,18 @@ interface TimelineState {
   draggedImage: { index: number } | undefined;
 }
 
+type startPosition = {
+  clientX: number,
+  clientY: number
+};
+
 const IMAGE_COUNT = 30;
 const PART_ONE_START = 40;
 const PART_ONE_HEIGHT = window.innerHeight / 2;
 
 interface Props {
-  selectedImage: Image;
-  setSelectedImage: Dispatch<SetStateAction<Image>>;
+  selectedImage: TFigure;
+  setSelectedImage: Dispatch<SetStateAction<TFigure>>;
   // Dumb hack to shuffle timeline
   shouldShuffle: boolean;
 }
@@ -28,12 +33,13 @@ export default function DraggableTimeline({
   shouldShuffle,
 }: Props) {
   const windowSize = useWindowSize();
-  const svgRef = createRef();
+  const svgRef = useRef<SVGSVGElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [startPosition, setStartPosition] = useState<object | undefined>(
+  const [startPosition, setStartPosition] = useState<startPosition | undefined>(
     undefined
   );
+
   const [{ imageSliceStart, imagePositions }, setState] =
     useState<TimelineState>(() => ({
       imageSliceStart: Math.floor(Math.random() * 30),
@@ -68,7 +74,7 @@ export default function DraggableTimeline({
     return "";
   }
 
-  function moveDraggedImage({ clientX, clientY }) {
+  function moveDraggedImage({ clientX, clientY }: { clientX: number, clientY: number}) {
     if (isDragging) {
       if (!startPosition) {
         setStartPosition({ clientX, clientY });
@@ -83,7 +89,7 @@ export default function DraggableTimeline({
     }
   }
 
-  const keyUp = (key) => {
+  const keyUp = (key: string) => {
     switch (key) {
       case "ArrowRight":
         if (currentImageIndex < images.length - 1) {
@@ -104,15 +110,16 @@ export default function DraggableTimeline({
 
   useEffect(() => {
     setSelectedImage(images[currentImageIndex]);
-  }, [svgRef, currentImageIndex, setSelectedImage, images, selectedImage]);
+  }, [currentImageIndex, setSelectedImage, images]);
 
   // Move the selected image to the top of the pile. I don't love this
   useEffect(() => {
-    const imageToFront = svgRef.current.getElementById(selectedImage.FILE_NAME);
+    if (!svgRef.current || !selectedImage) return;
+    const imageToFront = svgRef.current.getElementById(selectedImage.fileName);
     if (imageToFront) {
       svgRef.current?.appendChild(svgRef.current.removeChild(imageToFront));
     }
-  }, [svgRef, selectedImage]);
+  }, [selectedImage]);
 
   return (
     <svg
@@ -132,14 +139,14 @@ export default function DraggableTimeline({
     >
       {images.map((img, index) => {
         const isSelected =
-          img.CHAPTER === selectedImage.CHAPTER &&
-          img.FILE_NAME === selectedImage.FILE_NAME;
+          img.chapter === selectedImage?.chapter &&
+          img.fileName === selectedImage?.fileName;
         return (
-          <g key={img.FILE_NAME} id={img.FILE_NAME}>
+          <g key={img.fileName} id={img.fileName}>
             <image
               className={isSelected ? "outline outline-4 outline-red-500" : ""}
               style={{ cursor: "pointer" }}
-              href={`/images/${img.CHAPTER}/${img.FILE_NAME}`}
+              href={`/images/${img.chapter}/${img.fileName}.jpg`}
               width={150}
               transform={getTransform(index)}
               onMouseDown={() => {

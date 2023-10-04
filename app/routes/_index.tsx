@@ -1,21 +1,19 @@
 // This is the home page!
 
+import { useState } from "react";
 import ChapterCardGrid from "~/components/ChapterCardGrid";
 import Timeline from "~/components/home/Timeline.client";
 import { ClientOnly } from "remix-utils";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
-import timelineImages from "~/data/timelineImages.json";
-import { useState } from "react";
-import type { Image} from "~/components/home/timelineUtils";
 import { TimelineType } from "~/components/home/timelineUtils";
-import Figure from "~/components/layout/Figure";
+import timeLineImages from "~/data/figures/timeLine.json";
+import type { TFigure } from "~/types/figureType";
+import SelectedImage from "~/components/home/SelectedImage.client";
 
 export default function Index() {
   const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
-  const [selectedImage, setSelectedImage] = useState<Image>(
-    () => timelineImages[Math.floor(Math.random() * timelineImages.length)]
-  );
+  const [selectedImage, setSelectedImage] = useState<TFigure>(timeLineImages[Math.floor(Math.random()*timeLineImages.length)]);
   const [shouldShuffle, setShouldShuffle] = useState(false);
 
   return (
@@ -76,34 +74,11 @@ export default function Index() {
           </div>
         </div>
         <div className="hidden md:flex flex-col items-center p-10 pb-5 pt-20 w-1/4 basis-3/4">
-          <div className="flex flex-col items-center">
-            <Figure
-              className="pt-10"
-              imageClassName="max-h-96"
-              src={`/images/${selectedImage.CHAPTER}/${selectedImage.FILE_NAME}`}
-              alt={selectedImage.ALT_TEXT}
-            />
-            <div className=" pb-5 w-full text-white text-left">
-              <div className=" font-dubois text-xl">
-                {selectedImage.TITLE}
-                <br></br>
-                <div className="font-dubois italic text-base pt-2">
-                  by {selectedImage.ARTIST} ({selectedImage.YEAR})
-                </div>
-              </div>
-              <div className="  py-2 w-5/6 text-stone-400 sm:text-sm sm:w-full text-sm">
-                <span>{selectedImage.CREDIT} </span>
-
-                <span>{selectedImage.DIGITIZED}</span>
-              </div>
-              {/* <Link
-                to={`/chapters/${selectedImage.CHAPTER}`}
-                className="text-base font-dubois  pt-6"
-              >
-                GO TO CHAPTER →
-              </Link> */}
-            </div>
-          </div>
+          <ClientOnly>
+            {() => (
+              <SelectedImage selectedImage={selectedImage} />
+            )}
+          </ClientOnly>
         </div>
       </div>
       <ClientOnly>

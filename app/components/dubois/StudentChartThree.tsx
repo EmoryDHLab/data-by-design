@@ -39,7 +39,7 @@ export default function StudentChartThree() {
         <ul className="my-6 md:my-0 md:w-1/3">
           <li>prepared and executed by</li>
           <li>tanvi sharma, anna mola,</li>
-          <li>jay varner, and lauren klein</li>
+          <li>and lauren klein</li>
           <li>under the auspices of</li>
           <li>the digital humanities lab</li>
           <li>emory university, atlanta, ga.</li>
@@ -273,8 +273,8 @@ export default function StudentChartThree() {
                   setActiveResponse={setActiveResponse}
                   activeResponse={activeResponse}
                   response={response}
-                  color="#3B6FE0"
-                  textColor="white"
+                  color="#FEC313"
+                  textColor="black"
                 />
               )
             })}
