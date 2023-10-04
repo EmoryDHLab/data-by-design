@@ -2,13 +2,13 @@ import {useContext, useEffect, useState } from "react";
 import { EyeSlashIcon } from '@heroicons/react/24/outline'
 import { ChapterContext } from "~/chapterContext";
 import FigureModal from "./FigureModal";
-import type { Figure } from "~/types/figureType";
+import type { TFigure } from "~/types/figureType";
 import Picture from "./Picture";
 import type { ReactElement } from "react";
 
 interface Props {
-  figure?: Figure;
-  figures?: Array<Figure>;
+  figure?: TFigure;
+  figures?: Array<TFigure>;
   className?: string;
   imageClassName?: string;
   captionClassName?: string;

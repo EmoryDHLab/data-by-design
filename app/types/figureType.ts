@@ -1,4 +1,4 @@
-export type Figure = {
+export type TFigure = {
   chapter: string;
   fileName: string;
   title: string|undefined|null;

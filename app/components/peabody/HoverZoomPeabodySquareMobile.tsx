@@ -1,9 +1,9 @@
 import SlideShow from "../layout/SlideShow";
-import type { Figure } from "~/types/figureType";
+import type { TFigure } from "~/types/figureType";
 import type { ReactNode } from "react";
 
 interface Props {
-  figure: Figure;
+  figure: TFigure;
   className?: string;
   children?: ReactNode;
 }
@@ -37,7 +37,7 @@ const Image = ({ figure, className, children }: Props) => {
 }
 
 
-export default function HoverZoomPeabodySquareMobile({ figures }: { figures: Array<Figure>}) {
+export default function HoverZoomPeabodySquareMobile({ figures }: { figures: Array<TFigure>}) {
   return (
     <SlideShow
       className="block md:hidden bg-peabodyPrimary w-full py-10"

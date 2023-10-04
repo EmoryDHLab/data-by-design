@@ -1,10 +1,10 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import type { Figure } from "~/types/figureType";
+import type { TFigure } from "~/types/figureType";
 import type { ReactNode } from "react";
 
 interface Props {
-  figure?: Figure;
+  figure?: TFigure;
   src?: string;
   alt?: string;
   className?: string;

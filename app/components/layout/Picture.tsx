@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
-import type { Figure } from "~/types/figureType";
+import type { TFigure } from "~/types/figureType";
 
 interface Props {
-  figure: Figure;
+  figure: TFigure;
   className?: string;
 }
 

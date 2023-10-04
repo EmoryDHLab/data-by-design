@@ -3,7 +3,7 @@ import { classNames } from "~/utils";
 import figures from "~/data/figures/dubois.json";
 import Picture from "../layout/Picture";
 import FigureObj from "../layout/FigureObj";
-import type { Figure as FigureType } from "~/types/figureType";
+import type { TFigure as FigureType } from "~/types/figureType";
 
 type ImageSet = {
   [key: string]: FigureType[]

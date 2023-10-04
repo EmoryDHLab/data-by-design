@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
-import type { Figure } from "~/types/figureType";
+import type { TFigure } from "~/types/figureType";
 import { Caption } from "../layout/FigureObj";
 import FigureModal from "../layout/FigureModal";
 
 interface Props {
-  figure: Figure;
+  figure: TFigure;
 }
 
 export default function HoverZoomPeabodySquare({ figure }: Props) {

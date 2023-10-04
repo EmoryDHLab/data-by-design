@@ -2,10 +2,10 @@ import Carousel from "nuka-carousel";
 import { useDeviceContext } from "~/hooks";
 import type { ControlProps } from "nuka-carousel";
 import type { ReactElement } from "react";
-import type { Figure } from "~/types/figureType";
+import type { TFigure } from "~/types/figureType";
 
 interface Props {
-  figures?: Array<Figure>;
+  figures?: Array<TFigure>;
   className: string;
   children?: ReactElement | Array<ReactElement>;
 }
