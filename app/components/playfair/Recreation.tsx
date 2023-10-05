@@ -68,6 +68,8 @@ export default function Recreation({ scrollProgress }: { scrollProgress: number 
       return progToOpacityIn(scrollProgress);
     } else if (scrollProgress > arrayOut[0] && scrollProgress <= arrayOut[1]) {
       return progToOpacityOut(scrollProgress);
+    } else if (scrollProgress >= arrayIn[1] && scrollProgress <= arrayOut[0]) {
+      return 1;
     }
     return 0;
   };
@@ -150,7 +152,7 @@ export default function Recreation({ scrollProgress }: { scrollProgress: number 
         {/* First edition lines */}
         <g
           transform="scale(0.106, 0.09) translate(28,155)"
-          opacity={scrollProgress >= 1 && scrollProgress < 5.5 ? transitionInOut([1, 2], [5, 5.5]) : 0}
+          opacity={scrollProgress >= 1 && scrollProgress < 5.5 ? transitionInOut([1, 1.5], [5, 5.5]) : 0}
         >
           <path
             d={Paths.import1stEd}
