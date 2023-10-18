@@ -41,8 +41,8 @@ export const chapterMeta = (chapter: ChapterTitle) => {
   const imageUrl: string = `${hostName}/${chapterMetaData[chapter].image}`;
   return [
     { charset: "utf-8" },
-    { viewport: "width=device-width,initial-scale=1" },
     { title: `${metaData[chapter].title}: ${metaData[chapter].subtitle}` },
+    { name: "viewport", content: "width=device-width,initial-scale=1.0" },
     { name: "og:title", content: `${chapterMetaData[chapter].title}: ${chapterMetaData[chapter].subtitle}` },
     { name: "twitter:title", content: `${chapterMetaData[chapter].title}: ${chapterMetaData[chapter].subtitle}` },
     { name: "og:url", content: `${hostName}/chapters/${chapter}`},
