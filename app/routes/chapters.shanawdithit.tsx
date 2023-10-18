@@ -102,117 +102,114 @@ export default function ShanawdithitPage() {
           with the stories and statistics that record this colonial violence,
           constitute this chapter’s core. [MAP BROWSER OF THE FIVE HOWLEY
           MAPS???]
-          </CenteredLayout>
-       
-          <ChapterSectionTitle title=" A Record of Colonial Violence " />
+        </p>
+      </CenteredLayout>
 
-          <CenteredLayout>
-          <p>
-            Before moving forward, we must step back one again. Who is it, more
-            precisely, who have created this narrative, and who is it who we
-            presume to be reading these words? What are our obligations to
-            Shanawdithit and the maps she created? And what obligations are
-            yours?{" "}
-          </p>{" "}
-          <p>
-            {" "}
-            By our use of the term “obligation,” we intend to denote the more
-            specific form of responsibility that is characteristic of many
-            Indigenous knowledge practices. This responsibility entails an
-            acknowledgement of the places—both literal and figurative—from which
-            we do our work, as well as an awareness of how those places inform
-            our relationships with those whom our work touches. Here we are
-            indebted to Max Liboiron (Red River Métis/Michif) for their
-            discussion of obligation in the context of anticolonial research,
-            and their insistence that “we isn’t specific enough for obligation”
-            (24). It is not.
-          </p>
-          <p>
-            {" "}
-            Our “we”—the members of this research team—does not contain any
-            Indigenous team members, and is important to be explicit about this
-            fact. While we have sought approval from TK for the contents of this
-            narrative, as well as the images that we have chosen to share, we
-            remain aware of the limits of our knowledge, as well as of the long
-            history—passing through Shanawdithit herself—of extracting
-            Indigenous knowledge for colonial gain. For this reason, we do not
-            claim this project as a decolonial one. Rather, bearing our
-            obligations in mind, we have attempted to adopt an anticolonial
-            approach to the materials in this chapter. At each phase of our
-            process, we asked ourselves how we could resist reproducing the
-            "settler and colonial entitlement to Land and Indigenous cultures"
-            that Liboiron identifies, rightly, as a hallmark of academic
-            research (132). This is most directly expressed in our intentional
-            focus on Shanawdithit’s maps for how they illuminate the
-            significance of the colonial archive and the history of violence
-            that it records, rather than for what they might tell us about
-            Shanawdithit and her Beothuk kin.{" "}
-          </p>
-          <p>
-            {" "}
-            As a team of (mostly) settler scholars, we view it as among our
-            specific responsibilities to sit with the violence recorded in the
-            archive and to absorb its second-order harms. As we consider which
-            details are essential to convey for the purposes of our argument
-            about colonial power, we take seriously two additional areas of
-            concern. First is the additional harm brought about by restaging
-            colonial violence, as has been theorized with respect to the archive
-            of slavery by Saidiya Hartman (settler) and, more recently, in the
-            context of Black/Indigenous relations by Tiffany Lesthabo King
-            (second). Second is the allure, as voiced by Liboiron, following Eve
-            Tuck (Unangax), of advancing “a theory of change that establishes
-            harm or injury in order to achieve reparation” (Liboiron 34). The
-            details that follow, many of which do contain evidence of injury or
-            harm, are presented in the service of underscoring how the map at
-            the center of this chapter cannot be separated from the colonial
-            violence that produced it. Throughout this chapter, we have
-            attempted to prioritiz Indigenous sources and Indigenous scholars,
-            while remaining attuned to moments that might signal when certain
-            experiences, or ways of knowing, might lie beyond what settler
-            scholars can comprehend.{" "}
-          </p>
-          <p>
-            {" "}
-            As readers and viewers, you too are a part of this chapter, and for
-            this reason, we ask that you commit to a set of obligations as well:{" "}
-          </p>
-          {/* how will this be implemented? <form action="/action_page.php">
+      <ChapterSectionTitle title=" A Record of Colonial Violence " />
+
+      <CenteredLayout>
+        <p>
+          Before moving forward, we must step back one again. Who is it, more
+          precisely, who have created this narrative, and who is it who we
+          presume to be reading these words? What are our obligations to
+          Shanawdithit and the maps she created? And what obligations are yours?{" "}
+        </p>{" "}
+        <p>
+          {" "}
+          By our use of the term “obligation,” we intend to denote the more
+          specific form of responsibility that is characteristic of many
+          Indigenous knowledge practices. This responsibility entails an
+          acknowledgement of the places—both literal and figurative—from which
+          we do our work, as well as an awareness of how those places inform our
+          relationships with those whom our work touches. Here we are indebted
+          to Max Liboiron (Red River Métis/Michif) for their discussion of
+          obligation in the context of anticolonial research, and their
+          insistence that “we isn’t specific enough for obligation” (24). It is
+          not.
+        </p>
+        <p>
+          {" "}
+          Our “we”—the members of this research team—does not contain any
+          Indigenous team members, and is important to be explicit about this
+          fact. While we have sought approval from TK for the contents of this
+          narrative, as well as the images that we have chosen to share, we
+          remain aware of the limits of our knowledge, as well as of the long
+          history—passing through Shanawdithit herself—of extracting Indigenous
+          knowledge for colonial gain. For this reason, we do not claim this
+          project as a decolonial one. Rather, bearing our obligations in mind,
+          we have attempted to adopt an anticolonial approach to the materials
+          in this chapter. At each phase of our process, we asked ourselves how
+          we could resist reproducing the "settler and colonial entitlement to
+          Land and Indigenous cultures" that Liboiron identifies, rightly, as a
+          hallmark of academic research (132). This is most directly expressed
+          in our intentional focus on Shanawdithit’s maps for how they
+          illuminate the significance of the colonial archive and the history of
+          violence that it records, rather than for what they might tell us
+          about Shanawdithit and her Beothuk kin.{" "}
+        </p>
+        <p>
+          {" "}
+          As a team of (mostly) settler scholars, we view it as among our
+          specific responsibilities to sit with the violence recorded in the
+          archive and to absorb its second-order harms. As we consider which
+          details are essential to convey for the purposes of our argument about
+          colonial power, we take seriously two additional areas of concern.
+          First is the additional harm brought about by restaging colonial
+          violence, as has been theorized with respect to the archive of slavery
+          by Saidiya Hartman (settler) and, more recently, in the context of
+          Black/Indigenous relations by Tiffany Lesthabo King (second). Second
+          is the allure, as voiced by Liboiron, following Eve Tuck (Unangax), of
+          advancing “a theory of change that establishes harm or injury in order
+          to achieve reparation” (Liboiron 34). The details that follow, many of
+          which do contain evidence of injury or harm, are presented in the
+          service of underscoring how the map at the center of this chapter
+          cannot be separated from the colonial violence that produced it.
+          Throughout this chapter, we have attempted to prioritiz Indigenous
+          sources and Indigenous scholars, while remaining attuned to moments
+          that might signal when certain experiences, or ways of knowing, might
+          lie beyond what settler scholars can comprehend.{" "}
+        </p>
+        <p>
+          {" "}
+          As readers and viewers, you too are a part of this chapter, and for
+          this reason, we ask that you commit to a set of obligations as well:{" "}
+        </p>
+        {/* how will this be implemented? <form action="/action_page.php">
           <input type="checkbox" id="principle1" name="principle1" value="Aware">
 <label htmlFor="principle1"> I will remain aware of the long history of
           extracting Indigenous knowledge for colonial gain. </label><br></br>
  </form> */}
-          <p>
-          [ INTERACTIVE CHECK BOXES OF PRINCIPLES ]{" "}
-            I will remain aware of the long history of extracting Indigenous
-            knowledge for colonial gain.{" "}
-          </p>{" "}
-          <p>
-            I will commit to contemplating any new knowledge I might acquire,
-            rather than immediately shift to considering its future use.
-          </p>{" "}
-          <p>I will remind myself of the limits of my own knowledge. </p>{" "}
-          <p>
-            I will commit to making space for what I cannot or should not
-            understand I will recall the second-order violence as I read the
-            history that follows I will commit to retaining the colonial frame
-            around this history, as I will around the history of data
-            visualization as a whole.{" "}
-          </p>
-          <p>
-            {" "}
-            We now return to the story of Shanawdithit and her maps as it
-            emerges through the colonial archive. This story passes directly
-            through Demasduit and her own eventual fate. Evidently, Demasduit
-            made several attempts to escape her captors, but in the end, the
-            British prevailed. She was taken first to the fishing village of
-            Twillingate and then in the spring, after the ice had cleared, to
-            the colony of St. John's. At some point during this time, she
-            contracted tuberculosis. She succumbed to the disease less than a
-            year later, while aboard a boat that was intended to return her to
-            her family. With the death of Demasduit, the British achieved their
-            goal of grossly distorted retribution.{" "}
-          </p>
-          <p>
+        <p>
+          [ INTERACTIVE CHECK BOXES OF PRINCIPLES ] I will remain aware of the
+          long history of extracting Indigenous knowledge for colonial gain.{" "}
+        </p>{" "}
+        <p>
+          I will commit to contemplating any new knowledge I might acquire,
+          rather than immediately shift to considering its future use.
+        </p>{" "}
+        <p>I will remind myself of the limits of my own knowledge. </p>{" "}
+        <p>
+          I will commit to making space for what I cannot or should not
+          understand I will recall the second-order violence as I read the
+          history that follows I will commit to retaining the colonial frame
+          around this history, as I will around the history of data
+          visualization as a whole.{" "}
+        </p>
+        <p>
+          {" "}
+          We now return to the story of Shanawdithit and her maps as it emerges
+          through the colonial archive. This story passes directly through
+          Demasduit and her own eventual fate. Evidently, Demasduit made several
+          attempts to escape her captors, but in the end, the British prevailed.
+          She was taken first to the fishing village of Twillingate and then in
+          the spring, after the ice had cleared, to the colony of St. John's. At
+          some point during this time, she contracted tuberculosis. She
+          succumbed to the disease less than a year later, while aboard a boat
+          that was intended to return her to her family. With the death of
+          Demasduit, the British achieved their goal of grossly distorted
+          retribution.{" "}
+        </p>
+        <p>
           Shanawdithit was present the day that Demasduit’s body was returned to
           Red Indian Lake, and she directly participated in Demasduit’s funeral
           ceremony held the next spring. But the British would not learn of
@@ -369,15 +366,15 @@ export default function ShanawdithitPage() {
           led to its creation, this violence remains the source of our knowledge
           today. [ SHOW ORIGINAL MAP FULL-SCREEN HERE ]{" "}
         </p>
-        </CenteredLayout>
+      </CenteredLayout>
 
-        <ChapterSectionTitle
-          title=" 
+      <ChapterSectionTitle
+        title="
           Indigenous Cartography
-          within the Colonial Frame // TO HERE 9/6 
+          within the Colonial Frame // TO HERE 9/6
            "
-        />
-             <CenteredLayout>
+      />
+      <CenteredLayout>
         <p>
           {" "}
           Even as we cannot view this document as an unmediated expression of
@@ -460,18 +457,16 @@ export default function ShanawdithitPage() {
           as a physical reminder of how the colonial violence that led to the
           capture of Shanawdithit—and, ultimately, the destruction of her
           culture and kin—was the very same that led to the creation of her
-          maps.{" "}
-          [IMAGE OF EARLY BIRCH BARK MAP AND/OR SARAH SENSE REENAGEMENT ]
-
+          maps. [IMAGE OF EARLY BIRCH BARK MAP AND/OR SARAH SENSE REENAGEMENT ]
         </p>
-        </CenteredLayout>
-        <ChapterSectionTitle
-          title=" 
-          Maps, Data, and the Production of Colonial Knowledge 
+      </CenteredLayout>
+      <ChapterSectionTitle
+        title="
+          Maps, Data, and the Production of Colonial Knowledge
            "
-        />
-   
-        <CenteredLayout>
+      />
+
+      <CenteredLayout>
         <p>
           By shifting our focusing from the information visualized on the maps
           to the colonial power relations that frame it, we follow the approach
