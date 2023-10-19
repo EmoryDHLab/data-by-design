@@ -1,6 +1,5 @@
 {
-  "elt": [
-    {
+  "elt": [{
       "id": "d9ad6167",
       "x": 0,
       "y": 0,
@@ -818,8 +817,7 @@
       ]
     }
   ],
-  "cedu": [
-    {
+  "cedu": [{
       "id": "205efba3",
       "x": 0,
       "y": 0,
@@ -1048,7 +1046,7 @@
       "gender": "Unknown",
       "selection": "most certainly I shall give my boy a college education and my daughter a good normal training",
       "lines": [
-        "I don\u2019t know as to a trade or a",
+        "I don’t know as to a trade or a",
         "profession but <tspan class=\"underline\">most certainly I shall</tspan>",
         "<tspan class=\"underline\">give my boy a college education and my</tspan>",
         "<tspan class=\"underline\">daughter a good normal training</tspan>."
@@ -1309,8 +1307,7 @@
       ]
     }
   ],
-  "hind": [
-    {
+  "hind": [{
       "id": "ae8b8c61",
       "x": 0,
       "y": 0,
@@ -2006,7 +2003,7 @@
         "Lack of confidence among our people to intrust",
         "their business with one another and to do",
         "business with each other generally. I might",
-        "term it \u2018race pride.\u2019 I think it is due more to",
+        "term it ‘race pride.’ I think it is due more to",
         "absolute ignorance. However,<tspan class=\"underline\"> we are coming to</tspan>",
         "<tspan class=\"underline\">a better understanding of each other and business</tspan>",
         "<tspan class=\"underline\">confidence in each other is being developed</tspan>",
@@ -2184,8 +2181,8 @@
         "for work done and services rendered than would",
         "otherwise be the case. It often causes me to",
         "contest in court for fees after they have been",
-        "earned, when but for the \u2018previous condition of",
-        "servitude\u2019 of my ancestors said fees would be",
+        "earned, when but for the ‘previous condition of",
+        "servitude’ of my ancestors said fees would be",
         "cheerfully paid. <tspan class=\"underline\">No one is able to estimate</tspan>",
         "<tspan class=\"underline\">the damage inflicted upon him by the forces</tspan>",
         "<tspan class=\"underline\">which make for ostracism</tspan> and which impose a",
@@ -2214,8 +2211,7 @@
       ]
     }
   ],
-  "pl": [
-    {
+  "pl": [{
       "id": "a36b712c",
       "x": 0,
       "y": 0,
@@ -2248,8 +2244,8 @@
         "conclusion that right living on our part would not",
         "alone solve the problem. It is not the worthless,",
         "ignorant spendthrift among us that arouses the",
-        "white man\u2019s opposition, repression, oppression,",
-        "and prejudice. That class knows \u2018his place.\u2019"
+        "white man’s opposition, repression, oppression,",
+        "and prejudice. That class knows ‘his place.’"
       ]
     },
     {
@@ -2381,11 +2377,11 @@
       "x": 0,
       "y": 0,
       "gender": "Unknown",
-      "selection": "With education and the right to vote\u2014for both of which the Negro must work and fight daily\u2014he will win the place which is his here in America.",
+      "selection": "With education and the right to vote—for both of which the Negro must work and fight daily—he will win the place which is his here in America.",
       "lines": [
         "<tspan class=\"underline\">With education and the right to</tspan>",
-        "<tspan class=\"underline\">vote\u2014for both of which the Negro must</tspan>",
-        "<tspan class=\"underline\">work and fight daily\u2014he will win the</tspan>",
+        "<tspan class=\"underline\">vote—for both of which the Negro must</tspan>",
+        "<tspan class=\"underline\">work and fight daily—he will win the</tspan>",
         "<tspan class=\"underline\">place which is his here in America.</tspan>"
       ]
     },
@@ -2422,7 +2418,7 @@
       "x": 0,
       "y": 0,
       "gender": "Unknown",
-      "selection": "First train the mind; then in order to be highly regarded by Americans own some of the world\u2019s goods.",
+      "selection": "First train the mind; then in order to be highly regarded by Americans own some of the world’s goods.",
       "lines": [
         "The accumulation of property will do more to",
         "relieve the American Negro of many hardships and",
@@ -2432,7 +2428,7 @@
         "should outrank the ability to live well (the",
         "result of accumulated wealth). <tspan class=\"underline\">First train</tspan>",
         "<tspan class=\"underline\">the mind; then in order to be highly regarded</tspan>",
-        "<tspan class=\"underline\">by Americans own some of the world\u2019s goods.</tspan>"
+        "<tspan class=\"underline\">by Americans own some of the world’s goods.</tspan>"
       ]
     },
     {

@@ -1,221 +1,142 @@
-import p5 from "p5";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useWindowSize } from "~/hooks";
-import responseData from "~/data/dubois/student-responses.json";
+import responseData from "~/data/dubois/studentResponses.json";
 import ResponseV2 from "./chartThree/ResponseV2";
-
-type SimpleDot = {
-  x: number,
-  y: number,
-  d: number,
-  pressed?: any,
-  id: string,
-}
+import { random } from "~/utils";
+import ResponseDot from "./chartThree/ResponseDot";
+import type { SimpleDot } from "./types";
 
 const StudentChartThreeV2 = () => {
   const { width, height } = useWindowSize();
-  const p5Ref = useRef<p5 | undefined>(undefined);
   const [fontSize, setFontSize] = useState<number>(1);
   const [rightColumnX, setRightColumnX] = useState<number>(0);
   const [leftColumnX, setLeftColumnX] = useState<number>(0);
   const [bottomRowY, setBottomRowY] = useState<number>(0);
   const [activeResponse, setActiveResponse] = useState<string | undefined>(undefined);
-  const [clickedX, setClickedX] = useState<number>(0);
-  const [clickedY, setClickedY] = useState<number>(0);
+  const [chartWidth, setChartWidth] = useState<number>(0);
+  const [chartHeight, setChartHeight] = useState<number>(0);
+  const [eltDotsState, setEltDotsState] = useState<SimpleDot[]>([]);
+  const [ceduDotsState, setCeduDotsState] = useState<SimpleDot[]>([]);
+  const [hindDotsState, setHindDotsState] = useState<SimpleDot[]>([]);
+  const [plDotsState, setPlDotsState] = useState<SimpleDot[]>([]);
+
 
   useEffect(() => {
+    if (!width || !height) return;
+    setChartWidth(width * 0.5);
+    setChartHeight(height * 0.5);
+  }, [width, height]);
+
+  useEffect(() => {
+  const checkOverlapping = (dot: SimpleDot, existing: SimpleDot[]) => {
+    let overlapping = false;
+
+    for (let count = 0; count < existing.length; count++) {
+      let other = existing[count];
+      let distance = Math.hypot(other.x - dot.x, other.y - dot.y)
+      if (distance < 15) {
+          // console.log("🚀 ~ file: StudentChartThreeV2.client.tsx:33 ~ checkOverlapping ~ other:", other)
+          // console.log("🚀 ~ file: StudentChartThreeV2.client.tsx:39 ~ checkOverlapping ~ distance:", distance)
+          overlapping = true;
+        }
+      }
+
+      return overlapping;
+    };
+
+    if (chartHeight === 0 || chartWidth === 0) return;
+
+    setFontSize(chartHeight * 0.025);
+    setLeftColumnX(chartWidth * 0.25);
+    setRightColumnX(chartWidth * 0.75);
+    setBottomRowY((chartHeight / 2) + (chartHeight * 0.04));
+
     const eltDots: SimpleDot[] = [];
     const ceduDots: SimpleDot[] = [];
     const hindDots: SimpleDot[] = [];
     const plDots: SimpleDot[] = [];
 
-    function script(p5: p5) {
-      if (!width || !height) return;
-
-      const chartWidth = width * 0.5;
-      const chartHeight = height * 0.5;
-
-      p5.setup = function () {
-        const checkOverlapping = (dot: SimpleDot, existing: SimpleDot[]) => {
-          let overlapping = false;
-          for (var j = 0; j < existing.length; j++) {
-            let other = existing[j];
-            let d = p5.dist(dot.x, dot.y, other.x, other.y);
-            if (d < dot.d * 1.2) {
-              overlapping = true;
-            }
-          }
-          return overlapping;
-        };
-
-        const clicked = (dot: SimpleDot) => {
-          if (
-            p5.dist(p5.mouseX, p5.mouseY, dot.x, dot.y) <
-            5 &&
-            p5.mouseX &&
-            p5.mouseY
-          ) {
-              setClickedX(dot.x);
-              setClickedY(dot.y);
-              setActiveResponse(dot.id);
-          }
-        };
-
-        p5.createCanvas(
-          chartWidth,
-          chartHeight
-        ).parent("chart-3v2");
-
-        while (eltDots.length < responseData.elt.length) {
-          let dot = {
-            x: p5.random(15, (p5.width / 2) - 15),
-            y: p5.random(15, (p5.height / 2 - 50)) + 40,
-            d: 10,
-            pressed: clicked,
-            id: ""
-          };
-
-          const overlapping = checkOverlapping(dot, eltDots);
-          // If not keep it!
-          if (!overlapping) {
-            eltDots.push(dot);
-            dot.id = responseData.elt[eltDots.length - 1].id;
-            responseData.elt[eltDots.length - 1].x = dot.x;
-            responseData.elt[eltDots.length - 1].y = dot.y;
-            }
-        }
-
-        while (ceduDots.length < responseData.cedu.length) {
-          let dot = {
-            x: p5.random((p5.width / 2) + 15, p5.width - 15),
-            y: p5.random(15, (p5.height / 2 - 50)) + 40,
-            d: 10,
-            pressed: clicked,
-            id: ""
-          };
-
-          const overlapping = checkOverlapping(dot, ceduDots);
-          // If not keep it!
-          if (!overlapping) {
-            ceduDots.push(dot);
-            dot.id = responseData.cedu[ceduDots.length - 1].id;
-            responseData.cedu[ceduDots.length - 1].x = dot.x;
-            responseData.cedu[ceduDots.length - 1].y = dot.y;
-            }
-        }
-
-        // y: p5.random(15, (p5.height / 2 -15) + 15) ,
-        // y: p5.random(15, (p5.height / 2 - 100)) + 100,
-
-
-        while (hindDots.length < responseData.hind.length) {
-          let dot = {
-            x: p5.random(15, (p5.width / 2) - 15) + 15,
-            y: p5.random((p5.height / 2 + 50) + 15, p5.height - 15),
-            d: 10,
-            pressed: clicked,
-            id: ""
-          };
-
-          const overlapping = checkOverlapping(dot, hindDots);
-          if (!overlapping) {
-            hindDots.push(dot);
-            dot.id = responseData.hind[hindDots.length - 1].id;
-            responseData.hind[hindDots.length - 1].x = dot.x;
-            responseData.hind[hindDots.length - 1].y = dot.y;
-            }
-        }
-
-        while (plDots.length < responseData.pl.length) {
-          let dot = {
-            x: p5.random((p5.width / 2) + 15, p5.width - 15),
-            y: p5.random((p5.height / 2 + 60) + 25, p5.height - 25),
-            d: 10,
-            pressed: clicked,
-            id: ""
-          };
-
-          const overlapping = checkOverlapping(dot, plDots);
-          // If not keep it!
-          if (!overlapping) {
-            plDots.push(dot);
-            dot.id = responseData.pl[plDots.length - 1].id;
-            responseData.pl[plDots.length - 1].x = dot.x;
-            responseData.pl[plDots.length - 1].y = dot.y;
-            }
-        }
-
-        setFontSize(p5.height * 0.02);
-        setLeftColumnX(p5.width * 0.25);
-        setRightColumnX(p5.width * 0.75);
-        setBottomRowY((p5.height / 2) + (p5.height * 0.04));
+    while (eltDots.length < responseData.elt.length) {
+      let dot = {
+        x: random(15, (chartWidth / 2) - 15),
+        y: random(15, (chartHeight / 2 - 50)) + 40,
+        d: 2,
+        id: ""
       };
+      // console.log("🚀 ~ file: StudentChartThreeV2.client.tsx:65 ~ useEffect ~ dot:", dot)
 
-      p5.draw = function () {
-        p5.background("rgb(250, 241, 233)");
-
-        for (let i = 0; i < eltDots.length; i++) {
-          const dot = eltDots[i];
-          p5.push();
-          if (
-            p5.dist(p5.mouseX, p5.mouseY, dot.x, dot.y) <
-            5 &&
-            p5.mouseX &&
-            p5.mouseY
-            ) {
-              p5.fill("white");
-          } else {
-            p5.fill("#D92944");
-          }
-          p5.ellipse(dot.x, dot.y, dot.d);
-          p5.pop();
-        }
-
-        for (let i = 0; i < ceduDots.length; i++) {
-          const dot = ceduDots[i];
-          p5.push();
-          p5.fill("#9AE4C1")
-          p5.ellipse(dot.x, dot.y, dot.d)
-          p5.pop();
-        }
-
-        for (let i = 0; i < hindDots.length; i++) {
-          const dot = hindDots[i];
-          p5.push();
-          p5.fill("#FEC313")
-          p5.ellipse(dot.x, dot.y, dot.d)
-          p5.pop();
-        }
-
-        for (let i = 0; i < plDots.length; i++) {
-          const dot = plDots[i];
-          p5.push();
-          p5.fill("#3B6FE0")
-          p5.ellipse(dot.x, dot.y, dot.d)
-          p5.pop();
-        }
-      };
-
-      p5.mousePressed = function () {
-        [...eltDots, ...ceduDots, ...hindDots, ...plDots].forEach((dot) => {
-          dot.pressed(dot);
-        });
-      };
+      const overlapping = checkOverlapping(dot, eltDots);
+      if (!overlapping) {
+        eltDots.push(dot);
+        dot.id = responseData.elt[eltDots.length - 1].id;
+        responseData.elt[eltDots.length - 1].x = dot.x;
+        responseData.elt[eltDots.length - 1].y = dot.y;
+      }
     }
 
-    const p5Copy = new p5(script);
-    p5Ref.current = p5Copy;
+    while (ceduDots.length < responseData.cedu.length) {
+      let dot = {
+        x: random((chartWidth / 2) + 15, chartWidth - 15),
+        y: random(15, (chartHeight / 2 - 50)) + 40,
+        d: 2,
+        id: ""
+      };
 
-    return () => {
-      p5Copy.remove();
+      const overlapping = checkOverlapping(dot, ceduDots);
+      if (!overlapping) {
+        ceduDots.push(dot);
+        dot.id = responseData.cedu[ceduDots.length - 1].id;
+        responseData.cedu[ceduDots.length - 1].x = dot.x;
+        responseData.cedu[ceduDots.length - 1].y = dot.y;
+      }
     }
-  }, [width, height]);
+
+    while (hindDots.length < responseData.hind.length) {
+      let dot = {
+        x: random(15, (chartWidth / 2) - 15) + 15,
+        y: random((chartHeight / 2 + 50) + 15, chartHeight - 15),
+        d: 2,
+        id: ""
+      };
+
+      const overlapping = checkOverlapping(dot, hindDots);
+      if (!overlapping) {
+        hindDots.push(dot);
+        dot.id = responseData.hind[hindDots.length - 1].id;
+        responseData.hind[hindDots.length - 1].x = dot.x;
+        responseData.hind[hindDots.length - 1].y = dot.y;
+      }
+    }
+
+    while (plDots.length < responseData.pl.length) {
+      let dot = {
+        x: random((chartWidth / 2) + 15, chartWidth - 15),
+        y: random((chartHeight / 2 + 60) + 25, chartHeight - 25),
+        d: 2,
+        id: ""
+      };
+
+      const overlapping = checkOverlapping(dot, plDots);
+      if (!overlapping) {
+        plDots.push(dot);
+        dot.id = responseData.pl[plDots.length - 1].id;
+        responseData.pl[plDots.length - 1].x = dot.x;
+        responseData.pl[plDots.length - 1].y = dot.y;
+      }
+    }
+
+    setEltDotsState(eltDots);
+    setCeduDotsState(ceduDots);
+    setHindDotsState(hindDots);
+    setPlDotsState(plDots);
+
+  }, [chartHeight, chartWidth]);
 
   return (
     <>
       <p className="font-bold text-lg md:text-xl 2xl:text-2xl text-center font-duboisWide uppercase">
         A CHART ILLUSTRATING THE WORDS OF THE BLACK COLLEGE GRADUATES FROM ACROSS THE UNITED STATES
-        WHO CONTRIBUTED TO DU BOIS’S RESEARCH.
+        WHO CONTRIBUTED TO DU BOIS'S RESEARCH.
       </p>
       <div className="flex flex-col md:flex-row md:flex-wrap font-duboisNarrow text-base text-md text-center uppercase md:mt-8">
         <ul className="my-6 md:my-0 md:w-1/3">
@@ -239,16 +160,16 @@ const StudentChartThreeV2 = () => {
         </div>
       </div>
 
-      <div className="relative m-auto" style={{ width: `${p5Ref.current?.width}px`}}>
+      <div className="relative m-auto" style={{ width: `${chartWidth}px`, height: `${chartHeight}px` }}>
         <div id="chart-3v2">
         </div>
         {width && height &&
           <svg
-            viewBox={`0 0 ${p5Ref.current?.width} ${p5Ref.current?.height}`}
+            viewBox={`0 0 ${chartWidth} ${chartHeight}`}
             className="absolute top-0"
-            style={{ width: `${p5Ref.current?.width}px` }}
+            style={{ width: `${chartWidth}px` }}
           >
-            {/* <rect x={0} y={0} height={p5Ref.current?.height} width={p5Ref.current?.width} fill="deeppink" fillOpacity={0.3} /> */}
+            {/* <rect x={0} y={0} height={chartHeight} width={chartWidth} fill="deeppink" fillOpacity={0.3} /> */}
             <text
               x={leftColumnX}
               y={fontSize}
@@ -341,7 +262,56 @@ const StudentChartThreeV2 = () => {
                 in your case?)
               </tspan>
             </text>
-            {responseData.elt.map ((response) => {
+
+            {eltDotsState.map ((response) => {
+              return (
+                <ResponseDot
+                  key={`dot-${response.id}`}
+                  response={response}
+                  color="#D92944"
+                  setActiveResponse={setActiveResponse}
+
+                />
+              )
+            })}
+
+            {ceduDotsState.map ((response) => {
+              return (
+                <ResponseDot
+                  key={`dot-${response.id}`}
+                  response={response}
+                  color="#9AE4C1"
+                  setActiveResponse={setActiveResponse}
+
+                />
+              )
+            })}
+
+            {hindDotsState.map ((response) => {
+              return (
+                <ResponseDot
+                  key={`dot-${response.id}`}
+                  response={response}
+                  color="#FEC313"
+                  setActiveResponse={setActiveResponse}
+
+                />
+              )
+            })}
+
+            {plDotsState.map ((response) => {
+              return (
+                <ResponseDot
+                  key={`dot-${response.id}`}
+                  response={response}
+                  color="#3B6FE0"
+                  setActiveResponse={setActiveResponse}
+
+                />
+              )
+            })}
+
+            {responseData.elt.map ((response, index) => {
               return (
                 <ResponseV2
                   key={response.id}
@@ -350,15 +320,14 @@ const StudentChartThreeV2 = () => {
                   response={response}
                   color="#D92944"
                   textColor="white"
-                  x={clickedX}
-                  y={clickedY}
-                  canvasWidth={p5Ref.current?.width ?? 1000}
-                  canvasHeight={p5Ref.current?.height ?? 1000}
+                  canvasWidth={chartWidth}
+                  canvasHeight={chartHeight}
+                  dot={eltDotsState[index]}
                 />
               )
             })}
 
-            {responseData.cedu.map ((response) => {
+            {responseData.cedu.map ((response, index) => {
               return (
                 <ResponseV2
                   key={response.id}
@@ -367,15 +336,14 @@ const StudentChartThreeV2 = () => {
                   response={response}
                   color="#9AE4C1"
                   textColor="black"
-                  x={clickedX}
-                  y={clickedY}
-                  canvasWidth={p5Ref.current?.width ?? 1000}
-                  canvasHeight={p5Ref.current?.height ?? 1000}
+                  canvasWidth={chartWidth}
+                  canvasHeight={chartHeight}
+                  dot={ceduDotsState[index]}
                 />
               )
             })}
 
-            {responseData.hind.map ((response) => {
+            {responseData.hind.map ((response, index) => {
               return (
                 <ResponseV2
                   key={response.id}
@@ -384,15 +352,14 @@ const StudentChartThreeV2 = () => {
                   response={response}
                   color="#FEC313"
                   textColor="black"
-                  x={clickedX}
-                  y={clickedY}
-                  canvasWidth={p5Ref.current?.width ?? 1000}
-                  canvasHeight={p5Ref.current?.height ?? 1000}
+                  canvasWidth={chartWidth}
+                  canvasHeight={chartHeight}
+                  dot={hindDotsState[index]}
                 />
               )
             })}
 
-            {responseData.pl.map ((response) => {
+            {responseData.pl.map ((response, index) => {
               return (
                 <ResponseV2
                   key={response.id}
@@ -401,10 +368,9 @@ const StudentChartThreeV2 = () => {
                   response={response}
                   color="#3B6FE0"
                   textColor="white"
-                  x={clickedX}
-                  y={clickedY}
-                  canvasWidth={p5Ref.current?.width ?? 1000}
-                  canvasHeight={p5Ref.current?.height ?? 1000}
+                  canvasWidth={chartWidth}
+                  canvasHeight={chartHeight}
+                  dot={plDotsState[index]}
                 />
               )
             })}
