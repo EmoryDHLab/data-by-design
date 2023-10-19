@@ -18,11 +18,11 @@ const triggers = [
 
 function ClarksonScrollytell() {
   const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
-  const [scrollProgress, setScrollProgress] = useState<float>(0.0);
-  const [scale, setScale] = useState<float>(1.0);
+  const [scrollProgress, setScrollProgress] = useState<number>(0.0);
+  const [scale, setScale] = useState<number>(1.0);
   const [translateY, setTranslateY] = useState<number>(20);
   const [translateX, setTranslateX] = useState<number>(0);
-  const steps = useRef<HTMLDivElement | undefined>(undefined);
+  const steps = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (hideSensitiveState) return;
@@ -85,7 +85,6 @@ function ClarksonScrollytell() {
   return (
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
-        scrollProgress={scrollProgress}
         setScrollProgress={setScrollProgress}
         triggers={triggers}
         steps={steps}
@@ -117,12 +116,11 @@ function ClarksonScrollytell() {
                     height={2534}
                     fill="#D9D9D9"
                     stroke-width={55}
-                    class="stroke-brooksPrimary fill-brooksSecondary"
+                    className="stroke-brooksPrimary fill-brooksSecondary"
                   ></rect>
                   <EyeSlashIcon
-                    class="stroke-brooksPrimary"
                     strokeOpacity={0.75}
-                    className="w-1 h-1"
+                    className="stroke-brooksPrimary w-1 h-1"
                     height={800}
                     y="33%"
                   />
@@ -151,6 +149,6 @@ function ClarksonScrollytell() {
       </ScrollytellWrapper>
     </ScrollytellContext.Provider>
   )
-};
+}
 
 export default ClarksonScrollytell;
