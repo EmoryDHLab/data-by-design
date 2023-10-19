@@ -2,29 +2,28 @@ import Carousel from "nuka-carousel";
 import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import FigureObj from "../layout/FigureObj";
-import figures from "~/data/figures/peabody.json";
+import figures from "~/data/figures/shanawdithit.json";
 
 const FIGURES = [
-  figures["railroadscaled"],
-  figures["rochester"],
-  figures["louisville"],
-  figures["richmond"],
+  figures["Willard1"],
+  figures["Willard2"],
+  figures["Willard9"],
 ];
 
-export default function PromotionalTourMap() {
+export default function ColonialMaps() {
   const { hoverState } = useContext(ChapterContext);
   const [currentHover, setCurrentHover] = useState<number>(0);
 
   useEffect(() => {
     switch (hoverState) {
-      case "Rochester":
+      case "Willard1":
+        setCurrentHover(0);
+        break;
+      case "Willard2":
         setCurrentHover(1);
         break;
-      case "Louisville":
+      case "Willard9":
         setCurrentHover(2);
-        break;
-      case "Richmond":
-        setCurrentHover(3);
         break;
       default:
         setCurrentHover(0);

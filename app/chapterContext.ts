@@ -36,6 +36,9 @@ export type HoverState =
   | "Religion"
   | "Occupation"
   | "Map"
+  | "Willard1"
+  | "Willard2"
+  | "Willard9"
   | undefined;
 
 interface IChapterContext {

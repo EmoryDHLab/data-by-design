@@ -96,26 +96,26 @@ export default function DocumentViewer() {
           >
             {selectedSet === 'setOne' ? (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/dubois/stack1.png" alt="" />
-                <img className="w-full" src="/images/dubois/set1.png" alt="" />
+                <img src="/images/ui/stack1.png" alt="" />
+                <img className="w-full" src="/images/ui/set1.png" alt="" />
               </div>
             ) : (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/dubois/eyeframe.png" alt="" />
-                <img className="w-full" src="/images/dubois/set1.png" alt="" />
+                <img src="/images/ui/eyeframe.png" alt="" />
+                <img className="w-full" src="/images/ui/set1.png" alt="" />
               </div>
             )}
           </button>
           <button onClick={() => setSelectedSet('setTwo')}>
             {selectedSet === 'setTwo' ? (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/dubois/stack2.png" alt="" />
-                <img className="w-full" src="/images/dubois/set2.png" alt="" />
+                <img src="/images/ui/stack2.png" alt="" />
+                <img className="w-full" src="/images/ui/set2.png" alt="" />
               </div>
             ) : (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/dubois/eyeframe.png" alt="" />
-                <img className="w-full" src="/images/dubois/set2.png" alt="" />
+                <img src="/images/ui/eyeframe.png" alt="" />
+                <img className="w-full" src="/images/ui/set2.png" alt="" />
               </div>
             )}
           </button>
@@ -156,7 +156,7 @@ export default function DocumentViewer() {
               >
                 <img
                   className="w-[27.5px] h-[19.5px] mt-5"
-                  src="/images/dubois/leftarrow.png"
+                  src="/images/ui/leftarrow.png"
                   alt=""
                 />
               </button>
@@ -171,7 +171,7 @@ export default function DocumentViewer() {
               >
                 <img
                   className="w-[27.5px] h-[19.5px] mt-5"
-                  src="/images/dubois/rightarrow.png"
+                  src="/images/ui/rightarrow.png"
                   alt=""
                 />
               </button>
