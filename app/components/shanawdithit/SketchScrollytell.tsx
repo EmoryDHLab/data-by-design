@@ -92,7 +92,6 @@ function SketchScrollytell({ figure }: Props) {
         setXOffset(0);
         setYOffset(0);
       }
-      console.log("🚀 ~ file: SketchScrollyTell.tsx:90 ~ SketchScrollytell ~ scrollProgress:", scrollProgress)
   }, [scrollProgress]);
 
   return (
@@ -142,7 +141,7 @@ function SketchScrollytell({ figure }: Props) {
                   {...focusShapeSize}
                   fill="none"
                   stroke="black"
-                  strokeWidth={10}
+                  strokeWidth={3}
                   className="transition-all duration-1000"
                 />
                 <rect mask="url(#sketch-mask)"
