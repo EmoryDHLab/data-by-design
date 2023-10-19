@@ -16,6 +16,7 @@ import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
 import ColonialMaps from "~/components/shanawdithit/ColonialMaps";
 import DocumentViewer from "~/components/shanawdithit/DocumentViewer";
+import SketchScrollytell from "~/components/shanawdithit/SketchScrollytell";
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("shanawdithit");
@@ -254,7 +255,11 @@ export default function ShanawdithitPage() {
           know—prompted her to create her maps. A copy of the map known as
           "Sketch II" is shown below.
         </p>
-        [ START OF SCROLLYTELL ]
+      </CenteredLayout>
+
+      <SketchScrollytell figure={figures['howley-sketch2']} />
+
+      <CenteredLayout>
         <p>
           This map, second in the sequence of five, presents a syncretic picture
           of the series of encounters between the Beothuk and the British that,
