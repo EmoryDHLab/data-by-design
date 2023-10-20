@@ -14,7 +14,7 @@
     "fee": false,
     "notes": null,
     "frontPage": false,
-    "year": null,
+    "year": 0,
     "chapter": "dubois"
   },
   "service-pnp-cph-1": {
@@ -31,7 +31,7 @@
     "sourceUrl": null,
     "fee": false,
     "notes": null,
-    "year": null,
+    "year": 0,
     "frontPage": false,
     "chapter": "dubois"
   },
@@ -49,7 +49,7 @@
     "sourceUrl": null,
     "fee": false,
     "notes": null,
-    "year": null,
+    "year": 0,
     "frontPage": false,
     "chapter": "dubois"
   },
@@ -67,7 +67,7 @@
     "sourceUrl": null,
     "fee": false,
     "notes": null,
-    "year": null,
+    "year": 0,
     "frontPage": false,
     "chapter": "dubois"
   },
@@ -85,7 +85,7 @@
     "sourceUrl": null,
     "fee": false,
     "notes": null,
-    "year": null,
+    "year": 0,
     "frontPage": false,
     "chapter": "dubois"
   },

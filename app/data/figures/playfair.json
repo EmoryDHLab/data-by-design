@@ -14,7 +14,7 @@
     "fee": false,
     "notes": null,
     "frontPage": false,
-    "year": null,
+    "year": 0,
     "chapter": "playfair"
   },
   "9-protovis": {
@@ -32,7 +32,7 @@
     "fee": false,
     "notes": null,
     "frontPage": false,
-    "year": null,
+    "year": 0,
     "chapter": "playfair"
   },
   "10-Camoes": {
@@ -50,7 +50,7 @@
     "fee": false,
     "notes": null,
     "frontPage": false,
-    "year": null,
+    "year": 0,
     "chapter": "playfair"
   },
   "table-1787": {

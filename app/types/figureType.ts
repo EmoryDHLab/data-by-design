@@ -13,7 +13,7 @@ export type TFigure = {
   fee: boolean|string|undefined|null;
   notes: string|undefined|null;
   frontPage: boolean|string|undefined|null;
-  year: number|string|undefined|null;
+  year: number;
 }
 // export type ChapterFigure = {
 //   [key: string]: Figure;

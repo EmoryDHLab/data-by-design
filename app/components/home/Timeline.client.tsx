@@ -1,7 +1,6 @@
 import DraggableTimeline from "~/components/home/DraggableTimeline";
 import OrderedTimeline from "~/components/home/OrderedTimeline";
 import type { Dispatch, SetStateAction } from "react";
-// import type { Image} from "~/components/home/timelineUtils";
 import type { TFigure } from "~/types/figureType";
 import { TimelineType } from "~/components/home/timelineUtils";
 

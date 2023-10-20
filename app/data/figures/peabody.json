@@ -14,7 +14,7 @@
     "fee": false,
     "notes": null,
     "frontPage": false,
-    "year": null,
+    "year": 0,
     "chapter": "peabody"
   },
   "rochester": {
@@ -31,7 +31,7 @@
     "sourceUrl": null,
     "fee": false,
     "notes": null,
-    "year": null,
+    "year": 0,
     "frontPage": false,
     "chapter": "peabody"
   },
@@ -49,7 +49,7 @@
     "sourceUrl": null,
     "fee": false,
     "notes": null,
-    "year": null,
+    "year": 0,
     "frontPage": false,
     "chapter": "peabody"
   },
@@ -67,7 +67,7 @@
     "sourceUrl": null,
     "fee": false,
     "notes": null,
-    "year": null,
+    "year": 0,
     "frontPage": false,
     "chapter": "peabody"
   },
@@ -85,7 +85,7 @@
     "sourceUrl": null,
     "fee": false,
     "notes": null,
-    "year": null,
+    "year": 0,
     "frontPage": false,
     "chapter": "peabody"
   },

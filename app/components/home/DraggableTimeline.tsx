@@ -1,8 +1,10 @@
-import imageData from "~/data/figures/timeLine.json";
 import { useWindowSize } from "~/hooks";
 import { useRef, useState, useEffect } from "react";
+import { timelineImages } from "./timelineUtils";
 import type { Dispatch, SetStateAction } from "react";
 import type { TFigure } from "~/types/figureType";
+
+const imageData = timelineImages();
 
 interface TimelineState {
   imageSliceStart: number;
@@ -51,6 +53,7 @@ export default function DraggableTimeline({
     imageSliceStart,
     imageSliceStart + IMAGE_COUNT
   );
+  console.log("🚀 ~ file: DraggableTimeline.tsx:56 ~ images:", images)
 
   useEffect(() => {
     setState((state) => ({

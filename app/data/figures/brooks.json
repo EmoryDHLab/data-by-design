@@ -14,7 +14,7 @@
     "fee": false,
     "notes": null,
     "frontPage": false,
-    "year": null,
+    "year": 0,
     "chapter": "brooks"
   },
   "voyage-example": {
@@ -32,7 +32,7 @@
     "fee": false,
     "notes": null,
     "frontPage": false,
-    "year": null,
+    "year": 0,
     "chapter": "brooks"
   },
   "ch4-14-priestley-new-chart": {

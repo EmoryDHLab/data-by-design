@@ -1,8 +1,10 @@
-import imageData from "~/data/figures/timeLine.json";
 import { useEffect, useRef, useState } from "react";
 import type { Dispatch, SetStateAction, MouseEvent, KeyboardEvent } from "react";
 import type { TFigure } from "~/types/figureType";
 import { classNames } from "~/utils";
+import { timelineImages } from "./timelineUtils";
+
+const imageData: TFigure[] = timelineImages();
 
 function groupByYear() {
   const imagesByYear: { [y: string]: TFigure[] } = {};
