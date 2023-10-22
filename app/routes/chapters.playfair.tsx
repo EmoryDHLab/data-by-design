@@ -48,7 +48,7 @@ export default function PlayfairPage() {
         <Column>
           <p className="first-paragraph">
             One can only imagine the choice words exclaimed by the Scottish
-            political economist" William Playfair (1759 - 1823) when he
+            political economist William Playfair (1759 - 1823) when he
             recognized the error that he had inadvertently engraved into the
             tail end of the data line on his chart of "Exports &amp; Imports to
             and from all of North America." Engraving was—and still is—an
