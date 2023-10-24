@@ -14,9 +14,9 @@ export default function ChapterBody({ children, anchors }) {
     if (contentRef.current) {
       scrollerRef.current
         .setup({
-          step: ".chapter-content",
+          step: ".chapter-body",
           progress: true,
-          offset: "148px",
+          // offset: "148px",
         })
         .onStepProgress(({ progress }) =>
           setChapterProgressState(progress)
