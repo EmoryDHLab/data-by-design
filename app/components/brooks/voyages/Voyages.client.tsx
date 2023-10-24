@@ -19,12 +19,12 @@ function Voyages({ yearRange }: { yearRange: Array<number>}) {
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
   const showAllRef = useRef<boolean>(true);
   // const [showAllState, setShowAllState] = useState<boolean>(false);
-  const [width, setWidth] = useState<number>(window.outerWidth * 0.85);
+  const [width, setWidth] = useState<number>(window.outerWidth * 0.95);
   const [height, setHeight] = useState<number>(window.outerHeight * 0.45);
 
   useEffect(() => {
     if (windowSize.width && windowSize.height) {
-      setWidth(windowSize.width * 0.85);
+      setWidth(windowSize.width * 0.95);
       setHeight(windowSize.height * 0.45);
     }
   }, [windowSize]);
@@ -172,7 +172,7 @@ function Voyages({ yearRange }: { yearRange: Array<number>}) {
         </div>
         <div id="voyageContainer"></div>
         { width &&
-          <Axis width={width} color="black" yearRange={yearRange} />
+          <Axis width={width} color="black" yearRange={yearRange} widthAdjustment={45} />
         }
       </div>
     </section>

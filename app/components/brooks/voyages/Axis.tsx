@@ -6,7 +6,7 @@ interface Props {
   width: number;
   color?: string;
   yearRange: Array<number>;
-  widthAdjustment?: number | undefined;
+  widthAdjustment?: number;
 }
 
 function Axis({ width, color, yearRange, widthAdjustment=0 }: Props) {
@@ -18,7 +18,7 @@ function Axis({ width, color, yearRange, widthAdjustment=0 }: Props) {
   useEffect(() => {
     const xScale = d3.scaleLinear()
                    .domain(yearRange)
-                   .range([0, width + widthAdjustment || 0]);
+                   .range([0, width]);
 
     // Create axis
     const xAxis = d3.axisBottom(xScale).ticks(isDesktop ? 10 : 5, "d");

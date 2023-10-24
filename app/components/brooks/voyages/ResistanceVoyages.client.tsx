@@ -13,12 +13,12 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
   const p5Ref = useRef<p5 | undefined>();
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
-  const [width, setWidth] = useState<number>(window.outerWidth * 0.85);
+  const [width, setWidth] = useState<number>(window.outerWidth * 0.95);
   const [height, setHeight] = useState<number>(window.outerHeight * 0.45);
 
   useEffect(() => {
     if (windowSize.width && windowSize.height) {
-      setWidth(windowSize.width * 0.85);
+      setWidth(windowSize.width * 0.95);
       setHeight(windowSize.height * 0.45);
     }
   }, [windowSize]);
@@ -144,7 +144,7 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
       <div className="flex flex-col items-center mt-6 text-white">
         <div id="resistanceVoyageContainer"></div>
         { width &&
-          <Axis width={width} color="black" yearRange={yearRange} />
+          <Axis width={width} color="black" yearRange={yearRange} widthAdjustment={45}  />
         }
       </div>
     </section>
