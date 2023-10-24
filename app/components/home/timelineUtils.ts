@@ -35,5 +35,5 @@ export const timelineImages = () => {
     Object.fromEntries(brooks.concat(dubois, peabody, playfair, shanawdithit))
   );
 
-  return filteredFigures;
+  return filteredFigures || [];
 };

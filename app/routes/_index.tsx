@@ -6,14 +6,15 @@ import Timeline from "~/components/home/Timeline.client";
 import { ClientOnly } from "remix-utils";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
-import { TimelineType } from "~/components/home/timelineUtils";
-import timeLineImages from "~/data/figures/timeLine.json";
-import type { TFigure } from "~/types/figureType";
+import { TimelineType, timelineImages } from "~/components/home/timelineUtils";
 import SelectedImage from "~/components/home/SelectedImage.client";
+import type { TFigure } from "~/types/figureType";
 
 export default function Index() {
   const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
-  const [selectedImage, setSelectedImage] = useState<TFigure>(timeLineImages[Math.floor(Math.random()*timeLineImages.length)]);
+  const [selectedImage, setSelectedImage] = useState<TFigure>(
+    timelineImages[Math.floor(Math.random() * timelineImages.length)]
+  );
   const [shouldShuffle, setShouldShuffle] = useState(false);
 
   return (
@@ -21,7 +22,7 @@ export default function Index() {
       value={{
         backgroundColor: "playfairPrimary",
         primaryTextColor: "white",
-        footnotes: []
+        footnotes: [],
       }}
     >
       <div className="sm:flex bg-black text-white pt-10 sm:pt-5">
@@ -75,9 +76,7 @@ export default function Index() {
         </div>
         <div className="hidden md:flex flex-col items-center p-10 pb-5 pt-20 w-1/4 basis-3/4">
           <ClientOnly>
-            {() => (
-              <SelectedImage selectedImage={selectedImage} />
-            )}
+            {() => <SelectedImage selectedImage={selectedImage} />}
           </ClientOnly>
         </div>
       </div>
