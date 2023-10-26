@@ -24,7 +24,7 @@ export default function InlineFootnote({ index, bgOverride, superscriptOverride,
     <span>
       <button
         onClick={() => setIsTextVisible(!isTextVisible)}
-        className={`footnote mr-2 bg-${bgOverride ?? backgroundColor} text-${superscriptOverride ?? primaryTextColor}`}
+        className={`footnote mr-2 bg-${bgOverride ?? backgroundColor} text-${superscriptOverride ?? primaryTextColor} pointer-events-auto`}
       >
         {index + 1}
       </button>
