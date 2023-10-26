@@ -15,7 +15,7 @@ function Picture({ figure, className }: Props) {
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
       <img
-        className={`drop-shadow-lg transition-opacity opacity-${
+        className={`mx-auto drop-shadow-lg transition-opacity opacity-${
           hide ? "0" : "100"
         } ${className ?? ""}`}
         src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
