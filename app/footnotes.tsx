@@ -855,3 +855,5 @@ export const shanawdithitFootnotes = [
   //25
   <span key="ba0ba8ad"></span>,
 ];
+
+export const laborFootnotes = [];
