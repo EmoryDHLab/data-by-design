@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import tailwindConfig from "../tailwind.config";
 
+interface IWindowSize {
+  width: number | undefined;
+  height: number | undefined;
+}
 export function useWindowSize() {
   // Initialize state with undefined width/height so server and client renders match
   // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState({
+  const [windowSize, setWindowSize] = useState<IWindowSize>({
     width: undefined,
     height: undefined,
   });
@@ -39,6 +43,7 @@ export function useDeviceContext() {
 
   useEffect(() => {
     if (!width) return;
+    // @ts-ignore
     if (width <= parseInt(tailwindConfig.theme.screens.sm)) {
       setIsMobile(true);
       setIsDesktop(false);
@@ -49,4 +54,4 @@ export function useDeviceContext() {
   }, [width, setIsDesktop, setIsMobile]);
 
   return { isMobile, isDesktop };
-};
+}
