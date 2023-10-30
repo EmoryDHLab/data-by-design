@@ -133,6 +133,7 @@ module.exports = {
     "transition-opacity",
     "opacity-0",
     "opacity-10",
+    "opacity-25",
     "opacity-100",
     "duration-700",
     "text-offblack",

@@ -47,7 +47,7 @@ const PeopleVersions = () => {
           if (person[selectedFilterGroup.key].includes(selectedOption.label)) {
             person.opacity = 1;
           } else {
-            person.opacity = 0.5;
+            person.opacity = 0.25;
           }
           return person;
         })
