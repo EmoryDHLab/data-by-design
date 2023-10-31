@@ -13,7 +13,7 @@ export default function OverlaidSquare() {
       <image href={`/images/peabody/${currentCentury}s.jpg`} x="-3.5" y="-3.5" width="105.5" height="106" />
       {[...numberRange(0, 99)].map((index) => (
         <OverlaidYearSquare
-          key={index}
+          key={`bg-ol-year-${currentCentury + index + 1}`}
           index={index}
           year={currentCentury + index + 1}
         />

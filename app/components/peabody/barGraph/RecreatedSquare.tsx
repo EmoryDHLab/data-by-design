@@ -1,11 +1,5 @@
 // RecreatedPeabodySquare represents a Peabody square that is fully recreated in svg and
 // not an overlay of a Peabody square image.
-// import QuizYearSquare from "~/components/peabody/quiz/QuizYearSquare";
-import type {
-  HighlightedElement,
-  SquareData,
-} from "~/components/peabody/peabodyUtils";
-import type { Dispatch, SetStateAction } from "react";
 import { useContext } from "react";
 import BarGraphContext from "./BarGraphContext";
 import { numberRange } from "~/utils";
@@ -37,7 +31,7 @@ export default function RecreatedSquare() {
         <rect className="fill-peabodyOrange" x="0" width="100" height="99" />
         {[...numberRange(currentCentury + 1, currentCentury + 100)].map((year, index) => {
           return (
-            <g key={index}>
+            <g key={`bg-re-year-${currentCentury + index + 1}`}>
               <RecreatedYearSquare
                 index={index}
                 year={currentCentury + index + 1}

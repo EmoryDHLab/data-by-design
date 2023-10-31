@@ -7,6 +7,7 @@ import RecreatedSquare from "./barGraph/RecreatedSquare";
 import Timeline from "./barGraph/Timeline";
 import { getCenturyEvents } from "./peabodyUtils";
 import BarGraphContext from "./barGraph/BarGraphContext";
+import BarGraphActors from "./barGraph/BarGraphActors";
 const centuries = [1500, 1600, 1700, 1800];
 
 export default function PeabodyBarGraph() {
@@ -21,15 +22,17 @@ export default function PeabodyBarGraph() {
   }, [setCurrentCenturyEvents, currentCentury]);
 
   return (
-    <BarGraphContext.Provider value={{
-      currentCentury,
-      setCurrentCentury,
-      currentCenturyEvents,
-      setCurrentCenturyEvents,
-      activeEvent,
-      setActiveEvent,
-      centuries,
-    }}>
+    <BarGraphContext.Provider
+      value={{
+        currentCentury,
+        setCurrentCentury,
+        currentCenturyEvents,
+        setCurrentCenturyEvents,
+        activeEvent,
+        setActiveEvent,
+        centuries,
+      }}
+    >
       <div className="hidden md:grid grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-2 text-white text-center w-full p-6">
         <div className="w-full md:w-3/5 my-0 mx-auto">
           <OverlaidSquare />
@@ -37,7 +40,7 @@ export default function PeabodyBarGraph() {
         <div className="hidden md:block md:col-span-1 md:w-3/5 my-0 mx-auto">
           <RecreatedSquare />
         </div>
-        <div className="w-full col-span-2 grid grid-cols-1 gap-0 mt-1 py-6">
+        <div className="w-full col-span-2 grid grid-cols-1 gap-0 mt-.5 pt-5">
           <div className="flex justify-center">
             <BarGraph />
           </div>
@@ -55,6 +58,7 @@ export default function PeabodyBarGraph() {
             The Peabody Chart as Bar Graph
           </h4>
           <CenturySelect />
+          <BarGraphActors />
         </div>
         <div>
           <Key />

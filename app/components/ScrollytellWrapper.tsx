@@ -1,73 +1,92 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import scrollama from "scrollama";
 import type { ScrollamaInstance } from "scrollama";
 import { ChapterContext } from "~/chapterContext";
+import { useWindowSize } from "~/hooks";
 
 interface Props {
   scrollProgress : float;
   setScrollProgress: Dispatch<SetStateAction<float>>;
+  setCurrentStep: Dispatch<SetStateAction<number>>;
   children: ReactNodeLike;
+  container?: useRef<HTMLDivElement<undefined>>;
+  parent?: useRef<HTMLDivElement<undefined>>;
   steps: useRef<HTMLDivElement<undefined>>;
   triggers: Array;
   className?: string;
+  stepClassName?: string;
+  widthClass?: string;
+  bgColor?: string;
+  debug?: boolean;
+  scrollOffset?: float|string;
+  threshold?: number;
 }
 
-export default function ScrollytellWrapper({ children, steps, triggers, scrollProgress, setScrollProgress, className }: Props) {
-  const { accentColor, docHeightState } = useContext(ChapterContext);
+export default function ScrollytellWrapper({
+  children,
+  container,
+  parent,
+  steps,
+  triggers,
+  scrollProgress,
+  setScrollProgress,
+  setCurrentStep,
+  className,
+  stepClassName,
+  bgColor,
+  debug,
+  scrollOffset,
+  threshold,
+  widthClass
+}: Props) {
+  const { accentColor } = useContext(ChapterContext);
   const scrollerRef = useRef<ScrollamaInstance>(scrollama());
   const scrollerElementRef = useRef<HTMLDivElement | undefined>(undefined);
-  const [offsetTop, setOffsetTop] = useState<number>(0);
+  const windowSize = useWindowSize();
 
   useEffect(() => {
     if (steps.current?.children.length !== triggers.length) return;
     scrollerRef.current
       .setup({
-        offset: "60px",
-        step: ".step",
+        offset: scrollOffset ?? "60px",
+        step: stepClassName ?? ".step",
         progress: true,
+        debug,
+        parent,
+        container,
+        threshold
       })
-      .onStepProgress(({ index, progress }) =>
-        setScrollProgress(index + progress)
+      .onStepProgress(({ index, progress }) => {
+        if (setCurrentStep) setCurrentStep(index);
+        setScrollProgress(index + progress);
+      }
       );
 
     const scrollerRefCopy = scrollerRef.current;
 
     return () => scrollerRefCopy?.destroy();
-  }, [setScrollProgress, steps, triggers]);
+  }, [
+    debug,
+    container,
+    parent,
+    scrollOffset,
+    setCurrentStep,
+    setScrollProgress,
+    stepClassName,
+    steps,
+    threshold,
+    triggers,
+  ]);
 
   useEffect(() => {
     scrollerRef.current?.resize();
-    setOffsetTop(scrollerElementRef.current?.offsetTop + 60);
-  }, [docHeightState, setOffsetTop, scrollerRef, scrollerElementRef]);
-
-  const keyUp = (code) => {
-    if (scrollProgress < triggers.length) {
-      switch (code) {
-        case "ArrowRight":
-        case "ArrowDown":
-          window.scrollBy({left: 0, top: window.innerHeight, behavior: 'smooth'});
-          break;
-        case "ArrowLeft":
-        case "ArrowUp":
-          window.scrollBy({left: 0, top: -Math.abs(window.innerHeight), behavior: 'smooth'});
-          break;
-        case "Tab":
-          window.scrollBy({ left: 0, top: -Math.abs(window.innerHeight * scrollProgress)});
-      }
-    }
-  };
+  }, [windowSize, scrollerRef, scrollerElementRef]);
 
   return (
     <div
       ref={scrollerElementRef}
-      className={`bg-${accentColor} max-w-[100vw] top-[90px] ${className ?? ""}`}
-      tabIndex={0}
-      // onFocus={() => {
-      //   window.scrollTo({top: offsetTop, left: 0, block: "start", inline: "nearest"});
-      //   setScrollProgress(0);
-      // }}
-      // onKeyUp={(event) => { event.preventDefault(); keyUp(event.code)}}
-      >
+      className={`bg-${bgColor ?? accentColor} ${className ?? ""}`}
+    >
       {children }
     </div>
   )

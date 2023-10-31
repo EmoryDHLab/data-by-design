@@ -1,4 +1,4 @@
-export function classNames(...classes: (string | boolean)[]) {
+export function classNames(...classes: (string | boolean | undefined)[]) {
   return classes.filter(Boolean).join(" ");
 }
 
@@ -10,4 +10,8 @@ export function* numberRange(start: number, end: number) {
 
 export function scrollToAnchor(hash: string) {
   document.getElementById(hash.replace("#", ""))?.scrollIntoView({ block: start });
-}
+};
+
+export function spacesToHyphens(str: string) {
+  return str.replace(/\s/g, "-").toLowerCase();
+};

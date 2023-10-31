@@ -6,9 +6,16 @@ interface Props {
 }
 
 // Implements a full bleed grid: https://www.joshwcomeau.com/css/full-bleed/
-export default function CenteredLayout({ children, className }: Props) {
+export default function CenteredLayout({
+  children,
+  className,
+  ...props
+}: Props) {
   return (
-    <div className={`grid-wrapper md:py-5 ${className ?? ""}`}>
+    <div
+      className={`grid-wrapper md:py-5 ${className ?? ""}`}
+      {...props}
+    >
       {children}
     </div>
   );

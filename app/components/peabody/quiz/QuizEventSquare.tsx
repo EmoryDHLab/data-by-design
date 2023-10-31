@@ -3,10 +3,8 @@ import {
   getEventYFromIndex,
   POLYGONS,
 } from "~/components/peabody/peabodyUtils";
-import type { HighlightedElement } from "~/components/peabody/peabodyUtils";
-import type { Dispatch, SetStateAction } from "react";
 import { useContext, useEffect, useRef, useState  } from "react";
-import { QuizContext } from "../PeabodyQuiz";
+import { QuizContext } from "./QuizContext";
 import eventData from "~/data/peabody/eventData.json";
 
 interface Props {
@@ -15,71 +13,126 @@ interface Props {
   // Index in year square, so 0..8
   index: number;
   year: number;
+  yearEvents: object | undefined;
+  isVertical: boolean;
 }
 
-export default function QuizEventSquare({
+export default function RecreatedEventSquare({
   absoluteIndex,
   index,
   year,
+  yearEvents,
+  isVertical,
 }: Props) {
-  const [opacity, setOpacity] = useState(0);
-  const [hovered, setHovered] = useState(false);
-
   const {
-    currentEvent,
-    setCurrentEvent,
-    setHoveredEvent,
-    currentCenturyEvents,
-    solved,
-    setSolved,
+    allowOption,
+    currentStep,
+    currentStepCount,
+    focusedCategory,
+    handleCategoryClick,
+    selectedCategories,
+    setFocusedCategory,
   } = useContext(QuizContext);
 
-  const squareEvent = currentCenturyEvents.filter(e => e.year === year).find(e => e.squares.includes(index + 1) || e.squares === "full");
+  const [squareEvent, setSquareEvent] = useState<object | undefined>(undefined);
+  const [eventPolygons, setEventPolygons] = useState<array>([]);
+  const [polygonOpacity, setPolygonOpacity] = useState<float>(0.0);
+  const [interactiveOptions, setInteractiveOptions] = useState<object>({});
+  const [isOption, setIsOption] = useState<boolean>(allowOption(index));
 
-  const eventColors = useRef([]);
-
-  eventColors.current = squareEvent?.actors.map(actor => eventData.actorColors[actor]);
-
-  const polygons = [];
-
-  if (squareEvent?.actors?.length > 1) {
-    if (squareEvent?.squares === "full") {
-      switch (index) {
-        case 0:
-        case 1:
-        case 3:
-          polygons.push(...POLYGONS[0]);
-          eventColors.current = [eventData.actorColors[squareEvent.actors[0]]];
-          break;
-        case 5:
-        case 7:
-        case 8:
-          polygons.push(...POLYGONS[0]);
-          eventColors.current = [eventData.actorColors[squareEvent.actors[1]]];
-          break;
-        default:
-          polygons.push(...POLYGONS[squareEvent?.actors.length - 1]);
-      }
-    } else {
-      polygons.push(...POLYGONS[squareEvent?.actors.length - 1]);
-    }
-  } else if (squareEvent) {
-    polygons.push(...POLYGONS[0])
-  }
+  const eventColors = useRef<string[]>([]);
+  const polygonTransform = useRef<objects | undefined>(undefined);
 
   useEffect(() => {
-    squareEvent && solved.includes(squareEvent) ? setOpacity(1) : setOpacity(0);
-  }, [squareEvent, solved]);
+    setIsOption(allowOption(index));
+  }, [setIsOption, currentStepCount, selectedCategories, index, allowOption]);
 
-  const mouseEnter = () => {
-    setHoveredEvent({ type: index, event: squareEvent });
-    setHovered(true);
-  };
+  useEffect(() => {
+    if (
+      currentStepCount > 2 &&
+      currentStepCount < 7 &&
+      isOption &&
+      year === 1644
+    ) {
+      setInteractiveOptions({
+        role: "button",
+        tabIndex: 0,
+        onClick: () => handleCategoryClick(index),
+        onKeyUp: ({ key }) => { if (key === "Enter") handleCategoryClick(index) },
+        onMouseEnter: () => setFocusedCategory(index),
+        onMouseLeave: () => setFocusedCategory(undefined),
+        onFocus: () => setFocusedCategory(index),
+        onBlur: () => setFocusedCategory(undefined),
+        className: "focus:outline-none focus:ring-0 cursor-pointer",
+      });
+    }
+    else {
+      setInteractiveOptions({});
+    }
+  }, [setInteractiveOptions, index, allowOption, currentStepCount, year, setFocusedCategory, handleCategoryClick, isOption]);
 
-  const mouseLeave = () => {
-    setHoveredEvent(undefined);
-    setHovered(false);
-  }
+  useEffect(() => {
+    if (
+      (
+        currentStepCount <= 8 &&
+        year === 1644 &&
+        currentStep.solvedEvents.includes(index)
+      ) ||
+      currentStepCount >= 8
+    ) {
+      setPolygonOpacity(1.0);
+    } else {
+      setPolygonOpacity(0.0);
+    }
+  }, [currentStepCount, year, currentStep, setPolygonOpacity, index]);
+
+  useEffect(() => {
+    setSquareEvent(
+      yearEvents?.find(
+        event => event.squares.includes(index + 1) || event.squares === "full"
+      )
+    );
+  }, [setSquareEvent, yearEvents, index]);
+
+  useEffect(() => {
+    eventColors.current = squareEvent?.actors.map(actor => eventData.actorColors[actor]);
+
+    polygonTransform.current = squareEvent?.transform
+                                ? {
+                                    transform: `rotate(${squareEvent.transform[0]}deg)`,
+                                    transformOrigin: squareEvent.transform[1]
+                                  }
+                                : {};
+
+    const polygons = [];
+
+    if (squareEvent?.actors?.length > 1) {
+      if (squareEvent?.squares === "full") {
+        switch (index) {
+          case 0:
+          case 1:
+          case 3:
+            polygons.push(...POLYGONS[0]);
+            eventColors.current = [eventData.actorColors[squareEvent.actors[0]]];
+            break;
+          case 5:
+          case 7:
+          case 8:
+            polygons.push(...POLYGONS[0]);
+            eventColors.current = [eventData.actorColors[squareEvent.actors[1]]];
+            break;
+          default:
+            polygons.push(...POLYGONS[squareEvent?.actors.length - 1]);
+        }
+      } else {
+        polygons.push(...POLYGONS[squareEvent?.actors.length - 1]);
+      }
+    } else if (squareEvent) {
+      polygons.push(...POLYGONS[0])
+    }
+
+    setEventPolygons(polygons);
+  }, [squareEvent, index, setEventPolygons]);
 
   return (
     <svg
@@ -88,32 +141,58 @@ export default function QuizEventSquare({
       height={30}
       x={getEventXFromIndex(index)}
       y={getEventYFromIndex(index)}
-      className="cursor-pointer"
-      onClick={() => setSolved([...solved, squareEvent])}
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
+      className={`w-full h-auto ${isOption ? "" : "cursor-not-allowed"}`}
+      {...interactiveOptions}
     >
-      <rect
-        stroke={hovered ? "gold" : "#b3b3b3"}
-        strokeWidth={hovered ? 10 : 0.5}
-        fillOpacity={opacity}
-        fill="#d9bb9f"
-        width={30}
-        height={30}
-      ></rect>
-      {polygons.map((p, i) => {
-        return (
-          <polygon
-            key={i}
-            className={`transition-opacity duration-700`}
-            stroke="gold"
-            strokeWidth={0.5}
-            points={p}
-            fill={eventColors.current[i]}
-            fillOpacity={opacity}
-          />
-        );
-      })}
+      {(currentStepCount >= 3 && currentStepCount < 8 && year === 1644) &&
+      <>
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="central"
+          className="font-william text-lg fill-current pointer-events-none"
+          color="#3c6464"
+        >
+          {index + 1}
+        </text>
+
+        {selectedCategories.includes(index) &&
+          <>
+            <line x1={0} x2={30} y1={0} y2={30} className="stroke-red-400" strokeWidth={3}/>
+            <line x1={30} x2={0} y1={0} y2={30} className="stroke-red-400" strokeWidth={3}/>
+          </>
+        }
+
+        <rect
+          stroke={focusedCategory === index ? "gold" : "#b3b3b3"}
+          strokeWidth={focusedCategory === index ? 5 : 2}
+          width={30}
+          height={30}
+          fillOpacity={0}
+        ></rect>
+      </>
+      }
+
+      { squareEvent &&
+        <>
+          {eventPolygons.map((p, i) => {
+            return (
+              <polygon
+                key={i}
+                points={p}
+                fill={eventColors.current[i]}
+                stroke={eventColors.current[i]}
+                strokeWidth={0.5}
+                strokeOpacity={polygonOpacity}
+                style={polygonTransform.current}
+                fillOpacity={polygonOpacity}
+                className={`transition-all duration-700`}
+              />
+            );
+          })}
+        </>
+      }
     </svg>
   );
 }

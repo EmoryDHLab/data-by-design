@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SlideShow from "~/components/layout/SlideShow";
 import ChapterTitle from "~/components/ChapterTitle";
 import type { HoverState } from "~/chapterContext";
 import { ChapterContext } from "~/chapterContext";
@@ -13,7 +14,6 @@ import Footer from "~/components/Footer";
 import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
 import HoverText from "~/components/HoverText";
 import HoverZoomPeabodySquare from "~/components/peabody/HoverZoomPeabodySquare";
-import PeabodyTimelineView from "~/components/peabody/PeabodyTimelineView";
 import InlineFootnote from "~/components/InlineFootnote";
 import { peabodyFootnotes } from "~/footnotes";
 import PeabodySandbox from "~/components/peabody/PeabodySandbox";
@@ -22,6 +22,10 @@ import Scrollytell from "~/components/peabody/PeabodyScrollytell";
 import Quotation from "~/components/Quotation";
 import PeabodyQuiz from "~/components/peabody/PeabodyQuiz";
 import PeabodyBarGraph from "~/components/peabody/PeabodyBarGraph";
+import LEDChart from "~/components/peabody/LEDChart";
+import figures from "~/data/figures/peabody.json";
+import FigureObj from "~/components/layout/FigureObj";
+import HoverZoomPeabodySquareMobile from "~/components/peabody/HoverZoomPeabodySquareMobile";
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
@@ -45,49 +49,67 @@ export default function PeabodyPage() {
         title="The Work of Knowledge"
         subtitle="Elizabeth Palmer Peabody's Chronological Grids"
       />
-      <TwoColumnLayout>
-        <Column shouldPin={true} className="first-paragraph">
-          Elizabeth Palmer Peabody was born in Massachusetts in 1804.
-          Today, she is most widely recognized for her proximity to more famous
-          men—in particular, to the writers of the American Renaissance, such as
-          Ralph Waldo Emerson and Nathaniel Hawthorne, and to early champions of
+      <TwoColumnLayout className="w-full md:w-auto">
+        <Column shouldPin={true} className="first-paragraph mx-12 md:mx-0 w-fit md:w-full">
+          Elizabeth Palmer Peabody was born in Massachusetts in 1804. Today, she
+          is most widely recognized for her proximity to more famous men—in
+          particular, to the writers of the American Renaissance, such as Ralph
+          Waldo Emerson and Nathaniel Hawthorne, and to early champions of
           educational reform, such as Bronson Alcott and Horace Mann. (One of
           her sisters, Sophia Amelia Peabody, was married to Hawthorne; and the
           other, Mary Tyler Peabody, was married to Mann). But Elizabeth Palmer
           Peabody had intellectual impact in her own right: the bookstore that
           she ran out of her home, at 13 West Street, in Boston, functioned as
-          the <i>de facto</i> salon for the transcendentalist movement. She edited
-          and published the first version of Henry David Thoreau's essay on civil
-          disobedience. And she is credited with starting the first kindergarten
-          in the United States.<InlineFootnote index={0} />
+          the <i>de facto</i> salon for the transcendentalist movement. She
+          edited and published the first version of Henry David Thoreau's essay
+          on civil disobedience. And she is credited with starting the first
+          kindergarten in the United States.
+          <InlineFootnote index={0} />
           <p>
             Indeed, Peabody was an educator to her core. She came from a family
             of teachers. Her mother and two sisters all taught grade-school at
             various times. And in the 1850s, when she set out from her home in
             Boston to ride the rails, it was with an explicitly educational aim:
             to promote the pair of history textbooks she had recently written,
-            <cite>The Polish-American System of Chronology</cite>(1850) and
-            <cite>A Chronological History of the United States</cite> (1856). She
-            traveled as far north as <HoverText hoverState="Rochester">Rochester,
-            NY</HoverText>; as far west as <HoverText hoverState="Louisville">Louisville,
-            KY</HoverText>; and as far south as <HoverText hoverState="Richmond">Richmond,
-            VA</HoverText>, in order to evangelize about her new pedagogical method. The
-            Polish-American System, she came to call it, was a method with data
-            visualization at its center.
+            <cite>The Polish-American System of Chronology</cite> (1850) and
+            <cite>A Chronological History of the United States</cite> (1856).
+            She traveled as far north as{" "}
+            <HoverText hoverState="Rochester">Rochester, NY</HoverText>; as far
+            west as{" "}
+            <HoverText hoverState="Louisville">Louisville, KY</HoverText>; and
+            as far south as{" "}
+            <HoverText hoverState="Richmond">Richmond, VA</HoverText>, in order
+            to evangelize about her new pedagogical method. The Polish-American
+            System, she came to call it, was a method with data visualization at
+            its center.
           </p>
-          <FullBleed>
-            <PullQuote
-              title="Peabody designed her charts to be abstract rather than intuitive;"
-              subtitle="to promote sustained reflection rather than immediate insight. "
-            />
-          </FullBleed>
+        </Column>
+        <Column shouldPin>
+          <PromotionalTourMap />
+          <SlideShow
+            className="block md:hidden bg-peabodyPrimary w-full py-10"
+            figures={[
+              figures["railroadscaled"],
+              figures["rochester"],
+              figures["louisville"],
+              figures["richmond"]
+            ]}
+          />
+        </Column>
+      </TwoColumnLayout>
+      <PullQuote
+        title="Peabody designed her charts to be abstract rather than intuitive;"
+        subtitle="to promote sustained reflection rather than immediate insight. "
+      />
+      <TwoColumnLayout>
+        <Column shouldPin>
           <p>
             Along with boxes of her textbooks, Peabody traveled with a fabric
             roll the size of a living room rug, which contained a floor-sized
             version of one of the chronological charts described in the book.
             Peabody identified the charts—in their vibrant, full-color detail—as
             key components of her visual pedagogy. As she describes in the
-            "Advertisement" that begins the <cite>Polish-American System</cite>
+            "Advertisement" that begins the <cite>Polish-American System</cite>{" "}
             the charts were "intended to do for the science of history what maps
             do for that of geography; and they will make [it] easy to lay the
             foundations of historical knowledge in the minds of the young."
@@ -108,39 +130,20 @@ export default function PeabodyPage() {
             help envision new pathways for the future.
           </p>
         </Column>
-        <Column className="md:ml-12">
-          <PromotionalTourMap />
-          <Figure
-            images={[
-              {
-                src: "/images/peabody/1500s.jpg",
-                alt: "",
-              },
-              {
-                src: "/images/peabody/1600s.jpg",
-                alt: "",
-              },
-              {
-                src: "/images/peabody/1700s.jpg",
-                alt: "",
-              },
-              {
-                src: "/images/peabody/1800s.jpg",
-                alt: "",
-              },
+        <Column>
+          <FigureObj
+            className="md:ml-24 md:grid grid-cols-2 gap-4"
+            figures={[
+              figures["fig1-1500s-rect"],
+              figures["fig2-1600s-rect"],
+              figures["fig3-1700s-rect"],
+              figures["fig4-1800s-rect"],
             ]}
-          >
-            The four chronological charts included in Elizabeth Palmer Peabody's
-            Chronological History of the United States (1865), which display the
-            significant events of the 1500s, 1600s, 1700s, and 1800s. Images
-            courtesy of the Internet Archive. Digitized by the Library of
-            Congress.
-          </Figure>
+          />
         </Column>
       </TwoColumnLayout>
-      <ChapterSectionTitle>
-        A Visual Method of Making History
-      </ChapterSectionTitle>
+
+      <ChapterSectionTitle title="A Visual Method of Making History" />
       <CenteredLayout>
         <p>
           Peabody's method of visualizing events of historical significance was
@@ -164,7 +167,7 @@ export default function PeabodyPage() {
           biographers, Bruce Ronda.
           <InlineFootnote index={5}></InlineFootnote>
           She went on to devote several years to a study of the Polish System,
-          culminating with the development of her own modified version: the{" "}
+          culminating with the development of her own modified version: the
           <cite> Polish-American System </cite>
           that prompted her own national tour.
         </p>
@@ -178,122 +181,134 @@ export default function PeabodyPage() {
 
       <Scrollytell />
 
-      <TwoColumnLayout>
+
+          {/* <HoverZoomPeabodySquareMobile figures={[figures["fig2-1600s-rect"], figures["1620"]]} /> */}
+
+
+      <TwoColumnLayout className="w-full md:w-auto">
         <Column>
-          <p>
-            In <cite>The Polish-American System of Chronology</cite>, Peabody
-            covers a tremendous expanse of time: the period between 2500 BCE and
-            1849 CE (what was then the present). But Peabody also saw the need
-            for a textbook that focused exclusively on the United States, and
-            that went into more detail than she could cover in a textbook on
-            world history. And so, shortly after the release of the
-            <cite>Polish-American System</cite>, she began working on the book
-            that would be published, in 1856, as
-            <cite>A Chronological History of the United States</cite>. This
-            textbook contained the four full-color plates displayed above; one
-            for each of the centuries since the first European colonizers set
-            foot on Native American land. As Peabody envisioned it, the basic
-            exercise was to read a chapter of the textbook, which contained a
-            narrative account of the events of a single century, and then match
-            each item in the list of events that concluded the chapter with its
-            visual representation on the corresponding chart.
-          </p>
-          <p>
-            For example, by cross-referencing the table of events of the
-            seventeenth century, pictured just below, to its corresponding
-            chart, it is possible to identify, for example, the
-            <HoverText className="font-semibold" hoverState="Jamestown">
-              founding of Jamestown in 1607;
-            </HoverText>
-            that is the large red square in the first row on the right—red to
-            signal England's involvement, and its full-square shading to
-            indicate its heightened significance. One can also identify, in the
-            last square on the right, one row from the top,
-            <HoverText className="font-semibold" hoverState="Plymouth">
-              the settlement of Plymouth in 1620.
-            </HoverText>
-            The square is nearly entirely red—again, because of England's
-            involvement and because of its heightened significance—save for a
-            small teal square in the middle-right position. Teal corresponds to
-            action by the Dutch; indeed, this registers the
-            <HoverText
-              className="font-semibold"
-              hoverState="FirstEnslavedAfricans"
-            >
-              first enslaved Africans arriving in Virginia in that same year.
-            </HoverText>
-            On the side of abolition but by no means its most radical proponent,
-            the square's ratio of red to teal reflects Peabody's awareness of—if
-            not an urgency about—the need to end slavery in the United States.
-            <InlineFootnote index={8}></InlineFootnote>
-          </p>
-          <p>
-            Chronology—or, the study of events in time—is not, of course, the
-            same as historiography—the study of how history is written. But in
-            Peabody's mind, the one led to the other: "If you have the dates
-            here [on the charts] represented perfectly by heart," as she
-            explains in the introduction to students included in the
-            <cite>Chronological History</cite>, "events are so connected in the
-            narrative of history."
-            <InlineFootnote index={9}></InlineFootnote>
-            In keeping with the leading pedagogical theories of the day, which
-            emphasized mental recall, students were expected to commit the
-            charts to memory.
-            <InlineFootnote index={10}></InlineFootnote>
-            But Peabody's approach diverged from the rote memorization that
-            characterized most mid-nineteenth-century classrooms in that her
-            ultimate aim was for each student's mental picture of past events to
-            prompt a richer--and, crucially, and
-            individually-constructed--narrative of history. For Peabody, the
-            power of this personal narrative of history was immense: it could
-            show "the origin and consequences of national action"; and for the
-            US in particular—the world's first representative democracy—it could
-            instruct "every one what to do and what to leave undone, in his own
-            inevitable action," as a necessary participant in their own
-            governance.
-            <InlineFootnote index={11}></InlineFootnote>
-          </p>
-          <p>
-            Far from an antiquated line of thinking, Peabody's belief in the
-            catalyzing effects of chronology remains deeply embedded in US
-            culture today. As a prominent example, one might consider the
-            efforts of <cite>New York Times</cite> journalist Nikole
-            Hannah-Jones to replace 1776 with 1619—<i>contra</i>&nbsp; Peabody,
-            the year the first enslaved Africans actually arrived in Virginia—as
-            the starting point for the history of the United States. The goal of
-            this revised origin point, as Hannah-Jones explains in the visual
-            feature that introduces the 1619 Project, is to "reframe the
-            country's history by placing the consequences of slavery and the
-            contributions of black Americans at the very center of our national
-            narrative."
-            <InlineFootnote index={12}></InlineFootnote>
-            This recentered narrative would ideally, in turn—in a view endorsed
-            by the <cite>Times</cite> editorial board—prepare US citizens of all
-            races "for a more just future."
-            <InlineFootnote index={13}></InlineFootnote>
-          </p>
-          <p>
-            But it is not only the narrative of the nation's founding that can
-            benefit from a recentering of the enduring costs of its legacy of
-            slavery, or of the contributions made by its Black citizens. In her
-            acclaimed recent book, <cite>Dear Science and Other Stories</cite>,
-            Black studies scholar Katherine McKittrick takes on the project not
-            of history but of science, explaining how an account that centers
-            Black people, Black life, and Blackness more broadly can reveal the
-            "asymmetrically connected knowledge systems" that structure modern
-            scientific inquiry.
-            <InlineFootnote index={14}></InlineFootnote>
-            For McKittrick, an awareness of the range of related yet unequally
-            weighted knowledge-making systems is what enables her own vision of
-            a liberatory Black science to unfold. In addition, it also offers
-            lessons to scholars outside the field of Black studies—including
-            white scholars, such as myself, who cannot claim to know Blackness
-            firsthand—about the "asymmetrically connected knowledge systems"
-            that structure all of our work.
-          </p>
+          <section className="mx-12 md:mx-0 w-fit md:w-full">
+            <p>
+              In <cite>The Polish-American System of Chronology</cite>, Peabody
+              covers a tremendous expanse of time: the period between 2500 BCE and
+              1849 CE (what was then the present). But Peabody also saw the need
+              for a textbook that focused exclusively on the United States, and
+              that went into more detail than she could cover in a textbook on
+              world history. And so, shortly after the release of the
+              <cite>Polish-American System</cite>, she began working on the book
+              that would be published, in 1856, as
+              <cite>A Chronological History of the United States</cite>. This
+              textbook contained the four full-color plates displayed above; one
+              for each of the centuries since the first European colonizers set
+              foot on Native American land. As Peabody envisioned it, the basic
+              exercise was to read a chapter of the textbook, which contained a
+              narrative account of the events of a single century, and then match
+              each item in the list of events that concluded the chapter with its
+              visual representation on the corresponding chart.
+            </p>
+          </section>
+
+          <HoverZoomPeabodySquareMobile figures={[figures["fig2-1600s-rect"], figures["1620"]]} />
+
+          <section className="mx-12 md:mx-0 w-fit md:w-auto">
+            <p>
+              For example, by cross-referencing the table of events of the
+              seventeenth century, pictured just below, to its corresponding
+              chart, it is possible to identify, for example, the{" "}
+              <HoverText className="font-semibold" hoverState="Jamestown">
+                founding of Jamestown in 1607;
+              </HoverText>
+              that is the large red square in the first row on the right—red to
+              signal England's involvement, and its full-square shading to
+              indicate its heightened significance. One can also identify, in the
+              last square on the right, one row from the top,{" "}
+              <HoverText className="font-semibold" hoverState="Plymouth">
+                the settlement of Plymouth in 1620.
+              </HoverText>
+              The square is nearly entirely red—again, because of England's
+              involvement and because of its heightened significance—save for a
+              small teal square in the middle-right position. Teal corresponds to
+              action by the Dutch; indeed, this registers the
+              <HoverText
+                className="font-semibold"
+                hoverState="FirstEnslavedAfricans"
+              >
+                {" "}
+                first enslaved Africans arriving in Virginia in that same year.
+              </HoverText>
+              On the side of abolition but by no means its most radical proponent,
+              the square's ratio of red to teal reflects Peabody's awareness of—if
+              not an urgency about—the need to end slavery in the United States.
+              <InlineFootnote index={8}></InlineFootnote>
+            </p>
+            <p>
+              Chronology—or, the study of events in time—is not, of course, the
+              same as historiography—the study of how history is written. But in
+              Peabody's mind, the one led to the other: "If you have the dates
+              here [on the charts] represented perfectly by heart," as she
+              explains in the introduction to students included in the{" "}
+              <cite>Chronological History</cite>, "events are so connected in the
+              narrative of history."
+              <InlineFootnote index={9}></InlineFootnote>
+              In keeping with the leading pedagogical theories of the day, which
+              emphasized mental recall, students were expected to commit the
+              charts to memory.
+              <InlineFootnote index={10}></InlineFootnote>
+              But Peabody's approach diverged from the rote memorization that
+              characterized most mid-nineteenth-century classrooms in that her
+              ultimate aim was for each student's mental picture of past events to
+              prompt a richer--and, crucially, and
+              individually-constructed--narrative of history. For Peabody, the
+              power of this personal narrative of history was immense: it could
+              show "the origin and consequences of national action"; and for the
+              US in particular—the world's first representative democracy—it could
+              instruct "every one what to do and what to leave undone, in his own
+              inevitable action," as a necessary participant in their own
+              governance.
+              <InlineFootnote index={11}></InlineFootnote>
+            </p>
+            <p>
+              Far from an antiquated line of thinking, Peabody's belief in the
+              catalyzing effects of chronology remains deeply embedded in US
+              culture today. As a prominent example, one might consider the
+              efforts of <cite>New York Times</cite> journalist Nikole
+              Hannah-Jones to replace 1776 with 1619—<i>contra</i>&nbsp; Peabody,
+              the year the first enslaved Africans actually arrived in Virginia—as
+              the starting point for the history of the United States. The goal of
+              this revised origin point, as Hannah-Jones explains in the visual
+              feature that introduces the 1619 Project, is to "reframe the
+              country's history by placing the consequences of slavery and the
+              contributions of black Americans at the very center of our national
+              narrative."
+              <InlineFootnote index={12}></InlineFootnote>
+              This recentered narrative would ideally, in turn—in a view endorsed
+              by the <cite>Times</cite> editorial board—prepare US citizens of all
+              races "for a more just future."
+              <InlineFootnote index={13}></InlineFootnote>
+            </p>
+            <p>
+              But it is not only the narrative of the nation's founding that can
+              benefit from a recentering of the enduring costs of its legacy of
+              slavery, or of the contributions made by its Black citizens. In her
+              acclaimed recent book, <cite>Dear Science and Other Stories</cite>,
+              Black studies scholar Katherine McKittrick takes on the project not
+              of history but of science, explaining how an account that centers
+              Black people, Black life, and Blackness more broadly can reveal the
+              "asymmetrically connected knowledge systems" that structure modern
+              scientific inquiry.
+              <InlineFootnote index={14}></InlineFootnote>
+              For McKittrick, an awareness of the range of related yet unequally
+              weighted knowledge-making systems is what enables her own vision of
+              a liberatory Black science to unfold. In addition, it also offers
+              lessons to scholars outside the field of Black studies—including
+              white scholars, such as myself, who cannot claim to know Blackness
+              firsthand—about the "asymmetrically connected knowledge systems"
+              that structure all of our work.
+            </p>
+          </section>
         </Column>
         <Column className="md:ml-12" shouldPin={true}>
-          <HoverZoomPeabodySquare />
+          <HoverZoomPeabodySquare figure={figures["fig2-1600s-rect"]} />
         </Column>
       </TwoColumnLayout>
 
@@ -368,12 +383,10 @@ export default function PeabodyPage() {
           each viewer as that knowledge's source.
         </p>
       </CenteredLayout>
-      {/* <PeabodyTimelineView /> */}
+
       <PeabodyBarGraph />
 
-      <ChapterSectionTitle>
-        The Politics of Visual Knowledge Production
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="The Politics of Visual Knowledge Production" />
       <TwoColumnLayout>
         <Column>
           <p>
@@ -393,7 +406,7 @@ export default function PeabodyPage() {
           </p>
           <p>
             In addition, on her own, Peabody continued to iterate on the
-            teaching and learning materials associated with the
+            teaching and learning materials associated with the{" "}
             <cite>Polish-American System</cite>. In 1870, she began printing
             workbooks with sheets of blank charts—"blank centuries," as she
             called them--so that students could themselves create the
@@ -463,12 +476,11 @@ export default function PeabodyPage() {
             "The old world is covered with bad institutions which men have
             created, very often with positively good intentions, but on false
             notions, or, at least, without large and profound ideas," she
-            explains in the preface to the
-            <cite>Chronological History</cite>. "Whether the new world shall
-            estimate and sift out these evils, or repeat these mistakes, depends
-            on young Americans, who are now sitting in schoolrooms all over the
-            country, unconscious of their powers and consequent
-            responsibilities," she further explains.
+            explains in the preface to the <cite>Chronological History</cite>.
+            "Whether the new world shall estimate and sift out these evils, or
+            repeat these mistakes, depends on young Americans, who are now
+            sitting in schoolrooms all over the country, unconscious of their
+            powers and consequent responsibilities," she further explains.
             <InlineFootnote index={22}></InlineFootnote>
             Her hope was that the act of creating the chronological charts,
             rather than simply studying them, would prompt both self-reflection
@@ -609,11 +621,9 @@ export default function PeabodyPage() {
           course of future action.
         </p>
       </CenteredLayout>
-      <ChapterSectionTitle>
-        The Gendered Archive of Data Visualization
-      </ChapterSectionTitle>
+      <ChapterSectionTitle title="The Gendered Archive of Data Visualization" />
       <TwoColumnLayout className="pt-20">
-        <Column shouldPin={true}>
+        <Column>
           <p>
             There is a final lesson to be learned from Elizabeth Palmer Peabody
             and her charts, which has to do with the labor—physical as much as
@@ -669,7 +679,7 @@ export default function PeabodyPage() {
             <InlineFootnote index={31}></InlineFootnote>
           </p>
         </Column>
-        <Column className="md:ml-12">
+        <Column className="md:ml-12" shouldPin={true}>
           <Figure
             className="grid grid-cols-2 items-center middle-full gap-x-4"
             images={[
@@ -742,46 +752,6 @@ export default function PeabodyPage() {
             of work itself—of the focus that is required, and the resultant
             fatigue, of any large-scale project that is made by human hands.
           </p>
-
-          <p>
-            <span>
-              The tedious, time-intensive nature of the Floor Chart project
-              provides another path of connection back to the original mural
-              charts. For Peabody did not only demonstrate the charts as part of
-              her sales pitch; as an additional incentive, she also promised an
-              original mural chart to any teacher who purchased copies of one of
-              her textbooks for their entire class. Writing to a friend in 1850,
-              Peabody revealed that she was "aching from the fatigue of making
-              Charts for the Schools who will take the book." The letter
-              continues:
-            </span>
-          </p>
-
-          <Quotation
-            quote={
-              <>
-                Every school must have a mural chart—&amp; there is but one way
-                of making them (until they can be made by ten thousands) &amp;
-                that is by stenciling [<em>sic</em>]... I can do one a day. But
-                I must sell them cheap… To day I worked 15 hours—only sitting
-                down to take my meals—&amp; so I have done all week—so much
-                fatigue stupefies one—but as soon as it is adopted in a few
-                towns I shall be able to hire someone to do this drudgery for
-                me.
-              </>
-            }
-            byline="Elizabeth Peabody,Letter to Samuel Gray Ward, September 1850"
-          ></Quotation>
-
-          <p>
-            While we cannot change the fact that we no longer have access to the
-            original mural charts, letters like these help to attest to the
-            physical labor that was required to produce them. With its reference
-            to the "stencilling" through which Peabody created her colorful
-            symbols, as well as to its characterization of the tasks involved in
-            making the charts as "drudgery," the letter also underscores the
-            gendered dimensions of Peabody's knowledge work.
-          </p>
         </Column>
         <Column className="md:ml-12">
           <Figure
@@ -815,46 +785,96 @@ export default function PeabodyPage() {
             subtitle="when we fail to include examples like these in the stories we tell about the emergence of data visualization? "
           />
         </FullBleed>
-        <p>
-          It's not a coincidence that Peabody understood the labor of making her
-          mural charts as women's work, and that these same charts were not
-          preserved. Then as now, there exists a hierarchy of work that aligns
-          with the hierarchy of gender that governs the Anglo-Western world.
-          Work that is performed outside the home is valued, both culturally and
-          monetarily, over work that is performed within it. Work that is
-          perceived as more rigorous, or more professional—like, for instance,
-          the political economy that functioned as Playfair's primary trade—is
-          valued, again, both culturally and monetarily, over work that is
-          perceived as more intuitive, or more domestic—like, for instance, the
-          teaching that functioned as Peabody's main employ. Even—or, more
-          precisely, especially—within the art world, creative work that is
-          perceived as high art is valued above work perceived as craft.
-          <InlineFootnote index={36}></InlineFootnote>
-          These gendered divisions of labor are among primary reasons that
-          Peabody's mural charts never entered the archive. And they are the
-          same reasons that her charts have not (yet) been centered in the
-          account of the rise of modern data visualization that is most commonly
-          told. But who else are we missing when we fail to include examples
-          like these in the stories we tell about the emergence of data
-          visualization? And what possible future visualization designs are we
-          foreclosing, either intentionally or inadvertently, when we do?
-        </p>
-        <p>
-          Women's work of various forms has much to contribute to larger
-          narratives about the development of most scholarly disciplines and
-          professional fields. A final example helps to underscore this point:
-          most contemporary viewers, when seeing Peabody's charts for the first
-          time, observe that they look like paintings by Piet Mondrian, the
-          famous Dutch modernist.
-          <InlineFootnote index={37}></InlineFootnote>
-          To be sure, Peabody's charts strongly resemble Mondrian's own bold,
-          colorful, geometric grid. But Peabody's self-account of the work
-          involved in making the mural charts brings to mind a second point of
-          reference, which is not painting but quilting: an artform
-          traditionally practiced by women, and that has long been relegated to
-          the world of "folk art" and craft.
-          <InlineFootnote index={38}></InlineFootnote>
-        </p>
+      </CenteredLayout>
+
+      <TwoColumnLayout>
+        <Column shouldPin={true}>
+          <p>
+            The tedious, time-intensive nature of the Floor Chart project
+            provides another path of connection back to the original mural
+            charts. For Peabody did not only demonstrate the charts as part of
+            her sales pitch; as an additional incentive, she also promised an
+            original mural chart to any teacher who purchased copies of one of
+            her textbooks for their entire class. Writing to a friend in 1850,
+            Peabody revealed that she was "aching from the fatigue of making
+            Charts for the Schools who will take the book." The letter
+            continues:
+          </p>
+
+          <Quotation
+            quote={
+              <>
+                Every school must have a mural chart—&amp; there is but one way
+                of making them (until they can be made by ten thousands) &amp;
+                that is by stenciling [<em>sic</em>]... I can do one a day. But
+                I must sell them cheap… To day I worked 15 hours—only sitting
+                down to take my meals—&amp; so I have done all week—so much
+                fatigue stupefies one—but as soon as it is adopted in a few
+                towns I shall be able to hire someone to do this drudgery for
+                me.
+              </>
+            }
+            byline="Elizabeth Peabody,Letter to Samuel Gray Ward, September 1850"
+          ></Quotation>
+
+          <p>
+            While we cannot change the fact that we no longer have access to the
+            original mural charts, letters like these help to attest to the
+            physical labor that was required to produce them. With its reference
+            to the "stencilling" through which Peabody created her colorful
+            symbols, as well as to its characterization of the tasks involved in
+            making the charts as "drudgery," the letter also underscores the
+            gendered dimensions of Peabody's knowledge work.
+          </p>
+          <p>
+            It's not a coincidence that Peabody understood the labor of making
+            her mural charts as women's work, and that these same charts were
+            not preserved. Then as now, there exists a hierarchy of work that
+            aligns with the hierarchy of gender that governs the Anglo-Western
+            world. Work that is performed outside the home is valued, both
+            culturally and monetarily, over work that is performed within it.
+            Work that is perceived as more rigorous, or more professional—like,
+            for instance, the political economy that functioned as Playfair's
+            primary trade—is valued, again, both culturally and monetarily, over
+            work that is perceived as more intuitive, or more domestic—like, for
+            instance, the teaching that functioned as Peabody's main employ.
+            Even—or, more precisely, especially—within the art world, creative
+            work that is perceived as high art is valued above work perceived as
+            craft.
+            <InlineFootnote index={36}></InlineFootnote>
+            These gendered divisions of labor are among primary reasons that
+            Peabody's mural charts never entered the archive. And they are the
+            same reasons that her charts have not (yet) been centered in the
+            account of the rise of modern data visualization that is most
+            commonly told. But who else are we missing when we fail to include
+            examples like these in the stories we tell about the emergence of
+            data visualization? And what possible future visualization designs
+            are we foreclosing, either intentionally or inadvertently, when we
+            do?
+          </p>
+          <p>
+            Women's work of various forms has much to contribute to larger
+            narratives about the development of most scholarly disciplines and
+            professional fields. A final example helps to underscore this point:
+            most contemporary viewers, when seeing Peabody's charts for the
+            first time, observe that they look like paintings by Piet Mondrian,
+            the famous Dutch modernist.
+            <InlineFootnote index={37}></InlineFootnote>
+            To be sure, Peabody's charts strongly resemble Mondrian's own bold,
+            colorful, geometric grid. But Peabody's self-account of the work
+            involved in making the mural charts brings to mind a second point of
+            reference, which is not painting but quilting: an artform
+            traditionally practiced by women, and that has long been relegated
+            to the world of "folk art" and craft.
+            <InlineFootnote index={38}></InlineFootnote>
+          </p>
+        </Column>
+        <Column>
+          <LEDChart />
+        </Column>
+      </TwoColumnLayout>
+
+      <CenteredLayout>
         <Figure
           className="grid grid-cols-2 items-center middle-full gap-x-4"
           images={[
@@ -931,8 +951,7 @@ export default function PeabodyPage() {
           complete. Consider the surprise that greeted me—along with no small
           degree of pleasure—upon discovering that a quilt created by Loretta
           Pettway, one of the Gee's Bend quilters, graces the cover of Edward
-          Tufte's most recent book,
-          <cite>Seeing with Fresh Eyes</cite>
+          Tufte's most recent book, <cite>Seeing with Fresh Eyes</cite>
           (2020). More than merely a compelling image—"unorthodox, fresh,
           amazing" is the extent of how Tufte describes it in the text—we must
           learn to see Pettaway's quilt, like Peabody's chart, as a system of
@@ -966,7 +985,7 @@ export default function PeabodyPage() {
           knowledge.
         </p>
       </CenteredLayout>
-      <ChapterSectionTitle>The Visualization Work To Come</ChapterSectionTitle>
+      <ChapterSectionTitle title="The Visualization Work To Come" />
       <CenteredLayout>
         <p>
           Throughout this project, I argue for the knowledge that can be gained

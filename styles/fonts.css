@@ -23,7 +23,7 @@
     font-family: "VTC Du Bois";
     src: url("/fonts/VTCDubois/VTCDuBois-Bold.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-Bold.woff2") format("woff2");
-    font-weight: bolder;
+    font-weight: bold;
     font-style: normal;
     font-feature-settings: 'ss06' on;
 }
@@ -137,6 +137,7 @@
     url("/fonts/VTCDubois/VTCDuBois-RegularWide.woff2") format("woff2");
     font-weight: 400;
 
+}
 
 @font-face {
     font-family: "VTC Du Bois Light Wide";

@@ -1,49 +1,51 @@
-import { classNames } from "~/utils";
-import { useContext } from "react";
+import Carousel from "nuka-carousel";
+import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
-import ImageCaption from "~/components/ImageCaption";
-import ImageModal from "~/components/layout/ImageModal";
+import FigureObj from "../layout/FigureObj";
+import figures from "~/data/figures/peabody.json";
 
-const tourLocations = {
-  Spiral: {
-    mapStyles: "scale-[2.56] -translate-x-[14.25rem] translate-y-[11.5rem]",
-  },
-  Louisville: {
-    mapStyles: "scale-[3] translate-x-[4rem] -translate-y-[3rem]",
-  },
-  Richmond: {
-    mapStyles: "scale-[3.3] -translate-x-[9rem] -translate-y-[1rem]",
-  },
-  Rochester: {
-    mapStyles: "scale-[4] -translate-x-[22rem] translate-y-[22rem]",
-  },
-};
+const FIGURES = [
+  figures["railroadscaled"],
+  figures["rochester"],
+  figures["louisville"],
+  figures["richmond"],
+];
 
 export default function HoverImagesDubois() {
   const { hoverState } = useContext(ChapterContext);
-  let transformStyles = "";
+  const [currentHover, setCurrentHover] = useState<number>(0);
 
-  if (
-    hoverState === "Rochester" ||
-    hoverState === "Louisville" ||
-    hoverState === "Richmond"
-  ) {
-    transformStyles = tourLocations[hoverState].mapStyles;
-  }
+  useEffect(() => {
+    switch (hoverState) {
+      case "Rochester":
+        setCurrentHover(1);
+        break;
+      case "Louisville":
+        setCurrentHover(2);
+        break;
+      case "Richmond":
+        setCurrentHover(3);
+        break;
+      default:
+        setCurrentHover(0);
+    }
+  }, [hoverState, setCurrentHover]);
+
+
   return (
-    <div className="flex flex-col items-center">
-      <div className="border-peabodyPrimaryHalfOpacity border-[50px] p-1 max-w-xl overflow-hidden">
-        <ImageModal
-          src="/images/peabody/railroadscaled.webp"
-          alt=""
-          className={classNames("transition-transform", transformStyles)}
-        />
-      </div>
-      <ImageCaption>
-        The range of Peabody's promotional tour, as plotted on an 1850 rail map
-        of the United States. Image courtesy of the Library of Congress,
-        Geography and Map Division.
-      </ImageCaption>
+    <div className="ml-24 hidden md:block">
+      <Carousel
+        withoutControls
+        slideIndex={currentHover}
+        swiping={false}
+        animation="fade"
+      >
+        {FIGURES.map((figure) => {
+          return (
+            <FigureObj key={figure.fileName} figure={figure} className="w-full" />
+          )
+        })}
+      </Carousel>
     </div>
   );
 }

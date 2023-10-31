@@ -13,9 +13,12 @@ export type HoverState =
   | "watercolor"
   | "tables"
   | "nonhumanCargo"
-  | "naked"
+  | "nakedPeople"
   | "shackledMen"
   | "nursingMother"
+  | "crossSections"
+  | "sideView"
+  | "tableSet"
   | undefined;
 
 interface IChapterContext {
@@ -31,6 +34,7 @@ interface IChapterContext {
   setDocHeightState: Dispatch<SetStateAction<number>>;
   requireConsentState: boolean;
   setRequireConsentState: Dispatch<SetStateAction<boolean>>;
+  figures: object|undefined;
 }
 
 const ChapterContext = createContext<IChapterContext>({
@@ -51,6 +55,7 @@ const ChapterContext = createContext<IChapterContext>({
   },
   footnotes: [],
   requireConsent: false,
+  figures: undefined,
 });
 
 ChapterContext.displayName = "ChapterContext";

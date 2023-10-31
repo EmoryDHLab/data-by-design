@@ -1,23 +1,31 @@
-import type { ReactNodeLike } from "prop-types";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import CenteredLayout from "./layout/CenteredLayout";
+import { spacesToHyphens } from "~/utils";
+import Hyperlink from "~/components/icons/Hyperlink";
 
 interface Props {
-  children: ReactNodeLike;
+  title: string;
 }
 
-export default function ChapterSectionTitle({ children }: Props) {
+export default function ChapterSectionTitle({ title }: Props) {
   const { accentColor, accentTextColor } = useContext(ChapterContext);
+  const [isHovered, setIsHovered] = useState(false);
+  const id = spacesToHyphens(title);
   return (
-    <CenteredLayout className="py-10 md:py-20 w-full">
-      <div
-        className={`bg-${accentColor} p-4 font-dubois text-xl lg:text-2xl flex justify-center items-center text-${accentTextColor}`}
+    <CenteredLayout
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      id={id}
+      className="py-5 md:my-5 md:py-20 w-full"
+    >
+      <a
+        href={`#${id}`}
+        className={`bg-${accentColor} hover:bg-${accentColor}-translucent p-4 font-dubois text-xl lg:text-2xl flex justify-center items-center text-${accentTextColor}`}
       >
-        {children}
-      </div>
+        <Hyperlink visibility={!isHovered ? "hidden" : ""} />{" "}
+        <span className="px-4 text-center">{title}</span>
+      </a>
     </CenteredLayout>
   );
 }
-
-// Backticks create a template string. Template string allow you to put variable in the string. You have to tell react this is an expression with curly braces.

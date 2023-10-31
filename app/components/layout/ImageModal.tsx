@@ -1,27 +1,27 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-// import { ChapterContext } from "~/theme";
+import type { ChapterFigure } from "~/types/figureType";
 
 interface Props {
+  figure?: ChapterFigure;
   title?: string;
-  src: string;
+  sr?: string;
   alt?: string;
+  title?: string;
   className?: string;
   loading?: boolean;
 }
 
-export default function ImageModal({ alt, className, src, title, loading }: Props) {
+export default function ImageModal({ figure, alt, className, src, title, loading }: Props) {
   const [open, setOpen] = useState(false);
-
-  // TODO: Do we still need this?
-  // const { setDocHeightState } = useContext(ChapterContext);
 
   return (
     <>
       <img
         role="button"
-        src={src}
-        alt={alt}
+        src={figure ? `/images/${figure.chapter}/${figure.fileName}` : src}
+        alt={figure?.altText ?? alt}
+        title={figure?.title ?? title}
         className={className}
         loading={loading ?? "lazy"}
         onClick={() => setOpen(true)}
@@ -60,14 +60,15 @@ export default function ImageModal({ alt, className, src, title, loading }: Prop
                           as="h3"
                           className="text-lg font-medium leading-6 text-gray-900"
                         >
-                          {title}
+                          {figure?.title ?? title}
                         </Dialog.Title>
                       )}
                       <div className="mt-2">
                         <img
                           className="mx-auto"
-                          src={src}
-                          alt={title}
+                          src={figure ? `/images/${figure.chapter}/${figure.fileName}` : src}
+                          alt={figure?.altText ?? alt}
+                          title={figure?.title ?? title}
                           loading={loading ?? "lazy"}
                         />
                       </div>

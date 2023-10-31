@@ -119,7 +119,7 @@ export default function CombChart() {
             fontSize="2.5"
             fontFamily="Chancery Cursive"
             dy="2.3em"
-            transform={`translate(${offset + width / 2 + Math.sin(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6)},${(32 - Math.cos(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6))}) rotate(${((index + 0.4) * 360) / 11})`}
+            transform={`translate(${offset + width / 2 + Math.sin(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6)},${(32 - Math.cos(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6)).toFixed(8)}) rotate(${((index + 0.4) * 360) / 11})`}
           >
             { 1700 + index * 10 }
           </text>

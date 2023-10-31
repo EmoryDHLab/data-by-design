@@ -31,24 +31,16 @@ export default function Scrollytell() {
           <div className="text-3xl relative top-[calc(100vh-120px)] left-[calc(-50vw+6rem)] hidden md:block">↓</div>
           <Tutorial />
         </div>
-        <div ref={steps} className="bias-full md:bias-1/2 md:w-1/2 ">
+        <div ref={steps} className="bias-full md:bias-1/2 md:w-1/2 relative z-10">
           {TutorialTriggers.map((trigger, index) => {
             return (
-              // <div
-              //   key={index}
-              //   data-step={index}
-              //   className={`step relative text-2xl content-center p-5 md:px-20 ${
-              //     index + 1 === TutorialTriggers.length
-              //       ? "md:h-[50vh]"
-              //       : "h-screen"
-              //     } text-${primaryTextColor}`}>
               <div
-                key={index}
+                key={trigger.key}
                 data-step={index}
-                className={`step text-xl content-center p-5 md:px-20 ${
-                  index + 1 === TutorialTriggers.length || index == 0
-                    ? `${index !== 0 ? "h-[65vh]" : ""} md:h-[60vh]`
-                    : "h-screen"
+                className={`step text-xl content-center py-5 px-0 md:px-20 ${
+                  index == 0
+                    ? "md:h-[60vh]"
+                    : "min-h-screen"
                 } text-${primaryTextColor}`}
               >
                 {trigger}

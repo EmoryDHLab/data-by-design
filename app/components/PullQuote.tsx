@@ -1,12 +1,14 @@
+import type { ReactNodeLike } from "prop-types";
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 
 interface Props {
   title: string;
   subtitle: string;
+  children?: ReactNodeLike;
 }
 
-export default function PullQuote({ title, subtitle }: Props) {
+export default function PullQuote({ title, subtitle, children }: Props) {
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   return (
     <div
@@ -22,6 +24,7 @@ export default function PullQuote({ title, subtitle }: Props) {
           <p>
             <span>{subtitle}</span>
           </p>
+          {children}
         </div>
       </div>
     </div>
