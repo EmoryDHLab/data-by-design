@@ -2,6 +2,13 @@ import { Link } from "@remix-run/react";
 import { useContext, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 import { ChapterContext } from "~/chapterContext";
+import type { TAnchors } from "~/chapterContext";
+
+type TAnchorPosition = {
+  offset: number,
+  type: "figure" | "scrollytell" | "visualization",
+  hash: string | undefined,
+}
 
 const calcDocumentHeight = () => {
   const bodyEl = document.body;
@@ -14,7 +21,7 @@ const calcDocumentHeight = () => {
     htmlEl.scrollHeight,
     htmlEl.offsetHeight
   );
-}
+};
 
 const calcDocumentWidth = () => {
   const bodyEl = document.body;
@@ -29,46 +36,52 @@ const calcDocumentWidth = () => {
   );
 };
 
-const icon = (type) => {
+const icon = (type: string) => {
   switch (type) {
     case "scrollytell":
-      return "g"
+      return "g";
     case "figure":
-      return "a"
+      return "a";
     case "visualization":
-      return "h"
+      return "h";
     default:
-      return "i"
-  };
+      return "i";
+  }
 };
 
 interface Props {
-  anchors: object;
-  progress: float;
+  anchors: TAnchors;
+  progress: number;
 }
 export function ChapterNav({ anchors, progress }: Props) {
-  const { accentColor, backgroundColor, docHeightState, setDocHeightState } = useContext(ChapterContext);
-  const [ documentHeight, setDocumentHeight ] = useState<number>(calcDocumentHeight());
-  const [ documentWidth, setDocumentWidth ] = useState<number>(calcDocumentWidth());
-  const [ anchorMap, setAnchorMap ] = useState<array>([]);
+  const { accentColor, backgroundColor, docHeightState, setDocHeightState } =
+    useContext(ChapterContext);
+  const [documentHeight, setDocumentHeight] = useState<number>(
+    calcDocumentHeight()
+  );
+  const [documentWidth, setDocumentWidth] = useState<number>(
+    calcDocumentWidth()
+  );
+  const [anchorMap, setAnchorMap] = useState<TAnchorPosition[]>([]);
 
   useEffect(() => {
-    const anchorPositions = [];
+    const anchorPositions: TAnchorPosition[] = [];
     if (anchors) {
       for (const anchor of Object.keys(anchors)) {
+        // @ts-ignore
         const { top } = anchors[anchor].ref.current.getBoundingClientRect();
         // The 392 is the combined hight of the chapter title (320px),
         // the navbar (48px), and the chapter nax (24px)
         // TODO: we will need a different calculation for mobile.
-        const offset = ((top + window.scrollY)) / documentHeight * 100;
+        const offset = ((top + window.scrollY) / documentHeight) * 100;
         anchorPositions.push({
           offset,
           type: anchors[anchor].type,
-          hash: anchors[anchor].ref.current.id
+          hash: anchors[anchor].ref?.current?.id || "",
         });
       }
     }
-    setAnchorMap(anchorPositions)
+    setAnchorMap(anchorPositions);
   }, [anchors, setAnchorMap, documentHeight]);
 
   // The Scrollama instance dies when the overall document height changes
@@ -76,17 +89,16 @@ export function ChapterNav({ anchors, progress }: Props) {
   // the image containers the size of the image. Maybe later...
   // https://github.com/russellsamora/scrollama/issues/145
   const resizeObserver = new ResizeObserver(() => {
-      setDocumentWidth(calcDocumentWidth);
-      setDocumentHeight(calcDocumentHeight);
-    }
-  );
+    setDocumentWidth(calcDocumentWidth);
+    setDocumentHeight(calcDocumentHeight);
+  });
   resizeObserver.observe(document.body);
   resizeObserver.observe(document.documentElement);
 
   useEffect(() => {
-    setDocHeightState(docHeightState => docHeightState + 1);
+    if (!setDocHeightState) return;
+    setDocHeightState((docHeightState) => docHeightState + 1);
   }, [setDocHeightState, documentHeight]);
-
 
   useEffect(() => {
     setDocumentHeight(calcDocumentHeight());
@@ -94,28 +106,36 @@ export function ChapterNav({ anchors, progress }: Props) {
   }, [docHeightState, setDocumentHeight, setDocumentWidth]);
 
   return (
-    <nav className={`w-full z-10 sticky top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto h-6`}>
-      <div className={`bg-${backgroundColor} h-4 relative left-0 top-0 h-full`} style={{width: `${progress * 100}%`}}>
-        </div>
+    <nav
+      className={`w-full z-10 sticky top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto h-6`}
+    >
+      <div
+        className={`bg-${backgroundColor} relative left-0 top-0 h-full`}
+        style={{ width: `${progress * 100}%` }}
+      ></div>
 
-        {anchorMap.map((anchor, index) => {
-          const iconWidth = 13.14;
-          const iconOffset = (iconWidth * index) + "px";
-          return (
-            <span
-              key={index}
-              className={`relative max-lg:invisible -top-6 transition text-${anchor.offset > progress * 100 ? "black" : "white"}`}
-              style={{left: `calc(${anchor.offset}% - ${iconOffset})`}}>
-              <Link to={`#${anchor.hash}`} className="font-icons" data-tooltip-id={`my-tooltip-${index}`}>
-                {icon(anchor.type)}
-              </Link>
-              <Tooltip
-                id={`my-tooltip-${index}`}
-                content="Image Title"
-              />
-            </span>
-          )
-        })}
+      {anchorMap.map((anchor, index) => {
+        const iconWidth = 13.14;
+        const iconOffset = iconWidth * index + "px";
+        return (
+          <span
+            key={index}
+            className={`relative max-lg:invisible -top-6 transition text-${
+              anchor.offset > progress * 100 ? "black" : "white"
+            }`}
+            style={{ left: `calc(${anchor.offset}% - ${iconOffset})` }}
+          >
+            <Link
+              to={`#${anchor.hash}`}
+              className="font-icons"
+              data-tooltip-id={`my-tooltip-${index}`}
+            >
+              {icon(anchor.type)}
+            </Link>
+            <Tooltip id={`my-tooltip-${index}`} content="Image Title" />
+          </span>
+        );
+      })}
     </nav>
-  )
+  );
 }

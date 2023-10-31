@@ -3,11 +3,18 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ClientOnly } from "remix-utils";
 import { ChapterNav } from "~/components/ChapterNav";
+import type { ReactNode } from "react";
+import type { TAnchors } from "~/chapterContext";
 
-export default function ChapterBody({ children, anchors }) {
+interface Props {
+  children: ReactNode;
+  anchors: TAnchors
+}
+
+export default function ChapterBody({ children, anchors }: Props) {
   const scrollerRef = useRef(scrollama());
-  const contentRef = useRef();
-  const [chapterProgressState, setChapterProgressState] = useState<float>(0.0);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [chapterProgressState, setChapterProgressState] = useState<number>(0.0);
   const { docHeightState } = useContext(ChapterContext);
 
   useEffect(() => {
@@ -16,7 +23,6 @@ export default function ChapterBody({ children, anchors }) {
         .setup({
           step: ".chapter-body",
           progress: true,
-          // offset: "148px",
         })
         .onStepProgress(({ progress }) =>
           setChapterProgressState(progress)
@@ -26,9 +32,12 @@ export default function ChapterBody({ children, anchors }) {
   }, [setChapterProgressState, contentRef]);
 
   useEffect(() => {
-    console.log("🚀 ~ file: ChapterBody.tsx:31 ~ ChapterBody ~ docHeightState:", docHeightState, scrollerRef.current)
     scrollerRef.current?.resize();
   }, [docHeightState]);
+
+  useEffect(() => {
+
+  }, [chapterProgressState]);
 
   return (
     <>

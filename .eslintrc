@@ -8,5 +8,8 @@
     "@remix-run/eslint-config",
     "@remix-run/eslint-config/node",
     "plugin:jsx-a11y/recommended"
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": "disable"
+  }
 }

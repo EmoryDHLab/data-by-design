@@ -13,17 +13,31 @@ interface Props {
   children?: ReactNode;
 }
 
-export default function FigureModal({ children, src, figure, loading, hide, className }: Props) {
+export default function FigureModal({
+  children,
+  src,
+  figure,
+  loading,
+  hide,
+  className,
+}: Props) {
   const [open, setOpen] = useState(false);
   const [interactiveOptions, setInteractiveOptions] = useState<object>({});
   const figureRef = useRef<HTMLElement>(null);
-  const inColumn = figureRef.current?.parentElement?.classList.contains('md:bias-1/2');
+  // FIXME: There has to be better way?
+  const inColumn =
+    figureRef.current?.parentElement?.classList.contains("md:bias-1/2") ||
+    figureRef.current?.parentElement?.parentElement?.classList.contains(
+      "md:bias-1/2"
+    );
 
-    useEffect(() => {
+  useEffect(() => {
     if (!hide) {
       setInteractiveOptions({
-        onClick: () => setOpen(open => !open),
-        onKeyDown: ({ key }: { key: string }) => { if (key === "Enter") setOpen(open => !open) },
+        onClick: () => setOpen((open) => !open),
+        onKeyDown: ({ key }: { key: string }) => {
+          if (key === "Enter") setOpen((open) => !open);
+        },
         role: "button",
         tabIndex: 0,
       });
@@ -32,14 +46,14 @@ export default function FigureModal({ children, src, figure, loading, hide, clas
     }
   }, [hide, figure, setOpen, setInteractiveOptions]);
 
-
   return (
     <figure
       ref={figureRef}
-      className={`md:mx-auto ${inColumn ? "md:ml-24" : "md:mt-8"} ${className ?? ""}`}
+      className={`md:mx-auto ${inColumn ? "md:ml-24" : "md:mt-8"} ${
+        className ?? ""
+      }`}
       {...interactiveOptions}
     >
-
       {children}
 
       <Transition.Root show={open} as={Fragment}>
@@ -78,14 +92,21 @@ export default function FigureModal({ children, src, figure, loading, hide, clas
                             __html: figure.title,
                           }}
                         />
-
                       )}
                       <picture className="mt-2">
-                        <source srcSet={`/images/${figure?.chapter}/${figure?.fileName}.webp`} />
-                        <source srcSet={`/images/${figure?.chapter}/${figure?.fileName}.jpg`} />
+                        <source
+                          srcSet={`/images/${figure?.chapter}/${figure?.fileName}.webp`}
+                        />
+                        <source
+                          srcSet={`/images/${figure?.chapter}/${figure?.fileName}.jpg`}
+                        />
                         <img
                           className="mx-auto max-h-[80vh]"
-                          src={figure ? `/images/${figure.chapter}/${figure.fileName}.jpg` : src}
+                          src={
+                            figure
+                              ? `/images/${figure.chapter}/${figure.fileName}.jpg`
+                              : src
+                          }
                           alt={figure?.altText ?? ""}
                           title={figure?.title ?? ""}
                           loading={loading ?? "lazy"}

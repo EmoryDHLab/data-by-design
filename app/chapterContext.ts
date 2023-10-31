@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import type { Dispatch, SetStateAction, ReactNode } from "react";
+import type { Dispatch, SetStateAction, ReactNode, RefObject } from "react";
 
 export type HoverState =
   | "Rochester"
@@ -41,6 +41,12 @@ export type HoverState =
   | "Willard9"
   | undefined;
 
+export type TAnchors = {
+  [key: string]: {
+    type: "figure" | "scrollytell" | "visualization",
+    ref: RefObject<HTMLSpanElement> | undefined
+  }
+}
 interface IChapterContext {
   backgroundColor?: string;
   accentColor?: string;
