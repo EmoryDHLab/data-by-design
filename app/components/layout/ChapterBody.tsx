@@ -4,14 +4,13 @@ import { ClientOnly } from "remix-utils";
 import { ChapterNav } from "~/components/ChapterNav";
 import { useResizeObserver } from "~/hooks";
 import type { ReactNode } from "react";
-import type { TAnchors } from "~/chapterContext";
+import type { TVizAnchors } from "~/chapterContext";
 
 interface Props {
   children: ReactNode;
-  anchors: TAnchors
 }
 
-export default function ChapterBody({ children, anchors }: Props) {
+export default function ChapterBody({ children }: Props) {
   const scrollerRef = useRef(scrollama());
   const contentRef = useRef<HTMLDivElement>(null);
   const [chapterProgressState, setChapterProgressState] = useState<number>(0.0);
@@ -42,9 +41,9 @@ export default function ChapterBody({ children, anchors }: Props) {
   return (
     <>
       <ClientOnly>
-        {() => <ChapterNav anchors={anchors} progress={chapterProgressState} />}
+        {() => <ChapterNav progress={chapterProgressState} />}
       </ClientOnly>
-      <div className="chapter-content" ref={contentRef} data-step="z">
+      <div ref={contentRef}>
         {children}
       </div>
     </>

@@ -109,6 +109,7 @@ function ClarksonSideBySideScrollytell() {
       >
         <div
           className={`flex flex-col md:flex-row justify-between`}
+          id="scrollytell2"
         >
           <div className="sticky p-8 md:p-0 top-16 h-min mt-16 bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
             <svg

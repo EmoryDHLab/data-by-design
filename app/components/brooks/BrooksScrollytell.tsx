@@ -96,6 +96,7 @@ export default function BrooksScrollytell() {
       >
         <div
           className="cursor-pointer sticky pt-16 md:pt-0 top-0 h-screen grid grid-cols-1 md:content-end order-first"
+          id="scrollytell1"
         >
           <div className="text-3xl relative md:top-[calc(100vh-40rem)] ml-4 text-black hidden md:block" tabIndex={-1}>↓</div>
           <div className="mb-6">

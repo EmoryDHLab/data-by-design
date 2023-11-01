@@ -13,6 +13,7 @@ interface Props {
   imageClassName?: string;
   captionClassName?: string;
   groupCaption?: ReactElement;
+  id?: string;
 }
 
 export const Caption = ({ figure, className }: Props) => {
@@ -33,6 +34,7 @@ export default function FigureObj({
   captionClassName,
   groupCaption,
   imageClassName,
+  id,
 }: Props) {
   const { hideSensitiveState, accentColor, backgroundColor } = useContext(ChapterContext);
   const [hide, setHide] = useState<boolean>(Boolean(hideSensitiveState && figure?.sensitive));
@@ -43,7 +45,7 @@ export default function FigureObj({
 
   if (figures) {
     return (
-      <div className={className ?? ""}>
+      <div className={className ?? ""} id={`fig-group-${figures[0].fileName}`}>
         {figures.map((figure) => {
           return (
             <FigureModal key={`${figure.fileName}`} figure={figure}>
@@ -66,7 +68,7 @@ export default function FigureObj({
   } else if (figure) {
     return (
       <FigureModal figure={figure} hide={hide} className={className}>
-        <div className={`grid grid-cols-1 place-items-center border-${hide ? "4" : "0"} border-${backgroundColor} bg-${accentColor}`}>
+        <div id={`fig-${figure.fileName}`} className={`grid grid-cols-1 place-items-center border-${hide ? "4" : "0"} border-${backgroundColor} bg-${accentColor}`}>
           <EyeSlashIcon
             className={`h-36 absolute my-auto mx-auto transition-[stroke-opacity] stroke-${backgroundColor}`}
             strokeOpacity={hide ? 0.75 : 0}

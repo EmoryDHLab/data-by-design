@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import type { Dispatch, SetStateAction, ReactNode, RefObject } from "react";
+import type { TFigure } from "./types/figureType";
 
 export type HoverState =
   | "Rochester"
@@ -41,11 +42,10 @@ export type HoverState =
   | "Willard9"
   | undefined;
 
-export type TAnchors = {
-  [key: string]: {
-    type: "figure" | "scrollytell" | "visualization",
-    ref: RefObject<HTMLSpanElement> | undefined
-  }
+export type TVizAnchors = {
+  type: "scrollytell" | "visualization",
+  id: string,
+  title: string,
 }
 interface IChapterContext {
   backgroundColor?: string;
@@ -54,9 +54,11 @@ interface IChapterContext {
   primaryTextColor?: string;
   hoverState?: HoverState;
   setHoverState?: Dispatch<SetStateAction<HoverState>>;
-  footnotes: Array<ReactNode>;
+  footnotes: ReactNode[];
+  // TODO: Make figures and visualizations required
+  figures?: TFigure[];
+  visualizations?: TVizAnchors[];
   footnoteTextColor?: string;
-  figures?: object|undefined;
   disclosure?: boolean|undefined
   hideSensitiveState?: boolean|undefined;
   setHideSensitiveState?: Dispatch<SetStateAction<boolean>>;
@@ -74,7 +76,8 @@ const ChapterContext = createContext<IChapterContext>({
     console.error("setHoverState not implemented. Did you pass it to context?");
   },
   footnotes: [],
-  figures: undefined,
+  figures: [],
+  visualizations: [],
   hideSensitiveState: false,
 });
 

@@ -65,11 +65,12 @@ export default function SeraphiqueTour({ figure }: Props) {
 
   return (
     <FigureModal figure={figure} hide={hideSensitiveState}>
-      <p id={figure.fileName} className='sr-only'>{figure.caption}</p>
+      <p id={`fig-label-${figure.fileName}`} className='sr-only'>{figure.caption}</p>
       <svg
+      id={`fig-${figure.fileName}`}
         viewBox="0 0 50 69"
         role="img"
-        aria-labelledby={figure.fileName}
+        aria-labelledby={`fig-label-${figure.fileName}`}
         className={`drop-shadow-lg bg-${accentColor}`}
       >
         <mask id="seraphique">

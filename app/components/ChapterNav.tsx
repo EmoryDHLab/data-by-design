@@ -3,13 +3,13 @@ import { useContext, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 import { ChapterContext } from "~/chapterContext";
 import { useResizeObserver } from "~/hooks";
-import type { TAnchors } from "~/chapterContext";
 
 type TAnchorPosition = {
-  offset: number,
-  type: "figure" | "scrollytell" | "visualization",
-  hash: string | undefined,
-}
+  offset: number;
+  type: "figure" | "scrollytell" | "visualization";
+  hash: string | undefined;
+  title?: string;
+};
 
 const icon = (type: string) => {
   switch (type) {
@@ -25,40 +25,54 @@ const icon = (type: string) => {
 };
 
 interface Props {
-  anchors: TAnchors;
   progress: number;
 }
-export function ChapterNav({ anchors, progress }: Props) {
-  const { accentColor, backgroundColor } =
-    useContext(ChapterContext);
+export function ChapterNav({ progress }: Props) {
+  const { accentColor, backgroundColor, figures, visualizations } = useContext(ChapterContext);
   const { documentSize } = useResizeObserver();
   const [anchorMap, setAnchorMap] = useState<TAnchorPosition[]>([]);
 
   useEffect(() => {
-    console.log("🚀 ~ file: ChapterNav.tsx:45 ~ useEffect ~ documentSize.height:", documentSize)
     if (!documentSize.height) return;
+    const getOffset = (id: string) => {
+      const element = document.getElementById(id);
+      if (!element || !documentSize.height) return 0;
+      // @ts-ignore
+      const { top } = element.getBoundingClientRect();
+      return ((top + window.scrollY) / documentSize.height) * 100;
+    };
+
     const anchorPositions: TAnchorPosition[] = [];
-    if (anchors) {
-      for (const anchor of Object.keys(anchors)) {
-        // @ts-ignore
-        const { top } = anchors[anchor].ref.current.getBoundingClientRect();
-        // The 392 is the combined hight of the chapter title (320px),
-        // the navbar (48px), and the chapter nax (24px)
-        // TODO: we will need a different calculation for mobile.
-        const offset = ((top + window.scrollY) / documentSize.height) * 100;
+    if (figures) {
+      for (const figure of figures) {
+        const offset = getOffset(`fig-${figure.fileName}`);
+        if (offset > 0) {
+          anchorPositions.push({
+            offset,
+            type: "figure",
+            hash: `fig-${figure.fileName}`,
+            title: figure.title || figure.fileName
+          });
+        }
+      }
+    }
+    if (visualizations) {
+      for (const viz of visualizations) {
+        const offset = getOffset(viz.id);
         anchorPositions.push({
           offset,
-          type: anchors[anchor].type,
-          hash: anchors[anchor].ref?.current?.id || "",
+          type: viz.type,
+          hash: viz.id,
+          title: viz.title
         });
       }
     }
     setAnchorMap(anchorPositions);
-  }, [anchors, setAnchorMap, documentSize]);
+  }, [visualizations, setAnchorMap, documentSize]);
 
   return (
     <nav
-      className={`w-full z-10 sticky top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto h-6`}
+      className={`w-full z-[15] sticky top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto h-6`}
     >
       <div
         className={`bg-${backgroundColor} relative left-0 top-0 h-full`}
@@ -83,7 +97,7 @@ export function ChapterNav({ anchors, progress }: Props) {
             >
               {icon(anchor.type)}
             </Link>
-            <Tooltip id={`my-tooltip-${index}`} content="Image Title" />
+            <Tooltip id={`my-tooltip-${index}`} content={anchor.title} />
           </span>
         );
       })}

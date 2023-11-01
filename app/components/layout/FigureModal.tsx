@@ -26,10 +26,7 @@ export default function FigureModal({
   const figureRef = useRef<HTMLElement>(null);
   // FIXME: There has to be better way?
   const inColumn =
-    figureRef.current?.parentElement?.classList.contains("md:bias-1/2") ||
-    figureRef.current?.parentElement?.parentElement?.classList.contains(
-      "md:bias-1/2"
-    );
+    figureRef.current?.parentElement?.classList.contains("md:bias-1/2");
 
   useEffect(() => {
     if (!hide) {

@@ -15,13 +15,14 @@ export default function Consent() {
 
   const [small, setSmall] = useState<boolean>(false);
 
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   try {
     useEffect(() => {
       const observer = new IntersectionObserver(
         ([record]) => {
           const { intersectionRatio } = record;
+          console.log("🚀 ~ file: Consent.client.tsx:31 ~ useEffect ~ intersectionRatio:", intersectionRatio)
           if (intersectionRatio < 1) {
             setSmall(true)
           } else {
@@ -44,7 +45,7 @@ export default function Consent() {
 
   if (setHideSensitiveState) {
     return (
-      <section ref={containerRef} className={`w-full border-b-2 border-slate-400 sticky -top-4 mx-12 md:mx-24 md:pt-5 z-10 bg-${accentColor}`}>
+      <div ref={containerRef} className={`w-full border-b-2 border-slate-400 sticky top-2 md:pt-5 z-10 bg-${accentColor}`}>
         <p className="text-center w-full">
           <strong>Note:</strong> This chapter deals with images of slavery.
         </p>
@@ -59,7 +60,7 @@ export default function Consent() {
             Show sensitive images
           </Toggle>
         </p>
-      </section>
+      </div>
     );
   }
 

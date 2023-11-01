@@ -32,7 +32,7 @@ const CHAPTERS = [
 
 export default function ChapterDropdown({ children }: { children: ReactNode }) {
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block text-left z-30">
       <div>
         <Menu.Button className="">
           CHAPTERS
