@@ -2,6 +2,7 @@ import { Link } from "@remix-run/react";
 import { useContext, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 import { ChapterContext } from "~/chapterContext";
+import { useResizeObserver } from "~/hooks";
 import type { TAnchors } from "~/chapterContext";
 
 type TAnchorPosition = {
@@ -9,32 +10,6 @@ type TAnchorPosition = {
   type: "figure" | "scrollytell" | "visualization",
   hash: string | undefined,
 }
-
-const calcDocumentHeight = () => {
-  const bodyEl = document.body;
-  const htmlEl = document.documentElement;
-
-  return Math.max(
-    bodyEl.scrollHeight,
-    bodyEl.offsetHeight,
-    htmlEl.clientHeight,
-    htmlEl.scrollHeight,
-    htmlEl.offsetHeight
-  );
-};
-
-const calcDocumentWidth = () => {
-  const bodyEl = document.body;
-  const htmlEl = document.documentElement;
-
-  return Math.max(
-    bodyEl.scrollWidth,
-    bodyEl.offsetWidth,
-    htmlEl.clientWidth,
-    htmlEl.scrollWidth,
-    htmlEl.offsetWidth
-  );
-};
 
 const icon = (type: string) => {
   switch (type) {
@@ -54,17 +29,14 @@ interface Props {
   progress: number;
 }
 export function ChapterNav({ anchors, progress }: Props) {
-  const { accentColor, backgroundColor, docHeightState, setDocHeightState } =
+  const { accentColor, backgroundColor } =
     useContext(ChapterContext);
-  const [documentHeight, setDocumentHeight] = useState<number>(
-    calcDocumentHeight()
-  );
-  const [documentWidth, setDocumentWidth] = useState<number>(
-    calcDocumentWidth()
-  );
+  const { documentSize } = useResizeObserver();
   const [anchorMap, setAnchorMap] = useState<TAnchorPosition[]>([]);
 
   useEffect(() => {
+    console.log("🚀 ~ file: ChapterNav.tsx:45 ~ useEffect ~ documentSize.height:", documentSize)
+    if (!documentSize.height) return;
     const anchorPositions: TAnchorPosition[] = [];
     if (anchors) {
       for (const anchor of Object.keys(anchors)) {
@@ -73,7 +45,7 @@ export function ChapterNav({ anchors, progress }: Props) {
         // The 392 is the combined hight of the chapter title (320px),
         // the navbar (48px), and the chapter nax (24px)
         // TODO: we will need a different calculation for mobile.
-        const offset = ((top + window.scrollY) / documentHeight) * 100;
+        const offset = ((top + window.scrollY) / documentSize.height) * 100;
         anchorPositions.push({
           offset,
           type: anchors[anchor].type,
@@ -82,28 +54,7 @@ export function ChapterNav({ anchors, progress }: Props) {
       }
     }
     setAnchorMap(anchorPositions);
-  }, [anchors, setAnchorMap, documentHeight]);
-
-  // The Scrollama instance dies when the overall document height changes
-  // like when images are lazyloaded. We could, and maybe should, make
-  // the image containers the size of the image. Maybe later...
-  // https://github.com/russellsamora/scrollama/issues/145
-  const resizeObserver = new ResizeObserver(() => {
-    setDocumentWidth(calcDocumentWidth);
-    setDocumentHeight(calcDocumentHeight);
-  });
-  resizeObserver.observe(document.body);
-  resizeObserver.observe(document.documentElement);
-
-  useEffect(() => {
-    if (!setDocHeightState) return;
-    setDocHeightState((docHeightState) => docHeightState + 1);
-  }, [setDocHeightState, documentHeight]);
-
-  useEffect(() => {
-    setDocumentHeight(calcDocumentHeight());
-    setDocumentWidth(calcDocumentWidth());
-  }, [docHeightState, setDocumentHeight, setDocumentWidth]);
+  }, [anchors, setAnchorMap, documentSize]);
 
   return (
     <nav

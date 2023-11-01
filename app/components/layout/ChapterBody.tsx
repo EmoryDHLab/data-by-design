@@ -1,8 +1,8 @@
 import scrollama from "scrollama";
-import { useContext, useEffect, useRef, useState } from "react";
-import { ChapterContext } from "~/chapterContext";
+import { useEffect, useRef, useState } from "react";
 import { ClientOnly } from "remix-utils";
 import { ChapterNav } from "~/components/ChapterNav";
+import { useResizeObserver } from "~/hooks";
 import type { ReactNode } from "react";
 import type { TAnchors } from "~/chapterContext";
 
@@ -15,7 +15,7 @@ export default function ChapterBody({ children, anchors }: Props) {
   const scrollerRef = useRef(scrollama());
   const contentRef = useRef<HTMLDivElement>(null);
   const [chapterProgressState, setChapterProgressState] = useState<number>(0.0);
-  const { docHeightState } = useContext(ChapterContext);
+  const { documentSize } = useResizeObserver();
 
   useEffect(() => {
     if (contentRef.current) {
@@ -31,13 +31,13 @@ export default function ChapterBody({ children, anchors }: Props) {
     scrollerRef.current?.resize();
   }, [setChapterProgressState, contentRef]);
 
+  // The Scrollama instance dies when the overall document height changes
+  // like when images are lazyloaded. We could, and maybe should, make
+  // the image containers the size of the image. Maybe later...
+  // https://github.com/russellsamora/scrollama/issues/145
   useEffect(() => {
     scrollerRef.current?.resize();
-  }, [docHeightState]);
-
-  useEffect(() => {
-
-  }, [chapterProgressState]);
+  }, [documentSize]);
 
   return (
     <>

@@ -15,11 +15,6 @@ export default function InlineFootnote({ index, bgOverride, superscriptOverride,
     useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
 
-  useEffect(() => {
-    if (!setDocHeightState) return;
-    setDocHeightState(docHeightState => docHeightState + 1);
-  }, [isTextVisible, setDocHeightState]);
-
   return (
     <span>
       <button

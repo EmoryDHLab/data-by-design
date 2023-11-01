@@ -1,5 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
+import { useResizeObserver } from "~/hooks";
 import Toggle from "./Toggle";
 
 export default function Consent() {
@@ -8,8 +9,9 @@ export default function Consent() {
     setHideSensitiveState,
     accentColor,
     backgroundColor,
-    docHeightState,
   } = useContext(ChapterContext);
+
+  const { documentSize } = useResizeObserver();
 
   const [small, setSmall] = useState<boolean>(false);
 
@@ -17,10 +19,8 @@ export default function Consent() {
 
   try {
     useEffect(() => {
-    console.log("🚀 ~ file: Consent.tsx:17 ~ Consent ~ containerRef:", containerRef)
       const observer = new IntersectionObserver(
         ([record]) => {
-          console.log("🚀 ~ file: Consent.tsx:22 ~ useEffect ~ record:", record)
           const { intersectionRatio } = record;
           if (intersectionRatio < 1) {
             setSmall(true)
@@ -32,12 +32,13 @@ export default function Consent() {
       const observee = containerRef.current?.nextElementSibling?.firstElementChild;
 
       if (observee) observer.observe(observee);
+      console.log("🚀 ~ file: Consent.client.tsx:41 ~ Consent ~ documentSize:", documentSize)
 
       return () => {
         observer.disconnect();
       }
 
-    }, [setSmall, docHeightState]);
+    }, [setSmall, documentSize]);
   } catch (error) {
     console.log("🚀 ~ file: Consent.tsx:38 ~ useEffect ~ error:", error)
   }

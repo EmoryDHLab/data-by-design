@@ -56,8 +56,6 @@ interface IChapterContext {
   setHoverState?: Dispatch<SetStateAction<HoverState>>;
   footnotes: Array<ReactNode>;
   footnoteTextColor?: string;
-  docHeightState?: number;
-  setDocHeightState?: Dispatch<SetStateAction<number>>;
   figures?: object|undefined;
   disclosure?: boolean|undefined
   hideSensitiveState?: boolean|undefined;
@@ -74,12 +72,6 @@ const ChapterContext = createContext<IChapterContext>({
   hoverState: undefined,
   setHoverState: (_: SetStateAction<HoverState>) => {
     console.error("setHoverState not implemented. Did you pass it to context?");
-  },
-  docHeightState: 0,
-  setDocHeightState: (_: SetStateAction<number>) => {
-    console.error(
-      "setDocHeightState not implemented. Did you pass it to context?"
-    );
   },
   footnotes: [],
   figures: undefined,

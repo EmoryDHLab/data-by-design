@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -27,8 +27,6 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export default function PlayfairPage() {
-  const [docHeightState, setDocHeightState] = useState<number>(0);
-
   const anchors: TAnchors = {
     chartOne: {
       type: "figure",
@@ -97,8 +95,6 @@ export default function PlayfairPage() {
         accentTextColor: "white",
         footnoteTextColor: "playfairPrimary",
         footnotes: playfairFootnotes,
-        docHeightState,
-        setDocHeightState,
       }}
     >
       <ChapterTitle

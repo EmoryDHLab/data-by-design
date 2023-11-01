@@ -14,8 +14,6 @@ import playfairFigures from "~/data/figures/playfair.json";
 import FigureObj from "~/components/layout/FigureObj";
 
 export default function IntroPage() {
-  const [docHeightState, setDocHeightState] = useState<number>(0);
-
   return (
     <ChapterContext.Provider
       value={{
@@ -25,8 +23,6 @@ export default function IntroPage() {
         accentTextColor: "white",
         footnoteTextColor: "playfairPrimary",
         footnotes: playfairFootnotes,
-        docHeightState,
-        setDocHeightState,
       }}
     >
       <ChapterTitle

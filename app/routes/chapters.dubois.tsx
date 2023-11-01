@@ -33,7 +33,6 @@ export const meta: V2_MetaFunction = () => {
 
 export default function DuboisChapter() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
-  const [docHeightState, setDocHeightState] = useState<number>(0);
 
   return (
     <ChapterContext.Provider
@@ -45,8 +44,6 @@ export default function DuboisChapter() {
         footnotes: duboisFootnotes,
         hoverState,
         setHoverState,
-        docHeightState,
-        setDocHeightState,
       }}
     >
       <ChapterTitle

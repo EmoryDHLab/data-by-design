@@ -29,11 +29,10 @@ import type { V2_MetaFunction } from "@remix-run/node";
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("peabody");
-}
+};
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
-  const [docHeightState, setDocHeightState] = useState<number>(0);
 
   return (
     <ChapterContext.Provider
@@ -45,8 +44,6 @@ export default function PeabodyPage() {
         footnotes: peabodyFootnotes,
         hoverState,
         setHoverState,
-        docHeightState,
-        setDocHeightState,
       }}
     >
       <ChapterTitle
@@ -532,9 +529,13 @@ export default function PeabodyPage() {
               figures["ch4-11"],
               figures["ch4-12"],
             ]}
-            groupCaption={<p><cite>The Polish-American System</cite>
-              housed at the American Antiquarian Society. Courtesy
-              of the American Antiquarian Society. Photos by Lauren Klein.</p>}
+            groupCaption={
+              <p>
+                <cite>The Polish-American System</cite>
+                housed at the American Antiquarian Society. Courtesy of the
+                American Antiquarian Society. Photos by Lauren Klein.
+              </p>
+            }
           />
         </Column>
       </TwoColumnLayout>
@@ -663,16 +664,21 @@ export default function PeabodyPage() {
           */}
           <FigureObj
             className="grid grid-cols-2 gap-4 md:ml-12"
-            figures={[
-              figures["ch4-clarke1"],
-              figures["ch4-clarke2"]
-            ]}
-            groupCaption={<><p><strong>Left:</strong> One of the timelines
-              created by Anne Laura Clarke, as explored by Granville
-              Ganter in his essay on Clarke's traveling lectures.</p>
-              <p><strong>Right:</strong> Another timeline as it was first
-              encountered by Ganter. Photos by Granville Ganter. Courtesy of
-              Granville Ganter.</p></>}
+            figures={[figures["ch4-clarke1"], figures["ch4-clarke2"]]}
+            groupCaption={
+              <>
+                <p>
+                  <strong>Left:</strong> One of the timelines created by Anne
+                  Laura Clarke, as explored by Granville Ganter in his essay on
+                  Clarke's traveling lectures.
+                </p>
+                <p>
+                  <strong>Right:</strong> Another timeline as it was first
+                  encountered by Ganter. Photos by Granville Ganter. Courtesy of
+                  Granville Ganter.
+                </p>
+              </>
+            }
           />
         </Column>
       </TwoColumnLayout>
@@ -728,15 +734,19 @@ export default function PeabodyPage() {
             figures={[
               figures["ch4-15-fc-touch"],
               figures["ch4-16-fc-led-boards"],
-              figures["ch4-18-rendering"]
+              figures["ch4-18-rendering"],
             ]}
             className="md:ml-12"
-            groupCaption={<p>The layers of the touch interface, built with copper
-              tape and a foam spacer; the assembled touch interface; a view of
-              the modular circuit boards for communicating with the LEDs; a
-              rendering of the completed Floor Chart; the LEDs displayed on top
-              of the quilted chart. Photos by Lauren Klein.</p>}
-        />
+            groupCaption={
+              <p>
+                The layers of the touch interface, built with copper tape and a
+                foam spacer; the assembled touch interface; a view of the
+                modular circuit boards for communicating with the LEDs; a
+                rendering of the completed Floor Chart; the LEDs displayed on
+                top of the quilted chart. Photos by Lauren Klein.
+              </p>
+            }
+          />
         </Column>
       </TwoColumnLayout>
 
@@ -839,14 +849,24 @@ export default function PeabodyPage() {
             figures["ch4-19-rachel-carey-george"],
             figures["ch4-20-gbq-q030-06"],
           ]}
-          groupCaption={<><p><strong>Left:</strong> "Housetop," by Rachel
-            Carey George, ca. 1935.</p>
-            <p><strong>Right:</strong> "Housetop" variation, design by Mary Lee
-            Bendolph. 1998, quilted by Essie Bendolph Pettaway, 2001. Photos
-            courtesy of Tinwood Media.</p>
-            <p><em>Permissions pending.</em></p></>}
+          groupCaption={
+            <>
+              <p>
+                <strong>Left:</strong> "Housetop," by Rachel Carey George, ca.
+                1935.
+              </p>
+              <p>
+                <strong>Right:</strong> "Housetop" variation, design by Mary Lee
+                Bendolph. 1998, quilted by Essie Bendolph Pettaway, 2001. Photos
+                courtesy of Tinwood Media.
+              </p>
+              <p>
+                <em>Permissions pending.</em>
+              </p>
+            </>
+          }
         />
-                  <p>
+        <p>
           Pictured above are two quilts from the area of Alabama known as Gee's
           Bend, a small, rural Black community, 35 miles south of Selma, that
           can trace its roots to a cotton plantation that was established there

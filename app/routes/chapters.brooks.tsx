@@ -31,11 +31,10 @@ import type { V2_MetaFunction } from "@remix-run/node";
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("brooks");
-}
+};
 
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
-  const [docHeightState, setDocHeightState] = useState<number>(0);
   const [hideSensitiveState, setHideSensitiveState] = useState<boolean>(true);
 
   return (
@@ -50,8 +49,6 @@ export default function BrooksPage() {
         disclosure: true,
         hoverState,
         setHoverState,
-        docHeightState,
-        setDocHeightState,
         hideSensitiveState,
         setHideSensitiveState,
       }}
@@ -61,9 +58,7 @@ export default function BrooksPage() {
         subtitle="The Brooks / Diagram of a Slave Ship"
       />
 
-      <ClientOnly>
-        { () => <Consent /> }
-      </ClientOnly>
+      <ClientOnly>{() => <Consent />}</ClientOnly>
 
       <CenteredLayout className="top-0">
         <p>
@@ -355,10 +350,9 @@ export default function BrooksPage() {
           Finley makes the case that the diagram was intended to be viewed in
           relation to the text, pointing to how each figure is labeled with a
           number that corresponds to a place in the text. "Each is incomplete
-          without the other," she explains. "Once having moved from the
-          visuals to the text, these two aspects of the broadside virtually
-          require the individual reader to move back and forth between these
-          two elements."
+          without the other," she explains. "Once having moved from the visuals
+          to the text, these two aspects of the broadside virtually require the
+          individual reader to move back and forth between these two elements."
           <InlineFootnote index={10} />
         </p>
         <p>
@@ -366,19 +360,19 @@ export default function BrooksPage() {
           "readers," like the figures themselves, had a definitive race: they
           were white readers whose own lives were far removed from the actual
           experience of being enslaved. Indeed, Clarkson had a very clear
-          audience in mind with his design of the "Description": the Members
-          of Parliament--which included one of the London Committee's own
-          members, William Wilberforce--who were scheduled to vote on a motion
-          to abolish the slave trade in several weeks' time. Wilberforce
-          believed, and even said as much, that if the MPs "could actually see
-          one thousandth part of the evils of that practice which they have,
-          for so many years, under one pretense or another, been prevailed on
-          to suffer to be continued," that they would quickly come around to
-          the abolitionist cause.
+          audience in mind with his design of the "Description": the Members of
+          Parliament--which included one of the London Committee's own members,
+          William Wilberforce--who were scheduled to vote on a motion to abolish
+          the slave trade in several weeks' time. Wilberforce believed, and even
+          said as much, that if the MPs "could actually see one thousandth part
+          of the evils of that practice which they have, for so many years,
+          under one pretense or another, been prevailed on to suffer to be
+          continued," that they would quickly come around to the abolitionist
+          cause.
           <InlineFootnote index={11} />
           Thus the "Description" can be viewed, according to Finley, as a
-          "necessary weapon"--one which restages the violence of the slave
-          trade in its attempt to give that violence visual form.
+          "necessary weapon"--one which restages the violence of the slave trade
+          in its attempt to give that violence visual form.
           <InlineFootnote index={12} />
         </p>
         <p>
@@ -388,19 +382,18 @@ export default function BrooksPage() {
           of the image in these terms, recalling how "No one saw it but he was
           impressed. It spoke to him in a language, which was at once
           intelligible and irresistible. It brought forth tears of sympathy in
-          behalf of the sufferers, and it fixed their sufferings in his
-          heart."
+          behalf of the sufferers, and it fixed their sufferings in his heart."
           <InlineFootnote index={13} />
-          Here, Ian Baucom argues, Clarkson mobilizes the ideas of the
-          Scottish Enlightment as he enlists the "facts" of the slave trade in
-          the interest of engaging the "otherwise disinterested spectator in
-          the sufferings of an actually unseen other."
+          Here, Ian Baucom argues, Clarkson mobilizes the ideas of the Scottish
+          Enlightment as he enlists the "facts" of the slave trade in the
+          interest of engaging the "otherwise disinterested spectator in the
+          sufferings of an actually unseen other."
           <InlineFootnote index={14} />
           But for this transformation to take place, the viewer would be
-          required to enlist their own imagination in imagining the suffering
-          of others. As Finley explains, "The image is a starting point for
-          the viewer - a point of reference while the text enables the reader
-          to elaborate on the image in her mind."
+          required to enlist their own imagination in imagining the suffering of
+          others. As Finley explains, "The image is a starting point for the
+          viewer - a point of reference while the text enables the reader to
+          elaborate on the image in her mind."
           <InlineFootnote index={15} />
         </p>
         <p>
@@ -409,12 +402,12 @@ export default function BrooksPage() {
           abolitionists intended to represent. The sociologist Simone Browne
           emphasizes this point in her own analysis of the "Description,"
           underscoring how the original "vantage point was meant to be that of
-          the predominantly white and male abolitionists and lawmakers."
-          Browne connects the "Description" to Donna Haraway's critique of
+          the predominantly white and male abolitionists and lawmakers." Browne
+          connects the "Description" to Donna Haraway's critique of
           visualization as manufacturing a "view from nowhere," a view that is
           "always unmarked, and therefore already markedly white and male, and
-          one that claims a power to 'represent while escaping
-          representation.'" <InlineFootnote index={16} />
+          one that claims a power to 'represent while escaping representation.'"{" "}
+          <InlineFootnote index={16} />
           Browne continues: "What this visual representation of the slave ship
           points to is the primacy given in these abolitionist texts to white
           gazes and vantage points to the trauma of slavery, where the tiny
@@ -427,28 +420,27 @@ export default function BrooksPage() {
           <InlineFootnote index={18} /> Bernier also lends her support to this
           interpretation: "Working not to humanize but to propagandize black
           subjects bought and sold into slavery, the iconographic emphasis
-          across these broadsides betrays a white British commitment to
-          exposing slavery's atrocities by imagining black women, men, and
-          children not as individualized subjects but as unindividualized
-          objects defined solely by their incarceration on board a slave ship
-          whose physical dimensions alone were considered sufficient to offer
-          visual confirmation of the atrocities of the trade."{" "}
+          across these broadsides betrays a white British commitment to exposing
+          slavery's atrocities by imagining black women, men, and children not
+          as individualized subjects but as unindividualized objects defined
+          solely by their incarceration on board a slave ship whose physical
+          dimensions alone were considered sufficient to offer visual
+          confirmation of the atrocities of the trade."{" "}
           <InlineFootnote index={19} />
         </p>
         <p>
           The sole evidence of the agency of the enslaved are, as some have
           observed, the shackles that bind the arms of the men. The shackles
           point to the potetial for insurrection—a point underscored in the
-          accompanying text. And yet even in their inclusion they also
-          exclude: only the men are shackeled, even as women just as often
-          contributed to planning the insurrections on the ships. And with
-          respect to Spillers's "scaled inequalities," Clarkson is not immune.
-          Whether as a commentary on the "objectified status of the black
-          female body and the history of rape and sexual abuse to which black
-          female slaves were subjected by their white male captors," or
-          because of his own racist perceptions about the sexuality of Black
-          women, Clarkson depicts the women on the ship in exaggerated sexual
-          form.
+          accompanying text. And yet even in their inclusion they also exclude:
+          only the men are shackeled, even as women just as often contributed to
+          planning the insurrections on the ships. And with respect to
+          Spillers's "scaled inequalities," Clarkson is not immune. Whether as a
+          commentary on the "objectified status of the black female body and the
+          history of rape and sexual abuse to which black female slaves were
+          subjected by their white male captors," or because of his own racist
+          perceptions about the sexuality of Black women, Clarkson depicts the
+          women on the ship in exaggerated sexual form.
           <InlineFootnote index={20} />
         </p>
       </CenteredLayout>
@@ -693,7 +685,6 @@ export default function BrooksPage() {
           </PullQuote>
         </Column>
         <Column>
-
           <FigureObj figure={figures["7-Bell"]} />
           <FigureObj figure={figures["6-stream"]} />
         </Column>
@@ -819,15 +810,15 @@ export default function BrooksPage() {
       <TwoColumnLayout className="items-end">
         <Column>
           <p className="">
-            in the data set we are consilting theres a bunch of
-            voyages from 1565 to 1858.
+            in the data set we are consilting theres a bunch of voyages from
+            1565 to 1858.
           </p>
         </Column>
-          <Column>
-            <figure>
-              <VoyageExample />
-            </figure>
-          </Column>
+        <Column>
+          <figure>
+            <VoyageExample />
+          </figure>
+        </Column>
       </TwoColumnLayout>
 
       <FigureObj
@@ -842,26 +833,21 @@ export default function BrooksPage() {
 
       <VoyagesCompare />
 
-      <ClientOnly>
-        {() => <ResistanceVoyages1756 />}
-      </ClientOnly>
+      <ClientOnly>{() => <ResistanceVoyages1756 />}</ClientOnly>
 
       <p>
-        -- All voyages from 1756-1766 with voyages without resistance reported in grayscale and no interaction. --
+        -- All voyages from 1756-1766 with voyages without resistance reported
+        in grayscale and no interaction. --
       </p>
 
-      <ClientOnly>
-        {() => <AllVoyages1756 />}
-      </ClientOnly>
-
+      <ClientOnly>{() => <AllVoyages1756 />}</ClientOnly>
 
       <p>
-        -- Show all voyages in full color with no toggle with year range interaction. --
+        -- Show all voyages in full color with no toggle with year range
+        interaction. --
       </p>
 
-      <ClientOnly>
-        {() => <AllVoyages />}
-      </ClientOnly>
+      <ClientOnly>{() => <AllVoyages />}</ClientOnly>
 
       <CenteredLayout>
         <FootnotesList footnotes={brooksFootnotes} />
