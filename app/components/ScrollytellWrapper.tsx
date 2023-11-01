@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef } from "react";
 import scrollama from "scrollama";
 import { ChapterContext } from "~/chapterContext";
-import { useWindowSize } from "~/hooks";
+import { useResizeObserver } from "~/hooks";
 import type { DecimalType, ScrollamaInstance } from "scrollama";
 import type { Dispatch, SetStateAction, ReactNode, MutableRefObject } from "react";
 
@@ -39,7 +39,7 @@ export default function ScrollytellWrapper({
   const { accentColor } = useContext(ChapterContext);
   const scrollerRef = useRef<ScrollamaInstance>(scrollama());
   const scrollerElementRef = useRef<HTMLElement>(null);
-  const windowSize = useWindowSize();
+  const windowSize = useResizeObserver();
 
   useEffect(() => {
     if (steps?.current?.children.length !== triggers.length) return;

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useWindowSize } from "~/hooks";
+import { useResizeObserver } from "~/hooks";
 import p5 from "p5";
 import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
@@ -9,7 +9,7 @@ import { randomColor, voyageConstants } from "./utils";
 const INITIAL_YEAR_RANGE = [1756, 1766];
 
 function ResistanceVoyages1756() {
-  const windowSize = useWindowSize();
+  const { windowSize } = useResizeObserver();
   const p5Ref = useRef<p5 | undefined>();
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
@@ -32,23 +32,27 @@ function ResistanceVoyages1756() {
       let nonResistanceStrokeWidth = 0;
 
       p5.setup = () => {
-        p5.createCanvas(
-          width,
-          height
-        ).parent("resistanceVoyageContainer1756");
+        p5.createCanvas(width, height).parent("resistanceVoyageContainer1756");
 
-        const currentVoyages = voyageData.filter(obj => obj.year >= INITIAL_YEAR_RANGE[0] && obj.year <= INITIAL_YEAR_RANGE[1] && obj.resistanceReported);
+        const currentVoyages = voyageData.filter(
+          (obj) =>
+            obj.year >= INITIAL_YEAR_RANGE[0] &&
+            obj.year <= INITIAL_YEAR_RANGE[1] &&
+            obj.resistanceReported
+        );
 
         currentVoyages.forEach((voyage) => {
           const rgb = randomColor(true);
 
-          const upper = 10 + p5.map(
-            voyage.duration,
-            voyageConstants.minDuration,
-            voyageConstants.maxDuration,
-            0,
-            voyageConstants.maxOverlap
-          );
+          const upper =
+            10 +
+            p5.map(
+              voyage.duration,
+              voyageConstants.minDuration,
+              voyageConstants.maxDuration,
+              0,
+              voyageConstants.maxOverlap
+            );
 
           const curveSeeds = {
             c1: p5.random(upper * -1, upper),
@@ -57,11 +61,23 @@ function ResistanceVoyages1756() {
             c4: p5.random(upper * -1, upper),
             c5: p5.random(upper * -1, upper),
             c6: p5.random(upper * -1, upper),
-            c7: p5.random(upper * -1, upper)
+            c7: p5.random(upper * -1, upper),
           };
 
-          const vertexLower = p5.map(voyage.totalPeople * (1 - voyage.mortalityRate), voyageConstants.minEmbark, voyageConstants.maxEmbark, 0, voyageConstants.maxWidth);
-          const vertexUpper = p5.map(voyage.totalPeople, voyageConstants.minEmbark, voyageConstants.maxEmbark, 0, voyageConstants.maxWidth);
+          const vertexLower = p5.map(
+            voyage.totalPeople * (1 - voyage.mortalityRate),
+            voyageConstants.minEmbark,
+            voyageConstants.maxEmbark,
+            0,
+            voyageConstants.maxWidth
+          );
+          const vertexUpper = p5.map(
+            voyage.totalPeople,
+            voyageConstants.minEmbark,
+            voyageConstants.maxEmbark,
+            0,
+            voyageConstants.maxWidth
+          );
 
           const vertexSeeds = {
             c1: p5.random(vertexLower, vertexUpper),
@@ -70,9 +86,8 @@ function ResistanceVoyages1756() {
             c4: p5.random(vertexLower, vertexUpper),
             c5: p5.random(vertexLower, vertexUpper),
             c6: p5.random(vertexLower, vertexUpper),
-            c7: p5.random(vertexLower, vertexUpper)
+            c7: p5.random(vertexLower, vertexUpper),
           };
-
 
           voyages.current.push(
             new VoyageYear(
@@ -88,7 +103,7 @@ function ResistanceVoyages1756() {
               curveSeeds,
               vertexSeeds
             )
-          )
+          );
         });
       };
 
@@ -96,7 +111,7 @@ function ResistanceVoyages1756() {
       p5.draw = () => {
         // p5.background(250, 241, 233);
         p5.background(250, 241, 233);
-        if(lerpAmount < 1 && showAllRef.current){
+        if (lerpAmount < 1 && showAllRef.current) {
           lerpAmount += 0.01;
           nonResistanceStrokeWidth += 0.005;
         }
@@ -104,7 +119,7 @@ function ResistanceVoyages1756() {
         voyages.current.forEach((voyage) => voyage.show());
 
         p5.noLoop();
-      }
+      };
     };
 
     if (width && height) {
@@ -115,16 +130,16 @@ function ResistanceVoyages1756() {
 
     return () => {
       p5Copy?.remove();
-    }
+    };
   }, [width, height]);
 
   return (
     <section className="w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
         <div id="resistanceVoyageContainer1756" className=""></div>
-        { width &&
+        {width && (
           <Axis width={width} color="black" yearRange={INITIAL_YEAR_RANGE} />
-        }
+        )}
       </div>
     </section>
   );

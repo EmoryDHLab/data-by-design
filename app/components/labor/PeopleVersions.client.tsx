@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { peopleData, filterOptions } from "./peopleVersions/data";
-// import { useWindowSize } from "~/hooks";
 import PersonBox from "./peopleVersions/PersonBox";
 import FilterGroups from "./peopleVersions/FilterGroups";
 import type {
@@ -15,7 +14,6 @@ const VERSION_SIZE = VIS_SIZE.width * 0.25;
 
 const PeopleVersions = () => {
   const svgRef = useRef<SVGSVGElement>(null);
-  // const { width } = useWindowSize();
   const [people, setPeople] = useState<TPerson[]>(peopleData);
   const [activePerson, setActivePerson] = useState<TPerson | undefined>(
     undefined

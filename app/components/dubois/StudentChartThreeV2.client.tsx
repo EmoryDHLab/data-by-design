@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useWindowSize } from "~/hooks";
+import { useResizeObserver } from "~/hooks";
 import responseData from "~/data/dubois/studentResponses.json";
 import ResponseV2 from "./chartThree/ResponseV2";
 import { random } from "~/utils";
@@ -7,7 +7,7 @@ import ResponseDot from "./chartThree/ResponseDot";
 import type { SimpleDot } from "./types";
 
 const StudentChartThreeV2 = () => {
-  const { width, height } = useWindowSize();
+  const { width, height } = useResizeObserver().windowSize;
   const [fontSize, setFontSize] = useState<number>(1);
   const [rightColumnX, setRightColumnX] = useState<number>(0);
   const [leftColumnX, setLeftColumnX] = useState<number>(0);

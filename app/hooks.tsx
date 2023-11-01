@@ -11,37 +11,6 @@ type TViewportSize = {
   documentSize: TWindowSize
 }
 
-export function useWindowSize() {
-  // Initialize state with undefined width/height so server and client renders match
-  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState<TWindowSize>({
-    width: undefined,
-    height: undefined,
-  });
-
-  useEffect(() => {
-    // Handler to call on window resize
-    function handleResize() {
-      // Set window width/height to state
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-
-    // Call handler right away so state gets updated with initial window size
-    handleResize();
-
-    // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures that effect is only run on mount
-
-  return windowSize;
-}
-
 const calcDocumentHeight = () => {
   const bodyEl = document.body;
   const htmlEl = document.documentElement;
@@ -122,22 +91,22 @@ export function useResizeObserver() {
 }
 
 export function useDeviceContext() {
-  const { width } = useWindowSize();
+  const { windowSize } = useResizeObserver();
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!width) return;
+    if (!windowSize.width) return;
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    if (width <= parseInt(tailwindConfig.theme?.screens?.sm)) {
+    if (windowSize.width <= parseInt(tailwindConfig.theme?.screens?.sm)) {
       setIsMobile(true);
       setIsDesktop(false);
     } else {
       setIsMobile(false);
       setIsDesktop(true);
     }
-  }, [width, setIsDesktop, setIsMobile]);
+  }, [windowSize, setIsDesktop, setIsMobile]);
 
   return { isMobile, isDesktop };
 }

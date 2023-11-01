@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useWindowSize } from "~/hooks";
+import { useResizeObserver } from "~/hooks";
 import p5 from "p5";
 import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
@@ -10,7 +10,7 @@ import { randomColor, voyageConstants } from "./utils";
 const INITIAL_YEAR_RANGE = [1565, 1575];
 
 function AllVoyages() {
-  const windowSize = useWindowSize();
+  const { windowSize } = useResizeObserver();
   const p5Ref = useRef<p5 | undefined>();
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);

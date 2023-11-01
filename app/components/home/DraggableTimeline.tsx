@@ -1,4 +1,4 @@
-import { useWindowSize } from "~/hooks";
+import { useResizeObserver } from "~/hooks";
 import { useRef, useState, useEffect } from "react";
 import { timelineImages } from "./timelineUtils";
 import type { Dispatch, SetStateAction } from "react";
@@ -13,8 +13,8 @@ interface TimelineState {
 }
 
 type startPosition = {
-  clientX: number,
-  clientY: number
+  clientX: number;
+  clientY: number;
 };
 
 const IMAGE_COUNT = 30;
@@ -34,7 +34,7 @@ export default function DraggableTimeline({
   setSelectedImage,
   shouldShuffle,
 }: Props) {
-  const windowSize = useWindowSize();
+  const { windowSize } = useResizeObserver();
   const svgRef = useRef<SVGSVGElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [isDragging, setIsDragging] = useState<boolean>(false);
@@ -53,7 +53,6 @@ export default function DraggableTimeline({
     imageSliceStart,
     imageSliceStart + IMAGE_COUNT
   );
-  console.log("🚀 ~ file: DraggableTimeline.tsx:56 ~ images:", images)
 
   useEffect(() => {
     setState((state) => ({
@@ -77,7 +76,13 @@ export default function DraggableTimeline({
     return "";
   }
 
-  function moveDraggedImage({ clientX, clientY }: { clientX: number, clientY: number}) {
+  function moveDraggedImage({
+    clientX,
+    clientY,
+  }: {
+    clientX: number;
+    clientY: number;
+  }) {
     if (isDragging) {
       if (!startPosition) {
         setStartPosition({ clientX, clientY });

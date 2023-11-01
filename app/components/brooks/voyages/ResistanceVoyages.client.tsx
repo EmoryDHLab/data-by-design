@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useWindowSize } from "~/hooks";
+import { useResizeObserver } from "~/hooks";
 import p5 from "p5";
 import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
@@ -8,8 +8,8 @@ import { randomColor, voyageConstants } from "./utils";
 
 const INITIAL_YEAR_RANGE = [1565, 1575];
 
-function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
-  const windowSize = useWindowSize();
+function ResistanceVoyages({ yearRange }: { yearRange: Array<number> }) {
+  const { windowSize } = useResizeObserver();
   const p5Ref = useRef<p5 | undefined>();
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
@@ -25,13 +25,27 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
 
   useEffect(() => {
     if (!p5Ref.current) return;
-    filteredVoyages.current = voyages.current.filter(obj => obj.year >= yearRange[0] && obj.year <= yearRange[1]);
+    filteredVoyages.current = voyages.current.filter(
+      (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1]
+    );
     filteredVoyages.current.forEach((filteredVoyage) => {
       filteredVoyage.updateMinMax(
-        filteredVoyages.current.reduce((min, obj) => (obj.duration < min ? obj.duration : min), filteredVoyages.current[0].duration),
-        filteredVoyages.current.reduce((max, obj) => (obj.duration > max ? obj.duration : max), filteredVoyages.current[0].duration),
-        filteredVoyages.current.reduce((min, obj) => (obj.totalPeople < min ? obj.totalPeople : min), filteredVoyages.current[0].totalPeople),
-        filteredVoyages.current.reduce((max, obj) => (obj.totalPeople > max ? obj.totalPeople : max), filteredVoyages.current[0].totalPeople),
+        filteredVoyages.current.reduce(
+          (min, obj) => (obj.duration < min ? obj.duration : min),
+          filteredVoyages.current[0].duration
+        ),
+        filteredVoyages.current.reduce(
+          (max, obj) => (obj.duration > max ? obj.duration : max),
+          filteredVoyages.current[0].duration
+        ),
+        filteredVoyages.current.reduce(
+          (min, obj) => (obj.totalPeople < min ? obj.totalPeople : min),
+          filteredVoyages.current[0].totalPeople
+        ),
+        filteredVoyages.current.reduce(
+          (max, obj) => (obj.totalPeople > max ? obj.totalPeople : max),
+          filteredVoyages.current[0].totalPeople
+        ),
         yearRange[0],
         yearRange[1]
       );
@@ -43,25 +57,24 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
     const initP5 = (p5: p5) => {
       voyages.current = []; // The array containing all the voyages
       filteredVoyages.current = [];
-      let lerpAmount = 0;  // Transition parameter
+      let lerpAmount = 0; // Transition parameter
       let nonResistanceStrokeWidth = 0; //the stroke width of non-resistance voyages curves
 
       p5.setup = () => {
-        p5.createCanvas(
-          width,
-          height
-        ).parent("resistanceVoyageContainer");
+        p5.createCanvas(width, height).parent("resistanceVoyageContainer");
 
         voyageData.forEach((voyage) => {
           const rgb = randomColor(true);
 
-          const upper = 10 + p5.map(
-            voyage.duration,
-            voyageConstants.minDuration,
-            voyageConstants.maxDuration,
-            0,
-            voyageConstants.maxOverlap
-          );
+          const upper =
+            10 +
+            p5.map(
+              voyage.duration,
+              voyageConstants.minDuration,
+              voyageConstants.maxDuration,
+              0,
+              voyageConstants.maxOverlap
+            );
 
           const curveSeeds = {
             c1: p5.random(upper * -1, upper),
@@ -70,11 +83,23 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
             c4: p5.random(upper * -1, upper),
             c5: p5.random(upper * -1, upper),
             c6: p5.random(upper * -1, upper),
-            c7: p5.random(upper * -1, upper)
+            c7: p5.random(upper * -1, upper),
           };
 
-          const vertexLower = p5.map(voyage.totalPeople * (1 - voyage.mortalityRate), voyageConstants.minEmbark, voyageConstants.maxEmbark, 0, voyageConstants.maxWidth);
-          const vertexUpper = p5.map(voyage.totalPeople, voyageConstants.minEmbark, voyageConstants.maxEmbark, 0, voyageConstants.maxWidth);
+          const vertexLower = p5.map(
+            voyage.totalPeople * (1 - voyage.mortalityRate),
+            voyageConstants.minEmbark,
+            voyageConstants.maxEmbark,
+            0,
+            voyageConstants.maxWidth
+          );
+          const vertexUpper = p5.map(
+            voyage.totalPeople,
+            voyageConstants.minEmbark,
+            voyageConstants.maxEmbark,
+            0,
+            voyageConstants.maxWidth
+          );
 
           const vertexSeeds = {
             c1: p5.random(vertexLower, vertexUpper),
@@ -83,9 +108,8 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
             c4: p5.random(vertexLower, vertexUpper),
             c5: p5.random(vertexLower, vertexUpper),
             c6: p5.random(vertexLower, vertexUpper),
-            c7: p5.random(vertexLower, vertexUpper)
+            c7: p5.random(vertexLower, vertexUpper),
           };
-
 
           voyages.current.push(
             new VoyageYear(
@@ -101,11 +125,15 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
               curveSeeds,
               vertexSeeds
             )
-          )
+          );
         });
 
         //filter the voyages out based on the values on the slider.
-        filteredVoyages.current = voyages.current.filter(obj => obj.year >= INITIAL_YEAR_RANGE[0] && obj.year <= INITIAL_YEAR_RANGE[1]);
+        filteredVoyages.current = voyages.current.filter(
+          (obj) =>
+            obj.year >= INITIAL_YEAR_RANGE[0] &&
+            obj.year <= INITIAL_YEAR_RANGE[1]
+        );
       };
 
       //The  main visualization
@@ -125,7 +153,7 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
         }
 
         p5.noLoop();
-      }
+      };
     };
 
     if (width && height) {
@@ -136,16 +164,21 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number>}) {
 
     return () => {
       p5Copy?.remove();
-    }
+    };
   }, [width, height]);
 
   return (
     <section className="w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
         <div id="resistanceVoyageContainer"></div>
-        { width &&
-          <Axis width={width} color="black" yearRange={yearRange} widthAdjustment={45}  />
-        }
+        {width && (
+          <Axis
+            width={width}
+            color="black"
+            yearRange={yearRange}
+            widthAdjustment={45}
+          />
+        )}
       </div>
     </section>
   );

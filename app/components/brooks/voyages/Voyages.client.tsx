@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { useWindowSize } from "~/hooks";
+import { useResizeObserver } from "~/hooks";
 import p5 from "p5";
 // import { ChapterContext } from "~/chapterContext";
 import VoyageYear from "./VoyageYear";
@@ -11,8 +11,8 @@ import { randomColor, voyageConstants } from "./utils";
 
 const INITIAL_YEAR_RANGE = [1565, 1575];
 
-function Voyages({ yearRange }: { yearRange: Array<number>}) {
-  const windowSize = useWindowSize();
+function Voyages({ yearRange }: { yearRange: Array<number> }) {
+  const { windowSize } = useResizeObserver();
   // const { backgroundColor } = useContext(ChapterContext);
   const p5Ref = useRef<p5 | undefined>();
   const voyages = useRef<Array<VoyageYear>>([]);
@@ -31,13 +31,27 @@ function Voyages({ yearRange }: { yearRange: Array<number>}) {
 
   useEffect(() => {
     if (!p5Ref.current) return;
-    filteredVoyages.current = voyages.current.filter(obj => obj.year >= yearRange[0] && obj.year <= yearRange[1]);
+    filteredVoyages.current = voyages.current.filter(
+      (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1]
+    );
     filteredVoyages.current.forEach((filteredVoyage) => {
       filteredVoyage.updateMinMax(
-        filteredVoyages.current.reduce((min, obj) => (obj.duration < min ? obj.duration : min), filteredVoyages.current[0].duration),
-        filteredVoyages.current.reduce((max, obj) => (obj.duration > max ? obj.duration : max), filteredVoyages.current[0].duration),
-        filteredVoyages.current.reduce((min, obj) => (obj.totalPeople < min ? obj.totalPeople : min), filteredVoyages.current[0].totalPeople),
-        filteredVoyages.current.reduce((max, obj) => (obj.totalPeople > max ? obj.totalPeople : max), filteredVoyages.current[0].totalPeople),
+        filteredVoyages.current.reduce(
+          (min, obj) => (obj.duration < min ? obj.duration : min),
+          filteredVoyages.current[0].duration
+        ),
+        filteredVoyages.current.reduce(
+          (max, obj) => (obj.duration > max ? obj.duration : max),
+          filteredVoyages.current[0].duration
+        ),
+        filteredVoyages.current.reduce(
+          (min, obj) => (obj.totalPeople < min ? obj.totalPeople : min),
+          filteredVoyages.current[0].totalPeople
+        ),
+        filteredVoyages.current.reduce(
+          (max, obj) => (obj.totalPeople > max ? obj.totalPeople : max),
+          filteredVoyages.current[0].totalPeople
+        ),
         yearRange[0],
         yearRange[1]
       );
@@ -55,25 +69,24 @@ function Voyages({ yearRange }: { yearRange: Array<number>}) {
     const initP5 = (p5: p5) => {
       voyages.current = []; // The array containing all the voyages
       filteredVoyages.current = [];
-      let lerpAmount = 0;  // Transition parameter
+      let lerpAmount = 0; // Transition parameter
       let nonResistanceStrokeWidth = 0; //the stroke width of non-resistance voyages curves
 
       p5.setup = () => {
-        p5.createCanvas(
-          width,
-          height
-        ).parent("voyageContainer");
+        p5.createCanvas(width, height).parent("voyageContainer");
 
         voyageData.forEach((voyage) => {
           const rgb = randomColor(voyage.resistanceReported);
 
-          const upper = 10 + p5.map(
-            voyage.duration,
-            voyageConstants.minDuration,
-            voyageConstants.maxDuration,
-            0,
-            voyageConstants.maxOverlap
-          );
+          const upper =
+            10 +
+            p5.map(
+              voyage.duration,
+              voyageConstants.minDuration,
+              voyageConstants.maxDuration,
+              0,
+              voyageConstants.maxOverlap
+            );
 
           const curveSeeds = {
             c1: p5.random(upper * -1, upper),
@@ -82,11 +95,23 @@ function Voyages({ yearRange }: { yearRange: Array<number>}) {
             c4: p5.random(upper * -1, upper),
             c5: p5.random(upper * -1, upper),
             c6: p5.random(upper * -1, upper),
-            c7: p5.random(upper * -1, upper)
+            c7: p5.random(upper * -1, upper),
           };
 
-          const vertexLower = p5.map(voyage.totalPeople * (1 - voyage.mortalityRate), voyageConstants.minEmbark, voyageConstants.maxEmbark, 0, voyageConstants.maxWidth);
-          const vertexUpper = p5.map(voyage.totalPeople, voyageConstants.minEmbark, voyageConstants.maxEmbark, 0, voyageConstants.maxWidth);
+          const vertexLower = p5.map(
+            voyage.totalPeople * (1 - voyage.mortalityRate),
+            voyageConstants.minEmbark,
+            voyageConstants.maxEmbark,
+            0,
+            voyageConstants.maxWidth
+          );
+          const vertexUpper = p5.map(
+            voyage.totalPeople,
+            voyageConstants.minEmbark,
+            voyageConstants.maxEmbark,
+            0,
+            voyageConstants.maxWidth
+          );
 
           const vertexSeeds = {
             c1: p5.random(vertexLower, vertexUpper),
@@ -95,7 +120,7 @@ function Voyages({ yearRange }: { yearRange: Array<number>}) {
             c4: p5.random(vertexLower, vertexUpper),
             c5: p5.random(vertexLower, vertexUpper),
             c6: p5.random(vertexLower, vertexUpper),
-            c7: p5.random(vertexLower, vertexUpper)
+            c7: p5.random(vertexLower, vertexUpper),
           };
 
           voyages.current.push(
@@ -112,24 +137,31 @@ function Voyages({ yearRange }: { yearRange: Array<number>}) {
               curveSeeds,
               vertexSeeds
             )
-          )
+          );
         });
 
         //filter the voyages out based on the values on the slider.
-        filteredVoyages.current = voyages.current.filter(obj => obj.year >= INITIAL_YEAR_RANGE[0] && obj.year <= INITIAL_YEAR_RANGE[1]);
+        filteredVoyages.current = voyages.current.filter(
+          (obj) =>
+            obj.year >= INITIAL_YEAR_RANGE[0] &&
+            obj.year <= INITIAL_YEAR_RANGE[1]
+        );
       };
 
       //The  main visualization
       p5.draw = () => {
         p5.background(250, 241, 233);
         // p5.background(28, 24, 23);
-        if(lerpAmount < 1 && showAllRef.current){
+        if (lerpAmount < 1 && showAllRef.current) {
           lerpAmount += 0.01;
           nonResistanceStrokeWidth += 0.005;
         }
 
         for (const index in filteredVoyages.current) {
-          if (showAllRef.current || filteredVoyages.current[index].resistanceReported) {
+          if (
+            showAllRef.current ||
+            filteredVoyages.current[index].resistanceReported
+          ) {
             filteredVoyages.current[index].updateTransition(
               lerpAmount,
               nonResistanceStrokeWidth,
@@ -144,7 +176,7 @@ function Voyages({ yearRange }: { yearRange: Array<number>}) {
         } else {
           p5.loop();
         }
-      }
+      };
     };
 
     if (width && height) {
@@ -155,7 +187,7 @@ function Voyages({ yearRange }: { yearRange: Array<number>}) {
 
     return () => {
       p5Copy?.remove();
-    }
+    };
   }, [width, height]);
 
   return (
@@ -171,9 +203,14 @@ function Voyages({ yearRange }: { yearRange: Array<number>}) {
           </Toggle> */}
         </div>
         <div id="voyageContainer"></div>
-        { width &&
-          <Axis width={width} color="black" yearRange={yearRange} widthAdjustment={45} />
-        }
+        {width && (
+          <Axis
+            width={width}
+            color="black"
+            yearRange={yearRange}
+            widthAdjustment={45}
+          />
+        )}
       </div>
     </section>
   );

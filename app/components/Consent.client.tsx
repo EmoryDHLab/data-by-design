@@ -32,7 +32,6 @@ export default function Consent() {
       const observee = containerRef.current?.nextElementSibling?.firstElementChild;
 
       if (observee) observer.observe(observee);
-      console.log("🚀 ~ file: Consent.client.tsx:41 ~ Consent ~ documentSize:", documentSize)
 
       return () => {
         observer.disconnect();

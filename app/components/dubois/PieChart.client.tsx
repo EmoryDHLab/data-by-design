@@ -1,7 +1,7 @@
 import p5 from "p5";
 import { Circle } from "~/components/dubois/Circle";
 import { useEffect } from "react";
-import { useDeviceContext, useWindowSize } from "~/hooks";
+import { useDeviceContext, useResizeObserver } from "~/hooks";
 import type { Student, StudentData } from "~/components/dubois/types";
 
 interface Props {
@@ -142,7 +142,7 @@ function pieChart(p5: p5, studentData: StudentData, diameter: number) {
 
 export default function PieChart({ studentData, className }: Props) {
   const { isMobile } = useDeviceContext();
-  const { height } = useWindowSize();
+  const { windowSize } = useResizeObserver();
 
   useEffect(() => {
     function script(p5: p5) {
@@ -195,7 +195,7 @@ export default function PieChart({ studentData, className }: Props) {
     return () => {
       p5Copy.remove();
     }
-  }, [studentData, isMobile, height]);
+  }, [studentData, isMobile, windowSize]);
 
   return <div id="pieChart" className={`flex justify-center md:items-center ${className ?? ""}`} />;
 }

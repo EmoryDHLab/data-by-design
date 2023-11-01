@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import { useEffect, useRef } from "react";
-import { useDeviceContext, useWindowSize } from "~/hooks";
+import { useDeviceContext, useResizeObserver } from "~/hooks";
 
 interface Props {
   width: number;
@@ -9,16 +9,14 @@ interface Props {
   widthAdjustment?: number;
 }
 
-function Axis({ width, color, yearRange, widthAdjustment=0 }: Props) {
+function Axis({ width, color, yearRange, widthAdjustment = 0 }: Props) {
   const axisContainerRef = useRef<HTMLDivElement>(null);
   const axisRef = useRef<SVGSVGElement>(null);
   const { isDesktop } = useDeviceContext();
-  const windowSize = useWindowSize();
+  const { windowSize } = useResizeObserver();
 
   useEffect(() => {
-    const xScale = d3.scaleLinear()
-                   .domain(yearRange)
-                   .range([0, width]);
+    const xScale = d3.scaleLinear().domain(yearRange).range([0, width]);
 
     // Create axis
     const xAxis = d3.axisBottom(xScale).ticks(isDesktop ? 10 : 5, "d");
@@ -34,9 +32,12 @@ function Axis({ width, color, yearRange, widthAdjustment=0 }: Props) {
       .attr("height", 75)
       .attr("fill", color ?? "white")
       .append("g")
-      .attr("transform", `translate(${widthAdjustment > 0 ? widthAdjustment : 50},20)`)
+      .attr(
+        "transform",
+        `translate(${widthAdjustment > 0 ? widthAdjustment : 50},20)`
+      )
       .style("font-size", "1.25rem")
-      .style('color', color ?? 'white')
+      .style("color", color ?? "white")
       .call(xAxis);
   }, [yearRange, width, color, widthAdjustment, isDesktop, windowSize]);
 
