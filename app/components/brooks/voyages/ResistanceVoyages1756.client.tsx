@@ -5,6 +5,7 @@ import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
 import voyageData from "~/data/brooks/voyages.json";
 import { randomColor, voyageConstants } from "./utils";
+import type { TVoyage } from "~/types/voyage";
 
 const INITIAL_YEAR_RANGE = [1756, 1766];
 
@@ -34,74 +35,24 @@ function ResistanceVoyages1756() {
       p5.setup = () => {
         p5.createCanvas(width, height).parent("resistanceVoyageContainer1756");
 
-        const currentVoyages = voyageData.filter(
+        const currentVoyages = (voyageData as TVoyage[]).filter(
           (obj) =>
             obj.year >= INITIAL_YEAR_RANGE[0] &&
             obj.year <= INITIAL_YEAR_RANGE[1] &&
             obj.resistanceReported
         );
 
-        currentVoyages.forEach((voyage) => {
-          const rgb = randomColor(true);
-
-          const upper =
-            10 +
-            p5.map(
-              voyage.duration,
-              voyageConstants.minDuration,
-              voyageConstants.maxDuration,
-              0,
-              voyageConstants.maxOverlap
-            );
-
-          const curveSeeds = {
-            c1: p5.random(upper * -1, upper),
-            c2: p5.random(upper * -1, upper),
-            c3: p5.random(upper * -1, upper),
-            c4: p5.random(upper * -1, upper),
-            c5: p5.random(upper * -1, upper),
-            c6: p5.random(upper * -1, upper),
-            c7: p5.random(upper * -1, upper),
-          };
-
-          const vertexLower = p5.map(
-            voyage.totalPeople * (1 - voyage.mortalityRate),
-            voyageConstants.minEmbark,
-            voyageConstants.maxEmbark,
-            0,
-            voyageConstants.maxWidth
-          );
-          const vertexUpper = p5.map(
-            voyage.totalPeople,
-            voyageConstants.minEmbark,
-            voyageConstants.maxEmbark,
-            0,
-            voyageConstants.maxWidth
-          );
-
-          const vertexSeeds = {
-            c1: p5.random(vertexLower, vertexUpper),
-            c2: p5.random(vertexLower, vertexUpper),
-            c3: p5.random(vertexLower, vertexUpper),
-            c4: p5.random(vertexLower, vertexUpper),
-            c5: p5.random(vertexLower, vertexUpper),
-            c6: p5.random(vertexLower, vertexUpper),
-            c7: p5.random(vertexLower, vertexUpper),
-          };
-
+        currentVoyages.forEach((voyage: TVoyage) => {
           voyages.current.push(
             new VoyageYear(
               p5,
               voyage,
-              rgb,
               INITIAL_YEAR_RANGE[0],
               INITIAL_YEAR_RANGE[1],
               height,
               width,
               nonResistanceStrokeWidth,
-              lerpAmount,
-              curveSeeds,
-              vertexSeeds
+              lerpAmount
             )
           );
         });

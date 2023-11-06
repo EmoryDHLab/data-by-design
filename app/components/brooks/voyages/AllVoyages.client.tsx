@@ -5,7 +5,7 @@ import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
 import Slider from "./Slider";
 import voyageData from "~/data/brooks/voyages.json";
-import { randomColor, voyageConstants } from "./utils";
+import type { TVoyage } from "~/types/voyage";
 
 const INITIAL_YEAR_RANGE = [1565, 1575];
 
@@ -27,16 +27,11 @@ function AllVoyages() {
 
   useEffect(() => {
     if (!p5Ref.current) return;
-    filteredVoyages.current = voyages.current.filter(obj => obj.year >= yearRange[0] && obj.year <= yearRange[1]);
+    filteredVoyages.current = voyages.current.filter(
+      (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1]
+    );
     filteredVoyages.current.forEach((filteredVoyage) => {
-      filteredVoyage.updateMinMax(
-        filteredVoyages.current.reduce((min, obj) => (obj.duration < min ? obj.duration : min), filteredVoyages.current[0].duration),
-        filteredVoyages.current.reduce((max, obj) => (obj.duration > max ? obj.duration : max), filteredVoyages.current[0].duration),
-        filteredVoyages.current.reduce((min, obj) => (obj.totalPeople < min ? obj.totalPeople : min), filteredVoyages.current[0].totalPeople),
-        filteredVoyages.current.reduce((max, obj) => (obj.totalPeople > max ? obj.totalPeople : max), filteredVoyages.current[0].totalPeople),
-        yearRange[0],
-        yearRange[1]
-      );
+      filteredVoyage.updateMinMax(yearRange[0], yearRange[1]);
     });
     p5Ref.current.redraw();
   }, [yearRange]);
@@ -45,69 +40,34 @@ function AllVoyages() {
     const initP5 = (p5: p5) => {
       voyages.current = []; // The array containing all the voyages
       filteredVoyages.current = [];
-      let lerpAmount = 0;  // Transition parameter
+      let lerpAmount = 0; // Transition parameter
       let nonResistanceStrokeWidth = 0; //the stroke width of non-resistance voyages curves
 
       p5.setup = () => {
-        p5.createCanvas(
-          width,
-          height
-        ).parent("allVoyageContainer");
+        p5.createCanvas(width, height).parent("allVoyageContainer");
 
-        voyageData.forEach((voyage) => {
-          const rgb = randomColor(true);
-
-          const upper = 10 + p5.map(
-            voyage.duration,
-            voyageConstants.minDuration,
-            voyageConstants.maxDuration,
-            0,
-            voyageConstants.maxOverlap
-          );
-
-          const curveSeeds = {
-            c1: p5.random(upper * -1, upper),
-            c2: p5.random(upper * -1, upper),
-            c3: p5.random(upper * -1, upper),
-            c4: p5.random(upper * -1, upper),
-            c5: p5.random(upper * -1, upper),
-            c6: p5.random(upper * -1, upper),
-            c7: p5.random(upper * -1, upper)
-          };
-
-          const vertexLower = p5.map(voyage.totalPeople * (1 - voyage.mortalityRate), voyageConstants.minEmbark, voyageConstants.maxEmbark, 0, voyageConstants.maxWidth);
-          const vertexUpper = p5.map(voyage.totalPeople, voyageConstants.minEmbark, voyageConstants.maxEmbark, 0, voyageConstants.maxWidth);
-
-          const vertexSeeds = {
-            c1: p5.random(vertexLower, vertexUpper),
-            c2: p5.random(vertexLower, vertexUpper),
-            c3: p5.random(vertexLower, vertexUpper),
-            c4: p5.random(vertexLower, vertexUpper),
-            c5: p5.random(vertexLower, vertexUpper),
-            c6: p5.random(vertexLower, vertexUpper),
-            c7: p5.random(vertexLower, vertexUpper)
-          };
-
+        (voyageData as TVoyage[]).forEach((voyage: TVoyage) => {
           voyages.current.push(
             new VoyageYear(
               p5,
               voyage,
-              rgb,
               INITIAL_YEAR_RANGE[0],
               INITIAL_YEAR_RANGE[1],
               height,
               width,
               nonResistanceStrokeWidth,
               lerpAmount,
-              curveSeeds,
-              vertexSeeds,
               true
             )
-          )
+          );
         });
 
         //filter the voyages out based on the values on the slider.
-        filteredVoyages.current = voyages.current.filter(obj => obj.year >= INITIAL_YEAR_RANGE[0] && obj.year <= INITIAL_YEAR_RANGE[1]);
+        filteredVoyages.current = voyages.current.filter(
+          (obj) =>
+            obj.year >= INITIAL_YEAR_RANGE[0] &&
+            obj.year <= INITIAL_YEAR_RANGE[1]
+        );
       };
 
       //The  main visualization
@@ -125,7 +85,7 @@ function AllVoyages() {
         }
 
         p5.noLoop();
-      }
+      };
     };
 
     if (width && height) {
@@ -136,19 +96,28 @@ function AllVoyages() {
 
     return () => {
       p5Copy?.remove();
-    }
+    };
   }, [width, height]);
 
   return (
     <section className="w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
         <div className="bg-black mb-3">
-          <Slider width={width} yearRange={yearRange} setYearRange={setYearRange} />
+          <Slider
+            width={width}
+            yearRange={yearRange}
+            setYearRange={setYearRange}
+          />
         </div>
         <div id="allVoyageContainer"></div>
-        { width &&
-          <Axis width={width} yearRange={yearRange} widthAdjustment={45} color="black" />
-        }
+        {width && (
+          <Axis
+            width={width}
+            yearRange={yearRange}
+            widthAdjustment={45}
+            color="black"
+          />
+        )}
       </div>
     </section>
   );

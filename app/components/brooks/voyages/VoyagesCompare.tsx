@@ -30,9 +30,19 @@ function VoyagesCompare() {
         </div>
         <div>
           <ClientOnly>
-            {() => <ResistanceVoyages yearRange={yearRange} />}
+            {() => (
+              <ResistanceVoyages
+                yearRange={yearRange}
+              />
+            )}
           </ClientOnly>
-          <ClientOnly>{() => <Voyages yearRange={yearRange} />}</ClientOnly>
+          <ClientOnly>
+            {() => (
+              <Voyages
+                yearRange={yearRange}
+              />
+            )}
+          </ClientOnly>
         </div>
       </div>
     </section>
