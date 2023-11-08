@@ -86,7 +86,7 @@ export default function DocumentViewer() {
   const selectedImage: FigureType = imageSets[selectedSet][selectedImageIndex];
 
   return (
-    <div className="py-10 my-10 bg-black w-full flex flex-col items-center pb-10">
+    <div className="py-10 my-10 bg-black w-full flex flex-col items-center pb-10" id="doc-viewer">
       <div className="max-w-5xl flex">
         <div className="py-10 px-5 flex flex-col items-center w-1/6 space-y-5">
           <button
@@ -142,7 +142,7 @@ export default function DocumentViewer() {
             ))}
           </div>
           <div className="flex flex-col items-center">
-            <FigureObj figure={selectedImage as FigureType} className="max-w-xs text-white" />
+            <FigureObj figure={selectedImage as FigureType} className="max-w-xs text-white" id={`doc-viewer-${selectedImage.fileName}`} />
             <div className="flex text-white justify-around w-full">
               <button
                 aria-label="Select previous image"

@@ -130,7 +130,7 @@
     transition: cx .7s, cy .7s, rx .7s, ry .7s, x .7s, y .7s, height .7s, width .7s;
 }
 
-.chapter-body p {
+main p {
     margin: .75rem auto;
     line-height: 1.75rem;
 }

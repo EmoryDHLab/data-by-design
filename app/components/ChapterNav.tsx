@@ -6,7 +6,7 @@ import { useResizeObserver } from "~/hooks";
 
 type TAnchorPosition = {
   offset: number;
-  type: "figure" | "scrollytell" | "visualization";
+  type: "figure" | "scrollytell" | "visualization" | "figures";
   hash: string | undefined;
   title?: string;
 };
@@ -16,6 +16,7 @@ const icon = (type: string) => {
     case "scrollytell":
       return "g";
     case "figure":
+    case "figures":
       return "a";
     case "visualization":
       return "h";

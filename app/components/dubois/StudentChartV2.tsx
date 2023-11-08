@@ -9,7 +9,7 @@ const StudentChartV2 = ({ figure }: { figure: TFigure }) => {
   const [currentChart, setCurrentChart] = useState<string>("original");
 
   return (
-    <section className="w-full bg-black grid grid-cols-4 justify-items-center">
+    <section className="w-full bg-black grid grid-cols-4 justify-items-center" id="student-charts">
       <nav className="">
         <ul className="my-8">
         <li className="my-4">

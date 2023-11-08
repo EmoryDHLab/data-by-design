@@ -23,6 +23,7 @@ export type HoverState =
   | "City"
   | "Value"
   | "Owners"
+  | "Letter"
   | "Illiteracy"
   | "Countries"
   | "Occupations"
@@ -43,7 +44,7 @@ export type HoverState =
   | undefined;
 
 export type TVizAnchors = {
-  type: "scrollytell" | "visualization",
+  type: "scrollytell" | "visualization" | "figures",
   id: string,
   title: string,
 }

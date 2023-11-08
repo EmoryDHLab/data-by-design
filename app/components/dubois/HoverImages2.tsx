@@ -70,22 +70,20 @@ export default function HoverImages2() {
       case "Occupation":
         setCurrentHover(14);
         break;
-      default:
-        setCurrentHover(0);
     }
   }, [hoverState]);
 
   return (
-    <div className="ml-24 hidden md:block max-w-3xl">
+    <div className="ml-24 hidden md:block max-w-3xl" id="hover2">
       <Carousel
         withoutControls
         slideIndex={currentHover}
         swiping={false}
         animation="fade"
       >
-        {FIGURES.map((figure) => {
+        {FIGURES.map((figure, index) => {
           return (
-            <FigureObj key={figure.fileName} figure={figure} className="w-full" />
+            <FigureObj key={figure.fileName} figure={figure} className="w-full" id={`hover-2-${index}`} />
           )
         })}
       </Carousel>

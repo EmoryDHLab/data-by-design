@@ -45,7 +45,7 @@ export default function FigureObj({
 
   if (figures) {
     return (
-      <div className={className ?? ""} id={`fig-${figures[0].fileName}`}>
+      <div className={className ?? ""} id={id ?? `fig-${figures[0].fileName}`}>
         {figures.map((figure) => {
           return (
             <FigureModal key={`${figure.fileName}`} figure={figure}>
@@ -68,7 +68,7 @@ export default function FigureObj({
   } else if (figure) {
     return (
       <FigureModal figure={figure} hide={hide} className={className}>
-        <div id={`fig-${figure.fileName}`} className={`grid grid-cols-1 place-items-center border-${hide ? "4" : "0"} border-${backgroundColor} bg-${accentColor}`}>
+        <div id={id ?? `fig-${figure.fileName}`} className={`grid grid-cols-1 place-items-center border-${hide ? "4" : "0"} border-${backgroundColor} bg-${accentColor}`}>
           <EyeSlashIcon
             className={`h-36 absolute my-auto mx-auto transition-[stroke-opacity] stroke-${backgroundColor}`}
             strokeOpacity={hide ? 0.75 : 0}

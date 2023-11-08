@@ -5,37 +5,35 @@ import { ChapterNav } from "~/components/ChapterNav";
 import { useResizeObserver } from "~/hooks";
 import type { ReactNode } from "react";
 import type { TVizAnchors } from "~/chapterContext";
+import type { ScrollamaInstance } from "scrollama";
 
 interface Props {
   children: ReactNode;
 }
 
 export default function ChapterBody({ children }: Props) {
-  const scrollerRef = useRef(scrollama());
+  const scrollerRef = useRef<ScrollamaInstance | undefined>(undefined);
   const contentRef = useRef<HTMLDivElement>(null);
   const [chapterProgressState, setChapterProgressState] = useState<number>(0.0);
   const { documentSize } = useResizeObserver();
 
   useEffect(() => {
-    if (contentRef.current) {
+    if (scrollerRef.current) {
+      // The Scrollama instance dies when the overall document height changes
+      // like when images are lazyloaded. We could, and maybe should, make
+      // the image containers the size of the image. Maybe later...
+      // https://github.com/russellsamora/scrollama/issues/145
+      scrollerRef.current.resize();
+    } else {
+      scrollerRef.current = scrollama();
       scrollerRef.current
         .setup({
           step: ".chapter-body",
           progress: true,
+          debug: false,
         })
-        .onStepProgress(({ progress }) =>
-          setChapterProgressState(progress)
-        );
+        .onStepProgress(({ progress }) => setChapterProgressState(progress));
     }
-    scrollerRef.current?.resize();
-  }, [setChapterProgressState, contentRef]);
-
-  // The Scrollama instance dies when the overall document height changes
-  // like when images are lazyloaded. We could, and maybe should, make
-  // the image containers the size of the image. Maybe later...
-  // https://github.com/russellsamora/scrollama/issues/145
-  useEffect(() => {
-    scrollerRef.current?.resize();
   }, [documentSize]);
 
   return (
@@ -43,9 +41,9 @@ export default function ChapterBody({ children }: Props) {
       <ClientOnly>
         {() => <ChapterNav progress={chapterProgressState} />}
       </ClientOnly>
-      <div ref={contentRef} className="contents">
+      <div ref={contentRef} className="max-w-[100vw]">
         {children}
       </div>
     </>
-  )
+  );
 }
