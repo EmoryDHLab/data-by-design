@@ -187,7 +187,7 @@ const TutorialTriggers = [
       distribution of colors."
       <InlineFootnote index={7} bgOverride="white" superscriptOverride="offblack" />
     </p>
-    <div className="flex flex-wrap text-sm mt-6 gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0 mt-0 md:mt-4">
+    <div className="flex flex-wrap text-sm gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0 mt-6 md:mt-4">
       <PeabodyActors century={1600} />
     </div>
   </Fragment>,
@@ -200,7 +200,7 @@ const TutorialTriggers = [
     <p className="bg-[#9ae4c1cc] px-4 md:px-0 md:py-2 my-0">
       1607 marks the establishment of Jamestown.
     </p>
-    <div className="flex flex-wrap text-sm mt-6 gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0 mt-0">
+    <div className="flex flex-wrap text-sm mt-6 gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0">
       <PeabodyActors actor="England" />
     </div>
   </Fragment>,
@@ -233,7 +233,7 @@ const TutorialTriggers = [
     <p className="bg-[#9ae4c1cc] px-4 md:px-0 md:py-2 my-0">
       Peabody also uses diagonals to show an event being shared by 2 countries (or more).
     </p>
-    <div className="flex flex-wrap text-sm mt-6 gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0 mt-0">
+    <div className="flex flex-wrap text-sm mt-6 gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0">
       <PeabodyActors actor="England" /> <PeabodyActors actor="Americas" /> <PeabodyActors actor="Holland" />
     </div>
   </Fragment>,

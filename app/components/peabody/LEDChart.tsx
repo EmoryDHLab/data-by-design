@@ -8,7 +8,6 @@ const offset = 9;
 const maxTop = 10;
 
 const Triggers = [...numberRange(0, 8)].map((trigger) => {
-  console.log("🚀 ~ file: LEDChart.tsx:11 ~ Triggers ~ trigger:", trigger)
   return (
     <Fragment key={`led-trigger-${trigger}`}>
       <div

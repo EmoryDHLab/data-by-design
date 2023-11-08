@@ -42,7 +42,7 @@ export const chapterMeta = (chapter: ChapterTitle) => {
   return [
     { charset: "utf-8" },
     { title: `${metaData[chapter].title}: ${metaData[chapter].subtitle}` },
-    { name: "viewport", content: "width=device-width,initial-scale=1.0" },
+    { name: "viewport", content: "width=device-width,initial-scale=1" },
     { name: "og:title", content: `${chapterMetaData[chapter].title}: ${chapterMetaData[chapter].subtitle}` },
     { name: "twitter:title", content: `${chapterMetaData[chapter].title}: ${chapterMetaData[chapter].subtitle}` },
     { name: "og:url", content: `${hostName}/chapters/${chapter}`},

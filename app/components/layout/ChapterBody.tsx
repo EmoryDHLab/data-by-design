@@ -43,7 +43,7 @@ export default function ChapterBody({ children }: Props) {
       <ClientOnly>
         {() => <ChapterNav progress={chapterProgressState} />}
       </ClientOnly>
-      <div ref={contentRef}>
+      <div ref={contentRef} className="contents">
         {children}
       </div>
     </>

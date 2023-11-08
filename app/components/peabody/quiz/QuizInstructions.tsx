@@ -21,19 +21,21 @@ const InstructionsContent = ({ className, children }: Props) => {
 
   if (isDesktop) {
     return(
-      <text
-        fontSize={10}
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fill="white"
-        fontFamily="VTC Du Bois Narrow, serif"
-        fontStyle="italic"
-        className={`hidden md:block transition-transform duration-1000 tracking-widest ${className}`}
-      >
-        {children}
-      </text>
+      <svg>
+        <text
+          fontSize={10}
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fill="white"
+          fontFamily="VTC Du Bois Narrow, serif"
+          fontStyle="italic"
+          className={`hidden md:block transition-transform duration-1000 tracking-widest ${className}`}
+        >
+          {children}
+        </text>
+      </svg>
     );
   }
 

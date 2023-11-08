@@ -250,9 +250,9 @@ export default function PeabodyPage() {
               </p>
             </div>
 
-            <HoverZoomPeabodySquareMobile
+            {/* <HoverZoomPeabodySquareMobile
               figures={[figures["fig2-1600s-rect"], figures["1620"]]}
-            />
+            /> */}
 
             <div className="mx-12 md:mx-0 w-fit md:w-auto">
               <p>
