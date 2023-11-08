@@ -19,6 +19,8 @@ import DocumentViewer from "~/components/shanawdithit/DocumentViewer";
 import SketchScrollytell from "~/components/shanawdithit/SketchScrollytell";
 import InlineFootnote from "~/components/InlineFootnote";
 import WillardScrollytell from "~/components/shanawdithit/WillardScrollytell";
+import type { TVizAnchors } from "~/chapterContext";
+import ChapterBody from "~/components/layout/ChapterBody";
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("shanawdithit");
@@ -27,22 +29,43 @@ export const meta: V2_MetaFunction = () => {
 export default function ShanawdithitPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
 
+  const visualizations: TVizAnchors[] = [
+    {
+      type: "scrollytell",
+      id: "scrollytell-one",
+      title: "Scrollytell 1"
+    },
+    {
+      type: "visualization",
+      id: "willard-maps",
+      title: "Willard Maps"
+    },
+    {
+      type: "scrollytell",
+      id: "scrollytell-two",
+      title: "Scrollytell 2"
+    },
+  ];
+
   return (
     <ChapterContext.Provider
       value={{
         backgroundColor: "shanawdithitPrimary",
         primaryTextColor: "white",
-        accentColor: "shanawdithitPrimary",
+        accentColor: "shanawdithitSecondary",
         footnoteTextColor: "shanawdithitPrimary",
         footnotes: shanawdithitFootnotes,
         hoverState,
         setHoverState,
+        figures: Object.values(figures),
+        visualizations
       }}
     >
       <ChapterTitle
         title="Narratives of Possession"
         subtitle="Shanawdithit's Narrative Maps"
       />
+      <ChapterBody>
       <CenteredLayout>
         <p className="first-paragraph">
           This is not a story of triumph. It is not one of recovery. It is a
@@ -889,6 +912,7 @@ export default function ShanawdithitPage() {
         </Column>
         <Column shouldPin>[IMAGES HERE]</Column>
       </TwoColumnLayout>
+      </ChapterBody>
       <Footer />
     </ChapterContext.Provider>
   );

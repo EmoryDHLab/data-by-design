@@ -25,8 +25,6 @@ export default function ColonialMaps() {
       case "Willard9":
         setCurrentHover(2);
         break;
-      default:
-        setCurrentHover(0);
     }
   }, [hoverState, setCurrentHover]);
 
@@ -39,9 +37,9 @@ export default function ColonialMaps() {
         swiping={false}
         animation="fade"
       >
-        {FIGURES.map((figure) => {
+        {FIGURES.map((figure, index) => {
           return (
-            <FigureObj key={figure.fileName} figure={figure} className="w-full" />
+            <FigureObj key={figure.fileName} figure={figure} className="w-full" id={`colonial-map-${index}`} />
           )
         })}
       </Carousel>

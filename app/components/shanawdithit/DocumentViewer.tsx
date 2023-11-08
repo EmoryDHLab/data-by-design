@@ -23,7 +23,7 @@ export default function DocumentViewer() {
   const selectedImage: FigureType = images[selectedImageIndex];
 
   return (
-    <div className="py-10 my-10 bg-black w-full flex flex-col items-center pb-10">
+    <div className="py-10 my-10 bg-black w-full flex flex-col items-center pb-10" id="willard-maps">
       <div className="max-w-5xl flex">
         <div>
           <div className="grid grid-cols-4 md:grid-cols-5 gap-8 py-5 px-20">
@@ -47,7 +47,7 @@ export default function DocumentViewer() {
             ))}
           </div>
           <div className="flex flex-col items-center">
-            <FigureObj figure={selectedImage as FigureType} className="max-w-md text-white" />
+            <FigureObj figure={selectedImage as FigureType} className="max-w-md text-white" id={`doc-viewer-${selectedImage.fileName}`} />
             <div className="flex text-white justify-around w-full">
               <button
                 aria-label="Select previous image"
