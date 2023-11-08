@@ -50,7 +50,7 @@ export default function PlayfairPage() {
         backgroundColor: "playfairPrimary",
         primaryTextColor: "white",
         accentColor: "playfairSecondary",
-        accentTextColor: "white",
+        accentTextColor: "black",
         footnoteTextColor: "playfairPrimary",
         footnotes: playfairFootnotes,
         figures: Object.values(figures),

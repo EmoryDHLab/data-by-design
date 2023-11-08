@@ -19,6 +19,7 @@ interface Props {
   debug?: boolean;
   scrollOffset?: DecimalType;
   threshold?: 1|2|3|4;
+  id?: string;
 }
 
 export default function ScrollytellWrapper({
@@ -35,8 +36,9 @@ export default function ScrollytellWrapper({
   debug,
   scrollOffset,
   threshold=4,
+  id,
 }: Props) {
-  const { accentColor } = useContext(ChapterContext);
+  const { backgroundColor } = useContext(ChapterContext);
   const scrollerRef = useRef<ScrollamaInstance>(scrollama());
   const scrollerElementRef = useRef<HTMLElement>(null);
   const windowSize = useResizeObserver();
@@ -82,8 +84,9 @@ export default function ScrollytellWrapper({
 
   return (
     <section
+      id={id}
       ref={scrollerElementRef}
-      className={`bg-${bgColor ?? accentColor} ${className ?? ""}`}
+      className={`bg-${bgColor ?? backgroundColor} ${className ?? ""}`}
     >
       {children }
     </section>

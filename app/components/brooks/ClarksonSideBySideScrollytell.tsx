@@ -106,6 +106,7 @@ function ClarksonSideBySideScrollytell() {
         triggers={triggers}
         steps={steps}
         className="w-screen"
+        bgColor="brooksSecondary"
       >
         <div
           className={`flex flex-col md:flex-row justify-between`}

@@ -75,7 +75,7 @@ export default function PlayfairScrollytell() {
           <div className="text-3xl relative md:top-[calc(100vh-12rem)] right-[35vw] text-white hidden md:block">↓</div>
           <Recreation scrollProgress={scrollProgress} />
         </div>
-        <div ref={steps} className="bias-full w-full md:bias-1/2 md:w-2/5 relative">
+        <div ref={steps} className="bias-full w-full md:bias-1/2 md:w-2/5 relative ">
           {triggers.map((trigger, index) => {
             return (
               <div

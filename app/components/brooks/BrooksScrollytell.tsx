@@ -16,7 +16,7 @@ const triggers = [
 ];
 
 export default function BrooksScrollytell() {
-  const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
+  const { accentTextColor, hideSensitiveState, backgroundColor } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [focusShapeSize, setFocusShapeSize] = useState<object>({ x: 645, y: 130, width: 0, height: 0 });
   const [fadeShapeSize, setFadeShapeSize] = useState<object>({ x: 380, y: 0, width: 0, height: 291 });
@@ -88,7 +88,7 @@ export default function BrooksScrollytell() {
   return (
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
-        // scrollProgress={scrollProgress}
+        bgColor="brooksSecondary"
         setScrollProgress={setScrollProgress}
         triggers={triggers}
         steps={steps}

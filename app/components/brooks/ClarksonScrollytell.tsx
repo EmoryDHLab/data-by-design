@@ -89,6 +89,7 @@ function ClarksonScrollytell() {
         triggers={triggers}
         steps={steps}
         className="w-screen"
+        bgColor="brooksSecondary"
       >
         <div
           className={`cursor-pointer sticky pt-16 md:pt-0 top-0 h-screen grid grid-cols-1 md:content-end order-first`}
