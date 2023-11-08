@@ -80,7 +80,6 @@ export default function ScrollytellWrapper({
 
   useEffect(() => {
     scrollerRef.current?.resize();
-    console.log("🚀 ~ file: ScrollytellWrapper.tsx:84 ~ windowSize:", windowSize)
   }, [windowSize, scrollerRef, scrollerElementRef]);
 
   return (
