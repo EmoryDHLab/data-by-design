@@ -223,8 +223,6 @@ export default function PeabodyPage() {
 
         <Scrollytell />
 
-        {/* <HoverZoomPeabodySquareMobile figures={[figures["fig2-1600s-rect"], figures["1620"]]} /> */}
-
         <TwoColumnLayout className="w-full md:w-auto">
           <Column>
             <div className="mx-12 md:mx-0 w-fit md:w-full">
@@ -250,9 +248,9 @@ export default function PeabodyPage() {
               </p>
             </div>
 
-            {/* <HoverZoomPeabodySquareMobile
+            <HoverZoomPeabodySquareMobile
               figures={[figures["fig2-1600s-rect"], figures["1620"]]}
-            /> */}
+            />
 
             <div className="mx-12 md:mx-0 w-fit md:w-auto">
               <p>
@@ -799,7 +797,7 @@ export default function PeabodyPage() {
 
         <PullQuote
           title="Who else are we missing"
-          subtitle="when we fail to include examples like these in the stories we tell about the emergence of data visualization? "
+          subtitle="when we fail to include examples like these in the stories we tell about the emergence of data visualization?"
         />
 
         <TwoColumnLayout>
