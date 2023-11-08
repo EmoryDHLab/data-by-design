@@ -133,7 +133,7 @@ export default function Quiz() {
       feedback,
       setFeedback
     }}>
-      <section className="bg-black w-full h-[200vh] hidden md:block">
+      <section className="bg-black w-full h-[200vh] hidden md:block" id="quiz">
         <svg ref={quizRef} viewBox="0 0 300 200" className="h-screen m-auto w-11/12 sticky top-0">
           {currentStepCount <= 1 &&
             <QuizIntro className={`transition-all duration-1000 ${currentStepCount > 0 ? "-translate-x-full" : ""}`} />

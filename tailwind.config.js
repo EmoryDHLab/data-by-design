@@ -130,6 +130,7 @@ module.exports = {
     "text-peabodyPrimary",
     "text-peabodyOrange",
     "bg-peabodyPrimary",
+    "bg-peabodySecondary",
     "bg-peabodyPrimary-translucent",
     "transition-opacity",
     "opacity-0",

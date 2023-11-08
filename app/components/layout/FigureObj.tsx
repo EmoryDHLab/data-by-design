@@ -45,7 +45,7 @@ export default function FigureObj({
 
   if (figures) {
     return (
-      <div className={className ?? ""} id={`fig-group-${figures[0].fileName}`}>
+      <div className={className ?? ""} id={`fig-${figures[0].fileName}`}>
         {figures.map((figure) => {
           return (
             <FigureModal key={`${figure.fileName}`} figure={figure}>

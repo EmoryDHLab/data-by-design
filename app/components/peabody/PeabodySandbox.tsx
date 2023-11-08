@@ -36,7 +36,7 @@ const actorColors: Colors = [
 export default function PeabodySandbox() {
   const [currentColor, setCurrentColor] = useState<Color>(actorColors[0]);
   return (
-    <div className="w-full bg-black py-10 flex flex-col items-center">
+    <div className="w-full bg-black py-10 flex flex-col items-center" id="sandbox">
       <div className="flex justify-around w-1/2 py-10">
         {actorColors.map((color) => (
           <span
@@ -58,7 +58,7 @@ export default function PeabodySandbox() {
         <EditablePeabodySquare currentColor={currentColor} />
         <hr className="mx-6 mt-11"></hr>
         <div className="w-full  text-white text-left flex flex-row gap-0 mt-1 py-6">
-          <div className="flex-1  w-full mx-auto md:ml-0 md:ml-6">
+          <div className="flex-1  w-full mx-auto md:ml-6">
             <h3 className="mb-4 font-dubois text-xl pt-6 md:text-3xl">Play</h3>
             <h4 className="mb-6 font-dubois font-light text-base md:text-xl">
               The Peabody Chart for fun

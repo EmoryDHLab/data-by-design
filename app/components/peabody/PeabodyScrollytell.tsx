@@ -22,6 +22,7 @@ export default function Scrollytell() {
         setScrollProgress={setScrollProgress}
         triggers={TutorialTriggers}
         steps={steps}
+        id="tutorial"
       >
         <div className="sticky top-16 md:top-0 h-screen bias-full md:bias-1/2 md:w-1/2 md:mr-24 md:order-last">
           <div className="text-3xl relative top-[calc(100vh-120px)] left-[calc(-50vw+6rem)] hidden md:block">↓</div>

@@ -35,7 +35,7 @@ export default function PeabodyBarGraph() {
         centuries,
       }}
     >
-      <div className="hidden md:grid grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-2 text-white text-center w-full p-6">
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-2 text-white text-center w-full p-6" id="timeline">
         <div className="w-full md:w-3/5 my-0 mx-auto">
           <OverlaidSquare />
         </div>

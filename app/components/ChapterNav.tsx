@@ -28,7 +28,7 @@ interface Props {
   progress: number;
 }
 export function ChapterNav({ progress }: Props) {
-  const { accentColor, backgroundColor, figures, visualizations } = useContext(ChapterContext);
+  const { accentColor, accentTextColor, primaryTextColor, backgroundColor, figures, visualizations } = useContext(ChapterContext);
   const { documentSize } = useResizeObserver();
   const [anchorMap, setAnchorMap] = useState<TAnchorPosition[]>([]);
 
@@ -86,7 +86,7 @@ export function ChapterNav({ progress }: Props) {
           <span
             key={index}
             className={`relative max-lg:invisible -top-6 transition text-${
-              anchor.offset > progress * 100 ? "black" : "white"
+              anchor.offset > progress * 100 ? accentTextColor : primaryTextColor
             }`}
             style={{ left: `calc(${anchor.offset}% - ${iconOffset})` }}
           >
