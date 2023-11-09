@@ -22,6 +22,7 @@ export default function HoverZoomPeabodySquare({ figure }: Props) {
           role="presentation"
           href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
           width="100%"
+          id={`fig-${figure.fileName}`}
         />
         {hoverState === "Jamestown" && (
           <g>

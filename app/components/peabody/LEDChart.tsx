@@ -33,7 +33,6 @@ export default function LEDChart() {
   const [layer9Y, setLayer9Y] = useState<number>(initialY);
 
   useEffect(() => {
-    console.log(scrollProgress);
     if (scrollProgress && scrollProgress < 0.5) {
       setLayer1Y(initialY);
       setLayer2Y(initialY);

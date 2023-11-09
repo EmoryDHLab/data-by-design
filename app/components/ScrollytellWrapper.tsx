@@ -3,7 +3,12 @@ import scrollama from "scrollama";
 import { ChapterContext } from "~/chapterContext";
 import { useResizeObserver } from "~/hooks";
 import type { DecimalType, ScrollamaInstance } from "scrollama";
-import type { Dispatch, SetStateAction, ReactNode, MutableRefObject } from "react";
+import type {
+  Dispatch,
+  SetStateAction,
+  ReactNode,
+  MutableRefObject,
+} from "react";
 
 interface Props {
   setScrollProgress: Dispatch<SetStateAction<number>>;
@@ -18,7 +23,7 @@ interface Props {
   bgColor?: string;
   debug?: boolean;
   scrollOffset?: DecimalType;
-  threshold?: 1|2|3|4;
+  threshold?: 1 | 2 | 3 | 4;
   id?: string;
 }
 
@@ -35,16 +40,17 @@ export default function ScrollytellWrapper({
   bgColor,
   debug,
   scrollOffset,
-  threshold=4,
+  threshold = 4,
   id,
 }: Props) {
   const { backgroundColor } = useContext(ChapterContext);
-  const scrollerRef = useRef<ScrollamaInstance>(scrollama());
+  const scrollerRef = useRef<ScrollamaInstance | undefined>(undefined);
   const scrollerElementRef = useRef<HTMLElement>(null);
-  const windowSize = useResizeObserver();
+  const { documentSize } = useResizeObserver();
 
   useEffect(() => {
     if (steps?.current?.children.length !== triggers.length) return;
+    scrollerRef.current = scrollama();
     scrollerRef.current
       .setup({
         // @ts-ignore may be a Scrollama bug. offset does allow strings.
@@ -54,17 +60,17 @@ export default function ScrollytellWrapper({
         debug,
         parent,
         container,
-        threshold
+        threshold,
       })
       .onStepProgress(({ index, progress }) => {
         if (setCurrentStep) setCurrentStep(index);
         setScrollProgress(index + progress);
-      }
-      );
+      });
 
-    const scrollerRefCopy = scrollerRef.current;
-
-    return () => scrollerRefCopy?.destroy();
+    return () => {
+      scrollerRef.current?.destroy();
+      scrollerRef.current = undefined;
+    };
   }, [
     debug,
     container,
@@ -80,7 +86,7 @@ export default function ScrollytellWrapper({
 
   useEffect(() => {
     scrollerRef.current?.resize();
-  }, [windowSize, scrollerRef, scrollerElementRef]);
+  }, [documentSize]);
 
   return (
     <section
@@ -88,7 +94,7 @@ export default function ScrollytellWrapper({
       ref={scrollerElementRef}
       className={`bg-${bgColor ?? backgroundColor} ${className ?? ""}`}
     >
-      {children }
+      {children}
     </section>
-  )
+  );
 }

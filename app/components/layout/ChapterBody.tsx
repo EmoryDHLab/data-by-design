@@ -28,10 +28,17 @@ export default function ChapterBody({ children }: Props) {
         .setup({
           step: ".chapter-body",
           progress: true,
-          debug: false,
+          debug: true,
+          // @ts-ignore may be a Scrollama bug. offset does allow strings.
+          offset: "40px",
         })
         .onStepProgress(({ progress }) => setChapterProgressState(progress));
     }
+
+    return () => {
+      scrollerRef.current?.destroy();
+      scrollerRef.current = undefined;
+    };
   }, [documentSize]);
 
   return (
