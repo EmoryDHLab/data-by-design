@@ -29,7 +29,14 @@ interface Props {
   progress: number;
 }
 export function ChapterNav({ progress }: Props) {
-  const { accentColor, accentTextColor, primaryTextColor, backgroundColor, figures, visualizations } = useContext(ChapterContext);
+  const {
+    accentColor,
+    accentTextColor,
+    primaryTextColor,
+    backgroundColor,
+    figures,
+    visualizations,
+  } = useContext(ChapterContext);
   const { documentSize } = useResizeObserver();
   const [anchorMap, setAnchorMap] = useState<TAnchorPosition[]>([]);
 
@@ -52,7 +59,7 @@ export function ChapterNav({ progress }: Props) {
             offset,
             type: "figure",
             hash: `fig-${figure.fileName}`,
-            title: figure.title || figure.fileName
+            title: figure.title || figure.fileName,
           });
         }
       }
@@ -64,7 +71,7 @@ export function ChapterNav({ progress }: Props) {
           offset,
           type: viz.type,
           hash: viz.id,
-          title: viz.title
+          title: viz.title,
         });
       }
     }
@@ -87,7 +94,9 @@ export function ChapterNav({ progress }: Props) {
           <span
             key={index}
             className={`relative max-lg:invisible -top-6 transition text-${
-              anchor.offset > progress * 100 ? accentTextColor : primaryTextColor
+              anchor.offset > progress * 100
+                ? accentTextColor
+                : primaryTextColor
             }`}
             style={{ left: `calc(${anchor.offset}% - ${iconOffset})` }}
           >

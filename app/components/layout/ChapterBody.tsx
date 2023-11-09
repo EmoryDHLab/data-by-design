@@ -28,7 +28,7 @@ export default function ChapterBody({ children }: Props) {
         .setup({
           step: ".chapter-body",
           progress: true,
-          debug: true,
+          debug: false,
           // @ts-ignore may be a Scrollama bug. offset does allow strings.
           offset: "40px",
         })
