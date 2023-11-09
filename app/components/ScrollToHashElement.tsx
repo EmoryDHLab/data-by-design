@@ -21,12 +21,7 @@ const ScrollToHashElement = () => {
 
   useEffect(() => {
     if (hashElement) {
-      hashElement.scrollIntoView({
-        behavior: "smooth",
-        inline: "nearest",
-        block: "nearest",
-      });
-      window.scrollBy(0, -100);
+      hashElement.scrollIntoView();
     }
   }, [hashElement]);
 
