@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { useResizeObserver } from "~/hooks";
 import p5 from "p5";
 import VoyageYear from "./VoyageYear";
@@ -25,7 +25,7 @@ function AllVoyages() {
     }
   }, [windowSize]);
 
-  useEffect(() => {
+  useMemo(() => {
     if (!p5Ref.current) return;
     filteredVoyages.current = voyages.current.filter(
       (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1]
