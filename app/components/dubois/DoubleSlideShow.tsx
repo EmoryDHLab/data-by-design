@@ -1,6 +1,6 @@
 import Carousel from "nuka-carousel";
 import { useDeviceContext } from "~/hooks";
-import { leftControls, rightControls } from "../layout/SlideShow";
+import { leftControls, rightControls, noControl } from "../layout/SlideShow";
 import figures from "~/data/figures/dubois.json";
 import FigureModal from "../layout/FigureModal";
 
@@ -28,11 +28,11 @@ function DoubleSlideShow() {
 
   return (
     <Carousel
-      renderCenterLeftControls={isMobile ? leftControls : <></>}
-      renderCenterRightControls={isMobile ? rightControls : <></>}
-      renderBottomCenterControls={<></>}
-      renderBottomLeftControls={isDesktop ? leftControls : <></>}
-      renderBottomRightControls={isDesktop ? rightControls : <></>}
+      renderCenterLeftControls={isMobile ? leftControls : noControl}
+      renderCenterRightControls={isMobile ? rightControls : noControl}
+      renderBottomCenterControls={noControl}
+      renderBottomLeftControls={isDesktop ? leftControls : noControl}
+      renderBottomRightControls={isDesktop ? rightControls : noControl}
       wrapAround
     >
       {figureGroups?.map((group) => {
@@ -47,8 +47,8 @@ function DoubleSlideShow() {
                     <img
                       className="mx-auto max-h-[66vh]"
                       src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
-                      alt={figure.altText}
-                      title={figure.title}
+                      alt={figure.altText ?? ""}
+                      title={figure.title ?? ""}
                     />
                   </picture>
                 </FigureModal>

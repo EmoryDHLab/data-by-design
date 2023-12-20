@@ -48,7 +48,7 @@ export const rightControls = ({
   )
 }
 
-const noControl = () => {
+export const noControl = () => {
   return (
     <></>
   )

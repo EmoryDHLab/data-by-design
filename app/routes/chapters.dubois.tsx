@@ -507,7 +507,7 @@ export default function DuboisChapter() {
         </CenteredLayout>
 
         <section
-          className="text-white bg-black w-full py-10 my-12"
+          className="text-white bg-black w-screen py-10 my-12"
           id="side-by-side"
         >
           <DoubleSlideShow />

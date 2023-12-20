@@ -14,9 +14,11 @@ export default function ChapterBody({ children }: Props) {
   const scrollerRef = useRef<ScrollamaInstance | undefined>(undefined);
   const [chapterProgressState, setChapterProgressState] = useState<number>(0.0);
   const [fixedNav, setFixedNav] = useState<boolean>(false);
-  const { documentSize } = useResizeObserver();
+  const { mainContentSize, windowSize } = useResizeObserver();
 
   useEffect(() => {
+    if (!windowSize.height) return;
+
     if (scrollerRef.current) {
       // The Scrollama instance dies when the overall document height changes
       // like when images are lazyloaded. We could, and maybe should, make
@@ -30,8 +32,6 @@ export default function ChapterBody({ children }: Props) {
           step: ".chapter-body",
           progress: true,
           debug: false,
-          // @ts-ignore may be a Scrollama bug. offset does allow strings.
-          offset: "40px",
         })
         .onStepProgress(({ progress }) => setChapterProgressState(progress));
     }
@@ -40,10 +40,10 @@ export default function ChapterBody({ children }: Props) {
       scrollerRef.current?.destroy();
       scrollerRef.current = undefined;
     };
-  }, [documentSize]);
+  }, [mainContentSize]);
 
   useEffect(() => {
-    setFixedNav(chapterProgressState > 0.5);
+    setFixedNav(chapterProgressState > 0.98);
   }, [chapterProgressState]);
 
 

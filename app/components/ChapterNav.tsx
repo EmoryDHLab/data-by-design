@@ -38,17 +38,18 @@ export function ChapterNav({ progress, fixedNav }: Props) {
     figures,
     visualizations,
   } = useContext(ChapterContext);
-  const { documentSize } = useResizeObserver();
+  const { documentSize, mainContentSize } = useResizeObserver();
   const [anchorMap, setAnchorMap] = useState<TAnchorPosition[]>([]);
 
   useEffect(() => {
     if (!documentSize.height) return;
     const getOffset = (id: string) => {
       const element = document.getElementById(id);
-      if (!element || !documentSize.height) return 0;
+      const mainElement = document.getElementById('main-content');
+      if (!element || !documentSize.height || !mainElement || !mainContentSize.height) return 0;
       // @ts-ignore
       const { top } = element.getBoundingClientRect();
-      return ((top + window.scrollY) / documentSize.height) * 100;
+      return ((top + window.scrollY) / mainContentSize.height) * 100;
     };
 
     const anchorPositions: TAnchorPosition[] = [];

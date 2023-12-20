@@ -8,7 +8,8 @@ type TWindowSize = {
 
 type TViewportSize = {
   windowSize: TWindowSize,
-  documentSize: TWindowSize
+  documentSize: TWindowSize,
+  mainContentSize: TWindowSize & { topOffset: number | undefined },
 }
 
 const calcDocumentHeight = () => {
@@ -48,12 +49,18 @@ export function useResizeObserver() {
     documentSize: {
       width: undefined,
       height: undefined,
-    }
+    },
+    mainContentSize: {
+      width: undefined,
+      height: undefined,
+      topOffset: undefined,
+    },
   });
 
   useEffect(() => {
     // Handler to call on window resize
     function handleResize() {
+      const mainContentElement = document.getElementById("main-content");
       // Set window width/height to state
       setViewportSize({
         windowSize: {
@@ -64,6 +71,11 @@ export function useResizeObserver() {
           width: calcDocumentWidth(),
           height: calcDocumentHeight(),
         },
+        mainContentSize: {
+          width: mainContentElement?.clientWidth,
+          height: mainContentElement?.clientHeight,
+          topOffset: window.scrollY + (mainContentElement?.getBoundingClientRect().top || 0)
+        }
       });
     }
 

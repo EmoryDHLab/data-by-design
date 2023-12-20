@@ -90,10 +90,10 @@ function ClarksonScrollytell() {
         steps={steps}
         className="w-screen"
         bgColor="brooksSecondary"
+        id="scrollytell2"
       >
         <div
           className={`cursor-pointer sticky pt-16 md:pt-0 top-0 h-screen grid grid-cols-1 md:content-end order-first`}
-          id="scrollytell2"
         >
           <div className="mb-6">
             <div className="w-11/12 mx-auto">

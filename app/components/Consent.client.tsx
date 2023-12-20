@@ -39,7 +39,7 @@ export default function Consent() {
 
     }, [setSmall, documentSize]);
   } catch (error) {
-    console.log("🚀 ~ file: Consent.tsx:38 ~ useEffect ~ error:", error)
+    console.error("file: Consent.tsx:38 ~ useEffect ~ error:", error);
   }
 
   if (setHideSensitiveState) {

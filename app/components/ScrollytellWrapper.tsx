@@ -45,7 +45,7 @@ export default function ScrollytellWrapper({
 }: Props) {
   const { backgroundColor } = useContext(ChapterContext);
   const scrollerRef = useRef<ScrollamaInstance | undefined>(undefined);
-  const scrollerElementRef = useRef<HTMLElement>(null);
+  const scrollerElementRef = useRef<HTMLDivElement>(null);
   const { documentSize } = useResizeObserver();
 
   useEffect(() => {
@@ -89,12 +89,12 @@ export default function ScrollytellWrapper({
   }, [documentSize]);
 
   return (
-    <section
+    <div
       id={id}
       ref={scrollerElementRef}
       className={`bg-${bgColor ?? backgroundColor} ${className ?? ""}`}
     >
       {children}
-    </section>
+    </div>
   );
 }
