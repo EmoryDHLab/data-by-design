@@ -13,6 +13,7 @@ interface Props {
 export default function ChapterBody({ children }: Props) {
   const scrollerRef = useRef<ScrollamaInstance | undefined>(undefined);
   const [chapterProgressState, setChapterProgressState] = useState<number>(0.0);
+  const [fixedNav, setFixedNav] = useState<boolean>(false);
   const { documentSize } = useResizeObserver();
 
   useEffect(() => {
@@ -41,12 +42,17 @@ export default function ChapterBody({ children }: Props) {
     };
   }, [documentSize]);
 
+  useEffect(() => {
+    setFixedNav(chapterProgressState > 0.5);
+  }, [chapterProgressState]);
+
+
   return (
-    <>
+    <main className="chapter-body" id="main-content">
       <ClientOnly>
-        {() => <ChapterNav progress={chapterProgressState} />}
+        {() => <ChapterNav progress={chapterProgressState} fixedNav={fixedNav} />}
       </ClientOnly>
       {children}
-    </>
+    </main>
   );
 }

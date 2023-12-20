@@ -7,6 +7,7 @@ export default function Hyperlink(props: SVGProps<SVGSVGElement>) {
       width={36}
       height={35}
       fill="none"
+      aria-hidden="true"
       {...props}
     >
       <path

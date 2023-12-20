@@ -19,6 +19,7 @@ export default function ChapterSectionTitle({ title }: Props) {
       id={id}
       className={`bg-${accentColor} w-8/12 md:my-12`}
       role="button"
+      tabIndex={0}
     >
       <a
         href={`#${id}`}

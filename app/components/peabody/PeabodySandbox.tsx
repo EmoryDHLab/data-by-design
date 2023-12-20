@@ -42,7 +42,7 @@ export default function PeabodySandbox() {
           <span
             tabIndex={0}
             role="button"
-            aria-labelledby={`Select ${color.label}`}
+            aria-label={`Select ${color.label}`}
             key={color.rgb}
             onClick={() => setCurrentColor(color)}
             onKeyUp={({ key }: { key: string }) => { if (key === "Enter") { setCurrentColor(color)} } }

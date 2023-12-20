@@ -27,8 +27,9 @@ const icon = (type: string) => {
 
 interface Props {
   progress: number;
+  fixedNav: boolean;
 }
-export function ChapterNav({ progress }: Props) {
+export function ChapterNav({ progress, fixedNav }: Props) {
   const {
     accentColor,
     accentTextColor,
@@ -80,7 +81,7 @@ export function ChapterNav({ progress }: Props) {
 
   return (
     <nav
-      className={`w-full z-[15] sticky top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto h-6`}
+      className={`w-full z-[15] ${fixedNav ? "fixed" : "sticky"} top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto h-6`}
     >
       <div
         className={`bg-${backgroundColor} relative left-0 top-0 h-full`}

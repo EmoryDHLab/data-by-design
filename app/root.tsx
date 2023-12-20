@@ -15,6 +15,7 @@ import Navbar from "./components/Navbar";
 import styles from "~/styles/tailwind.css";
 import fontStyles from "../styles/fonts.css";
 import ScrollToHashElement from "./components/ScrollToHashElement";
+import LinkToMain from "./components/layout/LinkToMain";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -40,6 +41,7 @@ export default function App() {
       </head>
       <body className="overflow-x-hidden">
         <ScrollToHashElement />
+        <LinkToMain />
         <Navbar />
         <Outlet />
         <ScrollRestoration />
