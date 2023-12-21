@@ -13,7 +13,7 @@ import type { TFigure } from "~/types/figureType";
 export default function Index() {
   const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
   const [selectedImage, setSelectedImage] = useState<TFigure>(
-    timelineImages[Math.floor(Math.random() * timelineImages.length)]
+    timelineImages()[Math.floor(Math.random() * timelineImages.length)]
   );
   const [shouldShuffle, setShouldShuffle] = useState(false);
 
@@ -25,7 +25,7 @@ export default function Index() {
         footnotes: [],
       }}
     >
-      <div className="sm:flex bg-black text-white pt-10 sm:pt-5">
+      <main id="main-content" className="sm:flex bg-black text-white pt-10 sm:pt-5">
         <div className="sm:grid sm:grid-cols-5 sm:4 pl-6 sm:pl-0">
           <div className="pt-20 font-bold text-5xl sm:text-frontTitle font-dubois sm:col-start-1 sm:col-span-4 sm:row-start-2 sm:row-span-1 z-10 leading-veryTight sm:pl-24">
             <span className="sm:hidden">DATA BY DESIGN</span>
@@ -79,7 +79,7 @@ export default function Index() {
             {() => <SelectedImage selectedImage={selectedImage} />}
           </ClientOnly>
         </div>
-      </div>
+      </main>
       <ClientOnly>
         {() => (
           <Timeline
