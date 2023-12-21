@@ -47,8 +47,8 @@ function DoubleSlideShow() {
                     <img
                       className="mx-auto max-h-[66vh]"
                       src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
-                      alt={figure.altText ?? ""}
-                      title={figure.title ?? ""}
+                      alt={figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ?? figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? ""}
+                      title={figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? ""}
                     />
                   </picture>
                 </FigureModal>

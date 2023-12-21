@@ -19,7 +19,7 @@ export default function StippleHatch({ opacity }: { opacity: number }) {
           fill="url(#pattern-lines)"
         />
       </g>
-      <svg width="100" height="100">
+      <svg width="100" height="100" role="presentation">
         <pattern
           id="pattern-circles"
           x="0"
@@ -33,7 +33,7 @@ export default function StippleHatch({ opacity }: { opacity: number }) {
           <circle id="pattern-circle" cx="1" cy="1" r="1" fill="black" />
         </pattern>
       </svg>
-      <svg width="100" height="100">
+      <svg width="100" height="100" role="presentation">
         <pattern
           id="pattern-lines"
           x="0"

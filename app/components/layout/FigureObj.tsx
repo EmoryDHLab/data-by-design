@@ -72,6 +72,7 @@ export default function FigureObj({
           <EyeSlashIcon
             className={`h-36 absolute my-auto mx-auto transition-[stroke-opacity] stroke-${backgroundColor}`}
             strokeOpacity={hide ? 0.75 : 0}
+            role="presentation"
           />
         </div>
         <Picture figure={figure} className={imageClassName} />

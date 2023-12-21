@@ -27,18 +27,20 @@ export default function Index() {
     >
       <main id="main-content" className="sm:flex bg-black text-white pt-10 sm:pt-5">
         <div className="sm:grid sm:grid-cols-5 sm:4 pl-6 sm:pl-0">
-          <div className="pt-20 font-bold text-5xl sm:text-frontTitle font-dubois sm:col-start-1 sm:col-span-4 sm:row-start-2 sm:row-span-1 z-10 leading-veryTight sm:pl-24">
+          <h1 className="pt-20 font-bold text-5xl sm:text-frontTitle font-dubois sm:col-start-1 sm:col-span-4 sm:row-start-2 sm:row-span-1 z-10 leading-veryTight sm:pl-24">
             <span className="sm:hidden">DATA BY DESIGN</span>
             <span className="hidden sm:inline sm:ml-6 sm:pt-10">
               DATA BY
             </span>{" "}
             <span className="hidden sm:ml-24 sm:inline">DESIGN</span>
-          </div>
+          </h1>
           <div className="sm:text-3xl text-xl font-dubois font-normal sm:font-light sm:col-start-1 col-span-2 pt-3 row-start-3 sm:ml-32">
-            An Interactive History
-            <br /> of Data Visualization
-            <br />
-            <span className="pt-5">1786-1900</span>
+            <h2>
+              An Interactive History
+              <br /> of Data Visualization
+              <br />
+              <span className="pt-5">1786-1900</span>
+            </h2>
             <div className="pt-10 hidden md:block">
               <button
                 onClick={() => {

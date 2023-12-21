@@ -4,7 +4,7 @@ import { Link } from "@remix-run/react";
 export default function Navbar() {
   return (
     <nav className="fixed text-white w-full bg-black z-20">
-      <div className="w-3/4 flex items-center justify-around py-1 md:py-2">
+      <ul className="w-3/4 flex items-center justify-around py-1 md:py-2">
         <li className="font-dubois sm:text-2xl text-xl px-0 md:px-2 inline-block">
           <Link to="/">DxD</Link>
         </li>
@@ -16,7 +16,7 @@ export default function Navbar() {
             ABOUT
           </Link>
         </li>
-      </div>
+      </ul>
     </nav>
   );
 }

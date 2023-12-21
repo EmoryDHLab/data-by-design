@@ -65,12 +65,11 @@ export default function SeraphiqueTour({ figure }: Props) {
 
   return (
     <FigureModal figure={figure} hide={hideSensitiveState}>
-      <p id={`fig-label-${figure.fileName}`} className='sr-only'>{figure.caption}</p>
       <svg
       id={`fig-${figure.fileName}`}
         viewBox="0 0 50 69"
         role="img"
-        aria-labelledby={`fig-label-${figure.fileName}`}
+        aria-describedby={`fig-label-${figure.fileName}`}
         className={`drop-shadow-lg bg-${accentColor}`}
       >
         <mask id="seraphique">
@@ -118,6 +117,7 @@ export default function SeraphiqueTour({ figure }: Props) {
         </g>
       </svg>
       <figcaption className="font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
+        <span id={`fig-label-${figure.fileName}`} className='sr-only'>{figure.caption}</span>
         <span
           dangerouslySetInnerHTML={{
             __html: figure.caption ?? "",

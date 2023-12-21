@@ -19,8 +19,8 @@ function Picture({ figure, className }: Props) {
           hide ? "0" : "100"
         } ${className ?? ""}`}
         src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
-        alt={figure.altText ?? ""}
-        title={figure.title ?? ""}
+        alt={figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ?? figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? ""}
+        title={figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? figure.fileName}
         draggable={!hide}
       />
     </picture>

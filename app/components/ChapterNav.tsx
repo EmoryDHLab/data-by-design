@@ -94,7 +94,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
         const iconOffset = iconWidth * index + "px";
         return (
           <span
-            key={index}
+            key={anchor.hash}
             className={`relative max-lg:invisible -top-6 transition text-${
               anchor.offset > progress * 100
                 ? accentTextColor
@@ -106,10 +106,11 @@ export function ChapterNav({ progress, fixedNav }: Props) {
               to={`#${anchor.hash}`}
               className="font-icons"
               data-tooltip-id={`my-tooltip-${index}`}
+              data-tooltip-html={anchor.title}
             >
               {icon(anchor.type)}
             </Link>
-            <Tooltip id={`my-tooltip-${index}`} content={anchor.title} />
+            <Tooltip id={`my-tooltip-${index}`} />
           </span>
         );
       })}

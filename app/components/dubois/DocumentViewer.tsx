@@ -93,29 +93,35 @@ export default function DocumentViewer() {
             onClick={() => {
               setSelectedSet('setOne');
             }}
+            aria-hidden
+            aria-label="Set One"
           >
             {selectedSet === 'setOne' ? (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/ui/stack1.png" alt="" />
-                <img className="w-full" src="/images/ui/set1.png" alt="" />
+                <img src="/images/ui/stack1.png" alt="" role="presentation" />
+                <img className="w-full" src="/images/ui/set1.png" alt="" role="presentation" />
               </div>
             ) : (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/ui/eyeframe.png" alt="" />
-                <img className="w-full" src="/images/ui/set1.png" alt="" />
+                <img src="/images/ui/eyeframe.png" alt="" role="presentation" />
+                <img className="w-full" src="/images/ui/set1.png" alt="" role="presentation" />
               </div>
             )}
           </button>
-          <button onClick={() => setSelectedSet('setTwo')}>
+          <button
+            onClick={() => setSelectedSet('setTwo')}
+            aria-hidden
+            aria-label="Set Two"
+          >
             {selectedSet === 'setTwo' ? (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/ui/stack2.png" alt="" />
-                <img className="w-full" src="/images/ui/set2.png" alt="" />
+                <img src="/images/ui/stack2.png" alt="" role="presentation" />
+                <img className="w-full" src="/images/ui/set2.png" alt="" role="presentation" />
               </div>
             ) : (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/ui/eyeframe.png" alt="" />
-                <img className="w-full" src="/images/ui/set2.png" alt="" />
+                <img src="/images/ui/eyeframe.png" alt="" role="presentation" />
+                <img className="w-full" src="/images/ui/set2.png" alt="" role="presentation" />
               </div>
             )}
           </button>
@@ -158,6 +164,7 @@ export default function DocumentViewer() {
                   className="w-[27.5px] h-[19.5px] mt-5"
                   src="/images/ui/leftarrow.png"
                   alt=""
+                  role="presentation"
                 />
               </button>
 
@@ -173,6 +180,7 @@ export default function DocumentViewer() {
                   className="w-[27.5px] h-[19.5px] mt-5"
                   src="/images/ui/rightarrow.png"
                   alt=""
+                  role="presentation"
                 />
               </button>
             </div>
