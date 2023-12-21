@@ -32,6 +32,8 @@ export default function ChapterBody({ children }: Props) {
           step: ".chapter-body",
           progress: true,
           debug: false,
+          // @ts-ignore Maybe a bug in Scrollama type. String is acceptable.
+          offset: `${mainContentSize.topOffset}px`,
         })
         .onStepProgress(({ progress }) => setChapterProgressState(progress));
     }
