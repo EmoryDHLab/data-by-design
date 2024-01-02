@@ -261,7 +261,7 @@ export default function DuboisChapter() {
         </TwoColumnLayout>
 
         <SlideShow
-          className="block md:hidden bg-duboisPrimary w-full py-10 mb-8"
+          className="block md:hidden bg-black text-white w-full py-10 mb-8"
           figures={[
             figures["ch5-03-georgia"],
             figures["ch5-04a-city"],
@@ -401,7 +401,7 @@ export default function DuboisChapter() {
         </TwoColumnLayout>
 
         <SlideShow
-          className="block md:hidden bg-duboisPrimary w-full py-10 mb-8"
+          className="block md:hidden bg-black text-white w-full py-10 mb-8"
           figures={[
             figures["ch5-05a-countries"],
             figures["ch5-05a-countries"],
@@ -449,7 +449,10 @@ export default function DuboisChapter() {
             everyday lives.
           </p>
 
-          <FigureObj figure={figures["ch5-09-exhibit"]} />
+          <FigureObj
+            figure={figures["ch5-09-exhibit"]}
+            imageClassName="max-h-screen"
+          />
 
           <p>
             In a reflection on the Paris Exhibition, published several months
