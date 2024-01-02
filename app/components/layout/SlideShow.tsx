@@ -59,7 +59,7 @@ const SlideShow = ({ figures, className, children }: Props) => {
   const { isMobile, isDesktop } = useDeviceContext();
 
   return (
-    <section className={`mx-auto ${className ?? ""}`}>
+    <div className={`w-full mx-auto ${className ?? ""}`}>
       <Carousel
         renderCenterLeftControls={isDesktop ? leftControls : noControl}
         renderCenterRightControls={isDesktop ? rightControls : noControl}
@@ -91,7 +91,7 @@ const SlideShow = ({ figures, className, children }: Props) => {
         })}
         {children}
       </Carousel>
-    </section>
+    </div>
   )
 }
 

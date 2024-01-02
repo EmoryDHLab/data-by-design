@@ -50,7 +50,7 @@ export default function ChapterBody({ children }: Props) {
 
 
   return (
-    <main className="chapter-body" id="main-content">
+    <main className="chapter-body w-screen" id="main-content">
       <ClientOnly>
         {() => <ChapterNav progress={chapterProgressState} fixedNav={fixedNav} />}
       </ClientOnly>

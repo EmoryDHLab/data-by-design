@@ -21,7 +21,7 @@ export const meta: V2_MetaFunction = () => {
   return [
     { charset: "utf-8" },
     { title: "Data By Design" },
-    { viewport: "width=device-width,initial-scale=1" },
+    { name: "viewport", content: "width=device-width,initial-scale=1" },
   ];
 }
 
