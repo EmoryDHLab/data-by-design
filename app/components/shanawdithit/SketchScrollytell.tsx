@@ -101,10 +101,10 @@ function SketchScrollytell({ figure }: Props) {
           className={`flex flex-col md:flex-row justify-between`}
           id="scrollytell-one"
         >
-          <div className="sticky p-8 md:p-0 top-16 h-min mt-16 bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
+          <div className="sticky p-8 md:p-0 top-16 md:top-[20vh] h-min mt-16 bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
             <svg
               viewBox={`0 0 ${width} ${height}`}
-              className="max-h-[60vh] max-w-[90%] md:mt-[33%] md:mb-16 mx-auto drop-shadow-2xl"
+              className="max-h-[60vh] max-w-[90%] md:mb-16 mx-auto drop-shadow-2xl"
             >
               <image
                 href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
