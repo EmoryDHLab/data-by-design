@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type {
   LinksFunction,
   V2_MetaFunction,
@@ -33,6 +34,19 @@ export const links: LinksFunction = () => {
 }
 
 export default function App() {
+  useEffect(() => {
+    window.hypothesisConfig = function () {
+      return {
+        "openSidebar": false
+      };
+    };
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://hypothes.is/embed.js');
+    script.async = true;
+    head?.appendChild(script);
+  }, []);
+
   return (
     <html lang="en">
       <head>
