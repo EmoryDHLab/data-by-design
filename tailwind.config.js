@@ -120,6 +120,7 @@ module.exports = {
     "bg-brooksSecondary-translucent",
     "outline-brooksPrimary",
     "outline-brooksSecondary",
+    "bg-duboisPrimary",
     "text-duboisPrimary",
     "text-playfairPrimary",
     "bg-playfairPrimary",
