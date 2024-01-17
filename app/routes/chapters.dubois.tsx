@@ -68,9 +68,9 @@ export default function DuboisChapter() {
     <ChapterContext.Provider
       value={{
         backgroundColor: "duboisPrimary",
+        primaryTextColor: "white",
         accentColor: "duboisSecondary",
         footnoteTextColor: "duboisPrimary",
-        primaryTextColor: "white",
         footnotes: duboisFootnotes,
         hoverState,
         setHoverState,
@@ -85,7 +85,7 @@ export default function DuboisChapter() {
       {/* <div className="chapter-body container"> */}
       <ChapterBody>
         <CenteredLayout>
-          <p className="first-paragraph">
+          <p className="first-paragraph py-10">
             October 4th, 1899, was the first day of the fall term at Atlanta
             University (now Clark Atlanta University), where W.E.B. Du Bois had
             been teaching for the past two years&mdash;and a long two years they

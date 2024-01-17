@@ -84,7 +84,7 @@ export default function PeabodyPage() {
         subtitle="Elizabeth Palmer Peabody's Chronological Grids"
       />
       <ChapterBody>
-        <TwoColumnLayout>
+        <TwoColumnLayout className="py-10">
           <Column shouldPin={true}>
             <p className="first-paragraph">
               Elizabeth Palmer Peabody was born in Massachusetts in 1804. Today,

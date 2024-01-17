@@ -25,8 +25,11 @@ export default function Index() {
         footnotes: [],
       }}
     >
-      <main id="main-content" className="sm:flex bg-black text-white pt-10 sm:pt-5">
-        <div className="sm:grid sm:grid-cols-5 sm:4 pl-6 sm:pl-0">
+      <main
+        id="main-content"
+        className="sm:flex bg-black text-white pt-10 sm:pt-5 "
+      >
+        <div className="sm:grid bg-black sm:grid-cols-5 sm:4 pl-6 sm:pl-0  ">
           <h1 className="pt-20 font-bold text-5xl sm:text-frontTitle font-dubois sm:col-start-1 sm:col-span-4 sm:row-start-2 sm:row-span-1 z-10 leading-veryTight sm:pl-24">
             <span className="sm:hidden">DATA BY DESIGN</span>
             <span className="hidden sm:inline sm:ml-6 sm:pt-10">

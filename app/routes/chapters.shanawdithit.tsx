@@ -68,7 +68,7 @@ export default function ShanawdithitPage() {
       />
       <ChapterBody>
         <CenteredLayout>
-          <p className="first-paragraph">
+          <p className="first-paragraph py-10">
             This is not a story of triumph. It is not one of recovery. It is a
             story that can only be told in pieces—through compromised archives,
             second-hand accounts, and maps shot through with power relations.

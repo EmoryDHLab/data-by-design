@@ -30,17 +30,17 @@ export default function PlayfairPage() {
     {
       type: "scrollytell",
       id: "scrollytellOne",
-      title: "Combo Chart"
+      title: "Combo Chart",
     },
     {
       type: "visualization",
       id: "viz1",
-      title: "Playfair Scrollytell"
+      title: "Playfair Scrollytell",
     },
     {
       type: "visualization",
       id: "viz2",
-      title: "Recreation Covid"
+      title: "Recreation Covid",
     },
   ];
 
@@ -54,7 +54,7 @@ export default function PlayfairPage() {
         footnoteTextColor: "playfairPrimary",
         footnotes: playfairFootnotes,
         figures: Object.values(figures),
-        visualizations
+        visualizations,
       }}
     >
       <ChapterTitle
@@ -62,7 +62,7 @@ export default function PlayfairPage() {
         subtitle="William Playfair's Time-Series Charts"
       />
       <ChapterBody>
-        <TwoColumnLayout>
+        <TwoColumnLayout className="py-10">
           <Column>
             <p className="first-paragraph">
               One can only imagine the choice words exclaimed by the Scottish
@@ -168,9 +168,7 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj
-              figure={figures["1-northamerica"]}
-            />
+            <FigureObj figure={figures["1-northamerica"]} />
             <FigureObj figure={figures["2-wheat"]} />
             <FigureObj figure={figures["3-pie"]} />
           </Column>
@@ -351,7 +349,7 @@ export default function PlayfairPage() {
         <ChapterSectionTitle title="The Politics of Playfair's Charts" />
 
         <CenteredLayout>
-            <FigureObj figure={figures["5-minard"]} className="mt-8" />
+          <FigureObj figure={figures["5-minard"]} className="mt-8" />
           <p>
             Playfair created his charts in an era of intense political change.
             At the time that he released the third and most widely circulated

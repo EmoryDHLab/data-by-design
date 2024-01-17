@@ -97,8 +97,8 @@ export default function BrooksPage() {
 
       <ChapterBody>
         <ClientOnly>{() => <Consent />}</ClientOnly>
-        <CenteredLayout className="top-0">
-          <p>
+        <CenteredLayout>
+          <p className="py-10">
             Before there are data, there are people. People who offer up their
             lives as data -- or whose lives become data without consent.
           </p>

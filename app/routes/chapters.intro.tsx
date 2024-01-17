@@ -31,7 +31,7 @@ export default function IntroPage() {
       />
 
       <CenteredLayout>
-        <p className="first-paragraph">
+        <p className="first-paragraph py-10">
           From area charts that show the results of pivotal elections, to line
           graphs that document the effects of climate change, data visualization
           has become a central part of how we make sense of our complex lives.

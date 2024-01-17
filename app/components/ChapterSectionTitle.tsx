@@ -23,16 +23,16 @@ export default function ChapterSectionTitle({ title }: Props) {
     >
       <a
         href={`#${id}`}
-        className={`hover:bg-${accentColor}-translucent p-4 font-dubois text-xl lg:text-2xl flex justify-center items-center text-${accentTextColor}`}
+        className={`hover:bg-${accentColor}-translucent py-4 font-dubois text-xl lg:text-2xl flex text-${accentTextColor}`}
       >
-        <Hyperlink className="md:mr-4 hidden md:block" visibility={isHovered ? "" : "hidden"} />
+        <Hyperlink
+          className="md:mr-4 hidden md:block"
+          visibility={isHovered ? "" : "hidden"}
+        />
         <span className="text-center">{title}</span>
-        <span
-          className="md:ml-4 md:w-9 hidden md:block"
-          role="presentation"
-        >{" "}
-      </span>
-
+        <span className="md:ml-4 md:w-9 hidden md:block" role="presentation">
+          {" "}
+        </span>
       </a>
     </CenteredLayout>
   );

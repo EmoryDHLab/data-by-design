@@ -10,7 +10,7 @@ import { ClientOnly } from "remix-utils";
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("labour");
-}
+};
 
 export default function LabourPage() {
   return (
@@ -27,11 +27,9 @@ export default function LabourPage() {
         subtitle="The Making And Remaking Of This Site"
       />
       <CenteredLayout>
-        <p>content</p>
+        <p className="py-10">content</p>
       </CenteredLayout>
-      <ClientOnly>
-        {() => <PeopleVersions /> }
-      </ClientOnly>
+      <ClientOnly>{() => <PeopleVersions />}</ClientOnly>
       <Footer />
     </ChapterContext.Provider>
   );
