@@ -32,7 +32,7 @@ export default function OrderedTimeline({
   selectedImage,
 }: Props) {
   const sliderRef = useRef<HTMLDivElement>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(sortedImages.indexOf(selectedImage));
   const [mouseIsDown, setMouseIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);

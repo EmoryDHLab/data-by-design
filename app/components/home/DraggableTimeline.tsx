@@ -54,6 +54,8 @@ export default function DraggableTimeline({
     imageSliceStart + IMAGE_COUNT
   );
 
+  if (selectedImage) images.splice(0, 0, selectedImage);
+
   useEffect(() => {
     setState((state) => ({
       ...state,
