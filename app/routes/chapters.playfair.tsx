@@ -4,7 +4,7 @@ import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
-import RecreationCovid from "~/components/playfair/RecreationCovid";
+import RecreationLabor from "~/components/playfair/RecreationLabor";
 import StackedChart from "~/components/playfair/StackedChart";
 import CombChart from "~/components/playfair/CombChart";
 import FigureObj from "~/components/layout/FigureObj";
@@ -635,11 +635,11 @@ export default function PlayfairPage() {
               nor are the questions even prompted—by the simple view presented
               through Playfair's form.
             </p>
-            <p className="my-6 md:my-12">
-              <span id={visualizations[2].id}>
-                <RecreationCovid />
-              </span>
-            </p>
+            <div className="my-6 md:my-12">
+              <div id={visualizations[2].id}>
+                <RecreationLabor />
+              </div>
+            </div>
             <p>
               Every visualization carries certain assumptions—what we've called
               an argument in this chapter—about the knowledge that it conveys.
