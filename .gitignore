@@ -9,3 +9,5 @@ node_modules*
 .vercel
 /api*
 /styles/generated-app.css
+
+package-lock.json
