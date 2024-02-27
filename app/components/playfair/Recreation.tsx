@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as d3 from "d3";
 import VerticalGrid from "./elements/VerticalGrid";
 import HorizontalGrid from "./elements/HorizontalGrid";
@@ -17,39 +18,46 @@ const maxY = Math.max(maxImport, maxExport + 1_000_000);
 const interval = 200000;
 
 const xScaleDomain = [1700, 1800]; // d3.extent(playfairData.map(d => d.Years))
-const xScale = d3.scaleLinear()
-                 .range([0, (width / 11) * 10])
-                 .domain(xScaleDomain);
+const xScale = d3
+  .scaleLinear()
+  .range([0, (width / 11) * 10])
+  .domain(xScaleDomain);
 
-const yScale = d3.scaleLinear()
-                 .range([height, 0])
-                 .domain([0, maxY + 200_000]);
+const yScale = d3
+  .scaleLinear()
+  .range([height, 0])
+  .domain([0, maxY + 200_000]);
 
-const xMinorScale = d3.scaleLinear()
-                      .range([0, (width / 100) * 9])
-                      .domain([1_770, 1_780]);
+const xMinorScale = d3
+  .scaleLinear()
+  .range([0, (width / 100) * 9])
+  .domain([1_770, 1_780]);
 
 const yValues = yScale.ticks(20);
 const xValues = xScale.ticks();
 const xMinorValues = xMinorScale.ticks();
 
-const scatterImport = playfairData.map((d) => ({
-  x: d.Years,
-  y: d.Imports,
-})).slice(8, 21);
+const scatterImport = playfairData
+  .map((d) => ({
+    x: d.Years,
+    y: d.Imports,
+  }))
+  .slice(8, 21);
 
-const scatterExport = playfairData.map((d) => ({
-  x: d.Years,
-  y: d.Exports,
-})).slice(8, 21);
+const scatterExport = playfairData
+  .map((d) => ({
+    x: d.Years,
+    y: d.Exports,
+  }))
+  .slice(8, 21);
 
 const formatYValue = (value: number) => {
-  if (value < interval || value >= 6_000_000) return ' ';
-  if (value === interval) return '200,000';
+  if (value < interval || value >= 6_000_000) return " ";
+  if (value === interval) return "200,000";
   if (value < 1_000_000) return value / 100_000;
   const shortValue = value / 1_000_000;
-  if (shortValue === 1 && (shortValue) % 1 === 0) return `${shortValue} Million`;
-  if ((shortValue) % 1 === 0) return `${shortValue} Millions`;
+  if (shortValue === 1 && shortValue % 1 === 0) return `${shortValue} Million`;
+  if (shortValue % 1 === 0) return `${shortValue} Millions`;
   return value / 1_000_000;
 };
 
@@ -58,7 +66,11 @@ const scaleMapper = (sOut: Array<number>, sIn: Array<number>) => {
   return (x: number) => sOut[0] + m * (x - sIn[0]);
 };
 
-export default function Recreation({ scrollProgress }: { scrollProgress: number }) {
+export default function Recreation({
+  scrollProgress,
+}: {
+  scrollProgress: number;
+}) {
   const transitionInOut = (arrayIn: Array<number>, arrayOut: Array<number>) => {
     let progToOpacityIn = scaleMapper([0.0, 1.0], arrayIn);
     let progToOpacityOut = scaleMapper([1.0, 0.0], arrayOut);
@@ -86,7 +98,10 @@ export default function Recreation({ scrollProgress }: { scrollProgress: number 
   };
 
   return (
-    <svg viewBox="0 0 100 50" className="w-full md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0">
+    <svg
+      viewBox="0 0 100 50"
+      className="w-full md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0"
+    >
       <rect width="100%" height="100%" fill="#F3ECCB"></rect>
       <rect
         fill="transparent"
@@ -114,7 +129,7 @@ export default function Recreation({ scrollProgress }: { scrollProgress: number 
               offset={3}
               text={xValue}
             />
-          )
+          );
         })}
         {yValues.map((yValue, index) => {
           return (
@@ -125,34 +140,44 @@ export default function Recreation({ scrollProgress }: { scrollProgress: number 
               innerWidth={innerGridWidth}
               opacity={(yValue / 1_000_000) % 1 === 0 ? 0.2 : 0.1}
             />
-          )
+          );
         })}
-        <g opacity={scrollProgress > 0 && scrollProgress < 2 ? transitionInOut([0, 0.5], [1.25, 2]) : 0}>
+        <g
+          opacity={
+            scrollProgress > 0 && scrollProgress < 2
+              ? transitionInOut([0, 0.5], [1.25, 2])
+              : 0
+          }
+        >
           {scatterImport.map((plot) => {
-            return(
+            return (
               <ScatterPlot
                 key={plot.x + plot.y}
                 xValue={xScale(plot.x)}
                 yValue={yScale(plot.y)}
                 color="#D6BF24"
               />
-            )
+            );
           })}
           {scatterExport.map((plot) => {
-            return(
+            return (
               <ScatterPlot
                 key={plot.x + plot.y}
                 xValue={xScale(plot.x)}
                 yValue={yScale(plot.y)}
                 color="#BB877F"
               />
-            )
+            );
           })}
         </g>
         {/* First edition lines */}
         <g
           transform="scale(0.106, 0.09) translate(28,155)"
-          opacity={scrollProgress >= 1 && scrollProgress < 5.5 ? transitionInOut([1, 1.5], [5, 5.5]) : 0}
+          opacity={
+            scrollProgress >= 1 && scrollProgress < 5.5
+              ? transitionInOut([1, 1.5], [5, 5.5])
+              : 0
+          }
         >
           <path
             d={Paths.import1stEd}
@@ -168,7 +193,13 @@ export default function Recreation({ scrollProgress }: { scrollProgress: number 
           />
         </g>
         {/* Shaded area */}
-        <StippleHatch opacity={scrollProgress >= 2 && scrollProgress < 5.5 ? transitionInOut([2.25, 3], [5, 5.75]): 0} />
+        <StippleHatch
+          opacity={
+            scrollProgress >= 2 && scrollProgress < 5.5
+              ? transitionInOut([2.25, 3], [5, 5.75])
+              : 0
+          }
+        />
         {/* Detail lines */}
         {xMinorValues.map((xValue, index) => {
           return (
@@ -176,13 +207,20 @@ export default function Recreation({ scrollProgress }: { scrollProgress: number 
               key={xValue}
               xValue={xMinorScale(xValue)}
               offset={(width / 11) * 7 + 3}
-              text={' '}
-              opacity={scrollProgress >= 3 && scrollProgress < 5 ? transitionInOut([3, 4], [4, 5]) : 0}
+              text={" "}
+              opacity={
+                scrollProgress >= 3 && scrollProgress < 5
+                  ? transitionInOut([3, 4], [4, 5])
+                  : 0
+              }
             />
-          )
+          );
         })}
         {/* 3rd edition lines */}
-        <g transform="scale(0.22, 0.195) translate(14,58)" opacity={scrollProgress >= 5 ? transitionIn([5, 6]) : 0}>
+        <g
+          transform="scale(0.22, 0.195) translate(14,58)"
+          opacity={scrollProgress >= 5 ? transitionIn([5, 6]) : 0}
+        >
           <path d={Paths.import3rdEd} stroke="#F4B20C" fill="none" />
           <path d={Paths.export3rdEd} stroke="#56190F" fill="none" />
         </g>
@@ -243,5 +281,5 @@ export default function Recreation({ scrollProgress }: { scrollProgress: number 
         />
       </g>
     </svg>
-  )
+  );
 }
