@@ -20,9 +20,9 @@ export default function VerticalGrid({ xValue, offset, opacity, text }: Props) {
       <text
         fill="black"
         x={xValue + offset - 1}
-        y={47 + offset - 1}
+        y={47 + offset - 0.5}
         fontFamily="Chancery Cursive"
-        fontSize="2"
+        fontSize="3.5"
       >
         {text ?? xValue}
       </text>
