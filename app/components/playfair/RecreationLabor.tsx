@@ -127,13 +127,11 @@ export default function RecreationCovid() {
     }
   }, [yValues, selectedSources]);
 
-  const updateSources = (selectedSource: TLaborSource) => {
-    console.log(
-      "🚀 ~ updateSources ~ selectedSource:",
-      selectedSource,
-      selectedSources
-    );
+  const updateSources = (selectedSource: TLaborSource, key: string) => {
+    if (key && key !== "Enter") return;
+
     const indexOfSelected = selectedSources.indexOf(selectedSource);
+
     if (indexOfSelected >= 0) {
       setSelectedSources(
         selectedSources.filter((source) => source !== selectedSource)
@@ -275,10 +273,10 @@ export default function RecreationCovid() {
           return (
             <FancyButton
               key={source.key}
-              action={() => updateSources(source)}
+              action={({ key }) => updateSources(source, key)}
               className={`fill-${source.color} opacity-${
                 selectedSources.map((s) => s.key).includes(source.key) ? 1 : 50
-              } hover:opacity-90`}
+              } hover:opacity-90 focus:opacity-90`}
               textColor={
                 selectedSources.map((s) => s.key).includes(source.key)
                   ? source.activeText
