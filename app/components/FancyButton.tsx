@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { Dispatch, ReactNode, SetStateAction } from "react";
 
 interface Props {
@@ -31,17 +31,20 @@ export default function FancyButton({
   y,
 }: Props) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const svgRef = useRef<SVGSVGElement>(null);
 
   const handleFocus = () => {
     setIsHovered(true);
   };
 
   const handleBlur = () => {
+    svgRef.current?.blur();
     setIsHovered(false);
   };
 
   return (
     <svg
+      ref={svgRef}
       onClick={action}
       onKeyDown={action}
       onMouseEnter={handleFocus}
