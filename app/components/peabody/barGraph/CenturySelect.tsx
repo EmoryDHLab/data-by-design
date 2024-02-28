@@ -13,7 +13,7 @@ export default function CenturySelect() {
           <svg viewBox="0 0 100 32" key={`button-${index}`} className="w-1/6">
             <FancyButton
               outlineColor={currentCentury === century ? "gold" : "white"}
-              textColor={currentCentury === century ? "gold" : "white"}
+              textColor={currentCentury === century ? "yellow-500" : "white"}
               action={() => setCurrentCentury(century)}
             >
               {century}s

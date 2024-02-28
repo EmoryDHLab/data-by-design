@@ -273,25 +273,17 @@ export default function RecreationCovid() {
           Select two sources:{" "}
         </div>
         {laborSources.slice(0, 5).map((source) => {
+          const isActive = selectedSources
+            .map((s) => s.key)
+            .includes(source.key);
           return (
             <FancyButton
               key={source.key}
               action={({ key }) => updateSources(source, key)}
-              className={`fill-${source.color} ${
-                selectedSources.map((s) => s.key).includes(source.key)
-                  ? "opacity-100 hover:opacity-90 active:opacity-90"
-                  : "opacity-50 hover:opacity-60 active:opacity-60"
-              }`}
-              textColor={
-                selectedSources.map((s) => s.key).includes(source.key)
-                  ? source.activeText
-                  : source.inactiveText
-              }
-              outlineColor={
-                selectedSources.map((s) => s.key).includes(source.key)
-                  ? "black"
-                  : "white"
-              }
+              hoverColor={isActive ? undefined : source.color}
+              fillColor={isActive ? source.color : ""}
+              outlineColor="black"
+              textColor={isActive ? source.activeText : "black"}
             >
               {source.label}
             </FancyButton>
