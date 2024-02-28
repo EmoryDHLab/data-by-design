@@ -183,6 +183,7 @@ module.exports = {
     "scale-100",
     "stroke-white",
     "fill-white",
+    "fill-black",
     "fill-yellow-500",
     "stroke-yellow-500",
     "fill-gray-300",
