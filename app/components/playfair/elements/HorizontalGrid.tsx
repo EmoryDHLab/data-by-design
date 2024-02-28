@@ -21,15 +21,15 @@ export default function HorizontalGrid({
     d3.select(lineRef.current)
       .transition()
       .duration(600)
-      .attr("y1", yValue + 4)
-      .attr("y2", yValue + 4)
+      .attr("y1", yValue + 3)
+      .attr("y2", yValue + 3)
       .attr("opacity", opacity);
 
     d3.select(textRef.current)
       .transition()
       .duration(600)
       .attr("opacity", opacity > 0 ? 1 : 0)
-      .attr("y", yValue + 4.4);
+      .attr("y", yValue + 3.4);
   }, [yValue, innerWidth, text]);
 
   return (

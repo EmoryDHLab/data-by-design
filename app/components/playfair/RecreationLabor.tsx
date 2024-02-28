@@ -4,19 +4,18 @@ import * as d3 from "d3";
 import VerticalGrid from "./elements/VerticalGrid";
 import HorizontalGrid from "./elements/HorizontalGrid";
 import laborSources from "~/data/playfair/laborSources.json";
-import type { DSVRowArray } from "d3";
 import type { TLaborSource, TLaborData } from "~/types/laborSourceTypes";
 import FancyButton from "../FancyButton";
 
 const height = 44;
 const width = 98;
 const dates = Array.from({ length: 12 }, (_, i) => i + 2013);
-const yRange = Array.from({ length: 14 }, (_, i) => i * 10 + 10);
+const yRange = Array.from({ length: 15 }, (_, i) => i * 10);
 const innerGridWidth = (width / 11) * 10 + 3;
 
 const xScale = d3.scaleTime(
   [new Date(2013, 0, 1), new Date(2024, 11, 31)],
-  [0, width - 3]
+  [0, innerGridWidth - 3]
 );
 
 const yScale = d3.scaleLinear().range([height, 0]).domain([0, 100]);
@@ -35,46 +34,6 @@ export default function RecreationCovid() {
   const areaBelowRef = useRef<SVGPathElement>(null);
   const clipPathAboveRef = useRef<SVGPathElement>(null);
   const clipPathBelowRef = useRef<SVGPathElement>(null);
-
-  const path1 = d3
-    .area()
-    .curve(d3.curveMonotoneX)
-    .x((d) => xScale(d3.isoParse(d.date)))
-    .y((d) => yScale(d[selectedSources[0]?.label] || height));
-
-  const path2 = d3
-    .area()
-    .curve(d3.curveMonotoneX)
-    .x((d) => xScale(d3.isoParse(d.date)) || height)
-    .y((d) => yScale(d[selectedSources[1]?.label]) || height);
-
-  const clipAbove = d3
-    .area()
-    .curve(d3.curveMonotoneX)
-    .x((d) => xScale(d3.isoParse(d.date)) || height)
-    .y1((d) => yScale(d[selectedSources[0]?.label]) || height)
-    .y0(yScale(maxY) || 0);
-
-  const clipBelow = d3
-    .area()
-    .curve(d3.curveMonotoneX)
-    .x((d) => xScale(d3.isoParse(d.date)) || height)
-    .y1((d) => yScale(d[selectedSources[1]?.label]) || height)
-    .y0(yScale(maxY));
-
-  const areaAbove = d3
-    .area()
-    .curve(d3.curveMonotoneX)
-    .x((d) => xScale(d3.isoParse(d.date)) || 0)
-    .y1((d) => yScale(d[selectedSources[0]?.label]) || height)
-    .y0((d) => yScale(d[selectedSources[1]?.label]) || height);
-
-  const areaBelow = d3
-    .area()
-    .curve(d3.curveMonotoneX)
-    .x((d) => xScale(d3.isoParse(d.date)) || 0)
-    .y1((d) => yScale(d[selectedSources[0]?.label]) || 0)
-    .y0((d) => yScale(d[selectedSources[1]?.label]) || 0);
 
   useEffect(() => {
     const getData = async () => {
@@ -107,11 +66,51 @@ export default function RecreationCovid() {
   }, [selectedSources, csvData]);
 
   useEffect(() => {
-    setYValues(Array.from({ length: maxY / 10 }, (_, n) => (n + 1) * 10));
-    yScale.domain([0, maxY]);
+    setYValues(Array.from({ length: maxY / 10 + 1 }, (_, n) => n * 10));
+    yScale.domain([0, maxY + 10]);
   }, [maxY]);
 
   useEffect(() => {
+    const path1 = d3
+      .area()
+      .curve(d3.curveMonotoneX)
+      .x((d) => xScale(d3.isoParse(d.date)))
+      .y((d) => yScale(d[selectedSources[0]?.label] || height));
+
+    const path2 = d3
+      .area()
+      .curve(d3.curveMonotoneX)
+      .x((d) => xScale(d3.isoParse(d.date)) || height)
+      .y((d) => yScale(d[selectedSources[1]?.label]) || height);
+
+    const clipAbove = d3
+      .area()
+      .curve(d3.curveMonotoneX)
+      .x((d) => xScale(d3.isoParse(d.date)) || height)
+      .y1((d) => yScale(d[selectedSources[0]?.label]) || height)
+      .y0(yScale(maxY) || 0);
+
+    const clipBelow = d3
+      .area()
+      .curve(d3.curveMonotoneX)
+      .x((d) => xScale(d3.isoParse(d.date)) || height)
+      .y1((d) => yScale(d[selectedSources[1]?.label]) || height)
+      .y0(yScale(maxY));
+
+    const areaAbove = d3
+      .area()
+      .curve(d3.curveMonotoneX)
+      .x((d) => xScale(d3.isoParse(d.date)) || 0)
+      .y1((d) => yScale(d[selectedSources[0]?.label]) || height)
+      .y0((d) => yScale(d[selectedSources[1]?.label]) || height);
+
+    const areaBelow = d3
+      .area()
+      .curve(d3.curveMonotoneX)
+      .x((d) => xScale(d3.isoParse(d.date)) || 0)
+      .y1((d) => yScale(d[selectedSources[0]?.label]) || height)
+      .y0((d) => yScale(d[selectedSources[1]?.label]) || height);
+
     if (maxY > 0) {
       d3.select(clipPathAboveRef.current).attr("d", clipAbove(csvData));
 
@@ -125,7 +124,7 @@ export default function RecreationCovid() {
 
       d3.select(line2Ref.current).attr("d", path2(csvData));
     }
-  }, [yValues, selectedSources]);
+  }, [yValues, selectedSources, csvData, maxY]);
 
   const updateSources = (selectedSource: TLaborSource, key: string) => {
     if (key && key !== "Enter") return;
@@ -172,7 +171,7 @@ export default function RecreationCovid() {
               x="3"
               y="3"
               height={height}
-              width={(width / 12) * 10}
+              width={innerGridWidth - 3}
               opacity="0.2"
             ></rect>
             {dates.map((xValue, index) => {
@@ -186,15 +185,18 @@ export default function RecreationCovid() {
               );
             })}
             {yRange.map((yValue, index) => {
-              return (
-                <HorizontalGrid
-                  key={yValue}
-                  yValue={yValues.includes(yValue) ? yScale(yValue) : -1}
-                  text={yValue}
-                  innerWidth={innerGridWidth}
-                  opacity={yValues.includes(yValue) ? 0.2 : 0}
-                />
-              );
+              if (index > 0) {
+                return (
+                  <HorizontalGrid
+                    key={yValue}
+                    yValue={yValues.includes(yValue) ? yScale(yValue) : -1}
+                    text={yValue}
+                    innerWidth={innerGridWidth}
+                    opacity={yValues.includes(yValue) ? 0.2 : 0}
+                  />
+                );
+              }
+              return <></>;
             })}
 
             {csvData && (
