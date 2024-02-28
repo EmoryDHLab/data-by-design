@@ -33,5 +33,12 @@
     "color": "brooksPrimary",
     "activeText": "white",
     "inactiveText": "white"
+  },
+  {
+    "key": "flat",
+    "label": "flat",
+    "color": "",
+    "activeText": "",
+    "inactiveText": ""
   }
 ]

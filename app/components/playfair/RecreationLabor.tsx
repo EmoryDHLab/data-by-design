@@ -12,6 +12,7 @@ const width = 98;
 const dates = Array.from({ length: 12 }, (_, i) => i + 2013);
 const yRange = Array.from({ length: 15 }, (_, i) => i * 10);
 const innerGridWidth = (width / 11) * 10 + 3;
+const noSource = laborSources.find((source) => source.label === "flat");
 
 const xScale = d3.scaleTime(
   [new Date(2013, 0, 1), new Date(2024, 11, 31)],
@@ -22,8 +23,8 @@ const yScale = d3.scaleLinear().range([height, 0]).domain([0, 100]);
 
 export default function RecreationCovid() {
   const [selectedSources, setSelectedSources] = useState<TLaborSource[]>([
-    laborSources[0],
-    laborSources[1],
+    noSource,
+    noSource,
   ]);
   const [csvData, setCsvData] = useState<TLaborData | undefined>(undefined);
   const [maxY, setMaxY] = useState<number>(0);
@@ -129,17 +130,21 @@ export default function RecreationCovid() {
   const updateSources = (selectedSource: TLaborSource, key: string) => {
     if (key && key !== "Enter") return;
 
-    const indexOfSelected = selectedSources.indexOf(selectedSource);
+    let indexOfSelected = selectedSources.indexOf(selectedSource);
 
+    // If the selected source is currently active, we replace it with the
+    // flat source. Otherwise, we replace the flat source with the newly
+    // selected source. This makes sure the lines always transition up and
+    // down from the baseline.
     if (indexOfSelected >= 0) {
-      setSelectedSources(
-        selectedSources.filter((source) => source !== selectedSource)
-      );
-    } else if (selectedSources.length == 2) {
-      setSelectedSources(selectedSources.toSpliced(1, 1, selectedSource));
+      selectedSource = noSource;
     } else {
-      setSelectedSources([...selectedSources, selectedSource]);
+      indexOfSelected = selectedSources.indexOf(noSource);
     }
+
+    setSelectedSources(
+      selectedSources.toSpliced(indexOfSelected, 1, selectedSource)
+    );
   };
 
   return (
@@ -215,36 +220,32 @@ export default function RecreationCovid() {
                     d=""
                   ></path>
                 </clipPath>
-                {selectedSources.length === 2 && (
-                  <g>
-                    <path
-                      ref={areaBelowRef}
-                      className={`fill-${selectedSources[0]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
-                      d=""
-                      clipPath="url(#clip-below)"
-                      fillOpacity={0.5}
-                    />
-                    <path
-                      ref={line1Ref}
-                      className={`stroke-${selectedSources[0]?.color} translate-y-[3px] translate-x-[3px] fill-${selectedSources[0]?.color} transition-all duration-700`}
-                      d=""
-                      strokeWidth="0.1"
-                    />
-                    <path
-                      ref={areaAboveRef}
-                      className={`fill-${selectedSources[1]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
-                      d=""
-                      clipPath="url(#clip-above)"
-                      fillOpacity={0.5}
-                    />
-                    <path
-                      ref={line2Ref}
-                      className={`stroke-${selectedSources[1]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
-                      d=""
-                      strokeWidth="0.1"
-                    />
-                  </g>
-                )}{" "}
+                <path
+                  ref={areaBelowRef}
+                  className={`fill-${selectedSources[0]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
+                  d=""
+                  clipPath="url(#clip-below)"
+                  fillOpacity={0.5}
+                />
+                <path
+                  ref={line1Ref}
+                  className={`stroke-${selectedSources[0]?.color} translate-y-[3px] translate-x-[3px] fill-${selectedSources[0]?.color} transition-all duration-700`}
+                  d=""
+                  strokeWidth="0.1"
+                />
+                <path
+                  ref={areaAboveRef}
+                  className={`fill-${selectedSources[1]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
+                  d=""
+                  clipPath="url(#clip-above)"
+                  fillOpacity={0.5}
+                />
+                <path
+                  ref={line2Ref}
+                  className={`stroke-${selectedSources[1]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
+                  d=""
+                  strokeWidth="0.1"
+                />
               </g>
             )}
             <rect
@@ -271,14 +272,16 @@ export default function RecreationCovid() {
         <div className="font-duboisWide col-span-3 md:col-span-2">
           Select two sources:{" "}
         </div>
-        {laborSources.map((source) => {
+        {laborSources.slice(0, 5).map((source) => {
           return (
             <FancyButton
               key={source.key}
               action={({ key }) => updateSources(source, key)}
-              className={`fill-${source.color} opacity-${
-                selectedSources.map((s) => s.key).includes(source.key) ? 1 : 50
-              } hover:opacity-90 focus:opacity-90`}
+              className={`fill-${source.color} ${
+                selectedSources.map((s) => s.key).includes(source.key)
+                  ? "opacity-100 hover:opacity-90 active:opacity-90"
+                  : "opacity-50 hover:opacity-60 active:opacity-60"
+              }`}
               textColor={
                 selectedSources.map((s) => s.key).includes(source.key)
                   ? source.activeText
