@@ -6,6 +6,7 @@ import { useResizeObserver } from "~/hooks";
 
 type TAnchorPosition = {
   offset: number;
+  offsetPercent: number;
   type: "figure" | "scrollytell" | "visualization" | "figures";
   hash: string | undefined;
   title?: string;
@@ -24,6 +25,8 @@ const icon = (type: string) => {
       return "i";
   }
 };
+
+const iconWidth = 13;
 
 interface Props {
   progress: number;
@@ -45,20 +48,31 @@ export function ChapterNav({ progress, fixedNav }: Props) {
     if (!documentSize.height) return;
     const getOffset = (id: string) => {
       const element = document.getElementById(id);
-      const mainElement = document.getElementById('main-content');
-      if (!element || !documentSize.height || !mainElement || !mainContentSize.height) return 0;
+      const mainElement = document.getElementById("main-content");
+      if (
+        !element ||
+        !documentSize.height ||
+        !mainElement ||
+        !mainContentSize.height
+      )
+        return 0;
       // @ts-ignore
       const { top } = element.getBoundingClientRect();
-      return ((top + window.scrollY) / mainContentSize.height) * 100;
+      return (
+        ((top - (mainContentSize.topOffset || 0) + window.scrollY) /
+          mainContentSize.height) *
+        100
+      );
     };
 
     const anchorPositions: TAnchorPosition[] = [];
     if (figures) {
       for (const figure of figures) {
-        const offset = getOffset(`fig-${figure.fileName}`);
-        if (offset > 0) {
+        const offsetPercent = getOffset(`fig-${figure.fileName}`);
+        if (offsetPercent > 0) {
           anchorPositions.push({
-            offset,
+            offsetPercent,
+            offset: (offsetPercent * window.innerWidth) / 100 - iconWidth,
             type: "figure",
             hash: `fig-${figure.fileName}`,
             title: figure.title || figure.fileName,
@@ -66,23 +80,32 @@ export function ChapterNav({ progress, fixedNav }: Props) {
         }
       }
     }
+
     if (visualizations) {
       for (const viz of visualizations) {
-        const offset = getOffset(viz.id);
+        const offsetPercent = getOffset(viz.id);
         anchorPositions.push({
-          offset,
+          offsetPercent,
+          offset: (offsetPercent * window.innerWidth) / 100 - iconWidth,
           type: viz.type,
           hash: viz.id,
           title: viz.title,
         });
       }
     }
-    setAnchorMap(anchorPositions);
+
+    const sortedAnchors = anchorPositions.sort(function (a, b) {
+      return a.offset - b.offset;
+    });
+
+    setAnchorMap(sortedAnchors);
   }, [visualizations, setAnchorMap, documentSize]);
 
   return (
     <nav
-      className={`w-full z-[15] ${fixedNav ? "fixed" : "sticky"} top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto h-6`}
+      className={`w-full z-[15] ${
+        fixedNav ? "fixed" : "sticky"
+      } top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto h-6`}
     >
       <div
         className={`bg-${backgroundColor} relative left-0 top-0 h-full`}
@@ -90,17 +113,15 @@ export function ChapterNav({ progress, fixedNav }: Props) {
       ></div>
 
       {anchorMap.map((anchor, index) => {
-        const iconWidth = 13.14;
-        const iconOffset = iconWidth * index + "px";
         return (
           <span
             key={anchor.hash}
-            className={`relative max-lg:invisible -top-6 transition text-${
-              anchor.offset > progress * 100
+            className={`absolute max-lg:invisible -top-[0.1rem] transition text-${
+              anchor.offsetPercent > progress * 100
                 ? accentTextColor
                 : primaryTextColor
             }`}
-            style={{ left: `calc(${anchor.offset}% - ${iconOffset})` }}
+            style={{ left: `${anchor.offset}px` }}
           >
             <Link
               to={`#${anchor.hash}`}
