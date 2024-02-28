@@ -17,7 +17,7 @@ export default function ChapterSectionTitle({ title }: Props) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       id={id}
-      className={`bg-${accentColor} w-8/12 md:my-12 items-center`}
+      className={`bg-${accentColor} md:my-12 items-center`}
       role="button"
       tabIndex={0}
     >
