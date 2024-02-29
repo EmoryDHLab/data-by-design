@@ -116,7 +116,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
         return (
           <span
             key={anchor.hash}
-            className={`absolute max-lg:invisible -top-[0.1rem] transition text-${
+            className={`absolute max-lg:invisible -top-[0.01rem] transition text-${
               anchor.offsetPercent > progress * 100
                 ? accentTextColor
                 : primaryTextColor
