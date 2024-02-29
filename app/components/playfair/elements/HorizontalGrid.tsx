@@ -21,15 +21,15 @@ export default function HorizontalGrid({
     d3.select(lineRef.current)
       .transition()
       .duration(600)
-      .attr("y1", yValue + 3)
-      .attr("y2", yValue + 3)
+      .attr("y1", yValue + 5.5)
+      .attr("y2", yValue + 5.5)
       .attr("opacity", opacity);
 
     d3.select(textRef.current)
       .transition()
       .duration(600)
       .attr("opacity", opacity > 0 ? 1 : 0)
-      .attr("y", yValue + 3.4);
+      .attr("y", yValue + 5.9);
   }, [yValue, innerWidth, text]);
 
   return (
@@ -37,9 +37,9 @@ export default function HorizontalGrid({
       <line
         ref={lineRef}
         x1={innerWidth}
-        x2="3"
-        y1={3}
-        y2={3}
+        x2={5.5}
+        y1={5.5}
+        y2={5.5}
         stroke="black"
         opacity={0}
         strokeWidth="0.2"
@@ -48,9 +48,9 @@ export default function HorizontalGrid({
         ref={textRef}
         fill="black"
         x={innerWidth + 0.5}
-        y={3}
+        y={5.5}
         fontFamily="Arial"
-        fontSize="1.5"
+        fontSize={1.5}
         opacity={0}
       >
         {text ?? yValue}

@@ -10,9 +10,9 @@ export default function VerticalGrid({ xValue, offset, opacity, text }: Props) {
     <g>
       <line
         x1={xValue + offset}
-        y1="3"
+        y1={5.5}
         x2={xValue + offset}
-        y2="47"
+        y2={49.5}
         opacity={opacity ?? "0.4"}
         stroke="black"
         strokeWidth="0.1"

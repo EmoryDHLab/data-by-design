@@ -14,26 +14,43 @@ const ProjectTimelineContainer = ({
   innerGridWidth,
 }: Props) => {
   return (
-    <svg viewBox="0 0 100 50">
-      <rect fill="#F3ECCB" className="w-full h-full" />
-      {children}
+    <svg viewBox="0 0 105 55">
       <rect
-        fill="transparent"
-        x="3"
-        y="3"
+        fill="#F3ECCB"
+        className="w-full h-full"
+        strokeWidth={0.5}
+        stroke="black"
+        height={51}
+      />
+
+      <rect
+        fill="none"
+        x={1}
+        y={1}
+        height={53}
+        width={103}
+        stroke="black"
+        strokeWidth={0.1}
+      ></rect>
+
+      <rect
+        fill="none"
+        x={5.5}
+        y={5.5}
         height={height}
         width={width - 4.3}
         stroke="black"
-        strokeWidth="0.25"
+        strokeWidth={0.25}
       ></rect>
       <line
         x1={innerGridWidth}
-        y1="3"
+        y1={5.5}
         x2={innerGridWidth}
-        y2="47"
+        y2={49.5}
         stroke="black"
-        strokeWidth="0.1"
+        strokeWidth={0.1}
       ></line>
+      {children}
     </svg>
   );
 };

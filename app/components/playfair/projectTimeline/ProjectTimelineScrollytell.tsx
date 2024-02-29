@@ -76,7 +76,6 @@ const ProjectTimelineScrollytell = () => {
   }, []);
 
   useEffect(() => {
-    console.log(scrollProgress);
     switch (true) {
       case scrollProgress >= minScrollProgress - 0.25 &&
         scrollProgress < minScrollProgress + 1:

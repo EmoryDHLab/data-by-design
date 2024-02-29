@@ -10,11 +10,11 @@ const height = 44;
 const width = 98;
 const dates = Array.from({ length: 12 }, (_, i) => i + 2013);
 const yRange = Array.from({ length: 15 }, (_, i) => i * 10);
-const innerGridWidth = (width / 11) * 10 + 3;
+const innerGridWidth = (width / 11) * 10 + 5.5;
 
 const xScale = d3.scaleTime(
   [new Date(2013, 0, 1), new Date(2024, 11, 31)],
-  [0, innerGridWidth - 3]
+  [0, innerGridWidth - 5.5]
 );
 
 const yScale = d3.scaleLinear().range([height, 0]).domain([0, 100]);
@@ -33,7 +33,6 @@ export default function ProjectTimeline({
   selectedSources,
   className,
   areaOpacity = [0.5, 0.5],
-  useMask = false,
   showMask = false,
   strokeWidth = 0.1,
   id,
@@ -143,35 +142,37 @@ export default function ProjectTimeline({
         <text
           fill="black"
           x={width / 2}
-          y="2.3"
+          y={4}
           fontFamily="Times New Roman"
-          fontSize="2.3"
+          fontSize={2.5}
         >
           Time
         </text>
         <text
           fill="black"
-          y="2"
+          y={4}
+          x={-27.5}
           fontFamily="Times New Roman"
-          fontSize="2.3"
-          transform="rotate(-90) translate(-37, 0)"
+          fontSize={2.5}
+          transform="rotate(-90)"
+          textAnchor="middle"
         >
           Something
         </text>
         <rect
-          fill="white"
-          x="3"
-          y="3"
+          fill="none"
+          x={5.5}
+          y={5.5}
           height={height}
-          width={innerGridWidth - 3}
-          opacity="0.2"
+          width={innerGridWidth - 5.5}
+          opacity={0.2}
         ></rect>
         {dates.map((xValue, index) => {
           return (
             <VerticalGrid
               key={`${xValue}-${id}`}
               xValue={xScale(new Date(dates[index], 0, 1))}
-              offset={3}
+              offset={5.5}
               text={dates[index]}
             />
           );
@@ -209,27 +210,27 @@ export default function ProjectTimeline({
             </clipPath>
             <path
               ref={areaBelowRef}
-              className={`fill-${selectedSources[0]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
+              className={`fill-${selectedSources[0]?.color} translate-y-[5.5px] translate-x-[5.5px] transition-all duration-700`}
               d=""
               clipPath={`url(#clip-below-${id})`}
               fillOpacity={areaOpacity[0] ?? 0.5}
             />
             <path
               ref={line1Ref}
-              className={`stroke-${selectedSources[0]?.color} translate-y-[3px] translate-x-[3px] fill-${selectedSources[0]?.color} transition-all duration-700`}
+              className={`stroke-${selectedSources[0]?.color} translate-y-[5.5px] translate-x-[5.5px] fill-${selectedSources[0]?.color} transition-all duration-700`}
               d=""
               strokeWidth={strokeWidth}
             />
             <path
               ref={areaAboveRef}
-              className={`fill-${selectedSources[1]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
+              className={`fill-${selectedSources[1]?.color} translate-y-[5.5px] translate-x-[5.5px] transition-all duration-700`}
               d=""
               clipPath={`url(#clip-above-${id})`}
               fillOpacity={areaOpacity[1] ?? 0.5}
             />
             <path
               ref={line2Ref}
-              className={`stroke-${selectedSources[1]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
+              className={`stroke-${selectedSources[1]?.color} translate-y-[5.5px] translate-x-[5.5px] transition-all duration-700`}
               d=""
               strokeWidth={strokeWidth}
             />
@@ -241,26 +242,26 @@ export default function ProjectTimeline({
               <rect
                 x={0}
                 y={0}
-                width={100}
-                height={50}
+                width={105}
+                height={55}
                 fill="white"
                 fillOpacity={showMask ? 0.6 : 0}
                 className="transition-all duration-1000"
               />
-              <rect x={17.8} y={3} width={20} height={44} fill="black" />
+              <rect x={23.3} y={5.5} width={15} height={44} fill="black" />
             </mask>
           </defs>
           <g>
             <rect
-              x={17.8}
-              y={3}
-              width={20}
+              x={23.3}
+              y={5.5}
+              width={15}
               height={44}
               fill="none"
               stroke="black"
               strokeWidth={0}
             />
-            <rect mask="url(#focus)" x={0} y={0} width={100} height={50} />
+            <rect mask="url(#focus)" x={0} y={0} width={105} height={55} />
           </g>
         </g>
       </ProjectTimelineContainer>
