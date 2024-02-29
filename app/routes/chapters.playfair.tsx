@@ -4,7 +4,7 @@ import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
-import RecreationLabor from "~/components/playfair/RecreationLabor";
+import ProjectTimelineInteractive from "~/components/playfair/ProjectTimelineInteractive";
 import StackedChart from "~/components/playfair/StackedChart";
 import CombChart from "~/components/playfair/CombChart";
 import FigureObj from "~/components/layout/FigureObj";
@@ -20,6 +20,7 @@ import { chapterMeta } from "~/utils";
 import type { V2_MetaFunction } from "@remix-run/node";
 import type { TVizAnchors } from "~/chapterContext";
 import ChapterBody from "~/components/layout/ChapterBody";
+import ProjectTimelineScrollytell from "~/components/playfair/projectTimeline/ProjectTimelineScrollytell";
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("playfair");
@@ -40,7 +41,12 @@ export default function PlayfairPage() {
     {
       type: "visualization",
       id: "viz2",
-      title: "Recreation Covid",
+      title: "Project Timeline Interactive",
+    },
+    {
+      type: "scrollytell",
+      id: "scrollytellTwo",
+      title: "Project Timeline",
     },
   ];
 
@@ -537,11 +543,8 @@ export default function PlayfairPage() {
           </p>
 
           <p className="my-6 md:my-12 w-full h-full">
-            <span
-              id={visualizations[1].id}
-              className="col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 mt-6 flex flex-row"
-            >
-              <svg viewBox="0 0 100 50">
+            <span id={visualizations[1].id} className="">
+              <svg viewBox="0 0 100 50" className="margin-auto">
                 <rect width="64%" height="100%" fill="#F3ECCB" />
                 <rect width="35%" height="100%" fill="#F3ECCB" x="65" />
                 <StackedChart />
@@ -602,61 +605,64 @@ export default function PlayfairPage() {
           </Column>
         </TwoColumnLayout>
         <CenteredLayout>
-          <div className="py-5 md:py-10">
-            <p>
-              While this argument is not always made explicitly, or even
-              intentionally, it is evident in the wide range of contexts in
-              which Playfair's visual typologies are deployed. On the one hand,
-              this pervasiveness confirms Playfair's own claims about the broad
-              utility of his designs. But on the other hand, it elides the
-              assumptions embedded in those designs: that the primary goal of
-              visualization is to reduce complexity, and to produce a simple,
-              more comprehensible view.
-            </p>
-            <p>
-              What do these visualizations of incredibly varied data, each of
-              which look roughly the same, tell us about the assumptions
-              embedded in their form? To be sure, there are specific trends that
-              can be discerned from each dataset—in the case of deaths from
-              Covid-19, the waves of infection, and the comparative response
-              between the US and the UK
-              <InlineFootnote index={28} />; in the case of comparative income
-              levels, the increasingly tenacious grip of global neoliberalism
-              <InlineFootnote index={29} />; and in the case of women
-              representatives in government, how much more work is to be done.
-              <InlineFootnote index={30} />
-              But these are all general trends. How are we to be prompted to
-              think about, for example, the uncertainty around how "death" from
-              Covid-19 has been defined; how the average income level erases the
-              widening gap rich and poor; or, in the case of political
-              representation, how gradual change is often accelerated by
-              specific events. These are each crucial questions to ask about
-              their respective dataset, but their answers are not conveyed—or
-              nor are the questions even prompted—by the simple view presented
-              through Playfair's form.
-            </p>
-            <div className="my-6 md:my-12">
-              <div id={visualizations[2].id}>
-                <RecreationLabor />
-              </div>
+          {/* <div className="py-5 md:py-10"> */}
+          <p>
+            While this argument is not always made explicitly, or even
+            intentionally, it is evident in the wide range of contexts in which
+            Playfair's visual typologies are deployed. On the one hand, this
+            pervasiveness confirms Playfair's own claims about the broad utility
+            of his designs. But on the other hand, it elides the assumptions
+            embedded in those designs: that the primary goal of visualization is
+            to reduce complexity, and to produce a simple, more comprehensible
+            view.
+          </p>
+          <p>
+            What do these visualizations of incredibly varied data, each of
+            which look roughly the same, tell us about the assumptions embedded
+            in their form? To be sure, there are specific trends that can be
+            discerned from each dataset—in the case of deaths from Covid-19, the
+            waves of infection, and the comparative response between the US and
+            the UK
+            <InlineFootnote index={28} />; in the case of comparative income
+            levels, the increasingly tenacious grip of global neoliberalism
+            <InlineFootnote index={29} />; and in the case of women
+            representatives in government, how much more work is to be done.
+            <InlineFootnote index={30} />
+            But these are all general trends. How are we to be prompted to think
+            about, for example, the uncertainty around how "death" from Covid-19
+            has been defined; how the average income level erases the widening
+            gap rich and poor; or, in the case of political representation, how
+            gradual change is often accelerated by specific events. These are
+            each crucial questions to ask about their respective dataset, but
+            their answers are not conveyed—or nor are the questions even
+            prompted—by the simple view presented through Playfair's form.
+          </p>
+        </CenteredLayout>
+        <span id={visualizations[3].id}>
+          <ProjectTimelineScrollytell />
+        </span>
+        <CenteredLayout>
+          <div className="my-6 md:my-12">
+            <div id={visualizations[2].id}>
+              <ProjectTimelineInteractive />
             </div>
-            <p>
-              Every visualization carries certain assumptions—what we've called
-              an argument in this chapter—about the knowledge that it conveys.
-              This has to do not only with the value of that knowledge, or its
-              intended recipient, but also about its source. As we will see
-              throughout this site, this argument is by no means the same for
-              each image, interaction, or other instance of data visualization
-              that we encounter in the world. Thus while contemporary
-              visualization researchers increasingly assert, as does Ben
-              Shneiderman, that "the purpose of visualization is insight, not
-              pictures," we must continually ask ourselves about the nature of
-              this insight—the basis for its knowledge claims, the utility it
-              serves, and for whom its utility applies—lest we fall back into
-              the passive mode of knowledge reception that characterized
-              Playfair's intention for his charts.
-            </p>
           </div>
+          <p>
+            Every visualization carries certain assumptions—what we've called an
+            argument in this chapter—about the knowledge that it conveys. This
+            has to do not only with the value of that knowledge, or its intended
+            recipient, but also about its source. As we will see throughout this
+            site, this argument is by no means the same for each image,
+            interaction, or other instance of data visualization that we
+            encounter in the world. Thus while contemporary visualization
+            researchers increasingly assert, as does Ben Shneiderman, that "the
+            purpose of visualization is insight, not pictures," we must
+            continually ask ourselves about the nature of this insight—the basis
+            for its knowledge claims, the utility it serves, and for whom its
+            utility applies—lest we fall back into the passive mode of knowledge
+            reception that characterized Playfair's intention for his charts.
+          </p>
+          {/* </div> */}
         </CenteredLayout>
         <ChapterSectionTitle title="What Visualization Does Not Reveal" />
         <TwoColumnLayout>

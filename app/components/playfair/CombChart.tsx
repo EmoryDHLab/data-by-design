@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import playfairData from "~/data/playfair/playfairImportExport.json"
+import playfairData from "~/data/playfair/playfairImportExport.json";
 
 export default function CombChart() {
   const yearAngle = 3.27;
@@ -8,55 +8,70 @@ export default function CombChart() {
   const height = 50;
   const width = 34;
   const offset = 65;
-  const maxY = Math.max(...playfairData.map(d => d.Imports + d.Exports));
+  const maxY = Math.max(...playfairData.map((d) => d.Imports + d.Exports));
   const maxOuterR = ((maxY / interval + 1) * radiusScale) / 2;
 
-  const importArcs = Array.from({ length: playfairData.length}).map((_, index) => {
-    const startAng = ((playfairData[index].Years - 1700) * yearAngle * Math.PI) / 180;
+  const importArcs = Array.from({ length: playfairData.length }).map(
+    (_, index) => {
+      const startAng =
+        ((playfairData[index].Years - 1700) * yearAngle * Math.PI) / 180;
 
-    const endAng = index != playfairData.length - 1
-      ? ((playfairData[(index + 1) % playfairData.length].Years - 1700) * yearAngle *  Math.PI) / 180
-      : 2 * Math.PI;
+      const endAng =
+        index != playfairData.length - 1
+          ? ((playfairData[(index + 1) % playfairData.length].Years - 1700) *
+              yearAngle *
+              Math.PI) /
+            180
+          : 2 * Math.PI;
 
-    return d3.arc()
-             .innerRadius(0)
-             .outerRadius(
-               ((Number(playfairData[index].Imports) +
-                 Number(playfairData[index].Exports)) /
-                 interval) *
-                 radiusScale
-             )
-             .startAngle(startAng)
-             .endAngle(endAng)
-             .call();
-  });
+      return d3
+        .arc()
+        .innerRadius(0)
+        .outerRadius(
+          ((Number(playfairData[index].Imports) +
+            Number(playfairData[index].Exports)) /
+            interval) *
+            radiusScale
+        )
+        .startAngle(startAng)
+        .endAngle(endAng)
+        .call();
+    }
+  );
 
-  const exportArcs = Array.from({ length: playfairData.length}).map((_, index) => {
-    const startAng = ((playfairData[index].Years - 1700) * yearAngle * Math.PI) / 180;
+  const exportArcs = Array.from({ length: playfairData.length }).map(
+    (_, index) => {
+      const startAng =
+        ((playfairData[index].Years - 1700) * yearAngle * Math.PI) / 180;
 
-    const endAng = index != playfairData.length - 1
-      ? ((playfairData[(index + 1) % playfairData.length].Years - 1700) * yearAngle * Math.PI) / 180
-      : 2 * Math.PI;
+      const endAng =
+        index != playfairData.length - 1
+          ? ((playfairData[(index + 1) % playfairData.length].Years - 1700) *
+              yearAngle *
+              Math.PI) /
+            180
+          : 2 * Math.PI;
 
-    return d3.arc()
-             .innerRadius(0)
-             .outerRadius(
-               (playfairData[index].Imports / interval) * radiusScale
-             )
-             .startAngle(startAng)
-             .endAngle(endAng)
-             .call();
-  });
+      return d3
+        .arc()
+        .innerRadius(0)
+        .outerRadius((playfairData[index].Imports / interval) * radiusScale)
+        .startAngle(startAng)
+        .endAngle(endAng)
+        .call();
+    }
+  );
 
-  const outlineArcs = Array.from({ length: 11}).map((_, index) => {
+  const outlineArcs = Array.from({ length: 11 }).map((_, index) => {
     const startAng = ((2 * Math.PI) / 11) * index;
     const endAng = ((2 * Math.PI) / 11) * (index + 1);
-    return d3.arc()
-             .innerRadius(0)
-             .outerRadius(maxOuterR)
-             .startAngle(startAng)
-             .endAngle(endAng)
-             .call();
+    return d3
+      .arc()
+      .innerRadius(0)
+      .outerRadius(maxOuterR)
+      .startAngle(startAng)
+      .endAngle(endAng)
+      .call();
   });
 
   return (
@@ -96,7 +111,7 @@ export default function CombChart() {
         );
       })}
 
-      {Array.from({ length: 8}).map((_, index) => {
+      {Array.from({ length: 8 }).map((_, index) => {
         return (
           <circle
             key={`${index}'circle`}
@@ -119,9 +134,16 @@ export default function CombChart() {
             fontSize="2.5"
             fontFamily="Chancery Cursive"
             dy="2.3em"
-            transform={`translate(${offset + width / 2 + Math.sin(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6)},${(32 - Math.cos(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6)).toFixed(8)}) rotate(${((index + 0.4) * 360) / 11})`}
+            transform={`translate(${
+              offset +
+              width / 2 +
+              Math.sin(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6)
+            },${(
+              32 -
+              Math.cos(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6)
+            ).toFixed(8)}) rotate(${((index + 0.4) * 360) / 11})`}
           >
-            { 1700 + index * 10 }
+            {1700 + index * 10}
           </text>
         );
       })}

@@ -24,13 +24,15 @@ type TLaborSourceColor =
 
 type TLaborActiveColor = "white" | "black" | string;
 
-export type TLaborSource = {
-  key: TLaborSourceKey;
-  label: TLaborSourceLabel;
-  color: TLaborSourceColor;
-  activeText: TLaborActiveColor;
-  inactiveText: TLaborActiveColor;
-};
+export type TLaborSource =
+  | {
+      key: TLaborSourceKey;
+      label: TLaborSourceLabel;
+      color: TLaborSourceColor;
+      activeText: TLaborActiveColor;
+      inactiveText: TLaborActiveColor;
+    }
+  | undefined;
 
 export type TLaborSources = TLaborSource[];
 
