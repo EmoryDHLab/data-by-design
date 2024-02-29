@@ -23,16 +23,20 @@ interface Props {
   selectedSources: TLaborSource[];
   className?: string;
   areaOpacity?: [number, number];
+  useMask?: boolean;
   showMask?: boolean;
   strokeWidth?: number;
+  id?: string;
 }
 
 export default function ProjectTimeline({
   selectedSources,
   className,
   areaOpacity = [0.5, 0.5],
+  useMask = false,
   showMask = false,
   strokeWidth = 0.1,
+  id,
 }: Props) {
   const [csvData, setCsvData] = useState<TLaborData | undefined>(undefined);
   const [maxY, setMaxY] = useState<number>(0);
@@ -165,7 +169,7 @@ export default function ProjectTimeline({
         {dates.map((xValue, index) => {
           return (
             <VerticalGrid
-              key={xValue}
+              key={`${xValue}-${id}`}
               xValue={xScale(new Date(dates[index], 0, 1))}
               offset={3}
               text={dates[index]}
@@ -176,7 +180,7 @@ export default function ProjectTimeline({
           if (index > 0) {
             return (
               <HorizontalGrid
-                key={yValue}
+                key={`${yValue}-${id}`}
                 yValue={yValues.includes(yValue) ? yScale(yValue) : -1}
                 text={yValue}
                 innerWidth={innerGridWidth}
@@ -189,14 +193,14 @@ export default function ProjectTimeline({
 
         {csvData && selectedSources && (
           <g>
-            <clipPath id="clip-above">
+            <clipPath id={`clip-above-${id}`}>
               <path
                 ref={clipPathAboveRef}
                 className="transition-all duration-700"
                 d=""
               ></path>
             </clipPath>
-            <clipPath id="clip-below">
+            <clipPath id={`clip-below-${id}`}>
               <path
                 ref={clipPathBelowRef}
                 className="transition-all duration-700"
@@ -207,7 +211,7 @@ export default function ProjectTimeline({
               ref={areaBelowRef}
               className={`fill-${selectedSources[0]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
               d=""
-              clipPath="url(#clip-below)"
+              clipPath={`url(#clip-below-${id})`}
               fillOpacity={areaOpacity[0] ?? 0.5}
             />
             <path
@@ -220,7 +224,7 @@ export default function ProjectTimeline({
               ref={areaAboveRef}
               className={`fill-${selectedSources[1]?.color} translate-y-[3px] translate-x-[3px] transition-all duration-700`}
               d=""
-              clipPath="url(#clip-above)"
+              clipPath={`url(#clip-above-${id})`}
               fillOpacity={areaOpacity[1] ?? 0.5}
             />
             <path

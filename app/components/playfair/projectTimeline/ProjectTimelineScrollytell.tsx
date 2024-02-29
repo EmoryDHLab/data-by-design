@@ -71,7 +71,7 @@ const ProjectTimelineScrollytell = () => {
     setSelectedSources([laborSources[0], laborSources[3]]);
 
     return () => {
-      setSelectedSources([]);
+      setSelectedSources([noSource, noSource]);
     };
   }, []);
 
@@ -171,6 +171,7 @@ const ProjectTimelineScrollytell = () => {
             showMask={showMask}
             strokeWidth={strokeWidth}
             className="w-full md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0"
+            id="scrollytell"
           />
         </div>
         <div

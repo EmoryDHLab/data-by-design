@@ -16,7 +16,7 @@ const ProjectTimelineInteractive = () => {
     setSelectedSources([laborSources[0], laborSources[1]]);
 
     return () => {
-      setSelectedSources([]);
+      setSelectedSources([noSource, noSource]);
     };
   }, []);
 
