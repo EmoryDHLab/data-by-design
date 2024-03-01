@@ -174,6 +174,7 @@ export default function ProjectTimeline({
               xValue={xScale(new Date(dates[index], 0, 1))}
               offset={5.5}
               text={dates[index]}
+              textOffset={6.5}
             />
           );
         })}

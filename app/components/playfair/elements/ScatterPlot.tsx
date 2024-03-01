@@ -5,6 +5,6 @@ interface Props {
 }
 export default function ScatterPlot({ xValue, yValue, color }: Props) {
   return (
-    <circle cx={xValue + 3} cy={yValue + 3} r="0.5" fill={color}></circle>
-  )
+    <circle cx={xValue + 5.5} cy={yValue + 5.5} r="0.5" fill={color}></circle>
+  );
 }

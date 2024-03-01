@@ -11,7 +11,7 @@ import { Paths } from "./scrollytellElements/Paths";
 
 const height = 44;
 const width = 94;
-const innerGridWidth = (width / 11) * 10 + 3;
+const innerGridWidth = (width / 11) * 10 + 5.5;
 const maxImport = 3300000; // Math.max(...playfairData.map((d: PlayfairData) => d.Imports))
 const maxExport = 4900000; // Math.max(...playfairData.map((d: PlayfairData) => d.Exports))
 const maxY = Math.max(maxImport, maxExport + 1_000_000);
@@ -99,14 +99,32 @@ export default function Recreation({
 
   return (
     <svg
-      viewBox="0 0 100 50"
+      viewBox="0 0 105 55"
       className="w-full md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0"
     >
       <rect width="100%" height="100%" fill="#F3ECCB"></rect>
       <rect
+        x={0.25}
+        y={0.25}
+        width={104.5}
+        height={54.5}
+        fill="none"
+        strokeWidth={0.5}
+        stroke="black"
+      ></rect>
+      <rect
+        x={1}
+        y={1}
+        width={103}
+        height={53}
+        fill="none"
+        strokeWidth={0.1}
+        stroke="black"
+      ></rect>
+      <rect
         fill="transparent"
-        x={3}
-        y={3}
+        x={5.5}
+        y={5.5}
         height={height}
         width={width}
         stroke="black"
@@ -115,19 +133,20 @@ export default function Recreation({
       <g>
         <rect
           fill="white"
-          x="3"
-          y="3"
+          x={5.5}
+          y={5.5}
           height={height}
           width={(width / 11) * 10}
-          opacity="0.2"
+          opacity={0.2}
         ></rect>
         {xValues.map((xValue, index) => {
           return (
             <VerticalGrid
               key={xValue}
               xValue={xScale(xValue)}
-              offset={3}
+              offset={5.5}
               text={xValue}
+              textOffset={4.25}
             />
           );
         })}
@@ -172,7 +191,8 @@ export default function Recreation({
         </g>
         {/* First edition lines */}
         <g
-          transform="scale(0.106, 0.09) translate(28,155)"
+          // transform="scale(0.106, 0.09) translate(28,155)"
+          transform="scale(0.106, 0.09) translate(52,185)"
           opacity={
             scrollProgress >= 1 && scrollProgress < 5.5
               ? transitionInOut([1, 1.5], [5, 5.5])
@@ -206,7 +226,7 @@ export default function Recreation({
             <VerticalGrid
               key={xValue}
               xValue={xMinorScale(xValue)}
-              offset={(width / 11) * 7 + 3}
+              offset={(width / 11) * 7 + 5.5}
               text={" "}
               opacity={
                 scrollProgress >= 3 && scrollProgress < 5
@@ -218,7 +238,7 @@ export default function Recreation({
         })}
         {/* 3rd edition lines */}
         <g
-          transform="scale(0.22, 0.195) translate(14,58)"
+          transform="scale(0.22, 0.195) translate(25,70)"
           opacity={scrollProgress >= 5 ? transitionIn([5, 6]) : 0}
         >
           <path d={Paths.import3rdEd} stroke="#F4B20C" fill="none" />
@@ -230,15 +250,15 @@ export default function Recreation({
             fill="black"
             fontSize="3"
             fontFamily="Chancery Cursive"
-            transform={`rotate(-11) translate(${width / 9},${height})`}
+            transform={`rotate(-11) translate(${width / 9},${height + 2.5})`}
           >
-            Line of Imports
+            Line of Imports!!
           </text>
           <text
             fill="black"
-            fontSize="3"
+            fontSize={3}
             fontFamily="Chancery Cursive"
-            transform="rotate(-65) translate(-8,60)"
+            transform="rotate(-65) translate(-8,64)"
           >
             Line of Exports
           </text>
@@ -247,38 +267,46 @@ export default function Recreation({
         <ColorArea opacity={scrollProgress >= 6 ? transitionIn([6, 7]) : 0} />
         <OvalTitle
           color="#FCE2B0"
-          ellipse={{ cx: 28, cy: 17, rx: (width / 11) * 1.9, ry: 10 }}
-          topText={{ text: "EXPORTS & IMPORTS", x: 14, y: 15 }}
-          midText={{ text: "to and from all", x: 22, y: 18.5 }}
-          botText={{ text: "NORTH AMERICA", x: 15, y: 22 }}
+          ellipse={{ cx: 28, cy: 19, rx: (width / 11) * 1.9, ry: 10 }}
+          topText={{ text: "EXPORTS & IMPORTS", x: 14, y: 17 }}
+          midText={{ text: "to and from all", x: 22, y: 20.5 }}
+          botText={{ text: "NORTH AMERICA", x: 15, y: 24 }}
           opacity={scrollProgress >= 7 ? transitionIn([7, 8]) : 0}
         />
         <g opacity={scrollProgress >= 8 ? transitionIn([8, 9]) : 0}>
           <text
             fill="black"
             x={width / 2}
-            y="2.3"
+            y={4}
             fontFamily="Times New Roman"
-            fontSize="2.3"
+            fontSize={2.5}
           >
             Time
           </text>
           <text
             fill="black"
-            y="2"
+            y={4}
+            x={-27.5}
             fontFamily="Times New Roman"
-            fontSize="2.3"
-            transform="rotate(-90) translate(-29, 0)"
+            fontSize={2.5}
+            transform="rotate(-90)"
+            textAnchor="middle"
           >
             Money
           </text>
         </g>
-        <image
-          opacity={scrollProgress > 9 ? transitionIn([9, 9.25]) : 0}
-          transform="scale(1, .85)"
-          href="/images/playfair/1-northamerica.jpg"
-          width={100}
-        />
+        <g opacity={scrollProgress > 9 ? transitionIn([9, 9.25]) : 0}>
+          <image
+            transform="scale(1.17, 1.07)"
+            href="/images/playfair/1-northamerica.jpg"
+            width={105}
+            height={55}
+            x={-7.5}
+            y={-2}
+          />
+          <rect x={0} y={-2.5} fill="#3B6FE0" width={105} height={3} />
+          <rect x={0} y={54} fill="#3B6FE0" width={105} height={3} />
+        </g>
       </g>
     </svg>
   );
