@@ -31,9 +31,8 @@ export default function PromotionalTourMap() {
     }
   }, [hoverState, setCurrentHover]);
 
-
   return (
-    <div className="ml-24 hidden md:block">
+    <div id="promo-tour" className="ml-24 hidden md:block">
       <Carousel
         withoutControls
         slideIndex={currentHover}
@@ -42,8 +41,13 @@ export default function PromotionalTourMap() {
       >
         {FIGURES.map((figure) => {
           return (
-            <FigureObj key={figure.fileName} figure={figure} className="w-full" />
-          )
+            <FigureObj
+              key={figure.fileName}
+              figure={figure}
+              className="w-full"
+              id=""
+            />
+          );
         })}
       </Carousel>
     </div>

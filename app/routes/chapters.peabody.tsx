@@ -38,6 +38,11 @@ export default function PeabodyPage() {
 
   const visualizations: TVizAnchors[] = [
     {
+      type: "visualization",
+      id: "promo-tour",
+      title: "Promotional Tour",
+    },
+    {
       type: "scrollytell",
       id: "tutorial",
       title: "Tutorial",

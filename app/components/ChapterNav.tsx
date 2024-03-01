@@ -4,6 +4,11 @@ import { Tooltip } from "react-tooltip";
 import { ChapterContext } from "~/chapterContext";
 import { useResizeObserver } from "~/hooks";
 
+type TOffsets = {
+  offset: number;
+  offsetPercent: number;
+};
+
 type TAnchorPosition = {
   offset: number;
   offsetPercent: number;
@@ -55,27 +60,31 @@ export function ChapterNav({ progress, fixedNav }: Props) {
         !mainElement ||
         !mainContentSize.height
       )
-        return 0;
+        return { offset: 0, offsetPercent: 0 };
       // @ts-ignore
       const { top } = element.getBoundingClientRect();
-      return (
+      const offsetPercent: number =
         ((top - (mainContentSize.topOffset || 0) + window.scrollY) /
           mainContentSize.height) *
-        100
-      );
+        100;
+      let offset: number =
+        (offsetPercent * window.innerWidth) / 100 - iconWidth;
+      if (offset < 0) {
+        offset = iconWidth / 2;
+      }
+      return { offset, offsetPercent };
     };
 
     const anchorPositions: TAnchorPosition[] = [];
     if (figures) {
       for (const figure of figures) {
-        const offsetPercent = getOffset(`fig-${figure.fileName}`);
-        if (offsetPercent > 0) {
+        const offsets = getOffset(`fig-${figure.fileName}`);
+        if (offsets.offsetPercent > 0) {
           anchorPositions.push({
-            offsetPercent,
-            offset: (offsetPercent * window.innerWidth) / 100 - iconWidth,
             type: "figure",
             hash: `fig-${figure.fileName}`,
             title: figure.title || figure.fileName,
+            ...offsets,
           });
         }
       }
@@ -83,13 +92,12 @@ export function ChapterNav({ progress, fixedNav }: Props) {
 
     if (visualizations) {
       for (const viz of visualizations) {
-        const offsetPercent = getOffset(viz.id);
+        const offsets = getOffset(viz.id);
         anchorPositions.push({
-          offsetPercent,
-          offset: (offsetPercent * window.innerWidth) / 100 - iconWidth,
           type: viz.type,
           hash: viz.id,
           title: viz.title,
+          ...offsets,
         });
       }
     }
