@@ -4,7 +4,6 @@ import p5 from "p5";
 import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
 import voyageData from "~/data/brooks/voyages.json";
-import { randomColor, voyageConstants } from "./utils";
 import type { TVoyage } from "~/types/voyage";
 
 const INITIAL_YEAR_RANGE = [1756, 1766];

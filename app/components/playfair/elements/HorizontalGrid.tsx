@@ -30,7 +30,7 @@ export default function HorizontalGrid({
       .duration(600)
       .attr("opacity", opacity > 0 ? 1 : 0)
       .attr("y", yValue + 5.9);
-  }, [yValue, innerWidth, text]);
+  }, [yValue, innerWidth, text, opacity]);
 
   return (
     <g>

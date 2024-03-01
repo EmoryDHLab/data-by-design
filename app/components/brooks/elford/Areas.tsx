@@ -1,6 +1,6 @@
 interface Props {
   strokeOpacity: float;
-};
+}
 
 export default function Areas({ strokeOpacity }: Props) {
   const options = {
@@ -38,4 +38,4 @@ export default function Areas({ strokeOpacity }: Props) {
       />
     </g>
   );
-};
+}

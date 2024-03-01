@@ -42,17 +42,18 @@ export default function ChapterBody({ children }: Props) {
       scrollerRef.current?.destroy();
       scrollerRef.current = undefined;
     };
-  }, [mainContentSize]);
+  }, [mainContentSize, windowSize]);
 
   useEffect(() => {
     setFixedNav(chapterProgressState > 0.98);
   }, [chapterProgressState]);
 
-
   return (
     <main className="chapter-body w-screen" id="main-content">
       <ClientOnly>
-        {() => <ChapterNav progress={chapterProgressState} fixedNav={fixedNav} />}
+        {() => (
+          <ChapterNav progress={chapterProgressState} fixedNav={fixedNav} />
+        )}
       </ClientOnly>
       {children}
     </main>

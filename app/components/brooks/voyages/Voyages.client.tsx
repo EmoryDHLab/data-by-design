@@ -1,25 +1,19 @@
 import { useEffect, useState, useRef, useMemo } from "react";
 import { useResizeObserver } from "~/hooks";
 import p5 from "p5";
-// import { ChapterContext } from "~/chapterContext";
 import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
-// import Toggle from "~/components/Toggle";
-// import Slider from "./Slider";
 import voyageData from "~/data/brooks/voyages.json";
-import { randomColor, voyageConstants } from "./utils";
 import type { TVoyage } from "~/types/voyage";
 
 const INITIAL_YEAR_RANGE = [1565, 1575];
 
 function Voyages({ yearRange }: { yearRange: Array<number> }) {
   const { windowSize } = useResizeObserver();
-  // const { backgroundColor } = useContext(ChapterContext);
   const p5Ref = useRef<p5 | undefined>();
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
   const showAllRef = useRef<boolean>(true);
-  // const [showAllState, setShowAllState] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(window.outerWidth * 0.95);
   const [height, setHeight] = useState<number>(window.outerHeight * 0.45);
 
@@ -36,10 +30,7 @@ function Voyages({ yearRange }: { yearRange: Array<number> }) {
       (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1]
     );
     filteredVoyages.current.forEach((filteredVoyage) => {
-      filteredVoyage.updateMinMax(
-        yearRange[0],
-        yearRange[1]
-      );
+      filteredVoyage.updateMinMax(yearRange[0], yearRange[1]);
     });
     p5Ref.current.redraw();
   }, [yearRange]);
@@ -70,7 +61,7 @@ function Voyages({ yearRange }: { yearRange: Array<number> }) {
               height,
               width,
               nonResistanceStrokeWidth,
-              lerpAmount,
+              lerpAmount
             )
           );
         });

@@ -1,5 +1,5 @@
 import type { ReactNodeLike } from "prop-types";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 
 interface Props {
@@ -10,8 +10,13 @@ interface Props {
   textOverride?: string;
 }
 
-export default function InlineFootnote({ index, bgOverride, superscriptOverride, textOverride }: Props) {
-  const { backgroundColor, primaryTextColor, footnoteTextColor, footnotes, setDocHeightState, } =
+export default function InlineFootnote({
+  index,
+  bgOverride,
+  superscriptOverride,
+  textOverride,
+}: Props) {
+  const { backgroundColor, primaryTextColor, footnoteTextColor, footnotes } =
     useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
 
@@ -19,12 +24,16 @@ export default function InlineFootnote({ index, bgOverride, superscriptOverride,
     <span>
       <button
         onClick={() => setIsTextVisible(!isTextVisible)}
-        className={`footnote mr-2 bg-${bgOverride ?? backgroundColor} text-${superscriptOverride ?? primaryTextColor} pointer-events-auto`}
+        className={`footnote mr-2 bg-${bgOverride ?? backgroundColor} text-${
+          superscriptOverride ?? primaryTextColor
+        } pointer-events-auto`}
       >
         {index + 1}
       </button>
       {isTextVisible && (
-        <span className={`block text-${textOverride ?? footnoteTextColor}`}>{footnotes[index]}</span>
+        <span className={`block text-${textOverride ?? footnoteTextColor}`}>
+          {footnotes[index]}
+        </span>
       )}
     </span>
   );

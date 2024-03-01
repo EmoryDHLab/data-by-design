@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import PullQuote from "~/components/PullQuote";

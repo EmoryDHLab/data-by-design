@@ -4,7 +4,6 @@ import p5 from "p5";
 import VoyageYear from "./VoyageYear";
 import Axis from "./Axis";
 import voyageData from "~/data/brooks/voyages.json";
-import { randomColor, voyageConstants } from "./utils";
 import type { TVoyage } from "~/types/voyage";
 
 const INITIAL_YEAR_RANGE = [1565, 1575];
@@ -30,10 +29,7 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number> }) {
       (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1]
     );
     filteredVoyages.current.forEach((filteredVoyage) => {
-      filteredVoyage.updateMinMax(
-        yearRange[0],
-        yearRange[1]
-      );
+      filteredVoyage.updateMinMax(yearRange[0], yearRange[1]);
     });
     p5Ref.current.redraw();
   }, [yearRange]);
@@ -48,20 +44,22 @@ function ResistanceVoyages({ yearRange }: { yearRange: Array<number> }) {
       p5.setup = () => {
         p5.createCanvas(width, height).parent("resistanceVoyageContainer");
 
-        (voyageData as TVoyage[]).filter((voyage) => voyage.resistanceReported).forEach((voyage: TVoyage) => {
-          voyages.current.push(
-            new VoyageYear(
-              p5,
-              voyage,
-              INITIAL_YEAR_RANGE[0],
-              INITIAL_YEAR_RANGE[1],
-              height,
-              width,
-              nonResistanceStrokeWidth,
-              lerpAmount,
-            )
-          );
-        });
+        (voyageData as TVoyage[])
+          .filter((voyage) => voyage.resistanceReported)
+          .forEach((voyage: TVoyage) => {
+            voyages.current.push(
+              new VoyageYear(
+                p5,
+                voyage,
+                INITIAL_YEAR_RANGE[0],
+                INITIAL_YEAR_RANGE[1],
+                height,
+                width,
+                nonResistanceStrokeWidth,
+                lerpAmount
+              )
+            );
+          });
 
         //filter the voyages out based on the values on the slider.
         filteredVoyages.current = voyages.current.filter(

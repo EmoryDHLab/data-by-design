@@ -1,3 +1,17 @@
-{
-  "ignorePatterns": ["node_modules"]
-}
+node_modules*
+
+/.cache
+/public/build
+/.netlify
+.env
+.idea
+.DS_Store
+.vercel
+/api*
+/styles/generated-app.css
+
+package-lock.json
+.ruby-lsp
+
+server/
+public/

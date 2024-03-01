@@ -7,7 +7,8 @@
     "dev:css": "tailwindcss -w -i ./app/styles/app.css -o styles/generated-app.css",
     "dev": "remix dev",
     "start": "cross-env NODE_ENV=production netlify dev",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint --fix ."
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",

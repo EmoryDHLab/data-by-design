@@ -20,7 +20,7 @@ const ConclusionContent = () => {
 
 export default function QuizConclusion({ className }: { className?: string }) {
   const { setCurrentStepCount } = useContext(QuizContext);
-  const { isDesktop, isMobile } = useDeviceContext();
+  const { isMobile } = useDeviceContext();
 
   if (isMobile) {
     return <ConclusionContent />;

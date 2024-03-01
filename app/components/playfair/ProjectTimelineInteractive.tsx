@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import FancyButton from "../FancyButton";
 import ProjectTimeline from "./ProjectTimeline";
 import laborSources from "~/data/playfair/laborSources.json";
