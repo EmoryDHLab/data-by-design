@@ -11,42 +11,43 @@ import { shanawdithitFootnotes } from "~/footnotes";
 import { chapterMeta } from "~/utils";
 import figures from "~/data/figures/shanawdithit.json";
 import FigureObj from "~/components/layout/FigureObj";
-import type { V2_MetaFunction } from "@remix-run/node";
-import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
 import ColonialMaps from "~/components/shanawdithit/ColonialMaps";
 import DocumentViewer from "~/components/shanawdithit/DocumentViewer";
 import SketchScrollytell from "~/components/shanawdithit/SketchScrollytell";
 import InlineFootnote from "~/components/InlineFootnote";
 import WillardScrollytell from "~/components/shanawdithit/WillardScrollytell";
-import type { TVizAnchors } from "~/chapterContext";
 import ChapterBody from "~/components/layout/ChapterBody";
 import FootnotesList from "~/components/FootnotesList";
+import type { V2_MetaFunction } from "@remix-run/node";
+import type { HoverState, TVizAnchors } from "~/chapterContext";
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("shanawdithit");
 };
 
+const chapterFigures = Object.values(figures);
+
+const visualizations: TVizAnchors[] = [
+  {
+    type: "scrollytell",
+    id: "scrollytell-one",
+    title: "Scrollytell 1",
+  },
+  {
+    type: "visualization",
+    id: "willard-maps",
+    title: "Willard Maps",
+  },
+  {
+    type: "scrollytell",
+    id: "scrollytell-two",
+    title: "Scrollytell 2",
+  },
+];
+
 export default function ShanawdithitPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
-
-  const visualizations: TVizAnchors[] = [
-    {
-      type: "scrollytell",
-      id: "scrollytell-one",
-      title: "Scrollytell 1",
-    },
-    {
-      type: "visualization",
-      id: "willard-maps",
-      title: "Willard Maps",
-    },
-    {
-      type: "scrollytell",
-      id: "scrollytell-two",
-      title: "Scrollytell 2",
-    },
-  ];
 
   return (
     <ChapterContext.Provider
@@ -58,8 +59,8 @@ export default function ShanawdithitPage() {
         footnotes: shanawdithitFootnotes,
         hoverState,
         setHoverState,
-        figures: Object.values(figures),
         visualizations,
+        chapterFigures,
       }}
     >
       <ChapterTitle

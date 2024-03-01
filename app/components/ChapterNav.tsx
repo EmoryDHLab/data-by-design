@@ -4,11 +4,6 @@ import { Tooltip } from "react-tooltip";
 import { ChapterContext } from "~/chapterContext";
 import { useResizeObserver } from "~/hooks";
 
-type TOffsets = {
-  offset: number;
-  offsetPercent: number;
-};
-
 type TAnchorPosition = {
   offset: number;
   offsetPercent: number;
@@ -43,7 +38,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
     accentTextColor,
     primaryTextColor,
     backgroundColor,
-    figures,
+    chapterFigures,
     visualizations,
   } = useContext(ChapterContext);
   const { documentSize, mainContentSize } = useResizeObserver();
@@ -61,7 +56,6 @@ export function ChapterNav({ progress, fixedNav }: Props) {
         !mainContentSize.height
       )
         return { offset: 0, offsetPercent: 0 };
-      // @ts-ignore
       const { top } = element.getBoundingClientRect();
       const offsetPercent: number =
         ((top - (mainContentSize.topOffset || 0) + window.scrollY) /
@@ -76,8 +70,8 @@ export function ChapterNav({ progress, fixedNav }: Props) {
     };
 
     const anchorPositions: TAnchorPosition[] = [];
-    if (figures) {
-      for (const figure of figures) {
+    if (chapterFigures) {
+      for (const figure of chapterFigures) {
         const offsets = getOffset(`fig-${figure.fileName}`);
         if (offsets.offsetPercent > 0) {
           anchorPositions.push({
@@ -107,7 +101,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
     });
 
     setAnchorMap(sortedAnchors);
-  }, [visualizations, setAnchorMap, documentSize]);
+  }, [documentSize, mainContentSize, visualizations, chapterFigures]);
 
   return (
     <nav

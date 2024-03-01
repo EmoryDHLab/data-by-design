@@ -83,8 +83,13 @@ export default function HoverImages2() {
       >
         {FIGURES.map((figure, index) => {
           return (
-            <FigureObj key={figure.fileName} figure={figure} className="w-full" id={`hover-2-${index}`} />
-          )
+            <FigureObj
+              key={`${figure.fileName}-hover2`}
+              figure={figure}
+              className="w-full"
+              id={`hover-2-${index}`}
+            />
+          );
         })}
       </Carousel>
     </div>

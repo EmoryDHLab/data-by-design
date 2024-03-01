@@ -13,7 +13,6 @@ import InlineFootnote from "~/components/InlineFootnote";
 import BrooksScrollytell from "~/components/brooks/BrooksScrollytell";
 import FootnotesList from "~/components/FootnotesList";
 import SeraphiqueTour from "~/components/brooks/SeraphiqueTour";
-import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
 import Consent from "~/components/Consent.client";
 import FigureObj from "~/components/layout/FigureObj";
@@ -29,48 +28,50 @@ import VoyagesCompare from "~/components/brooks/voyages/VoyagesCompare";
 import { chapterMeta } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
 import type { V2_MetaFunction } from "@remix-run/node";
-import type { TVizAnchors } from "~/chapterContext";
+import type { HoverState, TVizAnchors } from "~/chapterContext";
+
+const chapterFigures = Object.values(figures);
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("brooks");
 };
 
+const visualizations: TVizAnchors[] = [
+  {
+    type: "scrollytell",
+    id: "scrollytell1",
+    title: "Scrollytell One",
+  },
+  {
+    type: "scrollytell",
+    id: "scrollytell2",
+    title: "Scrollytell Two",
+  },
+  {
+    type: "visualization",
+    id: "viz1",
+    title: "Visualization One",
+  },
+  {
+    type: "visualization",
+    id: "viz2",
+    title: "Visualization Two",
+  },
+  {
+    type: "visualization",
+    id: "viz3",
+    title: "Visualization Three",
+  },
+  {
+    type: "visualization",
+    id: "viz4",
+    title: "Visualization Four",
+  },
+];
+
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
   const [hideSensitiveState, setHideSensitiveState] = useState<boolean>(true);
-
-  const visualizations: TVizAnchors[] = [
-    {
-      type: "scrollytell",
-      id: "scrollytell1",
-      title: "Scrollytell One",
-    },
-    {
-      type: "scrollytell",
-      id: "scrollytell2",
-      title: "Scrollytell Two",
-    },
-    {
-      type: "visualization",
-      id: "viz1",
-      title: "Visualization One",
-    },
-    {
-      type: "visualization",
-      id: "viz2",
-      title: "Visualization Two",
-    },
-    {
-      type: "visualization",
-      id: "viz3",
-      title: "Visualization Three",
-    },
-    {
-      type: "visualization",
-      id: "viz4",
-      title: "Visualization Four",
-    },
-  ];
 
   return (
     <ChapterContext.Provider
@@ -81,7 +82,7 @@ export default function BrooksPage() {
         footnoteTextColor: "brooksPrimary",
         primaryTextColor: "white",
         footnotes: brooksFootnotes,
-        figures: Object.values(figures),
+        chapterFigures,
         visualizations,
         disclosure: true,
         hoverState,

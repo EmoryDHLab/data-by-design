@@ -15,7 +15,6 @@ import FootnotesList from "~/components/FootnotesList";
 import figures from "~/data/figures/dubois.json";
 
 import Quotation from "~/components/Quotation";
-import type { HoverState } from "~/chapterContext";
 import HoverText from "~/components/HoverText";
 import HoverImages1 from "~/components/dubois/HoverImages1";
 import HoverImages2 from "~/components/dubois/HoverImages2";
@@ -27,42 +26,44 @@ import { chapterMeta } from "~/utils";
 import StudentChartV2 from "~/components/dubois/StudentChartV2";
 import ChapterBody from "~/components/layout/ChapterBody";
 import type { V2_MetaFunction } from "@remix-run/node";
-import type { TVizAnchors } from "~/chapterContext";
+import type { TVizAnchors, HoverState } from "~/chapterContext";
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("dubois");
 };
 
+const visualizations: TVizAnchors[] = [
+  {
+    type: "figures",
+    id: "hover1",
+    title: "Charts",
+  },
+  {
+    type: "figures",
+    id: "hover2",
+    title: "Charts",
+  },
+  {
+    type: "visualization",
+    id: "side-by-side",
+    title: "Side by Side",
+  },
+  {
+    type: "visualization",
+    id: "student-charts",
+    title: "Student Charts",
+  },
+  {
+    type: "visualization",
+    id: "doc-viewer",
+    title: "Document Viewer",
+  },
+];
+
+const chapterFigures = Object.values(figures);
+
 export default function DuboisChapter() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
-
-  const visualizations: TVizAnchors[] = [
-    {
-      type: "figures",
-      id: "hover1",
-      title: "Charts",
-    },
-    {
-      type: "figures",
-      id: "hover2",
-      title: "Charts",
-    },
-    {
-      type: "visualization",
-      id: "side-by-side",
-      title: "Side by Side",
-    },
-    {
-      type: "visualization",
-      id: "student-charts",
-      title: "Student Charts",
-    },
-    {
-      type: "visualization",
-      id: "doc-viewer",
-      title: "Document Viewer",
-    },
-  ];
 
   return (
     <ChapterContext.Provider
@@ -74,7 +75,7 @@ export default function DuboisChapter() {
         footnotes: duboisFootnotes,
         hoverState,
         setHoverState,
-        figures: Object.values(figures),
+        chapterFigures,
         visualizations,
       }}
     >

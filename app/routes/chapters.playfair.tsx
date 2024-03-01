@@ -26,30 +26,32 @@ export const meta: V2_MetaFunction = () => {
   return chapterMeta("playfair");
 };
 
-export default function PlayfairPage() {
-  const visualizations: TVizAnchors[] = [
-    {
-      type: "scrollytell",
-      id: "scrollytellOne",
-      title: "Combo Chart",
-    },
-    {
-      type: "visualization",
-      id: "viz1",
-      title: "Playfair Scrollytell",
-    },
-    {
-      type: "visualization",
-      id: "viz2",
-      title: "Project Timeline Interactive",
-    },
-    {
-      type: "scrollytell",
-      id: "scrollytellTwo",
-      title: "Project Timeline",
-    },
-  ];
+const chapterFigures = Object.values(figures);
 
+const visualizations: TVizAnchors[] = [
+  {
+    type: "scrollytell",
+    id: "scrollytellOne",
+    title: "Combo Chart",
+  },
+  {
+    type: "visualization",
+    id: "viz1",
+    title: "Playfair Scrollytell",
+  },
+  {
+    type: "visualization",
+    id: "viz2",
+    title: "Project Timeline Interactive",
+  },
+  {
+    type: "scrollytell",
+    id: "scrollytellTwo",
+    title: "Project Timeline",
+  },
+];
+
+export default function PlayfairPage() {
   return (
     <ChapterContext.Provider
       value={{
@@ -59,8 +61,8 @@ export default function PlayfairPage() {
         accentTextColor: "black",
         footnoteTextColor: "playfairPrimary",
         footnotes: playfairFootnotes,
-        figures: Object.values(figures),
         visualizations,
+        chapterFigures,
       }}
     >
       <ChapterTitle

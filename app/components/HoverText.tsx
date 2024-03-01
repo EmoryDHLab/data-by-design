@@ -27,11 +27,10 @@ export default function HoverText({ className, children, hoverState }: Props) {
         >
           {children}
         </span>
-        <span className="inline md:hidden">{children}</span>
-        {" "}
+        <span className="inline md:hidden">{children}</span>{" "}
       </>
     );
   }
 
-  return <></>
+  return <></>;
 }

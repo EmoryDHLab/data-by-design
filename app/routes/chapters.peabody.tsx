@@ -1,7 +1,6 @@
 import { useState } from "react";
 import SlideShow from "~/components/layout/SlideShow";
 import ChapterTitle from "~/components/ChapterTitle";
-import type { HoverState } from "~/chapterContext";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
@@ -25,49 +24,51 @@ import figures from "~/data/figures/peabody.json";
 import FigureObj from "~/components/layout/FigureObj";
 import HoverZoomPeabodySquareMobile from "~/components/peabody/HoverZoomPeabodySquareMobile";
 import { chapterMeta } from "~/utils";
-import type { V2_MetaFunction } from "@remix-run/node";
-import type { TVizAnchors } from "~/chapterContext";
 import ChapterBody from "~/components/layout/ChapterBody";
+import type { V2_MetaFunction } from "@remix-run/node";
+import type { HoverState, TVizAnchors } from "~/chapterContext";
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("peabody");
 };
 
+const visualizations: TVizAnchors[] = [
+  {
+    type: "figures",
+    id: "promo-tour",
+    title: "Promotional Tour",
+  },
+  {
+    type: "scrollytell",
+    id: "tutorial",
+    title: "Tutorial",
+  },
+  {
+    type: "visualization",
+    id: "timeline",
+    title: "Timeline",
+  },
+  {
+    type: "visualization",
+    id: "quiz",
+    title: "Quiz",
+  },
+  {
+    type: "scrollytell",
+    id: "scrolly-led-chart",
+    title: "LED Chart,",
+  },
+  {
+    type: "visualization",
+    id: "sandbox",
+    title: "Sandbox",
+  },
+];
+
+const chapterFigures = Object.values(figures);
+
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
-
-  const visualizations: TVizAnchors[] = [
-    {
-      type: "visualization",
-      id: "promo-tour",
-      title: "Promotional Tour",
-    },
-    {
-      type: "scrollytell",
-      id: "tutorial",
-      title: "Tutorial",
-    },
-    {
-      type: "visualization",
-      id: "timeline",
-      title: "Timeline",
-    },
-    {
-      type: "visualization",
-      id: "quiz",
-      title: "Quiz",
-    },
-    {
-      type: "scrollytell",
-      id: "scrolly-led-chart",
-      title: "LED Chart,",
-    },
-    {
-      type: "visualization",
-      id: "sandbox",
-      title: "Sandbox",
-    },
-  ];
 
   return (
     <ChapterContext.Provider
@@ -80,7 +81,7 @@ export default function PeabodyPage() {
         footnotes: peabodyFootnotes,
         hoverState,
         setHoverState,
-        figures: Object.values(figures),
+        chapterFigures,
         visualizations,
       }}
     >
