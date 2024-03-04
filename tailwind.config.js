@@ -129,6 +129,7 @@ module.exports = {
     "fill-playfairPrimary/50",
     "fill-duboisPrimary/50",
     "fill-brooksSecondary/50",
+    "fill-offwhite",
     "hover:fill-brooksPrimary",
     "hover:fill-shanawdithitPrimary",
     "hover:fill-peabodyPrimary",

@@ -52,16 +52,17 @@ const ProjectTimelineInteractive = () => {
             .map((s) => s?.key)
             .includes(source.key);
           return (
-            <FancyButton
-              key={source.key}
-              action={({ key }) => updateSources(source, key)}
-              hoverColor={isActive ? undefined : source.color}
-              fillColor={isActive ? source.color : ""}
-              outlineColor="black"
-              textColor={isActive ? source.activeText : "black"}
-            >
-              {source.label}
-            </FancyButton>
+            <figure key={source.key} title={source.label}>
+              <FancyButton
+                action={({ key }) => updateSources(source, key)}
+                hoverColor={isActive ? undefined : source.color}
+                fillColor={isActive ? source.color : "offwhite"}
+                outlineColor="black"
+                textColor={isActive ? source.activeText : "black"}
+              >
+                {source.label}
+              </FancyButton>
+            </figure>
           );
         })}
       </div>
