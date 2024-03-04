@@ -172,9 +172,10 @@ export default function ProjectTimeline({
             <VerticalGrid
               key={`${xValue}-${id}`}
               xValue={xScale(new Date(dates[index], 0, 1))}
-              offset={5.5}
+              xOffset={5.5}
+              textYOffset={5.5}
               text={dates[index]}
-              textOffset={6.5}
+              textXOffset={6.5}
             />
           );
         })}

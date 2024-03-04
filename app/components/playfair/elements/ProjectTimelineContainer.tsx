@@ -33,15 +33,6 @@ const ProjectTimelineContainer = ({
         strokeWidth={0.1}
       ></rect>
 
-      <rect
-        fill="none"
-        x={5.5}
-        y={5.5}
-        height={height}
-        width={width - 4.3}
-        stroke="black"
-        strokeWidth={0.25}
-      ></rect>
       <line
         x1={innerGridWidth}
         y1={5.5}
@@ -51,6 +42,15 @@ const ProjectTimelineContainer = ({
         strokeWidth={0.1}
       ></line>
       {children}
+      <rect
+        fill="none"
+        x={5.5}
+        y={5.5}
+        height={height}
+        width={width - 4.3}
+        stroke="black"
+        strokeWidth={0.25}
+      ></rect>
     </svg>
   );
 };

@@ -144,9 +144,10 @@ export default function Recreation({
             <VerticalGrid
               key={xValue}
               xValue={xScale(xValue)}
-              offset={5.5}
+              xOffset={5.5}
               text={xValue}
-              textOffset={4.25}
+              textXOffset={4.25}
+              textYOffset={5.5}
             />
           );
         })}

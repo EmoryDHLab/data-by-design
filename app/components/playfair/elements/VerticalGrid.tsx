@@ -1,33 +1,37 @@
 interface Props {
   xValue: number;
-  offset: number;
+  xOffset: number;
   opacity?: number;
   text: string | number;
-  textOffset: number;
+  textXOffset?: number;
+  textYOffset?: number;
+  yOffset?: number;
 }
 
 export default function VerticalGrid({
   xValue,
-  offset,
+  xOffset,
   opacity,
   text,
-  textOffset,
+  textXOffset = 0,
+  textYOffset = 0,
+  yOffset = 0,
 }: Props) {
   return (
     <g>
       <line
-        x1={xValue + offset}
-        y1={5.5}
-        x2={xValue + offset}
-        y2={49.5}
+        x1={xValue + xOffset}
+        y1={5.5 + yOffset}
+        x2={xValue + xOffset}
+        y2={49.5 + yOffset}
         opacity={opacity ?? "0.4"}
         stroke="black"
         strokeWidth={0.1}
       ></line>
       <text
         fill="black"
-        x={xValue + textOffset}
-        y={47 + offset - 0.5}
+        x={xValue + textXOffset}
+        y={47 + textYOffset - 0.5}
         fontFamily="Chancery Cursive"
         fontSize={3.5}
       >

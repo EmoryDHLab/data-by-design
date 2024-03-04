@@ -6,6 +6,7 @@ interface Props {
   yValue: number;
   text: string | number;
   opacity: number;
+  xOffset?: number;
 }
 
 export default function HorizontalGrid({
@@ -13,6 +14,7 @@ export default function HorizontalGrid({
   yValue,
   text,
   opacity,
+  xOffset = 0,
 }: Props) {
   const lineRef = useRef<SVGLineElement>(null);
   const textRef = useRef<SVGTextElement>(null);
@@ -37,7 +39,7 @@ export default function HorizontalGrid({
       <line
         ref={lineRef}
         x1={innerWidth}
-        x2={5.5}
+        x2={5.5 + xOffset}
         y1={5.5}
         y2={5.5}
         stroke="black"

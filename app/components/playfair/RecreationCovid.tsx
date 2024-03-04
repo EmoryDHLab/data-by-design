@@ -1,3 +1,4 @@
+// @ts-nocheck
 import perCapitaCovidData from "~/data/playfair/perCapitaCovidData";
 import * as d3 from "d3";
 import VerticalGrid from "./elements/VerticalGrid";
@@ -11,65 +12,76 @@ export default function RecreationCovid() {
   const innerGridWidth = (94 / 11) * 10 + 3;
   const maxUK = 1006.53; // Math.max(...perCapitaCovidData.map(d => d.ukDeaths))
   const maxUS = 920.97; //Math.max(...perCapitaCovidData.map(d => d.usDeaths))
-  const yValues = Array.from({ length: Math.floor(Math.max(maxUK, maxUS) / 50 )}, (_, n) => (n + 1) * 50);
-  const yValueHighlights = Array.from({ length: 4}, (_, n) => ( n + 1) * 250);
-  const xValues = Array.from({ length: Math.floor(perCapitaCovidData.length / 30 )}, (_, n) => (n + 1) * 30);
-  const dates = xValues.map(v => perCapitaCovidData[v - 20]?.date.substring(5)).reverse();
+  const yValues = Array.from(
+    { length: Math.floor(Math.max(maxUK, maxUS) / 50) },
+    (_, n) => (n + 1) * 50
+  );
+  const yValueHighlights = Array.from({ length: 4 }, (_, n) => (n + 1) * 250);
+  const xValues = Array.from(
+    { length: Math.floor(perCapitaCovidData.length / 30) },
+    (_, n) => (n + 1) * 30
+  );
+  const dates = xValues
+    .map((v) => perCapitaCovidData[v - 20]?.date.substring(5))
+    .reverse();
   const ellipse = { cx: 23, cy: 17, rx: (94 / 11) * 1.9, ry: 10 };
   const topText = { text: "COVID-19 DEATHS", x: 11, y: 15 };
   const midText = { text: "a comparison between the", x: 13, y: 18.5 };
   const botText = { text: "U.S. AND U.K.", x: 13, y: 22 };
 
-  const xScale = d3.scaleLinear()
-                   .range([0, (width / 11) * 10])
-                   .domain([0, perCapitaCovidData.length]);
+  const xScale = d3
+    .scaleLinear()
+    .range([0, (width / 11) * 10])
+    .domain([0, perCapitaCovidData.length]);
 
-  const yScale = d3.scaleLinear()
-                   .range([height, 0])
-                   .domain([0, Math.max(maxUK, maxUS) + 100]);
+  const yScale = d3
+    .scaleLinear()
+    .range([height, 0])
+    .domain([0, Math.max(maxUK, maxUS) + 100]);
 
-  const fillAreaPath = d3.area()
-                 .curve(d3.curveCatmullRom)
-                 .x0((d) => xScale(d.position) + 3)
-                 .x1((d) => xScale(d.position) + 3)
-                 .y0((d) => yScale(d.ukDeaths) + 3)
-                 .y1((d) => yScale(d.usDeaths) + 3);
+  const fillAreaPath = d3
+    .area()
+    .curve(d3.curveCatmullRom)
+    .x0((d) => xScale(d.position) + 3)
+    .x1((d) => xScale(d.position) + 3)
+    .y0((d) => yScale(d.ukDeaths) + 3)
+    .y1((d) => yScale(d.usDeaths) + 3);
 
   const fillColorArea = fillAreaPath(perCapitaCovidData);
 
-  const ukPath = d3.area()
-                   .x((d) => xScale(d.position) + 3)
-                   .y((d) => yScale(d.ukDeaths) + 3)
-                   .curve(d3.curveCatmullRom)
-                   .defined(function (d) {
-                     return d.ukDeaths;
-                   });
+  const ukPath = d3
+    .area()
+    .x((d) => xScale(d.position) + 3)
+    .y((d) => yScale(d.ukDeaths) + 3)
+    .curve(d3.curveCatmullRom)
+    .defined(function (d) {
+      return d.ukDeaths;
+    });
 
   const ukLine = ukPath(perCapitaCovidData);
 
-  const usPath = d3.area()
-                   .x((d) => xScale(d.position) + 3)
-                   .y((d) => yScale(d.usDeaths) + 3)
-                   .curve(d3.curveCatmullRom)
-                   .defined(function (d) {
-                     return d.usDeaths;
-                   });
+  const usPath = d3
+    .area()
+    .x((d) => xScale(d.position) + 3)
+    .y((d) => yScale(d.usDeaths) + 3)
+    .curve(d3.curveCatmullRom)
+    .defined(function (d) {
+      return d.usDeaths;
+    });
 
   const usLine = usPath(perCapitaCovidData);
 
   const transformUSText = () => {
     return "rotate(-14) translate(" + 33 + "," + 41 + ")";
-  }
+  };
 
   const transformUKText = () => {
     return "rotate(-10) translate(" + 36 + "," + 29 + ")";
-  }
+  };
 
   return (
     <span className="col-span-6 2xl:col-span-8 col-start-3 2xl:col-start-4 mt-6 flex flex-row">
-      <svg
-        viewBox="0 0 100 50"
-      >
+      <svg viewBox="0 0 100 50">
         <rect width="100%" height="100%" fill="#F3ECCB" />
         <svg viewBox="0 0 100 50">
           <g>
@@ -104,10 +116,11 @@ export default function RecreationCovid() {
                 <VerticalGrid
                   key={xValue}
                   xValue={xScale(xValue)}
-                  offset={3}
+                  xOffset={3}
                   text={dates[index]}
+                  textXOffset={3.5}
                 />
-              )
+              );
             })}
             {yValues.map((yValue, index) => {
               return (
@@ -118,7 +131,7 @@ export default function RecreationCovid() {
                   innerWidth={innerGridWidth}
                   opacity={yValueHighlights.includes(yValue) ? 0.4 : 0.2}
                 />
-              )
+              );
             })}
             <ColorAreaCovid area={fillColorArea} />
             <path d={ukLine} strokeWidth=".4px" stroke="#D6BF24"></path>
@@ -148,27 +161,27 @@ export default function RecreationCovid() {
               stroke="black"
               strokeWidth="0.1"
             ></line>
-          <g>
-            <text
-              fill="black"
-              fontSize="3"
-              fontFamily="Chancery Cursive"
-              transform={transformUSText()}
-            >
-              U.S. Deaths
-            </text>
-            <text
-              fill="black"
-              fontSize="3"
-              fontFamily="Chancery Cursive"
-              transform={transformUKText()}
-            >
-              U.K. Deaths
-            </text>
+            <g>
+              <text
+                fill="black"
+                fontSize="3"
+                fontFamily="Chancery Cursive"
+                transform={transformUSText()}
+              >
+                U.S. Deaths
+              </text>
+              <text
+                fill="black"
+                fontSize="3"
+                fontFamily="Chancery Cursive"
+                transform={transformUKText()}
+              >
+                U.K. Deaths
+              </text>
+            </g>
           </g>
-        </g>
+        </svg>
       </svg>
-    </svg>
-  </span>
-  )
+    </span>
+  );
 }
