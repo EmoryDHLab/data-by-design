@@ -157,7 +157,7 @@ export default function ProjectTimeline({
           transform="rotate(-90)"
           textAnchor="middle"
         >
-          Something
+          Contributions
         </text>
         <rect
           fill="none"
