@@ -44,7 +44,7 @@ const ProjectTimelineInteractive = () => {
     <div>
       <ProjectTimeline selectedSources={selectedSources} />
       <div className="grid grid-cols-3 md:grid-cols-7 space-x-4 mt-6 text-center justify-items-center gap-y-4">
-        <div className="font-duboisWide col-span-3 md:col-span-2">
+        <div className="font-duboisWide col-span-3 md:col-span-2 pt-[5px]">
           Select two sources:{" "}
         </div>
         {laborSources.slice(0, 5).map((source) => {

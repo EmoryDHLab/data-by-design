@@ -25,7 +25,7 @@ interface Props {
   areaOpacity?: [number, number];
   useMask?: boolean;
   showMask?: boolean;
-  strokeWidth?: number;
+  strokeWidth?: [number, number];
   id?: string;
 }
 
@@ -34,7 +34,7 @@ export default function ProjectTimeline({
   className,
   areaOpacity = [0.5, 0.5],
   showMask = false,
-  strokeWidth = 0.1,
+  strokeWidth = [0.1, 0.1],
   id,
 }: Props) {
   const [csvData, setCsvData] = useState<TLaborData | undefined>(undefined);
@@ -221,7 +221,7 @@ export default function ProjectTimeline({
               ref={line1Ref}
               className={`stroke-${selectedSources[0]?.color} translate-y-[5.5px] translate-x-[5.5px] fill-${selectedSources[0]?.color} transition-all duration-700`}
               d=""
-              strokeWidth={strokeWidth}
+              strokeWidth={strokeWidth[0]}
             />
             <path
               ref={areaAboveRef}
@@ -234,7 +234,7 @@ export default function ProjectTimeline({
               ref={line2Ref}
               className={`stroke-${selectedSources[1]?.color} translate-y-[5.5px] translate-x-[5.5px] transition-all duration-700`}
               d=""
-              strokeWidth={strokeWidth}
+              strokeWidth={strokeWidth[1]}
             />
           </g>
         )}
@@ -242,10 +242,10 @@ export default function ProjectTimeline({
           <defs>
             <mask id="focus">
               <rect
-                x={0}
-                y={0}
-                width={105}
-                height={55}
+                x={5.5}
+                y={5.5}
+                width={innerGridWidth - 1}
+                height={44}
                 fill="white"
                 fillOpacity={showMask ? 0.6 : 0}
                 className="transition-all duration-1000"

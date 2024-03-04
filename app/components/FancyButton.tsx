@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import type { Dispatch, ReactNode, SetStateAction } from "react";
 
 interface Props {
-  action: Dispatch<SetStateAction<any>>;
+  action?: Dispatch<SetStateAction<any>>;
   className?: string;
   fillColor?: string;
   hoverColor?: string | undefined;
@@ -66,7 +66,7 @@ export default function FancyButton({
         d="M70 31H7C4.66 28.66 3.34 27.34 1 25V7C3.34 4.66 4.66 3.34 7 1H70C72.34 3.34 73.66 4.66 76 7V25C73.66 27.34 72.34 28.66 70 31Z"
         stroke={outlineColor ?? "white"}
         strokeWidth={isHovered ? 2.5 : 1.5}
-        className={`fill-${fillColor} stroke-${
+        className={`transition-all fill-${fillColor} stroke-${
           isHovered ? hoverColor : outlineColor ?? "black"
         }`}
         style={{

@@ -4,6 +4,7 @@ import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import ProjectTimeline from "../ProjectTimeline";
 import laborSources from "~/data/playfair/laborSources.json";
 import type { TLaborSource } from "~/types/laborSourceTypes";
+import FancyButton from "~/components/FancyButton";
 
 const noSource = laborSources.find((source) => source.label === "flat");
 
@@ -54,7 +55,7 @@ const defaultAreaOpacity = 0.5;
 
 const ProjectTimelineScrollytell = () => {
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
-  const [strokeWidth, setStrokeWidth] = useState<number>(0.1);
+  const [strokeWidth, setStrokeWidth] = useState<[number, number]>([0.1, 0.1]);
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   const [selectedSources, setSelectedSources] = useState<TLaborSource[]>([
     noSource,
@@ -80,44 +81,44 @@ const ProjectTimelineScrollytell = () => {
       case scrollProgress >= minScrollProgress - 0.25 &&
         scrollProgress < minScrollProgress + 1:
         setSelectedSources([
-          laborSources.find((source) => source.label === "GitHub"),
           laborSources.find((source) => source.label === "Zotero"),
+          laborSources.find((source) => source.label === "GitHub"),
         ]);
         setAreaOpacity([defaultAreaOpacity, defaultAreaOpacity]);
-        setStrokeWidth(0.1);
+        setStrokeWidth([0.1, 0.1]);
         break;
 
       case scrollProgress >= minScrollProgress + 1 &&
         scrollProgress < minScrollProgress + 2:
-        setAreaOpacity([0.1, 1]);
-        setStrokeWidth(0);
+        setAreaOpacity([1, 0.1]);
+        setStrokeWidth([0.1, 0]);
         setShowMask(false);
         break;
 
       case scrollProgress >= minScrollProgress + 2 &&
         scrollProgress < minScrollProgress + 3:
         setSelectedSources([
-          laborSources.find((source) => source.label === "GitHub"),
           laborSources.find((source) => source.label === "Zotero"),
+          laborSources.find((source) => source.label === "GitHub"),
         ]);
         setAreaOpacity([defaultAreaOpacity, defaultAreaOpacity]);
         setShowMask(true);
-        setStrokeWidth(0.1);
+        setStrokeWidth([0.1, 0.1]);
         break;
 
       case scrollProgress >= minScrollProgress + 3 &&
         scrollProgress < minScrollProgress + 4:
         setSelectedSources([
-          laborSources.find((source) => source.label === "GitHub"),
           laborSources.find((source) => source.label === "iCal"),
+          laborSources.find((source) => source.label === "GitHub"),
         ]);
         setShowMask(false);
         break;
       case scrollProgress >= minScrollProgress + 4 &&
         scrollProgress < minScrollProgress + 5:
         setSelectedSources([
-          noSource,
           laborSources.find((source) => source.label === "iCal"),
+          noSource,
         ]);
         break;
       case scrollProgress >= minScrollProgress + 5 &&
@@ -134,10 +135,12 @@ const ProjectTimelineScrollytell = () => {
           laborSources.find((source) => source.label === "Figma"),
         ]);
         setAreaOpacity([defaultAreaOpacity, defaultAreaOpacity]);
+        setStrokeWidth([0.1, 0.1]);
         break;
       case scrollProgress >= minScrollProgress + 7 &&
         scrollProgress < minScrollProgress + 8:
-        setAreaOpacity([0.1, 0.1]);
+        setAreaOpacity([0.1, 0.8]);
+        setStrokeWidth([0.05, 0.1]);
         break;
       case scrollProgress >= minScrollProgress + 8 &&
         scrollProgress < minScrollProgress + 11:
@@ -146,6 +149,7 @@ const ProjectTimelineScrollytell = () => {
           laborSources.find((source) => source.label === "GitHub"),
           laborSources.find((source) => source.label === "Figma"),
         ]);
+        setStrokeWidth([0.1, 0.1]);
         break;
 
       default:
@@ -159,19 +163,46 @@ const ProjectTimelineScrollytell = () => {
       triggers={triggers}
       steps={steps}
     >
-      <section className={`bg-${backgroundColor} md:flex justify-between`}>
+      <div className={`bg-${backgroundColor} md:flex justify-between`}>
         <div className="sticky top-16 md:top-0 h-screen mt-16 md:mt-0 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last md:pb-[60px]">
           <div className="text-3xl relative md:top-[calc(100vh-12rem)] right-[35vw] text-white hidden md:block">
             ↓
           </div>
-          <ProjectTimeline
-            selectedSources={selectedSources}
-            areaOpacity={areaOpacity}
-            showMask={showMask}
-            strokeWidth={strokeWidth}
-            className="w-full md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0"
-            id="scrollytell"
-          />
+          <div className="w-full md:h-full flex flex-col justify-center">
+            <ProjectTimeline
+              selectedSources={selectedSources}
+              areaOpacity={areaOpacity}
+              showMask={showMask}
+              strokeWidth={strokeWidth}
+              className=" md:ml-6 p-3 pb-0 md:p-0 pt-10 md:pt-0"
+              id="scrollytell"
+            />
+            <div className="grid grid-cols-3 md:grid-cols-7 space-x-4 mx-3 md:pt-3 md:pb-1 md:ml-6 md:mr-0 text-center justify-items-center gap-y-4 bg-playfairChart border-x-[1px] border-b-[1px] md:border-x-2 md:border-b-2 border-black">
+              <div className="col-span-3 md:col-span-2 font-duboisWide pt-[5px]">
+                Contribution Sources:
+              </div>
+              <FancyButton
+                fillColor={selectedSources[0]?.color}
+                textColor={selectedSources[0]?.activeText}
+                outlineColor="black"
+                className={`opacity-${
+                  selectedSources[0]?.label === "flat" ? 0 : 100
+                } transition-opacity duration-700`}
+              >
+                {selectedSources[0]?.label}
+              </FancyButton>
+              <FancyButton
+                fillColor={selectedSources[1]?.color}
+                textColor={selectedSources[1]?.activeText}
+                outlineColor="black"
+                className={`opacity-${
+                  selectedSources[1]?.label === "flat" ? 0 : 100
+                } transition-opacity duration-700`}
+              >
+                {selectedSources[1]?.label}
+              </FancyButton>
+            </div>
+          </div>
         </div>
         <div
           ref={steps}
@@ -199,7 +230,7 @@ const ProjectTimelineScrollytell = () => {
             );
           })}
         </div>
-      </section>
+      </div>
     </ScrollytellWrapper>
   );
 };

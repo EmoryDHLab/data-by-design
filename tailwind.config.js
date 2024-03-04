@@ -93,6 +93,7 @@ module.exports = {
         Spain: "rgb(209, 42, 5)",
         Native: "url(#diagonalHatch)",
         Mexico: "rgb(209, 42, 5)",
+        playfairChart: "#F3ECCB",
       },
       inset: {
         screen: "100vh",
@@ -153,6 +154,7 @@ module.exports = {
     "bg-playfairPrimary-translucent",
     "bg-playfairSecondary",
     "bg-playfairSecondary-translucent",
+    "bg-playfairChart",
     "bg-shanawdithitPrimary",
     "bg-shanawdithitSecondary",
     "text-peabodyPrimary",
