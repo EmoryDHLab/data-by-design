@@ -7,7 +7,7 @@ export default function CombChart() {
   const radiusScale = 1.6;
   const height = 50;
   const width = 34;
-  const offset = 65;
+  const offset = 66;
   const maxY = Math.max(...playfairData.map((d) => d.Imports + d.Exports));
   const maxOuterR = ((maxY / interval + 1) * radiusScale) / 2;
 
@@ -24,18 +24,21 @@ export default function CombChart() {
             180
           : 2 * Math.PI;
 
-      return d3
-        .arc()
-        .innerRadius(0)
-        .outerRadius(
-          ((Number(playfairData[index].Imports) +
-            Number(playfairData[index].Exports)) /
-            interval) *
-            radiusScale
-        )
-        .startAngle(startAng)
-        .endAngle(endAng)
-        .call();
+      return (
+        d3
+          .arc()
+          .innerRadius(0)
+          .outerRadius(
+            ((Number(playfairData[index].Imports) +
+              Number(playfairData[index].Exports)) /
+              interval) *
+              radiusScale
+          )
+          .startAngle(startAng)
+          .endAngle(endAng)
+          // @ts-expect-error
+          .call()
+      );
     }
   );
 
@@ -52,26 +55,32 @@ export default function CombChart() {
             180
           : 2 * Math.PI;
 
-      return d3
-        .arc()
-        .innerRadius(0)
-        .outerRadius((playfairData[index].Imports / interval) * radiusScale)
-        .startAngle(startAng)
-        .endAngle(endAng)
-        .call();
+      return (
+        d3
+          .arc()
+          .innerRadius(0)
+          .outerRadius((playfairData[index].Imports / interval) * radiusScale)
+          .startAngle(startAng)
+          .endAngle(endAng)
+          // @ts-expect-error
+          .call()
+      );
     }
   );
 
   const outlineArcs = Array.from({ length: 11 }).map((_, index) => {
     const startAng = ((2 * Math.PI) / 11) * index;
     const endAng = ((2 * Math.PI) / 11) * (index + 1);
-    return d3
-      .arc()
-      .innerRadius(0)
-      .outerRadius(maxOuterR)
-      .startAngle(startAng)
-      .endAngle(endAng)
-      .call();
+    return (
+      d3
+        .arc()
+        .innerRadius(0)
+        .outerRadius(maxOuterR)
+        .startAngle(startAng)
+        .endAngle(endAng)
+        // @ts-expect-error
+        .call()
+    );
   });
 
   return (
@@ -81,8 +90,9 @@ export default function CombChart() {
           <path
             fill="#E4AE95"
             key={`${index}importArcs`}
+            // @ts-expect-error
             d={arc}
-            transform=" translate(82, 32)"
+            transform=" translate(83, 30)"
           />
         );
       })}
@@ -92,8 +102,9 @@ export default function CombChart() {
           <path
             fill="#ABAF7B"
             key={`${index}exportArcs`}
+            // @ts-expect-error
             d={circle}
-            transform="translate(82, 32)"
+            transform="translate(83, 30)"
           />
         );
       })}
@@ -105,8 +116,9 @@ export default function CombChart() {
             stroke="#7e7e7e"
             strokeWidth="0.15"
             key={`${index}outlineArcs`}
+            // @ts-expect-error
             d={arc}
-            transform=" translate(82, 32)"
+            transform=" translate(83, 30)"
           />
         );
       })}
@@ -120,7 +132,7 @@ export default function CombChart() {
             strokeWidth={index % 2 === 0 ? 0.2 : 0.1}
             opacity="1"
             cx={offset + width / 2}
-            cy="32"
+            cy="30"
             r={index * radiusScale}
           />
         );
@@ -135,11 +147,13 @@ export default function CombChart() {
             fontFamily="Chancery Cursive"
             dy="2.3em"
             transform={`translate(${
-              offset +
+              offset -
+              1 +
               width / 2 +
-              Math.sin(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6)
+              Math.sin(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6) +
+              1
             },${(
-              32 -
+              30 -
               Math.cos(((2 * Math.PI) / 11) * (index + 0.4)) * (maxOuterR + 6)
             ).toFixed(8)}) rotate(${((index + 0.4) * 360) / 11})`}
           >

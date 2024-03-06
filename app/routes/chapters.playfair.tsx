@@ -544,16 +544,29 @@ export default function PlayfairPage() {
             visualized, on the web, according to any conceivable form.
           </p>
 
-          <p className="my-6 md:my-12 w-full h-full">
+          <div className="my-6 md:my-12 w-full h-full">
             <span id={visualizations[1].id} className="">
-              <svg viewBox="0 0 100 50" className="margin-auto">
-                <rect width="64%" height="100%" fill="#F3ECCB" />
-                <rect width="35%" height="100%" fill="#F3ECCB" x="65" />
+              <svg viewBox="0 0 100 51" className="margin-auto">
+                <rect
+                  width={64}
+                  height={50.9}
+                  fill="#F3ECCB"
+                  stroke="black"
+                  strokeWidth={0.1}
+                />
+                <rect
+                  width={35}
+                  height={50.9}
+                  stroke="black"
+                  strokeWidth={0.1}
+                  fill="#F3ECCB"
+                  x="65"
+                />
                 <StackedChart />
                 <CombChart />
               </svg>
             </span>
-          </p>
+          </div>
 
           <p>
             More than a practical issue, this structural dependency on the data

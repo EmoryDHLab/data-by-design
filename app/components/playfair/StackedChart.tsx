@@ -86,7 +86,7 @@ export default function StackedChart() {
       </text>
       <text
         fill="black"
-        y="2"
+        y={2.25}
         fontFamily="Times New Roman"
         fontSize="2.3"
         transform="rotate(-90) translate(-30, 0)"
@@ -156,7 +156,7 @@ export default function StackedChart() {
         topText={topText}
         midText={midText}
         botText={botText}
-        opacity={0}
+        opacity={1}
       />
 
       <rect
