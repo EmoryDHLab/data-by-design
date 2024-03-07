@@ -1,3 +1,66 @@
+export const visWidth = (windowWidth = window.innerWidth) => {
+  return (windowWidth / 3) * 2;
+};
+
+export const visHeight = (windowHeight = window.innerHeight) => {
+  return (windowHeight / 6) * 5;
+};
+
+export const visSize = (
+  windowHeight = window.innerHeight,
+  windowWidth = window.innerWidth
+) => {
+  return {
+    width: visWidth(windowWidth),
+    height: visHeight(windowHeight),
+  };
+};
+
+export const versionWidth = (windowWidth = window.innerWidth) => {
+  return visWidth(windowWidth) / 5;
+};
+
+export const versionHeight = (windowHeight = window.innerHeight) => {
+  return visHeight(windowHeight) / 14;
+};
+
+const versionSpacing = (windowWidth = window.innerWidth) => {
+  return versionWidth(windowWidth) / 2;
+};
+
+const versionMidX = (index: number, windowWidth: number) => {
+  return versionX(index) + versionWidth(windowWidth) / 2;
+};
+
+const versionBottomY = (windowHeight: number) => {
+  return versionHeight(windowHeight) / 3 + versionHeight(windowHeight);
+};
+
+export const VIS_SIZE = visSize();
+
+export const VERSION_WIDTH = versionWidth(window.innerWidth);
+export const VERSION_HEIGHT = versionHeight(window.innerHeight);
+export const VERSION_SPACING = versionSpacing(window.innerWidth);
+
+const versionX = (index: number, windowWidth = window.innerWidth) => {
+  return (
+    versionWidth(windowWidth) * index +
+    versionSpacing(windowWidth) * (1 + index)
+  );
+};
+
+const versionY = (windowHeight = window.innerHeight) => {
+  return versionHeight(windowHeight) / 3;
+};
+
+const personX = (offset: number, windowWidth = window.innerWidth) => {
+  return visWidth(windowWidth) * offset;
+};
+
+const personY = (offset: number, windowHeight = window.innerHeight) => {
+  return visHeight(windowHeight) * offset;
+};
+
 enum FirstNames {
   LK = "Lauren",
   TS = "Tanvi",
@@ -33,9 +96,9 @@ enum LastNames {
 }
 
 enum Versions {
-  P = "Prototype",
-  A = "Alpha",
-  F = "Final",
+  ONE = "V.1",
+  TWO = "V.2",
+  THREE = "V.3",
 }
 
 enum Institutions {
@@ -87,8 +150,10 @@ enum Locations {
 export type TVersion = {
   id: Versions;
   label: Versions;
-  x: number;
-  y: number;
+  getX: (index: number, windowWidth: number) => number;
+  getMidX: (index: number, windowWidth: number) => number;
+  getY: (windowHeight: number) => number;
+  getBottomY: (windowHeight: number) => number;
 };
 
 type TVersionData = {
@@ -107,14 +172,25 @@ export type TPerson = {
   locations: Locations[];
   x: number;
   y: number;
+  xOffset: number;
+  yOffset: number;
+  getX: (offset: number, windowWidth: number) => number;
+  getY: (offset: number, windowHeight: number) => number;
   opacity: number;
   none?: any;
 };
 
 export type TSelectedFilter = {
   id: string;
-  label: Locations | Departments | Institutions | Roles | "Select..." | "Select filter..." | "Clear filters";
-}
+  label:
+    | Locations
+    | Departments
+    | Institutions
+    | Roles
+    | "Select..."
+    | "Select filter..."
+    | "Clear filters";
+};
 
 export type TFilterOption = {
   id: number;
@@ -123,24 +199,34 @@ export type TFilterOption = {
   options: TSelectedFilter[];
 };
 
-export const versionsData: TVersionData = {
-  [Versions.P]: {
-    id: Versions.P,
-    label: Versions.P,
-    x: 60,
-    y: 90,
+export const versionData: TVersionData = {
+  [Versions.ONE]: {
+    id: Versions.ONE,
+    label: Versions.ONE,
+    getX: versionX,
+    getY: (windowHeight: number) => {
+      return versionY(windowHeight);
+    },
+    getMidX: versionMidX,
+    getBottomY: versionBottomY,
   },
-  [Versions.A]: {
-    id: Versions.A,
-    label: Versions.A,
-    x: 180,
-    y: 90,
+  [Versions.TWO]: {
+    id: Versions.TWO,
+    label: Versions.TWO,
+    getX: versionX,
+    getY: versionY,
+    getMidX: versionMidX,
+    getBottomY: versionBottomY,
   },
-  [Versions.F]: {
-    id: Versions.F,
-    label: Versions.F,
-    x: 300,
-    y: 90,
+  [Versions.THREE]: {
+    id: Versions.THREE,
+    label: Versions.THREE,
+    getX: versionX,
+    getY: (windowHeight: number) => {
+      return versionY(windowHeight);
+    },
+    getMidX: versionMidX,
+    getBottomY: versionBottomY,
   },
 };
 
@@ -150,59 +236,75 @@ export const peopleData: TPerson[] = [
     firstName: FirstNames.LK,
     lastName: LastNames.LK,
     versions: [
-      versionsData[Versions.P],
-      versionsData[Versions.A],
-      versionsData[Versions.F],
+      versionData[Versions.ONE],
+      versionData[Versions.TWO],
+      versionData[Versions.THREE],
     ],
     institutions: [Institutions.T, Institutions.E],
     roles: [Roles.R, Roles.W],
     departments: [Departments.E, Departments.L, Departments.MC, Departments.Q],
     positions: [Positions.F],
     locations: [Locations.ATL],
-    x: 99,
-    y: 158,
+    x: VIS_SIZE.width * 0.17,
+    xOffset: 0.17,
+    getX: personX,
+    y: VIS_SIZE.height * 0.65,
+    yOffset: 0.65,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.TS,
     firstName: FirstNames.TS,
     lastName: LastNames.TS,
-    versions: [versionsData[Versions.A], versionsData[Versions.F]],
+    versions: [versionData[Versions.TWO], versionData[Versions.THREE]],
     institutions: [Institutions.N, Institutions.E],
     roles: [Roles.DE, Roles.DV],
     departments: [Departments.G, Departments.I, Departments.Q],
     positions: [Positions.U, Positions.G, Positions.R],
     locations: [Locations.NY],
-    x: 235,
-    y: 152,
+    x: VIS_SIZE.width * 0.25,
+    xOffset: 0.25,
+    getX: personX,
+    y: VIS_SIZE.height * 0.75,
+    yOffset: 0.75,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.JV,
     firstName: FirstNames.JV,
     lastName: LastNames.JV,
-    versions: [versionsData[Versions.F]],
+    versions: [versionData[Versions.THREE]],
     institutions: [Institutions.E],
     roles: [Roles.DV],
     departments: [Departments.ECDS],
     positions: [Positions.R],
     locations: [Locations.ATL],
-    x: 303,
-    y: 112,
+    x: VIS_SIZE.width * 0.85,
+    xOffset: 0.85,
+    getX: personX,
+    y: VIS_SIZE.height * 0.7,
+    yOffset: 0.7,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.NY,
     firstName: FirstNames.NY,
     lastName: LastNames.NY,
-    versions: [versionsData[Versions.A], versionsData[Versions.F]],
+    versions: [versionData[Versions.TWO], versionData[Versions.THREE]],
     institutions: [Institutions.N],
     roles: [Roles.DV],
     departments: [Departments.CS],
     positions: [Positions.U],
     locations: [Locations.NY],
-    x: 242,
-    y: 123,
+    x: VIS_SIZE.width * 0.65,
+    xOffset: 0.65,
+    getX: personX,
+    y: VIS_SIZE.height * 0.45,
+    yOffset: 0.45,
+    getY: personY,
     opacity: 1,
   },
   {
@@ -210,17 +312,21 @@ export const peopleData: TPerson[] = [
     firstName: FirstNames.DJ,
     lastName: LastNames.DJ,
     versions: [
-      versionsData[Versions.P],
-      versionsData[Versions.A],
-      versionsData[Versions.F],
+      versionData[Versions.ONE],
+      versionData[Versions.TWO],
+      versionData[Versions.THREE],
     ],
     institutions: [Institutions.T],
     roles: [Roles.DE, Roles.DV],
     departments: [Departments.CS],
     positions: [Positions.U],
     locations: [Locations.ATL],
-    x: 124,
-    y: 115,
+    x: VIS_SIZE.width * 0.35,
+    xOffset: 0.35,
+    getX: personX,
+    y: VIS_SIZE.height * 0.2,
+    yOffset: 0.2,
+    getY: personY,
     opacity: 1,
   },
   {
@@ -228,166 +334,212 @@ export const peopleData: TPerson[] = [
     firstName: FirstNames.JF,
     lastName: LastNames.JF,
     versions: [
-      versionsData[Versions.P],
-      versionsData[Versions.A],
-      versionsData[Versions.F],
+      versionData[Versions.ONE],
+      versionData[Versions.TWO],
+      versionData[Versions.THREE],
     ],
     institutions: [Institutions.T, Institutions.B],
     roles: [Roles.DV],
     departments: [Departments.CS],
     positions: [Positions.U, Positions.G],
     locations: [Locations.ATL, Locations.BK],
-    x: 151,
-    y: 158,
+    x: VIS_SIZE.width * 0.48,
+    xOffset: 0.48,
+    getX: personX,
+    y: VIS_SIZE.height * 0.38,
+    yOffset: 0.38,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.AM,
     firstName: FirstNames.AM,
     lastName: LastNames.AM,
-    versions: [versionsData[Versions.A], versionsData[Versions.F]],
+    versions: [versionData[Versions.TWO], versionData[Versions.THREE]],
     institutions: [Institutions.E],
     roles: [Roles.DE, Roles.DV],
     departments: [Departments.CS, Departments.V],
     positions: [Positions.U],
     locations: [Locations.ATL],
-    x: 187,
-    y: 154,
+    x: VIS_SIZE.width * 0.61,
+    xOffset: 0.61,
+    getX: personX,
+    y: VIS_SIZE.height * 0.23,
+    yOffset: 0.23,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.SL,
     firstName: FirstNames.SL,
     lastName: LastNames.SL,
-    versions: [versionsData[Versions.F]],
+    versions: [versionData[Versions.THREE]],
     institutions: [Institutions.E],
     roles: [Roles.DE, Roles.DV],
     departments: [Departments.CS],
     positions: [Positions.D],
     locations: [Locations.ATL],
-    x: 292,
-    y: 140,
+    x: VIS_SIZE.width * 0.92,
+    xOffset: 0.92,
+    getX: personX,
+    y: VIS_SIZE.height * 0.36,
+    yOffset: 0.36,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.MA,
     firstName: FirstNames.MA,
     lastName: LastNames.MA,
-    versions: [versionsData[Versions.F]],
+    versions: [versionData[Versions.THREE]],
     institutions: [Institutions.E],
     roles: [Roles.R, Roles.W],
     departments: [Departments.E],
     positions: [Positions.D],
     locations: [Locations.ATL],
-    x: 320,
-    y: 129,
+    x: VIS_SIZE.width * 0.88,
+    xOffset: 0.88,
+    getX: personX,
+    y: VIS_SIZE.height * 0.15,
+    yOffset: 0.15,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.ZF,
     firstName: FirstNames.ZF,
     lastName: LastNames.ZF,
-    versions: [versionsData[Versions.A], versionsData[Versions.F]],
+    versions: [versionData[Versions.TWO], versionData[Versions.THREE]],
     institutions: [Institutions.E],
     roles: [Roles.DE, Roles.DV],
     departments: [Departments.Q],
     positions: [Positions.U],
     locations: [Locations.SHI, Locations.ATL],
-    x: 196,
-    y: 118,
+    x: VIS_SIZE.width * 0.51,
+    xOffset: 0.51,
+    getX: personX,
+    y: VIS_SIZE.height * 0.62,
+    yOffset: 0.62,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.YL,
     firstName: FirstNames.YL,
     lastName: LastNames.YL,
-    versions: [versionsData[Versions.F]],
+    versions: [versionData[Versions.THREE]],
     institutions: [Institutions.E],
     roles: [Roles.DE, Roles.DV],
     departments: [Departments.ECDS],
     positions: [Positions.R],
     locations: [Locations.SHI, Locations.BJ, Locations.ATL],
-    x: 268,
-    y: 158,
+    x: VIS_SIZE.width * 0.76,
+    xOffset: 0.76,
+    getX: personX,
+    y: VIS_SIZE.height * 0.57,
+    yOffset: 0.57,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.SM,
     firstName: FirstNames.SM,
     lastName: LastNames.SM,
-    versions: [versionsData[Versions.A], versionsData[Versions.F]],
+    versions: [versionData[Versions.TWO], versionData[Versions.THREE]],
     institutions: [Institutions.P],
     roles: [Roles.DE],
     departments: [],
     positions: [Positions.EX],
     locations: [Locations.LA],
-    x: 151,
-    y: 129,
+    x: VIS_SIZE.width * 0.69,
+    xOffset: 0.69,
+    getX: personX,
+    y: VIS_SIZE.height * 0.88,
+    yOffset: 0.88,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.QT,
     firstName: FirstNames.QT,
     lastName: LastNames.QT,
-    versions: [versionsData[Versions.P]],
+    versions: [versionData[Versions.ONE]],
     institutions: [Institutions.T],
     roles: [Roles.DE],
     departments: [Departments.D],
     positions: [Positions.G],
     locations: [Locations.ATL],
-    x: 46,
-    y: 118,
+    x: VIS_SIZE.width * 0.17,
+    xOffset: 0.17,
+    getX: personX,
+    y: VIS_SIZE.height * 0.17,
+    yOffset: 0.17,
+    getY: personY,
     opacity: 1,
   },
   {
     id: FirstNames.AH,
     firstName: FirstNames.AH,
     lastName: LastNames.AH,
-    versions: [versionsData[Versions.P]],
+    versions: [versionData[Versions.ONE]],
     institutions: [Institutions.T],
     roles: [Roles.DE, Roles.DV],
     departments: [Departments.CS],
     positions: [Positions.U],
     locations: [Locations.ATL],
-    x: 65,
-    y: 147,
+    x: VIS_SIZE.width * 0.25,
+    xOffset: 0.25,
+    getX: personX,
+    y: VIS_SIZE.height * 0.35,
+    yOffset: 0.35,
+    getY: personY,
     opacity: 1,
   },
 ];
 
 export const filterOptions: TFilterOption[] = [
-  { id: 1, label: "Filter by...", key: "none", options: [{ id: "none", label: "Select filter..."}]},
   {
     id: 2,
     label: "Location",
     key: "locations",
-    options: [{ id: 'none', label: "Clear filters" }, ...Object.keys(Locations).map((opt) => {
-      return { id: opt, label: Locations[opt as keyof typeof Locations] };
-    })],
+    options: [
+      ...Object.keys(Locations).map((opt) => {
+        return { id: opt, label: Locations[opt as keyof typeof Locations] };
+      }),
+    ],
   },
   {
     id: 3,
     label: "Discipline",
     key: "departments",
-    options: [{ id: 'none', label: "Clear filters" }, ...Object.keys(Departments).map((opt) => {
-      return { id: opt, label: Departments[opt as keyof typeof Departments] };
-    })],
+    options: [
+      ...Object.keys(Departments).map((opt) => {
+        return { id: opt, label: Departments[opt as keyof typeof Departments] };
+      }),
+    ],
   },
   {
     id: 4,
     label: "Institution",
     key: "institutions",
-    options: [{ id: 'none', label: "Clear filters" }, ...Object.keys(Institutions).map((opt) => {
-      return { id: opt, label: Institutions[opt as keyof typeof Institutions] };
-    })],
+    options: [
+      ...Object.keys(Institutions).map((opt) => {
+        return {
+          id: opt,
+          label: Institutions[opt as keyof typeof Institutions],
+        };
+      }),
+    ],
   },
   {
     id: 5,
     label: "Role",
     key: "roles",
-    options: [{ id: 'none', label: "Clear filters" }, ...Object.keys(Roles).map((opt) => {
-      return { id: opt, label: Roles[opt as keyof typeof Roles] };
-    })],
+    options: [
+      ...Object.keys(Roles).map((opt) => {
+        return { id: opt, label: Roles[opt as keyof typeof Roles] };
+      }),
+    ],
   },
 ];
 

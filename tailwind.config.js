@@ -207,5 +207,6 @@ module.exports = {
     "h-[125vh]",
     "grid-rows-1",
     "drop-shadow-2xl",
+    "underline-offset-8",
   ],
 };
