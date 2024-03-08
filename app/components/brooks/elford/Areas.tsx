@@ -1,5 +1,5 @@
 interface Props {
-  strokeOpacity: float;
+  strokeOpacity: number;
 }
 
 export default function Areas({ strokeOpacity }: Props) {

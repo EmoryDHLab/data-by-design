@@ -1,14 +1,11 @@
 import Carousel from "nuka-carousel";
+import { ClientOnly } from "remix-utils/client-only";
 import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import FigureObj from "../layout/FigureObj";
 import figures from "~/data/figures/shanawdithit.json";
 
-const FIGURES = [
-  figures["Willard1"],
-  figures["Willard2"],
-  figures["Willard9"],
-];
+const FIGURES = [figures["Willard1"], figures["Willard2"], figures["Willard9"]];
 
 export default function ColonialMaps() {
   const { hoverState } = useContext(ChapterContext);
@@ -28,21 +25,29 @@ export default function ColonialMaps() {
     }
   }, [hoverState, setCurrentHover]);
 
-
   return (
     <div className="ml-24 hidden md:block">
-      <Carousel
-        withoutControls
-        slideIndex={currentHover}
-        swiping={false}
-        animation="fade"
-      >
-        {FIGURES.map((figure, index) => {
-          return (
-            <FigureObj key={figure.fileName} figure={figure} className="w-full" id={`colonial-map-${index}`} />
-          )
-        })}
-      </Carousel>
+      <ClientOnly>
+        {() => (
+          <Carousel
+            withoutControls
+            slideIndex={currentHover}
+            swiping={false}
+            animation="fade"
+          >
+            {FIGURES.map((figure, index) => {
+              return (
+                <FigureObj
+                  key={figure.fileName}
+                  figure={figure}
+                  className="w-full"
+                  id={`colonial-map-${index}`}
+                />
+              );
+            })}
+          </Carousel>
+        )}
+      </ClientOnly>
     </div>
   );
 }

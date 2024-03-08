@@ -25,7 +25,7 @@ export type Actor = string;
 
 export type YearSquare = (Actor[] | null)[];
 
-export type SquareData = (YearSquare | null)[];
+export type SquareData = YearSquare[];
 
 export interface HighlightedElement {
   elementIndex: number;
@@ -53,9 +53,7 @@ const THREE_POLYGONS_SPLIT = [
   "15, 15 0, 30 30, 30",
 ];
 
-const SQUARE = [
-  "0 0, 0 30, 30 30, 30, 0"
-]
+const SQUARE = ["0 0, 0 30, 30 30, 30, 0"];
 
 export const POLYGONS = [
   SQUARE,
@@ -65,18 +63,24 @@ export const POLYGONS = [
   THREE_POLYGONS_SPLIT,
 ];
 
-export const getCenturyEvents = ((century: number) => {
-  return (Object.keys(eventData.events).map((year) => {
-    if (parseInt(year) >= century + 1 && parseInt(year) <= century + 100) {
-        return (eventData.events as {[key: string]: Array<PeabodyEvent | {}>})[year].flat();
-    }
-    return undefined;
-  }) as Array<PeabodyEvent>).filter(Boolean).flat();
-});
+export const getCenturyEvents = (century: number) => {
+  return (
+    Object.keys(eventData.events).map((year) => {
+      if (parseInt(year) >= century + 1 && parseInt(year) <= century + 100) {
+        return (
+          eventData.events as { [key: string]: Array<PeabodyEvent | {}> }
+        )[year].flat();
+      }
+      return undefined;
+    }) as Array<PeabodyEvent>
+  )
+    .filter(Boolean)
+    .flat();
+};
 
 export const strokeDasharray = (index: number, isVertical: boolean = false) => {
   if (isVertical) {
-    switch(index) {
+    switch (index) {
       case 8:
         return "top";
       default:

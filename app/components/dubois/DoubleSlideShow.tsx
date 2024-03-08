@@ -1,4 +1,5 @@
 import Carousel from "nuka-carousel";
+import { ClientOnly } from "remix-utils/client-only";
 import { useDeviceContext } from "~/hooks";
 import { leftControls, rightControls, noControl } from "../layout/SlideShow";
 import figures from "~/data/figures/dubois.json";
@@ -31,57 +32,63 @@ function DoubleSlideShow() {
   const { isMobile, isDesktop } = useDeviceContext();
 
   return (
-    <Carousel
-      renderCenterLeftControls={isMobile ? leftControls : noControl}
-      renderCenterRightControls={isMobile ? rightControls : noControl}
-      renderBottomCenterControls={noControl}
-      renderBottomLeftControls={isDesktop ? leftControls : noControl}
-      renderBottomRightControls={isDesktop ? rightControls : noControl}
-      wrapAround
-    >
-      {figureGroups?.map((group) => {
-        return (
-          <figure
-            key={`double-group-${group.figures[0].fileName}`}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center mx-24 md:mx-44 lg:mx-80 items-center"
-          >
-            {group.figures.map((figure) => {
-              return (
-                <FigureModal
-                  key={`double-fig-${figure.fileName}`}
-                  figure={figure}
-                >
-                  <picture>
-                    <source
-                      srcSet={`/_static/images/${figure.chapter}/${figure.fileName}.webp`}
-                    />
-                    <source
-                      srcSet={`/_static/images/${figure.chapter}/${figure.fileName}.jpg`}
-                    />
-                    <img
-                      className="mx-auto max-h-[66vh]"
-                      src={`/_static/images/${figure.chapter}/${figure.fileName}.jpg`}
-                      alt={
-                        figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
-                        figure.title?.replace(/(<i>|<\/i>)/gi, '"') ??
-                        ""
-                      }
-                      title={figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? ""}
-                    />
-                  </picture>
-                </FigureModal>
-              );
-            })}
-            <figcaption
-              className="font-dubois mt-3 md:w-1/2 mx-auto md:col-span-2"
-              dangerouslySetInnerHTML={{
-                __html: group.caption,
-              }}
-            />
-          </figure>
-        );
-      })}
-    </Carousel>
+    <ClientOnly>
+      {() => (
+        <Carousel
+          renderCenterLeftControls={isMobile ? leftControls : noControl}
+          renderCenterRightControls={isMobile ? rightControls : noControl}
+          renderBottomCenterControls={noControl}
+          renderBottomLeftControls={isDesktop ? leftControls : noControl}
+          renderBottomRightControls={isDesktop ? rightControls : noControl}
+          wrapAround
+        >
+          {figureGroups?.map((group) => {
+            return (
+              <figure
+                key={`double-group-${group.figures[0].fileName}`}
+                className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center mx-24 md:mx-44 lg:mx-80 items-center"
+              >
+                {group.figures.map((figure) => {
+                  return (
+                    <FigureModal
+                      key={`double-fig-${figure.fileName}`}
+                      figure={figure}
+                    >
+                      <picture>
+                        <source
+                          srcSet={`/_static/images/${figure.chapter}/${figure.fileName}.webp`}
+                        />
+                        <source
+                          srcSet={`/_static/images/${figure.chapter}/${figure.fileName}.jpg`}
+                        />
+                        <img
+                          className="mx-auto max-h-[66vh]"
+                          src={`/_static/images/${figure.chapter}/${figure.fileName}.jpg`}
+                          alt={
+                            figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
+                            figure.title?.replace(/(<i>|<\/i>)/gi, '"') ??
+                            ""
+                          }
+                          title={
+                            figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? ""
+                          }
+                        />
+                      </picture>
+                    </FigureModal>
+                  );
+                })}
+                <figcaption
+                  className="font-dubois mt-3 md:w-1/2 mx-auto md:col-span-2"
+                  dangerouslySetInnerHTML={{
+                    __html: group.caption,
+                  }}
+                />
+              </figure>
+            );
+          })}
+        </Carousel>
+      )}
+    </ClientOnly>
   );
 }
 

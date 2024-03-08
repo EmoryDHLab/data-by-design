@@ -6,12 +6,12 @@ import type {
 } from "~/components/peabody/peabodyUtils";
 
 interface Props {
-  currentColor: { label: string, rgb: string};
+  currentColor: { label: string; rgb: string };
 }
 
 export function EditablePeabodySquare({ currentColor }: Props) {
   const [squareColors, setSquareColors] = useState<SquareData>(
-    Array.from({ length: 100 }, () => null)
+    Array.from({ length: 100 }, () => [])
   );
   const [highlightedElement, setHighlightedElement] = useState<
     HighlightedElement | undefined
@@ -30,7 +30,7 @@ export function EditablePeabodySquare({ currentColor }: Props) {
           (color) => color !== currentColor.rgb
         );
       } else {
-        squareColors[yearIndex][eventIndex].push(currentColor.rgb);
+        squareColors[yearIndex][eventIndex]?.push(currentColor.rgb);
       }
     } else {
       squareColors[yearIndex][eventIndex] = [currentColor.rgb];

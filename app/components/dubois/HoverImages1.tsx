@@ -1,4 +1,5 @@
 import Carousel from "nuka-carousel";
+import { ClientOnly } from "remix-utils/client-only";
 import FigureObj from "../layout/FigureObj";
 import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
@@ -10,7 +11,7 @@ const FIGURES = [
   figures["ch5-04b-illiteracy"],
   figures["ch5-04c-owners"],
   figures["ch5-06a-letter"],
-]
+];
 
 export default function HoverImages1() {
   const { hoverState } = useContext(ChapterContext);
@@ -27,26 +28,35 @@ export default function HoverImages1() {
       case "Owners":
         setCurrentHover(3);
         break;
-        case "Value":
-          setCurrentHover(4);
-          break;
+      case "Value":
+        setCurrentHover(4);
+        break;
     }
   }, [hoverState, setCurrentHover]);
 
   return (
     <div className="ml-24 hidden md:block" id="hover1">
-      <Carousel
-        withoutControls
-        slideIndex={currentHover}
-        swiping={false}
-        animation="fade"
-      >
-        {FIGURES.map((figure, index) => {
-          return (
-            <FigureObj key={figure.fileName} figure={figure} className="w-full" id={`hover-1-${index}`} />
-          )
-        })}
-      </Carousel>
+      <ClientOnly>
+        {() => (
+          <Carousel
+            withoutControls
+            slideIndex={currentHover}
+            swiping={false}
+            animation="fade"
+          >
+            {FIGURES.map((figure, index) => {
+              return (
+                <FigureObj
+                  key={figure.fileName}
+                  figure={figure}
+                  className="w-full"
+                  id={`hover-1-${index}`}
+                />
+              );
+            })}
+          </Carousel>
+        )}
+      </ClientOnly>
     </div>
   );
 }

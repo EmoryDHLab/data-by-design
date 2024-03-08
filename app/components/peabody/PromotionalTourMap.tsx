@@ -1,4 +1,5 @@
 import Carousel from "nuka-carousel";
+import { ClientOnly } from "remix-utils/client-only";
 import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import FigureObj from "../layout/FigureObj";
@@ -33,23 +34,27 @@ export default function PromotionalTourMap() {
 
   return (
     <div id="promo-tour" className="ml-24 hidden md:block">
-      <Carousel
-        withoutControls
-        slideIndex={currentHover}
-        swiping={false}
-        animation="fade"
-      >
-        {FIGURES.map((figure) => {
-          return (
-            <FigureObj
-              key={figure.fileName}
-              figure={figure}
-              className="w-full"
-              id=""
-            />
-          );
-        })}
-      </Carousel>
+      <ClientOnly>
+        {() => (
+          <Carousel
+            withoutControls
+            slideIndex={currentHover}
+            swiping={false}
+            animation="fade"
+          >
+            {FIGURES.map((figure) => {
+              return (
+                <FigureObj
+                  key={figure.fileName}
+                  figure={figure}
+                  className="w-full"
+                  id=""
+                />
+              );
+            })}
+          </Carousel>
+        )}
+      </ClientOnly>
     </div>
   );
 }

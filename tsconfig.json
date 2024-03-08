@@ -1,7 +1,8 @@
 {
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js"],
-  "exclude": ["node_modules*", "scripts"],
+  "exclude": ["node_modules/*", "scripts"],
   "compilerOptions": {
+    "skipLibCheck": true,
     "lib": ["DOM", "DOM.Iterable", "ES2023"],
     "isolatedModules": true,
     "esModuleInterop": true,
