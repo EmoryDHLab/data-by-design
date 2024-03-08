@@ -3,6 +3,8 @@ node_modules*
 /.cache
 build
 server
+build
+server
 /public/build
 /.netlify
 .env
@@ -15,4 +17,3 @@ server
 package-lock.json
 .ruby-lsp
 .*.json
-server
