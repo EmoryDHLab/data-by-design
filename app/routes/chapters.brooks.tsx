@@ -19,7 +19,7 @@ import FigureObj from "~/components/layout/FigureObj";
 
 import figures from "~/data/figures/brooks.json";
 import ClarksonSideBySideScrollytell from "~/components/brooks/ClarksonSideBySideScrollytell";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import VoyageExample from "~/components/brooks/voyages/VoyageExample";
 import ResistanceVoyages1756 from "~/components/brooks/voyages/ResistanceVoyages1756.client";
 import AllVoyages1756 from "~/components/brooks/voyages/AllVoyages1756.client";
@@ -27,12 +27,12 @@ import AllVoyages from "~/components/brooks/voyages/AllVoyages.client";
 import VoyagesCompare from "~/components/brooks/voyages/VoyagesCompare";
 import { chapterMeta } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 
 const chapterFigures = Object.values(figures);
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return chapterMeta("brooks");
 };
 

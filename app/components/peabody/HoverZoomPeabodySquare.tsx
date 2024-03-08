@@ -12,7 +12,9 @@ export default function HoverZoomPeabodySquare({ figure }: Props) {
   const { hoverState } = useContext(ChapterContext);
   return (
     <FigureModal figure={figure} className="hidden md:block">
-      <p id={figure.fileName} className='sr-only'>{figure.caption}</p>
+      <p id={figure.fileName} className="sr-only">
+        {figure.caption}
+      </p>
       <svg
         viewBox="0 0 244.56 242.88"
         role="img"
@@ -20,7 +22,7 @@ export default function HoverZoomPeabodySquare({ figure }: Props) {
       >
         <image
           role="presentation"
-          href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+          href={`/_static/images/${figure.chapter}/${figure.fileName}.jpg`}
           width="100%"
           id={`fig-${figure.fileName}`}
         />

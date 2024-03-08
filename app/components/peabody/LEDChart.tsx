@@ -98,7 +98,7 @@ export default function LEDChart() {
                   y={layer9Y}
                   width={50}
                   height={30}
-                  href="/images/peabody/illustration/9.png"
+                  href="/_static/images/peabody/illustration/9.png"
                 />
                 <image
                   className="transition-all duration-700"
@@ -106,7 +106,7 @@ export default function LEDChart() {
                   y={layer8Y}
                   width={50}
                   height={30}
-                  href="/images/peabody/illustration/8.png"
+                  href="/_static/images/peabody/illustration/8.png"
                 />
                 <image
                   className="transition-all duration-700"
@@ -114,7 +114,7 @@ export default function LEDChart() {
                   y={layer7Y}
                   width={50}
                   height={30}
-                  href="/images/peabody/illustration/7.png"
+                  href="/_static/images/peabody/illustration/7.png"
                 />
                 <image
                   className="transition-all duration-700"
@@ -122,7 +122,7 @@ export default function LEDChart() {
                   y={layer6Y}
                   width={50}
                   height={30}
-                  href="/images/peabody/illustration/6.png"
+                  href="/_static/images/peabody/illustration/6.png"
                 />
                 <image
                   className="transition-all duration-700"
@@ -130,7 +130,7 @@ export default function LEDChart() {
                   y={layer5Y}
                   width={50}
                   height={30}
-                  href="/images/peabody/illustration/5.png"
+                  href="/_static/images/peabody/illustration/5.png"
                 />
                 <image
                   className="transition-all duration-700"
@@ -138,7 +138,7 @@ export default function LEDChart() {
                   y={layer4Y}
                   width={50}
                   height={30}
-                  href="/images/peabody/illustration/4.png"
+                  href="/_static/images/peabody/illustration/4.png"
                 />
                 <image
                   className="transition-all duration-700"
@@ -146,7 +146,7 @@ export default function LEDChart() {
                   y={layer3Y}
                   width={50}
                   height={30}
-                  href="/images/peabody/illustration/3.png"
+                  href="/_static/images/peabody/illustration/3.png"
                 />
                 <image
                   className="transition-all duration-700"
@@ -154,7 +154,7 @@ export default function LEDChart() {
                   y={layer2Y}
                   width={50}
                   height={30}
-                  href="/images/peabody/illustration/2.png"
+                  href="/_static/images/peabody/illustration/2.png"
                 />
                 <image
                   className="transition-all duration-700"
@@ -162,7 +162,7 @@ export default function LEDChart() {
                   y={layer1Y}
                   width={50}
                   height={30}
-                  href="/images/peabody/illustration/1.png"
+                  href="/_static/images/peabody/illustration/1.png"
                 />
               </g>
             </svg>
@@ -177,11 +177,7 @@ export default function LEDChart() {
           </figure>
           <div ref={stepsRef} className="relative">
             {Triggers.map((trigger) => {
-              return (
-                <div key={`trigger-wrap-${trigger.key}`}>
-                  {trigger}
-                </div>
-              )
+              return <div key={`trigger-wrap-${trigger.key}`}>{trigger}</div>;
             })}
           </div>
         </div>

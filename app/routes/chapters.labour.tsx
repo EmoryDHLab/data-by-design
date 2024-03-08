@@ -1,14 +1,14 @@
 import { ChapterContext } from "~/chapterContext";
 import ChapterTitle from "~/components/ChapterTitle";
 import { chapterMeta } from "~/utils";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import { laborFootnotes } from "~/footnotes";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import PeopleVersions from "~/components/labor/PeopleVersions.client";
 import Footer from "~/components/Footer";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return chapterMeta("labour");
 };
 

@@ -29,10 +29,7 @@ export const leftControls = ({
   );
 };
 
-export const rightControls = ({
-  nextDisabled,
-  nextSlide,
-}: ControlProps) => {
+export const rightControls = ({ nextDisabled, nextSlide }: ControlProps) => {
   return (
     <div className="mr-16 md:mr-32 lg:mr-64 text-2xl md:text-6xl">
       <button
@@ -45,15 +42,12 @@ export const rightControls = ({
         b
       </button>
     </div>
-  )
-}
+  );
+};
 
 export const noControl = () => {
-  return (
-    <></>
-  )
-}
-
+  return <></>;
+};
 
 const SlideShow = ({ figures, className, children }: Props) => {
   const { isMobile, isDesktop } = useDeviceContext();
@@ -72,27 +66,32 @@ const SlideShow = ({ figures, className, children }: Props) => {
           return (
             <figure key={figure.fileName} className="text-center">
               <picture>
-                <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
-                <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
+                <source
+                  srcSet={`/_static/images/${figure.chapter}/${figure.fileName}.webp`}
+                />
+                <source
+                  srcSet={`/_static/images/${figure.chapter}/${figure.fileName}.jpg`}
+                />
                 <img
                   className="max-h-96 md:max-h-max mx-auto max-w-xs md:max-w-none"
-                  src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+                  src={`/_static/images/${figure.chapter}/${figure.fileName}.jpg`}
                   alt={figure.altText ?? ""}
                   title={figure.title ?? ""}
                 />
               </picture>
-              <figcaption className="font-dubois mt-3 w-1/2 mx-auto"
+              <figcaption
+                className="font-dubois mt-3 w-1/2 mx-auto"
                 dangerouslySetInnerHTML={{
                   __html: figure.caption ?? "",
                 }}
               />
             </figure>
-          )
+          );
         })}
         {children}
       </Carousel>
     </div>
-  )
-}
+  );
+};
 
 export default SlideShow;

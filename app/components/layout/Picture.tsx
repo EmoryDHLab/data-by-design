@@ -12,14 +12,22 @@ function Picture({ figure, className }: Props) {
 
   return (
     <picture>
-      <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
-      <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
+      <source
+        srcSet={`/_static/images/${figure.chapter}/${figure.fileName}.webp`}
+      />
+      <source
+        srcSet={`/_static/images/${figure.chapter}/${figure.fileName}.jpg`}
+      />
       <img
         className={`mx-auto drop-shadow-lg transition-opacity opacity-${
           hide ? "0" : "100"
         } ${className ?? ""}`}
-        src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
-        alt={figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ?? figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? ""}
+        src={`/_static/images/${figure.chapter}/${figure.fileName}.jpg`}
+        alt={
+          figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
+          figure.title?.replace(/(<i>|<\/i>)/gi, '"') ??
+          ""
+        }
         title={figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? figure.fileName}
         draggable={!hide}
       />

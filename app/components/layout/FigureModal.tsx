@@ -92,16 +92,16 @@ export default function FigureModal({
                       )}
                       <picture className="mt-2">
                         <source
-                          srcSet={`/images/${figure?.chapter}/${figure?.fileName}.webp`}
+                          srcSet={`/_static/images/${figure?.chapter}/${figure?.fileName}.webp`}
                         />
                         <source
-                          srcSet={`/images/${figure?.chapter}/${figure?.fileName}.jpg`}
+                          srcSet={`/_static/images/${figure?.chapter}/${figure?.fileName}.jpg`}
                         />
                         <img
                           className="mx-auto max-h-[80vh]"
                           src={
                             figure
-                              ? `/images/${figure.chapter}/${figure.fileName}.jpg`
+                              ? `/_static/images/${figure.chapter}/${figure.fileName}.jpg`
                               : src
                           }
                           alt={figure?.altText ?? ""}

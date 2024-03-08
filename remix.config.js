@@ -1,11 +1,14 @@
 /** @type {import('@remix-run/dev').AppConfig} */
-module.exports = {
+export default {
   tailwind: true,
   postcss: true,
-  serverBuildTarget: "vercel",
-  server: process.env.NODE_ENV === "development" ? undefined : "./server.js",
-  serverModuleFormat: 'cjs',
+  server: "server.ts",
+  serverModuleFormat: "esm",
+  publicPath: "/_static/build/",
+  serverBuildPath: "server/index.mjs",
+  // assetsBuildDirectory: "public/build",
   serverDependenciesToBundle: [
+    /^remix-utils.*/,
     "react-dnd",
     "react-dnd-html5-backend",
     "dnd-core",
@@ -45,17 +48,9 @@ module.exports = {
     "d3-transition",
     "d3-zoom",
     "delaunator",
-    "robust-predicates"
+    "robust-predicates",
   ],
   ignoredRouteFiles: ["**/.*"],
-  future: {
-    v2_errorBoundary: true,
-    v2_normalizeFormMethod: true,
-    v2_meta: true,
-    v2_headers: true,
-    v2_routeConvention: true,
-    v2_dev: true
-  },
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: ".netlify/functions-internal/server.js",

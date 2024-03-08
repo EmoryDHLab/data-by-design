@@ -50,7 +50,7 @@ export default function ProjectTimeline({
   useEffect(() => {
     const getData = async () => {
       let fetchedCsvData: TLaborData = await d3.csv(
-        "/data/playfairSemester.csv"
+        "/_static/data/playfairSemester.csv"
       );
       fetchedCsvData = fetchedCsvData.sort(function (a, b) {
         return new Date(a.date).getTime() - new Date(b.date).getTime();

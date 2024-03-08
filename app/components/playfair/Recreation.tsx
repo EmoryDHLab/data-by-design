@@ -300,7 +300,7 @@ export default function Recreation({
         <g opacity={scrollProgress > 9 ? transitionIn([9, 9.25]) : 0}>
           <image
             transform="scale(1.17, 1.07)"
-            href="/images/playfair/1-northamerica.jpg"
+            href="/_static/images/playfair/1-northamerica.jpg"
             width={105}
             height={55}
             x={-7.5}

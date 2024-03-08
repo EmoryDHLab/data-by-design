@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useResizeObserver } from "~/hooks";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import Slider from "./Slider";
 import ResistanceVoyages from "./ResistanceVoyages.client";
 import Voyages from "./Voyages.client";
@@ -30,19 +30,9 @@ function VoyagesCompare() {
         </div>
         <div>
           <ClientOnly>
-            {() => (
-              <ResistanceVoyages
-                yearRange={yearRange}
-              />
-            )}
+            {() => <ResistanceVoyages yearRange={yearRange} />}
           </ClientOnly>
-          <ClientOnly>
-            {() => (
-              <Voyages
-                yearRange={yearRange}
-              />
-            )}
-          </ClientOnly>
+          <ClientOnly>{() => <Voyages yearRange={yearRange} />}</ClientOnly>
         </div>
       </div>
     </section>

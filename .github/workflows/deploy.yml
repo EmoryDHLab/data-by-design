@@ -1,0 +1,122 @@
+name: 🚀 Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  id-token: write
+  actions: write
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  lint:
+    name: ⬣ ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          cache-dependency-path: ./package.json
+          node-version: 18
+
+      - name: 📥 Install deps
+        run: npm install
+
+      - name: 🔬 Lint
+        run: npm run lint
+
+  typecheck:
+    name: ʦ TypeScript
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          cache-dependency-path: ./package.json
+          node-version: 18
+
+      - name: 📥 Install deps
+        run: npm install
+
+      - name: 🔎 Type check
+        run: npm run typecheck --if-present
+
+  deploy:
+    needs: [lint, typecheck]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          cache-dependency-path: ./package.json
+          node-version: 18
+
+      - name: 👀 Env
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Git ref:    ${{ github.ref }}"
+          echo "GH actor:   ${{ github.actor }}"
+          echo "SHA:        ${{ github.sha }}"
+          VER=`node --version`; echo "Node ver:   $VER"
+          VER=`npm --version`; echo "npm ver:    $VER"
+
+      - name: 📥 Install deps
+        run: |
+          npm install
+
+      - name: 🏗 Build
+        run: npm run build
+
+      - name: Configure AWS credentials from AWS account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: GitHub-OIDC-frontend
+
+      - name: 🚀 Dev Deploy
+        if: github.ref == 'refs/heads/dev'
+        run: |
+          chmod +x ./.github/deploy.sh
+          ./.github/deploy.sh
+        env:
+          AWS_ACCOUNT: ${{ secrets.AWS_ACCOUNT }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ROLE: ${{ secrets.AWS_ROLE }}
+          DEPLOY_PACKAGE: ${{ secrets.DEPLOY_PACKAGE }}
+          DEPLOY_BUCKET: ${{ secrets.DEV_DEPLOY_BUCKET }}
+          STATIC_BUCKET: ${{ secrets.DEV_STATIC_BUCKET }}
+          LAMBDA_FUNCTION: ${{ secrets.DEV_LAMBDA_FUNCTION }}
+
+      - name: 🚀 Production Deploy
+        if: github.ref == 'refs/heads/main'
+        run: ./.github/deploy.sh
+        env:
+          CI: true
+          DEPLOY_PACKAGE: ${{ secrets.DEPLOY_PACKAGE }}
+          DEV_DEPLOY_BUCKET: ${{ secrets.DEV_DEPLOY_BUCKET }}

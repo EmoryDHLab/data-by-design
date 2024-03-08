@@ -22,42 +22,42 @@
 .cardPlayfair:focus {
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/playfair/1-northamerica.jpg") center;
+        url("/_static/images/playfair/1-northamerica.jpg") center;
 }
 
 .cardBrooks:hover,
 .cardBrooks:focus {
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/brooks/1-sof_slaveship.jpg") center;
+        url("/_static/images/brooks/1-sof_slaveship.jpg") center;
 }
 
 .cardPeabody:hover,
 .cardPeabody:focus {
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/peabody/1500s.jpg") center;
+        url("/_static/images/peabody/1500s.jpg") center;
 }
 
 .cardShanawdithit:hover,
 .cardShanawdithit:focus {
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/peabody/ch4-13-willard.jpg") center;
+        url("/_static/images/peabody/ch4-13-willard.jpg") center;
 }
 
 .cardDubois:hover,
 .cardDubois:focus {
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/dubois/ch5-01-phila.jpg") center;
+        url("/_static/images/dubois/ch5-01-phila.jpg") center;
 }
 
 .cardLabour:hover,
 .cardLabour:focus {
     background-size: cover;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/peabody/railroadscaled.jpg") center;
+        url("/_static/images/peabody/railroadscaled.jpg") center;
 }
 
 .grid-wrapper {

@@ -8,18 +8,16 @@ interface Props {
   children?: ReactNode;
 }
 
-export const Caption = ({ children }: {children: ReactNode}) => {
+export const Caption = ({ children }: { children: ReactNode }) => {
   return (
-    <figcaption
-      className="font-dubois text-center my-3 w-3/4 mx-auto"
-    >
+    <figcaption className="font-dubois text-center my-3 w-3/4 mx-auto">
       {children}
     </figcaption>
-  )
-}
+  );
+};
 
 const Image = ({ figure, className, children }: Props) => {
-  return(
+  return (
     <svg
       viewBox="0 0 244.56 242.88"
       role="img"
@@ -28,24 +26,26 @@ const Image = ({ figure, className, children }: Props) => {
     >
       <image
         role="presentation"
-        href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+        href={`/_static/images/${figure.chapter}/${figure.fileName}.jpg`}
         width="100%"
       />
       {children}
     </svg>
   );
-}
+};
 
-
-export default function HoverZoomPeabodySquareMobile({ figures }: { figures: Array<TFigure>}) {
+export default function HoverZoomPeabodySquareMobile({
+  figures,
+}: {
+  figures: Array<TFigure>;
+}) {
   return (
-    <SlideShow
-      className="block md:hidden bg-peabodyPrimary w-full py-10"
-    >
+    <SlideShow className="block md:hidden bg-peabodyPrimary w-full py-10">
       <figure className="">
         <Image figure={figures[0]} />
         <Caption>
-          For example, by cross-referencing the table of events of the seventeenth century, pictured just below, to its corresponding chart
+          For example, by cross-referencing the table of events of the
+          seventeenth century, pictured just below, to its corresponding chart
         </Caption>
       </figure>
       <figure className="">
@@ -72,7 +72,9 @@ export default function HoverZoomPeabodySquareMobile({ figures }: { figures: Arr
           </g>
         </Image>
         <Caption>
-          the founding of Jamestown in 1607; that is the large red square in the first row on the right—red to signal England’s involvement, and its full-square shading to indicate its heightened significance.
+          the founding of Jamestown in 1607; that is the large red square in the
+          first row on the right—red to signal England’s involvement, and its
+          full-square shading to indicate its heightened significance.
         </Caption>
       </figure>
       <figure className="">
@@ -99,7 +101,11 @@ export default function HoverZoomPeabodySquareMobile({ figures }: { figures: Arr
           </g>
         </Image>
         <Caption>
-          One can also identify, in the last square on the right, one row from the top, the settlement of Plymouth in 1620. The square is nearly entirely red—again, because of England’s involvement and because of its heightened significance—save for a small teal square in the middle-right position.
+          One can also identify, in the last square on the right, one row from
+          the top, the settlement of Plymouth in 1620. The square is nearly
+          entirely red—again, because of England’s involvement and because of
+          its heightened significance—save for a small teal square in the
+          middle-right position.
         </Caption>
       </figure>
       <figure className="">
@@ -126,7 +132,8 @@ export default function HoverZoomPeabodySquareMobile({ figures }: { figures: Arr
           </g>
         </Image>
         <Caption>
-          Teal corresponds to action by the Dutch; indeed, this registers the first enslaved Africans arriving in Virginia in that same year.
+          Teal corresponds to action by the Dutch; indeed, this registers the
+          first enslaved Africans arriving in Virginia in that same year.
         </Caption>
       </figure>
       <figure className="">
@@ -152,9 +159,7 @@ export default function HoverZoomPeabodySquareMobile({ figures }: { figures: Arr
             />
           </g>
         </Image>
-        <Caption>
-          {figures[1].caption}
-        </Caption>
+        <Caption>{figures[1].caption}</Caption>
       </figure>
     </SlideShow>
   );

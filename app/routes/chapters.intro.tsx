@@ -317,7 +317,7 @@ export default function IntroPage() {
           </div>
         </Column>
         <Column className="md:ml-12">
-          <Figure src="/images/playfair/jevons.png" alt="">
+          <Figure src="/_static/images/playfair/jevons.png" alt="">
             Jevons's illustration of the benefits of the "graphical method," in
             which{" "}
             <span>

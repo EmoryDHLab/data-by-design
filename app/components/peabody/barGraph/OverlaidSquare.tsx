@@ -10,7 +10,13 @@ export default function OverlaidSquare() {
 
   return (
     <svg viewBox="0 0 99 99">
-      <image href={`/images/peabody/${currentCentury}s.jpg`} x="-3.5" y="-3.5" width="105.5" height="106" />
+      <image
+        href={`/_static/images/peabody/${currentCentury}s.jpg`}
+        x="-3.5"
+        y="-3.5"
+        width="105.5"
+        height="106"
+      />
       {[...numberRange(0, 99)].map((index) => (
         <OverlaidYearSquare
           key={`bg-ol-year-${currentCentury + index + 1}`}

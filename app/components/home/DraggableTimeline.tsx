@@ -156,7 +156,7 @@ export default function DraggableTimeline({
             <image
               className={isSelected ? "outline outline-4 outline-red-500" : ""}
               style={{ cursor: "pointer" }}
-              href={`/images/${img.chapter}/${img.fileName}.jpg`}
+              href={`/_static/images/${img.chapter}/${img.fileName}.jpg`}
               width={150}
               transform={getTransform(index)}
               onMouseDown={() => {

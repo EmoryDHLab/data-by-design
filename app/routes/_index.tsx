@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ChapterCardGrid from "~/components/ChapterCardGrid";
 import Timeline from "~/components/home/Timeline.client";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import { TimelineType, timelineImages } from "~/components/home/timelineUtils";
@@ -56,8 +56,8 @@ export default function Index() {
                   className="w-14 m-2"
                   src={
                     timelineType === TimelineType.Draggable
-                      ? "/images/ui/shuffle_click.png"
-                      : "/images/ui/shuffle_unclick.png"
+                      ? "/_static/images/ui/shuffle_click.png"
+                      : "/_static/images/ui/shuffle_unclick.png"
                   }
                   alt="Shuffle"
                 />
@@ -70,8 +70,8 @@ export default function Index() {
                   className="w-14 m-2"
                   src={
                     timelineType === TimelineType.Ordered
-                      ? "/images/ui/sort_selected.png"
-                      : "/images/ui/sort_unselected.png"
+                      ? "/_static/images/ui/sort_selected.png"
+                      : "/_static/images/ui/sort_unselected.png"
                   }
                   alt="Sort"
                 />

@@ -5,7 +5,7 @@
 //       <div className="flex flex-col items-center col-start-11 col-span-4 bg-nightingale_blue sm:p-16 pb-5 pt-10">
 //         <div className="flex flex-col items-center">
 //           <ImageModal
-//             src="/images/ch5-08b-amalg.jpg"
+//             src="/_static/images/ch5-08b-amalg.jpg"
 //             className="w-3/5 sm:w-full"
 //           />
 //         </div>
