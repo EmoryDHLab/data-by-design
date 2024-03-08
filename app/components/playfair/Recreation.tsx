@@ -227,6 +227,7 @@ export default function Recreation({
             <VerticalGrid
               key={xValue}
               xValue={xMinorScale(xValue)}
+              xOffset={(width / 11) * 7 + 5.5}
               offset={(width / 11) * 7 + 5.5}
               text={" "}
               opacity={

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
-import ProjectTimeline from "../ProjectTimeline";
+import ProjectTimeline from "./ProjectTimeline";
 import laborSources from "~/data/playfair/laborSources.json";
 import type { TLaborSource } from "~/types/laborSourceTypes";
 import FancyButton from "~/components/FancyButton";
@@ -78,8 +78,7 @@ const ProjectTimelineScrollytell = () => {
 
   useEffect(() => {
     switch (true) {
-      case scrollProgress >= minScrollProgress - 0.25 &&
-        scrollProgress < minScrollProgress + 1:
+      case scrollProgress >= 0 && scrollProgress < minScrollProgress + 1:
         setSelectedSources([
           laborSources.find((source) => source.label === "Zotero"),
           laborSources.find((source) => source.label === "GitHub"),

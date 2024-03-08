@@ -1,10 +1,10 @@
 // @ts-nocheck
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import VerticalGrid from "./elements/VerticalGrid";
-import HorizontalGrid from "./elements/HorizontalGrid";
+import VerticalGrid from "../elements/VerticalGrid";
+import HorizontalGrid from "../elements/HorizontalGrid";
 import type { TLaborSource, TLaborData } from "~/types/laborSourceTypes";
-import ProjectTimelineContainer from "./elements/ProjectTimelineContainer";
+import ProjectTimelineContainer from "./ProjectTimelineContainer";
 
 const height = 44;
 const width = 98;

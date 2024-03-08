@@ -4,7 +4,7 @@ import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
-import ProjectTimelineInteractive from "~/components/playfair/ProjectTimelineInteractive";
+import ProjectTimelineInteractive from "~/components/playfair/projectTimeline/ProjectTimelineInteractive";
 import StackedChart from "~/components/playfair/StackedChart";
 import CombChart from "~/components/playfair/CombChart";
 import FigureObj from "~/components/layout/FigureObj";

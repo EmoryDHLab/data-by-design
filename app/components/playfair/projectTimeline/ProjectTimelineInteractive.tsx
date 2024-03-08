@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import FancyButton from "../FancyButton";
+import FancyButton from "../../FancyButton";
 import ProjectTimeline from "./ProjectTimeline";
 import laborSources from "~/data/playfair/laborSources.json";
 import type { TLaborSource } from "~/types/laborSourceTypes";
