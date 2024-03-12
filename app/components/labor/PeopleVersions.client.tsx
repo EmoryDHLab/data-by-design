@@ -1,23 +1,27 @@
 import { useEffect, useRef, useState } from "react";
 import {
   peopleData,
+  versionData,
+  groupingData,
+} from "./peopleVersions/data/data";
+import {
   visWidth,
   visHeight,
-  versionData,
   versionHeight,
   versionWidth,
-} from "./peopleVersions/data";
+} from "./peopleVersions/data/functions";
 import PersonBox from "./peopleVersions/PersonBox";
-import FilterOptions from "./peopleVersions/FilterOptions";
-import FilterGroups from "./peopleVersions/FilterGroups";
+import GroupingSelect from "./peopleVersions/GroupingSelect";
 import { useResizeObserver } from "~/hooks";
 import type {
   TPerson,
-  TFilterOption,
-  TSelectedFilter,
-} from "./peopleVersions/data";
+  Groupings,
+  TGroupingData,
+  TGroupingNode,
+} from "./peopleVersions/data/types";
 import Version from "./peopleVersions/Version";
-import Connections from "./peopleVersions/Connections";
+import GroupingBox from "./peopleVersions/GroupingBox";
+import Connection from "./peopleVersions/Connection";
 
 const PeopleVersions = () => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -25,15 +29,13 @@ const PeopleVersions = () => {
     Object.keys(versionData)
   );
   const [people, setPeople] = useState<TPerson[]>(peopleData);
-  const [activePerson, setActivePerson] = useState<TPerson | undefined>(
+  const [activeNode, setActiveNode] = useState<
+    TPerson | TGroupingNode | undefined
+  >(undefined);
+  const [activeGrouping, setActiveGrouping] = useState<Groupings | undefined>(
     undefined
   );
-  const [activeFilterGroup, setActiveFilterGroup] = useState<
-    TFilterOption | undefined
-  >(undefined);
-  const [activeFilterOption, setActiveFilterOption] = useState<
-    TSelectedFilter | undefined
-  >(undefined);
+  const [dragging, setDragging] = useState<boolean>(false);
 
   const { windowSize } = useResizeObserver();
   const visWidthRef = useRef<number>(visWidth(windowSize.width));
@@ -47,75 +49,31 @@ const PeopleVersions = () => {
   }, [windowSize]);
 
   useEffect(() => {
-    if (activeFilterOption) {
-      setActiveVersions([]);
-    } else if (!activeFilterGroup) {
-      setActiveVersions(Object.keys(versionData));
-    }
-  }, [activeFilterOption, activeFilterGroup]);
-
-  useEffect(() => {
-    if (!activeFilterOption) return;
-    if (
-      activeFilterOption &&
-      activeFilterGroup?.options.includes(activeFilterOption)
-    ) {
-      setPeople(
-        peopleData.map((person) => {
-          if (
-            person[activeFilterGroup.key].includes(activeFilterOption?.label)
-          ) {
-            person.opacity = 1;
-          } else {
-            person.opacity = 0.25;
-          }
-          return person;
-        })
-      );
-    } else {
-      setPeople(
-        peopleData.map((person) => {
-          person.opacity = 1;
-          return person;
-        })
-      );
-    }
-  }, [activeFilterOption, activeFilterGroup]);
-
-  useEffect(() => {
-    if (!activeFilterOption) {
-      setPeople(
-        peopleData.map((person) => {
-          if (
-            person.versions.some((personVersion) =>
-              activeVersions.includes(personVersion.label)
-            )
-          ) {
-            person.opacity = 1;
-          } else {
-            person.opacity = 0.25;
-          }
-          return person;
-        })
-      );
-    }
-  }, [activeVersions, activeFilterOption]);
-
-  useEffect(() => {
     if (activeVersions.length > 0) {
-      setActiveFilterOption(undefined);
-      setActiveFilterGroup(undefined);
+      setActiveGrouping(undefined);
     }
   }, [activeVersions]);
 
+  useEffect(() => {
+    for (const person of peopleData) {
+      if (activeGrouping) {
+        setActiveVersions([]);
+        person.x = person.groupingsXY[activeGrouping].x;
+        person.y = person.groupingsXY[activeGrouping].y;
+      } else {
+        person.x = person.defaultX;
+        person.y = person.defaultY;
+      }
+    }
+    setPeople([...peopleData]);
+  }, [activeGrouping]);
+
   const updatedPerson = (index: number, x: number, y: number) => {
     if (x < visWidthRef.current && x > 0) {
-      people[index].x = x;
-      people[index].xOffset = x / (visWidth(windowSize.width) || 1);
+      people[index].x = x / (visWidth(windowSize.width) || 1);
     }
     if (y > versionHeightRef.current * 2 && y < visHeightRef.current) {
-      people[index].y = y;
-      people[index].yOffset = y / (visHeight(windowSize.height) || 1);
+      people[index].y = y / (visHeight(windowSize.height) || 1);
     }
     setPeople([...people]);
   };
@@ -135,7 +93,7 @@ const PeopleVersions = () => {
   };
 
   return (
-    <div className="bg-black w-screen grid grid-cols-3 grid-rows-6 h-screen text-white">
+    <div className="bg-offblack w-screen grid grid-cols-3 grid-rows-6 h-screen text-white">
       <div className="col-span-2 row-span-5">
         {windowSize && (
           <svg
@@ -152,10 +110,36 @@ const PeopleVersions = () => {
               fill="lightblue"
               stroke="red"
             /> */}
-            <Connections
-              activeFilterGroup={activeFilterGroup}
-              activeOption={activeFilterOption}
-            />
+            {activeGrouping && (
+              <>
+                {people.map((person) => {
+                  return (
+                    <g key={`connection-line-${person.id}`} id="connections">
+                      {person[activeGrouping].map((grouping) => {
+                        return (
+                          <Connection
+                            key={`connection-line-${person.id}-${grouping.id}`}
+                            person={person}
+                            x2={grouping.getX(
+                              grouping.x,
+                              windowSize.width || 0
+                            )}
+                            y2={
+                              grouping.getY(
+                                grouping.y,
+                                windowSize.height || 0
+                              ) +
+                              visHeight(windowSize.height) / 40
+                            }
+                            dragging={dragging}
+                          />
+                        );
+                      })}
+                    </g>
+                  );
+                })}
+              </>
+            )}
             {activeVersions.length > 0 && (
               <>
                 {people.map((person) => {
@@ -163,28 +147,18 @@ const PeopleVersions = () => {
                     <g key={`links-${person.firstName}`}>
                       {person.versions.map((version) => {
                         return (
-                          <line
+                          <Connection
                             key={`version-link-${person.id}-${version.id}`}
-                            x1={person.getX(
-                              person.xOffset,
-                              windowSize.width || 0
-                            )}
+                            person={person}
                             x2={version.getMidX(
                               Object.keys(versionData).indexOf(version.id),
                               windowSize.width ?? 0
                             )}
-                            y1={person.getY(
-                              person.yOffset,
-                              windowSize.height || 0
-                            )}
                             y2={version.getBottomY(windowSize.height || 0)}
-                            stroke="#D9D9D9"
-                            strokeOpacity={
-                              activeVersions.includes(version.label) ? 1 : 0
+                            dragging={dragging}
+                            opacity={
+                              activeVersions.includes(version.id) ? 100 : 0
                             }
-                            strokeWidth={activePerson === person ? 1.75 : 1.5}
-                            strokeDasharray={visWidth(windowSize.width) * 0.01}
-                            className="transition-all duration-1000"
                           />
                         );
                       })}
@@ -219,12 +193,69 @@ const PeopleVersions = () => {
                     person={person}
                     updatePerson={updatedPerson}
                     index={index}
-                    activePerson={activePerson}
-                    setActivePerson={setActivePerson}
+                    activeNode={activeNode}
+                    setActiveNode={setActiveNode}
                     boxHeight={visHeight(windowSize.height) / 20}
+                    dragging={dragging}
+                    setDragging={setDragging}
+                    opacity={
+                      activeVersions.length > 0 &&
+                      !person.versions.some((personVersion) =>
+                        activeVersions.includes(personVersion.label)
+                      )
+                        ? 0.5
+                        : 1
+                    }
                   />
                 );
               })}
+            </g>
+            <g id="groupings">
+              {Object.keys(groupingData).map((grouping) => {
+                return (
+                  <g key={`${grouping}-group`} id={`${grouping}-group`}>
+                    {Object.keys(
+                      groupingData[grouping as keyof TGroupingData]
+                    ).map((group, index) => {
+                      return (
+                        <g
+                          key={`${grouping}-group-${group}`}
+                          id={`${grouping}-group-${group}`}
+                        >
+                          <GroupingBox
+                            key={`grouping-box-${grouping}-${group}`}
+                            index={index}
+                            boxHeight={visHeight(windowSize.height) / 20}
+                            grouping={
+                              groupingData[grouping as keyof TGroupingData][
+                                group
+                              ]
+                            }
+                            opacity={activeGrouping == grouping ? 100 : 0}
+                            setActiveNode={setActiveNode}
+                          />
+                        </g>
+                      );
+                    })}
+                  </g>
+                );
+              })}
+              {/* {activeGrouping && (
+                <>
+                  {Object.keys(groupingData[activeGrouping]).map(
+                    (grouping, index) => {
+                      return (
+                        <GroupingBox
+                          key={groupingData[activeGrouping][grouping].id}
+                          index={index}
+                          boxHeight={visHeight(windowSize.height) / 20}
+                          grouping={groupingData.locations[grouping]}
+                        />
+                      );
+                    }
+                  )}
+                </>
+              )} */}
             </g>
           </svg>
         )}
@@ -232,31 +263,20 @@ const PeopleVersions = () => {
       <div className="border-l-2 row-span-5 grid grid-cols-1 grid-rows-2">
         <div className="border-b-2 flex flex-col">
           <div className="text-2xl p-2 border border-b-1 uppercase">
-            Filter by:
+            View by:
           </div>
           <div className="flex">
             <div>
-              <FilterGroups
-                activeFilter={activeFilterGroup}
-                setSelectedFilter={setActiveFilterGroup}
-              />
-            </div>
-            <div>
-              <FilterOptions
-                activeFilterGroup={activeFilterGroup}
-                activeOption={activeFilterOption}
-                setSelectedOption={setActiveFilterOption}
+              <GroupingSelect
+                setSelectedGrouping={setActiveGrouping}
+                activeGrouping={activeGrouping}
               />
             </div>
           </div>
         </div>
         <div>
-          {activePerson && (
-            <p className="p-2">
-              {activePerson.firstName} {activePerson.lastName}
-            </p>
-          )}
-          {!activePerson && (
+          {activeNode && <p className="p-2">{activeNode.label}</p>}
+          {!activeNode && (
             <div className="p-2">
               <p>Maybe some instructions?</p>
               <p>For example, click a name and see it here.</p>
