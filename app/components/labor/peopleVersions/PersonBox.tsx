@@ -68,7 +68,12 @@ const PersonBox = ({
   });
 
   return (
-    <g className="person cursor-grab" id={`person-${person.firstName}`}>
+    <g
+      className="person cursor-grab"
+      id={`person-${person.firstName}`}
+      onMouseEnter={() => setActiveNode(person)}
+      onMouseLeave={() => setActiveNode(undefined)}
+    >
       <rect
         ref={boxRef}
         id={`person-box-${person.firstName}`}
@@ -84,8 +89,6 @@ const PersonBox = ({
         className={`${
           dragging ? "transition-none" : "transition-all duration-1000"
         }`}
-        onMouseEnter={() => setActiveNode(person)}
-        onMouseLeave={() => setActiveNode(undefined)}
       />
       <text
         x={0}

@@ -185,31 +185,6 @@ const PeopleVersions = () => {
                 );
               })}
             </g>
-            <g id="people">
-              {people.map((person, index) => {
-                return (
-                  <PersonBox
-                    key={`box-${person.firstName}`}
-                    person={person}
-                    updatePerson={updatedPerson}
-                    index={index}
-                    activeNode={activeNode}
-                    setActiveNode={setActiveNode}
-                    boxHeight={visHeight(windowSize.height) / 20}
-                    dragging={dragging}
-                    setDragging={setDragging}
-                    opacity={
-                      activeVersions.length > 0 &&
-                      !person.versions.some((personVersion) =>
-                        activeVersions.includes(personVersion.label)
-                      )
-                        ? 0.5
-                        : 1
-                    }
-                  />
-                );
-              })}
-            </g>
             <g id="groupings">
               {Object.keys(groupingData).map((grouping) => {
                 return (
@@ -240,22 +215,31 @@ const PeopleVersions = () => {
                   </g>
                 );
               })}
-              {/* {activeGrouping && (
-                <>
-                  {Object.keys(groupingData[activeGrouping]).map(
-                    (grouping, index) => {
-                      return (
-                        <GroupingBox
-                          key={groupingData[activeGrouping][grouping].id}
-                          index={index}
-                          boxHeight={visHeight(windowSize.height) / 20}
-                          grouping={groupingData.locations[grouping]}
-                        />
-                      );
+            </g>
+            <g id="people">
+              {people.map((person, index) => {
+                return (
+                  <PersonBox
+                    key={`box-${person.firstName}`}
+                    person={person}
+                    updatePerson={updatedPerson}
+                    index={index}
+                    activeNode={activeNode}
+                    setActiveNode={setActiveNode}
+                    boxHeight={visHeight(windowSize.height) / 20}
+                    dragging={dragging}
+                    setDragging={setDragging}
+                    opacity={
+                      activeVersions.length > 0 &&
+                      !person.versions.some((personVersion) =>
+                        activeVersions.includes(personVersion.label)
+                      )
+                        ? 0.5
+                        : 1
                     }
-                  )}
-                </>
-              )} */}
+                  />
+                );
+              })}
             </g>
           </svg>
         )}
