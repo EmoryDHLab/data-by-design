@@ -29,6 +29,12 @@ const GroupingBox = ({
     <g
       className={`grouping opacity-${opacity} transition-opacity duration-700`}
       id={`grouping-${grouping.id}`}
+      onMouseEnter={() => {
+        if (opacity === 100) {
+          setActiveNode(grouping);
+        }
+      }}
+      onMouseLeave={() => setActiveNode(undefined)}
     >
       <rect
         ref={boxRef}
@@ -41,12 +47,6 @@ const GroupingBox = ({
         x={grouping.getX(grouping.x, windowSize.width || 0) - boxWidth / 2}
         y={grouping.getY(grouping.y, windowSize.height || 0)}
         rx={22}
-        onMouseEnter={() => {
-          if (opacity === 100) {
-            setActiveNode(grouping);
-          }
-        }}
-        onMouseLeave={() => setActiveNode(undefined)}
       />
       <text
         x={grouping.getX(grouping.x, windowSize.width || 0)}
