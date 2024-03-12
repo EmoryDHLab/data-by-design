@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import { useEffect, useRef } from "react";
 import { useResizeObserver } from "~/hooks";
 
-import type { TPerson } from "./data";
+import type { TGroupingNode, TPerson } from "./data/types";
 import type { Dispatch, SetStateAction } from "react";
 
 // const boxHeight: number = 10;
@@ -11,9 +11,12 @@ interface Props {
   person: TPerson;
   updatePerson: (index: number, x: number, y: number) => void;
   index: number;
-  setActivePerson: Dispatch<SetStateAction<TPerson | undefined>>;
+  activeNode: TPerson | TGroupingNode | undefined;
+  setActiveNode: Dispatch<SetStateAction<TPerson | TGroupingNode | undefined>>;
   boxHeight: number;
-  activePerson: TPerson | undefined;
+  dragging: boolean;
+  setDragging: Dispatch<SetStateAction<boolean>>;
+  opacity: 0.5 | 1;
 }
 
 interface Position {
@@ -25,27 +28,24 @@ const PersonBox = ({
   person,
   updatePerson,
   index,
-  activePerson,
-  setActivePerson,
+  setActiveNode,
   boxHeight,
+  dragging,
+  setDragging,
+  opacity,
 }: Props) => {
   const boxRef = useRef<SVGRectElement>(null);
   const offsetX = useRef<number>(0);
   const offsetY = useRef<number>(0);
   const { windowSize } = useResizeObserver();
   const boxWidth: number =
-    (person.firstName.length + person.lastName.length) * (boxHeight / 3);
+    (person.firstName.length + person.lastName.length) * (boxHeight / 4);
 
   useEffect(() => {
     const dragStart = ({ x, y }: Position) => {
-      if (person.opacity < 1) return;
-      if (person == activePerson) {
-        setActivePerson(undefined);
-      } else {
-        setActivePerson(person);
-      }
-      offsetX.current = person.getX(person.xOffset, windowSize.width || 0) - x;
-      offsetY.current = person.getY(person.yOffset, windowSize.height || 0) - y;
+      setDragging(true);
+      offsetX.current = person.getX(person.x, windowSize.width || 0) - x;
+      offsetY.current = person.getY(person.y, windowSize.height || 0) - y;
       d3.selectAll(".person")
         .filter(`#box-${person.firstName}`)
         .attr("class", "person cursor-grabbing")
@@ -53,12 +53,11 @@ const PersonBox = ({
     };
 
     const drag = ({ x, y }: Position) => {
-      if (person.opacity < 1) return;
       updatePerson(index, x + offsetX.current, y + offsetY.current);
     };
 
     const dragEnd = () => {
-      if (person.opacity < 1) return;
+      setDragging(false);
       d3.select(`#box-${person.firstName}`).attr("class", "person cursor-grab");
     };
 
@@ -69,47 +68,46 @@ const PersonBox = ({
   });
 
   return (
-    <g
-      className={`person cursor-${
-        person.opacity === 1 ? "grab" : "not-allowed"
-      } opacity-${person.opacity * 100} transition-opacity duration-700`}
-      id={`box-${person.firstName}`}
-    >
+    <g className="person cursor-grab" id={`person-${person.firstName}`}>
       <rect
         ref={boxRef}
-        id={`box-${person.firstName}`}
+        id={`person-box-${person.firstName}`}
         stroke="lightgray"
         strokeWidth={0.5}
+        strokeOpacity={opacity}
         width={boxWidth}
         height={boxHeight}
-        fill="#FAF1E9"
-        x={person.getX(person.xOffset, windowSize.width || 0) - boxWidth / 2}
-        y={person.getY(person.yOffset, windowSize.height || 0)}
-        rx={2}
-        // onMouseEnter={() => {
-        //   if (person.opacity === 1) setActivePerson(person);
-        // }}
-        // onMouseLeave={() => {
-        //   if (person.opacity === 1) setActivePerson(undefined);
-        // }}
+        fill="#1C1817"
+        x={person.getX(person.x, windowSize.width || 0) - boxWidth / 2}
+        y={person.getY(person.y, windowSize.height || 0)}
+        rx={22}
+        className={`${
+          dragging ? "transition-none" : "transition-all duration-1000"
+        }`}
+        onMouseEnter={() => setActiveNode(person)}
+        onMouseLeave={() => setActiveNode(undefined)}
       />
       <text
-        x={
-          person.getX(person.xOffset, windowSize.width || 0) -
-          boxWidth / 2 +
-          boxHeight / 4
-        }
-        y={person.getY(person.yOffset, windowSize.height || 0) + boxHeight / 2}
+        x={0}
+        y={0}
+        style={{
+          transform: `translate(${person.getX(
+            person.x,
+            windowSize.width || 0
+          )}px, ${
+            person.getY(person.y, windowSize.height || 0) + boxHeight / 2
+          }px)`,
+        }}
+        textAnchor="middle"
         dominantBaseline="middle"
-        fill="#1C1817"
-        className="pointer-events-none select-none"
+        fill="#FAF1E9"
+        fillOpacity={opacity}
+        className={`pointer-events-none select-none ${
+          dragging ? "transition-none" : "transition-all duration-1000"
+        }`}
+        fontSize={boxHeight / 3}
       >
-        <tspan fontFamily="DxD Icons" fontSize={boxHeight / 2}>
-          a
-        </tspan>
-        <tspan dx={1.5} dy={0.25} fontSize={boxHeight / 2.5}>
-          {person.firstName} {person.lastName}
-        </tspan>
+        {person.label}
       </text>
     </g>
   );

@@ -47,7 +47,7 @@ const Version = ({
       <rect
         y={y}
         x={x}
-        rx={8}
+        rx={50}
         width={width}
         height={height}
         fill="gray"
