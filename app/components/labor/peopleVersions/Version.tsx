@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { ReactNode } from "react";
+import { useDeviceContext } from "~/hooks";
 
 interface Props {
   versionName: string;
@@ -22,7 +23,8 @@ const Version = ({
   children,
 }: Props) => {
   const [focused, setFocused] = useState<boolean>(false);
-  const fontSize = height - 5;
+  const { isMobile } = useDeviceContext();
+  const fontSize = Math.min(width - height / 4, height - 5);
 
   const handleFocus = () => {
     setFocused(true);
@@ -47,7 +49,7 @@ const Version = ({
       <rect
         y={y}
         x={x}
-        rx={50}
+        rx={isMobile ? 5 : 50}
         width={width}
         height={height}
         fill="gray"

@@ -68,7 +68,7 @@ const PeopleVersions = () => {
     if (x < visWidthRef.current && x > 0) {
       people[index].x = x / (visWidth(windowSize.width) || 1);
     }
-    if (y > versionHeightRef.current * 2 && y < visHeightRef.current) {
+    if (y > versionHeightRef.current * 1.5 && y < visHeightRef.current) {
       people[index].y = y / (visHeight(windowSize.height) || 1);
     }
     setPeople([...people]);
@@ -89,8 +89,8 @@ const PeopleVersions = () => {
   };
 
   return (
-    <div className="bg-offblack w-screen grid grid-cols-3 grid-rows-6 h-screen text-white">
-      <div className="col-span-2 row-span-5">
+    <div className="bg-offblack w-screen grid grid-cols-1 md:grid-cols-3 md:grid-rows-6 md:h-screen text-white">
+      <div className="col-span-1 md:col-span-2 md:row-span-5">
         {windowSize && (
           <svg
             ref={svgRef}
@@ -236,12 +236,12 @@ const PeopleVersions = () => {
           </svg>
         )}
       </div>
-      <div className="border-l-2 row-span-5 grid grid-cols-1 grid-rows-2">
+      <div className="border-l-2 md:row-span-5 grid grid-cols-1 grid-rows-2">
         <div className="border-b-2 flex flex-col">
-          <div className="text-2xl p-2 border border-b-1 uppercase">
+          <div className="text-xl md:text-2xl p-2 border border-b-1 uppercase">
             View by:
           </div>
-          <div className="flex">
+          <div className="flex pb-4 md:pb-0">
             <div>
               <GroupingSelect
                 setSelectedGrouping={setActiveGrouping}
@@ -260,7 +260,7 @@ const PeopleVersions = () => {
           )}
         </div>
       </div>
-      <div className="border-t-2 col-span-3 p-4">
+      <div className="hidden md:block border-t-2 md:col-span-3 p-4">
         <h3 className="text-4xl font-duboisWide">People across versions</h3>
         <h4 className="text-2xl mt-2 font-duboisLightWide">Tag line?</h4>
       </div>
