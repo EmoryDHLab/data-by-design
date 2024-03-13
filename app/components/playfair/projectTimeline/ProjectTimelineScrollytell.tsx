@@ -4,7 +4,6 @@ import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import ProjectTimeline from "./ProjectTimeline";
 import laborSources from "~/data/playfair/laborSources.json";
 import type { TLaborSource } from "~/types/laborSourceTypes";
-import FancyButton from "~/components/FancyButton";
 
 const noSource = laborSources.find((source) => source.label === "flat");
 
@@ -176,11 +175,31 @@ const ProjectTimelineScrollytell = () => {
               className=" md:ml-6 p-3 pb-0 md:p-0 pt-10 md:pt-0"
               id="scrollytell"
             />
-            <div className="grid grid-cols-3 md:grid-cols-7 space-x-4 mx-3 md:pt-3 md:pb-1 md:ml-6 md:mr-0 text-center justify-items-center gap-y-4 bg-playfairChart border-x-[1px] border-b-[1px] md:border-x-2 md:border-b-2 border-black">
-              <div className="col-span-3 md:col-span-2 font-duboisWide pt-[5px]">
+            <div className="grid grid-cols-3 md:grid-cols-5 max-lg:grid-cols-7 space-x-8 mx-3 py-4 md:pt-3 md:pb-4 md:ml-6 md:mr-0 gap-y-4 bg-playfairChart border-x-[1px] border-b-[1px] md:border-x-2 md:border-b-2 border-black">
+              <div className="col-span-3 md:col-span-2 font-duboisWide pt-[5px] text-center">
                 Contribution Sources:
               </div>
-              <FancyButton
+              <div className="flex flex-row justify-items-start items-center">
+                <div
+                  className={`h-6 min-h-6 w-6 min-w-6 border-2 border-offblack border-opacity-70 rounded-md transition-colors bg-${selectedSources[0]?.color}`}
+                  style={{ backgroundColor: selectedSources[0]?.color }}
+                >
+                  {" "}
+                </div>
+                <div className="ml-2">{selectedSources[0]?.label}</div>
+              </div>
+              {selectedSources[1]?.label !== "flat" && (
+                <div className="flex flex-row justify-items-start items-center">
+                  <div
+                    className={`h-6 min-h-6 w-6 min-w-6 border-2 border-offblack border-opacity-70 rounded-md transition-colors bg-${selectedSources[1]?.color}`}
+                    style={{ backgroundColor: selectedSources[1]?.color }}
+                  >
+                    {" "}
+                  </div>
+                  <div className="ml-2">{selectedSources[1]?.label}</div>
+                </div>
+              )}
+              {/* <FancyButton
                 fillColor={selectedSources[0]?.color}
                 textColor={selectedSources[0]?.activeText}
                 outlineColor="black"
@@ -189,8 +208,8 @@ const ProjectTimelineScrollytell = () => {
                 } transition-opacity duration-700`}
               >
                 {selectedSources[0]?.label}
-              </FancyButton>
-              <FancyButton
+              </FancyButton> */}
+              {/* <FancyButton
                 fillColor={selectedSources[1]?.color}
                 textColor={selectedSources[1]?.activeText}
                 outlineColor="black"
@@ -199,7 +218,7 @@ const ProjectTimelineScrollytell = () => {
                 } transition-opacity duration-700`}
               >
                 {selectedSources[1]?.label}
-              </FancyButton>
+              </FancyButton> */}
             </div>
           </div>
         </div>
