@@ -4,7 +4,7 @@ import { chapterMeta } from "~/utils";
 import type { V2_MetaFunction } from "@remix-run/node";
 import { laborFootnotes } from "~/footnotes";
 import CenteredLayout from "~/components/layout/CenteredLayout";
-import PeopleVersions from "~/components/labor/PeopleVersions.client";
+import PeopleVersions from "~/components/labor/peopleVersions/PeopleVersions.client";
 import Footer from "~/components/Footer";
 import { ClientOnly } from "remix-utils";
 

@@ -1,7 +1,6 @@
 import * as d3 from "d3";
 import { useEffect, useRef } from "react";
 import { useResizeObserver } from "~/hooks";
-
 import type { TGroupingNode, TPerson } from "./data/types";
 import type { Dispatch, SetStateAction } from "react";
 
@@ -17,6 +16,7 @@ interface Props {
   dragging: boolean;
   setDragging: Dispatch<SetStateAction<boolean>>;
   opacity: 0.5 | 1;
+  center: { x: number; y: number };
 }
 
 interface Position {
@@ -33,8 +33,10 @@ const PersonBox = ({
   dragging,
   setDragging,
   opacity,
+  center,
 }: Props) => {
   const boxRef = useRef<SVGRectElement>(null);
+  const textRef = useRef<SVGTextElement>(null);
   const offsetX = useRef<number>(0);
   const offsetY = useRef<number>(0);
   const { windowSize } = useResizeObserver();
@@ -61,7 +63,24 @@ const PersonBox = ({
       d3.select(`#box-${person.firstName}`).attr("class", "person cursor-grab");
     };
 
+    d3.select(boxRef.current)
+      .transition()
+      .duration(dragging ? 1 : 700)
+      .attr("x", person.getX(person.x, windowSize.width || 0) - boxWidth / 2)
+      .attr("y", person.getY(person.y, windowSize.height || 0));
+
+    d3.select(textRef.current)
+      .transition()
+      .duration(dragging ? 1 : 700)
+      .attr("x", person.getX(person.x, windowSize.width || 0))
+      .attr("y", person.getY(person.y, windowSize.height || 0) + boxHeight / 2);
+
     d3.select(boxRef.current).call(
+      // @ts-ignore
+      d3.drag().on("drag", drag).on("start", dragStart).on("end", dragEnd)
+    );
+
+    d3.select(textRef.current).call(
       // @ts-ignore
       d3.drag().on("drag", drag).on("start", dragStart).on("end", dragEnd)
     );
@@ -83,31 +102,18 @@ const PersonBox = ({
         width={boxWidth}
         height={boxHeight}
         fill="#1C1817"
-        x={person.getX(person.x, windowSize.width || 0) - boxWidth / 2}
-        y={person.getY(person.y, windowSize.height || 0)}
+        x={center.x - boxWidth / 2}
+        y={center.y}
         rx={22}
-        className={`${
-          dragging ? "transition-none" : "transition-all duration-1000"
-        }`}
       />
       <text
-        x={0}
-        y={0}
-        style={{
-          transform: `translate(${person.getX(
-            person.x,
-            windowSize.width || 0
-          )}px, ${
-            person.getY(person.y, windowSize.height || 0) + boxHeight / 2
-          }px)`,
-        }}
+        ref={textRef}
+        x={center.x}
+        y={center.y + boxHeight / 2}
         textAnchor="middle"
         dominantBaseline="middle"
         fill="#FAF1E9"
         fillOpacity={opacity}
-        className={`pointer-events-none select-none ${
-          dragging ? "transition-none" : "transition-all duration-1000"
-        }`}
         fontSize={boxHeight / 3}
       >
         {person.label}
