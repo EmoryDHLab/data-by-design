@@ -743,7 +743,12 @@ export const brooksFootnotes = [
   //8
   <span key="a63ef162"> Cite Finley here too. </span>,
   //9
-  <span key="325f4c91">In an example of mixed methods research avant le letter, Clarkson also published the transcripts of his interviews with these men at roughly the same time as he released his revised version of the Plymouth Committee's "Plan." For more on the interviews, see Riedeker 319-324.</span>,
+  <span key="325f4c91">
+    In an example of mixed methods research avant le letter, Clarkson also
+    published the transcripts of his interviews with these men at roughly the
+    same time as he released his revised version of the Plymouth Committee's
+    "Plan." For more on the interviews, see Riedeker 319-324.
+  </span>,
   //10
   <span key="c5520f54">Wood 28</span>,
   //11
