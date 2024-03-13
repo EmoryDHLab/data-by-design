@@ -6,7 +6,7 @@ interface Props {
 
 export default function FootnotesList({ footnotes }: Props) {
   return (
-    <div>
+    <div className="break-anywhere">
       <h3 className="text-black font-duboisWide tracking-wider text-center text-xl mb-10 pt-5">
         FOOTNOTES
       </h3>

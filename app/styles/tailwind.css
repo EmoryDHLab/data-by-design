@@ -266,3 +266,19 @@ input[type=range]::-webkit-slider-thumb::before {
 :target {
     scroll-margin-top: 100px;
 }
+
+/*
+  The following might be added to Tailwind soon:
+  https://github.com/tailwindlabs/tailwindcss/discussions/12127
+*/
+@supports (overflow-wrap: anywhere) {
+    .break-anywhere {
+        overflow-wrap: anywhere;
+    }
+}
+
+@supports not (overflow-wrap: anywhere) {
+    .break-anywhere {
+        word-break: break-word;
+    }
+}
