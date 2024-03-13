@@ -1,27 +1,23 @@
 import { useEffect, useRef, useState } from "react";
-import {
-  peopleData,
-  versionData,
-  groupingData,
-} from "./peopleVersions/data/data";
+import { peopleData, versionData, groupingData } from "./data/data";
 import {
   visWidth,
   visHeight,
   versionHeight,
   versionWidth,
-} from "./peopleVersions/data/functions";
-import PersonBox from "./peopleVersions/PersonBox";
-import GroupingSelect from "./peopleVersions/GroupingSelect";
+} from "./data/functions";
+import PersonBox from "./PersonBox";
+import GroupingSelect from "./GroupingSelect";
 import { useResizeObserver } from "~/hooks";
 import type {
   TPerson,
   Groupings,
   TGroupingData,
   TGroupingNode,
-} from "./peopleVersions/data/types";
-import Version from "./peopleVersions/Version";
-import GroupingBox from "./peopleVersions/GroupingBox";
-import Connection from "./peopleVersions/Connection";
+} from "./data/types";
+import Version from "./Version";
+import GroupingBox from "./GroupingBox";
+import Connection from "./Connection";
 
 const PeopleVersions = () => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -102,14 +98,6 @@ const PeopleVersions = () => {
               ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
             } ${((windowSize?.height || window.innerHeight) / 6) * 5}`}
           >
-            {/* <rect
-              id="debug-helper"
-              width={visWidthRef.current}
-              height={visHeightRef.current}
-              strokeWidth={1}
-              fill="lightblue"
-              stroke="red"
-            /> */}
             {activeGrouping && (
               <>
                 {people.map((person) => {
@@ -227,6 +215,10 @@ const PeopleVersions = () => {
                     activeNode={activeNode}
                     setActiveNode={setActiveNode}
                     boxHeight={visHeight(windowSize.height) / 20}
+                    center={{
+                      x: visWidth(windowSize.width) / 2,
+                      y: visHeight(windowSize.height) / 2,
+                    }}
                     dragging={dragging}
                     setDragging={setDragging}
                     opacity={
