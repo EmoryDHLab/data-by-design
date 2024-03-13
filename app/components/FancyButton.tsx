@@ -70,9 +70,9 @@ export default function FancyButton({
           isHovered ? hoverColor : outlineColor ?? "black"
         }`}
         style={{
-          filter: `drop-shadow(2px 4px 1px rgb(0 0 0 / ${
-            isHovered ? 0.1 : 0.3
-          }))`,
+          filter: action
+            ? `drop-shadow(2px 4px 1px rgb(0 0 0 / ${isHovered ? 0.1 : 0.3}))`
+            : "none",
         }}
       ></path>
       <text
