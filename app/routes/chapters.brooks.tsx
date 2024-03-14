@@ -99,7 +99,7 @@ export default function BrooksPage() {
       <ChapterBody>
         <ClientOnly>{() => <Consent />}</ClientOnly>
         <CenteredLayout>
-          <p className="py-10">
+          <p className="py-10 md:pt-24">
             Before there are data, there are people. People who offer up their
             lives as data -- or whose lives become data without consent.
           </p>
@@ -881,7 +881,6 @@ export default function BrooksPage() {
           -- Only voyages with resistance reported and year range interaction.
           --
         </p>
-
         <span id="viz1">
           <VoyagesCompare />
         </span>

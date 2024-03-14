@@ -15,12 +15,12 @@ function AllVoyages() {
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
   const [yearRange, setYearRange] = useState<number[]>(INITIAL_YEAR_RANGE);
-  const [width, setWidth] = useState<number>(window.outerWidth * 0.95);
-  const [height, setHeight] = useState<number>(window.outerHeight * 0.45);
+  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
 
   useEffect(() => {
     if (windowSize.width && windowSize.height) {
-      setWidth(windowSize.width * 0.95);
+      setWidth(windowSize.width - 100);
       setHeight(windowSize.height * 0.45);
     }
   }, [windowSize]);
