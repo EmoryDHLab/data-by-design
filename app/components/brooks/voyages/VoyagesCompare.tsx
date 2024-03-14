@@ -19,7 +19,7 @@ function VoyagesCompare() {
   }, [windowSize]);
 
   return (
-    <section className=" w-screen">
+    <div>
       <div className="flex flex-col items-center mt-6 text-white">
         <div className="bg-black sticky top-20 md:top-[7.5rem]">
           <Slider
@@ -30,22 +30,12 @@ function VoyagesCompare() {
         </div>
         <div>
           <ClientOnly>
-            {() => (
-              <ResistanceVoyages
-                yearRange={yearRange}
-              />
-            )}
+            {() => <ResistanceVoyages yearRange={yearRange} />}
           </ClientOnly>
-          <ClientOnly>
-            {() => (
-              <Voyages
-                yearRange={yearRange}
-              />
-            )}
-          </ClientOnly>
+          <ClientOnly>{() => <Voyages yearRange={yearRange} />}</ClientOnly>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

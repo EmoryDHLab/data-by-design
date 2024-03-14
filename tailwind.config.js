@@ -208,5 +208,6 @@ module.exports = {
     "grid-rows-1",
     "drop-shadow-2xl",
     "underline-offset-8",
+    "translate-x-[2px]",
   ],
 };

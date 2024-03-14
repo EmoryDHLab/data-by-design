@@ -3,6 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 import { ChapterContext } from "~/chapterContext";
 import { useResizeObserver } from "~/hooks";
+import { ClientOnly } from "remix-utils";
+import Consent from "~/components/Consent.client";
 
 type TAnchorPosition = {
   offset: number;
@@ -40,6 +42,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
     backgroundColor,
     chapterFigures,
     visualizations,
+    disclosure,
   } = useContext(ChapterContext);
   const { documentSize, mainContentSize } = useResizeObserver();
   const [anchorMap, setAnchorMap] = useState<TAnchorPosition[]>([]);
@@ -104,39 +107,41 @@ export function ChapterNav({ progress, fixedNav }: Props) {
   }, [documentSize, mainContentSize, visualizations, chapterFigures]);
 
   return (
-    <nav
+    <div
       className={`w-full z-[15] ${
         fixedNav ? "fixed" : "sticky"
-      } top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto h-6`}
+      } top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto`}
     >
-      <div
-        className={`bg-${backgroundColor} relative left-0 top-0 h-full`}
-        style={{ width: `${progress * 100}%` }}
-      ></div>
-
-      {anchorMap.map((anchor, index) => {
-        return (
-          <span
-            key={anchor.hash}
-            className={`absolute max-lg:invisible -top-[0.01rem] transition text-${
-              anchor.offsetPercent > progress * 100
-                ? accentTextColor
-                : primaryTextColor
-            }`}
-            style={{ left: `${anchor.offset}px` }}
-          >
-            <Link
-              to={`#${anchor.hash}`}
-              className="font-icons"
-              data-tooltip-id={`my-tooltip-${index}`}
-              data-tooltip-html={anchor.title}
+      <nav className="h-6">
+        <div
+          className={`bg-${backgroundColor} relative left-0 top-0 h-full`}
+          style={{ width: `${progress * 100}%` }}
+        ></div>
+        {anchorMap.map((anchor, index) => {
+          return (
+            <span
+              key={anchor.hash}
+              className={`absolute max-lg:invisible -top-[0.01rem] transition text-${
+                anchor.offsetPercent > progress * 100
+                  ? accentTextColor
+                  : primaryTextColor
+              }`}
+              style={{ left: `${anchor.offset}px` }}
             >
-              {icon(anchor.type)}
-            </Link>
-            <Tooltip id={`my-tooltip-${index}`} />
-          </span>
-        );
-      })}
-    </nav>
+              <Link
+                to={`#${anchor.hash}`}
+                className="font-icons"
+                data-tooltip-id={`my-tooltip-${index}`}
+                data-tooltip-html={anchor.title}
+              >
+                {icon(anchor.type)}
+              </Link>
+              <Tooltip id={`my-tooltip-${index}`} />
+            </span>
+          );
+        })}
+        {disclosure && <ClientOnly>{() => <Consent />}</ClientOnly>}
+      </nav>
+    </div>
   );
 }

@@ -22,21 +22,26 @@ export default function Consent() {
       const observer = new IntersectionObserver(
         ([record]) => {
           const { intersectionRatio } = record;
+          console.log("🚀 ~ useEffect ~ intersectionRatio:", intersectionRatio);
           if (intersectionRatio < 1) {
-            setSmall(true)
+            setSmall(true);
           } else {
-            setSmall(false)
+            setSmall(false);
           }
-      }, { threshold: [1], root: null, rootMargin: "0px" });
+        },
+        { threshold: [1], root: null, rootMargin: "0px" }
+      );
 
-      const observee = containerRef.current?.nextElementSibling?.firstElementChild;
+      const observee = document.querySelector(".first-paragraph");
+      // document.getElementById("main-content")?.firstElementChild;
+      // containerRef.current?.nextElementSibling?.firstElementChild;
+      console.log("🚀 ~ useEffect ~ observee:", observee);
 
       if (observee) observer.observe(observee);
 
       return () => {
         observer.disconnect();
-      }
-
+      };
     }, [setSmall, documentSize]);
   } catch (error) {
     console.error("file: Consent.tsx:38 ~ useEffect ~ error:", error);
@@ -44,11 +49,25 @@ export default function Consent() {
 
   if (setHideSensitiveState) {
     return (
-      <div ref={containerRef} className={`w-full border-b-2 border-slate-400 sticky top-2 md:pt-5 z-10 bg-${accentColor}`}>
-        <p className="text-center w-full">
+      <div
+        ref={containerRef}
+        className={`w-full border-2 border-slate-400 md:top-2 ${
+          small ? "pt-0" : "pt-1 md:pt-5"
+        } z-10 bg-${accentColor}`}
+      >
+        <p
+          className={`text-center w-full text-sm md:text-base ${
+            small ? "hidden" : "block"
+          }`}
+        >
           <strong>Note:</strong> This chapter deals with images of slavery.
         </p>
-        <p className={`text-center transition-all duration-1000 mx-0 pt-3 md:pt-0 ${small ? "md:w-1 md:mx-16 md:scale-75" : "md:w-full"}`} style={{ whiteSpace: "nowrap"}}>
+        <p
+          className={`md:text-center text-xs md:text-lg transition-all duration-1000 md:mx-0 pt-0 my-2 ${
+            small ? "md:w-1 mx-3 md:mx-16 md:scale-75" : "md:w-full"
+          }`}
+          style={{ whiteSpace: "nowrap" }}
+        >
           <Toggle
             checked={!hideSensitiveState}
             onChange={() => setHideSensitiveState(!hideSensitiveState)}
@@ -63,5 +82,5 @@ export default function Consent() {
     );
   }
 
-  return <></>
+  return <></>;
 }

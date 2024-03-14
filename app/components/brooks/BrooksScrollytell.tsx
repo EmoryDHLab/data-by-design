@@ -141,7 +141,10 @@ export default function BrooksScrollytell() {
           </div>
           <div className="mb-6">
             <div className="w-11/12 m-auto">
-              <svg viewBox="0 0 713.52 291.12" className="w-full md:h-full">
+              <svg
+                viewBox="0 0 713.52 291.12"
+                className="w-full md:h-full mt-12 md:mt-0"
+              >
                 <image
                   href="/images/brooks/LSF_Volume-H_85_Plan_of_an_African_slave_ship.jpg"
                   width="2973"
