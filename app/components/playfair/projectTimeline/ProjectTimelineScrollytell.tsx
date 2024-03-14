@@ -175,8 +175,8 @@ const ProjectTimelineScrollytell = () => {
               className=" md:ml-6 p-3 pb-0 md:p-0 pt-10 md:pt-0"
               id="scrollytell"
             />
-            <div className="grid grid-cols-3 md:grid-cols-5 max-lg:grid-cols-7 space-x-8 mx-3 py-4 md:pt-3 md:pb-4 md:ml-6 md:mr-0 gap-y-4 bg-playfairChart border-x-[1px] border-b-[1px] md:border-x-2 md:border-b-2 border-black">
-              <div className="col-span-3 md:col-span-2 font-duboisWide pt-[5px] text-center">
+            <div className="grid grid-cols-2 md:grid-cols-5 grid-rows-2 md:grid-rows-1 2xl:grid-cols-7 space-x-8 mx-3 py-4 md:pt-3 md:pb-4 md:ml-6 md:mr-0 gap-y-4 bg-playfairChart border-x-[1px] border-b-[1px] md:border-x-2 md:border-b-2 border-black">
+              <div className="row-span-2 md:row-span-1 md:col-span-2 font-duboisWide pt-[5px] text-center">
                 Contribution Sources:
               </div>
               <div className="flex flex-row justify-items-start items-center">
@@ -199,26 +199,6 @@ const ProjectTimelineScrollytell = () => {
                   <div className="ml-2">{selectedSources[1]?.label}</div>
                 </div>
               )}
-              {/* <FancyButton
-                fillColor={selectedSources[0]?.color}
-                textColor={selectedSources[0]?.activeText}
-                outlineColor="black"
-                className={`opacity-${
-                  selectedSources[0]?.label === "flat" ? 0 : 100
-                } transition-opacity duration-700`}
-              >
-                {selectedSources[0]?.label}
-              </FancyButton> */}
-              {/* <FancyButton
-                fillColor={selectedSources[1]?.color}
-                textColor={selectedSources[1]?.activeText}
-                outlineColor="black"
-                className={`opacity-${
-                  selectedSources[1]?.label === "flat" ? 0 : 100
-                } transition-opacity duration-700`}
-              >
-                {selectedSources[1]?.label}
-              </FancyButton> */}
             </div>
           </div>
         </div>
