@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 import { ChapterContext } from "~/chapterContext";
 import { useResizeObserver } from "~/hooks";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import Consent from "~/components/Consent.client";
 
 type TAnchorPosition = {
