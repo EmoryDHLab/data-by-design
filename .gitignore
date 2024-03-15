@@ -15,3 +15,4 @@ server
 package-lock.json
 .ruby-lsp
 .*.json
+server

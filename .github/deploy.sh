@@ -1,8 +1,10 @@
 #!/bin/bash
 echo "Running deploy script"
+echo "Building and hydrating"
+npm run build
+npx arc hydrate
 
 echo "Zipping up Lambda function"
-npx arc hydrate
 cd server
 zip -r $DEPLOY_PACKAGE ./* > /dev/null
 
