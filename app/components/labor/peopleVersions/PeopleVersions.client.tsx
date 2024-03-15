@@ -64,6 +64,12 @@ const PeopleVersions = () => {
     setPeople([...peopleData]);
   }, [activeGrouping]);
 
+  useEffect(() => {
+    if (!activeGrouping) {
+      setActiveVersions(Object.keys(versionData));
+    }
+  }, [activeGrouping]);
+
   const updatedPerson = (index: number, x: number, y: number) => {
     if (x < visWidthRef.current && x > 0) {
       people[index].x = x / (visWidth(windowSize.width) || 1);
