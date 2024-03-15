@@ -2,13 +2,13 @@ import type p5 from "p5";
 import type { TVoyage } from "~/types/voyage";
 
 type Seed = {
-  c1: number,
-  c2: number,
-  c3: number,
-  c4: number,
-  c5: number,
-  c6: number,
-  c7: number
+  c1: number;
+  c2: number;
+  c3: number;
+  c4: number;
+  c5: number;
+  c6: number;
+  c7: number;
 };
 
 class VoyageYear {
@@ -71,7 +71,7 @@ class VoyageYear {
 
     this.distanceLeft = 10;
     this.distanceRight = 10;
-    this.shapeSeed = Math.floor(Math.random() * (293) + 1565);
+    this.shapeSeed = Math.floor(Math.random() * 293 + 1565);
     this.minEmbark = 1;
     this.maxEmbark = 1545;
     this.minDuration = 86400;
@@ -92,26 +92,25 @@ class VoyageYear {
     this.shapeSeed = shapeSeed;
   }
 
-  updateMinMax(
-    minYear: number,
-    maxYear: number
-  ) {
+  updateMinMax(minYear: number, maxYear: number) {
     this.minYear = minYear;
     this.maxYear = maxYear;
   }
 
-  show(){
+  show() {
     this.p5.randomSeed(this.shapeSeed);
-    const yStart = - this.height / 2;
+    const voyageHeight = this.p5.map(
+      this.totalPeople,
+      this.minEmbark,
+      this.maxEmbark,
+      0,
+      this.height
+    );
+    const rat = voyageHeight / this.height;
+    const yStart = -this.height / 2;
     this.p5.push();
     this.p5.translate(
-      this.p5.map(
-        this.year,
-        this.minYear,
-        this.maxYear,
-        40,
-        this.width
-      ),
+      this.p5.map(this.year, this.minYear, this.maxYear, 40, this.width),
       this.height / 2
     );
 
@@ -123,26 +122,47 @@ class VoyageYear {
     } else {
       this.p5.strokeWeight(this.nonResistanceStrokeWidth);
       this.p5.strokeWeight(0.5);
-      this.p5.stroke([0, 0, 0])
+      this.p5.stroke([0, 0, 0]);
       this.p5.fill([250, 241, 233]);
     }
 
     this.p5.beginShape();
-    this.p5.curveVertex(this.curveSeeds.c6, yStart - 300);
-    this.p5.curveVertex(this.curveSeeds.c5, yStart - 300);
+    this.p5.curveVertex(this.curveSeeds.c6, yStart - 300 * rat);
+    this.p5.curveVertex(this.curveSeeds.c5, yStart - 300 * rat);
     this.p5.curveVertex(this.curveSeeds.c1, yStart + (this.height / 5) * 1);
     this.p5.curveVertex(this.curveSeeds.c2, yStart + (this.height / 5) * 2);
     this.p5.curveVertex(this.curveSeeds.c3, yStart + (this.height / 5) * 3);
     this.p5.curveVertex(this.curveSeeds.c4, yStart + (this.height / 5) * 4);
-    this.p5.curveVertex(this.curveSeeds.c7, this.height / 2 + 500);
+    this.p5.curveVertex(this.curveSeeds.c7, this.height / 2 + 500 * rat);
 
-    this.p5.curveVertex(this.curveSeeds.c7 + this.vertexSeeds.c7, this.height / 2 + 500);
-    this.p5.curveVertex(this.curveSeeds.c4 + this.vertexSeeds.c4, yStart + (this.height / 5) * 4);
-    this.p5.curveVertex(this.curveSeeds.c3 + this.vertexSeeds.c3, yStart + (this.height / 5) * 3);
-    this.p5.curveVertex(this.curveSeeds.c2 + this.vertexSeeds.c2, yStart + (this.height / 5) * 2);
-    this.p5.curveVertex(this.curveSeeds.c1 + this.vertexSeeds.c1, yStart + (this.height / 5) * 1);
-    this.p5.curveVertex(this.curveSeeds.c5 + this.vertexSeeds.c5, yStart - 300);
-    this.p5.curveVertex(this.curveSeeds.c6 + this.vertexSeeds.c6, yStart - 300);
+    this.p5.curveVertex(
+      this.curveSeeds.c7 + this.vertexSeeds.c7,
+      this.height / 2 + 500 * rat
+    );
+    this.p5.curveVertex(
+      this.curveSeeds.c4 + this.vertexSeeds.c4,
+      yStart + (this.height / 5) * 4
+    );
+    this.p5.curveVertex(
+      this.curveSeeds.c3 + this.vertexSeeds.c3,
+      yStart + (this.height / 5) * 3
+    );
+    this.p5.curveVertex(
+      this.curveSeeds.c2 + this.vertexSeeds.c2,
+      yStart + (this.height / 5) * 2
+    );
+    this.p5.curveVertex(
+      this.curveSeeds.c1 + this.vertexSeeds.c1,
+      yStart + (this.height / 5) * 1
+    );
+    this.p5.curveVertex(
+      this.curveSeeds.c5 + this.vertexSeeds.c5,
+      yStart - 300 * rat
+    );
+    this.p5.curveVertex(
+      this.curveSeeds.c6 + this.vertexSeeds.c6,
+      yStart - 300 * rat
+    );
     this.p5.endShape(this.p5.CLOSE);
     this.p5.pop();
   }
