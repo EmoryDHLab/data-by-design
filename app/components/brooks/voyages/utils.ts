@@ -1,10 +1,13 @@
+import type p5 from "p5";
+import type { TVoyage } from "~/types/voyage";
+
 const colors = [
   [86, 146, 138],
   [238, 201, 159],
   [222, 0, 59],
   [58, 15, 49],
-  [77, 76, 132]
-]
+  [77, 76, 132],
+];
 
 export const randomColor = (fullColor: boolean) => {
   if (fullColor) {
@@ -13,13 +16,49 @@ export const randomColor = (fullColor: boolean) => {
 
   // Return black;
   return [0, 0, 0];
-}
+};
 
-export const voyageConstants = {
-  minEmbark: 1,
-  maxEmbark: 1545,
-  minDuration: 86400,
-  maxDuration: 273369600,
-  maxWidth: 30,
-  maxOverlap: 300
-}
+const minEmbark = 1;
+const maxEmbark = 1545;
+const minDuration = 86400;
+const maxDuration = 273369600;
+const maxWidth = 50;
+const maxOverlap = 30;
+const distanceLeft = 100;
+const distanceRight = 100;
+
+const curveSeed = (duration: number, p5: p5) => {
+  return p5.random(
+    -distanceLeft - p5.map(duration, minDuration, maxDuration, 0, maxOverlap),
+    distanceRight + p5.map(duration, minDuration, maxDuration, 0, maxOverlap)
+  );
+};
+
+const vertexSeed = (totalPeople: number, mortalityRate: number, p5: p5) => {
+  return p5.random(
+    p5.map(
+      totalPeople * (1 - mortalityRate),
+      minEmbark,
+      maxEmbark,
+      0,
+      maxWidth
+    ),
+    p5.map(totalPeople, minEmbark, maxEmbark, 0, maxWidth)
+  );
+};
+
+export const generateSeeds = (voyage: TVoyage, p5: p5) => {
+  const curveSeeds = {};
+  const vertexSeeds = {};
+  for (const index in Array.from({ length: 7 })) {
+    // @ts-ignore
+    curveSeeds[`c${parseInt(index) + 1}`] = curveSeed(voyage.duration, p5);
+    // @ts-ignore
+    vertexSeeds[`c${parseInt(index) + 1}`] = vertexSeed(
+      voyage.totalPeople,
+      voyage.mortalityRate,
+      p5
+    );
+  }
+  return { curveSeeds, vertexSeeds };
+};
