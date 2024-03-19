@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function ChapterSectionTitle({ title }: Props) {
-  const { accentColor, accentTextColor } = useContext(ChapterContext);
+  const { backgroundColor } = useContext(ChapterContext);
   const [isHovered, setIsHovered] = useState(false);
   const id = spacesToHyphens(title);
   return (
@@ -17,17 +17,17 @@ export default function ChapterSectionTitle({ title }: Props) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       id={id}
-      className={`bg-${accentColor} md:my-12 items-center`}
+      className={`md:my-12 items-center`}
       role="button"
       tabIndex={0}
     >
       <a
         href={`#${id}`}
-        className={`hover:bg-${accentColor}-translucent py-4 font-dubois text-xl lg:text-2xl flex text-center text-${accentTextColor}`}
+        className={`py-4 font-dubois text-xl lg:text-2xl flex text-center`}
       >
         <Hyperlink
-          className="md:mr-4 hidden md:block"
-          visibility={isHovered ? "" : "hidden"}
+          className={`stroke-${backgroundColor} hover:stroke-${backgroundColor} hidden md:block w-14`}
+          strokeOpacity={isHovered ? 1 : 0.75}
         />
         <span className="text-center w-full">{title}</span>
         <span className="md:ml-4 md:w-9 hidden md:block" role="presentation">
