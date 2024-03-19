@@ -256,6 +256,10 @@ export default function BrooksPage() {
             themselves, learning otherwise undisclosed details about the perils
             faced by crew members aboard these ships.
           </p>
+          <PullQuote
+            title="Why would Clarkson use water—the very site of the dehumanization that was required of the condition of enslavement"
+            subtitle="both those who design visualizations and those who perceive them—how the abstraction that is required to efficiently generate insight always comes at the expense of additional detail—detail that data alone cannot convey."
+          />
           <p>
             Finley speculates that among the "most useful" artifacts included in
             Parrey's report were the hand-drawn diagrams of the ships created by
@@ -716,21 +720,9 @@ export default function BrooksPage() {
             <PullQuote
               title="The study of chronology has been much facilitated by making space represent time, and a line of proportional length and in a suitable position, the life of a man, by means of which the men of past ages appear as it were before us in their proper time and place."
               subtitle='In the first edition of his Commerical and Political Atlas, Playfair cites the work of Joseph Priestley, the author of several famed chronological charts, "as a direct predecessor to his own line graphs and bar charts.'
-              // className="md:px-4 py-10 md:my-6"
-              // width="w-[initial]"
             >
-              <InlineFootnote
-                index={31}
-                bgOverride="white"
-                superscriptOverride="brooksPrimary"
-                textOverride="white"
-              />
-              <InlineFootnote
-                index={32}
-                bgOverride="white"
-                superscriptOverride="brooksPrimary"
-                textOverride="white"
-              />
+              <InlineFootnote index={31} />
+              <InlineFootnote index={32} />
             </PullQuote>
           </Column>
           <Column>
@@ -857,7 +849,7 @@ export default function BrooksPage() {
           {/* Runover "A violence of enslavement and a violence of abstraction developed together and reinforced each other," he further declares. // enslavement and abstraction developed together */}
         </CenteredLayout>
 
-        <TwoColumnLayout className="items-end">
+        <TwoColumnLayout>
           <Column>
             <p className="">
               in the data set we are consilting theres a bunch of voyages from

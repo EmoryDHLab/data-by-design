@@ -70,7 +70,7 @@ export default function PlayfairPage() {
         subtitle="William Playfair's Time-Series Charts"
       />
       <ChapterBody>
-        <TwoColumnLayout className="py-10">
+        <TwoColumnLayout>
           <Column>
             <p className="first-paragraph">
               One can only imagine the choice words exclaimed by the Scottish
@@ -328,17 +328,13 @@ export default function PlayfairPage() {
             subject—knowledge that would otherwise remain hidden from view.
             <InlineFootnote index={15} />
           </p>
-        </CenteredLayout>
-
-        <PullQuote
-          title="Playfair's goal was not accuracy but inspiration."
-          subtitle="His intent was to produce a visual impression—one
+          <PullQuote
+            title="Playfair's goal was not accuracy but inspiration."
+            subtitle="His intent was to produce a visual impression—one
                     inspired by the data, but not a direct
                     representation of it—that would, in turn, prompt
                     the insights that lead to new knowledge."
-        />
-
-        <CenteredLayout>
+          />
           <p className="pb-12">
             Playfair's charts may thus endure as an ur-example of the
             insight-producing power of data visualization. And yet, they are not
@@ -449,14 +445,12 @@ export default function PlayfairPage() {
             further consolidation of political and economic power, a result
             which directly follows from the consolidating design of the charts.
           </p>
-        </CenteredLayout>
 
-        <PullQuote
-          title="For whom is this knowledge truly useful"
-          subtitle='and for what reasons is it necessary that this particular "picture of the past" endure?'
-        />
+          <PullQuote
+            title="For whom is this knowledge truly useful"
+            subtitle='and for what reasons is it necessary that this particular "picture of the past" endure?'
+          />
 
-        <CenteredLayout>
           <p>
             To be sure, very few of the myriad people who employ time-series
             charts today do so with a stated aim of consolidating political or
@@ -526,12 +520,11 @@ export default function PlayfairPage() {
           </Column>
         </TwoColumnLayout>
 
-        <PullQuote
-          title="Playfair's charts are most forceful today — "
-          subtitle="for advancing an argument about the uses of visualization itself."
-        />
-
         <CenteredLayout>
+          <PullQuote
+            title="Playfair's charts are most forceful today — "
+            subtitle="for advancing an argument about the uses of visualization itself."
+          />
           <p>
             Consider the process of recreating one of Playfair's charts with
             D3.js, as we did for this chapter. Unlike Playfair's chart, which
@@ -543,7 +536,6 @@ export default function PlayfairPage() {
             instead the ease and efficiency with which a dataset can be
             visualized, on the web, according to any conceivable form.
           </p>
-
           <div className="my-6 md:my-12 w-full h-full">
             <span id={visualizations[1].id} className="">
               <svg viewBox="0 0 100 51" className="margin-auto">
@@ -567,7 +559,6 @@ export default function PlayfairPage() {
               </svg>
             </span>
           </div>
-
           <p>
             More than a practical issue, this structural dependency on the data
             points to an evolving understanding of the significance of data, and

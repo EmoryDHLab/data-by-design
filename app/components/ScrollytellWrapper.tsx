@@ -92,7 +92,9 @@ export default function ScrollytellWrapper({
     <div
       id={id}
       ref={scrollerElementRef}
-      className={`bg-${bgColor ?? backgroundColor} ${className ?? ""}`}
+      className={`bg-${bgColor ?? backgroundColor} ${
+        className ?? ""
+      } my-8 md:my-12`}
     >
       {children}
     </div>

@@ -2,9 +2,9 @@ import { EditablePeabodySquare } from "~/components/peabody/EditablePeabodySquar
 import { useState } from "react";
 import { classNames } from "~/utils";
 
-type Color = { label: string, rgb: string }
+type Color = { label: string; rgb: string };
 
-type Colors = Array<Color>
+type Colors = Array<Color>;
 
 const actorColors: Colors = [
   {
@@ -36,7 +36,10 @@ const actorColors: Colors = [
 export default function PeabodySandbox() {
   const [currentColor, setCurrentColor] = useState<Color>(actorColors[0]);
   return (
-    <div className="w-full bg-black py-10 flex flex-col items-center" id="sandbox">
+    <div
+      className="w-full bg-black py-10 flex flex-col items-center my-8 md:my-12"
+      id="sandbox"
+    >
       <div className="flex justify-around w-1/2 py-10">
         {actorColors.map((color) => (
           <span
@@ -45,7 +48,11 @@ export default function PeabodySandbox() {
             aria-label={`Select ${color.label}`}
             key={color.rgb}
             onClick={() => setCurrentColor(color)}
-            onKeyUp={({ key }: { key: string }) => { if (key === "Enter") { setCurrentColor(color)} } }
+            onKeyUp={({ key }: { key: string }) => {
+              if (key === "Enter") {
+                setCurrentColor(color);
+              }
+            }}
             className={classNames(
               "w-5 h-5",
               currentColor.rgb === color.rgb && "border"
