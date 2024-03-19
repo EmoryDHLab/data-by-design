@@ -90,7 +90,7 @@ export default function PeabodyPage() {
         subtitle="Elizabeth Palmer Peabody's Chronological Grids"
       />
       <ChapterBody>
-        <TwoColumnLayout className="py-10">
+        <TwoColumnLayout>
           <Column shouldPin={true}>
             <p className="first-paragraph">
               Elizabeth Palmer Peabody was born in Massachusetts in 1804. Today,
@@ -144,10 +144,13 @@ export default function PeabodyPage() {
           ]}
         />
 
-        <PullQuote
-          title="Peabody designed her charts to be abstract rather than intuitive;"
-          subtitle="to promote sustained reflection rather than immediate insight. "
-        />
+        <CenteredLayout>
+          <PullQuote
+            title="Peabody designed her charts to be abstract rather than intuitive;"
+            subtitle="to promote sustained reflection rather than immediate insight. "
+          />
+        </CenteredLayout>
+
         <TwoColumnLayout>
           <Column shouldPin>
             <p>
@@ -356,13 +359,13 @@ export default function PeabodyPage() {
           </Column>
         </TwoColumnLayout>
 
-        <PullQuote
-          title="Our ways of knowing—about science, about history,
-                          or about any other phenomena in the world—"
-          subtitle="are overdetermined by the asymmetrically connected
-                          (and constructed) systems that shape them."
-        />
         <CenteredLayout>
+          <PullQuote
+            title="Our ways of knowing—about science, about history,
+                          or about any other phenomena in the world—"
+            subtitle="are overdetermined by the asymmetrically connected
+                          (and constructed) systems that shape them."
+          />
           <p>
             Indeed, our ways of knowing—about science, about history, or about
             any other phenomena in the world—are overdetermined by the
@@ -464,7 +467,7 @@ export default function PeabodyPage() {
 
         <Quiz />
 
-        <TwoColumnLayout className="pt-20">
+        <TwoColumnLayout>
           <Column>
             <p>
               But the exercise of creating a chronological chart from scratch is
@@ -639,7 +642,7 @@ export default function PeabodyPage() {
           </p>
         </CenteredLayout>
         <ChapterSectionTitle title="The Gendered Archive of Data Visualization" />
-        <TwoColumnLayout className="pt-20">
+        <TwoColumnLayout>
           <Column>
             <p>
               There is a final lesson to be learned from Elizabeth Palmer
@@ -772,6 +775,10 @@ export default function PeabodyPage() {
               itself—of the focus that is required, and the resultant fatigue,
               of any large-scale project that is made by human hands.
             </p>
+            <PullQuote
+              title="Who else are we missing"
+              subtitle="when we fail to include examples like these in the stories we tell about the emergence of data visualization?"
+            />
           </Column>
           <Column>
             <FigureObj
@@ -793,11 +800,6 @@ export default function PeabodyPage() {
             />
           </Column>
         </TwoColumnLayout>
-
-        <PullQuote
-          title="Who else are we missing"
-          subtitle="when we fail to include examples like these in the stories we tell about the emergence of data visualization?"
-        />
 
         <TwoColumnLayout>
           <Column shouldPin={true}>

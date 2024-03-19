@@ -23,7 +23,7 @@ export default function AboutPage() {
         <ChapterTitle title="About" subtitle="" />
 
         <main id="main-content">
-          <TwoColumnLayout className="py-10">
+          <TwoColumnLayout>
             <Column className="pr-18">
               <p className="pt-16">
                 {" "}

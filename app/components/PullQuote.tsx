@@ -4,52 +4,40 @@ import { ChapterContext } from "~/chapterContext";
 
 interface Props {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   children?: ReactNodeLike;
   className?: string;
-  width?: string;
 }
 
-export default function PullQuote({ title, subtitle, children, className, width }: Props) {
+export default function PullQuote({
+  title,
+  subtitle,
+  children,
+  className,
+}: Props) {
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
-  const [inColumn, setInColumn] = useState<boolean>(false);
   const [classList, setClassList] = useState<string | undefined>(undefined);
   const asideRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    setInColumn(
-      Boolean(asideRef.current?.parentElement?.classList.contains('md:bias-1/2'))
-    );
-  }, []);
-
-  useEffect(() => {
-    const size = inColumn
-                 ? "w-screen md:w-auto -mx-12 md:mx-auto p-12 md:py-8 my-6 md:my-0"
-                 : "w-screen p-12 md:p-16 my-6 md:my-20"
-
-    setClassList(`flex flex-col items-center ${size} bg-${backgroundColor} text-${primaryTextColor} ${className ?? ""}`)
-  }, [inColumn, className, backgroundColor, primaryTextColor]);
+    setClassList(`flex flex-col py-6 md:py-12 md:-ml-4 ${className ?? ""}`);
+  }, [className, backgroundColor, primaryTextColor]);
 
   return (
-    <aside
-      ref={asideRef}
-      className={classList}
-    >
-      <blockquote className="w-full md:w-2/3">
+    <aside ref={asideRef} className={classList}>
+      <blockquote className={`border-l-4 border-l-${backgroundColor} md:pl-4`}>
         <p className="my-0">
-          <span className="font-duboisNarrow text-xl lg:text-2xl tracking-wide block">
+          <span className="font-duboisNarrow text-xl md:text-4xl tracking-wide block">
             {title}
           </span>
-          <span className="font-dubois text-l lg:text-xl pt-4 block">
-            {subtitle}
-          </span>
+          {subtitle && (
+            <span className="font-dubois text-l lg:text-2xl font-light pt-4 block">
+              {subtitle}
+            </span>
+          )}
         </p>
+        {children && <p className="m-0 pt-2">{children}</p>}
       </blockquote>
-        {children &&
-          <p className="w-full md:w-2/3 mt-0">
-            {children}
-          </p>
-        }
     </aside>
   );
 }

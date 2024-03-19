@@ -113,6 +113,13 @@ module.exports = {
   safelist: [
     "bg-brooksPrimary",
     "border-brooksPrimary",
+
+    "border-l-brooksPrimary",
+    "border-l-shanawdithitPrimary",
+    "border-l-peabodyPrimary",
+    "border-l-playfairPrimary",
+    "border-l-duboisPrimary",
+
     "stroke-brooksPrimary",
     "stroke-shanawdithitPrimary",
     "stroke-peabodyPrimary",
@@ -209,5 +216,6 @@ module.exports = {
     "drop-shadow-2xl",
     "underline-offset-8",
     "translate-x-[2px]",
+    "md:-mx-64",
   ],
 };
