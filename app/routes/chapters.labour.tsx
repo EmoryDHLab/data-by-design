@@ -12,6 +12,13 @@ export const meta: V2_MetaFunction = () => {
   return chapterMeta("labour");
 };
 
+const sections = [
+  {
+    title: "",
+    id: "",
+  },
+];
+
 export default function LabourPage() {
   return (
     <ChapterContext.Provider
@@ -20,6 +27,7 @@ export default function LabourPage() {
         accentColor: "laborPrimary",
         footnoteTextColor: "laborPrimary",
         footnotes: laborFootnotes,
+        sections,
       }}
     >
       <ChapterTitle

@@ -48,6 +48,12 @@ export type TVizAnchors = {
   id: string;
   title: string;
 };
+
+export type TChapterSection = {
+  title: string;
+  id: string;
+};
+
 interface IChapterContext {
   backgroundColor?: string;
   accentColor?: string;
@@ -64,6 +70,7 @@ interface IChapterContext {
   hideSensitiveState?: boolean | undefined;
   setHideSensitiveState?: Dispatch<SetStateAction<boolean>>;
   hide?: boolean;
+  sections: TChapterSection[];
 }
 
 const ChapterContext = createContext<IChapterContext>({
@@ -80,6 +87,7 @@ const ChapterContext = createContext<IChapterContext>({
   chapterFigures: [],
   visualizations: [],
   hideSensitiveState: false,
+  sections: [],
 });
 
 ChapterContext.displayName = "ChapterContext";

@@ -36,6 +36,29 @@ export const meta: V2_MetaFunction = () => {
   return chapterMeta("brooks");
 };
 
+const sections = [
+  {
+    title: "Origins and Absences",
+    id: "origins-and-absences",
+  },
+  {
+    title: 'The "Graphical Authority" of "Description of a Slave Ship"',
+    id: "the-graphical-authority-of-description-of-a-slave-ship",
+  },
+  {
+    title: "Enslavement and Abstraction",
+    id: "enslavement-and-abstraction",
+  },
+  {
+    title: "Data Visualization's Alternative Streams",
+    id: "data-visualizations-alternative-streams",
+  },
+  {
+    title: "Diagramming the Present",
+    id: "diagramming-the-present",
+  },
+];
+
 const visualizations: TVizAnchors[] = [
   {
     type: "scrollytell",
@@ -89,6 +112,7 @@ export default function BrooksPage() {
         setHoverState,
         hideSensitiveState,
         setHideSensitiveState,
+        sections,
       }}
     >
       <ChapterTitle
@@ -231,7 +255,7 @@ export default function BrooksPage() {
             at the same time that it seeks to put that knowledge on view.
           </p>
         </CenteredLayout>
-        <ChapterSectionTitle title="Origins and Absences"></ChapterSectionTitle>
+        <ChapterSectionTitle section={sections[0]}></ChapterSectionTitle>
         <CenteredLayout>
           <p>
             Like the history of data visualization itself, there is no clear
@@ -351,9 +375,7 @@ export default function BrooksPage() {
           </Column>
         </TwoColumnLayout>
 
-        <ChapterSectionTitle
-          title={`The "Graphical Authority" of "Description of a Slave Ship"`}
-        />
+        <ChapterSectionTitle section={sections[1]} />
 
         <TwoColumnLayout>
           <Column shouldPin>
@@ -502,7 +524,7 @@ export default function BrooksPage() {
           Visualization of Equiano's words inside ship? In shape of sihp? Visualization of Equiano topics inside ship, placed as sections of hold?
           Connect to Gallon, Black Data; Faithe Day, Black living data. // talk to Kim?! */}
 
-        <ChapterSectionTitle title="Enslavement and Abstraction" />
+        <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
           <p>
             The idea that quantitative information can be abstracted into pure
@@ -611,7 +633,7 @@ export default function BrooksPage() {
           </p>
         </CenteredLayout>
 
-        <ChapterSectionTitle title="Data Visualization's Alternative Streams" />
+        <ChapterSectionTitle section={sections[3]} />
         <CenteredLayout>
           <p>
             Far from the margins of the history of data visualization, it's
@@ -765,7 +787,7 @@ export default function BrooksPage() {
             <FigureObj figure={figures["ch4-14-priestley-new-chart"]} />
           </Column>
         </TwoColumnLayout>
-        <ChapterSectionTitle title="Diagramming the Present" />
+        <ChapterSectionTitle section={sections[4]} />
         <TwoColumnLayout>
           <Column shouldPin={true}>
             <p>

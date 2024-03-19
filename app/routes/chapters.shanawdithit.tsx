@@ -26,6 +26,25 @@ export const meta: V2_MetaFunction = () => {
   return chapterMeta("shanawdithit");
 };
 
+const sections = [
+  {
+    title: "A Record of Colonial Violence",
+    id: "a-record-of-colonial-violence",
+  },
+  {
+    title: "Indigenous Cartography within the Colonial Frame // TO HERE 9/6",
+    id: "indigenous-cartography-within-the-colonial-frame",
+  },
+  {
+    title: "Maps, Data, and the Production of Colonial Knowledge",
+    id: "maps-data-and-the-production-of-colonial-knowledge",
+  },
+  {
+    title: "Shanawdithit's Maps as Data System",
+    id: "shanawdithits-maps-as-data-system",
+  },
+];
+
 const chapterFigures = Object.values(figures);
 
 const visualizations: TVizAnchors[] = [
@@ -61,6 +80,7 @@ export default function ShanawdithitPage() {
         setHoverState,
         visualizations,
         chapterFigures,
+        sections,
       }}
     >
       <ChapterTitle
@@ -155,7 +175,7 @@ export default function ShanawdithitPage() {
           </Column>
         </TwoColumnLayout>
 
-        <ChapterSectionTitle title=" A Record of Colonial Violence " />
+        <ChapterSectionTitle section={sections[0]} />
 
         <CenteredLayout>
           <p>
@@ -395,12 +415,7 @@ export default function ShanawdithitPage() {
           <FigureObj figure={figures["placeholder-sketch2-original"]} />
         </CenteredLayout>
 
-        <ChapterSectionTitle
-          title="
-          Indigenous Cartography
-          within the Colonial Frame // TO HERE 9/6
-           "
-        />
+        <ChapterSectionTitle section={sections[1]} />
         <TwoColumnLayout>
           <Column>
             <p>
@@ -506,11 +521,7 @@ export default function ShanawdithitPage() {
             <FigureObj figure={figures["birch-bark-1841"]} />
           </Column>
         </TwoColumnLayout>
-        <ChapterSectionTitle
-          title="
-          Maps, Data, and the Production of Colonial Knowledge
-           "
-        />
+        <ChapterSectionTitle section={sections[2]} />
 
         <CenteredLayout>
           <p>
@@ -922,17 +933,19 @@ export default function ShanawdithitPage() {
               NEW YORK:
               https://blogs.loc.gov/loc/2021/11/native-american-maps-and-ideas-that-shaped-the-nation/
             </p>
-            <ChapterSectionTitle title="          Shanawdithit's Maps as Data System  " />
-            <p>
-              What we learn from the map and the wampum is that TIME , LAND,
-              ARCHIVE ALL RELATED. How might we visualize the data system that
-              gave rise to Shanawdithit's maps and that has preserved them into
-              the present? Below is pictured a diagram of the people, places,
-              archives, sources, dates… [DO THIS VIS]
-            </p>
           </Column>
           <Column shouldPin>[IMAGES HERE]</Column>
         </TwoColumnLayout>
+        <ChapterSectionTitle section={sections[3]} />
+        <CenteredLayout>
+          <p>
+            What we learn from the map and the wampum is that TIME , LAND,
+            ARCHIVE ALL RELATED. How might we visualize the data system that
+            gave rise to Shanawdithit's maps and that has preserved them into
+            the present? Below is pictured a diagram of the people, places,
+            archives, sources, dates… [DO THIS VIS]
+          </p>
+        </CenteredLayout>
       </ChapterBody>
       <CenteredLayout>
         <FootnotesList footnotes={shanawdithitFootnotes} />

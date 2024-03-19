@@ -8,6 +8,8 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 
+const sections = [{ title: "", id: "" }];
+
 export default function AboutPage() {
   return (
     <div>
@@ -18,6 +20,7 @@ export default function AboutPage() {
           footnoteTextColor: "duboisPrimary",
           primaryTextColor: "white",
           footnotes: duboisFootnotes,
+          sections,
         }}
       >
         <ChapterTitle title="About" subtitle="" />

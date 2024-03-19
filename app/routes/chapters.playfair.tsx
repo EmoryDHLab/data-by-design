@@ -26,6 +26,25 @@ export const meta: V2_MetaFunction = () => {
   return chapterMeta("playfair");
 };
 
+const sections = [
+  {
+    title: "The Value of Visual Knowledge",
+    id: "the-value-of-visual-knowledge",
+  },
+  {
+    title: "The Politics of Playfair's Charts",
+    id: "the-politics-of-playfair's-charts",
+  },
+  {
+    title: "Playfair's Argument in the Present",
+    id: "playfair's-argument-in-the-present",
+  },
+  {
+    title: "What Visualization Does Not Reveal",
+    id: "what-visualization-does-not-reveal",
+  },
+];
+
 const chapterFigures = Object.values(figures);
 
 const visualizations: TVizAnchors[] = [
@@ -63,6 +82,7 @@ export default function PlayfairPage() {
         footnotes: playfairFootnotes,
         visualizations,
         chapterFigures,
+        sections,
       }}
     >
       <ChapterTitle
@@ -181,7 +201,7 @@ export default function PlayfairPage() {
             <FigureObj figure={figures["3-pie"]} />
           </Column>
         </TwoColumnLayout>
-        <ChapterSectionTitle title="The Value of Visual Knowledge" />
+        <ChapterSectionTitle section={sections[0]} />
         <TwoColumnLayout>
           <Column>
             <p>
@@ -350,7 +370,7 @@ export default function PlayfairPage() {
           </p>
         </CenteredLayout>
 
-        <ChapterSectionTitle title="The Politics of Playfair's Charts" />
+        <ChapterSectionTitle section={sections[1]} />
 
         <CenteredLayout>
           <FigureObj figure={figures["5-minard"]} className="mt-8" />
@@ -494,7 +514,7 @@ export default function PlayfairPage() {
             their intended use.
           </p>
         </CenteredLayout>
-        <ChapterSectionTitle title="Playfair's Argument in the Present" />
+        <ChapterSectionTitle section={sections[2]} />
         <TwoColumnLayout>
           <Column className="py-5 md:py-10" shouldPin={true}>
             <p>
@@ -670,7 +690,7 @@ export default function PlayfairPage() {
           </p>
           {/* </div> */}
         </CenteredLayout>
-        <ChapterSectionTitle title="What Visualization Does Not Reveal" />
+        <ChapterSectionTitle section={sections[3]} />
         <TwoColumnLayout>
           <Column>
             <p>

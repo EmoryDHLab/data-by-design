@@ -12,6 +12,8 @@ import FootnotesList from "~/components/FootnotesList";
 import playfairFigures from "~/data/figures/playfair.json";
 import FigureObj from "~/components/layout/FigureObj";
 
+const sections = [{ title: "", id: "" }];
+
 export default function IntroPage() {
   return (
     <ChapterContext.Provider
@@ -22,6 +24,7 @@ export default function IntroPage() {
         accentTextColor: "white",
         footnoteTextColor: "playfairPrimary",
         footnotes: playfairFootnotes,
+        sections,
       }}
     >
       <ChapterTitle

@@ -32,6 +32,25 @@ export const meta: V2_MetaFunction = () => {
   return chapterMeta("peabody");
 };
 
+const sections = [
+  {
+    title: "A Visual Method of Making History",
+    id: "a-visual-method-of-making-history",
+  },
+  {
+    title: "The Politics of Visual Knowledge Production",
+    id: "the-politics-of-visual-knowledge-production",
+  },
+  {
+    title: "The Gendered Archive of Data Visualization",
+    id: "the-gendered-archive-of-data-visualization",
+  },
+  {
+    title: "The Visualization Work To Come",
+    id: "the-visualization-work-to-come",
+  },
+];
+
 const visualizations: TVizAnchors[] = [
   {
     type: "figures",
@@ -83,6 +102,7 @@ export default function PeabodyPage() {
         setHoverState,
         chapterFigures,
         visualizations,
+        sections,
       }}
     >
       <ChapterTitle
@@ -194,7 +214,7 @@ export default function PeabodyPage() {
           </Column>
         </TwoColumnLayout>
 
-        <ChapterSectionTitle title="A Visual Method of Making History" />
+        <ChapterSectionTitle section={sections[0]} />
         <CenteredLayout>
           <p>
             Peabody's method of visualizing events of historical significance
@@ -432,7 +452,7 @@ export default function PeabodyPage() {
 
         <PeabodyBarGraph />
 
-        <ChapterSectionTitle title="The Politics of Visual Knowledge Production" />
+        <ChapterSectionTitle section={sections[1]} />
         <TwoColumnLayout>
           <Column>
             <p>
@@ -641,7 +661,7 @@ export default function PeabodyPage() {
             a course of future action.
           </p>
         </CenteredLayout>
-        <ChapterSectionTitle title="The Gendered Archive of Data Visualization" />
+        <ChapterSectionTitle section={sections[2]} />
         <TwoColumnLayout>
           <Column>
             <p>
@@ -1000,7 +1020,7 @@ export default function PeabodyPage() {
             possibilities for future knowledge.
           </p>
         </CenteredLayout>
-        <ChapterSectionTitle title="The Visualization Work To Come" />
+        <ChapterSectionTitle section={sections[3]} />
         <CenteredLayout>
           <p>
             Throughout this project, I argue for the knowledge that can be

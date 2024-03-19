@@ -32,6 +32,29 @@ export const meta: V2_MetaFunction = () => {
   return chapterMeta("dubois");
 };
 
+const sections = [
+  {
+    title: "Visualization as Evidence, Visualization as Argument",
+    id: "visualization-as-evidence-visualization-as-argument",
+  },
+  {
+    title: "A Visual Method of Making History",
+    id: "a-visual-method-of-making-history",
+  },
+  {
+    title: "Between Chart and Photograph",
+    id: "between-chart-and-photograph",
+  },
+  {
+    title: "Education, Collaboration, and Credit",
+    id: "education-collaboration-and-credit",
+  },
+  {
+    title: "Visualization as Witness and as Testimony",
+    id: "visualization-as-witness-and-as-testimony",
+  },
+];
+
 const visualizations: TVizAnchors[] = [
   {
     type: "figures",
@@ -77,6 +100,7 @@ export default function DuboisChapter() {
         setHoverState,
         chapterFigures,
         visualizations,
+        sections,
       }}
     >
       <ChapterTitle
@@ -165,7 +189,7 @@ export default function DuboisChapter() {
             visualization&mdash;could do.
           </p>
         </CenteredLayout>
-        <ChapterSectionTitle title="Visualization as Evidence, Visualization as Argument" />
+        <ChapterSectionTitle section={sections[0]} />
         <CenteredLayout>
           <p>
             The 63 charts created for the Paris Exhibition were grouped into two
@@ -272,7 +296,7 @@ export default function DuboisChapter() {
           ]}
         />
 
-        <ChapterSectionTitle title="A Visual Method of Making History" />
+        <ChapterSectionTitle section={sections[1]} />
 
         <TwoColumnLayout>
           <Column>
@@ -422,7 +446,7 @@ export default function DuboisChapter() {
           ]}
         />
 
-        <ChapterSectionTitle title="Between Chart and Photograph" />
+        <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
           <p>
             Today, Du Bois's charts are often shared as single images, embedded
@@ -609,7 +633,7 @@ export default function DuboisChapter() {
           </p>
           <FigureObj figure={figures["ch5-11-property"]} />
         </CenteredLayout>
-        <ChapterSectionTitle title="Education, Collaboration, and Credit" />
+        <ChapterSectionTitle section={sections[3]} />
         <TwoColumnLayout>
           <Column>
             <p>
@@ -763,7 +787,7 @@ export default function DuboisChapter() {
 
         <StudentChartV2 figure={figures["ch5-12-series"]} />
 
-        <ChapterSectionTitle title="Visualization as Witness and as Testimony" />
+        <ChapterSectionTitle section={sections[4]} />
         <CenteredLayout>
           <p>
             The charts that Du Bois and his students together created for the
