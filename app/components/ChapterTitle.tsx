@@ -14,7 +14,7 @@ export default function ChapterTitle({ title, subtitle }: Props) {
   return (
     <header
       id={spacesToHyphens(title)}
-      className="root bg-black h-screen md:h-[657px] flex flex-col justify-center items-center w-full lg:grid lg:grid-cols-2 lg:gap-24"
+      className="root bg-black h-screen md:h-[657px] flex flex-col justify-center items-center w-full lg:grid lg:grid-cols-2 lg:gap-24 lg:pl-32"
     >
       <div className="text text-white text-center md:text-left lg:pl-16 my-5">
         <h1 className="font-duboisWide text-3xl lg:text-7xl my-10 lg:my-10">
