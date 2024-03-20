@@ -10,6 +10,13 @@ import { TimelineType, timelineImages } from "~/components/home/timelineUtils";
 import SelectedImage from "~/components/home/SelectedImage.client";
 import type { TFigure } from "~/types/figureType";
 
+const sections = [
+  {
+    title: "",
+    id: "",
+  },
+];
+
 export default function Index() {
   const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
   const [selectedImage, setSelectedImage] = useState<TFigure>(
@@ -23,6 +30,7 @@ export default function Index() {
         backgroundColor: "playfairPrimary",
         primaryTextColor: "white",
         footnotes: [],
+        sections,
       }}
     >
       <main
