@@ -17,10 +17,10 @@ export default function ChapterTitle({ title, subtitle }: Props) {
       className="root bg-black h-screen md:h-[657px] flex flex-col justify-center items-center w-full lg:grid lg:grid-cols-2 lg:gap-24 lg:pl-32"
     >
       <div className="text text-white text-center md:text-left lg:pl-16 my-5">
-        <h1 className="font-duboisWide text-3xl lg:text-7xl my-10 lg:my-10">
+        <h1 className="font-dubois font-bold text-3xl lg:text-7xl mb-8 lg:mb-8">
           {title}
         </h1>
-        <h2 className="font-dubois font-light my-3 lg:my-10 text-2xl lg:text-4xl">
+        <h2 className="font-dubois font-light text-2xl lg:text-2xl">
           {subtitle}
         </h2>
       </div>
