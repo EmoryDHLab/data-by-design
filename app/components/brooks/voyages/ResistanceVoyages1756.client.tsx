@@ -8,9 +8,14 @@ import type { TVoyage } from "~/types/voyage";
 
 const INITIAL_YEAR_RANGE = [1756, 1766];
 
-function ResistanceVoyages1756() {
+function ResistanceVoyages1756({
+  background = [250, 241, 233],
+}: {
+  background: number[];
+}) {
   const { windowSize } = useResizeObserver();
   const p5Ref = useRef<p5 | undefined>();
+  const backgroundRef = useRef<number[]>(background);
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
   const showAllRef = useRef<boolean>(false);
@@ -19,7 +24,7 @@ function ResistanceVoyages1756() {
 
   useEffect(() => {
     if (windowSize.width && windowSize.height) {
-      setWidth(windowSize.width * 0.75);
+      setWidth(windowSize.width - 100);
       setHeight(windowSize.height * 0.45);
     }
   }, [windowSize]);
@@ -60,7 +65,7 @@ function ResistanceVoyages1756() {
       //The  main visualization
       p5.draw = () => {
         // p5.background(250, 241, 233);
-        p5.background(250, 241, 233);
+        p5.background(backgroundRef.current);
         if (lerpAmount < 1 && showAllRef.current) {
           lerpAmount += 0.01;
           nonResistanceStrokeWidth += 0.005;

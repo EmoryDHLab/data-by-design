@@ -22,7 +22,6 @@ export default function Consent() {
       const observer = new IntersectionObserver(
         ([record]) => {
           const { intersectionRatio } = record;
-          console.log("🚀 ~ useEffect ~ intersectionRatio:", intersectionRatio);
           if (intersectionRatio < 1) {
             setSmall(true);
           } else {
@@ -33,9 +32,6 @@ export default function Consent() {
       );
 
       const observee = document.querySelector(".first-paragraph");
-      // document.getElementById("main-content")?.firstElementChild;
-      // containerRef.current?.nextElementSibling?.firstElementChild;
-      console.log("🚀 ~ useEffect ~ observee:", observee);
 
       if (observee) observer.observe(observee);
 
@@ -73,7 +69,7 @@ export default function Consent() {
             onChange={() => setHideSensitiveState(!hideSensitiveState)}
             colorOn={backgroundColor}
             colorOff={accentColor}
-            screenReaderMsg="Consent to descriptions of images of slavery."
+            screenReaderMsg="This chapter contains graphic images of slavery. "
           >
             Show sensitive images
           </Toggle>

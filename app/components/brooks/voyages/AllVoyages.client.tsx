@@ -9,12 +9,31 @@ import type { TVoyage } from "~/types/voyage";
 
 const INITIAL_YEAR_RANGE = [1565, 1575];
 
-function AllVoyages() {
+interface Props {
+  startYear?: number;
+  endYear?: number;
+  background?: number[];
+  showSlider?: boolean;
+  showAxis?: boolean;
+  id?: string;
+}
+
+function AllVoyages({
+  startYear = INITIAL_YEAR_RANGE[0],
+  endYear = INITIAL_YEAR_RANGE[1],
+  background = [250, 241, 233],
+  showAxis = true,
+  showSlider = true,
+  id = "allVoyageContainer",
+}: Props) {
   const { windowSize } = useResizeObserver();
   const p5Ref = useRef<p5 | undefined>();
+  const yearRangeRef = useRef<number[]>([startYear, endYear]);
+  const backgroundRef = useRef<number[]>(background);
+  const idRef = useRef<string>(id);
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
-  const [yearRange, setYearRange] = useState<number[]>(INITIAL_YEAR_RANGE);
+  const [yearRange, setYearRange] = useState<number[]>([startYear, endYear]);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
 
@@ -36,6 +55,10 @@ function AllVoyages() {
     p5Ref.current.redraw();
   }, [yearRange]);
 
+  useMemo(() => {
+    setYearRange([startYear, endYear]);
+  }, [startYear, endYear]);
+
   useEffect(() => {
     const initP5 = (p5: p5) => {
       voyages.current = []; // The array containing all the voyages
@@ -44,15 +67,15 @@ function AllVoyages() {
       let nonResistanceStrokeWidth = 0; //the stroke width of non-resistance voyages curves
 
       p5.setup = () => {
-        p5.createCanvas(width, height).parent("allVoyageContainer");
+        p5.createCanvas(width, height).parent(idRef.current);
 
         (voyageData as TVoyage[]).forEach((voyage: TVoyage) => {
           voyages.current.push(
             new VoyageYear(
               p5,
               voyage,
-              INITIAL_YEAR_RANGE[0],
-              INITIAL_YEAR_RANGE[1],
+              yearRangeRef.current[0],
+              yearRangeRef.current[1],
               height,
               width,
               nonResistanceStrokeWidth,
@@ -65,15 +88,14 @@ function AllVoyages() {
         //filter the voyages out based on the values on the slider.
         filteredVoyages.current = voyages.current.filter(
           (obj) =>
-            obj.year >= INITIAL_YEAR_RANGE[0] &&
-            obj.year <= INITIAL_YEAR_RANGE[1]
+            obj.year >= yearRangeRef.current[0] &&
+            obj.year <= yearRangeRef.current[1]
         );
       };
 
       //The  main visualization
       p5.draw = () => {
-        p5.background(250, 241, 233);
-        // p5.background(28, 24, 23);
+        p5.background(backgroundRef.current);
 
         for (const index in filteredVoyages.current) {
           filteredVoyages.current[index].updateTransition(
@@ -100,26 +122,36 @@ function AllVoyages() {
   }, [width, height]);
 
   return (
-    <section className="w-screen">
+    <div className="w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
-        <div className="bg-black mb-3">
+        <div
+          className={`bg-black mb-3 transition-opacity duration-1000 opacity-${
+            showSlider ? 100 : 0
+          }`}
+        >
           <Slider
             width={width}
             yearRange={yearRange}
             setYearRange={setYearRange}
           />
         </div>
-        <div id="allVoyageContainer"></div>
+        <div id={id}></div>
         {width && (
-          <Axis
-            width={width}
-            yearRange={yearRange}
-            widthAdjustment={45}
-            color="black"
-          />
+          <div
+            className={`opacity-${
+              showAxis ? 100 : 0
+            } transition-opacity duration-1000`}
+          >
+            <Axis
+              width={width}
+              yearRange={[startYear, endYear]}
+              widthAdjustment={45}
+              color="black"
+            />
+          </div>
         )}
       </div>
-    </section>
+    </div>
   );
 }
 

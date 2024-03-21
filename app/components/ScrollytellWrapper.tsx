@@ -50,22 +50,26 @@ export default function ScrollytellWrapper({
 
   useEffect(() => {
     if (steps?.current?.children.length !== triggers.length) return;
-    scrollerRef.current = scrollama();
-    scrollerRef.current
-      .setup({
-        // @ts-ignore may be a Scrollama bug. offset does allow strings.
-        offset: scrollOffset ?? "60px",
-        step: stepClassName ?? ".step",
-        progress: true,
-        debug,
-        parent,
-        container,
-        threshold,
-      })
-      .onStepProgress(({ index, progress }) => {
-        if (setCurrentStep) setCurrentStep(index);
-        setScrollProgress(index + progress);
-      });
+    try {
+      scrollerRef.current = scrollama();
+      scrollerRef.current
+        .setup({
+          // @ts-ignore may be a Scrollama bug. offset does allow strings.
+          offset: scrollOffset ?? "60px",
+          step: stepClassName ?? ".step",
+          progress: true,
+          debug,
+          parent,
+          container,
+          threshold,
+        })
+        .onStepProgress(({ index, progress }) => {
+          if (setCurrentStep) setCurrentStep(index);
+          setScrollProgress(index + progress);
+        });
+    } catch (error) {
+      console.error("file: Consent.tsx:38 ~ useEffect ~ error:", error);
+    }
 
     return () => {
       scrollerRef.current?.destroy();
@@ -85,7 +89,11 @@ export default function ScrollytellWrapper({
   ]);
 
   useEffect(() => {
-    scrollerRef.current?.resize();
+    try {
+      scrollerRef.current?.resize();
+    } catch (error) {
+      console.error("file: Consent.tsx:38 ~ useEffect ~ error:", error);
+    }
   }, [documentSize]);
 
   return (

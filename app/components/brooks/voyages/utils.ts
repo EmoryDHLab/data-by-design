@@ -2,11 +2,11 @@ import type p5 from "p5";
 import type { TVoyage } from "~/types/voyage";
 
 const colors = [
-  [86, 146, 138],
-  [238, 201, 159],
-  [222, 0, 59],
-  [58, 15, 49],
-  [77, 76, 132],
+  [86, 146, 138], // green
+  [238, 201, 159], // tan
+  [222, 0, 59], // red
+  [58, 15, 49], // purple
+  [77, 76, 132], // blue
 ];
 
 export const randomColor = (fullColor: boolean) => {

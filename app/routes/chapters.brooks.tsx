@@ -20,15 +20,12 @@ import FigureObj from "~/components/layout/FigureObj";
 import figures from "~/data/figures/brooks.json";
 import ClarksonSideBySideScrollytell from "~/components/brooks/ClarksonSideBySideScrollytell";
 import { ClientOnly } from "remix-utils";
-import VoyageExample from "~/components/brooks/voyages/VoyageExample";
-import ResistanceVoyages1756 from "~/components/brooks/voyages/ResistanceVoyages1756.client";
-import AllVoyages1756 from "~/components/brooks/voyages/AllVoyages1756.client";
 import AllVoyages from "~/components/brooks/voyages/AllVoyages.client";
-import VoyagesCompare from "~/components/brooks/voyages/VoyagesCompare";
 import { chapterMeta } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
 import type { V2_MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
+import VoyageScrollytell from "~/components/brooks/voyageScrollytell/VoyageScrollytell";
 
 const chapterFigures = Object.values(figures);
 
@@ -72,23 +69,13 @@ const visualizations: TVizAnchors[] = [
   },
   {
     type: "visualization",
-    id: "viz1",
-    title: "Visualization One",
-  },
-  {
-    type: "visualization",
-    id: "viz2",
-    title: "Visualization Two",
-  },
-  {
-    type: "visualization",
-    id: "viz3",
-    title: "Visualization Three",
-  },
-  {
-    type: "visualization",
     id: "viz4",
     title: "Visualization Four",
+  },
+  {
+    type: "scrollytell",
+    id: "voyage-scrollytell",
+    title: "Scrollytell 3",
   },
 ];
 
@@ -123,28 +110,34 @@ export default function BrooksPage() {
       <ChapterBody>
         <ClientOnly>{() => <Consent />}</ClientOnly>
         <CenteredLayout>
-          <p className="py-10 md:pt-24">
-            Before there are data, there are people. People who offer up their
-            lives as data -- or whose lives become data without consent.
-          </p>
+          <Quotation
+            quote={
+              <>
+                Before there are data, there are people. People who offer up
+                their lives as data -- or whose lives become data without
+                consent.
+              </>
+            }
+          />
           <p className="first-paragraph">
             It was a long and circuitous—and often painful—path that led Olaudah
-            Equiano," the famed author and abolitionist, to London in January
+            Equiano, the famed author and abolitionist, to London in January
             1777. According to his autobiography,{" "}
             <cite>
               The Interesting Narrative of the Life of Olaudah Equiano, or
               Gustavus Vassa, the African
             </cite>{" "}
             (1789), Equiano was born in the Igbo area of the Kingdom of Benin,
-            in what is now southeastern Nigeria. Kidnapped from his birthplace
-            at the age of 11 and carried to the Atlantic coast, Equiano was then
-            forced aboard a slave ship. There he encountered "a multitude of
-            black people of every description chained together," the captives
-            packed in quarters "so crowded that each had scarcely room to turn
-            himself."
-            <InlineFootnote index={0} />
-            Equiano sailed to Barbados and then to Virginia, where he was sold
-            into slavery. He would remain enslaved for almost twenty years.
+            in what is now southeastern Nigeria
+            <InlineFootnote index={0} />. Kidnapped from his birthplace at the
+            age of 11 and carried to the Atlantic coast, Equiano was then forced
+            aboard a slave ship. There he encountered “a multitude of black
+            people of every description chained together,” the captives packed
+            in quarters “so crowded that each had scarcely room to turn
+            himself.”
+            <InlineFootnote index={1} /> Equiano was taken to Barbados and then
+            to Virginia, where he was sold. He would remain enslaved for almost
+            twenty years.
           </p>
           <p>
             By the time that Equiano settled in London, he had been free for
@@ -163,45 +156,45 @@ export default function BrooksPage() {
             endorsement.
           </p>
           <p>
-            In <cite>Committed to Memory: The Art of the Slave Ship Icon</cite>,
-            art historian Cheryl Finley imagines how Equiano might have felt as
-            he encountered the image for the first time:
+            By the time that Equiano settled in London, he had been free for
+            over a decade; in 1766, Equiano had purchased himself, and therefore
+            his freedom, with earnings from his personal trading business. But
+            his experience of enslavement was never far from his mind. And so in
+            the late 1780s, as the British antislavery movement began to
+            coalesce, Equiano became increasingly involved in its activities.
+            Through this abolitionist work, he became acquainted with Thomas
+            Clarkson, a leading white abolitionist and key member of the London
+            Committee of the Society for Effecting the Abolition of the Slave
+            Trade (SEASE).
+            <InlineFootnote index={2} /> So when, in early 1789, Clarkson
+            received a copy of a diagram created by the Plymouth Committee of
+            SEASE entitled, “Plan of an African Ship’s Lower Deck with Negroes
+            in the Proportion of Only One to a Ton,” he knew exactly who he
+            should ask to confirm the truth of what he saw.
+            <InlineFootnote index={3} />
           </p>
-          <Quotation
-            quote={
-              <>
-                One can picture how his eyes might have followed the contours of
-                the darkly shaded figures, counting each one, possibly imagining
-                the face of someone he once knew. Fine black lines representing
-                the wall that divided groups of figures by age and sex might
-                have caused him to pause and think about which space he had
-                occupied or the people who had lived and died next to him. The
-                combination of rows and rows of black figures separated and
-                surrounded by fine black lines schematically mapped the space of
-                the hold, marking a route to untold horror.
-              </>
-            }
-          />
           <p>
-            The route that Finley evokes, the infamous Middle Passage, was what
-            Equiano, one year later, writing in his autobiography, would
-            describe as "a scene of horror almost inconceivable."
-            <InlineFootnote index={1} /> The route was the same that fellow
-            Black British antislavery activist, Quobna Ottobah Cugoano, in his
+            The diagram that Clarkson showed to Equiano depicted the
+            configuration of captive bodies in the hold of a slave ship—a “scene
+            of horror almost inconceivable,” as Equiano, in his autobiography,
+            described his own first view into the hold, and that his fellow
+            Black British antislavery activist Quobna Ottobah Cugoano, in his
             own treatise,{" "}
             <cite>
               Thoughts and Sentiments on the Evil and Wicked Traffic of the
               Slavery and Commerce of the Human Species
-            </cite>
-            , published in 1787, recalled such a trauma that he refused to
-            describe it at all.
-            <InlineFootnote index={2} />
-            But in the image that Clarkson received from the Plymouth Committee,
-            and that he shared with Equiano, he believed he'd found the key to
-            conveying this horror to his white compatriots. The image would
-            create an "instantaneous impression" in "all who saw it" and compel
-            them to join the abolitionist cause.
-            <InlineFootnote index={3} />
+            </cite>{" "}
+            (1787), recalled as such a trauma that he chose not to describe it
+            at all.
+            <InlineFootnote index={4} /> But in the diagram that Clarkson
+            received from the Plymouth Committee, and that he shared with
+            Equiano, Clarkson believed he’d found the key to conveying the depth
+            of this inhumanity to his white compatriots. The diagram, which he
+            would go on to revise and extend, and publish in March of that year
+            as “Description of a Slave Ship,” would create an “instantaneous
+            impression of horror upon all who saw it,” Clarkson later recalled,
+            and compel them to join the abolitionist cause.
+            <InlineFootnote index={5} />
           </p>
           <p>
             The "instantaneous impression" that Clarkson associated with the
@@ -871,64 +864,12 @@ export default function BrooksPage() {
           {/* Runover "A violence of enslavement and a violence of abstraction developed together and reinforced each other," he further declares. // enslavement and abstraction developed together */}
         </CenteredLayout>
 
-        <TwoColumnLayout>
-          <Column>
-            <p className="">
-              in the data set we are consilting theres a bunch of voyages from
-              1565 to 1858.
-            </p>
-          </Column>
-          <Column>
-            <figure>
-              <VoyageExample />
-            </figure>
-          </Column>
-        </TwoColumnLayout>
-
-        <FigureObj
-          figure={figures["all-resistance-voyages"]}
-          imageClassName="drop-shadow-none"
-          captionClassName="mx-12"
-        />
-
-        <p>
-          -- Only voyages with resistance reported and year range interaction.
-          --
-        </p>
-        <span id="viz1">
-          <VoyagesCompare />
-        </span>
-
-        <ClientOnly>
-          {() => (
-            <span id="viz2">
-              <ResistanceVoyages1756 />
-            </span>
-          )}
-        </ClientOnly>
-
-        <p>
-          -- All voyages from 1756-1766 with voyages without resistance reported
-          in grayscale and no interaction. --
-        </p>
-
-        <ClientOnly>
-          {() => (
-            <span id="viz3">
-              <AllVoyages1756 />
-            </span>
-          )}
-        </ClientOnly>
-
-        <p>
-          -- Show all voyages in full color with no toggle with year range
-          interaction. --
-        </p>
+        <VoyageScrollytell />
 
         <ClientOnly>
           {() => (
             <span id="viz4">
-              <AllVoyages />
+              <AllVoyages startYear={1665} endYear={1675} />
             </span>
           )}
         </ClientOnly>

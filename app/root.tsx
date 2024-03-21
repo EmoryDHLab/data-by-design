@@ -1,8 +1,5 @@
 import { useEffect } from "react";
-import type {
-  LinksFunction,
-  V2_MetaFunction,
-} from "@remix-run/node";
+import type { LinksFunction, V2_MetaFunction } from "@remix-run/node";
 
 import {
   Links,
@@ -24,28 +21,28 @@ export const meta: V2_MetaFunction = () => {
     { title: "Data By Design" },
     { name: "viewport", content: "width=device-width,initial-scale=1" },
   ];
-}
+};
 
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: fontStyles },
   ];
-}
+};
 
 export default function App() {
-  useEffect(() => {
-    window.hypothesisConfig = function () {
-      return {
-        "openSidebar": false
-      };
-    };
-    const head = document.querySelector('head');
-    const script = document.createElement('script');
-    script.setAttribute('src', 'https://hypothes.is/embed.js');
-    script.async = true;
-    head?.appendChild(script);
-  }, []);
+  // useEffect(() => {
+  //   window.hypothesisConfig = function () {
+  //     return {
+  //       "openSidebar": false
+  //     };
+  //   };
+  //   const head = document.querySelector('head');
+  //   const script = document.createElement('script');
+  //   script.setAttribute('src', 'https://hypothes.is/embed.js');
+  //   script.async = true;
+  //   head?.appendChild(script);
+  // }, []);
 
   return (
     <html lang="en">
