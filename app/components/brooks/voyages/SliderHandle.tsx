@@ -15,7 +15,13 @@ interface EventProps {
   key: string;
 }
 
-function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }: Props) {
+function SliderHandle({
+  sliderWidth,
+  setSliderWidth,
+  start,
+  maxX,
+  year,
+}: Props) {
   const circleRef = useRef<SVGCircleElement>(null);
 
   useEffect(() => {
@@ -31,7 +37,7 @@ function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }: Props)
       if (newX <= maxX + 1 && newX > sliderWidth[0] + 44) {
         setSliderWidth([sliderWidth[0], newX]);
       } else {
-        setSliderWidth([sliderWidth[0], maxX]);
+        // setSliderWidth([sliderWidth[0], maxX]);
       }
     };
 
@@ -62,19 +68,14 @@ function SliderHandle({ sliderWidth, setSliderWidth, start, maxX, year }: Props)
     d3.select(circleRef.current)
       .call(
         // @ts-ignore
-        d3.drag()
-          .on("drag", drag)
+        d3.drag().on("drag", drag)
       )
       .select("circle")
       .on("keydown", keyDown);
-
-    }, [start, setSliderWidth, maxX, sliderWidth]);
+  }, [start, setSliderWidth, maxX, sliderWidth]);
 
   return (
-    <g
-      ref={circleRef}
-      className="cursor-ew-resize"
-    >
+    <g ref={circleRef} className="cursor-ew-resize">
       <text
         x={start ? sliderWidth[0] - 20 : sliderWidth[1] - 20}
         y={-18}

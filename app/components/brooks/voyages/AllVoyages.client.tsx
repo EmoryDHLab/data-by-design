@@ -124,17 +124,15 @@ function AllVoyages({
   return (
     <div className="w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
-        <div
-          className={`bg-black mb-3 transition-opacity duration-1000 opacity-${
-            showSlider ? 100 : 0
-          }`}
-        >
-          <Slider
-            width={width}
-            yearRange={yearRange}
-            setYearRange={setYearRange}
-          />
-        </div>
+        {showSlider && (
+          <div className={`bg-black mb-3`}>
+            <Slider
+              width={width}
+              yearRange={yearRange}
+              setYearRange={setYearRange}
+            />
+          </div>
+        )}
         <div id={id}></div>
         {width && (
           <div

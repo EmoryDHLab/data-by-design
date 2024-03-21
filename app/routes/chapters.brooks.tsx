@@ -869,7 +869,7 @@ export default function BrooksPage() {
         <ClientOnly>
           {() => (
             <span id="viz4">
-              <AllVoyages startYear={1665} endYear={1675} />
+              <AllVoyages />
             </span>
           )}
         </ClientOnly>
