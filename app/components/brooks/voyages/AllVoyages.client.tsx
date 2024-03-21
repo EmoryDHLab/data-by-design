@@ -98,11 +98,11 @@ function AllVoyages({
         p5.background(backgroundRef.current);
 
         for (const index in filteredVoyages.current) {
-          filteredVoyages.current[index].updateTransition(
-            lerpAmount,
-            nonResistanceStrokeWidth,
-            filteredVoyages.current[index].year
-          );
+          // filteredVoyages.current[index].updateTransition(
+          //   lerpAmount,
+          //   nonResistanceStrokeWidth,
+          //   filteredVoyages.current[index].year
+          // );
           filteredVoyages.current[index].show();
         }
 

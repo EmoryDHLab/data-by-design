@@ -292,13 +292,29 @@ const VoyageScrollytell = () => {
         }`}
       >
         <ClientOnly>
-          {() => <AllVoyages1756 background={BACKGROUND} />}
+          {() => <AllVoyages1756 background={BACKGROUND} allEqual={false} />}
         </ClientOnly>
       </div>
 
       <div
         className={`fixed bottom-0 transition-opacity duration-1000 opacity-${
-          slideIndex === 12 || (slideIndex >= 15 && slideIndex < 17) ? 100 : 0
+          slideIndex === 12 ? 100 : 0
+        }`}
+      >
+        <ClientOnly>
+          {() => (
+            <AllVoyages1756
+              background={BACKGROUND}
+              allEqual={true}
+              id="scrollytell-allVoyageContainer1756"
+            />
+          )}
+        </ClientOnly>
+      </div>
+
+      <div
+        className={`fixed bottom-0 transition-opacity duration-1000 opacity-${
+          slideIndex >= 15 && slideIndex < 17 ? 100 : 0
         }`}
       >
         <ClientOnly>

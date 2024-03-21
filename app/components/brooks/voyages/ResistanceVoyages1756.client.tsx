@@ -66,10 +66,10 @@ function ResistanceVoyages1756({
       p5.draw = () => {
         // p5.background(250, 241, 233);
         p5.background(backgroundRef.current);
-        if (lerpAmount < 1 && showAllRef.current) {
-          lerpAmount += 0.01;
-          nonResistanceStrokeWidth += 0.005;
-        }
+        // if (lerpAmount < 1 && showAllRef.current) {
+        //   lerpAmount += 0.01;
+        //   nonResistanceStrokeWidth += 0.005;
+        // }
 
         voyages.current.forEach((voyage) => voyage.show());
 

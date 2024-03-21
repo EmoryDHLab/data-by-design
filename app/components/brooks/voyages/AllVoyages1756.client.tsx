@@ -8,14 +8,22 @@ import type { TVoyage } from "~/types/voyage";
 
 const INITIAL_YEAR_RANGE = [1756, 1766];
 
+interface Props {
+  background?: number[];
+  allEqual?: boolean;
+  id?: string;
+}
+
 function AllVoyages1756({
   background = [250, 241, 233],
-}: {
-  background: number[];
-}) {
+  allEqual = false,
+  id = "allVoyageContainer1756",
+}: Props) {
   const { windowSize } = useResizeObserver();
   const p5Ref = useRef<p5 | undefined>();
   const backgroundRef = useRef<number[]>(background);
+  const idRef = useRef<string>(id);
+  const allEqualRef = useRef<boolean>(allEqual);
   const voyages = useRef<Array<VoyageYear>>([]);
   const filteredVoyages = useRef<Array<VoyageYear>>([]);
   const [width, setWidth] = useState<number>(window.outerWidth * 0.75);
@@ -36,7 +44,7 @@ function AllVoyages1756({
       let nonResistanceStrokeWidth = 0;
 
       p5.setup = () => {
-        p5.createCanvas(width, height).parent("allVoyageContainer1756");
+        p5.createCanvas(width, height).parent(idRef.current);
 
         const currentVoyages: TVoyage[] = (voyageData as TVoyage[]).filter(
           (obj) =>
@@ -54,7 +62,8 @@ function AllVoyages1756({
               height,
               width,
               nonResistanceStrokeWidth,
-              lerpAmount
+              lerpAmount,
+              allEqualRef.current
             )
           );
         });
@@ -85,7 +94,7 @@ function AllVoyages1756({
   return (
     <section className="w-screen">
       <div className="flex flex-col items-center mt-6 text-white">
-        <div id="allVoyageContainer1756"></div>
+        <div id={id}></div>
         {width && (
           <Axis width={width} color="black" yearRange={INITIAL_YEAR_RANGE} />
         )}
