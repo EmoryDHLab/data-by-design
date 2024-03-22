@@ -10,11 +10,7 @@ import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import figures from "~/data/figures/brooks.json";
 import FiskColors from "./FiskColors";
 import VoyageExample from "../voyages/VoyageExample";
-import SampleVoyages from "./SampleVoyages.client";
-import AllVoyages from "../voyages/AllVoyages.client";
-import ResistanceVoyages from "../voyages/ResistanceVoyages.client";
-import ResistanceVoyages1756 from "../voyages/ResistanceVoyages1756.client";
-import AllVoyages1756 from "../voyages/AllVoyages1756.client";
+import VoyagesVis from "../voyages/VoyagesVis.client";
 
 const minScrollProgress = 16;
 const BACKGROUND = [224, 220, 242];
@@ -222,7 +218,22 @@ const VoyageScrollytell = () => {
             <FiskColors />
           </div>
           {/* 6 */}
-          <ClientOnly>{() => <SampleVoyages />}</ClientOnly>
+          <ClientOnly>
+            {() => (
+              <VoyagesVis
+                id="sample-voyages"
+                startYear={1586}
+                endYear={1588}
+                showSlider={false}
+                allVoyages={false}
+                background={BACKGROUND}
+                fullColor={true}
+                heightAdjust={1}
+                widthAdjust={0.2}
+                isSample={true}
+              />
+            )}
+          </ClientOnly>
           {/* 7 */}
           <div>
             <div className="p-6 md:mt-56">
@@ -240,7 +251,10 @@ const VoyageScrollytell = () => {
           {/* 12 */}
           <div></div>
           {/* 13 */}
-          <Picture figure={figures["autobiography"]} className="md:mt-56" />
+          <Picture
+            figure={figures["autobiographyPLACEHOLDER"]}
+            className="md:mt-56"
+          />
           {/* 14 */}
           <div className="p-8 h-2/5 grid content-center md:mt-56">
             <PullQuote
@@ -263,12 +277,14 @@ const VoyageScrollytell = () => {
           >
             <ClientOnly>
               {() => (
-                <ResistanceVoyages
+                <VoyagesVis
                   startYear={initialStartYear}
                   endYear={initialEndYear}
                   background={BACKGROUND}
                   showSlider={false}
                   showAxis={slideIndex === 9}
+                  allVoyages={false}
+                  id="resistance-only"
                 />
               )}
             </ClientOnly>
@@ -280,57 +296,78 @@ const VoyageScrollytell = () => {
             }`}
           >
             <ClientOnly>
-              {() => <ResistanceVoyages1756 background={BACKGROUND} />}
+              {() => (
+                <VoyagesVis
+                  id="resistance-only-1756"
+                  startYear={1756}
+                  endYear={1766}
+                  showSlider={false}
+                  allVoyages={false}
+                  background={BACKGROUND}
+                />
+              )}
+            </ClientOnly>
+          </div>
+          <div
+            className={`fixed bottom-0 transition-opacity duration-1000 opacity-${
+              slideIndex === 11 ? 100 : 0
+            }`}
+          >
+            <ClientOnly>
+              {() => (
+                <VoyagesVis
+                  id="all-1756"
+                  startYear={1756}
+                  endYear={1766}
+                  showSlider={false}
+                  allVoyages={true}
+                  background={BACKGROUND}
+                  fullColor={false}
+                />
+              )}
+            </ClientOnly>
+          </div>
+
+          <div
+            className={`fixed bottom-0 transition-opacity duration-1000 opacity-${
+              slideIndex === 12 ? 100 : 0
+            }`}
+          >
+            <ClientOnly>
+              {() => (
+                <VoyagesVis
+                  id="all-full-color-1756"
+                  startYear={1756}
+                  endYear={1766}
+                  showSlider={false}
+                  allVoyages={true}
+                  fullColor={true}
+                  background={BACKGROUND}
+                />
+              )}
+            </ClientOnly>
+          </div>
+
+          <div
+            className={`fixed bottom-0 transition-opacity duration-1000 opacity-${
+              slideIndex >= 15 && slideIndex < 17 ? 100 : 0
+            }`}
+          >
+            <ClientOnly>
+              {() => (
+                <VoyagesVis
+                  startYear={1776}
+                  endYear={1786}
+                  background={[224, 220, 242]}
+                  showSlider={false}
+                  showAxis={true}
+                  id="scrollytell-allVoyageContainer"
+                />
+              )}
             </ClientOnly>
           </div>
         </div>
       </div>
-
-      <div
-        className={`fixed bottom-0 transition-opacity duration-1000 opacity-${
-          slideIndex === 11 ? 100 : 0
-        }`}
-      >
-        <ClientOnly>
-          {() => <AllVoyages1756 background={BACKGROUND} allEqual={false} />}
-        </ClientOnly>
-      </div>
-
-      <div
-        className={`fixed bottom-0 transition-opacity duration-1000 opacity-${
-          slideIndex === 12 ? 100 : 0
-        }`}
-      >
-        <ClientOnly>
-          {() => (
-            <AllVoyages1756
-              background={BACKGROUND}
-              allEqual={true}
-              id="scrollytell-allVoyageContainer1756"
-            />
-          )}
-        </ClientOnly>
-      </div>
-
-      <div
-        className={`fixed bottom-0 transition-opacity duration-1000 opacity-${
-          slideIndex >= 15 && slideIndex < 17 ? 100 : 0
-        }`}
-      >
-        <ClientOnly>
-          {() => (
-            <AllVoyages
-              startYear={1776}
-              endYear={1786}
-              background={[224, 220, 242]}
-              showSlider={false}
-              showAxis={true}
-              id="scrollytell-allVoyageContainer"
-            />
-          )}
-        </ClientOnly>
-      </div>
-
       <div
         ref={steps}
         className="relative translate-y-[calc(-100vh+120px)] pointer-events-none md:mt-96 md:w-full"

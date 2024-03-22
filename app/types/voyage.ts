@@ -1,6 +1,6 @@
 import type p5 from "p5";
 
-export type Seed = {
+export type TPoint = {
   c1: number;
   c2: number;
   c3: number;
@@ -10,7 +10,7 @@ export type Seed = {
   c7: number;
 };
 
-export type TVoyage = {
+export type TVoyageData = {
   id: number;
   totalPeople: number;
   year: number;
@@ -18,12 +18,12 @@ export type TVoyage = {
   mortalityRate: number;
   resistanceReported: boolean;
   rgb: Array<number>;
-  curveSeeds: Seed;
-  vertexSeeds: Seed;
+  points: TPoint;
+  offsets: TPoint;
 };
 
-export type TVoyageYear = {
-  curveSeed: Seed;
+export type TVoyage = {
+  points: TPoint;
   distanceLeft: number;
   distanceRight: number;
   duration: number;
@@ -43,18 +43,10 @@ export type TVoyageYear = {
   rgb: Array<number>;
   shapeSeed: number;
   totalPeople: number;
-  vertexSeed: Seed;
+  offsets: TPoint;
   width: number;
   year: number;
-  updateTransition: (
-    lerpAmount: number,
-    nonResistanceStrokeWidth: number,
-    shapeSeed: number
-  ) => void;
-  updateMinMax: (
-    minYear: number,
-    maxYear: number
-  ) => void;
+  updateMinMax: (minYear: number, maxYear: number) => void;
   show: () => void;
   updateP5Instance: (p5: p5) => void;
 };

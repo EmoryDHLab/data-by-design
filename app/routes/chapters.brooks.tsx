@@ -20,7 +20,7 @@ import FigureObj from "~/components/layout/FigureObj";
 import figures from "~/data/figures/brooks.json";
 import ClarksonSideBySideScrollytell from "~/components/brooks/ClarksonSideBySideScrollytell";
 import { ClientOnly } from "remix-utils";
-import AllVoyages from "~/components/brooks/voyages/AllVoyages.client";
+import VoyagesVis from "~/components/brooks/voyages/VoyagesVis.client";
 import { chapterMeta } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
 import type { V2_MetaFunction } from "@remix-run/node";
@@ -869,7 +869,7 @@ export default function BrooksPage() {
         <ClientOnly>
           {() => (
             <span id="viz4">
-              <AllVoyages />
+              <VoyagesVis />
             </span>
           )}
         </ClientOnly>
