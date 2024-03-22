@@ -26,6 +26,7 @@ import ChapterBody from "~/components/layout/ChapterBody";
 import type { V2_MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import VoyageScrollytell from "~/components/brooks/voyageScrollytell/VoyageScrollytell";
+import ClarksonDiagram from "~/components/brooks/ClarksonDiagram";
 
 const chapterFigures = Object.values(figures);
 
@@ -35,24 +36,20 @@ export const meta: V2_MetaFunction = () => {
 
 const sections = [
   {
-    title: "Origins and Absences",
-    id: "origins-and-absences",
+    title: "Insight and Abstraction ",
+    id: "insight-and-bstraction",
   },
   {
-    title: 'The "Graphical Authority" of "Description of a Slave Ship"',
-    id: "the-graphical-authority-of-description-of-a-slave-ship",
+    title: "Graphical Authority and the God Trick",
+    id: "graphical-authority-and-the-god-trick",
   },
   {
-    title: "Enslavement and Abstraction",
-    id: "enslavement-and-abstraction",
+    title: "Visualizing Resistance ",
+    id: "visualizing-resistance ",
   },
   {
-    title: "Data Visualization's Alternative Streams",
-    id: "data-visualizations-alternative-streams",
-  },
-  {
-    title: "Diagramming the Present",
-    id: "diagramming-the-present",
+    title: "The Alternate Streams of Data Visualization",
+    id: "the-alternate-streams-of-data-visualization",
   },
 ];
 
@@ -104,7 +101,7 @@ export default function BrooksPage() {
     >
       <ChapterTitle
         title="Every Datapoint a Person"
-        subtitle="The Brooks / Diagram of a Slave Ship"
+        subtitle="Description of a Slave Ship"
       />
 
       <ChapterBody>
@@ -131,10 +128,10 @@ export default function BrooksPage() {
             in what is now southeastern Nigeria
             <InlineFootnote index={0} />. Kidnapped from his birthplace at the
             age of 11 and carried to the Atlantic coast, Equiano was then forced
-            aboard a slave ship. There he encountered “a multitude of black
-            people of every description chained together,” the captives packed
-            in quarters “so crowded that each had scarcely room to turn
-            himself.”
+            aboard a slave ship. There he encountered "a multitude of black
+            people of every description chained together," the captives packed
+            in quarters "so crowded that each had scarcely room to turn
+            himself."
             <InlineFootnote index={1} /> Equiano was taken to Barbados and then
             to Virginia, where he was sold. He would remain enslaved for almost
             twenty years.
@@ -168,15 +165,18 @@ export default function BrooksPage() {
             Trade (SEASE).
             <InlineFootnote index={2} /> So when, in early 1789, Clarkson
             received a copy of a diagram created by the Plymouth Committee of
-            SEASE entitled, “Plan of an African Ship’s Lower Deck with Negroes
-            in the Proportion of Only One to a Ton,” he knew exactly who he
+            SEASE entitled, "Plan of an African Ship's Lower Deck with Negroes
+            in the Proportion of Only One to a Ton," he knew exactly who he
             should ask to confirm the truth of what he saw.
             <InlineFootnote index={3} />
           </p>
+          <figure className="my-3">
+            <ClarksonDiagram />
+          </figure>
           <p>
             The diagram that Clarkson showed to Equiano depicted the
-            configuration of captive bodies in the hold of a slave ship—a “scene
-            of horror almost inconceivable,” as Equiano, in his autobiography,
+            configuration of captive bodies in the hold of a slave ship—a "scene
+            of horror almost inconceivable," as Equiano, in his autobiography,
             described his own first view into the hold, and that his fellow
             Black British antislavery activist Quobna Ottobah Cugoano, in his
             own treatise,{" "}
@@ -188,106 +188,148 @@ export default function BrooksPage() {
             at all.
             <InlineFootnote index={4} /> But in the diagram that Clarkson
             received from the Plymouth Committee, and that he shared with
-            Equiano, Clarkson believed he’d found the key to conveying the depth
+            Equiano, Clarkson believed he'd found the key to conveying the depth
             of this inhumanity to his white compatriots. The diagram, which he
             would go on to revise and extend, and publish in March of that year
-            as “Description of a Slave Ship,” would create an “instantaneous
-            impression of horror upon all who saw it,” Clarkson later recalled,
+            as "Description of a Slave Ship," would create an "instantaneous
+            impression of horror upon all who saw it," Clarkson later recalled,
             and compel them to join the abolitionist cause.
             <InlineFootnote index={5} />
           </p>
           <p>
-            The "instantaneous impression" that Clarkson associated with the
-            image, was--like all carefully engineered viewing experiences--the
-            result of countless hours of research and design. It also
-            represented the culmination of over a century of thinking about data
-            and its visual display. Indeed, the idea that evidence could be
-            compiled as data and analyzed in terms of its larger significance,
-            its findings then distilled into clear and compact visual form, took
-            shape over the course of the eighteenth century, guided by (then)
-            new theories about how knowledge is produced and perceived.
+            The "instantaneous impression of horror" that Clarkson hoped his
+            diagram would prompt was, like all carefully-engineered viewing
+            experiences, the result of countless hours of research and design.
+            Given the actual words that Clarkson employed—and in particular, the
+            "instantaneous impression"—it also safe to say that the diagram
+            represented the culmination of over two centuries of thinking about
+            the value of empirical evidence and the impact of giving it visual
+            form.
+            <InlineFootnote index={6} /> Indeed, the idea that evidence could be
+            visualized as data, perceived by the eyes, and then processed into
+            knowledge by the mind, coalesced from the contributions of
+            empiricism in both theory and practice, as well as an increasingly
+            wide array of examples of how numbers and the relationships among
+            them could be abstracted into images that the eye could perceive.
           </p>
           <p>
-            Most historians of data visualization agree about this chronology,
-            as well as about the philosophical reorientation that was required
-            for the earliest European exemplars of data visualization to begin
-            to envision their influential designs.
-            <InlineFootnote index={4} />
-            But they have not yet admitted how this philosophical reorientation
-            was the same that enabled the rise of global capitalism—itself
-            undergirded by the practice of slavery that was depicted in the
-            Plymouth Committee's "Plan." Thus in the "instantaneous impression"
-            produced by the image, not one but two salient features of data
-            visualization come into view: the first, of course, is the power of
-            visualization to distill complex information such that insights can
-            easily and efficiently emerge; and the second, equally present, but
-            far less remarked upon, is how the abstraction that is required into
-            to generate insight from complex information always comes at the
-            expense of the particularities—and the context—that the data
-            purports to represent.
+            This intellectual genealogy is, as readers might recall, the first
+            of the two stories of data visualization presented in this project's
+            introduction. But in the "horror" that Clarkson engineered his chart
+            to produce, the second story of data visualization—the one having to
+            do with the uneasy alliance between slavery and data—also snaps into
+            view. "Description of a Slave Ship" requires that we consider these
+            two stories together, and in so doing, demonstrates the importance
+            of this braided narrative for the history of the field. This
+            expanded account underscores the tremendous power of data
+            visualization to distill complex information such that insight can
+            easily and efficiently emerge, while at the same time reminding
+            us—both those who design visualizations and those who perceive
+            them—how the abstraction that is required to efficiently generate
+            insight always comes at the expense of additional detail—detail that
+            data alone cannot convey.
           </p>
           <p>
-            Setting the "Plan of an African Slave Ship's Lower Deck…" at the
-            center of the story we tell about the emergence of modern data
-            visualization serves as a powerful reminder that the history of data
-            and its visual display is intertwined with the history of both
-            capitalism and slavery. It also reminds us that the context of any
-            particular visualization always matters—and that context carries
-            with it both social and political force. More basically, and more
-            profoundly, the "Plan" reminds us that before there are data there
-            are people—people who offer up their lives to be counted as data, or
-            have their lives counted without their consent. Thus every design
-            process must be accompanied by a consideration of the ethical issues
-            engaged—both by those who design visualizations and those who
-            perceive them as well. In short, the "Plan" epitomizes the necessary
-            trade-offs and inherent contradictions involved in visualizing data,
-            those which often result in profound human cost. Placing the "Plan"
-            at the center of the story that we tell about the emergence of
-            modern data visualization thus reminds us of the power—for good and
-            for harm—that is involved in a technique that produces new knowledge
-            at the same time that it seeks to put that knowledge on view.
+            Setting "Description of a Slave Ship" at the center of the story we
+            tell about the emergence of modern data visualization also reminds
+            us that the context of any particular visualization always
+            matters—and that context carries with it both social and political
+            force. More basically, and more profoundly, Clarkson's "Description"
+            reminds us that before there are data there are people—people who
+            offer up their lives to be counted as data, or have their lives
+            counted without their consent. The act of transforming people into
+            data, and of putting that data on display, are both tremendous acts
+            of power. And that power is not guaranteed to always be a benevolent
+            force. Centering "Description of a Slave Ship" in the story we tell
+            about the emergence of data visualization is thus long overdue, for
+            it requires that we recognize the responsibility that comes with
+            this power—the power of visualizing data—which frames what is
+            possible for the viewer to know.
           </p>
         </CenteredLayout>
         <ChapterSectionTitle section={sections[0]}></ChapterSectionTitle>
         <CenteredLayout>
           <p>
-            Like the history of data visualization itself, there is no clear
-            starting point for the development of the "Plan of an African Slave
-            Ship," nor is there even a definitive version. It is generally
-            agreed upon that the idea to create the "Plan" originated with
-            another white British abolitionist William Elford, the chairman of
-            the Plymouth Committee of SEASE and a veritable polymath. A banker
-            by trade, Elford was also an acclaimed painter whose landscapes had
-            shown at the Royal Academy of Arts, as well as an amateur scientist
-            whose experiments had earned him a Fellowship of the Royal Society,
-            the highest scientific honor of the time. Supplementing these skill
-            was domain expertise: Elford had family ties to the Royal Navy, and
-            as a result, had early access to a report being prepared by one of
-            its naval captains, Captain Parrey. Commissioned by British
-            Parliament, Parrey had been tasked with investigating the ships
-            docked in Liverpool that were involved in the transatlantic slave
-            trade. His research was both quantitative and qualitative; in
-            addition to taking precise measurements of the ships and
-            scrutinizing muster logs—lists of crew members aboard any particular
-            ship—Parrey also interviewed the captains and sailors of the ships
-            themselves, learning otherwise undisclosed details about the perils
-            faced by crew members aboard these ships.
+            The original engraving that Clarkson showed to Equiano, and that
+            provided him with the visual model for his own, is attributed to the
+            Plymouth Committee as a collective. But it is generally believed
+            that the image was designed by a single man: William Elford, the
+            Committee's chairman and a veritable polymath. A banker by trade,
+            Elford was also an acclaimed painter whose landscapes had shown at
+            the Royal Academy of Arts, as well as an amateur scientist whose
+            experiments had earned him membership in the Royal Society, the
+            highest scientific honor of the time. (Locke, Boyle, Plot, and
+            others mentioned in the Introduction were also members).
           </p>
-          <PullQuote
-            title="Why would Clarkson use water—the very site of the dehumanization that was required of the condition of enslavement"
-            subtitle="both those who design visualizations and those who perceive them—how the abstraction that is required to efficiently generate insight always comes at the expense of additional detail—detail that data alone cannot convey."
-          />
           <p>
-            Finley speculates that among the "most useful" artifacts included in
-            Parrey's report were the hand-drawn diagrams of the ships created by
-            the captains themselves, which indicated the "cargo area and the
-            space allotted for the different types of goods to be stowed."
-            <InlineFootnote index={5} />
-            Intended to maximize the efficiency of packing cargo on board—since,
-            of course, the principal objective of these ships was financial
-            profit—the diagrams became inspiration to Elford, who recognized in
-            the simple sketches a visual representation of the violence that
-            accompanies the reduction of richly lived lives to commodity goods.
+            Supplementing this range of skills was domain expertise: Elford had
+            family ties to the Royal Navy, and as a result, had early access to
+            a report being prepared by one of its naval captains. Earlier in the
+            year, a group within the British Parliament had tasked the captain,
+            Parrey, with investigating the ships docked in Liverpool that were
+            involved in the transatlantic slave trade. This investigation took
+            both quantitative and qualitative form; in addition to taking
+            precise measurements of the ships and scrutinizing muster logs—lists
+            of crew members aboard any particular ship—Parrey also interviewed
+            the captains and sailors of the ships themselves, learning otherwise
+            undisclosed information about the perils faced by both captives and
+            crew.
+          </p>
+          <p>
+            The art historian Cheryl Finley, whose book{" "}
+            <cite>Committed to Memory: The Art of the Slave Ship Icon</cite>{" "}
+            explores the origins and evolving significance of the "Description"
+            in extensive detail, speculates that among the "most useful"
+            artifacts from Parrey's report were the hand-drawn diagrams of the
+            ships created by the captains themselves.
+            <InlineFootnote index={7} /> Intended as "a type of visual shorthand
+            apparently used to increase the efficiency of packing ships," for
+            abolitionist viewers, these sketches likely became a graphic call to
+            arms. Elford, for one, saw a direct visual depiction of the
+            dehumanization that was required in order to reduce human lives into
+            commodity goods on the part of slavery's profiteers.
+          </p>
+          <p>
+            Readers have likely already have noticed that the default settings
+            for this chapter hide the visual details of the "Description," and
+            the other sensitive images discussed here, until they are
+            sufficiently prepared for what they might see. We made this choice
+            because of the range of harms that can be brought about by engaging
+            with the archive of slavery without warning, context, or consent.
+            These harms may be retrospective, the result of "the uncertain line
+            between witness and spectator" that scholars of slavery often walk,
+            as literary scholar Saidiya Hartman has influentially written.
+            <InlineFootnote index={8} /> They may also be expressed in the form
+            of the desensitization brought about by evermore depictions of the
+            "routinized violence of slavery," Hartman further explains.
+            <InlineFootnote index={9} /> For viewers whose own ancestors were
+            enslaved, such depictions can also exacerbate existing
+            intergenerational trauma, as historian Jennifer Morgan describes.
+            <InlineFootnote index={10} /> Those who choose to view Elford's
+            version of the diagram may do so now by clicking the slider at the
+            top left. Or you may choose to continue to only read about the
+            images of slavery included here.
+          </p>
+          <p>
+            Indeed, Elford's diagram—the one that Equiano saw—is as viscerally
+            affecting as it is visually impossible. Viewers see the ship from
+            above, as if they are gods in the heavens. (We will return to what
+            is, in fact, a "god trick" down below). The top deck of the ship has
+            been removed, so that the viewer can see directly into the hold. The
+            hold is divided into six distinct areas: the largest, in the bow of
+            the ship, and which occupies the entire right half of the diagram,
+            is labeled the "Mens room," and depicts 120 male bodies in four rows
+            of thirty. In the middle is a narrow column labeled "Boys room" and
+            depicts shorter male figures in six rows of twelve. To its left is
+            the larger "Womens room," depicting figures the same size as the
+            adult men, but with breasts. They are depicted in four rows of
+            twenty-one, representing 84 women total. At the stern is the "Girls
+            Room," the figures shorter and squatter than the boys, arranged in
+            three rows of ten. These "scaled inequalities," as Black feminist
+            theorist Hortense Spillers characterizes the figures, literalize the
+            process of "dehumanizing, ungendering, and defacing" that the Middle
+            Passage brought about.
+            <InlineFootnote index={11} />
           </p>
         </CenteredLayout>
 
@@ -298,69 +340,125 @@ export default function BrooksPage() {
             <p>
               It is unknown as to whether Elford was familiar with an earlier,
               more literal depiction of a slave ship, the Marie Séraphique,
-              which dates to around 1770. This image, commissioned by the owner
-              of the ship, presents{" "}
+              which dates to around 1770. This image, "Plan, Profile, et
+              Distribution du Navire La Marie Seraphique," commissioned by the
+              ship's owner to commemorate the "successful" return of its first
+              slaving voyage, presents{" "}
               <HoverText hoverState="hold">a view of the hold—and</HoverText>{" "}
               the captives within it—as one of{" "}
               <HoverText hoverState="crossSections">
-                four cross-sections of each of the ship's levels
+                four cross-sections of each of the ship
               </HoverText>
-              . This image, which also includes a{" "}
+              . The image also includes a{" "}
               <HoverText hoverState="watercolor">
                 watercolor of the ship arriving into Loango
               </HoverText>{" "}
-              as well as{" "}
+              , in what is now Republic of Congo, where the 312 captives were
+              first purchased by the French captain,as well as{" "}
               <HoverText hoverState="tables">
-                tables that depict the numbers of captives
+                data tables that sort them by gender and age
               </HoverText>
-              —312 souls--alongside information about the other,{" "}
-              <HoverText hoverState="nonhumanCargo">
-                nonhuman cargo aboard
-              </HoverText>
-              , is shocking in its attempt at realism. The captives here are
-              each individually drawn, depicted lying on their sides.{" "}
+              , as well as by whether or not they survived.
+              <InlineFootnote index={12} />
+            </p>
+            <p>
+              This "Plan" is shocking in its attempt at realism. Unlike the
+              "cartoon figures" in Elford's diagram, as Spillers also describes
+              them, the captives depicted here are each individually drawn.
+              <InlineFootnote index={13} /> They are shown lying on their sides.{" "}
               <HoverText hoverState="nakedPeople">
                 Most are naked, but several are clothed
               </HoverText>
               . The{" "}
               <HoverText hoverState="shackledMen">men are shackled</HoverText>
-              —some their arms and legs shackled to each other; others shackled
-              to two-by-two.{" "}
-              <HoverText hoverState="nursingMother">
-                One woman nurses a child
-              </HoverText>
-              .
+              —some with their arms and legs shackled to each other; others
+              shackled to two-by-two.{" "}
+              <HoverText hoverState="nursingMother">One woman</HoverText>
+              nurses a child.
             </p>
             <p>
-              Regardless of whether Elford saw this particular image, he clearly
-              considered what was given visual form and what was not. In
-              contrast to the chart of the Marie Séraphique, the two areas of
-              the hold labeled "store room" are here left blank, even as they
-              were assuredly packed with all of the materials required to
-              sustain the captives and crew throughout the voyage.
-              <InlineFootnote index={7} />
-              In Elford's "Plan," however, the white space of the store rooms
-              emphasizes its rhetorical point: to call attention to the fact
-              that it is people who are packed as cargo on the ship.
+              Regardless of whether Elford saw this particular chart, he clearly
+              considered what he would give visual form and what he would not.
+              As evidence, consider how, in contrast to the diagram of the Marie
+              Séraphique, the two areas of Elford's diagram labeled "store room"
+              are left blank, even as they were presumably packed with same
+              <HoverText hoverState="nonhumanCargo">
+                barrels and other dry goods
+              </HoverText>{" "}
+              that were required to sustain the captives and crew. Here, the
+              white space of the store rooms instead emphasizes the diagram's
+              rhetorical point: that the slave trade primarily entailed the
+              packing of people as cargo aboard a ship.
+              <InlineFootnote index={14} />{" "}
             </p>
             <p>
-              And yet, in order to make this profound point, another form of
-              reduction must take place: from bodies to numbers, to richly lived
-              lives that are represented only by their incarceration on the
-              ship. The "Plan" represents the precise deployment of what Wood
-              describes as a "semiotic shock tactic." And yet for all of the
-              power that holds, it withholds much more. This has to do with the
-              violence of the slave trade that remains unimaginable for those
-              who did not experience it. As indicated by both Equiano and
-              Cugoano's remarks, the lived experience of the horror of the
-              middle passage, and the condition of slavery that it set in
-              motion, can never be communicated to those who did not experience
-              it—and even if it could be, as Saidiya Hartman and others have
-              argued, it should not be. Thus the turn to abstraction in the
-              original image of the "Plan" could signify a deliberate choice, on
-              the part of Elford, to use abstraction to signify that no amount
-              of description could ever accurately represent the truth of the
-              experience that the diagram seeks to depict.
+              At the same time, Elford could not but himself also participate in
+              this process of dehumanization, however inadvertently. A large
+              part of how the diagram achieves its visual impact is how its 297
+              human souls are drawn as nearly identical figures—what historian
+              Marcus Wood, in reference to Spillers, describes as a "mass of
+              black human flesh."
+              <InlineFootnote index={15} /> The figures' collective rather than
+              individual significance is further accentuated by their being set
+              against the clean lines that indicate the bounds of the ship.
+              <InlineFootnote index={16} /> The labels associated with each
+              area, engraved in neat script, underscore this reduction in
+              complexity—which is, of course, a reduction in humanity as well.
+            </p>
+            <p>
+              It is here that the significance of the diagram for the larger
+              practice of data visualization begins to cohere: Elford's design
+              achieves its success because of its strategic use of abstraction.
+              It represents the captives as almost proto-Isotypes, rather than
+              individual people each with unique bodily features and expressions
+              pointing to inner lives.
+              <InlineFootnote index={17} /> In so doing, Elford "induce[s]
+              viewers to think about the substance of the data" of the slave
+              trade, to employ Tufte's language, rather than about anything
+              else.
+              <InlineFootnote index={18} /> Yet Elford achieves this singular
+              focus by stripping away the individual lives behind each
+              datapoint. These lives are, paradoxically, the very same that he
+              designed his charts in order to support.
+            </p>
+            <p>
+              Not all data visualizations take on this most odious episode in
+              human history, of course. But this particular lesson about the
+              chart's constitutive tension is one that can be more universally
+              applied. The abstraction that is required to efficiently prompt
+              insight always—and, very crucially, <em>necessarily</em>—comes at
+              the expense of the full complexity of the phenomenon that it seeks
+              to represent. What should we do with this realization, either as
+              viewer of data visualizations or as designers of them? The answer
+              is not that we should reject visualization out of hand. Rather, it
+              is that we must always consider what is lost in the process of
+              visualizing data at the same time that we consider what is gained
+            </p>
+            <PullQuote
+              title="The abstraction that is required to efficiently prompt insight always—and, very crucially, necessarily"
+              subtitle="—comes at the expense of the full complexity of the phenomenon that it seeks to represent."
+            />
+            <p>
+              Elford's diagram also reminds us, with its subject most profound,
+              that there are aspects of human experience that data visualization
+              cannot and can never convey. No diagram can ever express the full
+              extent of the brutality and degradation that was required to
+              enforce the enslavement of otherwise equals. No diagram can ever
+              fully communicate the "horror almost inconceivable," to return to
+              Equiano's chilling words, to those who did not personally
+              experience it; nor can any diagram appropriately convey the
+              additional trauma that others, like Cugoano, chose to keep
+              suppressed. As above, the lesson is not of the futility of
+              visualizing data. It is, rather, one of hope: that with the image
+              of the slave ship indelibly etched in our minds, we will keep the
+              uses and limits of data visualization together in view. The power
+              to produce an "instantaneous impression" in the eyes of viewers
+              remains among the greatest strengths of data visualization.
+              <InlineFootnote index={19} /> But as we consider this tremendous
+              power, we must also—always—consider our responsibility for the
+              insights that we design our visualizations in order to prompt, the
+              knowledge they may lead to, and the detail and context—and in this
+              case, the lives—that visualization alone cannot convey.
             </p>
           </Column>
           <Column shouldPin>
@@ -373,31 +471,91 @@ export default function BrooksPage() {
         <TwoColumnLayout>
           <Column shouldPin>
             <p>
-              Independent of the Parrey report on which Elford based his "Plan,"
-              William Clarkston also pursued his own research—again, both
-              qualitative and quantitative--into the pernicious nature of the
-              slave trade. Like Parrey, Clarkston compiled data from the
-              available records. He visited merchant halls in order to examine
-              the muster rolls stored there, computing mortality rates among the
-              sailors and gathering 20,000 of their names. He then sought out
-              individuals—primarily sailors who had been mistreated or
-              maimed—who could speak from direct experience about the conditions
-              aboard slave ships.
-              <InlineFootnote index={8} />
-              More than anyone else involved in the abolitionist effort at the
-              time, Clarkston understood the value of evidence—and data in
-              particular—in order to advance his claims.
+              As Elford was scrutinizing the Parrey report, William Clarkston
+              was pursuing his own research into the pernicious nature of the
+              slave trade. Like Parrey, Clarkston began by transforming the
+              available records into data. He visited merchant halls in order to
+              examine the muster rolls stored there, and used them to compute
+              mortality rates among the sailors aboard the ships. (The dangers
+              of the slave trade to the sailors, who were predominantly white,
+              would become a highly persuasive piece of evidence in the argument
+              for its abolition.) While examining the muster rolls, Clarkson
+              also covertly transcribed 20,000 of the sailors' names. He then
+              sought out individual sailors—primarily those who had been
+              mistreated or maimed—whom he thought might be willing to speak
+              about the conditions aboard the ships (both those that they
+              personally experienced and those of the captives that they
+              observed).
+              <InlineFootnote index={20} /> These efforts at an early form of
+              mixed-methods research underscore Clarkson how understood the
+              value of empirical evidence—qualitative as well as quantitative—in
+              advancing his abolitionist claims.
             </p>
             <p>
-              The evidence-backed revisions that Clarkson made to the original
-              "Plan" secured what historian Marcus Wood describes as its
-              "graphic authority."
-              <InlineFootnote index={9} />
-              Drawing from the conventions of naval architecture, which were by
-              that time strongly established.
+              This view of the value of evidence of multiple forms, as well as
+              the value of multiple forms of display, strongly influenced
+              Clarkson's revisions to the original diagram. While Elford and the
+              Plymouth Committee had first printed the diagram as a companion to
+              a four-page abolitionist pamphlet, and later as a broadside
+              version with the image at the top, it was Clarkson who insisted
+              that the London Committee's version also include data tables. The
+              tables included measurements of the ship, the Brooks, that had
+              been used as a model for the diagram, and a conversion scale that
+              indicated precisely how much square footage had been intended to
+              be allocated to each captive on the chart. A second set of tables
+              enabled a comparison between the number of captives who had
+              actually been held on the original ship and the smaller number
+              depicted in the diagram. This additional information was intended
+              to "give a representation of the trade against which no complaint
+              of exaggeration could be brought."
+              <InlineFootnote index={21} /> It also underscores the fact that
+              "Description of Slave Ship" was, like its predecessor, a data
+              visualization. The "Description" has at times been dismissed from
+              the visualization pantheon because of its political orientation,
+              and because it is perceived to be an "infographic"—a direct
+              representation of data—rather than an abstraction of more complex
+              information. But "Description of a Slave Ship" in fact employs
+              both of the grounding criteria of that era's definition of visual
+              display: making "previously invisible phenomena subject to direct
+              inspection," as Michael Friendly and Howard Wainer propose, and
+              making those phenomena "palpable and concrete."
+              <InlineFootnote index={22} />
+            </p>
+            <Quotation
+              quote={
+                <span>
+                  "One can see that each of the tiny black figures are not
+                  replicas of each other; rather, some have variously crossed
+                  arms, different gestures, or seem to turn to face one another,
+                  while some stare and look back at the gaze from nowhere, and
+                  in so being the Description of a Slave Ship can also be
+                  understood as depicting black looks and the trauma of Middle
+                  Passage as multiply experienced and survived."
+                </span>
+              }
+              byline={<span>Simone Browne</span>}
+            />
+            <p>
+              To wit: just as Clarkson's reintroduction of data to the chart
+              underscored its basis in empirical evidence and buttressed its
+              claims to the truth, so too did his visual modifications. More
+              specifically, he shifted the view of the hold lower down the page,
+              and added a series of cross-sections that showed additional views
+              of the ship from the side. The inclusion of the cross sections
+              drew from the conventions of naval architectural plans, which were
+              by that time strongly established. This had the rhetorical effect
+              of securing the chart's "graphic authority," as Marcus Wood
+              describes it, in ways similar to how drawing new national borders
+              on an existing map leveraged the power of its seemingly
+              documentary form.
+              <InlineFootnote index={23} /> Unlike a typical naval diagram—or,
+              for that matter, a typical map—Clarkson's cross-sections also
+              included people. These represented the captives themselves, whom
+              Clarkson included as a way to show from multiple perspectives
+              precisely how they were confined.
             </p>
           </Column>
-          <Column>
+          <Column shouldPin>
             <FigureObj figure={figures["4-description-1789"]} />
           </Column>
         </TwoColumnLayout>
@@ -406,462 +564,176 @@ export default function BrooksPage() {
 
         <CenteredLayout>
           <p>
-            Finley makes the case that the diagram was intended to be viewed in
-            relation to the text, pointing to how each figure is labeled with a
-            number that corresponds to a place in the text. "Each is incomplete
-            without the other," she explains. "Once having moved from the
-            visuals to the text, these two aspects of the broadside virtually
-            require the individual reader to move back and forth between these
-            two elements."
-            <InlineFootnote index={10} />
+            Here we might recall how Elford's diagram depicted the captives'
+            bodies with minimal differentiation, which scholars have largely
+            interpreted as reflecting "an abolitionist cultural agenda which
+            dictated that slaves were to be visualized in a manner which
+            emphasized their total passivity and prioritized their status as
+            helpless victims."
+            <InlineFootnote index={24} /> In Clarkson's version, however, the
+            captives are shown wearing loincloths. The men are shackled together
+            in pairs, by both their hands and by their feet. The women, on the
+            other hand, remain unbound, and with their breasts exposed.
+            <InlineFootnote index={25} />
           </p>
           <p>
-            At this juncture one point becomes important to underscore: these
-            "readers," like the figures themselves, had a definitive race: they
-            were white readers whose own lives were far removed from the actual
-            experience of being enslaved. Indeed, Clarkson had a very clear
-            audience in mind with his design of the "Description": the Members
-            of Parliament--which included one of the London Committee's own
-            members, William Wilberforce--who were scheduled to vote on a motion
-            to abolish the slave trade in several weeks' time. Wilberforce
-            believed, and even said as much, that if the MPs "could actually see
-            one thousandth part of the evils of that practice which they have,
-            for so many years, under one pretense or another, been prevailed on
-            to suffer to be continued," that they would quickly come around to
-            the abolitionist cause.
-            <InlineFootnote index={11} />
-            Thus the "Description" can be viewed, according to Finley, as a
-            "necessary weapon"--one which restages the violence of the slave
-            trade in its attempt to give that violence visual form.
-            <InlineFootnote index={12} />
+            The combined effect was a diagram that engaged the viewer through
+            two very different epistemological registers, both at the same time.
+            First, as a representation of the data that, through its use of
+            naval convention, conveyed its graphical authority; and second, as
+            an intentionally evocative graphic that was intended to elicit a
+            combination of sympathy and shock.
+            <InlineFootnote index={26} /> The desired result of the diagram,
+            driven by empirical evidence and emotion, was that the viewer would
+            perceive the "inhumanity of the trade" through both the eyes and the
+            heart, and prompted by the "instantaneous impression" that it made
+            on the senses, be compelled to act.
+            <InlineFootnote index={27} />
           </p>
           <p>
-            The viewers intended to be affected by this image were white
-            abolitionists, and the response that was intended was one of
-            imaginative, sympathetic response. Clarkson himself frames the value
-            of the image in these terms, recalling how "No one saw it but he was
-            impressed. It spoke to him in a language, which was at once
-            intelligible and irresistible. It brought forth tears of sympathy in
-            behalf of the sufferers, and it fixed their sufferings in his
-            heart."
-            <InlineFootnote index={13} />
-            Here, Ian Baucom argues, Clarkson mobilizes the ideas of the
-            Scottish Enlightment as he enlists the "facts" of the slave trade in
-            the interest of engaging the "otherwise disinterested spectator in
-            the sufferings of an actually unseen other."
-            <InlineFootnote index={14} />
-            But for this transformation to take place, the viewer would be
-            required to enlist their own imagination in imagining the suffering
-            of others. As Finley explains, "The image is a starting point for
-            the viewer - a point of reference while the text enables the reader
-            to elaborate on the image in her mind."
-            <InlineFootnote index={15} />
+            At this juncture one additional point becomes important to say in
+            words: these viewers, like the captives themselves, also had a race:
+            they were white, predominantly British and predominantly men, with
+            lives far removed from the experience of enslavement. In point of
+            fact, Clarkson had an even more specific audience in mind with his
+            design: the Members of British Parliament, who were scheduled to
+            vote on a motion to abolish the slave trade in several weeks' time.
+            One of the London Committee's own members, William Wilberforce, was
+            among them, and he believed, and even said as much, that if the MPs
+            "could actually see one thousandth part of the evils of that
+            practice which they have, for so many years, under one pretense or
+            another, been prevailed on to suffer to be continued," they would
+            quickly commit themselves to the abolitionist cause.
+            <InlineFootnote index={28} />
           </p>
           <p>
-            But there is a second set of people less explicitly, but no less
-            clearly engaged by the "Description": those whose lives the
-            abolitionists intended to represent. The sociologist Simone Browne
-            emphasizes this point in her own analysis of the "Description,"
-            underscoring how the original "vantage point was meant to be that of
-            the predominantly white and male abolitionists and lawmakers."
-            Browne connects the "Description" to Donna Haraway's critique of
-            visualization as manufacturing a "view from nowhere," a view that is
-            "always unmarked, and therefore already markedly white and male, and
-            one that claims a power to 'represent while escaping
-            representation.'" <InlineFootnote index={16} />
-            Browne continues: "What this visual representation of the slave ship
-            points to is the primacy given in these abolitionist texts to white
-            gazes and vantage points to the trauma of slavery, where the tiny
-            black figures are made to seem androgynous, interchangeable, and
-            replicable." <InlineFootnote index={17} />
-            Gordon Wood elaborates this point: "This image supports an
-            abolitionist cultural agenda which dictated that slaves were to be
-            visualized in a manner which emphasized their total passivity and
-            prioritized their status as helpless victims."{" "}
-            <InlineFootnote index={18} /> Bernier also lends her support to this
-            interpretation: "Working not to humanize but to propagandize black
-            subjects bought and sold into slavery, the iconographic emphasis
-            across these broadsides betrays a white British commitment to
-            exposing slavery's atrocities by imagining black women, men, and
-            children not as individualized subjects but as unindividualized
-            objects defined solely by their incarceration on board a slave ship
-            whose physical dimensions alone were considered sufficient to offer
-            visual confirmation of the atrocities of the trade."{" "}
-            <InlineFootnote index={19} />
+            Here is where we will return to the idea of the "god trick,"
+            mentioned earlier in this chapter, and explore its significance in
+            fuller detail. The "god trick" is an idea developed by the feminist
+            philosopher Donna Haraway, which they use to describe the false
+            sense of neutrality that is conveyed through the default perspective
+            of data visualization, the "view from above."
+            <InlineFootnote index={29} /> The view from above can seem
+            godlike—this is the "god" part of Haraway's term—but it is a "trick"
+            because it preys upon our general tendency not to notice, let alone
+            question, any perspective that adheres to the default. In this
+            particular case, the seemingly godlike perspective is, in fact, the
+            perspective of "predominantly white and male abolitionists and
+            lawmakers," as sociologist Simone Browne observes.
+            <InlineFootnote index={30} /> Browne analyzes Clarkson's
+            "Description" in terms of the god trick, and employs it to
+            underscore Haraway's primary point: while the "view from above" may
+            seem like a view "from nowhere," it is in fact a view from
+            somewhere—all viewpoints are.
+            <InlineFootnote index={31} /> For Browne—and, we hope, for you now
+            as well—the "Description" provides unassailable evidence of this
+            fact.
           </p>
           <p>
-            The sole evidence of the agency of the enslaved are, as some have
-            observed, the shackles that bind the arms of the men. The shackles
-            point to the potetial for insurrection—a point underscored in the
-            accompanying text. And yet even in their inclusion they also
-            exclude: only the men are shackeled, even as women just as often
-            contributed to planning the insurrections on the ships. And with
-            respect to Spillers's "scaled inequalities," Clarkson is not immune.
-            Whether as a commentary on the "objectified status of the black
-            female body and the history of rape and sexual abuse to which black
-            female slaves were subjected by their white male captors," or
-            because of his own racist perceptions about the sexuality of Black
-            women, Clarkson depicts the women on the ship in exaggerated sexual
-            form.
-            <InlineFootnote index={20} />
+            Given Clarkson's own writing on the subject, he would likely not
+            disagree. Clarkson celebrated how the chart "brought forth tears of
+            sympathy in behalf of the sufferers, and it fixed their sufferings
+            in [the viewer's] heart."
+            <InlineFootnote index={32} /> But Browne's analysis of the power
+            relations embedded in the "Description," and more specifically, of
+            "the primacy given in these abolitionist texts to white gazes and
+            vantage points to the trauma of slavery," pushes us as twenty-first
+            century viewers to see more. Looking closely, she explains:
+          </p>
+          <Quotation
+            quote={
+              <span>
+                "One can see that each of the tiny black figures are not
+                replicas of each other; rather, some have variously crossed
+                arms, different gestures, or seem to turn to face one another,
+                while some stare and look back at the gaze from nowhere, and in
+                so being the Description of a Slave Ship can also be understood
+                as depicting black looks and the trauma of Middle Passage as
+                multiply experienced and survived."
+                <InlineFootnote index={34} />
+              </span>
+            }
+            byline={<span>Simone Browne</span>}
+          />
+          <p>
+            Did Clarkson intend to depict the captives looking back at the
+            viewer, challenging their gaze? Or was it just that, in his
+            commitment to accurate representation, he could not but depict the
+            captives' resistance
+            <InlineFootnote index={35} /> in ways large and small? These
+            questions lack definitive answers, but their possibilities are what
+            matter more. What would it mean to visualize the experience of the
+            Middle Passage from the perspective of the captives themselves? Is
+            this a task that should be undertaken, and if so, by whom? What data
+            would be required? Or, in the absence of data, what information
+            might be marshaled instead? Should the visualization by one that
+            anyone could access? Or is there some knowledge that should be kept
+            from public view?
           </p>
         </CenteredLayout>
-
-        {/* What does it mean that we can see these details in the bodies, but not the faces? Thus "Because of its crudeness, this image has a dialectical power at the spectator oscillates between these different possible frames and responses to the image." 40 Browne, "It gets a little tricky…" // COME BACK TO EQUIANO HERE, TENSION IN VISIT; SIGNIFICANCE THAT HE'D PUBLISH HIS OWN NARRATIVE A FEW MONTHS LATER // OR MAYBE END W/ VISUALIZATION OF SLAVE SHIP REBELLIONS, VIZ. CHARTS IN ESSAYS IN BROOKS FOLDER. Ideas for this:
-          Empty ship divided into parts to show # of rebellions, # of ppl
-          Abstraction of ships, broken ships, paths.
-          Maybe ship gets covered / occluded / turned black as number of rebellions increase?
-          Ship icons in lines as in: https://www.theguardian.com/us-news/ng-interactive/2021/may/27/us-mass-shootings-database
-          Can prob. reconstruct # of ppl involved; there are also icon sets of ppl in traditional African dress; could adapt those
-          Additional refs on rebellion (recent books): http://bostonreview.net/race/steven-hahn-slave-rebellions-and-mutinies-shaped-age-revolution
-          Visualization of Equiano's words inside ship? In shape of sihp? Visualization of Equiano topics inside ship, placed as sections of hold?
-          Connect to Gallon, Black Data; Faithe Day, Black living data. // talk to Kim?! */}
 
         <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
           <p>
-            The idea that quantitative information can be abstracted into pure
-            numbers, so as to be given visual form, is often considered the
-            conceptual precondition that paved the way for the technique of data
-            visualization to emerge. In The Visual Display of Quantitative
-            Information, Edward Tufte makes the case that QUOTE. But what has
-            gone unmentioned in discussions of the history of data visualization
-            is how that same conceptual precondition—of the abstraction of
-            complex information into more tractable numerical form—was what led
-            to the rise of modern capitalism. As Ian Baucom, following Mary
-            Poovey, explains, "what distinguishes European modernity's knowledge
-            projects (scientific, governmental, and aesthetic) from classical
-            Aristotelian models of epistemology—which had bred abstractions from
-            abstractions (universals from a priori truths)—is that for European
-            modernity abstraction predicates itself on observed particulars,
-            assemblages of fact from which abstract reason can never entirely
-            detach itself, and whose relation to the abstracting impulse's
-            systematic or universal truth claims, Europe's modern philosophical,
-            social, and political discourses continuously oblige themselves to
-            theorize."
-            <InlineFootnote index={21} />
+            These were the very questions that I, Lauren, brought to the Data by
+            Design project team. I also brought a dataset: a full download of
+            the Trans-Atlantic Slave Trade Database, which (as of the time of
+            this writing, in Spring 2024) contains records of 36,150 unique
+            slaving voyages that took place between the years 1514 and 1866,
+            resulting in the captivity and forced migration of an estimated 10.6
+            million souls.
+            <InlineFootnote index={36} /> Ever since the first release of the
+            database, in 1999 via CD-ROM, scholars and designers have attempted
+            to give this powerful data visual form.
+            <InlineFootnote index={37} /> Perhaps most prominently, in 2016,
+            Andrew Kahn and Jamelle Bouie produced an animated visualization of
+            the data for Slate, the online magazine, which depicted each of the
+            20,528 voyages that were then in the database as small black dots
+            that were seemingly pulled from the west coast of Africa to the
+            Americas as if by magnetic force.
+            <InlineFootnote index={38} /> While intended to "give sense of the
+            scale of the trans-Atlantic slave trade across time, as well as the
+            flow of transport and eventual destinations," the visualization was
+            roundly critiqued by scholars of slavery for the god's eye
+            perspective that it adopts. As literary scholar Britt Rusert
+            asserts, "It's as if a series of ‘invisible hands' operate the
+            trade," rather than specific people who should be condemned for
+            their acts.
+            <InlineFootnote index={39} /> Although she does not formulate her
+            critique in these exact terms, what Rusert identifies is another
+            version of the "god trick" at work.
           </p>
           <p>
-            This "will to abstraction, the will to derive systematic knowledges,
-            general theories, or any number of the other 'versions of
-            abstraction: universals, generalizations, aggregates' from observed
-            particulars," as Ian Baucom, quoting Mary Poovey, explains, …
-            COMPLETE THIS. // CONNECT TO RISE OF ABSTRACT PROPERTY, WORK IN
-            QUOTE: Indeed, to the extent that the case of the Zong was to help
-            define the struggle between slave traders and abolitionists in the
-            late eighteenth century, the way in which that struggle was waged
-            suggests that it was not only a struggle between competing theories
-            of right (the slaves' right to human dignity and the slavers' right
-            to trade), but one between competing theories of knowledge, a
-            struggle between an empirical and a contractual, an evidentiary and
-            a credible epistemology. As such, this struggle both extends and
-            replays what scholars in recent years have taken to be the central
-            epistemological drama of the long eighteenth century, the
-            drama—emerging from the social rivalry of the old landed and the new
-            moneyed classes—in which, as mobile property displaced ''real'
-            property, and the imaginary value of stocks, bonds,
-            bills-of-exchange, and insured property of all kinds increasingly
-            trumped the ''real' value of land, bullion, and other tangibles, the
-            concepts of what was knowable, credible, valuable, and real were
-            themselves transformed. 16
+            Reflecting on this visualization in the context of the questions
+            posed above enabled our project team to clarify our task. We first
+            considered the provenance of the dataset, and reflected on the fact
+            that the shipping logs and other data tables that served as its
+            primary sources were created by the enslavers, and not the enslaved.
+            This reminded us of the power relations embedded in the data, those
+            that could never be removed, as well as of how that power
+            contributed to a range of omissions and gaps. We also reflected on
+            our own subject positions, and the fact that, among the five of us
+            collaborating on this particular visualization, only one of us had
+            ancestors who had themselves been enslaved. This prompted a
+            recognition on behalf of the group that there were certain stories
+            about the data that we could not tell, and should be left for others
+            to convey. Finally, we reflected on Jessica Marie Johnson's powerful
+            statement that "there is nothing neutral, even in a digital
+            environment, about doing histories of slavery."
+            <InlineFootnote index={40} /> This called us back to the range of
+            harms that can be brought about by engaging with this history, as
+            discussed earlier in this chapter, and to how data visualization is
+            not immune. We saw the potential for "second-order violence," as
+            Hartman terms it, both in the act of reanimating a dataset that, in
+            its original form, conscribed the people it represented to living
+            death; and in the act of controlling the layout and motion of this
+            dataset which itself documented the forced migration of so many.
+            From this process, our goal became more refined. In order to honor
+            the enslaved as they lived, and not as they were reduced to data, we
+            would need a visual strategy for showing just how much about these
+            lives the data could not and could never show.
           </p>
-          <p>
-            For Baucom and Poovey, as for many others, the Ur example of the
-            "will to abstraction" that sustains modern capitalism is slavery.
-            Understood in Baucom's terms, slavery becomes the abstraction of
-            human lives into their monetary value. This process is no more
-            apparent than in the legers of slave ships which abstract the value
-            of their human captives into the monetary value of each when sold.
-            And while the creation of the Brooks diagram was intended to push
-            back against this violent abstraction, it nevertheless engages in
-            its own process of abstraction. As Baucom explains, "The print seeks
-            simultaneously, dialectically, to turn the empire's disinterested
-            modern science of wealth sentimentally against itself by fashioning
-            a visible abstraction (an image of what we cannot see) designed not
-            merely to account for the trade but to ‘give the spectator an idea
-            of the sufferings of the Africans in the Middle Passage, and this so
-            familiarly, that he might instantly pronounce upon the miseries
-            experienced there.'" <InlineFootnote index={22} />
-          </p>
-          <p>
-            There is one additional aspect of this process of generalizing from
-            observed particulars that this "visible abstraction" helps to
-            expose, and that is how the translation from observed particulars to
-            "theories, aggregates, universals, ideas, or any other type of
-            abstraction is not reason but fiction or the imagination."{" "}
-            <InlineFootnote index={23} /> Clarkson's desire that the diagram
-            will "give the spectator an idea of the sufferings of the Africans
-            in the Middle Passage" draws upon the viewer's imagination, and
-            their sympathy, and not any rational response. In her analysis of
-            Clarkson's diagram, she underscores this point: "Despite its graphic
-            flourishes and details, this plan was not a realistic representation
-            of the space available or the conditions characteristic of a slave
-            ship hold. Instead it was an abstraction. As with the Plymouth plan,
-            the schematic drawings, easy to grasp and hold in the memory, were
-            elaborated by the descriptive text." <InlineFootnote index={24} />
-          </p>
-          <p>
-            Clarkson himself understood as much, writing: "To persons
-            unacquainted with the mode of carrying on this system of trading in
-            human flesh, these Plans and Sections will appear rather a fiction,
-            than a real representation of a slave-ship." But as Finley observes,
-            "Clarkson's distinction between a fictional versus a "real
-            representation" introduces aesthetic and political debates regarding
-            the imaging and imagining of the slave ship that remain in place
-            across the nineteenth, twentieth, and twenty-first centuries by
-            shedding light upon the formal and thematic inspiration for a vast
-            majority of contemporary African American and black diasporic
-            artists. A recognition of the enduring significance of white
-            dominant emphases upon a literalized and figurative and therefore
-            seemingly authentic or "real representation" over and above
-            abstracted and experimental representations typically dismissed only
-            as a visual fabrication speaks to a white racist terrain
-            characterized by invisibilized black histories, narratives, and
-            memories." In a sense, the bodies represented in the diagram are not
-            abstracted into monetary currency but instead a moral currency—the
-            currency of the white-led abolitionist movement. Thus alongside
-            questions about the ethics of abstracting lives into data come
-            questions about the ethics of who is doing the abstracting, and for
-            whom it is intended to be perceived.
-          </p>
-        </CenteredLayout>
-
-        <ChapterSectionTitle section={sections[3]} />
-        <CenteredLayout>
-          <p>
-            Far from the margins of the history of data visualization, it's
-            possible to tell a story of the origins of data visualization that
-            places Clarkson and his thinking at its core. This history passes
-            through many of the images already familiar to scholars of
-            historical data visualization, but it places these images in the
-            context of the questions that must accompany them. These questions
-            have to do with the source of the data that is included, as well as
-            what is deliberately excluded or, alternately, impossible to capture
-            in quantitative form. They also have to do with the intended
-            audience for the visualization, as well as the intentions of those
-            who design it. With these questions in mind, we might turn to
-            another visualization designed by Thomas Clarkson, which is also
-            often included in histories of data visualization.
-          </p>
-
-          <FigureObj figure={figures["5-The_history_of_the_rise"]} />
-
-          <p>
-            This image, a so-called stream chart that Clarkson included in his
-            1808 volume,{" "}
-            <cite>
-              The History of the Rise, Progress, and Accomplishment of the
-              Abolition of the Slave Trade by the British Parliament
-            </cite>
-            , presents the history of abolition in the form of a watery network.
-            Each of the "springs and rivulets" are labeled with the name of a
-            significant abolitionist. They are also visualized according to
-            time, with horizontal lines indicating efforts that took place
-            before 1650, 1700, 1740, and 1787, respectively. As the viewer
-            follows the streams from top to bottom, in the direct of time, the
-            tributaries converge into "two great political rivers, representing
-            the abolitionist movement in England and America."{" "}
-            <InlineFootnote index={25} />
-          </p>
-          <p>
-            On the surface, the metaphor of abolition as a watery network, with
-            many tributaries that feed a larger river, seems like an apt
-            representation of a social movement which drew strength from
-            countless individuals and collectives over an extended period of
-            time. This conception must have been known to Clarkson, given his
-            work with the London Committee, which he once described as [BODY
-            QUOTE]. And yet, in adapting the model of the hydrographic map to
-            the abolitionist movement, Clarkson rewrites the history of
-            abolition through what Marcus Wood characterizes as "the new, lean,
-            scientific conventions of late-eighteenth-century hydrography. Each
-            abolitionist is a clean new river with a clear European name," with
-            "Africa off the map" altogether. <InlineFootnote index={26} />{" "}
-            Wood's critique calls attention to how the colonizing purpose of
-            hydrography and the abolitionist diagram are the same: both overtake
-            the territory that is pictured—and the people who live there—with
-            the British imperial mission. Here, it is not the discovery of new
-            land, but the discovery of the horrors of slavery, that were of
-            course already known to those who experienced its direct effects.
-            Here, as in the slave ship daigram, the question of audience comes
-            to the fore: this chart was not designed for those who were
-            enslaved, but for a British viewership that sought to valorize its
-            own role in the fight to end slavery.
-          </p>
-          <p>
-            Even as the stream chart shares the colonizing impulse as the slave
-            ship diagram, as well as its graphical authority, it bears far less
-            correlation to the facts. "In many ways there is no rhyme or reason
-            to the figures he selects," Wood explains, "his attempt to create a
-            self-sufficient cultural history for the cause requires a coherent
-            descriptive model which is capable of overriding the heterogeneity
-            of the names and writings he has furnished. Clarkson's map imposes
-            order on chaos by providing an abolition tree of Jesse. The fruitful
-            loins belonging to no single abolitionist but to a mysterious sea,
-            into which, in a strange reversal of the generative metaphor, all
-            the tributaries pour." <InlineFootnote index={27} />
-          </p>
-        </CenteredLayout>
-
-        <TwoColumnLayout>
-          <Column shouldPin={true}>
-            <p>
-              And yet, Clarkson was anchoring his diagram in some stable ground:
-              namely, this history of data visualization to that point. In
-              Cartographies of Time, Daniel Rosenberg and Anthony Grafton
-              position Clarkson's diagram as an adaptation of the ideas
-              expressed by the German chronologer, Friedrich Strass, who had
-              published his own widely circulated "Strom der Zeiten" (Stream of
-              Time) in 1803. Strass "believed that a graphic representation of
-              history held manifold advantages over a textual one: it revealed
-              order, scale, and synchronism simply and without the trouble of
-              memorization and calculation," Rosenberg and Grafton explain.{" "}
-              <InlineFootnote index={28} /> Translated into multiple languages,
-              including English, and widely circulated, Clarkson almost
-              certainly saw the chart. Even if he didn't, Clarkson clearly
-              understood how, according to the chart's English translator,
-              William Bell, the metaphor of the stream "gives greater liveliness
-              to the ideas, and impresses events more forcibly on the mind, than
-              the stiff regularity of the straight line."{" "}
-              <InlineFootnote index={29} />
-            </p>
-            <p>
-              Many scholars, including Grafton and Rosenberg, have made the case
-              that chronological charts "cleared the way for statistical
-              graphics" by introducing the idea of consistent scale.
-              <InlineFootnote index={30} /> William Playfair, the subject of the
-              next chapter of this book, wrote in his 1801 Statistical Breviary
-              that:
-            </p>
-            <PullQuote
-              title="The study of chronology has been much facilitated by making space represent time, and a line of proportional length and in a suitable position, the life of a man, by means of which the men of past ages appear as it were before us in their proper time and place."
-              subtitle='In the first edition of his Commerical and Political Atlas, Playfair cites the work of Joseph Priestley, the author of several famed chronological charts, "as a direct predecessor to his own line graphs and bar charts.'
-            >
-              <InlineFootnote index={31} />
-              <InlineFootnote index={32} />
-            </PullQuote>
-          </Column>
-          <Column>
-            <FigureObj figure={figures["7-Bell"]} />
-            <FigureObj figure={figures["6-stream"]} />
-          </Column>
-        </TwoColumnLayout>
-
-        <TwoColumnLayout>
-          <Column>
-            <p>
-              But there is a second feature of chronological charts that connect
-              to later data visualizations, which is the goal of presenting a
-              large amount of information in a single view. Clarkson himself
-              invokes this language as he explains his intention to bring the
-              history of abolition "before the reader, that he may comprehend
-              the whole of it in a single view." This goal is one echoed by
-              Playfair, in his Commercial and Political Atlas, and resonates up
-              to the present.
-            </p>
-            <p>
-              And yet, placing Clarkson and his abolitionist map at the center
-              of the history of data visualization prompts us to ask—always—what
-              this single view contains and what it omits, for whom this view
-              will benefit, and for whom this view will harm. In the case of the
-              abolitionist stream chart, the names of the bRitish abolitinoists
-              perform an erasure of those on whose behalf they were working, as
-              well as any Black abolitionists who might have contributed to the
-              cause. Some of these names may be recoverable, but others are
-              forever lost to time. Thus Clarkson's image also carries with it a
-              lesson about what remains outside of data, or its visual
-              representation: the kinship bonds, colelctives, etc etc., that
-              remain outside of western power strutures, outside of the western
-              gaxe, and therefore otusideof western history—but not outside of
-              all knowledge altogether. Clarkson's image thus accentuates the
-              boundedness of the totalizing western view. Concluding line TK.
-            </p>
-          </Column>
-          <Column shouldPin>
-            <FigureObj figure={figures["ch4-14-priestley-new-chart"]} />
-          </Column>
-        </TwoColumnLayout>
-        <ChapterSectionTitle section={sections[4]} />
-        <TwoColumnLayout>
-          <Column shouldPin={true}>
-            <p>
-              It is not only in the abstract but in the visible and concrete
-              that the slave ship diagram carries through the history of data
-              visualization, and into the present. Consider, for example, how
-              the inventors of the ISOTYPE icon system, Otto and Marie Neurath,
-              incorporated their own isotype icons into a reproduction of the
-              diagram in their pamphlet on the history of global trade. (They
-              also held a ca. 1800 version of the diagram, created by the German
-              printmaker Jacob Xaver Schmunzer, in their personal archive).{" "}
-              <InlineFootnote index={33} /> Their icons, like those on the slave
-              ship, were intended to serve as abstract representations of
-              observed particular—in their case, of the rich complexity of the
-              world's population. What's more, they similarly sought to enlist
-              their icons in a political cause.
-            </p>
-          </Column>
-          <Column>
-            <FigureObj figure={figures["9-isotype"]} />
-          </Column>
-        </TwoColumnLayout>
-
-        <CenteredLayout>
-          <p>
-            The Neuraths explicitly aligned themselves with the Brooks—and with
-            people and politics—at the same time that they rejected
-            visualization strategies that, they felt, lacked commensurate
-            communicative richness. Christopher Burke, the typeface designer and
-            historian, believes that the Neuraths probably deliberately chose to
-            exclude Playfair from their collection.{" "}
-            <InlineFootnote index={34} /> Trained as a political economist, Otto
-            Neurath was almost certainly familiar with Playfair's work. Less
-            speculative is Marie Neurath's blanket critique of time-series
-            charts, quoted by Burke: "Curves are subject to much stronger
-            demands for precision than pictorial representation. And so it is
-            all the more embarrassing when they do not fulfill these demands. A
-            method of statistics that works with countable elements, as
-            pictorial statistics does, hardly gives any occasion for error. Its
-            advantages are not only educational but also logical."{" "}
-            <InlineFootnote index={35} /> Marie Neurath was more correct than
-            she could have known, as will be discussed in the next chapter. [
-            MAYBE START NEXT CHAPTER W/ THIS ??? ]
-          </p>
-          <p>
-            It seems more than coincidental that Edward Tufte would critique
-            ISOTYPE on the way to establishing his own lineage of the history of
-            data visualization, the one which places Playfair at its center. For
-            Tufte, as for Playfair and for those who followed in his wake, the
-            idea of a neutral, objective representational form seemed possible,
-            and desirable. And yet, as the current political moment has shown,
-            data and its visual display is always political. With this in mind,
-            we must work to develop visual typologies that reattach—rather than
-            sever—the data to the people it represents.
-          </p>
-          <p>
-            Consider a recent visualization, of the people killed by guns in the
-            US. [DESCRIBE; SHOW].
-          </p>
-          <p>
-            https://www.theguardian.com/us-news/ng-interactive/2021/may/27/us-mass-shootings-database
-          </p>
-          <p>
-            Of course not all data is about people, nor are questions about
-            ethics TKTK equally relevant at any particular time. One of the only
-            rules of a visualization practice that seeks to attend to the
-            specificity of the data is to never say never in design.{" "}
-            <InlineFootnote index={36} /> But another fundamental rule of this
-            enlightened practice is to always consider the possibility from the
-            beginning; to interrogate our own positionalities, the people we've
-            involved in our projects, as we well as the project's potential for
-            impact or harm.
-          </p>
-          <p>
-            Taking the lessons of the Brooks, as well as these questions to
-            mind, might we visualize additional populations working to combat
-            gun violence, or other social harms? How might we honor the people
-            behind the data, and insist on connecting numbers back to their
-            richly lived lives?
-          </p>
-          {/* Runover "A violence of enslavement and a violence of abstraction developed together and reinforced each other," he further declares. // enslavement and abstraction developed together */}
+          <PullQuote title="In order to honor the enslaved as they lived, and not as they were reduced to data, we would need a visual strategy for showing just how much about these lives the data could not and could never show." />
         </CenteredLayout>
 
         <VoyageScrollytell />
@@ -873,6 +745,188 @@ export default function BrooksPage() {
             </span>
           )}
         </ClientOnly>
+
+        <ChapterSectionTitle section={sections[3]} />
+        <CenteredLayout>
+          <p>
+            While it would take another nine years—and, according to the
+            Trans-Atlantic Slave Trade Database, an additional 1.5 million
+            people or more forcibly separated from their homelands—for the
+            British Parliament to formally abolish the slave trade, historians
+            generally credit "Description of a Slave Ship," and Thomas Clarkson
+            in particular, for a large part of the campaign's success.
+            <InlineFootnote index={46} /> Clarkson himself likely contributed to
+            this narrative; in 1808, one year after the formal Act of
+            Parliament, he published a two-volume tome,{" "}
+            <cite>
+              The History of the Rise, Progress, and Accomplishment of the
+              Abolition of the Slave Trade by the British Parliament
+            </cite>
+            , which provided his own first-hand account of British abolition.
+            <InlineFootnote index={47} />
+          </p>
+          <p>
+            Interspersed among the History's nearly 1,200 pages were four
+            images—among them, a revised version of "Description of a Slave
+            Ship," and a new visualization that Clarkson himself designed. It
+            depicts the history of abolition in the form of a watery network.
+            Each of the "springs and rivulets" is labeled with the name of a
+            significant abolitionist. The streams are arranged from top to
+            bottom, roughly according to time, with horizontal lines separating
+            efforts that took place before 1650, 1700, 1740, and 1787,
+            respectively. As the viewer follows the streams down the page, they
+            converge into "two great political rivers, representing the
+            abolitionist movement in England and America," and while outside of
+            the bounds of the page, presumably meet in the sea.
+            <InlineFootnote index={48} />
+          </p>
+
+          <FigureObj figure={figures["5-The_history_of_the_rise"]} />
+
+          <p>
+            On the surface, the metaphor of abolition as a network of streams
+            and rivers flowing into a common sea may seem like an apt
+            representation of a social movement which drew strength from
+            countless individuals and collectives over an extended period of
+            time. This resonance must have been intentional, given how Clarkson
+            elsewhere analogized the British antislavery movement to the
+            distributed functioning of a human body, with "every limb...
+            essentially necessary for the completion of a perfect work."
+            <InlineFootnote index={49} /> And yet, certain key contributors are
+            missing from the chart. Most notably, the name of Olaudah Equiano,
+            or of any other Black abolitionist, is nowhere to be found.
+          </p>
+          <PullQuote title="And yet, certain key contributors are missing from the chart. Most notably,  the name of Olaudah Equiano, or of any other Black abolitionist, is nowhere to be found." />
+          <p>
+            As with "Description of a Slave Ship," the question of audience
+            returns to the fore. This chart was also not designed for those who
+            were enslaved, but rather, for a white British viewership—those who
+            sought to valorize their own role in the fight to end the slave
+            trade. In his analysis of the image, Marcus Wood speculates that
+            this goal—and its disconnection from the actual facts—is the source
+            of the confusion that the visualization ultimately imparts.
+            Clarkson's "attempt to create a self-sufficient cultural history for
+            the cause requires a coherent descriptive model which is capable of
+            overriding the heterogeneity of the names and writings he has
+            furnished" in the text of his volume, Wood asserts, as it does of
+            the composition of the movement overall.
+            <InlineFootnote index={50} /> Here, the success of the movement
+            "belong[s] to no single abolitionist but to a mysterious sea, into
+            which, in a strange reversal of the generative metaphor, al`l the
+            tributaries pour."
+            <InlineFootnote index={51} /> The sea metaphor is further clouded by
+            the role that actual water—namely, the Atlantic Ocean—played in the
+            slave trade. Why would Clarkson use water—the very site of the
+            dehumanization that was required of the condition of enslavement—as
+            the anchoring metaphor of his account?
+          </p>
+          <PullQuote title="Why would Clarkson use water—the very site of the dehumanization that was required of the condition of enslavement —as the anchoring metaphor of his account?" />
+          <p>
+            But Clarkson was anchoring his diagram in some stable ground:
+            namely, the then-prevalent use of water and streams to visually
+            represent the passage of time. In Cartographies of Time, Daniel
+            Rosenberg and Anthony Grafton position Clarkson's diagram as a
+            direct adaptation of the ideas expressed by the German chronologer,
+            Friedrich Strass, who had published his own widely circulated "Strom
+            der Zeiten" (Stream of Time) only a few years earlier, in 1803.
+            Translated into multiple languages, including English, and widely
+            circulated across Europe and the United States, "Strom der Zeiten"
+            was almost certainly a chart that Clarkson saw. But even if he did
+            not, Clarkson clearly intuited how the water metaphor "gives greater
+            liveliness to the ideas, and impresses events more forcibly on the
+            mind, than the stiff regularity of the straight line," as William
+            Bell, the English translator of Strass's chart, explained.
+            <InlineFootnote index={53} />
+          </p>
+        </CenteredLayout>
+
+        <CenteredLayout>
+          <FigureObj
+            className="md:ml-24 md:grid grid-cols-2 gap-4"
+            figures={[figures["6-stream"], figures["7-Bell"]]}
+          />
+
+          <p>
+            Indeed, there is a version of the history of data visualization that
+            need not be significantly reconfigured in order to provide Clarkson
+            with a more prominent place. Many scholars, including Rosenberg and
+            Grafton, have made the case that chronological charts such as those
+            created by Strass and Bell, as well as their more linear
+            antecedents, "cleared the way for statistical graphics" by
+            introducing the idea of consistent scale.
+            <InlineFootnote index={54} /> This argument is confirmed by the
+            purported "pioneer" of statistical graphics himself, William
+            Playfair, the subject of the next chapter, who praised the genre for
+            "making space represent time," and for using "a line of proportional
+            length and in a suitable position."
+            <InlineFootnote index={55} /> As we will learn, Playfair described
+            the purpose of his own visualizations in terms quite similar to
+            Clarkson's: to unite "a number of separate ideas… under one simple
+            impression of vision, and consequently, one act of memory."
+            <InlineFootnote index={56} />{" "}
+          </p>
+          <PullQuote title="But to simply slot Clarkson into the standard history of the field would miss much of the point." />
+          <p>
+            But to simply slot Clarkson into the standard history of the field
+            would miss much of the point. For Clarkson's visualizations, both
+            "Description of a Slave Ship" and his map of abolition, matter as
+            much for the questions that they provoke as they do the knowledge
+            that they reveal. When we look closely at either the diagram or the
+            map, we are prompted to ask what this "impression" conveys and what
+            it omits. We must consider the perspectives of the people for whom
+            these charts have been designed, the people who will benefit from
+            looking, and the people who are merely looked upon. We must consider
+            whose data is on view in any particular chart—and in the case of
+            "Description of a Slave Ship, whose actual lives. And we must
+            consider the potential for violence or harm that visualizing their
+            data might, however inadvertently, bring about. These are not
+            questions that Clarkson himself brings to the fore, but they are
+            ones that we as twenty-first century viewers of his
+            visualizations—and as designers of visualizations as well—should now
+            be required to ask. If these questions seem weighty, it is because
+            they are. Visualizations of data are indeed powerful, as the success
+            of "Description of a Slave Ship" affirms. But it is precisely
+            because of this power that we must continue to probe the nature of
+            the insights that visualization can help to prompt, and the
+            additional insights that it can never convey.{" "}
+          </p>
+          <PullQuote
+            title="It also underscores how, if the goal of a visualization is to bring about change,"
+            subtitle="then it must necessarily be accompanied by action."
+          />
+          <p>
+            We will never know if these are some of the questions that Equiano
+            posed to Clarkson upon seeing the original diagram, as there is no
+            record of the conversation that transpired. Several weeks later,
+            however, Equiano published a letter in{" "}
+            <cite>The Public Advertiser</cite>, a prominent London newspaper, in
+            which he acknowledged "having seen" the chart.
+            <InlineFootnote index={57} /> Interestingly, Equiano does not
+            comment directly on the image, choosing instead to affirm the work
+            of the abolitionist movement overall. But I believe that we can
+            still learn from Equiano's statement about what he saw. In the
+            diagram, Equiano saw clear evidence that its designers sought to
+            "contribute to so important a moral and religious duty as that of"
+            ending the slave trade. But he also saw that the chart alone would
+            not be enough. As a person who had himself been enslaved, Equiano
+            understood first-hand that ending "one of the greatest evils now
+            existing on earth" would require more than the chart alone could
+            convey. And therein lies the final lesson of "Description of a Slave
+            Ship" for visualization in the present. It has to do with the
+            continued insistence that before there is data, there are
+            people—people with lives that data alone cannot convey. It also
+            underscores how, if the goal of a visualization is to bring about
+            change, then it must necessarily be accompanied by action. To be
+            sure, not all visualizations are designed to effect political
+            change. And in fact, most visualizations are explicitly designed
+            with the opposite goal—of focusing on what the data, itself, can
+            reveal. But the example of "Description of a Slave Ship," which
+            visualizes the most monumental of humanity's stakes, should
+            underscore the responsibility that comes with the design of any
+            visualization—and with the viewing of any visualization as well: to
+            ask what knowledge it can point towards, and what it cannot show.
+          </p>
+        </CenteredLayout>
       </ChapterBody>
       <CenteredLayout>
         <FootnotesList footnotes={brooksFootnotes} />

@@ -165,7 +165,17 @@ function VoyagesVis({
   }, [width, height]);
 
   if (isSample) {
-    return <div id={id} className="fixed top-12"></div>;
+    if (windowSize.width) {
+      return (
+        <div
+          id={id}
+          className="fixed top-12"
+          style={{ marginLeft: `${windowSize.width / 6}px` }}
+        ></div>
+      );
+    }
+
+    return <></>;
   }
 
   return (

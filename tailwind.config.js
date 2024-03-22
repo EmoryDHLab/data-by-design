@@ -204,6 +204,7 @@ module.exports = {
     "text-lime-500",
     "top-12",
     "top-24",
+    "top-32",
     "md:scale-0",
     "h-0",
     "h-24",
