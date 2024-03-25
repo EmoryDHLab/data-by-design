@@ -282,3 +282,12 @@ input[type=range]::-webkit-slider-thumb::before {
         word-break: break-word;
     }
 }
+
+/* .slider-list {
+    transition: transform 0s normal 1s !important;
+    width: 5.55556% !important;
+} */
+
+/* .slider-list {
+    transform: none !important;
+} */

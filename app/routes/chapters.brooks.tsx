@@ -842,7 +842,7 @@ export default function BrooksPage() {
 
         <CenteredLayout>
           <FigureObj
-            className="md:ml-24 md:grid grid-cols-2 gap-4"
+            className="md:grid grid-cols-2 gap-4"
             figures={[figures["6-stream"], figures["7-Bell"]]}
           />
 
