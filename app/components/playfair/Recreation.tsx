@@ -254,7 +254,7 @@ export default function Recreation({
             fontFamily="Chancery Cursive"
             transform={`rotate(-11) translate(${width / 9},${height + 2.5})`}
           >
-            Line of Imports!!
+            Line of Imports
           </text>
           <text
             fill="black"
