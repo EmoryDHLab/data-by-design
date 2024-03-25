@@ -42,14 +42,14 @@ const scatterImport = playfairData
     x: d.Years,
     y: d.Imports,
   }))
-  .slice(8, 21);
+  .slice(0, 21);
 
 const scatterExport = playfairData
   .map((d) => ({
     x: d.Years,
     y: d.Exports,
   }))
-  .slice(8, 21);
+  .slice(0, 21);
 
 const formatYValue = (value: number) => {
   if (value < interval || value >= 6_000_000) return " ";

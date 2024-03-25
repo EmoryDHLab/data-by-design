@@ -6,8 +6,8 @@ import ScrollytellWrapper from "../ScrollytellWrapper";
 const triggers = [
   <span key="7e80c3fc"></span>,
   <span key="6830c50a">
-    The table in the first edition of the <cite>Atlas</cite> includes data only
-    for the years between 1770 and 1782.
+    The tables in the first and second editions of the <cite>Atlas</cite>{" "}
+    include annual data for the years between 1770 and 1782.
   </span>,
   <span key="8ceb9cdd">
     Playfair nevertheless plotted data lines for the full range of years between
