@@ -199,7 +199,7 @@ function VoyagesVis({
           >
             <Axis
               width={width}
-              yearRange={[startYear, endYear]}
+              yearRange={yearRange}
               widthAdjustment={45}
               color="black"
             />
