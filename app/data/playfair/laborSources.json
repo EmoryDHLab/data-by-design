@@ -37,8 +37,8 @@
   {
     "key": "flat",
     "label": "flat",
-    "color": "",
-    "activeText": "",
-    "inactiveText": ""
+    "color": "playfairChart",
+    "activeText": "transparent",
+    "inactiveText": "transparent"
   }
 ]

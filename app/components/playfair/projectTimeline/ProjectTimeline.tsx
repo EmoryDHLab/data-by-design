@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import VerticalGrid from "../elements/VerticalGrid";
 import HorizontalGrid from "../elements/HorizontalGrid";
-import type { TLaborSource, TLaborData } from "~/types/laborSourceTypes";
 import ProjectTimelineContainer from "./ProjectTimelineContainer";
+import type { TLaborSource, TLaborData } from "~/types/laborSourceTypes";
 
 const height = 44;
 const width = 98;
