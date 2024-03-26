@@ -7,7 +7,7 @@ interface Props {
   sliderWidth: Array<number>;
   maxX: number;
   setSliderWidth: Dispatch<SetStateAction<Array<number>>>;
-  yearRange: Array<number>
+  yearRange: Array<number>;
   children: ReactNode;
 }
 
@@ -22,7 +22,7 @@ function SliderJoin({
   setSliderWidth,
   yearRange,
   maxX,
-  children
+  children,
 }: Props) {
   const rectRef = useRef<SVGRectElement>(null);
   const circleRef = useRef<SVGCircleElement>(null);
@@ -35,28 +35,16 @@ function SliderJoin({
     if (key === "ArrowRight") {
       const newRightX = sliderWidth[1] + (sliderWidth[1] - sliderWidth[0]);
       if (newRightX <= maxX) {
-        setSliderWidth([
-          sliderWidth[1],
-          newRightX
-        ]);
+        setSliderWidth([sliderWidth[1], newRightX]);
       } else {
-        setSliderWidth([
-          sliderWidth[0] + (maxX - sliderWidth[1]),
-          maxX
-        ]);
+        setSliderWidth([sliderWidth[0] + (maxX - sliderWidth[1]), maxX]);
       }
     } else if (key === "ArrowLeft") {
       const newLeftX = sliderWidth[0] - (sliderWidth[1] - sliderWidth[0]);
       if (newLeftX >= 0) {
-        setSliderWidth([
-          newLeftX,
-          sliderWidth[0]
-        ]);
+        setSliderWidth([newLeftX, sliderWidth[0]]);
       } else {
-        setSliderWidth([
-          0,
-          sliderWidth[1] - sliderWidth[0]
-        ]);
+        setSliderWidth([0, sliderWidth[1] - sliderWidth[0]]);
       }
     }
   };
@@ -78,7 +66,6 @@ function SliderJoin({
     };
 
     const dragCircle = ({ x }: EventProps) => {
-      console.log("🚀 ~ file: SliderJoin.tsx:82 ~ dragCircle ~ x:", x, sliderWidth)
       if (!x) return;
 
       if (x >= 0 && x <= maxX + 1) {
@@ -88,26 +75,19 @@ function SliderJoin({
           setSliderWidth([Math.floor(sliderWidth[0] - x), x + 10]);
         }
       }
-    }
+    };
 
     if (isDesktop) {
-      d3.select(rectRef.current)
-        .call(
-          // @ts-ignore
-          d3.drag()
-            .on("start", dragRectStart)
-            .on("drag", dragRect)
-        );
-    } else {
-      d3.select(circleRef.current)
-      .call(
+      d3.select(rectRef.current).call(
         // @ts-ignore
-        d3.drag()
-          .on("drag", dragCircle)
-          .on("end", dragCircle)
+        d3.drag().on("start", dragRectStart).on("drag", dragRect)
+      );
+    } else {
+      d3.select(circleRef.current).call(
+        // @ts-ignore
+        d3.drag().on("drag", dragCircle).on("end", dragCircle)
       );
     }
-
   }, [maxX, sliderWidth, setSliderWidth, isDesktop]);
 
   if (isDesktop) {
@@ -130,15 +110,9 @@ function SliderJoin({
 
   return (
     <>
-      <circle
-        ref={circleRef}
-        cy={0}
-        cx={sliderWidth[0]}
-        r={8}
-        fill="white"
-      />
+      <circle ref={circleRef} cy={0} cx={sliderWidth[0]} r={8} fill="white" />
     </>
-  )
+  );
 }
 
 export default SliderJoin;

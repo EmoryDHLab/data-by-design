@@ -12,14 +12,15 @@ const StudentChartThreeV2 = () => {
   const [rightColumnX, setRightColumnX] = useState<number>(0);
   const [leftColumnX, setLeftColumnX] = useState<number>(0);
   const [bottomRowY, setBottomRowY] = useState<number>(0);
-  const [activeResponse, setActiveResponse] = useState<string | undefined>(undefined);
+  const [activeResponse, setActiveResponse] = useState<string | undefined>(
+    undefined
+  );
   const [chartWidth, setChartWidth] = useState<number>(0);
   const [chartHeight, setChartHeight] = useState<number>(0);
   const [eltDotsState, setEltDotsState] = useState<SimpleDot[]>([]);
   const [ceduDotsState, setCeduDotsState] = useState<SimpleDot[]>([]);
   const [hindDotsState, setHindDotsState] = useState<SimpleDot[]>([]);
   const [plDotsState, setPlDotsState] = useState<SimpleDot[]>([]);
-
 
   useEffect(() => {
     if (!width || !height) return;
@@ -28,15 +29,13 @@ const StudentChartThreeV2 = () => {
   }, [width, height]);
 
   useEffect(() => {
-  const checkOverlapping = (dot: SimpleDot, existing: SimpleDot[]) => {
-    let overlapping = false;
+    const checkOverlapping = (dot: SimpleDot, existing: SimpleDot[]) => {
+      let overlapping = false;
 
-    for (let count = 0; count < existing.length; count++) {
-      let other = existing[count];
-      let distance = Math.hypot(other.x - dot.x, other.y - dot.y)
-      if (distance < 15) {
-          // console.log("🚀 ~ file: StudentChartThreeV2.client.tsx:33 ~ checkOverlapping ~ other:", other)
-          // console.log("🚀 ~ file: StudentChartThreeV2.client.tsx:39 ~ checkOverlapping ~ distance:", distance)
+      for (let count = 0; count < existing.length; count++) {
+        let other = existing[count];
+        let distance = Math.hypot(other.x - dot.x, other.y - dot.y);
+        if (distance < 15) {
           overlapping = true;
         }
       }
@@ -49,7 +48,7 @@ const StudentChartThreeV2 = () => {
     setFontSize(chartHeight * 0.025);
     setLeftColumnX(chartWidth * 0.25);
     setRightColumnX(chartWidth * 0.75);
-    setBottomRowY((chartHeight / 2) + (chartHeight * 0.04));
+    setBottomRowY(chartHeight / 2 + chartHeight * 0.04);
 
     const eltDots: SimpleDot[] = [];
     const ceduDots: SimpleDot[] = [];
@@ -58,12 +57,11 @@ const StudentChartThreeV2 = () => {
 
     while (eltDots.length < responseData.elt.length) {
       let dot = {
-        x: random(15, (chartWidth / 2) - 15),
-        y: random(15, (chartHeight / 2 - 50)) + 40,
+        x: random(15, chartWidth / 2 - 15),
+        y: random(15, chartHeight / 2 - 50) + 40,
         d: 2,
-        id: ""
+        id: "",
       };
-      // console.log("🚀 ~ file: StudentChartThreeV2.client.tsx:65 ~ useEffect ~ dot:", dot)
 
       const overlapping = checkOverlapping(dot, eltDots);
       if (!overlapping) {
@@ -76,10 +74,10 @@ const StudentChartThreeV2 = () => {
 
     while (ceduDots.length < responseData.cedu.length) {
       let dot = {
-        x: random((chartWidth / 2) + 15, chartWidth - 15),
-        y: random(15, (chartHeight / 2 - 50)) + 40,
+        x: random(chartWidth / 2 + 15, chartWidth - 15),
+        y: random(15, chartHeight / 2 - 50) + 40,
         d: 2,
-        id: ""
+        id: "",
       };
 
       const overlapping = checkOverlapping(dot, ceduDots);
@@ -93,10 +91,10 @@ const StudentChartThreeV2 = () => {
 
     while (hindDots.length < responseData.hind.length) {
       let dot = {
-        x: random(15, (chartWidth / 2) - 15) + 15,
-        y: random((chartHeight / 2 + 50) + 15, chartHeight - 15),
+        x: random(15, chartWidth / 2 - 15) + 15,
+        y: random(chartHeight / 2 + 50 + 15, chartHeight - 15),
         d: 2,
-        id: ""
+        id: "",
       };
 
       const overlapping = checkOverlapping(dot, hindDots);
@@ -110,10 +108,10 @@ const StudentChartThreeV2 = () => {
 
     while (plDots.length < responseData.pl.length) {
       let dot = {
-        x: random((chartWidth / 2) + 15, chartWidth - 15),
-        y: random((chartHeight / 2 + 60) + 25, chartHeight - 25),
+        x: random(chartWidth / 2 + 15, chartWidth - 15),
+        y: random(chartHeight / 2 + 60 + 25, chartHeight - 25),
         d: 2,
-        id: ""
+        id: "",
       };
 
       const overlapping = checkOverlapping(dot, plDots);
@@ -129,14 +127,13 @@ const StudentChartThreeV2 = () => {
     setCeduDotsState(ceduDots);
     setHindDotsState(hindDots);
     setPlDotsState(plDots);
-
   }, [chartHeight, chartWidth]);
 
   return (
     <>
       <p className="font-bold text-lg md:text-xl 2xl:text-2xl text-center font-duboisWide uppercase">
-        A CHART ILLUSTRATING THE WORDS OF THE BLACK COLLEGE GRADUATES FROM ACROSS THE UNITED STATES
-        WHO CONTRIBUTED TO DU BOIS'S RESEARCH.
+        A CHART ILLUSTRATING THE WORDS OF THE BLACK COLLEGE GRADUATES FROM
+        ACROSS THE UNITED STATES WHO CONTRIBUTED TO DU BOIS'S RESEARCH.
       </p>
       <div className="flex flex-col md:flex-row md:flex-wrap font-duboisNarrow text-base text-md text-center uppercase md:mt-8">
         <ul className="my-6 md:my-0 md:w-1/3">
@@ -149,21 +146,24 @@ const StudentChartThreeV2 = () => {
         </ul>
         <div className="md:w-2/3 md:mb-8">
           <p>
-            The previous chart visualized information about the graduates of Atlanta
-            University in the context of the total number of Black college graduates
-            in the United States as of 1909.
+            The previous chart visualized information about the graduates of
+            Atlanta University in the context of the total number of Black
+            college graduates in the United States as of 1909.
           </p>
           <p>
-            As part of <cite>The College-Bred Negro American</cite>, these same college
-            graduates were surveyed about their lives. This chart visualizes their words.
+            As part of <cite>The College-Bred Negro American</cite>, these same
+            college graduates were surveyed about their lives. This chart
+            visualizes their words.
           </p>
         </div>
       </div>
 
-      <div className="relative m-auto" style={{ width: `${chartWidth}px`, height: `${chartHeight}px` }}>
-        <div id="chart-3v2">
-        </div>
-        {width && height &&
+      <div
+        className="relative m-auto"
+        style={{ width: `${chartWidth}px`, height: `${chartHeight}px` }}
+      >
+        <div id="chart-3v2"></div>
+        {width && height && (
           <svg
             viewBox={`0 0 ${chartWidth} ${chartHeight}`}
             className="absolute top-0"
@@ -179,7 +179,9 @@ const StudentChartThreeV2 = () => {
               textAnchor="middle"
             >
               <tspan>Reports of early life</tspan>
-              <tspan x={leftColumnX} dy={fontSize}>and training</tspan>
+              <tspan x={leftColumnX} dy={fontSize}>
+                and training
+              </tspan>
             </text>
 
             <text
@@ -191,17 +193,11 @@ const StudentChartThreeV2 = () => {
               textAnchor="middle"
             >
               <tspan>How shall you educate your</tspan>
-              <tspan
-              x={rightColumnX}
-              dy={fontSize}
-              >
+              <tspan x={rightColumnX} dy={fontSize}>
                 children
-              <tspan
-                dx={1}
-                fontFamily="VTC Du Bois Narrow, serif"
-              >
-                (i.e., to a trade in,
-              </tspan>
+                <tspan dx={1} fontFamily="VTC Du Bois Narrow, serif">
+                  (i.e., to a trade in,
+                </tspan>
               </tspan>
               <tspan
                 dy={fontSize}
@@ -221,8 +217,12 @@ const StudentChartThreeV2 = () => {
               textAnchor="middle"
             >
               <tspan>Briefly, what is your present practical</tspan>
-              <tspan x={leftColumnX} dy={fontSize }>philosophy in regard to the negro race</tspan>
-              <tspan x={leftColumnX} dy={fontSize }>in America?</tspan>
+              <tspan x={leftColumnX} dy={fontSize}>
+                philosophy in regard to the negro race
+              </tspan>
+              <tspan x={leftColumnX} dy={fontSize}>
+                in America?
+              </tspan>
             </text>
 
             <text
@@ -234,10 +234,7 @@ const StudentChartThreeV2 = () => {
               textAnchor="middle"
             >
               <tspan>What have been your chief</tspan>
-              <tspan
-                x={rightColumnX}
-                dy={fontSize}
-              >
+              <tspan x={rightColumnX} dy={fontSize}>
                 hinderances?
               </tspan>
               <tspan
@@ -263,55 +260,51 @@ const StudentChartThreeV2 = () => {
               </tspan>
             </text>
 
-            {eltDotsState.map ((response) => {
+            {eltDotsState.map((response) => {
               return (
                 <ResponseDot
                   key={`dot-${response.id}`}
                   response={response}
                   color="#D92944"
                   setActiveResponse={setActiveResponse}
-
                 />
-              )
+              );
             })}
 
-            {ceduDotsState.map ((response) => {
+            {ceduDotsState.map((response) => {
               return (
                 <ResponseDot
                   key={`dot-${response.id}`}
                   response={response}
                   color="#9AE4C1"
                   setActiveResponse={setActiveResponse}
-
                 />
-              )
+              );
             })}
 
-            {hindDotsState.map ((response) => {
+            {hindDotsState.map((response) => {
               return (
                 <ResponseDot
                   key={`dot-${response.id}`}
                   response={response}
                   color="#FEC313"
                   setActiveResponse={setActiveResponse}
-
                 />
-              )
+              );
             })}
 
-            {plDotsState.map ((response) => {
+            {plDotsState.map((response) => {
               return (
                 <ResponseDot
                   key={`dot-${response.id}`}
                   response={response}
                   color="#3B6FE0"
                   setActiveResponse={setActiveResponse}
-
                 />
-              )
+              );
             })}
 
-            {responseData.elt.map ((response, index) => {
+            {responseData.elt.map((response, index) => {
               return (
                 <ResponseV2
                   key={response.id}
@@ -324,10 +317,10 @@ const StudentChartThreeV2 = () => {
                   canvasHeight={chartHeight}
                   dot={eltDotsState[index]}
                 />
-              )
+              );
             })}
 
-            {responseData.cedu.map ((response, index) => {
+            {responseData.cedu.map((response, index) => {
               return (
                 <ResponseV2
                   key={response.id}
@@ -340,10 +333,10 @@ const StudentChartThreeV2 = () => {
                   canvasHeight={chartHeight}
                   dot={ceduDotsState[index]}
                 />
-              )
+              );
             })}
 
-            {responseData.hind.map ((response, index) => {
+            {responseData.hind.map((response, index) => {
               return (
                 <ResponseV2
                   key={response.id}
@@ -356,10 +349,10 @@ const StudentChartThreeV2 = () => {
                   canvasHeight={chartHeight}
                   dot={hindDotsState[index]}
                 />
-              )
+              );
             })}
 
-            {responseData.pl.map ((response, index) => {
+            {responseData.pl.map((response, index) => {
               return (
                 <ResponseV2
                   key={response.id}
@@ -372,26 +365,27 @@ const StudentChartThreeV2 = () => {
                   canvasHeight={chartHeight}
                   dot={plDotsState[index]}
                 />
-              )
+              );
             })}
-
           </svg>
-        }
+        )}
       </div>
       <div className="mx-4 md:mx-auto font-dubois uppercase text-justify tracking-wider">
         <p>
-          This visualization enriches the data associated with the 3,856 Black college
-          graduates who were documented in <cite>The College-Bred Negro American</cite>. As part of
-          the study, they were also asked to provide written responses to four questions:
-          their thoughts on their own "early life and training," their plans to educate
-          their children, the "chief hindrances" they had faced, and their “present practical
-          philosophy in regard to the Negro race in America,” abbreviated in the study as
-          "philosophy of life." About 800 responses to the survey were received, a selection
-          of which were published.
+          This visualization enriches the data associated with the 3,856 Black
+          college graduates who were documented in{" "}
+          <cite>The College-Bred Negro American</cite>. As part of the study,
+          they were also asked to provide written responses to four questions:
+          their thoughts on their own "early life and training," their plans to
+          educate their children, the "chief hindrances" they had faced, and
+          their “present practical philosophy in regard to the Negro race in
+          America,” abbreviated in the study as "philosophy of life." About 800
+          responses to the survey were received, a selection of which were
+          published.
         </p>
       </div>
     </>
   );
-}
+};
 
 export default StudentChartThreeV2;

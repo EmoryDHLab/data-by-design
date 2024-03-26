@@ -1,5 +1,4 @@
 // @ts-nocheck
-import { useEffect } from "react";
 import * as d3 from "d3";
 import VerticalGrid from "./elements/VerticalGrid";
 import HorizontalGrid from "./elements/HorizontalGrid";
@@ -97,10 +96,6 @@ export default function Recreation({
       return 1;
     }
   };
-
-  useEffect(() => {
-    console.log("🚀 ~ scrollProgress:", scrollProgress);
-  }, [scrollProgress]);
 
   return (
     <svg
