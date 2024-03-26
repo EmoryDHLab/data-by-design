@@ -15,7 +15,7 @@ export default function Column({ children, className, shouldPin }: Props) {
       className={`${
         className ?? ""
       } h-full w-full bias-full md:bias-1/2 md:w-1/2 md:py-5 my-6 md:my-0 ${
-        shouldPin ? `md:sticky top-${disclosure ? 32 : 12}` : ""
+        shouldPin ? `md:sticky top-${disclosure ? 32 : 24}` : ""
       }`}
     >
       {children}

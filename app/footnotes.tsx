@@ -639,7 +639,7 @@ export const playfairFootnotes = [
   //12
   <span key="fee18e02"></span>,
   //13
-  <span key="2d58d747"></span>,
+  <span key="2d58d747">Playfair, 1st ed, p. 4</span>,
   //14
   <span key="ae3308d6"></span>,
   //15

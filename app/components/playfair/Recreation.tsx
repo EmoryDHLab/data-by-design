@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { useEffect } from "react";
 import * as d3 from "d3";
 import VerticalGrid from "./elements/VerticalGrid";
 import HorizontalGrid from "./elements/HorizontalGrid";
@@ -97,6 +98,10 @@ export default function Recreation({
     }
   };
 
+  useEffect(() => {
+    console.log("🚀 ~ scrollProgress:", scrollProgress);
+  }, [scrollProgress]);
+
   return (
     <svg
       viewBox="0 0 105 55"
@@ -192,11 +197,10 @@ export default function Recreation({
         </g>
         {/* First edition lines */}
         <g
-          // transform="scale(0.106, 0.09) translate(28,155)"
           transform="scale(0.106, 0.09) translate(52,185)"
           opacity={
-            scrollProgress >= 1 && scrollProgress < 5.5
-              ? transitionInOut([1, 1.5], [5, 5.5])
+            scrollProgress >= 1 && scrollProgress < 4.5
+              ? transitionInOut([1, 1.5], [4, 4.5])
               : 0
           }
         >
@@ -216,8 +220,8 @@ export default function Recreation({
         {/* Shaded area */}
         <StippleHatch
           opacity={
-            scrollProgress >= 2 && scrollProgress < 5.5
-              ? transitionInOut([2.25, 3], [5, 5.75])
+            scrollProgress >= 1.5 && scrollProgress < 4.5
+              ? transitionInOut([1.5, 2], [4, 4.75])
               : 0
           }
         />
@@ -231,8 +235,8 @@ export default function Recreation({
               offset={(width / 11) * 7 + 5.5}
               text={" "}
               opacity={
-                scrollProgress >= 3 && scrollProgress < 5
-                  ? transitionInOut([3, 4], [4, 5])
+                scrollProgress >= 2.75 && scrollProgress < 4
+                  ? transitionInOut([2.75, 3], [3, 4])
                   : 0
               }
             />
@@ -241,13 +245,13 @@ export default function Recreation({
         {/* 3rd edition lines */}
         <g
           transform="scale(0.22, 0.195) translate(25,70)"
-          opacity={scrollProgress >= 5 ? transitionIn([5, 6]) : 0}
+          opacity={scrollProgress >= 4 ? transitionIn([4, 5]) : 0}
         >
           <path d={Paths.import3rdEd} stroke="#F4B20C" fill="none" />
           <path d={Paths.export3rdEd} stroke="#56190F" fill="none" />
         </g>
         {/* Labels */}
-        <g opacity={scrollProgress >= 6 ? transitionIn([6, 7]) : 0}>
+        <g opacity={scrollProgress >= 5 ? transitionIn([5, 6]) : 0}>
           <text
             fill="black"
             fontSize="3"
@@ -266,16 +270,16 @@ export default function Recreation({
           </text>
         </g>
         {/* Color Areas */}
-        <ColorArea opacity={scrollProgress >= 6 ? transitionIn([6, 7]) : 0} />
+        <ColorArea opacity={scrollProgress >= 5 ? transitionIn([5, 6]) : 0} />
         <OvalTitle
           color="#FCE2B0"
           ellipse={{ cx: 28, cy: 19, rx: (width / 11) * 1.9, ry: 10 }}
           topText={{ text: "EXPORTS & IMPORTS", x: 14, y: 17 }}
           midText={{ text: "to and from all", x: 22, y: 20.5 }}
           botText={{ text: "NORTH AMERICA", x: 15, y: 24 }}
-          opacity={scrollProgress >= 7 ? transitionIn([7, 8]) : 0}
+          opacity={scrollProgress >= 6 ? transitionIn([6, 7]) : 0}
         />
-        <g opacity={scrollProgress >= 8 ? transitionIn([8, 9]) : 0}>
+        <g opacity={scrollProgress >= 7 ? transitionIn([7, 8]) : 0}>
           <text
             fill="black"
             x={width / 2}

@@ -19,9 +19,9 @@ const ScrollytellSlideShow = ({
         swiping={false}
         withoutControls={true}
         slideIndex={slideIndex}
-        // animation="fade"
+        animation="fade"
         // animation="zoom"
-        speed={1500}
+        speed={1000}
       >
         {children}
       </Carousel>
