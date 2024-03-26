@@ -32,7 +32,7 @@ module.exports = {
         neueMontreal: ["PPNeueMontreal"],
         neueMontrealBold: ["PPNeueMontreal Bold"],
         neueMontrealLight: ["PPNeueMontreal Light"],
-        sans: ["neue-haas-unica", "sans-serif"],
+        sans: ["PPNeueMontreal", "sans-serif"],
         icons: ["DxD Icons"],
       },
 

@@ -19,7 +19,7 @@ interface Props {
 export const Caption = ({ figure, className }: Props) => {
   return (
     <figcaption
-      className={`font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full ${
+      className={`font-dubois text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full ${
         className ?? ""
       }`}
       dangerouslySetInnerHTML={{
@@ -62,7 +62,7 @@ export default function FigureObj({
         })}
         {groupCaption && (
           <figcaption
-            className={`font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full ${
+            className={`font-dubois text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full ${
               captionClassName ?? ""
             }`}
           >
