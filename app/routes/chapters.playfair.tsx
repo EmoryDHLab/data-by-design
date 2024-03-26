@@ -620,7 +620,7 @@ export default function PlayfairPage() {
           </Column>
           <Column shouldPin>
             <FigureObj figure={figures["10a-PLACEHOLDER"]} />
-            <FigureObj figure={figures["10-Camoes"]} />
+            <FigureObj figure={figures["10-camoes"]} />
           </Column>
         </TwoColumnLayout>
 
