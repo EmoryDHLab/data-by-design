@@ -88,7 +88,7 @@ export default function PlayfairPage() {
             quote={
               <>
                 Data visualization has never been neutral or objective. There is
-                meaning -- and an argument -- conveyed through each visual
+                meaning — and an argument — conveyed through each visual
                 design.
               </>
             }

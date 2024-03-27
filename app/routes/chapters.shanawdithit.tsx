@@ -785,7 +785,7 @@ export default function ShanawdithitPage() {
           </p>
           <p>
             Like Willard, Shanawdithit also produced multiple maps, although
-            less is known about the intention—if any--behind their ordering.
+            less is known about the intention—if any—behind their ordering.
             When reproducing them for his volume, Howley places them in
             chronological order (238), listing MENTION WHAT THE FIVE MAPS SHOW.
             but it is unclear as to whether they were drawn in that order or

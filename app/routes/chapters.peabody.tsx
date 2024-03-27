@@ -324,8 +324,8 @@ export default function PeabodyPage() {
               But Peabody's approach diverged from the rote memorization that
               characterized most mid-nineteenth-century classrooms in that her
               ultimate aim was for each student's mental picture of past events
-              to prompt a richer--and, crucially, and
-              individually-constructed--narrative of history. For Peabody, the
+              to prompt a richer—and, crucially, and
+              individually-constructedn—narrative of history. For Peabody, the
               power of this personal narrative of history was immense: it could
               show "the origin and consequences of national action"; and for the
               US in particular—the world's first representative democracy—it
@@ -476,7 +476,7 @@ export default function PeabodyPage() {
               teaching and learning materials associated with the{" "}
               <cite>Polish-American System</cite>. In 1870, she began printing
               workbooks with sheets of blank charts—"blank centuries," as she
-              called them--so that students could themselves create the
+              called them—so that students could themselves create the
               visualizations that they would then study.
             </p>
           </Column>
@@ -491,7 +491,7 @@ export default function PeabodyPage() {
           <Column>
             <p>
               But the exercise of creating a chronological chart from scratch is
-              quite hard, as you--the reader--might have discovered from the
+              quite hard, as you—the reader—_might have discovered from the
               interaction above. Not to worry, however! The difficulty level was
               high for students of the nineteenth century as well. Peabody's
               nephew, Julian Hawthorne, who served as her first test subject,
@@ -516,7 +516,7 @@ export default function PeabodyPage() {
               first developed her method at a time when the nation's future
               seemed to hang in balance. The second half of the 1840s had
               brought an increased awareness of the nation's growing
-              sectarianism, as well as its range of social ills--albeit with a
+              sectarianism, as well as its range of social ills—albeit with a
               (mostly) optimistic view about the potential of its governing
               structures to address these challenges. But as the 1850s unfolded,
               the magnitude of these challenges became increasingly more
@@ -656,7 +656,7 @@ export default function PeabodyPage() {
             case, Peabody herself—who originally developed its designs. If there
             is a single message communicated by Peabody's chronological charts,
             it is that their meaning is not fixed. Rather, they impress upon the
-            viewer a sense of responsibility--first for developing informed
+            viewer a sense of responsibility—first for developing informed
             interpretations of the images they perceive, and then for designing
             a course of future action.
           </p>
@@ -760,7 +760,7 @@ export default function PeabodyPage() {
               a touch matrix made of strips of copper tape.
               <InlineFootnote index={33}></InlineFootnote>
               The matrix works like a computer keyboard, with columns and rows
-              of conductive material--in this case, the copper tape--separated
+              of conductive material—in this case, the copper tape—separated
               by foam spacer. When a person presses on a square of the grid, the
               two layers of copper tape touch each other, creating a connection.
               Above the touch matrix sits a cloth topper, also fabricated by

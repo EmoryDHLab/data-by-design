@@ -45,7 +45,7 @@ module.exports = {
       colors: {
         black: "#1C1817",
         offblack: "#1C1817",
-        offwhite: "#FAF1E9",
+        offwhite: "#FDF9F6",
         nightingale_blue: "#3B6FE0",
         peabodyOrange: "rgb(219, 136, 42)",
         brooksSecondary: {

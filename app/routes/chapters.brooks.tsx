@@ -111,7 +111,7 @@ export default function BrooksPage() {
             quote={
               <>
                 Before there are data, there are people. People who offer up
-                their lives as data -- or whose lives become data without
+                their lives as data — or whose lives become data without
                 consent.
               </>
             }

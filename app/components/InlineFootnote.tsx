@@ -16,7 +16,7 @@ export default function InlineFootnote({
   superscriptOverride,
   textOverride,
 }: Props) {
-  const { backgroundColor, primaryTextColor, footnoteTextColor, footnotes } =
+  const { backgroundColor, primaryTextColor, footnotes } =
     useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
 
@@ -31,9 +31,7 @@ export default function InlineFootnote({
         {index + 1}
       </button>
       {isTextVisible && (
-        <span className={`block text-${textOverride ?? footnoteTextColor}`}>
-          {footnotes[index]}
-        </span>
+        <span className="font-neueMontrealLight">{footnotes[index]}</span>
       )}
     </span>
   );
