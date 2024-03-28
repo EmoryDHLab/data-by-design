@@ -19,12 +19,12 @@ interface Props {
 export const Caption = ({ figure, className }: Props) => {
   return (
     <figcaption
-      className={`font-neueMontreal text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full ${
+      className={`font-neueMontreal text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full ${
         className ?? ""
       }`}
       dangerouslySetInnerHTML={{
-        __html: `<p>${figure?.caption}<p>${
-          figure?.creditLine ? `<p>${figure?.creditLine}</p>` : ""
+        __html: `<caption>${figure?.caption}<caption>${
+          figure?.creditLine ? `<caption>${figure?.creditLine}</caption>` : ""
         }`,
       }}
     />
@@ -62,7 +62,7 @@ export default function FigureObj({
         })}
         {groupCaption && (
           <figcaption
-            className={`font-dubois text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full ${
+            className={`font-neueMontreal text-sm leading-tight text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full ${
               captionClassName ?? ""
             }`}
           >
