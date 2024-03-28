@@ -133,6 +133,7 @@
 main p {
     margin: .75rem auto;
     line-height: 1.75rem;
+    letter-spacing: 0.025em;
 }
 
 .se {
