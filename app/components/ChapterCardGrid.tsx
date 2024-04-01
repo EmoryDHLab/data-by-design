@@ -3,9 +3,6 @@ import ChapterCard from "~/components/ChapterCard";
 export default function ChapterCardGrid() {
   return (
     <div className="bg-black">
-      <h3 className="text-white font-duboisWide tracking-wider text-center text-3xl mb-10 pt-5">
-        CHAPTERS
-      </h3>
       <div className="grid sm:grid-cols-2 grid-cols-1 sm:grid-rows-3 3xl:mx-48">
         <ChapterCard
           to="/chapters/brooks"

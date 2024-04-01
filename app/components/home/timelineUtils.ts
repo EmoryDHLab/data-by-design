@@ -13,7 +13,6 @@ export enum TimelineType {
 }
 
 export const timelineImages = () => {
-
   const shanawdithit: TFilteredFigures[] = Object.entries(
     shanawdithitFigures
   ).filter((figures) => figures[1].frontPage);
@@ -27,12 +26,14 @@ export const timelineImages = () => {
   const peabody: TFilteredFigures[] = Object.entries(peabodyFigures).filter(
     (figures) => figures[1].frontPage
   );
-  const playfair: TFilteredFigures[] = Object.entries(
-    playfairFigures
-  ).filter((figures) => figures[1].frontPage);
+  const playfair: TFilteredFigures[] = Object.entries(playfairFigures).filter(
+    (figures) => figures[1].frontPage
+  );
 
   const filteredFigures: TFigure[] = Object.values(
-    Object.fromEntries(brooks.concat(dubois, peabody, playfair, shanawdithit))
+    Object.fromEntries(
+      brooks.concat(dubois.slice(0, 10), peabody, playfair, shanawdithit)
+    )
   );
 
   return filteredFigures || [];

@@ -9,6 +9,8 @@ interface Props {
   selectedImage: TFigure;
   setSelectedImage: Dispatch<SetStateAction<TFigure>>;
   shouldShuffle: boolean;
+  setShouldShuffle: Dispatch<SetStateAction<boolean>>;
+  setTimelineType: Dispatch<SetStateAction<TimelineType>>;
 }
 
 export default function Timeline({
@@ -16,24 +18,57 @@ export default function Timeline({
   selectedImage,
   setSelectedImage,
   shouldShuffle,
+  setShouldShuffle,
+  setTimelineType,
 }: Props) {
   return (
-    <div className="text-white text-center font-duboisWide text-3xl p-10 bg-black hidden md:block">
-      <div className="flex items-center border-white border-dashed border-y-2 w-full">
-        <h2 className="-rotate-90 h-[20px]">TIMELINE</h2>
-        {timelineType === TimelineType.Draggable ? (
-          <DraggableTimeline
-            selectedImage={selectedImage}
-            setSelectedImage={setSelectedImage}
-            shouldShuffle={shouldShuffle}
+    <>
+      <div className="flex flex-col">
+        <button
+          onClick={() => {
+            setTimelineType(TimelineType.Draggable);
+            setShouldShuffle((shouldShuffle) => !shouldShuffle);
+          }}
+          type="button"
+        >
+          <img
+            className="w-14 m-2"
+            src={
+              timelineType === TimelineType.Draggable
+                ? "/images/ui/shuffle_click.png"
+                : "/images/ui/shuffle_unclick.png"
+            }
+            alt="Shuffle"
           />
-        ) : (
-          <OrderedTimeline
-            selectedImage={selectedImage}
-            setSelectedImage={setSelectedImage}
+        </button>
+        <button
+          type="button"
+          onClick={() => setTimelineType(TimelineType.Ordered)}
+        >
+          <img
+            className="w-14 m-2"
+            src={
+              timelineType === TimelineType.Ordered
+                ? "/images/ui/sort_selected.png"
+                : "/images/ui/sort_unselected.png"
+            }
+            alt="Sort"
           />
-        )}
+        </button>
       </div>
-    </div>
+
+      {timelineType === TimelineType.Draggable ? (
+        <DraggableTimeline
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
+          shouldShuffle={shouldShuffle}
+        />
+      ) : (
+        <OrderedTimeline
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
+        />
+      )}
+    </>
   );
 }

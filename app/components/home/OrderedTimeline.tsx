@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import type { Dispatch, SetStateAction, MouseEvent, KeyboardEvent } from "react";
+import type {
+  Dispatch,
+  SetStateAction,
+  MouseEvent,
+  KeyboardEvent,
+} from "react";
 import type { TFigure } from "~/types/figureType";
 import { classNames } from "~/utils";
 import { timelineImages } from "./timelineUtils";
@@ -20,7 +25,7 @@ function groupByYear() {
 
 const imagesByYear = groupByYear();
 
-const sortedImages: TFigure[] = imageData.sort((a, b) => a.year - b.year)
+const sortedImages: TFigure[] = imageData.sort((a, b) => a.year - b.year);
 
 interface Props {
   selectedImage: TFigure;
@@ -32,7 +37,9 @@ export default function OrderedTimeline({
   selectedImage,
 }: Props) {
   const sliderRef = useRef<HTMLDivElement>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState<number>(sortedImages.indexOf(selectedImage));
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(
+    sortedImages.indexOf(selectedImage)
+  );
   const [mouseIsDown, setMouseIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
@@ -41,7 +48,9 @@ export default function OrderedTimeline({
     if (!selectedImage) return;
     const selectedImageSelector = `img[src="/images/${selectedImage.chapter}/${selectedImage.fileName}.jpg`;
     if (!sliderRef.current) return;
-    sliderRef.current.querySelector<HTMLElement>(selectedImageSelector)?.focus();
+    sliderRef.current
+      .querySelector<HTMLElement>(selectedImageSelector)
+      ?.focus();
   }, [selectedImage]);
 
   useEffect(() => {
@@ -73,28 +82,28 @@ export default function OrderedTimeline({
   const keyUp = (event: KeyboardEvent) => {
     const { key } = event;
     switch (key) {
-      case 'ArrowRight':
+      case "ArrowRight":
         if (currentImageIndex < imageData.length - 1) {
           setCurrentImageIndex(currentImageIndex + 1);
         } else {
           setCurrentImageIndex(0);
         }
         break;
-      case 'ArrowLeft':
+      case "ArrowLeft":
         if (currentImageIndex > 0) {
           setCurrentImageIndex(currentImageIndex - 1);
         } else {
           setCurrentImageIndex(imageData.length - 1);
         }
         break;
-      }
+    }
     event.preventDefault();
-  }
+  };
 
   return (
     <div
       ref={sliderRef}
-      className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5"
+      className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5 w-full ml-3 focus:outline-none"
       role="button"
       onMouseDown={({ pageX }) => mouseDown(pageX)}
       onMouseUp={() => setMouseIsDown(false)}
@@ -103,7 +112,6 @@ export default function OrderedTimeline({
       tabIndex={0}
       // TODO: Rethink after homepage design changes
       // onFocus={() => sliderRef.current.scrollIntoView({ block: "end" })}
-
     >
       {Object.entries(imagesByYear).map(([year, images]) => (
         <div key={year} style={{ minWidth: `${images.length * 10 + 150}px` }}>
@@ -124,11 +132,15 @@ export default function OrderedTimeline({
                   onKeyUp={() => setSelectedImage(image)}
                   className={classNames(
                     "absolute w-[150px]",
-                    isSelected && "border-4 border-red-500",
+                    isSelected && "border-4 border-red-500"
                   )}
-                  style={{ left: `${index * 10}px`, top: "0", zIndex: isSelected ? images.length + 1 : index + 1 }}
+                  style={{
+                    left: `${index * 10}px`,
+                    top: "0",
+                    zIndex: isSelected ? images.length + 1 : index + 1,
+                  }}
                   src={`/images/${image.chapter}/${image.fileName}.jpg`}
-                  alt={image.altText ?? ''}
+                  alt={image.altText ?? ""}
                 />
               );
             })}

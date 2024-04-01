@@ -18,8 +18,8 @@ type startPosition = {
 };
 
 const IMAGE_COUNT = 30;
-const PART_ONE_START = 40;
-const PART_ONE_HEIGHT = window.innerHeight / 2;
+const PART_ONE_START = 0;
+const PART_ONE_HEIGHT = window.innerHeight / 2.25;
 
 interface Props {
   selectedImage: TFigure;
@@ -54,15 +54,20 @@ export default function DraggableTimeline({
     imageSliceStart + IMAGE_COUNT
   );
 
-  if (selectedImage) images.splice(0, 0, selectedImage);
+  if (selectedImage && !images.includes(selectedImage)) {
+    images.splice(0, 0, selectedImage);
+  }
 
   useEffect(() => {
     setState((state) => ({
       ...state,
-      imagePositions: Array.from({ length: IMAGE_COUNT }, () => {
+      imagePositions: Array.from({ length: IMAGE_COUNT + 1 }, () => {
         const windowWidth = windowSize.width ?? 200;
-        const x = Math.random() * (windowWidth - 200);
-        const y = PART_ONE_START + Math.random() * (PART_ONE_HEIGHT - 200);
+        const x = Math.random() * (windowWidth - 300);
+        const y = Math.max(
+          PART_ONE_START + Math.random() * PART_ONE_HEIGHT - 200,
+          70
+        );
         const r = Math.random() * 60 - 30;
         return { x, y, r };
       }),
@@ -135,7 +140,7 @@ export default function DraggableTimeline({
     <svg
       ref={svgRef}
       width="100%"
-      height="50vh"
+      height="120%"
       onMouseMove={moveDraggedImage}
       onMouseUp={() => {
         setIsDragging(false);
@@ -146,6 +151,8 @@ export default function DraggableTimeline({
       // TODO: Rethink after homepage design changes
       // onFocus={() => svgRef.current.scrollIntoView({ block: "end" })}
       tabIndex={0}
+      className="relative z-10 right-0 focus:outline-none"
+      style={{ bottom: "39px" }}
     >
       {images.map((img, index) => {
         const isSelected =
@@ -155,6 +162,7 @@ export default function DraggableTimeline({
           <g key={img.fileName} id={img.fileName}>
             <image
               className={isSelected ? "outline outline-4 outline-red-500" : ""}
+              id={`index-${index}`}
               style={{ cursor: "pointer" }}
               href={`/images/${img.chapter}/${img.fileName}.jpg`}
               width={150}

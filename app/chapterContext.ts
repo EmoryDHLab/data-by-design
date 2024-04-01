@@ -70,7 +70,7 @@ interface IChapterContext {
   hideSensitiveState?: boolean | undefined;
   setHideSensitiveState?: Dispatch<SetStateAction<boolean>>;
   hide?: boolean;
-  sections: TChapterSection[];
+  sections?: TChapterSection[];
 }
 
 const ChapterContext = createContext<IChapterContext>({
