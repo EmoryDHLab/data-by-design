@@ -3,7 +3,7 @@ import ChapterCard from "~/components/ChapterCard";
 export default function ChapterCardGrid() {
   return (
     <div className="bg-black">
-      <div className="grid sm:grid-cols-2 grid-cols-1 sm:grid-rows-3 3xl:mx-48">
+      <div className="grid md:grid-cols-2 grid-cols-1 md:grid-rows-3 3xl:mx-48">
         <ChapterCard
           to="/chapters/brooks"
           status="IN PROGRESS"

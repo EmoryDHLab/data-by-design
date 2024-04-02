@@ -4,11 +4,11 @@ import { ChapterContext } from "~/chapterContext";
 export default function Footer() {
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   return (
-    <footer className="mt-8">
+    <footer className="mt-0 md:mt-8">
       <div
-        className={`grid sm:grid-cols-12 sm:gap-x-6 p-10 pt-20 bg-${backgroundColor} text-${primaryTextColor}`}
+        className={`grid md:grid-cols-12 md:gap-x-6 p-10 pt-20 bg-${backgroundColor} text-${primaryTextColor}`}
       >
-        <div className="c sm:col-start-3 sm:col-end-6 space-y-10">
+        <div className="c md:col-start-3 md:col-end-6 space-y-10">
           <span className="font-dubois text-3xl">Data By Design</span>{" "}
           <div className="py-5">
             <br />
@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className=" text-sm sm:col-start-6 sm:col-end-9 space-y-5">
+        <div className=" text-sm md:col-start-6 md:col-end-9 space-y-5">
           <div>
             Designed and developed by the Georgia Tech / Emory Digital
             Humanities Lab in collaboration with Polymode.
