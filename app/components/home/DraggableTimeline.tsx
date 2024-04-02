@@ -6,12 +6,6 @@ import type { TFigure } from "~/types/figureType";
 
 const imageData = timelineImages();
 
-interface TimelineState {
-  imageSliceStart: number;
-  imagePositions: { x: number; y: number; r: number }[];
-  draggedImage: { index: number } | undefined;
-}
-
 type startPosition = {
   clientX: number;
   clientY: number;
@@ -19,7 +13,11 @@ type startPosition = {
 
 const IMAGE_COUNT = 30;
 const PART_ONE_START = 0;
-const PART_ONE_HEIGHT = window.innerHeight / 2.25;
+const PART_ONE_HEIGHT = 484; // This is based on the container being 384px (h-96, or 24rem)
+const RANDOM_IMAGES = () => {
+  const start = Math.floor(Math.random() * 30);
+  return imageData.slice(start, start + IMAGE_COUNT);
+};
 
 interface Props {
   selectedImage: TFigure;
@@ -42,26 +40,20 @@ export default function DraggableTimeline({
     undefined
   );
 
-  const [{ imageSliceStart, imagePositions }, setState] =
-    useState<TimelineState>(() => ({
-      imageSliceStart: Math.floor(Math.random() * 30),
-      imagePositions: [],
-      draggedImage: undefined,
-    }));
+  const [imagePositions, setImagePositions] = useState<
+    { x: number; y: number; r: number }[]
+  >([]);
 
-  const images = imageData.slice(
-    imageSliceStart,
-    imageSliceStart + IMAGE_COUNT
-  );
+  const [images, setImages] = useState<TFigure[]>(RANDOM_IMAGES);
 
   if (selectedImage && !images.includes(selectedImage)) {
     images.splice(0, 0, selectedImage);
   }
 
   useEffect(() => {
-    setState((state) => ({
-      ...state,
-      imagePositions: Array.from({ length: IMAGE_COUNT + 1 }, () => {
+    setImages(RANDOM_IMAGES());
+    setImagePositions(
+      Array.from({ length: IMAGE_COUNT + 1 }, () => {
         const windowWidth = windowSize.width ?? 200;
         const x = Math.random() * (windowWidth - 300);
         const y = Math.max(
@@ -70,8 +62,8 @@ export default function DraggableTimeline({
         );
         const r = Math.random() * 60 - 30;
         return { x, y, r };
-      }),
-    }));
+      })
+    );
   }, [windowSize.width, shouldShuffle]);
 
   function getTransform(index: number) {
@@ -100,7 +92,6 @@ export default function DraggableTimeline({
       const moveY = clientY - startPosition.clientY;
       imagePositions[currentImageIndex].x += moveX;
       imagePositions[currentImageIndex].y += moveY;
-      setState((state) => ({ ...state, imagePositions: [...imagePositions] }));
     }
   }
 

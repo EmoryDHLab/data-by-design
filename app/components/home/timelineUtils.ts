@@ -32,7 +32,7 @@ export const timelineImages = () => {
 
   const filteredFigures: TFigure[] = Object.values(
     Object.fromEntries(
-      brooks.concat(dubois.slice(0, 10), peabody, playfair, shanawdithit)
+      brooks.concat(dubois.slice(0, 20), peabody, playfair, shanawdithit)
     )
   );
 

@@ -27,24 +27,23 @@ export default function Index() {
       }}
     >
       <main id="main-content" className="bg-black text-white">
-        <div className="md:flex  pt-10 md:pt-5">
-          <div className="md:grid  md:grid-cols-5 md:4 pl-6 md:pl-0  ">
-            <h1 className="pt-20 font-bold text-5xl md:text-frontTitle font-dubois md:col-start-1 md:col-span-4 md:row-start-2 md:row-span-1 z-10 leading-veryTight md:pl-24">
-              <span className="md:hidden">DATA BY DESIGN</span>
-              <span className="hidden md:inline md:ml-6 md:pt-10">
+        <div className="md:flex pt-10 md:pt-5">
+          <div className="md:grid  md:grid-cols-6 pl-6 md:pl-0 md:gap-x-4 gap-y-0  md:content-start">
+            <h1 className="pt-20 font-bold text-5xl md:text-6xl lg:text-frontTitle font-dubois md:col-span-5 lg:col-span-6 md:row-start-2 md:row-span-1 z-10 leading-veryTight md:pl-24">
+              <span className="lg:hidden">DATA BY DESIGN</span>
+              <span className="hidden lg:inline lg:ml-6 md:pt-10">
                 DATA BY
               </span>{" "}
-              <span className="hidden md:ml-24 md:inline">DESIGN</span>
+              <span className="hidden lg:ml-24 lg:inline">DESIGN</span>
             </h1>
-            <div className="md:text-3xl text-xl font-dubois font-normal md:font-light md:col-start-1 col-span-2 pt-3 row-start-3 md:ml-32">
-              <h2>
-                An Interactive History
-                <br /> of Data Visualization
-                <br />
-                <span className="pt-5">1786-1900</span>
-              </h2>
-              <div className="pt-10 hidden md:block"></div>
-            </div>
+            <h2 className="hidden lg:inline md:text-lg lg:text-xl xl:text-2xl font-dubois font-normal md:font-light md:col-start-1 md:col-span-4 pt-3 md:pt-0 row-start-3 md:pl-24 lg:ml-24">
+              An Interactive History
+              <br /> of Data Visualization
+              <br />
+            </h2>
+            <h2 className="hidden lg:inline md:col-start-5 lg:col-start-5 md:row-start-3 text-base lg:text-l xl:text-xl font-dubois font-normal md:font-light">
+              1786-1900
+            </h2>
           </div>
           <div className="hidden md:flex flex-col items-center ">
             <ClientOnly>
