@@ -31,7 +31,7 @@ export default function Index() {
           Data by Design: An Interactive History of Data Visualization 1786-1900
         </h1>
         <div
-          className="md:grid md:grid-cols-6 pt-10 md:pt-5 h-full md:h-[50vh] relative z-20 bg-center bg-cover"
+          className="md:grid md:grid-cols-6 pt-10 md:pt-5 h-full md:h-[50vh] relative z-20 bg-center bg-cover pointer-events-none"
           style={{
             backgroundImage: "url('/images/8-dark@tinypng.7abc66a1.png')",
           }}
