@@ -23,7 +23,7 @@ export default function Timeline({
 }: Props) {
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col px-4">
         <button
           onClick={() => {
             setTimelineType(TimelineType.Draggable);
