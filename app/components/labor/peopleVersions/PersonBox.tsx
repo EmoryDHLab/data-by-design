@@ -26,6 +26,7 @@ interface Position {
 
 const PersonBox = ({
   person,
+  activeNode,
   updatePerson,
   index,
   setActiveNode,
@@ -90,8 +91,9 @@ const PersonBox = ({
     <g
       className="person cursor-grab"
       id={`person-${person.firstName}`}
-      onMouseEnter={() => setActiveNode(person)}
-      onMouseLeave={() => setActiveNode(undefined)}
+      onClick={() => setActiveNode(person)}
+      // onMouseEnter={() => setActiveNode(person)}
+      // onMouseLeave={() => setActiveNode(undefined)}
     >
       <rect
         ref={boxRef}
@@ -101,10 +103,11 @@ const PersonBox = ({
         strokeOpacity={opacity}
         width={boxWidth}
         height={boxHeight}
-        fill="#1C1817"
+        fill={person == activeNode ? "#FFD3D3" : "#1C1817"}
         x={center.x - boxWidth / 2}
         y={center.y}
         rx={20}
+        className="transition-colors duration-700"
       />
       <text
         ref={textRef}
@@ -112,9 +115,10 @@ const PersonBox = ({
         y={center.y + boxHeight / 2}
         textAnchor="middle"
         dominantBaseline="middle"
-        fill="#FAF1E9"
+        fill={person === activeNode ? "#1C1817" : "#FAF1E9"}
         fillOpacity={opacity}
-        fontSize={boxHeight / 3}
+        fontSize={boxHeight / 2.25}
+        className="transition-colors duration-700"
       >
         {person.label}
       </text>

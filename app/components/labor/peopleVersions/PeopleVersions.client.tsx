@@ -18,6 +18,7 @@ import type {
 import Version from "./Version";
 import GroupingBox from "./GroupingBox";
 import Connection from "./Connection";
+import PersonGroupingList from "./PersonGroupingList";
 
 const PeopleVersions = () => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -69,6 +70,10 @@ const PeopleVersions = () => {
       setActiveVersions(Object.keys(versionData));
     }
   }, [activeGrouping]);
+
+  useEffect(() => {
+    console.log("🚀 ~ PeopleVersions ~ activeNode:", activeNode);
+  }, [activeNode]);
 
   const updatedPerson = (index: number, x: number, y: number) => {
     if (x < visWidthRef.current && x > 0) {
@@ -243,22 +248,36 @@ const PeopleVersions = () => {
           </svg>
         )}
       </div>
-      <div className="border-l-2 md:row-span-5 grid grid-cols-1 grid-rows-2">
-        <div className="border-b-2 flex flex-col">
-          <div className="text-xl md:text-2xl p-2 border border-b-1 uppercase">
-            View by:
-          </div>
-          <div className="flex pb-4 md:pb-0">
-            <div>
-              <GroupingSelect
-                setSelectedGrouping={setActiveGrouping}
-                activeGrouping={activeGrouping}
-              />
-            </div>
+      <div className="border-l-2 md:row-span-5 flex flex-col">
+        <div className="text-xl md:text-2xl p-2 border border-b-1 uppercase">
+          View by:
+        </div>
+        <div className="flex pb-4 md:pb-0 border border-b-1">
+          <div>
+            <GroupingSelect
+              setSelectedGrouping={setActiveGrouping}
+              activeGrouping={activeGrouping}
+            />
           </div>
         </div>
-        <div>
-          {activeNode && <p className="p-2">{activeNode.label}</p>}
+        <div className="overflow-y-hidden flex">
+          {activeNode && (
+            <div className="overflow-y-scroll">
+              <div className="p-2 text-xl font-dubois uppercase text-duboisSecondary">
+                {activeNode.label}
+              </div>
+              <div className="grid grid-cols-3 grid-rows-2 mx-4 gap-4">
+                <PersonGroupingList person={activeNode} grouping="location" />
+                <PersonGroupingList person={activeNode} grouping="department" />
+                <PersonGroupingList
+                  person={activeNode}
+                  grouping="institution"
+                />
+                <PersonGroupingList person={activeNode} grouping="role" />
+                <PersonGroupingList person={activeNode} grouping="position" />
+              </div>
+            </div>
+          )}
           {!activeNode && (
             <div className="p-2">
               <p>Maybe some instructions?</p>

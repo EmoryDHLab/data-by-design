@@ -20,15 +20,15 @@ const GroupingSelect = ({ setSelectedGrouping, activeGrouping }: Props) => {
     <ul>
       {Object.keys(groupingData).map((grouping) => {
         return (
-          <li key={grouping}>
+          <li key={grouping} className="">
             <button
               onClick={() => handleSelect(grouping as Groupings)}
               onMouseLeave={({ target }) =>
                 (target as HTMLButtonElement).blur()
               }
-              className={`p-1 m-1 hover:opacity-100 focus:opacity-100 uppercase ${
+              className={`px-1 py-2 w-full text-left m-1 hover:opacity-100 focus:opacity-100 uppercase ${
                 grouping === activeGrouping
-                  ? "underline underline-offset-8 opacity-100"
+                  ? "opacity-100 bg-duboisSecondary text-offblack"
                   : "opacity-60"
               }`}
             >

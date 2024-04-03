@@ -21,7 +21,7 @@ const GroupingBox = ({
   const boxRef = useRef<SVGRectElement>(null);
   const { windowSize } = useResizeObserver();
   const boxWidth: number = Math.max(
-    grouping.label.length * (boxHeight / 5),
+    (grouping.label.length + 3) * (boxHeight / 5),
     70
   );
 
@@ -29,12 +29,12 @@ const GroupingBox = ({
     <g
       className={`grouping opacity-${opacity} transition-opacity duration-700`}
       id={`grouping-${grouping.id}`}
-      onMouseEnter={() => {
-        if (opacity === 100) {
-          setActiveNode(grouping);
-        }
-      }}
-      onMouseLeave={() => setActiveNode(undefined)}
+      // onMouseEnter={() => {
+      //   if (opacity === 100) {
+      //     setActiveNode(grouping);
+      //   }
+      // }}
+      // onMouseLeave={() => setActiveNode(undefined)}
     >
       <rect
         ref={boxRef}
@@ -55,7 +55,7 @@ const GroupingBox = ({
         dominantBaseline="middle"
         className="pointer-events-none select-none"
         fill="#1C1817"
-        fontSize={boxHeight / 3}
+        fontSize={boxHeight / 2.25}
       >
         {grouping.label}
       </text>
