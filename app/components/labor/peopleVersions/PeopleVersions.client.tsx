@@ -100,6 +100,7 @@ const PeopleVersions = () => {
         {windowSize && (
           <svg
             ref={svgRef}
+            className="font-dubois font-bold"
             viewBox={`0 0 ${
               ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
             } ${((windowSize?.height || window.innerHeight) / 6) * 5}`}

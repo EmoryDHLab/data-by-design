@@ -67,7 +67,7 @@ const Version = ({
         stroke="#FAF1E9"
         strokeWidth={0.75}
         fontSize={fontSize}
-        className="font-duboisNarrow transition-all duration-1000"
+        className="transition-all duration-1000"
       >
         {children}
       </text>

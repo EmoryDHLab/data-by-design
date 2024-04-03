@@ -41,7 +41,7 @@ const PersonBox = ({
   const offsetY = useRef<number>(0);
   const { windowSize } = useResizeObserver();
   const boxWidth: number =
-    (person.firstName.length + person.lastName.length) * (boxHeight / 4);
+    (person.firstName.length + person.lastName.length + 3) * (boxHeight / 4);
 
   useEffect(() => {
     const dragStart = ({ x, y }: Position) => {
@@ -97,14 +97,14 @@ const PersonBox = ({
         ref={boxRef}
         id={`person-box-${person.firstName}`}
         stroke="lightgray"
-        strokeWidth={0.5}
+        strokeWidth={1.5}
         strokeOpacity={opacity}
         width={boxWidth}
         height={boxHeight}
         fill="#1C1817"
         x={center.x - boxWidth / 2}
         y={center.y}
-        rx={22}
+        rx={20}
       />
       <text
         ref={textRef}
