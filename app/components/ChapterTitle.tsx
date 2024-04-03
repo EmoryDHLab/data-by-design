@@ -29,7 +29,7 @@ export default function ChapterTitle({ title, subtitle }: Props) {
           Section
         </div>
         <ul className="mt-4">
-          {sections.map((section) => {
+          {sections?.map((section) => {
             return (
               <li key={section.id} className="py-2">
                 <Link className="hover:underline" to={`#${section.id}`}>

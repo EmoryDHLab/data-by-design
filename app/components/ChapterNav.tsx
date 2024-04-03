@@ -35,15 +35,8 @@ interface Props {
   fixedNav: boolean;
 }
 export function ChapterNav({ progress, fixedNav }: Props) {
-  const {
-    accentColor,
-    accentTextColor,
-    primaryTextColor,
-    backgroundColor,
-    chapterFigures,
-    visualizations,
-    disclosure,
-  } = useContext(ChapterContext);
+  const { chapterFigures, visualizations, disclosure } =
+    useContext(ChapterContext);
   const { documentSize, mainContentSize } = useResizeObserver();
   const [anchorMap, setAnchorMap] = useState<TAnchorPosition[]>([]);
 
@@ -110,21 +103,19 @@ export function ChapterNav({ progress, fixedNav }: Props) {
     <div
       className={`w-full z-[15] ${
         fixedNav ? "fixed" : "sticky"
-      } top-7 md:top-12 border-b-2 border-white bg-${accentColor} mx-auto`}
+      } top-7 md:top-12 bg-offwhite mx-auto`}
     >
-      <nav className="h-6">
+      <nav className="h-8">
         <div
-          className={`bg-${backgroundColor} relative left-0 top-0 h-full`}
+          className={`bg-black relative left-0 top-0 h-full`}
           style={{ width: `${progress * 100}%` }}
         ></div>
         {anchorMap.map((anchor, index) => {
           return (
             <span
               key={anchor.hash}
-              className={`absolute max-lg:invisible -top-[0.01rem] transition text-${
-                anchor.offsetPercent > progress * 100
-                  ? accentTextColor
-                  : primaryTextColor
+              className={`absolute max-lg:invisible -top-[0.01rem] transition text-xl text-${
+                anchor.offsetPercent > progress * 100 ? "black" : "white"
               }`}
               style={{ left: `${anchor.offset}px` }}
             >
