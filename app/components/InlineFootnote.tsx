@@ -16,17 +16,16 @@ export default function InlineFootnote({
   superscriptOverride,
   textOverride,
 }: Props) {
-  const { backgroundColor, primaryTextColor, footnotes } =
-    useContext(ChapterContext);
+  const { accentColor, footnotes } = useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
 
   return (
     <span>
       <button
         onClick={() => setIsTextVisible(!isTextVisible)}
-        className={`footnote mr-2 bg-${bgOverride ?? backgroundColor} text-${
-          superscriptOverride ?? primaryTextColor
-        } pointer-events-auto`}
+        className={`footnote mr-2 inline-flex items-center justify-center bg-${
+          isTextVisible ? accentColor : "offwhite"
+        } hover:bg-${accentColor} text-offblack pointer-events-auto border border-offblack`}
       >
         {index + 1}
       </button>
