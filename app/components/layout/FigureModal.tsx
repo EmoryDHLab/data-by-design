@@ -1,7 +1,11 @@
-import { Fragment, useEffect, useRef, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, useContext, useEffect, useRef, useState } from "react";
+import { ChapterContext } from "~/chapterContext";
+import { Dialog, Transition, Disclosure } from "@headlessui/react";
+import { Caption } from "./FigureObj";
 import type { TFigure } from "~/types/figureType";
 import type { ReactNode } from "react";
+import Close from "../icons/Close";
+import ChevronUp from "../icons/ChevronUp";
 
 interface Props {
   figure?: TFigure;
@@ -21,6 +25,7 @@ export default function FigureModal({
   hide,
   className,
 }: Props) {
+  const { backgroundColor, accentColor } = useContext(ChapterContext);
   const [open, setOpen] = useState(false);
   const [interactiveOptions, setInteractiveOptions] = useState<object>({});
   const figureRef = useRef<HTMLElement>(null);
@@ -80,45 +85,74 @@ export default function FigureModal({
               >
                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white p-6 md:px-4 md:pt-5 md:pb-4 text-left shadow-xl transition-all my-8 md:my-0 w-screen md:w-auto max-w-4xl md:max-w-auto">
                   <div>
-                    <div className=" text-center mt-5 md:mt-0">
-                      {figure?.title && (
-                        <Dialog.Title
-                          as="h3"
-                          className="text-lg font-medium leading-6 text-gray-900"
-                          dangerouslySetInnerHTML={{
-                            __html: figure.title,
-                          }}
-                        />
-                      )}
-                      <picture className="mt-2">
-                        <source
-                          srcSet={`/images/${figure?.chapter}/${figure?.fileName}.webp`}
-                        />
-                        <source
-                          srcSet={`/images/${figure?.chapter}/${figure?.fileName}.jpg`}
-                        />
-                        <img
-                          className="mx-auto max-h-[80vh]"
-                          src={
-                            figure
-                              ? `/images/${figure.chapter}/${figure.fileName}.jpg`
-                              : src
-                          }
-                          alt={figure?.altText ?? ""}
-                          title={figure?.title ?? ""}
-                          loading={loading ?? "lazy"}
-                        />
-                      </picture>
+                    <div className="text-center mt-5 md:mt-0">
+                      <div className="flex flex-auto items-stretch">
+                        {figure?.title && (
+                          <Dialog.Title
+                            as="h3"
+                            className="text-lg font-medium leading-6 text-gray-900 grow self-center"
+                            dangerouslySetInnerHTML={{
+                              __html: figure.title,
+                            }}
+                          />
+                        )}
+                        <div className="mr-4">
+                          <button
+                            type="button"
+                            className="w-4"
+                            onClick={() => setOpen(false)}
+                            aria-label="Close"
+                            title="Close"
+                          >
+                            <Close className="hover:text-offwhite text-offblack hover:fill-offblack" />
+                          </button>
+                        </div>
+                      </div>
+                      <figure>
+                        <picture className="mt-2">
+                          <source
+                            srcSet={`/images/${figure?.chapter}/${figure?.fileName}.webp`}
+                          />
+                          <source
+                            srcSet={`/images/${figure?.chapter}/${figure?.fileName}.jpg`}
+                          />
+                          <img
+                            className="mx-auto max-h-[80vh]"
+                            src={
+                              figure
+                                ? `/images/${figure.chapter}/${figure.fileName}.jpg`
+                                : src
+                            }
+                            alt={figure?.altText ?? ""}
+                            title={figure?.title ?? ""}
+                            loading={loading ?? "lazy"}
+                          />
+                        </picture>
+                        <Caption figure={figure} className="md:mb-2" />
+
+                        <div className="mx-auto w-full rounded-2xl bg-white p-2">
+                          <Disclosure>
+                            {({ open }) => (
+                              <>
+                                <Disclosure.Button
+                                  className={`flex w-full justify-between rounded-lg bg-${accentColor} px-4 py-2 text-left text-sm font-medium text-${backgroundColor} hover:bg-${backgroundColor}/75 `}
+                                >
+                                  <span>Alt Text</span>
+                                  <ChevronUp
+                                    className={`text-${backgroundColor} transition-transform ${
+                                      open ? "rotate-180 transform" : ""
+                                    }`}
+                                  />
+                                </Disclosure.Button>
+                                <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-left">
+                                  {figure?.altText}
+                                </Disclosure.Panel>
+                              </>
+                            )}
+                          </Disclosure>
+                        </div>
+                      </figure>
                     </div>
-                  </div>
-                  <div className="mt-6 md:mt-5 flex flex-col items-center">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm md:text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                      onClick={() => setOpen(false)}
-                    >
-                      Close
-                    </button>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
