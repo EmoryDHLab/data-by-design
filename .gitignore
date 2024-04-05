@@ -10,5 +10,4 @@ node_modules*
 /api*
 /styles/generated-app.css
 
-package-lock.json
 .ruby-lsp
