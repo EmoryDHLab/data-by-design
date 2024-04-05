@@ -5,9 +5,10 @@ import type { TFigure } from "~/types/figureType";
 interface Props {
   figure: TFigure;
   className?: string;
+  center?: boolean;
 }
 
-function Picture({ figure, className }: Props) {
+function Picture({ figure, className, center = true }: Props) {
   const { hide } = useContext(ChapterContext);
 
   return (
@@ -15,9 +16,9 @@ function Picture({ figure, className }: Props) {
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
       <img
-        className={`mx-auto  transition-opacity opacity-${hide ? "0" : "100"} ${
-          className ?? ""
-        }`}
+        className={`mx-${center ? "auto" : 0}  transition-opacity opacity-${
+          hide ? "0" : "100"
+        } ${className ?? ""}`}
         src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
         alt={
           figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
