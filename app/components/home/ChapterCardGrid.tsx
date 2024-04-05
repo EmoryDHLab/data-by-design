@@ -1,4 +1,4 @@
-import ChapterCard from "~/components/ChapterCard";
+import ChapterCard from "~/components/home/ChapterCard";
 
 export default function ChapterCardGrid() {
   return (

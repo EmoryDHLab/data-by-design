@@ -10,6 +10,7 @@ const SelectedImage = ({ selectedImage }: { selectedImage: TFigure }) => {
         <Picture
           figure={selectedImage}
           className="mx-0 pl-0 max-h-[30vh] pointer-events-auto"
+          center={false}
         />
         <figcaption className="w-full text-white text-left bg-black/75">
           <p

@@ -1,7 +1,7 @@
 // This is the home page!
 
 import { useState } from "react";
-import ChapterCardGrid from "~/components/ChapterCardGrid";
+import ChapterCardGrid from "~/components/home/ChapterCardGrid";
 import Timeline from "~/components/home/Timeline.client";
 import { ClientOnly } from "remix-utils";
 import Footer from "~/components/Footer";
@@ -30,19 +30,17 @@ export default function Index() {
         <h1 className="sr-only">
           Data by Design: An Interactive History of Data Visualization 1786-1900
         </h1>
+
         <div
-          className="md:grid md:grid-cols-6 pt-10 md:pt-5 h-full md:h-[50vh] relative z-20 bg-center bg-cover pointer-events-none"
+          className="md:grid md:grid-cols-2 pt-10 md:pt-5 h-full md:h-[50vh] relative z-20 bg-center bg-cover pointer-events-none 3xl:mx-48"
           style={{
             backgroundImage: "url('/images/8-dark@tinypng.7abc66a1.png')",
           }}
         >
-          <figure
-            aria-hidden
-            className="w-full mt-10 md:mt-20 md:ml-12 md:col-span-3 px-4 md:px-0"
-          >
+          <figure aria-hidden className="w-full mt-10 md:mt-36 px-6 md:px-28">
             <SiteTitle />
           </figure>
-          <div className="hidden md:block col-span-3 h-96 w-11/12">
+          <div className="hidden md:block h-96 px-6 md:px-28">
             <ClientOnly>
               {() => <SelectedImage selectedImage={selectedImage} />}
             </ClientOnly>
