@@ -47,7 +47,7 @@ const chapterFigures = Object.values(figures);
 
 const visualizations: TVizAnchors[] = [
   {
-    type: "visualization",
+    type: "scrollytell",
     id: "viz1",
     title: "Playfair Scrollytell",
   },
@@ -88,8 +88,7 @@ export default function PlayfairPage() {
             quote={
               <>
                 Data visualization has never been neutral or objective. There is
-                meaning — and an argument — conveyed through each visual
-                design.
+                meaning — and an argument — conveyed through each visual design.
               </>
             }
           />
