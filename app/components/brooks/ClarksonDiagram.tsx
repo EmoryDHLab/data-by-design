@@ -26,7 +26,7 @@ const ClarksonDiagram = () => {
           d={paths.outline}
         />
 
-        <Areas strokeOpacity={1} />
+        {/* <Areas strokeOpacity={1} /> */}
       </g>
     </svg>
   );

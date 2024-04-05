@@ -1,12 +1,11 @@
 interface Props {
-  strokeOpacity: float;
+  strokeOpacity: number;
 }
 
 export default function Areas({ strokeOpacity }: Props) {
   const options = {
-    className: "transition-all duration-1000",
+    className: "transition-all duration-1000 stroke-offblack",
     fillOpacity: 0,
-    stroke: "rgb(28 24 23)",
     strokeWidth: 3,
     strokeOpacity,
   };

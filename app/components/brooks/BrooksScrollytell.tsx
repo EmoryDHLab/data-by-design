@@ -2,7 +2,6 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "../ScrollytellWrapper";
-import { EyeSlashIcon } from "@heroicons/react/24/outline";
 import Areas from "./elford/Areas";
 import { paths } from "./elford/paths";
 
@@ -156,20 +155,23 @@ export default function BrooksScrollytell() {
                 {hideSensitiveState && (
                   <g>
                     <path
-                      className="transition-opacity duration-1000"
+                      className={`transition-all duration-1000 fill-${
+                        scrollProgress > 4.5
+                          ? "brooksSecondary"
+                          : "peabodyOrange"
+                      }`}
                       fillOpacity={1.0}
                       stroke="rgb(28 24 23)"
                       strokeWidth={scrollProgress > 4.5 ? 3 : 0}
-                      fill={scrollProgress > 4.5 ? "#D9D9D9" : "#db882a"}
                       d={paths.outline}
                     />
-                    <EyeSlashIcon
-                      stroke="rgb(28 24 23)"
-                      strokeOpacity={0.75}
-                      className="w-1 h-1"
+                    {/* <EyeClosed
+                      // stroke="rgb(28 24 23)"
+                      // strokeOpacity={0.75}
+                      className="w-1 h-1 text-brooksPrimary"
                       height={80}
                       y="33%"
-                    />
+                    /> */}
                   </g>
                 )}
                 <g
@@ -196,7 +198,7 @@ export default function BrooksScrollytell() {
 
                   <path
                     strokeWidth={0}
-                    fill="#D9D9D9"
+                    className="fill-brooksSecondary"
                     mask="url(#focus)"
                     d={paths.outline}
                   />
@@ -211,9 +213,10 @@ export default function BrooksScrollytell() {
                   />
 
                   <path
-                    className="transition-all duration-1000"
+                    className={`transition-all duration-1000 fill-${
+                      hideSensitiveState ? "brooksSecondary" : "offblack"
+                    }`}
                     strokeWidth={0}
-                    fill={hideSensitiveState ? "#D9D9D9" : "black"}
                     fillOpacity={fadeOpacity}
                     mask="url(#fade)"
                     d={paths.outline}

@@ -14,7 +14,7 @@ import FigureObj from "~/components/layout/FigureObj";
 import HoverText from "~/components/HoverText";
 import ColonialMaps from "~/components/shanawdithit/ColonialMaps";
 import DocumentViewer from "~/components/shanawdithit/DocumentViewer";
-import SketchScrollytell from "~/components/shanawdithit/SketchScrollytell";
+import SketchScrollytell from "~/components/shanawdithit/DrawingScrollytell";
 import InlineFootnote from "~/components/InlineFootnote";
 import WillardScrollytell from "~/components/shanawdithit/WillardScrollytell";
 import ChapterBody from "~/components/layout/ChapterBody";
@@ -785,16 +785,16 @@ export default function ShanawdithitPage() {
           </p>
           <p>
             Like Willard, Shanawdithit also produced multiple maps, although
-            less is known about the intention—if any—behind their ordering.
-            When reproducing them for his volume, Howley places them in
-            chronological order (238), listing MENTION WHAT THE FIVE MAPS SHOW.
-            but it is unclear as to whether they were drawn in that order or
-            conceived in sequence. It is also worth noting that Shanawdithit
-            accompanied her five maps with drawings of other aspects of Beothuk
-            cultural life. With the sensitivity to colonial power that frames
-            the maps, as Goeman would likely advice, their sequence—like
-            Willard's—enforces a narrative of the extinction of the Beothuk
-            people, as well as about the role that data played in that process.
+            less is known about the intention—if any—behind their ordering. When
+            reproducing them for his volume, Howley places them in chronological
+            order (238), listing MENTION WHAT THE FIVE MAPS SHOW. but it is
+            unclear as to whether they were drawn in that order or conceived in
+            sequence. It is also worth noting that Shanawdithit accompanied her
+            five maps with drawings of other aspects of Beothuk cultural life.
+            With the sensitivity to colonial power that frames the maps, as
+            Goeman would likely advice, their sequence—like Willard's—enforces a
+            narrative of the extinction of the Beothuk people, as well as about
+            the role that data played in that process.
           </p>
           <p> [ FIVE MAPS, HOVER TO SELECT LIKE DU BOIS ] </p>
           <p>
