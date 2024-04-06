@@ -26,28 +26,28 @@ export default function Index() {
         footnotes: [],
       }}
     >
-      <main id="main-content" className="bg-black text-white">
+      <main id="main-content" className="bg-black text-white relative">
         <h1 className="sr-only">
           Data by Design: An Interactive History of Data Visualization 1786-1900
         </h1>
-
         <div
-          className="md:grid md:grid-cols-2 pt-10 md:pt-5 h-full md:h-[50vh] relative z-20 bg-center bg-cover pointer-events-none 3xl:mx-48"
           style={{
             backgroundImage: "url('/images/8-dark@tinypng.7abc66a1.png')",
           }}
-        >
-          <figure aria-hidden className="w-full mt-10 md:mt-36 px-6 md:px-28">
+          className="absolute inset-0 bg-no-repeat pointer-events-none"
+        ></div>
+        <div className="md:flex md:items-center md:grid-rows-2 pt-10 md:pt-5 h-full md:h-[600px] z-20 3xl:mx-48">
+          <figure aria-hidden className="w-full mt-10 md:mt-18 px-6 md:px-28">
             <SiteTitle />
           </figure>
-          <div className="hidden md:block h-96 px-6 md:px-28">
+          <div className="hidden lg:block h-96 px-6 md:px-28 w-3/5">
             <ClientOnly>
               {() => <SelectedImage selectedImage={selectedImage} />}
             </ClientOnly>
           </div>
         </div>
-        <div className="hidden md:block w-screen border-y-2 border-white border-dashed mb-8">
-          <div className="  flex items-center w-full h-96">
+        <div className="hidden lg:block w-screen border-y-2 border-white border-dashed mb-8 pt-10">
+          <div className="flex items-center w-full h-96">
             <ClientOnly>
               {() => (
                 <Timeline

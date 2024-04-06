@@ -4,7 +4,7 @@ module.exports = {
   postcss: true,
   serverBuildTarget: "vercel",
   server: process.env.NODE_ENV === "development" ? undefined : "./server.js",
-  serverModuleFormat: 'cjs',
+  serverModuleFormat: "cjs",
   serverDependenciesToBundle: [
     "react-dnd",
     "react-dnd-html5-backend",
@@ -45,7 +45,8 @@ module.exports = {
     "d3-transition",
     "d3-zoom",
     "delaunator",
-    "robust-predicates"
+    "robust-predicates",
+    "@uidotdev/usehooks",
   ],
   ignoredRouteFiles: ["**/.*"],
   future: {
@@ -54,7 +55,7 @@ module.exports = {
     v2_meta: true,
     v2_headers: true,
     v2_routeConvention: true,
-    v2_dev: true
+    v2_dev: true,
   },
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",

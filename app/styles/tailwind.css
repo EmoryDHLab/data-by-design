@@ -3,269 +3,287 @@
 @tailwind utilities;
 
 @layer utilities {
-    .small-caps {
-        font-variant-caps: all-small-caps;
-    }
+  .small-caps {
+    font-variant-caps: all-small-caps;
+  }
+
+  .bg-diagonal-gradient-blue {
+    background-image: linear-gradient(
+      217deg,
+      rgba(2, 0, 36, 1) 20%,
+      rgba(0, 60, 64, 1) 30%,
+      rgba(0, 0, 0, 1) 40%
+    );
+  }
+
+  .bg-diagonal-gradient-pink {
+    background-image: linear-gradient(
+      217deg,
+      rgba(2, 0, 36, 1) 20%,
+      rgba(120, 88, 102, 1) 30%,
+      rgba(0, 0, 0, 1) 40%
+    );
+  }
 }
 
 .first-paragraph::first-letter {
-    float: left;
-    font-family: VTC Du Bois, serif !important;
-    font-feature-settings: "ss06" !important;
-    font-size: 6rem;
-    line-height: 3.5rem;
-    font-weight: bold;
-    padding: 1rem 0.75rem 0rem 0rem;
+  float: left;
+  font-family: VTC Du Bois, serif !important;
+  font-feature-settings: "ss06" !important;
+  font-size: 6rem;
+  line-height: 3.5rem;
+  font-weight: bold;
+  padding: 1rem 0.75rem 0rem 0rem;
 }
 
 .cardPlayfair:hover,
 .cardPlayfair:focus {
-    background-size: cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/playfair/1-northamerica.jpg") center;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/playfair/1-northamerica.jpg") center;
 }
 
 .cardBrooks:hover,
 .cardBrooks:focus {
-    background-size: cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/brooks/1-sof_slaveship.jpg") center;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/brooks/1-sof_slaveship.jpg") center;
 }
 
 .cardPeabody:hover,
 .cardPeabody:focus {
-    background-size: cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/peabody/1500s.jpg") center;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/peabody/1500s.jpg") center;
 }
 
 .cardShanawdithit:hover,
 .cardShanawdithit:focus {
-    background-size: cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/peabody/ch4-13-willard.jpg") center;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/peabody/ch4-13-willard.jpg") center;
 }
 
 .cardDubois:hover,
 .cardDubois:focus {
-    background-size: cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/dubois/ch5-01-phila.jpg") center;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/dubois/ch5-01-phila.jpg") center;
 }
 
 .cardLabour:hover,
 .cardLabour:focus {
-    background-size: cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("/images/peabody/railroadscaled.jpg") center;
+  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/peabody/railroadscaled.jpg") center;
 }
 
 .grid-wrapper {
-    display: grid;
-    grid-template-columns:
-        1fr min(111ch, 100%) 1fr;
+  display: grid;
+  grid-template-columns: 1fr min(111ch, 100%) 1fr;
 }
 
-.grid-wrapper>* {
-    grid-column: 2;
+.grid-wrapper > * {
+  grid-column: 2;
 }
 
 .column-grid-wrapper {
-    display: grid;
-    grid-template-columns:
-        1fr min(45ch, 100%) 1fr;
+  display: grid;
+  grid-template-columns: 1fr min(45ch, 100%) 1fr;
 }
 
-.column-grid-wrapper>* {
-    grid-column: 2;
+.column-grid-wrapper > * {
+  grid-column: 2;
 }
 
 .scrollytell .column-grid-wrapper {
-    display: block;
-    grid-template-columns: unset;
+  display: block;
+  grid-template-columns: unset;
 }
 
 .left-bleed {
-    width: 100%;
-    grid-column: 1 / 2;
+  width: 100%;
+  grid-column: 1 / 2;
 }
 
 .right-bleed {
-    width: 100%;
-    grid-column: 2 / 4;
+  width: 100%;
+  grid-column: 2 / 4;
 }
 
 .full-bleed {
-    width: 100%;
-    grid-column: 1 / 4;
+  width: 100%;
+  grid-column: 1 / 4;
 }
 
 .footnote {
-    cursor: pointer;
-    display: inline-block;
-    font-family: "VTC Du Bois";
-    vertical-align: middle;
-    font-size: .75rem;
-    line-height: 1.25rem;
-    border-radius: 50%;
-    min-width: 1.25rem;
-    height: 1.25rem;
-    margin-left: .25rem;
-    margin-bottom: .2rem;
-    text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "VTC Du Bois";
+  vertical-align: middle;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  border-radius: 50%;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.25rem;
+  margin-bottom: 0.2rem;
+  text-align: center;
 }
 
 .cut-corners {
-    clip-path: polygon(0 10px,
-            10px 0,
-            calc(100% - 10px) 0,
-            100% 10px,
-            100% calc(100% - 10px),
-            calc(100% - 10px) 100%,
-            10px 100%,
-            0 calc(100% - 10px));
+  clip-path: polygon(
+    0 10px,
+    10px 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
 }
 
 .scrollytell-shape-focus {
-    transition: cx .7s, cy .7s, rx .7s, ry .7s, x .7s, y .7s, height .7s, width .7s;
+  transition: cx 0.7s, cy 0.7s, rx 0.7s, ry 0.7s, x 0.7s, y 0.7s, height 0.7s,
+    width 0.7s;
 }
 
 main p {
-    margin: .75rem auto;
-    line-height: 1.75rem;
-    letter-spacing: 0.025em;
+  margin: 0.75rem auto;
+  line-height: 1.75rem;
+  letter-spacing: 0.025em;
 }
 
 .se {
-    stroke-dasharray: 0 30 30
+  stroke-dasharray: 0 30 30;
 }
 
 .nw {
-    stroke-dasharray: 30 30 0
+  stroke-dasharray: 30 30 0;
 }
 
 .sw {
-    stroke-dasharray: 0 60 30
+  stroke-dasharray: 0 60 30;
 }
 
 .ne {
-    stroke-dasharray: 30 0 30
+  stroke-dasharray: 30 0 30;
 }
 
 .w {
-    stroke-dasharray: 0 90 0
+  stroke-dasharray: 0 90 0;
 }
 
 .n {
-    stroke-dasharray: 30 90
+  stroke-dasharray: 30 90;
 }
 
 .s {
-    stroke-dasharray: 0 60 30 30
+  stroke-dasharray: 0 60 30 30;
 }
 
 .e {
-    stroke-dasharray: 0 30 30 60
+  stroke-dasharray: 0 30 30 60;
 }
 
 .c {
-    stroke-dasharray: 0 120
+  stroke-dasharray: 0 120;
 }
 
 .top {
-    stroke-dasharray: 30 0 30 30
+  stroke-dasharray: 30 0 30 30;
 }
 
 .middle {
-    stroke-dasharray: 0 30 0
+  stroke-dasharray: 0 30 0;
 }
 
 html {
-    scroll-padding-top: 3em;
+  scroll-padding-top: 3em;
 }
 
 tspan:focus {
-    outline: none;
-    text-decoration: underline;
+  outline: none;
+  text-decoration: underline;
 }
 
 svg.actor-button:focus {
-    outline: none;
+  outline: none;
 }
 
-
-input[type=range] {
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 4000px;
-    margin: 0;
-    padding: 0 2px;
-    /* Add some L/R padding to ensure box shadow of handle is shown */
-    overflow: hidden;
-    border: 0;
-    border-radius: 0.5px;
-    outline: none;
-    background: linear-gradient(white, white) no-repeat center;
-    /* Use a linear gradient to generate only the 2px height background */
-    background-size: 100% 2px;
-    pointer-events: none;
+input[type="range"] {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 4000px;
+  margin: 0;
+  padding: 0 2px;
+  /* Add some L/R padding to ensure box shadow of handle is shown */
+  overflow: hidden;
+  border: 0;
+  border-radius: 0.5px;
+  outline: none;
+  background: linear-gradient(white, white) no-repeat center;
+  /* Use a linear gradient to generate only the 2px height background */
+  background-size: 100% 2px;
+  pointer-events: none;
 }
 
-input[type=range]:active,
-input[type=range]:focus {
-    outline: none;
+input[type="range"]:active,
+input[type="range"]:focus {
+  outline: none;
 }
 
-input[type=range]::-webkit-slider-thumb {
-    height: 28px;
-    width: 28px;
-    border-radius: 28px;
-    background-color: white;
-    position: relative;
-    margin: 5px 0;
-    /* Add some margin to ensure box shadow is shown */
-    cursor: pointer;
-    -webkit-appearance: none;
-    appearance: none;
-    pointer-events: all;
-    box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
+input[type="range"]::-webkit-slider-thumb {
+  height: 28px;
+  width: 28px;
+  border-radius: 28px;
+  background-color: white;
+  position: relative;
+  margin: 5px 0;
+  /* Add some margin to ensure box shadow is shown */
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: all;
+  box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
 }
 
-input[type=range]::-webkit-slider-thumb::before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    top: 13px;
-    left: 100%;
-    width: 2000px;
-    height: 2px;
+input[type="range"]::-webkit-slider-thumb::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 13px;
+  left: 100%;
+  width: 2000px;
+  height: 2px;
 }
 
 .multi-range {
-    position: relative;
-    height: 50px;
+  position: relative;
+  height: 50px;
 }
 
-.multi-range input[type=range] {
-    position: absolute;
+.multi-range input[type="range"] {
+  position: absolute;
 }
 
-.multi-range input[type=range]:nth-child(1)::-webkit-slider-thumb::before {
-    background-color: red;
+.multi-range input[type="range"]:nth-child(1)::-webkit-slider-thumb::before {
+  background-color: red;
 }
 
-.multi-range input[type=range]:nth-child(2) {
-    /* background: none; */
+.multi-range input[type="range"]:nth-child(2) {
+  /* background: none; */
 }
 
-.multi-range input[type=range]:nth-child(2)::-webkit-slider-thumb::before {
-    background-color: grey;
+.multi-range input[type="range"]:nth-child(2)::-webkit-slider-thumb::before {
+  background-color: grey;
 }
 
 :target {
-    scroll-margin-top: 100px;
+  scroll-margin-top: 100px;
 }
 
 /*
@@ -273,15 +291,15 @@ input[type=range]::-webkit-slider-thumb::before {
   https://github.com/tailwindlabs/tailwindcss/discussions/12127
 */
 @supports (overflow-wrap: anywhere) {
-    .break-anywhere {
-        overflow-wrap: anywhere;
-    }
+  .break-anywhere {
+    overflow-wrap: anywhere;
+  }
 }
 
 @supports not (overflow-wrap: anywhere) {
-    .break-anywhere {
-        word-break: break-word;
-    }
+  .break-anywhere {
+    word-break: break-word;
+  }
 }
 
 /* .slider-list {
