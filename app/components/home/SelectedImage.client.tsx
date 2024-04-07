@@ -9,10 +9,10 @@ const SelectedImage = ({ selectedImage }: { selectedImage: TFigure }) => {
       <FigureModal figure={selectedImage}>
         <Picture
           figure={selectedImage}
-          className="mx-0 pl-0 max-h-[30vh] pointer-events-auto"
+          className="mx-0 pl-0 max-h-64 pointer-events-auto"
           center={false}
         />
-        <figcaption className="w-full text-white text-left bg-black/75">
+        <figcaption className="w-full text-white text-left max-w-lg">
           <p
             className="font-dubois text-lg"
             dangerouslySetInnerHTML={{
@@ -31,7 +31,7 @@ const SelectedImage = ({ selectedImage }: { selectedImage: TFigure }) => {
               dangerouslySetInnerHTML={{
                 __html: selectedImage.creditLine ?? "",
               }}
-            />
+            />{" "}
             <span
               dangerouslySetInnerHTML={{
                 __html: selectedImage.digitizedLine ?? "",
