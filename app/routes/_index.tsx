@@ -36,11 +36,11 @@ export default function Index() {
           }}
           className="absolute inset-0 bg-no-repeat pointer-events-none"
         ></div>
-        <div className="md:flex md:items-center md:grid-rows-2 pt-10 md:pt-5 h-full md:h-[600px] z-20 3xl:mx-48">
-          <figure aria-hidden className="w-full mt-10 md:mt-18 px-6 md:px-28">
+        <div className="md:flex md:items-center md:justify-around md:grid-rows-2 pt-10 md:pt-5 h-full md:h-[600px] z-20 3xl:mx-48">
+          <figure aria-hidden className="my-10 md:mt-18">
             <SiteTitle />
           </figure>
-          <div className="hidden lg:block h-96 px-6 md:px-28 w-3/5">
+          <div className="hidden h-96 lg:block">
             <ClientOnly>
               {() => <SelectedImage selectedImage={selectedImage} />}
             </ClientOnly>

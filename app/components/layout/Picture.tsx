@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import type { TFigure } from "~/types/figureType";
+import { classNames } from "~/utils";
 
 interface Props {
   figure: TFigure;
@@ -16,9 +17,12 @@ function Picture({ figure, className, center = true }: Props) {
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
       <img
-        className={`mx-${center ? "auto" : 0}  transition-opacity opacity-${
-          hide ? "0" : "100"
-        } ${className ?? ""}`}
+        className={classNames(
+          "transition-opacity",
+          center ? "mx-auto" : "mx-0",
+          hide ? "opacity-0" : "opacity-100",
+          className
+        )}
         src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
         alt={
           figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ??

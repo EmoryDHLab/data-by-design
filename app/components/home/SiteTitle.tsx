@@ -1,6 +1,7 @@
 const SiteTitle = () => {
   return (
     <svg
+      width="500px"
       viewBox="0 0 420 200"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -14,14 +15,14 @@ const SiteTitle = () => {
           x={50}
           dy={76}
           fontSize={96}
-          className="tracking-wider font-bold uppercase"
+          className="tracking-wide font-bold uppercase"
         >
           Design
         </tspan>
-        <tspan x={52} dy={23} fontSize={23} className="tracking-wide">
+        <tspan x={52} dy={28} fontSize={18} className="tracking-wide">
           An Interactive History
         </tspan>
-        <tspan dy={23} fontSize={23} x={52} className="tracking-wide">
+        <tspan dy={23} fontSize={18} x={52} className="tracking-wide">
           of Data Visualization
         </tspan>
         <tspan dy={-23} fontSize={15} x={311} className="tracking-wide">
