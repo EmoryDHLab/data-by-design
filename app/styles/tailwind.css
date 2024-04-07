@@ -7,22 +7,8 @@
     font-variant-caps: all-small-caps;
   }
 
-  .bg-diagonal-gradient-blue {
-    background-image: linear-gradient(
-      217deg,
-      rgba(2, 0, 36, 1) 20%,
-      rgba(0, 60, 64, 1) 30%,
-      rgba(0, 0, 0, 1) 40%
-    );
-  }
-
-  .bg-diagonal-gradient-pink {
-    background-image: linear-gradient(
-      217deg,
-      rgba(2, 0, 36, 1) 20%,
-      rgba(120, 88, 102, 1) 30%,
-      rgba(0, 0, 0, 1) 40%
-    );
+  .bg-gradient {
+    background-image: url("/images/8-dark@tinypng.7abc66a1.png");
   }
 }
 
