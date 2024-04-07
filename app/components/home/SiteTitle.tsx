@@ -1,7 +1,7 @@
 const SiteTitle = () => {
   return (
     <svg
-      width="500px"
+      width="100%"
       viewBox="0 0 420 200"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
