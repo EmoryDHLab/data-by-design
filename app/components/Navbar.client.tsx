@@ -10,7 +10,7 @@ export default function Navbar() {
     <nav
       className={classNames(
         "fixed text-white w-full z-50 duration-700 transition-colors",
-        y > 30 && "bg-black"
+        (y || 0) > 30 && "bg-black"
       )}
     >
       <ul className="w-3/4 flex items-center justify-around py-1 md:py-2">

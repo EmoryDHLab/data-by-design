@@ -9,11 +9,12 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar.client";
 import styles from "~/styles/tailwind.css";
 import fontStyles from "../styles/fonts.css";
 import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
+import { ClientOnly } from "remix-utils";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -50,10 +51,10 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="overflow-x-hidden">
+      <body className="overflow-x-hidden bg-brooksPrimary">
         <ScrollToHashElement />
         <LinkToMain />
-        <Navbar />
+        <ClientOnly>{() => <Navbar />}</ClientOnly>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
