@@ -24,8 +24,8 @@ const CHAPTERS = [
     title: "Narratives of Possession",
   },
   {
-    link: "labour",
-    title: "Labour",
+    link: "labor",
+    title: "Labor",
   },
 ];
 

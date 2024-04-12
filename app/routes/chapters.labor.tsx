@@ -7,9 +7,10 @@ import CenteredLayout from "~/components/layout/CenteredLayout";
 import PeopleVersions from "~/components/labor/peopleVersions/PeopleVersions.client";
 import Footer from "~/components/Footer";
 import { ClientOnly } from "remix-utils";
+import Treemap from "~/components/labor/treemap/Treemap.client";
 
 export const meta: V2_MetaFunction = () => {
-  return chapterMeta("labour");
+  return chapterMeta("labor");
 };
 
 const sections = [
@@ -35,9 +36,17 @@ export default function LabourPage() {
         subtitle="The Making And Remaking Of This Site"
       />
       <CenteredLayout>
-        <p className="py-10">content</p>
+        <p>content</p>
       </CenteredLayout>
       <ClientOnly>{() => <PeopleVersions />}</ClientOnly>
+      <CenteredLayout>
+        <p>more content</p>
+        <p>more content</p>
+        <p>more content</p>
+        <p>more content</p>
+        <p>more content</p>
+      </CenteredLayout>
+      <ClientOnly>{() => <Treemap />}</ClientOnly>
       <Footer />
     </ChapterContext.Provider>
   );

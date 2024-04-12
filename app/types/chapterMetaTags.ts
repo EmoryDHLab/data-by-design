@@ -4,15 +4,15 @@ export type ChapterTitle =
   | "peabody"
   | "playfair"
   | "shanawdithit"
-  | "labour";
+  | "labor";
 
 export type TChapterMeta = {
   [key in ChapterTitle]: {
-    title: string,
-    subtitle: string,
-    description: string,
-    image: string,
-    imageWidth: string,
-    imageHeight: string
-  }
+    title: string;
+    subtitle: string;
+    description: string;
+    image: string;
+    imageWidth: string;
+    imageHeight: string;
+  };
 };
