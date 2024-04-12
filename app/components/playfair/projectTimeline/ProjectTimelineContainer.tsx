@@ -14,10 +14,10 @@ const ProjectTimelineContainer = ({
   innerGridWidth,
 }: Props) => {
   return (
-    <svg viewBox="0 0 105 55">
+    <svg viewBox="0 0 105 55" className="bg-playfairPrimary">
       <rect
         fill="#F3ECCB"
-        className="w-full h-full"
+        className="w-full h-full bg-offwhite"
         strokeWidth={0.5}
         stroke="black"
         height={51}

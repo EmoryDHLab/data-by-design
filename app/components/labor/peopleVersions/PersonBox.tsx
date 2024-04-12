@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import { useEffect, useRef } from "react";
 import { useResizeObserver } from "~/hooks";
-import type { TGroupingNode, TPerson } from "./data/types";
+import type { TGroupingNode, TPerson } from "../data/types";
 import type { Dispatch, SetStateAction } from "react";
 
 // const boxHeight: number = 10;

@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { peopleData, versionData, groupingData } from "./data/data";
+import { peopleData, versionData, groupingData } from "../data";
 import {
   visWidth,
   visHeight,
   versionHeight,
   versionWidth,
-} from "./data/functions";
+} from "../data/functions";
 import PersonBox from "./PersonBox";
 import GroupingSelect from "./GroupingSelect";
 import { useResizeObserver } from "~/hooks";
@@ -14,7 +14,7 @@ import type {
   Groupings,
   TGroupingData,
   TGroupingNode,
-} from "./data/types";
+} from "../data/types";
 import Version from "./Version";
 import GroupingBox from "./GroupingBox";
 import Connection from "./Connection";
@@ -70,10 +70,6 @@ const PeopleVersions = () => {
       setActiveVersions(Object.keys(versionData));
     }
   }, [activeGrouping]);
-
-  useEffect(() => {
-    console.log("🚀 ~ PeopleVersions ~ activeNode:", activeNode);
-  }, [activeNode]);
 
   const updatedPerson = (index: number, x: number, y: number) => {
     if (x < visWidthRef.current && x > 0) {

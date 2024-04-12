@@ -1,9 +1,9 @@
 import * as d3 from "d3";
 
 import { useEffect, useRef } from "react";
-import { visHeight } from "./data/functions";
+import { visHeight } from "../data/functions";
 import { useResizeObserver } from "~/hooks";
-import type { TPerson } from "./data/types";
+import type { TPerson } from "../data/types";
 
 interface Props {
   person: TPerson;

@@ -239,31 +239,27 @@ export default function ProjectTimeline({
           </g>
         )}
         <g>
-          <defs>
-            <mask id="focus">
-              <rect
-                x={5.5}
-                y={5.5}
-                width={innerGridWidth - 1}
-                height={44}
-                fill="white"
-                fillOpacity={showMask ? 0.6 : 0}
-                className="transition-all duration-1000"
-              />
-              <rect x={23.3} y={5.5} width={15} height={44} fill="black" />
-            </mask>
-          </defs>
+          <mask id="focus">
+            <rect
+              x={5.5}
+              y={5.5}
+              width={innerGridWidth - 1}
+              height={44}
+              fill="white"
+              fillOpacity={showMask ? 0.6 : 0}
+              className="transition-all duration-1000 bg-playfairPrimary"
+            />
+            <rect x={23.3} y={5.5} width={15} height={44} fill="black" />
+          </mask>
           <g>
             <rect
-              x={23.3}
-              y={5.5}
-              width={15}
-              height={44}
-              fill="none"
-              stroke="black"
-              strokeWidth={0}
+              mask="url(#focus)"
+              x={0}
+              y={0}
+              width={105}
+              height={55}
+              className="fill-offwhite"
             />
-            <rect mask="url(#focus)" x={0} y={0} width={105} height={55} />
           </g>
         </g>
       </ProjectTimelineContainer>

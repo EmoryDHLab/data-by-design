@@ -1,4 +1,4 @@
-import type { TPerson } from "./data/types";
+import type { TPerson } from "../data/types";
 
 interface Props {
   person: TPerson;

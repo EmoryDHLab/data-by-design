@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useResizeObserver } from "~/hooks";
 
-import type { TGroupingNode, TPerson } from "./data/types";
+import type { TGroupingNode, TPerson } from "../data/types";
 import type { Dispatch, SetStateAction } from "react";
 
 interface Props {

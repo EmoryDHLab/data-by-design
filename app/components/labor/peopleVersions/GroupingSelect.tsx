@@ -1,5 +1,5 @@
-import { groupingData } from "./data/data";
-import type { Groupings } from "./data/types";
+import { groupingData } from "../data";
+import type { Groupings } from "../data/types";
 import type { Dispatch, SetStateAction } from "react";
 
 interface Props {

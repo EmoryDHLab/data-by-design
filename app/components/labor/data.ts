@@ -8,7 +8,7 @@ import {
   FirstNames,
   LastNames,
   Positions,
-} from "./types";
+} from "./data/types";
 import {
   versionY,
   versionX,
@@ -16,8 +16,8 @@ import {
   versionBottomY,
   nodeX,
   nodeY,
-} from "./functions";
-import type { TVersionData, TGroupingData, TPerson } from "./types";
+} from "./data/functions";
+import type { TVersionData, TGroupingData, TPerson } from "./data/types";
 
 export const versionData: TVersionData = {
   [Versions.ONE]: {
@@ -811,123 +811,3 @@ export const peopleData: TPerson[] = [
     opacity: 1,
   },
 ];
-
-// export const filterOptions: TFilterOption[] = [
-//   {
-//     id: 2,
-//     label: "Location",
-//     key: Groupings.L,
-//     options: [
-//       ...Object.keys(Locations).map((opt) => {
-//         return { id: opt, label: Locations[opt as keyof typeof Locations] };
-//       }),
-//     ],
-//     nodes: [
-//       {
-//         id: 0,
-//         label: Locations.ATL,
-//         x: 0.25,
-//         y: 0.35,
-//         getX: nodeX,
-//         getY: nodeY,
-//         opacity: 0,
-//       },
-//       {
-//         id: 1,
-//         label: Locations.NY,
-//         x: 0.35,
-//         y: 0.7,
-//         getX: nodeX,
-//         getY: nodeY,
-//         opacity: 0,
-//       },
-//       {
-//         id: 1,
-//         label: Locations.BK,
-//         x: 0.65,
-//         y: 0.4,
-//         getX: nodeX,
-//         getY: nodeY,
-//         opacity: 0,
-//       },
-//       {
-//         id: 1,
-//         label: Locations.LA,
-//         x: 0.67,
-//         y: 0.77,
-//         getX: nodeX,
-//         getY: nodeY,
-//         opacity: 0,
-//       },
-//       {
-//         id: 1,
-//         label: Locations.SHI,
-//         x: 0.9,
-//         y: 0.3,
-//         getX: nodeX,
-//         getY: nodeY,
-//         opacity: 0,
-//       },
-//       {
-//         id: 1,
-//         label: Locations.BJ,
-//         x: 0.88,
-//         y: 0.4,
-//         getX: nodeX,
-//         getY: nodeY,
-//         opacity: 0,
-//       },
-//     ],
-//   },
-//   {
-//     id: 3,
-//     label: "Discipline",
-//     key: Groupings.D,
-//     options: [
-//       ...Object.keys(Departments).map((opt) => {
-//         return { id: opt, label: Departments[opt as keyof typeof Departments] };
-//       }),
-//     ],
-//   },
-//   {
-//     id: 4,
-//     label: "Institution",
-//     key: Groupings.I,
-//     options: [
-//       ...Object.keys(Institutions).map((opt) => {
-//         return {
-//           id: opt,
-//           label: Institutions[opt as keyof typeof Institutions],
-//         };
-//       }),
-//     ],
-//   },
-//   {
-//     id: 5,
-//     label: "Role",
-//     key: Groupings.R,
-//     options: [
-//       ...Object.keys(Roles).map((opt) => {
-//         return { id: opt, label: Roles[opt as keyof typeof Roles] };
-//       }),
-//     ],
-//   },
-// ];
-
-// // export const nodes: Array<TPerson | TVersion> = [...versionsData, ...peopleData];
-
-// // export const links = peopleData
-// //   .map((person) => {
-// //     return person.versions.map((version) => {
-// //       const versionData = versionsData.find((v) => v.id == version);
-// //       return {
-// //         source: person.id,
-// //         sourceX: person.x,
-// //         sourceY: person.y,
-// //         target: version,
-// //         targetX: versionData?.x,
-// //         targetY: versionData?.y
-// //       };
-// //     });
-// //   })
-// //   .flat();

@@ -3,7 +3,7 @@ export const visWidth = (windowWidth = window.innerWidth) => {
 };
 
 export const visHeight = (windowHeight = window.innerHeight) => {
-  return (windowHeight / 6) * 5;
+  return (windowHeight / 7) * 5;
 };
 
 export const visSize = (
