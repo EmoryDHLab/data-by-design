@@ -12,7 +12,7 @@ const sections = [{ title: "", id: "" }];
 
 export default function AboutPage() {
   return (
-    <div>
+    <div className="bg-offwhite">
       <ChapterContext.Provider
         value={{
           backgroundColor: "duboisPrimary",

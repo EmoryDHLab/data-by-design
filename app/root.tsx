@@ -51,7 +51,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="overflow-x-hidden bg-brooksPrimary">
+      <body className="overflow-x-hidden">
         <ScrollToHashElement />
         <LinkToMain />
         <ClientOnly>{() => <Navbar />}</ClientOnly>
