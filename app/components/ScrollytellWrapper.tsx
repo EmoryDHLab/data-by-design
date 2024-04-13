@@ -9,6 +9,7 @@ import type {
   ReactNode,
   MutableRefObject,
 } from "react";
+import { classNames } from "~/utils";
 
 interface Props {
   setScrollProgress: Dispatch<SetStateAction<number>>;
@@ -100,9 +101,11 @@ export default function ScrollytellWrapper({
     <div
       id={id}
       ref={scrollerElementRef}
-      className={`bg-${bgColor ?? backgroundColor} ${
-        className ?? ""
-      } my-8 md:my-12`}
+      className={classNames(
+        `bg-${bgColor ?? backgroundColor}`,
+        className,
+        "my-8 md:my-12"
+      )}
     >
       {children}
     </div>

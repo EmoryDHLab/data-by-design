@@ -4,6 +4,10 @@ import { Menu, Transition } from "@headlessui/react";
 
 const CHAPTERS = [
   {
+    link: "intro",
+    title: "Introduction",
+  },
+  {
     link: "brooks",
     title: "Every Datapoint a Person",
   },
