@@ -71,25 +71,25 @@ function randomPaths(p5, scrollProgress) {
   p5.circle(500, 250, 20);
   p5.noFill();
 
-  if (scrollProgress >= 1.15) {
+  if (scrollProgress >= 1.5) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[0];
     p5.strokeWeight(strokeWeight);
     p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
-  if (scrollProgress >= 1.3) {
+  if (scrollProgress >= 1.8) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[1];
     p5.strokeWeight(strokeWeight);
     p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
-  if (scrollProgress >= 1.45) {
+  if (scrollProgress >= 2.2) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[2];
     p5.strokeWeight(strokeWeight);
     p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
-  if (scrollProgress >= 1.6) {
+  if (scrollProgress >= 2.6) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[3];
     p5.strokeWeight(strokeWeight);
     p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
@@ -109,7 +109,7 @@ let rectangles: {
   anchorY2: number;
   angle: number;
 }[] = [];
-for (let i = 0; i < 60; i++) {
+for (let i = 0; i < 30; i++) {
   const anchorX = Math.random() * 200 - 200;
   const anchorY = Math.random() * 200 - 500;
 
@@ -130,13 +130,18 @@ for (let i = 0; i < 60; i++) {
 
 function randomRectangles(p5) {
   p5.strokeWeight(2);
+  p5.rectMode(p5.CENTER);
 
   for (const { anchorX, anchorY, anchorX2, anchorY2, angle } of rectangles) {
     p5.push();
     p5.fill(224, 220, 242);
-    p5.rotate(angle);
-    p5.translate(anchorX, anchorY);
-    p5.rect(0, 0, Math.abs(anchorX2 - anchorX), Math.abs(anchorY2 - anchorY));
+    p5.rotate(angle, [anchorX, anchorY]);
+    p5.rect(
+      anchorX,
+      anchorY,
+      Math.abs(anchorX2 - anchorX),
+      Math.abs(anchorY2 - anchorY)
+    );
     p5.pop();
   }
 }
@@ -175,19 +180,20 @@ function LinearTimeline() {
     }
     p5Ref.current.clear();
 
-    if (scrollProgress < 0.6) {
+    if (scrollProgress < 1.5) {
       p5Ref.current.strokeWeight(2);
       p5Ref.current.fill(0, 0, 0);
       p5Ref.current.circle(50, 250, 20);
       p5Ref.current.line(50, 250, 500, 250);
       p5Ref.current.fill(0, 0, 0);
       p5Ref.current.circle(500, 250, 20);
-    } else if (scrollProgress < 1.5) {
+    } else if (scrollProgress < 2.6) {
       randomPaths(p5Ref.current, scrollProgress);
-    } else if (scrollProgress < 2) {
+    } else if (scrollProgress < 8) {
       randomRectangles(p5Ref.current);
     }
   }, [scrollProgress]);
+  console.log(scrollProgress);
 
   return <div id="timeline" />;
 }
