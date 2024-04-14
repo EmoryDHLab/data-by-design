@@ -62,6 +62,85 @@ for (let i = 0; i < 10; i++) {
   anchors.push({ anchorX, anchorY, anchorX2, anchorY2, strokeWeight });
 }
 
+// Produces random bezier curves that connect the two circles
+function randomPaths(p5, scrollProgress) {
+  p5.clear();
+  p5.rotate(0);
+  p5.fill(0, 0, 0);
+  p5.circle(50, 250, 20);
+  p5.circle(500, 250, 20);
+  p5.noFill();
+
+  if (scrollProgress >= 1.15) {
+    const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[0];
+    p5.strokeWeight(strokeWeight);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
+  }
+
+  if (scrollProgress >= 1.3) {
+    const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[1];
+    p5.strokeWeight(strokeWeight);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
+  }
+
+  if (scrollProgress >= 1.45) {
+    const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[2];
+    p5.strokeWeight(strokeWeight);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
+  }
+
+  if (scrollProgress >= 1.6) {
+    const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[3];
+    p5.strokeWeight(strokeWeight);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
+  }
+}
+
+const rectangleTypes = [
+  { width: 80, height: 100 },
+  { width: 100, height: 120 },
+  { width: 100, height: 100 },
+];
+
+let rectangles: {
+  anchorX: number;
+  anchorY: number;
+  anchorX2: number;
+  anchorY2: number;
+  angle: number;
+}[] = [];
+for (let i = 0; i < 60; i++) {
+  const anchorX = Math.random() * 200 - 200;
+  const anchorY = Math.random() * 200 - 500;
+
+  const { width, height } =
+    rectangleTypes[Math.floor(Math.random() * rectangleTypes.length)];
+
+  const anchorX2 = anchorX + width;
+  const anchorY2 = anchorY + height;
+  const angle = Math.random() * Math.PI;
+  rectangles.push({
+    anchorX,
+    anchorY,
+    anchorX2,
+    anchorY2,
+    angle,
+  });
+}
+
+function randomRectangles(p5) {
+  p5.strokeWeight(2);
+
+  for (const { anchorX, anchorY, anchorX2, anchorY2, angle } of rectangles) {
+    p5.push();
+    p5.fill(224, 220, 242);
+    p5.rotate(angle);
+    p5.translate(anchorX, anchorY);
+    p5.rect(0, 0, Math.abs(anchorX2 - anchorX), Math.abs(anchorY2 - anchorY));
+    p5.pop();
+  }
+}
+
 function LinearTimeline() {
   const { scrollProgress } = useContext(ScrollytellContext);
   const { windowSize } = useResizeObserver();
@@ -96,41 +175,17 @@ function LinearTimeline() {
     }
     p5Ref.current.clear();
 
-    if (scrollProgress >= 0.6 && scrollProgress < 1.5) {
+    if (scrollProgress < 0.6) {
+      p5Ref.current.strokeWeight(2);
       p5Ref.current.fill(0, 0, 0);
       p5Ref.current.circle(50, 250, 20);
       p5Ref.current.line(50, 250, 500, 250);
       p5Ref.current.fill(0, 0, 0);
       p5Ref.current.circle(500, 250, 20);
-    } else if (scrollProgress >= 2) {
-      p5Ref.current.clear();
-      p5Ref.current.fill(0, 0, 0);
-      p5Ref.current.circle(50, 250, 20);
-      p5Ref.current.circle(500, 250, 20);
-      p5Ref.current.noFill();
-      // for (let i = 0; i < 500; i += 25) {
-      //   p5Ref.current.bezier(50, 250, 275, i, 275, i, 500, 250);
-      // }
-
-      for (const {
-        anchorX,
-        anchorY,
-        anchorX2,
-        anchorY2,
-        strokeWeight,
-      } of anchors) {
-        p5Ref.current.strokeWeight(strokeWeight);
-        p5Ref.current.bezier(
-          50,
-          250,
-          anchorX,
-          anchorY,
-          anchorX2,
-          anchorY2,
-          500,
-          250
-        );
-      }
+    } else if (scrollProgress < 1.5) {
+      randomPaths(p5Ref.current, scrollProgress);
+    } else if (scrollProgress < 2) {
+      randomRectangles(p5Ref.current);
     }
   }, [scrollProgress]);
 

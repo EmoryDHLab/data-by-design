@@ -14,15 +14,11 @@ const IntroTriggers = [
   </Fragment>,
   <Fragment key="4653b4af">
     But the reality is that there are many paths that take us from past to
-    present. This is reason for the tremendous power of being able to choose how
-    to tell a story. For these paths are rarely linear, and are often traveled
-    at the same time. Some of these paths are well-worn and familiar, while
-    others are far less trafficked, or never trodden in the first place. Some
-    paths lead us not to this world, but to worlds never realized—or to worlds
-    that require us to “push us beyond the constraints of what we think, and are
-    told, is politically possible” in order to usher into existence, as
-    sociologist Ruha Benjamin invites us to consider. These imagined futures are
-    worlds still waiting to come to be.
+    present. Some paths lead us not to this world, but to worlds never
+    realized—or to worlds that require us to “push us beyond the constraints of
+    what we think, and are told, is politically possible” in order to usher into
+    existence, as sociologist Ruha Benjamin invites us to consider. These
+    imagined futures are worlds still waiting to come to be.
   </Fragment>,
   <Fragment key="0733c36">
     A timeline cannot convey this range of possibilities, but a shuffle
