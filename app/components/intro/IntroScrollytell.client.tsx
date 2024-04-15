@@ -6,6 +6,7 @@ import ScrollytellWrapper from "../ScrollytellWrapper";
 import { classNames } from "~/utils";
 import { useResizeObserver } from "~/hooks";
 import p5 from "p5";
+import ScrollProgress from "~/components/ScrollProgress";
 
 export default function IntroScrollytell() {
   const [scrollProgress, setScrollProgress] = useState(0.0);
@@ -19,6 +20,7 @@ export default function IntroScrollytell() {
         setScrollProgress,
       }}
     >
+      {process.env.NODE_ENV !== "production" && <ScrollProgress />}
       <ScrollytellWrapper
         className={`md:flex justify-between w-full`}
         setScrollProgress={setScrollProgress}
@@ -64,9 +66,15 @@ for (let i = 0; i < 10; i++) {
 
 // Produces random bezier curves that connect the two circles
 function randomPaths(p5, scrollProgress) {
-  p5.clear();
+  p5.push();
+
+  if (scrollProgress >= 2.1) {
+    const fade = 255 - (scrollProgress - 2.1) * 1000;
+    p5.stroke(0, 0, 0, fade);
+    p5.fill(0, 0, 0, fade);
+  }
+
   p5.rotate(0);
-  p5.fill(0, 0, 0);
   p5.circle(50, 250, 20);
   p5.circle(500, 250, 20);
   p5.noFill();
@@ -77,23 +85,25 @@ function randomPaths(p5, scrollProgress) {
     p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
-  if (scrollProgress >= 1.8) {
+  if (scrollProgress >= 1.7) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[1];
     p5.strokeWeight(strokeWeight);
     p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
-  if (scrollProgress >= 2.2) {
+  if (scrollProgress >= 1.9) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[2];
     p5.strokeWeight(strokeWeight);
     p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
-  if (scrollProgress >= 2.6) {
+  if (scrollProgress >= 2.1) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[3];
     p5.strokeWeight(strokeWeight);
     p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
+
+  p5.pop();
 }
 
 const rectangleTypes = [
