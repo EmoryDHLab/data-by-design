@@ -47,10 +47,10 @@ const Treemap = () => {
         {windowSize && (
           <svg
             ref={svgRef}
-            className="font-dubois font-bold text-white m-12 mt-6"
+            className="font-dubois font-bold text-white h-[95%] m-auto"
             viewBox={`0 0 ${
               ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
-            } ${((windowSize?.height || window.innerHeight) / 6) * 5}`}
+            } ${((windowSize?.height || window.innerHeight) / 6) * 5 + 20}`}
           >
             <MonthScale
               year={2023}
