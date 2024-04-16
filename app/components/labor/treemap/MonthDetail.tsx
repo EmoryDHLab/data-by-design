@@ -79,7 +79,11 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
     const xScale = d3.scaleLinear().domain([0, total]).range([0, 100]);
 
     return (
-      <svg ref={svgRef} viewBox="0 0 100 110" className="font-dubois mt-6">
+      <svg
+        ref={svgRef}
+        viewBox="0 0 100 110"
+        className="font-dubois mt-6 h-full"
+      >
         <g>
           {weeks?.map((week, index) => {
             let accumulatedWidth = 0;
