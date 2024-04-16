@@ -1,64 +1,51 @@
 import * as d3 from "d3";
+import type { DSVRowArray } from "d3";
 
-export type TRow = {
+export type TContribution = {
   source: string;
   user: string;
   timestamp: string;
   dateString: string;
   information: string;
+  monday: Date;
 };
 
 export const YEARS = [
-  2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
+  2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
 ];
 
 export const csvData = async () => {
-  const data: TRow[] = await d3.csv(
-    "/prototypes/data_traces_vis_for_jay/data/labor_data_0412.csv"
-  );
-  return data.map((row: TRow) => ({
+  const data = await d3.csv(
+    "/data/labor_contributions.csv"
+  ) satisfies DSVRowArray<keyof TContribution>;
+  return data.map((row) => ({
     ...row,
     dateString: new Date(row.timestamp).toDateString() || "",
+    monday: d3.timeMonday(new Date(row.timestamp)),
   }));
 };
-
-// export const groupedData = async () => {
-//   const data = await csvData();
-//   if (!data) return;
-//   return {
-//     byMonth: d3.rollup(
-//       data,
-//       (v) => v.length,
-//       (d) => d3.timeMonth(d.dateStirng),
-//       (d) => d.source
-//     ),
-//     byWeek: d3.rollup(
-//       data,
-//       (v) => v.length,
-//       (d) => d3.timeMonday.floor(d.dateStirng),
-//       (d) => d.source
-//     ),
-//   };
-// };
 
 export const yearScale = (visHeight: number) => {
   return d3
     .scaleTime()
-    .domain([new Date(2024, 8, 1), new Date(2013, 8, 1)])
+    .domain([new Date(2024, 8, 1), new Date(2012, 7, 1)])
     .range([0, visHeight + 50]);
 };
 
-// get monthly data from csv
-// result = Map.groupBy(temp1, ({timestamp}) => new Date(timestamp.getFullYear() == 2013))
-
-// export const formatWeeklyData = () {
-// for (const month of monthlyData) {
-//   wD[`${month.month.toLocaleString()}`] = weeklyData.filter(
-//     (w) =>
-//       w.week.getFullYear() == month.month.getFullYear() &&
-//       w.week.getMonth() == month.month.getMonth()
-//   );
-// }
-// //   console.log("🚀 ~ wd:", wD);
-
-// // }
+export const rectColor = (source: string | undefined) => {
+  if (!source) return;
+  switch (source) {
+    case "Github":
+      return "fill-duboisPrimary";
+    case "Figma":
+      return "fill-playfairPrimary";
+    case "Zotero":
+      return "fill-shanawdithitPrimary";
+    case "iCalendar":
+      return "fill-peabodyPrimary";
+    case "Google Drive":
+      return "fill-brooksPrimary";
+    default:
+      return "black";
+  }
+};

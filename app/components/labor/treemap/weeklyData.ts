@@ -1,4 +1,4 @@
-type TWeekData = {
+export type TWeekData = {
   week: Date;
   GitHub: number;
   Zotero: number;
@@ -19,6 +19,36 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
+      weekNum: 3,
+    },
+    {
+      week: new Date(2012, 7, 6),
+      GitHub: 0,
+      Zotero: 0,
+      "Google Drive": 0,
+      iCal: 0,
+      Figma: 0,
+      total: 0,
+      weekNum: 1,
+    },
+    {
+      week: new Date(2012, 7, 13),
+      GitHub: 0,
+      Zotero: 0,
+      "Google Drive": 0,
+      iCal: 0,
+      Figma: 0,
+      total: 0,
+      weekNum: 2,
+    },
+    {
+      week: new Date(2012, 7, 27),
+      GitHub: 0,
+      Zotero: 0,
+      "Google Drive": 0,
+      iCal: 0,
+      Figma: 0,
+      total: 0,
       weekNum: 4,
     },
   ],
@@ -83,7 +113,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2014, 0, 20),
@@ -93,7 +123,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2014, 0, 27),
@@ -103,7 +133,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2014, 0, 13),
@@ -113,7 +143,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
   ],
   m1_2014: [
@@ -125,7 +155,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2014, 1, 3),
@@ -135,7 +165,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2014, 1, 10),
@@ -145,7 +175,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2014, 1, 17),
@@ -155,7 +185,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m4_2014: [
@@ -167,7 +197,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2014, 4, 26),
@@ -177,7 +207,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2014, 4, 5),
@@ -187,7 +217,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2014, 4, 19),
@@ -197,7 +227,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m11_2014: [
@@ -306,16 +336,6 @@ const weeklyData: { [key: string]: TWeekData[] } = {
   ],
   m7_2015: [
     {
-      week: new Date(2015, 7, 17),
-      GitHub: 1,
-      Zotero: 0,
-      "Google Drive": 0,
-      iCal: 0,
-      Figma: 0,
-      total: 1,
-      weekNum: 4,
-    },
-    {
       week: new Date(2015, 7, 3),
       GitHub: 0,
       Zotero: 0,
@@ -334,6 +354,16 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       Figma: 0,
       total: 0,
       weekNum: 2,
+    },
+    {
+      week: new Date(2015, 7, 17),
+      GitHub: 1,
+      Zotero: 0,
+      "Google Drive": 0,
+      iCal: 0,
+      Figma: 0,
+      total: 1,
+      weekNum: 3,
     },
     {
       week: new Date(2015, 7, 24),
@@ -365,7 +395,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 4,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2016, 2, 7),
@@ -375,7 +405,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2016, 2, 14),
@@ -385,7 +415,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2016, 2, 28),
@@ -395,7 +425,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m3_2016: [
@@ -407,7 +437,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2016, 3, 11),
@@ -417,7 +447,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2016, 3, 18),
@@ -427,7 +457,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2016, 3, 25),
@@ -437,7 +467,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m4_2016: [
@@ -501,7 +531,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2016, 5, 6),
@@ -511,7 +541,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2016, 5, 13),
@@ -521,7 +551,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2016, 5, 20),
@@ -531,7 +561,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m7_2016: [
@@ -595,7 +625,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 4,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2016, 8, 12),
@@ -605,7 +635,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2016, 8, 19),
@@ -615,7 +645,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2016, 8, 26),
@@ -625,7 +655,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 7,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m9_2016: [
@@ -689,7 +719,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2016, 10, 28),
@@ -699,7 +729,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2016, 10, 14),
@@ -709,7 +739,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2016, 10, 21),
@@ -719,7 +749,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m11_2016: [
@@ -731,7 +761,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2016, 11, 12),
@@ -741,7 +771,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2016, 11, 19),
@@ -751,7 +781,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 12,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2016, 11, 26),
@@ -761,7 +791,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 13,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m0_2017: [
@@ -825,7 +855,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2017, 1, 13),
@@ -835,7 +865,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2017, 1, 20),
@@ -845,7 +875,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2017, 1, 27),
@@ -855,7 +885,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m2_2017: [
@@ -867,7 +897,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2017, 2, 13),
@@ -877,7 +907,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2017, 2, 27),
@@ -887,7 +917,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 4,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2017, 2, 20),
@@ -897,7 +927,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m3_2017: [
@@ -909,7 +939,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 5,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2017, 3, 3),
@@ -919,7 +949,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2017, 3, 10),
@@ -929,7 +959,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2017, 3, 24),
@@ -939,7 +969,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m4_2017: [
@@ -1003,7 +1033,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 2,
       Figma: 0,
       total: 2,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2017, 5, 12),
@@ -1013,7 +1043,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2017, 5, 19),
@@ -1023,7 +1053,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2017, 5, 26),
@@ -1033,7 +1063,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m7_2017: [
@@ -1045,7 +1075,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2017, 7, 28),
@@ -1055,7 +1085,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2017, 7, 7),
@@ -1065,7 +1095,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2017, 7, 14),
@@ -1075,7 +1105,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
   ],
   m8_2017: [
@@ -1087,7 +1117,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2017, 8, 25),
@@ -1097,7 +1127,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2017, 8, 4),
@@ -1107,7 +1137,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2017, 8, 11),
@@ -1117,7 +1147,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
   ],
   m9_2017: [
@@ -1181,7 +1211,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2017, 10, 13),
@@ -1191,7 +1221,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2017, 10, 20),
@@ -1201,7 +1231,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2017, 10, 27),
@@ -1211,7 +1241,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m11_2017: [
@@ -1223,7 +1253,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2017, 11, 11),
@@ -1233,7 +1263,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2017, 11, 18),
@@ -1243,7 +1273,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2017, 11, 25),
@@ -1253,7 +1283,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m0_2018: [
@@ -1317,7 +1347,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2018, 1, 12),
@@ -1327,7 +1357,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2018, 1, 19),
@@ -1337,7 +1367,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2018, 1, 26),
@@ -1347,7 +1377,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m3_2018: [
@@ -1411,7 +1441,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 4,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2018, 4, 14),
@@ -1421,7 +1451,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 12,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2018, 4, 21),
@@ -1431,7 +1461,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2018, 4, 28),
@@ -1441,7 +1471,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m5_2018: [
@@ -1453,7 +1483,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 31,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2018, 5, 18),
@@ -1463,7 +1493,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2018, 5, 25),
@@ -1473,7 +1503,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2018, 5, 4),
@@ -1483,7 +1513,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
   ],
   m6_2018: [
@@ -1547,7 +1577,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2018, 7, 20),
@@ -1557,7 +1587,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2018, 7, 13),
@@ -1567,7 +1597,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2018, 7, 27),
@@ -1577,7 +1607,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m8_2018: [
@@ -1589,7 +1619,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 2,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2018, 8, 10),
@@ -1599,7 +1629,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2018, 8, 17),
@@ -1609,7 +1639,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2018, 8, 24),
@@ -1619,7 +1649,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m9_2018: [
@@ -1683,7 +1713,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2018, 10, 5),
@@ -1693,7 +1723,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2018, 10, 12),
@@ -1703,7 +1733,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2018, 10, 19),
@@ -1713,7 +1743,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m11_2018: [
@@ -1777,7 +1807,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 7,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2019, 0, 21),
@@ -1787,7 +1817,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2019, 0, 28),
@@ -1797,7 +1827,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2019, 0, 14),
@@ -1807,7 +1837,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
   ],
   m1_2019: [
@@ -1819,7 +1849,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2019, 1, 11),
@@ -1829,7 +1859,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2019, 1, 18),
@@ -1839,7 +1869,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 13,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2019, 1, 25),
@@ -1849,7 +1879,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m2_2019: [
@@ -1861,7 +1891,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2019, 2, 25),
@@ -1871,7 +1901,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2019, 2, 11),
@@ -1881,7 +1911,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2019, 2, 18),
@@ -1891,7 +1921,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m3_2019: [
@@ -1955,7 +1985,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 5,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2019, 4, 27),
@@ -1965,7 +1995,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2019, 4, 6),
@@ -1975,7 +2005,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2019, 4, 13),
@@ -1985,7 +2015,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
   ],
   m5_2019: [
@@ -1997,7 +2027,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2019, 5, 3),
@@ -2007,7 +2037,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2019, 5, 10),
@@ -2017,7 +2047,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2019, 5, 24),
@@ -2027,7 +2057,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m6_2019: [
@@ -2091,7 +2121,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2019, 7, 12),
@@ -2101,7 +2131,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2019, 7, 19),
@@ -2111,7 +2141,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2019, 7, 26),
@@ -2121,7 +2151,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m8_2019: [
@@ -2185,7 +2215,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2019, 9, 7),
@@ -2195,7 +2225,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2019, 9, 21),
@@ -2205,7 +2235,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2019, 9, 28),
@@ -2215,7 +2245,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m10_2019: [
@@ -2227,7 +2257,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 6,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2019, 10, 18),
@@ -2237,7 +2267,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 7,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2019, 10, 4),
@@ -2247,7 +2277,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2019, 10, 25),
@@ -2257,7 +2287,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m11_2019: [
@@ -2321,7 +2351,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2020, 0, 13),
@@ -2331,7 +2361,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 5,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2020, 0, 20),
@@ -2341,7 +2371,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2020, 0, 27),
@@ -2351,7 +2381,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m1_2020: [
@@ -2363,7 +2393,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 5,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2020, 1, 10),
@@ -2373,7 +2403,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2020, 1, 24),
@@ -2383,7 +2413,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2020, 1, 17),
@@ -2393,7 +2423,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m2_2020: [
@@ -2457,7 +2487,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 4,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2020, 3, 27),
@@ -2467,7 +2497,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2020, 3, 13),
@@ -2477,7 +2507,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2020, 3, 20),
@@ -2487,7 +2517,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m4_2020: [
@@ -2499,7 +2529,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 11,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2020, 4, 11),
@@ -2509,7 +2539,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 18,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2020, 4, 18),
@@ -2519,7 +2549,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 20,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2020, 4, 25),
@@ -2529,7 +2559,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 4,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m5_2020: [
@@ -2593,7 +2623,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 5,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2020, 6, 13),
@@ -2603,7 +2633,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 12,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2020, 6, 20),
@@ -2613,7 +2643,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2020, 6, 27),
@@ -2623,7 +2653,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m7_2020: [
@@ -2687,7 +2717,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 15,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2020, 8, 14),
@@ -2697,7 +2727,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 6,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2020, 8, 21),
@@ -2707,7 +2737,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 4,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2020, 8, 28),
@@ -2717,7 +2747,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m9_2020: [
@@ -2729,7 +2759,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 4,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2020, 9, 19),
@@ -2739,7 +2769,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2020, 9, 26),
@@ -2749,7 +2779,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2020, 9, 5),
@@ -2759,7 +2789,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
   ],
   m10_2020: [
@@ -2823,7 +2853,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2020, 11, 14),
@@ -2833,7 +2863,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 17,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2020, 11, 21),
@@ -2843,7 +2873,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 43,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2020, 11, 28),
@@ -2853,7 +2883,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 33,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m0_2021: [
@@ -2865,7 +2895,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 32,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2021, 0, 11),
@@ -2875,7 +2905,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 1,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2021, 0, 25),
@@ -2885,7 +2915,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2021, 0, 18),
@@ -2895,7 +2925,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m1_2021: [
@@ -3001,7 +3031,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 5,
       total: 8,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2021, 3, 12),
@@ -3011,7 +3041,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 7,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2021, 3, 19),
@@ -3021,7 +3051,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 13,
       total: 13,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2021, 3, 26),
@@ -3031,7 +3061,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 2,
       total: 4,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m4_2021: [
@@ -3095,7 +3125,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 5,
       total: 31,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2021, 5, 14),
@@ -3105,7 +3135,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 38,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2021, 5, 21),
@@ -3115,7 +3145,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 9,
       total: 78,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2021, 5, 28),
@@ -3125,7 +3155,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 22,
       total: 37,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m6_2021: [
@@ -3137,7 +3167,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 4,
       total: 43,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2021, 6, 12),
@@ -3147,7 +3177,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 22,
       total: 31,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2021, 6, 19),
@@ -3157,7 +3187,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 4,
       total: 20,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2021, 6, 26),
@@ -3167,7 +3197,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 9,
       total: 9,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m7_2021: [
@@ -3231,7 +3261,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 3,
       Figma: 3,
       total: 9,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2021, 8, 20),
@@ -3241,7 +3271,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 4,
       total: 6,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2021, 8, 27),
@@ -3251,7 +3281,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 2,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2021, 8, 6),
@@ -3261,7 +3291,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
   ],
   m9_2021: [
@@ -3273,7 +3303,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 4,
       total: 12,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2021, 9, 11),
@@ -3283,7 +3313,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 3,
       total: 8,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2021, 9, 18),
@@ -3293,7 +3323,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 2,
       total: 12,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2021, 9, 25),
@@ -3303,7 +3333,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 2,
       total: 7,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m10_2021: [
@@ -3367,7 +3397,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 1,
       total: 4,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2021, 11, 13),
@@ -3377,7 +3407,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 2,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2021, 11, 27),
@@ -3387,7 +3417,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 2,
       total: 10,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2021, 11, 20),
@@ -3397,7 +3427,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m0_2022: [
@@ -3461,7 +3491,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 7,
       total: 15,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2022, 1, 14),
@@ -3471,7 +3501,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 3,
       total: 6,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2022, 1, 21),
@@ -3481,7 +3511,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 8,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2022, 1, 28),
@@ -3503,7 +3533,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 3,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2022, 2, 14),
@@ -3513,7 +3543,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 3,
       total: 18,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2022, 2, 21),
@@ -3523,7 +3553,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 1,
       total: 4,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2022, 2, 28),
@@ -3533,7 +3563,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 4,
       total: 9,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m3_2022: [
@@ -3545,7 +3575,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 6,
       total: 11,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2022, 3, 18),
@@ -3555,7 +3585,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 4,
       total: 17,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2022, 3, 25),
@@ -3565,7 +3595,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 2,
       total: 4,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2022, 3, 4),
@@ -3575,7 +3605,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 2,
+      weekNum: 1,
     },
   ],
   m4_2022: [
@@ -3639,7 +3669,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 4,
       total: 5,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2022, 5, 13),
@@ -3649,7 +3679,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 5,
       total: 7,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2022, 5, 20),
@@ -3659,7 +3689,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 9,
       total: 27,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2022, 5, 27),
@@ -3669,7 +3699,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 4,
       total: 10,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m6_2022: [
@@ -3681,7 +3711,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 8,
       total: 33,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2022, 6, 11),
@@ -3691,7 +3721,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 5,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2022, 6, 18),
@@ -3701,7 +3731,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 17,
       total: 81,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2022, 6, 25),
@@ -3711,7 +3741,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 4,
       total: 5,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m7_2022: [
@@ -3775,7 +3805,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 2,
       total: 3,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2022, 8, 12),
@@ -3785,7 +3815,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 1,
       total: 3,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2022, 8, 19),
@@ -3795,7 +3825,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 1,
       total: 7,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2022, 8, 26),
@@ -3805,7 +3835,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 1,
       total: 7,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m9_2022: [
@@ -3869,7 +3899,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 2,
       Figma: 13,
       total: 23,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2022, 10, 14),
@@ -3879,7 +3909,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 2,
       total: 2,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2022, 10, 21),
@@ -3889,7 +3919,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 3,
       total: 7,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2022, 10, 28),
@@ -3899,7 +3929,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 6,
       total: 11,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m11_2022: [
@@ -3911,7 +3941,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 1,
       total: 1,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2022, 11, 26),
@@ -3921,7 +3951,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 4,
-      weekNum: 5,
+      weekNum: 4,
     },
     {
       week: new Date(2022, 11, 12),
@@ -3931,7 +3961,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2022, 11, 19),
@@ -3941,7 +3971,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 4,
+      weekNum: 3,
     },
   ],
   m0_2023: [
@@ -4005,7 +4035,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 13,
       total: 16,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2023, 1, 13),
@@ -4015,7 +4045,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 4,
       total: 23,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2023, 1, 20),
@@ -4025,7 +4055,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 5,
       total: 16,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2023, 1, 27),
@@ -4035,7 +4065,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 9,
       total: 21,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m2_2023: [
@@ -4047,7 +4077,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 3,
       Figma: 12,
       total: 40,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2023, 2, 13),
@@ -4057,7 +4087,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 11,
       total: 25,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2023, 2, 20),
@@ -4067,7 +4097,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 15,
       total: 26,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2023, 2, 27),
@@ -4077,7 +4107,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 8,
       total: 9,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m3_2023: [
@@ -4089,7 +4119,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 4,
       total: 9,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2023, 3, 10),
@@ -4099,7 +4129,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 2,
       Figma: 0,
       total: 7,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2023, 3, 17),
@@ -4109,7 +4139,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 8,
       total: 8,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2023, 3, 24),
@@ -4119,7 +4149,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 20,
       total: 25,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m4_2023: [
@@ -4183,7 +4213,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 5,
       Figma: 15,
       total: 36,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2023, 5, 12),
@@ -4193,7 +4223,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 4,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2023, 5, 19),
@@ -4203,7 +4233,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 2,
       Figma: 7,
       total: 14,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2023, 5, 26),
@@ -4213,7 +4243,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 4,
       total: 7,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m6_2023: [
@@ -4277,7 +4307,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 10,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2023, 7, 14),
@@ -4287,7 +4317,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 3,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2023, 7, 21),
@@ -4297,7 +4327,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 2,
       Figma: 2,
       total: 18,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2023, 7, 28),
@@ -4307,7 +4337,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 4,
       total: 50,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m8_2023: [
@@ -4319,7 +4349,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 1,
       total: 6,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2023, 8, 11),
@@ -4329,7 +4359,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 2,
       total: 11,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2023, 8, 18),
@@ -4339,7 +4369,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2023, 8, 25),
@@ -4349,7 +4379,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 1,
       Figma: 0,
       total: 20,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m9_2023: [
@@ -4413,7 +4443,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 2,
       total: 18,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2023, 10, 13),
@@ -4423,7 +4453,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 1,
       total: 1,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2023, 10, 20),
@@ -4433,7 +4463,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 1,
       total: 1,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2023, 10, 27),
@@ -4443,7 +4473,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 0,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m11_2023: [
@@ -4455,7 +4485,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 0,
       total: 2,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2023, 11, 11),
@@ -4465,7 +4495,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 2,
       total: 2,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2023, 11, 18),
@@ -4475,7 +4505,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 3,
       total: 13,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2023, 11, 25),
@@ -4485,7 +4515,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 1,
       total: 1,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m0_2024: [
@@ -4549,7 +4579,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 6,
       total: 7,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2024, 1, 12),
@@ -4559,7 +4589,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 7,
       total: 8,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2024, 1, 19),
@@ -4569,7 +4599,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 2,
       total: 20,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2024, 1, 26),
@@ -4579,7 +4609,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 6,
       total: 28,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m2_2024: [
@@ -4591,7 +4621,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 6,
       total: 15,
-      weekNum: 2,
+      weekNum: 1,
     },
     {
       week: new Date(2024, 2, 11),
@@ -4601,7 +4631,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 17,
       total: 30,
-      weekNum: 3,
+      weekNum: 2,
     },
     {
       week: new Date(2024, 2, 18),
@@ -4611,7 +4641,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 15,
       total: 35,
-      weekNum: 4,
+      weekNum: 3,
     },
     {
       week: new Date(2024, 2, 25),
@@ -4621,7 +4651,7 @@ const weeklyData: { [key: string]: TWeekData[] } = {
       iCal: 0,
       Figma: 27,
       total: 51,
-      weekNum: 5,
+      weekNum: 4,
     },
   ],
   m3_2024: [

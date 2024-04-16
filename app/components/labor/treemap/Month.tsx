@@ -1,29 +1,11 @@
 import * as d3 from "d3";
 import { useEffect, useRef } from "react";
 import { visWidth, visHeight } from "../data/functions";
-import { yearScale } from "./data";
+import { yearScale, rectColor } from "./data";
 import type { TMontData } from "./monthlyData";
 import type { Dispatch, SetStateAction } from "react";
-console.log("🚀 ~ d3:", d3);
 
 const yScale = yearScale(visHeight());
-
-const rectColor = (source: string) => {
-  switch (source) {
-    case "Github":
-      return "fill-duboisPrimary";
-    case "Figma":
-      return "fill-playfairPrimary";
-    case "Zotero":
-      return "fill-shanawdithitPrimary";
-    case "iCalendar":
-      return "fill-peabodyPrimary";
-    case "Google Drive":
-      return "fill-brooksPrimary";
-    default:
-      return "black";
-  }
-};
 
 const createScale = (date: Date) => {
   if (date.getMonth() >= 8 && date.getMonth() <= 11) {
@@ -69,10 +51,22 @@ interface Props {
   setBoxSize?: Dispatch<
     SetStateAction<{ height: number; width: number } | undefined>
   >;
+  activeMonth: string | undefined;
+  selectedMonth: string | undefined;
+  setSelectedMonth: Dispatch<SetStateAction<string | undefined>>;
 }
 
-const Month = ({ monthlyData, width, setActiveMonth, setBoxSize }: Props) => {
+const Month = ({
+  monthlyData,
+  width,
+  activeMonth,
+  setActiveMonth,
+  setBoxSize,
+  selectedMonth,
+  setSelectedMonth,
+}: Props) => {
   const monthRef = useRef<SVGGElement>(null);
+
   useEffect(() => {
     const treemapWidth =
       createScale(new Date(2019, 2, 1)) -
@@ -84,17 +78,19 @@ const Month = ({ monthlyData, width, setActiveMonth, setBoxSize }: Props) => {
       monthlyData.month,
       treemapHeight
     );
-    // const treemapGroup = ;
-    // }
 
     const root = d3
       .stratify()
+      // @ts-ignore
+
       .id(({ source }) => source)
+      // @ts-ignore
       .parentId(({ month }) => month)([
       { source: monthlyData.month },
       ...monthlyData.sources,
     ]);
 
+    // @ts-ignore
     root.sum(({ count }) => {
       return count;
     });
@@ -105,31 +101,29 @@ const Month = ({ monthlyData, width, setActiveMonth, setBoxSize }: Props) => {
     d3.treemap().size([treemapWidth, treemapHeight]).padding(0)(root);
 
     d3.select(monthRef.current)
-      .attr("class", "month")
       .attr("transform", `translate(${translateX + 10}, ${translateY + 12})`)
       .selectAll("rect")
       .data(root.leaves())
       .join("rect")
       .attr("x", (d) => {
+        // @ts-ignore
         return d.x0;
       })
       .attr("y", (d) => {
+        // @ts-ignore
         return d.y0;
       })
       .attr("width", (d) => {
+        // @ts-ignore
         return d.x1 - d.x0;
       })
       .attr("height", (d) => {
+        // @ts-ignore
         return d.y1 - d.y0;
       })
       .style("stroke", "black")
-      // .style("fill", (d) => rectColor(d.data.source))
-      .attr("class", (d) => rectColor(d.data.source))
-      .on("mouseover", (e, d) => {
-        setActiveMonth(
-          `m${d.data.month.getMonth()}_${d.data.month.getFullYear()}`
-        );
-      });
+      // @ts-ignore
+      .attr("class", (d) => rectColor(d.data.source));
 
     const refCopy = monthRef.current;
 
@@ -144,6 +138,19 @@ const Month = ({ monthlyData, width, setActiveMonth, setBoxSize }: Props) => {
     <g
       ref={monthRef}
       id={`${monthlyData.month.getFullYear()}-${monthlyData.month.getMonth()}`}
+      className="cursor-pointer"
+      onMouseEnter={() => {
+        if (!selectedMonth) {
+          setActiveMonth(
+            `m${monthlyData.month.getMonth()}_${monthlyData.month.getFullYear()}`
+          );
+        }
+      }}
+      onClick={() => {
+        setSelectedMonth(
+          `m${monthlyData.month.getMonth()}_${monthlyData.month.getFullYear()}`
+        );
+      }}
     />
   );
 };

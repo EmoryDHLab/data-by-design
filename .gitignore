@@ -9,5 +9,5 @@ node_modules*
 .vercel
 /api*
 /styles/generated-app.css
-
+/public/prototypes/*
 .ruby-lsp

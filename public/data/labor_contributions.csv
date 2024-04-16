@@ -1772,7 +1772,7 @@ Figma,Tanvi Sharma,2022-07-21T11:17:00Z,Figma updates from Tanvi Sharma
 Google Drive,Tanvi Sharma,2022-07-21T14:55:53Z,Fonts
 Google Drive,Tanvi Sharma,2022-07-21T14:56:24Z,VTC Du Bois Webfont
 Google Drive,Tanvi Sharma,2022-07-21T14:56:25Z,Italic
-Google Drive,Tanvi Sharma,2022-07-21T14:56:25Z,Upright
+Google Drive,Tanvi Sharma,2022-07-21T14:55:25Z,Upright
 Google Drive,Tanvi Sharma,2022-07-21T14:56:25Z,Ritalic
 Google Drive,Tanvi Sharma,2022-07-21T14:56:25Z,Desktop
 Google Drive,Tanvi Sharma,2022-07-21T14:56:26Z,OTF
@@ -1780,7 +1780,7 @@ Google Drive,Tanvi Sharma,2022-07-21T14:56:26Z,TTF
 Google Drive,Tanvi Sharma,2022-07-21T14:56:27Z,Italic
 Google Drive,Tanvi Sharma,2022-07-21T14:56:28Z,RItalic
 Google Drive,Tanvi Sharma,2022-07-21T14:56:28Z,Upright
-Google Drive,Tanvi Sharma,2022-07-21T14:56:28Z,Upright
+Google Drive,Tanvi Sharma,2022-07-21T14:58:28Z,Upright
 Figma,Nicholas Yang,2022-07-21T16:03:00Z,Figma updates from Nicholas Yang
 Figma,Tanvi Sharma,2022-07-21T16:27:00Z,Figma updates from Tanvi Sharma
 Google Drive,Lauren Klein,2022-07-21T16:36:28Z,Du Bois1910 Atlanta University Study.pdf
@@ -1815,7 +1815,15 @@ Github,Nicholas Yang,2022-08-08T00:11:57Z,Making various misc fixes.- Moved arou
 Figma,Tanvi Sharma,2022-08-08T12:36:00Z,Figma updates from Tanvi Sharma
 Figma,Tanvi Sharma,2022-08-08T13:31:00Z,Figma updates from Tanvi Sharma
 Figma,Tanvi Sharma,2022-08-08T18:58:00Z,Figma updates from Tanvi Sharma
-Github,Nicholas Yang,2022-08-09T21:57:10Z,"Dubois charts (#39)* Rearranging the file and component structure* Added chart 1 and rearranged chart stuff in process* Added charts 2 and 3 along with data for chart 2.* Updated slots* Hot fix for nuxt generate bug"
+Github,Nicholas Yang,2022-08-09T21:57:10Z,"Dubois charts (#39)* Rearranging the file and component structure
+
+* Added chart 1 and rearranged chart stuff in process
+
+* Added charts 2 and 3 along with data for chart 2.
+
+* Updated slots
+
+* Hot fix for nuxt generate bug"
 Figma,Tanvi Sharma,2022-08-10T12:31:00Z,Figma updates from Tanvi Sharma
 Google Drive,Lauren Klein,2022-08-10T17:43:18Z,all-african-resistance-all-cols.csv
 Figma,Nicholas Yang,2022-08-11T12:32:00Z,Figma updates from Nicholas Yang
@@ -1832,8 +1840,12 @@ Figma,Tanvi Sharma,2022-08-23T15:15:00Z,Figma updates from Tanvi Sharma
 Google Drive,Lauren Klein,2022-08-24T11:17:00Z,LSF Volume XL 2_1 (H_89)  Plan of slave ship_FULL.jpg
 Google Drive,Lauren Klein,2022-08-24T11:17:00Z,LSF Volume H_85_Plan of an African slave ship.jpg
 Github,Jay Varner,2022-08-29T17:44:05Z,Add m-width-full to full screen elements #62
-Github,Nicholas Yang,2022-08-29T17:46:14Z,"Fixed playfair data loading bug (#86)* Fixed playfair data loading bug* Removed another static data"
-Github,Nicholas Yang,2022-08-29T17:56:14Z,"Trying to fix CI (#87)* Trying to fix CI* Trying again"
+Github,Nicholas Yang,2022-08-29T17:46:14Z,"Fixed playfair data loading bug (#86)* Fixed playfair data loading bug
+
+* Removed another static data"
+Github,Nicholas Yang,2022-08-29T17:56:14Z,"Trying to fix CI (#87)* Trying to fix CI
+
+* Trying again"
 Google Drive,Lauren Klein,2022-08-30T17:53:22Z,git process & gitpod
 Figma,Tanvi Sharma,2022-09-01T16:26:00Z,Figma updates from Tanvi Sharma
 Figma,Tanvi Sharma,2022-09-01T16:48:00Z,Figma updates from Tanvi Sharma
@@ -1843,8 +1855,22 @@ Figma,Tanvi Sharma,2022-09-02T17:24:00Z,Figma updates from Tanvi Sharma
 Figma,Tanvi Sharma,2022-09-06T11:27:00Z,Figma updates from Tanvi Sharma
 Figma,Tanvi Sharma,2022-09-06T12:15:00Z,Figma updates from Tanvi Sharma
 Github,Nicholas Yang,2022-09-07T01:13:51Z,Reduced page load by converting to webp (#89)
-Github,Nicholas Yang,2022-09-12T23:37:55Z,"refactor: Modified Google Docs API code so that it saves the files in JSON (#90)* Modified Google Docs API code so that it saves the files in JSON* Added docs* Removed docs from .gitignore"
-Github,Nicholas Yang,2022-09-13T00:55:52Z,"refactor: Vendor dependencies (#92)* Trying to vendor dependencies* Finished vendoring dependencies* Fixed up the build issues* Okay fixed now* Added dist* tsconfig fixes"
+Github,Nicholas Yang,2022-09-12T23:37:55Z,"refactor: Modified Google Docs API code so that it saves the files in JSON (#90)* Modified Google Docs API code so that it saves the files in JSON
+
+* Added docs
+
+* Removed docs from .gitignore"
+Github,Nicholas Yang,2022-09-13T00:55:52Z,"refactor: Vendor dependencies (#92)* Trying to vendor dependencies
+
+* Finished vendoring dependencies
+
+* Fixed up the build issues
+
+* Okay fixed now
+
+* Added dist
+
+* tsconfig fixes"
 Figma,Tanvi Sharma,2022-09-18T15:56:00Z,Figma updates from Tanvi Sharma
 Github,Jay Varner,2022-09-19T13:48:42Z,Footnote style. Fixes #60
 Github,Jay Varner,2022-09-19T15:07:13Z,Fix spacing. Part of #58
@@ -1852,9 +1878,21 @@ Github,Nicholas Yang,2022-09-19T18:06:05Z,Remove require context
 Github,Jay Varner,2022-09-19T21:52:53Z,Merge pull request #94 from EmoryDHLab/refactor/remove-require-contextrefactor: Remove require context
 Figma,Tanvi Sharma,2022-09-20T16:08:00Z,Figma updates from Tanvi Sharma
 iCalendar,Everyone,2022-09-23T16:30:00Z,Lauren / Gita / DxD
-Github,Jay Varner,2022-09-24T04:27:37Z,"Fix/dataload (#95)* Import data for Playfair. Fixes #70* Import data for Peabody quize #58* Remove console statements* Import data for Peabody tutorial #58"
+Github,Jay Varner,2022-09-24T04:27:37Z,"Fix/dataload (#95)* Import data for Playfair. Fixes #70
+
+* Import data for Peabody quize #58
+
+* Remove console statements
+
+* Import data for Peabody tutorial #58"
 Figma,Tanvi Sharma,2022-10-02T14:01:00Z,Figma updates from Tanvi Sharma
-Github,Jay Varner,2022-10-02T17:46:23Z,"Show text at start of Scrollytell visualizations (#93)* Show text at start of Scrollytell visualizations* Add top margin to Peabody Scrollytell* Ease transition when showing legend* Improvements for windows under 800px tall"
+Github,Jay Varner,2022-10-02T17:46:23Z,"Show text at start of Scrollytell visualizations (#93)* Show text at start of Scrollytell visualizations
+
+* Add top margin to Peabody Scrollytell
+
+* Ease transition when showing legend
+
+* Improvements for windows under 800px tall"
 Github,Nicholas Yang,2022-10-02T18:03:51Z,Fixed unnecessary gap in home page
 Github,Nicholas Yang,2022-10-02T18:14:59Z,Chapter slots refactor. Removed mixin and flattened to individual slots components (#97)
 Github,Nicholas Yang,2022-10-02T19:31:19Z,"Revert ""Chapter slots refactor. Removed mixin and flattened to individual slots components (#97)""This reverts commit 7abbf4e5cff76accc4ef233194713624684b45e0."
@@ -1890,7 +1928,15 @@ Github,Nicholas Yang,2022-10-21T22:23:16Z,Added PieChart for StudentChartTwo
 Github,Nicholas Yang,2022-10-22T00:35:03Z,More footnotes
 Github,Nicholas Yang,2022-10-22T03:38:37Z,Starting to port peabody
 Github,Tanvi Sharma,2022-10-23T18:00:45Z,tanvi's first rodeo
-Github,Tanvi Sharma,2022-10-23T19:17:52Z,"adding footnotes. deleted 1 (#1)* adding footnotes. deleted 1* Fixed styling* Switched <span className=""italic""> to <cite>* Delete spacesCo-authored-by: Nicholas Yang <nick@nicholasyang.com>"
+Github,Tanvi Sharma,2022-10-23T19:17:52Z,"adding footnotes. deleted 1 (#1)* adding footnotes. deleted 1
+
+* Fixed styling
+
+* Switched <span className=""italic""> to <cite>
+
+* Delete spaces
+
+Co-authored-by: Nicholas Yang <nick@nicholasyang.com>"
 Github,Nicholas Yang,2022-10-25T04:20:42Z,Peabody changes
 Github,Nicholas Yang,2022-10-26T05:03:09Z,More peabody
 Github,Nicholas Yang,2022-11-02T02:27:55Z,More changes
@@ -2252,7 +2298,8 @@ Figma,Tanvi Sharma,2023-04-04T15:17:00Z,Figma updates from Tanvi Sharma
 Figma,Tanvi Sharma,2023-04-04T18:21:00Z,Figma updates from Tanvi Sharma
 Figma,Tanvi Sharma,2023-04-05T17:33:00Z,Figma updates from Tanvi Sharma
 iCalendar,Everyone,2023-04-06T19:00:00Z,DxD work session
-Github,Nicholas Yang,2023-04-09T03:13:41Z,"Homepage Changes (#32)This is not the full set of changes, but it's a little bit ofrefactoring and style changes towards the new homepage design."
+Github,Nicholas Yang,2023-04-09T03:13:41Z,"Homepage Changes (#32)This is not the full set of changes, but it's a little bit of
+refactoring and style changes towards the new homepage design."
 Github,Tanvi Sharma,2023-04-10T14:36:29Z,mobile padding adjustments
 Github,Tanvi Sharma,2023-04-10T14:43:05Z,fixing left padding on drop cap-
 Github,Tanvi Sharma,2023-04-10T14:49:20Z,fixing left padding on drop capi want the padding for first-paragraph to be 0rem 0.5rem .5rem 0rembut it didnt quite work

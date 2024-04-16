@@ -11,7 +11,7 @@
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint --fix ."
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.7",
+    "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.0.13",
     "@remix-run/node": "^1.19.3",
     "@remix-run/react": "^1.19.3",

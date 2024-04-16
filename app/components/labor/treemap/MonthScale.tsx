@@ -21,6 +21,7 @@ const MonthScale = ({
 
     const xAxisYear = d3
       .axisBottom(xScaleYear)
+      // @ts-ignore
       .tickFormat(d3.timeFormat("%b"))
       .tickSize(0)
       .ticks(d3.timeMonth.every(1));
@@ -39,7 +40,6 @@ const MonthScale = ({
       .selectAll("path")
       .attr("class", "stroke-offblack");
 
-    // d3.select(scaleRef.current).call(xAxisYear);
     const refCopy = scaleRef.current;
 
     return () => {
@@ -47,7 +47,7 @@ const MonthScale = ({
         refCopy.innerHTML = "";
       }
     };
-  }, [year, width]);
+  }, [year, width, height, xOffset]);
 
   return <g ref={scaleRef} />;
 };
