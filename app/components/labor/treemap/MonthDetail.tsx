@@ -82,7 +82,7 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
       <svg
         ref={svgRef}
         viewBox="0 0 100 110"
-        className="font-dubois mt-6 h-full"
+        className="font-dubois mt-2 h-full"
       >
         <g>
           {weeks?.map((week, index) => {
