@@ -51,6 +51,10 @@ const Treemap = () => {
             viewBox={`0 0 ${
               ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
             } ${((windowSize?.height || window.innerHeight) / 6) * 5 + 20}`}
+            onClick={() => {
+              setActiveMonth(undefined);
+              setSelectedMonth(undefined);
+            }}
           >
             <MonthScale
               year={2023}

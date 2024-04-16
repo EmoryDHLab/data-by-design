@@ -95,7 +95,8 @@ const Month = ({
     root.sum(({ count }) => {
       return count;
     });
-    // root.sort((a, b) => b.height - a.height || b.value - a.value);
+    // @ts-ignore
+    root.sort((a, b) => b.height - a.height || b.value - a.value);
     if (setBoxSize) {
       setBoxSize({ width: boxDimension, height: boxDimension });
     }
@@ -147,7 +148,8 @@ const Month = ({
           );
         }
       }}
-      onClick={() => {
+      onClick={(event) => {
+        event.stopPropagation();
         setSelectedMonth(
           `m${monthlyData.month.getMonth()}_${monthlyData.month.getFullYear()}`
         );
