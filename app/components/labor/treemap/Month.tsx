@@ -74,9 +74,10 @@ const Month = ({
       10;
     const treemapHeight =
       yScale(new Date(2019, 1, 1)) - yScale(new Date(2020, 1, 1)) - 20;
+    const boxDimension = Math.min(treemapHeight, treemapWidth);
     const { translateX, translateY } = calcTransform(
       monthlyData.month,
-      treemapHeight
+      boxDimension
     );
 
     const root = d3
@@ -96,9 +97,9 @@ const Month = ({
     });
     // root.sort((a, b) => b.height - a.height || b.value - a.value);
     if (setBoxSize) {
-      setBoxSize({ width: treemapWidth, height: treemapHeight });
+      setBoxSize({ width: boxDimension, height: boxDimension });
     }
-    d3.treemap().size([treemapWidth, treemapHeight]).padding(0)(root);
+    d3.treemap().size([boxDimension, boxDimension]).padding(0)(root);
 
     d3.select(monthRef.current)
       .attr("transform", `translate(${translateX + 10}, ${translateY + 12})`)
