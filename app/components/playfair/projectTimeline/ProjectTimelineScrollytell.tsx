@@ -284,7 +284,7 @@ const ProjectTimelineScrollytell = () => {
               >
                 <p
                   className={`${
-                    index === 0 ? "" : "bg-[#3b6fe0bf]"
+                    index === 0 ? "" : "bg-playfairPrimary-translucent"
                   } p-3 md:p-0`}
                 >
                   {trigger}
