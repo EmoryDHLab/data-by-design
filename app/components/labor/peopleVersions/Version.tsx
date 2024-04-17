@@ -41,6 +41,7 @@ const Version = ({
       tabIndex={0}
       className="cursor-pointer focus:border-none focus:outline-none"
       role="button"
+      aria-label={`Highlight people who worked on ${versionName}`}
       onMouseEnter={() => handleFocus()}
       onMouseLeave={() => handleBlur()}
       onFocus={() => handleFocus()}

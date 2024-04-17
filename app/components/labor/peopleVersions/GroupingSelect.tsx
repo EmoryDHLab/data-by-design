@@ -31,6 +31,7 @@ const GroupingSelect = ({ setSelectedGrouping, activeGrouping }: Props) => {
                   ? "opacity-100 bg-duboisSecondary text-offblack"
                   : "opacity-60"
               }`}
+              aria-label={`Sort people by ${grouping}`}
             >
               {grouping}
             </button>
