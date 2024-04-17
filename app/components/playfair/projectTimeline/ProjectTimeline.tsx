@@ -8,12 +8,12 @@ import type { TLaborSource, TLaborData } from "~/types/laborSourceTypes";
 
 const height = 44;
 const width = 98;
-const dates = Array.from({ length: 12 }, (_, i) => i + 2013);
+const dates = Array.from({ length: 13 }, (_, i) => i + 2012);
 const yRange = Array.from({ length: 15 }, (_, i) => i * 10);
 const innerGridWidth = (width / 11) * 10 + 5.5;
 
 const xScale = d3.scaleTime(
-  [new Date(2013, 0, 1), new Date(2024, 11, 31)],
+  [new Date(2012, 0, 1), new Date(2024, 11, 31)],
   [0, innerGridWidth - 5.5]
 );
 
