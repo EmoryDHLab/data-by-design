@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { peopleData, versionData, groupingData } from "../data";
+import { peopleData, versionData, groupingData } from "../data/versions";
 import {
   visWidth,
   visHeight,

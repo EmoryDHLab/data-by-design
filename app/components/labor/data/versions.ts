@@ -8,7 +8,7 @@ import {
   FirstNames,
   LastNames,
   Positions,
-} from "./data/types";
+} from "./types";
 import {
   versionY,
   versionX,
@@ -16,8 +16,8 @@ import {
   versionBottomY,
   nodeX,
   nodeY,
-} from "./data/functions";
-import type { TVersionData, TGroupingData, TPerson } from "./data/types";
+} from "./functions";
+import type { TVersionData, TGroupingData, TPerson } from "./types";
 
 export const versionData: TVersionData = {
   [Versions.ONE]: {
@@ -360,6 +360,7 @@ export const peopleData: TPerson[] = [
     roles: [
       groupingData[Groupings.R][Roles.R],
       groupingData[Groupings.R][Roles.W],
+      groupingData[Groupings.R][Roles.DV],
     ],
     departments: [
       groupingData[Groupings.D][Departments.E],

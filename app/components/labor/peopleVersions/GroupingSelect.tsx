@@ -1,4 +1,4 @@
-import { groupingData } from "../data";
+import { groupingData } from "../data/versions";
 import type { Groupings } from "../data/types";
 import type { Dispatch, SetStateAction } from "react";
 
