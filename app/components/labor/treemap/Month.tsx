@@ -65,7 +65,6 @@ const Month = ({
   selectedMonth,
   setSelectedMonth,
 }: Props) => {
-  console.log("🚀 ~ monthlyData:", monthlyData);
   const monthRef = useRef<SVGGElement>(null);
   const transformRef = useRef<string | undefined>(undefined);
   const dimensionRef = useRef<number | undefined>(undefined);
