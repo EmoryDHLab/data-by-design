@@ -49,7 +49,7 @@ const MonthScale = ({
     };
   }, [year, width, height, xOffset]);
 
-  return <g ref={scaleRef} />;
+  return <g ref={scaleRef} role="presentation" />;
 };
 
 export default MonthScale;

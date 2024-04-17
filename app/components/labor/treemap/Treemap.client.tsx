@@ -55,6 +55,7 @@ const Treemap = () => {
               setActiveMonth(undefined);
               setSelectedMonth(undefined);
             }}
+            aria-description="here is a long description"
           >
             <MonthScale
               year={2023}
@@ -82,7 +83,7 @@ const Treemap = () => {
             })}
             {YEARS.map((year, index) => {
               return (
-                <g key={`year-${year}`}>
+                <g key={`year-${year}`} role="presentation">
                   <YearLabel
                     year={year}
                     height={(boxSize?.height || 1) / 2.5}

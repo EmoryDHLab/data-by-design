@@ -65,7 +65,11 @@ const Month = ({
   selectedMonth,
   setSelectedMonth,
 }: Props) => {
+  console.log("🚀 ~ monthlyData:", monthlyData);
   const monthRef = useRef<SVGGElement>(null);
+  const transformRef = useRef<string | undefined>(undefined);
+  const dimensionRef = useRef<number | undefined>(undefined);
+  const key = `m${monthlyData.month.getMonth()}_${monthlyData.month.getFullYear()}`;
 
   useEffect(() => {
     const treemapWidth =
@@ -75,10 +79,13 @@ const Month = ({
     const treemapHeight =
       yScale(new Date(2019, 1, 1)) - yScale(new Date(2020, 1, 1)) - 20;
     const boxDimension = Math.min(treemapHeight, treemapWidth);
+    dimensionRef.current = boxDimension;
     const { translateX, translateY } = calcTransform(
       monthlyData.month,
       boxDimension
     );
+
+    transformRef.current = `translate(${translateX + 10}, ${translateY + 12})`;
 
     const root = d3
       .stratify()
@@ -103,7 +110,7 @@ const Month = ({
     d3.treemap().size([boxDimension, boxDimension]).padding(0)(root);
 
     d3.select(monthRef.current)
-      .attr("transform", `translate(${translateX + 10}, ${translateY + 12})`)
+      .attr("transform", transformRef.current)
       .selectAll("rect")
       .data(root.leaves())
       .join("rect")
@@ -136,6 +143,19 @@ const Month = ({
     };
   }, [monthlyData, width, setActiveMonth, setBoxSize]);
 
+  useEffect(() => {
+    if (activeMonth == key && transformRef.current && dimensionRef.current) {
+      d3.select(monthRef.current)
+        .append("rect")
+        .attr("height", dimensionRef.current)
+        .attr("width", dimensionRef.current)
+        .attr("id", key)
+        .attr("class", "stroke-offwhite stroke-2 fill-none");
+    } else {
+      d3.select(`#${key}`).remove();
+    }
+  }, [activeMonth, key]);
+
   return (
     <g
       ref={monthRef}
@@ -143,17 +163,15 @@ const Month = ({
       className="cursor-pointer"
       onMouseEnter={() => {
         if (!selectedMonth) {
-          setActiveMonth(
-            `m${monthlyData.month.getMonth()}_${monthlyData.month.getFullYear()}`
-          );
+          setActiveMonth(key);
         }
       }}
       onClick={(event) => {
         event.stopPropagation();
-        setSelectedMonth(
-          `m${monthlyData.month.getMonth()}_${monthlyData.month.getFullYear()}`
-        );
+        setSelectedMonth(key);
       }}
+      onFocus={() => setActiveMonth(key)}
+      aria-description={monthlyData.month.toDateString()}
     />
   );
 };
