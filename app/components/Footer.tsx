@@ -133,31 +133,35 @@ export default function Footer() {
             className={`button border border-offwhite rounded-3xl px-5 py-4 text-center me-2 mb-2 hover:bg-offwhite cursor-pointer hover:text-offblack`}
           />
         </form>
-        <div className="flex flex-col md:flex-row flex-wrap space-y-6 justify-between items-Start">
-          <div className="font-dubois text-4xl mt-6">DH Lab</div>
+        <div className="flex flex-col md:flex-row flex-wrap space-y-6 items-start">
+          <div className="font-dubois md:text-3xl xl:text-4xl mt-6 md:mr-8">
+            DH Lab
+          </div>
           <img
-            className="h-auto w-full md:h-12 md:w-auto"
+            className="h-auto w-full md:h-10 md:mr-8 xl:h-12 md:w-auto"
             src="/images/footer/ecds.png"
             alt="Emory Center for Digital Scholarship"
           />
-          <div className="font-dubois text-4xl">Polymode</div>
+          <div className="font-dubois md:text-3xl md:mr-8 xl:text-4xl">
+            Polymode
+          </div>
           <img
-            className="h-auto w-full md:h-12 md:w-auto"
+            className="h-auto w-full md:h-10 xl:h-12 md:w-auto md:mr-8"
             src="/images/footer/DigitalPublishingHumanities.png"
             alt="Emory Digital Humanities Lab"
           />
           <img
-            className="h-auto w-full md:h-12 md:w-auto"
+            className="h-auto w-full md:h-10 xl:h-12 md:w-auto md:mr-8"
             src="/images/footer/neh.png"
             alt="The National Endowment for the Humanities"
           />
           <img
-            className="h-auto w-full md:h-12 md:w-auto"
+            className="h-auto w-full md:h-10 xl:h-12 md:w-auto md:mr-8"
             src="/images/footer/mellon.jpeg"
             alt="Andrew W. Mellon Foundation"
           />
           <img
-            className="h-auto w-1/2 md:h-12 md:w-auto"
+            className="h-auto w-1/2 md:h-10 xl:h-12 md:w-auto md:mr-8"
             src="/images/footer/mit.svg"
             alt="MIT Press"
           />
