@@ -361,6 +361,7 @@ export const peopleData: TPerson[] = [
       groupingData[Groupings.R][Roles.R],
       groupingData[Groupings.R][Roles.W],
       groupingData[Groupings.R][Roles.DV],
+      groupingData[Groupings.R][Roles.DE],
     ],
     departments: [
       groupingData[Groupings.D][Departments.E],
