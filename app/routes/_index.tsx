@@ -10,6 +10,7 @@ import { TimelineType, timelineImages } from "~/components/home/timelineUtils";
 import SelectedImage from "~/components/home/SelectedImage.client";
 import type { TFigure } from "~/types/figureType";
 import SiteTitle from "~/components/home/SiteTitle";
+import { Link } from "@remix-run/react";
 
 export default function Index() {
   const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
@@ -65,6 +66,47 @@ export default function Index() {
                 />
               )}
             </ClientOnly>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 font-neueMontreal border-b-2 border-dashed pb-0 md:pb-6">
+          <div className="px-6 md:px-28">
+            <p>
+              It is often said that “the purpose of data visualization is
+              insight: to produce the kind of “ah ha moment” in the mind of the
+              viewer when something snaps into focus that was previously too
+              difficult, too distributed, or too complex to otherwise see. For
+              those who design data visualizations, however, insight comes about
+              through a process that is far longer and more hard-won.
+            </p>
+            <p>
+              This lesson came home to our project team in the waning days of
+              summer 2021 as we iterated on the design for the front page of
+              this site. Ever since the first prototype of Data by Design, there
+              had always been a prominently-positioned timeline to welcome
+              visitors to the site—first an actual line, then illustrated with
+              images, and then a more designerly version that arranged each
+              year’s images into artfully arranged stacks.
+            </p>
+          </div>
+          <div className="px-6 md:px-28">
+            <p>
+              It all made sense: this project has a distinct chronological arc.
+              It looks at how ideas from the seventeenth and eighteenth
+              centuries, when the concept of data had just begun to crystalize,
+              inform today’s world in which we generate data with our every
+              waking moment (and sometimes even with our sleeping ones). And it
+              explores examples from the eighteenth and nineteenth centuries,
+              when the idea of visualizing data was itself an innovation,
+              connecting them to the present moment in which anyone with an
+              internet connection and an account on any number of software
+              platforms can go from data to chart in a series of clicks.
+            </p>
+            <p className="pt-6">
+              <Link to="/chapters/intro" className="text-xl">
+                <span className="font-dubois uppercase">Read more</span>{" "}
+                <span className="font-icons">b</span>
+              </Link>
+            </p>
           </div>
         </div>
 
