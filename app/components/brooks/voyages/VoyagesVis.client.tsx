@@ -202,7 +202,7 @@ function VoyagesVis({
     <div className="w-screen">
       <div className="flex flex-col items-center text-white">
         {showSlider && (
-          <div className={`bg-black w-screen`}>
+          <div className={`bg-black ${interactive ? "" : "w-screen"}`}>
             <Slider
               width={width}
               yearRange={yearRange}
