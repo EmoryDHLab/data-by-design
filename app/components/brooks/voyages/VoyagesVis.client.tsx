@@ -21,12 +21,13 @@ interface Props {
   widthAdjust?: number;
   heightAdjust?: number;
   isSample?: boolean;
+  interactive?: boolean;
 }
 
 function VoyagesVis({
   startYear = INITIAL_YEAR_RANGE[0],
   endYear = INITIAL_YEAR_RANGE[1],
-  background = [250, 241, 233],
+  background = [253, 249, 246],
   showAxis = true,
   showSlider = true,
   allVoyages = true,
@@ -34,6 +35,7 @@ function VoyagesVis({
   isSample = false,
   widthAdjust = 0.9,
   heightAdjust = 0.45,
+  interactive = false,
   id = "allVoyageContainer",
 }: Props) {
   const { windowSize } = useResizeObserver();
@@ -49,6 +51,7 @@ function VoyagesVis({
   const [yearRange, setYearRange] = useState<number[]>([startYear, endYear]);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
+  const [widthDiff, setWidthDiff] = useState<number>(0);
 
   // We make a bunch of refs so we can use properties in the initial setup.
   // We don't want the initial setup to run each time one of these is updated,
@@ -81,13 +84,29 @@ function VoyagesVis({
     if (windowSize.width && windowSize.height) {
       setWidth(windowSize.width * widthAdjust);
       setHeight(windowSize.height * heightAdjust);
+      setWidthDiff(
+        isSample ? 40 : windowSize.width - windowSize.width * widthAdjust
+      );
     }
-  }, [windowSize, widthAdjust, heightAdjust]);
+  }, [windowSize, widthAdjust, heightAdjust, isSample]);
 
   useMemo(() => {
     if (!p5Ref.current) return;
     filteredVoyages.current = voyages.current.filter(
       (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1]
+    );
+    console.log(
+      "🚀 ~ useMemo ~ filteredVoyages.current:",
+      filteredVoyages.current.length
+    );
+    if (!allVoyagesRef.current) {
+      filteredVoyages.current = filteredVoyages.current.filter(
+        (obj) => obj.resistanceReported
+      );
+    }
+    console.log(
+      "🚀 ~ useMemo ~ filteredVoyages.current:",
+      filteredVoyages.current.length
     );
     filteredVoyages.current.forEach((filteredVoyage) => {
       filteredVoyage.updateMinMax(yearRange[0], yearRange[1]);
@@ -105,7 +124,7 @@ function VoyagesVis({
       filteredVoyages.current = [];
 
       p5.setup = () => {
-        p5.createCanvas(width, height).parent(idRef.current);
+        p5.createCanvas(width + widthDiff, height).parent(idRef.current);
 
         (voyageData as TVoyage[]).forEach((voyage: TVoyage) => {
           voyages.current.push(
@@ -116,6 +135,7 @@ function VoyagesVis({
               yearRangeRef.current[1],
               height,
               width,
+              widthDiff,
               fullColorRef.current
             )
           );
@@ -162,14 +182,14 @@ function VoyagesVis({
     return () => {
       p5Copy?.remove();
     };
-  }, [width, height]);
+  }, [width, height, widthDiff]);
 
   if (isSample) {
     if (windowSize.width) {
       return (
         <div
           id={id}
-          className="fixed top-12"
+          className="fixed"
           style={{ marginLeft: `${windowSize.width / 6}px` }}
         ></div>
       );
@@ -180,13 +200,14 @@ function VoyagesVis({
 
   return (
     <div className="w-screen">
-      <div className="flex flex-col items-center mt-6 text-white">
+      <div className="flex flex-col items-center text-white">
         {showSlider && (
-          <div className={`bg-black mb-3`}>
+          <div className={`bg-black w-screen`}>
             <Slider
               width={width}
               yearRange={yearRange}
               setYearRange={setYearRange}
+              interactive={interactive}
             />
           </div>
         )}
@@ -198,7 +219,7 @@ function VoyagesVis({
             } transition-opacity duration-1000`}
           >
             <Axis
-              width={width}
+              width={width - widthDiff}
               yearRange={yearRange}
               widthAdjustment={45}
               color="black"

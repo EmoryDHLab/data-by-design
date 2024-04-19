@@ -21,10 +21,10 @@ export const randomColor = (fullColor: boolean) => {
 const maxEmbark = 1545;
 const minDuration = 86400;
 const maxDuration = 273369600;
-const maxWidth = 50;
+const maxWidth = 60;
 const maxOverlap = 300;
-const distanceLeft = 12;
-const distanceRight = 12;
+const distanceLeft = 36;
+const distanceRight = 36;
 
 const calcPoints = (duration: number, p5: p5) => {
   return p5.random(
@@ -42,7 +42,14 @@ const calcOffsets = (
 ) => {
   const currentTotalPeople = totalPeople - deathsPerLeg * index;
   const voyageWidth = p5.map(totalPeople, 0, maxEmbark, 0, maxWidth);
-  return p5.map(currentTotalPeople, survivors, totalPeople, 0, voyageWidth);
+  const offset = p5.map(
+    currentTotalPeople,
+    survivors,
+    totalPeople,
+    0,
+    voyageWidth
+  );
+  return offset > 0 ? offset : 1;
 };
 
 export const generatePoints = (voyage: TVoyage, p5: p5) => {

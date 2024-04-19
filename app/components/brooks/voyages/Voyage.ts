@@ -16,6 +16,7 @@ class Voyage {
   maxYear: number;
   height: number;
   width: number;
+  widthAdjust: number;
   points: TPoint;
   offsets: TPoint;
   fullColor: boolean;
@@ -27,6 +28,7 @@ class Voyage {
     maxYear: number,
     height: number,
     width: number,
+    widthAdjust: number,
     fullColor: boolean = false
   ) {
     this.p5 = p5;
@@ -45,6 +47,7 @@ class Voyage {
     this.maxYear = maxYear;
     this.height = height;
     this.width = width;
+    this.widthAdjust = widthAdjust;
     this.fullColor = fullColor;
 
     this.shapeSeed = Math.floor(Math.random() * 293 + 1565);
@@ -74,7 +77,13 @@ class Voyage {
     const yStart = -this.height / 2;
     this.p5.push();
     this.p5.translate(
-      this.p5.map(this.year, this.minYear, this.maxYear, 40, this.width),
+      this.p5.map(
+        this.year,
+        this.minYear,
+        this.maxYear,
+        this.widthAdjust,
+        this.width
+      ),
       this.height / 2
     );
 

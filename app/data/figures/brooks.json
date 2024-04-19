@@ -268,5 +268,23 @@
     "frontPage": false,
     "year": 0,
     "chapter": "brooks"
+  },
+  "ship": {
+    "chapterTitle": "Brooks",
+    "fileName": "ship",
+    "title": "",
+    "artist": "",
+    "caption": "",
+    "altText": null,
+    "sensitive": false,
+    "creditLine": "",
+    "digitizedLine": "",
+    "source": "",
+    "sourceUrl": "",
+    "fee": false,
+    "notes": "",
+    "frontPage": false,
+    "year": 0,
+    "chapter": "brooks"
   }
 }

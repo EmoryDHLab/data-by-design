@@ -9,6 +9,7 @@ interface Props {
   setSliderWidth: Dispatch<SetStateAction<Array<number>>>;
   yearRange: Array<number>;
   children: ReactNode;
+  interactive: boolean;
 }
 
 interface EventProps {
@@ -23,6 +24,7 @@ function SliderJoin({
   yearRange,
   maxX,
   children,
+  interactive,
 }: Props) {
   const rectRef = useRef<SVGRectElement>(null);
   const circleRef = useRef<SVGCircleElement>(null);
@@ -30,6 +32,7 @@ function SliderJoin({
   const { isDesktop } = useDeviceContext();
 
   const keyDown = ({ key, type }: EventProps) => {
+    if (!interactive) return;
     if (type !== "keydown") return;
 
     if (key === "ArrowRight") {
@@ -100,7 +103,7 @@ function SliderJoin({
           height={16}
           width={sliderWidth[1] - sliderWidth[0]}
           fill="#E0DCF2"
-          tabIndex={0}
+          tabIndex={interactive ? 0 : -1}
           onKeyDown={keyDown}
         />
         {children}

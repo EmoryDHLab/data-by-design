@@ -34,7 +34,7 @@ function Axis({ width, color, yearRange, widthAdjustment = 0 }: Props) {
       .append("g")
       .attr(
         "transform",
-        `translate(${widthAdjustment > 0 ? widthAdjustment : 50},20)`
+        `translate(${widthAdjustment > 0 ? widthAdjustment : 50},0)`
       )
       .style("font-size", "1.25rem")
       .style("color", color ?? "white")

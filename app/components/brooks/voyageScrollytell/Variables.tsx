@@ -16,7 +16,11 @@ const y9 = lineHeight * 42.5;
 
 const Variables = () => {
   return (
-    <svg viewBox={`0 0 90 ${lineHeight * 43}`} fontSize={fontSize}>
+    <svg
+      viewBox={`0 0 90 ${lineHeight * 43}`}
+      fontSize={fontSize}
+      className="h-full"
+    >
       <text x={x1} y={y1} fontWeight="bold">
         Variable name
       </text>

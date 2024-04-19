@@ -8,6 +8,7 @@ interface Props {
   maxX: number;
   year: number;
   start?: boolean;
+  interactive: boolean;
 }
 
 interface EventProps {
@@ -21,6 +22,7 @@ function SliderHandle({
   start,
   maxX,
   year,
+  interactive,
 }: Props) {
   const circleRef = useRef<SVGCircleElement>(null);
 
@@ -42,6 +44,7 @@ function SliderHandle({
     };
 
     const keyDown = ({ key }: EventProps) => {
+      if (!interactive) return;
       if (key === "ArrowRight") {
         if (start) {
           updateStart(sliderWidth[0] + 44);
@@ -72,10 +75,10 @@ function SliderHandle({
       )
       .select("circle")
       .on("keydown", keyDown);
-  }, [start, setSliderWidth, maxX, sliderWidth]);
+  }, [start, setSliderWidth, maxX, sliderWidth, interactive]);
 
   return (
-    <g ref={circleRef} className="cursor-ew-resize">
+    <g ref={circleRef} className={`${interactive ? "cursor-ew-resize" : ""}`}>
       <text
         x={start ? sliderWidth[0] - 20 : sliderWidth[1] - 20}
         y={-18}
@@ -88,7 +91,7 @@ function SliderHandle({
         cy={0}
         cx={start ? sliderWidth[0] : sliderWidth[1]}
         r={8}
-        tabIndex={0}
+        tabIndex={interactive ? 0 : -1}
         fill="white"
       />
       <circle

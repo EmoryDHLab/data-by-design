@@ -69,7 +69,7 @@ export default function ScrollytellWrapper({
           setScrollProgress(index + progress);
         });
     } catch (error) {
-      console.error("file: Consent.tsx:38 ~ useEffect ~ error:", error);
+      console.error(error);
     }
 
     return () => {

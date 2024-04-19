@@ -3,8 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 import { ChapterContext } from "~/chapterContext";
 import { useResizeObserver } from "~/hooks";
-import { ClientOnly } from "remix-utils";
-import Consent from "~/components/Consent.client";
+import Consent from "~/components/Consent";
 
 type TAnchorPosition = {
   offset: number;
@@ -131,7 +130,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
             </span>
           );
         })}
-        {disclosure && <ClientOnly>{() => <Consent />}</ClientOnly>}
+        {disclosure && <Consent />}
       </nav>
     </div>
   );
