@@ -95,10 +95,6 @@ function VoyagesVis({
     filteredVoyages.current = voyages.current.filter(
       (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1]
     );
-    console.log(
-      "🚀 ~ useMemo ~ filteredVoyages.current:",
-      filteredVoyages.current.length
-    );
     if (!allVoyagesRef.current) {
       filteredVoyages.current = filteredVoyages.current.filter(
         (obj) => obj.resistanceReported
