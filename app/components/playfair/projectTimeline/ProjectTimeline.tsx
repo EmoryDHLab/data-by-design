@@ -249,7 +249,7 @@ export default function ProjectTimeline({
               fillOpacity={showMask ? 0.6 : 0}
               className="transition-all duration-1000 bg-playfairPrimary"
             />
-            <rect x={23.3} y={5.5} width={15} height={44} fill="black" />
+            <rect x={42} y={5.5} width={6} height={44} fill="black" />
           </mask>
           <g>
             <rect
@@ -258,7 +258,7 @@ export default function ProjectTimeline({
               y={0}
               width={105}
               height={55}
-              className="fill-offwhite"
+              className="fill-offblack"
             />
           </g>
         </g>
