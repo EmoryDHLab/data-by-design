@@ -30,6 +30,8 @@ import PeabodyActors from "~/components/peabody/PeabodyActors";
 import TutorialKey from "~/components/peabody/tutorial/TutorialKey";
 import type { V2_MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
+import Takeaways from "~/components/layout/Takeaways";
+
 
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("peabody");
@@ -1238,6 +1240,36 @@ export default function PeabodyPage() {
           </p>
         </CenteredLayout>
         <PeabodySandbox />
+        <Takeaways
+          forDesigners={[
+            <span key="df782d45">
+              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+            <span key="6440631a">
+              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+            <span key="2f317172">
+              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+          ]}
+          forViewers={[
+            <span key="75cf526a">
+              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+            <span key="6d2691fc">
+              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+            <span key="9650286d">
+              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+          ]}
+        />
       </ChapterBody>
       <CenteredLayout>
         <FootnotesList footnotes={peabodyFootnotes} />

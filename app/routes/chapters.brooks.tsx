@@ -26,6 +26,8 @@ import type { V2_MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import VoyageScrollytell from "~/components/brooks/voyageScrollytell/VoyageScrollytell";
 import ShipOutline from "~/components/brooks/elford/ship";
+import Takeaways from "~/components/layout/Takeaways";
+
 
 const chapterFigures = Object.values(figures);
 
@@ -1081,6 +1083,36 @@ export default function BrooksPage() {
             ask what knowledge it can point towards, and what it cannot show.
           </p>
         </CenteredLayout>
+        <Takeaways
+          forDesigners={[
+            <span key="df782d45">
+              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+            <span key="6440631a">
+              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+            <span key="2f317172">
+              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+          ]}
+          forViewers={[
+            <span key="75cf526a">
+              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+            <span key="6d2691fc">
+              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+            <span key="9650286d">
+              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </span>,
+          ]}
+        />
       </ChapterBody>
       <CenteredLayout>
         <FootnotesList footnotes={brooksFootnotes} />

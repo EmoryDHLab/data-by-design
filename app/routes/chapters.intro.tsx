@@ -9,6 +9,7 @@ import Footer from "~/components/Footer";
 import { playfairFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import playfairFigures from "~/data/figures/playfair.json";
+import figures from "~/data/figures/shanawdithit.json";
 import FigureObj from "~/components/layout/FigureObj";
 import ChapterBody from "~/components/layout/ChapterBody";
 import IntroScrollytell from "~/components/intro/IntroScrollytell.client";
@@ -34,105 +35,118 @@ export default function IntroPage() {
         subtitle="A Counterhistory of Data Visualization"
       />
       <ChapterBody>
-        <CenteredLayout>
-          <p className="first-paragraph">
-            It is often said that “the purpose of data visualization is
-            insight”: to produce the kind of “ah ha moment” in the mind of the
-            viewer when something snaps into focus that was previously too
-            difficult, too distributed, or too complex to otherwise see. For
-            those who design data visualizations, however, insight comes about
-            through a process that is far longer and more hard-won.
-          </p>
-          <p>
-            This lesson came home to our project team in the waning days of
-            summer 2021 as we iterated on the design for the front page of this
-            site. Ever since the first prototype of Data by Design, there had
-            always been a prominently-positioned timeline to welcome visitors to
-            the site—first an actual line, then illustrated with images, and
-            then a more designerly version that arranged each year’s images into
-            artfully arranged stacks. It all made sense: this project has a
-            distinct chronological arc. It looks at how ideas from the
-            seventeenth and eighteenth centuries, when the concept of data had
-            just begun to crystalize, inform today’s world in which we generate
-            data with our every waking moment (and sometimes even with our
-            sleeping ones). And it explores examples from the eighteenth and
-            nineteenth centuries, when the idea of visualizing data was itself
-            an innovation, connecting them to the present moment in which anyone
-            with an internet connection and an account on any number of software
-            platforms can go from data to chart in a series of clicks.
-          </p>
-          <p>
-            But the timeline wasn’t sitting right. For one, there was the issue
-            of which years to use as its start and end points. Even as this
-            account begins at the dawn of what’s been called the “first golden
-            age” of data visualization, we remained aware that there were
-            earlier instances of data visualization than those we’d chosen to
-            explore. The Incan practice of quipu, for example—a technique of
-            recording quantitative information as knots on strings—has been
-            recorded as early as 250 B.C.E. Even limiting ourselves to North
-            America, where the majority of our team members are based, there
-            exist an abundance of examples of wampum belts being employed by
-            Indigenous nations to encode political relations—most famously, by
-            the Haudenosaunee—and those date to at least a century before the
-            beginning of the story that we tell here. Should those earlier
-            examples be included on the timeline, even if they were not directly
-            engaged? And what of the years inside the span of the timeline that
-            lacked examples? While others have attempted to provide
-            comprehensive accounts of the “milestones” of data visualization,
-            and even of the evolution of the timeline itself, the goal of Data
-            by Design has always been to contribute depth rather than breadth,
-            complexity rather than comprehensiveness. As visitors to this site
-            will soon learn, a guiding principle of this project is that history
-            is always—and, crucially, constitutively—incomplete. But when
-            looking at a timeline, empty space is empty space, and it’s very
-            difficult for gaps in the data to be interpreted as anything but
-            that, especially upon initial view.
-          </p>
-          <p>
-            “What if we foregrounded the images?” proposed Tanvi, who was then a
-            graduate student at NYU, and who had come onto the team earlier that
-            year as the project’s lead designer. She shared her screen, walking
-            us through a possible layout in which the images were arranged
-            according to their year of creation, with the year—and not an actual
-            line—serving as a visual anchor. We all appreciated how Tanvi’s
-            design preserved the overall chronology but eliminated the empty
-            space. It seemed like we were getting closer.
-          </p>
-          <p>
-            “We could make the timeline scrubbable,” Dan added—Dan was then an
-            undergraduate at Georgia Tech and had been working as the project’s
-            lead developer for the past several years. His suggestion, to
-            display only a few images on the screen at a time and allow the user
-            to control the movement of the timeline with their finger or mouse,
-            would address the issue of where to start and end. It would also
-            send a strong opening message about each user being able to shape
-            their own experience of the site, which would align with one of the
-            project’s main conceptual contributions, about how telling a story
-            necessarily involves choices, and invites questions of power as
-            well: who is enabled to tell the story, and to what ends?
-          </p>
-          <p>
-            The scrubbable timeline seemed promising too. And it would also
-            involve some technical challenges, which was a bonus for Jianing,
-            who’d recently graduated from Georgia Tech and had just started a
-            masters’ program at Berkeley. She’d been a developer on the project
-            since its very first iteration, and had always owned the
-            implementation of any features on the front page.
-          </p>
-          <p>
-            But for reasons that none of us could fully articulate, the design
-            still somehow felt unsatisfying. There was something deeper that we
-            wanted to convey…
-          </p>
-          <p>
-            And that’s when it came to us. It was during one of our weekly
-            full-team meetings—virtual, of course, since college campuses had
-            only just returned to in-person instruction, and almost everything
-            else remained online. No one can remember who said it first. But
-            whoever had the idea, we all recognized it as our own “ah ha
-            moment.” Starting with a shuffle.
-          </p>
-        </CenteredLayout>
+        <TwoColumnLayout>
+          <Column shouldPin={true}>
+            <p className="first-paragraph py-10">
+              It is often said that “the purpose of data visualization is
+              insight”: to produce the kind of “ah ha moment” in the mind of the
+              viewer when something snaps into focus that was previously too
+              difficult, too distributed, or too complex to otherwise see. For
+              those who design data visualizations, however, insight comes about
+              through a process that is far longer and more hard-won.
+            </p>
+            <p>
+              This lesson came home to our project team in the waning days of
+              summer 2021 as we iterated on the design for the front page of
+              this site. Ever since the first prototype of Data by Design, there
+              had always been a prominently-positioned timeline to welcome
+              visitors to the site—first an actual line, then illustrated with
+              images, and then a more designerly version that arranged each
+              year’s images into artfully arranged stacks. It all made sense:
+              this project has a distinct chronological arc. It looks at how
+              ideas from the seventeenth and eighteenth centuries, when the
+              concept of data had just begun to crystalize, inform today’s world
+              in which we generate data with our every waking moment (and
+              sometimes even with our sleeping ones). And it explores examples
+              from the eighteenth and nineteenth centuries, when the idea of
+              visualizing data was itself an innovation, connecting them to the
+              present moment in which anyone with an internet connection and an
+              account on any number of software platforms can go from data to
+              chart in a series of clicks.
+            </p>
+            <p>
+              But the timeline wasn’t sitting right. For one, there was the
+              issue of which years to use as its start and end points. Even as
+              this account begins at the dawn of what’s been called the “first
+              golden age” of data visualization, we remained aware that there
+              were earlier instances of data visualization than those we’d
+              chosen to explore. The Incan practice of quipu, for example—a
+              technique of recording quantitative information as knots on
+              strings—has been recorded as early as 250 B.C.E. Even limiting
+              ourselves to North America, where the majority of our team members
+              are based, there exist an abundance of examples of wampum belts
+              being employed by Indigenous nations to encode political
+              relations—most famously, by the Haudenosaunee—and those date to at
+              least a century before the beginning of the story that we tell
+              here. Should those earlier examples be included on the timeline,
+              even if they were not directly engaged? And what of the years
+              inside the span of the timeline that lacked examples? While others
+              have attempted to provide comprehensive accounts of the
+              “milestones” of data visualization, and even of the evolution of
+              the timeline itself, the goal of Data by Design has always been to
+              contribute depth rather than breadth, complexity rather than
+              comprehensiveness. As visitors to this site will soon learn, a
+              guiding principle of this project is that history is always—and,
+              crucially, constitutively—incomplete. But when looking at a
+              timeline, empty space is empty space, and it’s very difficult for
+              gaps in the data to be interpreted as anything but that,
+              especially upon initial view.
+            </p>
+            <p>
+              “What if we foregrounded the images?” proposed Tanvi, who was then
+              a graduate student at NYU, and who had come onto the team earlier
+              that year as the project’s lead designer. She shared her screen,
+              walking us through a possible layout in which the images were
+              arranged according to their year of creation, with the year—and
+              not an actual line—serving as a visual anchor. We all appreciated
+              how Tanvi’s design preserved the overall chronology but eliminated
+              the empty space. It seemed like we were getting closer.
+            </p>
+            <p>
+              “We could make the timeline scrubbable,” Dan added—Dan was then an
+              undergraduate at Georgia Tech and had been working as the
+              project’s lead developer for the past several years. His
+              suggestion, to display only a few images on the screen at a time
+              and allow the user to control the movement of the timeline with
+              their finger or mouse, would address the issue of where to start
+              and end. It would also send a strong opening message about each
+              user being able to shape their own experience of the site, which
+              would align with one of the project’s main conceptual
+              contributions, about how telling a story necessarily involves
+              choices, and invites questions of power as well: who is enabled to
+              tell the story, and to what ends?
+            </p>
+            <p>
+              The scrubbable timeline seemed promising too. And it would also
+              involve some technical challenges, which was a bonus for Jianing,
+              who’d recently graduated from Georgia Tech and had just started a
+              masters’ program at Berkeley. She’d been a developer on the
+              project since its very first iteration, and had always owned the
+              implementation of any features on the front page.
+            </p>
+            <p>
+              But for reasons that none of us could fully articulate, the design
+              still somehow felt unsatisfying. There was something deeper that
+              we wanted to convey…
+            </p>
+            <p>
+              And that’s when it came to us. It was during one of our weekly
+              full-team meetings—virtual, of course, since college campuses had
+              only just returned to in-person instruction, and almost everything
+              else remained online. No one can remember who said it first. But
+              whoever had the idea, we all recognized it as our own “ah ha
+              moment.” Starting with a shuffle.
+            </p>
+          </Column>
+          <Column>
+            {" "}
+            {/* These images need to be replaced */}
+            <FigureObj figure={figures["Demasduit"]} />
+            <FigureObj figure={figures["Demasduit"]} />
+            <FigureObj figure={figures["Demasduit"]} />
+            <FigureObj figure={figures["Demasduit"]} />
+          </Column>
+        </TwoColumnLayout>
 
         <ClientOnly>{() => <IntroScrollytell />}</ClientOnly>
 
