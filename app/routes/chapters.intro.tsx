@@ -15,6 +15,7 @@ import FigureObj from "~/components/layout/FigureObj";
 import ChapterBody from "~/components/layout/ChapterBody";
 import IntroScrollytell from "~/components/intro/IntroScrollytell.client";
 import { ClientOnly } from "remix-utils";
+import FakePage from "~/components/intro/FakePage";
 
 const sections = [
   {

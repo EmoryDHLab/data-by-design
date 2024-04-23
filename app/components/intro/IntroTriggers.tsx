@@ -2,6 +2,7 @@ import p5 from "p5";
 import { Fragment, useEffect, useRef } from "react";
 import { useResizeObserver } from "~/hooks";
 import PullQuote from "~/components/PullQuote";
+import ImageGrid from "~/components/intro/ImageGrid";
 
 const IntroTriggers = [
   <p key={"2c8354f7"}></p>,
@@ -51,6 +52,7 @@ const IntroTriggers = [
     The images are randomly selected from the nearly two hundred charts, graphs,
     and other visualizations that are included in the project.
   </Fragment>,
+  <ImageGrid />,
   <Fragment key="a609783e">
     Some of the images go on to serve as centerpieces of the chapters in which
     they appear, their history and significance elaborated in extensive detail.
