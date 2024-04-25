@@ -14,7 +14,7 @@ import styles from "~/styles/tailwind.css";
 import fontStyles from "../styles/fonts.css";
 import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 
 export const meta: V2_MetaFunction = () => {
   return [

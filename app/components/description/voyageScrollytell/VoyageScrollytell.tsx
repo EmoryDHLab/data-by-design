@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import Picture from "~/components/layout/Picture";
 import PullQuote from "~/components/PullQuote";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";

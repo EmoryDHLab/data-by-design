@@ -1,6 +1,6 @@
 import scrollama from "scrollama";
 import { useEffect, useRef, useState } from "react";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import { ChapterNav } from "~/components/ChapterNav";
 import { useResizeObserver } from "~/hooks";
 import type { ReactNode } from "react";

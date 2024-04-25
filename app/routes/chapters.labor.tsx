@@ -6,7 +6,7 @@ import { laborFootnotes } from "~/footnotes";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import PeopleVersions from "~/components/labor/peopleVersions/PeopleVersions.client";
 import Footer from "~/components/Footer";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import Treemap from "~/components/labor/treemap/Treemap.client";
 
 export const meta: V2_MetaFunction = () => {

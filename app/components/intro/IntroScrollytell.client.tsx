@@ -8,6 +8,7 @@ import ScrollProgress from "~/components/ScrollProgress";
 import RandomPaths from "~/components/intro/RandomPaths";
 import FakePage from "~/components/intro/FakePage";
 import RandomRectangles from "~/components/intro/RandomRectangles";
+import RandomOrTimelineRectangles from "~/components/intro/RandomOrTimelineRectangles";
 
 export default function IntroScrollytell() {
   const [scrollProgress, setScrollProgress] = useState(0.0);
@@ -23,7 +24,7 @@ export default function IntroScrollytell() {
     >
       {process.env.NODE_ENV !== "production" && <ScrollProgress />}
       <ScrollytellWrapper
-        className={`md:flex justify-between w-full`}
+        className="md:flex justify-between w-full"
         setScrollProgress={setScrollProgress}
         triggers={IntroTriggers}
         steps={steps}
@@ -36,12 +37,9 @@ export default function IntroScrollytell() {
                 key={trigger.key}
                 data-step={index}
                 className={classNames(
-                  `step text-xl w-full content-center py-5 px-0 md:px-20 text-${primaryTextColor}`,
-                  index == 0
-                    ? "md:h-[60vh]"
-                    : index == 4
-                    ? "md:h-[150vh]"
-                    : "min-h-screen"
+                  `step text-xl content-center py-5 px-0 md:px-20 text-${primaryTextColor}`,
+                  index == 0 ? "md:h-[60vh]" : "min-h-screen",
+                  index == 4 || index == 7 ? "w-screen" : "w-[50vw]"
                 )}
               >
                 {trigger}
@@ -49,7 +47,7 @@ export default function IntroScrollytell() {
             );
           })}
         </div>
-        <div className="sticky top-16 md:top-[200px] h-screen md:w-1/2 md:mr-24">
+        <div className="sticky top-16 right-0 md:top-[200px] md:w-1/2 h-screen md:mr-24">
           <LinearTimeline />
         </div>
       </ScrollytellWrapper>
@@ -67,7 +65,7 @@ function LinearTimeline() {
   } else if (scrollProgress < 4.4) {
     return <div></div>;
   } else if (scrollProgress < 6) {
-    return <RandomRectangles />;
+    return <RandomOrTimelineRectangles />;
   } else if (scrollProgress < 7) {
     return <FakePage />;
   }

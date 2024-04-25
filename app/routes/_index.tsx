@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ChapterCardGrid from "~/components/home/ChapterCardGrid";
 import Timeline from "~/components/home/Timeline.client";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import { TimelineType, timelineImages } from "~/components/home/timelineUtils";

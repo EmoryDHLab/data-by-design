@@ -90,22 +90,10 @@ export default function RandomRectangles() {
       return;
     }
     drawRectangles(p5Ref.current, rectangles);
-  }, [rectangles, p5Ref]);
+  }, [rectangles, p5Ref.current]);
 
   return (
     <div>
-      <button
-        onClick={() => {
-          setRectangles(generateRectangles());
-        }}
-        type="button"
-      >
-        <img
-          className="w-14 m-2"
-          src="/images/ui/shuffle_click.png"
-          alt="Shuffle"
-        />
-      </button>
       <div id="rectangles" />
     </div>
   );

@@ -11,3 +11,4 @@ node_modules*
 /styles/generated-app.css
 /public/prototypes/*
 .ruby-lsp
+/build

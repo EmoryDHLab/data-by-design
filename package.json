@@ -13,8 +13,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.0.13",
-    "@remix-run/node": "^1.19.3",
-    "@remix-run/react": "^1.19.3",
+    "@remix-run/node": "^2.9.1",
+    "@remix-run/react": "^2.9.1",
     "@remix-run/vercel": "^1.19.3",
     "@uidotdev/usehooks": "^2.4.1",
     "cross-env": "^7.0.3",
@@ -26,13 +26,13 @@
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-tooltip": "^5.21.6",
-    "remix-utils": "^3.3.0",
+    "remix-utils": "^7.6.0",
     "scrollama": "^3.2.0"
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.19.3",
-    "@remix-run/eslint-config": "^1.19.3",
-    "@remix-run/serve": "^1.19.3",
+    "@remix-run/dev": "^2.9.1",
+    "@remix-run/eslint-config": "^2.9.1",
+    "@remix-run/serve": "^2.9.1",
     "@types/d3": "^7.4.0",
     "@types/p5": "^1.6.2",
     "@types/react": "^18.0.15",
