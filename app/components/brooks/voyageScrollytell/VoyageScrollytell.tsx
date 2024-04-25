@@ -8,9 +8,9 @@ import figures from "~/data/figures/brooks.json";
 import FiskColors from "./FiskColors";
 import VoyageExample from "../voyages/VoyageExample";
 import VoyagesVis from "../voyages/VoyagesVis.client";
-import type { ReactElement } from "react";
 import ScrollingVoyageVis from "./ScrollingVoyageVis";
 import Variables from "./Variables";
+import type { ReactElement } from "react";
 
 const minScrollProgress = 16;
 const BACKGROUND = [224, 220, 242];
@@ -29,6 +29,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
     } else if (scrollProgress <= minScrollProgress + 0.25) {
       setSlideIndex(0);
     }
+    console.log("🚀 ~ VoyageScrollytell ~ scrollProgress:", scrollProgress);
   }, [scrollProgress]);
 
   return (
@@ -69,7 +70,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             </div>
             {/* 3 */}
             <div
-              className={`absolute transition-opacity duration-1000 opacity-${
+              className={`absolute top-[6%] transition-opacity duration-1000 opacity-${
                 slideIndex === 2 ? 100 : 0
               }`}
             >
@@ -80,7 +81,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
 
             {/* 4 */}
             <div
-              className={`absolute transition-opacity duration-1000 opacity-${
+              className={`absolute top-[6%] transition-opacity duration-1000 opacity-${
                 slideIndex === 3 ? 100 : 0
               }`}
             >
@@ -240,7 +241,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
         {/* 18 */}
         <div
           className={`absolute top-4 transition-opacity duration-1000 opacity-${
-            scrollProgress >= 32.5 && scrollProgress <= 33 ? 100 : 0
+            scrollProgress >= 32.85 && scrollProgress <= 33.3 ? 100 : 0
           }`}
         >
           <ClientOnly>
@@ -258,7 +259,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
         </div>
         <div
           className={`absolute -top-4 transition-opacity duration-1000 opacity-${
-            scrollProgress >= 33 ? 100 : 0
+            scrollProgress >= 33.3 ? 100 : 0
           }`}
         >
           <ClientOnly>
@@ -270,7 +271,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 showSlider={false}
                 showAxis={false}
                 id="scrollytell-allVoyageContainer"
-                heightAdjust={1}
+                heightAdjust={1.02}
                 widthAdjust={1}
               />
             )}

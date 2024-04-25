@@ -19,7 +19,7 @@ const Variables = () => {
     <svg
       viewBox={`0 0 90 ${lineHeight * 43}`}
       fontSize={fontSize}
-      className="h-full"
+      className="h-full w-11/12"
     >
       <text x={x1} y={y1} fontWeight="bold">
         Variable name
