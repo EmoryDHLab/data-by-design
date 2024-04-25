@@ -100,10 +100,6 @@ function VoyagesVis({
         (obj) => obj.resistanceReported
       );
     }
-    console.log(
-      "🚀 ~ useMemo ~ filteredVoyages.current:",
-      filteredVoyages.current.length
-    );
     filteredVoyages.current.forEach((filteredVoyage) => {
       filteredVoyage.updateMinMax(yearRange[0], yearRange[1]);
     });

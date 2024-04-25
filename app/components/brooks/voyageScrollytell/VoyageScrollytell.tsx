@@ -53,7 +53,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
               }`}
             >
               <Picture
-                figure={figures["query"]}
+                figure={figures["PLACEHOLDERquery"]}
                 className={`drop-shadow-none p-6`}
               />
             </div>
@@ -64,7 +64,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
               }`}
             >
               <Picture
-                figure={figures["query2"]}
+                figure={figures["PLACEHOLDERquery2"]}
                 className={`drop-shadow-none p-6`}
               />
             </div>
@@ -86,7 +86,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
               }`}
             >
               <Picture
-                figure={figures["image23"]}
+                figure={figures["PLACEHOLDERplate22sheet9"]}
                 className={`drop-shadow-none h-[75vh]`}
               />
             </div>
@@ -124,7 +124,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
               }`}
             >
               <Picture
-                figure={figures["autobiographyPLACEHOLDER"]}
+                figure={figures["PLACEHOLDERautobiography"]}
                 className={`drop-shadow-none p-10`}
               />
             </div>
