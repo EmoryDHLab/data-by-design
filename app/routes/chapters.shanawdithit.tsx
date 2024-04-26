@@ -396,14 +396,11 @@ export default function ShanawdithitPage() {
         </CenteredLayout>
 
         <ChapterSectionTitle section={sections[1]} />
-        <TwoColumnLayout>
-          <Column>
+        <CenteredLayout>
+          <p>The circumstances that surround the creation of Shanawdithit's map make it clear that we cannot view it as an unmediated expression of her worldview. And yet, it is also clear that, despite Shanawdithit's captivity, and Comack's role in prompting the creation of the map, Shanawdithit was able to incorporate many of her own ideas into the map's design with respect to both content and form, in the sense that many of Shanawdithit's design decisions appear to be informed by elements of Indigenous mapmaking practice. These elements are useful to unpack for how they help to attune us—if not to grant full access—to ways of knowing outside of the colonial frame. 
+          </p>
             <p>
-              As the previous discussion has (hopefully) shown, we cannot view
-              Shanawdithit's map as an unmediated expression of her worldview.
-              And yet, many of her design decisions are informed by elements of
-              Indigenous mapmaking practice, which are helpful to unpack for how
-              they help to attune us to ways of knowing outside of our own. The
+              The
               idea of "Indigenous mapmaking practice" is of course loose term,
               spanning cultures and continents, medium and genre, as critical
               cartographer Margaret Pearce (Potawatomi) explains. In her
@@ -413,151 +410,42 @@ export default function ShanawdithitPage() {
               how Indigenous maps may be "gestural, chanted, or inscribed in
               stone, wood, wall, tattoo, leaf, or paper," and may be enlisted to
               a variety of ends: "to assess taxes, guide a pilgrim, connect the
-              realms of the sacred and profane, or navigate beyond the horizon,"
-              she explains (110).
-              <InlineFootnote index={23} /> What binds these examples together,
+              realms of the sacred and profane, or navigate beyond the horizon."
+              <InlineFootnote index={31} /> What binds these examples together,
               for Pearce, as for other scholars of Indigenous cartography, is
-              how they are understood as part of a larger process of
-              knowledge-making, rather than as a definitive source of what
-              exists, or what is true. This process is premised on relationships
-              among people as well as places, relationships that continue to
-              acquire meaning as they unfold.
+              how they are understood as part of a larger <em>process</em> of
+              knowledge-making, rather than as a definitive source of what is
+              <em>there</em>. This process is premised on relationships among people as well as places, relationships that continue to acquire meaning as they unfold. 
             </p>
             <p>
-              We see this temporal point of view emerge in Shanawdithit's
-              decision to depict a series of events, transpiring over decades,
-              in the single place of Red Indian Lake. We can also perceive its
-              difference from the spatial perspective that was (and remains)
-              characteristic of colonial mapping practices in Cormack's
-              difficulty in determining what it is, precisely, that Shanawdithit
-              has drawn. He crosses out an incorrect label, "The Taking of Mary
-              March," which he first positions on the south side of the lake,
-              and rewrites in its proper location on the north side. He also
-              adds in a clarifying note at the top left of the map, just below
-              the reference number he has provided: "2 different Scenes &
-              times." The note is underlined for emphasis. It appears that
-              Cormack requires this explanatory note in order to remind himself
-              of what it is that is depicted, even as the two scenes are easily
-              linked in Shanawdithit's mind. Another hallmark of Indigenous
-              cartography emerges through Shanawdithit's decision to include
-              both human figures and geographical features on her map. This is
-              what Pearce characterizes as an emphasis on place as it is
-              experienced "as opposed to the Western convention of depicting
-              space as universal, homogenized, and devoid of human experience."
-              Settler geographer Matthew Sparke, who has commented directly on
-              Shanawdithit's maps as examples of Indigenous cartography,
-              observes how even the symbolic components of the map, such as the
-              paths across the lake, push back against Western orthodoxies of
-              space and scale. By depicting "the uneven possibilities of travel
-              by foot across uneven landscape," Sparke suggests, Shanawdithit
-              incorporates an embodied dimension into the elements of the map
-              that would otherwise be interpreted only for the geographical
-              information that they convey (324).
+            The relational basis of Indigenous mapmaking is most directly expressed in how such maps express temporal rather than spatial points of view.<InlineFootnote index={32} />   We see this foregrounding of a temporal perspective emerge in Shanawdithit's decision to depict a series of events, which transpired over decades, in the single place of Beothuk Lake. In Cormack's difficulty in determining what it was, precisely, that Shanawdithit had pictured on the page, we can also perceive its divergence from the spatial perspective that was (and remains) characteristic of colonial maps. Cormack crosses out one of his earlier incorrect labels, “The Taking of Mary March,” which he had first positioned on the south side of the lake, and rewrites in a more accurate location on the north side.<InlineFootnote index={33} />   He also adds in a clarifying note at the top left of the map, just below the reference number he has provided: “2 different Scenes & times.” The note is underlined for emphasis. It appears that Cormack himself requires this note in order to remind himself of what was depicted, even as the link between the two scenes was (presumably) self-evident in Shanawdithit's mind. 
             </p>
             <p>
-              [[ CUT??? Extending Sparke's reading, Fiona Polack finds in the
-              footpaths a direct challenge to the colonizing function of Western
-              cartography—and in particular, to colonial maps made of the North
-              American continent. Whereas those maps enforce "the myth of terra
-              nullius" by plotting only geographic features, such as mountains
-              or rivers, Shanawdithit's decision to also include human-made
-              footpaths provides evidence of "repeated Indigenous journeys
-              across [the] territory" (2013). In this way, Shanawdithit's maps
-              make it impossible for their viewers to conceive of the land
-              without the people—her people—who had first inhabited it. ]] But
-              of course, Shanawdithit was not simply drawing her people; she was
-              also drawing herself. The documents that attempt to preserve
-              Shanawdithit's knowledge for the page, including narratives by
-              both Cormack and John Peyton Jr., make repeated mention of how
-              Shanawdithit "was present" during each of the encounters with the
-              British. It follows, then, that Shanawdithit was herself
-              represented by one of the thirty-seven tick marks on the south
-              side of the lake, and again on the north side as one of the
-              figures in red that sought shelter in the woods. She may have been
-              recording "information" about her people, to return to Cormack's
-              words, but she was also recording her own story—one that included
-              certain triumphs, but was ultimately shaded by trauma and loss.
-              One further detail underscores this point. The art historian
-              Nicholas Chare, who has written on Shanawdithit's maps through the
-              lens of trauma studies, locates in a note written by Cormack the
-              otherwise unremarked upon fact that Shanawdithit "received two
-              gunshot wounds at two different times, from shots fired at the
-              band she was with by the English people at Exploits," and that
-              "one wound was that [of] a slug or buck shot thro[ugh] the palm of
-              her hand" (294). While it is unknown which hand Shanawdithit
-              employed to draw her sketches, "it may well have been the hand she
-              sketched with," Chare suggests. Regardless, the wound serves as a
-              physical reminder of how the colonial violence that led to the
-              capture of Shanawdithit—and, ultimately, the destruction of her
-              culture and kin—was the very same that led to the creation of her
-              maps. [IMAGE OF EARLY BIRCH BARK MAP AND/OR SARAH SENSE
-              REENAGEMENT ]
+            Another indicator of how Shanawdithit understood her map as only one piece of a larger system can be seen her decision to include human figures on her map. This exemplifies what Pearce characterizes as an emphasis on place as it is experienced, “as opposed to the Western convention of depicting space as universal, homogenized, and devoid of human experience.”<InlineFootnote index={34} />   This is what geographer Laura Harjo (Mvskoke) has theorized with respect to Mvskoke conceptions of space as a “kin-space-time lens,” which she similarly contrasts with “Cartesian mapping.”<InlineFootnote index={35} />   In his analysis of Shanawdithit's maps, geographer Matthew Sparke observes something similar, noting how even the symbolic components of the map, such as the paths across the lake, push back against Western orthodoxies of space and scale. By depicting “the uneven possibilities of travel by foot across uneven landscape,” he suggests, Shanawdithit incorporates an embodied dimension into the elements of the map that would otherwise be interpreted only for the geographical information that they convey.<InlineFootnote index={36} />   More pointedly, as Fiona Polack observes, Shanawdithit's maps make it impossible for their viewers to conceive of the land without the people—the Beothuk—who had first inhabited it.<InlineFootnote index={37} />  
             </p>
-          </Column>
-          <Column shouldPin>
-            <FigureObj
-              figure={figures["placeholder-sarah sense BirchBark 400px"]}
-            />
-            <FigureObj figure={figures["birch-bark-1841"]} />
-          </Column>
-        </TwoColumnLayout>
+            <p>
+            Before moving forward, there are several additional features of the map that are important to underscore. First, it is incredibly accurate; Howley is among several settlers who comment on the maps' “extraordinary minuteness of topographical detail.”<InlineFootnote index={38} />    Second, Shanawdithit was not simply drawing her land and her people; she was actually drawing herself. Shanawdithit appears on the map in multiple places and in multiple forms: as one of the thirty-seven tick marks on the south side of the lake, and again on the north side as one of the figures in red that sought shelter in the woods. While she may have been recording “information” about her people for Cormack, to return to his words, she was also testifying to the events of her own life. It follows, then, that there is also an interpretation of the map as evidence of Shanawdithit's “survivance,” to enlist a term coined by Chippewa scholar Gerald Vizenor, which he intends to emphasize how, in the continued unfolding of colonial violence, survival constitutes an act of resistance in and of itself. 
+            </p>
+            <p>
+            With that said, the violence that surrounds the creation of the map—the same violence that it records—ensures that it can never be upheld as an example of triumph alone. For even if it epitomizes a “kin-space-time lens,” it also vivifies the violence that is the reason it was even set to the page.<InlineFootnote index={39} />   An additional biographical detail underscores this point. The art historian Nicholas Chare, who has written on Shanawdithit's maps through the lens of trauma studies, locates in a note written by Cormack the otherwise unremarked upon fact that Shanawdithit “received two gunshot wounds at two different times, from shots fired at the band she was with by the English people at Exploits,” and that “one wound was that [of] a slug or buck shot thro[ugh] the palm of her hand.”<InlineFootnote index={40} />   While it is unknown which hand Shanawdithit employed to draw her sketches, “it may well have been the hand she sketched with,” Chare suggests. <InlineFootnote index={41} />  Regardless, the wound and the scar it left on her skin—one which Cormack reports that he saw—serves as a visceral reminder of how Shanawdithit's maps were a direct output of colonial violence, the very same that led to the destruction of her culture and the death of her Beothuk kin.  
+              </p>          
+           
+           
+        </CenteredLayout>
+
         <ChapterSectionTitle section={sections[2]} />
 
         <CenteredLayout>
           <p>
-            By excavating the layers of colonial violence that surround
-            Shanawdithit's creation of her map, we are further guided by the
-            approach of literary scholar Mishuana Goeman (Seneca), who
-            emphasizes the importance of "examining the theoretical dimensions
-            of power" so as to resist the "utopian" yet ultimately impossible
-            goal of recovery (4). No magnitude of desire or strength of effort,
-            as Goeman explains, can gain us access to "an original and pure
-            point in history," nor can we ever fully account for colonialism's
-            ongoing effects (4). The most generative form of knowledge we might
-            pursue, Goeman suggests, and which this chapter sets as its goal, is
-            an understanding of "the relationships set forth during colonialism
-            that continue to mark us today" (4).
+          By excavating the layers of knowledge extraction, and outright violence, that surround Shanawdithit's creation of her map, we are further guided by the approach of literary scholar Mishuana Goeman (Seneca), who emphasizes the importance of “examining the theoretical dimensions of power” so as to resist the “utopian” yet ultimately impossible goal of recovery.<InlineFootnote index={42} />    No magnitude of desire or strength of effort, as Goeman explains, can gain us access to “an original and pure point in history,” nor can we ever fully account for colonialism's ongoing effects.<InlineFootnote index={43} />    The most generative form of knowledge we might pursue, Goeman suggests, and which this chapter sets as its goal, is an understanding of “the relationships set forth during colonialism that continue to mark us today.”  <InlineFootnote index={44} />  
           </p>
           <p>
-            Goeman's point of departure, like ours, is the map because of how
-            closely maps and mapping are tied to the production of colonial
-            power. Maps can literally create nations and dismantle others— a
-            lesson that most Indigenous inhabitants of Turtle Island had learned
-            well before the encounter between the Beothuk and Peyton and his
-            men. Consider the example of the so-called "Walking Purchase," which
-            dates to 1737, nearly a century before Shanawdithit set her maps to
-            paper, when the Lenape leader Teedyuscung agreed to sell a parcel of
-            land to the Penn family (of the then-colony of Pennsylvania) that
-            was bounded by the distance that a man could walk in a day and a
-            half. After the treaty was signed, the Penns' agent cleared a trail
-            through the land and hired three of the fastest runners he knew to
-            run along it, resulting in the Lenape ceding a swath of land twice
-            as long as was initially envisioned. In response to the "fraud," as
-            Teedyuscung himself called it in his report to colonial officials,
-            he subsequently "insisted on drawing his own map to delineate [the
-            Lenape] territory and solidify their rights," as Lisa Brooks
-            (Abenaki) explains.
-            <InlineFootnote index={27} />
+          Goeman's point of departure, like ours, is the map, because of how closely maps and mapping are tied to the production of colonial power. Maps can literally create nations and dismantle others—a lesson that most Indigenous inhabitants of Turtle Island had learned well before the encounter between the Beothuk and Peyton and his men. Consider the example of the so-called “Walking Purchase,” which dates to 1737, nearly a century before Shanawdithit set her maps to paper, when the Lenape leader Teedyuscung agreed to sell a parcel of land to the Penn family (of the then-colony of Pennsylvania) that was bounded by the distance that a man could walk in a day and a half. After the treaty was signed, the Penns' agent cleared a trail through the land and hired three of the fastest runners he knew to run along it, resulting in the Lenape ceding a swath of land twice as long as was initially envisioned. In response to the “fraud”—Teedyuscung's own characterization in his report to colonial officials—he subsequently, according to Lisa Brooks (Abenaki), “insisted on drawing his own map to delineate [the Lenape] territory and solidify their rights.”  
+            <InlineFootnote index={45} />
           </p>
           <p>
-            Or, consider the end result of a seemingly innocuous encounter
-            between Ac ko mok ki, a Siksika leader, and a surveyor for the
-            Hudson Bay Company named Peter Fidler, which took place at an
-            outpost at the juncture of RIVER and RIVER, just east of what is now
-            known as Alberta. At the time, however, the outpost represented the
-            frontier of colonial knowledge as well as settlement. When asked by
-            Fidler about what lay further north and west, Ac ko mok ki traced in
-            the snow— from memory—a map of more than 200,000 square miles of the
-            continent, narrating the features of the map as he drew. Fidler then
-            copied the map onto paper "reduced ¼ from the original," annotated
-            it with the information he'd heard Ac ko mok ki speak aloud, and
-            then sent the map back to the headquarters of the Hudson Bay Company
-            in London. Ac ko mok ki's knowledge was then incorporated into the
-            map of the continent that the Hudson Bay Company had been preparing,
-            and which three years later would be used by Lewis and Clark to
-            determine the route for their nation-marking mission.
-            <InlineFootnote index={28} />
-          </p>
+          Or, consider the end result of a seemingly innocuous encounter between Ac ko mok ki, a Siksika leader, and a surveyor for the Hudson Bay Company named Peter Fidler, which took place at an outpost just east of what is more commonly known today as Alberta. At the time, however, the outpost represented the frontier of colonial knowledge as well as settlement. When asked by Fidler about what lay further north and west, Ac ko mok ki traced in the snow—from memory—a map of more than 200,000 square miles of the continent, narrating the features of the map as he drew. Fidler then copied the map onto paper “reduced ¼ from the original,” annotated it with the information he'd heard Ac ko mok ki speak aloud, and then sent the map back to the headquarters of the Hudson Bay Company in London.<InlineFootnote index={46} />  Ac ko mok ki's knowledge was then incorporated into the map of the continent that the Hudson Bay Company had been preparing, and which three years later would be used by Meriwether Lewis and William Clark to determine the route for their expedition to the west coast. <InlineFootnote index={47} /> Their mission is widely recognized as authorizing the United States' future claims to the full width of the continent, and establishing the foundation for the idea of “manifest destiny” that would guide US territorial expansion into the next century and beyond. 
+                    </p>
         </CenteredLayout>
         <CenteredLayout>
           <FigureObj figure={figures["fidler-large-HBCA-E3-2-225"]} />
@@ -565,47 +453,19 @@ export default function ShanawdithitPage() {
         <TwoColumnLayout>
           <Column>
             <p>
-              For the Indigenous knowledge that they consistently capture, and
-              the dispossession continually they leave in their wake, maps like
-              the Hudson Bay Company's might be understood as weapons -— weapons
-              of map destruction, to adapt a phrase from Cathy O'Neil—producing
-              colonial nations just as effectively as they reproduce the power
-              on which colonialism depends.
-              <InlineFootnote index={29} />
+            For the Indigenous knowledge that they consistently capture, and the dispossession they continually leave in their wake, maps like the Hudson Bay Company's might be understood as weapons—weapons of map destruction, to adapt a phrase from Cathy O'Neil. For they become tools to dismantle Indigenous sovereignty just as effectively as they consolidate the knowledge on which colonial power depends.  
+              <InlineFootnote index={48} />
             </p>
             <p>
-              Colonial maps do not only define the borders of new nations; they
-              also define the stories those nations require to grow. At the very
-              same time that Shanawdithit was committing the story of her people
-              to paper, for example, a settler woman by the name of Emma Hart
-              Willard was mapping a new narrative for the United States. The
-              Connecticut-born Willard, an educator and activist, designed her
-              maps to accompany her US history textbook,{" "}
-              <cite>History of the United States</cite>, or The
-              <cite>Republic of America</cite>, which was published in 1828.
-              Whereas Shanawditith, at that time, was documenting the
-              near-complete destruction of the her world, Willard was
-              scaffolding a story of American national emergence.
+            These maps do not only record features of the landscape; they also serve as the source of stories that nations require to continue to grow. At the very same time that Shanawdithit was committing the story of the destruction of her people to paper, for example, a settler woman by the name of Emma Hart Willard was mapping a new narrative for the young United States. The Connecticut-born Willard, an educator and activist, designed her maps to accompany her US history textbook, {" "}
+              <cite>History of the United States, or The Republic of America</cite>, which was first published in 1828—the year that Shanawdithit began her captivity—and would go on to be reprinted every year until the 1860s, when the US Civil War would require wholesale revision to the nation's origin story, as the next chapter explores. 
             </p>
             <p>
-              From the <HoverText hoverState="Willard1">"First Map"</HoverText>{" "}
-              of 1578, which depicts the routes taken by European
-              explorers—including John Cabot to Newfoundland, where he likely
-              encountered the Beothuk—to the{" "}
-              <HoverText hoverState="Willard2">"Second Map"</HoverText> of 1620,
-              which depicts the colony of Virginia along with an inset
-              documenting the Pilgrims' landing at Plymouth Rock, and on to the
-              final <HoverText hoverState="Willard9">"Ninth Map"</HoverText> of
-              1826, which are told represents the present day, Willard presents
-              a "cumulative statement of nationhood," as historian Susan
-              Schulten (settler) describes it, one which enlists the
-              knowledge-producing power of the map in the service of a national
-              origin story.
-              <InlineFootnote index={30} /> This story, as Willard herself
-              explained in the preface to her book, would connect otherwise
-              isolated events in history "by some common tie," and as a result,
-              "contribute much… to the growth of wholesome national feeling."
-              <InlineFootnote index={31} />
+              From Willard's <HoverText hoverState="Willard1">"First Map or Map of 1578"</HoverText>{" "}, which depicts the routes taken by European explorers—including John Cabot to Newfoundland—to the {" "}
+              <HoverText hoverState="Willard2">"Second Map or Map of 1620</HoverText>,
+              which depicts the colony of Virginia (along with an inset documenting the Pilgrims' landing at Plymouth Rock), and onto the final <HoverText hoverState="Willard9">"Ninth Map or Map of
+              1826"</HoverText>, which depicts the then-present day, Willard presents a “cumulative statement of nationhood,” as historian Susan Schulten explains, one which enlists the consolidating power of the map in the service of a story of America's national emergence. <InlineFootnote index={49} />  As Willard herself explains, her maps connect otherwise isolated historical “facts” in history and as a result, “contribute[s] much… to the growth of wholesome national feeling.”
+              <InlineFootnote index={50} />
             </p>
           </Column>
           <Column shouldPin>
@@ -617,20 +477,7 @@ export default function ShanawdithitPage() {
 
         <CenteredLayout>
           <p>
-            One part of this "wholesome national feeling" was the new narrative
-            that the maps provided about the emergence of the United States,
-            which we will return to in Chapter 3. But this national feeling was
-            premised on the removal of any Indigenous nations that might
-            complicate its upward growth. In this context, it is notable that
-            the only map to reference Indigenous people or nations is the
-            textbook's "Introductory Map," which is subtitled "Locations and
-            Wanderings of the Aboriginal Tribes." On this map, Willard places
-            labels in the approximate locations of each Indigenous nation or
-            tribe that she knew. She also circles each of the tribe's names,
-            with the size of the circle indicating its "size and relative
-            influence." The color of the circles and the lines connecting them
-            indicate affiliation or "migration," in Willard's terms, although it
-            is more accurately described as displacement.
+          This “wholesome national feeling” for the United States was premised on the removal of any existing Indigenous nations, however—from its own national origin story as from the land itself. This removal was required to remove any competing claims to its narrative of divinely ordained flourishing and growth. In this context, it is notable that the only map in the textbook that references Indigenous people or nations is the “Introductory Map,” which is subtitled “Locations and Wanderings of the Aboriginal Tribes.” On this map, Willard places labels in the approximate locations of each Indigenous nation or tribe that she knew. She also circles each of the tribe's names, with the size of the circle indicating its “size and relative influence.” The color of the circles and the lines connecting them indicate affiliation and “migration,” in Willard's terms, although a more accurate word would be displacement. 
           </p>
         </CenteredLayout>
 
@@ -638,294 +485,77 @@ export default function ShanawdithitPage() {
 
         <CenteredLayout>
           <p>
-            The perspective inhabited by the map is peculiar. On the one hand,
-            Willard chooses to label certain waterways with names that seem
-            chosen to convey an Indigenous worldview. Instead of the Atlantic
-            Ocean, for example—the label that appears on subsequent maps—that
-            body of water is here labeled "Salt water Lake or Great Water." Yet
-            her choice to present this map as an "Introductory Map," rather than
-            incorporate Indigenous nations into a more complete (if not more
-            "wholesome") story of the United States, as Schulten convincingly
-            argues, "reinforced the contemporary assumption that Native
-            Americans existed in a timeless space prior to human history" (25).
-            Nations such as the Beothuk are not granted a place in the future of
-            North America; only its past.
+          The perspective inhabited by the “Introductory Map” is somewhat contradictory. Willard makes the clear choice to label certain geographic features with names intended to evoke an Indigenous worldview, as evidenced by how the same features are labeled differently on all subsequent maps. Instead of the Atlantic Ocean, for example, the body of water is here labeled “Salt water Lake or Great Water,” which she explains in the accompanying chapter of the textbook are two names given to it by the Delaware at various times. <InlineFootnote index={51} />   
           </p>
           <p>
-            In addition to how they provide evidence of how mapmaking functioned
-            as a means of producing colonial knowledge, Willard's maps are also
-            instructive for how they more closely connect the maps in this
-            chapter to the project of data visualization. While this
-            relationship is a complicated one, and often contested, it is
-            generally agreed upon that certain maps, which translate data into
-            image, can be considered under the rubric of data visualization. For
-            Willard, the decision to translate data into image was
-            pedagogical—indeed, epistemological—choice. She consistently railed
-            against numbers alone for being "hard to acquire, difficult to
-            remember, and, standing by themselves, of little value when
-            remembered," as she wrote with respect to her "Temple of Time,"
-            discussed later in this project.33 As an alternative pedagogical
-            strategy, Willard seized upon the model of the "tableau physique,"
-            as popularized by the German naturalist and explorer Alexander von
-            Humboldt (with A.G. Bonpland), as an example of how to "stimulate
-            memory by visualizing information."
-            <InlineFootnote index={33} />
+          Yet Willard also chooses to present this map as “introductory,” rather than accord it the position of “First Map.” This she reserves for the map depicting the voyages of the European explorers, as previously discussed. More pointedly, Willard also fails to incorporate any of the Indigenous nations she marks here into the rest of the story she tells about the emergence of the United States. This choice “reinforced the [then] contemporary assumption that Native Americans existed in a timeless space prior to human history,” Schulten explains. <InlineFootnote index={52} />    Nations such as the Beothuk are not granted a place in the future of North America, only its past. 
           </p>
+          <p>
+            This view is confirmed in when considering Willard's map as an example of the “thematic map” genre. Such maps can be analyzed in terms of the layers of data that they visualize, and the designer's choices about how to order them.<InlineFootnote index={53} />     Because the data that is plotted as the bottom layer of the map is presumed to be stable and true--the “base data” over which new layers can be added, and through which new insight can emerge—it accords whatever dataset is placed at the bottom the status of incontrovertible fact, as historian and cartographer Bill Rankin has observed.<InlineFootnote index={54} />     In the case of “Locations and Wanderings of the Aboriginal Tribes,” Willard places the state borders of the not-yet-actually-extant United States in the background of the map, presenting them as the literal ground truth on which Native peoples are only temporarily superimposed. 
+            </p>
+          <p>
+            With our eyes attuned to the layers of Willard's map and the claims implied by each, it is worth returning to Shanawdithit's maps once more in order to consider the parallel claims implied by its "kin-space-time lens,” to return to Harjo's phrase. In rejecting the distinction between foreground and background, and by presenting people, place, and time in a single visual plane, Shanawdithit insists on her cultural as well as geographic authority. By contrast to Willard, who strategically deploys temporal data in order to impose her own story onto the land, Shanawdithit employs time to unify the many stories that connect people to the land, across past, present, and future.  Viewing her map from a settler perspective, and at more than two centuries removed, we—the authors of this chapter--cannot know the exact stories that order those relations.<InlineFootnote index={55} />    But we can recognize the additional stories that order the relations between the map and ourselves today. These are signaled by Cormack's annotations, and point to the relations between colonizer and colonized, and between knowledge and knower. These are not “good relations,” but they are necessary to acknowledge and to understand, because these relations—to recall the words of Mishauna Goeman that began this section—are those that “continue to mark us today.” 
+            </p>
+  
+            <ChapterSectionTitle section={sections[3]} />
 
-          <FigureObj
-            imageClassName="mx-auto"
-            figure={figures["placeholder-humboldt-sketch"]}
-          />
-          <FigureObj
-            imageClassName="mx-auto"
-            figure={figures["Geographie_der_Pflanzen_in_den_Tropen-Ländern"]}
-          />
-          <FigureObj
-            imageClassName="mx-auto"
-            figure={figures["placeholder-phelps"]}
-          />
-          <p>
-            Whether this information had to do with species of plants that grew
-            at specific altitudes, as in the Humboldt visualization reproduced
-            in the botany textbook created by Willard's sister, Almira Hart
-            Lincoln Phelps, who lived with Willard at the time; or the dates of
-            key developments in the development of Western empire, which Willard
-            would go on to visualize in the style of Humboldt and his Colombian
-            antecedent, Francisco José de Caldas, several years after the
-            publication of her textbook, in 1836, Willard believed that "facts"
-            (as she termed them) would be better recalled if connected,
-            visually, "by some common tie" (Willard, "History," vii). Here
-            Willard anticipates the function of visualization that is
-            consistently extolled by today's visualization researchers as
-            enhancing our ability to detect otherwise imperceptible patterns in
-            our data.
-          </p>
-          <p>[ IMAGE OF CALDAS VIS, WILLARD PICTURE OF NATIONS ] </p>
+            <CenteredLayout>
+              <p>
+                About a decade after Shanawdithit set her maps to paper, just over a thousand miles to the west, two men, likely Ojibwe, stood atop a ridge between Lake Huron and the Ottawa River. They were a day ahead of the rest of their group, and wanted to inform those behind them of the progress of their trip thus far, and their future route. One or both of the men etched a kikaigon, or directional map, into a piece of birch bark and attached it to a tree. The map depicts their path across Lake Huron, including the location of the campsite where they had spent the night, as well as the canoe they were using to travel. Two vertical lines drawn inside the canoe, each attached to an oar, represent the men themselves. The map suggests that they planned to continue up the Ottawa River, perhaps all the way to Montreal, another 400 miles away.<InlineFootnote index={56} />   
+            </p>
+            </CenteredLayout>
 
-          <FigureObj
-            imageClassName="mx-auto"
-            figure={figures["placeholder-caldas-1803-2"]}
-          />
-          <FigureObj
-            imageClassName="mx-auto"
-            figure={figures["placeholder-caldas-1803-1"]}
-          />
-          <FigureObj
-            imageClassName="mx-auto"
-            figure={figures["Willard-picture"]}
-          />
+            <FigureObj figure={figures["birch-bark-1841"]} />
 
-          <p>
-            While the images above are perhaps more legible as data
-            visualization than Willard's maps, it is worth considering the maps
-            for the patterns and other analytical components that they do
-            contain. In this regard, Bill Rankin's conceptualization of the
-            "analytical map" is helpful, as it helps to distill the components
-            of the map that are intended to identify the patterns that prompt
-            insight, and those that are intended to be taken as the ground
-            truth.
-            <InlineFootnote index={34} /> In Rankin's formulation, the map is
-            divided into a foreground and a background, where the background is
-            the "'base data" that provides the geographic context for the map,
-            while in the foreground are plotted additional data sources that
-            serve as the analytical contribution of the map. As Rankin also
-            observes, the choice of which datasets are placed in the foreground
-            and which are placed in the background are just that—choices—and
-            those choices are both rhetorical and political. In the case of
-            "Locations and Wanderings of the Aboriginal Tribes," Willard places
-            US state borders in the background of the map, enhancing their
-            authority by presenting them as the literal ground truth on which
-            Native peoples, past and present, are superimposed.
-          </p>
-          <p>
-            With an awareness of the foreground/background divide and the
-            rhetorical significance of what information is placed where, it's
-            worth returning to Shanawdithit's maps once again in order to
-            contemplate an additional way in which they teach us about her
-            worldview and its distance from our own. More specifically,
-            Shanawdithit rejects the distinction between foreground and
-            background, presenting people and place in a single visual plane. In
-            doing so, she insists on her cultural as well as geographic
-            authority. Her worldview is one that insists upon the connection of
-            people to the land, and her map gives this relationality visual
-            form.
-            <InlineFootnote index={35} /> Viewing her map from a settler
-            perspective, and at more than two centuries removed, we cannot know
-            the exact stories that order these relations.37 But we can
-            recognize—and respect—the visual evidence of an ordering practice
-            outside of our own.
-          </p>
-          <p>
-            The Colonial Archive and the Lookout Tree Indigenous Data
-            Sovereignty, Indigenous Data Systems /// Shanawdithit's Maps as Data
-            System/// The Colonial Archive and the Lookout Tree THIS SECTION IS
-            ONE THAT POINTS TO LONG HISTORY OF INDIGEOUS DATA VISUALIZATION BUT
-            RESISTS GOING THERE; ISNTEAD VISUALIZES COLONIAL ARCHIVE, SOURCES,
-            ETC.
-          </p>
-          <p>
-            Like Willard, Shanawdithit also produced multiple maps, although
-            less is known about the intention—if any—behind their ordering. When
-            reproducing them for his volume, Howley places them in chronological
-            order (238), listing MENTION WHAT THE FIVE MAPS SHOW. but it is
-            unclear as to whether they were drawn in that order or conceived in
-            sequence. It is also worth noting that Shanawdithit accompanied her
-            five maps with drawings of other aspects of Beothuk cultural life.
-            With the sensitivity to colonial power that frames the maps, as
-            Goeman would likely advice, their sequence—like Willard's—enforces a
-            narrative of the extinction of the Beothuk people, as well as about
-            the role that data played in that process.
-          </p>
-          <p> [ FIVE MAPS, HOVER TO SELECT LIKE DU BOIS ] </p>
-          <p>
-            As PERSON observes, QUOTE ABOUT COLONIAL DATA / NUMBERS /
-            MEASUREMENT OF NATIVE PEOPLES. This knowledge-via-quantification is
-            no clearer than the so-called Sketch IV, which depicts a significant
-            swath of the Exploits River. Howley observes that it is drawn in
-            black pencil only "because I presume as no whitemen figured in this
-            one, there was no occasion to make a distinction by the use of the
-            black and red lines" (243). And while there might not have been
-            settlers pictured in Shanawdithit's rendering of the water and land,
-            there is a clear presence of "whitemen" in the form of Cormack's
-            annotations, which—also by Howelys' account, were "written all over
-            it" (243). These notes are largely numerical, representing Cormack's
-            attempt to enumerate the Beothuk population during the final years
-            of its existence as an independent nation. (Note about merging into
-            M'iqmaq, Innu). At the top of the page are two sets of enumerations
-            of the Beothuk population—the first in March 1823, indicated by an
-            "A," and the second in April 1823, indicated by a "C," between which
-            the population had diminished from 27 to 19. Corrmack provides
-            separate counts for men, women, children, and the dead, who are
-            summed together through arithmetic notation. At various places on
-            the map, Cormack transcribes what (presumably) Shanawdithit told him
-            about the people who inhabited the land pictured. These appear to be
-            written with ease. This stand in contrast to the large table of
-            population statistics at the center of the chart, which while
-            presented in clear tabulations in Howely's recreation, in the
-            original contains more scribblings and crossings-out than numbers.
-            Cormack clearly strained to arrive at precise population figures—his
-            intended goal and the ultimate arbiter of colonial knowledge about
-            the Beothuk—this in contrast to Shanawdithit's smooth lines that
-            document the landscape's physical geography.
-          </p>
-          <p> [ SCROLLYTELL LIKE ABOVE ]</p>
-        </CenteredLayout>
-        <TwoColumnLayout>
-          <Column shouldPin={true}>
-            <p className="first-paragraph">
-              This map vivifies the extractive statistical practices that have
-              motivated deep suspicion of colonial data by Indigenous peoples,
-              as well as the motivation for the development of Indigenous data
-              practices—and Indigenous research protocols more generally—that
-              can counter these extractive moves. Grouped together under the
-              concept of Indigenous Data Soverignty, proposals such as the CARE
-              principles for data sovereignty, or the ANOTHER EXAMPLE for
-              Indigenous cultural heritage, show how the principles and
-              practices of data collection, analysis, and—indeed,
-              visualization—can be reconsidered through an Indigenous lens. As
-              AUTHORS explain, "For Indigenous Peoples, the statistics and data
-              themselves per se, are not the problem. From a policy perspective,
-              the far more critical question is how are such numbers deployed
-              and what and whose purposes do they, and their attendant
-              narratives, serve" (2). As settler scholars without Beothuk
-              partners in this project, we cannot fully realize these principles
-              here. But we can keep them in mind as we continue to work towards
-              methods that acknowledge and account for the colonial frame. As a
-              first step we might reconsider the visualizations that structure
-              our work as only one component of a broader data system, one which
-              includes the people who created the data, the context, events, etc
-              etc. Here an example of another Indigenous data visualization
-              practice, the wampum belt, is instructive. Below is pictured the
-              famed two-row wampum created by the Haudenosaunee, [ IMAGE OF
-              TWO-ROW WAMPUM ]
+            <CenteredLayout>
+            <p> We do not know whether the other members of the group ever saw the map. We do know, however, that it was seen by one Captain Bainbrigge, of the Royal Engineers. We know this because Bainbrigge took the map off the tree and affixed it to a larger sheet of rag paper. Below the original, he drew his own copy of the map, replacing the vertical hash marks used to indicate the men's route with more constrained dotted lines, but keeping the icons used to indicate the camp, the canoe, and the men. He added in an indication of direction of the river and several other annotations, as well as a pejorative note. He then sent the map back to England, where it eventually arrived at the British Library. As a result, it has earned distinction as the oldest known example of a birch bark map to have been preserved.     <InlineFootnote index={57} />   
+            </p>
+
+            <p>
+            Yet Bainbrigge's preservation of the map flattens it profoundly—and not only in a literal sense. By removing it from the time, place, and people for whom its insights were intended, Bainbrigge removes much of its meaning. His annotations, even more than Cormack's, impose his own assessment of its value. And because the original map and Banbrigge's copy are literally on the same page, this assessment is impossible for contemporary viewers to ignore. Put another way, we can no longer employ the map to produce the full range of insights for which it was initially designed. Its primary insights, now, have to do with the inescapability of its colonial frame.           
             </p>
             <p>
-              Kaswenta is symbolized by a wampum belt crafted from the white
-              shells of the channelled whelk snail and the purple shells of the
-              qualog clam. Across the belt flow 9 rows of white shells that
-              represent the River of Life. There are 4 rows of purple shells
-              forming two separate horizontal lines in the center of the belt.
-              One purple row denotes the Haudenosaunee canoe, the other is the
-              European tall ship. The three white shells separating them shows
-              a respectful relationship based on peace, trust, and friendship -
-              all values inherent in Kayanerenkó:wa also known as The Great Law
-              of Peace.The strings flowing on each side of the belt show that
-              more beads can be added and, therefore, the relationship is
-              eternal. The two rows never intersect; they are parallel. This
-              denotes a separate-but-equal relationship that respects each
-              other's sovereignty. The Haudenosaunee never steer the Dutch ship,
-              and the Dutch never steer the Haudenosaunee canoe as they both
-              travel down the River of Life. Both parties respect each other's
-              autonomy and interdependence. Haudenosaunee consider the Kaswenta
-              as a valid and ongoing treaty. Some settlers refuse to acknowledge
-              this because of a single forged document. These settlers claim
-              that the Two Row Wampum is a modern construction used to satisfy
-              contemporary political needs but those ignorant, and racist,
-              claims misrepresent the actual data source. Wampum belts are not a
-              replacement for paper, they embody a different way of thinking
-              about data. These belts act as symbolic reminders and public
-              demonstrations of active and ongoing relationships. Haudenosaunee
-              use them as a guide to help narrate complex understandings of
-              sacred promises made between both parties involved and the
-              Creator. … Wampum belts are part of a complex data system that
-              records, stores, analyzes and shares information for as long as is
-              necessary. The belts themselves are just a part of the data
-              system, that's why the Canadian government failed to destroy
-              Haudenosaunee databases and explains why they are still such a
-              potent symbol of Indigenous sovereignty and an excellent example
-              of Indigenous Data Sovereignty in practice.  While labor
-              intensive, the belts can be remade and many remain as part of a
-              living treaty system still recognized hundreds of years after the
-              treaties were first made. This is because the belts are part of an
-              ongoing relationship between the treaty holders, the leaders
-              involved, the people they serve, and the Creator. They don't
-              depend on one way to store a record, they store it with multiple
-              knowledge holders as well as the community at large. These records
-              are refreshed by authorized leaders in diplomatic missions and
-              internal community decision making. They are visible reminders of
-              something that cannot be denied as long as the people remain --
-              Kelsey, Reading the Wampum Idea of Iriquois "visual code, a set of
-              mutually understood symbols and images that communicate
-              culturally-embedded ideas to the viewer" xii Angela Haas, "In
-              order to memorize the belt and its story, the trained individaul
-              would impress in the mind the visual representaiotn of the belt
-              and subsequently forge mnemonic associations between the visual
-              representation of the belt and the accompnayin story. Thus the
-              wampum "reader" or presenter can trace the nodes of information
-              and can link their associated inherited knowledge by tracing the
-              embedded stories "told" by wampum and sinew hypertext… xviii The
-              Two Row Wampum depicts the Hodiohso:ni' in a canoe and the Dutch
-              in a ship sailing down the river of life with each group retaining
-              their own language, culture, spirituality, and ways of being and
-              not forcing their beliefs on the other group. xi BROOKS, RELATION
-              B/T MAP AND WAMPUM Whiel awikhjoganak were often temporary,
-              characterized by their "portability," wampum symbolized
-              permanence. When an agreemtn, an alliance, or an event was put in
-              wampum, a transformation in Native space was solidified. 10
-              Awikhjoganak and wampum were facets of an indigenous writing
-              system that was based on ‘cartographic principles.' The graphic
-              symbols used in both forms represented the relatinoships between
-              people, between places, between humans and nonhumans, between the
-              waterways that joined them. The communal stories recored on
-              birchbark and in wampum would even connect people with relatinos
-              across time, bringing the past, present, and future into the same
-              space. 12 citing Malcolm Lewis MAP OF HAUDENOSAUNEE THAT LOOKS LIK
-              NEW YORK:
-              https://blogs.loc.gov/loc/2021/11/native-american-maps-and-ideas-that-shaped-the-nation/
+            But contemporary artist, Sarah Sense (Chitimacha/Choctaw), demonstrates how these current insights can be contested and further transformed. In her digital artwork, “Birch Bark,” she employs her own ancestral basket weaving techniques as a way to interrupt the unidirectional process of knowledge extraction that the Banbrigge map records. Her own process “re-Indigenizes” the map, as she explains in the accompanying artist's statement, redirecting some of the map's meaning-making force. <InlineFootnote index={58} />    Here, the “warp” of the image—what in basket-weaving practice is viewed as the more passive layer, since it serves as the basket's base—is a reproduction of the Banbrigge map. Woven through the map, in patterns derived from Sense's own Chitimacha and Choctaw heritage, is a photograph of the land. Considered as a thematic map, Sense's choice to make the land the more active “weft” controlling the pattern that is produced contests the authority of the map that serves as its base.
             </p>
-          </Column>
-          <Column shouldPin>[IMAGES HERE]</Column>
-        </TwoColumnLayout>
-        <ChapterSectionTitle section={sections[3]} />
-        <CenteredLayout>
-          <p>
-            What we learn from the map and the wampum is that TIME , LAND,
-            ARCHIVE ALL RELATED. How might we visualize the data system that
-            gave rise to Shanawdithit's maps and that has preserved them into
-            the present? Below is pictured a diagram of the people, places,
-            archives, sources, dates… [DO THIS VIS]
-          </p>
-        </CenteredLayout>
+            </CenteredLayout>
+
+            <FigureObj figure={figures["placeholder-sarah sense BirchBark 400px"]} />
+
+            <CenteredLayout>
+              <p>Our project team returned to Sense's image multiple times when considering how we might similarly infuse Shanawdithit's map with new meaning. But ultimately, we recalled the lessons of this chapter, reminding ourselves that Shanawdithit's map and the knowledge it records was not ours to further dissect. Our own knowledge is, after all, the knowledge recorded in the colonial archive. With this in mind, we turned away from the information inscribed in the map—information which we might otherwise convert into data and, for example, re-visualize on a more familiar map—and back towards the information in the archive that set the story that we tell here in motion. We asked ourselves how we might employ our perspective, and our skills, to contest the authority of the archive from within.  </p>
+              <p>One particular passage seemed to hold the key to this work. It is a lengthy footnote that appears in Peyton's narrative, which reads in its entirety:  
+              </p> 
+
+              <Quotation
+              quote={
+                <>
+                  “Mr. Peyton afterwards learned from the woman Shanawdithit, the full particulars of the manner in which his boat was stolen. She was present all the time and knew every incident connected with this event. As Mr. P. rightly conjectured, it appears the Indians were watching all his movements very closely. There was a high wooded ridge behind his house, which from its peculiar outline had been named Canoe Hill. It bore some resemblance to a canoe turned bottom up. One tall birch tree on the summit of this ridge, (still standing at the time of my first visit 1871), was pointed out by Shanawdithit as the lookout from whence the Indians observed Peyton's movements, during several days preceding the depredation. She also informed him, that when he paid his last visit of inspection to the long wharf before the taking of the boat, that the Indians were actually hidden in their canoe beneath the wharf, but kept so perfectly motionless, that in the dense darkness he did not observe their presence.” 
+                </>
+              }
+              byline="Howley 96"
+            ></Quotation>
+
+<p>Here in this footnote, perhaps even deliberately relegated to the bottom of the page, is the suggestion of a version of the events that contests the authority of Peyton's account. In this version, Shanawdithit serves as the authoritative source of knowledge, since she “was present all the time and knew every incident connected with this event.” Peyton, meanwhile, only learns “the full particulars” from Shanawdithit after that act. </p>
+
+<p>We might additionally consider how, in Peyton's account, his surveillance of the Beothuk in advance of his own attack structures his entire narrative.<InlineFootnote index={59}  />  Even as it contains details that stretch back decades, the narrative is titled “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of March 1819.” But here is evidence of an earlier phase of surveillance, one far more sustained, in which the Beothuk “observed Peyton's movements” for “several days preceding the depredation.” In the account suggested by the footnote, it is the Beothuk—and not the British—who are in control. </p>
+
+<p>The footnote also draws out a second theme. We have previously discussed how Shanawdithit's maps are mediated documents, inseparable from the colonial violence that produced them. But so too is Peyton's narrative. It was filtered not only through his eyes but through his memory, recorded late in his life, in 1871—nearly a half-century after the original events transpired—by none other than James Howley. It was then rewritten by Howley for the publication of his own book, {" "}<cite>The Beothucks or Red Indians</cite>{" "}, which was published by Cambridge University Press in 1915. Howley was likely the author of the footnote, and any additional edits he might have made to Peyton's version of the events—as he did to Shanawdithit's—will remain forever undisclosed. </p>
+
+<p>John Paul's account, which we last considered in our analysis of the events depicted in Shanawdithit's map, was also recorded in the twentieth century, by an American anthropologist named Frank Speck, who published it in his own book on the Beothuk and Mi'kmaq in 1922. Speck's book, interestingly, also contains a series of photographs, which he took during his own visit to Newfoundland in the summer of 1914. One of these photographs is of a lookout tree. </p>
+
+<FigureObj figure={figures["speck-lookout-tree"]} />
+
+<p>This lookout tree is not the same as the “tall birch tree” that Shanawdithit told Peyton about, as Speck labels it as being located at Red Indian Point. He also identifies it not as a birch but a “large white spruce,” as he describes in the textual account of his trip.<InlineFootnote index={60}  />  Speck provides a second photo of the view from the top of the tree, which he “climbed to experience the sensation of observing these wastes [sic] from the vantage point of the ancients.” <InlineFootnote index={61}  /> For Speck, the view from the lookout tree suggests a window in an unmediated past—a sense of what the Beothuk themselves might have seen. </p>
+
+<FigureObj figure={figures["speck-treetop"]} />
+
+<p>But what if we understood Speck's view from the lookout tree differently—in terms our distance from the past. Here, it is not the “vantage point of the ancients” that Speck hoped to document, but his own photograph that gives us meaning. Looking closely at the photo, we can see that the center of the image is clouded over, in contrast to the crispness of the ripples of the water that appear closer to the foreground of the image, in the lower right. This cloudiness, we contend, is this photo's greatest insight. In his photo, Speck indeed captures a view of the same lake that Shanawdithit saw, but he also captures the mediated nature of his own perspective. </p>
+
+<p>One hundred years after Speck's visit to the Beothuk's winter camp, where the attack by the British took place, we can now employ sophisticated visualization tools in addition to digital photography in order to prompt fresh insights about the past. But these insights are also limited by our distance from the original events—as they are by the colonial archive and the historical evidence that it contains. Rather than view the limitations of what we can render visible with data as the end of our knowledge, however, we must each expand our own personal frame. When we consider our relationships with our sources and the people who created them, as well as the knowledge that, through our own work, we seek to enable, we come to see our responsibilities to them as well. This is the clarity that Speck's clouded image ultimately leads towards—more intentional and ethical design choices, a more precise sense of what we can or should seek to know, and what we must leave to others to explore.  </p>
+
+            </CenteredLayout>
+
+
         <Takeaways
           forDesigners={[
             <span key="df782d45">
