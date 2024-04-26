@@ -13,45 +13,42 @@ const WIDTH = 713.52;
 const Ship = ({ figure }: Props) => {
   const { hideSensitiveState } = useContext(ChapterContext);
   return (
-    <figure className="my-8">
+    <figure>
       <svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="w-full">
-        <image
-          href="/images/description/1-sof_slaveship.jpg"
-          width={2973}
-          height={1213}
-          transform="scale(.24)"
-          x={0}
-          y={-0.45}
-        />
-        <g>
+        <filter id="blurShip">
+          <feGaussianBlur stdDeviation="5" />
+        </filter>
+        <g
+          className={`fill-brooksSecondary transition-all duration-1000 ${
+            hideSensitiveState ? "blur" : "blur-0"
+          }`}
+        >
           <path
             strokeWidth={0}
-            className={`fill-brooksSecondary transition-opacity duration-1000 opacity-${
+            className={`transition-opacity duration-1000 opacity-100`}
+            d={paths.outline}
+          />
+        </g>
+        <path
+          className={`duration-1000 transition-all fill-none origin-center stroke-offblack stroke-${
+            hideSensitiveState ? 0 : 1
+          }`}
+          d={paths.outline}
+        />
+        <foreignObject
+          width={WIDTH * 0.7}
+          x={WIDTH / 6}
+          y={HEIGHT / 3}
+          className="h-1/3"
+        >
+          <p
+            className={`font-neueMontreal transition-opacity duration-1000 opacity-${
               hideSensitiveState ? 100 : 0
             }`}
-            d={paths.outline}
-          />
-          <path
-            className={`duration-1000 transition-colors fill-none stroke-2 stroke-${
-              hideSensitiveState ? "offblack" : "none"
-            }`}
-            d={paths.outline}
-          />
-          <foreignObject
-            width={WIDTH * 0.7}
-            x={WIDTH / 6}
-            y={HEIGHT / 3}
-            className="h-1/3"
           >
-            <p
-              className={`font-neueMontreal transition-opacity duration-1000 opacity-${
-                hideSensitiveState ? 100 : 0
-              }`}
-            >
-              {figure.altText?.split(".")[0]}.
-            </p>
-          </foreignObject>
-        </g>
+            {figure.altText?.split(".")[0]}.
+          </p>
+        </foreignObject>
       </svg>
     </figure>
   );

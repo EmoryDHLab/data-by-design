@@ -57,6 +57,11 @@ const sections = [
 
 const visualizations: TVizAnchors[] = [
   {
+    type: "visualization",
+    id: "consent-explain",
+    title: "Consent explainer.",
+  },
+  {
     type: "scrollytell",
     id: "scrollytell1",
     title: "Scrollytell One",
@@ -158,12 +163,18 @@ export default function BrooksPage() {
 
           <Ship figure={figures["1-sof_slaveship"]} />
 
-          <div className="flex flex-col md:flex-row md:space-x-8 md:mb-8">
+          <div
+            id="consent-explain"
+            className="flex flex-col text-lg md:text-xl md:flex-row space-x-6 md:space-x-6 lg:space-x-4 md:mb-8"
+          >
             <div className="w-1/3 self-center text-center">
               <span
                 className={`inline-flex items-center justify-center border h-auto w-auto border-offblack rounded-full bg-brooksSecondary hover:bg-brooksPrimary`}
               >
-                <Toggle className="h-6 w-6 md:h-28 md:w-28" id="big-toggle" />
+                <Toggle
+                  className="h-6 w-6 md:h-28 md:w-28 p-2"
+                  id="big-toggle"
+                />
               </span>
             </div>
             <div className="font-dubois text-lg md:text-2xl">

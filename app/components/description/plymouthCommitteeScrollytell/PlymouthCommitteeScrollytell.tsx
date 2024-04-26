@@ -122,22 +122,17 @@ export default function PlymouthCommitteeScrollytell({
                   x={0}
                   y={-0.45}
                 />
-                {hideSensitiveState && (
-                  <g>
-                    <path
-                      className={`transition-all duration-1000 fill-${
-                        scrollProgress > 4.5
-                          ? "brooksSecondary"
-                          : "peabodyOrange"
-                      }`}
-                      fillOpacity={1.0}
-                      stroke="rgb(28 24 23)"
-                      strokeWidth={scrollProgress > 4.5 ? 3 : 0}
-                      d={paths.outline}
-                    />
-                    <Labels />
-                  </g>
-                )}
+                <g>
+                  <path
+                    className={`transition-all duration-1000 fill-${
+                      scrollProgress > 4.5 ? "brooksSecondary" : "peabodyOrange"
+                    } opacity-${hideSensitiveState ? 100 : 0}`}
+                    stroke="rgb(28 24 23)"
+                    strokeWidth={scrollProgress > 4.5 ? 3 : 0}
+                    d={paths.outline}
+                  />
+                  <Labels />
+                </g>
                 <g
                   className={`transition-all duration-1000 opacity-${
                     scrollProgress >= 4.5 ? 0 : 100
@@ -179,9 +174,8 @@ export default function PlymouthCommitteeScrollytell({
                   <path
                     className={`transition-all duration-1000 fill-${
                       hideSensitiveState ? "brooksSecondary" : "offblack"
-                    }`}
+                    } opacity-${fadeOpacity / 100}`}
                     strokeWidth={0}
-                    fillOpacity={fadeOpacity}
                     mask="url(#fade)"
                     d={paths.outline}
                   />
@@ -211,6 +205,7 @@ export default function PlymouthCommitteeScrollytell({
                   strokeOpacity={
                     scrollProgress < 0.25 || scrollProgress >= 4.5 ? 1.0 : 0.0
                   }
+                  strokeWidth={scrollProgress >= 4.5 ? 1 : 3}
                 />
               </svg>
               <figcaption></figcaption>
