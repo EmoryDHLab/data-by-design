@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import FigureModal from "../layout/FigureModal";
-import EyeClosed from "../icons/EyeClosed";
 import type { TFigure } from "~/types/figureType";
 
 type MaskType = {
@@ -39,19 +38,19 @@ const tourLocations: TourLocations = {
   },
   nonhumanCargo: {
     transform: "scale-[8] -translate-x-[216.8px] -translate-y-[228px]",
-    mask: { x: 0, y: 0, h: 69, w: 50 },
+    mask: { x: 0, y: 0, h: 70, w: 50 },
   },
   nakedPeople: {
     transform: "scale-[11] -translate-x-[304px] -translate-y-[236px]",
-    mask: { x: 0, y: 0, h: 69, w: 50 },
+    mask: { x: 0, y: 0, h: 70, w: 50 },
   },
   shackledMen: {
     transform: "scale-[11] -translate-x-[280px] -translate-y-[256px]",
-    mask: { x: 0, y: 0, h: 69, w: 50 },
+    mask: { x: 0, y: 0, h: 70, w: 50 },
   },
   nursingMother: {
     transform: "scale-[28] -translate-x-[784px] -translate-y-[312px]",
-    mask: { x: 0, y: 0, h: 69, w: 50 },
+    mask: { x: 0, y: 0, h: 70, w: 50 },
   },
 };
 
@@ -60,24 +59,31 @@ interface Props {
 }
 
 export default function SeraphiqueTour({ figure }: Props) {
-  const { hoverState, hideSensitiveState, accentColor, backgroundColor } =
-    useContext(ChapterContext);
+  const { hoverState, hideSensitiveState } = useContext(ChapterContext);
 
   return (
-    <FigureModal figure={figure} hide={hideSensitiveState}>
+    <FigureModal figure={figure}>
+      <p
+        className={`absolute z-10 overflow-hidden font-neueMontreal text-xl p-6 m-6 transition-opacity duration-1000 opacity-${
+          hideSensitiveState ? 100 : 0
+        }`}
+      >
+        {figure.altText?.split(".")[0]}. {figure.altText?.split(".")[1]}.
+      </p>
+
       <svg
         id={`fig-${figure.fileName}`}
-        viewBox="0 0 50 69"
+        viewBox="0 0 50 70"
         role="img"
         aria-describedby={`fig-label-${figure.fileName}`}
-        className={`drop-shadow-lg bg-${accentColor}`}
+        className={`drop-shadow-lg`}
       >
         <mask id="seraphique">
           <rect
             x={0}
             y={0}
             width={50}
-            height={69}
+            height={70}
             fill="white"
             fillOpacity={0.3}
           />
@@ -86,7 +92,7 @@ export default function SeraphiqueTour({ figure }: Props) {
             x={tourLocations[hoverState ?? ""]?.mask.x ?? 0}
             y={tourLocations[hoverState ?? ""]?.mask.y ?? 0}
             width={tourLocations[hoverState ?? ""]?.mask.w ?? 50}
-            height={tourLocations[hoverState ?? ""]?.mask.h ?? 69}
+            height={tourLocations[hoverState ?? ""]?.mask.h ?? 70}
             fill="white"
           />
         </mask>
@@ -96,33 +102,10 @@ export default function SeraphiqueTour({ figure }: Props) {
             role="presentation"
             href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
             width="100%"
-            className={`duration-[2s] transition-transform ${
+            className={`duration-[2s] transition-all ease-in-out ${
               tourLocations[hoverState ?? ""]?.transform ?? ""
-            }`}
+            } ${hideSensitiveState ? "blur-[2px]" : ""}`}
           />
-        </g>
-        <g>
-          {hideSensitiveState && (
-            <g>
-              <rect
-                x={0}
-                y={0}
-                height={69}
-                width={50}
-                fill="#D9D9D9"
-                strokeWidth={1}
-                className={`stroke-${backgroundColor} fill-${accentColor}`}
-              />
-              <EyeClosed
-                height={20}
-                // strokeOpacity={0.7}
-                y="33%"
-                // textAnchor="middle"
-                // dominantBaseline="middle"
-                className={`w-1 h-1 text-${backgroundColor}`}
-              />
-            </g>
-          )}
         </g>
       </svg>
       <figcaption className="font-dubois md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">

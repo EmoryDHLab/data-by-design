@@ -1,47 +1,17 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
-import ScrollytellWrapper from "../ScrollytellWrapper";
-import Areas from "./elford/Areas";
-import { paths } from "./elford/paths";
+import ScrollytellWrapper from "../../ScrollytellWrapper";
+import Areas from "./Areas";
+import { paths } from "./paths";
+import Labels from "./Labels";
+import type { ReactElement } from "react";
 
-const triggers = [
-  <span key="07226c6e">
-    Elford's "Plan" divides the ship's hold into six distinct areas.
-  </span>,
-  <span key="a400ea46">
-    The largest area, in the bow of the ship, and which occupies the entire
-    right half of the diagram, is labeled the "Men's room," and depicts 120 male
-    bodies in four rows of 30.
-  </span>,
-  <span key="e6184ce7">
-    In the middle is a narrow column labeled "Boy's room" and depicts smaller
-    male figures in six rows of 12.
-  </span>,
-  <span key="aebd268b">
-    To the left is the larger "Women's room," depicting figures the same size as
-    the men, but with breasts, in four rows of 21 figures representing 84 women
-    total.
-  </span>,
-  <span key="b1f566ad">
-    And at the stern, in the center, the "Girls room," the figures shorter and
-    squatter than the boys, arranged in three rows of ten. These "scaled
-    inequalities," as Hortense Spillers describes the layout, represented
-    COMPLETE.
-  </span>,
-  <span key="d90523c5">
-    Certain visual features help the plan achieve its impact. Most immediate is
-    how the 297 figures, what Marcus Wood describes as a "mass of black human
-    flesh," are set against the clean lines that indicate the bounds of the
-    ship. The labels of each area, engraved in neat script, underscore the
-    reduction in complexity that is intended by the diagram. Wood describes the
-    design of the Plan in terms of an "awful rigor," underscoring how the
-    "formality" of the figures "appears to deny [their] flesh and blood
-    presence." But for Elford, this abstraction was perhaps part of the point.
-  </span>,
-];
-
-export default function BrooksScrollytell() {
+export default function PlymouthCommitteeScrollytell({
+  triggers,
+}: {
+  triggers: ReactElement[];
+}) {
   const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [focusShapeSize, setFocusShapeSize] = useState<object>({
@@ -145,7 +115,7 @@ export default function BrooksScrollytell() {
                 className="w-full md:h-full mt-12 md:mt-0"
               >
                 <image
-                  href="/images/brooks/LSF_Volume-H_85_Plan_of_an_African_slave_ship.jpg"
+                  href="/images/brooks/1-sof_slaveship.jpg"
                   width="2973"
                   height="1213"
                   transform="scale(.24)"
@@ -165,13 +135,7 @@ export default function BrooksScrollytell() {
                       strokeWidth={scrollProgress > 4.5 ? 3 : 0}
                       d={paths.outline}
                     />
-                    {/* <EyeClosed
-                      // stroke="rgb(28 24 23)"
-                      // strokeOpacity={0.75}
-                      className="w-1 h-1 text-brooksPrimary"
-                      height={80}
-                      y="33%"
-                    /> */}
+                    <Labels />
                   </g>
                 )}
                 <g
@@ -242,9 +206,12 @@ export default function BrooksScrollytell() {
                     strokeOpacity={fadeOpacity}
                     d={fadeBorder}
                   />
-
-                  <Areas strokeOpacity={scrollProgress < 0.25 ? 1.0 : 0.0} />
                 </g>
+                <Areas
+                  strokeOpacity={
+                    scrollProgress < 0.25 || scrollProgress >= 4.5 ? 1.0 : 0.0
+                  }
+                />
               </svg>
               <figcaption></figcaption>
             </div>

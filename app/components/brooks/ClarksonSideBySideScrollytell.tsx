@@ -2,7 +2,6 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
-import EyeClosed from "../icons/EyeClosed";
 
 type TFocusShape = {
   x: number;
@@ -59,6 +58,9 @@ const height = 2534;
 
 function ClarksonSideBySideScrollytell() {
   const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
+  const [highlightSection, setHighlightSection] = useState<string | undefined>(
+    undefined
+  );
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [focusShapeSize, setFocusShapeSize] = useState<TFocusShape>({
     x: 0,
@@ -74,12 +76,11 @@ function ClarksonSideBySideScrollytell() {
   const minScrollProgress = 6.5;
 
   useEffect(() => {
-    if (hideSensitiveState) return;
-
     switch (true) {
       // Cross-sections
       case scrollProgress >= minScrollProgress &&
         scrollProgress < minScrollProgress + 1:
+        setHighlightSection("cross");
         setFocusShapeSize({ x: 0, y: 650, width, height: 800 });
         setZoom(1);
         setXOffset(0);
@@ -88,6 +89,7 @@ function ClarksonSideBySideScrollytell() {
       // Side Cross-section
       case scrollProgress >= minScrollProgress + 1 &&
         scrollProgress < minScrollProgress + 2:
+        setHighlightSection("side");
         setFocusShapeSize({ x: 0, y: 200, width, height: 600 });
         setZoom(1);
         setXOffset(0);
@@ -96,6 +98,7 @@ function ClarksonSideBySideScrollytell() {
       // Text
       case scrollProgress >= minScrollProgress + 2 &&
         scrollProgress < minScrollProgress + 3:
+        setHighlightSection("text");
         setFocusShapeSize({ x: 0, y: 1550, width, height: 950 });
         setZoom(1);
         setXOffset(0);
@@ -104,6 +107,7 @@ function ClarksonSideBySideScrollytell() {
       // Title
       case scrollProgress >= minScrollProgress + 3 &&
         scrollProgress < minScrollProgress + 4:
+        setHighlightSection("title");
         setFocusShapeSize({ x: 0, y: 10, width, height: 220 });
         setZoom(1);
         setXOffset(0);
@@ -112,6 +116,7 @@ function ClarksonSideBySideScrollytell() {
       // Tables
       case scrollProgress >= minScrollProgress + 4 &&
         scrollProgress < minScrollProgress + 5:
+        setHighlightSection("tables");
         setFocusShapeSize({ x: 0, y: 1550, width: 1000, height: 950 });
         setZoom(1);
         setXOffset(0);
@@ -120,6 +125,7 @@ function ClarksonSideBySideScrollytell() {
       // Table 1
       case scrollProgress >= minScrollProgress + 5 &&
         scrollProgress < minScrollProgress + 6:
+        setHighlightSection("table1");
         setFocusShapeSize({ x: 0, y: 50, width, height: 2200 });
         setZoom(4);
         setXOffset(-150);
@@ -128,19 +134,23 @@ function ClarksonSideBySideScrollytell() {
       // Table 2
       case scrollProgress >= minScrollProgress + 6 &&
         scrollProgress < minScrollProgress + 7:
+        setHighlightSection("table2");
         setFocusShapeSize({ x: 0, y: 840, width, height: 450 });
         setZoom(5.85);
         setXOffset(-1025);
         setYOffset(-12300);
         break;
+      // Table 3
       case scrollProgress >= minScrollProgress + 7 &&
         scrollProgress < minScrollProgress + 8:
+        setHighlightSection("table3");
         setFocusShapeSize({ x: 0, y: 400, width, height: 1000 });
         setZoom(4.9);
         setXOffset(-2875);
         setYOffset(-7550);
         break;
       default:
+        setHighlightSection(undefined);
         setFocusShapeSize({ x: 0, y: 0, width, height });
         setZoom(1);
         setXOffset(0);
@@ -169,8 +179,8 @@ function ClarksonSideBySideScrollytell() {
               <image
                 mask="url(#clarkson-mask"
                 href="/images/brooks/4-description-1789.jpg"
-                className={`transition-all origin-center duration-1000  opacity-${
-                  hideSensitiveState ? 0 : 100
+                className={`transition-all origin-center duration-1000  ${
+                  hideSensitiveState ? "blur-xl" : "blur-none"
                 }`}
                 width={width * zoom}
                 height={height * zoom}
@@ -178,22 +188,17 @@ function ClarksonSideBySideScrollytell() {
                 y={0 + yOffset}
               />
               <g
-                className={`transition-opacity origin-center duration-1000  opacity-${
+                className={`transition-aoo origin-center duration-1000  opacity-${
                   hideSensitiveState ? 100 : 0
                 }`}
               >
-                <rect
+                {/* <rect
                   width={width}
                   height={height}
-                  fill="#D9D9D9"
+                  fill="none"
                   strokeWidth={20}
-                  className="stroke-brooksPrimary fill-brooksSecondary"
-                ></rect>
-                <EyeClosed
-                  height={800}
-                  className="h-screen stroke-brooksPrimary text-5xl scale-150"
-                  y="33%"
-                />
+                  className="stroke-brooksPrimary fill-none"
+                ></rect> */}
               </g>
               <mask id="clarkson-mask">
                 <rect
@@ -215,10 +220,112 @@ function ClarksonSideBySideScrollytell() {
                 <rect
                   {...focusShapeSize}
                   fill="none"
-                  stroke="#8C20E1"
-                  strokeWidth={hideSensitiveState ? 0 : 20}
-                  className="transition-all duration-1000"
+                  strokeWidth={20}
+                  className="transition-all duration-1000 stroke-brooksPrimary"
                 />
+              </g>
+
+              <g
+                className={`transition-opacity duration-1000 opacity-${
+                  hideSensitiveState ? 100 : 0
+                }`}
+              >
+                <text
+                  x={"50%"}
+                  y={1050}
+                  textAnchor="middle"
+                  fontSize={80}
+                  className={`font-neueMontreal duration-1000 delay-500 transition-all opacity-${
+                    highlightSection === "cross" ? 100 : 0
+                  }`}
+                >
+                  Cross-sections of each deck.
+                </text>
+
+                <text
+                  x={"50%"}
+                  y={525}
+                  textAnchor="middle"
+                  fontSize={80}
+                  className={`font-neueMontreal duration-1000 delay-500 transition-all opacity-${
+                    highlightSection === "side" ? 100 : 0
+                  }`}
+                >
+                  Side views.
+                </text>
+
+                <text
+                  x={"50%"}
+                  y={2025}
+                  textAnchor="middle"
+                  fontSize={80}
+                  className={`font-neueMontreal duration-1000 delay-500 transition-all opacity-${
+                    highlightSection === "text" ? 100 : 0
+                  }`}
+                >
+                  Small typescript explanations.
+                </text>
+
+                <text
+                  x={"50%"}
+                  y={140}
+                  textAnchor="middle"
+                  fontSize={80}
+                  className={`font-neueMontreal duration-1000 delay-500 transition-all opacity-${
+                    highlightSection === "title" ? 100 : 0
+                  }`}
+                >
+                  Title: "Description of a Slave Ship".
+                </text>
+
+                <text
+                  x={500}
+                  y={2025}
+                  width={1000}
+                  textAnchor="middle"
+                  fontSize={80}
+                  className={`font-neueMontreal duration-1000 delay-500 transition-all opacity-${
+                    highlightSection === "tables" ? 100 : 0
+                  }`}
+                >
+                  Data tables.
+                </text>
+
+                <text
+                  x={"50%"}
+                  y={1050}
+                  textAnchor="middle"
+                  fontSize={80}
+                  className={`font-neueMontreal duration-1000 delay-500 transition-all opacity-${
+                    highlightSection === "table1" ? 100 : 0
+                  }`}
+                >
+                  Ship measurements.
+                </text>
+
+                <text
+                  x={"50%"}
+                  y={1050}
+                  textAnchor="middle"
+                  fontSize={80}
+                  className={`font-neueMontreal duration-1000 delay-500 transition-all opacity-${
+                    highlightSection === "table2" ? 100 : 0
+                  }`}
+                >
+                  Tabulation of captives held on the ship.
+                </text>
+
+                <text
+                  x={"50%"}
+                  y={800}
+                  textAnchor="middle"
+                  fontSize={80}
+                  className={`font-neueMontreal duration-1000 delay-500 transition-all opacity-${
+                    highlightSection === "table3" ? 100 : 0
+                  }`}
+                >
+                  Comparison of actual captives and those pictured.
+                </text>
               </g>
             </svg>
             <figcaption></figcaption>

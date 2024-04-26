@@ -10,7 +10,7 @@ import Footer from "~/components/Footer";
 import { brooksFootnotes } from "~/footnotes";
 import Quotation from "~/components/Quotation";
 import InlineFootnote from "~/components/InlineFootnote";
-import BrooksScrollytell from "~/components/brooks/BrooksScrollytell";
+import PlymouthCommitteeScrollytell from "~/components/brooks/plymouthCommitteeScrollytell/PlymouthCommitteeScrollytell";
 import FootnotesList from "~/components/FootnotesList";
 import SeraphiqueTour from "~/components/brooks/SeraphiqueTour";
 import HoverText from "~/components/HoverText";
@@ -22,12 +22,13 @@ import { ClientOnly } from "remix-utils";
 import VoyagesVis from "~/components/brooks/voyages/VoyagesVis.client";
 import { chapterMeta } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
+import VoyageScrollytell from "~/components/brooks/voyageScrollytell/VoyageScrollytell";
+import Takeaways from "~/components/layout/Takeaways";
+import Toggle from "~/components/consent/Toggle";
+
 import type { V2_MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
-import VoyageScrollytell from "~/components/brooks/voyageScrollytell/VoyageScrollytell";
-import ShipOutline from "~/components/brooks/elford/ship";
-import Takeaways from "~/components/layout/Takeaways";
-
+import Ship from "~/components/brooks/Ship";
 
 const chapterFigures = Object.values(figures);
 
@@ -170,9 +171,27 @@ export default function BrooksPage() {
             should ask to confirm the truth of what he saw.
             <InlineFootnote index={3} />
           </p>
-          <figure>
-            <ShipOutline />
-          </figure>
+
+          <Ship figure={figures["1-sof_slaveship"]} />
+
+          <div className="flex flex-col md:flex-row md:space-x-8 md:mb-8">
+            <div className="w-1/3 self-center text-center">
+              <span
+                className={`inline-flex items-center justify-center border h-auto w-auto border-offblack rounded-full bg-brooksSecondary hover:bg-brooksPrimary`}
+              >
+                <Toggle className="h-6 w-6 md:h-28 md:w-28" id="big-toggle" />
+              </span>
+            </div>
+            <div className="font-dubois text-lg md:text-2xl">
+              <p className="font-bold">
+                This chapter contains images of enslavement.
+              </p>
+              <p>
+                This button will show or hide sensitive images. It will remain
+                below throughout the chapter.
+              </p>
+            </div>
+          </div>
           <p>
             The diagram that Clarkson showed to Equiano depicted the
             configuration of captive bodies in the hold of a slave ship—a "scene
@@ -333,7 +352,44 @@ export default function BrooksPage() {
           </p>
         </CenteredLayout>
 
-        <BrooksScrollytell />
+        <PlymouthCommitteeScrollytell
+          triggers={[
+            <span key="07226c6e">
+              Elford's "Plan" divides the ship's hold into six distinct areas.
+            </span>,
+            <span key="a400ea46">
+              The largest area, in the bow of the ship, and which occupies the
+              entire right half of the diagram, is labeled the "Men's room," and
+              depicts 120 male bodies in four rows of 30.
+            </span>,
+            <span key="e6184ce7">
+              In the middle is a narrow column labeled "Boy's room" and depicts
+              smaller male figures in six rows of 12.
+            </span>,
+            <span key="aebd268b">
+              To the left is the larger "Women's room," depicting figures the
+              same size as the men, but with breasts, in four rows of 21 figures
+              representing 84 women total.
+            </span>,
+            <span key="b1f566ad">
+              And at the stern, in the center, the "Girls room," the figures
+              shorter and squatter than the boys, arranged in three rows of ten.
+              These "scaled inequalities," as Hortense Spillers describes the
+              layout, represented COMPLETE.
+            </span>,
+            <span key="d90523c5">
+              Certain visual features help the plan achieve its impact. Most
+              immediate is how the 297 figures, what Marcus Wood describes as a
+              "mass of black human flesh," are set against the clean lines that
+              indicate the bounds of the ship. The labels of each area, engraved
+              in neat script, underscore the reduction in complexity that is
+              intended by the diagram. Wood describes the design of the Plan in
+              terms of an "awful rigor," underscoring how the "formality" of the
+              figures "appears to deny [their] flesh and blood presence." But
+              for Elford, this abstraction was perhaps part of the point.
+            </span>,
+          ]}
+        />
 
         <TwoColumnLayout>
           <Column shouldPin={true}>

@@ -13,7 +13,6 @@ interface Props {
   alt?: string;
   className?: string;
   loading?: "eager" | "lazy";
-  hide?: boolean;
   children?: ReactNode;
 }
 
@@ -22,10 +21,10 @@ export default function FigureModal({
   src,
   figure,
   loading,
-  hide,
   className,
 }: Props) {
-  const { backgroundColor, accentColor } = useContext(ChapterContext);
+  const { backgroundColor, accentColor, hideSensitiveState } =
+    useContext(ChapterContext);
   const [open, setOpen] = useState(false);
   const [interactiveOptions, setInteractiveOptions] = useState<object>({});
   const figureRef = useRef<HTMLElement>(null);
@@ -34,7 +33,7 @@ export default function FigureModal({
     figureRef.current?.parentElement?.classList.contains("md:bias-1/2");
 
   useEffect(() => {
-    if (!hide) {
+    if (!hideSensitiveState) {
       setInteractiveOptions({
         onClick: () => setOpen((open) => !open),
         onKeyDown: ({ key }: { key: string }) => {
@@ -46,7 +45,7 @@ export default function FigureModal({
     } else {
       setInteractiveOptions({});
     }
-  }, [hide, figure, setOpen, setInteractiveOptions]);
+  }, [hideSensitiveState, figure, setOpen, setInteractiveOptions]);
 
   return (
     <figure

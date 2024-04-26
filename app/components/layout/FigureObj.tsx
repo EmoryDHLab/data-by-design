@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { EyeSlashIcon } from "@heroicons/react/24/outline";
+import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import FigureModal from "./FigureModal";
 import type { TFigure } from "~/types/figureType";
@@ -40,15 +39,7 @@ export default function FigureObj({
   imageClassName,
   id,
 }: Props) {
-  const { hideSensitiveState, accentColor, backgroundColor } =
-    useContext(ChapterContext);
-  const [hide, setHide] = useState<boolean>(
-    Boolean(hideSensitiveState && figure?.sensitive)
-  );
-
-  useEffect(() => {
-    setHide(Boolean(hideSensitiveState && figure?.sensitive));
-  }, [setHide, hideSensitiveState, figure]);
+  const { hideSensitiveState } = useContext(ChapterContext);
 
   if (figures) {
     return (
@@ -74,20 +65,18 @@ export default function FigureObj({
     );
   } else if (figure) {
     return (
-      <FigureModal figure={figure} hide={hide} className={className}>
-        <div
-          id={id ?? `fig-${figure.fileName}`}
-          className={`grid grid-cols-1 place-items-center border-${
-            hide ? "4" : "0"
-          } border-${backgroundColor} bg-${accentColor}`}
-        >
-          <EyeSlashIcon
-            className={`h-36 absolute my-auto mx-auto transition-[stroke-opacity] stroke-${backgroundColor}`}
-            strokeOpacity={hide ? 0.75 : 0}
-            role="presentation"
-          />
-        </div>
-        <Picture figure={figure} className={imageClassName} />
+      <FigureModal figure={figure} className={className}>
+        {hideSensitiveState && (
+          <div className="absolute p-6 z-10 text-xl font-neueMontreal">
+            {figure.altText?.split(".")[0]}. {figure.altText?.split(".")[1]}.
+          </div>
+        )}
+        <Picture
+          figure={figure}
+          className={`transition-all duration-1000 ${imageClassName} ${
+            hideSensitiveState ? "blur-md border-2 border-offblack" : ""
+          }`}
+        />
         <Caption figure={figure} className={captionClassName} />
       </FigureModal>
     );
