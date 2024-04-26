@@ -19,12 +19,7 @@ for (let i = 0; i < 10; i++) {
 function randomPaths(p5, scrollProgress) {
   p5.push();
 
-  if (scrollProgress >= 2.1) {
-    const fade = 255 - (scrollProgress - 2.1) * 500;
-    p5.stroke(0, 0, 0, fade);
-    p5.fill(0, 0, 0, fade);
-  }
-
+  p5.fill(0, 0, 0);
   p5.rotate(0);
   p5.circle(50, 250, 20);
   p5.circle(500, 250, 20);
@@ -91,12 +86,14 @@ export default function RandomPaths() {
     }
 
     if (scrollProgress < 1.5) {
+      p5Ref.current.push();
       p5Ref.current.strokeWeight(2);
       p5Ref.current.fill(0, 0, 0);
       p5Ref.current.circle(50, 250, 20);
       p5Ref.current.line(50, 250, 500, 250);
       p5Ref.current.fill(0, 0, 0);
       p5Ref.current.circle(500, 250, 20);
+      p5Ref.current.pop();
     } else if (scrollProgress < 2.6) {
       randomPaths(p5Ref.current, scrollProgress);
     }

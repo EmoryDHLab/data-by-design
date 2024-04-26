@@ -3,6 +3,7 @@ import { Fragment, useEffect, useRef } from "react";
 import { useResizeObserver } from "~/hooks";
 import PullQuote from "~/components/PullQuote";
 import ImageGrid from "~/components/intro/ImageGrid";
+import RandomImagesIntoGrid from "~/components/intro/RandomImagesIntoGrid";
 
 const IntroTriggers = [
   <p key={"2c8354f7"}></p>,
@@ -48,11 +49,11 @@ const IntroTriggers = [
       again, opening up an entirely new set of possible paths.
     </p>
   </p>,
-  <p key="217dc82d">
+  <p className="z-30" key="217dc82d">
     The images are randomly selected from the nearly two hundred charts, graphs,
     and other visualizations that are included in the project.
   </p>,
-  <ImageGrid />,
+  <RandomImagesIntoGrid />,
   <p key="a609783e">
     Some of the images go on to serve as centerpieces of the chapters in which
     they appear, their history and significance elaborated in extensive detail.

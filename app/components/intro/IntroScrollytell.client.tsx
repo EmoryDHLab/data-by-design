@@ -33,13 +33,21 @@ export default function IntroScrollytell() {
       >
         <div ref={steps} className="relative z-10 pointer-events-none">
           {IntroTriggers.map((trigger, index) => {
+            let height = "min-h-screen";
+            if (index == 0) {
+              height = "md:h-[60vh]";
+            }
+            if (index == 6) {
+              height = "";
+            }
+
             return (
               <div
                 key={trigger.key}
                 data-step={index}
                 className={classNames(
                   `step text-xl content-center py-5 px-0 md:px-20 text-${primaryTextColor}`,
-                  index == 0 ? "md:h-[60vh]" : "min-h-screen",
+                  height,
                   index == 4 || index == 7 ? "w-screen" : "w-[50vw]"
                 )}
               >
@@ -80,15 +88,11 @@ function LinearTimeline() {
     return <RandomOrTimelineRectangles />;
   }
 
-  if (scrollProgress > 5.5 && scrollProgress < 7) {
-    return <RandomImagesIntoGrid />;
+  if (scrollProgress > 6.05 && scrollProgress < 8) {
+    return <div />;
   }
 
-  if (scrollProgress > 7 && scrollProgress < 7.8) {
-    return <div></div>;
-  }
-
-  if (scrollProgress > 7.8 && scrollProgress < 10) {
+  if (scrollProgress > 7 && scrollProgress < 10) {
     return <FakePage />;
   }
 }
