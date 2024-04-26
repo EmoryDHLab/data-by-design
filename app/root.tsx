@@ -1,5 +1,5 @@
 // import { useEffect } from "react";
-import type { LinksFunction, V2_MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
 import {
   Links,
@@ -16,7 +16,7 @@ import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
 import { ClientOnly } from "remix-utils/client-only";
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [
     { charset: "utf-8" },
     { title: "Data By Design" },

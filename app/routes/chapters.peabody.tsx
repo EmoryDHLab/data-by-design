@@ -28,12 +28,11 @@ import ChapterBody from "~/components/layout/ChapterBody";
 import eventData from "~/data/peabody/eventData.json";
 import PeabodyActors from "~/components/peabody/PeabodyActors";
 import TutorialKey from "~/components/peabody/tutorial/TutorialKey";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
 
-
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return chapterMeta("peabody");
 };
 

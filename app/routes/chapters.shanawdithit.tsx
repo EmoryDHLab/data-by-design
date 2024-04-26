@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ChapterTitle from "~/components/ChapterTitle";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
-
+import Quotation from "~/components/Quotation";
 import Footer from "~/components/Footer";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
@@ -19,12 +19,11 @@ import InlineFootnote from "~/components/InlineFootnote";
 import WillardScrollytell from "~/components/shanawdithit/WillardScrollytell";
 import ChapterBody from "~/components/layout/ChapterBody";
 import FootnotesList from "~/components/FootnotesList";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
 
-
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return chapterMeta("shanawdithit");
 };
 
@@ -91,50 +90,204 @@ export default function ShanawdithitPage() {
       />
       <ChapterBody>
         <CenteredLayout>
-        <Quotation
+          <Quotation
             quote={
               <>
-                Maps can represent reality and can contest it. How can we learn to see the lines of power that they encode?
+                Maps can represent reality and can contest it. How can we learn
+                to see the lines of power that they encode?
               </>
             }
           />
           <p className="first-paragraph py-10">
-          One early morning in March 1819, at the first break of dawn, a small group of Beothuk—the indigenous inhabitants of the island now more commonly known as Newfoundland—were at their winter camp on the north side of Beothuk Lake, a long and narrow body of water at the island's center, when they were awakened by the sound of intruders. A group of British settlers had surrounded their camp. While the settlers' intentions were not yet known, the Beothuk had cause for alarm. Every previous encounter with the British had ended in destruction and death. This encounter would soon result in the same. 
+            One early morning in March 1819, at the first break of dawn, a small
+            group of Beothuk—the indigenous inhabitants of the island now more
+            commonly known as Newfoundland—were at their winter camp on the
+            north side of Beothuk Lake, a long and narrow body of water at the
+            island's center, when they were awakened by the sound of intruders.
+            A group of British settlers had surrounded their camp. While the
+            settlers' intentions were not yet known, the Beothuk had cause for
+            alarm. Every previous encounter with the British had ended in
+            destruction and death. This encounter would soon result in the same.
           </p>
           <p>
-          The Beothuk had been navigating their relationships with Europeans for centuries. Some speculate that the Icelandic Sagas' mention of “Skraelings” refers to ancestors of the Beothuk, which would date a first encounter to the eleventh century. <InlineFootnote index={0} /> A second phase of more sustained relation began shortly after the Italian explorer John Cabot's initial visit to the island, in 1497, and persisted for over two hundred years. During this time, “fishing crews from Spain, Portugal, France, and Britain would spend the summer months catching and processing cod before returning home for the winter,” as environmental humanities scholar Fiona Polack explains.<InlineFootnote index={1} /> These seasonal incursions granted the Beothuk “periods of unimpeded access to valuable materials, such as metal objects left in unattended fishing stations, and reduced the need for them to interact directly with the invaders.” <InlineFootnote index={2} /> Polack also documents how this arrangement—to which, of course, the Beothuk had no choice but to consent—began to strain as “increasing numbers of people from the British isles began to settle permanently on the island and compete directly with the Beothuk for resources.” <InlineFootnote index={3} /> It was this competition for resources, compounded over centuries, that in no small part led the British to Beothuk Lake that day.
+            The Beothuk had been navigating their relationships with Europeans
+            for centuries. Some speculate that the Icelandic Sagas' mention of
+            “Skraelings” refers to ancestors of the Beothuk, which would date a
+            first encounter to the eleventh century.{" "}
+            <InlineFootnote index={0} /> A second phase of more sustained
+            relation began shortly after the Italian explorer John Cabot's
+            initial visit to the island, in 1497, and persisted for over two
+            hundred years. During this time, “fishing crews from Spain,
+            Portugal, France, and Britain would spend the summer months catching
+            and processing cod before returning home for the winter,” as
+            environmental humanities scholar Fiona Polack explains.
+            <InlineFootnote index={1} /> These seasonal incursions granted the
+            Beothuk “periods of unimpeded access to valuable materials, such as
+            metal objects left in unattended fishing stations, and reduced the
+            need for them to interact directly with the invaders.”{" "}
+            <InlineFootnote index={2} /> Polack also documents how this
+            arrangement—to which, of course, the Beothuk had no choice but to
+            consent—began to strain as “increasing numbers of people from the
+            British isles began to settle permanently on the island and compete
+            directly with the Beothuk for resources.”{" "}
+            <InlineFootnote index={3} /> It was this competition for resources,
+            compounded over centuries, that in no small part led the British to
+            Beothuk Lake that day.
           </p>
           <p>
-          But there were other, more direct motivations: several months earlier, on September 18th, 1818, it was a group of Beothuk who had surprised the same British settlers as they were preparing for a trip to market. Hidden in a canoe under a wharf at Lower Sandy Point, in the Bay of Exploits—north and east of Beothuk Lake, where its waters met up with the sea—the Beothuk waited for the “dense darkness” of night and then absconded with a boat carrying the season's catch of salmon, and possibly some furs.<InlineFootnote index={4} /> This “theft and act of destruction” provided the rationale for John Peyton Jr., the owner of the boat, whose personal narrative serves as the source of the direct quotations here, to request formal authorization from the governor of colonial Newfoundland to “search for his stolen property and, if possible, try and capture one of the Indians alive.”<InlineFootnote index={5} /> 
+            But there were other, more direct motivations: several months
+            earlier, on September 18th, 1818, it was a group of Beothuk who had
+            surprised the same British settlers as they were preparing for a
+            trip to market. Hidden in a canoe under a wharf at Lower Sandy
+            Point, in the Bay of Exploits—north and east of Beothuk Lake, where
+            its waters met up with the sea—the Beothuk waited for the “dense
+            darkness” of night and then absconded with a boat carrying the
+            season's catch of salmon, and possibly some furs.
+            <InlineFootnote index={4} /> This “theft and act of destruction”
+            provided the rationale for John Peyton Jr., the owner of the boat,
+            whose personal narrative serves as the source of the direct
+            quotations here, to request formal authorization from the governor
+            of colonial Newfoundland to “search for his stolen property and, if
+            possible, try and capture one of the Indians alive.”
+            <InlineFootnote index={5} />
           </p>
           <p>
-          The Beothuk group did not know about the kidnapping authorization when they awoke that morning in March. But within minutes, the settlers' goal became clear. When the Beothuk fled to the woods, one woman, Demasduit, fell behind and was immediately set upon by the British. She “pointed out to the white men her full breasts to show that she had a child, and pointed up to the heavens to implore them, in God's mercy, to allow her to return to her child,” but they “took hold of her,” recalled John Paul, a Mi'kmaq-Innu man whose grandfather had been alive (but not present) at the time of the original events.<InlineFootnote index={6} />  Demasduit's partner, a man named Nonosabasut, “came to her aid,” but Peyton shot and killed him. <InlineFootnote index={7} /> Two days later, the child of Demasduit and Nonosabasut died as well—likely the result of starvation. One other young woman, Shanawdithit, who was then around seventeen, bore witness to it all.<InlineFootnote index={8} /> </p>
-          <p>
-          Shanawdithit's hand-drawn maps, which we first encountered in this project's Introduction, as we will now learn document these events in visual form. But the story that we tell about them here is not offered in the service of an argument about the utility of Beothuk mapping techniques for the field of data visualization, or an analysis of the additional insight about the data that the maps prompt. Rather, the story we present in this chapter is about the colonial context that gave rise to their creation, and about how that context—what we call here the <em>colonial frame</em>—must be considered alongside any knowledge that the maps themselves bring to light. 
+            The Beothuk group did not know about the kidnapping authorization
+            when they awoke that morning in March. But within minutes, the
+            settlers' goal became clear. When the Beothuk fled to the woods, one
+            woman, Demasduit, fell behind and was immediately set upon by the
+            British. She “pointed out to the white men her full breasts to show
+            that she had a child, and pointed up to the heavens to implore them,
+            in God's mercy, to allow her to return to her child,” but they “took
+            hold of her,” recalled John Paul, a Mi'kmaq-Innu man whose
+            grandfather had been alive (but not present) at the time of the
+            original events.
+            <InlineFootnote index={6} /> Demasduit's partner, a man named
+            Nonosabasut, “came to her aid,” but Peyton shot and killed him.{" "}
+            <InlineFootnote index={7} /> Two days later, the child of Demasduit
+            and Nonosabasut died as well—likely the result of starvation. One
+            other young woman, Shanawdithit, who was then around seventeen, bore
+            witness to it all.
+            <InlineFootnote index={8} />{" "}
           </p>
-          <!-- add in first source diagram here -->
           <p>
-            The diagram above attempts to give this colonial frame visual presence, accentuating the three primary sources that allow us, today, to learn about the events that led to the maps' creation. Our choice of focus on the frame is intentional. At various points in this project—in the Introduction, for example, and in our visualization of the Trans-Atlantic Slave Trade data that appears in Chapter 1—we have been explicit about acknowledging the positions from which our work has taken place. Here is another moment where these positions matter, since research involving sources that document Indigenous cultures must always be informed by the relationships among those sources, the researchers, and the cultures they seek to study. As a group of (mostly) settler researchers, our relationships to the Beothuk and the sources that document their culture is itself a colonial one.<InlineFootnote index={9} />   As such, we see our role—indeed, our responsibility—as one of illuminating the role of Shanawdithit and the place of her maps in the long history of extracting Indigenous knowledge for colonial gain.<InlineFootnote index={10} />   
-            </p>
-            <p>
-            This history is a violent one, as you have already begun to learn. The additional details about Shanawdithit and her maps that follow, which involve yet more instances of violence and harm, underscore how the maps at the center of this chapter cannot be separated from the inherent violence of colonialism.<InlineFootnote index={11} />  This is an important lesson for readers who have not yet considered the colonial context that frames so much of the history of data visualization. But there is a second lesson of this chapter, one more conceptual but no less profound, about how our present view of the value of data visualization—that is, its ability to distill insight from complex data such that knowledge can easily and efficiently emerge—sits uneasily close to that constitutive practice of colonial power: of extracting knowledge from its source.   
-            </p>
-            <p>
-            As at previous moments in this project that have brought us to uncomfortable points, the response to this assertion is, we hope, not to close this browser tab and walk away. Rather, we hope it will serve as an invitation to consider how we might design future data visualizations, as well as reposition ourselves with respect to existing ones, in ways that enable the creation of knowledge in less extractive modes. This consideration entails an attention to the lives behind the data, as we have explored in Chapter 1, as well as to the forms of insight that visualizations are most often designed to promote, as Chapter 2 helps to explain. But the colonial frame that surrounds Shanawdithit's maps enables us to see yet more: our own relationships with the people who provide us with data, and those represented in it, as well as our responsibilities towards the knowledge that we together create.  
-            </p>
+            Shanawdithit's hand-drawn maps, which we first encountered in this
+            project's Introduction, as we will now learn document these events
+            in visual form. But the story that we tell about them here is not
+            offered in the service of an argument about the utility of Beothuk
+            mapping techniques for the field of data visualization, or an
+            analysis of the additional insight about the data that the maps
+            prompt. Rather, the story we present in this chapter is about the
+            colonial context that gave rise to their creation, and about how
+            that context—what we call here the <em>colonial frame</em>—must be
+            considered alongside any knowledge that the maps themselves bring to
+            light.
+          </p>
+          {/* add in first source diagram here */}
+          <p>
+            The diagram above attempts to give this colonial frame visual
+            presence, accentuating the three primary sources that allow us,
+            today, to learn about the events that led to the maps' creation. Our
+            choice of focus on the frame is intentional. At various points in
+            this project—in the Introduction, for example, and in our
+            visualization of the Trans-Atlantic Slave Trade data that appears in
+            Chapter 1—we have been explicit about acknowledging the positions
+            from which our work has taken place. Here is another moment where
+            these positions matter, since research involving sources that
+            document Indigenous cultures must always be informed by the
+            relationships among those sources, the researchers, and the cultures
+            they seek to study. As a group of (mostly) settler researchers, our
+            relationships to the Beothuk and the sources that document their
+            culture is itself a colonial one.
+            <InlineFootnote index={9} /> As such, we see our role—indeed, our
+            responsibility—as one of illuminating the role of Shanawdithit and
+            the place of her maps in the long history of extracting Indigenous
+            knowledge for colonial gain.
+            <InlineFootnote index={10} />
+          </p>
+          <p>
+            This history is a violent one, as you have already begun to learn.
+            The additional details about Shanawdithit and her maps that follow,
+            which involve yet more instances of violence and harm, underscore
+            how the maps at the center of this chapter cannot be separated from
+            the inherent violence of colonialism.
+            <InlineFootnote index={11} /> This is an important lesson for
+            readers who have not yet considered the colonial context that frames
+            so much of the history of data visualization. But there is a second
+            lesson of this chapter, one more conceptual but no less profound,
+            about how our present view of the value of data visualization—that
+            is, its ability to distill insight from complex data such that
+            knowledge can easily and efficiently emerge—sits uneasily close to
+            that constitutive practice of colonial power: of extracting
+            knowledge from its source.
+          </p>
+          <p>
+            As at previous moments in this project that have brought us to
+            uncomfortable points, the response to this assertion is, we hope,
+            not to close this browser tab and walk away. Rather, we hope it will
+            serve as an invitation to consider how we might design future data
+            visualizations, as well as reposition ourselves with respect to
+            existing ones, in ways that enable the creation of knowledge in less
+            extractive modes. This consideration entails an attention to the
+            lives behind the data, as we have explored in Chapter 1, as well as
+            to the forms of insight that visualizations are most often designed
+            to promote, as Chapter 2 helps to explain. But the colonial frame
+            that surrounds Shanawdithit's maps enables us to see yet more: our
+            own relationships with the people who provide us with data, and
+            those represented in it, as well as our responsibilities towards the
+            knowledge that we together create.
+          </p>
         </CenteredLayout>
 
         <ChapterSectionTitle section={sections[0]} />
 
         <CenteredLayout>
           <p>
-          With the importance of relationships and responsibility in mind, we now return to the story of Shanawdithit's maps as it emerges from the colonial archive. As it turns out, this story passes directly through Demasduit and her own eventual fate. Demasduit was taken first to the fishing village of Twillingate and then in the spring, after the ice had cleared, to the colony of St. John's. She made several attempts to escape her captors.<InlineFootnote index={12} />  At some point during this time, she contracted tuberculosis. She succumbed to the disease less than a year later, while aboard a boat that was intended to return her to her family, the British having achieved a deadly version of their goal of retribution. <InlineFootnote index={13} /> 
+            With the importance of relationships and responsibility in mind, we
+            now return to the story of Shanawdithit's maps as it emerges from
+            the colonial archive. As it turns out, this story passes directly
+            through Demasduit and her own eventual fate. Demasduit was taken
+            first to the fishing village of Twillingate and then in the spring,
+            after the ice had cleared, to the colony of St. John's. She made
+            several attempts to escape her captors.
+            <InlineFootnote index={12} /> At some point during this time, she
+            contracted tuberculosis. She succumbed to the disease less than a
+            year later, while aboard a boat that was intended to return her to
+            her family, the British having achieved a deadly version of their
+            goal of retribution. <InlineFootnote index={13} />
           </p>
           <p>
-          Shanawdithit was present the day that Demasduit's body was returned to Beothuk Lake, and she participated in Demasduit's burial ceremony, held over the course of several months the next spring. But the British would not learn of Shanawdithit until four years later, in April 1823, when Shanawdithit was herself captured, along with her mother and her sister. The three women had been heading “to the seacoast in search of mussels to subsist on,” following another winter in which food had been scarce and illness had been plentiful. A different group of British settlers—furriers, this time—came across them.<InlineFootnote index={14} />  Concluding that it had become too difficult to continue to keep themselves alive, according to another British account, Shanawdithit and her kin “allowed themselves in despair to be quietly captured.” <InlineFootnote index={15} />  
+            Shanawdithit was present the day that Demasduit's body was returned
+            to Beothuk Lake, and she participated in Demasduit's burial
+            ceremony, held over the course of several months the next spring.
+            But the British would not learn of Shanawdithit until four years
+            later, in April 1823, when Shanawdithit was herself captured, along
+            with her mother and her sister. The three women had been heading “to
+            the seacoast in search of mussels to subsist on,” following another
+            winter in which food had been scarce and illness had been plentiful.
+            A different group of British settlers—furriers, this time—came
+            across them.
+            <InlineFootnote index={14} /> Concluding that it had become too
+            difficult to continue to keep themselves alive, according to another
+            British account, Shanawdithit and her kin “allowed themselves in
+            despair to be quietly captured.” <InlineFootnote index={15} />
           </p>
           <p>
-          Like Demsaduit before them, the three women were taken to Twillingate, where they were held captive in the home of none other than John Peyton Jr. Shanawdithit's mother and sister soon died, also of tuberculosis. But Shanawdithit persevered. For five years, she was forced to work for Peyton as a domestic servant, before she too fell ill. Following Demasduit's final path, Shanawdithit was then brought to St. John's, where she spent six of the final weeks of her life in the home of William Epps Cormack.<InlineFootnote index={16} />  Cormack, the Newfoundland-born son of Scottish settlers who'd earned early fame as for his natural history of the island's interior, was the one to supply Shanawdithit with “paper and pencils of various colours,” and who through some combination of enticement or coercion—we can never know—prompted her to create her maps.<InlineFootnote index={17} />    
+            Like Demsaduit before them, the three women were taken to
+            Twillingate, where they were held captive in the home of none other
+            than John Peyton Jr. Shanawdithit's mother and sister soon died,
+            also of tuberculosis. But Shanawdithit persevered. For five years,
+            she was forced to work for Peyton as a domestic servant, before she
+            too fell ill. Following Demasduit's final path, Shanawdithit was
+            then brought to St. John's, where she spent six of the final weeks
+            of her life in the home of William Epps Cormack.
+            <InlineFootnote index={16} /> Cormack, the Newfoundland-born son of
+            Scottish settlers who'd earned early fame as for his natural history
+            of the island's interior, was the one to supply Shanawdithit with
+            “paper and pencils of various colours,” and who through some
+            combination of enticement or coercion—we can never know—prompted her
+            to create her maps.
+            <InlineFootnote index={17} />
           </p>
         </CenteredLayout>
 
@@ -142,27 +295,103 @@ export default function ShanawdithitPage() {
 
         <CenteredLayout>
           <p>
-          Already, the inextricability of the maps' creation from the larger colonial project should be quite clear. But Cormack's own words lay the extractive nature of this project bare: “I keep her pretty busily employed in drawing historical representations of everything that suggests itself relating to her tribe, which I find is the best and readiest way of gathering information from her,” as he wrote in a letter to the Bishop of Nova Scotia in January 1829.  
-            <InlineFootnote index={25} /> Cormack's sense of entitlement to Shanawdihit's knowledge is here apparent. 
+            Already, the inextricability of the maps' creation from the larger
+            colonial project should be quite clear. But Cormack's own words lay
+            the extractive nature of this project bare: “I keep her pretty
+            busily employed in drawing historical representations of everything
+            that suggests itself relating to her tribe, which I find is the best
+            and readiest way of gathering information from her,” as he wrote in
+            a letter to the Bishop of Nova Scotia in January 1829.
+            <InlineFootnote index={25} /> Cormack's sense of entitlement to
+            Shanawdihit's knowledge is here apparent.
           </p>
           <p>
-          Cormack's entitlement is also documented on the map in the form of the textual annotations, which were penned not by Shanawdithit but by Cormack himself, likely at the same time that Shanawdithit set her own lines to the page. Cormack's handwriting encircles Shanawdithit's image, registering the “information” he sought to extract from her and even more: the power that he held over her as her captor, power that also colors the information presented on the map. 
+            Cormack's entitlement is also documented on the map in the form of
+            the textual annotations, which were penned not by Shanawdithit but
+            by Cormack himself, likely at the same time that Shanawdithit set
+            her own lines to the page. Cormack's handwriting encircles
+            Shanawdithit's image, registering the “information” he sought to
+            extract from her and even more: the power that he held over her as
+            her captor, power that also colors the information presented on the
+            map.
           </p>
           <p>
-          But Cormack's direct extraction of Shanawdithit's knowledge was only one layer of how her maps have been mined for information over time.<InlineFootnote index={26} />   In the early twentieth century, a British government official and geographer named James P. Howley redrew Shanawdithit's maps for inclusion his own book, {" "}<cite>The Beothucks or Red Indians</cite>{" "}, which is also the first place that Peyton's narrative appears.<InlineFootnote index={27} />   In addition to certain aesthetic decisions, such as smoothing out Shanawdithit's shading of the riverbanks, which had the effect of erasing the individual pencil strokes that more directly link Shanawdithit to the creation of her map, Howley also edited and re-wrote Cormack's annotations, removing the erroneous words that Cormack first recorded and then crossed out. This editorial decision underscores Howley's own sense of entitlement to Shanawdithit's knowledge, and his view of it as ethnographic information that could be easily severed from its source.   
+            But Cormack's direct extraction of Shanawdithit's knowledge was only
+            one layer of how her maps have been mined for information over time.
+            <InlineFootnote index={26} /> In the early twentieth century, a
+            British government official and geographer named James P. Howley
+            redrew Shanawdithit's maps for inclusion his own book,{" "}
+            <cite>The Beothucks or Red Indians</cite> , which is also the first
+            place that Peyton's narrative appears.
+            <InlineFootnote index={27} /> In addition to certain aesthetic
+            decisions, such as smoothing out Shanawdithit's shading of the
+            riverbanks, which had the effect of erasing the individual pencil
+            strokes that more directly link Shanawdithit to the creation of her
+            map, Howley also edited and re-wrote Cormack's annotations, removing
+            the erroneous words that Cormack first recorded and then crossed
+            out. This editorial decision underscores Howley's own sense of
+            entitlement to Shanawdithit's knowledge, and his view of it as
+            ethnographic information that could be easily severed from its
+            source.
           </p>
 
           <FigureObj figure={figures["howley-sketch2"]} />
 
           <p>
-          While we made the decision not to convert this information into GIS data and plot it on a map of our own, we are still also actors in this extractive process. For as much as we have sought to keep our emphasis on the map's colonial frame, rather than the “information” about the Beothuk that it contains, our model of interactive explanation—the same we use to structure the start of each chapter of this book—reflects an uncomfortably similar approach to the one that Cormack and Howley both employed: of atomizing the image and clarifying the significance of its various parts. In the present, we still presume that the goal of visualization should be to clarify, and to enable deeper exploration if required.<InlineFootnote index={28} />   We do not often consider how the process of clarifying the significance of the data runs the risk of further distancing the data from those who created it, or how enabling deeper exploration very often involves the transfer of explanatory power from those who created (or are represented in) the original data—or in this case, the original image—to ourselves. 
+            While we made the decision not to convert this information into GIS
+            data and plot it on a map of our own, we are still also actors in
+            this extractive process. For as much as we have sought to keep our
+            emphasis on the map's colonial frame, rather than the “information”
+            about the Beothuk that it contains, our model of interactive
+            explanation—the same we use to structure the start of each chapter
+            of this book—reflects an uncomfortably similar approach to the one
+            that Cormack and Howley both employed: of atomizing the image and
+            clarifying the significance of its various parts. In the present, we
+            still presume that the goal of visualization should be to clarify,
+            and to enable deeper exploration if required.
+            <InlineFootnote index={28} /> We do not often consider how the
+            process of clarifying the significance of the data runs the risk of
+            further distancing the data from those who created it, or how
+            enabling deeper exploration very often involves the transfer of
+            explanatory power from those who created (or are represented in) the
+            original data—or in this case, the original image—to ourselves.
           </p>
           <p>
-          Centuries of experiencing the effects of knowledge extraction, as well as of the blatant disregard for responsibility or relation, have motivated Indigenous scholars to develop principles for maintaining Indigenous data sovereignty and governance. <InlineFootnote index={29} />   These principles elevate the goal of collective benefit, as well as considerations of responsibility and ethics, as well as access and control. Here we begin to see how similar principles might be applied to visualization, since the process of extracting knowledge from those who originally possess it is not limited to the collection phase of the data analysis “pipeline” alone.<InlineFootnote index={30} />           
+            Centuries of experiencing the effects of knowledge extraction, as
+            well as of the blatant disregard for responsibility or relation,
+            have motivated Indigenous scholars to develop principles for
+            maintaining Indigenous data sovereignty and governance.{" "}
+            <InlineFootnote index={29} /> These principles elevate the goal of
+            collective benefit, as well as considerations of responsibility and
+            ethics, as well as access and control. Here we begin to see how
+            similar principles might be applied to visualization, since the
+            process of extracting knowledge from those who originally possess it
+            is not limited to the collection phase of the data analysis
+            “pipeline” alone.
+            <InlineFootnote index={30} />
           </p>
-          <!-- insert second diagram of sources here -->
+          {/* <!-- insert second diagram of sources here --> */}
           <p>
-          Adding Cormack and Howley, along with ourselves, to our diagram of sources accentuates the layers of mediation that separate us from the original image, as they do from Shanawdithit's first-hand knowledge of the original events. This direct knowledge is irrecoverable—and even if we could approximate it, the principles of Indigenous data sovereignty tell us that it is not ours to own. But the visual evidence of this irrecoverability can, we hope, also be a source of broader insight, as well as a guide for future visualization work. As visualization designers, we cannot change our reliance on data; it is the substrate of all the work that we do, as Chapter 2 has explored. But what we can change is our awareness of our position with respect to our data, and to the visualizations that we create. When we enter into a visualization project without sufficient regard for the data's provenance, we often fail to recognize what knowledge may have already been lost in the process of separating that data from its source. It also becomes all the more difficult to consider any responsibilities we might have to the people who created the data, the people whose data our visualizations represents, and the people who view or interact with our visualizations in their final form. 
+            Adding Cormack and Howley, along with ourselves, to our diagram of
+            sources accentuates the layers of mediation that separate us from
+            the original image, as they do from Shanawdithit's first-hand
+            knowledge of the original events. This direct knowledge is
+            irrecoverable—and even if we could approximate it, the principles of
+            Indigenous data sovereignty tell us that it is not ours to own. But
+            the visual evidence of this irrecoverability can, we hope, also be a
+            source of broader insight, as well as a guide for future
+            visualization work. As visualization designers, we cannot change our
+            reliance on data; it is the substrate of all the work that we do, as
+            Chapter 2 has explored. But what we can change is our awareness of
+            our position with respect to our data, and to the visualizations
+            that we create. When we enter into a visualization project without
+            sufficient regard for the data's provenance, we often fail to
+            recognize what knowledge may have already been lost in the process
+            of separating that data from its source. It also becomes all the
+            more difficult to consider any responsibilities we might have to the
+            people who created the data, the people whose data our
+            visualizations represents, and the people who view or interact with
+            our visualizations in their final form.
           </p>
         </CenteredLayout>
 

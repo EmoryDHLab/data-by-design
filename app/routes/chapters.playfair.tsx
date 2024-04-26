@@ -15,13 +15,13 @@ import FootnotesList from "~/components/FootnotesList";
 import Quotation from "~/components/Quotation";
 import figures from "~/data/figures/playfair.json";
 import { chapterMeta } from "~/utils";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import type { TVizAnchors } from "~/chapterContext";
 import ChapterBody from "~/components/layout/ChapterBody";
 import ProjectTimelineScrollytell from "~/components/playfair/projectTimeline/ProjectTimelineScrollytell";
 import Takeaways from "~/components/layout/Takeaways";
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return chapterMeta("playfair");
 };
 
@@ -89,7 +89,8 @@ export default function PlayfairPage() {
             quote={
               <>
                 Data visualization has never been neutral or objective. There is
-                a meaning — and an argument — conveyed through each visual design.
+                a meaning — and an argument — conveyed through each visual
+                design.
               </>
             }
           />
@@ -583,7 +584,20 @@ export default function PlayfairPage() {
               different process than Playfair himself employed.
             </p>
             <p>
-              But plotting Playfair's datapoints was only the beginning. While it generally takes only a single line of D3 code to plot a path from one point to the next, Playfair's data-lines contained more curves than were recorded in his tables. Because our goal was to recreate Playfair's chart with fidelity to the image, and not to the data tables that Playfair himself removed, we needed a way to convert his data-lines back into data that we could plot. To do this, we first imported a high-resolution scan of the original image into Adobe Photoshop, then traced the data-lines with a digital pen so that we could save them as vector-based paths. We exported each path's coordinate vector from Photoshop as a standalone file, which we then imported back into D3 as data. Only then could we plot Playfair's data-lines on the chart as they are currently shown. 
+              But plotting Playfair's datapoints was only the beginning. While
+              it generally takes only a single line of D3 code to plot a path
+              from one point to the next, Playfair's data-lines contained more
+              curves than were recorded in his tables. Because our goal was to
+              recreate Playfair's chart with fidelity to the image, and not to
+              the data tables that Playfair himself removed, we needed a way to
+              convert his data-lines back into data that we could plot. To do
+              this, we first imported a high-resolution scan of the original
+              image into Adobe Photoshop, then traced the data-lines with a
+              digital pen so that we could save them as vector-based paths. We
+              exported each path's coordinate vector from Photoshop as a
+              standalone file, which we then imported back into D3 as data. Only
+              then could we plot Playfair's data-lines on the chart as they are
+              currently shown.
             </p>
             <p>
               If this process seems convoluted, that is a large part of the

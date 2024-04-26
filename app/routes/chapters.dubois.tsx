@@ -25,11 +25,11 @@ import SlideShow from "~/components/layout/SlideShow";
 import { chapterMeta } from "~/utils";
 import StudentChartV2 from "~/components/dubois/StudentChartV2";
 import ChapterBody from "~/components/layout/ChapterBody";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return chapterMeta("dubois");
 };
 

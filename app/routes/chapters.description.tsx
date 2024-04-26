@@ -26,13 +26,13 @@ import VoyageScrollytell from "~/components/description/voyageScrollytell/Voyage
 import Takeaways from "~/components/layout/Takeaways";
 import Toggle from "~/components/consent/Toggle";
 
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import Ship from "~/components/description/Ship";
 
 const chapterFigures = Object.values(figures);
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return chapterMeta("description");
 };
 
