@@ -141,22 +141,6 @@ export default function BrooksPage() {
             By the time that Equiano settled in London, he had been free for
             over a decade; in 1766, Equiano had purchased himself, and therefore
             his freedom, with earnings from his personal trading business. But
-            his experience of enslavement was never far from his mind. Thus in
-            the late 1780s, as the British antislavery movement began to
-            coalesce, Equiano became increasingly involved in its activities.
-            Through these activities, he became acquainted with Thomas Clarkson,
-            a leading British abolitionist and key member of the London
-            Committee of the Society for Effecting the Abolition of the Slave
-            Trade (SEASE). Thus in early 1789, when Clarkson received a copy of
-            an image created by the Plymouth Committee of SEASE entitled, "Plan
-            of an African Slave Ship's Lower Deck with Negroes in the Proportion
-            of Only One to a Ton," he knew who he should approach for its first
-            endorsement.
-          </p>
-          <p>
-            By the time that Equiano settled in London, he had been free for
-            over a decade; in 1766, Equiano had purchased himself, and therefore
-            his freedom, with earnings from his personal trading business. But
             his experience of enslavement was never far from his mind. And so in
             the late 1780s, as the British antislavery movement began to
             coalesce, Equiano became increasingly involved in its activities.
@@ -309,7 +293,7 @@ export default function BrooksPage() {
             commodity goods on the part of slavery's profiteers.
           </p>
           <p>
-            Readers have likely already have noticed that the default settings
+            Readers have already been informed that the default settings
             for this chapter hide the visual details of the "Description," and
             the other sensitive images discussed here, until they are
             sufficiently prepared for what they might see. We made this choice
@@ -325,8 +309,7 @@ export default function BrooksPage() {
             enslaved, such depictions can also exacerbate existing
             intergenerational trauma, as historian Jennifer Morgan describes.
             <InlineFootnote index={10} /> Those who choose to view Elford's
-            version of the diagram may do so now by clicking the slider at the
-            top left. Or you may choose to continue to only read about the
+            version of the diagram may do so now by clicking the button at the bottom right. Or you may choose to continue to only read about the
             images of slavery included here.
           </p>
           <p>
@@ -334,51 +317,41 @@ export default function BrooksPage() {
             affecting as it is visually impossible. Viewers see the ship from
             above, as if they are gods in the heavens. (We will return to what
             is, in fact, a "god trick" down below). The top deck of the ship has
-            been removed, so that the viewer can see directly into the hold. The
-            hold is divided into six distinct areas: the largest, in the bow of
-            the ship, and which occupies the entire right half of the diagram,
-            is labeled the "Mens room," and depicts 120 male bodies in four rows
-            of thirty. In the middle is a narrow column labeled "Boys room" and
-            depicts shorter male figures in six rows of twelve. To its left is
-            the larger "Womens room," depicting figures the same size as the
-            adult men, but with breasts. They are depicted in four rows of
-            twenty-one, representing 84 women total. At the stern is the "Girls
-            Room," the figures shorter and squatter than the boys, arranged in
-            three rows of ten. These "scaled inequalities," as Black feminist
-            theorist Hortense Spillers characterizes the figures, literalize the
-            process of "dehumanizing, ungendering, and defacing" that the Middle
-            Passage brought about.
-            <InlineFootnote index={11} />
+            been removed, so that the viewer can see directly into the hold. 
           </p>
         </CenteredLayout>
 
         <PlymouthCommitteeScrollytell
           triggers={[
             <span key="07226c6e">
-              Elford's "Plan" divides the ship's hold into six distinct areas.
+              The hold is divided into six distinct areas.
             </span>,
             <span key="a400ea46">
-              The largest area, in the bow of the ship, and which occupies the
-              entire right half of the diagram, is labeled the "Men's room," and
-              depicts 120 male bodies in four rows of 30.
+              The largest area, in the bow of the ship, and which occupies the entire right half of the diagram, is labeled the "Mens room," and depicts 120 male bodies in four rows of thirty.
             </span>,
             <span key="e6184ce7">
-              In the middle is a narrow column labeled "Boy's room" and depicts
-              smaller male figures in six rows of 12.
+              In the middle is a narrow column labeled "Boys room" and depicts shorter male figures in six rows of twelve. 
             </span>,
             <span key="aebd268b">
-              To the left is the larger "Women's room," depicting figures the
-              same size as the men, but with breasts, in four rows of 21 figures
-              representing 84 women total.
+              To its left is the larger "Womens room," depicting figures the same size as the adult men, but with breasts. They are depicted in four rows of twenty-one, representing 84 women total.
             </span>,
             <span key="b1f566ad">
-              And at the stern, in the center, the "Girls room," the figures
-              shorter and squatter than the boys, arranged in three rows of ten.
-              These "scaled inequalities," as Hortense Spillers describes the
-              layout, represented COMPLETE.
+              At the stern is the "Girls
+            Room," the figures shorter and squatter than the boys, arranged in
+            three rows of ten. 
             </span>,
             <span key="d90523c5">
-              Certain visual features help the plan achieve its impact. Most
+              These "scaled inequalities," as Black feminist
+            theorist Hortense Spillers characterizes the figures, literalize the
+            process of "dehumanizing, ungendering, and defacing" that the Middle
+            Passage brought about.  <InlineFootnote index={11} />
+            </span>,
+          ]}
+        />
+
+        <TwoColumnLayout>
+          <Column shouldPin={true}>
+            <p>Certain visual features help the plan achieve its impact. Most
               immediate is how the 297 figures, what Marcus Wood describes as a
               "mass of black human flesh," are set against the clean lines that
               indicate the bounds of the ship. The labels of each area, engraved
@@ -387,12 +360,8 @@ export default function BrooksPage() {
               terms of an "awful rigor," underscoring how the "formality" of the
               figures "appears to deny [their] flesh and blood presence." But
               for Elford, this abstraction was perhaps part of the point.
-            </span>,
-          ]}
-        />
-
-        <TwoColumnLayout>
-          <Column shouldPin={true}>
+            </p>
+            
             <p>
               It is unknown as to whether Elford was familiar with an earlier,
               more literal depiction of a slave ship, the Marie Séraphique,
@@ -481,18 +450,18 @@ export default function BrooksPage() {
               Not all data visualizations take on this most odious episode in
               human history, of course. But this particular lesson about the
               chart's constitutive tension is one that can be more universally
-              applied. The abstraction that is required to efficiently prompt
+              applied. The abstraction that is required to efficiently produce
               insight always—and, very crucially, <em>necessarily</em>—comes at
               the expense of the full complexity of the phenomenon that it seeks
               to represent. What should we do with this realization, either as
               viewer of data visualizations or as designers of them? The answer
               is not that we should reject visualization out of hand. Rather, it
               is that we must always consider what is lost in the process of
-              visualizing data at the same time that we consider what is gained
+              visualizing data at the same time that we consider what is gained.
             </p>
             <PullQuote
-              title="The abstraction that is required to efficiently prompt insight always—and, very crucially, necessarily"
-              subtitle="—comes at the expense of the full complexity of the phenomenon that it seeks to represent."
+              title="The abstraction that is required to produce insight always—and, necessarily"
+              subtitle="—comes at the expense of the complexity of the phenomenon that it seeks to represent."
             />
             <p>
               Elford's diagram also reminds us, with its subject most profound,
@@ -577,20 +546,6 @@ export default function BrooksPage() {
               making those phenomena "palpable and concrete."
               <InlineFootnote index={22} />
             </p>
-            <Quotation
-              quote={
-                <span>
-                  "One can see that each of the tiny black figures are not
-                  replicas of each other; rather, some have variously crossed
-                  arms, different gestures, or seem to turn to face one another,
-                  while some stare and look back at the gaze from nowhere, and
-                  in so being the Description of a Slave Ship can also be
-                  understood as depicting black looks and the trauma of Middle
-                  Passage as multiply experienced and survived."
-                </span>
-              }
-              byline={<span>Simone Browne</span>}
-            />
             <p>
               To wit: just as Clarkson's reintroduction of data to the chart
               underscored its basis in empirical evidence and buttressed its
@@ -731,8 +686,9 @@ export default function BrooksPage() {
         <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
           <p>
-            These were the very questions that I, Lauren, brought to the Data by
-            Design project team. I also brought a dataset: a full download of
+            These were the very questions that I, Lauren, brought to the {" "}
+            <cite>Data by
+            Design</cite>{" "} project team. I also brought a dataset: a full download of
             the Trans-Atlantic Slave Trade Database, which (as of the time of
             this writing, in Spring 2024) contains records of 36,150 unique
             slaving voyages that took place between the years 1514 and 1866,
@@ -789,7 +745,7 @@ export default function BrooksPage() {
             would need a visual strategy for showing just how much about these
             lives the data could not and could never show.
           </p>
-          <PullQuote title="In order to honor the enslaved as they lived, and not as they were reduced to data, we would need a visual strategy for showing just how much about these lives the data could not and could never show." />
+          <PullQuote title="To honor the enslaved as they lived, and not as they were reduced to data, we would need a visual strategy for showing just how much about these lives the data could not show." />
         </CenteredLayout>
 
         <VoyageScrollytell
@@ -850,9 +806,7 @@ export default function BrooksPage() {
               departed from Africa on each ship. The width at the bottom
               corresponds to the number who arrived in the Americas having
               survived. The duration of each voyage is conveyed through the
-              amplitude of each bind, but plotted from the side. In other words,
-              longer voyages have wider curves, and shorter voyages narrower
-              ones.
+              amplitude of each bind, but plotted from the side. 
             </span>,
             <span key="d4c5b977">
               While Fisk's original design superimposes the floodplains of the
@@ -911,7 +865,7 @@ export default function BrooksPage() {
               captives, who perhaps might have taken heart—or inspiration—in the
               possibilities to push back against their likely fate. But as
               unfinished acts of resistance, they would have gone unrecorded in
-              the dataset
+              the dataset.
             </span>,
             <span key="8562b8b3">
               We might also consider the myriad number of smaller acts of
@@ -1029,10 +983,10 @@ export default function BrooksPage() {
             <InlineFootnote index={51} /> The sea metaphor is further clouded by
             the role that actual water—namely, the Atlantic Ocean—played in the
             slave trade. Why would Clarkson use water—the very site of the
-            dehumanization that was required of the condition of enslavement—as
+            dehumanization that enslavement brought about—as
             the anchoring metaphor of his account?
           </p>
-          <PullQuote title="Why would Clarkson use water—the very site of the dehumanization that was required of the condition of enslavement —as the anchoring metaphor of his account?" />
+          <PullQuote title="Why would Clarkson use water—the very site of the dehumanization that enslavement brought about—as the anchoring metaphor of his account?" />
           <p>
             But Clarkson was anchoring his diagram in some stable ground:
             namely, the then-prevalent use of water and streams to visually
