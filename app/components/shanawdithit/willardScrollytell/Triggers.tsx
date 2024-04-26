@@ -12,23 +12,19 @@ const Triggers = [
 
   <Fragment key="98f807329ff5">
     <p className="pl-4 md:pl0 w-9/12">
-      On this map, Willard places labels in the approximate locations of each
-      Indigenous nation or tribe that she knew.
+    On this map, Willard places labels in the approximate locations of each Indigenous nation or tribe that she knew. 
     </p>
   </Fragment>,
 
   <Fragment key={"849298f5b0bd"}>
     <p className="pl-4 md:pl0 w-9/12">
-      She also circles each of the tribe’s names, with the size of the circle
-      indicating its “size and relative influence.”{" "}
+    She also circles each of the tribe's names, with the size of the circle indicating its “size and relative influence.”{" "}
     </p>
   </Fragment>,
 
   <Fragment key={"9b7e0221a7b7"}>
     <p className="pl-4 md:pl0 mb-0 pb-2 md:pb-0 w-9/12">
-      The color of the circles and the lines connecting them indicate
-      affiliation or “migration,” in Willard’s terms, although it is more
-      accurately described as displacement.{" "}
+    The color of the circles and the lines connecting them indicate affiliation and “migration,” in Willard's terms, although a more accurate word would be displacement. {" "}
     </p>
   </Fragment>,
 
