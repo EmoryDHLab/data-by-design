@@ -66,7 +66,7 @@ export default function FigureObj({
   } else if (figure) {
     return (
       <FigureModal figure={figure} className={className}>
-        {hideSensitiveState && (
+        {hideSensitiveState && figure.sensitive && (
           <div className="absolute p-6 z-10 text-xl font-neueMontreal">
             {figure.altText?.split(".")[0]}. {figure.altText?.split(".")[1]}.
           </div>
@@ -74,7 +74,9 @@ export default function FigureObj({
         <Picture
           figure={figure}
           className={`transition-all duration-1000 ${imageClassName} ${
-            hideSensitiveState ? "blur-md border-2 border-offblack" : ""
+            hideSensitiveState && figure.sensitive
+              ? "blur-md border-2 border-offblack"
+              : ""
           }`}
         />
         <Caption figure={figure} className={captionClassName} />
