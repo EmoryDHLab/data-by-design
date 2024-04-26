@@ -115,7 +115,7 @@ export default function PlymouthCommitteeScrollytell({
                 className="w-full md:h-full mt-12 md:mt-0"
               >
                 <image
-                  href="/images/brooks/1-sof_slaveship.jpg"
+                  href="/images/description/1-sof_slaveship.jpg"
                   width="2973"
                   height="1213"
                   transform="scale(.24)"

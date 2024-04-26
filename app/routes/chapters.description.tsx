@@ -7,39 +7,39 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import Footer from "~/components/Footer";
-import { brooksFootnotes } from "~/footnotes";
+import { descriptionFootnotes } from "~/footnotes";
 import Quotation from "~/components/Quotation";
 import InlineFootnote from "~/components/InlineFootnote";
-import PlymouthCommitteeScrollytell from "~/components/brooks/plymouthCommitteeScrollytell/PlymouthCommitteeScrollytell";
+import PlymouthCommitteeScrollytell from "~/components/description/plymouthCommitteeScrollytell/PlymouthCommitteeScrollytell";
 import FootnotesList from "~/components/FootnotesList";
-import SeraphiqueTour from "~/components/brooks/SeraphiqueTour";
+import SeraphiqueTour from "~/components/description/SeraphiqueTour";
 import HoverText from "~/components/HoverText";
 import FigureObj from "~/components/layout/FigureObj";
 
-import figures from "~/data/figures/brooks.json";
-import ClarksonSideBySideScrollytell from "~/components/brooks/ClarksonSideBySideScrollytell";
+import figures from "~/data/figures/description.json";
+import ClarksonSideBySideScrollytell from "~/components/description/ClarksonSideBySideScrollytell";
 import { ClientOnly } from "remix-utils";
-import VoyagesVis from "~/components/brooks/voyages/VoyagesVis.client";
+import VoyagesVis from "~/components/description/voyages/VoyagesVis.client";
 import { chapterMeta } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
-import VoyageScrollytell from "~/components/brooks/voyageScrollytell/VoyageScrollytell";
+import VoyageScrollytell from "~/components/description/voyageScrollytell/VoyageScrollytell";
 import Takeaways from "~/components/layout/Takeaways";
 import Toggle from "~/components/consent/Toggle";
 
 import type { V2_MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
-import Ship from "~/components/brooks/Ship";
+import Ship from "~/components/description/Ship";
 
 const chapterFigures = Object.values(figures);
 
 export const meta: V2_MetaFunction = () => {
-  return chapterMeta("brooks");
+  return chapterMeta("description");
 };
 
 const sections = [
   {
     title: "Insight and Abstraction ",
-    id: "insight-and-bstraction",
+    id: "insight-and-abstraction",
   },
   {
     title: "Graphical Authority and the God Trick",
@@ -90,7 +90,7 @@ export default function BrooksPage() {
         accentTextColor: "black",
         footnoteTextColor: "brooksPrimary",
         primaryTextColor: "white",
-        footnotes: brooksFootnotes,
+        footnotes: descriptionFootnotes,
         chapterFigures,
         visualizations,
         disclosure: true,
@@ -1171,7 +1171,7 @@ export default function BrooksPage() {
         />
       </ChapterBody>
       <CenteredLayout>
-        <FootnotesList footnotes={brooksFootnotes} />
+        <FootnotesList footnotes={descriptionFootnotes} />
       </CenteredLayout>
       <Footer />
     </ChapterContext.Provider>

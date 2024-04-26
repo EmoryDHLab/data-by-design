@@ -33,7 +33,7 @@
 .cardBrooks:focus {
   background-size: cover;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/brooks/1-sof_slaveship.jpg") center;
+    url("/images/description/1-sof_slaveship.jpg") center;
 }
 
 .cardPeabody:hover,
@@ -69,7 +69,7 @@
   grid-template-columns: 1fr min(111ch, 100%) 1fr;
 }
 
-.grid-wrapper > * {
+.grid-wrapper>* {
   grid-column: 2;
 }
 
@@ -78,7 +78,7 @@
   grid-template-columns: 1fr min(45ch, 100%) 1fr;
 }
 
-.column-grid-wrapper > * {
+.column-grid-wrapper>* {
   grid-column: 2;
 }
 
@@ -118,16 +118,14 @@
 }
 
 .cut-corners {
-  clip-path: polygon(
-    0 10px,
-    10px 0,
-    calc(100% - 10px) 0,
-    100% 10px,
-    100% calc(100% - 10px),
-    calc(100% - 10px) 100%,
-    10px 100%,
-    0 calc(100% - 10px)
-  );
+  clip-path: polygon(0 10px,
+      10px 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% calc(100% - 10px),
+      calc(100% - 10px) 100%,
+      10px 100%,
+      0 calc(100% - 10px));
 }
 
 .scrollytell-shape-focus {

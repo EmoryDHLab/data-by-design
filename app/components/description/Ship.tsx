@@ -16,7 +16,7 @@ const Ship = ({ figure }: Props) => {
     <figure className="my-8">
       <svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="w-full">
         <image
-          href="/images/brooks/1-sof_slaveship.jpg"
+          href="/images/description/1-sof_slaveship.jpg"
           width={2973}
           height={1213}
           transform="scale(.24)"

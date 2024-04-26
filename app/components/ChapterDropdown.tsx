@@ -8,7 +8,7 @@ const CHAPTERS = [
     title: "Introduction",
   },
   {
-    link: "brooks",
+    link: "description",
     title: "Every Datapoint a Person",
   },
   {

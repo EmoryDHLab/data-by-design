@@ -725,7 +725,7 @@ export const playfairFootnotes = [
     visualization and their associated techniques.
   </span>,
 ];
-export const brooksFootnotes = [
+export const descriptionFootnotes = [
   //1
   <span key="560e48c1">Equiano 55, 58.</span>,
   //2

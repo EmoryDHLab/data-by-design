@@ -4,7 +4,7 @@ import p5 from "p5";
 import Voyage from "./Voyage";
 import Axis from "./Axis";
 import Slider from "./Slider";
-import voyageData from "~/data/brooks/voyages.json";
+import voyageData from "~/data/description/voyages.json";
 import type { TVoyage } from "~/types/voyage";
 
 const INITIAL_YEAR_RANGE = [1565, 1575];

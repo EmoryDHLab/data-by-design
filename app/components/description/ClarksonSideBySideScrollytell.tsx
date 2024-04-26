@@ -178,7 +178,7 @@ function ClarksonSideBySideScrollytell() {
             >
               <image
                 mask="url(#clarkson-mask"
-                href="/images/brooks/4-description-1789.jpg"
+                href="/images/description/4-description-1789.jpg"
                 className={`transition-all origin-center duration-1000  ${
                   hideSensitiveState ? "blur-xl" : "blur-none"
                 }`}

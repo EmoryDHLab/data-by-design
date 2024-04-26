@@ -1,4 +1,4 @@
-import brooksFigures from "~/data/figures/brooks.json";
+import descriptionFigures from "~/data/figures/description.json";
 import duboisFigures from "~/data/figures/dubois.json";
 import peabodyFigures from "~/data/figures/peabody.json";
 import playfairFigures from "~/data/figures/playfair.json";
@@ -17,9 +17,9 @@ export const timelineImages = () => {
     shanawdithitFigures
   ).filter((figures) => figures[1].frontPage);
 
-  const brooks: TFilteredFigures[] = Object.entries(brooksFigures).filter(
-    (figures) => figures[1].frontPage
-  );
+  const description: TFilteredFigures[] = Object.entries(
+    descriptionFigures
+  ).filter((figures) => figures[1].frontPage);
   const dubois: TFilteredFigures[] = Object.entries(duboisFigures).filter(
     (figures) => figures[1].frontPage
   );
@@ -32,7 +32,7 @@ export const timelineImages = () => {
 
   const filteredFigures: TFigure[] = Object.values(
     Object.fromEntries(
-      brooks.concat(dubois.slice(0, 20), peabody, playfair, shanawdithit)
+      description.concat(dubois.slice(0, 20), peabody, playfair, shanawdithit)
     )
   );
 

@@ -5,7 +5,7 @@ export default function ChapterCardGrid() {
     <div className="bg-black">
       <div className="grid md:grid-cols-2 grid-cols-1 md:grid-rows-3 3xl:mx-48">
         <ChapterCard
-          to="/chapters/brooks"
+          to="/chapters/description"
           status="IN PROGRESS"
           className="cardBrooks bg-black hover:text-white"
           title="Every Datapoint a Person"

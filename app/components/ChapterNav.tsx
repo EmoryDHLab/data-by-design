@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Tooltip } from "react-tooltip";
 import { ChapterContext } from "~/chapterContext";
 import { useResizeObserver } from "~/hooks";
-import Consent from "~/components/Consent";
+import Consent from "~/components/consent/Consent";
 
 type TAnchorPosition = {
   offset: number;

@@ -895,7 +895,7 @@ export default function ShanawdithitPage() {
               system, that's why the Canadian government failed to destroy
               Haudenosaunee databases and explains why they are still such a
               potent symbol of Indigenous sovereignty and an excellent example
-              of Indigenous Data Sovereignty in practice.  While labour
+              of Indigenous Data Sovereignty in practice.  While labor
               intensive, the belts can be remade and many remain as part of a
               living treaty system still recognized hundreds of years after the
               treaties were first made. This is because the belts are part of an

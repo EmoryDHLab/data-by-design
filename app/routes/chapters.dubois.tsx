@@ -29,7 +29,6 @@ import type { V2_MetaFunction } from "@remix-run/node";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
 
-
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("dubois");
 };
@@ -481,7 +480,7 @@ export default function DuboisChapter() {
             imageClassName="max-h-screen"
           />
 
-          <p>
+          <span>
             In a reflection on the Paris Exhibition, published several months
             after its opening, Du Bois explains that he included the photographs
             to challenge "conventional American ideas," although he does not
@@ -500,8 +499,8 @@ export default function DuboisChapter() {
             white international audience a view of how Black American saw
             themselves.
             <InlineFootnote index={12}></InlineFootnote>
-          </p>
-          <p>
+          </span>
+          <span>
             Considered alongside the photographs, it becomes possible to
             understand the charts as pushing back against this double
             consciousness through an additional visual form. In their discussion
@@ -516,8 +515,8 @@ export default function DuboisChapter() {
             relations of the time. They also express a more general desire, one
             shared with the photographs, to put the vitality and talents of
             Black America on public display.
-          </p>
-          <p>
+          </span>
+          <span>
             But Du Bois's decision to pair the photographs with the charts also
             points to his awareness of the limits of what each medium could
             achieve on its own. While the photographs could document the
@@ -533,7 +532,7 @@ export default function DuboisChapter() {
             understood the charts and the photographs as two parts of a larger
             whole. While each was legible on its own, the best and most complete
             picture was gained by viewing them together.
-          </p>
+          </span>
         </CenteredLayout>
 
         <section

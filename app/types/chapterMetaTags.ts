@@ -1,5 +1,5 @@
 export type ChapterTitle =
-  | "brooks"
+  | "description"
   | "dubois"
   | "peabody"
   | "playfair"

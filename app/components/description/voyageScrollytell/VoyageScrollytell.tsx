@@ -4,7 +4,7 @@ import { ClientOnly } from "remix-utils";
 import Picture from "~/components/layout/Picture";
 import PullQuote from "~/components/PullQuote";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
-import figures from "~/data/figures/brooks.json";
+import figures from "~/data/figures/description.json";
 import FiskColors from "./FiskColors";
 import VoyageExample from "../voyages/VoyageExample";
 import VoyagesVis from "../voyages/VoyagesVis.client";

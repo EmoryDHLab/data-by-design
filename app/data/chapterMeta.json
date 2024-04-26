@@ -1,9 +1,9 @@
 {
-  "brooks": {
+  "description": {
     "title": "Every Datapoint a Person",
     "subtitle": "The Brooks / Diagram of a Slave Ship",
     "description": "Before there are data, there are people. People who offer up their lives as data — or whose lives become data without consent.",
-    "image": "/images/brooks/1-sof_slaveship.jpg",
+    "image": "/images/description/1-sof_slaveship.jpg",
     "imageWidth": "500",
     "imageHeight": "182"
   },
