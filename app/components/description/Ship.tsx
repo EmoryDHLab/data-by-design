@@ -30,9 +30,8 @@ const Ship = ({ figure }: Props) => {
           />
         </g>
         <path
-          className={`duration-1000 transition-all fill-none origin-center stroke-offblack stroke-${
-            hideSensitiveState ? 0 : 1
-          }`}
+          className={`duration-1000 transition-all fill-none stroke-offblack`}
+          style={{ strokeOpacity: hideSensitiveState ? 0 : 1 }}
           d={paths.outline}
         />
         <foreignObject
