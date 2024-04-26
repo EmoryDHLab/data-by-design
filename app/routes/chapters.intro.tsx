@@ -4,18 +4,36 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 
 import CenteredLayout from "~/components/layout/CenteredLayout";
+import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 
 import Footer from "~/components/Footer";
 import { playfairFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import playfairFigures from "~/data/figures/playfair.json";
-import figures from "~/data/figures/shanawdithit.json";
+import figures from "~/data/figures/intro.json";
 import FigureObj from "~/components/layout/FigureObj";
 import ChapterBody from "~/components/layout/ChapterBody";
 import IntroScrollytell from "~/components/intro/IntroScrollytell.client";
 import { ClientOnly } from "remix-utils";
 
-const sections = [{ title: "", id: "" }];
+const sections = [
+  {
+    title: "A Visual Method of Making History",
+    id: "a-visual-method-of-making-history",
+  },
+  {
+    title: "Visualising Resistance",
+    id: "visualising-resistance",
+  },
+  {
+    title: "The Gendered Archive of Data Visualization",
+    id: "the-gendered-archive-of-data-visualization",
+  },
+  {
+    title: "The Visualization Work To Come",
+    id: "the-visualization-work-to-come",
+  },
+];
 
 export default function IntroPage() {
   return (
@@ -141,194 +159,414 @@ export default function IntroPage() {
           <Column>
             {" "}
             {/* These images need to be replaced */}
-            <FigureObj figure={figures["Demasduit"]} />
-            <FigureObj figure={figures["Demasduit"]} />
-            <FigureObj figure={figures["Demasduit"]} />
-            <FigureObj figure={figures["Demasduit"]} />
+            <FigureObj figure={playfairFigures["1-northamerica"]} />
+            <FigureObj figure={playfairFigures["1-northamerica"]} />
+            <FigureObj figure={playfairFigures["1-northamerica"]} />
+            <FigureObj figure={playfairFigures["1-northamerica"]} />
           </Column>
         </TwoColumnLayout>
 
         <ClientOnly>{() => <IntroScrollytell />}</ClientOnly>
 
         <TwoColumnLayout>
+          <Column className="ml-0 md:w-2/3 md:ml-10">
+            <p>
+              The story of the emergence of modern data visualization, as it is
+              generally told, begins in Europe under the influence of the ideas
+              associated with the Scientific Revolution. Many of the specific
+              advances in the fields of astronomy, physics, mathematics,
+              biology, chemistry, and more, were bound together by their belief
+              in the value of knowledge gained through empirical evidence—that
+              is to say, through evidence gained through experimentation,
+              observation, and other forms of direct sensory experience. Most
+              famously, astronomers such as Galileo Galilei and Johannes Kepler
+              employed their observations of the night sky, conducted using some
+              of the earliest telescopes, in order to develop deeper knowledge
+              of the moon and planets and to determine their laws of motion.
+              Around Galileo in late renaissance Italy, and soon elsewhere on
+              the European continent, Enlightenment philosophers such as Francis
+              Bacon, John Locke, and David Hume, among others, also began to
+              develop theories of empiricism that authorized direct sensory
+              experience as the source of the evidence that led to new
+              knowledge, as opposed to earlier conceptions of knowledge as
+              divinely received.
+            </p>{" "}
+            <p>
+              While this empirical evidence could be registered by any of the
+              senses, the sense of sight retained the primary status that it had
+              long enjoyed. After all, it was by observing the night sky that
+              Galileo was able to confirm the phases of Venus and the existence
+              of mountains on the moon. Fifty years later, in England, in an
+              experiment canonized by historians of science (albeit less
+              memorable to students of high-school chemistry) it would be by
+              recording his own observations about his self-fashioned “air
+              pump,” and inviting members of the public to do the same, that
+              Robert Boyle developed his law describing the relationship between
+              the pressure and volume of air. These experiments’ clear
+              contributions to scientific knowledge, combined with the
+              empiricist philosophies that legitimized them, provided both the
+              evidence and the epistemological framework for people to begin to
+              consider how they might acquire knowledge through what they saw.
+              Despite this strong scaffolding, both conceptual and concrete, not
+              everyone was so easily convinced. Most significantly, René
+              Descartes and other proponents of rationalism—a competing
+              epistemological theory—insisted that certain core ideas, such as
+              the notion of language or the shape of a curve, came to be
+              understood not by experiment but instead through the inner
+              workings of the mind. These fundamental concepts were not
+              observable but innate, the rationalists posited, and were
+              transformed into knowledge by a process of deduction: by moving
+              from the abstract to the particular. This process was the opposite
+              of the inductive approach advanced by the empiricists, who
+              believed in moving from the particular to the abstract, and this
+              “mistrust of sense perception on the part of Descartes and his
+              disciples”—and the philosophical debate that ensued—was major
+              factor in delaying the development of data visualization, as
+              Howard Wainer and Ian Spence, have observed. There was still not
+              consensus around the idea that the sense of sight could be
+              believed.   But if Descartes’s distrust of the senses had a
+              decelerating effect on the emergence of data visualization, his
+              contributions in another arena—mathematics—were, ironically,
+              essential. While there had been earlier examples of chart-like
+              forms—an anonymous tenth-century diagram of the changing locations
+              of constellations in the night sky, and a set of
+              fourteenth-century charts of the relationships between quantities
+              created by French philosopher Nichole Oresme are often cited—it
+              was Descartes himself who first had the idea of “representing
+              points, lines, and geometric figures by equations that could be
+              visualized in diagrams and used to solve problems,” as Michael
+              Friendly and Howard Wainer, in A History of Data Visualization &
+              Graphic Communication, explain. This conceptual leap opened the
+              door to others, such as the perfectly named Robert Plot—also,
+              incidentally, credited with discovering (but not identifying) the
+              first dinosaur bone—to begin to plot other forms of numerical
+              data, such as barometric pressure (Plot’s subject), mortality
+              statistics (Christiaan Huygens’s), soil temperature (Johann
+              Lambert’s), and financial data (William Playfair’s). And so with
+              these visual examples, an abundance of data, and an empiricist
+              worldview, the flowering of data visualization was set to begin. 
+              Or so the story goes. 
+            </p>
+          </Column>
           <Column>
             <FigureObj figure={playfairFigures["1-northamerica"]} />
             <FigureObj figure={playfairFigures["2-wheat"]} />
             <FigureObj figure={playfairFigures["3-pie"]} />
           </Column>
-          <Column className="ml-0 md:w-2/3 md:ml-10">
-            <p>
-              But before moving any further, it’s important to make clear that
-              1788 — the date this project begins — was not the first time that
-              anyone had ever had the idea to visualize data. The Incan practice
-              of quipu, for example — a technique of recording quantitative
-              information as knots on strings — has been traced as early as 250
-              B.C.E. In the North American context—where the majority of the
-              project team lives and works—there are an abundance of examples of
-              wampum belts being employed by Indigenous nations to encode
-              political relations — most famously, by the Haudenosaunee — and
-              these date to at least a century before the beginning of the story
-              that we tell on this site.
-            </p>{" "}
-            <p>
-              For the story we tell is not simply about data visualization. It’s
-              a story that places the emergence of data visualization in the
-              context of the European Enlightenment, and in particular, in the
-              context of Enlightenment theories about the value of visual and
-              statistical knowledge. As such, it also, necessarily, places data
-              visualization in the context of global capitalism, which was of
-              course racial capitalism–a fact that continues to carry
-              consequences for us today. And while it might be surprising to
-              some readers to learn that seemingly “neutral” or “objective”
-              methods of visualizing data are embedded in this specific
-              sociopolitical context, it was not actually news to those in the
-              eighteenth and nineteenth centuries who were developing these
-              early visualization techniques that their work had social and
-              political stakes. Consider William Playfair, the man often
-              described as the “father” of modern data visualization, and who is
-              credited with inventing the pie chart. On the first page of the
-              preface to the third edition of his Commercial and Political Atlas
-              (1801), Playfair explains how “the minds of men, the boundaries of
-              nations, their laws and relations to each other, are all in a
-              state of change,” and for that reason, he has “chosen the present
-              moment” to republish his charts.
-            </p>
-            <p>
-              Admittedly, Playfair was also motivated by personal reasons. Very
-              few people had purchased the first edition of his book, and he was
-              “long anxious” to be acknowledged as an innovator. And while it
-              would have given him great pleasure to know that he is hailed
-              today as the father of data visualization, there are many other
-              visualization innovators who have yet to receive their due. These
-              include activists and educators, sociologists and statisticians,
-              as well as regular folks recording information about their lives
-              in the ways that rang most true. And as we follow their paths from
-              their own times up into the present, we begin to see the multiple
-              ways in which data might be given visual form, and the multiple
-              paths to knowledge that those visualizations enable.
-            </p>
-            <p>
-              To do this, we interweave detailed analyses of historical
-              visualization examples–some well-known and some more obscure–with
-              interactive reimaginings of those same images. Each of the
-              interactions that you will encounter has been intentionally
-              designed in order to convey an argument. For example, on the
-              project front page, you’ve already encountered the first of
-              these–a representation of all of the archival images that appear
-              throughout the site. We decided to present these images to you in
-              a way that might appear at first glance as a hodge-podge, or even
-              a mess. The images are scattered as if on a floor, many
-              overlapping with each other. But this layout has an underlying
-              rationale: the paths through the images that we offer in this
-              project, in the form of the chapters that can be navigated up
-              above, are only some of many. And while we’ve made it possible to
-              sort the shuffled images into a timeline, as you may have
-              discovered by clicking the “timeline” button on the previous page,
-              we did not want to imply–either through our writing, or through
-              our design–that there is one single path through.
-            </p>
-            <p>
-              While it is possible to read the chapters in any order, they are
-              arranged in somewhat of a chronological arc, moving from England
-              to Scotland, sites of some of the earliest instances of so-called
-              modern data visualization, and then on to the Americas, in order
-              to emphasize the influence of colonial expansion on the
-              development of modern data visualization. To this point, we begin
-              the project not with Playfair but, instead, with the indelible
-              Diagram of a Slave Ship, which dramatizes the data of the slave
-              trade by depicting each anguished body that the numbers represent.
-              This image, also known as the Brooks, for the name of the ship
-              that the diagram was based upon, was created in 1788, within a
-              year of the first versions of Playfair’s canonical charts.
-              Considered instead of Playfair as the starting point for the story
-              we tell, it establishes the importance of considering data
-              visualization in relation to the lives the data seeks to
-              represent.
-            </p>
-            While the Diagram of a Slave Ship was designed to produce an
-            “instantaneous impression” in all those who saw it, we decided to
-            present this image to contemporary readers more carefully than it
-            was in its own time. In that first chapter, you will notice an
-            option to read the chapter with images or without, so as to give you
-            the choice as to whether you wish to engage with this visual record
-            of violence. More broadly, the Diagram of a Slave Ship and its data
-            of human suffering sets in motion one of the main arguments of this
-            project: the idea of data visualization as a double-edged sword.
-            This consists, on the one side, of the power to distill complex
-            information such that insight can easily and efficiently emerge; and
-            on the other, of its potential for harm, brought about by how the
-            abstraction required to distill this insight comes at the expense of
-            the details of the data and the context in which it was produced.
-            <p>
-              With this key tension of data visualization firmly in place, we
-              return you to the time-series charts of William Playfair,
-              presenting an analysis of his charts alongside the text of his
-              Commercial and Political Atlas. Through this exercise, we confirm
-              how the uncertainty brought about by the Age of Revolutions, as
-              much as an adherence to Enlightenment empiricism, inspired his
-              influential visualization techniques.
-            </p>
-            <p>
-              We carry forward a discussion of democracy and nation-formation
-              into the next chapter, which considers two contrasting approaches
-              to visualizing geographical data: the historical atlas created by
-              Emma Willard, the activist and educator, to accompany her US
-              history textbook (1828); and the impressionistic maps sketched by
-              Shanawdithit (Beothuk) at the urging of a Scottish-Canadian
-              anthropologist (ca. 1829). Engaging questions of colonial
-              expansion alongside concerns about Indigenous sovereignty, we
-              continue to probe how data visualization enables new modes of
-              understanding, across both languages and cultures, at the same
-              time that it also often requires a severing of both data and
-              knowledge from its source.
-            </p>
-            <p>
-              We continue to track the development of data visualization into
-              the nineteenth century, and across the United States, through the
-              railroad journey of educator and editor Elizabeth Palmer Peabody.
-              Peabody undertook her travels in order to promote a new method of
-              visual pedagogy, which employed color and position in order to
-              represent historical events in time. Peabody’s charts, as
-              described in The Polish-American System of Cartography (1850) and
-              documented in A Chronological History of the United States (1856),
-              were designed to be abstract rather than intuitive; to promote
-              sustained reflection rather than immediate insight. In doing so,
-              she was guided by a clear goal: to provoke a unique imaginative
-              response in each viewer.
-            </p>
-            <p>
-              But if Peabody placed unyielding faith in the generative potential
-              of data visualization, the esteemed sociologist W.E.B. Du Bois,
-              the subject of the project’s final chapter, acknowledged both its
-              uses and limits. By exploring the charts that he designed for the
-              1900 Paris Exposition, in the context of his writing on race and
-              racism and his sociological theory, we reassert how data
-              visualization, the conceptual conditions of its emergence, and its
-              political consequences, are fundamentally intertwined. Drawing a
-              discussion of race, data, and political agency into the present,
-              we conclude with a consideration of the ethics of visualization,
-              illustrating how data visualization can bear witness to instances
-              of oppression at the same time that it can—if intentionally
-              designed—hold space for what cannot be conveyed through data
-              alone.
-            </p>
-            <p>
-              A final chapter, on the making of this project, elevates another
-              theme that courses throughout the work. This theme is labor, and
-              indeed, this project has been the work of many hands. Over six
-              years, two continents, four states, and four institutions, a
-              highly-skilled team of students, staff, and professionals, united
-              under the auspices of the Georgia Tech and now Emory Digital
-              Humanities Lab, have designed and implemented this platform and
-              interactive features you encounter throughout the site. The story
-              of this collaboration serves as a coda to this project, reminding
-              us–once again–that before there are data there are people, and
-              that in order to comprehend the full significance of any
-              particular data visualization, one must trace the data being
-              visualized back to its human source.
-            </p>
-          </Column>
         </TwoColumnLayout>
+        <FigureObj
+          figure={figures["8-Edmond_Halley's_map_of_the_trade_winds,_1686"]}
+          className="mx-2 md:mx-12 text-sm md:text-base"
+          captionClassName="mx-12"
+        />
+
+        <CenteredLayout>
+          <p>
+            But there is another version of this story that can be told, one
+            that passes through the difficult histories of slavery and of
+            settler colonialism, which have thus far gone unlinked to the
+            history of data and its visual display. This account also begins in
+            Europe, also in the exploratory air of the Renaissance, but it
+            involves men who, instead of fixing their eyes on the heavens, set
+            their sights on the seas. With an initial goal of discovering
+            oceanic trade routes to India, bolstered by the prospect of
+            spreading Christianity as well as of acquiring goods for future
+            trade, these explorers—Christopher Columbus the most infamous among
+            them—set the era of European colonization in motion. Between the
+            sixteenth and eighteenth centuries—the very same time-span as the
+            account above—Spain and Portugal, with English, France, and the
+            Netherlands shortly behind, sought to establish colonies in the
+            Americas that would enhance their economic, territorial, and
+            political power. These colonization efforts, as we know, inflicted
+            disease and outright violence on the estimated fifty to one hundred
+            million Indigenous people who already inhabited those lands,
+            reducing the population of the Americas to 1/10th that size over the
+            next century. In so doing, these colonial powers also established
+            the foundation of “conquest and genocide” that, as Indigenous
+            environmental studies scholar Max Liboiron (Métis/Mechif) explains,
+            continues to structure the forms of colonialism that persist today. 
+          </p>{" "}
+          <p>
+            While it may seem that the project of colonialism, with its emphasis
+            on the acquisition of land and the extraction of resources, places
+            it far from the origins of data visualization, there are clear links
+            between them. For one, European colonial expansion was fundamentally
+            dependent on visualizing data, in the form of mapping, in order to
+            create navigational aids for would-be explorers and to assert claims
+            over the land they sought to possess. Some of the earliest examples
+            of “data maps”—or “thematic maps” as they are known to
+            cartographers—date to this era, including Edmond Halley’s 1686
+            diagram of trade winds overlayed on a map of the world, which Tufte
+            cites as among the earliest examples of “placing a measured quantity
+            on the map’s surface at the intersection of two threads [of latitude
+            and longitude] instead of the name of a city.” Two centuries later,
+            the “data map” would reach its apotheosis in the exemplary
+            settler-colonial state, the United States, if the form of the
+            lavishly designed statistical atlases commissioned by the Census
+            Bureau. These atlases advanced state-of-the-art visualization
+            techniques in the service of a narrative that equated American
+            progress with western territorial expansion. As historian Benjamin
+            Schmidt has argued, the idea of manifest destiny was itself an
+            argument made more via data visualization than it was via actual
+            data, since the data showed far less uniform western settlement than
+            the narrative of progress that Frederick Jackson Turner and others
+            sought to advance.    
+          </p>
+          <p>
+            Studies from across the fields of geography, critical cartography,
+            Indigenous studies, American (and Latin American) studies, literary
+            studies, and history, among many others, have explored the
+            imbrications of mapping and colonialism in deep and varied detail.
+            While full account of this work exceeds the scope of this project,
+            we might focus on one additional phenomenon with particular
+            relevance to data visualization: how the colonial desire to extract
+            profit from resources first required the extraction of knowledge
+            about those resources. We have already been exposed to one example
+            of this in the map created by Shanawdithit, introduced earlier in
+            this introduction, which will be considered in depth in Chapter 3.
+            But as an example that coincides with the story offered here, we
+            might consider the famed 1580 map of the Spanish-colonial
+            municipality of Teozacoalco, located in what is now the Mexican
+            state of Oaxaca, which was created by an unknown Mixtec artist at
+            the request of a local Spanish official, who himself was responding
+            to a request from his King. 
+          </p>
+          <FigureObj figure={figures["9-PLACEHOLDER-teozacoalco"]} />
+          <p>
+            This request illustrates the conceptual convergence between the
+            European colonial project and the rise of empiricism, which is
+            included in standard accounts of the emergence of the field. For the
+            request made to this particular corregidor was one of many; in
+            attempt to collect information about the geography, resources, and
+            cultures of the colonies he sought to govern, King Phillip II of
+            Spain had issued a large-scale survey to all officials of New Spain.
+            It included questions about the terrain, its natural resources, and
+            its demographics, which elicited quantitative as well as qualitative
+            responses. As a result, the Relaciones Geográficas, as the survey
+            would come to be known, has earned the distinction of being the
+            first (known) statistical study of the Americas. The colonial
+            reliance on data and statistics throughout this era is a large part
+            of the reason for the longstanding suspicion of data by many
+            Indigenous groups. It has also provided the motivation for the
+            creation of the principles of Indigenous Data Sovereignty, which we
+            all benefit from bearing in mind. More to the point of the story
+            told here, however, was that King Phillip approached the task of
+            gaining knowledge about his colonies in a method very similar to how
+            Galileo approached the sky or Boyle the air pump: through empirical
+            evidence. The King’s motivation for the Relaciones reflect his
+            belief that data, direct observation—and, the reason for its
+            inclusion here, expertly drawn maps—would lead to more complete
+            knowledge of his domain. 
+          </p>{" "}
+          <p>
+            In the case of Teozacoalco, the map returned to King Phillip gave
+            him far more knowledge than he could have anticipated, in the form
+            of its expert blending of Mesoamerican pictorial devices with
+            European mapmaking techniques. It makes use of multiple dimensions,
+            and both genealogical and geographical data, to produce a
+            “space-time-story graphic” of precisely the kind that Tufte extolls.
+            Unlike Minard’s flow-map, however, the data depicted in the
+            Teozacoalco map encompasses a far longer time-span than a single
+            military campaign; it depicts the lineage of region’s ruling elite
+            over multiple generations, and connects them to the towns in their
+            domain. The genealogy of rulers can be found on the left-hand side
+            of the chart, with the Mixtec calendar system used to identify key
+            dates. A thick brown line connects the rulers to a globe-like form,
+            representing the totality of the municipalities they presided over.
+            Additional lines between the towns indicate their borders, with
+            additional features of the landscape drawn out, evidently with such
+            accuracy that it has enabled present-day archaeologists to pinpoint
+            the locations of these historical towns. In this way, the chart
+            endures as a record of pre-colonial history and culture as much as
+            it does of the force of imperial encounter. This is a well-known
+            paradox of the colonial archive, which results in Indigenous
+            artifacts produced in the service of the colonial state being those
+            most likely to survive. In the context of the history of data
+            visualization, however, this map reminds us, in the form of its
+            striking aesthetic hybridity and informatic depth, that it—like all
+            maps and, as will soon be argued, all data—cannot be considered
+            outside of the colonial
+          </p>
+        </CenteredLayout>
+        <ChapterSectionTitle section={sections[1]} />
+        <CenteredLayout>
+          <p>
+            In the seventeenth century, as the economic ambition of the European
+            colonial class continued to grow, they required more and more labor
+            to convert their land and the resources it contained into profit.
+            These labor demands were first met through a combination of
+            indentured servants who traveled from Europe out of their own
+            volition, and enslaved workers who had been forcibly captured both
+            from local populations and from abroad. But as the century unfolded,
+            and especially in the Caribbean, as sugar plantations proved to be
+            so much of an economic boon, the capture and enslavement of African
+            people—and the brutality and degradation that it was premised
+            upon—would increasingly become the primary means by which the labor
+            demands of the plantation system were sustained. This odious
+            model—of the forced extraction of labor, and also knowledge, from
+            those with darker skin—would not only motivate the establishment of
+            illy C ap new plantations in what would later become the southern
+            half of the United States, but also set in motion the development of
+            the idea of Blackness as a “biological racial essence viewed as
+            immutable, heritable, and determinative” that, as historian Tiya
+            Miles explains, “fully mature[d] into the zealous arguments of
+            nineteenth-century scientific racism and the vehement politics of
+            twentieth-century American Jim Crow.”    
+          </p>{" "}
+          <p>
+            As we will discover over the course of this project, the idea of
+            data, as well as the epistemological value of its visual display,
+            are more closely connected to the rise of slavery, to the modern
+            conception of race, and to modern racism, than we would like to
+            believe. To understand these imbrications, we must first consider
+            how colonialism, which provided European nations with the land and
+            resources that they could then exploit, was complemented by the
+            economic model of mercantile capitalism, which justified its pursuit
+            and which allowed the world order it established to become
+            permanently entrenched. Capitalism in its range of guises—including
+            racial capitalism, to be discussed more below—was and remains what
+            authorizes colonial powers to continue to accumulate wealth and
+            resources, and in the process, enforces a view of objects, actions,
+            and even people in the world as “goods” that can be reduced to a
+            price. 
+          </p>{" "}
+          <p>
+            Because the word “data” did not achieve widespread usage until the
+            eighteenth century, it is often spared association with racial
+            capitalism and all that it entailed. But when looking at what Mary
+            Poovey terms the “epistemological unit” of data, as opposed to the
+            word itself, a clear link between data and capitalism begins to
+            emerge. As with colonialism, this connection is both concrete and
+            conceptual. First, concrete: in addition to the notebooks filled
+            with temperature readings that inspired Johann Lambert to create his
+            time-series charts, and the bills of mortality that provided
+            Christiaan Huygens with the data he required to create his
+            population curves, there were also the double-entry ledger books
+            that merchants employed to recorded credits and debits—that is to
+            say, the data of capitalism—in orderly, column-like pairs. As is
+            true of the long history of data visualization, there also exist
+            earlier examples of data tables—far earlier, in this case; the
+            earliest known examples date to 3500 BCE, in the Neolithic cities of
+            Sumerian Mesopotamia. But the crucial difference between the
+            mercantile ledgers and earlier examples, as Poovey has influentially
+            argued, is how the double-column format lent an air of objectivity
+            to the data as it allowed the numbers to become detached from those
+            who had inscribed them, and—crucially—to become interchangeable with
+            other numbers that represented other quantities and prices of
+            goods—goods that, again, at times took human form. 
+          </p>
+          <FigureObj
+            className="grid grid-cols-2 items-center middle-full gap-x-4"
+            figures={[
+              figures["10-PLACEHOLDER-ledger1"],
+              figures["11-PLACEHOLDER-ledger2"],
+            ]}
+            groupCaption={
+              <>
+                <p></p>
+              </>
+            }
+          />
+          <p>
+            The earliest versions of these ledger books still included a
+            substantial amount of descriptive text, but it was not long before
+            the data table, like the numbers it contained, came to stand on its
+            own. In the eighteenth century, examples abound of tables
+            documenting credits and debits, profits and losses, and costs and
+            counts—not only of saleable goods, such as fruit or fabrics, but of
+            also of people. The table below, from 1770, one component of a
+            diagram of a French slave ship, the Marie Séraphique, discussed in
+            detail in Chapter 1, presents its data in this by-then standard
+            tabular form. The largest section, on the left, provides a breakdown
+            of the counts of various “items of trade,” indicating which were
+            intended for sale, as gifts to the king, consumed along the way, and
+            so on. But next to that section, in near-identical form, is another
+            table which lists “Products of Loango,” a pre-colonial African state
+            located in what is now Republic of Congo. These numbers here refer
+            not to goods but to people, with counts corresponding the number who
+            perished and those who survived. 
+          </p>
+          <FigureObj
+            figure={figures["8-Edmond_Halley's_map_of_the_trade_winds,_1686"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+          <p>
+            This visual presentation of people as data—a literal headcount, as
+            Margy Adams has observed—reinforces the claims made by scholars of
+            slavery, such as Jessica Marie Johnson, that data itself “is the
+            evidence of terror, and the idea of data as fundamental and
+            objective information… obscures rather than reveals the scene of the
+            crime.” Johnson’s focus is her essay is the uneasy link between
+            these data tables and contemporary digital databases, such as the
+            Trans-Atlantic Slave Trade database, pictured below, which employs
+            digitized versions of the very same data—represented, moreover, in
+            the very same columns and rows—in the service of gaining knowledge
+            about the past. While this knowledge is at times sought out by
+            present-day descendants of the enslaved, for whom the information
+            contained within historical data tables and related shipping
+            logs—the port of origin, a captive’s gender and age—often,
+            perversely, represents the best chance of leaning about their own
+            family’s past, “there is no bloodless data in slavery’s archive,”
+            Johnson reminds us, and any present-day attempt to engage with this
+            data must be undertaken in full awareness of this fact. Carrying
+            this context forward into the nineteenth century, with the rise of
+            scientific racism and in turn, the co-emergence of eugenics and
+            modern statistics, this lesson comes to apply to data work as a
+            whole. As we contemplate what can be learned through data analysis
+            and its visual display, we must also always consider the context—and
+            very often, the humanity—that is stripped away.
+          </p>
+          <FigureObj
+            figure={figures["13-PLACEHOLDER-TAST"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+          <p>
+            There is a final conceptual connection to capitalism, and to
+            slavery, with which those who work with data must contend. This has
+            to do with the core economic theory of capitalism, and in
+            particular, how it is premised upon an abstraction of human labor
+            into its economic or “exchange” value, which in slavery finds its
+            most heinous form. In his account of this era of capitalism, Ian
+            Baucom employs the powerful example of another slave ship—this one
+            British, the Zong—which made a series of navigational errors while
+            crossing the Atlantic, resulting in a shortage of food and water for
+            the captives and crew on board. The captain then performed a
+            cost-benefit analysis, ultimately leading him to the decision to
+            throw the captives overboard, killing them, so that the crew members
+            could consume the remaining food and water themselves. As Baucom
+            explains it, this decision was made because the captain calculated
+            that he could collect enough insurance money on his captives’ loss
+            of life to profit, even if he couldn’t sell them once they landed
+            ashore. For Baucom, as for other critics of capitalism, the blatant
+            inhumanity of this decision exemplifies the dangers to which the
+            abstraction of labor into “exchange value” leads. For those of us
+            who work with data, the Zong continues to carry a cautionary tale:
+            about the fundamental importance of attending to the lives behind
+            the data, even as our tools and methods—those “technologies of
+            distance,” as Theodore Porter famously called them—have largely been
+            designed to strip that humanity away.
+          </p>
+          <p>
+            Indeed, there is a version of the history of data visualization that
+            need not be significantly reconfigured in order to provide Clarkson
+            with a more prominent place. Many scholars, including Rosenberg and
+            Grafton, have made the case that chronological charts such as those
+            created by Strass and Bell, as well as their more linear
+            antecedents, “cleared the way for statistical graphics” by
+            introducing the idea of consistent scale. This argument is confirmed
+            by the purported “pioneer” of statistical graphics himself, William
+            Playfair, the subject of the next chapter, who praised the genre for
+            “making space represent time,” and for using “a line of proportional
+            length and in a suitable position.” As we will learn, Playfair
+            described the purpose of his own visualizations in terms quite
+            similar to Clarkson’s: to unite “a number of separate ideas… under
+            one simple impression of vision, and consequently, one act of
+            memory.”
+          </p>
+        </CenteredLayout>
+        <ChapterSectionTitle section={sections[2]} />
       </ChapterBody>
       <CenteredLayout>
         <p>
