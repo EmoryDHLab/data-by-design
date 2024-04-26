@@ -27,8 +27,8 @@ export const meta: V2_MetaFunction = () => {
 
 const sections = [
   {
-    title: "The Value of Visual Knowledge",
-    id: "the-value-of-visual-knowledge",
+    title: "The Value of Visualization",
+    id: "the-value-of-visualization",
   },
   {
     title: "The Politics of Playfair's Charts",
@@ -89,7 +89,7 @@ export default function PlayfairPage() {
             quote={
               <>
                 Data visualization has never been neutral or objective. There is
-                meaning — and an argument — conveyed through each visual design.
+                a meaning — and an argument — conveyed through each visual design.
               </>
             }
           />
@@ -180,8 +180,8 @@ export default function PlayfairPage() {
               who can most benefit from its insights.
             </p>
             <PullQuote
-              title="These views—about why, how, and for whom a visualization has been designed"
-              subtitle="—are what we describe in this chapter as a visualization's argument."
+              title="These views—about why, how, and for whom a visualization has been designed—"
+              subtitle="are what we describe in this chapter as a visualization's argument."
             />
             <p>
               These views—about why, how, and for whom a visualization has been
@@ -472,7 +472,7 @@ export default function PlayfairPage() {
               be impacted by that missing information.
               <InlineFootnote index={26} /> What is surprising is that we, in
               the present, have not yet come to see these design choices as the
-              argument of Playfair's charts.
+              <em>argument</em> of Playfair's charts.
             </p>
             <p>
               Perhaps this is due to the design of the charts themselves: how
@@ -582,6 +582,8 @@ export default function PlayfairPage() {
               parse. Only then could we plot the points on our chart—a very
               different process than Playfair himself employed.
             </p>
+            <p>But plotting Playfair's datapoints was only the beginning. While it generally takes only a single line of D3 code to plot a path from one point to the next, Playfair's data-lines contained more curves than were recorded in his tables. Because our goal was to recreate Playfair's chart with fidelity to the image, and not to the data tables that Playfair himself removed, we needed a way to convert his data-lines back into data that we could plot. To do this, we first imported a high-resolution scan of the original image into Adobe Photoshop, then traced the data-lines with a digital pen so that we could save them as vector-based paths. We exported each path's coordinate vector from Photoshop as a standalone file, which we then imported back into D3 as data. Only then could we plot Playfair's data-lines on the chart as they are currently shown. 
+            </p>
             <p>
               If this process seems convoluted, that is a large part of the
               point. It underscores the degree to which D3 depends on data, and
@@ -641,8 +643,6 @@ export default function PlayfairPage() {
               </span>,
               <span key="7acf0c9e">
                 Between 2016 and 2018 is a gap, when my attention was elsewhere.
-                In 2018, the implementation work begins, gradually increasing
-                through the project's final release.
               </span>,
               <span key="96d84379">
                 In 2018, the implementation work begins, gradually increasing
@@ -723,7 +723,7 @@ export default function PlayfairPage() {
               method of display: <q>I have begun to practice the mode here,</q>
               writes Playfair in the voice of Franklin,{" "}
               <q>
-                a nd it throws light on the state of our accounts, as if by
+                and it throws light on the state of our accounts, as if by
                 inspiration, one minute giving a much clearer idea of the
                 matter, than whole days and weeks without this simple invention.
               </q>
