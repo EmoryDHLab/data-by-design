@@ -3,7 +3,7 @@ import SiteTitle from "./home/SiteTitle";
 export default function Footer() {
   return (
     <footer
-      className={`grid md:grid-cols-12 md:gap-x-12 p-10 pt-20 md:pt-12 font-neueMontreal bg-offblack text-offwhite border-t-2 border-offwhite`}
+      className={`grid md:grid-cols-12 md:gap-x-12 p-20 pt-20 md:pt-12 font-neueMontreal bg-offblack text-offwhite border-t-2 border-offwhite`}
     >
       <div className="col-span-12 md:col-span-3 flex flex-col">
         <cite className="sr-only">Data by Design</cite>
