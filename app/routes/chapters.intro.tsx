@@ -14,7 +14,7 @@ import figures from "~/data/figures/intro.json";
 import FigureObj from "~/components/layout/FigureObj";
 import ChapterBody from "~/components/layout/ChapterBody";
 import IntroScrollytell from "~/components/intro/IntroScrollytell.client";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 
 const sections = [
   {

@@ -18,7 +18,7 @@ import FigureObj from "~/components/layout/FigureObj";
 
 import figures from "~/data/figures/description.json";
 import ClarksonSideBySideScrollytell from "~/components/description/ClarksonSideBySideScrollytell";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import VoyagesVis from "~/components/description/voyages/VoyagesVis.client";
 import { chapterMeta } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
@@ -293,15 +293,15 @@ export default function BrooksPage() {
             commodity goods on the part of slavery's profiteers.
           </p>
           <p>
-            Readers have already been informed that the default settings
-            for this chapter hide the visual details of the "Description," and
-            the other sensitive images discussed here, until they are
-            sufficiently prepared for what they might see. We made this choice
-            because of the range of harms that can be brought about by engaging
-            with the archive of slavery without warning, context, or consent.
-            These harms may be retrospective, the result of "the uncertain line
-            between witness and spectator" that scholars of slavery often walk,
-            as literary scholar Saidiya Hartman has influentially written.
+            Readers have already been informed that the default settings for
+            this chapter hide the visual details of the "Description," and the
+            other sensitive images discussed here, until they are sufficiently
+            prepared for what they might see. We made this choice because of the
+            range of harms that can be brought about by engaging with the
+            archive of slavery without warning, context, or consent. These harms
+            may be retrospective, the result of "the uncertain line between
+            witness and spectator" that scholars of slavery often walk, as
+            literary scholar Saidiya Hartman has influentially written.
             <InlineFootnote index={8} /> They may also be expressed in the form
             of the desensitization brought about by evermore depictions of the
             "routinized violence of slavery," Hartman further explains.
@@ -309,7 +309,8 @@ export default function BrooksPage() {
             enslaved, such depictions can also exacerbate existing
             intergenerational trauma, as historian Jennifer Morgan describes.
             <InlineFootnote index={10} /> Those who choose to view Elford's
-            version of the diagram may do so now by clicking the button at the bottom right. Or you may choose to continue to only read about the
+            version of the diagram may do so now by clicking the button at the
+            bottom right. Or you may choose to continue to only read about the
             images of slavery included here.
           </p>
           <p>
@@ -317,7 +318,7 @@ export default function BrooksPage() {
             affecting as it is visually impossible. Viewers see the ship from
             above, as if they are gods in the heavens. (We will return to what
             is, in fact, a "god trick" down below). The top deck of the ship has
-            been removed, so that the viewer can see directly into the hold. 
+            been removed, so that the viewer can see directly into the hold.
           </p>
         </CenteredLayout>
 
@@ -327,31 +328,36 @@ export default function BrooksPage() {
               The hold is divided into six distinct areas.
             </span>,
             <span key="a400ea46">
-              The largest area, in the bow of the ship, and which occupies the entire right half of the diagram, is labeled the "Mens room," and depicts 120 male bodies in four rows of thirty.
+              The largest area, in the bow of the ship, and which occupies the
+              entire right half of the diagram, is labeled the "Mens room," and
+              depicts 120 male bodies in four rows of thirty.
             </span>,
             <span key="e6184ce7">
-              In the middle is a narrow column labeled "Boys room" and depicts shorter male figures in six rows of twelve. 
+              In the middle is a narrow column labeled "Boys room" and depicts
+              shorter male figures in six rows of twelve.
             </span>,
             <span key="aebd268b">
-              To its left is the larger "Womens room," depicting figures the same size as the adult men, but with breasts. They are depicted in four rows of twenty-one, representing 84 women total.
+              To its left is the larger "Womens room," depicting figures the
+              same size as the adult men, but with breasts. They are depicted in
+              four rows of twenty-one, representing 84 women total.
             </span>,
             <span key="b1f566ad">
-              At the stern is the "Girls
-            Room," the figures shorter and squatter than the boys, arranged in
-            three rows of ten. 
+              At the stern is the "Girls Room," the figures shorter and squatter
+              than the boys, arranged in three rows of ten.
             </span>,
             <span key="d90523c5">
-              These "scaled inequalities," as Black feminist
-            theorist Hortense Spillers characterizes the figures, literalize the
-            process of "dehumanizing, ungendering, and defacing" that the Middle
-            Passage brought about.  <InlineFootnote index={11} />
+              These "scaled inequalities," as Black feminist theorist Hortense
+              Spillers characterizes the figures, literalize the process of
+              "dehumanizing, ungendering, and defacing" that the Middle Passage
+              brought about. <InlineFootnote index={11} />
             </span>,
           ]}
         />
 
         <TwoColumnLayout>
           <Column shouldPin={true}>
-            <p>Certain visual features help the plan achieve its impact. Most
+            <p>
+              Certain visual features help the plan achieve its impact. Most
               immediate is how the 297 figures, what Marcus Wood describes as a
               "mass of black human flesh," are set against the clean lines that
               indicate the bounds of the ship. The labels of each area, engraved
@@ -361,7 +367,7 @@ export default function BrooksPage() {
               figures "appears to deny [their] flesh and blood presence." But
               for Elford, this abstraction was perhaps part of the point.
             </p>
-            
+
             <p>
               It is unknown as to whether Elford was familiar with an earlier,
               more literal depiction of a slave ship, the Marie Séraphique,
@@ -451,12 +457,13 @@ export default function BrooksPage() {
               human history, of course. But this particular lesson about the
               chart's constitutive tension is one that can be more universally
               applied. The abstraction that is required to efficiently produce
-              insight always—and <em>necessarily</em>—comes at
-              the expense of the full complexity of the phenomenon that it represents. What should we do with this realization, either as
-              viewer of data visualizations or as designers of them? The answer
-              is not that we should reject visualization out of hand. Rather, it
-              is that we must always consider what is lost in the process of
-              visualizing data at the same time that we consider what is gained.
+              insight always—and <em>necessarily</em>—comes at the expense of
+              the full complexity of the phenomenon that it represents. What
+              should we do with this realization, either as viewer of data
+              visualizations or as designers of them? The answer is not that we
+              should reject visualization out of hand. Rather, it is that we
+              must always consider what is lost in the process of visualizing
+              data at the same time that we consider what is gained.
             </p>
             <PullQuote
               title="The abstraction that is required to produce insight always—and, necessarily—"
@@ -685,14 +692,13 @@ export default function BrooksPage() {
         <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
           <p>
-            These were the very questions that I, Lauren, brought to the {" "}
-            <cite>Data by
-            Design</cite>{" "} project team. I also brought a dataset: a full download of
-            the Trans-Atlantic Slave Trade Database, which (as of the time of
-            this writing, in Spring 2024) contains records of 36,150 unique
-            slaving voyages that took place between the years 1514 and 1866,
-            resulting in the captivity and forced migration of an estimated 10.6
-            million souls.
+            These were the very questions that I, Lauren, brought to the{" "}
+            <cite>Data by Design</cite> project team. I also brought a dataset:
+            a full download of the Trans-Atlantic Slave Trade Database, which
+            (as of the time of this writing, in Spring 2024) contains records of
+            36,150 unique slaving voyages that took place between the years 1514
+            and 1866, resulting in the captivity and forced migration of an
+            estimated 10.6 million souls.
             <InlineFootnote index={36} /> Ever since the first release of the
             database, in 1999 via CD-ROM, scholars and designers have attempted
             to give this powerful data visual form.
@@ -805,7 +811,7 @@ export default function BrooksPage() {
               departed from Africa on each ship. The width at the bottom
               corresponds to the number who arrived in the Americas having
               survived. The duration of each voyage is conveyed through the
-              amplitude of each bind, but plotted from the side. 
+              amplitude of each bind, but plotted from the side.
             </span>,
             <span key="d4c5b977">
               While Fisk's original design superimposes the floodplains of the
@@ -982,8 +988,8 @@ export default function BrooksPage() {
             <InlineFootnote index={51} /> The sea metaphor is further clouded by
             the role that actual water—namely, the Atlantic Ocean—played in the
             slave trade. Why would Clarkson use water—the very site of the
-            dehumanization that enslavement brought about—as
-            the anchoring metaphor of his account?
+            dehumanization that enslavement brought about—as the anchoring
+            metaphor of his account?
           </p>
           <PullQuote title="Why would Clarkson use water—the very site of the dehumanization that enslavement brought about—as the anchoring metaphor of his account?" />
           <p>
