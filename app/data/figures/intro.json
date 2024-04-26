@@ -232,5 +232,41 @@
     "frontPage": true,
     "year": 1915,
     "chapter": "intro"
+  },
+  "timeline-as-stacks": {
+    "chapterTitle": "Intro",
+    "fileName": "timeline-as-stacks.png",
+    "title": "Timeline as stacks",
+    "artist": null,
+    "caption": null,
+    "altText": null,
+    "sensitive": false,
+    "creditLine": null,
+    "digitizedLine": null,
+    "source": null,
+    "sourceUrl": null,
+    "fee": false,
+    "notes":null,
+    "frontPage": true,
+    "year": null,
+    "chapter": "intro"
+  },
+  "OldTimeline": {
+    "chapterTitle": "Intro",
+    "fileName": "OldTimeline.png",
+    "title": "Timeline as line",
+    "artist": null,
+    "caption": null,
+    "altText": null,
+    "sensitive": false,
+    "creditLine": null,
+    "digitizedLine": null,
+    "source": null,
+    "sourceUrl": null,
+    "fee": false,
+    "notes":null,
+    "frontPage": true,
+    "year": null,
+    "chapter": "intro"
   }
 }
