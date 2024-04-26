@@ -451,17 +451,16 @@ export default function BrooksPage() {
               human history, of course. But this particular lesson about the
               chart's constitutive tension is one that can be more universally
               applied. The abstraction that is required to efficiently produce
-              insight always—and, very crucially, <em>necessarily</em>—comes at
-              the expense of the full complexity of the phenomenon that it seeks
-              to represent. What should we do with this realization, either as
+              insight always—and <em>necessarily</em>—comes at
+              the expense of the full complexity of the phenomenon that it represents. What should we do with this realization, either as
               viewer of data visualizations or as designers of them? The answer
               is not that we should reject visualization out of hand. Rather, it
               is that we must always consider what is lost in the process of
               visualizing data at the same time that we consider what is gained.
             </p>
             <PullQuote
-              title="The abstraction that is required to produce insight always—and, necessarily"
-              subtitle="—comes at the expense of the complexity of the phenomenon that it seeks to represent."
+              title="The abstraction that is required to produce insight always—and, necessarily—"
+              subtitle="comes at the expense of the full complexity of the phenomenon that it represents."
             />
             <p>
               Elford's diagram also reminds us, with its subject most profound,
