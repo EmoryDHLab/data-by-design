@@ -1,5 +1,5 @@
 function Image() {
-  return <div className="w-24 h-24 border-4 border-black"></div>;
+  return <div className="w-24 h-24 border-black"></div>;
 }
 export default function ImageGrid() {
   let images = [];

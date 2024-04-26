@@ -9,6 +9,7 @@ import RandomPaths from "~/components/intro/RandomPaths";
 import FakePage from "~/components/intro/FakePage";
 import RandomRectangles from "~/components/intro/RandomRectangles";
 import RandomOrTimelineRectangles from "~/components/intro/RandomOrTimelineRectangles";
+import RandomImagesIntoGrid from "~/components/intro/RandomImagesIntoGrid";
 
 export default function IntroScrollytell() {
   const [scrollProgress, setScrollProgress] = useState(0.0);
@@ -30,7 +31,7 @@ export default function IntroScrollytell() {
         steps={steps}
         id="intro"
       >
-        <div ref={steps} className="relative z-10">
+        <div ref={steps} className="relative z-10 pointer-events-none">
           {IntroTriggers.map((trigger, index) => {
             return (
               <div
@@ -47,7 +48,12 @@ export default function IntroScrollytell() {
             );
           })}
         </div>
-        <div className="sticky top-16 right-0 md:top-[200px] md:w-1/2 h-screen md:mr-24">
+        <div
+          className={classNames(
+            "sticky top-16 right-0 md:top-[200px] h-screen md:mr-24",
+            (scrollProgress < 5.5 || scrollProgress > 7) && "md:w-1/2"
+          )}
+        >
           <LinearTimeline />
         </div>
       </ScrollytellWrapper>
@@ -58,15 +64,31 @@ export default function IntroScrollytell() {
 function LinearTimeline() {
   const { scrollProgress } = useContext(ScrollytellContext);
 
-  if (scrollProgress < 2.6) {
+  if (scrollProgress > 0 && scrollProgress < 2.6) {
     return <RandomPaths />;
-  } else if (scrollProgress < 3.2) {
+  }
+
+  if (scrollProgress > 2.6 && scrollProgress < 3.2) {
     return <RandomRectangles />;
-  } else if (scrollProgress < 4.4) {
+  }
+
+  if (scrollProgress > 3.2 && scrollProgress < 4.4) {
     return <div></div>;
-  } else if (scrollProgress < 6) {
+  }
+
+  if (scrollProgress > 4.4 && scrollProgress < 5.5) {
     return <RandomOrTimelineRectangles />;
-  } else if (scrollProgress < 7) {
+  }
+
+  if (scrollProgress > 5.5 && scrollProgress < 7) {
+    return <RandomImagesIntoGrid />;
+  }
+
+  if (scrollProgress > 7 && scrollProgress < 7.8) {
+    return <div></div>;
+  }
+
+  if (scrollProgress > 7.8 && scrollProgress < 10) {
     return <FakePage />;
   }
 }

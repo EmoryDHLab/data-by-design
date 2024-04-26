@@ -2,14 +2,15 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { useResizeObserver } from "~/hooks";
 import { ScrollytellContext } from "~/scrollytellContext";
 import p5 from "p5";
+import Shuffle from "~/components/icons/Shuffle";
 
 const rectangleTypes = [
-  { width: 40, height: 50 },
-  { width: 50, height: 60 },
-  { width: 50, height: 50 },
+  { width: 80, height: 100 },
+  { width: 100, height: 120 },
+  { width: 100, height: 100 },
   {
-    width: 30,
-    height: 60,
+    width: 60,
+    height: 120,
   },
 ];
 
@@ -21,7 +22,7 @@ function generateRectangles() {
     height: number;
     angle: number;
   }[] = [];
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 25; i++) {
     const x = Math.random();
     const y = Math.random();
 
@@ -47,10 +48,13 @@ export default function RandomRectangles() {
 
   return (
     <div className="relative w-[50vw]">
+      <button onClick={() => setRectangles(generateRectangles())}>
+        <Shuffle />
+      </button>
       {rectangles.map((rectangle, index) => {
         return (
           <div
-            className="border-black pointer-events-none border-2"
+            className="border-black pointer-events-none border-2 bg-brooksSecondary"
             key={index}
             style={{
               position: "sticky",
@@ -60,9 +64,9 @@ export default function RandomRectangles() {
               height: rectangle.height,
               transform: `translate(${
                 rectangle.x * windowSize.width * 0.4
-              }px, ${rectangle.y * windowSize.height * 0.5}px) rotate(${
-                rectangle.angle
-              }rad)`,
+              }px, ${
+                rectangle.y * windowSize.height * 0.5 - windowSize.height * 0.5
+              }px) rotate(${rectangle.angle}rad)`,
             }}
           ></div>
         );
