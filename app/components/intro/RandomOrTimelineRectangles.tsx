@@ -26,15 +26,23 @@ export default function RandomOrTimelineRectangles() {
 }
 
 let rectangles = [];
-for (let i = 0; i < 50; i++) {
-  const num = Math.floor(Math.random() * 10);
+for (let i = 0; i < 5; i++) {
+  const num = Math.floor(Math.random() * 5) + 1;
   let temp = [];
   for (let j = 0; j < num; j++) {
-    temp.push(<div className="border-black border-2 w-12 h-12"></div>);
+    temp.push(
+      <div
+        className="fixed border-black border-2 w-24 h-24 top-[40vh] bg-offwhite"
+        style={{
+          left: `calc(${i * 120 + j * 5}px + 50vw)`,
+          marginTop: `${j * 20}px`,
+        }}
+      ></div>
+    );
   }
-  rectangles.push(<div className="flex flex-col space-y-2">{temp}</div>);
+  rectangles.push(<div className="relative">{temp}</div>);
 }
 
 function OrderedRectangles() {
-  return <div className="pt-4 flex space-x-2">{rectangles}</div>;
+  return <div className="pt-4 w-[50vw] flex space-x-2">{rectangles}</div>;
 }

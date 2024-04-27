@@ -39,7 +39,7 @@ export default function IntroPage() {
   return (
     <ChapterContext.Provider
       value={{
-        backgroundColor: "brooksSecondary",
+        backgroundColor: "offwhite",
         primaryTextColor: "black",
         accentColor: "playfairPrimary",
         accentTextColor: "white",

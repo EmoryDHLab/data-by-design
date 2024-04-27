@@ -1,8 +1,4 @@
-import p5 from "p5";
-import { Fragment, useEffect, useRef } from "react";
-import { useResizeObserver } from "~/hooks";
 import PullQuote from "~/components/PullQuote";
-import ImageGrid from "~/components/intro/ImageGrid";
 import RandomImagesIntoGrid from "~/components/intro/RandomImagesIntoGrid";
 
 const IntroTriggers = [
@@ -57,10 +53,6 @@ const IntroTriggers = [
   <p key="a609783e">
     Some of the images go on to serve as centerpieces of the chapters in which
     they appear, their history and significance elaborated in extensive detail.
-  </p>,
-  <p key="6df07f1a">
-    Others are referenced only in passing, their deeper significance left for
-    other scholars to explore.
   </p>,
   <p key="1d5bc9f0">
     Shuffle once and a familiar sight may appear: the faded orange flow-line

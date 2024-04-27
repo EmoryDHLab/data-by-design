@@ -10,6 +10,7 @@ import FakePage from "~/components/intro/FakePage";
 import RandomRectangles from "~/components/intro/RandomRectangles";
 import RandomOrTimelineRectangles from "~/components/intro/RandomOrTimelineRectangles";
 import RandomImagesIntoGrid from "~/components/intro/RandomImagesIntoGrid";
+import CentralImageOnPage from "~/components/intro/CentralImageOnPage";
 
 export default function IntroScrollytell() {
   const [scrollProgress, setScrollProgress] = useState(0.0);
@@ -88,11 +89,11 @@ function LinearTimeline() {
     return <RandomOrTimelineRectangles />;
   }
 
-  if (scrollProgress > 6.05 && scrollProgress < 8) {
+  if (scrollProgress > 6.05 && scrollProgress < 7.2) {
     return <div />;
   }
 
-  if (scrollProgress > 7 && scrollProgress < 10) {
-    return <FakePage />;
+  if (scrollProgress > 7.6 && scrollProgress < 8) {
+    return <CentralImageOnPage />;
   }
 }

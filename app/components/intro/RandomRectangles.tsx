@@ -54,7 +54,7 @@ export default function RandomRectangles() {
       {rectangles.map((rectangle, index) => {
         return (
           <div
-            className="border-black pointer-events-none border-2 bg-brooksSecondary"
+            className="border-black pointer-events-none border-2 bg-offwhite"
             key={index}
             style={{
               position: "sticky",
