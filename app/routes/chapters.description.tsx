@@ -263,7 +263,7 @@ export default function BrooksPage() {
         </CenteredLayout>
         <ChapterSectionTitle section={sections[0]}></ChapterSectionTitle>
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             The original engraving that Clarkson showed to Equiano, and that
             provided him with the visual model for his own, is attributed to the
             Plymouth Committee as a collective. But it is generally believed
@@ -512,7 +512,7 @@ export default function BrooksPage() {
 
         <TwoColumnLayout>
           <Column shouldPin>
-            <p>
+            <p className="first-paragraph">
               As Elford was scrutinizing the Parrey report, William Clarkston
               was pursuing his own research into the pernicious nature of the
               slave trade. Like Parrey, Clarkston began by transforming the
@@ -702,7 +702,7 @@ export default function BrooksPage() {
 
         <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             These were the very questions that I, Lauren, brought to the{" "}
             <cite>Data by Design</cite> project team. I also brought a dataset:
             a full download of the Trans-Atlantic Slave Trade Database, which
@@ -930,7 +930,7 @@ export default function BrooksPage() {
 
         <ChapterSectionTitle section={sections[3]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             While it would take another nine years—and, according to the
             Trans-Atlantic Slave Trade Database, an additional 1.5 million
             people or more forcibly separated from their homelands—for the

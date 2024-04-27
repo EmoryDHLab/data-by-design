@@ -192,9 +192,9 @@ export default function DuboisChapter() {
         </CenteredLayout>
         <ChapterSectionTitle section={sections[0]} />
         <CenteredLayout>
-          <p>
-            The 63 charts created for the Paris Exhibition were grouped into two
-            sets. <InlineFootnote index={6}></InlineFootnote>
+          <p className="first-paragraph">
+            F The 63 charts created for the Paris Exhibition were grouped into
+            two sets. <InlineFootnote index={6}></InlineFootnote>
             The first set, <cite>The Georgia Negro: A Sociological Study</cite>,
             focused on statistics that had been compiled by Du Bois and his
             students that related to the Black population of that state. The
@@ -301,7 +301,7 @@ export default function DuboisChapter() {
 
         <TwoColumnLayout>
           <Column>
-            <p>
+            <p className="first-paragraph">
               As the series unfolds, so too does its argument about the progress
               of the state's Black citizens, and it does so in a way in which
               the data presented is aligned with its method of display. The
@@ -449,7 +449,7 @@ export default function DuboisChapter() {
 
         <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             Today, Du Bois's charts are often shared as single images, embedded
             in a tweet or blog post, or&mdash;as in the case of Du Bois's{" "}
             <cite>Data Portraits</cite>, the 2018 volume that compiled the
@@ -637,7 +637,7 @@ export default function DuboisChapter() {
         <ChapterSectionTitle section={sections[3]} />
         <TwoColumnLayout>
           <Column>
-            <p>
+            <p className="first-paragraph">
               If one major purpose of the Paris Exposition was to illustrate the
               accomplishments&mdash;and, therefore, the requisite
               tenacity&mdash;of Black Americans as a group, a second equally
@@ -790,7 +790,7 @@ export default function DuboisChapter() {
 
         <ChapterSectionTitle section={sections[4]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             The charts that Du Bois and his students together created for the
             Paris Exposition demonstrate how data visualization can serve as
             witness and as testimony: documenting the existing

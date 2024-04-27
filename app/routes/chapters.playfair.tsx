@@ -213,7 +213,7 @@ export default function PlayfairPage() {
         <ChapterSectionTitle section={sections[0]} />
         <TwoColumnLayout>
           <Column>
-            <p>
+          <p className="first-paragraph">
               Playfair did not intend to include his charts' underlying data in
               the <cite>Atlas</cite>. It was only after soliciting feedback from
               James Watt, inventor of the steam engine—and for whom Playfair
@@ -331,7 +331,7 @@ export default function PlayfairPage() {
 
         <TwoColumnLayout>
           <Column>
-            <p>
+          <p className="first-paragraph">
               Playfair created his charts in an era of intense political change.
               At the time that he released the third edition of the Atlas, the
               French Revolution had only just come to a halt, the result of a
@@ -500,7 +500,7 @@ export default function PlayfairPage() {
         <ChapterSectionTitle section={sections[2]} />
         <TwoColumnLayout>
           <Column className="py-5 md:py-10" shouldPin={true}>
-            <p>
+          <p className="first-paragraph">
               From our perspective in the present, it appears that Playfair was
               correct in his assertion about the enduring nature of the "form
               and manner" of his charts.
@@ -727,7 +727,7 @@ export default function PlayfairPage() {
         <ChapterSectionTitle section={sections[3]} />
         <TwoColumnLayout>
           <Column>
-            <p>
+          <p className="first-paragraph">
               ​​Playfair clearly longed to be recognized for his graphical
               innovations. In 1787, one year after the initial publication of
               the Commercial and Political Atlas, he authored an account—almost

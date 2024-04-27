@@ -242,7 +242,7 @@ export default function ShanawdithitPage() {
         <ChapterSectionTitle section={sections[0]} />
 
         <CenteredLayout>
-          <p>
+        <p className="first-paragraph">
             With the importance of relationships and responsibility in mind, we
             now return to the story of Shanawdithit's maps as it emerges from
             the colonial archive. As it turns out, this story passes directly
@@ -397,7 +397,7 @@ export default function ShanawdithitPage() {
 
         <ChapterSectionTitle section={sections[1]} />
         <CenteredLayout>
-          <p>
+        <p className="first-paragraph">
             The circumstances that surround the creation of Shanawdithit's map
             make it clear that we cannot view it as an unmediated expression of
             her worldview. And yet, it is also clear that, despite
@@ -524,7 +524,7 @@ export default function ShanawdithitPage() {
         <ChapterSectionTitle section={sections[2]} />
 
         <CenteredLayout>
-          <p>
+        <p className="first-paragraph">
             By excavating the layers of knowledge extraction, and outright
             violence, that surround Shanawdithit's creation of her map, we are
             further guided by the approach of literary scholar Mishuana Goeman
@@ -744,7 +744,7 @@ export default function ShanawdithitPage() {
 
           <ChapterSectionTitle section={sections[3]} />
 
-          <p>
+          <p className="first-paragraph">
             About a decade after Shanawdithit set her maps to paper, just over a
             thousand miles to the west, two men, likely Ojibwe, stood atop a
             ridge between Lake Huron and the Ottawa River. They were a day ahead

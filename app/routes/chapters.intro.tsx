@@ -390,7 +390,7 @@ export default function IntroPage() {
         </CenteredLayout>
         <ChapterSectionTitle section={sections[1]} />
         <CenteredLayout>
-          <p>
+        <p className="first-paragraph">
             In the seventeenth century, as the economic ambition of the European
             colonial class continued to grow, they required more and more labor
             to convert their land and the resources it contained into profit.

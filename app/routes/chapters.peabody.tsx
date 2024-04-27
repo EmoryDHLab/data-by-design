@@ -220,7 +220,7 @@ export default function PeabodyPage() {
 
         <ChapterSectionTitle section={sections[0]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             Peabody's method of visualizing events of historical significance
             was inspired by a system developed in Poland in the 1820s, and
             popularized in subsequent decades by the military general (and
@@ -618,7 +618,7 @@ export default function PeabodyPage() {
         <ChapterSectionTitle section={sections[1]} />
         <TwoColumnLayout>
           <Column>
-            <p>
+            <p className="first-paragraph">
               Peabody was a lifelong proponent of what might be described today
               as participatory learning. In the early 1860s, as the nation
               became increasingly consumed by the Civil War, Peabody found
@@ -827,7 +827,7 @@ export default function PeabodyPage() {
         <ChapterSectionTitle section={sections[2]} />
         <TwoColumnLayout>
           <Column>
-            <p>
+            <p className="first-paragraph">
               There is a final lesson to be learned from Elizabeth Palmer
               Peabody and her charts, which has to do with the labor—physical as
               much as intellectual—that is involved in the production of
@@ -1185,7 +1185,7 @@ export default function PeabodyPage() {
         </CenteredLayout>
         <ChapterSectionTitle section={sections[3]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             Throughout this project, I argue for the knowledge that can be
             gained by expanding the history of data visualization to include a
             wider range of forms and figures. To be sure, additional examples of
