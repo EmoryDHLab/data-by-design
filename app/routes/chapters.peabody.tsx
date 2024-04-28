@@ -38,7 +38,7 @@ export const meta: MetaFunction = () => {
 
 const sections = [
   {
-    title: "The Value of Mulitple Perspectives",
+    title: "The Value of Multiple Perspectives",
     id: "the-value-of-multiple-perspectives",
   },
   {
