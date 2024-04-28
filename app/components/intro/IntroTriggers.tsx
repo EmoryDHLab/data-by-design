@@ -1,9 +1,11 @@
 import PullQuote from "~/components/PullQuote";
 import RandomImagesIntoGrid from "~/components/intro/RandomImagesIntoGrid";
+import ShanawdithitMap from "~/components/intro/ShanawdithitMap";
+import ShanawdithitAndMinard from "~/components/intro/ShanawdithitAndMinard";
 
 const IntroTriggers = [
-  <p key={"2c8354f7"}></p>,
-  <p key={"6f989444"}>
+  <p key="2c8354f7"></p>,
+  <p key="6f989444">
     The appeal of a timeline is easy to understand. For one, a clear trajectory
     that connects past to present is satisfying; it’s easy to reconcile with how
     we experience the world today. But more subtly, it also authorizes our
@@ -89,6 +91,121 @@ const IntroTriggers = [
     features—primarily cities and rivers—which can be cross-referenced with the
     more conventional map above.
   </p>,
+  <p key="aa79dccb">
+    Fine vertical guides connect the lower flow-line a time-series chart below,
+    which plots the freezing temperatures that contributed to the army’s
+    staggering death-count and, as the chart conveys, its ultimate defeat.
+  </p>,
+  <div key="4621797e4">
+    <p>
+      If the story told in the chart is one of hubris and of the horrors of war,
+      the story told about the chart is nothing short of heroic. It’s been
+      upheld as the epitome of the “golden age of graphics.” It’s been acclaimed
+      for its “singular rhetorical power,” and for how it communicates its own
+      “epic story” in ways that “had never been done before.” Edward Tufte, the
+      best-known contemporary scholar of data visualization, has gone so far as
+      to claim that Minard’s chart “may well be the best statistical graphic
+      ever drawn.”
+    </p>
+    <div>
+      <img src="/images/intro/tufte-quote.png" alt="" />
+      <img src="/images/intro/tufte-quote-2.png" alt="" />
+    </div>
+  </div>,
+  <div key="6eebc10a" className="z-20 bg-offwhite p-5">
+    <p>
+      For Tufte, Minard’s chart epitomizes the “graphical excellence” that he
+      has devoted his own life’s work to promoting, as characterized by the
+      qualities of “clarity, precision, and efficiency” and as as conveyed
+      through a sparse, minimal aesthetic and an intentional absence of “chart
+      junk.” (“Chart junk” is just what is sounds like—unnecessary visual
+      embellishment that clutters the visual field.)
+    </p>
+    <p>
+      In support of this ideal, Tufte constructs his own timeline for the
+      history of the field, one that borrows from nineteenth and
+      twentieth-century histories, and that has been carried into the
+      twenty-first century largely unchanged. This chronology looks back to the
+      late eighteenth-century time-series charts of the Swiss-German
+      mathematician Johann Heinrich Lambert and the Scottish political economist
+      William Playfair—the subject of the second chapter of this book—who,
+      together, Tufte dubs “the two great inventors of modern graphical
+      designs.”
+    </p>
+  </div>,
+  <p key="637c78f4" className="z-30 bg-offwhite p-5">
+    It passes through the “most worthy” epidemiological maps of the British
+    physician John Snow, created in the 1850s, and continues on through Minard
+    into the late nineteenth century with the proto-modernist train schedule
+    diagrams of French scientist Étienne-Jules Marey, himself also a historian
+    of the field. Throughout, this timeline of “founders” and “fathers” enforces
+    the narrative of singular innovation and heroic achievement that Minard’s
+    chart exemplifies. Furthermore, it looks to the formal qualities of the
+    charts in order to confirm their admission into this visualization pantheon.
+    Indeed, a defining feature of Tufte’s “graphical excellence” is that it
+    enables the viewer to focus on “the substance of the findings rather than
+    the methodology, the graphical design, or other aspects” of the chart’s
+    creation. This definition leaves no room for additional context—historical
+    or otherwise—that might help to expand a chart’s significance, or tell us
+    more about the data on display.
+  </p>,
+  <p key="2e3444df" className="z-20 bg-offwhite p-5">
+    But all charts are created within particular contexts, of course, and it is
+    a central claim of this project that an attention to these
+    contexts—historical as well as social and political—can indeed tell us more
+    about the meaning of any particular chart. And so shuffle again and another
+    image might appear, one that opens up a path that underscores this claim.
+  </p>,
+  <p key="aa6abe95" className="z-20 bg-offwhite p-5">
+    This chart is absent from Tufte’s account, as it is from most other
+    histories of the field. Upon first glance, its exclusion would seem
+    warranted, as its style diverges sharply from Tufte’s modernistic mien. Its
+    visual field is defined not—pace Minard—by bold shapes and sharp angles, but
+    instead by a pair of meandering lines. It is composed in humble pen and ink,
+    rather than a lithographer’s practiced hand.
+  </p>,
+  <div key="679ce11d" className="z-20 bg-offwhite p-5">
+    <p>
+      While it does contain some statistical information—the tick marks in the
+      chart’s lower right quadrant, for example—the image is dominated by
+      clusters of what appear to be small figures, penned in black and in a
+      rusty shade of red. (This inclusion of representational imagery is one
+      that Minard’s chart resists.)
+    </p>
+    <p>
+      And yet this chart is both more closely connected to Minard’s, and far
+      more distinct, than might initially appear. Acknowledging these
+      similarities and differences requires an attention to context—a commitment
+      to looking beyond the borders of the chart itself, and even to the
+      possibility that the full significance of the cart, and the story that it
+      tells, may forever remain out of reach.
+    </p>
+  </div>,
+  <div key="8a8745b3" className="z-20 bg-offwhite p-5">
+    <p>
+      But click on the chart and see a new timeline snap into view. This
+      timeline sets us on a path that travels back to the winter of 1829, when a
+      Beothuk woman, Shanawdithit, created the original drawing on which this
+      1915 reproduction is based. It passes through the dark and often deadly
+      history of colonial knowledge extraction—the practice of European
+      explorers, and later settlers, gathering information from those they
+      colonized in order to bolster their own economic, political, or
+      territorial power. It leads into the archive, where I encountered the
+      original image and the others presented throughout this site.
+    </p>
+    <p>
+      And it culminates in a lesson: that the depth of our knowledge about the
+      history of data visualization, and our sense of the possibilities for its
+      future, depends on how the story of the emergence of data visualization is
+      told. Indeed, if the initial argument of Data by Design is of the
+      importance of starting with a shuffle, so as to consider the multiplicity
+      of possible paths, then this argument expands into an even more powerful
+      claim: that the history of data visualization is itself comprised of an
+      infinite number of stories, and that by looking at any two together, we
+      arrive at a more complete picture of all.
+    </p>
+  </div>,
+  <ShanawdithitAndMinard />,
 ];
 
 export default IntroTriggers;

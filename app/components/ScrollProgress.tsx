@@ -4,7 +4,7 @@ import { useContext } from "react";
 export default function ScrollProgress() {
   const { scrollProgress } = useContext(ScrollytellContext);
   return (
-    <div className="fixed bottom-0 left-0 bg-black text-white">
+    <div className="fixed bottom-0 left-0 bg-black text-white z-30">
       {scrollProgress.toFixed(2)}
     </div>
   );
