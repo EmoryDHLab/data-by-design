@@ -167,7 +167,7 @@ export default function IntroPage() {
         </TwoColumnLayout>
 
         <ClientOnly>{() => <IntroScrollytell />}</ClientOnly>
-        <ChapterSectionTitle section={sections[1]} />
+        <ChapterSectionTitle section={sections[0]} />
         <TwoColumnLayout>
           <Column className="ml-0 md:w-2/3 md:ml-10">
             <p>
@@ -388,7 +388,7 @@ export default function IntroPage() {
             outside of the colonial
           </p>
         </CenteredLayout>
-        <ChapterSectionTitle section={sections[2]} />
+        <ChapterSectionTitle section={sections[1]} />
         <CenteredLayout>
           <p className="first-paragraph">
             In the seventeenth century, as the economic ambition of the European
@@ -566,7 +566,7 @@ export default function IntroPage() {
             memory.”
           </p>
         </CenteredLayout>
-        <ChapterSectionTitle section={sections[3]} />
+        <ChapterSectionTitle section={sections[2]} />
         <TwoColumnLayout>
           <Column>
             <p className="first-paragraph py-10">
@@ -705,7 +705,7 @@ export default function IntroPage() {
           </Column>
           <Column></Column>
         </TwoColumnLayout>
-        <ChapterSectionTitle section={sections[4]} />
+        <ChapterSectionTitle section={sections[3]} />
         <CenteredLayout>
           <p>
             As a team that consists of visualization designers and software
