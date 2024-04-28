@@ -50,10 +50,18 @@ const IntroTriggers = [
     and other visualizations that are included in the project.
   </p>,
   <RandomImagesIntoGrid />,
-  <p key="a609783e">
-    Some of the images go on to serve as centerpieces of the chapters in which
-    they appear, their history and significance elaborated in extensive detail.
-  </p>,
+  <div key="a609783e" className="flex justify-between items-center w-screen">
+    <div className="w-1/2">
+      <p>
+        Some of the images go on to serve as centerpieces of the chapters in
+        which they appear, their history and significance elaborated in
+        extensive detail.
+      </p>
+    </div>
+    <div className="w-1/2">
+      <img className="max-w-lg" src="/images/peabody/1500s.webp" alt="" />
+    </div>
+  </div>,
   <p key="1d5bc9f0">
     Shuffle once and a familiar sight may appear: the faded orange flow-line
     that anchors Charles Minard’s famed chart of Napoleon’s failed Russian

@@ -11,6 +11,7 @@ import RandomRectangles from "~/components/intro/RandomRectangles";
 import RandomOrTimelineRectangles from "~/components/intro/RandomOrTimelineRectangles";
 import RandomImagesIntoGrid from "~/components/intro/RandomImagesIntoGrid";
 import CentralImageOnPage from "~/components/intro/CentralImageOnPage";
+import MinardPath from "./MinardPath";
 
 export default function IntroScrollytell() {
   const [scrollProgress, setScrollProgress] = useState(0.0);
@@ -89,11 +90,22 @@ function LinearTimeline() {
     return <RandomOrTimelineRectangles />;
   }
 
-  if (scrollProgress > 6.05 && scrollProgress < 7.2) {
+  if (scrollProgress > 6.05 && scrollProgress < 8.6) {
     return <div />;
   }
 
-  if (scrollProgress > 7.6 && scrollProgress < 8) {
-    return <CentralImageOnPage />;
+  if (scrollProgress > 8.6) {
+    return (
+      <div className="w-[50vw] relative">
+        {scrollProgress > 9.5 && (
+          <MinardPath className="absolute left-[25px] top-[35px] md:w-[700px]" />
+        )}
+        <img
+          className="z-20 md:w-[576px]"
+          alt="Minard chart"
+          src="/images/playfair/5-minard.jpg"
+        />
+      </div>
+    );
   }
 }
