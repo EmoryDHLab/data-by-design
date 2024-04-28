@@ -28,7 +28,7 @@ const IntroTriggers = [
     title="Whereas a timeline says “this, then that,” a shuffle indicates “this and that”"
     subtitle="—a deemphasis on “firsts,” an opening up of multiple paths forward, and an easier way to see these possibilities in relation to each other"
   />,
-  <p key="542d9b4b">
+  <div key="542d9b4b">
     <p>
       The impact—and, therefore, the responsibility—of the choice of which path
       to take was what we what we wanted to convey to the viewer. And the
@@ -44,7 +44,7 @@ const IntroTriggers = [
       narrative that connects them to begin to take shape. Or they can shuffle
       again, opening up an entirely new set of possible paths.
     </p>
-  </p>,
+  </div>,
   <p className="z-30" key="217dc82d">
     The images are randomly selected from the nearly two hundred charts, graphs,
     and other visualizations that are included in the project.

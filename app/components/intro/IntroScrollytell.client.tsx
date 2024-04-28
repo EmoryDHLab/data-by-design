@@ -27,13 +27,21 @@ export default function IntroScrollytell() {
     >
       {process.env.NODE_ENV !== "production" && <ScrollProgress />}
       <ScrollytellWrapper
-        className="md:flex justify-between w-full"
+        className="flex flex-col md:flex-row md:justify-between w-full"
         setScrollProgress={setScrollProgress}
         triggers={IntroTriggers}
         steps={steps}
         id="intro"
       >
-        <div ref={steps} className="relative z-10 pointer-events-none">
+        <div
+          className={classNames(
+            "sticky top-0 flex flex-col items-center right-0 md:block md:top-[200px] md:h-screen md:mr-24 w-screen md:order-last",
+            (scrollProgress < 5.5 || scrollProgress > 7) && "md:w-1/2"
+          )}
+        >
+          <LinearTimeline />
+        </div>
+        <div ref={steps} className="z-10 pointer-events-none">
           {IntroTriggers.map((trigger, index) => {
             let height = "min-h-screen";
             if (index == 0) {
@@ -57,14 +65,6 @@ export default function IntroScrollytell() {
               </div>
             );
           })}
-        </div>
-        <div
-          className={classNames(
-            "sticky top-16 right-0 md:top-[200px] h-screen md:mr-24",
-            (scrollProgress < 5.5 || scrollProgress > 7) && "md:w-1/2"
-          )}
-        >
-          <LinearTimeline />
         </div>
       </ScrollytellWrapper>
     </ScrollytellContext.Provider>
