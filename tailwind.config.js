@@ -35,7 +35,9 @@ module.exports = {
         sans: ["PPNeueMontreal", "sans-serif"],
         icons: ["DxD Icons"],
       },
-
+      spacing: {
+        18: "4.5rem",
+      },
       gridTemplateColumns: {
         14: "repeat(14, minmax(0, 1fr))",
       },

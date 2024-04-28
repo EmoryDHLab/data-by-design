@@ -48,9 +48,9 @@ export default function IntroScrollytell() {
                 key={trigger.key}
                 data-step={index}
                 className={classNames(
-                  `step text-xl content-center py-5 px-0 md:px-20 text-${primaryTextColor}`,
+                  `step text-xl content-center py-5 px-0 md:px-20 w-full text-${primaryTextColor}`,
                   height,
-                  index == 4 || index == 7 ? "w-screen" : "w-[50vw]"
+                  index == 4 || index == 7 ? "md:w-screen" : "md:w-[50vw]"
                 )}
               >
                 {trigger}

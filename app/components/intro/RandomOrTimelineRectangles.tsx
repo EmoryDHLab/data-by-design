@@ -32,7 +32,7 @@ for (let i = 0; i < 5; i++) {
   for (let j = 0; j < num; j++) {
     temp.push(
       <div
-        className="fixed border-black border-2 w-24 h-24 top-[40vh] bg-offwhite"
+        className="fixed border-black border-2 w-6 h-6 lg:w-18 lg:h-18 xl:w-24 xl:h-24 top-[40vh] bg-offwhite"
         style={{
           left: `calc(${i * 120 + j * 5}px + 50vw)`,
           marginTop: `${j * 20}px`,

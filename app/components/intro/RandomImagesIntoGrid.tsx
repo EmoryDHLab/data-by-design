@@ -24,7 +24,7 @@ function Image({ x, y, angle, isSelected }: ImageProps) {
   return (
     <div
       className={classNames(
-        "w-6 h-6 sm:w-12 sm:h-12 md:w-24 md:h-24 border-4 transition bg-offwhite",
+        "w-6 h-6 lg:w-18 lg:h-18 xl:w-24 xl:h-24 border-4 transition bg-offwhite",
         scrollProgress > 6.5
           ? isSelected
             ? "border-black"
@@ -55,7 +55,7 @@ export default function RandomImagesIntoGrid() {
           <Image key={idx} x={x} y={y} isSelected={isSelected} angle={angle} />
         ))}
       </div>
-      <div className="absolute top-[55vw] -left-2 max-w-lg bg-offwhite p-2">
+      <div className="absolute top-0 lg:top-[40vw] xl:top-[55vw] -left-2 max-w-lg bg-offwhite p-2">
         Some of the images are referenced only in passing, their deeper
         significance left for other scholars to explore.{" "}
       </div>
