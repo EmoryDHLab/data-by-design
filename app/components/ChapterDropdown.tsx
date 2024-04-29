@@ -9,27 +9,27 @@ const CHAPTERS = [
   },
   {
     link: "description",
-    title: "Every Datapoint a Person",
+    title: "1. Every Datapoint a Person",
   },
   {
     link: "playfair",
-    title: "Visualization as Argument",
-  },
-  {
-    link: "peabody",
-    title: "The Work of Knowledge",
-  },
-  {
-    link: "dubois",
-    title: "Between Data and Truth",
+    title: "2. What Visualization Reveals",
   },
   {
     link: "shanawdithit",
-    title: "Narratives of Possession",
+    title: "3. The Power of the Frame",
+  },
+  {
+    link: "peabody",
+    title: "4. The Work of Knowledge",
+  },
+  {
+    link: "dubois",
+    title: "5. Between Data and Truth",
   },
   {
     link: "labor",
-    title: "Labor",
+    title: "6. From Idea to Insight",
   },
 ];
 
