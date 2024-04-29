@@ -5,14 +5,14 @@ const Triggers = [
 
   <Fragment key={"794f9397eb50"}>
     <p className="pl-4 md:pl0 w-9/12">
-      <cite>Introductory Map</cite>, which is subtitled{" "}
+      The map is subtitled{" "}
       <cite>Locations and Wanderings of the Aboriginal Tribes</cite>.
     </p>
   </Fragment>,
 
   <Fragment key="98f807329ff5">
     <p className="pl-4 md:pl0 w-9/12">
-    On this map, Willard places labels in the approximate locations of each Indigenous nation or tribe that she knew. 
+    Willard places labels in the approximate locations of each Indigenous nation or tribe that she knew. 
     </p>
   </Fragment>,
 
@@ -30,7 +30,7 @@ const Triggers = [
 
   <Fragment key={"81d65ca3c699"}>
     <p className="pl-4 md:pl0 mb-0 w-9/12">
-      “Salt water Lake or Great Water.”{" "}
+    Yet the perspective inhabited by the map is contradictory. She makes the clear choice to label certain geographic features with names intended to evoke an Indigenous worldview, such as “Salt water Lake or Great Water,” which she explains in the accompanying chapter are two names given to the Atlantic Ocean by the Delaware at various times. <InlineFootnote index={51} />{" "}
     </p>
   </Fragment>,
 

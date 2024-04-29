@@ -657,37 +657,13 @@ export default function ShanawdithitPage() {
 
         <CenteredLayout>
           <p>
-            This “wholesome national feeling” for the United States was premised
-            on the removal of any existing Indigenous nations, however—from its
-            own national origin story as from the land itself. This removal was
-            required to remove any competing claims to its narrative of divinely
-            ordained flourishing and growth. In this context, it is notable that
-            the only map in the textbook that references Indigenous people or
-            nations is the “Introductory Map,” which is subtitled “Locations and
-            Wanderings of the Aboriginal Tribes.” On this map, Willard places
-            labels in the approximate locations of each Indigenous nation or
-            tribe that she knew. She also circles each of the tribe's names,
-            with the size of the circle indicating its “size and relative
-            influence.” The color of the circles and the lines connecting them
-            indicate affiliation and “migration,” in Willard's terms, although a
-            more accurate word would be displacement.
+          In this context, it is notable that the only map in the textbook that references Indigenous peoples or nations is the "Introductory Map.” 
           </p>
         </CenteredLayout>
 
         <WillardScrollytell figure={figures["Willard0"]} />
 
         <CenteredLayout>
-          <p>
-            The perspective inhabited by the “Introductory Map” is somewhat
-            contradictory. Willard makes the clear choice to label certain
-            geographic features with names intended to evoke an Indigenous
-            worldview, as evidenced by how the same features are labeled
-            differently on all subsequent maps. Instead of the Atlantic Ocean,
-            for example, the body of water is here labeled “Salt water Lake or
-            Great Water,” which she explains in the accompanying chapter of the
-            textbook are two names given to it by the Delaware at various times.{" "}
-            <InlineFootnote index={51} />
-          </p>
           <p>
             Yet Willard also chooses to present this map as “introductory,”
             rather than accord it the position of “First Map.” This she reserves
