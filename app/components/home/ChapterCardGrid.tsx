@@ -6,7 +6,7 @@ export default function ChapterCardGrid() {
       <div className="grid md:grid-cols-2 grid-cols-1 md:grid-rows-3 3xl:mx-48">
         <ChapterCard
           to="/chapters/description"
-          status="IN PROGRESS"
+          status=""
           className="cardBrooks bg-black hover:text-white"
           title="Every Datapoint a Person"
           subtitle="Diagram of a Slave Ship"
@@ -26,7 +26,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/shanawdithit"
-          status="COMING SOON"
+          status=""
           className="cardShanawdithit bg-black hover:text-white"
           title="Narratives of Possession"
           subtitle="Shanawdithit's Narrative Maps"
@@ -56,7 +56,7 @@ export default function ChapterCardGrid() {
         </ChapterCard>
         <ChapterCard
           to="/chapters/labor"
-          status="COMING SOON"
+          status="IN PROGRESS"
           className="cardLabour bg-black hover:text-white"
           title="The Process is the Product"
           subtitle="The Making of Data by Design"

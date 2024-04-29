@@ -1,50 +1,50 @@
 {
   "description": {
     "title": "Every Datapoint a Person",
-    "subtitle": "The Brooks / Diagram of a Slave Ship",
+    "subtitle": "Description of a Slave Ship",
     "description": "Before there are data, there are people. People who offer up their lives as data — or whose lives become data without consent.",
-    "image": "/images/description/1-sof_slaveship.jpg",
-    "imageWidth": "500",
-    "imageHeight": "182"
+    "image": "/images/description/5-The_history_of_the_rise.jpg",
+    "imageWidth": "1280",
+    "imageHeight": "913"
   },
   "dubois": {
     "title": "Between Data and Truth",
-    "subtitle": "W. E. B. Du Bois's “Data Portraits”",
-    "description": "How can data visualization bear witness to oppression? How can it hold space for what cannot be conveyed through data alone?",
-    "image": "/images/dubois/ch5-01-phila.jpg",
-    "imageWidth": "5097",
-    "imageHeight": "1165"
+    "subtitle": "W.E.B. Du Bois's “Data Portraits”",
+    "description": "How can data visualization bear witness to oppression? How can we hold space for what cannot be conveyed through data alone?",
+    "image": "/images/dubois/887.jpg",
+    "imageWidth": "807",
+    "imageHeight": "1024"
   },
   "labor": {
-    "title": "The Process is the Product",
+    "title": "From Idea to Insight",
     "subtitle": "The Making of Data by Design",
-    "description": "Any digital project is the work of many hands. How can this labor be visualized? What labor remains out of sight?",
-    "image": "/images/peabody/railroadscaled.jpg",
-    "imageWidth": "3225",
-    "imageHeight": "2594"
+    "description": "Any digital project is the work of many hands. How can this labor be visualized? What remains out of sight?",
+    "image": "/images/labor/data-traces.png",
+    "imageWidth": "2252",
+    "imageHeight": "1698"
   },
   "peabody": {
     "title": "The Work of Knowledge",
     "subtitle": "Elizabeth Palmer Peabody's Chronological Grids",
-    "description": "We have come to believe that data visualizations should be clear and efficient. Is there value in designs that make us pause and reflect?",
-    "image": "/images/peabody/1500s.jpg",
+    "description": "We have explored only part of the history of data visualization. What possibilities can we imagine when we expand our view of the past?",
+    "image": "/images/peabody/1600s.jpg",
     "imageWidth": "1019",
     "imageHeight": "1012"
   },
   "playfair": {
     "title": "What Visualization Reveals",
     "subtitle": "William Playfair's Time-Series Charts",
-    "description": "Data visualization has never been neutral or objective. There is a meaning — and an argument — conveyed through each design.",
+    "description": "Data visualization has never been neutral or objective. There is a meaning — and an argument — conveyed through each visual design.",
     "image": "/images/playfair/1-northamerica.jpg",
     "imageWidth": "1364",
     "imageHeight": "801"
   },
   "shanawdithit": {
-    "title": "Narratives of Possession",
-    "subtitle": "Shanawdithit's Narrative Maps",
-    "description": "Maps can create nations and contest them. How have maps been used to document multiple pasts?",
-    "image": "/images/peabody/ch4-13-willard.jpg",
-    "imageWidth": "1197",
-    "imageHeight": "850"
+    "title": "The Power of the Frame",
+    "subtitle": "Shanawdithit's Thematic Maps",
+    "description": "Maps can represent reality and can contest it. How can we learn to see the lines of power that they encode?",
+    "image": "/images/shanawdithit/1829-03.jpg",
+    "imageWidth": "658",
+    "imageHeight": "400"
   }
 }
