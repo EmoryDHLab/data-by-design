@@ -14,6 +14,7 @@ interface Props {
   className?: string;
   loading?: "eager" | "lazy";
   children?: ReactNode;
+  id: string;
 }
 
 export default function FigureModal({
@@ -22,6 +23,7 @@ export default function FigureModal({
   figure,
   loading,
   className,
+  id,
 }: Props) {
   const { backgroundColor, accentColor, hideSensitiveState } =
     useContext(ChapterContext);
@@ -50,6 +52,7 @@ export default function FigureModal({
   return (
     <figure
       ref={figureRef}
+      id={id}
       className={`md:mx-auto ${inColumn ? "md:ml-24" : "md:mt-8"} ${
         className ?? ""
       }`}

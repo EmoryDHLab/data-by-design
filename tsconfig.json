@@ -2,6 +2,7 @@
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.js"],
   "exclude": ["node_modules*", "scripts"],
   "compilerOptions": {
+    "files": ["./node_modules/wmr/types.d.ts"],
     "lib": ["DOM", "DOM.Iterable", "ES2023"],
     "isolatedModules": true,
     "esModuleInterop": true,

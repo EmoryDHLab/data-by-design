@@ -1,3 +1,4 @@
+import * as d3 from "d3";
 import descriptionFigures from "~/data/figures/description.json";
 import duboisFigures from "~/data/figures/dubois.json";
 import peabodyFigures from "~/data/figures/peabody.json";
@@ -31,10 +32,20 @@ export const timelineImages = () => {
   );
 
   const filteredFigures: TFigure[] = Object.values(
-    Object.fromEntries(
-      description.concat(dubois.slice(0, 20), peabody, playfair, shanawdithit)
-    )
+    Object.fromEntries([
+      ...description,
+      ...dubois,
+      ...peabody,
+      ...playfair,
+      ...shanawdithit,
+    ])
   );
 
   return filteredFigures || [];
+};
+
+export const randomTimelineImages = (imageCount: number) => {
+  const shuffled = d3.shuffle(timelineImages());
+  const start = Math.floor(Math.random() * imageCount);
+  return shuffled.slice(start, start + imageCount);
 };

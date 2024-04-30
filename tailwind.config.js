@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ["./app/**/*.{js,ts,jsx,tsx}"],
   important: true,
   media: false, // or 'media' or 'class'
@@ -188,6 +188,7 @@ module.exports = {
     "bg-playfairPrimary-translucent",
     "bg-playfairSecondary",
     "bg-playfairSecondary-translucent",
+    "bg-duboisPrimary-translucent",
     "bg-playfairChart",
     "bg-shanawdithitPrimary",
     "bg-shanawdithitSecondary",
@@ -247,5 +248,7 @@ module.exports = {
     "md:-mx-64",
     "border-opacity-0",
     "border-opacity-70",
+    "opacity-20",
+    "md:mt-28",
   ],
 };

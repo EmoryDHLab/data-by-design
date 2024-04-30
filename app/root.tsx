@@ -3,15 +3,14 @@ import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
 import Navbar from "./components/Navbar.client";
-import styles from "~/styles/tailwind.css";
-import fontStyles from "../styles/fonts.css";
+// @ts-ignore
+import styles from "./index.css?url";
 import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
 import { ClientOnly } from "remix-utils/client-only";
@@ -25,10 +24,7 @@ export const meta: MetaFunction = () => {
 };
 
 export const links: LinksFunction = () => {
-  return [
-    { rel: "stylesheet", href: styles },
-    { rel: "stylesheet", href: fontStyles },
-  ];
+  return [{ rel: "stylesheet", href: styles }];
 };
 
 export default function App() {
@@ -58,7 +54,6 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );

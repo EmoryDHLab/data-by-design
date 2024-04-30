@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import type { Dispatch, SetStateAction } from "react";
-import type { ResponseData, SimpleDot } from "../types";
+import type { ResponseData } from "../types";
 
 const WIDTH = 175;
 const HEIGHT = 180;
@@ -9,21 +9,14 @@ const HEIGHT = 180;
 interface Props {
   response: ResponseData;
   activeResponse: string | undefined;
-  setActiveResponse: Dispatch<SetStateAction<string | undefined>>;
+  setActiveResponse: Dispatch<SetStateAction<string | undefined>> | null;
   color: string;
   textColor: string;
   canvasWidth: number;
   canvasHeight: number;
-  dot: SimpleDot;
+  unravel?: boolean | undefined;
+  id?: string | undefined;
 }
-
-// s
-// 'Data visualization has never been neutral or objective. There is a meaning — and an argument — conveyed through each design. not by'
-// c = Math.ceil(s.length / 6)
-// 22
-// a = Array.from({length: 6})
-// (6) [undefined, undefined, undefined, undefined, undefined, undefined]
-// a.forEach((p, i) => { console.log(s.slice(i * c, c * (i + 1))) })
 
 function ResponseV2({
   response,
@@ -33,7 +26,8 @@ function ResponseV2({
   textColor,
   canvasWidth,
   canvasHeight,
-  dot,
+  unravel = false,
+  id,
 }: Props) {
   const pathRef = useRef<
     d3.Selection<SVGPathElement, null, HTMLElement, any> | undefined
@@ -44,7 +38,6 @@ function ResponseV2({
   const textPathRef = useRef<
     d3.Selection<SVGTextPathElement, null, HTMLElement, any> | undefined
   >(undefined);
-  // const buttonRef = useRef<d3.Selection<SVGRectElement, null, HTMLElement, any> | undefined>(undefined);
   const containerRef = useRef<
     d3.Selection<SVGRectElement, null, HTMLElement, any> | undefined
   >(undefined);
@@ -55,36 +48,39 @@ function ResponseV2({
   const wadRef = useRef<string | null>(null);
   const knotRef = useRef<string | null>(null);
   const wadLengthRef = useRef<number>(0);
-  const boxX = useRef<number>(dot?.x || 0);
-  const boxY = useRef<number>(dot?.y || 0);
+  const boxX = useRef<number>(response.x);
+  const boxY = useRef<number>(response.y);
   const [isUnraveled, setIsUnraveled] = useState<boolean>(false);
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
-  useEffect(() => {}, [response]);
+  useEffect(() => {
+    setIsUnraveled(unravel);
+    setIsCollapsed(!unravel);
+  }, [unravel]);
 
   // SETUP
   useEffect(() => {
-    if (!dot || dot.x === 0 || dot.y === 0) return;
+    if (!response || response.x === 0 || response.y === 0) return;
 
-    boxX.current = dot.x;
-    boxY.current = dot.y;
-    textRef.current = d3.select(`#text-${response.id}`);
-    containerRef.current = d3.select(`#container-${response.id}`);
-    contentRef.current = d3.select(`#content-${response.id}`);
-    pathRef.current = d3.select(`#path-${response.id}`);
-    textPathRef.current = d3.select(`#text-path-${response.id}`);
+    boxX.current = response.x;
+    boxY.current = response.y;
+    textRef.current = d3.select(`#text-${response.id}-${id}`);
+    containerRef.current = d3.select(`#container-${response.id}-${id}`);
+    contentRef.current = d3.select(`#content-${response.id}-${id}`);
+    pathRef.current = d3.select(`#path-${response.id}-${id}`);
+    textPathRef.current = d3.select(`#text-path-${response.id}-${id}`);
 
-    if (dot.x + WIDTH > canvasWidth) {
-      const leftOffSet = dot.x + WIDTH - canvasWidth;
-      boxX.current = dot.x - leftOffSet;
+    if (response.x + WIDTH > canvasWidth) {
+      const leftOffSet = response.x + WIDTH - canvasWidth;
+      boxX.current = response.x - leftOffSet;
     }
 
-    if (dot.y + HEIGHT > canvasHeight) {
-      const bottomOffset = dot.y + HEIGHT - canvasHeight;
-      boxY.current = dot.y - bottomOffset;
-    } else if (dot.y - 30 < 0) {
-      const topOffset = (dot.y - 32) * -1;
-      boxY.current = dot.y + topOffset;
+    if (response.y + HEIGHT > canvasHeight) {
+      const bottomOffset = response.y + HEIGHT - canvasHeight;
+      boxY.current = response.y - bottomOffset;
+    } else if (response.y - 30 < 0) {
+      const topOffset = (response.y - 32) * -1;
+      boxY.current = response.y + topOffset;
     }
 
     const wad: Array<[number, number]> = Array.from({ length: 6 }).map(() => [
@@ -110,9 +106,9 @@ function ResponseV2({
       pathRef.current?.node()?.getTotalLength() ||
       response.selection.length * 2;
     textPathRef.current
-      ?.attr("xlink:href", `#path-${response.id}`)
+      ?.attr("xlink:href", `#path-${response.id}-${id}`)
       .text(response.selection);
-  }, [response, canvasHeight, canvasWidth, dot]);
+  }, [response, canvasHeight, canvasWidth, id]);
 
   // SHOW KNOT
   useEffect(() => {
@@ -186,7 +182,7 @@ function ResponseV2({
         boxWidth / 2 + boxX.current
       );
 
-      if (dot.y + boxHeight > canvasHeight) {
+      if (response.y + boxHeight > canvasHeight) {
         const bottomOffset = boxY.current + boxHeight - canvasHeight;
         boxY.current = boxY.current - bottomOffset;
       }
@@ -222,25 +218,17 @@ function ResponseV2({
         ?.attr("height", 0)
         .attr("width", WIDTH)
         .attr("fill-opacity", 0)
-        .attr("x", dot.x)
-        .attr("y", dot.y)
+        .attr("x", response.x)
+        .attr("y", response.y)
         .attr("rx", 5);
 
       contentRef.current
         ?.attr("font-size", 0)
         .attr("fill-opacity", 0)
-        .attr("x", dot.x + 10)
-        .attr("y", dot.y - 20);
+        .attr("x", response.x + 10)
+        .attr("y", response.y - 20);
     }
-  }, [
-    isUnraveled,
-    response,
-    color,
-    activeResponse,
-    canvasHeight,
-    canvasWidth,
-    dot,
-  ]);
+  }, [isUnraveled, response, color, activeResponse, canvasHeight, canvasWidth]);
 
   // COLLAPSE
   useEffect(() => {
@@ -257,13 +245,13 @@ function ResponseV2({
     }
   }, [isCollapsed, response]);
 
-  if (dot) {
+  if (response) {
     return (
-      <svg id={`response-svg-${response.id}`}>
+      <svg id={`response-svg-${response.id}-${id}`}>
         <rect
-          id={`container-${response.id}`}
-          x={dot.x}
-          y={dot.y - 25}
+          id={`container-${response.id}-${id}`}
+          x={response.x}
+          y={response.y - 25}
           rx={15}
           width={WIDTH}
           height={0}
@@ -273,30 +261,35 @@ function ResponseV2({
           className="drop-shadow-md focus:stroke-black focus:outline-0 focus:outline-none"
           tabIndex={0}
           onKeyUp={({ key }) => {
-            if (key === "Escape") setActiveResponse(undefined);
+            if (key === "Escape" && setActiveResponse)
+              setActiveResponse(undefined);
           }}
         />
         <path
-          id={`path-${response.id}`}
+          id={`path-${response.id}-${id}`}
           fill="none"
           stroke="black"
           strokeWidth={8}
           strokeOpacity={0}
         />
-        <text id={`text-${response.id}`} fill={textColor} textLength={0}>
+        <text id={`text-${response.id}-${id}`} fill={textColor} textLength={0}>
           <textPath
-            id={`text-path-${response.id}`}
+            id={`text-path-${response.id}-${id}`}
             fontFamily="VTC Du Bois Narrow, serif"
             className={`font-bold text-${textColor}`}
             fontSize={12}
             fillOpacity={1}
-            onClick={() => setActiveResponse(undefined)}
+            onClick={() => {
+              if (setActiveResponse) {
+                setActiveResponse(undefined);
+              }
+            }}
           ></textPath>
         </text>
 
         <text
-          x={dot.x + 16.5}
-          y={dot.y + 42}
+          x={response.x + 16.5}
+          y={response.y + 42}
           fontSize={0}
           className="uppercase"
           fill={textColor}
@@ -309,16 +302,16 @@ function ResponseV2({
           <tspan className={`button-text-${response.id}`}>Read full</tspan>
           <tspan
             className={`button-text-${response.id}`}
-            x={dot.x + 16.5}
+            x={response.x + 16.5}
             dy={12}
           >
             response
           </tspan>
         </text>
         <rect
-          id={`full-container-${response.id}`}
-          x={dot.x}
-          y={dot.y - 25}
+          id={`full-container-${response.id}-${id}`}
+          x={response.x}
+          y={response.y - 25}
           width={WIDTH}
           height={0}
           strokeWidth={0.5}
@@ -326,16 +319,20 @@ function ResponseV2({
           fill="rgb(250 241 233)"
         />
         <text
-          id={`content-${response.id}`}
-          x={dot.x + 10}
-          y={dot.y - 20}
+          id={`content-${response.id}-${id}`}
+          x={response.x + 10}
+          y={response.y - 20}
           fontSize={0}
           className="text-white font-duboisNarrow tracking-widest"
           fill={textColor}
           fillOpacity={0}
           textAnchor="middle"
           dominantBaseline="middle"
-          onClick={() => setActiveResponse(undefined)}
+          onClick={() => {
+            if (setActiveResponse) {
+              setActiveResponse(undefined);
+            }
+          }}
         >
           {response.lines.map((line, index) => {
             return (

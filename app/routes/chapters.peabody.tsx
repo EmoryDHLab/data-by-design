@@ -8,7 +8,7 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import Footer from "~/components/Footer";
-import PromotionalTourMap from "~/components/peabody/PromotionalTourMap";
+import PromotionalTourMap from "~/components/peabody/PromotionalTourMap.client";
 import HoverText from "~/components/HoverText";
 import HoverZoomPeabodySquare from "~/components/peabody/HoverZoomPeabodySquare";
 import InlineFootnote from "~/components/InlineFootnote";
@@ -31,6 +31,7 @@ import TutorialKey from "~/components/peabody/tutorial/TutorialKey";
 import type { MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
+import { ClientOnly } from "remix-utils/client-only";
 
 export const meta: MetaFunction = () => {
   return chapterMeta("peabody");
@@ -171,7 +172,7 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <PromotionalTourMap />
+            <ClientOnly>{() => <PromotionalTourMap />}</ClientOnly>
           </Column>
         </TwoColumnLayout>
 
@@ -264,7 +265,7 @@ export default function PeabodyPage() {
               possibilities for shaping its future.
             </p>
           </Column>
-          <Column>
+          <Column shouldPin>
             <FigureObj
               className="md:ml-24 md:grid grid-cols-2 gap-4"
               figures={[

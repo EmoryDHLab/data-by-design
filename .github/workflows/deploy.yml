@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read # This is required for actions/checkout
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Checkout Docker configs
+        run: |
+          mv ./.github/workflows/deploy.sh .
+          chmod +x deploy.sh
+
+      - name: Configure AWS credentials from AWS account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE }}
+          aws-region: us-east-1
+          role-session-name: GitHub-OIDC-frontend
+
+      - name: Run Deploy
+        env:
+          BRANCH: ${{ github.head_ref || github.ref_name }}
+          AWS_ECR: ${{ secrets.AWS_ECR }}
+        run: ./deploy.sh

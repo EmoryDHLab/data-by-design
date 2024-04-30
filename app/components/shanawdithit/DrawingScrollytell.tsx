@@ -2,17 +2,18 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
-import Triggers from "./drawingScrollytell/Triggers";
 import type { TFigure } from "~/types/figureType";
+import type { ReactElement } from "react";
 
 const width = 3482;
 const height = 2254;
 
 interface Props {
   figure: TFigure;
+  triggers: ReactElement[];
 }
 
-function SketchScrollytell({ figure }: Props) {
+function SketchScrollytell({ figure, triggers }: Props) {
   const { accentTextColor } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [focusShapeSize, setFocusShapeSize] = useState<object>({
@@ -106,7 +107,7 @@ function SketchScrollytell({ figure }: Props) {
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
         setScrollProgress={setScrollProgress}
-        triggers={Triggers}
+        triggers={triggers}
         steps={steps}
         className="w-screen"
       >
@@ -162,18 +163,16 @@ function SketchScrollytell({ figure }: Props) {
                   y={0}
                   width={width}
                   height={height}
-                  // className="transition-opacity duration-700 opacity-100"
                 />
               </g>
             </svg>
             <figcaption></figcaption>
-            {/* <div className={`text-3xl relative md:bottom-0 ml-4 text-black hidden md:${scrollProgress >= 13.5 ? "hidden" : "block"}`} tabIndex={-1}>↓</div> */}
           </div>
           <div
             ref={steps}
             className="bias-full w-full md:bias-1/2 md:w-2/5 relative"
           >
-            {Triggers.map((trigger, index) => {
+            {triggers.map((trigger, index) => {
               return (
                 <div
                   key={`sketch-trigger-${trigger.key}`}
