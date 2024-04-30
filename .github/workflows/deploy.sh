@@ -9,6 +9,7 @@ docker login --username AWS --password-stdin "${AWS_ECR}"
 echo "Logged in successfully"
 
 echo "Would tag image as ${AWS_ECR}:${TAG}"
+echo "Bransh is ${BRANCH}"
 
 # echo "Building and tagging Docker image"
 # docker build -t dxd --no-cache .
