@@ -12,7 +12,7 @@ import { chapterMeta } from "~/utils";
 import figures from "~/data/figures/shanawdithit.json";
 import FigureObj from "~/components/layout/FigureObj";
 import HoverText from "~/components/HoverText";
-import ColonialMaps from "~/components/shanawdithit/ColonialMaps";
+import ColonialMaps from "~/components/shanawdithit/ColonialMaps.client";
 import DocumentViewer from "~/components/shanawdithit/DocumentViewer";
 import SketchScrollytell from "~/components/shanawdithit/DrawingScrollytell";
 import InlineFootnote from "~/components/InlineFootnote";
@@ -22,6 +22,7 @@ import FootnotesList from "~/components/FootnotesList";
 import type { MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
+import { ClientOnly } from "remix-utils/client-only";
 
 export const meta: MetaFunction = () => {
   return chapterMeta("shanawdithit");
@@ -775,7 +776,7 @@ export default function ShanawdithitPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <ColonialMaps />
+            <ClientOnly>{() => <ColonialMaps />}</ClientOnly>
           </Column>
         </TwoColumnLayout>
 
@@ -783,7 +784,9 @@ export default function ShanawdithitPage() {
 
         <CenteredLayout>
           <p>
-          In this context, it is notable that the only map in the textbook that references Indigenous peoples or nations is the "Introductory Map.” 
+            In this context, it is notable that the only map in the textbook
+            that references Indigenous peoples or nations is the "Introductory
+            Map.”
           </p>
         </CenteredLayout>
 

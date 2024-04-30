@@ -4,13 +4,9 @@ import { ChapterContext } from "~/chapterContext";
 import FigureObj from "../layout/FigureObj";
 import figures from "~/data/figures/shanawdithit.json";
 
-const FIGURES = [
-  figures["Willard1"],
-  figures["Willard2"],
-  figures["Willard9"],
-];
+const FIGURES = [figures["Willard1"], figures["Willard2"], figures["Willard9"]];
 
-export default function ColonialMaps() {
+const ColonialMaps = () => {
   const { hoverState } = useContext(ChapterContext);
   const [currentHover, setCurrentHover] = useState<number>(0);
 
@@ -28,7 +24,6 @@ export default function ColonialMaps() {
     }
   }, [hoverState, setCurrentHover]);
 
-
   return (
     <div className="ml-24 hidden md:block">
       <Carousel
@@ -39,10 +34,17 @@ export default function ColonialMaps() {
       >
         {FIGURES.map((figure, index) => {
           return (
-            <FigureObj key={figure.fileName} figure={figure} className="w-full" id={`colonial-map-${index}`} />
-          )
+            <FigureObj
+              key={figure.fileName}
+              figure={figure}
+              className="w-full"
+              id={`colonial-map-${index}`}
+            />
+          );
         })}
       </Carousel>
     </div>
   );
-}
+};
+
+export default ColonialMaps;
