@@ -264,7 +264,7 @@ export default function PeabodyPage() {
               possibilities for shaping its future.
             </p>
           </Column>
-          <Column>
+          <Column shouldPin>
             <FigureObj
               className="md:ml-24 md:grid grid-cols-2 gap-4"
               figures={[
