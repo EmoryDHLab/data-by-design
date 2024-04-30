@@ -1,8 +1,8 @@
 import type { Dispatch, SetStateAction } from "react";
-import type { SimpleDot } from "../types";
+import type { ResponseData } from "../types";
 
 interface Props {
-  response: SimpleDot;
+  response: ResponseData;
   setActiveResponse: Dispatch<SetStateAction<string | undefined>>;
   color: string;
   id: string;

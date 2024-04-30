@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { useResizeObserver } from "~/hooks";
 import responseData from "~/data/dubois/studentResponses.json";
 import ResponseV2 from "./chartThree/ResponseV2";
-import { random } from "~/utils";
 import ResponseDot from "./chartThree/ResponseDot";
-import type { SimpleDot } from "./types";
 
 interface Props {
   interactive?: boolean;
@@ -25,10 +23,6 @@ const StudentChartThreeV2 = ({
   const [activeResponse, setActiveResponse] = useState<string | undefined>(
     undefined
   );
-  const [eltDotsState, setEltDotsState] = useState<SimpleDot[]>([]);
-  const [ceduDotsState, setCeduDotsState] = useState<SimpleDot[]>([]);
-  const [hindDotsState, setHindDotsState] = useState<SimpleDot[]>([]);
-  const [plDotsState, setPlDotsState] = useState<SimpleDot[]>([]);
   const [eltOpacity, setEltOpacity] = useState<number>(100);
   const [ceduOpacity, setCeduOpacity] = useState<number>(100);
   const [hindOpacity, setHindOpacity] = useState<number>(100);
@@ -75,100 +69,6 @@ const StudentChartThreeV2 = ({
     } else setActiveResponse(undefined);
   }, [scrollProgress]);
 
-  useEffect(() => {
-    const checkOverlapping = (dot: SimpleDot, existing: SimpleDot[]) => {
-      let overlapping = false;
-
-      for (let count = 0; count < existing.length; count++) {
-        let other = existing[count];
-        let distance = Math.hypot(other.x - dot.x, other.y - dot.y);
-        if (distance < 15) {
-          overlapping = true;
-        }
-      }
-
-      return overlapping;
-    };
-
-    const eltDots: SimpleDot[] = [];
-    const ceduDots: SimpleDot[] = [];
-    const hindDots: SimpleDot[] = [];
-    const plDots: SimpleDot[] = [];
-
-    while (eltDots.length < responseData.elt.length) {
-      let dot = {
-        x: random(15, 315 - 15),
-        y: random(chartHeight / 4, (chartHeight / 5) * 2) + 40,
-        d: 2,
-        id: "",
-      };
-
-      const overlapping = checkOverlapping(dot, eltDots);
-      if (!overlapping) {
-        eltDots.push(dot);
-        dot.id = responseData.elt[eltDots.length - 1].id;
-        responseData.elt[eltDots.length - 1].x = dot.x;
-        responseData.elt[eltDots.length - 1].y = dot.y;
-      }
-    }
-
-    while (ceduDots.length < responseData.cedu.length) {
-      let dot = {
-        x: random(315 + 15, chartWidth - 15),
-        y: random(chartHeight / 4, (chartHeight / 5) * 2) + 40,
-        d: 2,
-        id: "",
-      };
-
-      const overlapping = checkOverlapping(dot, ceduDots);
-      if (!overlapping) {
-        ceduDots.push(dot);
-        dot.id = responseData.cedu[ceduDots.length - 1].id;
-        responseData.cedu[ceduDots.length - 1].x = dot.x;
-        responseData.cedu[ceduDots.length - 1].y = dot.y;
-      }
-    }
-
-    while (hindDots.length < responseData.hind.length) {
-      let dot = {
-        x: random(315 + 15, chartWidth - 15),
-        y: random(chartHeight / 2 + 50 + 15, chartHeight / 2 + chartHeight / 4),
-        d: 2,
-        id: "",
-      };
-
-      const overlapping = checkOverlapping(dot, hindDots);
-      if (!overlapping) {
-        hindDots.push(dot);
-        dot.id = responseData.hind[hindDots.length - 1].id;
-        responseData.hind[hindDots.length - 1].x = dot.x;
-        responseData.hind[hindDots.length - 1].y = dot.y;
-      }
-    }
-
-    while (plDots.length < responseData.pl.length) {
-      let dot = {
-        x: random(15, 315 - 15) + 15,
-        y: random(chartHeight / 2 + 50 + 15, chartHeight / 2 + chartHeight / 4),
-        d: 2,
-        id: "",
-      };
-
-      const overlapping = checkOverlapping(dot, plDots);
-      if (!overlapping) {
-        plDots.push(dot);
-        dot.id = responseData.pl[plDots.length - 1].id;
-        responseData.pl[plDots.length - 1].x = dot.x;
-        responseData.pl[plDots.length - 1].y = dot.y;
-      }
-    }
-
-    setEltDotsState(eltDots);
-    setCeduDotsState(ceduDots);
-    setHindDotsState(hindDots);
-    setPlDotsState(plDots);
-  }, []);
-
   return (
     <div
       className={`relative m-auto mt-${interactive ? "auto" : 28} mb-12`}
@@ -193,9 +93,9 @@ const StudentChartThreeV2 = ({
           >
             <text
               x={315}
-              y={16}
+              y={28}
               className="font-duboisWide"
-              fontSize={16}
+              fontSize={15}
               textAnchor="middle"
             >
               <tspan>
@@ -206,55 +106,28 @@ const StudentChartThreeV2 = ({
                 ACROSS THE UNITED STATES WHO CONTRIBUTED TO DU BOIS'S RESEARCH.
               </tspan>
             </text>
-            {/* <foreignObject width={chartWidth} height={chartHeight * 0.2}>
-              <div className="grid grid-cols-3 font-duboisWide  text-center gap-y-4 gap-x-6">
-                <p
-                  className="text-center col-span-3 font-duboisWide font-bold"
-                  style={{ fontSize: "70%" }}
-                >
-                  A CHART ILLUSTRATING THE WORDS OF THE BLACK COLLEGE GRADUATES
-                  FROM ACROSS THE UNITED STATES WHO CONTRIBUTED TO DU BOIS'S
-                  RESEARCH.
-                </p>
-                <p style={{ fontSize: "55%", lineHeight: "105%" }}>
-                  PREPARED AND EXECUTED BY, TANVI SHARMA,ANNA MOLA, JAY VARNER,
-                  AND LAUREN KLEIN UNDER THE AUSPICES OF THE DIGITAL HUMANITIES
-                  LAB EMORY UNIVERSITY, ATLANTA, GA UNITED STATES OF AMERICA
-                </p>
-                <p
-                  className="col-span-2"
-                  style={{ fontSize: "55%", lineHeight: "105%" }}
-                >
-                  THE PREVIOUS CHART VISUALIZED INFORMATION ABOUT THE GRADUATES
-                  OF ATLANTA UNIVERSITY IN THE CONTEXT OF THE TOTAL NUMBER OF
-                  BLACK COLLEGE GRADUATES IN THE UNITED STATES AS OF 1909.AS
-                  PART OF THE COLLEGE-BRED NEGRO AMERICAN, THESE SAME COLLEGE
-                  GRADUATES WERE SURVEYED ABOUT THEIR LIVES. THIS CHART
-                  VISUALIZES THEIR WORDS.
-                </p>
-              </div>
-            </foreignObject> */}
+
             <text
-              x={100}
+              x={115}
               fontSize={13.5}
               y={90}
               textAnchor="middle"
               className="uppercase font-duboisNarrow"
             >
               <tspan>PREPARED AND EXECUTED BY</tspan>
-              <tspan x={100} dy={14}>
+              <tspan x={115} dy={14}>
                 TANVI SHARMA, ANNA MOLA, Jay
               </tspan>
-              <tspan x={100} dy={14}>
+              <tspan x={115} dy={14}>
                 Varner, AND LAUREN KLEIN UNDER
               </tspan>
-              <tspan x={100} dy={14}>
+              <tspan x={115} dy={14}>
                 THE AUSPICES OF THE Digital{" "}
               </tspan>
-              <tspan x={100} dy={14}>
+              <tspan x={115} dy={14}>
                 HUMANITIES LAB Emory University,
               </tspan>
-              <tspan x={100} dy={14}>
+              <tspan x={115} dy={14}>
                 ATLANTA, GA UNITED STATES OF AMERICA
               </tspan>
             </text>
@@ -283,25 +156,6 @@ const StudentChartThreeV2 = ({
                 WORDS.
               </tspan>
             </text>
-
-            {/* <foreignObject
-              y={chartHeight * 0.8}
-              height={chartHeight / 3 - 10}
-              className="w-full"
-            >
-              <p className="font-duboisNarrow text-justify">
-                THE COLLEGE-BRED NEGRO AMERICAN THIS VISUALIZATION ENRICHES THE
-                DATA ASSOCIATED WITH THE 3,856 BLACK COLLEGE GRADUATES WHO WERE
-                DOCUMENTED IN <cite>THE COLLEGE-BRED NEGRO AMERICAN</cite>. AS
-                PART OF THE STUDY, THEY WERE ALSO ASKED TO PROVIDE WRITTEN
-                RESPONSES TO FOUR QUESTIONS: THEIR THOUGHTS ON THEIR OWN "EARLY
-                LIFE AND TRAINING," THEIR PLANS TO EDUCATE THEIR CHILDREN, THE
-                "CHIEF HINDRANCES" THEY HAD FACED, AND THEIR "PRESENT PRACTICAL
-                PHILOSOPHY IN REGARD TO THE NEGRO RACE IN AMERICA,"ABBREVIATED
-                IN THE STUDY AS "PHILOSOPHY OF LIFE." ABOUT 800 RESPONSES TO THE
-                SURVEY WERE RECEIVED, A SELECTION OF WHICH WERE PUBLISHED.
-              </p>
-            </foreignObject> */}
 
             <text
               x={14}
@@ -365,7 +219,7 @@ const StudentChartThreeV2 = ({
                 and training
               </tspan>
             </text>
-            {eltDotsState.map((response) => {
+            {responseData.elt.map((response) => {
               return (
                 <ResponseDot
                   key={`dot-${response.id}`}
@@ -405,7 +259,7 @@ const StudentChartThreeV2 = ({
                 college, in a profession, etc.)
               </tspan>
             </text>
-            {ceduDotsState.map((response) => {
+            {responseData.cedu.map((response) => {
               return (
                 <ResponseDot
                   key={`dot-${response.id}`}
@@ -438,7 +292,7 @@ const StudentChartThreeV2 = ({
                 in America?
               </tspan>
             </text>
-            {plDotsState.map((response) => {
+            {responseData.pl.map((response) => {
               return (
                 <ResponseDot
                   key={`dot-${response.id}`}
@@ -489,7 +343,7 @@ const StudentChartThreeV2 = ({
                 in your case?)
               </tspan>
             </text>
-            {hindDotsState.map((response) => {
+            {responseData.hind.map((response) => {
               return (
                 <ResponseDot
                   key={`dot-${response.id}`}
@@ -515,7 +369,6 @@ const StudentChartThreeV2 = ({
                   textColor="white"
                   canvasWidth={chartWidth}
                   canvasHeight={chartHeight}
-                  dot={eltDotsState[index]}
                 />
               );
             })}
@@ -531,7 +384,6 @@ const StudentChartThreeV2 = ({
                   textColor="black"
                   canvasWidth={chartWidth}
                   canvasHeight={chartHeight}
-                  dot={ceduDotsState[index]}
                 />
               );
             })}
@@ -547,7 +399,6 @@ const StudentChartThreeV2 = ({
                   textColor="black"
                   canvasWidth={chartWidth}
                   canvasHeight={chartHeight}
-                  dot={hindDotsState[index]}
                   unravel={
                     scrollProgress != undefined &&
                     scrollProgress >= 4.5 &&
@@ -568,23 +419,27 @@ const StudentChartThreeV2 = ({
                   textColor="white"
                   canvasWidth={chartWidth}
                   canvasHeight={chartHeight}
-                  dot={plDotsState[index]}
                 />
               );
             })}
           </g>
-          {scrollProgress && (
+          {!interactive && (
             <g>
               <image
                 href="/images/dubois/1910-survey-cover.jpg"
                 className={`w-full transition-opacity duration-1000 opacity-${
-                  scrollProgress >= 0 && scrollProgress <= 1 ? 100 : 0
+                  ((scrollProgress || 0) >= 0 && (scrollProgress || 0) <= 1) ||
+                  (!interactive && !scrollProgress)
+                    ? 100
+                    : 0
                 }`}
               />
               <image
                 href="/images/dubois/1910-survey-p1.jpg"
                 className={`w-full transition-opacity duration-1000 opacity-${
-                  scrollProgress >= 1 && scrollProgress <= 2 ? 100 : 0
+                  (scrollProgress || 0) >= 1 && (scrollProgress || 0) <= 2
+                    ? 100
+                    : 0
                 }`}
               />
             </g>

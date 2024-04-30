@@ -248,6 +248,7 @@ module.exports = {
     "md:-mx-64",
     "border-opacity-0",
     "border-opacity-70",
+    "opacity-20",
     "md:mt-28",
   ],
 };
