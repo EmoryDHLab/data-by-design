@@ -165,12 +165,12 @@ export default function DuboisChapter() {
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="mx-12"
           />
-          <FigureObj
-            figure={figures["ch5-01-phila"]}
-            className="mx-2 md:mx-12 text-sm md:text-base"
-            captionClassName="mx-12"
-          />
         </CenteredLayout>
+        <FigureObj
+          figure={figures["ch5-01-phila"]}
+          className="mx-2 md:mx-12 text-sm md:text-base"
+          captionClassName="mx-12"
+        />
 
         <CenteredLayout>
           <p>
