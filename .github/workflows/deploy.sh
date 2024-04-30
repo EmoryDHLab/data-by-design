@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Running deploy script"
-echo "!!!! ${BRANCH_VAR} !!!!"
+echo "!!!! ${BRANCH} !!!!"
 TAG=$([ "$BRANCH" = "main" ] && echo "latest" || echo "dev")
 
 echo "Logging in to AWS"

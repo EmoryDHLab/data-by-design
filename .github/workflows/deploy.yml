@@ -31,7 +31,6 @@ jobs:
 
       - name: Run Deploy
         env:
-          BRANCH: "dev"
-          BRANCH_VAR: ${{ github.head_ref || github.ref_name }}
+          BRANCH: ${{ github.head_ref || github.ref_name }}
           AWS_ECR: ${{ secrets.AWS_ECR }}
         run: ./deploy.sh
