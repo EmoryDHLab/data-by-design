@@ -1,37 +1,8 @@
 import { Fragment } from "react";
 import { Link } from "@remix-run/react";
 import { Menu, Transition } from "@headlessui/react";
-
-const CHAPTERS = [
-  {
-    link: "intro",
-    title: "Introduction",
-  },
-  {
-    link: "description",
-    title: "1. Every Datapoint a Person",
-  },
-  {
-    link: "playfair",
-    title: "2. What Visualization Reveals",
-  },
-  {
-    link: "shanawdithit",
-    title: "3. The Power of the Frame",
-  },
-  {
-    link: "peabody",
-    title: "4. The Work of Knowledge",
-  },
-  {
-    link: "dubois",
-    title: "5. Between Data and Truth",
-  },
-  {
-    link: "labor",
-    title: "6. From Idea to Insight",
-  },
-];
+import chapters from "~/data/chapterMeta.json";
+import type { TChapterMeta, ChapterTitle } from "~/types/chapterMetaTags";
 
 export default function ChapterDropdown() {
   return (
@@ -50,16 +21,17 @@ export default function ChapterDropdown() {
       >
         <Menu.Items className="absolute left-0 mt-2 origin-top-right text-lg divide-gray-100 rounded-md shadow-md shadow-gray-700 ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="grid-wrapper w-max divide-y border">
-            {CHAPTERS.map((chapter) => (
-              <Menu.Item key={chapter.link}>
+            {Object.keys(chapters as TChapterMeta).map((chapter, index) => (
+              <Menu.Item key={chapter}>
                 {({ active }) => (
                   <Link
                     className={`${
                       active ? "bg-playfairPrimary" : "bg-black"
                     } inline-block focus:bg-playfairPrimary hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5`}
-                    to={`/chapters/${chapter.link}`}
+                    to={`/chapters/${chapter}`}
                   >
-                    {chapter.title}
+                    {index == 0 ? "" : `${index}. `}
+                    {chapters[chapter as ChapterTitle].title}
                   </Link>
                 )}
               </Menu.Item>
