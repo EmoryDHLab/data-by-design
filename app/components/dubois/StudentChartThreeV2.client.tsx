@@ -14,14 +14,14 @@ interface Props {
 const chartHeight = 900;
 const chartWidth = 630;
 const leftColumnX = 157.5;
+const rightColumnX = 472.5;
+const bottomRowY = 450;
 
 const StudentChartThreeV2 = ({
   interactive = false,
   scrollProgress,
 }: Props) => {
   const { width, height } = useResizeObserver().windowSize;
-  const [rightColumnX, setRightColumnX] = useState<number>(0);
-  const [bottomRowY, setBottomRowY] = useState<number>(0);
   const [activeResponse, setActiveResponse] = useState<string | undefined>(
     undefined
   );
@@ -89,10 +89,6 @@ const StudentChartThreeV2 = ({
 
       return overlapping;
     };
-
-    setLeftColumnX(chartWidth * 0.25);
-    setRightColumnX(chartWidth * 0.75);
-    setBottomRowY(chartHeight - chartHeight / 2);
 
     const eltDots: SimpleDot[] = [];
     const ceduDots: SimpleDot[] = [];
