@@ -11,11 +11,11 @@ echo "Logged in successfully"
 echo "Would tag image as ${AWS_ECR}:${TAG}"
 echo "Bransh is ${BRANCH}"
 
-# echo "Building and tagging Docker image"
-# docker build -t dxd --no-cache .
-# docker tag dxd "${AWS_ECR}:${TAG}"
+echo "Building and tagging Docker image"
+docker build -t dxd --no-cache .
+docker tag dxd "${AWS_ECR}:${TAG}"
 
-# echo "Pushing image"
-# docker push "${AWS_ECR}:${TAG}"
+echo "Pushing image"
+docker push "${AWS_ECR}:${TAG}"
 
-# echo "Pushed succesfully"
+echo "Pushed succesfully"
