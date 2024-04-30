@@ -188,6 +188,7 @@ module.exports = {
     "bg-playfairPrimary-translucent",
     "bg-playfairSecondary",
     "bg-playfairSecondary-translucent",
+    "bg-duboisPrimary-translucent",
     "bg-playfairChart",
     "bg-shanawdithitPrimary",
     "bg-shanawdithitSecondary",
@@ -247,5 +248,6 @@ module.exports = {
     "md:-mx-64",
     "border-opacity-0",
     "border-opacity-70",
+    "md:mt-28",
   ],
 };

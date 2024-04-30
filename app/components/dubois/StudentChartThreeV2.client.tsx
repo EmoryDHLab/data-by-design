@@ -167,18 +167,23 @@ const StudentChartThreeV2 = ({
     setCeduDotsState(ceduDots);
     setHindDotsState(hindDots);
     setPlDotsState(plDots);
-  }, [chartHeight, chartWidth]);
+  }, []);
 
   return (
     <div
       className={`relative m-auto mt-${interactive ? "auto" : 28} mb-12`}
       style={{ width: `${chartWidth}px`, height: `${chartHeight}px` }}
     >
-      <div id={`chart-3v2-${interactive ? "interactive" : "scrolly"}`}></div>
+      <div
+        id={`chart-3v2-${interactive ? "interactive" : "scrolly"}`}
+        className="bg-offwhite"
+      ></div>
       {width && height && (
         <svg
           viewBox={`0 0 ${chartWidth} ${chartHeight}`}
-          className={`bg-offwhite p-${interactive ? "auto" : 6}`}
+          className={`bg-offwhite md:p-${interactive ? "auto" : 6} md:mt-${
+            interactive ? "auto" : 28
+          }`}
           style={{ width: `${chartWidth}px` }}
         >
           <g

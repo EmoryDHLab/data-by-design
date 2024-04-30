@@ -46,7 +46,11 @@ export default function FigureObj({
       <div className={className ?? ""} id={id ?? `fig-${figures[0].fileName}`}>
         {figures.map((figure) => {
           return (
-            <FigureModal key={`${figure.fileName}`} figure={figure}>
+            <FigureModal
+              key={`${figure.fileName}`}
+              figure={figure}
+              id={id ?? `fig-${figures[0].fileName}`}
+            >
               <Picture figure={figure} />
             </FigureModal>
           );
@@ -65,7 +69,11 @@ export default function FigureObj({
     );
   } else if (figure) {
     return (
-      <FigureModal figure={figure} className={className}>
+      <FigureModal
+        figure={figure}
+        className={className}
+        id={id ?? `fig-${figure.fileName}`}
+      >
         {hideSensitiveState && figure.sensitive && (
           <div className="absolute p-6 z-10 text-xl font-neueMontreal">
             {figure.altText?.split(".")[0]}. {figure.altText?.split(".")[1]}.
