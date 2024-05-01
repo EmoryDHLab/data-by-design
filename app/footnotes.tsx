@@ -1,261 +1,389 @@
-export const duboisFootnotes = [
-  //1
-  <span key="efa3fdad">
-    {" "}
-    As indicated in the{" "}
-    <cite>
-      Catalogue of the Officers and Students of Atlanta University, 1899-1900
-    </cite>
-    , available online at:{" "}
-    <a href="http://digitalcommons.auctr.edu/aucatalogs/31">
-      http://digitalcommons.auctr.edu/aucatalogs/31
-    </a>
-    .
+export const introFootnotes = [
+  // 1
+  <span key="a3B5x7C9">Shneiderman, Kosara</span>,
+  // 2
+  <span key="1qW8eR2t">Friendly</span>,
+  // 3
+  <span key="z4X6cV8b">Quipu cites</span>,
+  // 4
+  <span key="9uI7mO5y">Wampum cites </span>,
+  // 5
+  <span key="j2K4lP6n">Friendly, Grafton. </span>,
+  // 6
+  <span key="H3gT5fS7">Cite absence paper, missing data paper. </span>,
+  // 7
+  <span key="D9aZ6qX8">Imagination, p. 23.</span>,
+  // 8
+  <span key="7wE4rU1i">Trouillot, p. 26.</span>,
+  // 9
+  <span key="L2vB5nM3">Rendgren 2018, Friendly and Wainer 167, Sarah Grace. </span>,
+  // 10
+  <span key="6sD9fG4h">Tufte </span>,
+  // 11
+  <span key="N1jK8lP2">Marey, Funkhauser, Kosara</span>,
+  // 12
+  <span key="T7gY4hU6">Islamic empiricism cites. Descartes and Spinoza, rationalism as alternate theory; and Cavendish as alternative to both.  </span>,
+  // 13
+  <span key="5bR3cV2x">Explain about Aristotle, hierarchy of senses.</span>,
+  // 14
+  <span key="E8qW1oI9">Shapin and Shaeffer.</span>,
+  // 15
+  <span key="C6mF4tD7">Friendly and Wainer, History of Data Visualization, 17.</span>,
+  // 16
+  <span key="3eA7kP9l">Explain role of barometer, Friendly and Wainer, p. 20.</span>,
+  // 17
+  <span key="G2uH5nS8">Gloss earlier instances of colonization; this is just the European version. </span>,
+  // 18
+  <span key="fJ4dR6vY">
+      The impact of this devastation continues into the present, as contemporary Indigenous scholars such as Mishauna Goeman (Seneca) and Max Liboiron (Métis/Mechif) remind us, profoundly disordering social structures and relationships (Goeman), as well as relations with land and resources (Libioron). As Liboiron, citing Glen Sean Coulthard (Yellowknives Dene) explains, “colonialism is a way to describe relationships characterized by conquest and genocide that grant colonialists and settlers ‘ongoing state access to land and resources that contradictorily provide the material and spiritual sustenance of Indigenous societies on the one hand, and the foundation of colonial state-formation, settlement, and capitalist development on the other.”  
   </span>,
-  //2
-  <span key="b87cdc9f">
-    The medical cause was diphtheria, although Du Bois and his wife always felt
-    that the root cause of Burghardt's death was racism. None of Atlanta's "two
-    or three" Black doctors had been available to make an emergency house call,
-    and not a single one of the city's many white doctors would allow themselves
-    to cross racial lines to tend to Burghardt, even with the knowledge of the
-    severity of his illness. For more on this incident and Du Bois's early years
-    in Atlanta, see David Levering Lewis,{" "}
-    <cite>W.E.B. Du Bois: A Biography</cite> (New York: Henry Holt, 2009):
-    152-176.
+  // 19
+  <span key="9tC7gB3i">Liboiron 9.</span>,
+  // 20
+  <span key="Q5yX2wE1">Tufte 22.</span>,
+  // 21
+  <span key="6rU8oV4q">Bouk, Data & Society, Datafied State. </span>,
+  // 22
+  <span key="S3hN5jM7">Schmidt</span>,
+  // 23
+  <span key="1aZ9sD2x">Explain role of Juan López de Velasco, also a scientist. </span>,
+  // 24
+  <span key="P8kF6nL4">
+    The colonial reliance on data and statistics throughout this era is a large part of the reason for the longstanding suspicion of data by many Indigenous groups. It has also provided the motivation for the creation of the principles of Indigenous Data Sovereignty, which we all benefit from bearing in mind.
   </span>,
-  //3
-  <span key="3ee8d5f7">
-    W.E.B. Du Bois, "
-    <a className="underline" href="http://www.webdubois.org/dbANParis.html">
-      The American Negro in Paris
-    </a>
-    ,"
-    <cite>The American Monthly Review of Reviews</cite> 22.5 (November 1900), p.
-    576.
-  </span>,
-  //4
-  <span key="adf5bbd2">
-    <cite>On The Philadelphia Negro</cite> as the antecedent to the Paris
-    Exposition charts, see Alexander Weheliye, "Diagrammatics as Physiognomy:
-    W.E.B. Du Bois's Graphic Modernities,"{" "}
-    <cite>CR: The New Centennial Review</cite> 15.2 (2015): 23-58.
-  </span>,
-  //5
-  <span key="36b913fb">
-    {" "}
-    Du Bois, "
-    <a
-      href="http://www.webdubois.org/dbANParis.html"
-      className="underline text-blue-500"
-    >
-      The American Negro in Paris
-    </a>
-    ," p. 576.
-  </span>,
-  //6
-  <span key="fb4901b2">
-    {" "}
-    Du Bois, "
-    <a href="http://www.webdubois.org/dbANParis.html" className="underline">
-      The American Negro in Paris
-    </a>
-    ," p. 577; Whitney Battle-Baptiste and Britt Rusert, "Introduction," in
-    W.E.B. <cite>Du Bois's Data Portraits: Visualizing Black America</cite>,
-    eds. Whitney Battle-Baptiste and Britt Rusert (New York: Princeton
-    Architectural Press, 2018), p. 19. For a sustained meditation on the legacy
-    of the Black Codes and their relation to contemporary digital life, see the
-    special issue of <cite>The Black Scholar</cite> on "Black Code," edited by
-    Jessica Marie Johnson and Mark Anthony Neal, and in particular, the
-    introduction, "Wild Seed in the Machine," <cite>The Black Scholar</cite>{" "}
-    47.3 (2017): 1-2.
-  </span>,
-  //7
-  <span key="fbe17de3">
-    {" "}
-    The visualization designer Jason Forrest believes that there is evidence of
-    an additional chart, bringing the total to 64. See "Discovering an Unknown
-    Chart from W.E.B. Du Bois's 'The Exhibition of American Negroes',"
-    <cite> Nightingale: The Journal of the Data Visualization Society, </cite>
-    January 1, 2019.
-  </span>,
-  //8
-  <span key="feba0647">
-    Mabel O. Wilson, "The Cartography of W.E.B. Du Bois's Color Line," in
-    Battle-Baptiste and Rusert, p. 39.
-  </span>,
-  //9 is empty
-  //10
-  <span key="32e32d9c">See Battle-Baptiste and Rusert.</span>,
-  //11
-  <span key="661bce46">
-    {" "}
-    Du Bois, "
-    <a href="http://www.webdubois.org/dbANParis.html">
-      The American Negro in Paris
-    </a>
-    ," p. 577.{" "}
-  </span>,
-
-  //12
-  <span key="b1956148">
-    W.E.B. Du Bois, <cite>The Souls of Black Folk</cite> (New York: Library of
-    America, 1903), p. 8; quoted in Shawn Michelle Smith,{" "}
-    <cite>
-      Photography on the Color Line: W.E.B. Du Bois, Race, and Visual Culture
-    </cite>{" "}
-    (Durham: Duke Univ. Press, 2004) p. 25. For more on the photographs, see the
-    Library of Congress,{" "}
-    <cite>
-      A Small Nation of People: W.E.B. Du Bois and African American Portraits of
-      Progress{" "}
-    </cite>
-    (New York: Amistad-HarperCollins, 2003).{" "}
-  </span>,
-  //13
-  <span key="4b12ec50">
-    Historian of photography Deborah Willis identifies one of these
-    photographers as the prominent Black portraitist Thomas Askew. Others remain
-    unknown. See "The Sociologist's Eye: W.E.B. Du Bois and the Paris
-    Exposition," in <cite>A Small Nation of People</cite>, pp. 51-78.
-  </span>,
-  //14
-  <span key="a22a0441">Battle-Baptiste and Rusert, p. 15.</span>,
-  //15
-  <span key="590aacc5">
-    {" "}
-    W.E.B. Du Bois,{" "}
-    <cite>
-      Dusk of Dawn: An Essay Toward an Autobiography of a Race Concept
-    </cite>
-    , ed. Irene Diggs (New Brunswick NJ: Transaction, 1984), p. 51.
-  </span>,
-  //16
-  <span key="32c9e0d5">
-    Du Bois,
-    <cite> Dusk of Dawn </cite>p. 67.
-  </span>,
-  //17
-  <span key="b1c28368">
-    Du Bois,
-    <cite> Dusk of Dawn </cite>p. 67.
-  </span>,
-  //18
-  <span key="cc1c5e9c">
-    In keeping with the approach of Saidiya Hartman as outlined in
-    <cite>
-      {" "}
-      p. 67. Scenes of Subjection: Terror, Slavery, and Self-Making in
-      Nineteenth-Century America{" "}
-    </cite>
-    (New York: Oxford Univ. Press, 1997), I elect not to restage the violence of
-    this horrific act. To read Du Bois's account, see
-    <cite> Dusk of Dawn </cite>p. 67.
-  </span>,
-  //19
-  <span key="c687ffac">
-    "The Georgia Negro Exhibit for the Paris Exposition,"
-    <cite> The Bulletin of Atlanta University, </cite>
-    May 1900, p. 2.
-  </span>,
-  //20
-  <span key="69373a39">
-    W.E.B. Du Bois,
-    <cite>
-      {" "}
-      A Soliloquy on viewing my life from the last decade of its first century,{" "}
-    </cite>
-    ca. 1961. W.E.B. Du Bois Papers (MS 312). Special Collections and University
-    Archives, University of Massachusetts Amherst Libraries. p. 18.
-  </span>,
-  //21
-  <span key="e0550499">
-    {" "}
-    "Atlanta University Exhibit At Paris,"'
-    <cite>The Atlanta Journal,</cite> February 22, 1900. Archives Research
-    Center, Robert W. Woodruff Library, Atlanta University Center, Box 23,
-    folder 6; "Catalogue of the Officers and Students of Atlanta University,
-    1899-1900,"
-    <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives Research
-    Center, Robert W. Woodruff Library, Atlanta University Center.
-  </span>,
-  //22
-  <span key="aeee60b3">
-    "Atlanta University Exhibit At Paris,"'
-    <cite>The Atlanta Journal,</cite> February 22, 1900. Archives Research
-    Center, Robert W. Woodruff Library, Atlanta University Center, Box 23,
-    folder 6; "Catalogue of the Officers and Students of Atlanta University,
-    1899-1900,"
-    <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives Research
-    Center, Robert W. Woodruff Library, Atlanta University Center.
-  </span>,
-  //23
-  <span key="4416017c">
-    {" "}
-    Aldon Morris,
-    <cite>
-      {" "}
-      The Scholar Denied: W.E.B. Du Bois and the Birth of Modern Sociology{" "}
-    </cite>
-    (Oakland: Univ. of California Press, 2015), p. 71.
-  </span>,
-  //24
-  <span key="7c3593ce">
-    "Catalogue of the Officers and Students of Atlanta University, 1899-1900,"
-    p. 14.
-  </span>,
-  //25
-  <span key="bbe450de">
-    In the report published in advance of the 1900 Atlanta Conference, on the
-    life trajectories and achievements of college-educated Black citizens, Du
-    Bois describes his "general method" of distributing surveys to "about fifty"
-    "experienced correspondents throughout the South," drawing from a network of
-    "graduates of Atlanta, Fisk, and other institutions."
-    <cite> See The College-Bred Negro, ed. W.E.B. Du Bois </cite>
-    (Atlanta: Atlanta Univ. Press, 1900), p. 10.
-  </span>,
-  //26
-  <span key="af1c65bb">
-    {" "}
-    Mona Chalabi, "W.E.B. Du Bois: Retracing his attempt to challenge racism
-    with data,"
-    <cite> The Guardian, </cite>
-    February 14, 2017,
-    https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs
-  </span>,
-  //27
-  <span key="edbf8fa4">
-    {" "}
-    Documentation of the installation is available on the artist's website,
-    <cite> Mimi Onuoha, </cite>
-    "In Absentia" (2019), https://mimionuoha.com/in-absentia, accessed February
-    21, 2021.
-  </span>,
-  //28
-  <span key="920e77da">
-    This mission is stated on the landing page of the group's website. See "Data
-    for Black Lives," https://d4bl.org/, accessed February 21, 2021. The scholar
-    Ruha Benjamin has also cited Du Bois as a key antecedent for her work. See,
-    <cite>
-      {" "}
-      for example, Race After Technology: Abolitionist Tools for the New Jim
-      Code{" "}
-    </cite>
-    (New York: Polity, 2020).
-  </span>,
-
-  //29
-  <span key="03e8539c">
-    {" "}
-    For additional examples of how data can be wielded back against inequality
-    and oppression, see Lauren F. Klein and Miriam Posner, "Data," in
-    <cite> Keywords for American Cultural Studies, </cite>
-    3rd ed., eds. Bruce Burgett and Glenn Hendler (New York: New York University
-    Press, 2000) : 82-5; and Catherine D'Ignazio and Lauren F. Klein,
-    <cite> Data Feminism </cite>
-    (MIT Press, 2020).
+  // 25
+  <span key="W7bE9cT3">Hidalgo, http://www.famsi.org/reports/01032/01032Whittington01.pdf </span>,
+  // 26
+  <span key="4vX1iO8g">Stoler, others. </span>,
+  // 27
+  <span key="M5yH3rT7">Dunn, Slaves and Sugar; Tiya Miles, All that she Carried 45-6.</span>,
+  // 28
+  <span key="iS9wF6jG">Miles 44.</span>,
+  // 29
+  <span key="2lR8uN4q">Insert explanation of mercantile vs. industrial capitalism. Time period focuses on mercantile here. </span>,
+  // 30
+  <span key="O3zB5xV1">Rosenberg, “Data before the Fact”</span>,
+  // 31
+  <span key="7tD2vC8m">Poovey xiv. </span>,
+  // 32
+  <span key="L4kN6jA9">Explain about Luca Pacioli, Poovey 32. </span>,
+  // 33
+  <span key="P2sG8hR5">https://csis.pace.edu/~marchese/Papers/IV11/Marchese_IV'11.pdf</span>,
+  // 34
+  <span key="F9fE7wQ3">Johnson, Markup Bodies.</span>,
+  // 35
+  <span key="6yT4uI1a">
+    Thomas Clarkson, The History of the Rise, Progress, and Accomplishment of the Abolition of the African Slave-trade by the British Parliament, vol. 2 (London: 1808), p. 111. 
   </span>,
 ];
+
+export const descriptionFootnotes = [
+  //1
+  <span key="560e48c1">Equiano 55, 58.</span>,
+  //2
+  <span key="f2043330">Equiano 58; more on Cugoano refusal, p. 15.</span>,
+  //3
+  <span key="b5c28022">Equiano 58; more on Cugoano refusal, p. 15.</span>,
+  //4
+  <span key="6cc8613f">Clarkson, history of abolition, need ##.</span>,
+  //5
+  <span key="97e782e7">Ref here about retaining anglo-western focus.</span>,
+  //6
+  <span key="ea40ed60">Finley 34.</span>,
+  //7
+  <span key="8df7cc09">Wood 28.</span>,
+  //8
+  <span key="a63ef162"> Cite Finley here too. </span>,
+  //9
+  <span key="325f4c91">
+    In an example of mixed methods research avant le letter, Clarkson also
+    published the transcripts of his interviews with these men at roughly the
+    same time as he released his revised version of the Plymouth Committee's
+    "Plan." For more on the interviews, see Riedeker 319-324.
+  </span>,
+  //10
+  <span key="c5520f54">Wood 28</span>,
+  //11
+  <span key="a24478b3">Finley 67.</span>,
+  //12
+  <span key="a52fd08c">Quoted in Baucom 218.</span>,
+  //13
+  <span key="43d4a6ec">Finley 99.</span>,
+  //14
+  <span key="0a123912">Quoted in Baucom 267,</span>,
+  //15
+  <span key="945f669a">Baucom 267-8.</span>,
+  //16
+  <span key="63940a2c">Finley 40.</span>,
+  //17
+  <span key="8025cd1e">Browne 49.</span>,
+  //18
+  <span key="45ac2174">Browne 49.</span>,
+  //19
+  <span key="7337f333">Wood 17.</span>,
+  //20
+  <span key="d688cb70">Bernier 998.</span>,
+  //21
+  <span key="532d207a">Finley 59.</span>,
+  //22
+  <span key="afa3a6c1">Baucom 223.</span>,
+  //23
+  <span key="43ec2892">Baucom 274.</span>,
+  //24
+  <span key="e7fc1e51"> Baucom 274.</span>,
+  //25
+  <span key="17fe0afe">Finley 62.</span>,
+  //26
+  <span key="f01ec097">Cartographies of time.</span>,
+  //27
+  <span key="1726a736">Wood 5.</span>,
+  //28
+  <span key="75812c99">Wood 4.</span>,
+  //29
+  <span key="0014505a">CoT 143.</span>,
+  //30
+  <span key="89b4a05f">Cartographies of time.</span>,
+  //31
+  <span key="d0bd55aa">CoT 136.</span>,
+  //32
+  <span key="75fbde5b">Quoted in CoT 136</span>,
+  //33
+  <span key="8b46db1c">CoT 136.</span>,
+  //34
+  <span key="24fa21d3">From Hyrogliphics… p. 189.</span>,
+  //35
+  <span key="37035873">Isoytpe design and contexts, 10.</span>,
+  //36
+  <span key="858f3e32">Qutoed in Isotype, Design and Cotext, 11.</span>,
+  //37
+  <span key="f1a4e3f8">Ref DF</span>,
+];
+
+export const playfairFootnotes = [
+  //1
+  <span key="adafe778">
+    Edward Tufte, <cite>The Visual Display of Quantitative Information </cite>
+    (Cheshire, CT: Graphics Press, 2001), p. 32.
+  </span>,
+  //2
+  <span key="750a1b40">
+    In their preface to the modern edition of Playfair's{" "}
+    <cite> Commercial and Political Atlas</cite> (1786), for instance, Howard
+    Wainer and Ian Spence describe that text as the "Bible" of contemporary
+    visualization design (New York: Cambridge University Press, 2005), p. vi. In
+    related work, Wainer traces a direct line from Playfair to Jacques Bertin,
+    author of <cite>The Semiology of Graphics,</cite> the most significant study
+    of visualization of the twentieth century (Bertin 1983, vii). Bertin himself
+    selects an 1805 chart of Playfair's as one of only two historical images he
+    reproduces in his foundational text. Also see Michael Friendly, "The Golden
+    Age of Statistical Graphics," <cite> Statistical Science 23.4 </cite>(2008):
+    502-535; and more recently, Sandra Rendgen,{" "}
+    <cite> History of Information Graphics</cite> (Koln, Germany: Taschen,
+    2019).
+  </span>,
+  //3
+  <span key="d33c3331">
+    {" "}
+    Howard Wainer and Ian Spence, "Introduction" in William Playfair,{" "}
+    <cite>
+      The Commercial and Political Atlas and Statistical Breviary,{" "}
+    </cite>{" "}
+    eds. Howard Wainer and Ian Spence (New York: Cambridge Univ. Press, 2005),
+    p. 9
+  </span>,
+  //4
+  <span key="09aff8d2">
+    Responsible for numerous failed money-making schemes throughout his life,
+    Playfair, in 1816, attempted blackmail. Claiming ownership of a set of
+    papers that would cast doubt on the lineage of the twin inheritors of the
+    Douglas estate—a seven-year debate, known as the Douglas Cause, that earned
+    dubious distinction as the longest and most expensive legal battle in
+    Scottish history—Playfair attempted to extort funds from Lord Douglas
+    himself, one of the wealthiest men in Scotland. For more on this episode in
+    Playfair's life, see Wainer and Spence 8-9.
+  </span>,
+  //5
+  <span key="24b82b93">
+    My account of Neele and Playfair's distribution of tasks derives from Wainer
+    and Spence.
+  </span>,
+  //6
+  <span key="b1edeea8">
+    My account of copperplate engraving derives from Wainer and Spence, as well
+    as Roger Gaskell,
+    <cite>
+      "Printing House and Engraving Shop: A Mysterious Collaboration"
+    </cite>{" "}
+    BC 53 (2004): 213-51. Interested readers may also consult{" "}
+    <cite>"From Paper to Copper: The Engraver's Process,"</cite> a demonstration
+    by Andrew Stein Raftery, Associate Professor of Printmaking at the Rhode
+    Island School of Design, viewable online at:
+    <a href=" https://www.youtube.com/watch?v=fQvghHs15hA">
+      https://www.youtube.com/watch?v=fQvghHs15hA{" "}
+    </a>
+  </span>,
+  //7
+  <span key="ca2c1aef">
+    William Playfair, <cite>The Commercial and Political Atlas,</cite> 3rd ed.
+    (London: 1801), p. viii.
+  </span>,
+  //8
+  <span key="85e48c28">Quoted in Wainer and Spence, p. 14.</span>,
+  //9
+  <span key="bc7ce7aa">Playfair, pp. ix-x. attr</span>,
+  //10
+  <span key="96ae40c8">
+    Wainer and Spence find evidence of similar extrapolation in the chart of
+    trade with the Channel Islands. It depicts seven reversals of the balance of
+    trade, whereas the data table records only three. See p. 21.
+  </span>,
+  //11
+  <span key="dc641ca4">Playfair, p. 29.</span>,
+  //12
+  <span key="fee18e02"></span>,
+  //13
+  <span key="2d58d747">Playfair, 1st ed, p. 4</span>,
+  //14
+  <span key="ae3308d6"></span>,
+  //15
+  <span key="b4e82e49"></span>,
+  //16
+  <span key="998e22ab"></span>,
+  //17
+  <span key="77e9bc99"></span>,
+  //18
+  <span key="90c53b48">Playfair, p. iv.</span>,
+  //19
+  <span key="6e0fca3c">Playfair, p. iv.</span>,
+  //20
+  <span key="4c22d55f">Playfair, p. xiv.</span>,
+  //21
+  <span key="3c751aed"></span>,
+  //22
+  <span key="cb4b95f7"></span>,
+  //22
+  <span key="80c2ed3a"></span>,
+  //23
+  <span key="2e738d24"></span>,
+  //24
+  <span key="3987a182"></span>,
+  //25
+  <span key="e43873d2">
+    See:{" "}
+    <a href="http://idl.cs.washington.edu/projects/lyra/">
+      http://idl.cs.washington.edu/projects/lyra/
+    </a>
+  </span>,
+  //26
+  <span key="28bf492e">
+    <a href="https://mbostock.github.io/protovis/ex/wheat.html">
+      https://mbostock.github.io/protovis/ex/wheat.html
+    </a>
+  </span>,
+  //27
+  <span key="25557133">
+    <a
+      href="https://excelcharts.com/excel-charts-meet-william-playfair/
+
+"
+    >
+      https://excelcharts.com/excel-charts-meet-william-playfair/
+    </a>
+  </span>,
+  //28
+  <span key="0642a7c8">
+    Another notable recreation of Playfair is{" "}
+    <a href="http://dougmccune.com/blog/2010/01/19/recreating-william-playfairs-importexport-charts/">
+      {" "}
+      Doug McCune's design of a custom app to generate Playfair-esque charts
+      using contemporary import-export data.{" "}
+    </a>
+  </span>,
+  //29
+  <span key="9617d82b">Data on deaths from Covid-19 courtesy of TK.</span>,
+  //30
+  <span key="48e5c18b">Data on income courtesy of TK.</span>,
+  //31
+  <span key="68def0aa">
+    Data on women in the US Congress courtesy of TK. Data on women MPs courtesy
+    of Sam Joiner, The Times of London.
+  </span>,
+  //32
+  <span key="deee91e4">Need LCP cite, (1787, 232).</span>,
+  //33
+  <span key="5de16d50">
+    Michael Friendly and Daniel Denis's comprehensive website,{" "}
+    <cite>
+      Milestones in the history of thematic cartography, statistical graphics,
+      and data visualization,
+    </cite>{" "}
+    viewable at{" "}
+    <a href="http://www.datavis.ca/milestones/">
+      {" "}
+      http://www.datavis.ca/milestones/{" "}
+    </a>{" "}
+    serves as the benchmark reference for this history. See their entry,
+    "1950-1974: Re-birth of data visualization," for an extended treatment of
+    the impact of digital computing on the proliferation of theories of data
+    visualization and their associated techniques.
+  </span>,
+];
+
+export const shanawdithitFootnotes = [
+  //1
+  <span key="03f8cc84"></span>,
+  //2
+  <span key="c3f1da3c"></span>,
+  //3
+  <span key="28d35057"></span>,
+  //4
+  <span key="151903bb"></span>,
+  //5
+  <span key="fa508296"></span>,
+  //6
+  <span key="49a30344"></span>,
+  //7
+  <span key="48b2bf2a"></span>,
+  //8
+  <span key="369cdb92"></span>,
+  //9
+  <span key="915bf412"></span>,
+  //10
+  <span key="c72e8365"></span>,
+  //11
+  <span key="d5049c72"></span>,
+  //12
+  <span key="ca76e92f"></span>,
+  //13
+  <span key="cf1749f4"></span>,
+  //14
+  <span key="52d63a4d"></span>,
+  //15
+  <span key="6c6e05ac"></span>,
+  //16
+  <span key="ce1ff96d"></span>,
+  //17
+  <span key="dbb5330a"></span>,
+  //18
+  <span key="620a26f6"></span>,
+  //19
+  <span key="e22e9734"></span>,
+  //20
+  <span key="6baf8ae7"></span>,
+  //21
+  <span key="8f4e22b4"></span>,
+  //22
+  <span key="500c3902"></span>,
+  //22
+  <span key="239b6db0"></span>,
+  //23
+  <span key="b807f8c6"></span>,
+  //24
+  <span key="7427f4e2"></span>,
+  //25
+  <span key="ba0ba8ad"></span>,
+];
+
 export const peabodyFootnotes = [
   //1
   <span key="a50176dd">
@@ -556,309 +684,265 @@ export const peabodyFootnotes = [
   //46
   <span key="d1b71371">Brown, p. 926.</span>,
 ];
-export const playfairFootnotes = [
+
+export const duboisFootnotes = [
   //1
-  <span key="adafe778">
-    Edward Tufte, <cite>The Visual Display of Quantitative Information </cite>
-    (Cheshire, CT: Graphics Press, 2001), p. 32.
-  </span>,
-  //2
-  <span key="750a1b40">
-    In their preface to the modern edition of Playfair's{" "}
-    <cite> Commercial and Political Atlas</cite> (1786), for instance, Howard
-    Wainer and Ian Spence describe that text as the "Bible" of contemporary
-    visualization design (New York: Cambridge University Press, 2005), p. vi. In
-    related work, Wainer traces a direct line from Playfair to Jacques Bertin,
-    author of <cite>The Semiology of Graphics,</cite> the most significant study
-    of visualization of the twentieth century (Bertin 1983, vii). Bertin himself
-    selects an 1805 chart of Playfair's as one of only two historical images he
-    reproduces in his foundational text. Also see Michael Friendly, "The Golden
-    Age of Statistical Graphics," <cite> Statistical Science 23.4 </cite>(2008):
-    502-535; and more recently, Sandra Rendgen,{" "}
-    <cite> History of Information Graphics</cite> (Koln, Germany: Taschen,
-    2019).
-  </span>,
-  //3
-  <span key="d33c3331">
+  <span key="efa3fdad">
     {" "}
-    Howard Wainer and Ian Spence, "Introduction" in William Playfair,{" "}
+    As indicated in the{" "}
     <cite>
-      The Commercial and Political Atlas and Statistical Breviary,{" "}
-    </cite>{" "}
-    eds. Howard Wainer and Ian Spence (New York: Cambridge Univ. Press, 2005),
-    p. 9
+      Catalogue of the Officers and Students of Atlanta University, 1899-1900
+    </cite>
+    , available online at:{" "}
+    <a href="http://digitalcommons.auctr.edu/aucatalogs/31">
+      http://digitalcommons.auctr.edu/aucatalogs/31
+    </a>
+    .
+  </span>,
+  //2
+  <span key="b87cdc9f">
+    The medical cause was diphtheria, although Du Bois and his wife always felt
+    that the root cause of Burghardt's death was racism. None of Atlanta's "two
+    or three" Black doctors had been available to make an emergency house call,
+    and not a single one of the city's many white doctors would allow themselves
+    to cross racial lines to tend to Burghardt, even with the knowledge of the
+    severity of his illness. For more on this incident and Du Bois's early years
+    in Atlanta, see David Levering Lewis,{" "}
+    <cite>W.E.B. Du Bois: A Biography</cite> (New York: Henry Holt, 2009):
+    152-176.
+  </span>,
+  //3
+  <span key="3ee8d5f7">
+    W.E.B. Du Bois, "
+    <a className="underline" href="http://www.webdubois.org/dbANParis.html">
+      The American Negro in Paris
+    </a>
+    ,"
+    <cite>The American Monthly Review of Reviews</cite> 22.5 (November 1900), p.
+    576.
   </span>,
   //4
-  <span key="09aff8d2">
-    Responsible for numerous failed money-making schemes throughout his life,
-    Playfair, in 1816, attempted blackmail. Claiming ownership of a set of
-    papers that would cast doubt on the lineage of the twin inheritors of the
-    Douglas estate—a seven-year debate, known as the Douglas Cause, that earned
-    dubious distinction as the longest and most expensive legal battle in
-    Scottish history—Playfair attempted to extort funds from Lord Douglas
-    himself, one of the wealthiest men in Scotland. For more on this episode in
-    Playfair's life, see Wainer and Spence 8-9.
+  <span key="adf5bbd2">
+    <cite>On The Philadelphia Negro</cite> as the antecedent to the Paris
+    Exposition charts, see Alexander Weheliye, "Diagrammatics as Physiognomy:
+    W.E.B. Du Bois's Graphic Modernities,"{" "}
+    <cite>CR: The New Centennial Review</cite> 15.2 (2015): 23-58.
   </span>,
   //5
-  <span key="24b82b93">
-    My account of Neele and Playfair's distribution of tasks derives from Wainer
-    and Spence.
-  </span>,
-  //6
-  <span key="b1edeea8">
-    My account of copperplate engraving derives from Wainer and Spence, as well
-    as Roger Gaskell,
-    <cite>
-      "Printing House and Engraving Shop: A Mysterious Collaboration"
-    </cite>{" "}
-    BC 53 (2004): 213-51. Interested readers may also consult{" "}
-    <cite>"From Paper to Copper: The Engraver's Process,"</cite> a demonstration
-    by Andrew Stein Raftery, Associate Professor of Printmaking at the Rhode
-    Island School of Design, viewable online at:
-    <a href=" https://www.youtube.com/watch?v=fQvghHs15hA">
-      https://www.youtube.com/watch?v=fQvghHs15hA{" "}
-    </a>
-  </span>,
-  //7
-  <span key="ca2c1aef">
-    William Playfair, <cite>The Commercial and Political Atlas,</cite> 3rd ed.
-    (London: 1801), p. viii.
-  </span>,
-  //8
-  <span key="85e48c28">Quoted in Wainer and Spence, p. 14.</span>,
-  //9
-  <span key="bc7ce7aa">Playfair, pp. ix-x. attr</span>,
-  //10
-  <span key="96ae40c8">
-    Wainer and Spence find evidence of similar extrapolation in the chart of
-    trade with the Channel Islands. It depicts seven reversals of the balance of
-    trade, whereas the data table records only three. See p. 21.
-  </span>,
-  //11
-  <span key="dc641ca4">Playfair, p. 29.</span>,
-  //12
-  <span key="fee18e02"></span>,
-  //13
-  <span key="2d58d747">Playfair, 1st ed, p. 4</span>,
-  //14
-  <span key="ae3308d6"></span>,
-  //15
-  <span key="b4e82e49"></span>,
-  //16
-  <span key="998e22ab"></span>,
-  //17
-  <span key="77e9bc99"></span>,
-  //18
-  <span key="90c53b48">Playfair, p. iv.</span>,
-  //19
-  <span key="6e0fca3c">Playfair, p. iv.</span>,
-  //20
-  <span key="4c22d55f">Playfair, p. xiv.</span>,
-  //21
-  <span key="3c751aed"></span>,
-  //22
-  <span key="cb4b95f7"></span>,
-  //22
-  <span key="80c2ed3a"></span>,
-  //23
-  <span key="2e738d24"></span>,
-  //24
-  <span key="3987a182"></span>,
-  //25
-  <span key="e43873d2">
-    See:{" "}
-    <a href="http://idl.cs.washington.edu/projects/lyra/">
-      http://idl.cs.washington.edu/projects/lyra/
-    </a>
-  </span>,
-  //26
-  <span key="28bf492e">
-    <a href="https://mbostock.github.io/protovis/ex/wheat.html">
-      https://mbostock.github.io/protovis/ex/wheat.html
-    </a>
-  </span>,
-  //27
-  <span key="25557133">
+  <span key="36b913fb">
+    {" "}
+    Du Bois, "
     <a
-      href="https://excelcharts.com/excel-charts-meet-william-playfair/
-
-"
+      href="http://www.webdubois.org/dbANParis.html"
+      className="underline text-blue-500"
     >
-      https://excelcharts.com/excel-charts-meet-william-playfair/
+      The American Negro in Paris
     </a>
+    ," p. 576.
   </span>,
-  //28
-  <span key="0642a7c8">
-    Another notable recreation of Playfair is{" "}
-    <a href="http://dougmccune.com/blog/2010/01/19/recreating-william-playfairs-importexport-charts/">
-      {" "}
-      Doug McCune's design of a custom app to generate Playfair-esque charts
-      using contemporary import-export data.{" "}
+  //6
+  <span key="fb4901b2">
+    {" "}
+    Du Bois, "
+    <a href="http://www.webdubois.org/dbANParis.html" className="underline">
+      The American Negro in Paris
     </a>
+    ," p. 577; Whitney Battle-Baptiste and Britt Rusert, "Introduction," in
+    W.E.B. <cite>Du Bois's Data Portraits: Visualizing Black America</cite>,
+    eds. Whitney Battle-Baptiste and Britt Rusert (New York: Princeton
+    Architectural Press, 2018), p. 19. For a sustained meditation on the legacy
+    of the Black Codes and their relation to contemporary digital life, see the
+    special issue of <cite>The Black Scholar</cite> on "Black Code," edited by
+    Jessica Marie Johnson and Mark Anthony Neal, and in particular, the
+    introduction, "Wild Seed in the Machine," <cite>The Black Scholar</cite>{" "}
+    47.3 (2017): 1-2.
   </span>,
-  //29
-  <span key="9617d82b">Data on deaths from Covid-19 courtesy of TK.</span>,
-  //30
-  <span key="48e5c18b">Data on income courtesy of TK.</span>,
-  //31
-  <span key="68def0aa">
-    Data on women in the US Congress courtesy of TK. Data on women MPs courtesy
-    of Sam Joiner, The Times of London.
+  //7
+  <span key="fbe17de3">
+    {" "}
+    The visualization designer Jason Forrest believes that there is evidence of
+    an additional chart, bringing the total to 64. See "Discovering an Unknown
+    Chart from W.E.B. Du Bois's 'The Exhibition of American Negroes',"
+    <cite> Nightingale: The Journal of the Data Visualization Society, </cite>
+    January 1, 2019.
   </span>,
-  //32
-  <span key="deee91e4">Need LCP cite, (1787, 232).</span>,
-  //33
-  <span key="5de16d50">
-    Michael Friendly and Daniel Denis's comprehensive website,{" "}
+  //8
+  <span key="feba0647">
+    Mabel O. Wilson, "The Cartography of W.E.B. Du Bois's Color Line," in
+    Battle-Baptiste and Rusert, p. 39.
+  </span>,
+  //9 is empty
+  //10
+  <span key="32e32d9c">See Battle-Baptiste and Rusert.</span>,
+  //11
+  <span key="661bce46">
+    {" "}
+    Du Bois, "
+    <a href="http://www.webdubois.org/dbANParis.html">
+      The American Negro in Paris
+    </a>
+    ," p. 577.{" "}
+  </span>,
+
+  //12
+  <span key="b1956148">
+    W.E.B. Du Bois, <cite>The Souls of Black Folk</cite> (New York: Library of
+    America, 1903), p. 8; quoted in Shawn Michelle Smith,{" "}
     <cite>
-      Milestones in the history of thematic cartography, statistical graphics,
-      and data visualization,
+      Photography on the Color Line: W.E.B. Du Bois, Race, and Visual Culture
     </cite>{" "}
-    viewable at{" "}
-    <a href="http://www.datavis.ca/milestones/">
+    (Durham: Duke Univ. Press, 2004) p. 25. For more on the photographs, see the
+    Library of Congress,{" "}
+    <cite>
+      A Small Nation of People: W.E.B. Du Bois and African American Portraits of
+      Progress{" "}
+    </cite>
+    (New York: Amistad-HarperCollins, 2003).{" "}
+  </span>,
+  //13
+  <span key="4b12ec50">
+    Historian of photography Deborah Willis identifies one of these
+    photographers as the prominent Black portraitist Thomas Askew. Others remain
+    unknown. See "The Sociologist's Eye: W.E.B. Du Bois and the Paris
+    Exposition," in <cite>A Small Nation of People</cite>, pp. 51-78.
+  </span>,
+  //14
+  <span key="a22a0441">Battle-Baptiste and Rusert, p. 15.</span>,
+  //15
+  <span key="590aacc5">
+    {" "}
+    W.E.B. Du Bois,{" "}
+    <cite>
+      Dusk of Dawn: An Essay Toward an Autobiography of a Race Concept
+    </cite>
+    , ed. Irene Diggs (New Brunswick NJ: Transaction, 1984), p. 51.
+  </span>,
+  //16
+  <span key="32c9e0d5">
+    Du Bois,
+    <cite> Dusk of Dawn </cite>p. 67.
+  </span>,
+  //17
+  <span key="b1c28368">
+    Du Bois,
+    <cite> Dusk of Dawn </cite>p. 67.
+  </span>,
+  //18
+  <span key="cc1c5e9c">
+    In keeping with the approach of Saidiya Hartman as outlined in
+    <cite>
       {" "}
-      http://www.datavis.ca/milestones/{" "}
-    </a>{" "}
-    serves as the benchmark reference for this history. See their entry,
-    "1950-1974: Re-birth of data visualization," for an extended treatment of
-    the impact of digital computing on the proliferation of theories of data
-    visualization and their associated techniques.
+      p. 67. Scenes of Subjection: Terror, Slavery, and Self-Making in
+      Nineteenth-Century America{" "}
+    </cite>
+    (New York: Oxford Univ. Press, 1997), I elect not to restage the violence of
+    this horrific act. To read Du Bois's account, see
+    <cite> Dusk of Dawn </cite>p. 67.
   </span>,
-];
-export const descriptionFootnotes = [
-  //1
-  <span key="560e48c1">Equiano 55, 58.</span>,
-  //2
-  <span key="f2043330">Equiano 58; more on Cugoano refusal, p. 15.</span>,
-  //3
-  <span key="b5c28022">Equiano 58; more on Cugoano refusal, p. 15.</span>,
-  //4
-  <span key="6cc8613f">Clarkson, history of abolition, need ##.</span>,
-  //5
-  <span key="97e782e7">Ref here about retaining anglo-western focus.</span>,
-  //6
-  <span key="ea40ed60">Finley 34.</span>,
-  //7
-  <span key="8df7cc09">Wood 28.</span>,
-  //8
-  <span key="a63ef162"> Cite Finley here too. </span>,
-  //9
-  <span key="325f4c91">
-    In an example of mixed methods research avant le letter, Clarkson also
-    published the transcripts of his interviews with these men at roughly the
-    same time as he released his revised version of the Plymouth Committee's
-    "Plan." For more on the interviews, see Riedeker 319-324.
-  </span>,
-  //10
-  <span key="c5520f54">Wood 28</span>,
-  //11
-  <span key="a24478b3">Finley 67.</span>,
-  //12
-  <span key="a52fd08c">Quoted in Baucom 218.</span>,
-  //13
-  <span key="43d4a6ec">Finley 99.</span>,
-  //14
-  <span key="0a123912">Quoted in Baucom 267,</span>,
-  //15
-  <span key="945f669a">Baucom 267-8.</span>,
-  //16
-  <span key="63940a2c">Finley 40.</span>,
-  //17
-  <span key="8025cd1e">Browne 49.</span>,
-  //18
-  <span key="45ac2174">Browne 49.</span>,
   //19
-  <span key="7337f333">Wood 17.</span>,
+  <span key="c687ffac">
+    "The Georgia Negro Exhibit for the Paris Exposition,"
+    <cite> The Bulletin of Atlanta University, </cite>
+    May 1900, p. 2.
+  </span>,
   //20
-  <span key="d688cb70">Bernier 998.</span>,
+  <span key="69373a39">
+    W.E.B. Du Bois,
+    <cite>
+      {" "}
+      A Soliloquy on viewing my life from the last decade of its first century,{" "}
+    </cite>
+    ca. 1961. W.E.B. Du Bois Papers (MS 312). Special Collections and University
+    Archives, University of Massachusetts Amherst Libraries. p. 18.
+  </span>,
   //21
-  <span key="532d207a">Finley 59.</span>,
+  <span key="e0550499">
+    {" "}
+    "Atlanta University Exhibit At Paris,"'
+    <cite>The Atlanta Journal,</cite> February 22, 1900. Archives Research
+    Center, Robert W. Woodruff Library, Atlanta University Center, Box 23,
+    folder 6; "Catalogue of the Officers and Students of Atlanta University,
+    1899-1900,"
+    <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives Research
+    Center, Robert W. Woodruff Library, Atlanta University Center.
+  </span>,
   //22
-  <span key="afa3a6c1">Baucom 223.</span>,
+  <span key="aeee60b3">
+    "Atlanta University Exhibit At Paris,"'
+    <cite>The Atlanta Journal,</cite> February 22, 1900. Archives Research
+    Center, Robert W. Woodruff Library, Atlanta University Center, Box 23,
+    folder 6; "Catalogue of the Officers and Students of Atlanta University,
+    1899-1900,"
+    <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives Research
+    Center, Robert W. Woodruff Library, Atlanta University Center.
+  </span>,
   //23
-  <span key="43ec2892">Baucom 274.</span>,
+  <span key="4416017c">
+    {" "}
+    Aldon Morris,
+    <cite>
+      {" "}
+      The Scholar Denied: W.E.B. Du Bois and the Birth of Modern Sociology{" "}
+    </cite>
+    (Oakland: Univ. of California Press, 2015), p. 71.
+  </span>,
   //24
-  <span key="e7fc1e51"> Baucom 274.</span>,
+  <span key="7c3593ce">
+    "Catalogue of the Officers and Students of Atlanta University, 1899-1900,"
+    p. 14.
+  </span>,
   //25
-  <span key="17fe0afe">Finley 62.</span>,
+  <span key="bbe450de">
+    In the report published in advance of the 1900 Atlanta Conference, on the
+    life trajectories and achievements of college-educated Black citizens, Du
+    Bois describes his "general method" of distributing surveys to "about fifty"
+    "experienced correspondents throughout the South," drawing from a network of
+    "graduates of Atlanta, Fisk, and other institutions."
+    <cite> See The College-Bred Negro, ed. W.E.B. Du Bois </cite>
+    (Atlanta: Atlanta Univ. Press, 1900), p. 10.
+  </span>,
   //26
-  <span key="f01ec097">Cartographies of time.</span>,
+  <span key="af1c65bb">
+    {" "}
+    Mona Chalabi, "W.E.B. Du Bois: Retracing his attempt to challenge racism
+    with data,"
+    <cite> The Guardian, </cite>
+    February 14, 2017,
+    https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs
+  </span>,
   //27
-  <span key="1726a736">Wood 5.</span>,
+  <span key="edbf8fa4">
+    {" "}
+    Documentation of the installation is available on the artist's website,
+    <cite> Mimi Onuoha, </cite>
+    "In Absentia" (2019), https://mimionuoha.com/in-absentia, accessed February
+    21, 2021.
+  </span>,
   //28
-  <span key="75812c99">Wood 4.</span>,
+  <span key="920e77da">
+    This mission is stated on the landing page of the group's website. See "Data
+    for Black Lives," https://d4bl.org/, accessed February 21, 2021. The scholar
+    Ruha Benjamin has also cited Du Bois as a key antecedent for her work. See,
+    <cite>
+      {" "}
+      for example, Race After Technology: Abolitionist Tools for the New Jim
+      Code{" "}
+    </cite>
+    (New York: Polity, 2020).
+  </span>,
+
   //29
-  <span key="0014505a">CoT 143.</span>,
-  //30
-  <span key="89b4a05f">Cartographies of time.</span>,
-  //31
-  <span key="d0bd55aa">CoT 136.</span>,
-  //32
-  <span key="75fbde5b">Quoted in CoT 136</span>,
-  //33
-  <span key="8b46db1c">CoT 136.</span>,
-  //34
-  <span key="24fa21d3">From Hyrogliphics… p. 189.</span>,
-  //35
-  <span key="37035873">Isoytpe design and contexts, 10.</span>,
-  //36
-  <span key="858f3e32">Qutoed in Isotype, Design and Cotext, 11.</span>,
-  //37
-  <span key="f1a4e3f8">Ref DF</span>,
-];
-export const shanawdithitFootnotes = [
-  //1
-  <span key="03f8cc84"></span>,
-  //2
-  <span key="c3f1da3c"></span>,
-  //3
-  <span key="28d35057"></span>,
-  //4
-  <span key="151903bb"></span>,
-  //5
-  <span key="fa508296"></span>,
-  //6
-  <span key="49a30344"></span>,
-  //7
-  <span key="48b2bf2a"></span>,
-  //8
-  <span key="369cdb92"></span>,
-  //9
-  <span key="915bf412"></span>,
-  //10
-  <span key="c72e8365"></span>,
-  //11
-  <span key="d5049c72"></span>,
-  //12
-  <span key="ca76e92f"></span>,
-  //13
-  <span key="cf1749f4"></span>,
-  //14
-  <span key="52d63a4d"></span>,
-  //15
-  <span key="6c6e05ac"></span>,
-  //16
-  <span key="ce1ff96d"></span>,
-  //17
-  <span key="dbb5330a"></span>,
-  //18
-  <span key="620a26f6"></span>,
-  //19
-  <span key="e22e9734"></span>,
-  //20
-  <span key="6baf8ae7"></span>,
-  //21
-  <span key="8f4e22b4"></span>,
-  //22
-  <span key="500c3902"></span>,
-  //22
-  <span key="239b6db0"></span>,
-  //23
-  <span key="b807f8c6"></span>,
-  //24
-  <span key="7427f4e2"></span>,
-  //25
-  <span key="ba0ba8ad"></span>,
+  <span key="03e8539c">
+    {" "}
+    For additional examples of how data can be wielded back against inequality
+    and oppression, see Lauren F. Klein and Miriam Posner, "Data," in
+    <cite> Keywords for American Cultural Studies, </cite>
+    3rd ed., eds. Bruce Burgett and Glenn Hendler (New York: New York University
+    Press, 2000) : 82-5; and Catherine D'Ignazio and Lauren F. Klein,
+    <cite> Data Feminism </cite>
+    (MIT Press, 2020).
+  </span>,
 ];
 
-export const laborFootnotes = [];
+export const laborFootnotes = [
+];
