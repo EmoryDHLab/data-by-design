@@ -846,90 +846,49 @@ export const peabodyFootnotes = [
 export const duboisFootnotes = [
   //1
   <span key="efa3fdad">
-    {" "}
-    As indicated in the{" "}
-    <cite>
-      Catalogue of the Officers and Students of Atlanta University, 1899-1900
-    </cite>
-    , available online at:{" "}
-    <a href="http://digitalcommons.auctr.edu/aucatalogs/31">
-      http://digitalcommons.auctr.edu/aucatalogs/31
-    </a>
-    .
+    Note that this was not the main US exhibition space, which was reserved for a unified (and white) view of the nation. Need cite.  
   </span>,
   //2
   <span key="b87cdc9f">
-    The medical cause was diphtheria, although Du Bois and his wife always felt
-    that the root cause of Burghardt's death was racism. None of Atlanta's "two
-    or three" Black doctors had been available to make an emergency house call,
-    and not a single one of the city's many white doctors would allow themselves
-    to cross racial lines to tend to Burghardt, even with the knowledge of the
-    severity of his illness. For more on this incident and Du Bois's early years
-    in Atlanta, see David Levering Lewis,{" "}
-    <cite>W.E.B. Du Bois: A Biography</cite> (New York: Henry Holt, 2009):
-    152-176.
+    W.E.B. Du Bois, “The American Negro in Paris,” The American Monthly Review of Reviews 22.5 (November 1900), p. 576. 
   </span>,
   //3
-  <span key="3ee8d5f7">
-    W.E.B. Du Bois, "
-    <a className="underline" href="http://www.webdubois.org/dbANParis.html">
-      The American Negro in Paris
-    </a>
-    ,"
-    <cite>The American Monthly Review of Reviews</cite> 22.5 (November 1900), p.
-    576.
-  </span>,
-  //4
   <span key="adf5bbd2">
     <cite>On The Philadelphia Negro</cite> as the antecedent to the Paris
     Exposition charts, see Alexander Weheliye, "Diagrammatics as Physiognomy:
     W.E.B. Du Bois's Graphic Modernities,"{" "}
     <cite>CR: The New Centennial Review</cite> 15.2 (2015): 23-58.
   </span>,
-  //5
-  <span key="36b913fb">
-    {" "}
-    Du Bois, "
-    <a
-      href="http://www.webdubois.org/dbANParis.html"
-      className="underline text-blue-500"
-    >
-      The American Negro in Paris
-    </a>
-    ," p. 576.
-  </span>,
-  //6
-  <span key="fb4901b2">
-    {" "}
-    Du Bois, "
-    <a href="http://www.webdubois.org/dbANParis.html" className="underline">
-      The American Negro in Paris
-    </a>
-    ," p. 577; Whitney Battle-Baptiste and Britt Rusert, "Introduction," in
-    W.E.B. <cite>Du Bois's Data Portraits: Visualizing Black America</cite>,
-    eds. Whitney Battle-Baptiste and Britt Rusert (New York: Princeton
-    Architectural Press, 2018), p. 19. For a sustained meditation on the legacy
-    of the Black Codes and their relation to contemporary digital life, see the
-    special issue of <cite>The Black Scholar</cite> on "Black Code," edited by
-    Jessica Marie Johnson and Mark Anthony Neal, and in particular, the
-    introduction, "Wild Seed in the Machine," <cite>The Black Scholar</cite>{" "}
-    47.3 (2017): 1-2.
-  </span>,
-  //7
-  <span key="fbe17de3">
-    {" "}
-    The visualization designer Jason Forrest believes that there is evidence of
+  //4
+  <span key="3ee8d5f7">
+    In addition, it is worth noting that the visualization designer Jason Forrest believes that there is evidence of
     an additional chart, bringing the total to 64. See "Discovering an Unknown
     Chart from W.E.B. Du Bois's 'The Exhibition of American Negroes',"
     <cite> Nightingale: The Journal of the Data Visualization Society, </cite>
     January 1, 2019.
+  </span>,
+  //5
+  <span key="36b913fb">
+    {" "} Du Bois, " <a href="http://www.webdubois.org/dbANParis.html" className="underline text-blue-500">The American Negro in Paris
+    </a>," <cite>The American Monthly Review of Reviews</cite> 22.5 (November 1900), p. 576.
+  </span>,
+  //6
+  <span key="fb4901b2">
+    Add in Hyperallergenic, other examples. 
+  </span>,
+  //7
+  <span key="fbe17de3">
+    Give explanation for this claim (Atlanta University Studies). 
   </span>,
   //8
   <span key="feba0647">
     Mabel O. Wilson, "The Cartography of W.E.B. Du Bois's Color Line," in
     Battle-Baptiste and Rusert, p. 39.
   </span>,
-  //9 is empty
+  //9 
+  <span key="1qg8er2t">
+    Henry Gannett, “Transmittal Letter,” in The Statistical Atlas of the United States, based upon the results of the eleventh census (Washington, D.C.: Govt. print., 1898), p. 3. 
+  </span>,
   //10
   <span key="32e32d9c">See Battle-Baptiste and Rusert.</span>,
   //11
@@ -941,7 +900,6 @@ export const duboisFootnotes = [
     </a>
     ," p. 577.{" "}
   </span>,
-
   //12
   <span key="b1956148">
     W.E.B. Du Bois, <cite>The Souls of Black Folk</cite> (New York: Library of
@@ -967,6 +925,10 @@ export const duboisFootnotes = [
   //14
   <span key="a22a0441">Battle-Baptiste and Rusert, p. 15.</span>,
   //15
+  <span key="z4x6cv8b">
+    Data Feminism, pp. ##.
+  </span>,
+  //16
   <span key="590aacc5">
     {" "}
     W.E.B. Du Bois,{" "}
@@ -975,45 +937,78 @@ export const duboisFootnotes = [
     </cite>
     , ed. Irene Diggs (New Brunswick NJ: Transaction, 1984), p. 51.
   </span>,
-  //16
+  //17
   <span key="32c9e0d5">
     Du Bois,
     <cite> Dusk of Dawn </cite>p. 67.
   </span>,
-  //17
+  //18
   <span key="b1c28368">
     Du Bois,
     <cite> Dusk of Dawn </cite>p. 67.
   </span>,
-  //18
-  <span key="cc1c5e9c">
-    In keeping with the approach of Saidiya Hartman as outlined in
-    <cite>
-      {" "}
-      p. 67. Scenes of Subjection: Terror, Slavery, and Self-Making in
-      Nineteenth-Century America{" "}
-    </cite>
-    (New York: Oxford Univ. Press, 1997), I elect not to restage the violence of
-    this horrific act. To read Du Bois's account, see
-    <cite> Dusk of Dawn </cite>p. 67.
-  </span>,
   //19
+  <span key="cc1c5e9c">
+    <cite> Dusk of Dawn </cite>pp. 67-8.
+  </span>,
+  //20
+  <span key="9ui7mo5y">
+    This was the legislation that, as Whitney Battle-Baptiste and Britt Rusert explain, “stretch[ed] from the slave codes of the colonial and antebellum period to the segregationist policies and laws of the present,” and which attempted to control and constrain all aspects of Black life (19). Du Bois’s transcription of the Black Codes filled three large manuscript volumes. For a sustained meditation on the legacy of the Black Codes and their relation to contemporary digital life, see the special issue of The Black Scholar on "Black Code," edited by Jessica Marie Johnson and Mark Anthony Neal, and in particular, the introduction, "Wild Seed in the Machine," The Black Scholar 47.3 (2017): 1-2.
+  </span>,
+  //21
+  <span key="j2k4lp6n">
+    The annual “Du Bois Challenge,” for example, seeks to “celebrate his data visualization legacy by recreating the visualizations showcased at the 1900 Paris Exposition using modern tools. [Cite website. ]
+  </span>,
+  //22
+  <span key="af1c65bb">
+    Chalabi traces her own inspiration to a recent exhibition of work by the Chicago-based artist Theaster Gates. See Mona Chalabi {" "}
+    "W.E.B. Du Bois: Retracing his attempt to challenge racism with data,"
+    <cite> The Guardian, </cite>
+    February 14, 2017,
+    https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs
+  </span>,
+  //23
+  <span key="h3gt5fs7">
+    https://www.dignityanddebt.org/projects/student-debt-calculator/   
+  </span>,
+  //24
+  <span key="d9az6qx8">
+    The project is also notable for how it acknowledges the role of policy change. As the website explains, “Visualizations can render data to make it meaningful for people around the world. Furthermore, they are able to reveal what might be either changed or strengthened through policy and individual action.” https://www.dignityanddebt.org/projects/student-debt-contest/ 
+  </span>,
+  //25
+  <span key="">
+    As we share in Data Feminism, “In 2015, communications researcher Candice Lanius wrote a widely shared blog post, “Fact Check: Your Demand for Statistical Proof is Racist,” in which she summarizes the ample research on how those in positions of power accept anecdotal evidence from those like themselves, but demand endless statistics from minoritized groups. In those cases, she argues convincingly, more data will never be enough” (##).
+  </span>,
+  //26
+  <span key="edbf8fa4">
+    {" "}
+    <cite> Mimi Onuoha, </cite>
+    "In Absentia" (2019), https://mimionuoha.com/in-absentia, accessed February
+    21, 2021.
+  </span>,
+  //27
+  <span key="7we4ru1i">
+    In relaying this anecdote, Battle-Baptiste and Rusert also observe its “close proximity to the hold of the ship” (17).
+  </span>,
+  //28
+  <span key="l2vb5nm3">
+   Reference Data for Black Lives and Milner’s idea of abolishing big data.
+  </span>,
+  //29
+  <span key="6sdfg4h">
+    Note about deleterious effects of white supremacy on white people too, cf. Jessie Daniels.  
+  </span>,
+  //30
   <span key="c687ffac">
     "The Georgia Negro Exhibit for the Paris Exposition,"
     <cite> The Bulletin of Atlanta University, </cite>
     May 1900, p. 2.
   </span>,
-  //20
-  <span key="69373a39">
-    W.E.B. Du Bois,
-    <cite>
-      {" "}
-      A Soliloquy on viewing my life from the last decade of its first century,{" "}
-    </cite>
-    ca. 1961. W.E.B. Du Bois Papers (MS 312). Special Collections and University
-    Archives, University of Massachusetts Amherst Libraries. p. 18.
+  //31
+  <span key="a3b5x7c9">
+    W.E.B. Du Bois, A Soliloquy on viewing my life from the last decade of its first century, ca. 1961. W.E.B. Du Bois Papers (MS 312). Special Collections and University Archives, University of Massachusetts Amherst Libraries. p. 18.
   </span>,
-  //21
+  //32
   <span key="e0550499">
     {" "}
     "Atlanta University Exhibit At Paris,"'
@@ -1024,17 +1019,11 @@ export const duboisFootnotes = [
     <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives Research
     Center, Robert W. Woodruff Library, Atlanta University Center.
   </span>,
-  //22
+  //33
   <span key="aeee60b3">
-    "Atlanta University Exhibit At Paris,"'
-    <cite>The Atlanta Journal,</cite> February 22, 1900. Archives Research
-    Center, Robert W. Woodruff Library, Atlanta University Center, Box 23,
-    folder 6; "Catalogue of the Officers and Students of Atlanta University,
-    1899-1900,"
-    <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives Research
-    Center, Robert W. Woodruff Library, Atlanta University Center.
+    Silas Munro, “Plates,” in Battle-Baptiste and Rusert, p. 50.
   </span>,
-  //23
+  //34
   <span key="4416017c">
     {" "}
     Aldon Morris,
@@ -1044,12 +1033,12 @@ export const duboisFootnotes = [
     </cite>
     (Oakland: Univ. of California Press, 2015), p. 71.
   </span>,
-  //24
+  //35
   <span key="7c3593ce">
     "Catalogue of the Officers and Students of Atlanta University, 1899-1900,"
     p. 14.
   </span>,
-  //25
+  //36
   <span key="bbe450de">
     In the report published in advance of the 1900 Atlanta Conference, on the
     life trajectories and achievements of college-educated Black citizens, Du
@@ -1058,47 +1047,6 @@ export const duboisFootnotes = [
     "graduates of Atlanta, Fisk, and other institutions."
     <cite> See The College-Bred Negro, ed. W.E.B. Du Bois </cite>
     (Atlanta: Atlanta Univ. Press, 1900), p. 10.
-  </span>,
-  //26
-  <span key="af1c65bb">
-    {" "}
-    Mona Chalabi, "W.E.B. Du Bois: Retracing his attempt to challenge racism
-    with data,"
-    <cite> The Guardian, </cite>
-    February 14, 2017,
-    https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs
-  </span>,
-  //27
-  <span key="edbf8fa4">
-    {" "}
-    Documentation of the installation is available on the artist's website,
-    <cite> Mimi Onuoha, </cite>
-    "In Absentia" (2019), https://mimionuoha.com/in-absentia, accessed February
-    21, 2021.
-  </span>,
-  //28
-  <span key="920e77da">
-    This mission is stated on the landing page of the group's website. See "Data
-    for Black Lives," https://d4bl.org/, accessed February 21, 2021. The scholar
-    Ruha Benjamin has also cited Du Bois as a key antecedent for her work. See,
-    <cite>
-      {" "}
-      for example, Race After Technology: Abolitionist Tools for the New Jim
-      Code{" "}
-    </cite>
-    (New York: Polity, 2020).
-  </span>,
-
-  //29
-  <span key="03e8539c">
-    {" "}
-    For additional examples of how data can be wielded back against inequality
-    and oppression, see Lauren F. Klein and Miriam Posner, "Data," in
-    <cite> Keywords for American Cultural Studies, </cite>
-    3rd ed., eds. Bruce Burgett and Glenn Hendler (New York: New York University
-    Press, 2000) : 82-5; and Catherine D'Ignazio and Lauren F. Klein,
-    <cite> Data Feminism </cite>
-    (MIT Press, 2020).
   </span>,
 ];
 
