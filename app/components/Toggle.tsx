@@ -43,7 +43,7 @@ export default function Toggle({
         <span className="sr-only">{screenReaderMsg}</span>
         <span
           aria-hidden="true"
-          className={`bg-${isFocused ? backgroundColor : "white"}
+          className={`bg-${backgroundColor}
             ${
               checked
                 ? `translate-x-[16px] md:translate-x-[24px] bg-white`
