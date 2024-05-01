@@ -5,6 +5,7 @@ import { ChapterNav } from "~/components/ChapterNav";
 import { useResizeObserver } from "~/hooks";
 import type { ReactNode } from "react";
 import type { ScrollamaInstance } from "scrollama";
+import FootnoteToggle from "../FootnoteToggle";
 
 interface Props {
   children: ReactNode;
@@ -59,6 +60,7 @@ export default function ChapterBody({ children, className }: Props) {
           <ChapterNav progress={chapterProgressState} fixedNav={fixedNav} />
         )}
       </ClientOnly>
+      <FootnoteToggle />
       {children}
     </main>
   );

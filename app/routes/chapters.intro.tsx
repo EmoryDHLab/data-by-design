@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
@@ -36,6 +37,7 @@ const sections = [
 ];
 
 export default function IntroPage() {
+  const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
   return (
     <ChapterContext.Provider
       value={{
@@ -46,6 +48,8 @@ export default function IntroPage() {
         footnoteTextColor: "playfairPrimary",
         footnotes: playfairFootnotes,
         sections,
+        showFootnotes,
+        setShowFootnotes,
       }}
     >
       <ChapterTitle

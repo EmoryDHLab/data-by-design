@@ -69,6 +69,7 @@ const visualizations: TVizAnchors[] = [
 
 export default function ShanawdithitPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
+  const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
 
   return (
     <ChapterContext.Provider
@@ -83,6 +84,8 @@ export default function ShanawdithitPage() {
         visualizations,
         chapterFigures,
         sections,
+        showFootnotes,
+        setShowFootnotes,
       }}
     >
       <ChapterTitle

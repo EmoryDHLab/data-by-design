@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ChapterTitle from "~/components/ChapterTitle";
 import { chapterMeta } from "~/utils";
@@ -48,6 +49,8 @@ const sections = [
 ];
 
 export default function LabourPage() {
+  const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
+
   return (
     <ChapterContext.Provider
       value={{
@@ -57,6 +60,8 @@ export default function LabourPage() {
         footnotes: laborFootnotes,
         sections,
         visualizations,
+        showFootnotes,
+        setShowFootnotes,
       }}
     >
       <ChapterTitle

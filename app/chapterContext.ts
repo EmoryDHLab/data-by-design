@@ -69,6 +69,8 @@ interface IChapterContext {
   disclosure?: boolean | undefined;
   hideSensitiveState?: boolean | undefined;
   setHideSensitiveState?: Dispatch<SetStateAction<boolean>>;
+  showFootnotes: boolean;
+  setShowFootnotes: Dispatch<SetStateAction<boolean>>;
   hide?: boolean;
   sections?: TChapterSection[];
 }
@@ -88,6 +90,12 @@ const ChapterContext = createContext<IChapterContext>({
   visualizations: [],
   hideSensitiveState: false,
   sections: [],
+  setShowFootnotes: (_: SetStateAction<boolean>) => {
+    console.error(
+      "setShowFootnotes not implemented. Did you pass it to context?"
+    );
+  },
+  showFootnotes: false,
 });
 
 ChapterContext.displayName = "ChapterContext";

@@ -13,16 +13,14 @@ const WIDTH = 713.52;
 const Ship = ({ figure }: Props) => {
   const { hideSensitiveState } = useContext(ChapterContext);
   return (
-    <figure>
-      <svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="w-full">
-        <filter id="blurShip">
-          <feGaussianBlur stdDeviation="5" />
-        </filter>
-        <g
-          className={`fill-brooksSecondary transition-all duration-1000 ${
-            hideSensitiveState ? "blur" : "blur-0"
-          }`}
-        >
+    <figure className="relative">
+      <svg
+        viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+        className={`w-full transition-all duration-1000 ${
+          hideSensitiveState ? "blur-md" : "blur-none"
+        }`}
+      >
+        <g className={`fill-brooksSecondary`}>
           <path
             strokeWidth={0}
             className={`transition-opacity duration-1000 opacity-100`}
@@ -34,21 +32,14 @@ const Ship = ({ figure }: Props) => {
           style={{ strokeOpacity: hideSensitiveState ? 0 : 1 }}
           d={paths.outline}
         />
-        <foreignObject
-          width={WIDTH * 0.7}
-          x={WIDTH / 6}
-          y={HEIGHT / 3}
-          className="h-1/3"
-        >
-          <p
-            className={`font-neueMontreal transition-opacity duration-1000 opacity-${
-              hideSensitiveState ? 100 : 0
-            }`}
-          >
-            {figure.altText?.split(".")[0]}.
-          </p>
-        </foreignObject>
       </svg>
+      <p
+        className={`absolute top-1/3 ml-[20%] w-1/2 transition-opacity duration-1000 opacity-${
+          hideSensitiveState ? 100 : 0
+        }`}
+      >
+        {figure.altText?.split(".")[0]}.
+      </p>
     </figure>
   );
 };

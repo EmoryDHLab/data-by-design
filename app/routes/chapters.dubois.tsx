@@ -85,6 +85,7 @@ const chapterFigures = Object.values(figures);
 
 export default function DuboisChapter() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
+  const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
 
   return (
     <ChapterContext.Provider
@@ -99,6 +100,8 @@ export default function DuboisChapter() {
         chapterFigures,
         visualizations,
         sections,
+        showFootnotes,
+        setShowFootnotes,
       }}
     >
       <ChapterTitle

@@ -182,8 +182,6 @@ export default {
     "bg-brooksSecondary",
     "bg-brooksPrimary-translucent",
     "bg-brooksSecondary-translucent",
-    "outline-brooksPrimary",
-    "outline-brooksSecondary",
     "bg-duboisPrimary",
     "text-duboisPrimary",
     "text-playfairPrimary",
@@ -267,5 +265,7 @@ export default {
     "md:mt-28",
     ...Object.keys(chapters).map((chapter) => `bg-${chapter}`),
     ...Object.keys(chapters).map((chapter) => `hover:bg-${chapter}`),
+    ...Object.keys(chapters).map((chapter) => `outline-${chapter}Primary`),
+    ...Object.keys(chapters).map((chapter) => `outline-${chapter}Secondary`),
   ],
 } satisfies Config;

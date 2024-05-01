@@ -93,6 +93,7 @@ const chapterFigures = Object.values(figures);
 
 export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
+  const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
 
   return (
     <ChapterContext.Provider
@@ -108,6 +109,8 @@ export default function PeabodyPage() {
         chapterFigures,
         visualizations,
         sections,
+        showFootnotes,
+        setShowFootnotes,
       }}
     >
       <ChapterTitle
@@ -362,11 +365,7 @@ export default function PeabodyPage() {
                 countries involved in a particular event. On this point, Peabody
                 makes special note that she employs "a somewhat different, and,
                 as it seems to me, a more expressive distribution of colors."
-                <InlineFootnote
-                  index={6}
-                  bgOverride="white"
-                  superscriptOverride="offblack"
-                />
+                <InlineFootnote index={6} />
               </p>
               <div className="flex flex-wrap text-sm gap-2 bg-[#9ae4c1cc] w-full md:w-auto px-4 pt-4 md:p-0 mt-6 md:mt-4">
                 <PeabodyActors century={1600} />

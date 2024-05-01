@@ -24,7 +24,7 @@ import { chapterMeta } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
 import VoyageScrollytell from "~/components/description/voyageScrollytell/VoyageScrollytell";
 import Takeaways from "~/components/layout/Takeaways";
-import Toggle from "~/components/consent/Toggle";
+import ConsentToggle from "~/components/consent/Toggle";
 
 import type { MetaFunction } from "@remix-run/node";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
@@ -86,6 +86,7 @@ const visualizations: TVizAnchors[] = [
 export default function BrooksPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
   const [hideSensitiveState, setHideSensitiveState] = useState<boolean>(true);
+  const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
 
   return (
     <ChapterContext.Provider
@@ -104,6 +105,8 @@ export default function BrooksPage() {
         hideSensitiveState,
         setHideSensitiveState,
         sections,
+        showFootnotes,
+        setShowFootnotes,
       }}
     >
       <ChapterTitle
@@ -171,7 +174,7 @@ export default function BrooksPage() {
               <span
                 className={`inline-flex items-center justify-center border h-auto w-auto border-offblack rounded-full bg-brooksSecondary hover:bg-brooksPrimary`}
               >
-                <Toggle
+                <ConsentToggle
                   className="h-6 w-6 md:h-28 md:w-28 p-2"
                   id="big-toggle"
                 />
