@@ -23,6 +23,14 @@
     "imageWidth": "1364",
     "imageHeight": "801"
   },
+  "shanawdithit": {
+    "title": "The Power of the Frame",
+    "subtitle": "Shanawdithit's Thematic Maps",
+    "description": "Maps can represent reality and can contest it. How can we learn to see the lines of power that they encode?",
+    "image": "/images/shanawdithit/1829-03.jpg",
+    "imageWidth": "658",
+    "imageHeight": "400"
+  },
   "peabody": {
     "title": "The Work of Knowledge",
     "subtitle": "Elizabeth Palmer Peabody's Chronological Grids",
@@ -38,14 +46,6 @@
     "image": "/images/dubois/887.jpg",
     "imageWidth": "807",
     "imageHeight": "1024"
-  },
-  "shanawdithit": {
-    "title": "The Power of the Frame",
-    "subtitle": "Shanawdithit's Thematic Maps",
-    "description": "Maps can represent reality and can contest it. How can we learn to see the lines of power that they encode?",
-    "image": "/images/shanawdithit/1829-03.jpg",
-    "imageWidth": "658",
-    "imageHeight": "400"
   },
   "labor": {
     "title": "From Idea to Insight",
