@@ -225,24 +225,11 @@ export const descriptionFootnotes = [
 export const playfairFootnotes = [
   //1
   <span key="adafe778">
-    Edward Tufte, <cite>The Visual Display of Quantitative Information </cite>
-    (Cheshire, CT: Graphics Press, 2001), p. 32.
+    Add in short history of earlier bar charts, Philippe Buache, etc. 
   </span>,
   //2
   <span key="750a1b40">
-    In their preface to the modern edition of Playfair's{" "}
-    <cite> Commercial and Political Atlas</cite> (1786), for instance, Howard
-    Wainer and Ian Spence describe that text as the "Bible" of contemporary
-    visualization design (New York: Cambridge University Press, 2005), p. vi. In
-    related work, Wainer traces a direct line from Playfair to Jacques Bertin,
-    author of <cite>The Semiology of Graphics,</cite> the most significant study
-    of visualization of the twentieth century (Bertin 1983, vii). Bertin himself
-    selects an 1805 chart of Playfair's as one of only two historical images he
-    reproduces in his foundational text. Also see Michael Friendly, "The Golden
-    Age of Statistical Graphics," <cite> Statistical Science 23.4 </cite>(2008):
-    502-535; and more recently, Sandra Rendgen,{" "}
-    <cite> History of Information Graphics</cite> (Koln, Germany: Taschen,
-    2019).
+    Edward Tufte, The Visual Display of Quantitative Information (Cheshire, CT: Graphics Press, 2001), p. 32. In terms of other histories, see, for example, Howard Wainer and Ian Spence; in their preface to the modern edition of Playfair’s Commercial and Political Atlas, they describe it as the “Bible” of contemporary visualization design (New York: Cambridge University Press, 2005), p. vi. In related work, Wainer traces a direct line from Playfair to Jacques Bertin, author of The Semiology of Graphics, the most significant study of visualization of the twentieth century (Bertin 1983, vii). Bertin himself selects an 1805 chart of Playfair’s as one of only two historical images he reproduces in his foundational text. Michael Friendly, in “The Golden Age of Statistical Graphics,” similarly canonizes Playfair (Statistical Science 23.4 (2008): 502-535); and more recently, Sandra Rendgen, centers Playfair in her History of Information Graphics (Koln, Germany: Taschen, 2019). 
   </span>,
   //3
   <span key="d33c3331">
@@ -293,102 +280,72 @@ export const playfairFootnotes = [
   //8
   <span key="85e48c28">Quoted in Wainer and Spence, p. 14.</span>,
   //9
-  <span key="bc7ce7aa">Playfair, pp. ix-x. attr</span>,
+  <span key="bc7ce7aa">Ref 1786 edition, p. 7. </span>,
   //10
   <span key="96ae40c8">
-    Wainer and Spence find evidence of similar extrapolation in the chart of
-    trade with the Channel Islands. It depicts seven reversals of the balance of
-    trade, whereas the data table records only three. See p. 21.
+    In the introduction to the third edition, Playfair includes quotations from the press coverage of earlier editions, as well as his own recollections of the book’s early reception in England and France. 
   </span>,
   //11
-  <span key="dc641ca4">Playfair, p. 29.</span>,
+  <span key="dc641ca4">
+    Unless otherwise indicated, all quotations are from Wainer and Spence’s modern edition of the third edition of the Atlas. Playfair, pp. ix-x, in Wainer/Spence 2005.
+  </span>,
   //12
-  <span key="fee18e02"></span>,
+  <span key="fee18e02">
+    Wainer and Spence push this analysis even further, finding “minor, but careless, arithmetical errors in the tables” which “throws into doubt the accurracy of the remaining numbers in these and the other tables,” as well as discrepancies in the visual “rendering of the raw data,” especially in the third edition. Their analysis focuses on the charts involving the West Indies and Jersey, Guernsey, and Alderney, but they arrive at a conclusion about the charts overall, which is that “some of the curves that connect the datapoints seem to have derived their shapes from Playfair’s opinion of how the itnervening data should look” (19, 18).  
+  </span>,
   //13
   <span key="2d58d747">Playfair, 1st ed, p. 4</span>,
   //14
-  <span key="ae3308d6"></span>,
+  <span key="ae3308d6">Tufte, p. 13.</span>,
   //15
-  <span key="b4e82e49"></span>,
+  <span key="b4e82e49">Tufte, p. 13.</span>,
   //16
-  <span key="998e22ab"></span>,
+  <span key="998e22ab">Playfair, p. iii.</span>,
   //17
-  <span key="77e9bc99"></span>,
+  <span key="77e9bc99">Playfair, p. iv</span>,
   //18
   <span key="90c53b48">Playfair, p. iv.</span>,
   //19
-  <span key="6e0fca3c">Playfair, p. iv.</span>,
+  <span key="6e0fca3c">Playfair, p. xiv.</span>,
   //20
-  <span key="4c22d55f">Playfair, p. xiv.</span>,
+  <span key="4c22d55f">Playfair, p. ##.</span>,
   //21
-  <span key="3c751aed"></span>,
+  <span key="3c751aed">Playfair, p. xiv.</span>,
   //22
-  <span key="cb4b95f7"></span>,
-  //22
-  <span key="80c2ed3a"></span>,
+  <span key="cb4b95f7">Playfair, p. xv.</span>,
   //23
-  <span key="2e738d24"></span>,
+  <span key="80c2ed3a">Playfair p. 20. He concludes by noting that “much attention has been lately paid to the subject, and most well informed men are of opinion that a change might easily be effected that would be productive of general advantage.”</span>,
   //24
-  <span key="3987a182"></span>,
+  <span key="2e738d24">This explanation is 11 pages to the West Indies’ one-and-a-half.</span>,
   //25
-  <span key="e43873d2">
-    See:{" "}
-    <a href="http://idl.cs.washington.edu/projects/lyra/">
-      http://idl.cs.washington.edu/projects/lyra/
-    </a>
-  </span>,
+  <span key="3987a182">Playfair p. 28.</span>,
   //26
-  <span key="28bf492e">
-    <a href="https://mbostock.github.io/protovis/ex/wheat.html">
-      https://mbostock.github.io/protovis/ex/wheat.html
-    </a>
-  </span>,
+  <span key="e43873d2">Playfair p. 29</span>,
   //27
-  <span key="25557133">
-    <a
-      href="https://excelcharts.com/excel-charts-meet-william-playfair/
-
-"
-    >
-      https://excelcharts.com/excel-charts-meet-william-playfair/
-    </a>
+  <span key="28bf492e">
+    On visualization as enabling the “big picture” of a dataset, see Kosara et al. (2009) and Shneiderman (2014). Also see the work of Google’s “Big Picture” data visualization research group at, co-directed by Fernanda Viegas and Martin Wattenberg. https://research.google.com/bigpicture/.
   </span>,
   //28
-  <span key="0642a7c8">
-    Another notable recreation of Playfair is{" "}
-    <a href="http://dougmccune.com/blog/2010/01/19/recreating-william-playfairs-importexport-charts/">
-      {" "}
-      Doug McCune's design of a custom app to generate Playfair-esque charts
-      using contemporary import-export data.{" "}
-    </a>
+  <span key="25557133">
+    Ref full title of 1st and 2nd editions, including the phrase “in a single view.”
   </span>,
   //29
-  <span key="9617d82b">Data on deaths from Covid-19 courtesy of TK.</span>,
+  <span key="0642a7c8">
+    Playfair 1801, p. v.
+  </span>,
   //30
-  <span key="48e5c18b">Data on income courtesy of TK.</span>,
+  <span key="9617d82b">Cite D3.</span>,
   //31
-  <span key="68def0aa">
-    Data on women in the US Congress courtesy of TK. Data on women MPs courtesy
-    of Sam Joiner, The Times of London.
+  <span key="48e5c18b">
+    This argument is carried even further in software platforms such as Tableau, which have been developed to enable non-technical users to upload and visualize their data in a series of clicks. Their mission, as they declare it on their website, is to “help people see and understand data.” [there are more good quotes; discussion can be extended]
   </span>,
   //32
-  <span key="deee91e4">Need LCP cite, (1787, 232).</span>,
+  <span key="68def0aa">
+    Need LCP catalog ID (1787, p. 232). 
+  </span>,
   //33
-  <span key="5de16d50">
-    Michael Friendly and Daniel Denis's comprehensive website,{" "}
-    <cite>
-      Milestones in the history of thematic cartography, statistical graphics,
-      and data visualization,
-    </cite>{" "}
-    viewable at{" "}
-    <a href="http://www.datavis.ca/milestones/">
-      {" "}
-      http://www.datavis.ca/milestones/{" "}
-    </a>{" "}
-    serves as the benchmark reference for this history. See their entry,
-    "1950-1974: Re-birth of data visualization," for an extended treatment of
-    the impact of digital computing on the proliferation of theories of data
-    visualization and their associated techniques.
+  <span key="deee91e4">
+    Ref Wainer/Spence 31.
   </span>,
 ];
 
