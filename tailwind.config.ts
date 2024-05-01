@@ -1,4 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+import chapters from "./app/data/chapterMeta.json";
+import type { Config } from 'tailwindcss'
+
 export default {
   content: ["./app/**/*.{js,ts,jsx,tsx}"],
   important: true,
@@ -42,7 +44,13 @@ export default {
         14: "repeat(14, minmax(0, 1fr))",
       },
       backgroundImage: {
-        brooks: "url('/assets/images/brooks/1-sof_slaveship.jpg')",
+        description: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.description.image}')`,
+        dubois: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.dubois.image}')`,
+        intro: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.intro.image}')`,
+        labor: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.labor.image}')`,
+        peabody: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.peabody.image}')`,
+        playfair: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.playfair.image}')`,
+        shanawdithit: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.shanawdithit.image}')`,
       },
       colors: {
         black: "#1C1817",
@@ -83,13 +91,18 @@ export default {
           DEFAULT: "#9AE4C1",
           translucent: "#9AE4C1CC",
         },
+        laborPrimary: {
+          DEFAULT: "#BB9AEC",
+        },
+        labourSecondary: {
+          DEFAULT: "#DFD2DE",
+        },
         peabodyPrimaryHalfOpacity: "#9ae4c180",
         shanawdithitPrimary: "#fb9318",
         shanawdithitSecondary: "#fac88d",
         peabodyChartBackground: "#d9bb9f",
         willardSecondary: "#FEFFC9",
         willardPrimary: "#FEC313",
-        labourSecondary: "#FFF0BC",
         England: "rgb(119,43,21)",
         France: "rgb(60,100,100)",
         Americas: "rgb(222,145,49)",
@@ -117,6 +130,7 @@ export default {
   },
   safelist: [
     "bg-brooksPrimary",
+    "bg-laborPrimary",
     "border-brooksPrimary",
     "border-l-brooksPrimary",
     "border-l-shanawdithitPrimary",
@@ -128,6 +142,7 @@ export default {
     "stroke-peabodyPrimary",
     "stroke-playfairPrimary",
     "stroke-duboisPrimary",
+    "stroke-laborPrimary",
     "fill-brooksPrimary",
     "fill-shanawdithitPrimary",
     "fill-peabodyPrimary",
@@ -250,5 +265,7 @@ export default {
     "border-opacity-70",
     "opacity-20",
     "md:mt-28",
+    ...Object.keys(chapters).map((chapter) => `bg-${chapter}`),
+    ...Object.keys(chapters).map((chapter) => `hover:bg-${chapter}`),
   ],
-};
+} satisfies Config;

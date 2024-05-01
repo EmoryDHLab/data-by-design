@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import tailwindConfig from "../tailwind.config";
 
 type TWindowSize = {
-  width: number | undefined,
-  height: number | undefined
-}
+  width: number | undefined;
+  height: number | undefined;
+};
 
 type TViewportSize = {
-  windowSize: TWindowSize,
-  documentSize: TWindowSize,
-  mainContentSize: TWindowSize & { topOffset: number | undefined },
-}
+  windowSize: TWindowSize;
+  documentSize: TWindowSize;
+  mainContentSize: TWindowSize & { topOffset: number | undefined };
+};
 
 const calcDocumentHeight = () => {
   const bodyEl = document.body;
@@ -74,8 +74,10 @@ export function useResizeObserver() {
         mainContentSize: {
           width: mainContentElement?.clientWidth,
           height: mainContentElement?.clientHeight,
-          topOffset: window.scrollY + (mainContentElement?.getBoundingClientRect().top || 0)
-        }
+          topOffset:
+            window.scrollY +
+            (mainContentElement?.getBoundingClientRect().top || 0),
+        },
       });
     }
 
