@@ -79,84 +79,147 @@ export const introFootnotes = [
 
 export const descriptionFootnotes = [
   //1
-  <span key="560e48c1">Equiano 55, 58.</span>,
+  <span key="560e48c1">Carretta, explain evidence to doubt veracity of childhood in Africa. </span>,
   //2
-  <span key="f2043330">Equiano 58; more on Cugoano refusal, p. 15.</span>,
+  <span key="f2043330">Equiano 55, 58. </span>,
   //3
-  <span key="b5c28022">Equiano 58; more on Cugoano refusal, p. 15.</span>,
+  <span key="b5c28022">Say it out loud. Contemporary CS acronyms have nothing on C18 abolitionists! </span>,
   //4
-  <span key="6cc8613f">Clarkson, history of abolition, need ##.</span>,
+  <span key="6cc8613f">  
+    The art historian Cheryl Finley, in her landmark study of this image, Committed to Memory: The Art of the Slave Ship Icon, makes clear that it’s important to identify which version Equiano saw. In particular, this was a print accompanied 4-page pamphlet. Later, the Plymouth Committee printed them together as a broadside. Finley also powerfully considers the impact of this request from Equiano’s perspective: “One can picture how [Equiano’s] eyes might have followed the contours of the darkly shaded figures, counting each one, possibly imagining the face of someone he once knew. Fine black lines representing the wall that divided groups of figures by age and sex might have caused him to pause and think about which space he had occupied or the people who had lived and died next to him. The combination of rows and rows of black figures separated and surrounded by fine black lines schematically mapped the space of the hold, marking a route to untold horror” ##. 
+  </span>,
   //5
-  <span key="97e782e7">Ref here about retaining anglo-western focus.</span>,
+  <span key="97e782e7">Equiano 58; add in more on Cugoano refusal, p. 15, connect to data refusal. </span>,
   //6
-  <span key="ea40ed60">Finley 34.</span>,
+  <span key="ea40ed60">Clarkson, History</span>,
   //7
-  <span key="8df7cc09">Wood 28.</span>,
+  <span key="8df7cc09">Note about centrality of impression, Locke, senses, Schuller, Biopolitics of Feeling. Also Hume, impressions vs. ideas. </span>,
   //8
-  <span key="a63ef162"> Cite Finley here too. </span>,
+  <span key="a63ef162"> Finley 34. </span>,
   //9
   <span key="325f4c91">
-    In an example of mixed methods research avant le letter, Clarkson also
-    published the transcripts of his interviews with these men at roughly the
-    same time as he released his revised version of the Plymouth Committee's
-    "Plan." For more on the interviews, see Riedeker 319-324.
+      Hartman, Scenes. 
   </span>,
   //10
-  <span key="c5520f54">Wood 28</span>,
+  <span key="c5520f54">Hartman, Scenes. </span>,
   //11
-  <span key="a24478b3">Finley 67.</span>,
+  <span key="a24478b3">Morgan, Reckoning with Slavery. </span>,
   //12
-  <span key="a52fd08c">Quoted in Baucom 218.</span>,
+  <span key="a52fd08c">Spillers 72. Also gloss critique of white space / modernism.</span>,
   //13
-  <span key="43d4a6ec">Finley 99.</span>,
+  <span key="43d4a6ec">Cite discussion in intro. </span>,
   //14
-  <span key="0a123912">Quoted in Baucom 267,</span>,
+  <span key="0a123912">Spillers </span>,
   //15
-  <span key="945f669a">Baucom 267-8.</span>,
+  <span key="945f669a">
+    Finley makes a similar point with respect to another diagram of the Marie Seraphique. (Note that both images are in high circulation because of the process of amends-making by the Musée de Nantes)
+  </span>,
   //16
-  <span key="63940a2c">Finley 40.</span>,
+  <span key="63940a2c">
+    Gordon Wood elaborates this point: “This image supports an abolitionist cultural agenda which dictated that slaves were to be visualized in a manner which emphasized their total passivity and prioritized their status as helpless victims” (17). Can also gloss body vs. flesh, Spillers, Tiffany King, Wood 28.
+  </span>,
   //17
-  <span key="8025cd1e">Browne 49.</span>,
+  <span key="8025cd1e">
+    Explain connection to Hurston, Ligon, “Against a sharp white background,” and Senchyne/Fielder book. Bernier also lends her support to this interpretation: “Working not to humanize but to propagandize black subjects bought and sold into slavery, the iconographic emphasis across these broadsides betrays a white British commitment to exposing slavery’s atrocities by imagining black women, men, and children not as individualized subjects but as unindividualized objects defined solely by their incarceration on board a slave ship” (998).
+  </span>,
   //18
-  <span key="45ac2174">Browne 49.</span>,
+  <span key="45ac2174">
+    In fact, Otto and Marie Neurath, the inventors of the ISOTYPE icon system, incorporated their isotype icons into a reproduction of the diagram in their pamphlet on the history of global trade. They also held a ca. 1800 version of the diagram, created by the German printmaker Jacob Xaver Schmunzer, in their personal archive. It is possible to make an argument their icons, like those on the slave ship, were intended to serve as abstract representations of “observed particulars”—in their case, of the population of the world. What’s more, they similarly sought to enlist their icons in a political cause. [ADD IN IMAGE HERE]
+  </span>,
   //19
-  <span key="7337f333">Wood 17.</span>,
+  <span key="7337f333">Tufte</span>,
   //20
-  <span key="d688cb70">Bernier 998.</span>,
+  <span key="d688cb70">Viegas in Data Feminism.</span>,
   //21
-  <span key="532d207a">Finley 59.</span>,
+  <span key="532d207a">  
+    In an example of mixed methods research avant le letter, Clarkson also published the transcripts of his interviews with these men at roughly the same time as he released his revised version of the Plymouth Committee’s “Plan.” For more on the interviews, see Riedeker 319-324.
+  </span>,
   //22
-  <span key="afa3a6c1">Baucom 223.</span>,
+  <span key="afa3a6c1">Cite chart, transcription in Finley 62-67. Clarkson, para 1.</span>,
   //23
-  <span key="43ec2892">Baucom 274.</span>,
+  <span key="43ec2892">27. Ref Marey. Also note about definition of visualization. </span>,
   //24
-  <span key="e7fc1e51"> Baucom 274.</span>,
+  <span key="e7fc1e51">Wood 28</span>,
   //25
-  <span key="17fe0afe">Finley 62.</span>,
+  <span key="17fe0afe">Wood</span>,
   //26
-  <span key="f01ec097">Cartographies of time.</span>,
+  <span key="f01ec097">
+    Clarkson’s motivation for these design choices is, admittedly, difficult to discern. Why leave the women unbound when evidence points to the fact that they were also “known to organize, lead, and assist with rebellions aboard slave ships,” Finley wonders (59). Is the exaggerated sexuality of the women figures a comment, on the part of Clarkson, about the “objectified status of the black female body and the history of rape and sexual abuse to which black female slaves were subjected by their white male captors,” or because of his own racist perceptions about the sexuality of Black women, Finley further enquires (59). We may never be able to answer these questions with any degree of certainty, but their possible answers expand our understanding of the chart nonetheless. More specifically, they underscore the perspective inhabited by the chart, and point to the additional perspectives we must consider if we are to achieve a more complete picture of the actual subject at hand. 
+  </span>,
   //27
-  <span key="1726a736">Wood 5.</span>,
+  <span key="1726a736">
+    Here, Ian Baucom argues, Clarkson mobilizes a central tenet of the Scottish Enlightenment, which held that meaning was created first by verifiable evidence and then through a responsibly used imagination. In this case, Clarkson enlists the “facts” of the slave trade in the interest of engaging the “otherwise disinterested spectator in the sufferings of an actually unseen other” (Baucom ##). But for this transformation to take place, the viewer would be required to enlist their own imagination in imagining the suffering of others. 
+  </span>,
   //28
-  <span key="75812c99">Wood 4.</span>,
+  <span key="75812c99">Add in Clarkson quote. Para 22.</span>,
   //29
-  <span key="0014505a">CoT 143.</span>,
+  <span key="0014505a">Quoted in Baucom 218. Also ref wood model, and discussion in Critical Visualization book.</span>,
   //30
-  <span key="89b4a05f">Cartographies of time.</span>,
+  <span key="89b4a05f">Haraway, D’Ignazio and Klein.</span>,
   //31
-  <span key="d0bd55aa">CoT 136.</span>,
+  <span key="d0bd55aa">Browne 49. </span>,
   //32
-  <span key="75fbde5b">Quoted in CoT 136</span>,
+  <span key="t7gY4Hu6">Haraway. </span>,
   //33
-  <span key="8b46db1c">CoT 136.</span>,
+  <span key="5Br3Cv2X">Quoted in Baucom 267</span>,
   //34
-  <span key="24fa21d3">From Hyrogliphics… p. 189.</span>,
+  <span key="75fbde5b">
+    Browne 49. While on this note, Clarkson would also likely not disagree. In the History, Clarkson proudly recalls how the chart “brought forth tears of sympathy in behalf of the sufferers, and it fixed their sufferings in [the viewer’s] heart.” Quoted in Baucom 267
+  </span>,
   //35
-  <span key="37035873">Isoytpe design and contexts, 10.</span>,
+  <span key="8b46db1c">Browne 50.</span>,
   //36
-  <span key="858f3e32">Qutoed in Isotype, Design and Cotext, 11.</span>,
+  <span key="24fa21d3">
+    The viewers intended to be affected by this image were white abolitionists, and the response that was intended was one of imaginative, sympathetic response. Clarkson himself frames the value of the image in these terms, recalling how “No one saw it but he was impressed. It spoke to him in a language, which was at once intelligible and irresistible. It brought forth tears of sympathy in behalf of the sufferers, and it fixed their sufferings in his heart” (##). Here, Ian Baucom argues, Clarkson mobilizes a central tenet of the Scottish Enlightenment, which held that meaning was created first by verifiable evidence and then through a responsibly used imagination. In this case, Clarkson enlists the “facts” of the slave trade in the interest of engaging the “otherwise disinterested spectator in the sufferings of an actually unseen other” (Baucom ##). But for this transformation to take place, the viewer would be required to enlist their own imagination in imagining the suffering of others. As Finley also explains, “The image is a starting point for the viewer – a point of reference while the text enables the reader to elaborate on the image in her mind” (##). 
+  </span>,
   //37
-  <span key="f1a4e3f8">Ref DF</span>,
+  <span key="37035873">Add in cites to TAST database, history, and overview. </span>,
+  //38
+  <span key="858f3e32">TAST, “History of Project”</span>,
+  //39
+  <span key="f1a4e3f8">
+    https://slate.com/news-and-politics/2021/09/atlantic-slave-trade-history-animated-interactive.html.  As Britt Rusert helpfully summarizes, “The Slate map has at least two direct antecedents: a set of maps of the slave trade on the Trans-Atlantic Slave Trade Database website, and David Eltis and David Richardson’s 2010 print volume, Atlas of the Transatlantic Slave Trade, whose maps were “constructed from a set of estimates derived from the Trans-Atlantic Slave Trade Database as it existed in January 2008— almost a year before the launch of the Voyages Web site” (xxiv). These earlier iterations of maps derived from the Trans-Atlantic Slave Trade Database are a reminder of the important continuities between the “age of print” and the “digital age.”
+  </span>,
+  //40
+  <span key="a3b5X7c9">Ref Rusert, “New World.” </span>,
+  //41
+  <span key="1Qw8Er2T">Ref Johnson, “Markup Bodies”  </span>,    
+  //42
+  <span key="z4X6cV8B">Spillers, 1978; Hartman, 2002; Sharpe, 2016; King, 2019  </span>,
+  //43
+  <span key="9uI7mO5y">Morrison 2018. </span>,
+  //44
+  <span key="J2k4Lp6N">A further connection to Spillers’ theorization of the process of dehumanization as the conversion of bodies into flesh that the Middle Passage brought about. </span>,
+  //45
+  <span key="h3Gt5Fs7">First quote is ch 2, second ch 3. Need numbers. </span>,
+  //46
+  <span key="d9Az6Qx8">Add in note about wide circulation, in England France and US. Finley chapters 2 and 3.</span>,
+  //47
+  <span key="7We4Ru1I">“I was in possession of more facts on this subject than any other person,” as he wrote in the second chapter of the 1200-page tome (Clarkson, History, vol 1, p 31) Clarkson, History, vol 1, p 31.  </span>,    
+  //48
+  <span key="l2Vb5nM3">Cartographies of Time. </span>,
+  //49
+  <span key="6Sd9Fg4H">History ch 12.  </span>,
+  //50
+  <span key="n1Jk8Lp2">
+    In adapting this particular style of image, the hydrographic map, to the abolitionist movement, Clarkson also imposes the colonial valences of mapping—and mapping waterways in particular—onto the abolitionist movement.  Here, however, it is not the discovery of new trade routes, but the discovery of the horrors of slavery, that the image renders visible; and these horrors were, of course, already viscerally known to those who experienced the trade’s direct effects. Wood 4.
+  </span>,
+  //51
+  <span key="e8Qw1Oi9">Wood 4. </span>,    
+  //52
+  <span key="c6Mf4Td7">
+    Strass “believed that a graphic representation of history held manifold advantages over a textual one: it revealed order, scale, and synchronism simply and without the trouble of memorization and calculation,” Rosenberg and Grafton explain (Cartographies of Time 143).
+   </span>,
+  //53
+  <span key="3Ea7Kp9L">Bell, quoted in Cartographies of Time, p. 147.</span>,
+  //54
+  <span key="g2Uh5Ns8">Cartographies of Time 136. Also gloss contribution of Priestley.  </span>,
+  //55
+  <span key="Fj4Dr6Vy">Quoted in Cartographies of Time 136. </span>,
+  //56
+  <span key="9tC7Gb3I">Ref Playfair, “Introduction,” x.  Also cite Clarkson, second version of his goal: to “bring [the history of abolition] before the reader, that he may comprehend the whole of it at a single view.” Playfair also uses the phrase “single view” in the title of his book.  </span>,
+  //57
+  <span key="q5Yx2We1">Ref Norton edition, p.205. </span>,    
 ];
 
 export const playfairFootnotes = [
