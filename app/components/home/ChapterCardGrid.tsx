@@ -7,14 +7,14 @@ const ChapterCardGrid = () => {
     <div className="bg-black">
       <div className="grid md:grid-cols-2 grid-cols-1 md:grid-rows-3 3xl:mx-48">
         {Object.keys(chapters as TChapterMeta)
-          .slice(1, 7)
+          .slice(1, 8)
           .map((chapterName) => {
             const chapter = chapters[chapterName as ChapterTitle];
             return (
               <ChapterCard
                 key={`card-${chapterName}`}
                 to={`/chapters/${chapterName}`}
-                className={`card-${chapterName} bg-black hover:text-white`}
+                className={`hover:bg-${chapterName} bg-center hover:text-white`}
                 title={chapter.title}
                 subtitle={chapter.subtitle}
               >
