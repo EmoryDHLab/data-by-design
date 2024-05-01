@@ -1,14 +1,16 @@
-import type { TPerson } from "../data/types";
+import type { TGroupingNode, TPerson } from "../data/types";
 
 interface Props {
-  person: TPerson;
+  person: TPerson | TGroupingNode;
   grouping: string;
 }
+
 const PersonGroupingList = ({ person, grouping }: Props) => {
   return (
     <div>
       <span className="uppercase">{grouping}</span>
       <ul className="ml-4">
+        {/* @ts-ignore */}
         {person[`${grouping}s`].map((group) => {
           return (
             <li

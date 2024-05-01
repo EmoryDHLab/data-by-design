@@ -8,9 +8,10 @@ import type { ScrollamaInstance } from "scrollama";
 
 interface Props {
   children: ReactNode;
+  className?: string;
 }
 
-export default function ChapterBody({ children }: Props) {
+export default function ChapterBody({ children, className }: Props) {
   const scrollerRef = useRef<ScrollamaInstance | undefined>(undefined);
   const [chapterProgressState, setChapterProgressState] = useState<number>(0.0);
   const [fixedNav, setFixedNav] = useState<boolean>(false);
@@ -49,7 +50,10 @@ export default function ChapterBody({ children }: Props) {
   }, [chapterProgressState]);
 
   return (
-    <main className="chapter-body w-screen" id="main-content">
+    <main
+      className={`chapter-body w-screen ${className ?? ""}`}
+      id="main-content"
+    >
       <ClientOnly>
         {() => (
           <ChapterNav progress={chapterProgressState} fixedNav={fixedNav} />

@@ -96,7 +96,10 @@ const PeopleVersions = () => {
   };
 
   return (
-    <div className="bg-offblack w-screen grid grid-cols-1 md:grid-cols-3 md:grid-rows-6 md:h-screen text-white">
+    <div
+      id="people-across-versions"
+      className="bg-offblack w-screen grid grid-cols-1 md:grid-cols-3 md:grid-rows-6 md:h-screen text-white"
+    >
       <div className="col-span-1 md:col-span-2 md:row-span-5">
         {windowSize && (
           <svg
