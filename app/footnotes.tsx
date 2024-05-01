@@ -351,57 +351,201 @@ export const playfairFootnotes = [
 
 export const shanawdithitFootnotes = [
   //1
-  <span key="03f8cc84"></span>,
+  <span key="03f8cc84">Ref renaming of Red Indian Lake, provenance of "red" in moniker.</span>,
   //2
-  <span key="c3f1da3c"></span>,
+  <span key="c3f1da3c">Thank you to Lori Temple and the management team at The Rooms, the regional museum of Newfoundland and Labrador, for their fact-checking and feedback on this chapter.  </span>,
   //3
-  <span key="28d35057"></span>,
+  <span key="28d35057">Polack 5.</span>,
   //4
-  <span key="151903bb"></span>,
+  <span key="151903bb">Polack 5.</span>,
   //5
-  <span key="fa508296"></span>,
+  <span key="fa508296">Polack 5.</span>,
   //6
-  <span key="49a30344"></span>,
+  <span key="49a30344">Howley 96</span>,
   //7
-  <span key="48b2bf2a"></span>,
+  <span key="48b2bf2a">Howley 93.</span>,
   //8
-  <span key="369cdb92"></span>,
+  <span key="369cdb92">Speck 49.</span>,
   //9
-  <span key="915bf412"></span>,
+  <span key="915bf412">
+    Ingeborg Marshall, whose History and Ethnography of the Beothuk offers the most comprehensive contemporary study of the Beothuk, believes that Shanawdithit was around twenty years old at the time of her capture. Because this event took place three years earlier, she would have been about seventeen. Marshall 208.
+  </span>,
   //10
-  <span key="c72e8365"></span>,
+  <span key="c72e8365">Add in longer note about positionality, note non-US members, subject to other forms of colonialism, etc.  </span>,
   //11
-  <span key="d5049c72"></span>,
+  <span key="d5049c72">Add in longer gloss of Liboiron and "settler and colonial entitlement to Land and Indigenous cultures" (132). More on anticolonial rather than decolonial approach too. </span>,
   //12
-  <span key="ca76e92f"></span>,
+  <span key="ca76e92f">Ref Tuck/Yang, harm/reparations quote. </span>,
   //13
-  <span key="cf1749f4"></span>,
+  <span key="cf1749f4">According to Peyton, Demasduit at one point attempted to crawl across the snow under the cover of night, trailing her deer-skin cloak behind her so as to erase her tracks. “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of March 1819,” in Howley 94.</span>,
   //14
-  <span key="52d63a4d"></span>,
+  <span key="52d63a4d">“Report of Captain Glascock,” in Howley 113-116.</span>,
   //15
-  <span key="6c6e05ac"></span>,
+  <span key="6c6e05ac">W.E. Cormack, “History of the Red Indians of Newfoundland,” in Howley 229.</span>,
   //16
-  <span key="ce1ff96d"></span>,
+  <span key="ce1ff96d">Cormack, “History,” in Howley 224.</span>,
   //17
-  <span key="dbb5330a"></span>,
+  <span key="dbb5330a">See Marshall 217, 2019.</span>,
   //18
-  <span key="620a26f6"></span>,
+  <span key="620a26f6">Add in note about the Beothick Institute. </span>,
   //19
-  <span key="e22e9734"></span>,
+  <span key="e22e9734">John Paul, “The Story of Buchan’s Expedition,” in Speck 49</span>,
   //20
-  <span key="6baf8ae7"></span>,
+  <span key="6baf8ae7">For more on the story of this ill-fated expedition, see John Paul, “The Story of Buchan’s Expedition,” in Speck 49-51.</span>,
   //21
-  <span key="8f4e22b4"></span>,
+  <span key="8f4e22b4">Neither Peyton’s account nor Cormack’s annotations suggest any direct link between these dwellings and the specific events depicted, but the annotations of the previous map in the sequence suggest that</span>,
   //22
-  <span key="500c3902"></span>,
-  //22
-  <span key="239b6db0"></span>,
+  <span key="500c3902">Ref Peyton </span>,
   //23
-  <span key="b807f8c6"></span>,
+  <span key="239b6db0">See Howley 228.</span>,
   //24
-  <span key="7427f4e2"></span>,
+  <span key="b807f8c6">Ref claim </span>,
   //25
-  <span key="ba0ba8ad"></span>,
+  <span key="7427f4e2">Qtd. in Howley 210.</span>,
+  //26
+  <span key="ba0ba8ad">
+    While it exceeds the scope of this chapter, it is worth noting that another one of Shanawdithit’s maps—fourth in the sequence—contains annotations so “copious,” as Howley describes them, that they threaten to overrun the map itself (243). These annotations are primarily numerical, and as such, have their own history—regrettably, another history of violence. From the time of first contact, colonists consistently sought to collect data about the Indigenous populations they encountered as a means of political and psychological control. As these populations succumbed to effects of settler colonialism, including but not limited to the starvation and disease that afflicted the Beothuk, these numbers were wielded as weapons, proof of the inevitable decline of Indigenous populations. These biopolitical overtones are the source of the continued suspicion of data and data collection by Indigenous peoples and groups. That this type of data collection is documented on the map itself underscores how—as we’ve seen again and again—data collection, data visualization, and the larger colonial project are fundamentally intertwined. [ADD IN MAP HERE IN FOOTNOTE?] 
+  </span>,
+  //27
+  <span key="a3b5x7c9">
+    Add in note about red ochre. 
+  </span>,
+  //28
+  <span key="1qw8er2t">
+    Ref Shneiderman, “overview first… details on demand.”
+  </span>,  
+  //29
+  <span key="z4x6cv8b">
+    Ref OCAP, CARE.
+  </span>,
+  //30
+  <span key="9ui7mo5y">
+    Counting Feminicide, idea of collection as misnomer, data as “produced.”  
+  </span>,  
+  //31
+  <span key="j2k4lp6n">
+    Pearce 110. Add in refs to Malcolm Lewis, others. 
+  </span>,
+  //32
+  <span key="h3gt5fs7">
+    Ref Laura Harjo, discussion of “assets.”   
+  </span>,  
+  //33
+  <span key="d9az6qx8">
+    As the literary scholar Lisa Brooks (Abenaki) explains, the power of Indigenous maps resides in their ability to “connect people with relations across time, bringing the past, present, and future into the same space” (12). 
+  </span>,
+  //34
+  <span key="7we4ru1i">
+    Add in explanation about the “March” in Demasduit’s English name.
+  </span>,  
+  //35
+  <span key="l2vb5nm3">
+    Pearce 110-111.
+  </span>,
+  //36
+  <span key="6sdfg4h">
+    Harjo 41.
+  </span>,  
+  //37
+  <span key="n1jk8lp2">
+    Sparke 324.
+  </span>,
+  //38
+  <span key="t7gy4hu6">
+    Can quote Harjo here: “The scale of the Mvskoke community is produced through relational proceses rather than territorial proceses. The production of scale is often used to understand the ways in which vaputal moves or Western and settler formations of territory, or territories’ relationship to the larger global political economy. Indigenous community scales are instantiated in myriad ways. It can be useful for communities to understand political and economic geographies in order to advance liberatory claims” (42).  
+  </span>,  
+  //39
+  <span key="5br3cv2x">
+    Howley ##.
+  </span>,
+  //40
+  <span key="e8qw1oi9">
+    Harjo 41. 
+  </span>,  
+  //41
+  <span key="c6mf4td7">
+    Cormark ##, quoted in Chare 294.
+  </span>, 
+  //42
+  <span key="g2uh5ns8">
+    Chare 294.
+  </span>,
+  //43
+  <span key="fj4dr6vy">
+    Brooks 234.
+  </span>,  
+  //44
+  <span key="9tc7gb3i">
+    Ref map. 
+  </span>,
+  //45
+  <span key="q5yx2we1">
+    For a detailed account of the map’s genesis, see Warhus, Anotehr America 1-3. 
+  </span>,  
+  //46
+  <span key="a3b5x7c9">
+    Ref O’Neil.
+  </span>,
+  //47
+  <span key="1qg8er2t">
+    Schulten 24.  
+  </span>,  
+  //48
+  <span key="z4x6cv8b">
+    Willard, “Preface,” vii; “Introduction” cv.
+  </span>,
+  //49
+  <span key="9ui7mo5y">
+    3, 5. 
+  </span>,  
+  //50
+  <span key="j2k4lp6n">
+    Schulten 25.
+  </span>,
+  //51
+  <span key="h3gt5fs7">
+    Ref history of thematic mapping, figure/ground analysis here.  
+  </span>,  
+  //52
+  <span key="d9az6qx8">
+    Bill Rankin, need cite.
+  </span>,
+  //53
+  <span key="7we4ru1i">
+    As Jason Edward Lewis et al explain, "relationality is rooted in context and the prime context is place."
+  </span>,  
+  //54
+  <span key="l2vb5nm3">
+    Geographer Emilie Cameron highlights how for the Inuit peoples in Canada’s central Arctic, the vast Northern geography is ‘ordered by stories – stories that make legible the connections between particular people, places, and ideas.’ Far from ambiguous narrations of Inuit peoples’ experience within the North, Cameron, following the work of John Law, asserts that stories must be thought of as ‘material ordering practices’ – that is, not as ‘something separate from, nor merely representative of, the world around us’; rather stories are themselves material and intimately bound up with ‘the materials in which they are carried’ (377)
+  </span>,
+  //55
+  <span key="6sdfg4h">
+    Ref Warhus 9-11.
+  </span>,  
+  //56
+  <span key="n1jk8lp2">
+    Ref earlier written accounts. 
+  </span>,
+  //57
+  <span key="t7gy4hu6">
+    Ref https://sarahsense.com/Artists/11571/website_statements_2021-22.pdf 
+  </sp58an>, 
+  //58
+  <span key="5br3cv2x">
+    Howley 96.
+  </span>,
+  //59
+  <span key="e8qw1oi9">
+    Ref Title, “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of Marhc 1819.”   
+  </span>,  
+  //60
+  <span key="c6mf4td7">
+    Speck 23.
+  </span>,
+  //61
+  <span key="3ea7kp9l">
+    Speck 23.
+  </span>,  
 ];
 
 export const peabodyFootnotes = [
