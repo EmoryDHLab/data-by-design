@@ -46,8 +46,8 @@ export default function Footer() {
       <div className="col-span-12 md:col-span-4 flex flex-col space-y-4 font-neueMontrealLight leading-6 md:px-12 text-sm md:text-xs">
         <p className="uppercase font-neueMontreal">Cite as</p>
         <p className="font-neueMontreal">
-          Lauren Klein, Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams, Dan
-          Jutan, Jianing Fu, Nicholas Yang, Anna Mola, Zhou Fang, Yang Li, and
+          Lauren Klein, Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams, Nicholas Yang, Dan
+          Jutan, Jianing Fu, Anna Mola, Zhou Fang, Yang Li, and
           Silas Munro. Data by Design: An Interactive History of Data
           Visualization, 1789-1900. 2024 public beta.
         </p>
