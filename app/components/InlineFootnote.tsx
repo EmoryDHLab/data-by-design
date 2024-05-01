@@ -1,23 +1,17 @@
-import type { ReactNodeLike } from "prop-types";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 
 interface Props {
   index: number;
-  children?: ReactNodeLike;
-  bgOverride?: string;
-  superscriptOverride?: string;
-  textOverride?: string;
 }
 
-export default function InlineFootnote({
-  index,
-  bgOverride,
-  superscriptOverride,
-  textOverride,
-}: Props) {
-  const { accentColor, footnotes } = useContext(ChapterContext);
+export default function InlineFootnote({ index }: Props) {
+  const { accentColor, footnotes, showFootnotes } = useContext(ChapterContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
+
+  useEffect(() => {
+    setIsTextVisible(showFootnotes);
+  }, [showFootnotes]);
 
   return (
     <span>
@@ -25,7 +19,7 @@ export default function InlineFootnote({
         onClick={() => setIsTextVisible(!isTextVisible)}
         className={`footnote mr-2 inline-flex items-center font-semibold justify-center bg-${
           isTextVisible ? accentColor : "offwhite"
-        } hover:bg-${accentColor} text-offblack pointer-events-auto border border-[1.5px] border-offblack`}
+        } hover:bg-${accentColor} text-offblack pointer-events-auto border-[1.5px] border-offblack`}
       >
         {index + 1}
       </button>
