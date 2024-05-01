@@ -69,8 +69,8 @@ interface IChapterContext {
   disclosure?: boolean | undefined;
   hideSensitiveState?: boolean | undefined;
   setHideSensitiveState?: Dispatch<SetStateAction<boolean>>;
-  showFootnotes: boolean;
-  setShowFootnotes: Dispatch<SetStateAction<boolean>>;
+  showFootnotes?: boolean;
+  setShowFootnotes?: Dispatch<SetStateAction<boolean>>;
   hide?: boolean;
   sections?: TChapterSection[];
 }

@@ -1,6 +1,7 @@
 // This is the home page!
 
 import { useState } from "react";
+import type { MetaFunction } from "@remix-run/node";
 import ChapterCardGrid from "~/components/home/ChapterCardGrid";
 import Timeline from "~/components/home/Timeline.client";
 import { ClientOnly } from "remix-utils/client-only";
@@ -11,6 +12,36 @@ import SelectedImage from "~/components/home/SelectedImage.client";
 import type { TFigure } from "~/types/figureType";
 import SiteTitle from "~/components/home/SiteTitle";
 import { Link } from "@remix-run/react";
+
+export const meta: MetaFunction = () => {
+  const hostName = "https://dataxdesign.io";
+  return [
+    { charset: "utf-8" },
+    { title: "Data by Design" },
+    { name: "viewport", content: "width=device-width,initial-scale=1" },
+    { name: "og:title", content: "Data by Design" },
+    { name: "twitter:title", content: "Data by Design" },
+    { name: "og:url", content: hostName },
+    {
+      name: "description",
+      content: "An interactive history of data visualization 1786-1900.",
+    },
+    {
+      name: "og:description",
+      content: "An interactive history of data visualization 1786-1900.",
+    },
+    {
+      name: "twitter:description",
+      content: "An interactive history of data visualization 1786-1900.",
+    },
+    { name: "image", content: `${hostName}/images/dxd.jpg` },
+    { name: "og:image", content: `${hostName}/images/dxd.jpg` },
+    { name: "og:image:width", content: 565 },
+    { name: "og:image:height", content: 389 },
+    { name: "twitter:image", content: `${hostName}/images/dxd.jpg` },
+    { name: "og:site_name", content: "Data by Design" },
+  ];
+};
 
 export default function Index() {
   const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
