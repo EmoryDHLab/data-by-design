@@ -62,7 +62,6 @@ interface IChapterContext {
   hoverState?: HoverState;
   setHoverState?: Dispatch<SetStateAction<HoverState>>;
   footnotes: ReactNode[];
-  // TODO: Make figures and visualizations required
   chapterFigures?: TFigure[];
   visualizations?: TVizAnchors[];
   footnoteTextColor?: string;

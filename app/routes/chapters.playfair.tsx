@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -65,6 +66,7 @@ const visualizations: TVizAnchors[] = [
 ];
 
 export default function PlayfairPage() {
+  const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
   return (
     <ChapterContext.Provider
       value={{
@@ -77,6 +79,8 @@ export default function PlayfairPage() {
         visualizations,
         chapterFigures,
         sections,
+        showFootnotes,
+        setShowFootnotes,
       }}
     >
       <ChapterTitle
@@ -207,13 +211,13 @@ export default function PlayfairPage() {
           </Column>
           <Column shouldPin>
             <FigureObj figure={figures["3-pie"]} />
-            <FigureObj figure={figures["scottishImportExportPLACEHOLDER"]} />
+            <FigureObj figure={figures["PLACEHOLDER-early-bar-chart"]} />
           </Column>
         </TwoColumnLayout>
         <ChapterSectionTitle section={sections[0]} />
         <TwoColumnLayout>
           <Column>
-          <p className="first-paragraph">
+            <p className="first-paragraph">
               Playfair did not intend to include his charts' underlying data in
               the <cite>Atlas</cite>. It was only after soliciting feedback from
               James Watt, inventor of the steam engine—and for whom Playfair
@@ -331,7 +335,7 @@ export default function PlayfairPage() {
 
         <TwoColumnLayout>
           <Column>
-          <p className="first-paragraph">
+            <p className="first-paragraph">
               Playfair created his charts in an era of intense political change.
               At the time that he released the third edition of the Atlas, the
               French Revolution had only just come to a halt, the result of a
@@ -494,13 +498,13 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["westIndiesPLACEHOLDER"]} />
+            <FigureObj figure={figures["PLACEHOLDER-west-indies"]} />
           </Column>
         </TwoColumnLayout>
         <ChapterSectionTitle section={sections[2]} />
         <TwoColumnLayout>
           <Column className="py-5 md:py-10" shouldPin={true}>
-          <p className="first-paragraph">
+            <p className="first-paragraph">
               From our perspective in the present, it appears that Playfair was
               correct in his assertion about the enduring nature of the "form
               and manner" of his charts.
@@ -636,7 +640,7 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["10a-PLACEHOLDER"]} />
+            <FigureObj figure={figures["wood"]} />
             <FigureObj figure={figures["10-camoes"]} />
           </Column>
         </TwoColumnLayout>
@@ -727,7 +731,7 @@ export default function PlayfairPage() {
         <ChapterSectionTitle section={sections[3]} />
         <TwoColumnLayout>
           <Column>
-          <p className="first-paragraph">
+            <p className="first-paragraph">
               ​​Playfair clearly longed to be recognized for his graphical
               innovations. In 1787, one year after the initial publication of
               the Commercial and Political Atlas, he authored an account—almost
@@ -809,31 +813,27 @@ export default function PlayfairPage() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Presume that visualization is not neutral 
+              Presume that visualization is not neutral
             </span>,
             <span key="6440631a">
-              Consider the context that might inform the choice of visual/interactive form
+              Consider the context that might inform the choice of
+              visual/interactive form
             </span>,
             <span key="2f317172">
-              Consider the nature of the insights that are prompted by that particular form
+              Consider the nature of the insights that are prompted by that
+              particular form
             </span>,
-            <span key="2f317173">
-              Ask who will most benefit from them
-           </span>,
+            <span key="2f317173">Ask who will most benefit from them</span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Examine any assumptions about your viewership 
+              Examine any assumptions about your viewership
             </span>,
-            <span key="6d2691fc">
-              Accept no best practices by default
-            </span>,
+            <span key="6d2691fc">Accept no best practices by default</span>,
             <span key="9650286d">
-              Consider which visual/interactive forms your tools enable 
+              Consider which visual/interactive forms your tools enable
             </span>,
-            <span key="9650286e">
-             Consider which forms they do not  
-          </span>,
+            <span key="9650286e">Consider which forms they do not</span>,
           ]}
         />
       </ChapterBody>
