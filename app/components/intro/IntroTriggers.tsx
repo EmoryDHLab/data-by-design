@@ -50,16 +50,23 @@ const IntroTriggers = [
     and other visualizations that are included in the project.
   </p>,
   <RandomImagesIntoGrid />,
-  <div key="a609783e" className="flex justify-between items-center w-screen">
-    <div className="w-1/2">
+  <div
+    key="a609783e"
+    className="flex flex-col md:flex-row justify-between items-center w-screen"
+  >
+    <div className="w-4/5 md:w-1/2">
       <p>
         Some of the images go on to serve as centerpieces of the chapters in
         which they appear, their history and significance elaborated in
         extensive detail.
       </p>
     </div>
-    <div className="w-1/2">
-      <img className="max-w-lg" src="/images/peabody/1500s.webp" alt="" />
+    <div className="md:w-1/2">
+      <img
+        className="max-w-xs md:max-w-lg"
+        src="/images/peabody/1500s.webp"
+        alt=""
+      />
     </div>
   </div>,
   <p key="1d5bc9f0">
