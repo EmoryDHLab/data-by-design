@@ -62,7 +62,7 @@ export default function SeraphiqueTour({ figure }: Props) {
   const { hoverState, hideSensitiveState } = useContext(ChapterContext);
 
   return (
-    <FigureModal figure={figure}>
+    <FigureModal figure={figure} id={figure.fileName}>
       <p
         className={`absolute z-10 overflow-hidden font-neueMontreal text-xl p-6 m-6 transition-opacity duration-1000 opacity-${
           hideSensitiveState ? 100 : 0
@@ -76,7 +76,9 @@ export default function SeraphiqueTour({ figure }: Props) {
         viewBox="0 0 50 70"
         role="img"
         aria-describedby={`fig-label-${figure.fileName}`}
-        className={`drop-shadow-lg`}
+        className={`transition-all duration-1000 drop-shadow-lg blur-${
+          hideSensitiveState ? "xl" : "none"
+        }`}
       >
         <mask id="seraphique">
           <rect
@@ -104,7 +106,7 @@ export default function SeraphiqueTour({ figure }: Props) {
             width="100%"
             className={`duration-[2s] transition-all ease-in-out ${
               tourLocations[hoverState ?? ""]?.transform ?? ""
-            } ${hideSensitiveState ? "blur-[2px]" : ""}`}
+            } `}
           />
         </g>
       </svg>

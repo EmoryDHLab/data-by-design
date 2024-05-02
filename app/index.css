@@ -23,48 +23,6 @@
   padding: 1rem 0.75rem 0rem 0rem;
 }
 
-.card-playfair:hover,
-.card-playfair:focus {
-  background-size: cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/playfair/1-northamerica.jpg") center;
-}
-
-.card-description:hover,
-.card-description:focus {
-  background-size: cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/description/1-sof_slaveship.jpg") center;
-}
-
-.card-peabody:hover,
-.card-peabody:focus {
-  background-size: cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/peabody/1500s.jpg") center;
-}
-
-.card-shanawdithit:hover,
-.card-shanawdithit:focus {
-  background-size: cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/peabody/ch4-13-willard.jpg") center;
-}
-
-.card-dubois:hover,
-.card-dubois:focus {
-  background-size: cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/dubois/ch5-01-phila.jpg") center;
-}
-
-.card-labor:hover,
-.card-labor:focus {
-  background-size: cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/peabody/railroadscaled.jpg") center;
-}
-
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr min(111ch, 100%) 1fr;

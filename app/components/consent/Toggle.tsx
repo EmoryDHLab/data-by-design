@@ -8,7 +8,7 @@ interface Props {
   className?: string;
 }
 
-const Toggle = ({ id, className }: Props) => {
+const ConsentToggle = ({ id, className }: Props) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const {
@@ -59,4 +59,4 @@ const Toggle = ({ id, className }: Props) => {
   return null;
 };
 
-export default Toggle;
+export default ConsentToggle;
