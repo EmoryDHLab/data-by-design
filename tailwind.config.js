@@ -168,6 +168,7 @@ module.exports = {
     "outline-brooksPrimary",
     "outline-brooksSecondary",
     "bg-duboisPrimary",
+    "bg-duboisSecondary",
     "text-duboisPrimary",
     "text-playfairPrimary",
     "hover:text-duboisPrimary",

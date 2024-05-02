@@ -28,6 +28,11 @@ import ChapterBody from "~/components/layout/ChapterBody";
 import type { V2_MetaFunction } from "@remix-run/node";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
 
+import DuboisPosterSideBySideScrollytell from "~/components/dubois/duboisScrollytell/DuboisPosterSideBySideScrollytell";
+import DuboisScrollytell from "~/components/dubois/duboisScrollytell/DuboisScrollytell";
+import { ClientOnly } from "remix-utils";
+import StudentChartTwoAlternative from "~/components/dubois/StudentChartTwoAlternative";
+
 export const meta: V2_MetaFunction = () => {
   return chapterMeta("dubois");
 };
@@ -103,12 +108,14 @@ export default function DuboisChapter() {
         sections,
       }}
     >
+      
       <ChapterTitle
         title="Between Data and Truth"
         subtitle={`W.E.B. Du Bois's "Data Portraits"`}
       />
       {/* <div className="chapter-body container"> */}
       <ChapterBody>
+        
         <CenteredLayout>
           <p className="first-paragraph py-10">
             October 4th, 1899, was the first day of the fall term at Atlanta
@@ -786,6 +793,36 @@ export default function DuboisChapter() {
         </CenteredLayout>
 
         <StudentChartV2 figure={figures["ch5-12-series"]} />
+
+        <DuboisPosterSideBySideScrollytell />
+
+        <DuboisScrollytell
+          triggers={[
+            <span key="490b6e1c">
+              [PH] While Du Bois does not disclose the source of his data on the chart, the number of graduates matches with the number of alumni listed in the 1898-1899 Catalogue of the Officers and Students of Atlanta University. In the catalogue, the same graduates represented in the pie chart are listed by graduation year and then alphabetically by name, along with the type of degree(s) earned, their current occupation, and their place of residence. (Du Bois includes those with college as well as theological and normal school degrees in the 330 he represents).  
+            </span>,
+            <span key="577fe346">
+              [PH] Scanning the list of alumni provides fleeting glimpses into their lives–NAME who moved to STATE to become a OCCUPATION; NAME who moved to COUNTRY to become an OCCUPATION; or NAME, class of YEAR, who, in YEAR, was deceased.     
+            </span>,
+            <span key="90c3c7eb">
+              [PH] At the same time that Du Bois and his students were creating the charts for the Paris Exposition, they were also at work on a larger study of Black college graduates around the country. This study, published in 1900 as The College-Bred Negro, included data on the approximately 2500 Black college graduates who Du Bois and his student team had been able to identify, representing an estimated 90% of the Black Americans who had graduated from college up to that point. 
+            </span>,
+            <span key="cf140bd8">
+              [PH] In the 1909-1910 academic year, Du Bois and a new team of students undertook a followup study, resulting in data about 3856 Black college graduates across the country. Among that number were 163 college graduates of Atlanta University–including, presumably, the five students who contributed to the making of the original chart.     
+            </span>,
+            <span key="2deac1f9">
+              [PH] In this chart, each of the 133 college graduates of Atlanta University as of 1909 with known occupations, as determined by the alumni section of the 1909-1910 Atlanta University catalog, are positioned in the appropriate area of the pie chart. Additional categories represent the 9 college graduates with unknown occupations, and the 21 graduates who were recorded in the 1909-1910 catalog as “Deceased.” An additional 3693 gray dots represent the graduates of the other 140 colleges included in the study whose names were not recorded as data. They are placed in the appropriate area of the pie chart as determined by the overall statistics about occupations, included in the study. These dots hold space for these students, even if we do not know their names. 
+            </span>,
+            <span key="1c73c2f3">
+              [PH] The original map has been expanded to include the locations of the 141 colleges included in the study. The location of Atlanta University is marked with a star. 
+            </span>,
+            <span key="7ed03972">
+              [PH] In the pie chart, we can see for example the five students who contributed to the original charts, now placed in the area corresponding to the profession they held in 1909. NAME is a OCCUPATION, NAME is a OCCUPATION, NAME is a OCCUPATION, NAME is a OCCUPATION, and NAME is a OCCUPATION. 
+            </span>,
+          ]}
+        />
+        
+        <ClientOnly>{() => <StudentChartTwoAlternative />}</ClientOnly>
 
         <ChapterSectionTitle section={sections[4]} />
         <CenteredLayout>
