@@ -102,35 +102,15 @@ export default function Index() {
         <div className="grid grid-cols-1 md:grid-cols-2 font-neueMontreal border-b-2 border-dashed pb-0 md:pb-6">
           <div className="px-6 md:px-28">
             <p>
-              It is often said that “the purpose of data visualization is
-              insight: to produce the kind of “ah ha moment” in the mind of the
-              viewer when something snaps into focus that was previously too
-              difficult, too distributed, or too complex to otherwise see. For
-              those who design data visualizations, however, insight comes about
-              through a process that is far longer and more hard-won.
+              Data visualization is not a recent innovation. Even in the eighteenth century, activists and economists, as well as educators and politicians, were fully aware of the power of visualization to produce new knowledge. 
             </p>
             <p>
-              This lesson came home to our project team in the waning days of
-              summer 2021 as we iterated on the design for the front page of
-              this site. Ever since the first prototype of Data by Design, there
-              had always been a prominently-positioned timeline to welcome
-              visitors to the site—first an actual line, then illustrated with
-              images, and then a more designerly version that arranged each
-              year’s images into artfully arranged stacks.
+              But who, more precisely, was wielding this power? On whose behalf? And for whose benefit? The answers to these questions are what this project explores. 
             </p>
           </div>
           <div className="px-6 md:px-28">
             <p>
-              It all made sense: this project has a distinct chronological arc.
-              It looks at how ideas from the seventeenth and eighteenth
-              centuries, when the concept of data had just begun to crystalize,
-              inform today’s world in which we generate data with our every
-              waking moment (and sometimes even with our sleeping ones). And it
-              explores examples from the eighteenth and nineteenth centuries,
-              when the idea of visualizing data was itself an innovation,
-              connecting them to the present moment in which anyone with an
-              internet connection and an account on any number of software
-              platforms can go from data to chart in a series of clicks.
+              By retelling the history of data visualization alongside the histories of colonialism and slavery, we show how questions of ethics and justice have always been present—and continue to offer lessons to viewers and designers of data visualizations today.
             </p>
             <p className="pt-6">
               <Link to="/chapters/intro" className="text-xl">
