@@ -1270,31 +1270,31 @@ export default function PeabodyPage() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Commit to a capacious definition of what counts as knowledge
             </span>,
             <span key="6440631a">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Commit to a capacious definition of what counts as visualization
             </span>,
             <span key="2f317172">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider who might be missing from the field of visualization 
             </span>,
+             <span key="2f317173">
+             Consider the reasons why 
+           </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Focus on supporting the process of knowledge production 
             </span>,
             <span key="6d2691fc">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Enable interactions among multiple representational forms (text, image, etc)
             </span>,
             <span key="9650286d">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider alternatives to ease and efficiency
             </span>,
+             <span key="2f317175">
+             Consider modes of representing data beyond the visual form 
+           </span>,
           ]}
         />
       </ChapterBody>

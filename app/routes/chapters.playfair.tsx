@@ -809,31 +809,31 @@ export default function PlayfairPage() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Presume that visualization is not neutral 
             </span>,
             <span key="6440631a">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider the context that might inform the choice of visual/interactive form
             </span>,
             <span key="2f317172">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider the nature of the insights that are prompted by that particular form
             </span>,
+            <span key="2f317173">
+              Ask who will most benefit from them
+           </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Examine any assumptions about your viewership 
             </span>,
             <span key="6d2691fc">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Accept no best practices by default
             </span>,
             <span key="9650286d">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider which visual/interactive forms your tools enable 
             </span>,
+            <span key="9650286e">
+             Consider which forms they do not  
+          </span>,
           ]}
         />
       </ChapterBody>

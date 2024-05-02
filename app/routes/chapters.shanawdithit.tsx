@@ -1114,31 +1114,31 @@ export default function ShanawdithitPage() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+             Consider your relationship to the data being visualized
             </span>,
             <span key="6440631a">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+             Consider your responsibility to the data and its stewards 
             </span>,
             <span key="2f317172">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+             Be attentive to the distance between the data and your knowledge
             </span>,
+             <span key="2f317173">
+             Remember that some knowledge is not yours to share 
+           </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+             Examine your relationships to your data and its stewards 
             </span>,
             <span key="6d2691fc">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+             Take seriously and act on your responsibilities to them 
             </span>,
             <span key="9650286d">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+             Consider how to keep your data more connected to its source
             </span>,
+             <span key="2f317174">
+             Consider when your data might require additional or alternative protocols 
+           </span>,
           ]}
         />
       </ChapterBody>

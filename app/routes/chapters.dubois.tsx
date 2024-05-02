@@ -1141,30 +1141,30 @@ export default function DuboisChapter() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Always recall the power of visualization (again)
             </span>,
             <span key="6440631a">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider when that power should be aligned with political goals 
             </span>,
             <span key="2f317172">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider how to combine visualization with a commitment to act 
             </span>,
+             <span key="2f317173">
+             Reorient towards a goal of knowledge or justice, not visualization itself 
+           </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Align your visualization projects with your values 
             </span>,
             <span key="6d2691fc">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Honor and credit the contributions of each team member 
             </span>,
             <span key="9650286d">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider how to combine visualization with other knowledge-making forms 
+            </span>,
+            <span key="9650286e">
+              Know that change also requires a commitment to act
             </span>,
           ]}
         />

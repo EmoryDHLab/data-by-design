@@ -1112,30 +1112,30 @@ export default function BrooksPage() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Always recall the power of visualization
             </span>,
             <span key="6440631a">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Ask for and by whom any visualization has been designed 
             </span>,
             <span key="2f317172">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider the context of the data—including any people behind it 
+            </span>,
+            <span key="2f317173">
+              Remember that there is always more than data alone can convey  
             </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider the tradeoffs between efficiency and detail
             </span>,
             <span key="6d2691fc">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Ask who will benefit from your visualization and who might be harmed
             </span>,
             <span key="9650286d">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Probe any missing data and the reasons why 
+            </span>,
+            <span key="9650286e">
+              Hold space for the possibility of not visualizing at all
             </span>,
           ]}
         />
