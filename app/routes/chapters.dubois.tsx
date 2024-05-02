@@ -913,16 +913,7 @@ export default function DuboisChapter() {
 
         <CenteredLayout>
           <p>
-            As our project team considered how we might inhabit Du Bois's
-            revised approach to his research methods, and commit ourselves to
-            pursue the greater knowledge that became his goal, we reflected on
-            the fact that most members of our team—as white Americans, and as
-            citizens of other countries—could not claim to understand the extent
-            of the charge that Du Bois experienced upon hearing the news of Sam
-            Hose's murder. By the same token, we recognized that we could not,
-            collectively, understand the effects of anti-Black racism
-            first-hand. <InlineFootnote index={27}></InlineFootnote> We thus
-            returned to the main experience that we shared with Du Bois and his
+          As our project team considered how we might inhabit Du Bois’s revised approach to his research methods, and commit ourselves to pursue the greater knowledge that became his goal, we also knew that we could not claim to understand the full extent of the charge that Du Bois experienced upon hearing the news of Sam Hose’s murder. By the same token, we recognized that we could not uniformly, as a group, understand the effects of anti-Black racism first-hand. <InlineFootnote index={27}></InlineFootnote> But there was an experience that we shared with Du Bois and his
             students: the fact that we, too, were a majority-student
             visualization team. And among the lessons that we had learned from
             our own process of creating the visualizations for this site is that
