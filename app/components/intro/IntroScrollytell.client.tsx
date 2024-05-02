@@ -27,7 +27,7 @@ export default function IntroScrollytell() {
     >
       {process.env.NODE_ENV !== "production" && <ScrollProgress />}
       <ScrollytellWrapper
-        className="flex flex-col md:flex-row md:justify-between w-full"
+        className="md:flex justify-between"
         setScrollProgress={setScrollProgress}
         triggers={IntroTriggers}
         steps={steps}
@@ -35,13 +35,18 @@ export default function IntroScrollytell() {
       >
         <div
           className={classNames(
-            "sticky top-0 flex flex-col items-center right-0 md:block md:top-[200px] md:h-screen md:mr-24 w-screen md:order-last",
+            "sticky top-16 md:top-[200px] bias-full md:bias-1/2 h-screen md:mr-24 md:order-last border-black border z-20",
             (scrollProgress < 5.5 || scrollProgress > 7) && "md:w-1/2"
           )}
         >
-          <LinearTimeline />
+          <div className="flex flex-col items-center right-0 md:block md:h-screen w-screen">
+            <LinearTimeline />
+          </div>
         </div>
-        <div ref={steps} className="z-10 pointer-events-none">
+        <div
+          ref={steps}
+          className="bias-full md:bias-1/2 pointer-events-none md:w-1/2 z-10"
+        >
           {IntroTriggers.map((trigger, index) => {
             let height = "min-h-screen";
             if (index == 0) {
@@ -96,7 +101,7 @@ function LinearTimeline() {
 
   if (scrollProgress > 8.6) {
     return (
-      <div className="w-[50vw] relative">
+      <div className="md:w-[50vw] relative">
         {scrollProgress > 9.5 && (
           <MinardPath className="absolute left-[25px] top-[35px] md:w-[700px]" />
         )}
