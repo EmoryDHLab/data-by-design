@@ -1,16 +1,18 @@
 import scrollama from "scrollama";
 import { useEffect, useRef, useState } from "react";
-import { ClientOnly } from "remix-utils";
+import { ClientOnly } from "remix-utils/client-only";
 import { ChapterNav } from "~/components/ChapterNav";
 import { useResizeObserver } from "~/hooks";
 import type { ReactNode } from "react";
 import type { ScrollamaInstance } from "scrollama";
+import FootnoteToggle from "../FootnoteToggle";
 
 interface Props {
   children: ReactNode;
+  className?: string;
 }
 
-export default function ChapterBody({ children }: Props) {
+export default function ChapterBody({ children, className }: Props) {
   const scrollerRef = useRef<ScrollamaInstance | undefined>(undefined);
   const [chapterProgressState, setChapterProgressState] = useState<number>(0.0);
   const [fixedNav, setFixedNav] = useState<boolean>(false);
@@ -49,12 +51,16 @@ export default function ChapterBody({ children }: Props) {
   }, [chapterProgressState]);
 
   return (
-    <main className="chapter-body w-screen" id="main-content">
+    <main
+      className={`chapter-body w-screen ${className ?? ""}`}
+      id="main-content"
+    >
       <ClientOnly>
         {() => (
           <ChapterNav progress={chapterProgressState} fixedNav={fixedNav} />
         )}
       </ClientOnly>
+      <FootnoteToggle />
       {children}
     </main>
   );

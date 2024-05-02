@@ -4,7 +4,6 @@ export default function Hyperlink(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      // width={36}
       height={35}
       fill="none"
       aria-hidden="true"

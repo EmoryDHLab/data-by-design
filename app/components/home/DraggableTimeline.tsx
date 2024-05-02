@@ -1,10 +1,8 @@
 import { useResizeObserver } from "~/hooks";
 import { useRef, useState, useEffect } from "react";
-import { timelineImages } from "./timelineUtils";
+import { randomTimelineImages } from "./timelineUtils";
 import type { Dispatch, SetStateAction } from "react";
 import type { TFigure } from "~/types/figureType";
-
-const imageData = timelineImages();
 
 type startPosition = {
   clientX: number;
@@ -14,10 +12,6 @@ type startPosition = {
 const IMAGE_COUNT = 30;
 const PART_ONE_START = 0;
 const PART_ONE_HEIGHT = 484; // This is based on the container being 384px (h-96, or 24rem)
-const RANDOM_IMAGES = () => {
-  const start = Math.floor(Math.random() * 30);
-  return imageData.slice(start, start + IMAGE_COUNT);
-};
 
 interface Props {
   selectedImage: TFigure;
@@ -44,16 +38,18 @@ export default function DraggableTimeline({
     { x: number; y: number; r: number }[]
   >([]);
 
-  const [images, setImages] = useState<TFigure[]>(RANDOM_IMAGES);
+  const [images, setImages] = useState<TFigure[]>(
+    randomTimelineImages(IMAGE_COUNT)
+  );
 
   if (selectedImage && !images.includes(selectedImage)) {
     images.splice(0, 0, selectedImage);
   }
 
   useEffect(() => {
-    setImages(RANDOM_IMAGES());
+    setImages(randomTimelineImages(IMAGE_COUNT));
     setImagePositions(
-      Array.from({ length: IMAGE_COUNT + 1 }, () => {
+      Array.from({ length: 30 + 1 }, () => {
         const windowWidth = windowSize.width ?? 200;
         const x = Math.random() * (windowWidth - 300);
         const y = Math.max(

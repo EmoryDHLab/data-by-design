@@ -2,17 +2,18 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
-import Triggers from "./willardScrollytell/Triggers";
 import type { TFigure } from "~/types/figureType";
+import type { ReactElement } from "react";
 
 const width = 1232;
 const height = 1089;
 
 interface Props {
   figure: TFigure;
+  triggers: ReactElement[];
 }
 
-function WillardScrollytell({ figure }: Props) {
+function WillardScrollytell({ figure, triggers }: Props) {
   const { accentTextColor } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [focusShapeSize, setFocusShapeSize] = useState<object>({
@@ -96,7 +97,7 @@ function WillardScrollytell({ figure }: Props) {
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
         setScrollProgress={setScrollProgress}
-        triggers={Triggers}
+        triggers={triggers}
         steps={steps}
         className="w-screen"
       >
@@ -165,7 +166,7 @@ function WillardScrollytell({ figure }: Props) {
             ref={steps}
             className="bias-full w-full md:bias-1/2 md:w-2/5 relative"
           >
-            {Triggers.map((trigger, index) => {
+            {triggers.map((trigger, index) => {
               return (
                 <div
                   key={`sketch-trigger-${trigger.key}`}

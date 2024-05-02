@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -15,20 +16,20 @@ import FootnotesList from "~/components/FootnotesList";
 import Quotation from "~/components/Quotation";
 import figures from "~/data/figures/playfair.json";
 import { chapterMeta } from "~/utils";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import type { TVizAnchors } from "~/chapterContext";
 import ChapterBody from "~/components/layout/ChapterBody";
 import ProjectTimelineScrollytell from "~/components/playfair/projectTimeline/ProjectTimelineScrollytell";
 import Takeaways from "~/components/layout/Takeaways";
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return chapterMeta("playfair");
 };
 
 const sections = [
   {
-    title: "The Value of Visual Knowledge",
-    id: "the-value-of-visual-knowledge",
+    title: "The Value of Visualization",
+    id: "the-value-of-visualization",
   },
   {
     title: "The Politics of Playfair's Charts",
@@ -65,6 +66,7 @@ const visualizations: TVizAnchors[] = [
 ];
 
 export default function PlayfairPage() {
+  const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
   return (
     <ChapterContext.Provider
       value={{
@@ -77,6 +79,8 @@ export default function PlayfairPage() {
         visualizations,
         chapterFigures,
         sections,
+        showFootnotes,
+        setShowFootnotes,
       }}
     >
       <ChapterTitle
@@ -89,7 +93,8 @@ export default function PlayfairPage() {
             quote={
               <>
                 Data visualization has never been neutral or objective. There is
-                meaning — and an argument — conveyed through each visual design.
+                a meaning — and an argument — conveyed through each visual
+                design.
               </>
             }
           />
@@ -180,8 +185,8 @@ export default function PlayfairPage() {
               who can most benefit from its insights.
             </p>
             <PullQuote
-              title="These views—about why, how, and for whom a visualization has been designed"
-              subtitle="—are what we describe in this chapter as a visualization's argument."
+              title="These views—about why, how, and for whom a visualization has been designed—"
+              subtitle="are what we describe in this chapter as a visualization's argument."
             />
             <p>
               These views—about why, how, and for whom a visualization has been
@@ -206,13 +211,13 @@ export default function PlayfairPage() {
           </Column>
           <Column shouldPin>
             <FigureObj figure={figures["3-pie"]} />
-            <FigureObj figure={figures["scottishImportExportPLACEHOLDER"]} />
+            <FigureObj figure={figures["PLACEHOLDER-early-bar-chart"]} />
           </Column>
         </TwoColumnLayout>
         <ChapterSectionTitle section={sections[0]} />
         <TwoColumnLayout>
           <Column>
-            <p>
+            <p className="first-paragraph">
               Playfair did not intend to include his charts' underlying data in
               the <cite>Atlas</cite>. It was only after soliciting feedback from
               James Watt, inventor of the steam engine—and for whom Playfair
@@ -330,7 +335,7 @@ export default function PlayfairPage() {
 
         <TwoColumnLayout>
           <Column>
-            <p>
+            <p className="first-paragraph">
               Playfair created his charts in an era of intense political change.
               At the time that he released the third edition of the Atlas, the
               French Revolution had only just come to a halt, the result of a
@@ -472,7 +477,7 @@ export default function PlayfairPage() {
               be impacted by that missing information.
               <InlineFootnote index={26} /> What is surprising is that we, in
               the present, have not yet come to see these design choices as the
-              argument of Playfair's charts.
+              <em>argument</em> of Playfair's charts.
             </p>
             <p>
               Perhaps this is due to the design of the charts themselves: how
@@ -493,13 +498,13 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["westIndiesPLACEHOLDER"]} />
+            <FigureObj figure={figures["PLACEHOLDER-west-indies"]} />
           </Column>
         </TwoColumnLayout>
         <ChapterSectionTitle section={sections[2]} />
         <TwoColumnLayout>
           <Column className="py-5 md:py-10" shouldPin={true}>
-            <p>
+            <p className="first-paragraph">
               From our perspective in the present, it appears that Playfair was
               correct in his assertion about the enduring nature of the "form
               and manner" of his charts.
@@ -583,6 +588,22 @@ export default function PlayfairPage() {
               different process than Playfair himself employed.
             </p>
             <p>
+              But plotting Playfair's datapoints was only the beginning. While
+              it generally takes only a single line of D3 code to plot a path
+              from one point to the next, Playfair's data-lines contained more
+              curves than were recorded in his tables. Because our goal was to
+              recreate Playfair's chart with fidelity to the image, and not to
+              the data tables that Playfair himself removed, we needed a way to
+              convert his data-lines back into data that we could plot. To do
+              this, we first imported a high-resolution scan of the original
+              image into Adobe Photoshop, then traced the data-lines with a
+              digital pen so that we could save them as vector-based paths. We
+              exported each path's coordinate vector from Photoshop as a
+              standalone file, which we then imported back into D3 as data. Only
+              then could we plot Playfair's data-lines on the chart as they are
+              currently shown.
+            </p>
+            <p>
               If this process seems convoluted, that is a large part of the
               point. It underscores the degree to which D3 depends on data, and
               in so doing, exposes its epistemological claim: that the knowledge
@@ -619,7 +640,7 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["10a-PLACEHOLDER"]} />
+            <FigureObj figure={figures["wood"]} />
             <FigureObj figure={figures["10-camoes"]} />
           </Column>
         </TwoColumnLayout>
@@ -641,8 +662,6 @@ export default function PlayfairPage() {
               </span>,
               <span key="7acf0c9e">
                 Between 2016 and 2018 is a gap, when my attention was elsewhere.
-                In 2018, the implementation work begins, gradually increasing
-                through the project's final release.
               </span>,
               <span key="96d84379">
                 In 2018, the implementation work begins, gradually increasing
@@ -712,7 +731,7 @@ export default function PlayfairPage() {
         <ChapterSectionTitle section={sections[3]} />
         <TwoColumnLayout>
           <Column>
-            <p>
+            <p className="first-paragraph">
               ​​Playfair clearly longed to be recognized for his graphical
               innovations. In 1787, one year after the initial publication of
               the Commercial and Political Atlas, he authored an account—almost
@@ -723,7 +742,7 @@ export default function PlayfairPage() {
               method of display: <q>I have begun to practice the mode here,</q>
               writes Playfair in the voice of Franklin,{" "}
               <q>
-                a nd it throws light on the state of our accounts, as if by
+                and it throws light on the state of our accounts, as if by
                 inspiration, one minute giving a much clearer idea of the
                 matter, than whole days and weeks without this simple invention.
               </q>
@@ -794,31 +813,27 @@ export default function PlayfairPage() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Presume that visualization is not neutral
             </span>,
             <span key="6440631a">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider the context that might inform the choice of
+              visual/interactive form
             </span>,
             <span key="2f317172">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider the nature of the insights that are prompted by that
+              particular form
             </span>,
+            <span key="2f317173">Ask who will most benefit from them</span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Takeaway 1 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Examine any assumptions about your viewership
             </span>,
-            <span key="6d2691fc">
-              Takeaway 2 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </span>,
+            <span key="6d2691fc">Accept no best practices by default</span>,
             <span key="9650286d">
-              Takeaway 3 Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+              Consider which visual/interactive forms your tools enable
             </span>,
+            <span key="9650286e">Consider which forms they do not</span>,
           ]}
         />
       </ChapterBody>

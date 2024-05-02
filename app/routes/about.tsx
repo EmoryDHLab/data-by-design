@@ -34,9 +34,9 @@ export default function AboutPage() {
                   <span className="font-dubois"> Citation </span>
                   <p>
                     <cite className="select-all">
-                      L. Klein, T. Sharma, J. Varner, N. Yang, D. Jutan, J. Fu,
-                      A. Mola, S. Li, M. Adams, Z. Fang, Y. Li, and S. Munro.
-                      Data by Design. 2023 public beta.
+                      L. Klein, T. Sharma, J. Varner, S. Li, M. Adams,  N. Yang, D. Jutan, J. Fu,
+                      A. Mola,  Z. Fang, Y. Li, and S. Munro.
+                      Data by Design. 2024 public beta.
                     </cite>
                   </p>
                 </p>
@@ -58,72 +58,68 @@ export default function AboutPage() {
                   <span className="font-medium"> Lauren Klein </span> (Emory,
                   Departments of Quantitative Theory & Methods and English) is
                   the director of the project and conducted the historical and
-                  archival research for the project. She also wrote the text
-                  that appears on the site.
+                  archival research for the project. She also wrote all of the words
+                  that appear on the site.
                 </p>
                 <p className="py-2">
                   <span className="font-medium"> Tanvi Sharma </span> (NYU, MS
                   ‘23, Interactive Design and Media) is the lead designer on the
-                  project. She prototyped the project website, designing both
+                  project. She designed the project website, including both
                   site-wide and page-specific interactions, as well as the
-                  custom visualizations that appear on the site.
+                  custom visualizations and other illustrations that appear on the site.
                 </p>{" "}
                 <p className="py-2">
                   <span className="font-medium"> Jay Varner </span> (Emory,
-                  Center for Digital Scholarship) is the current lead developer
-                  on the project. He implemented many of the project’s
-                  interactive components, including the scrollytell mechanism
-                  that appears throughout the site.{" "}
+                  Center for Digital Scholarship) is the lead developer
+                  on the project. He implemented most of the project website,
+                  including the final versions of all of the interactive components
+                  that appear throughout the site.{" "}
                 </p>
+                <p className="py-2">
+                  <span className="font-medium"> Shiyao Li </span> (Emory, PhD
+                  ‘26, Computer Science) prototyped the visualizations of the Voyages
+                  data for the "Description of a Slave Ship" chapter, and the project team's data for the chapter about the making of the site.
+                </p>{" "}
+                <p className="py-2">
+                  <span className="font-medium"> Margy Adams </span> (Emory, PhD
+                  ‘25, English) wrote the alt-text for the project site, and
+                  contributed research and ideas to the "Description of a Slave Ship"  chapter.
+                </p>{" "}
                 <p className="py-2">
                   {" "}
                   <span className="font-medium"> Nicholas Yang </span> (NYU, BA
-                  ‘22, Computer Science) is a current developer on the project
-                  and former lead developer on the project. He designed and
-                  implemented the current site architecture and implemented many
-                  of the project’s interactive components, including the
-                  visualizations and other interactive features that appear on
-                  the front page as well as in the Du Bois chapter. He also led
-                  the migration from Vue to React.{" "}
+                  ‘22, Computer Science) is a developer on the project
+                  and former lead developer on the project. He implemented the
+                  "Introduction" and led the migration from Vue to React.{" "}
                 </p>{" "}
                 <p className="py-2">
                   {" "}
                   <span className="font-medium">Dan Jutan </span> (Georgia Tech,
                   BS ‘24, Computer Science) was the first lead developer on the
-                  project, and built the project prototype and alpha version of
-                  the site.
+                  project. He built the project prototype and alpha version of
+                  the site, including most interactive components.
                 </p>{" "}
                 <p className="py-2">
                   <span className="font-medium">Jianing Fu </span> (Georgia
                   Tech, BS ‘21, Computer Science, Univ. of California, Berkeley,
-                  MEng ‘22, Computer Science) built the components on the
+                  MEng ‘22, Computer Science) was a developer on the project. She built the components on the
                   project’s front page, including the interactive timeline, for
                   the project prototype and alpha versions of the site.
                 </p>{" "}
                 <p className="py-2">
                   <span className="font-medium"> Anna Mola </span>(Emory, BA
-                  ‘22, Computer Science and Visual Arts) built the components of
+                  ‘22, Computer Science and Visual Arts) was a developer on the project. She built the components of
                   the Playfair chapter for the project’s alpha version.
                 </p>{" "}
                 <p className="py-2">
-                  <span className="font-medium"> Shiyao Li </span> (Emory, PhD
-                  ‘26, Computer Science) built the visualization of the Voyages
-                  data for the Brooks chapter.
-                </p>{" "}
-                <p className="py-2">
-                  <span className="font-medium"> Margy Adams </span> (Emory, PhD
-                  ‘25, English) wrote the alt-text for the project site, and
-                  contributed research and ideas to the Brooks chapter.
-                </p>{" "}
-                <p className="py-2">
                   <span className="font-medium"> Zhou Fang </span> (Emory BA
-                  ‘22, Quantitative Sciences) built the image browser component
+                  ‘22, Quantitative Sciences) was a developer on the project. She built the image browser component
                   of the Du Bois chapter for the project’s alpha version.
                 </p>
                 <p className="py-2">
                   <span className="font-medium"> Yang Li </span> (Emory, Center
-                  for Digital Scholarship) built the chapter navigation
-                  component for the project site.
+                  for Digital Scholarship) is a developer on the project. He built the chapter navigation
+                  component for the project site, and contributed to the visualizations in the Du Bois chapter.
                 </p>
                 <p className="py-2">
                   <span className="font-medium"> Silas Munro </span> (Polymode)

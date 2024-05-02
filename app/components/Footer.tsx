@@ -3,7 +3,7 @@ import SiteTitle from "./home/SiteTitle";
 export default function Footer() {
   return (
     <footer
-      className={`grid md:grid-cols-12 md:gap-x-12 p-10 pt-20 md:pt-12 font-neueMontreal bg-offblack text-offwhite border-t-2 border-offwhite`}
+      className={`grid md:grid-cols-12 md:gap-x-12 p-20 pt-20 md:pt-12 font-neueMontreal bg-offblack text-offwhite border-t-2 border-offwhite`}
     >
       <div className="col-span-12 md:col-span-3 flex flex-col">
         <cite className="sr-only">Data by Design</cite>
@@ -19,12 +19,12 @@ export default function Footer() {
           <g>
             <foreignObject x={52} y={0} height={200} width={368}>
               <p className="text-2xl font-neueMontrealLight">
-                Final project forthcoming in print and online from The{" "}
+                Final version forthcoming in print and online from {" "}
                 <a
                   className="underline underline-offset-4 decoration-1 hover:decoration-2 focus:decoration-2"
                   href="https://mitpress.mit.edu/"
                 >
-                  MIT Press
+                  The MIT Press
                 </a>{" "}
                 in Fall 2025.
               </p>
@@ -46,8 +46,8 @@ export default function Footer() {
       <div className="col-span-12 md:col-span-4 flex flex-col space-y-4 font-neueMontrealLight leading-6 md:px-12 text-sm md:text-xs">
         <p className="uppercase font-neueMontreal">Cite as</p>
         <p className="font-neueMontreal">
-          Lauren Klein, Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams, Dan
-          Jutan, Jianing Fu, Nicholas Yang, Anna Mola, Zhou Fang, Yang Li, and
+          Lauren Klein, Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams, Nicholas Yang, Dan
+          Jutan, Jianing Fu, Anna Mola, Zhou Fang, Yang Li, and
           Silas Munro. Data by Design: An Interactive History of Data
           Visualization, 1789-1900. 2024 public beta.
         </p>
@@ -93,7 +93,7 @@ export default function Footer() {
       </div>
       {/* THIRD COL */}
       <div className="col-span-12 md:col-span-5 flex flex-col space-y-16">
-        <p className="uppercase">Sign up for our mailing list:</p>
+        <p className="uppercase">Sign up for project updates:</p>
         <form
           className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 items-baseline validate mb-8"
           action="https://dataxdesign.us22.list-manage.com/subscribe/post?u=6d2b8677087077c76d5d9940a&amp;id=7cff42ff53&amp;f_id=00a6c7e1f0"

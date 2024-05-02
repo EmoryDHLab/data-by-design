@@ -7,10 +7,10 @@ interface Props {
 
 const Takeaways = ({ forDesigners, forViewers }: Props) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 p-8 md:p-56 gap-8 md:gap-12 bg-offblack text-offwhite font-neueMontrealLight md:font-neueMontreal">
+    <div className="grid grid-cols-1 md:grid-cols-2 p-8 md:p-56 gap-8 md:gap-12 mt-12 md:mt-24 bg-offblack text-offwhite font-neueMontrealLight md:font-neueMontreal">
       <div>
         <h3 className="text-xl md:text-3xl mb-2 md:mb-0">
-          Takeaways for designers
+          Conceptual takeaways
         </h3>
         <ul className="list-disc list-outside ml-4">
           {forDesigners.map((takeaway) => {
@@ -27,7 +27,7 @@ const Takeaways = ({ forDesigners, forViewers }: Props) => {
       </div>
       <div>
         <h3 className="text-xl md:text-3xl mb-2 md:mb-0">
-          Takeaways for viewers
+          Practical takeaways
         </h3>
         <ul className="list-disc list-outside ml-4">
           {forViewers.map((takeaway) => {

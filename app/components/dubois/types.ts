@@ -23,10 +23,3 @@ export interface ResponseData {
   x: number;
   y: number;
 }
-
-export type SimpleDot = {
-  x: number,
-  y: number,
-  d: number,
-  id: string,
-}

@@ -25,38 +25,36 @@ import SlideShow from "~/components/layout/SlideShow";
 import { chapterMeta } from "~/utils";
 import StudentChartV2 from "~/components/dubois/StudentChartV2";
 import ChapterBody from "~/components/layout/ChapterBody";
-import type { V2_MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@remix-run/node";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
+import Takeaways from "~/components/layout/Takeaways";
+import ChartThreeScrollytell from "~/components/dubois/chartScrollytells/ChartThreeScrollytell";
 
 import DuboisPosterSideBySideScrollytell from "~/components/dubois/duboisScrollytell/DuboisPosterSideBySideScrollytell";
 import DuboisScrollytell from "~/components/dubois/duboisScrollytell/DuboisScrollytell";
 import { ClientOnly } from "remix-utils";
 import StudentChartTwoAlternative from "~/components/dubois/StudentChartTwoAlternative";
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return chapterMeta("dubois");
 };
 
 const sections = [
   {
-    title: "Visualization as Evidence, Visualization as Argument",
-    id: "visualization-as-evidence-visualization-as-argument",
+    title: "The Argument of Visualization, Reimagined",
+    id: "the-argument-of-visualization-reimagined",
   },
   {
-    title: "A Visual Method of Making History",
-    id: "a-visual-method-of-making-history",
+    title: "Charts, Photographs, and Facts ",
+    id: "charts-photographs-and-facts",
   },
   {
-    title: "Between Chart and Photograph",
-    id: "between-chart-and-photograph",
+    title: "Du Bois, Truth, and Visualization Today",
+    id: "du-bois-truth-and-visualization-today",
   },
   {
-    title: "Education, Collaboration, and Credit",
-    id: "education-collaboration-and-credit",
-  },
-  {
-    title: "Visualization as Witness and as Testimony",
-    id: "visualization-as-witness-and-as-testimony",
+    title: "The Work that Visualization Can Do",
+    id: "the-work-that-visualization-can-do",
   },
 ];
 
@@ -92,6 +90,7 @@ const chapterFigures = Object.values(figures);
 
 export default function DuboisChapter() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
+  const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
 
   return (
     <ChapterContext.Provider
@@ -106,6 +105,8 @@ export default function DuboisChapter() {
         chapterFigures,
         visualizations,
         sections,
+        showFootnotes,
+        setShowFootnotes,
       }}
     >
       
@@ -118,47 +119,63 @@ export default function DuboisChapter() {
         
         <CenteredLayout>
           <p className="first-paragraph py-10">
-            October 4th, 1899, was the first day of the fall term at Atlanta
-            University (now Clark Atlanta University), where W.E.B. Du Bois had
-            been teaching for the past two years&mdash;and a long two years they
-            had been.
-            <InlineFootnote index={0}></InlineFootnote> After relocating from
-            Philadelphia to Atlanta in January 1897, Du Bois and his family were
-            first required to contend with the overt racism of their everyday
-            lives in the New South; and then, on May 24th, 1899, the most
-            profound of personal tragedies when the Du Bois's two-year-old son,
-            Burghardt, died after a brief illness.
-            <InlineFootnote index={1} />
-            But any small comfort that might have brought about by the start of
-            the school year and the return to a teaching routine would soon
-            evanesce as Du Bois found himself pulled into an unexpected new
-            project, one that had the potential to put his research to date on a
-            major international stage.
+            There is a now-famous photograph of W.E.B. Du Bois (1868-1963), the
+            field-defining sociologist, author, and activist, taken in Paris in
+            the spring of 1900. Du Bois sits at a desk, jauntily dressed, a book
+            open in his lap. While he had yet to author the most influential of
+            his texts— <cite>The Souls of Black Folk</cite> would be published
+            three years later, in 1903—his intellectual reputation was already
+            increasingly outsized. In the photograph, however, Du Bois takes up
+            only a small portion of the frame. For its purpose was not only to
+            picture Du Bois but also his surroundings: directly behind him is a
+            low bookcase, its shelves lined end-to-end with books large and
+            small; the top of the bookcase, at counter height, is stacked with
+            more books, pamphlets, and other artifacts, intended to be perused;
+            and above the bookcase are charts—dozens and dozens of them—along
+            with photographs and additional artifacts, each installed in a
+            picture frame or swing-out vitrine, and mounted in rows reaching up
+            to the sky.
           </p>
+
+          <FigureObj
+            figure={figures["dubois-paris-expo-colored-american"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
           <p>
-            On that very same day in October, Du Bois's own college classmate,
-            the lawyer and newspaper editor Thomas J. Calloway began the letter
-            campaign that would result in a commitment from the federal
-            government to fund an “Exhibit of American Negroes” at the 1900{" "}
-            <cite>Exposition Universelle</cite> in Paris, which was scheduled to
-            open the following spring. With time running short, Calloway turned
-            to Du Bois and one other man, Daniel A.P. Murray, the Assistant
-            Librarian of Congress, to design and curate the show. While Murray
-            tasked himself with assembling a set of books and pamphlets by Black
-            writers to put on display, Du Bois saw his purview in more
-            conceptual terms: to present “the history and present condition of a
-            large group of human beings”&mdash;namely, the United States's Black
-            citizens&mdash;“in as systematic and compact a form as possible.”
-            <InlineFootnote index={2}></InlineFootnote>
-            This “systematic and compact form” was, of course, data
-            visualization&mdash;a technique that he'd studied during his time in
-            Germany, and which he'd perfected in his groundbreaking study,{" "}
-            <cite>The Philadelphia Negro</cite>, published just one year
-            earlier.
-            <InlineFootnote index={3}></InlineFootnote>
+            The photograph of Du Bois documents the exhibit he designed for the
+            1900 <em>Exposition Universelle</em>. The “American Negro Exhibit,”
+            as it was called, was the result of over a year of campaigning,
+            reaching up to the President of the United States, to include the
+            contributions of Black Americans as among the other celebratory
+            displays of national might and ingenuity that were typical of
+            World's Fairs at the time. Du Bois and his co-curator, Daniel A.P.
+            Murray, then the Assistant Librarian of Congress, were given the
+            southeast corner of the U.S. exhibition space in the Palace of
+            Social Economy and Congresses—what visitors would have seen
+            immediately to their right upon entering the hall—and went to work.
+            <InlineFootnote index={0}></InlineFootnote> While Murray tasked
+            himself with assembling a set of books by Black writers to put on
+            display, Du Bois saw his purview in more conceptual terms: to
+            present “the history and present condition of a large group of human
+            beings”—namely, the nation's Black citizens—"in as systematic and
+            compact a form as possible.”
+            <InlineFootnote index={1}></InlineFootnote>
           </p>
         </CenteredLayout>
 
+        <CenteredLayout>
+          <FigureObj
+            figure={figures["expo-entrance"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+          <FigureObj
+            figure={figures["Group-XVI-floorplan"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+        </CenteredLayout>
         <FigureObj
           figure={figures["ch5-01-phila"]}
           className="mx-2 md:mx-12 text-sm md:text-base"
@@ -167,44 +184,77 @@ export default function DuboisChapter() {
 
         <CenteredLayout>
           <p>
-            For the Paris Exposition, as the event is more commonly known, Du
-            Bois worked with a team of Atlanta University students to create 63
-            poster-sized statistical charts. Like William Playfair and most
-            visualization practitioners ever since, Du Bois appreciated the
-            ability of the charts to convey trends and patterns "at a glance."
-            <InlineFootnote index={4}></InlineFootnote>
-            In this case, Du Bois sought to highlight the growth and progress of
-            Black Americans in the years since emancipation. But Du Bois
-            understood that data could not convey the full picture of this
-            progress&mdash;nor could it convey the full extent of the obstacles
-            that the nation's Black citizens were required to overcome. Thus he
-            supplemented the charts with over 500 photographs that documented
-            "typical" Black Americans at home, at school, and at work; as well
-            as with three large manuscript volumes that compiled the complete
-            Black Codes of Georgia&mdash;the legislation that, as Whitney
-            Battle-Baptiste and Britt Rusert explain, “stretch[ed] from the
-            slave codes of the colonial and antebellum period to the
-            segregationist policies and laws of the present,“ and which
-            attempted to control and constrain all aspects of Black life.
-            <InlineFootnote index={5}></InlineFootnote>
-            Conceived at a time when Du Bois found himself increasingly
-            affected, both personally and intellectually, by the racism and
-            violence of white supremacy, the range of materials assembled for
-            the Paris Exposition at once attest to his deep-seated belief in the
-            transformative power of data and, at the same time, his growing
-            awareness of the limits of what data&mdash;and, by extension, data
-            visualization&mdash;could do.
+            This “systematic and compact form” was, of course, data
+            visualization—a technique that Du Bois had first encountered a
+            decade earlier during his graduate study in Germany, and that he'd
+            perfected more recently in Philadelphia, where he lived with his
+            wife Nina, in 1896, as he collected the social surveys and other
+            data that would culminate in <cite>The Philadelphia Negro</cite>.{" "}
+            <InlineFootnote index={2}></InlineFootnote>Du Bois had since moved
+            to Atlanta to take up a position as a professor of sociology at
+            Atlanta University, and because time—and money—was already running
+            short, he enlisted the expertise of William Andrew Rogers, who had
+            graduated from Atlanta University the year before, as well as the
+            four students then enrolled in his year-long sociology course.
+            Together, Du Bois and his team created the create 63 poster-sized
+            charts—each a dazzling display of trenchant data analysis and
+            inventive graphic design—that would travel to Paris in several
+            months' time. <InlineFootnote index={3}></InlineFootnote>
           </p>
         </CenteredLayout>
-        <ChapterSectionTitle section={sections[0]} />
+
+        <DocumentViewer />
+
         <CenteredLayout>
           <p>
-            The 63 charts created for the Paris Exhibition were grouped into two
-            sets. <InlineFootnote index={6}></InlineFootnote>
-            The first set, <cite>The Georgia Negro: A Sociological Study</cite>,
-            focused on statistics that had been compiled by Du Bois and his
-            students that related to the Black population of that state. The
-            second set was more national in scope. Entitled{""}
+            Like Thomas Clarkson, William Playfair, and most data visualization
+            practitioners ever since, Du Bois appreciated the ability of
+            visualization to convey significant trends and patterns—in his
+            words—“at a glance.” <InlineFootnote index={4}></InlineFootnote> In
+            the case of the charts that he and his students designed for the
+            Paris Exposition, Du Bois sought to highlight one trend in
+            particular: the growth and progress of Black Americans in the years
+            since emancipation. His selection of datasets, combined with his (or
+            his students) masterful deployment of color and form, resulted in a
+            series of charts that were as visually striking as they were
+            sociologically profound. After being digitized by the Library of
+            Congress in 2014, the charts have captivated a new generation of
+            visualization designers and aficionados who see in them evidence of
+            how visualization can be enlisted in the service of justice while
+            also advancing the formal possibilities of the field.{" "}
+            <InlineFootnote index={5}></InlineFootnote>
+          </p>
+
+          <p>
+            As for Du Bois himself, however, both as a scholar who was then
+            pioneering the idea of mixed-methods research, and as a Black man in
+            the United States, he was deeply attuned to the limits of
+            visualization as well as its uses. His scholarly expertise and lived
+            experience together pointed to the fact that, on its own, data
+            visualization could not hope to convey a complete picture of the
+            progress of Black Americans to date, nor could it convey the extent
+            of the obstacles that were required to be overcome. His
+            incorporation of additional forms of visual evidence into his
+            research, combined with his continued insistence on acknowledging
+            the larger social and political context that framed the work, offer
+            us a model for making change in the world that indeed enlists the
+            power of data, while also acknowledging how our own work is far from
+            complete even after visualizing that data for the screen or page.
+          </p>
+        </CenteredLayout>
+
+        <ChapterSectionTitle section={sections[0]} />
+        <CenteredLayout>
+          <p className="first-paragraph">
+            Although most of 63 charts that Du Bois and his students created for
+            the Paris Exhibition were displayed on the countertops, available
+            for visitors to peruse in any order they chose, the charts were
+            conceived as two distinct sets. The first,{" "}
+            <cite>The Georgia Negro: A Sociological Study</cite>, focused on
+            statistics that had been compiled by Du Bois and his students that
+            related to the Black population of that state.{" "}
+            <InlineFootnote index={6}></InlineFootnote> The second was national
+            in scope. Entitled{" "}
             <cite>
               A Series of Statistical Charts Illustrating the Condition of the
               Descendants of Former Slaves Now in Residence in the United States
@@ -212,79 +262,120 @@ export default function DuboisChapter() {
             </cite>
             , this set drew from several data sources, including the US Census,
             in order to put the Black population of the United States in
-            national and international perspectives. Throughout both series of
-            charts, Du Bois underscores the vitality of the nation's Black
-            citizens, as well the educational and economic progress they had
-            made in the decades since Emancipation.
+            national and international perspectives.
           </p>
         </CenteredLayout>
-        <DocumentViewer />
 
         <TwoColumnLayout>
           <Column>
             <p>
-              The first chart of <cite>The Georgia Negro </cite> series, which
-              functions as its title page, makes clear how Du Bois understood
-              the twofold purpose of the project. Below a pair of Mercator
-              projections, one of Africa and the other of the Americas, which
-              together depict the “routes of the African slave trade,” are two
-              epigraphs. The first makes the expository aim of the series
-              explicit: “to illustrate the development of the American Negro in
-              a single typical state of the United States.” The second advances
-              the argument of the series: “The problem of the 20 the century is
-              the problem of the color line.”
+              In the exhibition space, Du Bois mounted the introductory chart of
+              each set—a title page of sorts—directly at eye-level against the
+              back wall. Clearly, Du Bois wanted these charts to be seen. Of the
+              two, the introductory chart of <cite>The Georgia Negro </cite>{" "}
+              series was given a particular place of prominence: the center-left
+              position in the row of frames, likely the first image that would
+              catch the eyes of visitors as they entered the room. The image is
+              comprised of a pair of Mercator projections, one of Africa and the
+              other of the Americas, their connection indicated by lines that
+              link key locations, and shading in yellow, black, and brown that
+              suggests additional thematic relationships. As the key below
+              clarifies, what are depicted are the “routes of the African slave
+              trade.” Two epigraphs fill what would otherwise be empty space at
+              the bottom of the chart. The first makes the expository aim of the
+              series explicit: “to illustrate the development of the American
+              Negro in a single typical state of the United States.” The second
+              advances its argument: “The problem of the 20th century is the
+              problem of the color line.”
             </p>
             <p>
               These words would reappear several years later in{" "}
-              <cite>The Souls of Black Folk </cite> (19n03), where they would
-              become “perhaps Du Bois's most famous indictment of the centrality
-              of race and racism to modern American sociopolitical life,” as
+              <cite>The Souls of Black Folk </cite>, where they would become
+              “perhaps Du Bois's most famous indictment of the centrality of
+              race and racism to modern American sociopolitical life,” as
               architectural historian Mabel O. Wilson explains.
               <InlineFootnote index={7}></InlineFootnote>
-              But Du Bois mounts the same case through his charts. Both through
-              his choices about what data to visualize, and about how to
-              visualize them, Du Bois advances a clear argument about the
-              nation's Black citizens: not only about the progress that the
-              nation's Black citizens had made up to that date, but also about
-              the extent of the challenges that remained to be addressed.
+              But his charts make the same assertion in visual form. Both
+              through his choices about what datasets to visualize, and through
+              his choices about how to visualize them, Du Bois advances a clear
+              argument about the nation's Black citizens: about the progress
+              they had made in the years since emancipation, and about the
+              challenges that remained to be addressed.
             </p>
             <p>
-              While the first several charts in the series make use of familiar
-              visual forms&mdash;maps, bar charts, and line graphs&mdash;in
-              order to introduce the exhibition's international viewership to
-              the state of Georgia and its significance as an object of study,
-              the visual style shifts to altogether new terrain once the focus
-              on Georgia's Black residents has been established.{" "}
+              More than a century after Playfair introduced his line charts and
+              bar charts to the public, visualizations no longer required
+              lengthy textual explanations in order to be understood. Even
+              still, Du Bois took active steps to ensure that there would be no
+              mistaking the argument of the charts, about the barriers of racism
+              and the progress made nonetheless, by selecting data to visualize
+              such that in not a single bar or area chart does any measure
+              related to his subject trend down. The Black population of Georgia
+              is shown to increase every decade; the number of Black children
+              enrolled in school is similarly shown to be on the rise; land
+              ownership is documented as growing nearly every year of the
+              previous twenty-five; and the assessed value of Black Georgians'
+              property has exploded so exponentially that it requires a wholly
+              new visual form—a bar chart curved into a spiral—for the most
+              recent values to even fit on the page.
+            </p>
+            <p>
+              Indeed, in this chart and the others that diverge by
+              then-conventional visualization techniques is evidence of an
+              additional argument that—like Playfair's charts—is made through
+              the intentional choice of visual form. This has to do with the
+              as-yet-realized possibilities for Black life if it were supported
+              in its flourishing, rather than be actively suppressed. Consider
+              how the first several charts in the series make use of familiar
+              visual strategies—maps, bar charts, and line graphs—in order to
+              introduce the exhibition's international viewership to the state
+              of Georgia and its significance as an object of study. But the
+              visual style shifts into new terrain once the focus on Georgia's
+              Black residents has been established.{" "}
               <HoverText hoverState="City" className="font-medium">
-                In his comparative representation of the places where Georgia's
-                Black citizens reside, for example, Du Bois brings together
-                aspects of the bar chart and the line chart along with a new
-                form of spiral graph{" "}
+                A comparative representation of the places where Georgia's Black
+                citizens reside{" "}
               </HoverText>
-              in order to give animacy to the presence of Black people in each
-              of type of locale.{" "}
+              is where Du Bois introduces his iconic spiral, for example,
+              bringing together aspects of the bar chart and the line chart
+              along with this new form of circular graph in order to animate the
+              increasing presence of Black people throughout the state. In a
+              later chart in the series, which documents{" "}
               <HoverText hoverState="Illiteracy" className="font-medium">
-                In a later chart, which documents the decrease in illiteracy
-                rates in the years between 1860 and 1900,
+                the decrease in illiteracy rates in the years between 1860 and
+                1900
               </HoverText>{" "}
-              Du Bois makes use of what graphic designer Silas Munro describes
-              as a “lattice-like arrangement,” in which an otherwise standard
-              bar is folded at a right angle in order to further accentuate the
-              decreasing rate of illiteracy. Du Bois elaborates upon this
-              technique in a{" "}
+              , Du Bois makes use of what graphic designer (and contributor to
+              this project) Silas Munro describes as a “lattice-like
+              arrangement,” in which an otherwise standard bar is folded at a
+              right angle in order to further accentuate the decreasing rate of
+              illiteracy over time. Du Bois elaborates upon this technique in a
+              later chart, which{" "}
               <HoverText hoverState="Owners" className="font-medium">
-                later chart, which compares the numbers of Black property
-                owners, and the value of their properties, in two Georgia
-                cities.
+                compares the numbers of Black property owners, and the value of
+                their properties, in two Georgia cities
               </HoverText>{" "}
-              Another unique chart in this series, which{" "}
+              , building upon his own visual language to represent the progress
+              that had been achieved by the Black residents of Georgia in spite
+              of the efforts of their white compatriots.
+            </p>
+            <p>
+              Compared to the easily interpretable “picture of the past” that
+              Playfair designed his time-series charts to convey, the sequence
+              of{" "}
               <HoverText hoverState="Value" className="font-medium">
-                plots the “assessed value of household and kitchen furniture
-                owned by Black Georgians, takes the standard bar chart and bends
-                it into a spiral, concentrating the viewer's focus on the
-                cumulative value of the population's material possessions in
-                addition to its growth in time.
-              </HoverText>
+                increasingly novel visual forms
+              </HoverText>{" "}
+              that characterizes the <em>Georgia Negro</em> series charts seems
+              to ask viewers to imagine future Black progress through the lens
+              of Black creativity: what might come to be if the future of Black
+              America, like the expressive possibilities of data visualization,
+              were also not curtailed by convention and code. Of course Black
+              Americans had already excelled through all normative measures, the
+              more typical charts easily confirmed. But what else might be
+              possible—in terms of contributions to visualization design, or to
+              the nation—if Black Americans could engineer their own charts, and
+              their futures, unconstrained by the “color line”?
             </p>
           </Column>
           <Column shouldPin className="md:p-10">
@@ -303,27 +394,25 @@ export default function DuboisChapter() {
           ]}
         />
 
-        <ChapterSectionTitle section={sections[1]} />
-
         <TwoColumnLayout>
           <Column>
-            <p>
-              As the series unfolds, so too does its argument about the progress
-              of the state's Black citizens, and it does so in a way in which
-              the data presented is aligned with its method of display. The
-              charts' custom visual design speaks to an overarching desire, on
-              the part of Du Bois, to attend to the specificity of the data and
-              its significance for his larger goal.
+            <p className="first-paragraph">
+              Du Bois continues to affirm these imaginative possibilities
+              through the graphical innovation of the second series of charts,
+              which focuses on the “condition of the descendants of former
+              African slaves now resident in the United States of America,” as
+              its introductory chart explains. In this series, Du Bois was also
+              joined by his students as co-designers, as a later section of this
+              chapter will further explore. Here, what is significant is how, in
+              documenting the upward progress of Black Americans in a national
+              and international context, Du Bois and his students make use of
+              comparisons to other populations—and to other charts—in order to
+              affirm a narrative of progress and possibility with respect to
+              Black Americans' social, intellectual, and economic lives.
             </p>
 
-            <p>
-              Du Bois continues this line of argument, and his graphical
-              innovation, in the second series of charts. Focused on the
-              “condition of the descendants of former African slaves now
-              resident in the United States of America,” as the introductory
-              chart of this series explains, these charts document the upward
-              progress of Black Americans in a national and international
-              context. They also make use of{" "}
+            {/* <p>
+             They also make use of{" "}
               <HoverText hoverState="Countries" className="font-medium">
                 comparisons to other populations,
               </HoverText>{" "}
@@ -342,84 +431,100 @@ export default function DuboisChapter() {
                 economics,
               </HoverText>{" "}
               as well as social, cultural, and religious life.
-            </p>
+            </p> */}
 
             <p>
-              An unnamed interlocutor in this series is the US Federal
+              A clear but unnamed interlocutor in this series is the US Federal
               Government, which for each of the three previous national
-              censuses, had created a "statistical atlas" that visualized the
-              data that had been collected. The most recent atlas, based on the
-              results of the 1890 Census, had been published only two years
+              censuses, had created a statistical atlas that visualized the data
+              collected at national scale. The most recent of these atlases,
+              based on the 1890 Census, had been published only two years
               earlier, in 1898. Most famous today for its visual depiction of
-              the closing of the American frontier, in its own time the atlas
-              was motivated by a more academic goal: “popularizing and extending
+              the closing of the American frontier—a symbol to the
+              settler-colonial nation that its goals of “manifest destiny” had
+              run its course, and to Native peoples that their displacement was
+              complete—the <cite>Statistical Atlas of the United States</cite> ,
+              based on the results of the eleventh census in its own time was
+              motivated by a more pedagogical goal: “popularizing and extending
               the study of statistics.”
               <InlineFootnote index={8}></InlineFootnote>
             </p>
             <p>
-              The 409 maps and diagrams began, as Du Bois's did, by introducing
-              viewers to{" "}
+              The atlas was overseen by the then-chief geographer for the US
+              Geological Survey, Henry Gannett, and was comprised of 409 maps
+              and diagrams. The sequence began, just as Du Bois's did, by
+              introducing viewers to the statistics on population{" "}
               <HoverText hoverState="Map" className="font-medium">
-                the population of the United States.
+                statistics on population
               </HoverText>{" "}
-              Through by-then standard bar charts, pie charts, and line graphs,
-              as well as its own creative use of pattern and visual form, the
-              Atlas included, for example, a{" "}
+              T. Through by-then-standard bar charts, pie charts, and line
+              graphs, as well as its own creative use of pattern and visual
+              form, the atlas included, for example, a{" "}
               <HoverText hoverState="Populations" className="font-medium">
-                prototypal bump chart that ranked each state according to its
-                population;
+                prototypical bump chart that ranked each state according to its
+                population
               </HoverText>{" "}
-              a map that illustrated{" "}
+              ; a map that illustrated{" "}
               <HoverText hoverState="Gender" className="font-medium">
                 {" "}
-                the spatial distribution of the nation's male population; and
-                another that illustrated{" "}
+                the spatial distribution of the nation's male population
               </HoverText>{" "}
+              ; and another that illustrated{" "}
               <HoverText hoverState="Race" className="font-medium">
                 the spatial distribution of the nation's Black population.
               </HoverText>{" "}
+              . (Another chart used
               <HoverText hoverState="Race-Distribution" className="font-medium">
-                (Another chart used area charts in small multiples in order
-                compare certain state's Black and white populations).
+                area charts in small multiples in order to compare certain
+                states' Black and white populations
               </HoverText>{" "}
-              And while race was certainly of concern in the census; indeed,
-              race remains one of the lighting rod issues of the census, even
-              today&mdash;it was not the <cite>Statistical Atlas's </cite>
-              main concern. Indeed, after a series of charts early in the atlas
-              that visualized the nation's Black population, the focus of the
-              atlas shifts,
+              ).
+            </p>
+
+            <p>
+              While race was certainly of concern in the census—indeed, it
+              remains one of the lighting rod issues of the census even today—it
+              was not the <cite>Statistical Atlas's </cite>
+              main concern. Reading further into the intent conveyed through the
+              sequence of maps, after an early series of charts that visualize
+              the nation's Black population, the focus of the atlas shifts,
+              turning first to
               <HoverText hoverState="Foreign" className="font-medium">
                 {" "}
-                turning first to the nation's immigrant population{" "}
+                the nation's immigrant population{" "}
               </HoverText>{" "}
               before expanding outward to consider other features altogether:
               <HoverText hoverState="Age-Sex" className="font-medium">
                 {" "}
-                the population's age and gender breakdown,
+                the population's age and gender breakdown
               </HoverText>{" "}
+              , the country's increasingly diverse
               <HoverText hoverState="Religion" className="font-medium">
-                its religion,
+                religious groupings
               </HoverText>{" "}
+              , the
               <HoverText hoverState="Occupation" className="font-medium">
-                the occupations of its inhabitants, and more.
+                occupations of its inhabitants
               </HoverText>
+              , and more.
             </p>
 
             <p>
-              Du Bois was clearly influenced by the Atlas. Several of the
-              diagrams created for the Paris Exposition precisely mirror the
-              form of those created for the Atlas. Du Bois's graduated area
+              Du Bois's charts were clearly influenced by the{" "}
+              <em>Statistical Atlas</em>. Several of his own diagrams mirror the
+              form of those created for the atlas. Du Bois's graduated area
               chart of “The Amalgamation of White and Black elements of the
-              Population in the United States,” for example, takes the same
-              visual form as the chart in the Atlas depicting “Growth of the
-              Elements of the Population: 1790-1890.” Similarly, the combined
-              area and bar chart form that Du Bois ¸ employs for his chart of
-              “Conjugal Condition of American Negroes according to Age Periods”
-              is the very same as the chart in the Atlas depicting “Conjugal
-              Condition of the Population by Age and Sex, in proportion to the
-              total number of each group.” The notable difference within each
-              pair is, of course, Du Bois's focus on the Black population alone.
-              And for Du Bois, this focus was the point: the nation's Black
+              population in the United States,” for example, takes the same
+              visual form as the chart in the <em>Statistical Atlas</em>{" "}
+              depicting “Growth of the Elements of the Population: 1790-1890.”
+              Similarly, the combined area and bar chart form that Du Bois
+              employs for his chart of “Conjugal Condition of American Negroes
+              according to Age Periods” is the very same as the chart in the{" "}
+              <em>Statistical Atlas</em> depicting “Conjugal Condition of the
+              Population by Age and Sex, in proportion to the total number of
+              each group.” The notable difference within each pair is, of
+              course, Du Bois's focus on the Black population alone. And for Du
+              Bois, this difference in data was the point: the nation's Black
               population was itself diverse, and it was thriving. By adopting
               the visual typologies of the Statistical Atlas in order to make
               his claims, Du Bois underscores his textual argument about the
@@ -455,90 +560,84 @@ export default function DuboisChapter() {
 
         <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             Today, Du Bois's charts are often shared as single images, embedded
-            in a tweet or blog post, or&mdash;as in the case of Du Bois's{" "}
-            <cite>Data Portraits</cite>, the 2018 volume that compiled the
-            charts in print for the first time&mdash;bound as a dazzling,
+            in a post on social media, or—as in the case of{" "}
+            <cite>Du Bois's Data Portraits</cite>, the 2018 volume that compiled
+            the charts in print for the first time-bound as a dazzling,
             full-color book. <InlineFootnote index={9}></InlineFootnote>
-            But in their own time, the charts were intended to be viewed as part
-            of a carefully curated exhibition experience. Visitors entered a
-            small reading room, about 20 feet by 20 feet square, its walls
-            painted and ornamented by decorative crown molding, and lined with
-            artifacts from floor to ceiling. The books assembled by Daniel
-            Murray, of the Library of Congress, filled three shelves of
-            under-counter bookcases. On the counters lay more books and some of
-            the charts, arranged in a stack for easy perusal. A bronze statue of
-            Frederick Douglass was installed on one of the side walls, on a
-            pedestal that could swing out from the wall for a 360° view. Filling
-            the entire height of the back wall were framed artifacts, arranged
-            in three rows: farming tools and other objects from Black
-            agricultural and industrial schools, installed in swing-out
-            vitrines; the most significant of the charts, installed in ornate
-            wooden frames; and alongside them, photographs: over 500 portraits
-            of the nation's Black citizens, pictured at school, at home, and at
-            work&mdash;in other words, in the activities that defined their
-            everyday lives.
+            But in their own time, the charts were intended to be viewed in
+            relation the photographs that accompanied them on the exhibit's
+            countertops and walls. And photographs there were—over 500 of them,
+            documenting Black Americans at home, at school, and at work, which
+            Du Bois had commissioned from a fleet of Black photographers from
+            Atlanta and beyond. In a reflection published several months after
+            his return from Paris, Du Bois explains that he included the
+            photographs to challenge “conventional American ideas,” although he
+            does not specify what particular ideas he intended to challenge.
+            <InlineFootnote index={10}></InlineFootnote> Presumably, these ideas
+            included racist assumptions about what the nation's Black citizenry
+            looked like, what social and professional roles they occupied, and
+            the extent of what they could achieve.
           </p>
 
-          <FigureObj
-            figure={figures["ch5-09-exhibit"]}
-            imageClassName="max-h-screen"
-          />
-
           <p>
-            In a reflection on the Paris Exhibition, published several months
-            after its opening, Du Bois explains that he included the photographs
-            to challenge "conventional American ideas," although he does not
-            specify what particular ideas he intends to challenge.
-            <InlineFootnote index={10}></InlineFootnote>
-            Presumably, these ideas included racist assumptions about what Black
-            citizens looked like, what social and professional roles they
-            occupied, and what they could achieve. In her in-depth analysis of
-            the photographs, art historian Shawn Michelle Smith connects them to
-            Du Bois's idea of double consciousness, “the sense of always looking
-            at one's self through the eyes of another,” as articulated most
-            famously in <cite>The Souls of Black Folk.</cite>
+            In her in-depth analysis of the photographs, art historian Shawn
+            Michelle Smith connects them to Du Bois's idea of double
+            consciousness, “the sense of always looking at one's self through
+            the eyes of another,” as articulated most famously in{" "}
+            <cite>The Souls of Black Folk.</cite>
             <InlineFootnote index={11}></InlineFootnote>
             With the photos, which not only featured black citizens but were
             also created by them, Du Bois sought to present to a predominantly
-            white international audience a view of how Black American saw
+            white international audience a view of how Black Americans saw
             themselves.
             <InlineFootnote index={12}></InlineFootnote>
           </p>
+
           <p>
             Considered alongside the photographs, it becomes possible to
             understand the charts as pushing back against this double
             consciousness through an additional visual form. In their discussion
             of the charts, Battle-Baptiste and Rusert elaborate this line of
             thinking, emphasizing how Du Bois understood double consciousness as
-            a "kind of 'second sight' that might be transformed from a curse
-            into a "gift" that offered a unique and superior perspective on
+            a “kind of 'second sight' that might be transformed from a curse
+            into a “gift” that offered a unique and superior perspective on
             turn-of-the-century race relations, sociability, and even existence
-            itself." <InlineFootnote index={13}></InlineFootnote>
-            In direct comparison to the <cite>Statistical Atlas</cite>, the
-            charts certainly express a "superior perspective" on the race
-            relations of the time. They also express a more general desire, one
-            shared with the photographs, to put the vitality and talents of
-            Black America on public display.
+            itself.” <InlineFootnote index={13}></InlineFootnote> In direct
+            comparison to the Statistical Atlas, the charts might be interpreted
+            as expressing this “superior perspective” on the status of race in
+            America at the time. Du Bois's narrower focus on the data of Black
+            Americans allowed him to visualize the deleterious effects of racism
+            with more precision, as well as to provide a clearer view of what
+            the nation's Black citizens had, despite this racism, still managed
+            to achieve. Here was the “empiricism of lived experience,” to quote
+            contemporary data activist Anita Gurumurthy, that, for example,
+            Clarkson's “Description of a Slave Ship,” which was designed without
+            the inclusion of the enslaved, clearly lacked.{" "}
+            <InlineFootnote index={14}></InlineFootnote>
           </p>
-          <p>
-            But Du Bois's decision to pair the photographs with the charts also
-            points to his awareness of the limits of what each medium could
-            achieve on its own. While the photographs could document the
-            richness of individual lives, they could not picture each one of the
-            nation's Black citizens. Conversely, while the charts could present
-            powerful evidence of generalized trends, they could not expose the
-            individual people behind the data or the unique stories that
-            accompanied each one of their lives. Considered as a complementary
-            pair, the charts and the photographs recall another visual
-            technology of that era: the stereoscope. The stereoscope was a
-            device designed to resolve left- and right-eye views of the same
-            image into a single view of additional depth. Similarly, Du Bois
-            understood the charts and the photographs as two parts of a larger
-            whole. While each was legible on its own, the best and most complete
-            picture was gained by viewing them together.
-          </p>
+          <span>
+            At the same time, Du Bois's decision to pair the photographs with
+            the charts also points to his awareness of the limits of what either
+            medium could achieve on its own. While the photographs could
+            document the richness of individual lives, they could not possibly
+            document the life of every one of the nation's Black citizens.
+            Conversely, while the charts could present powerful evidence of
+            generalized trends, they could not expose the individual people
+            behind the data, nor could they express the individual stories that
+            reflected the warp and weft of each person's life. Considered as a
+            complementary pair, however, the charts and the photographs recall
+            another visual technology of that era, the stereoscope, whose form
+            is suggested by the double-projection layout of the{" "}
+            <em>Georgia Negro's</em> introductory chart. The stereoscope was a
+            device that spliced together two views of the same image, one in
+            each eye, creating the illusion of three-dimensional depth.
+            Similarly, Du Bois understood the charts and the photographs as two
+            parts of a larger whole. While each was legible on its own, the most
+            complete—and therefore most accurate—picture was gained by viewing
+            them together.
+          </span>
         </CenteredLayout>
 
         <section
@@ -550,56 +649,65 @@ export default function DuboisChapter() {
 
         <CenteredLayout>
           <p>
-            The idea of the charts and the photographs as stereoscopic pairs is
-            more than a visual gimmick; it serves as an outward reflection of
-            the methodological soul-searching in which Du Bois was, in the
-            months leading up to the Paris Exhibition, deeply engaged. When Du
-            Bois first arrived in Atlanta, he was heavily invested in advancing
-            a quantitative approach to sociological work. As he recalls in his
-            1940 autobiography, <cite>Dusk of Dawn</cite>, I was going to study
-            the facts, any and all facts, concerning the American Negro and his
-            plight, and by measurement and comparison and research, work up to
-            any valid generalization which I could."
-            <InlineFootnote index={14}></InlineFootnote>
-            Here we see the strength of Du Bois's belief in the power of
-            "facts"&mdash;the more facts the better&mdash;when they could be
-            aggregated and analyzed in the service of generalized claims.{" "}
+            This is another version of the epistemological pluralism that the
+            previous chapter, on Elizabeth Palmer Peabody, has explored. But
+            more than Peabody allowed herself to admit in writing, and certainly
+            more than her empirical-epistemological forebears, Du Bois was
+            explicit about the fact that there were aspects of human
+            experience—and therefore knowledge—that data visualization could not
+            ever hope to convey. Indeed, I believe that Du Bois's decision to
+            include charts and photographs alongside each other on the walls and
+            counters of the Paris Exhibition is an outward reflection of his own
+            epistemological soul-searching, an activity in which Du Bois, in the
+            months leading up to exhibition, was deeply engaged-
           </p>
           <p>
-            But after only a year in the Deep South&mdash;and just a few months
-            before he began to assemble the materials for Paris
-            Exposition&mdash;Du Bois experienced what can only be described as
-            an intellectual epiphany, one brought about not by any new
-            sociological research but instead by his own first-hand evidence of
-            how white supremacy overdetermined any and all of the work he might
-            do. In <cite>Dusk of Dawn</cite>, Du Bois narrates this
-            transformation in almost metaphysical terms: “At the very time when
-            my studies were most successful, there cut across this plan which I
-            had as a scientist, a red ray which could not be ignored.”
-            <InlineFootnote index={15}></InlineFootnote>
+            When Du Bois first arrived at Atlanta University, he was determined
+            to advance a quantitative approach to sociological work. As he
+            recalls in his 1940 autobiography, <cite>Dusk of Dawn</cite>, “I was
+            going to study the facts, any and all facts, concerning the American
+            Negro and his plight, and by measurement and comparison and
+            research, work up to any valid generalization which I could.”{" "}
+            <InlineFootnote index={15}></InlineFootnote> Here we see the
+            strength of Du Bois's belief in the power of “facts”—the more facts
+            the better—when they could be enlisted in the service of inductive
+            reasoning, analyzed and aggregated to point towards larger claims.
           </p>
           <p>
-            This "red ray" was no abstraction. It had a specific and horrific
-            source: the lynching of a man named Sam Hose, which had taken place
-            just outside of Atlanta, on April 23, 1899. Du Bois had first
-            intended to approach the incident as he approached any inquiry:
-            through a social-scientific lens. He recalls how drafted a “careful
-            and reasoned statement concerning the evident facts” of the case,
-            which he sought to publish in the Atlanta Constitution, the leading
-            newspaper of the South.
+            But after only a year in the South—and just a few months before he
+            began to assemble the materials for Paris Exposition—Du Bois
+            experienced what can only be described as an epistemological
+            epiphany, one brought about not by any new research but instead by
+            his own first-hand evidence of how white supremacy restricted any
+            and all of the work he might do. In <cite>Dusk of Dawn</cite>, Du
+            Bois narrates this transformation in almost metaphysical terms: “At
+            the very time when my studies were most successful, there cut across
+            this plan which I had as a scientist, a red ray which could not be
+            ignored.”
             <InlineFootnote index={16}></InlineFootnote>
-            But while walking from the Atlanta University campus to the
-            newspaper office&mdash;he planned to deliver the statement in
-            person&mdash;Du Bois learned of a gruesome new turn of events.
-            <InlineFootnote index={17}></InlineFootnote>
-            He turned around and went home, his statement never to see the light
-            of day.
           </p>
           <p>
-            While Du Bois's desire to publish a statement on the "facts" of the
+            This “red ray” was no abstraction. It had a specific and horrific
+            source: the lynching of a man named Sam Hose, which had taken place
+            just outside of Atlanta, on April 23, 1899. Hose had been suspected
+            of killing his landlord's wife, and Du Bois had the idea to write an
+            essay about the case for the <cite>Atlanta Constitution</cite>, the
+            leading newspaper of the South. He intended to approach it as he
+            would any other inquiry: through a social-scientific lens. He
+            recalls how drafted a “careful and reasoned statement concerning the
+            evident facts.” <InlineFootnote index={17}></InlineFootnote> But
+            while walking from the Atlanta University campus to the newspaper
+            office—he planned to deliver the statement in person—Du Bois learned
+            of a gruesome new turn of events: Hose had been lynched, and his
+            body parts were rumored to be on display in a storefront that Du
+            Bois himself would soon pass on his walk. Du Bois turned around and
+            went home, his statement never to see the light of day.
+          </p>
+          <p>
+            While Du Bois's desire to publish a statement on the “facts” of the
             case was extinguished at that point, he continued to
-            contemplate&mdash;deeply&mdash;the larger function of his
-            sociological work. As he narrates in <cite>Dusk of Dawn</cite>:
+            contemplate—deeply—the larger function of his research. As he
+            narrates in <cite>Dusk of Dawn</cite>:
           </p>
 
           <Quotation
@@ -625,260 +733,451 @@ export default function DuboisChapter() {
           ></Quotation>
 
           <p>
-            From these lines, it becomes clear that Du Bois emerged from the
-            incident with a greater awareness of the limits of his "scientific,"
-            data-driven approach, as well as of the larger stakes of any future
-            work he might do. The violence brought about by centuries of white
-            supremacy, Du Bois then realized, demanded a different scholarly
-            charge: not an emphasis on any particular methodology, but instead a
-            broader attempt to describe "the truth." Thus when Du Bois turned to
-            the Paris Exhibition in several months' time, it was this
-            "truth&mdash;the experience and effects of living within, and
-            continually resisting, a racist regime&mdash;that Du Bois sought,
-            through the charts and the photographs together, to put on public
-            display.
+            From these lines—which Du Bois echoes in an autobiographical audio
+            interview recorded in 1961—it becomes clear that he emerged from the
+            incident with a greater awareness of the limits of his inductive,
+            data-driven approach to advancing knowledge, just as he registered
+            the heightened stakes of pursuing that knowledge and communicating
+            it to the public. The violence brought about by centuries of white
+            supremacy, Du Bois realized at that moment, demanded a different
+            epistemological charge: not an adherence to any particular method,
+            but instead a broader attempt to describe “the truth.” Thus when Du
+            Bois turned to the Paris Exhibition in several months' time, it was
+            not facts or data, but instead this “truth”—the experience and
+            effects of living within, continually resisting, and thriving in
+            spite of a racist regime—that Du Bois sought to give visual form. He
+            did this through the charts and the photographs that he installed
+            together on the walls, and in the presence of the Black Codes on the
+            bookcases below.<InlineFootnote index={18}></InlineFootnote>
           </p>
           <FigureObj figure={figures["ch5-11-property"]} />
         </CenteredLayout>
         <ChapterSectionTitle section={sections[3]} />
-        <TwoColumnLayout>
-          <Column>
-            <p>
-              If one major purpose of the Paris Exposition was to illustrate the
-              accomplishments&mdash;and, therefore, the requisite
-              tenacity&mdash;of Black Americans as a group, a second equally
-              major purpose was to illustrate the accomplishments of a much
-              smaller group: the students of Atlanta University. These students
-              were pictured in several of photographs included in the
-              exhibition, along with students from other Black universities and
-              industrial schools; but their talents and potential were most
-              visible in the second series of charts, which were credited not to
-              Du Bois but to “Negro students under the direction of Atlanta
-              University.”
-            </p>
-            <p>
-              Through his explicit acknowledgement of his students'
-              contributions, as well as the contents of the charts themselves,
-              Du Bois sought to demonstrate the capability of his Atlanta
-              University students. To wit: the introductory chart of the second
-              series, which announces itself as a study of the Black citizens of
-              the United States, is illustrated not by any visualization of the
-              population as a whole, but instead by a pie chart that displays
-              the occupations of the 330 individuals who had graduated from
-              Atlanta University to that date. Additional statistics printed at
-              the bottom of the chart provide additional information about the
-              University, including the number of current faculty members (20)
-              and students (250), as well as buildings on campus (5) and books
-              in the library (11,000). A final number closes the chart: the
-              amount of funding required to seed an endowment for this level of
-              intellectual inquiry ($500,000). In this way, the chart reads as
-              an advertisement for the past successes of the University and a
-              plea for its future support.
-            </p>
-            <p>
-              While the subsequent charts in the series deliver on the promise
-              to treat the Black population of the United States as a whole,
-              they continue to underscore the value of Atlanta University, both
-              for its students and for the nation. Unlike the first set of
-              charts, which do not include credit lines except on the
-              introductory image, each chart in this series contains a credit
-              line just below its title: “Done by Atlanta University.” The
-              credit line serves the dual purpose of acknowledging their labor
-              and accentuating their skill.
-            </p>
-          </Column>
-          <Column shouldPin>
-            <FigureObj figure={figures["ch5-12-series"]} />
-          </Column>
-        </TwoColumnLayout>
+        <CenteredLayout>
+          <p className="first-paragraph">
+            Du Bois's nuanced consideration of the uses and the limits of data
+            and its visualization, in the context of his larger goal of pursing
+            “the truth,” helps to explain why his charts are often referenced in
+            the context of current conversations about data and its utility for
+            advancing racial justice claims. They are also often, like
+            Playfair's recreated with contemporary tools.”{" "}
+            <InlineFootnote index={19}></InlineFootnote> But what is revealed
+            through the process of recreating Du Bois's charts—like the goals of
+            his original research—extends far beyond a demonstration of mastery
+            over the techniques themselves. To be sure, the originality of Du
+            Bois's original forms means that there are far fewer built-in
+            plotting functions that designers and developers can rely upon,
+            requiring an additional outlay of creativity and skill that, for
+            example, recreating Playfair's charts does not require. But Du
+            Bois's substantive focus on topics like income distribution and
+            occupational spread also ensure that recreations of these charts
+            with current data can lend evidence to enduring—and deeply
+            unjust—social truths.
+          </p>
+          <p>
+            When data journalist and visualization designer Mona Chalabi decided
+            to recreate Du Bois's charts using contemporary data, for example,
+            she discovered that as of the 2010 U.S. Census, “illiteracy among
+            black Americans was still four times higher than it was for white
+            Americans.” <InlineFootnote index={20}></InlineFootnote> Her
+            updating of the chart of “assessed value of household and kitchen
+            furniture” owned by Black Georgians, which led her to additional
+            Census Bureau statistics on net worth, resulted in a picture that
+            documented how, “for every dollar a black household in America has
+            in net assets, a white household has 16.5 more.” Because Du Bois's
+            representational forms have yet to be assimilated into mainstream
+            visualization techniques, they still hold tremendous visual power,
+            allowing them to bear witness through image—as well as data—to the
+            racism and other forms of structural oppression that remain
+            entrenched in US society today.
+          </p>
 
-        <TwoColumnLayout>
-          <Column>
-            <p>
-              As to who, more specifically, Du Bois intended to credit, it
-              remains difficult to discern. The{" "}
-              <cite>Atlanta University Bulletin</cite>
-              for May 1900, which included an article on the exposition,
-              emphasizes how the work “was done entirely by Negroes&mdash;Dr. Du
-              Bois and his assistants, most of whom are Atlanta University
-              graduates.” <InlineFootnote index={18}></InlineFootnote>
-              Du Bois himself provides only slightly more clarity, recalling in
-              his third and final autobiographical text, written late in life,
-              “I got a couple of my best students and put a series of facts into
-              charts,” resulting in the “most interesting set of drawings” that
-              were displayed in Paris.{" "}
-              <InlineFootnote index={19}></InlineFootnote>
-              And while Du Bois goes on to describe the contents of the charts
-              as well as how “the details of finishing these fifty or more
-              charts, in colors, with accuracy, was terribly difficult with
-              little money, limited time, and not too much encouragement,” he
-              does not name any of the students who might have helped to ease
-              this challenging task.
-            </p>
-            <p>
-              [ SOMETHING INTERESTING WITH ALL OF THE SINGLE CREDIT LINES? ]
-            </p>
-            <p>
-              Newspaper reportage of the Paris Exposition does name one former
-              student, William Andrew Rogers, as responsible for having
-              “executed“ the charts. The 1899-1900 Atlanta University{" "}
-              <cite>College Bulletin</cite> confirms this role, listing Rogers's
-              occupation as "Work on Paris Exhibit."{" "}
-              <InlineFootnote index={20}></InlineFootnote>
-              (Rogers had graduated the previous year.) But “based on the volume
-              of the designs, each piece's complexity and detail, and the
-              compressed project timeline,” as graphic designer Silas Munro
-              confirms, “it seems implausible that Rogers and Du Bois worked
-              alone to complete the project.”{" "}
-              <InlineFootnote index={21}></InlineFootnote>
-              The fact that the first set of charts are more sophisticated in
-              their visual design, and more professional in their execution,
-              suggests that Rogers and Du Bois might have worked on the first
-              series together, while enlisting additional students in the design
-              and execution of the second set of charts.
-            </p>
-          </Column>
-          <Column shouldPin>
-            <FigureObj figure={figures["ch5-14-rogers"]} />
-          </Column>
-        </TwoColumnLayout>
+          <FigureObj
+            figure={figures["ch5-16b-chalabi"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+
+          <FigureObj
+            figure={figures["chalabi-net-worth"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+
+          <p>
+            Other projects seek to adapt the activist intent of Du Bois's
+            original charts to call attention to new issues that have arisen in
+            the years since their creation, but that nonetheless still have
+            racism at their source. For example, the Dignity + Debt Network and
+            the VizE Lab for Ethnographic Data Visualization at Princeton
+            created a series of interactive visualizations to expose the racial
+            disparities in student loan debt in the United States in the style
+            of Du Bois's charts. <InlineFootnote index={21}></InlineFootnote>{" "}
+            One tool enables users to enter the amount they originally borrowed,
+            and see that amount compared to the average principle for each major
+            racial and ethnic group. The tool makes use animation to extend and
+            redirect the spiral's original comparative form. Whereas in the
+            original chart, the spiral form concentrates the viewer's focus on
+            the cumulative value of Black Georgians material possessions, the
+            animated plotting of the data-lines here, spiraling out from the
+            center over time, emphasizes the continuing effects of this debt
+            burden. Crucially, it also invites the user to take action. A form
+            below allows them to compare their current interest rate to others,
+            educating them as to how a change in rate or monthly payment amount
+            could lead to a different payoff date or total amount owed.{" "}
+            <InlineFootnote index={22}></InlineFootnote>
+          </p>
+
+          <FigureObj
+            figure={figures["dignity-and-debt"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+
+          <p>
+            At the same time, it is important to recognize that the existence of
+            racial disparities in, for example, student loan debt, are not the
+            fault of the students themselves, nor should they be the ones
+            consistently tasked with providing more evidence as to its
+            deleterious effects. <InlineFootnote index={23}></InlineFootnote>{" "}
+            This is a point made by another contemporary project that is based
+            on Du Bois's charts, by the artist and educator Mimi Onuoha. “In
+            Absentia” consists of six charts that reference the sequence and
+            visual typologies of Du Bois's charts. But the point is not to
+            provide additional evidence of what is already known to be true.
+            Rather, in Onuoha's own words, “the prints form a meditation on
+            interpretability, questioning why such a fact should need proving.”{" "}
+            <InlineFootnote index={24}></InlineFootnote> Onuoha's charts follow
+            a similar progression to those in Du Bois's <em>Georgia Negro</em>{" "}
+            series, in styles that recall if not directly replicate the
+            typologies original charts. Maps in small multiples, similar to
+            those that Du Bois employed to begin the series, document for
+            example the spatial relation between the Indigenous lands that were
+            claimed by the US government through the Indian Removal Act of 1830,
+            the locations in which “convict leasing” was practiced in the
+            1870s—this was the practice of prisons profiting from requiring
+            those they imprisoned to work for private companies with no
+            compensation for (or consent from) the imprisoned themselves—and the
+            states with the highest incarceration rates as of 2019. But rather
+            than continue to provide additional evidence of the unfolding legacy
+            of slavery and dispossession, Onuoha employs Du Bois's more
+            experimental forms to offer commentary on this continual need for
+            evidence. A chart that resembles the spiraling bar-chart of the
+            value of household possessions, discussed above, here consists of
+            lines labeled “What,” “are we,” trying to prove.” A final chart is
+            simply a circle, fully shaded, labeled “A space for truths that
+            cannot be shown.” The chart is titled, “It Could Never Be Large
+            Enough.”
+          </p>
+
+          <FigureObj
+            figure={figures["onuoha1"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+
+          <FigureObj
+            figure={figures["onuoha2"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+
+          <FigureObj
+            figure={figures["onuoha3"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+
+          <p>
+            In the context of Du Bois's own writing about the relationship
+            between data and “the truth,” Onuoha's use of this term speaks
+            volumes. It reminds us as those who might seek to create new
+            visualizations that bear witness to oppression, and as those who are
+            eager to celebrate such images—which indeed attest to persistence of
+            the same racism that, for example, enabled Du Bois's charts to be
+            sent ahead to Paris while Du Bois himself was required to travel in
+            steerage, as Battle-Baptist and Rusert document—that we often need
+            no further evidence of many facts, including the foundation of
+            racism that remains entrenched in American life.{" "}
+            <InlineFootnote index={25}></InlineFootnote> With this knowledge in
+            mind, we might come to understand Du Bois's charts for how they
+            illustrate another truth: how the arguments mounted through
+            visualization, while often valuable, cannot be left to stand on
+            their own. They must be accompanied by additional methods of
+            knowledge-making, by broader context, and by a commitment to act.{" "}
+            <InlineFootnote index={26}></InlineFootnote>
+          </p>
+        </CenteredLayout>
+
+        <ChapterSectionTitle section={sections[3]} />
+
         <CenteredLayout>
           <p>
+            As our project team considered how we might inhabit Du Bois's
+            revised approach to his research methods, and commit ourselves to
+            pursue the greater knowledge that became his goal, we reflected on
+            the fact that most members of our team—as white Americans, and as
+            citizens of other countries—could not claim to understand the extent
+            of the charge that Du Bois experienced upon hearing the news of Sam
+            Hose's murder. By the same token, we recognized that we could not,
+            collectively, understand the effects of anti-Black racism
+            first-hand. <InlineFootnote index={27}></InlineFootnote> We thus
+            returned to the main experience that we shared with Du Bois and his
+            students: the fact that we, too, were a majority-student
+            visualization team. And among the lessons that we had learned from
+            our own process of creating the visualizations for this site is that
+            each contributor to the project has their own story, one which helps
+            to further contextualize the visualizations they helped to
+            create—and, therefore, augments the insights that it prompts. We
+            wondered if there might be additional context we might uncover if we
+            brought our own range of methods and disciplinary expertise to bear
+            on the student creators of the charts—and, in turn, what additional
+            knowledge this context might help to prompt.
+          </p>
+
+          <p>
+            As have others, we noted the fact that the introductory chart of the
+            second series of charts, the one with national focus, credited the
+            charts' creation to “Negro students under the direction of Atlanta
+            University.” We found it additionally intriguing that the
+            visualization below the introductory text visualized data about
+            Atlanta University students as well.
+          </p>
+
+          <FigureObj
+            figure={figures["ch5-12-series"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+        </CenteredLayout>
+
+        {/* Here is where the first scrollytell will be*/}
+
+        <CenteredLayout>
+          <p className="first-paragraph">
+            But these were not the same students who themselves created the
+            charts. Their identities are more difficult to pinpoint with
+            precision. An article from the May 1900{" "}
+            <cite>Atlanta University Bulletin</cite> describes how the work “was
+            done entirely by Negroes--Dr. Du Bois and his assistants, most of
+            whom are Atlanta University graduates.”{" "}
+            <InlineFootnote index={28}></InlineFootnote> Du Bois himself
+            provides only a bit more detail, recalling in his third and final
+            autobiographical text, written late in life, “I got a couple of my
+            best students and put a series of facts into charts,” resulting in
+            the “most interesting set of drawings” that were displayed in Paris.{" "}
+            <InlineFootnote index={29}></InlineFootnote> And while he goes on to
+            describe the contents of the charts as well as how “the details of
+            finishing these fifty or more charts, in colors, with accuracy, was
+            terribly difficult with little money, limited time, and not too much
+            encouragement,” he does not name any of the students who seemingly
+            helped to ease this challenging task.
+          </p>
+          <p>
+            Newspaper reportage does name one former student, William Andrew
+            Rogers, as responsible for having “executed” the charts, and the
+            1899-1900 Catalogue of the Officers and Students confirms this role,
+            listing Rogers's occupation as “Work on Paris Exhibit.”{" "}
+            <InlineFootnote index={30}></InlineFootnote> (Rogers had graduated
+            the previous year.) But “based on the volume of the designs, each
+            piece's complexity and detail, and the compressed project timeline,”
+            as Silas Munro confirms, “it seems implausible that Rogers and Du
+            Bois worked alone to complete the project.”{" "}
+            <InlineFootnote index={31}></InlineFootnote> The fact that the first
+            set of charts are more sophisticated in their visual design, and
+            more professional in their execution, suggests that Rogers and Du
+            Bois might have worked on the first series together, while enlisting
+            other students in the design and execution of the second set of
+            charts.
+          </p>
+
+          <FigureObj
+            figure={figures["1899-grads"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="mx-12"
+          />
+
+          <p>
             If this were true, it would not have been the first time that Du
-            Bois enlisted his students in a collaborative research project.
+            Bois enlisted his own students in a collaborative research project.
             Among the defining intellectual contributions of the early years of
             Atlanta University were the Atlanta University Studies, annual
             data-driven reports on specific areas of Black life that were
             presented each spring at a large public conference. In fact, Du Bois
-            was recruited to the University in large part to assume direction of
-            the studies, which had begun only two years earlier. To complete
-            this work, Du Bois drew from "two tiers of volunteer researchers,"
-            as sociologist Aldon Morris explains, recent graduates of HBCUs
-            across the nation, and his own graduate and undergraduate students.
-            <InlineFootnote index={22}></InlineFootnote>
-            Their work together became the basis for what Morris names the Du
-            Bois-Atlanta School of Sociology, the first "scientific, or
-            data-driven, sociology program in the United States.
+            was recruited to the university in large part to assume direction of
+            the studies, which had begun only two years before his arrival. To
+            complete this work, Du Bois drew from “two tiers of volunteer
+            researchers,” as sociologist Aldon Morris explains: recent graduates
+            of HBCUs across the nation, and his own graduate and undergraduate
+            students. <InlineFootnote index={32}></InlineFootnote> Their work
+            together became the basis for what Morris names the Du Bois-Atlanta
+            School of Sociology, the first “scientific,” or data-driven,
+            sociology program in the United States.
           </p>
+
           <p>
             Among the innovations of the Du Bois-Atlanta school was its required
             coursework. Long before any elite university offered training in
             data collection or analysis methods, Du Bois instructed his students
             in a full year of such methods, culminating in a term of applied
             research on “the social and economic conditions of the American
-            Negro.” <InlineFootnote index={23}></InlineFootnote>
-            While there is minimal evidence as to the specific research tasks
-            these students performed, it is generally acknowledged that this
-            coursework was the mechanism by which Du Bois prepared his students
-            for the role they would play after graduation, as satellite field
-            sites for the data collection required to produce the annual
-            reports. <InlineFootnote index={24}></InlineFootnote>
+            Negro” during their senior year.{" "}
+            <InlineFootnote index={33}></InlineFootnote> While there is minimal
+            evidence as to the specific research tasks these students performed,
+            it is generally acknowledged that this coursework was the mechanism
+            by which Du Bois prepared his students for the roles they would play
+            after graduation as unofficial field sites for the data collection
+            required to continue to produce the annual reports.{" "}
+            <InlineFootnote index={34}></InlineFootnote>
+          </p>
+
+          <p>
+            Several of the charts displayed in the Paris Exposition make use of
+            the data that was collected for the study,{" "}
+            <cite>The College-Bred Negro</cite>, that would be published later
+            that year. The data on the Atlanta University graduates that is
+            visualized in the opening chart, for example, is the same that
+            appears in the published report. Thus while the specific
+            contributions of individual students remain lost to time, we can
+            look up the names of the students who were enrolled in Du Bois's
+            sociology course that year in the corresponding <em>Catalogue</em>.
+            There were four: Henry Napoleon Lee, Lula Iola Mack, Edward Lee
+            Simon, and William George Westmoreland. A slightly revised version
+            of the chart above includes these names, positioned outside of the
+            pie itself, closest to the occupation that—according to their own
+            alumni records—they would soon take on.
+          </p>
+
+          {/* add in chart w/ extra four students here? or put at left */}
+
+          <p>
+            But the role of these students in Du Bois's sociological project—and
+            is pedagogical legacy—was not limited to their assistance with
+            collection and analysis of the data that appeared on the charts, or
+            whatever their role in visualizing that data might have been. In the
+            1909-1910 academic year, Du Bois and a new team of students
+            undertook a follow-up study to the College-Bred Negro, based on a
+            survey of 3856 Black college graduates across the country. Among the
+            responses were 163 graduates of the “college course” of Atlanta
+            University-including the five students who contributed to the making
+            of the original chart. A decade on, their lives had become data that
+            further testified to the enduring value of Du Bois's pedagogical
+            aims.
+          </p>
+
+          {/* start of second scrollytell */}
+
+          <p>
+            There is little more that we can learn about Lee's abbreviated life
+            from the extant data. The catalogs of the years after the Paris
+            Exposition show that, evidently, Lee moved to Memphis with Edward
+            Lee Simon immediately upon graduation. While Simon became the
+            superintendent of the printing department at LeMoyne Institute, Lee
+            worked as a teacher in the industrial department of the same school.
+            The next year, he moved to Denver, then to Hot Springs, Arkansas,
+            then back to Atlanta. In 1905, he was working in Macon, Georgia, as
+            a teacher at the Ballard Normal School, along with several other
+            alumni of Atlanta University who had found employment there.
+            According to the catalog, Lee lived and worked in Macon until he
+            passed away.
+          </p>
+
+          <p>
+            There are many questions we might think to ask about Lee and his
+            abbreviated life—about his reasons for traveling the country, about
+            his experiences in those far-flung locals, and his relationships
+            with the other Atlanta University alumni who welcomed him as a
+            colleague when he returned to his home state. But the answers to
+            these questions are not found in the extant data. This truth, to
+            return to Onuoha's formulation, is likely not recorded as data at
+            all.
           </p>
           <p>
-            As for the charts created for the Paris Exposition, several of the
-            charts made clear use of data collected for the Atlanta University
-            Studies. The data on Atlanta University graduates that was collected
-            for the 1900 report, for example, is the same that is visualized in
-            the second series's opening chart. Thus while the specific
-            contributions of individual students remain conscribed to the past,
-            we might take the data they together created as an invitation to
-            visualize the larger network of the Du Bois-Atlanta School of
-            Sociology: the names of Atlanta University students and alumni who
-            contributed, in ways large and small, to the program that enabled
-            the creation of the charts. This visualization, while necessarily
-            imperfect and imprecise, nonetheless helps bear witness to the deep
-            infrastructure and broad scope required to produce the Paris
-            Exposition charts.
+            Yet there are other truths we might gesture towards with our
+            visualization work. In addition to the quantitative data presented
+            in the 1910 Atlanta University Study, there was also data that was
+            qualitative in form.
           </p>
         </CenteredLayout>
-
-        <StudentChartV2 figure={figures["ch5-12-series"]} />
-
-        <DuboisPosterSideBySideScrollytell />
-
-        <DuboisScrollytell
+        {/* start of third scrollytell */}
+        <ChartThreeScrollytell
           triggers={[
-            <span key="490b6e1c">
-              [PH] While Du Bois does not disclose the source of his data on the chart, the number of graduates matches with the number of alumni listed in the 1898-1899 Catalogue of the Officers and Students of Atlanta University. In the catalogue, the same graduates represented in the pie chart are listed by graduation year and then alphabetically by name, along with the type of degree(s) earned, their current occupation, and their place of residence. (Du Bois includes those with college as well as theological and normal school degrees in the 330 he represents).  
+            <span key="1119d19f">
+              The survey that Du Bois and the seniors in that year’s sociology
+              course created, and sent out across the United States, in addition
+              to soliciting information about their lives and accomplishments
+              that could be compiled as statistics, also included four questions
+              that encouraged long-form response.
             </span>,
-            <span key="577fe346">
-              [PH] Scanning the list of alumni provides fleeting glimpses into their lives–NAME who moved to STATE to become a OCCUPATION; NAME who moved to COUNTRY to become an OCCUPATION; or NAME, class of YEAR, who, in YEAR, was deceased.     
+            <span key="8a675777">
+              These included their thoughts on their own “early life and
+              training,” their plans to educate their children, the “chief
+              hindrances” they had faced, and their “present practical
+              philosophy in regard to the Negro race in America,” which was
+              abbreviated in the published study as “philosophy of life.”
             </span>,
-            <span key="90c3c7eb">
-              [PH] At the same time that Du Bois and his students were creating the charts for the Paris Exposition, they were also at work on a larger study of Black college graduates around the country. This study, published in 1900 as The College-Bred Negro, included data on the approximately 2500 Black college graduates who Du Bois and his student team had been able to identify, representing an estimated 90% of the Black Americans who had graduated from college up to that point. 
+            <span key="ffe08fa4">
+              About 800 responses to the survey were received, which were
+              published in the 1910 study.
             </span>,
-            <span key="cf140bd8">
-              [PH] In the 1909-1910 academic year, Du Bois and a new team of students undertook a followup study, resulting in data about 3856 Black college graduates across the country. Among that number were 163 college graduates of Atlanta University–including, presumably, the five students who contributed to the making of the original chart.     
+            <span key="9fdc6bc3">
+              We visualize these four sets of responses here. Each of the
+              responses are represented as a dot, placed under the appropriate
+              question.
             </span>,
-            <span key="2deac1f9">
-              [PH] In this chart, each of the 133 college graduates of Atlanta University as of 1909 with known occupations, as determined by the alumni section of the 1909-1910 Atlanta University catalog, are positioned in the appropriate area of the pie chart. Additional categories represent the 9 college graduates with unknown occupations, and the 21 graduates who were recorded in the 1909-1910 catalog as “Deceased.” An additional 3693 gray dots represent the graduates of the other 140 colleges included in the study whose names were not recorded as data. They are placed in the appropriate area of the pie chart as determined by the overall statistics about occupations, included in the study. These dots hold space for these students, even if we do not know their names. 
+            <span key="4a7176fc">
+              Clicking each dot displays a key phrase from the response it
+              represents.
             </span>,
-            <span key="1c73c2f3">
-              [PH] The original map has been expanded to include the locations of the 141 colleges included in the study. The location of Atlanta University is marked with a star. 
+            <span key="d957876f">
+              Clicking on the phrase reveals the full response from which it is
+              drawn, providing a window into that person’s thoughts even as they
+              remain unnamed.
             </span>,
-            <span key="7ed03972">
-              [PH] In the pie chart, we can see for example the five students who contributed to the original charts, now placed in the area corresponding to the profession they held in 1909. NAME is a OCCUPATION, NAME is a OCCUPATION, NAME is a OCCUPATION, NAME is a OCCUPATION, and NAME is a OCCUPATION. 
+            <span key="94ea0708">
+              Thus we close this chapter, and this project, with our own
+              contribution to Du Bois’s project: a visualization of the
+              meaning-making power of data, which we hope also holds space to
+              acknowledge the limits of what data--and, by extension, data
+              visualization--could do.
             </span>,
           ]}
         />
-        
-        <ClientOnly>{() => <StudentChartTwoAlternative />}</ClientOnly>
 
-        <ChapterSectionTitle section={sections[4]} />
-        <CenteredLayout>
-          <p>
-            The charts that Du Bois and his students together created for the
-            Paris Exposition demonstrate how data visualization can serve as
-            witness and as testimony: documenting the existing
-            conditions&mdash;and even the accomplishments&mdash;of a group that
-            would otherwise go overlooked. They also show how visualization can
-            be used to make arguments, either on their own through choices about
-            what data to visualize and how to visualize it; or through
-            comparison to other datasets or to other data visualizations. At the
-            same time, the arguments mounted through visualizations of data
-            cannot stand on their own; they must be accompanied by additional
-            forms of information and methods of presentation, as well as the
-            broader context in which they are intended to intervene. Du Bois
-            understood these things as well, as evidenced through his decision
-            to display the charts alongside the photographs at the Paris
-            Exposition, as well as through his writing throughout his life about
-            the uses and limits of data.
-          </p>
-          <p>
-            Du Bois's nuanced consideration of both the uses and the limits of
-            data, in the context of his larger goal of bearing witness to "the
-            truth," helps to explain why his charts have become flashpoints in
-            current conversations about data in relation to racial justice. The
-            topics explored through Du Bois's charts, such as income level and
-            occupational spread, continue to bear witness to the deep roots of
-            racism and oppression, as the data journalist and visualization
-            designer Mona Chalabi discovered when she created Du Bois's charts
-            with contemporary data. <InlineFootnote index={25}></InlineFootnote>
-            The methods of data collection employed by Du Bois, focused as they
-            were on the data that others did not see as important&mdash;or,
-            alternately, intentionally sought to ignore&mdash;similarly continue
-            to inspire artists and activists alike to turn their critical eye to
-            the racism that overdetermines which data are collected and which
-            are not, as the artist and educator Mimi Onuoha explores in her
-            multimedia installation, "In Absentia."
-            <InlineFootnote index={26}></InlineFootnote>
-          </p>
-          <p>
-            As scholars and activists turn, once again, to questions of how data
-            can be enlisted as "protest," "accountability," and "collective
-            action," as the group Data for Black Lives aims to do, Du Bois again
-            emerges as a key antecedent&mdash;as much for how he understood how
-            data and data visualization is complicit in holding up the
-            structures of white supremacy is it can be used to dismantle them.
-            <InlineFootnote index={27}></InlineFootnote>
-            The challenge as Du Bois understood it, and as these artists,
-            activists, scholars, and organizers, also understand in the present,
-            is how to hold these two competing realities in their hands at the
-            same time: how data has been used as a tool of oppression, and at
-            the same time how it can be wielded back.
-            <InlineFootnote index={28}></InlineFootnote>
-          </p>
-        </CenteredLayout>
+        <div className="md:my-12">
+          <StudentChartV2 figure={figures["ch5-12-series"]} />
+        </div>
+
+        <Takeaways
+          forDesigners={[
+            <span key="df782d45">
+              Always recall the power of visualization (again)
+            </span>,
+            <span key="6440631a">
+              Consider when that power should be aligned with political goals 
+            </span>,
+            <span key="2f317172">
+              Consider how to combine visualization with a commitment to act 
+            </span>,
+             <span key="2f317173">
+             Reorient towards a goal of knowledge or justice, not visualization itself 
+           </span>,
+          ]}
+          forViewers={[
+            <span key="75cf526a">
+              Align your visualization projects with your values 
+            </span>,
+            <span key="6d2691fc">
+              Honor and credit the contributions of each team member 
+            </span>,
+            <span key="9650286d">
+              Consider how to combine visualization with other knowledge-making forms 
+            </span>,
+            <span key="9650286e">
+              Know that change also requires a commitment to act
+            </span>,
+          ]}
+        />
       </ChapterBody>
       {/* </div> */}
       <CenteredLayout>

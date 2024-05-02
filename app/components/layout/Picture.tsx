@@ -9,20 +9,15 @@ interface Props {
   center?: boolean;
 }
 
-function Picture({ figure, className, center = true }: Props) {
-  const { hide } = useContext(ChapterContext);
+const Picture = ({ figure, className, center = true }: Props) => {
+  const { hideSensitiveState } = useContext(ChapterContext);
 
   return (
     <picture>
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
       <img
-        className={classNames(
-          "transition-opacity",
-          center ? "mx-auto" : "mx-0",
-          hide ? "opacity-0" : "opacity-100",
-          className
-        )}
+        className={classNames(center ? "mx-auto" : "mx-0", className)}
         src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
         alt={
           figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
@@ -30,10 +25,10 @@ function Picture({ figure, className, center = true }: Props) {
           ""
         }
         title={figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? figure.fileName}
-        draggable={!hide}
+        draggable={!hideSensitiveState}
       />
     </picture>
   );
-}
+};
 
 export default Picture;

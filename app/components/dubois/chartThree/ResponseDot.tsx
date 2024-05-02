@@ -1,17 +1,16 @@
 import type { Dispatch, SetStateAction } from "react";
-import type { SimpleDot } from "../types";
+import type { ResponseData } from "../types";
 
 interface Props {
-  response: SimpleDot;
+  response: ResponseData;
   setActiveResponse: Dispatch<SetStateAction<string | undefined>>;
   color: string;
+  id: string;
 }
 
-function ResponseDot({ response, color, setActiveResponse}: Props) {
+function ResponseDot({ response, color, setActiveResponse, id }: Props) {
   return (
-    <svg
-      id={`response-dot-${response.id}`}
-    >
+    <g id={`response-dot-${response.id}-${id}`}>
       <circle
         id={`dot-${response.id}`}
         cx={response.x}
@@ -26,7 +25,7 @@ function ResponseDot({ response, color, setActiveResponse}: Props) {
         fillOpacity={1}
         tabIndex={0}
       />
-    </svg>
+    </g>
   );
 }
 

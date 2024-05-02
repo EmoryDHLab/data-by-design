@@ -2,17 +2,18 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
-import Triggers from "./drawingScrollytell/Triggers";
 import type { TFigure } from "~/types/figureType";
+import type { ReactElement } from "react";
 
 const width = 3482;
-const height = 2467;
+const height = 2254;
 
 interface Props {
   figure: TFigure;
+  triggers: ReactElement[];
 }
 
-function SketchScrollytell({ figure }: Props) {
+function SketchScrollytell({ figure, triggers }: Props) {
   const { accentTextColor } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [focusShapeSize, setFocusShapeSize] = useState<object>({
@@ -21,9 +22,9 @@ function SketchScrollytell({ figure }: Props) {
     width,
     height,
   });
-  const [zoom, setZoom] = useState<number>(2);
+  const [zoom, setZoom] = useState<number>(1);
   const [translateX, setTranslateX] = useState<number>(0);
-  const [translateY, setTranslateY] = useState<number>(60);
+  const [translateY, setTranslateY] = useState<number>(0);
   const steps = useRef<HTMLDivElement>(null);
 
   const minScrollProgress = 0;
@@ -33,15 +34,15 @@ function SketchScrollytell({ figure }: Props) {
       // Winter Camp
       case scrollProgress >= minScrollProgress + 1 &&
         scrollProgress < minScrollProgress + 2:
-        setFocusShapeSize({ x: 1400, y: 1500, width: 800, height: 800 });
-        setZoom(3);
-        setTranslateX(-600);
-        setTranslateY(-250);
+        setFocusShapeSize({ x: 1300, y: 450, width: 1200, height: 1200 });
+        setZoom(4);
+        setTranslateX(-825);
+        setTranslateY(-750);
         break;
       // Dotted Paths
       case scrollProgress >= minScrollProgress + 2 &&
         scrollProgress < minScrollProgress + 3:
-        setFocusShapeSize({ x: 230, y: 675, width: 3000, height: 1200 });
+        setFocusShapeSize({ x: 230, y: 675, width: 3000, height: 1500 });
         setZoom(2);
         setTranslateX(550);
         setTranslateY(-25);
@@ -49,33 +50,33 @@ function SketchScrollytell({ figure }: Props) {
       // North Shore
       case scrollProgress >= minScrollProgress + 3 &&
         scrollProgress < minScrollProgress + 4:
-        setFocusShapeSize({ x: 1600, y: 900, width: 400, height: 400 });
-        setZoom(4.5);
-        setTranslateX(-120);
+        setFocusShapeSize({ x: 1350, y: 700, width: 800, height: 800 });
+        setZoom(5.5);
+        setTranslateX(-250);
         setTranslateY(300);
         break;
       // 2nd set of mamateeks
       case scrollProgress >= minScrollProgress + 4 &&
         scrollProgress < minScrollProgress + 5:
-        setFocusShapeSize({ x: 1550, y: 775, width: 400, height: 400 });
-        setZoom(4.5);
-        setTranslateX(900);
-        setTranslateY(400);
+        setFocusShapeSize({ x: 1350, y: 700, width: 800, height: 800 });
+        setZoom(5.5);
+        setTranslateX(1100);
+        setTranslateY(500);
         break;
       // Setter surveillance
       case scrollProgress >= minScrollProgress + 5 &&
         scrollProgress < minScrollProgress + 6:
-        setFocusShapeSize({ x: 1450, y: 1100, width: 400, height: 400 });
-        setZoom(4.5);
-        setTranslateX(-800);
+        setFocusShapeSize({ x: 1350, y: 1100, width: 800, height: 800 });
+        setZoom(5.5);
+        setTranslateX(-1100);
         setTranslateY(300);
         break;
       // Safety in the woods
       case scrollProgress >= minScrollProgress + 6 &&
         scrollProgress < minScrollProgress + 7:
-        setFocusShapeSize({ x: 925, y: 200, width: 1600, height: 2100 });
-        setZoom(3.5);
-        setTranslateX(0);
+        setFocusShapeSize({ x: 925, y: 100, width: 1600, height: 2000 });
+        setZoom(2.5);
+        setTranslateX(-100);
         setTranslateY(525);
         break;
       // Capture
@@ -83,22 +84,22 @@ function SketchScrollytell({ figure }: Props) {
         scrollProgress < minScrollProgress + 8:
         setFocusShapeSize({ x: 925, y: 500, width: 1200, height: 1200 });
         setZoom(3.5);
-        setTranslateX(-400);
-        setTranslateY(150);
+        setTranslateX(-575);
+        setTranslateY(95);
         break;
       // Captured
       case scrollProgress >= minScrollProgress + 8 &&
         scrollProgress < minScrollProgress + 9:
-        setFocusShapeSize({ x: 1450, y: 1100, width: 400, height: 400 });
+        setFocusShapeSize({ x: 1450, y: 750, width: 600, height: 600 });
         setZoom(4.5);
-        setTranslateX(-715);
-        setTranslateY(245);
+        setTranslateX(-990);
+        setTranslateY(150);
         break;
       default:
         setFocusShapeSize({ x: 0, y: 0, width, height });
-        setZoom(2);
+        setZoom(1);
         setTranslateX(0);
-        setTranslateY(60);
+        setTranslateY(0);
     }
   }, [scrollProgress]);
 
@@ -106,7 +107,7 @@ function SketchScrollytell({ figure }: Props) {
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
         setScrollProgress={setScrollProgress}
-        triggers={Triggers}
+        triggers={triggers}
         steps={steps}
         className="w-screen"
       >
@@ -162,18 +163,16 @@ function SketchScrollytell({ figure }: Props) {
                   y={0}
                   width={width}
                   height={height}
-                  className="transition-opacity duration-700 opacity-100"
                 />
               </g>
             </svg>
             <figcaption></figcaption>
-            {/* <div className={`text-3xl relative md:bottom-0 ml-4 text-black hidden md:${scrollProgress >= 13.5 ? "hidden" : "block"}`} tabIndex={-1}>↓</div> */}
           </div>
           <div
             ref={steps}
             className="bias-full w-full md:bias-1/2 md:w-2/5 relative"
           >
-            {Triggers.map((trigger, index) => {
+            {triggers.map((trigger, index) => {
               return (
                 <div
                   key={`sketch-trigger-${trigger.key}`}

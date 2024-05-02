@@ -1,8 +1,9 @@
 {
-  "elt": [{
+  "elt": [
+    {
       "id": "d9ad6167",
-      "x": 0,
-      "y": 0,
+      "x": 131,
+      "y": 361,
       "gender": "Men",
       "selection": "I was carefully reared by parents who had been slaves, attended public schools",
       "lines": [
@@ -13,8 +14,8 @@
     },
     {
       "id": "ef181b2f",
-      "x": 0,
-      "y": 0,
+      "x": 237,
+      "y": 375,
       "gender": "Men",
       "selection": "Mother and father were honest tho unlettered",
       "lines": [
@@ -30,8 +31,8 @@
     },
     {
       "id": "884c6ce0",
-      "x": 0,
-      "y": 0,
+      "x": 170,
+      "y": 270,
       "gender": "Men",
       "selection": "Attended Phillips Andover Academy from 1872 to 1875; then to Middlebury College, Vermont, 1875 to 1880; Boston University, 1880 to 1883.",
       "lines": [
@@ -47,8 +48,8 @@
     },
     {
       "id": "ab016548",
-      "x": 0,
-      "y": 0,
+      "x": 81,
+      "y": 333,
       "gender": "Men",
       "selection": "My early training was two months of public school each year and studying at night by lightwood knots.",
       "lines": [
@@ -62,8 +63,8 @@
     },
     {
       "id": "48dc6e27",
-      "x": 0,
-      "y": 0,
+      "x": 138,
+      "y": 269,
       "gender": "Men",
       "selection": "I went to night school in the town where I was being reared by a family of white people who were the ex-owners of my parents",
       "lines": [
@@ -78,8 +79,8 @@
     },
     {
       "id": "c225a860",
-      "x": 0,
-      "y": 0,
+      "x": 235,
+      "y": 305,
       "gender": "Men",
       "selection": "My literary training was obtained in Tennessee, to which I was brought in very early life.",
       "lines": [
@@ -93,8 +94,8 @@
     },
     {
       "id": "4056ed11",
-      "x": 0,
-      "y": 0,
+      "x": 70,
+      "y": 358,
       "gender": "Men",
       "selection": "My early life was one of poverty and longing for better things",
       "lines": [
@@ -104,8 +105,8 @@
     },
     {
       "id": "1f09763b",
-      "x": 0,
-      "y": 0,
+      "x": 40,
+      "y": 348,
       "gender": "Men",
       "selection": "peddled wood at the Fayetteville, North Carolina, market many a winter with no shoes on and clothing extremely scarce. . . .",
       "lines": [
@@ -126,8 +127,8 @@
     },
     {
       "id": "783ee4d5",
-      "x": 0,
-      "y": 0,
+      "x": 44,
+      "y": 265,
       "gender": "Men",
       "selection": "She was very kind to me and did laundry work that I might be allowed to attend school.",
       "lines": [
@@ -145,8 +146,8 @@
     },
     {
       "id": "97ee3c6c",
-      "x": 0,
-      "y": 0,
+      "x": 23,
+      "y": 340,
       "gender": "Men",
       "selection": "I learned the alphabet in 1868 near Nashville, Tennessee, and graduated from college in 1878.",
       "lines": [
@@ -157,8 +158,8 @@
     },
     {
       "id": "68893c95",
-      "x": 0,
-      "y": 0,
+      "x": 113,
+      "y": 275,
       "gender": "Men",
       "selection": "Early life on a plantation amid surroundings incident to slave life. Attended public school more or less irregularly",
       "lines": [
@@ -169,8 +170,8 @@
     },
     {
       "id": "16ad8473",
-      "x": 0,
-      "y": 0,
+      "x": 222,
+      "y": 267,
       "gender": "Men",
       "selection": "I was a slave until eleven years of age. I learned the bricklayer's trade. I entered college in l875.",
       "lines": [
@@ -181,8 +182,8 @@
     },
     {
       "id": "397fe94e",
-      "x": 0,
-      "y": 0,
+      "x": 22,
+      "y": 278,
       "gender": "Men",
       "selection": "I was born in the country, worked on farm till eighteen years old, then worked for railroad three years.",
       "lines": [
@@ -194,8 +195,8 @@
     },
     {
       "id": "20e5fdb3",
-      "x": 0,
-      "y": 0,
+      "x": 274,
+      "y": 367,
       "gender": "Men",
       "selection": "I never had the support of a father but was obedient to the direction of a loving mother to whom I owe all I am and all I hope to be.",
       "lines": [
@@ -209,8 +210,8 @@
     },
     {
       "id": "63363902",
-      "x": 0,
-      "y": 0,
+      "x": 239,
+      "y": 342,
       "gender": "Men",
       "selection": "I worked on a farm and attended rural schools until I was sixteen and then entered Fisk University.",
       "lines": [
@@ -221,8 +222,8 @@
     },
     {
       "id": "118eb1c2",
-      "x": 0,
-      "y": 0,
+      "x": 126,
+      "y": 392,
       "gender": "Men",
       "selection": "I was born a slave and was freed by the Emancipation Proclamation of Abraham Lincoln.",
       "lines": [
@@ -232,8 +233,8 @@
     },
     {
       "id": "98ada5aa",
-      "x": 0,
-      "y": 0,
+      "x": 104,
+      "y": 307,
       "gender": "Men",
       "selection": "I lived then with white people, working for my board and clothes several years.",
       "lines": [
@@ -250,8 +251,8 @@
     },
     {
       "id": "59fcefea",
-      "x": 0,
-      "y": 0,
+      "x": 57,
+      "y": 292,
       "gender": "Men",
       "selection": "I was born on a sugar plantation; spent early life as a farmer.",
       "lines": [
@@ -262,8 +263,8 @@
     },
     {
       "id": "bcf283b0",
-      "x": 0,
-      "y": 0,
+      "x": 221,
+      "y": 356,
       "gender": "Men",
       "selection": "I pushed my own way forward mostly, i. e. with the occasional lift my father would give when I called upon him",
       "lines": [
@@ -285,8 +286,8 @@
     },
     {
       "id": "57a2d2ae",
-      "x": 0,
-      "y": 0,
+      "x": 199,
+      "y": 311,
       "gender": "Men",
       "selection": "I was born on my father's farm in the traditional log cabin.",
       "lines": [
@@ -297,8 +298,8 @@
     },
     {
       "id": "95ebe3c4",
-      "x": 0,
-      "y": 0,
+      "x": 35,
+      "y": 388,
       "gender": "Men",
       "selection": "In 1876 1 got desperate and broke away from my family and entered Storr's School.",
       "lines": [
@@ -315,8 +316,8 @@
     },
     {
       "id": "88f3e072",
-      "x": 0,
-      "y": 0,
+      "x": 61,
+      "y": 267,
       "gender": "Men",
       "selection": "My people were free, able to read and write, and with a knowledge of refinement above the average",
       "lines": [
@@ -340,8 +341,8 @@
     },
     {
       "id": "1dfb2365",
-      "x": 0,
-      "y": 0,
+      "x": 265,
+      "y": 303,
       "gender": "Men",
       "selection": "During vacations and holidays I worked in the shop with my father who was a wheelwright and wagon and carriage builder.",
       "lines": [
@@ -354,8 +355,8 @@
     },
     {
       "id": "24f5444c",
-      "x": 0,
-      "y": 0,
+      "x": 61,
+      "y": 382,
       "gender": "Men",
       "selection": "From 1867 to 1880 I was in school in Atlanta, Georgia, and Andover, Massachusetts.",
       "lines": [
@@ -372,8 +373,8 @@
     },
     {
       "id": "be51b48c",
-      "x": 0,
-      "y": 0,
+      "x": 184,
+      "y": 378,
       "gender": "Men",
       "selection": "I worked on farm with my father until I was fifteen; then a few months on the railroad",
       "lines": [
@@ -387,8 +388,8 @@
     },
     {
       "id": "8a27551d",
-      "x": 0,
-      "y": 0,
+      "x": 208,
+      "y": 293,
       "gender": "Men",
       "selection": "I worked at any and all kinds of common work, such as waiting table and barber shop porter",
       "lines": [
@@ -400,8 +401,8 @@
     },
     {
       "id": "417122b9",
-      "x": 0,
-      "y": 0,
+      "x": 65,
+      "y": 332,
       "gender": "Men",
       "selection": "I learned to read and write in night school in Albany, Georgia, in 1866",
       "lines": [
@@ -413,8 +414,8 @@
     },
     {
       "id": "431b3fbd",
-      "x": 0,
-      "y": 0,
+      "x": 152,
+      "y": 345,
       "gender": "Men",
       "selection": "When I was eight years old I walked with my parents to Kanawha county, West Virginia, a distance of two hundred and fifty miles",
       "lines": [
@@ -429,8 +430,8 @@
     },
     {
       "id": "dc3a06ec",
-      "x": 0,
-      "y": 0,
+      "x": 192,
+      "y": 399,
       "gender": "Men",
       "selection": "I had about nine months of schooling before reaching the age of twenty-one years",
       "lines": [
@@ -445,8 +446,8 @@
     },
     {
       "id": "f11727de",
-      "x": 0,
-      "y": 0,
+      "x": 167,
+      "y": 343,
       "gender": "Men",
       "selection": "I acted as a clerk in a supply department at a summer resort for eighteen years during summer vacations while a student",
       "lines": [
@@ -461,8 +462,8 @@
     },
     {
       "id": "6f067a4f",
-      "x": 0,
-      "y": 0,
+      "x": 205,
+      "y": 381,
       "gender": "Men",
       "selection": "I had to work for what I could eat and wear, having no one to help me in life.",
       "lines": [
@@ -476,8 +477,8 @@
     },
     {
       "id": "8d382df5",
-      "x": 0,
-      "y": 0,
+      "x": 243,
+      "y": 360,
       "gender": "Men",
       "selection": "I was naturally studious. I studied Latin and Algebra myself.",
       "lines": [
@@ -496,8 +497,8 @@
     },
     {
       "id": "7829afc9",
-      "x": 0,
-      "y": 0,
+      "x": 43,
+      "y": 314,
       "gender": "Men",
       "selection": "I was educated largely by my own efforts, being left an orphan in the state of Vermont after 1865.",
       "lines": [
@@ -508,8 +509,8 @@
     },
     {
       "id": "baa0c95e",
-      "x": 0,
-      "y": 0,
+      "x": 201,
+      "y": 266,
       "gender": "Men",
       "selection": "At the end of the school term I passed the fourth grade, the proudest boy in the world.",
       "lines": [
@@ -527,8 +528,8 @@
     },
     {
       "id": "c499f3c0",
-      "x": 0,
-      "y": 0,
+      "x": 159,
+      "y": 382,
       "gender": "Men",
       "selection": "I was taught at nights by the daughters of the man to whom I was apprenticed for four years.",
       "lines": [
@@ -541,8 +542,8 @@
     },
     {
       "id": "84929e73",
-      "x": 0,
-      "y": 0,
+      "x": 291,
+      "y": 338,
       "gender": "Men",
       "selection": "I attended two months during session for four years. Meanwhile I continued to burn the midnight oil.",
       "lines": [
@@ -558,8 +559,8 @@
     },
     {
       "id": "4d987469",
-      "x": 0,
-      "y": 0,
+      "x": 195,
+      "y": 345,
       "gender": "Men",
       "selection": "I attended public schools of Augusta, Georgia, and worked between times as a newspaper carrier and later on as a printer.",
       "lines": [
@@ -572,8 +573,8 @@
     },
     {
       "id": "e3692aac",
-      "x": 0,
-      "y": 0,
+      "x": 136,
+      "y": 376,
       "gender": "Men",
       "selection": "I grew up on a farm with a 'scrapped up' education in fitful public and private schools and private instruction.",
       "lines": [
@@ -584,8 +585,8 @@
     },
     {
       "id": "0bf02f59",
-      "x": 0,
-      "y": 0,
+      "x": 85,
+      "y": 312,
       "gender": "Men",
       "selection": "My early life and training was that of the ordinary youth of our race: one of a large family of children, on a little farm",
       "lines": [
@@ -601,8 +602,8 @@
     },
     {
       "id": "75091b44",
-      "x": 0,
-      "y": 0,
+      "x": 182,
+      "y": 297,
       "gender": "Men",
       "selection": "I was born a slave and was a farm boy until twenty-four years old.",
       "lines": [
@@ -612,8 +613,8 @@
     },
     {
       "id": "dc9a799b",
-      "x": 0,
-      "y": 0,
+      "x": 273,
+      "y": 282,
       "gender": "Men",
       "selection": "I learned my A, B, C's from the Bible in my tenth year. I had two terms of school",
       "lines": [
@@ -629,8 +630,8 @@
     },
     {
       "id": "3faf4112",
-      "x": 0,
-      "y": 0,
+      "x": 110,
+      "y": 350,
       "gender": "Men",
       "selection": "I was a farm boy until twenty-four years of age. I was born a slave.",
       "lines": [
@@ -640,8 +641,8 @@
     },
     {
       "id": "e8ad9371",
-      "x": 0,
-      "y": 0,
+      "x": 109,
+      "y": 371,
       "gender": "Men",
       "selection": "Sea life for eight or ten years. I traveled much.",
       "lines": [
@@ -654,8 +655,8 @@
     },
     {
       "id": "8d6ca789",
-      "x": 0,
-      "y": 0,
+      "x": 135,
+      "y": 339,
       "gender": "Women",
       "selection": "I made a good average with attendance daily the first term and was promoted. The next term I became tutor.",
       "lines": [
@@ -671,8 +672,8 @@
     },
     {
       "id": "f2d865e1",
-      "x": 0,
-      "y": 0,
+      "x": 91,
+      "y": 267,
       "gender": "Women",
       "selection": "Steady work and interested parties put me thru school.",
       "lines": [
@@ -685,8 +686,8 @@
     },
     {
       "id": "6b666fe2",
-      "x": 0,
-      "y": 0,
+      "x": 71,
+      "y": 397,
       "gender": "Women",
       "selection": "My parents were poor yet they kept me supplied with books and saw to it that I attended our rural school regularly.",
       "lines": [
@@ -698,8 +699,8 @@
     },
     {
       "id": "2a0598df",
-      "x": 0,
-      "y": 0,
+      "x": 142,
+      "y": 325,
       "gender": "Women",
       "selection": "knowing the advantage of an education they spent a fortune in educating their children, giving thirteen-all who did not die in early childhood-a fair English training",
       "lines": [
@@ -719,8 +720,8 @@
     },
     {
       "id": "c59c0972",
-      "x": 0,
-      "y": 0,
+      "x": 210,
+      "y": 336,
       "gender": "Women",
       "selection": "I was born in a cabin and attended a country school.",
       "lines": [
@@ -730,8 +731,8 @@
     },
     {
       "id": "96fa10c0",
-      "x": 0,
-      "y": 0,
+      "x": 47,
+      "y": 373,
       "gender": "Women",
       "selection": "I had every opportunity and encouragement to acquire an education.",
       "lines": [
@@ -743,8 +744,8 @@
     },
     {
       "id": "476852ca",
-      "x": 0,
-      "y": 0,
+      "x": 92,
+      "y": 378,
       "gender": "Women",
       "selection": "My mother was a skilled dressmaker who served for Mrs. President Polk and others high in social life.",
       "lines": [
@@ -760,8 +761,8 @@
     },
     {
       "id": "b57d02af",
-      "x": 0,
-      "y": 0,
+      "x": 103,
+      "y": 395,
       "gender": "Women",
       "selection": "I attended the public school of Oberlin, Ohio, for two years.",
       "lines": [
@@ -773,8 +774,8 @@
     },
     {
       "id": "0c28a461",
-      "x": 0,
-      "y": 0,
+      "x": 296,
+      "y": 383,
       "gender": "Women",
       "selection": "During each school year I earned my board entirely by services rendered in the president's family.",
       "lines": [
@@ -794,8 +795,8 @@
     },
     {
       "id": "5fe99b3a",
-      "x": 0,
-      "y": 0,
+      "x": 240,
+      "y": 390,
       "gender": "Women",
       "selection": "I was educated in Iowa. I earned my way thru the University.",
       "lines": [
@@ -805,8 +806,8 @@
     },
     {
       "id": "c8bf8d76",
-      "x": 0,
-      "y": 0,
+      "x": 187,
+      "y": 280,
       "gender": "Women",
       "selection": "My father was a man of fair education; mother not formally educated but a great reader from her youth up.",
       "lines": [
@@ -817,10 +818,11 @@
       ]
     }
   ],
-  "cedu": [{
+  "cedu": [
+    {
       "id": "205efba3",
-      "x": 0,
-      "y": 0,
+      "x": 565,
+      "y": 319,
       "gender": "Unknown",
       "selection": "It is my present intention to give my boys a full university training in order that they may be equipped to take high rank",
       "lines": [
@@ -832,8 +834,8 @@
     },
     {
       "id": "36921fdc",
-      "x": 0,
-      "y": 0,
+      "x": 419,
+      "y": 346,
       "gender": "Unknown",
       "selection": "I believe in educating the child to make the best citizen; a college education to those who will take it.",
       "lines": [
@@ -844,8 +846,8 @@
     },
     {
       "id": "2a4d5d2a",
-      "x": 0,
-      "y": 0,
+      "x": 429,
+      "y": 384,
       "gender": "Unknown",
       "selection": "If then any offspring from my household manifest special taste for and high merit in any worthy line, I shall only ask God to enable me to assist them",
       "lines": [
@@ -864,8 +866,8 @@
     },
     {
       "id": "d70a6ac8",
-      "x": 0,
-      "y": 0,
+      "x": 369,
+      "y": 369,
       "gender": "Unknown",
       "selection": "I shall teach the importance of attainment of the highest possible type of culture and refinement",
       "lines": [
@@ -880,8 +882,8 @@
     },
     {
       "id": "8fd7b3fe",
-      "x": 0,
-      "y": 0,
+      "x": 356,
+      "y": 288,
       "gender": "Unknown",
       "selection": "I have but one daughter. I plan to give her a college education in southern, eastern and European institutions.",
       "lines": [
@@ -892,8 +894,8 @@
     },
     {
       "id": "7db1c505",
-      "x": 0,
-      "y": 0,
+      "x": 384,
+      "y": 280,
       "gender": "Unknown",
       "selection": "I am striving to be in shape to give my children a thoro, practical education",
       "lines": [
@@ -904,8 +906,8 @@
     },
     {
       "id": "54b81090",
-      "x": 0,
-      "y": 0,
+      "x": 515,
+      "y": 384,
       "gender": "Unknown",
       "selection": "I shall endeavor to give that training which in my judgment will be of the highest good to him.",
       "lines": [
@@ -916,8 +918,8 @@
     },
     {
       "id": "638c78f8",
-      "x": 0,
-      "y": 0,
+      "x": 406,
+      "y": 369,
       "gender": "Unknown",
       "selection": "I want my daughter to make music her specialty but will allow her to choose her literary course.",
       "lines": [
@@ -928,8 +930,8 @@
     },
     {
       "id": "f7a16a94",
-      "x": 0,
-      "y": 0,
+      "x": 387,
+      "y": 337,
       "gender": "Unknown",
       "selection": "Two or three may take the university course, one in music, one in theology.",
       "lines": [
@@ -940,8 +942,8 @@
     },
     {
       "id": "189930ef",
-      "x": 0,
-      "y": 0,
+      "x": 540,
+      "y": 292,
       "gender": "Unknown",
       "selection": "It is my intention to give them the very best education that they can assimilate.",
       "lines": [
@@ -951,8 +953,8 @@
     },
     {
       "id": "0e22bac9",
-      "x": 0,
-      "y": 0,
+      "x": 504,
+      "y": 296,
       "gender": "Unknown",
       "selection": "I shall teach them the fundamentals of politeness, hygiene, and the art of doing work assigned them smoothly and with polish.",
       "lines": [
@@ -966,8 +968,8 @@
     },
     {
       "id": "92752752",
-      "x": 0,
-      "y": 0,
+      "x": 507,
+      "y": 321,
       "gender": "Unknown",
       "selection": "The education of my children will probably depend largely upon their own wishes",
       "lines": [
@@ -981,8 +983,8 @@
     },
     {
       "id": "08f8889e",
-      "x": 0,
-      "y": 0,
+      "x": 597,
+      "y": 299,
       "gender": "Unknown",
       "selection": "If I should be so fortunate as to have any children I would send them to Phillips Exeter, Harvard and Lawrence Scientific School.",
       "lines": [
@@ -993,8 +995,8 @@
     },
     {
       "id": "f87577e1",
-      "x": 0,
-      "y": 0,
+      "x": 554,
+      "y": 344,
       "gender": "Unknown",
       "selection": "One is already a dressmaker, another is a trained nurse and still another has finished in theology and is doing good pastoral work at Albany, Georgia.",
       "lines": [
@@ -1007,8 +1009,8 @@
     },
     {
       "id": "b6c818e2",
-      "x": 0,
-      "y": 0,
+      "x": 494,
+      "y": 274,
       "gender": "Unknown",
       "selection": "I expect to send my boys thru college and my daughter thru a normal training school.",
       "lines": [
@@ -1018,8 +1020,8 @@
     },
     {
       "id": "367fc822",
-      "x": 0,
-      "y": 0,
+      "x": 588,
+      "y": 352,
       "gender": "Unknown",
       "selection": "I propose to give them as complete an education as they can receive.",
       "lines": [
@@ -1029,8 +1031,8 @@
     },
     {
       "id": "ac0a8b9a",
-      "x": 0,
-      "y": 0,
+      "x": 429,
+      "y": 294,
       "gender": "Unknown",
       "selection": "As their talent seems to indicate. The best is none too good.",
       "lines": [
@@ -1041,8 +1043,8 @@
     },
     {
       "id": "afa3b01e",
-      "x": 0,
-      "y": 0,
+      "x": 374,
+      "y": 310,
       "gender": "Unknown",
       "selection": "most certainly I shall give my boy a college education and my daughter a good normal training",
       "lines": [
@@ -1054,8 +1056,8 @@
     },
     {
       "id": "2ddf8131",
-      "x": 0,
-      "y": 0,
+      "x": 611,
+      "y": 308,
       "gender": "Unknown",
       "selection": "College and technical as far as my influence can bring this about; ultimately, of course, the child must decide.",
       "lines": [
@@ -1066,8 +1068,8 @@
     },
     {
       "id": "7a4d58ad",
-      "x": 0,
-      "y": 0,
+      "x": 577,
+      "y": 376,
       "gender": "Unknown",
       "selection": "I believe no boy or girl should be permitted to grow up without leaning how to do some kind of work proficiently with the hands.",
       "lines": [
@@ -1084,8 +1086,8 @@
     },
     {
       "id": "b3fed94d",
-      "x": 0,
-      "y": 0,
+      "x": 466,
+      "y": 388,
       "gender": "Unknown",
       "selection": "I favor college education because then they are better prepared to succeed; then to his trade or profession well equipped.",
       "lines": [
@@ -1096,8 +1098,8 @@
     },
     {
       "id": "53864ed9",
-      "x": 0,
-      "y": 0,
+      "x": 563,
+      "y": 288,
       "gender": "Unknown",
       "selection": "I shall give them a higher Christian literary education as a foundation and allow them afterwards to study any trade or profession they may wish.",
       "lines": [
@@ -1109,8 +1111,8 @@
     },
     {
       "id": "50e5aedb",
-      "x": 0,
-      "y": 0,
+      "x": 362,
+      "y": 348,
       "gender": "Unknown",
       "selection": "I shall educate my girls to be school teachers.",
       "lines": [
@@ -1120,8 +1122,8 @@
     },
     {
       "id": "fc522aa2",
-      "x": 0,
-      "y": 0,
+      "x": 588,
+      "y": 396,
       "gender": "Unknown",
       "selection": "I am giving my son academic and professional and my daughter academic and trade.",
       "lines": [
@@ -1131,8 +1133,8 @@
     },
     {
       "id": "a89283fb",
-      "x": 0,
-      "y": 0,
+      "x": 530,
+      "y": 368,
       "gender": "Unknown",
       "selection": "I desire them to have a three-fold education.",
       "lines": [
@@ -1144,8 +1146,8 @@
     },
     {
       "id": "40b03d60",
-      "x": 0,
-      "y": 0,
+      "x": 486,
+      "y": 314,
       "gender": "Unknown",
       "selection": "Train their early years in some form of handicraft or trade; give them a college course in an institution for Negroes",
       "lines": [
@@ -1158,8 +1160,8 @@
     },
     {
       "id": "95fe2794",
-      "x": 0,
-      "y": 0,
+      "x": 572,
+      "y": 341,
       "gender": "Unknown",
       "selection": "I am not partial; to any kind of education which fits men and women for true service.",
       "lines": [
@@ -1171,8 +1173,8 @@
     },
     {
       "id": "b2c53b8a",
-      "x": 0,
-      "y": 0,
+      "x": 438,
+      "y": 398,
       "gender": "Unknown",
       "selection": "For profession if they show inclination and ability sufficient to indicate that they will be successful in such work.",
       "lines": [
@@ -1185,8 +1187,8 @@
     },
     {
       "id": "af713d68",
-      "x": 0,
-      "y": 0,
+      "x": 457,
+      "y": 347,
       "gender": "Unknown",
       "selection": "I would give him a broad and comprehensive college training and leave it to his own inclination as to trade or profession.",
       "lines": [
@@ -1197,8 +1199,8 @@
     },
     {
       "id": "583be6e0",
-      "x": 0,
-      "y": 0,
+      "x": 344,
+      "y": 395,
       "gender": "Unknown",
       "selection": "If he or she is best fitted for an industrial life or a profession I desire to root that industry or profession into a fertile, college-trained brain.",
       "lines": [
@@ -1211,8 +1213,8 @@
     },
     {
       "id": "8e5efd72",
-      "x": 0,
-      "y": 0,
+      "x": 427,
+      "y": 276,
       "gender": "Unknown",
       "selection": "Boys to a trade or a profession, according to their respective inclinations and apparent adaptability.",
       "lines": [
@@ -1224,8 +1226,8 @@
     },
     {
       "id": "65905aba",
-      "x": 0,
-      "y": 0,
+      "x": 354,
+      "y": 272,
       "gender": "Unknown",
       "selection": "Their professional training shall be the outgrowth of their natural adaptation together with the aid and direction of parents.",
       "lines": [
@@ -1239,8 +1241,8 @@
     },
     {
       "id": "8507f8df",
-      "x": 0,
-      "y": 0,
+      "x": 467,
+      "y": 281,
       "gender": "Unknown",
       "selection": "Intend to make teachers of some of them. The boys wish to be scientific farmers.",
       "lines": [
@@ -1250,8 +1252,8 @@
     },
     {
       "id": "da75884b",
-      "x": 0,
-      "y": 0,
+      "x": 339,
+      "y": 339,
       "gender": "Unknown",
       "selection": "In college and in the ministry with some industrial training, with the hope that he may become a missionary to Africa.",
       "lines": [
@@ -1262,8 +1264,8 @@
     },
     {
       "id": "5322acc5",
-      "x": 0,
-      "y": 0,
+      "x": 380,
+      "y": 396,
       "gender": "Unknown",
       "selection": "Intend to make a dentist of my boy and a musician of my girl.",
       "lines": [
@@ -1273,8 +1275,8 @@
     },
     {
       "id": "c26a059f",
-      "x": 0,
-      "y": 0,
+      "x": 445,
+      "y": 317,
       "gender": "Unknown",
       "selection": "Hope to have them learn trade, go thru one of the northern colleges and learn some profession.",
       "lines": [
@@ -1285,8 +1287,8 @@
     },
     {
       "id": "eaa7c9ff",
-      "x": 0,
-      "y": 0,
+      "x": 353,
+      "y": 364,
       "gender": "Unknown",
       "selection": "Boy, to trade or medicine; girl, to domestic science and music.",
       "lines": [
@@ -1296,8 +1298,8 @@
     },
     {
       "id": "639ca5a2",
-      "x": 0,
-      "y": 0,
+      "x": 371,
+      "y": 267,
       "gender": "Unknown",
       "selection": "I am striving to give my children a thoro practical education which will best fit them for the daily pursuits of life.",
       "lines": [
@@ -1307,10 +1309,11 @@
       ]
     }
   ],
-  "hind": [{
+  "hind": [
+    {
       "id": "ae8b8c61",
-      "x": 0,
-      "y": 0,
+      "x": 506,
+      "y": 627,
       "gender": "Unknown",
       "selection": "Prejudice has all along hindered me in getting what I have merited.",
       "lines": [
@@ -1324,8 +1327,8 @@
     },
     {
       "id": "2aceb8d9",
-      "x": 0,
-      "y": 0,
+      "x": 359,
+      "y": 593,
       "gender": "Unknown",
       "selection": "I have always had to hustle for what I have attained and having become accustomed to it I hardly consider that a hindrance now.",
       "lines": [
@@ -1340,8 +1343,8 @@
     },
     {
       "id": "c3f743ff",
-      "x": 0,
-      "y": 0,
+      "x": 544,
+      "y": 548,
       "gender": "Unknown",
       "selection": "the young men of our race are neglecting opportunities which would seem golden to the young men of other lands.",
       "lines": [
@@ -1354,8 +1357,8 @@
     },
     {
       "id": "65c37d7b",
-      "x": 0,
-      "y": 0,
+      "x": 436,
+      "y": 515,
       "gender": "Unknown",
       "selection": "I find that a desire to work, when based on a good foundation, educational and moral, is appreciated",
       "lines": [
@@ -1367,8 +1370,8 @@
     },
     {
       "id": "c3c45f6d",
-      "x": 0,
-      "y": 0,
+      "x": 494,
+      "y": 591,
       "gender": "Unknown",
       "selection": "My chief hindrance has been a lack of capital with which to carry out my plans.",
       "lines": [
@@ -1381,8 +1384,8 @@
     },
     {
       "id": "e31b95d3",
-      "x": 0,
-      "y": 0,
+      "x": 359,
+      "y": 626,
       "gender": "Unknown",
       "selection": "I think to a certain extent I have been such a victim.",
       "lines": [
@@ -1394,8 +1397,8 @@
     },
     {
       "id": "9874be69",
-      "x": 0,
-      "y": 0,
+      "x": 404,
+      "y": 641,
       "gender": "Unknown",
       "selection": "In getting into close, vital relation with my people in order to be of real service.",
       "lines": [
@@ -1405,8 +1408,8 @@
     },
     {
       "id": "261ef1f2",
-      "x": 0,
-      "y": 0,
+      "x": 559,
+      "y": 639,
       "gender": "Unknown",
       "selection": "I could say poverty; but it has been the spur that made me move when I would have fallen by the wayside",
       "lines": [
@@ -1422,8 +1425,8 @@
     },
     {
       "id": "4ace6bb7",
-      "x": 0,
-      "y": 0,
+      "x": 444,
+      "y": 622,
       "gender": "Unknown",
       "selection": "Poor salary.",
       "lines": [
@@ -1434,8 +1437,8 @@
     },
     {
       "id": "7c688c93",
-      "x": 0,
-      "y": 0,
+      "x": 418,
+      "y": 622,
       "gender": "Unknown",
       "selection": "Prejudice has militated against increase of salary in service of city.",
       "lines": [
@@ -1445,8 +1448,8 @@
     },
     {
       "id": "5a6767a5",
-      "x": 0,
-      "y": 0,
+      "x": 584,
+      "y": 555,
       "gender": "Unknown",
       "selection": "My greatest hindrance has been lack of opportunity as I have had to meet heavy obligations since leaving school.",
       "lines": [
@@ -1459,8 +1462,8 @@
     },
     {
       "id": "1f16c23e",
-      "x": 0,
-      "y": 0,
+      "x": 559,
+      "y": 551,
       "gender": "Unknown",
       "selection": "I have never been able to receive pay adequate to my qualifications.",
       "lines": [
@@ -1473,8 +1476,8 @@
     },
     {
       "id": "5488a626",
-      "x": 0,
-      "y": 0,
+      "x": 346,
+      "y": 612,
       "gender": "Unknown",
       "selection": "Southern prejudice has helped rather than hindered me.",
       "lines": [
@@ -1484,8 +1487,8 @@
     },
     {
       "id": "9c99099d",
-      "x": 0,
-      "y": 0,
+      "x": 612,
+      "y": 634,
       "gender": "Unknown",
       "selection": "The things which would tend to advancement for white men have been overlooked in my case on account of color.",
       "lines": [
@@ -1497,8 +1500,8 @@
     },
     {
       "id": "e545f109",
-      "x": 0,
-      "y": 0,
+      "x": 491,
+      "y": 550,
       "gender": "Unknown",
       "selection": "Menial positions; poor pay as a teacher; fidelity to my race, which led me to decline a high position on a railroad in Georgia which I could have had by passing for white.",
       "lines": [
@@ -1513,8 +1516,8 @@
     },
     {
       "id": "b1891eee",
-      "x": 0,
-      "y": 0,
+      "x": 470,
+      "y": 605,
       "gender": "Unknown",
       "selection": "I think perhaps my life would have been larger and far different but for my color",
       "lines": [
@@ -1528,8 +1531,8 @@
     },
     {
       "id": "879e78de",
-      "x": 0,
-      "y": 0,
+      "x": 600,
+      "y": 515,
       "gender": "Unknown",
       "selection": "I always attended to my own business and let other people do the same.",
       "lines": [
@@ -1541,8 +1544,8 @@
     },
     {
       "id": "b9877fc8",
-      "x": 0,
-      "y": 0,
+      "x": 464,
+      "y": 565,
       "gender": "Unknown",
       "selection": "I have often been able to cross the bounds set by prejudice.",
       "lines": [
@@ -1553,8 +1556,8 @@
     },
     {
       "id": "344ebdca",
-      "x": 0,
-      "y": 0,
+      "x": 351,
+      "y": 652,
       "gender": "Unknown",
       "selection": "I have not had access to hospital and clinical facilities to keep up and perfect myself in my professional work.",
       "lines": [
@@ -1565,8 +1568,8 @@
     },
     {
       "id": "e97fe3ee",
-      "x": 0,
-      "y": 0,
+      "x": 548,
+      "y": 598,
       "gender": "Unknown",
       "selection": "Prejudice has hindered me from becoming head physician here.",
       "lines": [
@@ -1577,8 +1580,8 @@
     },
     {
       "id": "1797bba9",
-      "x": 0,
-      "y": 0,
+      "x": 375,
+      "y": 535,
       "gender": "Unknown",
       "selection": "It is an awful fact and works with a maliciousness that is willful and premeditated but it is wanting in substance",
       "lines": [
@@ -1594,8 +1597,8 @@
     },
     {
       "id": "7adb74da",
-      "x": 0,
-      "y": 0,
+      "x": 440,
+      "y": 659,
       "gender": "Unknown",
       "selection": "Prejudice has made me less prominent as an engineer, kept from me good paying positions and forced me to accept less pay for the same work.",
       "lines": [
@@ -1610,8 +1613,8 @@
     },
     {
       "id": "3f89e5bb",
-      "x": 0,
-      "y": 0,
+      "x": 390,
+      "y": 520,
       "gender": "Unknown",
       "selection": "Doing same or more work for less money than my white comrades.",
       "lines": [
@@ -1624,8 +1627,8 @@
     },
     {
       "id": "f6cd8004",
-      "x": 0,
-      "y": 0,
+      "x": 579,
+      "y": 524,
       "gender": "Unknown",
       "selection": "Prejudice among colored people against their own college men is a hindrance.",
       "lines": [
@@ -1635,8 +1638,8 @@
     },
     {
       "id": "a9a853b5",
-      "x": 0,
-      "y": 0,
+      "x": 347,
+      "y": 549,
       "gender": "Unknown",
       "selection": "I have gone steadily on and have done whatever has been my duty so far as I have been able to see my duty.",
       "lines": [
@@ -1650,8 +1653,8 @@
     },
     {
       "id": "b6a9df68",
-      "x": 0,
-      "y": 0,
+      "x": 422,
+      "y": 548,
       "gender": "Unknown",
       "selection": "The truth is that the colored lawyer to succeed at all must be far beyond the average white lawyer.",
       "lines": [
@@ -1672,8 +1675,8 @@
     },
     {
       "id": "e2aae719",
-      "x": 0,
-      "y": 0,
+      "x": 523,
+      "y": 627,
       "gender": "Unknown",
       "selection": "Prejudice circumscribed the sphere of activities for broader culture and for increased efficiency.",
       "lines": [
@@ -1684,8 +1687,8 @@
     },
     {
       "id": "dace305c",
-      "x": 0,
-      "y": 0,
+      "x": 577,
+      "y": 628,
       "gender": "Unknown",
       "selection": "Race prejudice has undoubtedly lessened my opportunities but on the other hand has served indirectly to make me use such opportunities",
       "lines": [
@@ -1698,8 +1701,8 @@
     },
     {
       "id": "c878ceb5",
-      "x": 0,
-      "y": 0,
+      "x": 385,
+      "y": 614,
       "gender": "Unknown",
       "selection": "I taught physics and chemistry in a laboratory in --- furnished by ourselves.",
       "lines": [
@@ -1715,8 +1718,8 @@
     },
     {
       "id": "1b7e03cc",
-      "x": 0,
-      "y": 0,
+      "x": 531,
+      "y": 593,
       "gender": "Unknown",
       "selection": "n some places silent opposition to Negro college graduates on the part of white and colored.",
       "lines": [
@@ -1726,8 +1729,8 @@
     },
     {
       "id": "1a054c5d",
-      "x": 0,
-      "y": 0,
+      "x": 531,
+      "y": 533,
       "gender": "Unknown",
       "selection": "Prejudice is always present but I have found far more opportunity than prejudice",
       "lines": [
@@ -1743,8 +1746,8 @@
     },
     {
       "id": "fad10e64",
-      "x": 0,
-      "y": 0,
+      "x": 445,
+      "y": 642,
       "gender": "Unknown",
       "selection": "It is my belief that prejudice is a spur to serious endeavor on the part of intelligent colored men.",
       "lines": [
@@ -1755,8 +1758,8 @@
     },
     {
       "id": "a3a817e6",
-      "x": 0,
-      "y": 0,
+      "x": 613,
+      "y": 662,
       "gender": "Unknown",
       "selection": "Prejudice and proscription have operated to my disadvantage to the extent of cooling ardor and chilling aspiration.",
       "lines": [
@@ -1767,8 +1770,8 @@
     },
     {
       "id": "5b1cfeac",
-      "x": 0,
-      "y": 0,
+      "x": 551,
+      "y": 573,
       "gender": "Unknown",
       "selection": "Prejudice and lack of opportunity have retarded my progress but by industry, economy, conservatism and perseverance I have in a measure overcome them",
       "lines": [
@@ -1780,8 +1783,8 @@
     },
     {
       "id": "9e16d4df",
-      "x": 0,
-      "y": 0,
+      "x": 431,
+      "y": 603,
       "gender": "Unknown",
       "selection": "Prejudice against the higher education of Negroes.",
       "lines": [
@@ -1791,8 +1794,8 @@
     },
     {
       "id": "428b19c0",
-      "x": 0,
-      "y": 0,
+      "x": 331,
+      "y": 549,
       "gender": "Unknown",
       "selection": "Prejudice denies us the privilege of enjoying the confidence and association of many superior minds.",
       "lines": [
@@ -1807,8 +1810,8 @@
     },
     {
       "id": "0ae81d5a",
-      "x": 0,
-      "y": 0,
+      "x": 556,
+      "y": 672,
       "gender": "Unknown",
       "selection": "There is not enough business among colored people to employ their young men and women when they finish school.",
       "lines": [
@@ -1820,8 +1823,8 @@
     },
     {
       "id": "f1a26785",
-      "x": 0,
-      "y": 0,
+      "x": 594,
+      "y": 628,
       "gender": "Unknown",
       "selection": "No man who has been hampered by or has been compelled to contend against prejudice has been able to reach his best and biggest self.",
       "lines": [
@@ -1834,8 +1837,8 @@
     },
     {
       "id": "1e1764f2",
-      "x": 0,
-      "y": 0,
+      "x": 393,
+      "y": 656,
       "gender": "Unknown",
       "selection": "I have been engaged for clerical work and then discharged when my color became known.",
       "lines": [
@@ -1850,8 +1853,8 @@
     },
     {
       "id": "23518905",
-      "x": 0,
-      "y": 0,
+      "x": 534,
+      "y": 651,
       "gender": "Unknown",
       "selection": "I find the old adage holds true: Where there is a will there is a way",
       "lines": [
@@ -1862,8 +1865,8 @@
     },
     {
       "id": "dc57e1a7",
-      "x": 0,
-      "y": 0,
+      "x": 429,
+      "y": 580,
       "gender": "Unknown",
       "selection": "Prejudice has been no barrier when it came to acquiring property, but if often crushes my spirit.",
       "lines": [
@@ -1874,8 +1877,8 @@
     },
     {
       "id": "35f97d6a",
-      "x": 0,
-      "y": 0,
+      "x": 501,
+      "y": 564,
       "gender": "Unknown",
       "selection": "I have got what I went after, after a fight nevertheless, yet got it.",
       "lines": [
@@ -1898,8 +1901,8 @@
     },
     {
       "id": "d1c4d477",
-      "x": 0,
-      "y": 0,
+      "x": 415,
+      "y": 534,
       "gender": "Unknown",
       "selection": "I cannot buy or rent respectable property without the greatest embarrassment and sometimes not even then.",
       "lines": [
@@ -1911,8 +1914,8 @@
     },
     {
       "id": "d73eb3e3",
-      "x": 0,
-      "y": 0,
+      "x": 406,
+      "y": 575,
       "gender": "Unknown",
       "selection": "Prejudice has closed several doors of opportunity along the line of educational advantages",
       "lines": [
@@ -1925,8 +1928,8 @@
     },
     {
       "id": "34efef81",
-      "x": 0,
-      "y": 0,
+      "x": 597,
+      "y": 667,
       "gender": "Unknown",
       "selection": "my chief hindrance has been my inability to play the hypocrite.",
       "lines": [
@@ -1938,8 +1941,8 @@
     },
     {
       "id": "618433ac",
-      "x": 0,
-      "y": 0,
+      "x": 458,
+      "y": 661,
       "gender": "Unknown",
       "selection": "Prejudice, I think, has made me suspicious of all white people, sometimes with injustice to them, I fear, and with injury to myself.",
       "lines": [
@@ -1953,8 +1956,8 @@
     },
     {
       "id": "c2aa2c61",
-      "x": 0,
-      "y": 0,
+      "x": 530,
+      "y": 609,
       "gender": "Unknown",
       "selection": "My chief hindrance is that I am deprived of the enjoyment of my rights as a free citizen.",
       "lines": [
@@ -1964,8 +1967,8 @@
     },
     {
       "id": "cf6f0957",
-      "x": 0,
-      "y": 0,
+      "x": 505,
+      "y": 515,
       "gender": "Unknown",
       "selection": "I feel that only half the measure of the possibilities of my career has been filled",
       "lines": [
@@ -1979,8 +1982,8 @@
     },
     {
       "id": "e1b43b1e",
-      "x": 0,
-      "y": 0,
+      "x": 345,
+      "y": 518,
       "gender": "Unknown",
       "selection": "There is in this community a kindly growing sentiment on the part of the whites toward colored people and so prejudice does not interrupt much",
       "lines": [
@@ -1995,8 +1998,8 @@
     },
     {
       "id": "ac111dd5",
-      "x": 0,
-      "y": 0,
+      "x": 350,
+      "y": 578,
       "gender": "Unknown",
       "selection": "we are coming to a better understanding of each other and business confidence in each other is being developed",
       "lines": [
@@ -2013,8 +2016,8 @@
     },
     {
       "id": "c1c0aa2e",
-      "x": 0,
-      "y": 0,
+      "x": 517,
+      "y": 661,
       "gender": "Unknown",
       "selection": "Expecting no quarter it has been with me a fight to the finish and a point of manhood and honor to succeed.",
       "lines": [
@@ -2029,8 +2032,8 @@
     },
     {
       "id": "43787d1a",
-      "x": 0,
-      "y": 0,
+      "x": 455,
+      "y": 517,
       "gender": "Unknown",
       "selection": "Failure of the people - to appreciate real ability.",
       "lines": [
@@ -2042,8 +2045,8 @@
     },
     {
       "id": "0272259d",
-      "x": 0,
-      "y": 0,
+      "x": 450,
+      "y": 554,
       "gender": "Unknown",
       "selection": "My greatest hindrance was lack of public school opportunity early in life.",
       "lines": [
@@ -2054,8 +2057,8 @@
     },
     {
       "id": "83139851",
-      "x": 0,
-      "y": 0,
+      "x": 335,
+      "y": 533,
       "gender": "Unknown",
       "selection": "No man can do his best while hampered by senseless prejudice.",
       "lines": [
@@ -2067,8 +2070,8 @@
     },
     {
       "id": "7c8e8074",
-      "x": 0,
-      "y": 0,
+      "x": 379,
+      "y": 637,
       "gender": "Unknown",
       "selection": "Prejudice of ignorant blacks as well as whites does a great deal to hinder.",
       "lines": [
@@ -2080,8 +2083,8 @@
     },
     {
       "id": "7de92c45",
-      "x": 0,
-      "y": 0,
+      "x": 498,
+      "y": 657,
       "gender": "Unknown",
       "selection": "I have felt perhaps more than anything else the prohibition from public library facilities in such a city as Atlanta.",
       "lines": [
@@ -2092,8 +2095,8 @@
     },
     {
       "id": "93e4d053",
-      "x": 0,
-      "y": 0,
+      "x": 383,
+      "y": 564,
       "gender": "Unknown",
       "selection": "My chief hindrance has possibly come from within: the ignorance of the big opportunities that await the average young Negro man of education",
       "lines": [
@@ -2109,8 +2112,8 @@
     },
     {
       "id": "eab6342c",
-      "x": 0,
-      "y": 0,
+      "x": 521,
+      "y": 643,
       "gender": "Unknown",
       "selection": "Social conditions in my home state shut me out of the career I would have naturally sought there.",
       "lines": [
@@ -2123,8 +2126,8 @@
     },
     {
       "id": "fd8b0a8d",
-      "x": 0,
-      "y": 0,
+      "x": 488,
+      "y": 521,
       "gender": "Unknown",
       "selection": "It has kept me alive and made me yearn to accomplish something, nerved me to live and endure suffering",
       "lines": [
@@ -2138,8 +2141,8 @@
     },
     {
       "id": "73c03b52",
-      "x": 0,
-      "y": 0,
+      "x": 605,
+      "y": 608,
       "gender": "Unknown",
       "selection": "Rather difficult to answer as I have worked all the while under conditions that I saw little hope of changing",
       "lines": [
@@ -2158,8 +2161,8 @@
     },
     {
       "id": "7899cd87",
-      "x": 0,
-      "y": 0,
+      "x": 385,
+      "y": 548,
       "gender": "Unknown",
       "selection": "The color line has prevented a chance for scientific and literary work.",
       "lines": [
@@ -2169,8 +2172,8 @@
     },
     {
       "id": "7a254c8e",
-      "x": 0,
-      "y": 0,
+      "x": 574,
+      "y": 568,
       "gender": "Unknown",
       "selection": "No one is able to estimate the damage inflicted upon him by the forces which make for ostracism",
       "lines": [
@@ -2191,8 +2194,8 @@
     },
     {
       "id": "cc784a49",
-      "x": 0,
-      "y": 0,
+      "x": 482,
+      "y": 649,
       "gender": "Unknown",
       "selection": "3. The false notion that the Negro scholar does not deserve as much pay for intellectual work as a white man",
       "lines": [
@@ -2211,10 +2214,11 @@
       ]
     }
   ],
-  "pl": [{
+  "pl": [
+    {
       "id": "a36b712c",
-      "x": 0,
-      "y": 0,
+      "x": 158,
+      "y": 536,
       "gender": "Unknown",
       "selection": "The hope of the Negro is a Christian education of heart, head and hand.",
       "lines": [
@@ -2224,8 +2228,8 @@
     },
     {
       "id": "ee6e516e",
-      "x": 0,
-      "y": 0,
+      "x": 158,
+      "y": 615,
       "gender": "Unknown",
       "selection": "He wants to be treated and regarded as an American citizen in fact.",
       "lines": [
@@ -2250,8 +2254,8 @@
     },
     {
       "id": "156314c8",
-      "x": 0,
-      "y": 0,
+      "x": 120,
+      "y": 548,
       "gender": "Unknown",
       "selection": "There is an attempt in a large part of the country to establish a caste system of education for the Negro.",
       "lines": [
@@ -2268,8 +2272,8 @@
     },
     {
       "id": "c3ef6beb",
-      "x": 0,
-      "y": 0,
+      "x": 262,
+      "y": 549,
       "gender": "Unknown",
       "selection": "I firmly believe that the destiny of the American Negro lies largely in his own hands.",
       "lines": [
@@ -2286,8 +2290,8 @@
     },
     {
       "id": "f9804c52",
-      "x": 0,
-      "y": 0,
+      "x": 62,
+      "y": 556,
       "gender": "Unknown",
       "selection": "Tho race prejudice is rampant it is still too weak to suppress any class which has the determination to rise. There is still plenty of room.",
       "lines": [
@@ -2304,8 +2308,8 @@
     },
     {
       "id": "7c19a23e",
-      "x": 0,
-      "y": 0,
+      "x": 226,
+      "y": 628,
       "gender": "Unknown",
       "selection": "The Negro must continue to contend for all the rights, privileges, and opportunities accorded other American citizens.",
       "lines": [
@@ -2318,8 +2322,8 @@
     },
     {
       "id": "afdc2e49",
-      "x": 0,
-      "y": 0,
+      "x": 268,
+      "y": 520,
       "gender": "Unknown",
       "selection": "we would do well to spend less time in finding fault and use that time preparing ourselves for larger activities and more usefulness.",
       "lines": [
@@ -2335,8 +2339,8 @@
     },
     {
       "id": "4be99c38",
-      "x": 0,
-      "y": 0,
+      "x": 38,
+      "y": 548,
       "gender": "Unknown",
       "selection": "My own confident hope is that there will be ultimately a satisfactory issue to all present race difficulties.",
       "lines": [
@@ -2347,8 +2351,8 @@
     },
     {
       "id": "33fa4583",
-      "x": 0,
-      "y": 0,
+      "x": 302,
+      "y": 535,
       "gender": "Unknown",
       "selection": "The problem of the American Negro is difficult to solve upon a basis of perpetual segregation.",
       "lines": [
@@ -2374,8 +2378,8 @@
     },
     {
       "id": "d7712472",
-      "x": 0,
-      "y": 0,
+      "x": 71,
+      "y": 608,
       "gender": "Unknown",
       "selection": "With education and the right to vote—for both of which the Negro must work and fight daily—he will win the place which is his here in America.",
       "lines": [
@@ -2387,8 +2391,8 @@
     },
     {
       "id": "2b411cc9",
-      "x": 0,
-      "y": 0,
+      "x": 240,
+      "y": 620,
       "gender": "Unknown",
       "selection": "an all-controlling desire to stick to the right, will not only win for the Negro the respect of America but will give him a place immortal in the history of the world.",
       "lines": [
@@ -2402,8 +2406,8 @@
     },
     {
       "id": "29833918",
-      "x": 0,
-      "y": 0,
+      "x": 162,
+      "y": 668,
       "gender": "Unknown",
       "selection": "enable him to successfully compete with every other element of Americanism in every walk of life",
       "lines": [
@@ -2415,8 +2419,8 @@
     },
     {
       "id": "b456c3b9",
-      "x": 0,
-      "y": 0,
+      "x": 214,
+      "y": 535,
       "gender": "Unknown",
       "selection": "First train the mind; then in order to be highly regarded by Americans own some of the world’s goods.",
       "lines": [
@@ -2433,8 +2437,8 @@
     },
     {
       "id": "c81ba1a3",
-      "x": 0,
-      "y": 0,
+      "x": 250,
+      "y": 579,
       "gender": "Unknown",
       "selection": "The Negro race would be much stronger if there were more who could see the benefit of a college education",
       "lines": [
@@ -2448,8 +2452,8 @@
     },
     {
       "id": "64c070b0",
-      "x": 0,
-      "y": 0,
+      "x": 33,
+      "y": 623,
       "gender": "Unknown",
       "selection": "7. The Negro should be urged to content peaceably and earnestly for everything that is needed to make him a man.",
       "lines": [
@@ -2476,8 +2480,8 @@
     },
     {
       "id": "46bfb5e9",
-      "x": 0,
-      "y": 0,
+      "x": 177,
+      "y": 608,
       "gender": "Unknown",
       "selection": "The Negro is passing through a critical period of his existence in America",
       "lines": [
@@ -2498,8 +2502,8 @@
     },
     {
       "id": "c46b19c3",
-      "x": 0,
-      "y": 0,
+      "x": 160,
+      "y": 556,
       "gender": "Unknown",
       "selection": "If the Negro is given protection and an equal opportunity in the industrial world he will succeed as a race.",
       "lines": [
@@ -2510,8 +2514,8 @@
     },
     {
       "id": "f37c5ac3",
-      "x": 0,
-      "y": 0,
+      "x": 100,
+      "y": 592,
       "gender": "Unknown",
       "selection": "we shall ultimately build for ourselves character and accumulate wealth, a combination which merits and demands respect",
       "lines": [
@@ -2529,8 +2533,8 @@
     },
     {
       "id": "e33e9886",
-      "x": 0,
-      "y": 0,
+      "x": 179,
+      "y": 673,
       "gender": "Unknown",
       "selection": "As he labors he should link himself to every movement for the betterment of the social and economic life of the community in which he casts his lot.",
       "lines": [
@@ -2554,8 +2558,8 @@
     },
     {
       "id": "4d22d566",
-      "x": 0,
-      "y": 0,
+      "x": 308,
+      "y": 575,
       "gender": "Unknown",
       "selection": "He should qualify himself politically as well as otherwise and become interested in all questions affecting humanity",
       "lines": [
@@ -2573,8 +2577,8 @@
     },
     {
       "id": "b79f167d",
-      "x": 0,
-      "y": 0,
+      "x": 92,
+      "y": 615,
       "gender": "Unknown",
       "selection": "The Negro American must he accorded absolute social and political equality and all the rights guaranteed under a pure democracy.",
       "lines": [
@@ -2590,8 +2594,8 @@
     },
     {
       "id": "353dada9",
-      "x": 0,
-      "y": 0,
+      "x": 47,
+      "y": 524,
       "gender": "Unknown",
       "selection": "Diversification in education and pursuit is necessary if a people is to be of the highest good to the country.",
       "lines": [
@@ -2604,8 +2608,8 @@
     },
     {
       "id": "cc389512",
-      "x": 0,
-      "y": 0,
+      "x": 135,
+      "y": 644,
       "gender": "Unknown",
       "selection": "Retention of the right of suffrage and the display of more independence in the matter of voting.",
       "lines": [
@@ -2624,8 +2628,8 @@
     },
     {
       "id": "fa988ea3",
-      "x": 0,
-      "y": 0,
+      "x": 101,
+      "y": 658,
       "gender": "Unknown",
       "selection": "Vigorously opposing the doctrine of servility and submission-but not service.",
       "lines": [
@@ -2638,8 +2642,8 @@
     },
     {
       "id": "69e597d5",
-      "x": 0,
-      "y": 0,
+      "x": 253,
+      "y": 534,
       "gender": "Unknown",
       "selection": "he will eventually climb as high and accomplish as much as any race or people has accomplished",
       "lines": [
@@ -2654,8 +2658,8 @@
     },
     {
       "id": "5c381c2d",
-      "x": 0,
-      "y": 0,
+      "x": 118,
+      "y": 665,
       "gender": "Unknown",
       "selection": "the Negro will some day become a big factor in the political life of the nation and occupy an enviable place in the economic development of the United States",
       "lines": [
@@ -2671,8 +2675,8 @@
     },
     {
       "id": "a679131a",
-      "x": 0,
-      "y": 0,
+      "x": 58,
+      "y": 541,
       "gender": "Unknown",
       "selection": "I believe that the American Negro must live and die in America. Africa is not his home",
       "lines": [
@@ -2687,8 +2691,8 @@
     },
     {
       "id": "4ad25bd7",
-      "x": 0,
-      "y": 0,
+      "x": 38,
+      "y": 669,
       "gender": "Unknown",
       "selection": "he will eventually come into his own and be fully recognized as an American citizen",
       "lines": [
@@ -2701,8 +2705,8 @@
     },
     {
       "id": "e5487d2d",
-      "x": 0,
-      "y": 0,
+      "x": 197,
+      "y": 659,
       "gender": "Unknown",
       "selection": "He must deport himself as a man and he must insist on being treated as a man in America.",
       "lines": [
@@ -2720,8 +2724,8 @@
     },
     {
       "id": "387ade14",
-      "x": 0,
-      "y": 0,
+      "x": 271,
+      "y": 595,
       "gender": "Unknown",
       "selection": "The Negro should be given every opportunity and encouraged to get the very best education possible",
       "lines": [
@@ -2740,8 +2744,8 @@
     },
     {
       "id": "26d71535",
-      "x": 0,
-      "y": 0,
+      "x": 171,
+      "y": 525,
       "gender": "Unknown",
       "selection": "We must produce a substantial capitalist class. Such a state of economy admits of a leisure class.",
       "lines": [
@@ -2764,8 +2768,8 @@
     },
     {
       "id": "711acc24",
-      "x": 0,
-      "y": 0,
+      "x": 55,
+      "y": 585,
       "gender": "Unknown",
       "selection": "A right-about-face with regard to the matter of the education of the youth of our race; that is, less industrialism and more intelligence.",
       "lines": [
@@ -2780,8 +2784,8 @@
     },
     {
       "id": "af917e82",
-      "x": 0,
-      "y": 0,
+      "x": 88,
+      "y": 673,
       "gender": "Unknown",
       "selection": "I most strenuously urge that our people, all of them, get the best possible training in the best colleges and universities of the country",
       "lines": [
@@ -2798,8 +2802,8 @@
     },
     {
       "id": "1fa236bb",
-      "x": 0,
-      "y": 0,
+      "x": 48,
+      "y": 654,
       "gender": "Unknown",
       "selection": "Wherever our people congregate in large numbers there very soon begins the agitation for disfranchisement.",
       "lines": [
@@ -2820,8 +2824,8 @@
     },
     {
       "id": "7d339bb3",
-      "x": 0,
-      "y": 0,
+      "x": 201,
+      "y": 547,
       "gender": "Unknown",
       "selection": "the teaching of a saner and purer religion, performance of duties and a demand for all our rights under the law will bring a brighter day for the Negro in America",
       "lines": [
@@ -2834,8 +2838,8 @@
     },
     {
       "id": "366af694",
-      "x": 0,
-      "y": 0,
+      "x": 160,
+      "y": 595,
       "gender": "Unknown",
       "selection": "I believe that education coupled with a good moral and religious training will be the main factor",
       "lines": [
@@ -2847,8 +2851,8 @@
     },
     {
       "id": "8b60bf8a",
-      "x": 0,
-      "y": 0,
+      "x": 145,
+      "y": 553,
       "gender": "Unknown",
       "selection": "I am rather an enthusiast on the return of a goodly portion of the Negroes to Africa as a final solution",
       "lines": [
@@ -2862,8 +2866,8 @@
     },
     {
       "id": "8a104191",
-      "x": 0,
-      "y": 0,
+      "x": 88,
+      "y": 526,
       "gender": "Unknown",
       "selection": "The Negro will ever remain in America.",
       "lines": [
@@ -2876,8 +2880,8 @@
     },
     {
       "id": "eaa713c9",
-      "x": 0,
-      "y": 0,
+      "x": 179,
+      "y": 633,
       "gender": "Unknown",
       "selection": "each will come to see that all must enjoy the same privileges",
       "lines": [
@@ -2894,8 +2898,8 @@
     },
     {
       "id": "bab55939",
-      "x": 0,
-      "y": 0,
+      "x": 268,
+      "y": 626,
       "gender": "Unknown",
       "selection": "Every day gives us new evidences of the fact that he is becoming more appreciative of his right to life, liberty and property.",
       "lines": [
@@ -2909,8 +2913,8 @@
     },
     {
       "id": "6539c60b",
-      "x": 0,
-      "y": 0,
+      "x": 100,
+      "y": 643,
       "gender": "Unknown",
       "selection": "to become a citizen in the true sense he must enjoy the same opportunities and benefits as other citizens",
       "lines": [
@@ -2924,8 +2928,8 @@
     },
     {
       "id": "e2ecb0f9",
-      "x": 0,
-      "y": 0,
+      "x": 52,
+      "y": 610,
       "gender": "Unknown",
       "selection": "He must he taught not to close the door of hope upon himself, even in though he must be made to feel that competency must win",
       "lines": [
@@ -2942,8 +2946,8 @@
     },
     {
       "id": "d8162393",
-      "x": 0,
-      "y": 0,
+      "x": 286,
+      "y": 588,
       "gender": "Unknown",
       "selection": "the outlook for the Negro race in America is bright or dark owing to the deportment of the Negro himself.",
       "lines": [
@@ -2958,8 +2962,8 @@
     },
     {
       "id": "f1218f9e",
-      "x": 0,
-      "y": 0,
+      "x": 138,
+      "y": 528,
       "gender": "Unknown",
       "selection": "Let him cease to be a cringing suppliant; assert his manhood intelligently; speak out against unjust discrimination and laws that affect him",
       "lines": [
@@ -2977,8 +2981,8 @@
     },
     {
       "id": "5de91d02",
-      "x": 0,
-      "y": 0,
+      "x": 66,
+      "y": 571,
       "gender": "Unknown",
       "selection": "The Negro came to America not by his own volition and is here to stay.",
       "lines": [
@@ -2991,8 +2995,8 @@
     },
     {
       "id": "82c69abd",
-      "x": 0,
-      "y": 0,
+      "x": 68,
+      "y": 645,
       "gender": "Unknown",
       "selection": "It is nonsense to expect perfect harmony between two races so situated as the Negroes and whites of America.",
       "lines": [
@@ -3010,8 +3014,8 @@
     },
     {
       "id": "bbb264e5",
-      "x": 0,
-      "y": 0,
+      "x": 236,
+      "y": 604,
       "gender": "Unknown",
       "selection": "The two things indispensable to the Negro's advance are money and education",
       "lines": [
@@ -3031,8 +3035,8 @@
     },
     {
       "id": "be170249",
-      "x": 0,
-      "y": 0,
+      "x": 209,
+      "y": 640,
       "gender": "Unknown",
       "selection": "I believe that the ultimate solution of the race problem is amalgamation.",
       "lines": [
@@ -3042,8 +3046,8 @@
     },
     {
       "id": "654298d2",
-      "x": 0,
-      "y": 0,
+      "x": 253,
+      "y": 670,
       "gender": "Unknown",
       "selection": "Nothing is worth having if it is not worth fighting for.",
       "lines": [
@@ -3056,8 +3060,8 @@
     },
     {
       "id": "d7df1299",
-      "x": 0,
-      "y": 0,
+      "x": 110,
+      "y": 563,
       "gender": "Unknown",
       "selection": "the Negro in America will succeed and become a mighty power in the affairs of this country",
       "lines": [
@@ -3070,8 +3074,8 @@
     },
     {
       "id": "a6ff3612",
-      "x": 0,
-      "y": 0,
+      "x": 242,
+      "y": 520,
       "gender": "Unknown",
       "selection": "business enterprises of various kinds which will give employment to the average boy and girl of our race",
       "lines": [
@@ -3087,8 +3091,8 @@
     },
     {
       "id": "f04dcdb4",
-      "x": 0,
-      "y": 0,
+      "x": 286,
+      "y": 624,
       "gender": "Unknown",
       "selection": "The Negro needs simply the proper training and a fair chance in the business world along with a square deal before the law",
       "lines": [
@@ -3103,8 +3107,8 @@
     },
     {
       "id": "773f2d79",
-      "x": 0,
-      "y": 0,
+      "x": 135,
+      "y": 589,
       "gender": "Unknown",
       "selection": "The man who has no political rights has no way of protecting himself and family.",
       "lines": [
@@ -3118,8 +3122,8 @@
     },
     {
       "id": "7d163016",
-      "x": 0,
-      "y": 0,
+      "x": 114,
+      "y": 608,
       "gender": "Unknown",
       "selection": "In the present swift revolving scheme of industrial America, the right to vote is paramount.",
       "lines": [
@@ -3134,8 +3138,8 @@
     },
     {
       "id": "1c5da939",
-      "x": 0,
-      "y": 0,
+      "x": 186,
+      "y": 560,
       "gender": "Unknown",
       "selection": "We are American citizens and should accept no treatment that does not apply equally to every other American citizen.",
       "lines": [
@@ -3148,8 +3152,8 @@
     },
     {
       "id": "850eec1e",
-      "x": 0,
-      "y": 0,
+      "x": 288,
+      "y": 548,
       "gender": "Unknown",
       "selection": "The Negro men who are really qualified to speak should take a bold, manly stand for the race.",
       "lines": [
@@ -3164,8 +3168,8 @@
     },
     {
       "id": "eb868782",
-      "x": 0,
-      "y": 0,
+      "x": 133,
+      "y": 566,
       "gender": "Unknown",
       "selection": "The future of the Negro in this country will depend upon the kind of training given to the Negro youth.",
       "lines": [
@@ -3178,8 +3182,8 @@
     },
     {
       "id": "ff1e4cd0",
-      "x": 0,
-      "y": 0,
+      "x": 230,
+      "y": 560,
       "gender": "Unknown",
       "selection": "We must work, think and live independent of the dictates of those who regard us as less than other men.",
       "lines": [

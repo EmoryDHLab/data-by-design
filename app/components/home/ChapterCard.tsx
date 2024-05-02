@@ -3,7 +3,7 @@ import type { ReactNodeLike } from "prop-types";
 
 interface Props {
   to: string;
-  status: string;
+  status?: string;
   title: string;
   subtitle: string;
   className: string;
