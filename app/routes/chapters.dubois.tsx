@@ -82,6 +82,21 @@ const visualizations: TVizAnchors[] = [
     id: "doc-viewer",
     title: "Document Viewer",
   },
+  {
+    type: "scrollytell",
+    id: "scrollytell-1",
+    title: "Scrollytell One",
+  },
+  {
+    type: "scrollytell",
+    id: "scrollytell-2",
+    title: "Scrollytell Two",
+  },
+  {
+    type: "scrollytell",
+    id: "scrollytell-3",
+    title: "Scrollytell Three",
+  },
 ];
 
 const chapterFigures = Object.values(figures);

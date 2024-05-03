@@ -25,7 +25,7 @@ function ChartThreeScrollytell({ triggers }: { triggers: ReactElement[] }) {
       >
         <div
           className={`flex flex-col md:flex-row justify-between`}
-          id="scrollytell2"
+          id="scrollytell-3"
         >
           <div className="sticky h-min bias-full top-0 w-full md:bias-1/2 md:w-7/12 md:order-last">
             <div className="relative top-0 p-6">
