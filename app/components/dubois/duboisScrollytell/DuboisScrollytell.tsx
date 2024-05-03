@@ -1,25 +1,42 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
-import { ClientOnly } from "remix-utils";
-import Picture from "~/components/layout/Picture";
-import PullQuote from "~/components/PullQuote";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
-import figures from "~/data/figures/dubois.json";
 import type { ReactElement } from "react";
+import type { TFocusShape } from "~/types/scrollytellTypes";
 
-const minScrollProgress = 10;
+const chartHeight = 900;
+const chartWidth = 630;
 
 const DuboisScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
   const { accentTextColor } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
-  const [slideIndex, setSlideIndex] = useState<number>(0);
   const steps = useRef<HTMLDivElement>(null);
+  const [focusShapeSize, setFocusShapeSize] = useState<TFocusShape>({
+    x: 0,
+    y: 0,
+    width: chartWidth,
+    height: chartHeight,
+  });
 
   useEffect(() => {
-    if (scrollProgress > minScrollProgress && scrollProgress % 1 > 0.25) {
-      setSlideIndex(Math.ceil(scrollProgress) - minScrollProgress);
-    } else if (scrollProgress <= minScrollProgress + 0.25) {
-      setSlideIndex(0);
+    switch (true) {
+      case scrollProgress >= 0.5 && scrollProgress <= 1.5:
+        setFocusShapeSize({ x: 0, y: 160, width: chartWidth, height: 130 });
+        break;
+      case scrollProgress >= 1.5 && scrollProgress <= 2.5:
+        setFocusShapeSize({ x: 190, y: 340, width: 250, height: 240 });
+        break;
+      case scrollProgress >= 2.5 && scrollProgress <= 5.5:
+        setFocusShapeSize({ x: 0, y: 340, width: chartWidth, height: 240 });
+        break;
+      default:
+        setFocusShapeSize({
+          x: 0,
+          y: 0,
+          width: chartWidth,
+          height: chartHeight,
+        });
+        break;
     }
   }, [scrollProgress]);
 
@@ -27,89 +44,199 @@ const DuboisScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
     <ScrollytellWrapper
       setScrollProgress={setScrollProgress}
       steps={steps}
-      bgColor="duboisSecondary"
+      bgColor="duboisPrimary"
       triggers={triggers}
       id="voyage-scrollytell"
       className="w-screen"
     >
-      <div className={`sticky h-screen top-24`}>
-        <div className="grid grid-cols-2">
-          <div></div>
-          <div className="h-3/4 w-3/4 my-auto">
-            <div></div>
-            {/* 1 */}
-            <div
-              className={`absolute transition-opacity duration-1000 opacity-${
-                slideIndex === 0 ? 100 : 0
-              }`}
-            >
-              <Picture
-                figure={figures["ch5-14-rogers"]}
-                className={`drop-shadow-none p-6 w-3/5`}
-              />
-            </div>
+      <div className="flex">
+        <div className="sticky top-16 md:top-0 h-screen mt-16 md:mt-0 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last md:pb-[60px]">
+          <svg
+            viewBox={`0 0 ${chartWidth} ${chartHeight}`}
+            className={`max-h-[80vh] max-w-[90%] md:my-16 mx-auto bg-duboisPrimary`}
+          >
+            <g id="original-chart">
+              <mask id="chart1-mask">
+                <rect
+                  x={0}
+                  y={0}
+                  width={chartWidth}
+                  height={chartHeight}
+                  fill="white"
+                  stroke="black"
+                  fillOpacity={0.1}
+                  className="transition-all duration-1000"
+                />
+                <rect
+                  {...focusShapeSize}
+                  fill="white"
+                  className="transition-all duration-1000"
+                />
+              </mask>
 
-            {/* 2 */}
-            <div
-              className={`absolute transition-opacity duration-1000 opacity-${
-                slideIndex === 1 ? 100 : 0
+              <image
+                mask="url(#chart1-mask)"
+                href="/images/dubois/ch5-12-series.jpg"
+                className={`w-full transition-opacity duration-1000 opacity-${
+                  (scrollProgress || 0) >= 0 && (scrollProgress || 0) <= 3
+                    ? 100
+                    : 0
+                }`}
+              />
+              <rect
+                {...focusShapeSize}
+                fill="none"
+                strokeWidth={
+                  scrollProgress >= 1 && scrollProgress <= 3 ? 10 : 0
+                }
+                className="transition-all duration-1000 stroke-shanawdithitPrimary"
+              />
+            </g>
+            <g id="catalog">
+              <image
+                y="10%"
+                href="/images/dubois/1898-1899-catalog-data-table-cropped.jpg"
+                className={`w-full transition-opacity duration-1000 opacity-${
+                  (scrollProgress || 0) >= 3 && (scrollProgress || 0) <= 4
+                    ? 100
+                    : 0
+                }`}
+              />
+            </g>
+            <g
+              id="alumni"
+              className={`transition-opacity duration-1000 opacity-${
+                (scrollProgress || 0) >= 4 && (scrollProgress || 0) <= 6
+                  ? 100
+                  : 0
               }`}
             >
-              <Picture
-                figure={figures["ch5-14-rogers-highlighted"]}
-                className={`drop-shadow-none p-6 w-3/5`}
+              <image
+                className="w-full"
+                href="/images/dubois/1898-1899-catalog-alumni-page.jpg"
               />
-            </div>
+              <g
+                className={`w-full transition-opacity duration-1000 opacity-${
+                  (scrollProgress || 0) >= 5 && (scrollProgress || 0) <= 6
+                    ? 100
+                    : 0
+                }`}
+              >
+                <rect
+                  x={102}
+                  y={483}
+                  width={163}
+                  height={19}
+                  fill="yellow"
+                  fillOpacity={0.3}
+                  strokeOpacity={0.5}
+                  strokeWidth={0.5}
+                  className="stroke-offblack"
+                />
+                <rect
+                  x={102}
+                  y={502}
+                  width={163}
+                  height={17}
+                  fill="yellow"
+                  fillOpacity={0.3}
+                  strokeOpacity={0.5}
+                  strokeWidth={0.5}
+                  className="stroke-offblack"
+                />
+                <rect
+                  x={102}
+                  y={530}
+                  width={163}
+                  height={19}
+                  fill="yellow"
+                  fillOpacity={0.3}
+                  strokeOpacity={0.5}
+                  strokeWidth={0.5}
+                  className="stroke-offblack"
+                />
+              </g>
+            </g>
+            <g
+              id="google-sheet"
+              className={`w-full transition-opacity duration-1000 opacity-${
+                (scrollProgress || 0) >= 6 && (scrollProgress || 0) <= 7
+                  ? 100
+                  : 0
+              }`}
+            >
+              <image
+                y="12%"
+                href="/images/dubois/screenshot-grad-google-sheet.jpg"
+                className={`w-full`}
+              />
+            </g>
+            <g
+              id="chart1-pie"
+              className={`w-full transition-opacity duration-1000 opacity-${
+                (scrollProgress || 0) >= 7 && (scrollProgress || 0) <= 8
+                  ? 100
+                  : 0
+              }`}
+            >
+              <image
+                y="12%"
+                href="/images/dubois/chart1-pie.jpg"
+                className={`w-full`}
+              />
+            </g>
+            <g
+              id="chart1-hover"
+              className={`w-full transition-opacity duration-1000 opacity-${
+                (scrollProgress || 0) >= 8 && (scrollProgress || 0) <= 9
+                  ? 100
+                  : 0
+              }`}
+            >
+              <image
+                y="12%"
+                href="/images/dubois/chart1-hover.jpg"
+                className={`w-full`}
+              />
+            </g>
+            <g
+              id="chart1-full"
+              className={`w-full transition-opacity duration-1000 opacity-${
+                (scrollProgress || 0) >= 9 && (scrollProgress || 0) <= 11
+                  ? 100
+                  : 0
+              }`}
+            >
+              <image
+                y="12%"
+                href="/images/dubois/chart1-full.jpg"
+                className={`w-full`}
+              />
+            </g>
+          </svg>
+        </div>
 
-            {/* 3 */}
-            <div
-              className={`absolute transition-opacity duration-1000 opacity-${
-                slideIndex === 2 ? 100 : 0
-              }`}
-            >
-              <Picture
-                figure={figures["college-bred-negro"]}
-                className={`drop-shadow-none p-6`}
-              />
-            </div>
-
-            {/* 4 */}
-            <div
-              className={`absolute transition-opacity duration-1000 opacity-${
-                slideIndex === 3 ? 100 : 0
-              }`}
-            >
-              <Picture
-                figure={figures["number-of-graduates"]}
-                className={`drop-shadow-none h-[75vh]`}
-              />
-            </div>
-            
-          </div>
+        <div
+          ref={steps}
+          className="relative pointer-events-none md:mt-96 md:w-full"
+        >
+          {triggers.map((trigger, index) => {
+            return (
+              <div
+                key={`DuboisScrollytell-${trigger.key}`}
+                data-step={index}
+                className={`pointer-events-none step text-xl p-5 relative w-auto md:w-3/4 ${
+                  index + 1 === triggers.length ? "h-[50vh]" : "h-screen"
+                } text-${accentTextColor}`}
+              >
+                <p className="bg-duboisPrimary-translucent p-3 md:p-12 text-offblack md:text-offwhite">
+                  {trigger}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
-
-      <div
-        ref={steps}
-        className="relative translate-y-[calc(-100vh+120px)] pointer-events-none md:mt-96 md:w-full"
-      >
-        {triggers.map((trigger, index) => {
-          return (
-            <div
-              key={`DuboisScrollytell-${trigger.key}`}
-              data-step={index}
-              className={`pointer-events-none step text-xl p-5 md:px-20 relative w-auto md:w-1/2 ${
-                index + 1 === triggers.length ? "h-[50vh]" : "h-screen"
-              } text-${accentTextColor}`}
-            >
-              <p className="bg-duboisSecondary-translucent p-3 md:p-12">
-                {trigger}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-
     </ScrollytellWrapper>
   );
 };

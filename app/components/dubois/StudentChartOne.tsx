@@ -46,6 +46,7 @@ export default function StudentChartOne() {
         <ClientOnly>
           {() => (
             <PieChart
+              id="student-chart-1"
               studentData={studentData}
               className="order-last md:order-none"
             />

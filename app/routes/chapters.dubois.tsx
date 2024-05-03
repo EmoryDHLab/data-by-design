@@ -28,12 +28,10 @@ import ChapterBody from "~/components/layout/ChapterBody";
 import type { MetaFunction } from "@remix-run/node";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
-import ChartThreeScrollytell from "~/components/dubois/chartScrollytells/ChartThreeScrollytell";
+import ChartThreeScrollytell from "~/components/dubois/duboisScrollytell/ChartThreeScrollytell";
 
 import DuboisPosterSideBySideScrollytell from "~/components/dubois/duboisScrollytell/DuboisPosterSideBySideScrollytell";
 import DuboisScrollytell from "~/components/dubois/duboisScrollytell/DuboisScrollytell";
-import { ClientOnly } from "remix-utils";
-import StudentChartTwoAlternative from "~/components/dubois/StudentChartTwoAlternative";
 
 export const meta: MetaFunction = () => {
   return chapterMeta("dubois");
@@ -109,14 +107,12 @@ export default function DuboisChapter() {
         setShowFootnotes,
       }}
     >
-      
       <ChapterTitle
         title="Between Data and Truth"
         subtitle={`W.E.B. Du Bois's "Data Portraits"`}
       />
       {/* <div className="chapter-body container"> */}
       <ChapterBody>
-        
         <CenteredLayout>
           <p className="first-paragraph py-10">
             There is a now-famous photograph of W.E.B. Du Bois (1868-1963), the
@@ -913,17 +909,25 @@ export default function DuboisChapter() {
 
         <CenteredLayout>
           <p>
-          As our project team considered how we might inhabit Du Bois’s revised approach to his research methods, and commit ourselves to pursue the greater knowledge that became his goal, we also knew that we could not claim to understand the full extent of the charge that Du Bois experienced upon hearing the news of Sam Hose’s murder. By the same token, we recognized that we could not uniformly, as a group, understand the effects of anti-Black racism first-hand. <InlineFootnote index={27}></InlineFootnote> But there was an experience that we shared with Du Bois and his
-            students: the fact that we, too, were a majority-student
-            visualization team. And among the lessons that we had learned from
-            our own process of creating the visualizations for this site is that
-            each contributor to the project has their own story, one which helps
-            to further contextualize the visualizations they helped to
-            create—and, therefore, augments the insights that it prompts. We
-            wondered if there might be additional context we might uncover if we
-            brought our own range of methods and disciplinary expertise to bear
-            on the student creators of the charts—and, in turn, what additional
-            knowledge this context might help to prompt.
+            As our project team considered how we might inhabit Du Bois’s
+            revised approach to his research methods, and commit ourselves to
+            pursue the greater knowledge that became his goal, we also knew that
+            we could not claim to understand the full extent of the charge that
+            Du Bois experienced upon hearing the news of Sam Hose’s murder. By
+            the same token, we recognized that we could not uniformly, as a
+            group, understand the effects of anti-Black racism first-hand.{" "}
+            <InlineFootnote index={27}></InlineFootnote> But there was an
+            experience that we shared with Du Bois and his students: the fact
+            that we, too, were a majority-student visualization team. And among
+            the lessons that we had learned from our own process of creating the
+            visualizations for this site is that each contributor to the project
+            has their own story, one which helps to further contextualize the
+            visualizations they helped to create—and, therefore, augments the
+            insights that it prompts. We wondered if there might be additional
+            context we might uncover if we brought our own range of methods and
+            disciplinary expertise to bear on the student creators of the
+            charts—and, in turn, what additional knowledge this context might
+            help to prompt.
           </p>
 
           <p>
@@ -943,6 +947,80 @@ export default function DuboisChapter() {
         </CenteredLayout>
 
         {/* Here is where the first scrollytell will be*/}
+        <DuboisScrollytell
+          triggers={[
+            <span key="59880c59">
+              As have others, we noted the fact that the introductory chart of
+              the second series of charts, the one with national focus, credited
+              the charts’ creation to “Negro students under the direction of
+              Atlanta University.”
+            </span>,
+            <span key="5151297c">
+              We found it additionally intriguing that the visualization below
+              the introductory text visualized data about Atlanta University
+              students as well.
+            </span>,
+            <span key="c05853e8">
+              The pie chart at the center of the image gives visual form to the
+              occupations of 330 graduates of Atlanta University, all those who
+              had graduated from one of its three degree programs since its
+              founding in 1867 through 1898, the year before the chart was made.
+            </span>,
+            <span key="621891f0">
+              The slices of the pie correspond to four categories of occupation
+              and professional field–teachers, ministers, government service,
+              and business–as well as additional categories for “other
+              professions” and “house wives”—that the graduates would go on to
+              pursue.
+            </span>,
+            <span key="ba410bc0">
+              While Du Bois does not disclose the source of his data on the
+              chart, the number of graduates matches exactly with the number of
+              alumni listed in the 1898-1899 Catalogue of the Officers and
+              Students of Atlanta University, which Lauren had consulted in her
+              background research. The total graduates and occupations for each
+              type of degree—college, normal, and theological—are summarized in
+              a data table at the end of the book.
+            </span>,
+            <span key="88c7a06f">
+              In the pages before the table appears, the alumni are listed by
+              degree, and then according to their year of graduation,
+              alphabetically by name, along with their current occupation and
+              place of residence.
+            </span>,
+            <span key="83071a27">
+              Scanning the page which records the earliest graduates of Atlanta
+              University provides fleeting glimpses into their lives. (1)
+              William Henry Crogman, class of 1876, stayed in Atlanta to become
+              a professor at Clark University. (2) Samuel Benjamin Morse moved
+              to Savannah, 250 miles away on the Georgia coast, to become a
+              music teacher. (3) London Humes Waters was deceased.
+            </span>,
+            <span key="62bc6638">
+              To bring these traces back into the chart itself, Tanvi first
+              transcribed all of the names and associated information from the
+              scanned version of the catalog into a spreadsheet.
+            </span>,
+            <span key="ea89f8d3">
+              Then, on the basis of Tanvi’s design, Anna and Nick recreated the
+              original chart, placing the 255 alumni with known occupations in
+              the appropriate section of the pie.
+            </span>,
+            <span key="da9219cf">
+              Hovering on each dot reveals the person’s name, occupation, and
+              place of residence. Additional categories represent the 35 alumni
+              with unknown occupations, and the 42 alumni who were recorded in
+              the catalog as “Deceased.”
+            </span>,
+            <span key="f358e08a">
+              These are the actual people behind the data in the original pie
+              chart, those whose education and accomplishments mattered so much
+              to Du Bois that he devoted the majority of the space of the chart
+              itself to testify to them, and to issue a call for additional
+              funding that would ensure such opportunities for students ahead.
+            </span>,
+          ]}
+        />
 
         <CenteredLayout>
           <p className="first-paragraph">
@@ -1055,9 +1133,52 @@ export default function DuboisChapter() {
             further testified to the enduring value of Du Bois's pedagogical
             aims.
           </p>
+        </CenteredLayout>
 
-          {/* start of second scrollytell */}
-
+        {/* start of second scrollytell */}
+        <DuboisPosterSideBySideScrollytell
+          triggers={[
+            <span key="94a7a3b2">
+              In this expanded chart that visualizes the data from the 1910
+              Atlanta University Study, the colorful map that informs the viewer
+              of the location of Atlanta University has been expanded to include
+              the locations of the 140 additional colleges also included in the
+              study.
+            </span>,
+            <span key="63ba9abc">
+              As in the original, the location of Atlanta University is marked
+              with a star.
+            </span>,
+            <span key="1a7c90eb">
+              In this pie chart, the 133 graduates of Atlanta University as of
+              1909 with known occupations (as determined by the alumni section
+              of the 1909-1910 catalog) are positioned in the appropriate area
+              of the pie chart. Additional categories represent the nine
+              graduates with unknown occupations, and the 21 graduates who were
+              recorded as “Deceased.”
+            </span>,
+            <span key="5448c43e">
+              An additional 3693 gray dots represent the graduates of the other
+              140 colleges included in the study whose names were not recorded
+              as data. They are placed in the appropriate area as determined by
+              the summary statistics of occupations included in the study. These
+              dots hold space for these students’ contributions to the study,
+              even if we do not know their names.
+            </span>,
+            <span key="06e375fc">
+              Here we can see the five students who contributed to the original
+              charts, now placed in the area corresponding to the profession
+              they held in 1909. Lula Iola Mack became a housewife, married to a
+              Mr. F.H. Wilkins, and was living in the city of Athens, Georgia.
+              Edward Lee Simon became a supervisor of industrial work in the
+              Memphis Public Schools. William George Westmoreland stayed in
+              Atlanta, working as a mail carrier. Henry Napoleon Lee, three
+              years earlier, in 1907, was deceased.
+            </span>,
+            <span key="9b862bca"></span>,
+          ]}
+        />
+        <CenteredLayout>
           <p>
             There is little more that we can learn about Lee's abbreviated life
             from the extant data. The catalogs of the years after the Paris
@@ -1145,24 +1266,26 @@ export default function DuboisChapter() {
               Always recall the power of visualization (again)
             </span>,
             <span key="6440631a">
-              Consider when that power should be aligned with political goals 
+              Consider when that power should be aligned with political goals
             </span>,
             <span key="2f317172">
-              Consider how to combine visualization with a commitment to act 
+              Consider how to combine visualization with a commitment to act
             </span>,
-             <span key="2f317173">
-             Reorient towards a goal of knowledge or justice, not visualization itself 
-           </span>,
+            <span key="2f317173">
+              Reorient towards a goal of knowledge or justice, not visualization
+              itself
+            </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Align your visualization projects with your values 
+              Align your visualization projects with your values
             </span>,
             <span key="6d2691fc">
-              Honor and credit the contributions of each team member 
+              Honor and credit the contributions of each team member
             </span>,
             <span key="9650286d">
-              Consider how to combine visualization with other knowledge-making forms 
+              Consider how to combine visualization with other knowledge-making
+              forms
             </span>,
             <span key="9650286e">
               Know that change also requires a commitment to act

@@ -6,7 +6,9 @@ import type { Student, StudentData } from "~/components/dubois/types";
 
 interface Props {
   studentData: StudentData;
+  id: string;
   className?: string;
+  containerSize?: number;
 }
 
 const OFFSET = Math.PI * 1.1;
@@ -140,7 +142,12 @@ function pieChart(p5: p5, studentData: StudentData, diameter: number) {
   }
 }
 
-export default function PieChart({ studentData, className }: Props) {
+export default function PieChart({
+  studentData,
+  id,
+  className,
+  containerSize,
+}: Props) {
   const { isMobile } = useDeviceContext();
   const { windowSize } = useResizeObserver();
 
@@ -148,20 +155,31 @@ export default function PieChart({ studentData, className }: Props) {
     function script(p5: p5) {
       let circles: Circle[] = [];
 
-      // The p5.windowWidth does not seem to reliable when the window is resized.
-      const pieSize = isMobile ? window.innerWidth - 100 : Math.min(350, window.innerHeight * 0.2);
+      let pieSize = 100;
+      if (containerSize) {
+        pieSize = p5.map(
+          containerSize * 0.3,
+          0,
+          containerSize,
+          0,
+          window.innerWidth * 0.2
+        );
+      } else {
+        pieSize = isMobile
+          ? window.innerWidth - 100
+          : Math.min(350, window.innerHeight * 0.2);
+      }
+      console.log("🚀 ~ script ~ pieSize:", pieSize);
+      // The p5.windowWidth does not seem to be reliable when the window is resized.
 
       p5.setup = function () {
-        p5.createCanvas(
-          pieSize + 100,
-          pieSize + 100
-        ).parent("pieChart");
+        p5.createCanvas(pieSize + 100, pieSize + 100).parent(id);
 
         placeCategories(p5, studentData, circles);
       };
 
       p5.draw = function () {
-        p5.background("rgb(250, 241, 233)");
+        p5.background("rgb(253, 249, 246)");
         pieChart(p5, studentData, p5.width);
 
         circles.forEach((ball) => {
@@ -194,8 +212,13 @@ export default function PieChart({ studentData, className }: Props) {
 
     return () => {
       p5Copy.remove();
-    }
-  }, [studentData, isMobile, windowSize]);
+    };
+  }, [studentData, isMobile, windowSize, containerSize]);
 
-  return <div id="pieChart" className={`flex justify-center md:items-center ${className ?? ""}`} />;
+  return (
+    <div
+      id={id}
+      className={`flex justify-center md:items-center ${className ?? ""}`}
+    />
+  );
 }

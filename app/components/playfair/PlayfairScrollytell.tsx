@@ -12,11 +12,11 @@ const triggers = [
     between 1700 and 1770, there is only data for each decade.
   </span>,
   <span key="8340a9d4">
-    He shaded the area between the two data lines in order to illustrate the balance
-    of trade between the two nations. Stippled dots indicate periods of time
-    when the amount of imports from North America to England exceeded the amount
-    of exports from England to North America. Diagonal lines indicate the times
-    when exports from England to North America exceeded imports.
+    He shaded the area between the two data lines in order to illustrate the
+    balance of trade between the two nations. Stippled dots indicate periods of
+    time when the amount of imports from North America to England exceeded the
+    amount of exports from England to North America. Diagonal lines indicate the
+    times when exports from England to North America exceeded imports.
   </span>,
   <span key="8ceb9cdd">
     In the accompanying chart, Playfair includes both major and minor gridlines
@@ -53,12 +53,7 @@ const triggers = [
   <span key="a74c7264">
     The overall effect was to solidify the authority of the “simple and complete
     idea” that he envisioned from the start.
-    <InlineFootnote
-      index={12}
-      bgOverride="white"
-      superscriptOverride="playfairPrimary"
-      textOverride="white"
-    />
+    <InlineFootnote index={12} />
   </span>,
   <span key="e6a1c5ea"></span>,
 ];

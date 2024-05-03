@@ -71,20 +71,20 @@ const StudentChartThreeV2 = ({
 
   return (
     <div
-      className={`relative m-auto mt-${interactive ? "auto" : 28} mb-12`}
-      style={{ width: `${chartWidth}px`, height: `${chartHeight}px` }}
+      // className={`relative m-auto mt-${interactive ? "auto" : 28} mb-12`}
+      // style={{ width: `${chartWidth}px`, height: `${chartHeight}px` }}
+      id={`chart-3v2-${interactive ? "interactive" : "scrolly"}`}
     >
-      <div
-        id={`chart-3v2-${interactive ? "interactive" : "scrolly"}`}
+      {/* <div
         className="bg-offwhite"
-      ></div>
+      ></div> */}
       {width && height && (
         <svg
           viewBox={`0 0 ${chartWidth} ${chartHeight}`}
-          className={`bg-offwhite md:p-${interactive ? "auto" : 6} md:mt-${
-            interactive ? "auto" : 28
-          }`}
-          style={{ width: `${chartWidth}px` }}
+          className={`mx-auto md:p-${interactive ? "auto" : 6} ${
+            interactive ? "md:mt-auto" : "md:mt-28 max-h-[80vh] max-w-[90%]"
+          } bg-offwhite`}
+          style={{ width: interactive ? `${chartWidth}px` : "auto" }}
         >
           <g
             className={`duration-1000 transition-opacity opacity-${
