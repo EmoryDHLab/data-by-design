@@ -55,7 +55,7 @@ export default function RandomImagesIntoGrid() {
           <Image key={idx} x={x} y={y} isSelected={isSelected} angle={angle} />
         ))}
       </div>
-      <div className="absolute top-[120vw] lg:top-[40vw] xl:top-[55vw] lg:-left-2 max-w-lg bg-offwhite p-2">
+      <div className="absolute top-0 lg:top-[40vw] xl:top-[55vw] -left-2 max-w-lg bg-offwhite p-2">
         Some of the images are referenced only in passing, their deeper
         significance left for other scholars to explore.{" "}
       </div>

@@ -16,70 +16,70 @@ for (let i = 0; i < 10; i++) {
 }
 
 // Produces random bezier curves that connect the two circles
-function randomPaths(p5, scrollProgress, endX) {
+function randomPaths(p5, scrollProgress) {
   p5.push();
 
   p5.fill(0, 0, 0);
   p5.rotate(0);
   p5.circle(50, 250, 20);
-  p5.circle(endX, 250, 20);
+  p5.circle(500, 250, 20);
   p5.noFill();
 
   if (scrollProgress >= 1.2) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[9];
     p5.strokeWeight(strokeWeight);
-    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, endX, 250);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
   if (scrollProgress >= 1.3) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[8];
     p5.strokeWeight(strokeWeight);
-    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, endX, 250);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
   if (scrollProgress >= 1.4) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[0];
     p5.strokeWeight(strokeWeight);
-    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, endX, 250);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
   if (scrollProgress >= 1.5) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[1];
     p5.strokeWeight(strokeWeight);
-    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, endX, 250);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
   if (scrollProgress >= 1.6) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[2];
     p5.strokeWeight(strokeWeight);
-    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, endX, 250);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
   if (scrollProgress >= 1.7) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[3];
     p5.strokeWeight(strokeWeight);
-    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, endX, 250);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
   if (scrollProgress >= 1.8) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[4];
     p5.strokeWeight(strokeWeight);
-    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, endX, 250);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
   if (scrollProgress >= 1.9) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[5];
     p5.strokeWeight(strokeWeight);
-    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, endX, 250);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
   if (scrollProgress >= 2) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[6];
     p5.strokeWeight(strokeWeight);
-    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, endX, 250);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
   if (scrollProgress >= 2.1) {
     const { anchorX, anchorY, anchorX2, anchorY2, strokeWeight } = anchors[7];
     p5.strokeWeight(strokeWeight);
-    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, endX, 250);
+    p5.bezier(50, 250, anchorX, anchorY, anchorX2, anchorY2, 500, 250);
   }
 
   p5.pop();
@@ -97,18 +97,9 @@ export default function RandomPaths() {
           console.error("no window size!");
           return;
         }
-
-        let width;
-        let height;
-        if (windowSize.width < 640) {
-          width = windowSize.width * 0.8;
-          height = windowSize.width;
-        } else {
-          width = windowSize.width * 0.5;
-          height = windowSize.width * 0.5;
-        }
-
-        p5.createCanvas(width, height).parent("paths");
+        p5.createCanvas(windowSize.width * 0.5, windowSize.height * 0.6).parent(
+          "paths"
+        );
       };
 
       p5.draw = () => {
@@ -126,18 +117,18 @@ export default function RandomPaths() {
       console.error("no p5!");
       return;
     }
-    let endX = Math.min(p5Ref.current.width * 0.8, 500);
+
     if (scrollProgress < 1.2) {
       p5Ref.current.push();
       p5Ref.current.strokeWeight(2);
       p5Ref.current.fill(0, 0, 0);
       p5Ref.current.circle(50, 250, 20);
-      p5Ref.current.line(50, 250, endX, 250);
+      p5Ref.current.line(50, 250, 500, 250);
       p5Ref.current.fill(0, 0, 0);
-      p5Ref.current.circle(endX, 250, 20);
+      p5Ref.current.circle(500, 250, 20);
       p5Ref.current.pop();
     } else if (scrollProgress < 2.6) {
-      randomPaths(p5Ref.current, scrollProgress, endX);
+      randomPaths(p5Ref.current, scrollProgress);
     }
   }, [scrollProgress]);
   return <div id="paths" />;

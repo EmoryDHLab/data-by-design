@@ -28,7 +28,7 @@ const IntroTriggers = [
     title="Whereas a timeline says “this, then that,” a shuffle indicates “this and that”"
     subtitle="—a deemphasis on “firsts,” an opening up of multiple paths forward, and an easier way to see these possibilities in relation to each other"
   />,
-  <div key="542d9b4b">
+  <p key="542d9b4b">
     <p>
       The impact—and, therefore, the responsibility—of the choice of which path
       to take was what we what we wanted to convey to the viewer. And the
@@ -44,29 +44,22 @@ const IntroTriggers = [
       narrative that connects them to begin to take shape. Or they can shuffle
       again, opening up an entirely new set of possible paths.
     </p>
-  </div>,
+  </p>,
   <p className="z-30" key="217dc82d">
     The images are randomly selected from the nearly two hundred charts, graphs,
     and other visualizations that are included in the project.
   </p>,
   <RandomImagesIntoGrid />,
-  <div
-    key="a609783e"
-    className="flex flex-col md:flex-row justify-between items-center w-screen"
-  >
-    <div className="w-4/5 md:w-1/2">
+  <div key="a609783e" className="flex justify-between items-center w-screen">
+    <div className="w-1/2">
       <p>
         Some of the images go on to serve as centerpieces of the chapters in
         which they appear, their history and significance elaborated in
         extensive detail.
       </p>
     </div>
-    <div className="md:w-1/2">
-      <img
-        className="max-w-xs md:max-w-lg"
-        src="/images/peabody/1500s.webp"
-        alt=""
-      />
+    <div className="w-1/2">
+      <img className="max-w-lg" src="/images/peabody/1500s.webp" alt="" />
     </div>
   </div>,
   <p key="1d5bc9f0">
