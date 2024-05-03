@@ -163,10 +163,10 @@ export default function IntroPage() {
           <Column>
             {" "}
             {/* These images need to be replaced */}
-            <FigureObj figure={playfairFigures["1-northamerica"]} />
-            <FigureObj figure={playfairFigures["1-northamerica"]} />
-            <FigureObj figure={playfairFigures["1-northamerica"]} />
-            <FigureObj figure={playfairFigures["1-northamerica"]} />
+            <FigureObj figure={figures["OldTimeline.png"]} />
+            <FigureObj figure={figures["timeline-as-stacks.png"]} />
+            <FigureObj figure={figures["PLACEHOLDER-quipu.jpeg"]} />
+            <FigureObj figure={figures["two-row-wampum.jpeg"]} />
           </Column>
         </TwoColumnLayout>
 
