@@ -12,6 +12,7 @@ import RandomOrTimelineRectangles from "~/components/intro/RandomOrTimelineRecta
 import RandomImagesIntoGrid from "~/components/intro/RandomImagesIntoGrid";
 import CentralImageOnPage from "~/components/intro/CentralImageOnPage";
 import MinardPath from "./MinardPath";
+import MinardBlackLine from "~/components/intro/MinardBlackLine";
 
 export default function IntroScrollytell() {
   const [scrollProgress, setScrollProgress] = useState(0.0);
@@ -35,7 +36,7 @@ export default function IntroScrollytell() {
       >
         <div
           className={classNames(
-            "sticky top-16 md:top-[200px] bias-full md:bias-1/2 h-screen md:mr-24 md:order-last border-black border z-20",
+            "sticky h-[60vh] md:h-screen top-16 md:top-[200px] bias-full md:bias-1/2 md:mr-24 md:order-last z-0 md:z-20",
             (scrollProgress < 5.5 || scrollProgress > 7) && "md:w-1/2"
           )}
         >
@@ -104,6 +105,9 @@ function LinearTimeline() {
       <div className="md:w-[50vw] relative">
         {scrollProgress > 9.5 && (
           <MinardPath className="absolute left-[25px] top-[35px] md:w-[700px]" />
+        )}
+        {scrollProgress > 10.5 && (
+          <MinardBlackLine className="absolute left-[25px] top-[55px] md:w-[500px]" />
         )}
         <img
           className="z-20 md:w-[576px]"
