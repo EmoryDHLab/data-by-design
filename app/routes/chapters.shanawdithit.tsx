@@ -187,7 +187,7 @@ export default function ShanawdithitPage() {
             considered alongside any knowledge that the maps themselves bring to
             light.
           </p>
-          {/* add in first source diagram here */}
+          <FigureObj figure={figures["Illustration1"]} />
           <p>
             The diagram above attempts to give this colonial frame visual
             presence, accentuating the three primary sources that allow us,
@@ -964,9 +964,7 @@ export default function ShanawdithitPage() {
           </p>
         </CenteredLayout>
 
-        <FigureObj
-          figure={figures["placeholder-sarah sense BirchBark 400px"]}
-        />
+        <FigureObj figure={figures["BirchBark"]} />
 
         <CenteredLayout>
           <p>
@@ -1117,31 +1115,32 @@ export default function ShanawdithitPage() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-             Consider your relationship to the data being visualized
+              Consider your relationship to the data being visualized
             </span>,
             <span key="6440631a">
-             Consider your responsibility to the data and its stewards 
+              Consider your responsibility to the data and its stewards
             </span>,
             <span key="2f317172">
-             Be attentive to the distance between the data and your knowledge
+              Be attentive to the distance between the data and your knowledge
             </span>,
-             <span key="2f317173">
-             Remember that some knowledge is not yours to share 
-           </span>,
+            <span key="2f317173">
+              Remember that some knowledge is not yours to share
+            </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-             Examine your relationships to your data and its stewards 
+              Examine your relationships to your data and its stewards
             </span>,
             <span key="6d2691fc">
-             Take seriously and act on your responsibilities to them 
+              Take seriously and act on your responsibilities to them
             </span>,
             <span key="9650286d">
-             Consider how to keep your data more connected to its source
+              Consider how to keep your data more connected to its source
             </span>,
-             <span key="2f317174">
-             Consider when your data might require additional or alternative protocols 
-           </span>,
+            <span key="2f317174">
+              Consider when your data might require additional or alternative
+              protocols
+            </span>,
           ]}
         />
       </ChapterBody>

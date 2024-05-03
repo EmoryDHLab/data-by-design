@@ -523,11 +523,6 @@ export default function IntroPage() {
             and its visual display, we must also always consider the context—and
             very often, the humanity—that is stripped away.
           </p>
-          <FigureObj
-            figure={figures["13-PLACEHOLDER-TAST"]}
-            className="mx-2 md:mx-12 text-sm md:text-base"
-            captionClassName="mx-12"
-          />
           <p>
             There is a final conceptual connection to capitalism, and to
             slavery, with which those who work with data must contend. This has
