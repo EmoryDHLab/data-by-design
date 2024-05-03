@@ -43,13 +43,13 @@ export default function FigureObj({
 
   if (figures) {
     return (
-      <div className={className ?? ""} id={id ?? `fig-${figures[0].fileName}`}>
+      <div className={className ?? ""} id={id ?? `fig-${figures[0]?.fileName}`}>
         {figures.map((figure) => {
           return (
             <FigureModal
-              key={`${figure.fileName}`}
+              key={`${figure?.fileName}`}
               figure={figure}
-              id={id ?? `fig-${figures[0].fileName}`}
+              id={id ?? `fig-${figures[0]?.fileName}`}
             >
               <Picture figure={figure} />
             </FigureModal>

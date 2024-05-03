@@ -46,8 +46,15 @@ export default function RandomRectangles() {
   const { windowSize } = useResizeObserver();
   const [rectangles, setRectangles] = useState(generateRectangles());
 
+  let width;
+  if (windowSize.width > 640) {
+    width = windowSize.width * 0.4;
+  } else {
+    width = windowSize.width;
+  }
+
   return (
-    <div className="relative w-[50vw]">
+    <div className="relative w-screen md:w-[50vw]">
       <button onClick={() => setRectangles(generateRectangles())}>
         <Shuffle />
       </button>
@@ -62,9 +69,7 @@ export default function RandomRectangles() {
               left: 0,
               width: rectangle.width,
               height: rectangle.height,
-              transform: `translate(${
-                rectangle.x * windowSize.width * 0.4
-              }px, ${
+              transform: `translate(${rectangle.x * width}px, ${
                 rectangle.y * windowSize.height * 0.5 - windowSize.height * 0.5
               }px) rotate(${rectangle.angle}rad)`,
             }}

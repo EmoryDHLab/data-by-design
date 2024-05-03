@@ -12,6 +12,7 @@ import RandomOrTimelineRectangles from "~/components/intro/RandomOrTimelineRecta
 import RandomImagesIntoGrid from "~/components/intro/RandomImagesIntoGrid";
 import CentralImageOnPage from "~/components/intro/CentralImageOnPage";
 import MinardPath from "./MinardPath";
+import MinardBlackLine from "~/components/intro/MinardBlackLine";
 
 export default function IntroScrollytell() {
   const [scrollProgress, setScrollProgress] = useState(0.0);
@@ -27,13 +28,26 @@ export default function IntroScrollytell() {
     >
       {process.env.NODE_ENV !== "production" && <ScrollProgress />}
       <ScrollytellWrapper
-        className="md:flex justify-between w-full"
+        className="md:flex justify-between"
         setScrollProgress={setScrollProgress}
         triggers={IntroTriggers}
         steps={steps}
         id="intro"
       >
-        <div ref={steps} className="relative z-10 pointer-events-none">
+        <div
+          className={classNames(
+            "sticky h-[60vh] md:h-screen top-16 md:top-[200px] bias-full md:bias-1/2 md:mr-24 md:order-last z-0 md:z-20",
+            (scrollProgress < 5.5 || scrollProgress > 7) && "md:w-1/2"
+          )}
+        >
+          <div className="flex flex-col items-center right-0 md:block md:h-screen w-screen">
+            <LinearTimeline />
+          </div>
+        </div>
+        <div
+          ref={steps}
+          className="bias-full md:bias-1/2 pointer-events-none md:w-1/2 z-10"
+        >
           {IntroTriggers.map((trigger, index) => {
             let height = "min-h-screen";
             if (index == 0) {
@@ -57,14 +71,6 @@ export default function IntroScrollytell() {
               </div>
             );
           })}
-        </div>
-        <div
-          className={classNames(
-            "sticky top-16 right-0 md:top-[200px] h-screen md:mr-24",
-            (scrollProgress < 5.5 || scrollProgress > 7) && "md:w-1/2"
-          )}
-        >
-          <LinearTimeline />
         </div>
       </ScrollytellWrapper>
     </ScrollytellContext.Provider>
@@ -96,14 +102,20 @@ function LinearTimeline() {
 
   if (scrollProgress > 8.6) {
     return (
-      <div className="w-[50vw] relative">
+      <div className="md:w-[50vw] relative">
         {scrollProgress > 9.5 && (
-          <MinardPath className="absolute left-[25px] top-[35px] md:w-[700px]" />
+          <MinardPath className="absolute sm:left-[24px] sm:top-[137px] sm:w-[333px] lg:left-[40px] lg:top-[230px] lg:w-[550px] z-10" />
+        )}
+        {scrollProgress > 10.5 && (
+          <MinardBlackLine className="absolute sm:left-[31px] sm:top-[143px] sm:w-[251px] lg:left-[52px] lg:top-[238px] lg:w-[418px] z-10" />
         )}
         <img
-          className="z-20 md:w-[576px]"
+          className={classNames(
+            "z-20 lg:w-[500px] transition sm:w-[300px]",
+            scrollProgress > 9.5 && "opacity-50"
+          )}
           alt="Minard chart"
-          src="/images/playfair/5-minard.jpg"
+          src="/images/intro/1-Carte_figurative_des_pertes_successives_Minard_Charles-Joseph.jpeg"
         />
       </div>
     );
