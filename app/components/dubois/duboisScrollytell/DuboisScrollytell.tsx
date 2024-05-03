@@ -49,7 +49,7 @@ const DuboisScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
       id="voyage-scrollytell"
       className="w-screen"
     >
-      <div className="flex" id="scrollytell-one">
+      <div className="flex" id="scrollytell-1">
         <div className="sticky top-16 md:top-0 h-screen mt-16 md:mt-0 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last md:pb-[60px]">
           <svg
             viewBox={`0 0 ${chartWidth} ${chartHeight}`}
