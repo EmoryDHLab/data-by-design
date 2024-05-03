@@ -163,10 +163,10 @@ export default function IntroPage() {
           <Column>
             {" "}
             {/* These images need to be replaced */}
-            <FigureObj figure={figures["OldTimeline.png"]} />
-            <FigureObj figure={figures["timeline-as-stacks.png"]} />
-            <FigureObj figure={figures["PLACEHOLDER-quipu.jpeg"]} />
-            <FigureObj figure={figures["two-row-wampum.jpeg"]} />
+            <FigureObj figure={figures["OldTimeline"]} />
+            <FigureObj figure={figures["timeline-as-stacks"]} />
+            <FigureObj figure={figures["PLACEHOLDER-quipu"]} />
+            <FigureObj figure={figures["two-row-wampum"]} />
           </Column>
         </TwoColumnLayout>
 
@@ -335,7 +335,7 @@ export default function IntroPage() {
             the request of a local Spanish official, who himself was responding
             to a request from his King. 
           </p>
-          <FigureObj figure={figures["9-PLACEHOLDER-teozacoalco"]} />
+          <FigureObj figure={figures["9-teozacoalco"]} />
           <p>
             This request illustrates the conceptual convergence between the
             European colonial project and the rise of empiricism, which is
@@ -459,18 +459,20 @@ export default function IntroPage() {
             other numbers that represented other quantities and prices of
             goods—goods that, again, at times took human form. 
           </p>
-          <FigureObj
-            className="grid grid-cols-2 items-center middle-full gap-x-4"
-            figures={[
-              figures["10-PLACEHOLDER-ledger1"],
-              figures["11-PLACEHOLDER-ledger2"],
-            ]}
-            groupCaption={
-              <>
-                <p></p>
-              </>
-            }
-          />
+          {/*<FigureObj*/}
+          {/*  className="grid grid-cols-2 items-center middle-full gap-x-4"*/}
+          {/*  figures={*/}
+          {/*    [*/}
+          {/*      figures["10-ledger1"],*/}
+          {/*      figures["11-ledger2"],*/}
+          {/*    ]*/}
+          {/*  }*/}
+          {/*  groupCaption={*/}
+          {/*    <>*/}
+          {/*      <p></p>*/}
+          {/*    </>*/}
+          {/*  }*/}
+          {/*/>*/}
           <p>
             The earliest versions of these ledger books still included a
             substantial amount of descriptive text, but it was not long before
