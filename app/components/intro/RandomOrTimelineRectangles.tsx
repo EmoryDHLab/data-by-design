@@ -32,9 +32,9 @@ for (let i = 0; i < 5; i++) {
   for (let j = 0; j < num; j++) {
     temp.push(
       <div
-        className="fixed border-black border-2 w-6 h-6 lg:w-18 lg:h-18 xl:w-24 xl:h-24 top-[40vh] bg-offwhite"
+        className="absolute border-black border-2 w-8 h-8 lg:w-18 lg:h-18 xl:w-24 xl:h-24 bg-offwhite"
         style={{
-          left: `calc(${i * 120 + j * 5}px + 50vw)`,
+          left: `${i * 120 + j * 5}px`,
           marginTop: `${j * 20}px`,
         }}
       ></div>
@@ -44,5 +44,9 @@ for (let i = 0; i < 5; i++) {
 }
 
 function OrderedRectangles() {
-  return <div className="pt-4 w-[50vw] flex space-x-2">{rectangles}</div>;
+  return (
+    <div className="pt-4 w-screen md:w-[50vw] h-screen flex space-x-2">
+      {rectangles}
+    </div>
+  );
 }
