@@ -11,11 +11,11 @@ import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 
 const sections = [
   {
-    title: "About This Review",
+    title: "About this Review",
     id: "about-this-review",
   },
   {
-    title: "About This Project",
+    title: "About this Project",
     id: "about-this-project",
   },
   {
@@ -43,7 +43,7 @@ export default function AboutPage() {
         <main id="main-content">
           <CenteredLayout>
             <p className="first-paragraph py-10">
-              Welcome to the community review site for <em>Data by Design</em>,
+              Welcome to the community review for <em>Data by Design</em>,
               and thank you for your generosity and time. The review period for
               this draft will close on June 14th, 2024, although the ability to
               leave comments will still be available after that point.
@@ -95,18 +95,14 @@ export default function AboutPage() {
             </p>
 
             <p>
-              This site represents a complete working draft of the project as of
-              Spring 2024--a public beta, if you will. We are using{" "}
-              <a href="https://web.hypothes.is/">Hypothesis</a> to track
-              comments. Please feel free to email Lauren at{" "}
+              Please email Lauren at{" "}
               <a href="mailto:lauren.klein@emory.edu">lauren.klein@emory.edu</a>{" "}
               with any comments that can't be registered via Hypothesis, or that
               you would rather not publicly disclose.
             </p>
 
-            <p>Thank you, once again,</p>
-
             <p>
+              Thank you, once again,<br></br>
               Lauren Klein, on behalf of the <em>Data by Design</em> project
               team
               <br></br>
