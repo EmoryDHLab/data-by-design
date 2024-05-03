@@ -2,8 +2,7 @@ import * as React from "react";
 const MinardBlackLine = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={728}
-    height={193}
+    viewBox="0 0 728 193"
     fill="none"
     {...props}
   >

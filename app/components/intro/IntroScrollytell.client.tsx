@@ -104,15 +104,18 @@ function LinearTimeline() {
     return (
       <div className="md:w-[50vw] relative">
         {scrollProgress > 9.5 && (
-          <MinardPath className="absolute left-[25px] top-[35px] md:w-[700px]" />
+          <MinardPath className="absolute sm:left-[24px] sm:top-[137px] sm:w-[333px] lg:left-[40px] lg:top-[230px] lg:w-[550px] z-10" />
         )}
         {scrollProgress > 10.5 && (
-          <MinardBlackLine className="absolute left-[25px] top-[55px] md:w-[500px]" />
+          <MinardBlackLine className="absolute sm:left-[31px] sm:top-[143px] sm:w-[251px] lg:left-[52px] lg:top-[238px] lg:w-[418px] z-10" />
         )}
         <img
-          className="z-20 md:w-[576px]"
+          className={classNames(
+            "z-20 lg:w-[500px] transition sm:w-[300px]",
+            scrollProgress > 9.5 && "opacity-50"
+          )}
           alt="Minard chart"
-          src="/images/playfair/5-minard.jpg"
+          src="/images/intro/1-Carte_figurative_des_pertes_successives_Minard_Charles-Joseph.jpeg"
         />
       </div>
     );
