@@ -100,6 +100,7 @@ export default {
         peabodyPrimaryHalfOpacity: "#9ae4c180",
         shanawdithitPrimary: "#fb9318",
         shanawdithitSecondary: "#fac88d",
+        shanawdithitAccent:"#FEFFC9",
         peabodyChartBackground: "#d9bb9f",
         willardSecondary: "#FEFFC9",
         willardPrimary: "#FEC313",
@@ -129,6 +130,8 @@ export default {
     extend: {},
   },
   safelist: [
+    "bg-shanawdithitAccent",
+    "shanawdithitAccent",
     "bg-brooksPrimary",
     "bg-laborPrimary",
     "border-brooksPrimary",

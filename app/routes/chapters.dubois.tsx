@@ -151,7 +151,7 @@ export default function DuboisChapter() {
           <FigureObj
             figure={figures["dubois-paris-expo-colored-american"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
-            captionClassName="mx-12"
+            captionClassName="text-center"
           />
           <p>
             The photograph of Du Bois documents the exhibit he designed for the
@@ -880,24 +880,22 @@ export default function DuboisChapter() {
             cannot be shown.” The chart is titled, “It Could Never Be Large
             Enough.”
           </p>
+          <div className="sm:grid grid-cols-3 gap-4 ">
+            <FigureObj
+              figure={figures["onuoha1"]}
+              className="mx-2 md:mx-12 text-sm md:text-base"
+            />
 
-          <FigureObj
-            figure={figures["onuoha1"]}
-            className="mx-2 md:mx-12 text-sm md:text-base"
-            captionClassName="mx-12"
-          />
+            <FigureObj
+              figure={figures["onuoha2"]}
+              className="mx-2 md:mx-12 text-sm md:text-base"
+            />
 
-          <FigureObj
-            figure={figures["onuoha2"]}
-            className="mx-2 md:mx-12 text-sm md:text-base"
-            captionClassName="mx-12"
-          />
-
-          <FigureObj
-            figure={figures["onuoha3"]}
-            className="mx-2 md:mx-12 text-sm md:text-base"
-            captionClassName="mx-12"
-          />
+            <FigureObj
+              figure={figures["onuoha3"]}
+              className="mx-2 md:mx-12 text-sm md:text-base"
+            />
+          </div>
 
           <p>
             In the context of Du Bois's own writing about the relationship

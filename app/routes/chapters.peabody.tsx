@@ -1275,25 +1275,24 @@ export default function PeabodyPage() {
               Commit to a capacious definition of what counts as visualization
             </span>,
             <span key="2f317172">
-              Consider who might be missing from the field of visualization 
+              Consider who might be missing from the field of visualization
             </span>,
-             <span key="2f317173">
-             Consider the reasons why 
-           </span>,
+            <span key="2f317173">Consider the reasons why</span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Focus on supporting the process of knowledge production 
+              Focus on supporting the process of knowledge production
             </span>,
             <span key="6d2691fc">
-              Enable interactions among multiple representational forms (text, image, etc)
+              Enable interactions among multiple representational forms (text,
+              image, etc)
             </span>,
             <span key="9650286d">
               Consider alternatives to ease and efficiency
             </span>,
-             <span key="2f317175">
-             Consider modes of representing data beyond the visual form 
-           </span>,
+            <span key="2f317175">
+              Consider modes of representing data beyond the visual form
+            </span>,
           ]}
         />
       </ChapterBody>

@@ -785,14 +785,6 @@ export default function ShanawdithitPage() {
 
         <DocumentViewer />
 
-        <CenteredLayout>
-          <p>
-            In this context, it is notable that the only map in the textbook
-            that references Indigenous peoples or nations is the "Introductory
-            Map.”
-          </p>
-        </CenteredLayout>
-
         <WillardScrollytell
           figure={figures["Willard0"]}
           triggers={[
@@ -800,6 +792,8 @@ export default function ShanawdithitPage() {
 
             <Fragment key={"794f9397eb50"}>
               <p className="pl-4 md:pl0 w-9/12">
+                In this context, it is notable that the only map in the textbook
+                that references Indigenous peoples or nations is the{" "}
                 <cite>Introductory Map</cite>, which is subtitled{" "}
                 <cite>Locations and Wanderings of the Aboriginal Tribes</cite>.
               </p>
@@ -829,7 +823,18 @@ export default function ShanawdithitPage() {
 
             <Fragment key={"81d65ca3c699"}>
               <p className="pl-4 md:pl0 mb-0 w-9/12">
-                “Salt water Lake or Great Water.”{" "}
+                The perspective inhabited by the “Introductory Map” is somewhat
+                contradictory. Willard makes the clear choice to label certain
+                geographic features with names intended to evoke an Indigenous
+                worldview, as evidenced by how the same features are labeled
+                differently on all subsequent maps.{" "}
+                <p className="pt-5">
+                  {" "}
+                  Instead of the Atlantic Ocean, for example, the body of water
+                  is here labeled “Salt water Lake or Great Water,” which she
+                  explains in the accompanying chapter of the textbook are two
+                  names given to it by the Delaware at various times. {" "}
+                </p>
               </p>
             </Fragment>,
 
@@ -891,9 +896,9 @@ export default function ShanawdithitPage() {
             words of Mishauna Goeman that began this section—are those that
             “continue to mark us today.”
           </p>
-
-          <ChapterSectionTitle section={sections[3]} />
-
+        </CenteredLayout>
+        <ChapterSectionTitle section={sections[3]} />
+        <CenteredLayout>
           <p className="first-paragraph">
             About a decade after Shanawdithit set her maps to paper, just over a
             thousand miles to the west, two men, likely Ojibwe, stood atop a
@@ -912,7 +917,11 @@ export default function ShanawdithitPage() {
           </p>
         </CenteredLayout>
 
-        <FigureObj figure={figures["birch-bark-1841"]} />
+        <FigureObj
+          figure={figures["birch-bark-1841"]}
+          className="mx-2 md:mx-12 text-sm md:text-base"
+          captionClassName="text-center	"
+        />
 
         <CenteredLayout>
           <p>
@@ -991,7 +1000,7 @@ export default function ShanawdithitPage() {
           <Quotation
             quote={
               <>
-                “Mr. Peyton afterwards learned from the woman Shanawdithit, the
+                Mr. Peyton afterwards learned from the woman Shanawdithit, the
                 full particulars of the manner in which his boat was stolen. She
                 was present all the time and knew every incident connected with
                 this event. As Mr. P. rightly conjectured, it appears the
@@ -1006,7 +1015,7 @@ export default function ShanawdithitPage() {
                 paid his last visit of inspection to the long wharf before the
                 taking of the boat, that the Indians were actually hidden in
                 their canoe beneath the wharf, but kept so perfectly motionless,
-                that in the dense darkness he did not observe their presence.”
+                that in the dense darkness he did not observe their presence.
               </>
             }
             byline="Howley 96"
