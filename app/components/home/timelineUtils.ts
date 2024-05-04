@@ -21,7 +21,7 @@ export const timelineImages = () => {
   const description: TFilteredFigures[] = Object.entries(
     descriptionFigures
   ).filter((figures) => figures[1].frontPage);
-  const dubois: TFilteredFigures[] = Object.entries(duboisFigures).filter(
+  const allDubois: TFilteredFigures[] = Object.entries(duboisFigures).filter(
     (figures) => figures[1].frontPage
   );
   const peabody: TFilteredFigures[] = Object.entries(peabodyFigures).filter(
@@ -29,6 +29,12 @@ export const timelineImages = () => {
   );
   const playfair: TFilteredFigures[] = Object.entries(playfairFigures).filter(
     (figures) => figures[1].frontPage
+  );
+
+  const shuffledDubois = d3.shuffle(allDubois);
+  const dubois: TFilteredFigures[] = shuffledDubois.slice(
+    0,
+    allDubois.length / 8
   );
 
   const filteredFigures: TFigure[] = Object.values(
