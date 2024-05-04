@@ -1,4 +1,4 @@
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
 import {
@@ -29,18 +29,20 @@ export const links: LinksFunction = () => {
 };
 
 export default function App() {
-  // useEffect(() => {
-  //   window.hypothesisConfig = function () {
-  //     return {
-  //       "openSidebar": false
-  //     };
-  //   };
-  //   const head = document.querySelector('head');
-  //   const script = document.createElement('script');
-  //   script.setAttribute('src', 'https://hypothes.is/embed.js');
-  //   script.async = true;
-  //   head?.appendChild(script);
-  // }, []);
+  useEffect(() => {
+    // @ts-ignore
+
+    window.hypothesisConfig = function () {
+      return {
+        openSidebar: false,
+      };
+    };
+    const head = document.querySelector("head");
+    const script = document.createElement("script");
+    script.setAttribute("src", "https://hypothes.is/embed.js");
+    script.async = true;
+    head?.appendChild(script);
+  }, []);
 
   return (
     <html lang="en">
