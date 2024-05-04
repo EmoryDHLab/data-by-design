@@ -1118,13 +1118,13 @@ export default function BrooksPage() {
               Always recall the power of visualization
             </span>,
             <span key="6440631a">
-              Ask for and by whom any visualization has been designed 
+              Ask for and by whom any visualization has been designed
             </span>,
             <span key="2f317172">
-              Consider the context of the data—including any people behind it 
+              Consider the context of the data—including any people behind it
             </span>,
             <span key="2f317173">
-              Remember that there is always more than data alone can convey  
+              Remember that there is always more than data alone can convey
             </span>,
           ]}
           forViewers={[
@@ -1132,10 +1132,11 @@ export default function BrooksPage() {
               Consider the tradeoffs between efficiency and detail
             </span>,
             <span key="6d2691fc">
-              Ask who will benefit from your visualization and who might be harmed
+              Ask who will benefit from your visualization and who might be
+              harmed
             </span>,
             <span key="9650286d">
-              Probe any missing data and the reasons why 
+              Probe any missing data and the reasons why
             </span>,
             <span key="9650286e">
               Hold space for the possibility of not visualizing at all

@@ -40,13 +40,13 @@ export default function AboutPage() {
         <ChapterTitle title="About" subtitle="" />
 
         <ChapterSectionTitle section={sections[0]}></ChapterSectionTitle>
-        <main id="main-content">
+        <main id="main-content pb-36">
           <CenteredLayout>
             <p className="first-paragraph py-10">
-              Welcome to the community review for <em>Data by Design</em>,
-              and thank you for your generosity and time. The review period for
-              this draft will close on June 14th, 2024, although the ability to
-              leave comments will still be available after that point.
+              Welcome to the community review for <em>Data by Design</em>, and
+              thank you for your generosity and time. The review period for this
+              draft will close on June 14th, 2024, although the ability to leave
+              comments will still be available after that point.
             </p>
 
             <p>
@@ -235,11 +235,6 @@ export default function AboutPage() {
 
           <ChapterSectionTitle section={sections[2]}></ChapterSectionTitle>
 
-          <CenteredLayout>
-            <div className="bg-duboisSecondary p-4 font-dubois text-xl lg:text-2xl flex justify-center items-center text-black mb-5">
-              Previous Versions
-            </div>
-          </CenteredLayout>
           <div>
             <details>
               <summary className="text-xl  font-dubois py-2  mx-12 md:ml-[26rem] md:py-5 ">
