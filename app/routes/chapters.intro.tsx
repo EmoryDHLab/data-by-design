@@ -253,15 +253,14 @@ export default function IntroPage() {
             </p>
           </Column>
           <Column>
-            <FigureObj figure={playfairFigures["1-northamerica"]} />
-            <FigureObj figure={playfairFigures["2-wheat"]} />
-            <FigureObj figure={playfairFigures["3-pie"]} />
+            <FigureObj figure={figures["3-anonymous"]} />
+            <FigureObj figure={figures["4-oresme"]} />
           </Column>
         </TwoColumnLayout>
         <FigureObj
           figure={figures["8-Edmond_Halley's_map_of_the_trade_winds,_1686"]}
           className="mx-2 md:mx-12 text-sm md:text-base"
-          captionClassName="mx-12"
+          captionClassName="text-center"
         />
 
         <CenteredLayout>
@@ -459,20 +458,11 @@ export default function IntroPage() {
             other numbers that represented other quantities and prices of
             goods—goods that, again, at times took human form. 
           </p>
-          {/*<FigureObj*/}
-          {/*  className="grid grid-cols-2 items-center middle-full gap-x-4"*/}
-          {/*  figures={*/}
-          {/*    [*/}
-          {/*      figures["10-ledger1"],*/}
-          {/*      figures["11-ledger2"],*/}
-          {/*    ]*/}
-          {/*  }*/}
-          {/*  groupCaption={*/}
-          {/*    <>*/}
-          {/*      <p></p>*/}
-          {/*    </>*/}
-          {/*  }*/}
-          {/*/>*/}
+          <FigureObj
+            figure={figures["mellis"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="text-center"
+          />
           <p>
             The earliest versions of these ledger books still included a
             substantial amount of descriptive text, but it was not long before
@@ -493,9 +483,9 @@ export default function IntroPage() {
             perished and those who survived. 
           </p>
           <FigureObj
-            figure={figures["8-Edmond_Halley's_map_of_the_trade_winds,_1686"]}
+            figure={figures["2-1468px-Plan"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
-            captionClassName="mx-12"
+            captionClassName="text-center"
           />
           <p>
             This visual presentation of people as data—a literal headcount, as
@@ -523,6 +513,11 @@ export default function IntroPage() {
             and its visual display, we must also always consider the context—and
             very often, the humanity—that is stripped away.
           </p>
+          <FigureObj
+            figure={figures["TAST-2"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+            captionClassName="text-center"
+          />
           <p>
             There is a final conceptual connection to capitalism, and to
             slavery, with which those who work with data must contend. This has

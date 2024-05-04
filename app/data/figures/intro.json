@@ -91,7 +91,7 @@
   },
   "PLACEHOLDER-quipu": {
     "chapterTitle": "Intro",
-    "fileName": "PLACEHOLDER-quipu",
+    "fileName": "quipu",
     "title": "Quipu/Counting record",
     "artist": "Probably Inka",
     "caption": "An example of Inkan quipu from the Late Horizon period, ca. 1450-1532.",
@@ -163,7 +163,7 @@
   },
   "8-Edmond_Halley's_map_of_the_trade_winds,_1686": {
     "chapterTitle": "Intro",
-    "fileName": "8-Edmond_Halley's_map_of_the_trade_winds,_1686",
+    "fileName": "8-Edmond_Halley_s_map_of_the_trade_winds,_1686",
     "title": "\"An Historical Account of the Trade Winds, and Monsoons, Observable in the Seas between and near the Tropicks, with an Attempt to Assign the Phisical Cause of the Said Wind\"",
     "artist": "Edmond Halley",
     "caption": "Edmond Halley's \"An Historical Account of the Trade Winds, and Monsoons, Observable in the Seas between and near the Tropicks, with an Attempt to Assign the Phisical Cause of the Said Wind\"",
@@ -286,5 +286,24 @@
     "frontPage": true,
     "year": 1993,
     "chapter": "intro"
+  },
+
+  "2-1468px-Plan": {
+    "chapterTitle": "Description",
+    "fileName": "2-1468px-Plan-crop",
+    "title": "Plan, Profil, et Distribution du Navire La Marie Séraphique de Nantes",
+    "artist": "Anonymous",
+    "caption": "An early engraving that makes use of the aerial view of the ship's hold, displaying its human captives alongside its goods for sale.",
+    "altText": "A page divided into three sections depicts the human captives and products for sale in a ship’s hold. The images are colored rather than monochromatic, like Elford’s graphic discussed earlier in the chapter. Beneath the bold title written in French, the first section shows a row of four aerial views of a ship’s various levels. The two leftmost images show the two bottommost floors, packed with barrels. To the right is the level “between decks” (“l’entre-pont”), where the enslaved are held in captivity. While there is more detail in this graphic than the former “Plan,” the people drawn remain featureless, save for the occasional garment or body part, both which indicate the sex of the person. In stark contrast to the previous infographic, the captive’s bodies are curved up against and overlap one another, implying a level of claustrophobia Elford’s “Plan” omits; it gives the impression that space was incredibly cramped. The final image in the row on the far right shows the top deck, with barrels, crates, and other objects cast along the surface. The second section, below the row of the aerial views, shows a watercolor painting of the Marie Séraphique ship and its surrounding seascape. The ship is in the foreground, pulling along a small rowboat in its wake, while a hilly, green, tropical land is shown in the background. The final section on the bottom of the page is a table in French that shows nonhuman goods counted up alongside the people captured on board, equating the material and humans as cargo.",
+    "sensitive": false,
+    "creditLine": "Image courtesy of Wikimedia Commons.",
+    "digitizedLine": "Digitized by the Musée d'Histoire de Nantes.",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plan,_profil_et_distribution_du_navire_La_Marie_S%C3%A9raphique_de_Nantes.jpg",
+    "fee": false,
+    "notes": null,
+    "frontPage": false,
+    "year": 1770,
+    "chapter": "description"
   }
 }

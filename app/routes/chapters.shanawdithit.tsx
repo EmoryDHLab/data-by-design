@@ -500,7 +500,7 @@ export default function ShanawdithitPage() {
             “pipeline” alone.
             <InlineFootnote index={30} />
           </p>
-          {/* <!-- insert second diagram of sources here --> */}
+          <FigureObj figure={figures["Illustration2"]} />
           <p>
             Adding Cormack and Howley, along with ourselves, to our diagram of
             sources accentuates the layers of mediation that separate us from

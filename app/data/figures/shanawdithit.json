@@ -522,5 +522,23 @@
     "frontPage": false,
     "year": 2024,
     "chapter": "shanawdithit"
+  },
+  "Illustration2": {
+    "chapterTitle": "Shanawdithit",
+    "fileName": "illustration-2",
+    "title": "Illustration 2",
+    "artist": "",
+    "caption": "",
+    "altText": "",
+    "sensitive": false,
+    "creditLine": "",
+    "digitizedLine": null,
+    "source": "",
+    "sourceUrl": "",
+    "fee": true,
+    "notes": "",
+    "frontPage": false,
+    "year": 2024,
+    "chapter": "shanawdithit"
   }
 }
