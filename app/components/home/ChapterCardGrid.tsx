@@ -4,7 +4,7 @@ import type { TChapterMeta, ChapterTitle } from "~/types/chapterMetaTags";
 
 const ChapterCardGrid = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-black ">
       <div className="grid md:grid-cols-2 grid-cols-1 md:grid-rows-3 3xl:mx-48">
         {Object.keys(chapters as TChapterMeta)
           .slice(1, 8)

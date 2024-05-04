@@ -3,9 +3,9 @@ import SiteTitle from "./home/SiteTitle";
 export default function Footer() {
   return (
     <footer
-      className={`grid md:grid-cols-12 md:gap-x-12 p-20 pt-20 md:pt-12 font-neueMontreal bg-offblack text-offwhite border-t-2 border-offwhite`}
+      className={`grid md:grid-cols-12  md:gap-x-12 p-32 md:pt-12 font-neueMontreal bg-offblack text-offwhite `}
     >
-      <div className="col-span-12 md:col-span-3 flex flex-col">
+      <div className="col-span-12  md:col-span-3 flex flex-col">
         <cite className="sr-only">Data by Design</cite>
         <SiteTitle showTag={false} className="" />
         <svg
@@ -19,7 +19,7 @@ export default function Footer() {
           <g>
             <foreignObject x={52} y={0} height={200} width={368}>
               <p className="text-2xl font-neueMontrealLight">
-                Final version forthcoming in print and online from {" "}
+                Final version forthcoming in print and online from{" "}
                 <a
                   className="underline underline-offset-4 decoration-1 hover:decoration-2 focus:decoration-2"
                   href="https://mitpress.mit.edu/"
@@ -46,9 +46,9 @@ export default function Footer() {
       <div className="col-span-12 md:col-span-4 flex flex-col space-y-4 font-neueMontrealLight leading-6 md:px-12 text-sm md:text-xs">
         <p className="uppercase font-neueMontreal">Cite as</p>
         <p className="font-neueMontreal">
-          Lauren Klein, Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams, Nicholas Yang, Dan
-          Jutan, Jianing Fu, Anna Mola, Zhou Fang, Yang Li, and
-          Silas Munro. Data by Design: An Interactive History of Data
+          Lauren Klein, Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams,
+          Nicholas Yang, Dan Jutan, Jianing Fu, Anna Mola, Zhou Fang, Yang Li,
+          and Silas Munro. Data by Design: An Interactive History of Data
           Visualization, 1789-1900. 2024 public beta.
         </p>
         <p>

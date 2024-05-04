@@ -58,7 +58,7 @@ export default function Index() {
         footnotes: [],
       }}
     >
-      <main id="main-content" className="bg-black text-white relative">
+      <main id="main-content" className="bg-black pb-32 text-white relative">
         <h1 className="sr-only">
           Data by Design: An Interactive History of Data Visualization 1786-1900
         </h1>
@@ -83,8 +83,8 @@ export default function Index() {
             </ClientOnly>
           </div>
         </div>
-        <div className="hidden lg:block w-screen border-y-2 border-white border-dashed mb-8 pt-10">
-          <div className="flex items-center w-full h-96">
+        <div className="hidden lg:block w-screen my-2 mb-8 pt-10">
+          <div className="flex items-center w-full h-96 fancyborder ">
             <ClientOnly>
               {() => (
                 <Timeline
@@ -99,18 +99,26 @@ export default function Index() {
             </ClientOnly>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 font-neueMontreal border-b-2 border-dashed pb-0 md:pb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 font-neueMontreal my-32 pb-0 md:pb-6">
           <div className="px-6 md:px-28">
             <p>
-              Data visualization is not a recent innovation. Even in the eighteenth century, activists and economists, as well as educators and politicians, were fully aware of the power of visualization to produce new knowledge. 
+              Data visualization is not a recent innovation. Even in the
+              eighteenth century, activists and economists, as well as educators
+              and politicians, were fully aware of the power of visualization to
+              produce new knowledge.
             </p>
             <p>
-              But who, more precisely, was wielding this power? On whose behalf? And for whose benefit? The answers to these questions are what this project explores. 
+              But who, more precisely, was wielding this power? On whose behalf?
+              And for whose benefit? The answers to these questions are what
+              this project explores.
             </p>
           </div>
           <div className="px-6 md:px-28">
             <p>
-              By retelling the history of data visualization alongside the histories of colonialism and slavery, we show how questions of ethics and justice have always been present—and continue to offer lessons to viewers and designers of data visualizations today.
+              By retelling the history of data visualization alongside the
+              histories of colonialism and slavery, we show how questions of
+              ethics and justice have always been present—and continue to offer
+              lessons to viewers and designers of data visualizations today.
             </p>
             <p className="pt-6">
               <Link to="/chapters/intro" className="text-xl">
@@ -121,7 +129,7 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="flex md:items-center w-full flex-col md:flex-row">
+        <div className="flex md:items-center  w-full flex-col md:flex-row">
           <ChapterCardGrid />
         </div>
       </main>
