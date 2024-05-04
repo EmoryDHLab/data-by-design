@@ -14,6 +14,7 @@ import styles from "./index.css?url";
 import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
 import { ClientOnly } from "remix-utils/client-only";
+import Banner from "./components/layout/Banner";
 
 export const meta: MetaFunction = () => {
   return [
@@ -51,6 +52,7 @@ export default function App() {
         <ScrollToHashElement />
         <LinkToMain />
         <ClientOnly>{() => <Navbar />}</ClientOnly>
+        <Banner>Public Beta</Banner>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
