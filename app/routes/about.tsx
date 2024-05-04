@@ -117,9 +117,9 @@ export default function AboutPage() {
 
           <TwoColumnLayout>
             <Column className="pr-18" shouldPin>
-              <p className="pt-16">
+              <div className="pt-16">
                 {" "}
-                <p className="pb-4">
+                <div className="pb-4">
                   <span className="font-dubois"> Citation </span>
                   <p>
                     <cite className="select-all">
@@ -128,12 +128,10 @@ export default function AboutPage() {
                       Data by Design. 2024 public beta.
                     </cite>
                   </p>
-                </p>
-                <p>
-                  <p className="font-dubois"> Code </p>
-                  https://github.com/EmoryDHLab/data-by-design
-                </p>
-              </p>
+                </div>
+                <p className="font-dubois"> Code </p>
+                <p>https://github.com/EmoryDHLab/data-by-design</p>
+              </div>
             </Column>
             <Column className="px-3">
               <p className="pt-16 first-paragraph leading-7">
@@ -142,7 +140,7 @@ export default function AboutPage() {
                 students, and professionals, collaborating across two
                 continents, three states, and four institutions.
               </p>
-              <span className="font-normal">
+              <div className="font-normal">
                 <p className="py-2">
                   <span className="font-medium"> Lauren Klein </span> (Emory,
                   Departments of Quantitative Theory & Methods and English) is
@@ -229,7 +227,7 @@ export default function AboutPage() {
                   <span className="font-medium">Brian Johnson</span> contributed
                   valuable ideas and feedback.
                 </p>
-              </span>
+              </div>
             </Column>
           </TwoColumnLayout>
 
@@ -244,83 +242,62 @@ export default function AboutPage() {
               <TwoColumnLayout>
                 <Column className="pr-18">
                   <p>
-                    <p>
-                      <span className="font-dubois"> Citation </span>
-                      <p>
-                        <cite className="select-all">
-                          L. Klein, T. Sharma, D. Jutan, N. Yang, J. Fu, A.
-                          Mola, Z. Fang, and S. Monro.{" "}
-                          <cite>Data by Design.</cite> 2023 alpha.
-                        </cite>
-                      </p>
-                      <p>
-                        <p className="font-dubois  pt-5"> Code </p>
-                        https://github.com/EmoryDHLab/2021-data-by-design
-                      </p>
-                    </p>
-                    <p>
-                      {" "}
-                      <p className="font-dubois pt-5 uppercase">
-                        {" "}
-                        Project director:
-                      </p>{" "}
-                      Lauren Klein
-                    </p>
-                    <p>
-                      <p className="font-dubois pt-5 uppercase"> Designers: </p>
-                      Tanvi Sharma (NYU, MS Interactive Design and Media ‘23),
-                      <p>Silas Monro (Polymode)</p>
-                    </p>
-                    <p>
-                      <p className="font-dubois pt-5 uppercase">
-                        {" "}
-                        Developers:{" "}
-                      </p>{" "}
-                      Dan Jutan (Georgia Tech, BS Computer Science ‘24),
-                      <p> Nicholas Yang (NYU, BA Computer Science ‘22),</p>
-                      <p>
-                        {" "}
-                        Jianing Fu (Georgia Tech, BS ‘21, Computer Science,
-                        Univ. of California, Berkeley, MEng ‘22, Computer
-                        Science),{" "}
-                      </p>{" "}
-                      <p>
-                        {" "}
-                        Anna Mola (Emory BA ‘22, Computer Science and Visual
-                        Art),
-                      </p>
-                      <p> Zhou Fang (Emory BA ‘22, Quantitative Sciences)</p>
-                    </p>
+                    <span className="font-dubois"> Citation </span>
+                    <span className="select-all">
+                      L. Klein, T. Sharma, D. Jutan, N. Yang, J. Fu, A. Mola, Z.
+                      Fang, and S. Monro. <cite>Data by Design.</cite> 2023
+                      alpha.
+                    </span>
                   </p>
+                  <p className="font-dubois  pt-5"> Code </p>
+                  <p>https://github.com/EmoryDHLab/2021-data-by-design</p>
+                  <p className="font-dubois pt-5 uppercase">
+                    Project director: Lauren Klein
+                  </p>
+                  <p className="font-dubois pt-5 uppercase"> Designers: </p>
+                  Tanvi Sharma (NYU, MS Interactive Design and Media ‘23),
+                  <p>Silas Monro (Polymode)</p>
+                  <p className="font-dubois pt-5 uppercase">
+                    {" "}
+                    Developers:{" "}
+                  </p>{" "}
+                  <p>Dan Jutan (Georgia Tech, BS Computer Science ‘24),</p>
+                  <p> Nicholas Yang (NYU, BA Computer Science ‘22),</p>
+                  <p>
+                    {" "}
+                    Jianing Fu (Georgia Tech, BS ‘21, Computer Science, Univ. of
+                    California, Berkeley, MEng ‘22, Computer Science),{" "}
+                  </p>
+                  <p>
+                    Anna Mola (Emory BA ‘22, Computer Science and Visual Art),
+                  </p>
+                  <p> Zhou Fang (Emory BA ‘22, Quantitative Sciences)</p>
                 </Column>
                 <Column className="px-3">
                   <p>
-                    <span className="">
-                      The alpha version of Data by Design was created between
-                      2021 and 2023 by the faculty and students associated with
-                      the Emory Digital Humanities Lab (formerly the Georgia
-                      Tech Digital Humanities Lab), in collaboration with the
-                      design firm Polymode. Lauren Klein directed the project
-                      and conducted the historical and archival research for the
-                      project. She also wrote the text for the site. Tanvi
-                      Sharma was the lead designer on the project. She
-                      prototyped the project website, designing both site-wide
-                      and page-specific interactions, as well as the custom
-                      visualizations that appear on the site. Dan Jutan was the
-                      first lead developer on the project, between 2021 and
-                      2022. He designed the site architecture, both frontend and
-                      backend, and implemented both site-wide and page-specific
-                      components, including those that appear on the Peabody
-                      chapter page. Nicholas Yang joined the team as developer
-                      and then lead developer on the project. He implemented the
-                      components that appear on the Du Bois chapter page, as
-                      well as several additional site-wide components. Jianing
-                      Fu built the components on the project’s front page,
-                      including the interactive timeline. Anna Mola built the
-                      components of the Playfair chapter. Zhou Fang built the
-                      image browser component of the Du Bois chapter. Silas
-                      Munro created the initial design concept for the site.
-                    </span>
+                    The alpha version of Data by Design was created between 2021
+                    and 2023 by the faculty and students associated with the
+                    Emory Digital Humanities Lab (formerly the Georgia Tech
+                    Digital Humanities Lab), in collaboration with the design
+                    firm Polymode. Lauren Klein directed the project and
+                    conducted the historical and archival research for the
+                    project. She also wrote the text for the site. Tanvi Sharma
+                    was the lead designer on the project. She prototyped the
+                    project website, designing both site-wide and page-specific
+                    interactions, as well as the custom visualizations that
+                    appear on the site. Dan Jutan was the first lead developer
+                    on the project, between 2021 and 2022. He designed the site
+                    architecture, both frontend and backend, and implemented
+                    both site-wide and page-specific components, including those
+                    that appear on the Peabody chapter page. Nicholas Yang
+                    joined the team as developer and then lead developer on the
+                    project. He implemented the components that appear on the Du
+                    Bois chapter page, as well as several additional site-wide
+                    components. Jianing Fu built the components on the project’s
+                    front page, including the interactive timeline. Anna Mola
+                    built the components of the Playfair chapter. Zhou Fang
+                    built the image browser component of the Du Bois chapter.
+                    Silas Munro created the initial design concept for the site.
                   </p>
                 </Column>
               </TwoColumnLayout>
@@ -333,49 +310,31 @@ export default function AboutPage() {
               </summary>
               <TwoColumnLayout>
                 <Column className="pr-18">
+                  <p className="pb-4">
+                    <span className="font-dubois"> Credits Citation </span>
+                  </p>
                   <p>
+                    <span className="select-all">
+                      L. Klein, D. Jutan, J. Fu, Q. Tian, and A. Hayward.{" "}
+                      <cite>Data by Design.</cite> 2021 prototype.
+                    </span>
+                  </p>
+                  <p className="font-dubois"> Code </p>
+                  <p>https://github.com/EmoryDHLab/2020-data-by-design</p>
+                  <p className="font-dubois pt-5  uppercase">
                     {" "}
-                    <p className="pb-4">
-                      <span className="font-dubois"> Credits Citation </span>
-                      <p>
-                        <cite className="select-all">
-                          L. Klein, D. Jutan, J. Fu, Q. Tian, and A. Hayward.{" "}
-                          <cite>Data by Design.</cite> 2021 prototype.
-                        </cite>
-                      </p>
-                    </p>
-                    <p>
-                      <p className="font-dubois"> Code </p>
-                      https://github.com/EmoryDHLab/2020-data-by-design
-                    </p>
-                  </p>
-                  <p>
-                    <p>
-                      {" "}
-                      <p className="font-dubois pt-5  uppercase">
-                        {" "}
-                        Project director:
-                      </p>{" "}
-                      Lauren Klein
-                    </p>
-                    <p>
-                      <p className="font-dubois pt-5 uppercase"> Designer: </p>
-                      Qing Tian (Georgia Tech, MS Digital Media ‘19){" "}
-                    </p>
-                    <p>
-                      <p className="font-dubois pt-5 uppercase">
-                        {" "}
-                        Developers:{" "}
-                      </p>{" "}
-                      Dan Jutan (Georgia Tech, BS Computer Science ‘24),{" "}
-                      <p>
-                        Jianing Fu (Georgia Tech, BS ‘21, Computer Science),{" "}
-                      </p>
-                      <p>
-                        Adam Hayward (Georgia Tech, BS Computer Science ‘19)
-                      </p>
-                    </p>
-                  </p>
+                    Project director:
+                  </p>{" "}
+                  <p>Lauren Klein</p>
+                  <p className="font-dubois pt-5 uppercase"> Designer: </p>
+                  <p>Qing Tian (Georgia Tech, MS Digital Media ‘19) </p>
+                  <p className="font-dubois pt-5 uppercase">
+                    {" "}
+                    Developers:{" "}
+                  </p>{" "}
+                  <p>Dan Jutan (Georgia Tech, BS Computer Science ‘24), </p>
+                  <p>Jianing Fu (Georgia Tech, BS ‘21, Computer Science), </p>
+                  <p>Adam Hayward (Georgia Tech, BS Computer Science ‘19)</p>
                 </Column>
                 <Column className="px-3">
                   <span className="font-normal">
