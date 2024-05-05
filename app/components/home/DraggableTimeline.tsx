@@ -42,9 +42,12 @@ export default function DraggableTimeline({
     randomTimelineImages(IMAGE_COUNT)
   );
 
-  if (selectedImage && !images.includes(selectedImage)) {
-    images.splice(0, 0, selectedImage);
-  }
+  useEffect(() => {
+    if (selectedImage && !images.includes(selectedImage)) {
+      images.splice(0, 0, selectedImage);
+      setCurrentImageIndex(0);
+    }
+  }, [selectedImage, images]);
 
   useEffect(() => {
     setImages(randomTimelineImages(IMAGE_COUNT));

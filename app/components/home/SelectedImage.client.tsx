@@ -6,7 +6,10 @@ const SelectedImage = ({ selectedImage }: { selectedImage: TFigure }) => {
   if (selectedImage) {
     // TODO: Be able to reset margin on the figure tag in the modal
     return (
-      <FigureModal figure={selectedImage}>
+      <FigureModal
+        figure={selectedImage}
+        id={`selected-image-${selectedImage.fileName}`}
+      >
         <Picture
           figure={selectedImage}
           className="mx-0 pl-0 max-h-64 pointer-events-auto"
