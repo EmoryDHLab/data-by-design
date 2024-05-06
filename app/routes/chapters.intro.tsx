@@ -8,7 +8,7 @@ import CenteredLayout from "~/components/layout/CenteredLayout";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 
 import Footer from "~/components/Footer";
-import { playfairFootnotes } from "~/footnotes";
+import { introFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import figures from "~/data/figures/intro.json";
 import FigureObj from "~/components/layout/FigureObj";
@@ -54,7 +54,7 @@ export default function IntroPage() {
         accentColor: "playfairPrimary",
         accentTextColor: "white",
         footnoteTextColor: "playfairPrimary",
-        footnotes: playfairFootnotes,
+        footnotes: introFootnotes,
         sections,
         showFootnotes,
         setShowFootnotes,
@@ -268,7 +268,7 @@ export default function IntroPage() {
           </Column>
         </TwoColumnLayout>
         <FigureObj
-          figure={figures["8-Edmond_Halleys_map_of_the_trade_winds_1686"]}
+          figure={figures["8-Edmond_Halley_s_map_of_the_trade_winds_1686"]}
           className="mx-2 md:mx-12 text-sm md:text-base"
           captionClassName="text-center"
         />
@@ -755,7 +755,7 @@ export default function IntroPage() {
         </CenteredLayout>
       </ChapterBody>
       <CenteredLayout>
-        <FootnotesList footnotes={playfairFootnotes} />
+        <FootnotesList footnotes={introFootnotes} />
       </CenteredLayout>
       <Footer />
     </ChapterContext.Provider>
