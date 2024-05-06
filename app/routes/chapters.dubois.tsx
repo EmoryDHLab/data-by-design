@@ -130,31 +130,17 @@ export default function DuboisChapter() {
       <ChapterBody>
         <CenteredLayout>
           <p className="first-paragraph py-10">
-            There is a now-famous photograph of W.E.B. Du Bois (1868-1963), the
-            field-defining sociologist, author, and activist, taken in Paris in
-            the spring of 1900. Du Bois sits at a desk, jauntily dressed, a book
-            open in his lap. While he had yet to author the most influential of
-            his texts— <cite>The Souls of Black Folk</cite> would be published
-            three years later, in 1903—his intellectual reputation was already
-            increasingly outsized. In the photograph, however, Du Bois takes up
-            only a small portion of the frame. For its purpose was not only to
-            picture Du Bois but also his surroundings: directly behind him is a
-            low bookcase, its shelves lined end-to-end with books large and
-            small; the top of the bookcase, at counter height, is stacked with
-            more books, pamphlets, and other artifacts, intended to be perused;
-            and above the bookcase are charts—dozens and dozens of them—along
-            with photographs and additional artifacts, each installed in a
-            picture frame or swing-out vitrine, and mounted in rows reaching up
-            to the sky.
+          There is a now-famous photograph, yellowed by age, which was taken in Paris in the spring of 1900. No people appear in the photo. Instead what appears is a low bookcase, its shelves lined end-to-end with books large and small. The top of the bookcase, at counter height, is stacked with more books, pamphlets, and other artifacts, intended to be perused. And above the bookcase are charts—dozens and dozens of them—along with photographs and additional artifacts, each installed in a picture frame or swing-out vitrine, and mounted in rows reaching up to the sky.
           </p>
 
           <FigureObj
-            figure={figures["dubois-paris-expo-colored-american"]}
+            figure={figures["paris-expo-loc"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="text-center"
           />
           <p>
-            The photograph of Du Bois documents the exhibit he designed for the
+            The photograph documents the exhibit that W.E.B. Du Bois (1868-1963), the
+            field-defining sociologist, author, and activist, designed for the
             1900 <em>Exposition Universelle</em>. The “American Negro Exhibit,”
             as it was called, was the result of over a year of campaigning,
             reaching up to the President of the United States, to include the
