@@ -174,11 +174,13 @@ function ClarksonSideBySideScrollytell() {
           <div className="sticky p-8 md:p-0 top-20 h-min bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
             <svg
               viewBox={`0 0 ${width} ${height}`}
-              className={`max-h-[80vh] max-w-[90%] md:my-16 mx-auto bg-brooksSecondary transition-all duration-1000 ${
-                hideSensitiveState ? "blur-xl" : "blur-none"
-              }`}
+              className={`max-h-[80vh] max-w-[90%] md:my-16 mx-auto bg-brooksSecondary transition-all duration-1000`}
             >
+              <filter id="blurMe">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+              </filter>
               <image
+                filter={hideSensitiveState ? "url(#blurMe)" : ""}
                 mask="url(#clarkson-mask)"
                 href="/images/description/4-description-1789.jpg"
                 className={`transition-all origin-center duration-1000`}
