@@ -29,7 +29,6 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
     } else if (scrollProgress <= minScrollProgress + 0.25) {
       setSlideIndex(0);
     }
-    console.log("🚀 ~ VoyageScrollytell ~ scrollProgress:", scrollProgress);
   }, [scrollProgress]);
 
   return (
