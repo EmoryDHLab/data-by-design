@@ -268,7 +268,7 @@ export default function IntroPage() {
           </Column>
         </TwoColumnLayout>
         <FigureObj
-          figure={figures["8-Edmond_Halley's_map_of_the_trade_winds,_1686"]}
+          figure={figures["8-Edmond_Halleys_map_of_the_trade_winds_1686"]}
           className="mx-2 md:mx-12 text-sm md:text-base"
           captionClassName="text-center"
         />
@@ -741,20 +741,20 @@ export default function IntroPage() {
             power—and, therefore, the responsibility—that we hold as designers
             of visualizations ourselves. 
           </p>
+          <p>
+            Finally, if you have read this far, thank you. But please also keep
+            in mind that the version of the project that you are looking at is a
+            working draft. We anticipate completing a full draft of the project,
+            including revisions to all of the writing on the site–including this
+            introduction — by the end of Summer 2023. At that point, we will
+            begin a process of open community review. If you have comments or
+            feedback to share before then, please email the project director,
+            Lauren Klein, at lauren.klein@emory.edu, and she will share your
+            message with the project team.
+          </p>
         </CenteredLayout>
       </ChapterBody>
       <CenteredLayout>
-        <p>
-          Finally, if you have read this far, thank you. But please also keep in
-          mind that the version of the project that you are looking at is a
-          working draft. We anticipate completing a full draft of the project,
-          including revisions to all of the writing on the site–including this
-          introduction — by the end of Summer 2023. At that point, we will begin
-          a process of open community review. If you have comments or feedback
-          to share before then, please email the project director, Lauren Klein,
-          at lauren.klein@emory.edu, and she will share your message with the
-          project team.
-        </p>
         <FootnotesList footnotes={playfairFootnotes} />
       </CenteredLayout>
       <Footer />
