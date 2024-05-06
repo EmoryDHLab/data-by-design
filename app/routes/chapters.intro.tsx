@@ -10,12 +10,12 @@ import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import Footer from "~/components/Footer";
 import { playfairFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
-import playfairFigures from "~/data/figures/playfair.json";
 import figures from "~/data/figures/intro.json";
 import FigureObj from "~/components/layout/FigureObj";
 import ChapterBody from "~/components/layout/ChapterBody";
 import IntroScrollytell from "~/components/intro/IntroScrollytell.client";
 import { ClientOnly } from "remix-utils/client-only";
+import type { TVizAnchors } from "~/chapterContext";
 
 const sections = [
   {
@@ -36,6 +36,14 @@ const sections = [
   },
 ];
 
+const visualizations: TVizAnchors[] = [
+  {
+    type: "scrollytell",
+    id: "intro-scrollytell",
+    title: "Scrollytell",
+  },
+];
+
 export default function IntroPage() {
   const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
   return (
@@ -50,6 +58,8 @@ export default function IntroPage() {
         sections,
         showFootnotes,
         setShowFootnotes,
+        chapterFigures: Object.values(figures),
+        visualizations,
       }}
     >
       <ChapterTitle
@@ -160,12 +170,12 @@ export default function IntroPage() {
               moment.” Starting with a shuffle.
             </p>
           </Column>
-          <Column>
+          <Column shouldPin>
             {" "}
             {/* These images need to be replaced */}
             <FigureObj figure={figures["OldTimeline"]} />
             <FigureObj figure={figures["timeline-as-stacks"]} />
-            <FigureObj figure={figures["PLACEHOLDER-quipu"]} />
+            <FigureObj figure={figures["quipu"]} />
             <FigureObj figure={figures["two-row-wampum"]} />
           </Column>
         </TwoColumnLayout>
@@ -252,7 +262,7 @@ export default function IntroPage() {
               Or so the story goes. 
             </p>
           </Column>
-          <Column>
+          <Column shouldPin>
             <FigureObj figure={figures["3-anonymous"]} />
             <FigureObj figure={figures["4-oresme"]} />
           </Column>
@@ -483,7 +493,7 @@ export default function IntroPage() {
             perished and those who survived. 
           </p>
           <FigureObj
-            figure={figures["2-1468px-Plan"]}
+            figure={figures["2-2-1468px-Plan"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="text-center"
           />
@@ -563,144 +573,138 @@ export default function IntroPage() {
           </p>
         </CenteredLayout>
         <ChapterSectionTitle section={sections[2]} />
-        <TwoColumnLayout>
-          <Column>
-            <p className="first-paragraph py-10">
-              The chapters that follow begin where this history leaves off,
-              following a chronological arc from the final years of the
-              eighteenth century—what is considered the dawn of modern data
-              visualization—and continuing up to the turn of the twentieth
-              century, when the “golden age” of data visualization began to
-              crest. Each chapter contains both historical visualization
-              examples and new visualizations, designed by our project team,
-              intended to animate the particular argument that the chapter sets
-              in motion, and to suggest possibilities for how that argument can
-              be accounted for into future visualization design. While the
-              chapters have been designed to stand alone, and can be read in any
-              order, the sequence of the first two chapters is intentional.
-              Chapter 1 begins with the indelible image of the Diagram of a
-              Slave Ship (ca. 1789), which visualizes the data of the slave
-              trade by depicting each anguished body that the numbers represent.
-              By beginning with this image, and not any of the more canonical
-              examples often shown, we seek to set the story of data
-              visualization on a path that will require those who design (and
-              perceive) them to consistently consider their visualizations in
-              relation to the lives the data seeks to represent. The
-              “instantaneous impression” that the Diagram was designed to
-              evoke—notably, a very similar goal that William Playfair, in
-              near-identical language, intended for his charts—also  helps to
-              mobilize a larger argument about visualization as a double edge
-              sword: its power, on the one side, to distill complex information
-              such that insight can easily and efficiently emerge; and its
-              potential for harm, on the other, in how the abstraction required
-              to distill this insight often comes at the expense of the details
-              of the data and the context in which it was produced. 
-            </p>
-            <p>
-              With this key tension of data visualization firmly in place, we
-              return to William Playfair’s time-series charts with new
-              perspective and fresh eyes. Analyzing the components of his charts
-              alongside the text that introduces the third (and most widely
-              circulated) edition of his Commercial and Political Atlas (1801),
-              we confirms how the political instability brought about by the Age
-              of Revolutions, as much as an adherence to Enlightenment
-              empiricism, inspired his influential visualization techniques. By
-              recreating Playfair’s charts with a contemporary visualization
-              library, D3, we show how the data-lines of his charts—so often
-              upheld for their accuracy and objectivity—in fact embellish the
-              story told by the data alone. Far from delegitimizing the value of
-              his charts, this finding serves to advance this project’s core
-              claim: about how an attention to context—historical, political,
-              and in this particular case, material—allows us to learn more and
-              not less about the data they contain.  
-            </p>
-            <p>
-              Chapter 3 represents an inflection point in the project, because
-              it takes us one level up from questions of data and visualization
-              to consider its colonial frame. It also moves from England and
-              Scotland, where the Diagram and Playfair’s time-series charts were
-              created, to North America, where the central examples of all
-              subsequent chapters take shape. This chapter, in particular, is
-              where Shanawdithit’s narrative maps (ca. 1829), discussed earlier
-              in this introduction, take center stage. The argument we make here
-              is both more subdued than the previous chapters and more profound,
-              because it has to do with the fact that all visualizations that we
-              create—and not just those explicitly enlisted in the service of
-              empire—must be considered with a colonial frame. This chapter also
-              asks us, as (majority) settler researchers and designers, to
-              consider our own work in the context of colonialism. We ask
-              difficult questions about the uses of data, visualization, and
-              knowledge itself. The lessons of this chapter have more to do with
-              the limits of data visualization, and the limits of knowledge, but
-              they are no less important to behold—for they teach us about our
-              obligations to our work and to the people and land who enable it,
-              and about what we cannot or should not understand. 
-            </p>
-            <p>
-              If the emphasis of Chapter 3 is the limits of our knowledge, the
-              point of Chapter 4 is to open the door to future possibilities.
-              Its focus is on the chronological grids of educator and editor
-              Elizabeth Palmer Peabody, which employed color and position in
-              order to represent historical events in time. Peabody’s charts, as
-              described her Polish-American System of Cartography (1850) and
-              documented in her Chronological History of the United States
-              (1856), were designed to be abstract rather than intuitive; to
-              promote sustained reflection rather than immediate insight; and to
-              provoke a unique imaginative response in each viewer. These are
-              each principles that diverge sharply from the positivism that has
-              shaped visualization best practices to this point. This chapter
-              uses the example of Peabody’s alternative epistemological
-              viewpoint to ask us to consider what additional visualization
-              strategies—and what additional knowledge we could gain—if we were
-              to expand our own understanding of how visualization should be
-              deployed.    Chapter 5 takes us up to the century’s close,
-              considering the charts designed by the esteemed sociologist W.E.B.
-              Du Bois and his team of students from Atlanta University for the
-              1900 Paris Exposition. Recently reclaimed by historians of data
-              visualization as a corrective to their otherwise dominant
-              accounts, Du Bois’s charts in fact tell a more complex story—one
-              that acknowledges the uses of data visualization at the same time
-              as its limits. By exploring his charts in the context of his
-              writing on race and racism and his sociological theory, and by
-              recreating the charts in ways that account for the students whose
-              knowledge and labor helped to shape them, we close with a
-              reassertion of how data visualization, the conceptual conditions
-              of its emergence, and its political consequences, are
-              fundamentally intertwined. Drawing a discussion of race, data, and
-              political agency into the present, the chapter concludes with a
-              consideration of how data visualization can bear witness to
-              instances of oppression at the same time that it can—if
-              intentionally designed—hold space for what cannot be conveyed
-              through data alone. 
-            </p>
-            <p>
-              A final chapter hones in on the issue of labor, a through-line of
-              the project overall. It takes as its focus not the history of
-              visualization but its practice in the present, in the form of the
-              making of Data by Design itself. Here it is worth making explicit
-              the fact that while the words you are reading are written by one
-              person, Lauren Klein, a professor of digital humanities and data
-              science with scholarly expertise in the eighteenth and nineteenth
-              centuries, the visualizations and other interactions that animate
-              the written arguments made throughout this project have been
-              designed collaboratively, and have been implemented by an
-              intentionally interdisciplinary research team, one with expertise
-              that spans the fields of art and design, computer science, and
-              literary, cultural, and media studies. The team itself has
-              undergone several iterations, owing to an institutional transition
-              and the fact that many of the team members joined this project as
-              students seeking research experience, with aspirations that would
-              take them into their own professional roles. As this project has
-              evolved, we have come to see ourselves and our own process as
-              illustrative of the ideas animated by the historical examples, and
-              this final chapter represents our attempt to document our work and
-              credit all contributors, while providing the first example of how
-              the lessons of Data by Design can find form in contemporary
-              visualization work.
-            </p>
-          </Column>
-          <Column></Column>
-        </TwoColumnLayout>
+        <CenteredLayout>
+          <p className="first-paragraph py-10">
+            The chapters that follow begin where this history leaves off,
+            following a chronological arc from the final years of the eighteenth
+            century—what is considered the dawn of modern data visualization—and
+            continuing up to the turn of the twentieth century, when the “golden
+            age” of data visualization began to crest. Each chapter contains
+            both historical visualization examples and new visualizations,
+            designed by our project team, intended to animate the particular
+            argument that the chapter sets in motion, and to suggest
+            possibilities for how that argument can be accounted for into future
+            visualization design. While the chapters have been designed to stand
+            alone, and can be read in any order, the sequence of the first two
+            chapters is intentional. Chapter 1 begins with the indelible image
+            of the Diagram of a Slave Ship (ca. 1789), which visualizes the data
+            of the slave trade by depicting each anguished body that the numbers
+            represent. By beginning with this image, and not any of the more
+            canonical examples often shown, we seek to set the story of data
+            visualization on a path that will require those who design (and
+            perceive) them to consistently consider their visualizations in
+            relation to the lives the data seeks to represent. The
+            “instantaneous impression” that the Diagram was designed to
+            evoke—notably, a very similar goal that William Playfair, in
+            near-identical language, intended for his charts—also  helps to
+            mobilize a larger argument about visualization as a double edge
+            sword: its power, on the one side, to distill complex information
+            such that insight can easily and efficiently emerge; and its
+            potential for harm, on the other, in how the abstraction required to
+            distill this insight often comes at the expense of the details of
+            the data and the context in which it was produced. 
+          </p>
+          <p>
+            With this key tension of data visualization firmly in place, we
+            return to William Playfair’s time-series charts with new perspective
+            and fresh eyes. Analyzing the components of his charts alongside the
+            text that introduces the third (and most widely circulated) edition
+            of his Commercial and Political Atlas (1801), we confirms how the
+            political instability brought about by the Age of Revolutions, as
+            much as an adherence to Enlightenment empiricism, inspired his
+            influential visualization techniques. By recreating Playfair’s
+            charts with a contemporary visualization library, D3, we show how
+            the data-lines of his charts—so often upheld for their accuracy and
+            objectivity—in fact embellish the story told by the data alone. Far
+            from delegitimizing the value of his charts, this finding serves to
+            advance this project’s core claim: about how an attention to
+            context—historical, political, and in this particular case,
+            material—allows us to learn more and not less about the data they
+            contain.  
+          </p>
+          <p>
+            Chapter 3 represents an inflection point in the project, because it
+            takes us one level up from questions of data and visualization to
+            consider its colonial frame. It also moves from England and
+            Scotland, where the Diagram and Playfair’s time-series charts were
+            created, to North America, where the central examples of all
+            subsequent chapters take shape. This chapter, in particular, is
+            where Shanawdithit’s narrative maps (ca. 1829), discussed earlier in
+            this introduction, take center stage. The argument we make here is
+            both more subdued than the previous chapters and more profound,
+            because it has to do with the fact that all visualizations that we
+            create—and not just those explicitly enlisted in the service of
+            empire—must be considered with a colonial frame. This chapter also
+            asks us, as (majority) settler researchers and designers, to
+            consider our own work in the context of colonialism. We ask
+            difficult questions about the uses of data, visualization, and
+            knowledge itself. The lessons of this chapter have more to do with
+            the limits of data visualization, and the limits of knowledge, but
+            they are no less important to behold—for they teach us about our
+            obligations to our work and to the people and land who enable it,
+            and about what we cannot or should not understand. 
+          </p>
+          <p>
+            If the emphasis of Chapter 3 is the limits of our knowledge, the
+            point of Chapter 4 is to open the door to future possibilities. Its
+            focus is on the chronological grids of educator and editor Elizabeth
+            Palmer Peabody, which employed color and position in order to
+            represent historical events in time. Peabody’s charts, as described
+            her Polish-American System of Cartography (1850) and documented in
+            her Chronological History of the United States (1856), were designed
+            to be abstract rather than intuitive; to promote sustained
+            reflection rather than immediate insight; and to provoke a unique
+            imaginative response in each viewer. These are each principles that
+            diverge sharply from the positivism that has shaped visualization
+            best practices to this point. This chapter uses the example of
+            Peabody’s alternative epistemological viewpoint to ask us to
+            consider what additional visualization strategies—and what
+            additional knowledge we could gain—if we were to expand our own
+            understanding of how visualization should be deployed.    Chapter 5
+            takes us up to the century’s close, considering the charts designed
+            by the esteemed sociologist W.E.B. Du Bois and his team of students
+            from Atlanta University for the 1900 Paris Exposition. Recently
+            reclaimed by historians of data visualization as a corrective to
+            their otherwise dominant accounts, Du Bois’s charts in fact tell a
+            more complex story—one that acknowledges the uses of data
+            visualization at the same time as its limits. By exploring his
+            charts in the context of his writing on race and racism and his
+            sociological theory, and by recreating the charts in ways that
+            account for the students whose knowledge and labor helped to shape
+            them, we close with a reassertion of how data visualization, the
+            conceptual conditions of its emergence, and its political
+            consequences, are fundamentally intertwined. Drawing a discussion of
+            race, data, and political agency into the present, the chapter
+            concludes with a consideration of how data visualization can bear
+            witness to instances of oppression at the same time that it can—if
+            intentionally designed—hold space for what cannot be conveyed
+            through data alone. 
+          </p>
+          <p>
+            A final chapter hones in on the issue of labor, a through-line of
+            the project overall. It takes as its focus not the history of
+            visualization but its practice in the present, in the form of the
+            making of Data by Design itself. Here it is worth making explicit
+            the fact that while the words you are reading are written by one
+            person, Lauren Klein, a professor of digital humanities and data
+            science with scholarly expertise in the eighteenth and nineteenth
+            centuries, the visualizations and other interactions that animate
+            the written arguments made throughout this project have been
+            designed collaboratively, and have been implemented by an
+            intentionally interdisciplinary research team, one with expertise
+            that spans the fields of art and design, computer science, and
+            literary, cultural, and media studies. The team itself has undergone
+            several iterations, owing to an institutional transition and the
+            fact that many of the team members joined this project as students
+            seeking research experience, with aspirations that would take them
+            into their own professional roles. As this project has evolved, we
+            have come to see ourselves and our own process as illustrative of
+            the ideas animated by the historical examples, and this final
+            chapter represents our attempt to document our work and credit all
+            contributors, while providing the first example of how the lessons
+            of Data by Design can find form in contemporary visualization work.
+          </p>
+        </CenteredLayout>
         <ChapterSectionTitle section={sections[3]} />
         <CenteredLayout>
           <p>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import IntroTriggers from "./IntroTriggers";
@@ -6,11 +6,8 @@ import ScrollytellWrapper from "../ScrollytellWrapper";
 import { classNames } from "~/utils";
 import ScrollProgress from "~/components/ScrollProgress";
 import RandomPaths from "~/components/intro/RandomPaths";
-import FakePage from "~/components/intro/FakePage";
 import RandomRectangles from "~/components/intro/RandomRectangles";
 import RandomOrTimelineRectangles from "~/components/intro/RandomOrTimelineRectangles";
-import RandomImagesIntoGrid from "~/components/intro/RandomImagesIntoGrid";
-import CentralImageOnPage from "~/components/intro/CentralImageOnPage";
 import MinardPath from "./MinardPath";
 import MinardBlackLine from "~/components/intro/MinardBlackLine";
 
@@ -39,6 +36,7 @@ export default function IntroScrollytell() {
             "sticky h-[60vh] md:h-screen top-16 md:top-[200px] bias-full md:bias-1/2 md:mr-24 md:order-last z-0 md:z-20",
             (scrollProgress < 5.5 || scrollProgress > 7) && "md:w-1/2"
           )}
+          id="intro-scrollytell"
         >
           <div className="flex flex-col items-center right-0 md:block md:h-screen w-screen">
             <LinearTimeline />
