@@ -10,6 +10,10 @@ import RandomRectangles from "~/components/intro/RandomRectangles";
 import RandomOrTimelineRectangles from "~/components/intro/RandomOrTimelineRectangles";
 import MinardPath from "./MinardPath";
 import MinardBlackLine from "~/components/intro/MinardBlackLine";
+import MinardText from "~/components/intro/MinardText";
+import MinardVerticalLines from "~/components/intro/MinardVerticalLines";
+import HorizontalTimeline from "~/components/intro/HorizontalTimeline";
+import ShanawdithitMap from "~/components/intro/ShanawdithitMap";
 
 export default function IntroScrollytell() {
   const [scrollProgress, setScrollProgress] = useState(0.0);
@@ -53,6 +57,9 @@ export default function IntroScrollytell() {
             }
             if (index == 6) {
               height = "";
+            }
+            if (index == 16) {
+              height = "md:h-[200vh]";
             }
 
             return (
@@ -98,7 +105,7 @@ function LinearTimeline() {
     return <div />;
   }
 
-  if (scrollProgress > 8.6) {
+  if (scrollProgress > 8.6 && scrollProgress < 14.5) {
     return (
       <div className="md:w-[50vw] relative">
         {scrollProgress > 9.5 && (
@@ -106,6 +113,12 @@ function LinearTimeline() {
         )}
         {scrollProgress > 10.5 && (
           <MinardBlackLine className="absolute sm:left-[31px] sm:top-[143px] sm:w-[251px] lg:left-[52px] lg:top-[238px] lg:w-[418px] z-10" />
+        )}
+        {scrollProgress > 11.5 && (
+          <MinardText className="absolute lg:left-[47px] lg:top-[225px] lg:w-[410px] z-10" />
+        )}
+        {scrollProgress > 12.5 && (
+          <MinardVerticalLines className="absolute lg:left-[43px] lg:top-[282px] lg:w-[320px] z-10" />
         )}
         <img
           className={classNames(
@@ -117,5 +130,13 @@ function LinearTimeline() {
         />
       </div>
     );
+  }
+
+  if (scrollProgress > 14.5 && scrollProgress < 16.5) {
+    return <HorizontalTimeline />;
+  }
+
+  if (scrollProgress > 16.5 && scrollProgress < 20) {
+    return <ShanawdithitMap />;
   }
 }
