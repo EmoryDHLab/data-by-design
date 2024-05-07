@@ -23,6 +23,7 @@ const Analytics = () => {
         src=""
         className="border-0 height-0"
         id={key}
+        referrerPolicy="no-referrer-when-downgrade"
       />
     );
   }
