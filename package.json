@@ -7,7 +7,7 @@
     "dev": "node ./server.js",
     "start": "cross-env NODE_ENV=production node ./server.js",
     "typecheck": "tsc",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint --fix ."
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint --fix ./app/"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",

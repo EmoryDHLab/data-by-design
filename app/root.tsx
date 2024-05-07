@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
-
 import {
   Links,
   Meta,
@@ -15,6 +13,8 @@ import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
 import { ClientOnly } from "remix-utils/client-only";
 import Banner from "./components/layout/Banner";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import Analytics from "./components/Analytics";
 
 export const meta: MetaFunction = () => {
   return [
@@ -30,18 +30,19 @@ export const links: LinksFunction = () => {
 
 export default function App() {
   useEffect(() => {
-    // @ts-ignore
-
-    window.hypothesisConfig = function () {
-      return {
-        openSidebar: false,
+    if (process.env.NODE_ENV == "production") {
+      // @ts-ignore
+      window.hypothesisConfig = function () {
+        return {
+          openSidebar: false,
+        };
       };
-    };
-    const head = document.querySelector("head");
-    const script = document.createElement("script");
-    script.setAttribute("src", "https://hypothes.is/embed.js");
-    script.async = true;
-    head?.appendChild(script);
+      const head = document.querySelector("head");
+      const script = document.createElement("script");
+      script.setAttribute("src", "https://hypothes.is/embed.js");
+      script.async = true;
+      head?.appendChild(script);
+    }
   }, []);
 
   return (
@@ -56,6 +57,7 @@ export default function App() {
         <ClientOnly>{() => <Navbar />}</ClientOnly>
         <Banner>Public Beta</Banner>
         <Outlet />
+        <Analytics />
         <ScrollRestoration />
         <Scripts />
       </body>

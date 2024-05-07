@@ -26,21 +26,21 @@ const remixHandler = createRequestHandler({
   build: viteDevServer
     ? () => viteDevServer.ssrLoadModule("virtual:remix/server-build")
     : await import("./build/server/index.js"),
-  getLoadContext: (req, res) => {
-    const host = req.get("Host");
-    const tenant =
-      req.subdomains.length > minSubdomainCount()
-        ? req.subdomains.pop()
-        : undefined;
-    const port = host.split(":").pop();
-    const request = {
-      protocol: req.protocol,
-      host,
-      subdomains: req.subdomains,
-      port,
-    };
-    return { tenant, res, request, req };
-  },
+  // getLoadContext: (req, res) => {
+  //   const host = req.get("Host");
+  //   const tenant =
+  //     req.subdomains.length > minSubdomainCount()
+  //       ? req.subdomains.pop()
+  //       : undefined;
+  //   const port = host.split(":").pop();
+  //   const request = {
+  //     protocol: req.protocol,
+  //     host,
+  //     subdomains: req.subdomains,
+  //     port,
+  //   };
+  //   return { tenant, res, request, req };
+  // },
 });
 
 const app = express();
@@ -72,5 +72,7 @@ app.all("*", remixHandler);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () =>
-  console.log(`Express server listening at http://localhost:${port}`)
+  console.log(
+    `Express server listening at http://localhost:${port} for ${process.env.NODE_ENV}`
+  )
 );
