@@ -28,7 +28,7 @@ export default function ChapterDropdown() {
                     className={`${
                       active ? "bg-playfairPrimary" : "bg-black"
                     } inline-block focus:bg-playfairPrimary hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5`}
-                    to={`/chapters/${chapter}`}
+                    to={`/chapterMeta/${chapter}`}
                   >
                     {index == 0 ? "" : `${index}. `}
                     {chapterMeta[chapter as ChapterTitle].title}
