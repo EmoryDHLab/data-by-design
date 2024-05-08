@@ -6,7 +6,7 @@ import SiteMap from "vite-plugin-sitemap";
 import { chapterMeta } from "./app/data/chapterMeta";
 
 const CHAPTERS = Object.keys(chapterMeta).map(
-  (chapter) => `/chapter/${chapter}`
+  (chapter) => `/chapters/${chapter}`
 );
 
 export default defineConfig({
