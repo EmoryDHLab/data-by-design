@@ -13,7 +13,7 @@ const ChapterCardGrid = () => {
             return (
               <ChapterCard
                 key={`card-${chapterName}`}
-                to={`/chapterMeta/${chapterName}`}
+                to={`/chapters/${chapterName}`}
                 className={`hover:bg-${chapterName} bg-center hover:text-white`}
                 title={chapter.title}
                 subtitle={chapter.subtitle}
