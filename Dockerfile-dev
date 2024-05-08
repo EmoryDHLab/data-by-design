@@ -2,8 +2,7 @@ FROM node:20.12.1-slim
 WORKDIR /dxd
 COPY . .
 RUN rm package-lock.json
-RUN which npm
 RUN npm install
-RUN npm run build
+RUN npm run build_dev
 EXPOSE 3000
 ENTRYPOINT ["npm", "run", "dev"]
