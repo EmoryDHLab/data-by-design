@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "remix vite:build",
+    "build_dev": "NODE_ENV=development remix vite:build",
     "dev": "node ./server.js",
     "start": "cross-env NODE_ENV=production node ./server.js",
     "typecheck": "tsc",

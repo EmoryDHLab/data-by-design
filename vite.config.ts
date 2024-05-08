@@ -5,9 +5,14 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import SiteMap from "vite-plugin-sitemap";
 import { chapterMeta } from "./app/data/chapterMeta";
 
-const CHAPTERS = Object.keys(chapterMeta).map(
-  (chapter) => `/chapters/${chapter}`
-);
+const CHAPTERS = Object.keys(chapterMeta).map((chapter) => {
+  return `/chapters/${chapter}`;
+});
+
+const robotOption = {
+  userAgent: "*",
+  [process.env.NODE_ENV === "production" ? "allow" : "disallow"]: "/",
+};
 
 export default defineConfig({
   plugins: [
@@ -25,6 +30,7 @@ export default defineConfig({
         "/prototypes/brooks_visualization/lib/empty-example",
       ],
       dynamicRoutes: ["/about", ...CHAPTERS],
+      robots: [robotOption],
     }),
   ],
   ssr: {
