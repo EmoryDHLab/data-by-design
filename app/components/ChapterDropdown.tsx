@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Link } from "@remix-run/react";
 import { Menu, Transition } from "@headlessui/react";
-import chapters from "~/data/chapterMeta.json";
+import { chapterMeta } from "~/data/chapterMeta";
 import type { TChapterMeta, ChapterTitle } from "~/types/chapterMetaTags";
 
 export default function ChapterDropdown() {
@@ -21,17 +21,17 @@ export default function ChapterDropdown() {
       >
         <Menu.Items className="absolute left-0 mt-2 origin-top-right text-lg divide-gray-100 rounded-md shadow-md shadow-gray-700 ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="grid-wrapper w-max divide-y border">
-            {Object.keys(chapters as TChapterMeta).map((chapter, index) => (
+            {Object.keys(chapterMeta as TChapterMeta).map((chapter, index) => (
               <Menu.Item key={chapter}>
                 {({ active }) => (
                   <Link
                     className={`${
                       active ? "bg-playfairPrimary" : "bg-black"
                     } inline-block focus:bg-playfairPrimary hover:bg-playfairPrimary pl-2 pr-3 pb-0.5 pt-0.5`}
-                    to={`/chapters/${chapter}`}
+                    to={`/chapterMeta/${chapter}`}
                   >
                     {index == 0 ? "" : `${index}. `}
-                    {chapters[chapter as ChapterTitle].title}
+                    {chapterMeta[chapter as ChapterTitle].title}
                   </Link>
                 )}
               </Menu.Item>

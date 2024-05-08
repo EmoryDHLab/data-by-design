@@ -2,6 +2,12 @@
 import { remixVitePlugin as remix } from "@remix-run/dev/dist/vite/plugin";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import SiteMap from "vite-plugin-sitemap";
+import { chapterMeta } from "./app/data/chapterMeta";
+
+const CHAPTERS = Object.keys(chapterMeta).map(
+  (chapter) => `/chapter/${chapter}`
+);
 
 export default defineConfig({
   plugins: [
@@ -9,6 +15,17 @@ export default defineConfig({
       ignoredRouteFiles: ["**/*.css"],
     }),
     tsconfigPaths(),
+    SiteMap({
+      hostname: "https://dataxdesign.io",
+      outDir: "public",
+      exclude: [
+        "/prototypes/brooks_visualization",
+        "/prototypes/data_traces_vis_for_jay",
+        "/prototypes/voyages/conceptual_map",
+        "/prototypes/brooks_visualization/lib/empty-example",
+      ],
+      dynamicRoutes: ["/about", ...CHAPTERS],
+    }),
   ],
   ssr: {
     noExternal: [

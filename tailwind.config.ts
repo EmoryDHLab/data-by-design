@@ -1,4 +1,4 @@
-import chapters from "./app/data/chapterMeta.json";
+import {chapterMeta} from "./app/data/chapterMeta";
 import type { Config } from 'tailwindcss'
 
 export default {
@@ -44,13 +44,13 @@ export default {
         14: "repeat(14, minmax(0, 1fr))",
       },
       backgroundImage: {
-        description: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.description.image}')`,
-        dubois: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.dubois.image}')`,
-        intro: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.intro.image}')`,
-        labor: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.labor.image}')`,
-        peabody: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.peabody.image}')`,
-        playfair: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.playfair.image}')`,
-        shanawdithit: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapters.shanawdithit.image}')`,
+        description: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapterMeta.description.image}')`,
+        dubois: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapterMeta.dubois.image}')`,
+        intro: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapterMeta.intro.image}')`,
+        labor: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapterMeta.labor.image}')`,
+        peabody: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapterMeta.peabody.image}')`,
+        playfair: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapterMeta.playfair.image}')`,
+        shanawdithit: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${chapterMeta.shanawdithit.image}')`,
       },
       colors: {
         black: "#1C1817",
@@ -267,9 +267,9 @@ export default {
     "border-opacity-70",
     "opacity-20",
     "md:mt-28",
-    ...Object.keys(chapters).map((chapter) => `bg-${chapter}`),
-    ...Object.keys(chapters).map((chapter) => `hover:bg-${chapter}`),
-    ...Object.keys(chapters).map((chapter) => `outline-${chapter}Primary`),
-    ...Object.keys(chapters).map((chapter) => `outline-${chapter}Secondary`),
+    ...Object.keys(chapterMeta).map((chapter) => `bg-${chapter}`),
+    ...Object.keys(chapterMeta).map((chapter) => `hover:bg-${chapter}`),
+    ...Object.keys(chapterMeta).map((chapter) => `outline-${chapter}Primary`),
+    ...Object.keys(chapterMeta).map((chapter) => `outline-${chapter}Secondary`),
   ],
 } satisfies Config;
