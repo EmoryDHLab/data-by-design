@@ -13,3 +13,5 @@ node_modules*
 .ruby-lsp
 /build
 .*.json
+/public/sitemap.xml
+/public/robots.txt
