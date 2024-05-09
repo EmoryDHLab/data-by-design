@@ -2,9 +2,7 @@ import SiteTitle from "./home/SiteTitle";
 
 export default function Footer() {
   return (
-    <footer
-      className={`grid md:grid-cols-12  md:gap-x-12 p-32 md:pt-12 font-neueMontreal bg-offblack text-offwhite `}
-    >
+    <footer className="grid md:grid-cols-12  md:gap-x-12 px-8 md:p-32 md:pt-12 font-neueMontreal bg-offblack text-offwhite">
       <div className="col-span-12  md:col-span-3 flex flex-col">
         <cite className="sr-only">Data by Design</cite>
         <SiteTitle showTag={false} className="" />
@@ -92,7 +90,7 @@ export default function Footer() {
         </p>
       </div>
       {/* THIRD COL */}
-      <div className="col-span-12 md:col-span-5 flex flex-col space-y-16">
+      <div className="col-span-12 md:col-span-5 flex flex-col space-y-16 pt-12 md:pt-0 p-4 md:p-0">
         <p className="uppercase">Sign up for project updates:</p>
         <form
           className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 items-baseline validate mb-8"
@@ -105,7 +103,7 @@ export default function Footer() {
           <input
             placeholder="Email address here"
             type="email"
-            className="required email bg-transparent focus:bg-transparent active:bg-transparent autofill:bg-transparent text-offblack active:text-offblack focus:bg-playfairPrimary border-b-2 border-offwhite placeholder-offwhite font-neueMontrealLight tracking font-light text-2xl w-full"
+            className="required email bg-transparent focus:bg-transparent active:bg-transparent autofill:bg-transparent text-offblack active:text-offblack focus:bg-playfairPrimary border-b-2 border-offwhite placeholder-offwhite font-neueMontrealLight tracking font-light text-2xl w-full text-white"
             name="EMAIL"
             id="mce-EMAIL"
             required
