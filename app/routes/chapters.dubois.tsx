@@ -130,7 +130,15 @@ export default function DuboisChapter() {
       <ChapterBody>
         <CenteredLayout>
           <p className="first-paragraph py-10">
-          There is a now-famous photograph, yellowed by age, which was taken in Paris in the spring of 1900. No people appear in the photo. Instead what appears is a low bookcase, its shelves lined end-to-end with books large and small. The top of the bookcase, at counter height, is stacked with more books, pamphlets, and other artifacts, intended to be perused. And above the bookcase are charts—dozens and dozens of them—along with photographs and additional artifacts, each installed in a picture frame or swing-out vitrine, and mounted in rows reaching up to the sky.
+            There is a now-famous photograph, yellowed by age, which was taken
+            in Paris in the spring of 1900. No people appear in the photo.
+            Instead what appears is a low bookcase, its shelves lined end-to-end
+            with books large and small. The top of the bookcase, at counter
+            height, is stacked with more books, pamphlets, and other artifacts,
+            intended to be perused. And above the bookcase are charts—dozens and
+            dozens of them—along with photographs and additional artifacts, each
+            installed in a picture frame or swing-out vitrine, and mounted in
+            rows reaching up to the sky.
           </p>
 
           <FigureObj
@@ -139,18 +147,19 @@ export default function DuboisChapter() {
             captionClassName="text-center"
           />
           <p>
-            The photograph documents the exhibit that W.E.B. Du Bois (1868-1963), the
-            field-defining sociologist, author, and activist, designed for the
-            1900 <em>Exposition Universelle</em>. The “American Negro Exhibit,”
-            as it was called, was the result of over a year of campaigning,
-            reaching up to the President of the United States, to include the
-            contributions of Black Americans as among the other celebratory
-            displays of national might and ingenuity that were typical of
-            World's Fairs at the time. Du Bois and his co-curator, Daniel A.P.
-            Murray, then the Assistant Librarian of Congress, were given the
-            southeast corner of the U.S. exhibition space in the Palace of
-            Social Economy and Congresses—what visitors would have seen
-            immediately to their right upon entering the hall—and went to work.
+            The photograph documents the exhibit that W.E.B. Du Bois
+            (1868-1963), the field-defining sociologist, author, and activist,
+            designed for the 1900 <em>Exposition Universelle</em>. The “American
+            Negro Exhibit,” as it was called, was the result of over a year of
+            campaigning, reaching up to the President of the United States, to
+            include the contributions of Black Americans as among the other
+            celebratory displays of national might and ingenuity that were
+            typical of World's Fairs at the time. Du Bois and his co-curator,
+            Daniel A.P. Murray, then the Assistant Librarian of Congress, were
+            given the southeast corner of the U.S. exhibition space in the
+            Palace of Social Economy and Congresses—what visitors would have
+            seen immediately to their right upon entering the hall—and went to
+            work.
             <InlineFootnote index={0}></InlineFootnote> While Murray tasked
             himself with assembling a set of books by Black writers to put on
             display, Du Bois saw his purview in more conceptual terms: to
@@ -161,7 +170,7 @@ export default function DuboisChapter() {
           </p>
         </CenteredLayout>
 
-{/* Removing these until we can update layout
+        {/* Removing these until we can update layout
 
         <CenteredLayout>
           <FigureObj
@@ -175,7 +184,7 @@ export default function DuboisChapter() {
             captionClassName="mx-12"
           />
 
-          
+
 
         </CenteredLayout> */}
         <FigureObj
@@ -510,29 +519,6 @@ export default function DuboisChapter() {
               </HoverText>
               , and more.
             </p>
-
-            <p>
-              Du Bois's charts were clearly influenced by the{" "}
-              <em>Statistical Atlas</em>. Several of his own diagrams mirror the
-              form of those created for the atlas. Du Bois's graduated area
-              chart of “The Amalgamation of White and Black elements of the
-              population in the United States,” for example, takes the same
-              visual form as the chart in the <em>Statistical Atlas</em>{" "}
-              depicting “Growth of the Elements of the Population: 1790-1890.”
-              Similarly, the combined area and bar chart form that Du Bois
-              employs for his chart of “Conjugal Condition of American Negroes
-              according to Age Periods” is the very same as the chart in the{" "}
-              <em>Statistical Atlas</em> depicting “Conjugal Condition of the
-              Population by Age and Sex, in proportion to the total number of
-              each group.” The notable difference within each pair is, of
-              course, Du Bois's focus on the Black population alone. And for Du
-              Bois, this difference in data was the point: the nation's Black
-              population was itself diverse, and it was thriving. By adopting
-              the visual typologies of the Statistical Atlas in order to make
-              his claims, Du Bois underscores his textual argument about the
-              “small nation of people” within the larger United States by
-              creating a national statistical atlas of their own.
-            </p>
           </Column>
           <Column shouldPin>
             <HoverImages2 />
@@ -559,6 +545,41 @@ export default function DuboisChapter() {
             figures["ch5-07h-occupation"],
           ]}
         />
+
+        <TwoColumnLayout>
+          <Column shouldPin>
+            <p>
+              Du Bois's charts were clearly influenced by the{" "}
+              <em>Statistical Atlas</em>. Several of his own diagrams mirror the
+              form of those created for the atlas. Du Bois's graduated area
+              chart of “The Amalgamation of White and Black elements of the
+              population in the United States,” for example, takes the same
+              visual form as the chart in the <em>Statistical Atlas</em>{" "}
+              depicting “Growth of the Elements of the Population: 1790-1890.”
+              Similarly, the combined area and bar chart form that Du Bois
+              employs for his chart of “Conjugal Condition of American Negroes
+              according to Age Periods” is the very same as the chart in the{" "}
+              <em>Statistical Atlas</em> depicting “Conjugal Condition of the
+              Population by Age and Sex, in proportion to the total number of
+              each group.” The notable difference within each pair is, of
+              course, Du Bois's focus on the Black population alone. And for Du
+              Bois, this difference in data was the point: the nation's Black
+              population was itself diverse, and it was thriving. By adopting
+              the visual typologies of the Statistical Atlas in order to make
+              his claims, Du Bois underscores his textual argument about the
+              “small nation of people” within the larger United States by
+              creating a national statistical atlas of their own.
+            </p>
+          </Column>
+          <Column>
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 md:ml-24">
+              <FigureObj figure={figures["ch5-08a-population"]} />
+              <FigureObj figure={figures["916"]} />
+              <FigureObj figure={figures["ch5-08c-conjugal"]} />
+              <FigureObj figure={figures["ch5-08d-db-conjugal"]} />
+            </div>
+          </Column>
+        </TwoColumnLayout>
 
         <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
