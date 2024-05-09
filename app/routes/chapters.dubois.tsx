@@ -640,7 +640,7 @@ export default function DuboisChapter() {
             the inclusion of the enslaved, clearly lacked.{" "}
             <InlineFootnote index={14}></InlineFootnote>
           </p>
-          <span>
+          <p>
             At the same time, Du Bois's decision to pair the photographs with
             the charts also points to his awareness of the limits of what either
             medium could achieve on its own. While the photographs could
@@ -660,7 +660,7 @@ export default function DuboisChapter() {
             parts of a larger whole. While each was legible on its own, the most
             complete—and therefore most accurate—picture was gained by viewing
             them together.
-          </span>
+          </p>
         </CenteredLayout>
 
         <section
