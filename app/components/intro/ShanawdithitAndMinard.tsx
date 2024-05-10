@@ -30,7 +30,7 @@ export default function ShanawdithitAndMinard() {
   // );
 
   return (
-    <div className="relative flex space-x-12 w-screen items-center justify-center">
+    <div className="relative flex space-x-12 w-screen items-center justify-center md:-ml-20">
       <img
         className="max-w-lg transition"
         src="/images/intro/1-Carte_figurative_des_pertes_successives_Minard_Charles-Joseph.jpeg"
