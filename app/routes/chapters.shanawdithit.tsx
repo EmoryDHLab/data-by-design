@@ -19,10 +19,10 @@ import InlineFootnote from "~/components/InlineFootnote";
 import WillardScrollytell from "~/components/shanawdithit/WillardScrollytell";
 import ChapterBody from "~/components/layout/ChapterBody";
 import FootnotesList from "~/components/FootnotesList";
-import type { MetaFunction } from "@remix-run/node";
-import type { HoverState, TVizAnchors } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
 import { ClientOnly } from "remix-utils/client-only";
+import type { MetaFunction } from "@remix-run/node";
+import type { HoverState, TVizAnchors } from "~/chapterContext";
 
 export const meta: MetaFunction = () => {
   return chapterMeta("shanawdithit");
@@ -828,13 +828,13 @@ export default function ShanawdithitPage() {
                 geographic features with names intended to evoke an Indigenous
                 worldview, as evidenced by how the same features are labeled
                 differently on all subsequent maps.{" "}
-                <p className="pt-5">
-                  {" "}
-                  Instead of the Atlantic Ocean, for example, the body of water
-                  is here labeled “Salt water Lake or Great Water,” which she
-                  explains in the accompanying chapter of the textbook are two
-                  names given to it by the Delaware at various times. {" "}
-                </p>
+              </p>
+              <p className="pt-5">
+                {" "}
+                Instead of the Atlantic Ocean, for example, the body of water is
+                here labeled “Salt water Lake or Great Water,” which she
+                explains in the accompanying chapter of the textbook are two
+                names given to it by the Delaware at various times. {" "}
               </p>
             </Fragment>,
 

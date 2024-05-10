@@ -22,8 +22,10 @@ export const Caption = ({ figure, className }: Props) => {
         className ?? ""
       }`}
       dangerouslySetInnerHTML={{
-        __html: `<caption>${figure?.caption}<caption>${
-          figure?.creditLine ? `<caption>${figure?.creditLine}</caption>` : ""
+        __html: `<caption>${figure?.caption ?? ""}<caption> ${
+          figure?.creditLine
+            ? `<caption>${figure?.creditLine ?? ""}</caption>`
+            : ""
         }`,
       }}
     />

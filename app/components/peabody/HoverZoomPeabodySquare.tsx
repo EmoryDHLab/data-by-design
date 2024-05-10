@@ -11,8 +11,10 @@ interface Props {
 export default function HoverZoomPeabodySquare({ figure }: Props) {
   const { hoverState } = useContext(ChapterContext);
   return (
-    <FigureModal figure={figure} className="hidden md:block">
-      <p id={figure.fileName} className='sr-only'>{figure.caption}</p>
+    <FigureModal figure={figure} className="hidden md:block" id="hover-square">
+      <p id={figure.fileName} className="sr-only">
+        {figure.caption}
+      </p>
       <svg
         viewBox="0 0 244.56 242.88"
         role="img"

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TimelineType } from "~/components/home/timelineUtils";
 import RandomRectangles from "~/components/intro/RandomRectangles";
-import { classNames } from "~/utils";
+import type { ReactElement } from "react";
 
 export default function RandomOrTimelineRectangles() {
   const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
@@ -25,13 +25,14 @@ export default function RandomOrTimelineRectangles() {
   );
 }
 
-let rectangles = [];
+let rectangles: ReactElement[] = [];
 for (let i = 0; i < 5; i++) {
   const num = Math.floor(Math.random() * 5) + 1;
   let temp = [];
   for (let j = 0; j < num; j++) {
     temp.push(
       <div
+        key="86b46923"
         className="absolute border-black border-2 w-8 h-8 lg:w-18 lg:h-18 xl:w-24 xl:h-24 bg-offwhite"
         style={{
           left: `${i * 120 + j * 5}px`,
