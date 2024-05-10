@@ -123,6 +123,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
                 className="font-icons"
                 data-tooltip-id={`my-tooltip-${index}`}
                 data-tooltip-html={anchor.title}
+                data-tooltip-class-name="z-50"
               >
                 {icon(anchor.type)}
               </Link>
