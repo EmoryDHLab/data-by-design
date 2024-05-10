@@ -187,7 +187,7 @@ export default function ShanawdithitPage() {
             considered alongside any knowledge that the maps themselves bring to
             light.
           </p>
-          <FigureObj figure={figures["illustration-1"]} />
+          <FigureObj figure={figures["Illustration1"]} />
           <p>
             The diagram above attempts to give this colonial frame visual
             presence, accentuating the three primary sources that allow us,
@@ -465,7 +465,7 @@ export default function ShanawdithitPage() {
             source.
           </p>
 
-          <FigureObj figure={figures["1829-03"]} />
+          <FigureObj figure={figures["howley-sketch2"]} />
 
           <p>
             While we made the decision not to convert this information into GIS
@@ -500,7 +500,7 @@ export default function ShanawdithitPage() {
             “pipeline” alone.
             <InlineFootnote index={30} />
           </p>
-          <FigureObj figure={figures["illustration-2"]} />
+          <FigureObj figure={figures["Illustration2"]} />
           <p>
             Adding Cormack and Howley, along with ourselves, to our diagram of
             sources accentuates the layers of mediation that separate us from
