@@ -296,7 +296,7 @@ export default function ShanawdithitPage() {
         </CenteredLayout>
 
         <SketchScrollytell
-          figure={figures["howley-sketch2"]}
+          figure={figures["DRW-II"]}
           triggers={[
             <p key={"e39ab69e6343"}></p>,
 
