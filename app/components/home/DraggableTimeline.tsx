@@ -1,6 +1,5 @@
 import { useResizeObserver } from "~/hooks";
 import { useRef, useState, useEffect } from "react";
-import { randomTimelineImages } from "./timelineUtils";
 import type { Dispatch, SetStateAction } from "react";
 import type { TFigure } from "~/types/figureType";
 
@@ -9,22 +8,20 @@ type startPosition = {
   clientY: number;
 };
 
-const IMAGE_COUNT = 30;
 const PART_ONE_START = 0;
 const PART_ONE_HEIGHT = 484; // This is based on the container being 384px (h-96, or 24rem)
 
 interface Props {
-  selectedImage: TFigure;
-  setSelectedImage: Dispatch<SetStateAction<TFigure>>;
-  // Dumb hack to shuffle timeline
-  shouldShuffle: boolean;
+  selectedImage: TFigure | undefined;
+  setSelectedImage: Dispatch<SetStateAction<TFigure | undefined>>;
+  shuffledImages: TFigure[];
 }
 
 // Timeline of draggable documents arranged randomly
 export default function DraggableTimeline({
   selectedImage,
   setSelectedImage,
-  shouldShuffle,
+  shuffledImages,
 }: Props) {
   const { windowSize } = useResizeObserver();
   const svgRef = useRef<SVGSVGElement>(null);
@@ -38,19 +35,15 @@ export default function DraggableTimeline({
     { x: number; y: number; r: number }[]
   >([]);
 
-  const [images, setImages] = useState<TFigure[]>(
-    randomTimelineImages(IMAGE_COUNT)
-  );
+  // useEffect(() => {
+  //   if (selectedImage && !images.includes(selectedImage)) {
+  //     images.splice(0, 0, selectedImage);
+  //     setCurrentImageIndex(0);
+  //   }
+  // }, [selectedImage, images]);
 
   useEffect(() => {
-    if (selectedImage && !images.includes(selectedImage)) {
-      images.splice(0, 0, selectedImage);
-      setCurrentImageIndex(0);
-    }
-  }, [selectedImage, images]);
-
-  useEffect(() => {
-    setImages(randomTimelineImages(IMAGE_COUNT));
+    // setImages(randomTimelineImages(IMAGE_COUNT));
     setImagePositions(
       Array.from({ length: 30 + 1 }, () => {
         const windowWidth = windowSize.width ?? 200;
@@ -63,7 +56,7 @@ export default function DraggableTimeline({
         return { x, y, r };
       })
     );
-  }, [windowSize.width, shouldShuffle]);
+  }, [windowSize.width]);
 
   function getTransform(index: number) {
     const position = imagePositions[index];
@@ -97,7 +90,7 @@ export default function DraggableTimeline({
   const keyUp = (key: string) => {
     switch (key) {
       case "ArrowRight":
-        if (currentImageIndex < images.length - 1) {
+        if (currentImageIndex < shuffledImages.length - 1) {
           setCurrentImageIndex(currentImageIndex + 1);
         } else {
           setCurrentImageIndex(0);
@@ -107,15 +100,15 @@ export default function DraggableTimeline({
         if (currentImageIndex > 1) {
           setCurrentImageIndex(currentImageIndex - 1);
         } else {
-          setCurrentImageIndex(images.length - 1);
+          setCurrentImageIndex(shuffledImages.length - 1);
         }
         break;
     }
   };
 
   useEffect(() => {
-    setSelectedImage(images[currentImageIndex]);
-  }, [currentImageIndex, setSelectedImage, images]);
+    setSelectedImage(shuffledImages[currentImageIndex]);
+  }, [currentImageIndex, setSelectedImage, shuffledImages]);
 
   // Move the selected image to the top of the pile. I don't love this
   useEffect(() => {
@@ -144,7 +137,7 @@ export default function DraggableTimeline({
       className="relative z-10 right-0 focus:outline-none"
       style={{ bottom: "39px" }}
     >
-      {images.map((img, index) => {
+      {shuffledImages.map((img, index) => {
         const isSelected =
           img.chapter === selectedImage?.chapter &&
           img.fileName === selectedImage?.fileName;

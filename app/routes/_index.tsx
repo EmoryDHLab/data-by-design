@@ -7,7 +7,6 @@ import Timeline from "~/components/home/Timeline.client";
 import { ClientOnly } from "remix-utils/client-only";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
-import { TimelineType, timelineImages } from "~/components/home/timelineUtils";
 import SelectedImage from "~/components/home/SelectedImage.client";
 import type { TFigure } from "~/types/figureType";
 import SiteTitle from "~/components/home/SiteTitle";
@@ -44,11 +43,8 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
-  const [selectedImage, setSelectedImage] = useState<TFigure>(
-    timelineImages()[Math.floor(Math.random() * timelineImages.length)]
-  );
-  const [shouldShuffle, setShouldShuffle] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<TFigure>();
+  // timelineImages()[Math.floor(Math.random() * timelineImages.length)]
 
   return (
     <ChapterContext.Provider
@@ -90,10 +86,6 @@ export default function Index() {
                 <Timeline
                   selectedImage={selectedImage}
                   setSelectedImage={setSelectedImage}
-                  shouldShuffle={shouldShuffle}
-                  timelineType={timelineType}
-                  setShouldShuffle={setShouldShuffle}
-                  setTimelineType={setTimelineType}
                 />
               )}
             </ClientOnly>

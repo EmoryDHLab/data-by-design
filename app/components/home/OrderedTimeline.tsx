@@ -28,8 +28,8 @@ const imagesByYear = groupByYear();
 const sortedImages: TFigure[] = imageData.sort((a, b) => a.year - b.year);
 
 interface Props {
-  selectedImage: TFigure;
-  setSelectedImage: Dispatch<SetStateAction<TFigure>>;
+  selectedImage: TFigure | undefined;
+  setSelectedImage: Dispatch<SetStateAction<TFigure | undefined>>;
 }
 
 export default function OrderedTimeline({
@@ -38,7 +38,7 @@ export default function OrderedTimeline({
 }: Props) {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(
-    sortedImages.indexOf(selectedImage)
+    selectedImage ? sortedImages.indexOf(selectedImage) : 0
   );
   const [mouseIsDown, setMouseIsDown] = useState(false);
   const [startX, setStartX] = useState(0);

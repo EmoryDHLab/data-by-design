@@ -2,7 +2,11 @@ import type { TFigure } from "~/types/figureType";
 import FigureModal from "../layout/FigureModal";
 import Picture from "../layout/Picture";
 
-const SelectedImage = ({ selectedImage }: { selectedImage: TFigure }) => {
+const SelectedImage = ({
+  selectedImage,
+}: {
+  selectedImage: TFigure | undefined;
+}) => {
   if (selectedImage) {
     // TODO: Be able to reset margin on the figure tag in the modal
     return (
