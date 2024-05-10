@@ -465,7 +465,7 @@ export default function ShanawdithitPage() {
             source.
           </p>
 
-          <FigureObj figure={figures["howley-sketch2"]} />
+          <FigureObj figure={figures["1829-03"]} />
 
           <p>
             While we made the decision not to convert this information into GIS
