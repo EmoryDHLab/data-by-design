@@ -1,26 +1,32 @@
+import { useEffect, useState } from "react";
 import DraggableTimeline from "~/components/home/DraggableTimeline";
 import OrderedTimeline from "~/components/home/OrderedTimeline";
+import { randomTimelineImages, TimelineType } from "./timelineUtils";
 import type { Dispatch, SetStateAction } from "react";
 import type { TFigure } from "~/types/figureType";
-import { TimelineType } from "~/components/home/timelineUtils";
+
+const IMAGE_COUNT = 30;
 
 interface Props {
-  timelineType: TimelineType;
-  selectedImage: TFigure;
-  setSelectedImage: Dispatch<SetStateAction<TFigure>>;
-  shouldShuffle: boolean;
-  setShouldShuffle: Dispatch<SetStateAction<boolean>>;
-  setTimelineType: Dispatch<SetStateAction<TimelineType>>;
+  selectedImage: TFigure | undefined;
+  setSelectedImage: Dispatch<SetStateAction<TFigure | undefined>>;
 }
 
-export default function Timeline({
-  timelineType,
-  selectedImage,
-  setSelectedImage,
-  shouldShuffle,
-  setShouldShuffle,
-  setTimelineType,
-}: Props) {
+const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
+  const [shuffledImages, setShuffledImages] = useState<TFigure[]>(
+    randomTimelineImages(IMAGE_COUNT)
+  );
+  const [shouldShuffle, setShouldShuffle] = useState<boolean>(false);
+  const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
+
+  useEffect(() => {
+    setShuffledImages(randomTimelineImages(IMAGE_COUNT));
+  }, [shouldShuffle]);
+
+  useEffect(() => {
+    setSelectedImage(shuffledImages[0]);
+  }, [shuffledImages, setSelectedImage]);
+
   return (
     <>
       <div className="flex flex-col px-4">
@@ -61,7 +67,7 @@ export default function Timeline({
         <DraggableTimeline
           selectedImage={selectedImage}
           setSelectedImage={setSelectedImage}
-          shouldShuffle={shouldShuffle}
+          shuffledImages={shuffledImages}
         />
       ) : (
         <OrderedTimeline
@@ -71,4 +77,6 @@ export default function Timeline({
       )}
     </>
   );
-}
+};
+
+export default Timeline;
