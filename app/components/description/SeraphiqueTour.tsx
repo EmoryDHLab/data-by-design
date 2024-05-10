@@ -99,8 +99,12 @@ export default function SeraphiqueTour({ figure }: Props) {
           />
         </mask>
         <g>
+          <filter id="seraphique-blur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="0.75" />
+          </filter>
           <image
             mask="url(#seraphique)"
+            filter="url(#seraphique-blur)"
             role="presentation"
             href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
             width="100%"
