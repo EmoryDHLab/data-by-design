@@ -35,6 +35,7 @@ export default function App() {
       window.hypothesisConfig = function () {
         return {
           openSidebar: false,
+          showHighlights: false,
         };
       };
       const head = document.querySelector("head");
