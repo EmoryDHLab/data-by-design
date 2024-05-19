@@ -84,7 +84,7 @@ export default function PlymouthCommitteeScrollytell({
       if (hideSensitiveState) {
         setFadeOpacity(1.0);
       } else {
-        setFadeOpacity(0.7);
+        setFadeOpacity(0.75);
       }
     } else {
       setFadeOpacity(0.0);
@@ -173,8 +173,8 @@ export default function PlymouthCommitteeScrollytell({
 
                   <path
                     className={`transition-all duration-1000 fill-${
-                      hideSensitiveState ? "brooksSecondary" : "offblack opacity-75"
-                    }`}
+                      hideSensitiveState ? "brooksSecondary" : "offblack"
+                    } opacity-${fadeOpacity * 100}`}
                     strokeWidth={0}
                     mask="url(#fade)"
                     d={paths.outline}
