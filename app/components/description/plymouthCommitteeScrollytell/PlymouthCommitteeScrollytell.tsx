@@ -173,8 +173,8 @@ export default function PlymouthCommitteeScrollytell({
 
                   <path
                     className={`transition-all duration-1000 fill-${
-                      hideSensitiveState ? "brooksSecondary" : "offblack"
-                    } opacity-${fadeOpacity / 100}`}
+                      hideSensitiveState ? "brooksSecondary" : "offblack opacity-75"
+                    }`}
                     strokeWidth={0}
                     mask="url(#fade)"
                     d={paths.outline}
@@ -203,7 +203,7 @@ export default function PlymouthCommitteeScrollytell({
                 </g>
                 <Areas
                   strokeOpacity={
-                    scrollProgress < 0.25 || scrollProgress >= 4.5 ? 1.0 : 0.0
+                    scrollProgress < 0.25 || (scrollProgress >= 4.5 && hideSensitiveState) ? 1.0 : 0.0
                   }
                   strokeWidth={scrollProgress >= 4.5 ? 1 : 3}
                 />

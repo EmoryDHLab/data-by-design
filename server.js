@@ -4,13 +4,6 @@ import compression from "compression";
 import express from "express";
 import morgan from "morgan";
 
-const minSubdomainCount = () => {
-  if (process.env.NODE_ENV === "staging") {
-    return 1;
-  }
-  return 0;
-};
-
 installGlobals();
 
 const viteDevServer =
@@ -26,21 +19,6 @@ const remixHandler = createRequestHandler({
   build: viteDevServer
     ? () => viteDevServer.ssrLoadModule("virtual:remix/server-build")
     : await import("./build/server/index.js"),
-  // getLoadContext: (req, res) => {
-  //   const host = req.get("Host");
-  //   const tenant =
-  //     req.subdomains.length > minSubdomainCount()
-  //       ? req.subdomains.pop()
-  //       : undefined;
-  //   const port = host.split(":").pop();
-  //   const request = {
-  //     protocol: req.protocol,
-  //     host,
-  //     subdomains: req.subdomains,
-  //     port,
-  //   };
-  //   return { tenant, res, request, req };
-  // },
 });
 
 const app = express();

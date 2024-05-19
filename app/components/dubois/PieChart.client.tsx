@@ -213,7 +213,7 @@ export default function PieChart({
     return () => {
       p5Copy.remove();
     };
-  }, [studentData, isMobile, windowSize, containerSize]);
+  }, [studentData, isMobile, windowSize, containerSize, id]);
 
   return (
     <div

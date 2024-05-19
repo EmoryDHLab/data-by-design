@@ -17,7 +17,7 @@ const Ship = ({ figure }: Props) => {
       <svg
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
         className={`w-full transition-all duration-1000 ${
-          hideSensitiveState ? "blur-md" : "blur-none"
+          hideSensitiveState ? "blur-sm md:blur-md" : "blur-none"
         }`}
       >
         <g className={`fill-brooksSecondary`}>
@@ -34,7 +34,7 @@ const Ship = ({ figure }: Props) => {
         />
       </svg>
       <p
-        className={`absolute top-1/3 ml-[20%] w-1/2 transition-opacity duration-1000 opacity-${
+        className={`absolute top-6 md:top-1/3 ml-[20%] w-3/4 md:w-1/2 text-xs md:text-base transition-opacity duration-1000 opacity-${
           hideSensitiveState ? 100 : 0
         }`}
       >
