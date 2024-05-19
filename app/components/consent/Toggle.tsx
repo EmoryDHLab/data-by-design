@@ -22,9 +22,9 @@ const ConsentToggle = ({ id, className }: Props) => {
     if (hideSensitiveState) {
       return (
         <EyeClosed
-          className={`text-off${isHovered ? "white" : "black"} ${
-            className ?? ""
-          }`}
+          className={`text-offblack md:text-off${
+            isHovered ? "white" : "black"
+          } ${className ?? ""}`}
         />
       );
     }

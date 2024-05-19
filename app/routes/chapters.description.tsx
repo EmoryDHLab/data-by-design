@@ -168,14 +168,14 @@ export default function BrooksPage() {
 
           <div
             id="consent-explain"
-            className="flex flex-col text-lg md:text-xl md:flex-row space-x-6 md:space-x-6 lg:space-x-4 md:mb-8"
+            className="flex text-lg md:text-xl md:flex-row space-x-6 md:space-x-6 lg:space-x-4 md:mb-8"
           >
-            <div className="w-1/3 self-center text-center">
+            <div className="w-1/3 self-end mb-12 md:mb-auto md:self-center text-center">
               <span
                 className={`inline-flex items-center justify-center border h-auto w-auto border-offblack rounded-full bg-brooksSecondary hover:bg-brooksPrimary`}
               >
                 <ConsentToggle
-                  className="h-6 w-6 md:h-28 md:w-28 p-2"
+                  className="md:h-28 md:w-28 p-0.5 md:p-2"
                   id="big-toggle"
                 />
               </span>
