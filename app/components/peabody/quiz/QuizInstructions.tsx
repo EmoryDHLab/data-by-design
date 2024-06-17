@@ -13,14 +13,16 @@ const InstructionsContent = ({ className, children }: Props) => {
 
   if (isMobile) {
     return (
-      <span className={`duration-1000 transition-opacity w-screen text-center italic ${className}`}>
+      <span
+        className={`duration-1000 transition-opacity w-screen text-center italic ${className}`}
+      >
         {children}
       </span>
     );
   }
 
   if (isDesktop) {
-    return(
+    return (
       <svg>
         <text
           fontSize={10}
@@ -39,12 +41,7 @@ const InstructionsContent = ({ className, children }: Props) => {
     );
   }
 
-  return (
-    <section>
-      {children}
-    </section>
-  );
-
+  return <section>{children}</section>;
 };
 
 export default function QuizInstructions() {
@@ -54,13 +51,27 @@ export default function QuizInstructions() {
   if (isMobile) {
     return (
       <>
-        <InstructionsContent className={`transition-all duration-1000 ${currentStepCount == 1 ? "opacity-100" : "opacity-0 h-0"}`}>
+        <InstructionsContent
+          className={`transition-all duration-1000 ${
+            currentStepCount == 1 ? "opacity-100" : "opacity-0 h-0"
+          }`}
+        >
           SELECT THE TWO COUNTRIES INVOLVED.
         </InstructionsContent>
-        <InstructionsContent className={`transition-all duration-1000 ${currentStepCount == 2 ? "opacity-100" : "opacity-0 h-0"}`}>
+        <InstructionsContent
+          className={`transition-all duration-1000 ${
+            currentStepCount == 2 ? "opacity-100" : "opacity-0 h-0"
+          }`}
+        >
           SELECT THE YEAR 1644.
         </InstructionsContent>
-        <InstructionsContent className={`transition-all duration-1000 ${currentStepCount >= 3 && currentStepCount <= 6 ? "opacity-100" : "opacity-0 h-0"}`}>
+        <InstructionsContent
+          className={`transition-all duration-1000 ${
+            currentStepCount >= 3 && currentStepCount <= 6
+              ? "opacity-100"
+              : "opacity-0 h-0"
+          }`}
+        >
           CATEGORIZE THE EVENT.
         </InstructionsContent>
       </>
@@ -71,7 +82,10 @@ export default function QuizInstructions() {
     <svg
       width={300}
       height={10}
-      className={`hidden md:block opacity-${currentStepCount === 0 || currentStepCount === 8 ? "0" : "100"}`}
+      y={20}
+      className={`hidden md:block opacity-${
+        currentStepCount === 0 || currentStepCount === 8 ? "0" : "100"
+      }`}
     >
       <InstructionsContent
         className={`

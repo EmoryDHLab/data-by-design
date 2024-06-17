@@ -20,24 +20,29 @@ export default function QuizFeedback() {
 
   if (isMobile) {
     return (
-      <span className={`
+      <span
+        className={`
         transition-all duration-700 tracking-widest
-        text-center absolute top-0 bg-black z-10
-        ${show ? "opacity-100 w-full px-3 pb-3 h-20": "opacity-0 px-0 pb-0 h-0"}
+        text-center absolute top-10 bg-black z-10
+        ${
+          show ? "opacity-100 w-full px-3 pb-3 h-20" : "opacity-0 px-0 pb-0 h-0"
+        }
         text-${feedback?.correct ? "green-400" : "red-600"}
       `}
       >
         {feedback?.message ?? " "}
       </span>
-    )
+    );
   }
 
   return (
     <svg
       width={300}
       height={10}
-      y={14}
-      className={`hidden md:block opacity-${currentStepCount === 0 || currentStepCount === 8 ? "0" : "100"}`}
+      y={34}
+      className={`hidden md:block opacity-${
+        currentStepCount === 0 || currentStepCount === 8 ? "0" : "100"
+      }`}
     >
       <text
         fontSize={6}
@@ -48,10 +53,12 @@ export default function QuizFeedback() {
         fill={feedback?.correct ? "green" : "red"}
         fontFamily="VTC Du Bois Narrow, serif"
         fontStyle="italic"
-        className={`transition-opacity duration-700 tracking-widest opacity-${show ? "100": "0"}`}
+        className={`transition-opacity duration-700 tracking-widest opacity-${
+          show ? "100" : "0"
+        }`}
       >
         {feedback?.message}
       </text>
     </svg>
-  )
+  );
 }

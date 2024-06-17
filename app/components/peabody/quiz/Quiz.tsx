@@ -192,7 +192,7 @@ export default function Quiz() {
               currentStepCount >= 2 ? 100 : 0
             } transition-all duration-1000 origin-bottom-right`}
           >
-            <QuizSquare defaultX={165} defaultY={25} />
+            <QuizSquare defaultX={165} defaultY={45} />
           </g>
 
           <g
@@ -206,12 +206,12 @@ export default function Quiz() {
               currentStepCount >= 8 ? "-translate-x-full opacity-0" : ""
             } transition-all duration-1000`}
           >
-            <text x={60} y={41} fontSize={6} fill="white" className={`opacity`}>
+            <text x={60} y={61} fontSize={6} fill="white" className={`opacity`}>
               EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
             </text>
             <text
               x={60}
-              y={55}
+              y={75}
               fontSize={12}
               fill="white"
               fontFamily="VTC Du Bois, serif"

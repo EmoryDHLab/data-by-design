@@ -28,13 +28,13 @@ export default function QuizConclusion({ className }: { className?: string }) {
   return (
     <svg>
       <g className={className}>
-        <foreignObject x={10} y={20} width={150} height={200}>
+        <foreignObject x={10} y={40} width={150} height={200}>
           <div className="text-white">
             <ConclusionContent />
           </div>
         </foreignObject>
         <text
-          y={140}
+          y={160}
           x={10}
           width={20}
           height={20}
