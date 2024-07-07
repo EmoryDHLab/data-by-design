@@ -1,11 +1,12 @@
 import scrollama from "scrollama";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ClientOnly } from "remix-utils/client-only";
 import { ChapterNav } from "~/components/ChapterNav";
 import { useResizeObserver } from "~/hooks";
 import type { ReactNode } from "react";
 import type { ScrollamaInstance } from "scrollama";
 import FootnoteToggle from "../FootnoteToggle";
+import { ChapterContext } from "~/chapterContext";
 
 interface Props {
   children: ReactNode;
@@ -17,6 +18,7 @@ export default function ChapterBody({ children, className }: Props) {
   const [chapterProgressState, setChapterProgressState] = useState<number>(0.0);
   const [fixedNav, setFixedNav] = useState<boolean>(false);
   const { mainContentSize, windowSize } = useResizeObserver();
+  const { backgroundColor } = useContext(ChapterContext);
 
   useEffect(() => {
     if (!windowSize.height) return;
@@ -52,7 +54,9 @@ export default function ChapterBody({ children, className }: Props) {
 
   return (
     <main
-      className={`chapter-body w-screen ${className ?? ""}`}
+      className={`chapter-body w-screen selection:bg-${backgroundColor} selection:text-white ${
+        className ?? ""
+      }`}
       id="main-content"
     >
       <ClientOnly>

@@ -269,6 +269,8 @@ export default {
     "md:mt-28",
     ...Object.keys(chapterMeta).map((chapter) => `bg-${chapter}`),
     ...Object.keys(chapterMeta).map((chapter) => `hover:bg-${chapter}`),
+    ...Object.keys(chapterMeta).map((chapter) => `selection:bg-${chapter}Primary`),
+    ...Object.keys(chapterMeta).map((chapter) => `selection:bg-${chapter}Secondary`),
     ...Object.keys(chapterMeta).map((chapter) => `outline-${chapter}Primary`),
     ...Object.keys(chapterMeta).map((chapter) => `outline-${chapter}Secondary`),
   ],
