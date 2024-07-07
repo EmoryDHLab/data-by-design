@@ -30,7 +30,7 @@
   {
     "key": "gdrive",
     "label": "GDrive",
-    "color": "brooksPrimary",
+    "color": "descriptionPrimary",
     "activeText": "white",
     "inactiveText": "white"
   },

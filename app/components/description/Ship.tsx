@@ -20,7 +20,7 @@ const Ship = ({ figure }: Props) => {
           hideSensitiveState ? "blur-sm md:blur-md" : "blur-none"
         }`}
       >
-        <g className={`fill-brooksSecondary`}>
+        <g className={`fill-descriptionSecondary`}>
           <path
             strokeWidth={0}
             className={`transition-opacity duration-1000 opacity-100`}

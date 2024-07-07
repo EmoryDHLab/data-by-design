@@ -35,7 +35,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
     <ScrollytellWrapper
       setScrollProgress={setScrollProgress}
       steps={steps}
-      bgColor="brooksSecondary"
+      bgColor="descriptionSecondary"
       triggers={triggers}
       id="voyage-scrollytell"
       className="w-screen"
@@ -291,7 +291,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 index + 1 === triggers.length ? "h-[50vh]" : "h-screen"
               } text-${accentTextColor}`}
             >
-              <p className="bg-brooksSecondary-translucent p-3 md:p-12">
+              <p className="bg-descriptionSecondary-translucent p-3 md:p-12">
                 {trigger}
               </p>
             </div>

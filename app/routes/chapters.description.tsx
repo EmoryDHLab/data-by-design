@@ -91,10 +91,10 @@ export default function BrooksPage() {
   return (
     <ChapterContext.Provider
       value={{
-        backgroundColor: "brooksPrimary",
-        accentColor: "brooksSecondary",
+        backgroundColor: "descriptionPrimary",
+        accentColor: "descriptionSecondary",
         accentTextColor: "black",
-        footnoteTextColor: "brooksPrimary",
+        footnoteTextColor: "descriptionPrimary",
         primaryTextColor: "white",
         footnotes: descriptionFootnotes,
         chapterFigures,
@@ -172,7 +172,7 @@ export default function BrooksPage() {
           >
             <div className="w-1/3 self-end mb-12 md:mb-auto md:self-center text-center">
               <span
-                className={`inline-flex items-center justify-center border h-auto w-auto border-offblack rounded-full bg-brooksSecondary hover:bg-brooksPrimary`}
+                className={`inline-flex items-center justify-center border h-auto w-auto border-offblack rounded-full bg-descriptionSecondary hover:bg-descriptionPrimary`}
               >
                 <ConsentToggle
                   className="md:h-28 md:w-28 p-0.5 md:p-2"

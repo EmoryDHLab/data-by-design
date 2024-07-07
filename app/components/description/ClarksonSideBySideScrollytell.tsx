@@ -165,7 +165,7 @@ function ClarksonSideBySideScrollytell() {
         triggers={triggers}
         steps={steps}
         className="w-screen"
-        bgColor="brooksSecondary"
+        bgColor="descriptionSecondary"
       >
         <div
           className={`flex flex-col md:flex-row justify-between`}
@@ -174,7 +174,7 @@ function ClarksonSideBySideScrollytell() {
           <div className="sticky p-8 md:p-0 top-20 h-min bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
             <svg
               viewBox={`0 0 ${width} ${height}`}
-              className={`max-h-[80vh] max-w-[90%] md:my-16 mx-auto bg-brooksSecondary transition-all duration-1000`}
+              className={`max-h-[80vh] max-w-[90%] md:my-16 mx-auto bg-descriptionSecondary transition-all duration-1000`}
             >
               <filter id="clarkson-blur">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
@@ -199,7 +199,7 @@ function ClarksonSideBySideScrollytell() {
                   height={height}
                   fill="none"
                   strokeWidth={20}
-                  className="stroke-brooksPrimary fill-none"
+                  className="stroke-descriptionPrimary fill-none"
                 ></rect> */}
               </g>
               <mask id="clarkson-mask">
@@ -223,7 +223,7 @@ function ClarksonSideBySideScrollytell() {
                   {...focusShapeSize}
                   fill="none"
                   strokeWidth={20}
-                  className="transition-all duration-1000 stroke-brooksPrimary"
+                  className="transition-all duration-1000 stroke-descriptionPrimary"
                 />
               </g>
 
@@ -347,7 +347,7 @@ function ClarksonSideBySideScrollytell() {
                     className={`p-6 md:p-0 bg-${
                       index == 0 || index == triggers.length - 1
                         ? ""
-                        : "brooksSecondary-translucent"
+                        : "descriptionSecondary-translucent"
                     } w-9/12`}
                   >
                     {trigger}

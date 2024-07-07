@@ -15,7 +15,7 @@ type TLaborSourceLabel =
   | string;
 
 type TLaborSourceColor =
-  | "brooksPrimary"
+  | "descriptionPrimary"
   | "shanawdithitPrimary"
   | "peabodyPrimary"
   | "playfairPrimary"

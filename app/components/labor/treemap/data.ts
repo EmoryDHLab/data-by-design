@@ -44,7 +44,7 @@ export const rectColor = (source: string | undefined) => {
     case "iCalendar":
       return "fill-peabodyPrimary";
     case "Google Drive":
-      return "fill-brooksPrimary";
+      return "fill-descriptionPrimary";
     default:
       return "black";
   }
