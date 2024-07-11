@@ -14,10 +14,12 @@ const centuries = [1500, 1600, 1700, 1800];
 
 export default function PeabodyBarGraph() {
   const [currentCentury, setCurrentCentury] = useState(centuries[2]);
-  const [currentCenturyEvents, setCurrentCenturyEvents] = useState<Array<PeabodyEvent>>(
-    getCenturyEvents(1700)
-  );
-  const [activeEvent, setActiveEvent] = useState<ActivePeabodyEvent | undefined>(undefined);
+  const [currentCenturyEvents, setCurrentCenturyEvents] = useState<
+    Array<PeabodyEvent>
+  >(getCenturyEvents(1700));
+  const [activeEvent, setActiveEvent] = useState<
+    ActivePeabodyEvent | undefined
+  >(undefined);
 
   useEffect(() => {
     setCurrentCenturyEvents(getCenturyEvents(currentCentury));
@@ -35,7 +37,10 @@ export default function PeabodyBarGraph() {
         centuries,
       }}
     >
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-2 text-white text-center w-full p-6" id="timeline">
+      <div
+        className="hidden md:grid grid-cols-1 md:grid-cols-2 bg-black gap-x-0 md:gap-x-32 md:gap-y-2 text-white text-center w-full p-6 relative z-10"
+        id="timeline"
+      >
         <div className="w-full md:w-3/5 my-0 mx-auto">
           <OverlaidSquare />
         </div>

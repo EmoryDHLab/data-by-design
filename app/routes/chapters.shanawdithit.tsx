@@ -829,7 +829,7 @@ export default function ShanawdithitPage() {
                 worldview, as evidenced by how the same features are labeled
                 differently on all subsequent maps.{" "}
               </p>
-              <p className="pt-5">
+              <p className="pl-4 md:pl0 mb-0 w-9/12">
                 {" "}
                 Instead of the Atlantic Ocean, for example, the body of water is
                 here labeled “Salt water Lake or Great Water,” which she
@@ -973,7 +973,10 @@ export default function ShanawdithitPage() {
           </p>
         </CenteredLayout>
 
-        <FigureObj figure={figures["BirchBark"]} />
+        <FigureObj
+          figure={figures["BirchBark"]}
+          captionClassName="text-center	md:mx-8"
+        />
 
         <CenteredLayout>
           <p>

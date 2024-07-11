@@ -53,9 +53,9 @@ export default function FigureModal({
     <figure
       ref={figureRef}
       id={id}
-      className={`md:mx-auto ${inColumn ? "md:ml-24" : "md:mt-8"} ${
-        className ?? ""
-      }`}
+      className={`md:mx-auto relative z-10 ${
+        inColumn ? "md:ml-24" : "md:mt-8"
+      } ${className ?? ""}`}
       {...interactiveOptions}
     >
       {children}

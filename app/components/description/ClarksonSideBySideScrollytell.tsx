@@ -199,7 +199,7 @@ function ClarksonSideBySideScrollytell() {
                   height={height}
                   fill="none"
                   strokeWidth={20}
-                  className="stroke-descriptionPrimary fill-none"
+                  className="stroke-brooksPrimary fill-none"
                 ></rect> */}
               </g>
               <mask id="clarkson-mask">
@@ -223,7 +223,7 @@ function ClarksonSideBySideScrollytell() {
                   {...focusShapeSize}
                   fill="none"
                   strokeWidth={20}
-                  className="transition-all duration-1000 stroke-descriptionPrimary"
+                  className="transition-all duration-1000 stroke-brooksPrimary"
                 />
               </g>
 

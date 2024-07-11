@@ -37,7 +37,7 @@ export default function PeabodySandbox() {
   const [currentColor, setCurrentColor] = useState<Color>(actorColors[0]);
   return (
     <div
-      className="w-full bg-black py-10 flex flex-col items-center my-8 md:my-12"
+      className="w-full bg-black py-10 flex flex-col items-center my-8 md:my-12 relative z-10"
       id="sandbox"
     >
       <div className="flex justify-around w-1/2 py-10">

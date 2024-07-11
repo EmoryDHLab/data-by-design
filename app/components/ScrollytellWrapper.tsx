@@ -104,7 +104,7 @@ export default function ScrollytellWrapper({
       className={classNames(
         `bg-${bgColor ?? backgroundColor}`,
         className,
-        "my-8 md:my-12 relative"
+        "my-8 md:my-12 relative z-10"
       )}
     >
       {children}
