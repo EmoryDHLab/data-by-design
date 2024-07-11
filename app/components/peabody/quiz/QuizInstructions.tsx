@@ -72,7 +72,7 @@ export default function QuizInstructions() {
               : "opacity-0 h-0"
           }`}
         >
-          CATEGORIZE THE EVENT.
+          CATEGORIZE THE EVENT.!!!!!!
         </InstructionsContent>
       </>
     );
@@ -89,24 +89,24 @@ export default function QuizInstructions() {
     >
       <InstructionsContent
         className={`
-        ${currentStepCount < 1 ? "translate-x-full" : ""}
-        ${currentStepCount > 1 ? "-translate-x-full" : ""}
+        ${currentStepCount < 1 ? "translate-x-[100vw]" : ""}
+        ${currentStepCount > 1 ? "-translate-x-[100vw]" : ""}
         `}
       >
         SELECT THE TWO COUNTRIES INVOLVED.
       </InstructionsContent>
       <InstructionsContent
         className={`
-        ${currentStepCount < 2 ? "translate-x-full" : ""}
-        ${currentStepCount > 2 ? "-translate-x-full" : ""}
+        ${currentStepCount < 2 ? "translate-x-[100vw]" : ""}
+        ${currentStepCount > 2 ? "-translate-x-[100vw]" : ""}
         `}
       >
         SELECT THE YEAR 1644.
       </InstructionsContent>
       <InstructionsContent
         className={`
-        ${currentStepCount < 3 ? "translate-x-full" : ""}
-        ${currentStepCount > 6 ? "-translate-x-full" : ""}
+        ${currentStepCount < 3 ? "translate-x-[100vw]" : ""}
+        ${currentStepCount > 6 ? "-translate-x-[100vw]" : ""}
         `}
       >
         CATEGORIZE THE EVENT.

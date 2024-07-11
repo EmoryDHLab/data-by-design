@@ -161,7 +161,10 @@ export default function Quiz() {
         setFeedback,
       }}
     >
-      <section className="bg-black w-full h-[100vw] hidden md:block" id="quiz">
+      <section
+        className="bg-black w-full h-[100vw] hidden md:block relative z-10"
+        id="quiz"
+      >
         <svg
           ref={quizRef}
           viewBox="0 0 300 200"

@@ -24,7 +24,7 @@ export default function QuizSquare({
     <g
       className={`${
         currentStepCount == 0 ? "hidden" : ""
-      } transition-all duration-700 ${isMobile ? "origin-center" : ""} ${
+      } transition-all duration-[2000ms] ${isMobile ? "origin-center" : ""} ${
         currentStepCount >= 3 && currentStepCount < 8
           ? "scale-[10.5] md:scale-[7] translate-x-[160%] md:-translate-x-[78rem]  translate-y-[63%] md:-translate-y-[38rem]"
           : ""
