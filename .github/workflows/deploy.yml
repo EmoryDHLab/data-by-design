@@ -33,9 +33,9 @@ jobs:
         env:
           BRANCH: ${{ github.head_ref || github.ref_name }}
           AWS_ECR: ${{ secrets.AWS_ECR }}
-          AWS_ECR_CLUSTER: ${{ secrets.AWS_ECR_CLUSTER }}
-          AWS_ECR_CLUSTER_DEV: ${{ secrets.AWS_ECR_CLUSTER_DEV }}
-          AWS_ECR_SERVICE: ${{ secrets.AWS_ECR_SERVICE }}
-          AWS_ECR_SERVICE_DEV: ${{ secrets.AWS_ECR_SERVICE_DEV }}
+          AWS_ECR_CLUSTER: ${{ secrets.AWS_ECS_CLUSTER }}
+          AWS_ECR_CLUSTER_DEV: ${{ secrets.AWS_ECS_CLUSTER_DEV }}
+          AWS_ECR_SERVICE: ${{ secrets.AWS_ECS_SERVICE }}
+          AWS_ECR_SERVICE_DEV: ${{ secrets.AWS_ECS_SERVICE_DEV }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
         run: ./deploy.sh
