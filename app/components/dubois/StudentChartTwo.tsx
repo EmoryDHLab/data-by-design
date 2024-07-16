@@ -4,11 +4,14 @@ import Legend from "~/components/dubois/pieChart/Legend";
 import studentData from "~/data/dubois/studentChartTwo.json";
 import PieChart from "~/components/dubois/PieChart.client";
 import { ClientOnly } from "remix-utils/client-only";
+import { map } from "~/utils";
 
-const rowOneOffset = 0.025;
-const rowOneSpacing = 0.025;
-const rowThreeFontsize = 0.016;
 const faded = 10;
+
+const largeText = 22;
+const smallText = 15;
+const regularText = 15;
+const leftMargin = 15;
 
 interface Props {
   id?: string;
@@ -28,39 +31,36 @@ export default function StudentChartTwo({
   background = "offwhite",
 }: Props) {
   const { windowSize } = useResizeObserver();
-  const [windowWidth, setWindowWidth] = useState<number>(100);
-  const [windowHeight, setWindowHeight] = useState<number>(100);
-  const [smallText, setSmallText] = useState<number>(10);
-  const [regularText, setRegularText] = useState<number>(15);
-  const [largeText, setLargeText] = useState<number>(20);
+  const [chartWidth, setChartWidth] = useState<number>(800);
 
   useEffect(() => {
     if (!windowSize.height || !windowSize.width) return;
-    const { width, height } = windowSize;
-    setWindowWidth(width / 2);
-    setWindowHeight(height - 80);
-    setSmallText(Math.max(height * 0.0095, width * 0.0095));
-    setRegularText(Math.max(height * 0.012, width * 0.012));
-    setLargeText(Math.max(height * 0.014, width * 0.014));
+    const { width } = windowSize;
+    setChartWidth(width / 2);
   }, [windowSize]);
 
   return (
     <div
-      className={`bg-${background} h-full w-full relative`}
-      style={{ width: `${windowWidth}px` }}
+      className={`bg-duboisPrimary h-screen m-auto flex flex-col mr-4`}
+      // style={{ width: `${chartWidth}px` }}
     >
       <svg
-        viewBox={`0 0 ${windowWidth} ${windowHeight}`}
-        className={`bg-offwhite relative md:scale-95`}
-        style={{
-          width: `${windowWidth}px`,
-          height: `${windowHeight}px`,
-        }}
+        viewBox={`0 0 800 1000`}
+        className={`bg-offwhite relative m-auto`}
+        // style={{ width: `${chartWidth}px`, height: `${chartHeight}px` }}
       >
+        <rect
+          x={0}
+          y={0}
+          height={1000}
+          width={800}
+          fill="none"
+          stroke="black"
+        />
         <g>
           <text
             x="50%"
-            y={windowHeight * rowOneOffset}
+            y={25}
             className={`text-black font-duboisWide transition-opacity duration-1000 opacity-${
               highlightChart || highlightMap ? faded : 100
             }`}
@@ -71,10 +71,10 @@ export default function StudentChartTwo({
             <tspan x="50%">
               A STATISTICAL CHART ILLUSTRATING INFORMATION ABOUT THE BLACK
             </tspan>
-            <tspan x="50%" dy={windowHeight * rowOneSpacing}>
+            <tspan x="50%" dy={largeText + 5}>
               COLLEGE GRADUATES FROM ACROSS THE UNITED STATES WHO
             </tspan>
-            <tspan x="50%" dy={windowHeight * rowOneSpacing}>
+            <tspan x="50%" dy={largeText + 5}>
               CONTRIBUTED TO DU BOIS'S RESEARCH.
             </tspan>
           </text>
@@ -82,33 +82,33 @@ export default function StudentChartTwo({
         <g>
           <text
             x="25%"
-            y={windowHeight * rowOneSpacing * 4}
+            y={110}
             textAnchor="middle"
             dominantBaseline="central"
             fontSize={smallText}
-            className={`uppercase font-duboisWide tracking-wide transition-opacity duration-1000 opacity-${
+            className={`uppercase font-duboisWide tracking-wider transition-opacity duration-1000 opacity-${
               highlightChart || highlightMap ? faded : 100
             }`}
           >
-            <tspan x="25%" dy={largeText}>
+            <tspan x="25%" dy={smallText + 6}>
               Prepared and executed by,
             </tspan>
-            <tspan x="25%" dy={largeText}>
+            <tspan x="25%" dy={smallText + 6}>
               Tanvi Sharma,Anna Mola, Nicholas Yang,
             </tspan>
-            <tspan x="25%" dy={largeText}>
+            <tspan x="25%" dy={smallText + 6}>
               Yang Li, Jay Varner, and Lauren Klein
             </tspan>
-            <tspan x="25%" dy={largeText}>
+            <tspan x="25%" dy={smallText + 6}>
               Under the Auspices of the{" "}
             </tspan>
-            <tspan x="25%" dy={largeText}>
+            <tspan x="25%" dy={smallText + 6}>
               Digital Humanities Lab
             </tspan>
-            <tspan x="25%" dy={largeText}>
+            <tspan x="25%" dy={smallText + 6}>
               Emory University, Atlanta, GA.
             </tspan>
-            <tspan x="25%" dy={largeText}>
+            <tspan x="25%" dy={smallText + 6}>
               United States of America
             </tspan>
           </text>
@@ -118,27 +118,18 @@ export default function StudentChartTwo({
             highlightChart ? faded : 100
           }`}
         >
-          <image
-            x={windowWidth / 1.75}
-            y={windowHeight * rowOneSpacing * 4}
-            height={regularText * 8}
-            href="/images/dubois/map.png"
-          />
+          <image x={450} y={120} height={160} href="/images/dubois/map.png" />
           <path
             d={`M13.94 27.108C21.248 27.108 27.116 21.204 27.116 13.932C27.116 6.768 21.356 0.827998 13.94 0.827998C6.74 0.827998 0.836 6.516 0.836 13.932C0.836 21.204 6.704 27.108 13.94 27.108ZM6.812 23.58L9.548 15.444L2.924 10.98H11.06L13.94 2.196L16.892 10.98H25.028L18.404 15.444L21.14 23.58L13.94 18.396L6.812 23.58Z`}
             fill="black"
-            transform={`translate(${windowWidth / 1.75}, ${
-              windowHeight * rowOneSpacing * 4.1 + regularText * 8
-            }) scale(0.8)`}
-            height={largeText}
-            width={largeText}
+            transform={`translate(486, 295) scale(0.7)`}
           />
           p
           <text
-            x={windowWidth / 1.75 + smallText * 2.5}
-            y={windowHeight * rowOneSpacing * 4 + largeText * 8}
+            x={510}
+            y={310}
             fill="black"
-            fontSize={regularText}
+            fontSize={smallText}
             className="uppercase font-duboisWide"
           >
             Atlanta University
@@ -147,37 +138,32 @@ export default function StudentChartTwo({
         <g>
           <text
             x="50%"
-            y={
-              windowHeight * rowOneSpacing * 4 +
-              regularText * 6 +
-              windowHeight * rowOneOffset * 2 +
-              regularText * 2
-            }
+            y={360}
             textAnchor="middle"
             dominantBaseline="central"
-            fontSize={regularText}
+            fontSize={regularText + 2}
             className={`uppercase font-duboisWide transition-opacity duration-1000 opacity-${
               highlightChart || highlightMap ? faded : 100
             }`}
           >
-            <tspan x="50%" dy={windowHeight * rowOneSpacing}>
+            <tspan x="50%">
               The previous chart visualized graduates of Atlanta University. In
-              1910,
+              1910, Du Bois
             </tspan>
-            <tspan x="50%" dy={windowHeight * rowOneSpacing}>
-              Du Bois and his students undertook a larger study of Black college
+            <tspan x="50%" dy={regularText + 6}>
+              and his students undertook a larger study of Black college
+              graduates across
             </tspan>
-            <tspan x="50%" dy={windowHeight * rowOneSpacing}>
-              graduates across the United States.
+            <tspan x="50%" dy={regularText + 6}>
+              the United States.
             </tspan>
-            <tspan x="50%" dy={windowHeight * rowOneSpacing * 2}>
-              This chart visualizes information about the graduates of
+            <tspan x="50%" dy={regularText + 18}>
+              This chart visualizes information about the graduates of Atlanta
+              University
             </tspan>
-            <tspan x="50%" dy={windowHeight * rowOneSpacing}>
-              Atlanta University who were included in the 1910 study, American
-            </tspan>
-            <tspan x="50%" dy={windowHeight * rowOneSpacing} className="italic">
-              The College-Bred Negro American
+            <tspan x="50%" dy={regularText + 6}>
+              who were included in the 1910 study,{" "}
+              <tspan className="italic">The College-Bred Negro American</tspan>
             </tspan>
           </text>
         </g>
@@ -187,63 +173,66 @@ export default function StudentChartTwo({
           }`}
         >
           <Legend
-            x={windowWidth * 0.035}
-            y={windowHeight / 2 + windowHeight * 0.028}
-            width={windowWidth}
-            radius={windowWidth * 0.018}
-            height={windowHeight * rowThreeFontsize}
+            x={40}
+            y={510}
+            maxX={800}
+            width={chartWidth}
+            radius={largeText / 2}
+            height={regularText}
             catagories={studentData.categories}
           />
         </g>
         <g>
           <text
-            y={windowHeight * 0.825}
-            x={windowWidth * 0.01}
-            fontSize={smallText}
-            className={`uppercase font-duboisWide tracking-wide transition-opacity duration-1000 opacity-${
+            y={790}
+            fontSize={regularText}
+            className={`uppercase font-duboisWide tracking-wider transition-opacity duration-1000 opacity-${
               highlightChart || highlightMap ? faded : 100
             }`}
           >
-            <tspan x={windowWidth * 0.01}>
+            <tspan x={leftMargin}>
               This visualization honors the 3,856 Black college graduates from
               across the United
             </tspan>
-            <tspan x={windowWidth * 0.01} dy={regularText * 1.1}>
+            <tspan x={leftMargin} dy={largeText}>
               States whose lives were included as data in the The College-Bred
               Negro American. A
             </tspan>
-            <tspan x={windowWidth * 0.01} dy={regularText * 1.1}>
+            <tspan x={leftMargin} dy={largeText}>
               subset of these graduates, whose names remain unknown, contributed
               additional
             </tspan>
-            <tspan x={windowWidth * 0.01} dy={regularText * 1.1}>
+            <tspan x={leftMargin} dy={largeText}>
               research to the study in the form of data collection and analysis.
             </tspan>
-            <tspan x={windowWidth * 0.01} dy={regularText * 1.5}>
+            <tspan x={leftMargin} dy={largeText * 1.5}>
               In this chart, each graduate of Atlanta University as of 1909,
-              with a known occupation, is
+              with a known occupation,
             </tspan>
-            <tspan x={windowWidth * 0.01} dy={regularText * 1.1}>
-              positioned in the appropriate area of the chart. Additional
-              categories represent those
+            <tspan x={leftMargin} dy={largeText}>
+              is positioned in the appropriate area of the chart. Additional
+              categories represent
             </tspan>
-            <tspan x={windowWidth * 0.01} dy={regularText * 1.1}>
-              with unknown occupations and those recorded as “Deceased.” An
-              additional 3,693 dots
+            <tspan x={leftMargin} dy={largeText}>
+              those with unknown occupations and those recorded as “Deceased.”
+              An additional
             </tspan>
-            <tspan x={windowWidth * 0.01} dy={regularText * 1.1}>
-              represent the graduates of the other 140 colleges included in the
-              study whose names
+            <tspan x={leftMargin} dy={largeText}>
+              3,693 dots represent the graduates of the other 140 colleges
+              included in the study
             </tspan>
-            <tspan x={windowWidth * 0.01} dy={regularText * 1.1}>
-              were not recorded as data.
+            <tspan x={leftMargin} dy={largeText}>
+              whose names were not recorded as data.
             </tspan>
           </text>
         </g>
       </svg>
       <div
-        className="absolute flex flex-col w-full"
-        style={{ top: `${windowHeight / 2}px` }}
+        className="absolute"
+        style={{
+          top: `${map(510, 0, 1000, 0, windowSize.height ?? 100)}px`,
+          left: `${chartWidth / 3}px`,
+        }}
       >
         <ClientOnly>
           {() => (
@@ -255,7 +244,9 @@ export default function StudentChartTwo({
               }`}
               interactive={interactive}
               activeStudent={activeStudent}
-              containerSize={Math.min(windowHeight / 6, windowWidth / 3)}
+              containerSize={
+                map(200, 0, 1000, 0, windowSize.height ?? 100) - 120
+              }
             />
           )}
         </ClientOnly>

@@ -3,13 +3,14 @@ import type { Category } from "~/components/dubois/types";
 interface Props {
   x: number;
   y: number;
+  maxX: number;
   height: number;
   width: number;
   radius: number;
   catagories: Category[];
 }
 
-const Legend = ({ x, y, height, width, radius, catagories }: Props) => {
+const Legend = ({ x, y, maxX, height, width, radius, catagories }: Props) => {
   return (
     <>
       {catagories.slice(0, 4).map((category, index) => {
@@ -57,7 +58,7 @@ const Legend = ({ x, y, height, width, radius, catagories }: Props) => {
         return (
           <g key={category.name}>
             <circle
-              cx={width - width * 0.04}
+              cx={maxX - 40}
               cy={y + height * (index * 4.5)}
               r={radius}
               fill={category.color}
@@ -66,19 +67,16 @@ const Legend = ({ x, y, height, width, radius, catagories }: Props) => {
             {category.displayName.includes(" ") &&
               category.displayName.length > 15 && (
                 <text
-                  x={width - width * 0.04 - radius * 1.5}
+                  x={maxX - 40 - radius * 3}
                   y={y + height * (index * 4.5) + radius / 5}
                   className="uppercase font-duboisWide"
                   fontSize={radius * 1.5}
                   textAnchor="end"
                 >
-                  <tspan x={width - width * 0.04 - radius * 1.5}>
+                  <tspan x={maxX - 40 - radius * 3}>
                     {category.displayName.split(" ")[0]}
                   </tspan>
-                  <tspan
-                    x={width - width * 0.04 - radius * 1.5}
-                    dy={radius * 1.55}
-                  >
+                  <tspan x={maxX - 40 - radius * 3} dy={radius * 1.55}>
                     {category.displayName.split(" ")[1]}
                   </tspan>
                 </text>
@@ -86,7 +84,7 @@ const Legend = ({ x, y, height, width, radius, catagories }: Props) => {
             {(!category.displayName.includes(" ") ||
               category.displayName.length < 15) && (
               <text
-                x={width - width * 0.04 - radius * 1.5}
+                x={maxX - 40 - radius * 3}
                 y={y + height * (index * 4.55) + radius / 2.5}
                 className="uppercase font-duboisWide"
                 fontSize={radius * 1.5}

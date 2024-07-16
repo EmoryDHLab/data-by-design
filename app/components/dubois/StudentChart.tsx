@@ -32,10 +32,12 @@ export function StudentChart() {
 
   const switchChart = (chart: Chart) => {
     setActiveChart(chart);
-    const containerOffset = containerRef.current?.getBoundingClientRect().top
-    const position = containerOffset ? containerOffset + window.scrollY + yOffset : window.scrollY + yOffset;
-    window.scrollTo({ top: position, behavior: 'smooth' });
-  }
+    const containerOffset = containerRef.current?.getBoundingClientRect().top;
+    const position = containerOffset
+      ? containerOffset + window.scrollY + yOffset
+      : window.scrollY + yOffset;
+    window.scrollTo({ top: position, behavior: "smooth" });
+  };
 
   return (
     <section className="flex flex-col items-center">

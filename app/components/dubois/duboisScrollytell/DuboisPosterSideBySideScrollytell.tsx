@@ -62,7 +62,7 @@ function DuboisPosterSideBySideScrollytell({
           className={`flex flex-col md:flex-row justify-between`}
           id="scrollytell-2"
         >
-          <div className="sticky p-8 md:p-0 top-20 h-min bias-full w-full md:bias-1/2 md:w-1/2 md:order-last">
+          <div className="sticky p-8 md:p-0 top-0 h-full bias-full w-full md:bias-1/2 md:w-1/2 md:order-last">
             <StudentChartTwo
               id="student-chart-two-scrolly"
               interactive={interactive}
