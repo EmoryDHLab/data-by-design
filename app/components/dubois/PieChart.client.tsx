@@ -1,7 +1,9 @@
 import p5 from "p5";
-import { Circle } from "~/components/dubois/Circle";
-import { useEffect } from "react";
+import { Circle } from "~/components/dubois/pieChart/Circle";
+import { Label } from "~/components/dubois/pieChart/Label";
+import { useEffect, useRef } from "react";
 import { useDeviceContext, useResizeObserver } from "~/hooks";
+import tailwindConfig from "tailwind.config";
 import type { Student, StudentData } from "~/components/dubois/types";
 
 interface Props {
@@ -9,6 +11,8 @@ interface Props {
   id: string;
   className?: string;
   containerSize?: number;
+  interactive?: boolean;
+  activeStudent: any;
 }
 
 const OFFSET = Math.PI * 1.1;
@@ -28,7 +32,8 @@ function createNewCircle(
   circleDiameter: number,
   startAngle: number,
   endAngle: number,
-  center: { x: number; y: number }
+  center: { x: number; y: number },
+  interactive: boolean
 ) {
   // Using polar coordinates here
   // Get a random radius
@@ -62,15 +67,19 @@ function createNewCircle(
     circleDiameter,
     id,
     circles,
-    `${student.name}\n${student.location}\n${student.year}`
+    `${student.name}\n${student.location}\n${student.year}`,
+    interactive
   );
 }
+
 function placeCategoryCircles(
   p5: p5,
   circles: Circle[],
+  labels: Label[],
   currentAngle: number,
   categoryAngle: number,
-  students: any[]
+  students: any[],
+  interactive: boolean
 ) {
   const diameter = p5.width * (15 / 466);
   const center = {
@@ -93,7 +102,8 @@ function placeCategoryCircles(
         diameter,
         currentAngle,
         currentAngle + categoryAngle,
-        center
+        center,
+        interactive
       );
 
       if (circle) {
@@ -105,15 +115,34 @@ function placeCategoryCircles(
 
   // Then we add the category circles to the main circle
   circles.push(...categoryCircles);
+  for (const circle of circles) {
+    labels.push(
+      new Label(p5, circle.x, circle.y, circle.diameter, circle.text)
+    );
+  }
 }
 
-function placeCategories(p5: p5, studentData: StudentData, circles: Circle[]) {
+function placeCategories(
+  p5: p5,
+  studentData: StudentData,
+  circles: Circle[],
+  labels: Label[],
+  interactive: boolean
+) {
   const { count, categories } = studentData;
   let currentAngle = OFFSET;
 
   for (const { students } of categories) {
     const categoryAngle = (students.length / count) * 2 * Math.PI;
-    placeCategoryCircles(p5, circles, currentAngle, categoryAngle, students);
+    placeCategoryCircles(
+      p5,
+      circles,
+      labels,
+      currentAngle,
+      categoryAngle,
+      students,
+      interactive
+    );
     currentAngle += categoryAngle;
   }
 }
@@ -147,39 +176,41 @@ export default function PieChart({
   id,
   className,
   containerSize,
+  interactive = true,
+  activeStudent,
 }: Props) {
   const { isMobile } = useDeviceContext();
   const { windowSize } = useResizeObserver();
+  const activeStudentRef = useRef<string | undefined>(undefined);
+
+  useEffect(() => {
+    activeStudentRef.current = activeStudent;
+  }, [activeStudent]);
 
   useEffect(() => {
     function script(p5: p5) {
       let circles: Circle[] = [];
+      let labels: Label[] = [];
 
       let pieSize = 100;
+
+      // The p5.windowWidth does not seem to be reliable when the window is resized.
       if (containerSize) {
-        pieSize = p5.map(
-          containerSize * 0.3,
-          0,
-          containerSize,
-          0,
-          window.innerWidth * 0.2
-        );
+        pieSize = containerSize;
       } else {
         pieSize = isMobile
           ? window.innerWidth - 100
           : Math.min(350, window.innerHeight * 0.2);
       }
-      console.log("🚀 ~ script ~ pieSize:", pieSize);
-      // The p5.windowWidth does not seem to be reliable when the window is resized.
 
       p5.setup = function () {
         p5.createCanvas(pieSize + 100, pieSize + 100).parent(id);
 
-        placeCategories(p5, studentData, circles);
+        placeCategories(p5, studentData, circles, labels, interactive);
       };
 
       p5.draw = function () {
-        p5.background("rgb(253, 249, 246)");
+        p5.background(tailwindConfig.theme.extend.colors.offwhite);
         pieChart(p5, studentData, p5.width);
 
         circles.forEach((ball) => {
@@ -187,25 +218,16 @@ export default function PieChart({
           ball.collide();
           ball.wiggle();
           ball.withinBounds();
-          ball.mouseOn();
         });
-        // p5.noLoop();
-      };
-      p5.mousePressed = function () {
-        circles.forEach((ball) => {
-          ball.pressed();
+        labels.forEach((label) => {
+          if (interactive) label.mouseOn();
+          if (
+            activeStudentRef.current &&
+            label.text.startsWith(activeStudentRef.current)
+          )
+            label.showLabel();
         });
       };
-      // p5.mouseDragged = function () {
-      //   circles.forEach((ball) => {
-      //     ball.update();
-      //   });
-      // };
-      // p5.mouseReleased = function () {
-      //   circles.forEach((ball) => {
-      //     ball.released();
-      //   });
-      // };
     }
 
     const p5Copy = new p5(script);
@@ -213,7 +235,7 @@ export default function PieChart({
     return () => {
       p5Copy.remove();
     };
-  }, [studentData, isMobile, windowSize, containerSize, id]);
+  }, [studentData, isMobile, windowSize, containerSize, id, interactive]);
 
   return (
     <div

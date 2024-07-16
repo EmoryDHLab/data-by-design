@@ -7,6 +7,7 @@ export interface Category {
   displayName: string;
   color: string;
   students: Student[];
+  name: string;
 }
 
 export interface Student {

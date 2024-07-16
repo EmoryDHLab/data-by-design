@@ -1163,44 +1163,69 @@ export default function DuboisChapter() {
         {/* start of second scrollytell */}
         <DuboisPosterSideBySideScrollytell
           triggers={[
-            <span key="94a7a3b2">
-              In this expanded chart that visualizes the data from the 1910
-              Atlanta University Study, the colorful map that informs the viewer
-              of the location of Atlanta University has been expanded to include
-              the locations of the 140 additional colleges also included in the
-              study.
-            </span>,
-            <span key="63ba9abc">
-              As in the original, the location of Atlanta University is marked
-              with a star.
-            </span>,
-            <span key="1a7c90eb">
-              In this pie chart, the 133 graduates of Atlanta University as of
-              1909 with known occupations (as determined by the alumni section
-              of the 1909-1910 catalog) are positioned in the appropriate area
-              of the pie chart. Additional categories represent the nine
-              graduates with unknown occupations, and the 21 graduates who were
-              recorded as “Deceased.”
-            </span>,
-            <span key="5448c43e">
-              An additional 3693 gray dots represent the graduates of the other
-              140 colleges included in the study whose names were not recorded
-              as data. They are placed in the appropriate area as determined by
-              the summary statistics of occupations included in the study. These
-              dots hold space for these students’ contributions to the study,
-              even if we do not know their names.
-            </span>,
-            <span key="06e375fc">
-              Here we can see the five students who contributed to the original
-              charts, now placed in the area corresponding to the profession
-              they held in 1909. Lula Iola Mack became a housewife, married to a
-              Mr. F.H. Wilkins, and was living in the city of Athens, Georgia.
-              Edward Lee Simon became a supervisor of industrial work in the
-              Memphis Public Schools. William George Westmoreland stayed in
-              Atlanta, working as a mail carrier. Henry Napoleon Lee, three
-              years earlier, in 1907, was deceased.
-            </span>,
-            <span key="9b862bca"></span>,
+            <div key="94a7a3b2">
+              <p>
+                In this expanded chart that visualizes the data from the 1910
+                Atlanta University Study, the colorful map that informs the
+                viewer of the location of Atlanta University has been expanded
+                to include the locations of the 140 additional colleges also
+                included in the study.
+              </p>
+            </div>,
+            <div key="63ba9abc">
+              <p>
+                As in the original, the location of Atlanta University is marked
+                with a star.
+              </p>
+            </div>,
+            <div key="1a7c90eb">
+              <p>
+                In this pie chart, the 133 graduates of Atlanta University as of
+                1909 with known occupations (as determined by the alumni section
+                of the 1909-1910 catalog) are positioned in the appropriate area
+                of the pie chart. Additional categories represent the nine
+                graduates with unknown occupations, and the 21 graduates who
+                were recorded as “Deceased.”
+              </p>
+            </div>,
+            <div key="5448c43e">
+              <p>
+                An additional 3693 gray dots represent the graduates of the
+                other 140 colleges included in the study whose names were not
+                recorded as data. They are placed in the appropriate area as
+                determined by the summary statistics of occupations included in
+                the study. These dots hold space for these students’
+                contributions to the study, even if we do not know their names.
+              </p>
+            </div>,
+            <div key="06e375fc">
+              <p>
+                Here we can see the five students who contributed to the
+                original charts, now placed in the area corresponding to the
+                profession they held in 1909.
+              </p>
+              <ol className="list-decimal list-outside ml-4">
+                <li className="py-2">
+                  Lula Iola Mack became a housewife, married to a Mr. F.H.
+                  Wilkins, and was living in the city of Athens, Georgia.
+                </li>
+                <li className="py-2">
+                  Edward Lee Simon became a supervisor of industrial work in the
+                  Memphis Public Schools.
+                </li>
+                <li className="py-2">
+                  William George Westmoreland stayed in Atlanta, working as a
+                  mail carrier.
+                </li>
+                <li className="py-2">
+                  Henry Napoleon Lee, three years earlier, in 1907, was
+                  deceased.
+                </li>
+              </ol>
+            </div>,
+            <div key="9b862bca">
+              <p>Hover over the dots to data for each individual student</p>
+            </div>,
           ]}
         />
         <CenteredLayout>
