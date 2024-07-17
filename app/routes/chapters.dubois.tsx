@@ -1180,7 +1180,7 @@ export default function DuboisChapter() {
             </div>,
             <div key="1a7c90eb">
               <p>
-                In this pie chart, the 133 graduates of Atlanta University as of
+                In this pie chart, the 163 graduates of Atlanta University as of
                 1909 with known occupations (as determined by the alumni section
                 of the 1909-1910 catalog) are positioned in the appropriate area
                 of the pie chart. Additional categories represent the nine
