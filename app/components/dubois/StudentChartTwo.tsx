@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useResizeObserver } from "~/hooks";
 import Legend from "~/components/dubois/pieChart/Legend";
 import studentData from "~/data/dubois/studentChartTwo.json";
@@ -19,7 +19,6 @@ interface Props {
   highlightMap?: boolean;
   highlightChart?: boolean;
   activeStudent: any;
-  background?: string;
 }
 
 export default function StudentChartTwo({
@@ -28,26 +27,47 @@ export default function StudentChartTwo({
   highlightChart = false,
   highlightMap = false,
   activeStudent,
-  background = "offwhite",
 }: Props) {
   const { windowSize } = useResizeObserver();
   const [chartWidth, setChartWidth] = useState<number>(800);
+  const chartRef = useRef<SVGSVGElement>(null);
+  const [pieChartTop, setPieChartTop] = useState<number>(100);
+  const [pieChartLeft, setPieChartLeft] = useState<number>(100);
+  const [pieChartWidth, setPieChartWidth] = useState<number>(100);
 
   useEffect(() => {
     if (!windowSize.height || !windowSize.width) return;
-    const { width } = windowSize;
-    setChartWidth(width / 2);
+    setChartWidth(windowSize.width / 2 - 16);
   }, [windowSize]);
+
+  useEffect(() => {
+    if (!windowSize.height) return;
+    setPieChartTop(
+      map(
+        480, // Y value for pie chart
+        0,
+        1000, // Height of SVG viewbox
+        0,
+        // Add 80 to account for the navbar.
+        windowSize.height + 80
+      )
+    );
+  }, [windowSize, pieChartWidth]);
+
+  useEffect(() => {
+    setPieChartLeft(map(250, 0, 800, 0, chartWidth));
+
+    setPieChartWidth(map(350, 0, 1000, 0, chartWidth));
+  }, [chartWidth]);
 
   return (
     <div
-      className={`bg-duboisPrimary h-screen m-auto flex flex-col mr-4`}
-      // style={{ width: `${chartWidth}px` }}
+      className={`bg-duboisPrimary h-[calc(100vh-80px)] mt-20 my-auto flex flex-col mr-4`}
     >
       <svg
+        ref={chartRef}
         viewBox={`0 0 800 1000`}
-        className={`bg-offwhite relative m-auto`}
-        // style={{ width: `${chartWidth}px`, height: `${chartHeight}px` }}
+        className="relative my-auto h-[80vh]"
       >
         <rect
           x={0}
@@ -56,7 +76,9 @@ export default function StudentChartTwo({
           width={800}
           fill="none"
           stroke="black"
+          className="fill-offwhite"
         />
+
         <g>
           <text
             x="50%"
@@ -230,8 +252,8 @@ export default function StudentChartTwo({
       <div
         className="absolute"
         style={{
-          top: `${map(510, 0, 1000, 0, windowSize.height ?? 100)}px`,
-          left: `${chartWidth / 3}px`,
+          top: `${pieChartTop}px`,
+          left: `${pieChartLeft}px`,
         }}
       >
         <ClientOnly>
@@ -244,9 +266,7 @@ export default function StudentChartTwo({
               }`}
               interactive={interactive}
               activeStudent={activeStudent}
-              containerSize={
-                map(200, 0, 1000, 0, windowSize.height ?? 100) - 120
-              }
+              containerSize={pieChartWidth}
             />
           )}
         </ClientOnly>

@@ -75,7 +75,6 @@ function DuboisPosterSideBySideScrollytell({
                 scrollProgress <= minScrollProgress + 2
               }
               activeStudent={activeStudent}
-              background="duboisPrimary"
             />
           </div>
 

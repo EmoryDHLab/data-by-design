@@ -204,7 +204,7 @@ export default function PieChart({
       }
 
       p5.setup = function () {
-        p5.createCanvas(pieSize + 100, pieSize + 100).parent(id);
+        p5.createCanvas(pieSize, pieSize).parent(id);
 
         placeCategories(p5, studentData, circles, labels, interactive);
       };
