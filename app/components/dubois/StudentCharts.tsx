@@ -5,7 +5,7 @@ import StudentChartTwo from "./StudentChartTwo";
 import type { TFigure } from "~/types/figureType";
 import FigureObj from "../layout/FigureObj";
 
-const StudentChartV2 = ({ figure }: { figure: TFigure }) => {
+const StudentCharts = ({ figure }: { figure: TFigure }) => {
   const [currentChart, setCurrentChart] = useState<string>("original");
 
   useEffect(() => {
@@ -75,4 +75,4 @@ const StudentChartV2 = ({ figure }: { figure: TFigure }) => {
   );
 };
 
-export default StudentChartV2;
+export default StudentCharts;

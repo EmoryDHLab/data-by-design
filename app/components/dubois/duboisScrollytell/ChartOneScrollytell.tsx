@@ -7,7 +7,7 @@ import type { TFocusShape } from "~/types/scrollytellTypes";
 const chartHeight = 900;
 const chartWidth = 630;
 
-const DuboisScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
+const ChartOneScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
   const { accentTextColor } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const steps = useRef<HTMLDivElement>(null);
@@ -244,4 +244,4 @@ const DuboisScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
   );
 };
 
-export default DuboisScrollytell;
+export default ChartOneScrollytell;

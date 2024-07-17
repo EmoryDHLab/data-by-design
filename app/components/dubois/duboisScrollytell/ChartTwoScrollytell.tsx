@@ -5,11 +5,7 @@ import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import type { ReactElement } from "react";
 import StudentChartTwo from "../StudentChartTwo";
 
-function DuboisPosterSideBySideScrollytell({
-  triggers,
-}: {
-  triggers: ReactElement[];
-}) {
+function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
   const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [activeStudent, setActiveStudent] = useState<string | undefined>(
@@ -108,4 +104,4 @@ function DuboisPosterSideBySideScrollytell({
   );
 }
 
-export default DuboisPosterSideBySideScrollytell;
+export default ChartTwoScrollytell;

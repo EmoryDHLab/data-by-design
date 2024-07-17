@@ -18,7 +18,7 @@ interface Props {
   interactive?: boolean;
   highlightMap?: boolean;
   highlightChart?: boolean;
-  activeStudent: any;
+  activeStudent?: string;
 }
 
 export default function StudentChartTwo({
@@ -26,7 +26,7 @@ export default function StudentChartTwo({
   interactive = true,
   highlightChart = false,
   highlightMap = false,
-  activeStudent,
+  activeStudent = undefined,
 }: Props) {
   const { windowSize } = useResizeObserver();
   const [chartWidth, setChartWidth] = useState<number>(800);

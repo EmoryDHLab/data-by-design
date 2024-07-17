@@ -23,15 +23,14 @@ import DoubleSlideShow from "~/components/dubois/DoubleSlideShow";
 import FigureObj from "~/components/layout/FigureObj";
 import SlideShow from "~/components/layout/SlideShow";
 import { chapterMeta } from "~/utils";
-import StudentChartV2 from "~/components/dubois/StudentChartV2";
+import StudentCharts from "~/components/dubois/StudentCharts";
 import ChapterBody from "~/components/layout/ChapterBody";
 import type { MetaFunction } from "@remix-run/node";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
+import ChartOneScrollytell from "~/components/dubois/duboisScrollytell/ChartOneScrollytell";
+import ChartTwoScrollytell from "~/components/dubois/duboisScrollytell/ChartTwoScrollytell";
 import ChartThreeScrollytell from "~/components/dubois/duboisScrollytell/ChartThreeScrollytell";
-
-import DuboisPosterSideBySideScrollytell from "~/components/dubois/duboisScrollytell/DuboisPosterSideBySideScrollytell";
-import DuboisScrollytell from "~/components/dubois/duboisScrollytell/DuboisScrollytell";
 
 export const meta: MetaFunction = () => {
   return chapterMeta("dubois");
@@ -972,7 +971,7 @@ export default function DuboisChapter() {
         </CenteredLayout>
 
         {/* Here is where the first scrollytell will be*/}
-        <DuboisScrollytell
+        <ChartOneScrollytell
           triggers={[
             <span key="59880c59">
               As have others, we noted the fact that the introductory chart of
@@ -1161,7 +1160,7 @@ export default function DuboisChapter() {
         </CenteredLayout>
 
         {/* start of second scrollytell */}
-        <DuboisPosterSideBySideScrollytell
+        <ChartTwoScrollytell
           triggers={[
             <div key="94a7a3b2">
               <p>
@@ -1307,7 +1306,7 @@ export default function DuboisChapter() {
         />
 
         <div className="md:my-12">
-          <StudentChartV2 figure={figures["ch5-12-series"]} />
+          <StudentCharts figure={figures["ch5-12-series"]} />
         </div>
 
         <Takeaways
