@@ -12,7 +12,7 @@ interface Props {
   className?: string;
   containerSize?: number;
   interactive?: boolean;
-  activeStudent: any;
+  activeStudent?: string;
 }
 
 const OFFSET = Math.PI * 1.1;

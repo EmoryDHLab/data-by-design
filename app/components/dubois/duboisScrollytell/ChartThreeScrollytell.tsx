@@ -3,8 +3,7 @@ import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import type { ReactElement } from "react";
-import StudentChartThreeV2 from "../StudentChartThreeV2.client";
-import { ClientOnly } from "remix-utils/client-only";
+import StudentChartThreeV2 from "../StudentChartThree";
 
 const minScrollProgress = 0;
 
@@ -24,18 +23,16 @@ function ChartThreeScrollytell({ triggers }: { triggers: ReactElement[] }) {
         stepClassName=".chart-three-step"
       >
         <div
-          className={`flex flex-col md:flex-row justify-between`}
-          id="scrollytell-3"
+          className="flex flex-col md:flex-row justify-between"
+          id="scrollytell-2"
         >
-          <div className="sticky h-min bias-full top-0 w-full md:bias-1/2 md:w-7/12 md:order-last">
-            <div className="relative top-0 p-6">
-              <ClientOnly>
-                {() => (
-                  <StudentChartThreeV2
-                    scrollProgress={scrollProgress + minScrollProgress}
-                  />
-                )}
-              </ClientOnly>
+          <div className="sticky p-8 md:p-0 top-0 h-min bias-full w-full md:bias-1/2 md:w-1/2 md:order-last">
+            <div
+              className={`bg-duboisPrimary h-[calc(100vh-80px)] mt-20 my-auto flex flex-col mr-4`}
+            >
+              <StudentChartThreeV2
+                scrollProgress={scrollProgress + minScrollProgress}
+              />
             </div>
           </div>
           <div

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useResizeObserver } from "~/hooks";
 import Legend from "~/components/dubois/pieChart/Legend";
 import studentData from "~/data/dubois/studentChartTwo.json";
@@ -19,6 +19,8 @@ interface Props {
   highlightMap?: boolean;
   highlightChart?: boolean;
   activeStudent?: string;
+  topOffset: number;
+  leftOffset?: number;
 }
 
 export default function StudentChartTwo({
@@ -27,17 +29,18 @@ export default function StudentChartTwo({
   highlightChart = false,
   highlightMap = false,
   activeStudent = undefined,
+  topOffset,
+  leftOffset = 0,
 }: Props) {
   const { windowSize } = useResizeObserver();
   const [chartWidth, setChartWidth] = useState<number>(800);
-  const chartRef = useRef<SVGSVGElement>(null);
   const [pieChartTop, setPieChartTop] = useState<number>(100);
   const [pieChartLeft, setPieChartLeft] = useState<number>(100);
   const [pieChartWidth, setPieChartWidth] = useState<number>(100);
 
   useEffect(() => {
     if (!windowSize.height || !windowSize.width) return;
-    setChartWidth(windowSize.width / 2 - 16);
+    setChartWidth(windowSize.width / 2);
   }, [windowSize]);
 
   useEffect(() => {
@@ -49,26 +52,20 @@ export default function StudentChartTwo({
         1000, // Height of SVG viewbox
         0,
         // Add 80 to account for the navbar.
-        windowSize.height + 80
+        windowSize.height + topOffset
       )
     );
-  }, [windowSize, pieChartWidth]);
+  }, [windowSize, pieChartWidth, topOffset]);
 
   useEffect(() => {
-    setPieChartLeft(map(250, 0, 800, 0, chartWidth));
+    setPieChartLeft(map(250, 0, 800, 0, chartWidth) - leftOffset);
 
     setPieChartWidth(map(350, 0, 1000, 0, chartWidth));
-  }, [chartWidth]);
+  }, [chartWidth, leftOffset]);
 
   return (
-    <div
-      className={`bg-duboisPrimary h-[calc(100vh-80px)] mt-20 my-auto flex flex-col mr-4`}
-    >
-      <svg
-        ref={chartRef}
-        viewBox={`0 0 800 1000`}
-        className="relative my-auto h-[80vh]"
-      >
+    <>
+      <svg viewBox={`0 0 800 1000`} className="my-auto h-[80vh]">
         <rect
           x={0}
           y={0}
@@ -144,7 +141,7 @@ export default function StudentChartTwo({
           <path
             d={`M13.94 27.108C21.248 27.108 27.116 21.204 27.116 13.932C27.116 6.768 21.356 0.827998 13.94 0.827998C6.74 0.827998 0.836 6.516 0.836 13.932C0.836 21.204 6.704 27.108 13.94 27.108ZM6.812 23.58L9.548 15.444L2.924 10.98H11.06L13.94 2.196L16.892 10.98H25.028L18.404 15.444L21.14 23.58L13.94 18.396L6.812 23.58Z`}
             fill="black"
-            transform={`translate(486, 295) scale(0.7)`}
+            transform={`translate(491, 295) scale(0.59)`}
           />
           p
           <text
@@ -212,34 +209,34 @@ export default function StudentChartTwo({
               highlightChart || highlightMap ? faded : 100
             }`}
           >
-            <tspan x={leftMargin}>
+            <tspan x={leftMargin} textLength={755}>
               This visualization honors the 3,856 Black college graduates from
               across the United
             </tspan>
-            <tspan x={leftMargin} dy={largeText}>
+            <tspan x={leftMargin} dy={largeText} textLength={755}>
               States whose lives were included as data in the The College-Bred
               Negro American. A
             </tspan>
-            <tspan x={leftMargin} dy={largeText}>
+            <tspan x={leftMargin} dy={largeText} textLength={755}>
               subset of these graduates, whose names remain unknown, contributed
               additional
             </tspan>
             <tspan x={leftMargin} dy={largeText}>
               research to the study in the form of data collection and analysis.
             </tspan>
-            <tspan x={leftMargin} dy={largeText * 1.5}>
+            <tspan x={leftMargin} dy={largeText * 1.5} textLength={755}>
               In this chart, each graduate of Atlanta University as of 1909,
               with a known occupation,
             </tspan>
-            <tspan x={leftMargin} dy={largeText}>
+            <tspan x={leftMargin} dy={largeText} textLength={755}>
               is positioned in the appropriate area of the chart. Additional
               categories represent
             </tspan>
-            <tspan x={leftMargin} dy={largeText}>
+            <tspan x={leftMargin} dy={largeText} textLength={755}>
               those with unknown occupations and those recorded as “Deceased.”
               An additional
             </tspan>
-            <tspan x={leftMargin} dy={largeText}>
+            <tspan x={leftMargin} dy={largeText} textLength={755}>
               3,693 dots represent the graduates of the other 140 colleges
               included in the study
             </tspan>
@@ -271,6 +268,6 @@ export default function StudentChartTwo({
           )}
         </ClientOnly>
       </div>
-    </div>
+    </>
   );
 }

@@ -3,6 +3,12 @@ import * as d3 from "d3";
 import type { Dispatch, SetStateAction } from "react";
 import type { ResponseData } from "../types";
 
+// Stuff needed to calculate x y values
+// import { random } from "~/utils";
+// import responseData from "~/data/dubois/studentResponses.json";
+// const chartHeight = 1000;
+// const chartWidth = 800;
+
 const WIDTH = 175;
 const HEIGHT = 180;
 
@@ -57,6 +63,104 @@ function ResponseV2({
     setIsUnraveled(unravel);
     setIsCollapsed(!unravel);
   }, [unravel]);
+
+  // Keep this around if we need to regenerate x y values.
+  // useEffect(() => {
+  //   const checkOverlapping = (dot, existing) => {
+  //     let overlapping = false;
+
+  //     for (let count = 0; count < existing.length; count++) {
+  //       let other = existing[count];
+  //       let distance = Math.hypot(other.x - dot.x, other.y - dot.y);
+  //       if (distance < 15) {
+  //         overlapping = true;
+  //       }
+  //     }
+
+  //     return overlapping;
+  //   };
+
+  //   const eltDots = [];
+  //   const ceduDots = [];
+  //   const hindDots = [];
+  //   const plDots = [];
+
+  //   while (eltDots.length < responseData.elt.length) {
+  //     let dot = {
+  //       x: random(40, 400 - 15),
+  //       y: random(chartHeight / 4, (chartHeight / 4.5) * 2) + 60,
+  //       d: 2,
+  //       id: "",
+  //     };
+
+  //     const overlapping = checkOverlapping(dot, eltDots);
+  //     if (!overlapping) {
+  //       eltDots.push(dot);
+  //       dot.id = responseData.elt[eltDots.length - 1].id;
+  //       responseData.elt[eltDots.length - 1].x = dot.x;
+  //       responseData.elt[eltDots.length - 1].y = dot.y;
+  //     }
+  //   }
+
+  //   while (ceduDots.length < responseData.cedu.length) {
+  //     let dot = {
+  //       x: random(400 + 15, chartWidth - 40),
+  //       y: random(chartHeight / 4, (chartHeight / 4.5) * 2) + 60,
+  //       d: 2,
+  //       id: "",
+  //     };
+
+  //     const overlapping = checkOverlapping(dot, ceduDots);
+  //     if (!overlapping) {
+  //       ceduDots.push(dot);
+  //       dot.id = responseData.cedu[ceduDots.length - 1].id;
+  //       responseData.cedu[ceduDots.length - 1].x = dot.x;
+  //       responseData.cedu[ceduDots.length - 1].y = dot.y;
+  //     }
+  //   }
+
+  //   while (hindDots.length < responseData.hind.length) {
+  //     let dot = {
+  //       x: random(400 + 15, chartWidth - 40),
+  //       y: random(
+  //         chartHeight / 2 + 80 + 15,
+  //         chartHeight / 2 + (chartHeight / 4.5) * 1.5
+  //       ),
+  //       d: 2,
+  //       id: "",
+  //     };
+
+  //     const overlapping = checkOverlapping(dot, hindDots);
+  //     if (!overlapping) {
+  //       hindDots.push(dot);
+  //       dot.id = responseData.hind[hindDots.length - 1].id;
+  //       responseData.hind[hindDots.length - 1].x = dot.x;
+  //       responseData.hind[hindDots.length - 1].y = dot.y;
+  //     }
+  //   }
+
+  //   while (plDots.length < responseData.pl.length) {
+  //     let dot = {
+  //       x: random(15, 400 - 15) + 15,
+  //       y: random(
+  //         chartHeight / 2 + 80 + 15,
+  //         chartHeight / 2 + (chartHeight / 4.5) * 1.5
+  //       ),
+  //       d: 2,
+  //       id: "",
+  //     };
+
+  //     const overlapping = checkOverlapping(dot, plDots);
+  //     if (!overlapping) {
+  //       plDots.push(dot);
+  //       dot.id = responseData.pl[plDots.length - 1].id;
+  //       responseData.pl[plDots.length - 1].x = dot.x;
+  //       responseData.pl[plDots.length - 1].y = dot.y;
+  //     }
+  //   }
+
+  //   console.log(responseData);
+  // }, []);
 
   // SETUP
   useEffect(() => {

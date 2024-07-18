@@ -6,7 +6,7 @@ import type { ReactElement } from "react";
 import StudentChartTwo from "../StudentChartTwo";
 
 function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
-  const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
+  const { accentTextColor } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [activeStudent, setActiveStudent] = useState<string | undefined>(
     undefined
@@ -43,7 +43,7 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
       default:
         setActiveStudent(undefined);
     }
-  }, [scrollProgress, hideSensitiveState]);
+  }, [scrollProgress]);
 
   return (
     <ScrollytellContext.Provider value={{ scrollProgress }}>
@@ -55,23 +55,29 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
         bgColor="duboisPrimary"
       >
         <div
-          className={`flex flex-col md:flex-row justify-between`}
+          className="flex flex-col md:flex-row justify-between"
           id="scrollytell-2"
         >
-          <div className="sticky p-8 md:p-0 top-0 h-full bias-full w-full md:bias-1/2 md:w-1/2 md:order-last">
-            <StudentChartTwo
-              id="student-chart-two-scrolly"
-              interactive={interactive}
-              highlightChart={
-                scrollProgress >= minScrollProgress + 2 &&
-                scrollProgress <= minScrollProgress + 3
-              }
-              highlightMap={
-                scrollProgress >= minScrollProgress + 1 &&
-                scrollProgress <= minScrollProgress + 2
-              }
-              activeStudent={activeStudent}
-            />
+          <div className="sticky p-8 md:p-0 top-0 h-min bias-full w-full md:bias-1/2 md:w-1/2 md:order-last">
+            <div
+              className={`bg-duboisPrimary h-[calc(100vh-80px)] mt-20 my-auto flex flex-col mr-4`}
+            >
+              <StudentChartTwo
+                id="student-chart-two-scrolly"
+                interactive={interactive}
+                topOffset={80}
+                leftOffset={16}
+                highlightChart={
+                  scrollProgress >= minScrollProgress + 2 &&
+                  scrollProgress <= minScrollProgress + 3
+                }
+                highlightMap={
+                  scrollProgress >= minScrollProgress + 1 &&
+                  scrollProgress <= minScrollProgress + 2
+                }
+                activeStudent={activeStudent}
+              />
+            </div>
           </div>
 
           <div

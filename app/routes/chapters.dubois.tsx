@@ -973,76 +973,100 @@ export default function DuboisChapter() {
         {/* Here is where the first scrollytell will be*/}
         <ChartOneScrollytell
           triggers={[
-            <span key="59880c59">
-              As have others, we noted the fact that the introductory chart of
-              the second series of charts, the one with national focus, credited
-              the charts’ creation to “Negro students under the direction of
-              Atlanta University.”
-            </span>,
-            <span key="5151297c">
-              We found it additionally intriguing that the visualization below
-              the introductory text visualized data about Atlanta University
-              students as well.
-            </span>,
-            <span key="c05853e8">
-              The pie chart at the center of the image gives visual form to the
-              occupations of 330 graduates of Atlanta University, all those who
-              had graduated from one of its three degree programs since its
-              founding in 1867 through 1898, the year before the chart was made.
-            </span>,
-            <span key="621891f0">
-              The slices of the pie correspond to four categories of occupation
-              and professional field–teachers, ministers, government service,
-              and business–as well as additional categories for “other
-              professions” and “house wives”—that the graduates would go on to
-              pursue.
-            </span>,
-            <span key="ba410bc0">
-              While Du Bois does not disclose the source of his data on the
-              chart, the number of graduates matches exactly with the number of
-              alumni listed in the 1898-1899 Catalogue of the Officers and
-              Students of Atlanta University, which Lauren had consulted in her
-              background research. The total graduates and occupations for each
-              type of degree—college, normal, and theological—are summarized in
-              a data table at the end of the book.
-            </span>,
-            <span key="88c7a06f">
-              In the pages before the table appears, the alumni are listed by
-              degree, and then according to their year of graduation,
-              alphabetically by name, along with their current occupation and
-              place of residence.
-            </span>,
-            <span key="83071a27">
-              Scanning the page which records the earliest graduates of Atlanta
-              University provides fleeting glimpses into their lives. (1)
-              William Henry Crogman, class of 1876, stayed in Atlanta to become
-              a professor at Clark University. (2) Samuel Benjamin Morse moved
-              to Savannah, 250 miles away on the Georgia coast, to become a
-              music teacher. (3) London Humes Waters was deceased.
-            </span>,
-            <span key="62bc6638">
-              To bring these traces back into the chart itself, Tanvi first
-              transcribed all of the names and associated information from the
-              scanned version of the catalog into a spreadsheet.
-            </span>,
-            <span key="ea89f8d3">
-              Then, on the basis of Tanvi’s design, Anna and Nick recreated the
-              original chart, placing the 255 alumni with known occupations in
-              the appropriate section of the pie.
-            </span>,
-            <span key="da9219cf">
-              Hovering on each dot reveals the person’s name, occupation, and
-              place of residence. Additional categories represent the 35 alumni
-              with unknown occupations, and the 42 alumni who were recorded in
-              the catalog as “Deceased.”
-            </span>,
-            <span key="f358e08a">
-              These are the actual people behind the data in the original pie
-              chart, those whose education and accomplishments mattered so much
-              to Du Bois that he devoted the majority of the space of the chart
-              itself to testify to them, and to issue a call for additional
-              funding that would ensure such opportunities for students ahead.
-            </span>,
+            <div key="59880c59">
+              <p>
+                As have others, we noted the fact that the introductory chart of
+                the second series of charts, the one with national focus,
+                credited the charts’ creation to “Negro students under the
+                direction of Atlanta University.”
+              </p>
+            </div>,
+            <div key="5151297c">
+              <p>
+                We found it additionally intriguing that the visualization below
+                the introductory text visualized data about Atlanta University
+                students as well.
+              </p>
+            </div>,
+            <div key="c05853e8">
+              <p>
+                The pie chart at the center of the image gives visual form to
+                the occupations of 330 graduates of Atlanta University, all
+                those who had graduated from one of its three degree programs
+                since its founding in 1867 through 1898, the year before the
+                chart was made.
+              </p>
+            </div>,
+            <div key="621891f0">
+              <p>
+                The slices of the pie correspond to four categories of
+                occupation and professional field–teachers, ministers,
+                government service, and business–as well as additional
+                categories for “other professions” and “house wives”—that the
+                graduates would go on to pursue.
+              </p>
+            </div>,
+            <div key="ba410bc0">
+              <p>
+                While Du Bois does not disclose the source of his data on the
+                chart, the number of graduates matches exactly with the number
+                of alumni listed in the 1898-1899 Catalogue of the Officers and
+                Students of Atlanta University, which Lauren had consulted in
+                her background research. The total graduates and occupations for
+                each type of degree—college, normal, and theological—are
+                summarized in a data table at the end of the book.
+              </p>
+            </div>,
+            <div key="88c7a06f">
+              <p>
+                In the pages before the table appears, the alumni are listed by
+                degree, and then according to their year of graduation,
+                alphabetically by name, along with their current occupation and
+                place of residence.
+              </p>
+            </div>,
+            <div key="83071a27">
+              <p>
+                Scanning the page which records the earliest graduates of
+                Atlanta University provides fleeting glimpses into their lives.
+                (1) William Henry Crogman, class of 1876, stayed in Atlanta to
+                become a professor at Clark University. (2) Samuel Benjamin
+                Morse moved to Savannah, 250 miles away on the Georgia coast, to
+                become a music teacher. (3) London Humes Waters was deceased.
+              </p>
+            </div>,
+            <div key="62bc6638">
+              <p>
+                To bring these traces back into the chart itself, Tanvi first
+                transcribed all of the names and associated information from the
+                scanned version of the catalog into a spreadsheet.
+              </p>
+            </div>,
+            <div key="ea89f8d3">
+              <p>
+                Then, on the basis of Tanvi’s design, Anna and Nick recreated
+                the original chart, placing the 255 alumni with known
+                occupations in the appropriate section of the pie.
+              </p>
+            </div>,
+            <div key="da9219cf">
+              <p>
+                Hovering on each dot reveals the person’s name, occupation, and
+                place of residence. Additional categories represent the 35
+                alumni with unknown occupations, and the 42 alumni who were
+                recorded in the catalog as “Deceased.”
+              </p>
+            </div>,
+            <div key="f358e08a">
+              <p>
+                These are the actual people behind the data in the original pie
+                chart, those whose education and accomplishments mattered so
+                much to Du Bois that he devoted the majority of the space of the
+                chart itself to testify to them, and to issue a call for
+                additional funding that would ensure such opportunities for
+                students ahead.
+              </p>
+            </div>,
           ]}
         />
 
@@ -1305,9 +1329,7 @@ export default function DuboisChapter() {
           ]}
         />
 
-        <div className="md:my-12">
-          <StudentCharts figure={figures["ch5-12-series"]} />
-        </div>
+        <StudentCharts figure={figures["ch5-12-series"]} />
 
         <Takeaways
           forDesigners={[
