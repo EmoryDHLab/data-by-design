@@ -322,7 +322,7 @@ export default function StudentChartOne({
             />
           </g>
           <g
-            className={`transition-all duration-1000 ${
+            className={`transition-all duration-1000 origin-center ${
               highlightNames
                 ? "scale-150 -translate-y-48"
                 : "scale-1 translate-y-0"

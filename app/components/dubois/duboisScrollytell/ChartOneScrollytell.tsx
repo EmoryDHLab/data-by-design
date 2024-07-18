@@ -34,8 +34,20 @@ const ChartOneScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
   });
 
   useEffect(() => {
-    console.log("🚀 ~ ChartOneScrollytell ~ scrollProgress:", scrollProgress);
     switch (true) {
+      case scrollProgress >= 0 && scrollProgress <= 0.5:
+        setShowOriginal(true);
+        setFocusShape({ x: 0, y: 0, width: 800, height: 1000 });
+
+        setActiveStudent(undefined);
+        setHighlightNames(false);
+        setInteractive(false);
+        setShowCroppedDataTable(false);
+        setShowDataTable(false);
+        setShowGoogleSheet(false);
+        setShowPieChart(false);
+        setShowRecreation(false);
+        break;
       case scrollProgress >= 0.5 && scrollProgress <= 1.5:
         setShowOriginal(true);
         setFocusShape({ x: 10, y: 230, width: chartWidth - 20, height: 145 });
