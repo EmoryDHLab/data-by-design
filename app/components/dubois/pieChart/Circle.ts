@@ -59,8 +59,7 @@ export class Circle {
   display() {
     if (
       this.p5.dist(this.p5.mouseX, this.p5.mouseY, this.x, this.y) <
-        this.diameter / 2 &&
-      this.interactive
+      this.diameter / 2
     ) {
       this.p5.fill("white");
       this.p5.stroke("#FEF6D8");

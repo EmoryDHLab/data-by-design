@@ -227,6 +227,8 @@ export default function PieChart({
           )
             label.showLabel();
         });
+
+        // p5.noLoop();
       };
     }
 
@@ -235,7 +237,7 @@ export default function PieChart({
     return () => {
       p5Copy.remove();
     };
-  }, [studentData, isMobile, windowSize, containerSize, id, interactive]);
+  }, [studentData, isMobile, windowSize, containerSize, id]);
 
   return (
     <div

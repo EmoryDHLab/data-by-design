@@ -48,11 +48,22 @@ export default function StudentChartOne({
   const [pieChartTop, setPieChartTop] = useState<number>(100);
   const [pieChartLeft, setPieChartLeft] = useState<number>(100);
   const [pieChartWidth, setPieChartWidth] = useState<number>(100);
+  const [recreationOpacity, setRecreationOpacity] = useState<number>(100);
 
   useEffect(() => {
     if (!windowSize.height || !windowSize.width) return;
     setChartWidth(windowSize.width / 2);
   }, [windowSize, activeStudent]);
+
+  useEffect(() => {
+    if (showRecreation) {
+      setRecreationOpacity(100);
+    } else if (showPieChart) {
+      setRecreationOpacity(50);
+    } else {
+      setRecreationOpacity(0);
+    }
+  }, [showRecreation, showPieChart]);
 
   useEffect(() => {
     if (!windowSize.height) return;
@@ -78,9 +89,7 @@ export default function StudentChartOne({
       <svg viewBox={`0 0 800 1000`} className="my-auto h-[80vh]">
         <g
           id="recreated-chart-1"
-          className={`transition-opacity duration-1000 opacity-${
-            showRecreation ? 100 : 0
-          }`}
+          className={`transition-opacity duration-1000 opacity-${recreationOpacity}`}
         >
           <rect
             x={0}
@@ -391,7 +400,9 @@ export default function StudentChartOne({
             <PieChart
               id={id ?? "student-chart-one"}
               studentData={studentData}
-              className={`order-last md:order-none transition-opacity duration-1000 translate-x-6 opacity-${
+              className={`pointer-events-${
+                interactive ? "auto" : "none"
+              } order-last md:order-none transition-opacity duration-1000 translate-x-6 opacity-${
                 showPieChart ? 100 : 0
               }`}
               interactive={interactive}
