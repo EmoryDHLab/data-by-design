@@ -15,7 +15,7 @@ export default function HoverText({ className, children, hoverState }: Props) {
     return (
       <>
         <span
-          className={`hidden md:inline cursor-pointer font-medium underline decoration-solid decoration-duboisPrimary decoration-1 hover:decoration-2 hover-bg-duboisSecondary ${
+          className={`hidden md:inline cursor-pointer font-bold underline decoration-solid decoration-duboisPrimary decoration-2 hover:decoration-4 hover-bg-duboisSecondary ${
             className ?? ""
           }`}
           onMouseEnter={() => setHoverState(hoverState)}
