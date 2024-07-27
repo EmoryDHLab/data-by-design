@@ -1,14 +1,9 @@
 @import url("https://use.typekit.net/lnq8wua.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@font-face {
-    font-family: "Maranallo";
-    src: url("/fonts/Maranallo/Maranallo.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Chancery Cursive";
-    src: url("/fonts/Chancery/Chancery_Cursive_Italic.ttf") format("truetype");
-}
+@layer base {
 
 @font-face {
     font-family: "DxD Icons";
@@ -310,5 +305,5 @@
     font-weight: 400;
     font-style: normal;
 }
-
+}
 /* ------ end ------ */
