@@ -37,6 +37,20 @@ export default defineConfig({
   resolve: {
     alias: { $fonts: resolve("./public/fonts") },
   },
+  optimizeDeps: {
+    include: [
+      "react-router",
+      "nuka-carousel",
+      "scrollama",
+      "@headlessui/react",
+      "react-tooltip",
+      "remix-utils/client-only",
+      "@uidotdev/usehooks",
+      "d3",
+      "@samvera/clover-iiif/image",
+      "p5",
+    ],
+  },
   ssr: {
     noExternal: [
       "@samvera_clover-iiif",
