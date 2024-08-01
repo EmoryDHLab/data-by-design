@@ -7,6 +7,7 @@
     "build_dev": "NODE_ENV=development remix vite:build",
     "dev": "node ./server.js",
     "start": "cross-env NODE_ENV=production node ./server.js",
+    "start_dev": "cross-env NODE_ENV=development node ./server.js",
     "typecheck": "tsc",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint --fix ./app/"
   },

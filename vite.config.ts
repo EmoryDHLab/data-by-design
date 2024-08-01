@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import SiteMap from "vite-plugin-sitemap";
 import { chapterMeta } from "./app/data/chapterMeta";
+import { resolve } from "path";
 
 const CHAPTERS = Object.keys(chapterMeta).map((chapter) => {
   return `/chapters/${chapter}`;
@@ -33,8 +34,12 @@ export default defineConfig({
       robots: [robotOption],
     }),
   ],
+  resolve: {
+    alias: { $fonts: resolve("./public/fonts") },
+  },
   ssr: {
     noExternal: [
+      "@samvera_clover-iiif",
       "react-dnd",
       "react-dnd-html5-backend",
       "dnd-core",
