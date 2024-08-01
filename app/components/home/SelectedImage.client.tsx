@@ -7,9 +7,6 @@ const SelectedImage = ({
 }: {
   selectedImage: TFigure | undefined;
 }) => {
-  useEffect(() => {
-    console.log("🚀 ~ selectedImage:", selectedImage);
-  }, [selectedImage]);
   if (selectedImage) {
     // TODO: Be able to reset margin on the figure tag in the modal
     return (
