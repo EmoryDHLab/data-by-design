@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import type { TFigure } from "~/types/figureType";
-import { Caption } from "../layout/FigureObj";
+import { Caption } from "../figures/Figure";
 import FigureModal from "../figures/FigureModal";
 
 interface Props {
