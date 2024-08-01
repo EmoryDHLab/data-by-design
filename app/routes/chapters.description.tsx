@@ -14,7 +14,7 @@ import PlymouthCommitteeScrollytell from "~/components/description/plymouthCommi
 import FootnotesList from "~/components/FootnotesList";
 import SeraphiqueTour from "~/components/description/SeraphiqueTour";
 import HoverText from "~/components/HoverText";
-import FigureObj from "~/components/layout/FigureObj";
+import Figure from "~/components/figures/Figure";
 
 import figures from "~/data/figures/description.json";
 import ClarksonSideBySideScrollytell from "~/components/description/ClarksonSideBySideScrollytell";
@@ -587,7 +587,7 @@ export default function BrooksPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["4-description-1789"]} />
+            <Figure figure={figures["4-description-1789"]} />
           </Column>
         </TwoColumnLayout>
 
@@ -966,7 +966,7 @@ export default function BrooksPage() {
             <InlineFootnote index={48} />
           </p>
 
-          <FigureObj figure={figures["5-The_history_of_the_rise"]} />
+          <Figure figure={figures["5-The_history_of_the_rise"]} />
 
           <p>
             On the surface, the metaphor of abolition as a network of streams
@@ -1026,7 +1026,7 @@ export default function BrooksPage() {
         </CenteredLayout>
 
         <CenteredLayout>
-          <FigureObj
+          <Figure
             className="md:grid grid-cols-2 gap-4"
             figures={[figures["6-stream"], figures["7-Bell"]]}
           />

@@ -147,7 +147,8 @@ export default function DraggableTimeline({
               className={isSelected ? "outline outline-4 outline-red-500" : ""}
               id={`index-${index}`}
               style={{ cursor: "pointer" }}
-              href={`/images/${img.chapter}/${img.fileName}.jpg`}
+              // href={`/images/${img.chapter}/${img.fileName}.jpg`}
+              href={`https://iip.readux.io/iiif/3/dxd/${img.chapter}/${img.fileName}.tiff/full/75,/0/color.png`}
               width={150}
               transform={getTransform(index)}
               onMouseDown={() => {

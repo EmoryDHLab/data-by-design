@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import StudentChartOne from "./StudentChartOne";
 import StudentChartThreeV2 from "./StudentChartThree";
 import StudentChartTwo from "./StudentChartTwo";
+import Figure from "../figures/Figure";
 import type { TFigure } from "~/types/figureType";
-import FigureObj from "../layout/FigureObj";
 
 const StudentCharts = ({ figure }: { figure: TFigure }) => {
   const [currentChart, setCurrentChart] = useState<string>("original");
@@ -21,7 +21,7 @@ const StudentCharts = ({ figure }: { figure: TFigure }) => {
         <div className="sticky p-8 md:p-0 top-0 h-full bias-full w-full md:bias-1/2 md:w-1/2 md:order-last">
           <div className="bg-offblack h-[calc(100vh-80px)] my-auto flex flex-col mr-4">
             {currentChart === "original" && (
-              <FigureObj figure={figure} imageClassName="m-auto" />
+              <Figure figure={figure} imageClassName="m-auto" />
             )}
             {currentChart === "one" && (
               <StudentChartOne topOffset={-80} leftOffset={16} />

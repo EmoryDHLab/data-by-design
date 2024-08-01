@@ -1,7 +1,7 @@
 import Carousel from "nuka-carousel";
 import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
-import FigureObj from "../layout/FigureObj";
+import Figure from "../figures/Figure";
 import figures from "~/data/figures/shanawdithit.json";
 
 const FIGURES = [figures["Willard1"], figures["Willard2"], figures["Willard9"]];
@@ -34,7 +34,7 @@ const ColonialMaps = () => {
       >
         {FIGURES.map((figure, index) => {
           return (
-            <FigureObj
+            <Figure
               key={figure.fileName}
               figure={figure}
               className="w-full"

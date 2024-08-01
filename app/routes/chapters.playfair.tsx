@@ -6,7 +6,7 @@ import PullQuote from "~/components/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import ProjectTimelineInteractive from "~/components/playfair/projectTimeline/ProjectTimelineInteractive";
-import FigureObj from "~/components/layout/FigureObj";
+import Figure from "~/components/figures/Figure";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import PlayfairScrollytell from "~/components/playfair/PlayfairScrollytell";
 import Footer from "~/components/Footer";
@@ -114,7 +114,7 @@ export default function PlayfairPage() {
             he had invested in producing the twenty-eight plates for the third
             edition of his Atlas; it was also the expense.
           </p>
-          <FigureObj figure={figures["1-northamerica"]} />
+          <Figure figure={figures["1-northamerica"]} />
           <p>
             Today, Playfair is widely celebrated for his leading role in the
             development of modern data visualization. His bar charts, pie
@@ -210,8 +210,8 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["3-pie"]} />
-            <FigureObj figure={figures["PLACEHOLDER-early-bar-chart"]} />
+            <Figure figure={figures["3-pie"]} />
+            <Figure figure={figures["PLACEHOLDER-early-bar-chart"]} />
           </Column>
         </TwoColumnLayout>
         <ChapterSectionTitle section={sections[0]} />
@@ -297,7 +297,7 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column className="md:ml-12" shouldPin={true}>
-            <FigureObj figure={figures["table-1787"]} />
+            <Figure figure={figures["table-1787"]} />
           </Column>
         </TwoColumnLayout>
         <span id={visualizations[0].id}>
@@ -435,7 +435,7 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["5-minard"]} />
+            <Figure figure={figures["5-minard"]} />
           </Column>
         </TwoColumnLayout>
         <TwoColumnLayout>
@@ -498,7 +498,7 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["PLACEHOLDER-west-indies"]} />
+            <Figure figure={figures["PLACEHOLDER-west-indies"]} />
           </Column>
         </TwoColumnLayout>
         <ChapterSectionTitle section={sections[2]} />
@@ -543,13 +543,13 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["6-snow"]} />
-            <FigureObj figure={figures["7-nightingale"]} />
+            <Figure figure={figures["6-snow"]} />
+            <Figure figure={figures["7-nightingale"]} />
           </Column>
         </TwoColumnLayout>
 
         <CenteredLayout>
-          <FigureObj figure={figures["2-wheat"]} />
+          <Figure figure={figures["2-wheat"]} />
         </CenteredLayout>
 
         <TwoColumnLayout>
@@ -640,8 +640,8 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["wood"]} />
-            <FigureObj figure={figures["10-camoes"]} />
+            <Figure figure={figures["wood"]} />
+            <Figure figure={figures["10-camoes"]} />
           </Column>
         </TwoColumnLayout>
 
@@ -807,7 +807,7 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["jevons"]} />
+            <Figure figure={figures["jevons"]} />
           </Column>
         </TwoColumnLayout>
         <Takeaways

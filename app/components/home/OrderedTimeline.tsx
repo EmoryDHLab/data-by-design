@@ -131,7 +131,7 @@ export default function OrderedTimeline({
                   onFocus={() => setSelectedImage(image)}
                   onKeyUp={() => setSelectedImage(image)}
                   className={classNames(
-                    "absolute w-[150px]",
+                    "absolute w-[150px] min-h-36 min-w-36 border border-red-400 bg-offwhite",
                     isSelected && "border-4 border-red-500"
                   )}
                   style={{
@@ -139,7 +139,7 @@ export default function OrderedTimeline({
                     top: "0",
                     zIndex: isSelected ? images.length + 1 : index + 1,
                   }}
-                  src={`/images/${image.chapter}/${image.fileName}.jpg`}
+                  src={`https://iip.readux.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/100,/0/color.jpg`}
                   alt={image.altText ?? ""}
                 />
               );

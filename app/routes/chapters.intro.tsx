@@ -12,7 +12,7 @@ import Footer from "~/components/Footer";
 import { introFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import figures from "~/data/figures/intro.json";
-import FigureObj from "~/components/layout/FigureObj";
+import Figure from "~/components/figures/Figure";
 import ChapterBody from "~/components/layout/ChapterBody";
 import IntroScrollytell from "~/components/intro/IntroScrollytell.client";
 import { ClientOnly } from "remix-utils/client-only";
@@ -183,10 +183,10 @@ export default function IntroPage() {
           <Column shouldPin>
             {" "}
             {/* These images need to be replaced */}
-            <FigureObj figure={figures["OldTimeline"]} />
-            <FigureObj figure={figures["timeline-as-stacks"]} />
-            <FigureObj figure={figures["quipu"]} />
-            <FigureObj figure={figures["two-row-wampum"]} />
+            <Figure figure={figures["OldTimeline"]} />
+            <Figure figure={figures["timeline-as-stacks"]} />
+            <Figure figure={figures["quipu"]} />
+            <Figure figure={figures["two-row-wampum"]} />
           </Column>
         </TwoColumnLayout>
 
@@ -251,11 +251,11 @@ export default function IntroPage() {
             <p>Or so the story goes.</p>
           </Column>
           <Column shouldPin>
-            <FigureObj figure={figures["3-anonymous"]} />
-            <FigureObj figure={figures["4-oresme"]} />
+            <Figure figure={figures["3-anonymous"]} />
+            <Figure figure={figures["4-oresme"]} />
           </Column>
         </TwoColumnLayout>
-        <FigureObj
+        <Figure
           figure={figures["8-Edmond_Halley_s_map_of_the_trade_winds_1686"]}
           className="mx-2 md:mx-12 text-sm md:text-base"
           captionClassName="text-center"
@@ -331,7 +331,7 @@ export default function IntroPage() {
             local Spanish official, who himself was responding to a request from
             his King.
           </p>
-          <FigureObj figure={figures["9-teozacoalco"]} />
+          <Figure figure={figures["9-teozacoalco"]} />
           <p>
             This request illustrates a conceptual convergence between the
             European colonial project and the rise of empiricism; in other
@@ -459,7 +459,7 @@ export default function IntroPage() {
             represented other quantities and prices of goods—goods that, at
             times, took human form.
           </p>
-          <FigureObj
+          <Figure
             figure={figures["mellis"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="text-center"
@@ -482,7 +482,7 @@ export default function IntroPage() {
             Republic of Congo. These numbers here refer to people, a count who
             perished and who survived.
           </p>
-          <FigureObj
+          <Figure
             figure={figures["2-2-1468px-Plan"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="text-center"
@@ -518,7 +518,7 @@ export default function IntroPage() {
             display, we must also always consider the context—and very often,
             the humanity—that is stripped away.
           </p>
-          <FigureObj
+          <Figure
             figure={figures["TAST-2"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="text-center"

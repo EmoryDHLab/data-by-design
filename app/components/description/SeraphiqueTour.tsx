@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
-import FigureModal from "../layout/FigureModal";
+import FigureModal from "../figures/FigureModal";
 import type { TFigure } from "~/types/figureType";
 
 type MaskType = {

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import type { TFigure } from "~/types/figureType";
 import { Caption } from "../layout/FigureObj";
-import FigureModal from "../layout/FigureModal";
+import FigureModal from "../figures/FigureModal";
 
 interface Props {
   figure: TFigure;

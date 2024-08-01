@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import Carousel from "nuka-carousel";
-import FigureObj from "../layout/FigureObj";
+import Figure from "../figures/Figure";
 import figures from "~/data/figures/dubois.json";
 import { ClientOnly } from "remix-utils/client-only";
 
@@ -86,7 +86,7 @@ export default function HoverImages2() {
           >
             {FIGURES.map((figure, index) => {
               return (
-                <FigureObj
+                <Figure
                   key={`${figure.fileName}-hover2`}
                   figure={figure}
                   className="w-full"

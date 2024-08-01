@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { classNames } from "~/utils";
 import figures from "~/data/figures/shanawdithit.json";
-import Picture from "../layout/Picture";
-import FigureObj from "../layout/FigureObj";
+import Picture from "../figures/Picture";
+import Figure from "../figures/Figure";
 import type { TFigure as FigureType } from "~/types/figureType";
 
 const images: FigureType[] = [
@@ -50,10 +50,11 @@ export default function DocumentViewer() {
             ))}
           </div>
           <div className="flex flex-col items-center">
-            <FigureObj
+            <Figure
               figure={selectedImage as FigureType}
               className="max-w-md text-white"
               id={`doc-viewer-${selectedImage.fileName}`}
+              figureHeight={600}
             />
             <div className="flex text-white justify-around w-full">
               <button

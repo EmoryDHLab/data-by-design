@@ -13,6 +13,7 @@ export type TChapterMeta = {
     subtitle: string;
     description: string;
     image: string;
+    bgImage: string;
     imageWidth: string;
     imageHeight: string;
   };

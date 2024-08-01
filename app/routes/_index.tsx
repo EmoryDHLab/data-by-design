@@ -1,16 +1,27 @@
 // This is the home page!
 
 import { useState } from "react";
-import type { MetaFunction } from "@remix-run/node";
 import ChapterCardGrid from "~/components/home/ChapterCardGrid";
 import Timeline from "~/components/home/Timeline.client";
 import { ClientOnly } from "remix-utils/client-only";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import SelectedImage from "~/components/home/SelectedImage.client";
-import type { TFigure } from "~/types/figureType";
 import SiteTitle from "~/components/home/SiteTitle";
 import { Link } from "@remix-run/react";
+import { chapterMeta } from "~/data/chapterMeta";
+import type { MetaFunction, LinksFunction } from "@remix-run/node";
+import type { TFigure } from "~/types/figureType";
+import type { ChapterTitle } from "~/types/chapterMetaTags";
+
+export const links: LinksFunction = () => {
+  return Object.keys(chapterMeta).map((chapter) => {
+    return {
+      rel: "preload",
+      href: chapterMeta[chapter as ChapterTitle].bgImage,
+    };
+  });
+};
 
 export const meta: MetaFunction = () => {
   const hostName = "https://dataxdesign.io";
@@ -44,7 +55,6 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<TFigure>();
-  // timelineImages()[Math.floor(Math.random() * timelineImages.length)]
 
   return (
     <ChapterContext.Provider

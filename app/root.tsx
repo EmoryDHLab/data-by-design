@@ -15,6 +15,7 @@ import { ClientOnly } from "remix-utils/client-only";
 import Banner from "./components/layout/Banner";
 import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import Analytics from "./components/Analytics";
+import Loading from "./components/layout/Loading";
 
 export const meta: MetaFunction = () => {
   return [
@@ -58,6 +59,7 @@ export default function App() {
         <ClientOnly>{() => <Navbar />}</ClientOnly>
         <Banner>Public Beta</Banner>
         <Outlet />
+        <Loading />
         <Analytics />
         <ScrollRestoration />
         <Scripts />

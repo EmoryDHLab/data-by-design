@@ -2,7 +2,7 @@ import Carousel from "nuka-carousel";
 import { useDeviceContext } from "~/hooks";
 import { leftControls, rightControls, noControl } from "../layout/SlideShow";
 import figures from "~/data/figures/dubois.json";
-import FigureModal from "../layout/FigureModal";
+import FigureModal from "../figures/FigureModal";
 import { ClientOnly } from "remix-utils/client-only";
 
 const figureGroups = [

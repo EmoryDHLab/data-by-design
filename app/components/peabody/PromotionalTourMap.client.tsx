@@ -1,7 +1,7 @@
 import Carousel from "nuka-carousel";
 import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
-import FigureObj from "../layout/FigureObj";
+import Figure from "../figures/Figure";
 import figures from "~/data/figures/peabody.json";
 
 const FIGURES = [
@@ -41,7 +41,7 @@ export default function PromotionalTourMap() {
       >
         {FIGURES.map((figure) => {
           return (
-            <FigureObj
+            <Figure
               key={figure.fileName}
               figure={figure}
               className="w-full"

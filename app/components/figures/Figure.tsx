@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import FigureModal from "./FigureModal";
-import type { TFigure } from "~/types/figureType";
 import Picture from "./Picture";
 import type { ReactElement } from "react";
+import type { TFigure } from "~/types/figureType";
 
 interface Props {
   figure?: TFigure;
@@ -13,6 +13,8 @@ interface Props {
   captionClassName?: string;
   groupCaption?: ReactElement;
   id?: string;
+  figureHeight?: number;
+  figureWidth?: number;
 }
 
 export const Caption = ({ figure, className }: Props) => {
@@ -32,7 +34,7 @@ export const Caption = ({ figure, className }: Props) => {
   );
 };
 
-export default function FigureObj({
+export default function Figure({
   figure,
   figures,
   className,
@@ -40,6 +42,8 @@ export default function FigureObj({
   groupCaption,
   imageClassName,
   id,
+  figureHeight,
+  figureWidth,
 }: Props) {
   const { hideSensitiveState } = useContext(ChapterContext);
 

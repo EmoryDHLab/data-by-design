@@ -20,7 +20,7 @@ import HoverImages1 from "~/components/dubois/HoverImages1";
 import HoverImages2 from "~/components/dubois/HoverImages2";
 
 import DoubleSlideShow from "~/components/dubois/DoubleSlideShow";
-import FigureObj from "~/components/layout/FigureObj";
+import Figure from "~/components/figures/Figure";
 import SlideShow from "~/components/layout/SlideShow";
 import { chapterMeta } from "~/utils";
 import StudentCharts from "~/components/dubois/StudentCharts";
@@ -140,7 +140,7 @@ export default function DuboisChapter() {
             rows reaching up to the sky.
           </p>
 
-          <FigureObj
+          <Figure
             figure={figures["paris-expo-loc"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="text-center"
@@ -186,7 +186,7 @@ export default function DuboisChapter() {
 
 
         </CenteredLayout> */}
-        <FigureObj
+        <Figure
           figure={figures["ch5-01-phila"]}
           className="mx-2 md:mx-12 text-sm md:text-base"
           captionClassName="mx-12"
@@ -572,10 +572,10 @@ export default function DuboisChapter() {
           </Column>
           <Column>
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-8 md:ml-24">
-              <FigureObj figure={figures["ch5-08a-population"]} />
-              <FigureObj figure={figures["916"]} />
-              <FigureObj figure={figures["ch5-08c-conjugal"]} />
-              <FigureObj figure={figures["ch5-08d-db-conjugal"]} />
+              <Figure figure={figures["ch5-08a-population"]} />
+              <Figure figure={figures["916"]} />
+              <Figure figure={figures["ch5-08c-conjugal"]} />
+              <Figure figure={figures["ch5-08d-db-conjugal"]} />
             </div>
           </Column>
         </TwoColumnLayout>
@@ -772,7 +772,7 @@ export default function DuboisChapter() {
             together on the walls, and in the presence of the Black Codes on the
             bookcases below.<InlineFootnote index={18}></InlineFootnote>
           </p>
-          <FigureObj figure={figures["ch5-11-property"]} />
+          <Figure figure={figures["ch5-11-property"]} />
         </CenteredLayout>
         <ChapterSectionTitle section={sections[3]} />
         <CenteredLayout>
@@ -814,13 +814,13 @@ export default function DuboisChapter() {
             entrenched in US society today.
           </p>
 
-          <FigureObj
+          <Figure
             figure={figures["ch5-16b-chalabi"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="mx-12"
           />
 
-          <FigureObj
+          <Figure
             figure={figures["chalabi-net-worth"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="mx-12"
@@ -850,7 +850,7 @@ export default function DuboisChapter() {
             <InlineFootnote index={22}></InlineFootnote>
           </p>
 
-          <FigureObj
+          <Figure
             figure={figures["dignity-and-debt"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="mx-12"
@@ -892,17 +892,17 @@ export default function DuboisChapter() {
             Enough.”
           </p>
           <div className="sm:grid grid-cols-3 gap-4 ">
-            <FigureObj
+            <Figure
               figure={figures["onuoha1"]}
               className="mx-2 md:mx-12 text-sm md:text-base"
             />
 
-            <FigureObj
+            <Figure
               figure={figures["onuoha2"]}
               className="mx-2 md:mx-12 text-sm md:text-base"
             />
 
-            <FigureObj
+            <Figure
               figure={figures["onuoha3"]}
               className="mx-2 md:mx-12 text-sm md:text-base"
             />
@@ -963,7 +963,7 @@ export default function DuboisChapter() {
             Atlanta University students as well.
           </p>
 
-          <FigureObj
+          <Figure
             figure={figures["ch5-12-series"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="mx-12"
@@ -1108,7 +1108,7 @@ export default function DuboisChapter() {
             charts.
           </p>
 
-          <FigureObj
+          <Figure
             figure={figures["1899-grads"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
             captionClassName="mx-12"

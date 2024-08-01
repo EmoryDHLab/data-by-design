@@ -21,8 +21,7 @@ import Quiz from "~/components/peabody/quiz/Quiz";
 import PeabodyBarGraph from "~/components/peabody/PeabodyBarGraph";
 import LEDChart from "~/components/peabody/LEDChart";
 import figures from "~/data/figures/peabody.json";
-import FigureObj from "~/components/layout/FigureObj";
-// import HoverZoomPeabodySquareMobile from "~/components/peabody/HoverZoomPeabodySquareMobile";
+import Figure from "~/components/figures/Figure";
 import { chapterMeta } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
 import eventData from "~/data/peabody/eventData.json";
@@ -269,7 +268,7 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <FigureObj
+            <Figure
               className="md:ml-24 md:grid grid-cols-2 gap-4"
               figures={[
                 figures["fig1-1500s-rect"],
@@ -677,7 +676,7 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column>
-            <FigureObj figure={figures["ch4-blank-chart"]} />
+            <Figure figure={figures["ch4-blank-chart"]} />
           </Column>
         </TwoColumnLayout>
 
@@ -786,7 +785,7 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column shouldPin={true}>
-            <FigureObj
+            <Figure
               className="grid grid-cols-2 md:grid-cols-4 gap-2 md:ml-12"
               figures={[
                 figures["ch4-5"],
@@ -809,7 +808,7 @@ export default function PeabodyPage() {
           </Column>
         </TwoColumnLayout>
         <CenteredLayout>
-          <FigureObj figure={figures["ch4-13-willard"]} />
+          <Figure figure={figures["ch4-13-willard"]} />
           <p>
             While sharply divergent from Peabody's charts in terms of visual
             form, Peabody nevertheless identified Willard as a major source of
@@ -929,7 +928,7 @@ export default function PeabodyPage() {
             figures["ch4-clark2"] looks like a photo of a damaged
             chart.
           */}
-            <FigureObj
+            <Figure
               className="grid grid-cols-2 gap-4 md:ml-12"
               figures={[figures["ch4-clarke1"], figures["ch4-clarke2"]]}
               groupCaption={
@@ -1000,7 +999,7 @@ export default function PeabodyPage() {
             />
           </Column>
           <Column>
-            <FigureObj
+            <Figure
               figures={[
                 figures["ch4-15-fc-touch"],
                 figures["ch4-16-fc-led-boards"],
@@ -1113,7 +1112,7 @@ export default function PeabodyPage() {
         </TwoColumnLayout>
 
         <CenteredLayout>
-          <FigureObj
+          <Figure
             className="grid grid-cols-2 items-center middle-full gap-x-4"
             figures={[
               figures["ch4-19-rachel-carey-george"],

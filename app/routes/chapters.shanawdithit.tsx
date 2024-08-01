@@ -10,7 +10,7 @@ import Column from "~/components/layout/Column";
 import { shanawdithitFootnotes } from "~/footnotes";
 import { chapterMeta } from "~/utils";
 import figures from "~/data/figures/shanawdithit.json";
-import FigureObj from "~/components/layout/FigureObj";
+import Figure from "~/components/figures/Figure";
 import HoverText from "~/components/HoverText";
 import ColonialMaps from "~/components/shanawdithit/ColonialMaps.client";
 import DocumentViewer from "~/components/shanawdithit/DocumentViewer";
@@ -187,7 +187,7 @@ export default function ShanawdithitPage() {
             considered alongside any knowledge that the maps themselves bring to
             light.
           </p>
-          <FigureObj figure={figures["Illustration1"]} />
+          <Figure figure={figures["Illustration1"]} />
           <p>
             The diagram above attempts to give this colonial frame visual
             presence, accentuating the three primary sources that allow us,
@@ -465,7 +465,7 @@ export default function ShanawdithitPage() {
             source.
           </p>
 
-          <FigureObj figure={figures["howley-sketch2"]} />
+          <Figure figure={figures["howley-sketch2"]} />
 
           <p>
             While we made the decision not to convert this information into GIS
@@ -500,7 +500,7 @@ export default function ShanawdithitPage() {
             “pipeline” alone.
             <InlineFootnote index={30} />
           </p>
-          <FigureObj figure={figures["Illustration2"]} />
+          <Figure figure={figures["Illustration2"]} />
           <p>
             Adding Cormack and Howley, along with ourselves, to our diagram of
             sources accentuates the layers of mediation that separate us from
@@ -719,7 +719,7 @@ export default function ShanawdithitPage() {
           </p>
         </CenteredLayout>
         <CenteredLayout>
-          <FigureObj figure={figures["fidler-large-HBCA-E3-2-225"]} />
+          <Figure figure={figures["fidler-large-HBCA-E3-2-225"]} />
         </CenteredLayout>
         <TwoColumnLayout>
           <Column>
@@ -917,7 +917,7 @@ export default function ShanawdithitPage() {
           </p>
         </CenteredLayout>
 
-        <FigureObj
+        <Figure
           figure={figures["birch-bark-1841"]}
           className="mx-2 md:mx-12 text-sm md:text-base"
           captionClassName="text-center	"
@@ -973,7 +973,7 @@ export default function ShanawdithitPage() {
           </p>
         </CenteredLayout>
 
-        <FigureObj
+        <Figure
           figure={figures["BirchBark"]}
           captionClassName="text-center	md:mx-8"
         />
@@ -1073,7 +1073,7 @@ export default function ShanawdithitPage() {
             1914. One of these photographs is of a lookout tree.{" "}
           </p>
 
-          <FigureObj figure={figures["speck-lookout-tree"]} />
+          <Figure figure={figures["speck-lookout-tree"]} />
 
           <p>
             This lookout tree is not the same as the “tall birch tree” that
@@ -1089,7 +1089,7 @@ export default function ShanawdithitPage() {
             sense of what the Beothuk themselves might have seen.{" "}
           </p>
 
-          <FigureObj figure={figures["speck-treetop"]} />
+          <Figure figure={figures["speck-treetop"]} />
 
           <p>
             But what if we understood Speck's view from the lookout tree

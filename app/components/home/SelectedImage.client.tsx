@@ -1,12 +1,15 @@
+import { useEffect } from "react";
+import FigureModal from "../figures/FigureModal";
 import type { TFigure } from "~/types/figureType";
-import FigureModal from "../layout/FigureModal";
-import Picture from "../layout/Picture";
 
 const SelectedImage = ({
   selectedImage,
 }: {
   selectedImage: TFigure | undefined;
 }) => {
+  useEffect(() => {
+    console.log("🚀 ~ selectedImage:", selectedImage);
+  }, [selectedImage]);
   if (selectedImage) {
     // TODO: Be able to reset margin on the figure tag in the modal
     return (
@@ -14,11 +17,27 @@ const SelectedImage = ({
         figure={selectedImage}
         id={`selected-image-${selectedImage.fileName}`}
       >
-        <Picture
-          figure={selectedImage}
-          className="mx-0 pl-0 max-h-64 pointer-events-auto"
-          center={false}
-        />
+        <picture>
+          <source
+            srcSet={`https://iip.readux.io/iiif/3/dxd/${selectedImage.chapter}/${selectedImage.fileName}.tiff/full/,256/0/color.webp`}
+          />
+          <source
+            srcSet={`https://iip.readux.io/iiif/3/dxd/${selectedImage.chapter}/${selectedImage.fileName}.tiff/full/,256/0/color.jpg`}
+          />
+          <img
+            src={`https://iip.readux.io/iiif/3/dxd/${selectedImage.chapter}/${selectedImage.fileName}.tiff/full/,256/0/color.jpg`}
+            alt={
+              selectedImage.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
+              selectedImage.title?.replace(/(<i>|<\/i>)/gi, '"') ??
+              ""
+            }
+            title={
+              selectedImage.title?.replace(/(<i>|<\/i>)/gi, '"') ??
+              selectedImage.fileName
+            }
+          />
+        </picture>
+
         <figcaption className="w-full text-white text-left max-w-lg">
           <p
             className="font-dubois text-lg"
