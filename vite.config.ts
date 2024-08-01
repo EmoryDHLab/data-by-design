@@ -49,6 +49,7 @@ export default defineConfig({
       "d3",
       "@samvera/clover-iiif/image",
       "p5",
+      "react-router-dom",
     ],
   },
   ssr: {
