@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import scrollama from "scrollama";
 import { ChapterContext } from "~/chapterContext";
 import { useResizeObserver } from "~/hooks";
@@ -48,16 +48,22 @@ export default function ScrollytellWrapper({
   const scrollerRef = useRef<ScrollamaInstance | undefined>(undefined);
   const scrollerElementRef = useRef<HTMLDivElement>(null);
   const { documentSize } = useResizeObserver();
+  const [setupFailed, setSetupFailed] = useState<boolean>(false);
+  const [shouldRetry, setShouldRetry] = useState<boolean>(false);
 
   useEffect(() => {
-    if (steps?.current?.children.length !== triggers.length) return;
+    if (
+      steps?.current?.children.length !== triggers.length ||
+      scrollerRef.current
+    )
+      return;
     try {
       scrollerRef.current = scrollama();
       scrollerRef.current
         .setup({
           // @ts-ignore may be a Scrollama bug. offset does allow strings.
-          offset: scrollOffset ?? "60px",
-          step: stepClassName ?? ".step",
+          offset: "60px",
+          step: ".step",
           progress: true,
           debug,
           parent,
@@ -68,8 +74,10 @@ export default function ScrollytellWrapper({
           if (setCurrentStep) setCurrentStep(index);
           setScrollProgress(index + progress);
         });
+      setSetupFailed(false);
     } catch (error) {
-      console.error(error);
+      scrollerRef.current = undefined;
+      setSetupFailed(true);
     }
 
     return () => {
@@ -87,7 +95,13 @@ export default function ScrollytellWrapper({
     steps,
     threshold,
     triggers,
+    shouldRetry,
   ]);
+
+  useEffect(() => {
+    // Mostly a bug when navigating from error page.
+    setShouldRetry(setupFailed);
+  }, [setupFailed]);
 
   useEffect(() => {
     try {

@@ -20,6 +20,8 @@ export default function ChapterBody({ children, className }: Props) {
   const [fixedNav, setFixedNav] = useState<boolean>(false);
   const { mainContentSize, windowSize } = useResizeObserver();
   const { backgroundColor } = useContext(ChapterContext);
+  const [setupFailed, setSetupFailed] = useState<boolean>(false);
+  const [shouldRetry, setShouldRetry] = useState<boolean>(false);
 
   useEffect(() => {
     if (!windowSize.height) return;
@@ -30,10 +32,7 @@ export default function ChapterBody({ children, className }: Props) {
       // the image containers the size of the image. Maybe later...
       // https://github.com/russellsamora/scrollama/issues/145
       scrollerRef.current.resize();
-    } else if (
-      containerRef.current &&
-      document.body.contains(containerRef.current)
-    ) {
+    } else if (!scrollerRef.current && containerRef.current) {
       scrollerRef.current = scrollama();
       try {
         scrollerRef.current
@@ -47,6 +46,7 @@ export default function ChapterBody({ children, className }: Props) {
           .onStepProgress(({ progress }) => setChapterProgressState(progress));
       } catch {
         scrollerRef.current = undefined;
+        setSetupFailed(true);
       }
     }
 
@@ -54,7 +54,12 @@ export default function ChapterBody({ children, className }: Props) {
       scrollerRef.current?.destroy();
       scrollerRef.current = undefined;
     };
-  }, [mainContentSize, windowSize]);
+  }, [mainContentSize, windowSize, shouldRetry]);
+
+  useEffect(() => {
+    // Mostly a bug when navigating from error page.
+    setShouldRetry(setupFailed);
+  }, [setupFailed]);
 
   useEffect(() => {
     setFixedNav(chapterProgressState > 0.98);

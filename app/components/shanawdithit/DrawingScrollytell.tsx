@@ -121,7 +121,24 @@ function SketchScrollytell({ figure, triggers }: Props) {
               viewBox={`0 0 ${width} ${height}`}
               className="max-h-[60vh] max-w-[90%] md:mb-16 mx-auto drop-shadow-2xl"
             >
+              <mask id="sketch-mask">
+                <rect
+                  x={0}
+                  y={0}
+                  width={width}
+                  height={height}
+                  fill="white"
+                  fillOpacity={0.3}
+                  className="transition-all duration-[3s]"
+                />
+                <rect
+                  {...focusShapeSize}
+                  fill="white"
+                  className="transition-all duration-[3s]"
+                />
+              </mask>
               <image
+                mask="url(#sketch-mask)"
                 href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
                 className="transition-all origin-center duration-[3s]  opacity-100"
                 width={width}
@@ -132,39 +149,21 @@ function SketchScrollytell({ figure, triggers }: Props) {
                   transform: `scale(${zoom}) translateY(${translateY}px) translateX(${translateX}px)`,
                 }}
               />
-              <defs>
-                <mask id="sketch-mask">
-                  <rect
-                    x={0}
-                    y={0}
-                    width={width}
-                    height={height}
-                    fill="white"
-                    fillOpacity={0.7}
-                    className="transition-all duration-[3s]"
-                  />
-                  <rect
-                    {...focusShapeSize}
-                    fill="black"
-                    className="transition-all duration-[3s]"
-                  />
-                </mask>
-              </defs>
               <g>
-                <rect
+                {/* <rect
                   {...focusShapeSize}
                   fill="none"
                   stroke="black"
                   strokeWidth={3}
                   className="transition-all duration-[3s]"
-                />
-                <rect
+                /> */}
+                {/* <rect
                   mask="url(#sketch-mask)"
                   x={0}
                   y={0}
                   width={width}
                   height={height}
-                />
+                /> */}
               </g>
             </svg>
             <figcaption></figcaption>
