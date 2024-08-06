@@ -14,7 +14,7 @@ import Figure from "~/components/figures/Figure";
 import HoverText from "~/components/HoverText";
 import ColonialMaps from "~/components/shanawdithit/ColonialMaps.client";
 import DocumentViewer from "~/components/shanawdithit/DocumentViewer";
-import SketchScrollytell from "~/components/shanawdithit/DrawingScrollytell";
+import SketchScrollytell from "~/components/shanawdithit/drawingScrollytell/DrawingScrollytell";
 import InlineFootnote from "~/components/InlineFootnote";
 import WillardScrollytell from "~/components/shanawdithit/WillardScrollytell";
 import ChapterBody from "~/components/layout/ChapterBody";

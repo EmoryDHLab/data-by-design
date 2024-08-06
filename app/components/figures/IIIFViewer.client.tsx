@@ -1,8 +1,9 @@
 import CloverImage from "@samvera/clover-iiif/image";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import type { Options } from "openseadragon";
 import type { LabeledIIIFExternalWebResource } from "@samvera/clover-iiif/image";
 import type { TFigure } from "~/types/figureType";
+import { ClientOnly } from "remix-utils/client-only";
 
 const fetchTileSource = async (figure: TFigure) => {
   const response = await fetch(
@@ -27,15 +28,20 @@ const openSeadragonConfig: Options = {
 
 interface Props {
   figure: TFigure;
-  modalOpen: boolean;
+  modalOpen?: boolean;
+  openSeadragonOptions?: Options;
 }
 
-const IIIFViewer = ({ figure, modalOpen = true }: Props) => {
+const IIIFViewer = ({
+  figure,
+  modalOpen = true,
+  openSeadragonOptions = {},
+}: Props) => {
   const [tileSource, setTileSource] = useState<
     LabeledIIIFExternalWebResource | undefined
   >(undefined);
 
-  useEffect(() => {
+  useMemo(() => {
     if (figure) {
       const fetchSource = async () => {
         const result = await fetchTileSource(figure);
@@ -43,16 +49,24 @@ const IIIFViewer = ({ figure, modalOpen = true }: Props) => {
       };
       fetchSource();
     }
+    console.log("🚀 ~ figure:", figure);
   }, [figure]);
 
   if (tileSource && modalOpen) {
     return (
       <div className="h-full bg-offblack w-full aspect-[1.75]">
-        <CloverImage
-          body={tileSource}
-          isTiledImage
-          openSeadragonConfig={openSeadragonConfig}
-        />
+        <ClientOnly>
+          {() => (
+            <CloverImage
+              body={tileSource}
+              isTiledImage
+              openSeadragonConfig={{
+                ...openSeadragonConfig,
+                ...openSeadragonOptions,
+              }}
+            />
+          )}
+        </ClientOnly>
       </div>
     );
   }
