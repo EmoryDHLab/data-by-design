@@ -1,4 +1,5 @@
 import { chapterMeta as chapterMetaData } from "~/data/chapterMeta";
+import { authors } from "./data/projectMeta";
 import type { TChapterMeta, ChapterTitle } from "./types/chapterMetaTags";
 
 export const classNames = (...classes: (string | boolean | undefined)[]) => {
@@ -46,7 +47,6 @@ export const map = (
 export const chapterMeta = (chapter: ChapterTitle) => {
   const metaData: TChapterMeta = chapterMetaData;
   const hostName: string = "https://dev.dataxdesign.io";
-  const imageUrl: string = `${hostName}/${chapterMetaData[chapter].image}`;
   return [
     { charset: "utf-8" },
     { title: `${metaData[chapter].title}: ${metaData[chapter].subtitle}` },
@@ -66,11 +66,21 @@ export const chapterMeta = (chapter: ChapterTitle) => {
       name: "twitter:description",
       content: chapterMetaData[chapter].description,
     },
-    { name: "image", content: imageUrl },
-    { name: "og:image", content: imageUrl },
+    { name: "image", content: chapterMetaData[chapter].image },
+    { name: "og:image", content: chapterMetaData[chapter].image },
     { name: "og:image:width", content: chapterMetaData[chapter].imageWidth },
     { name: "og:image:height", content: chapterMetaData[chapter].imageHeight },
-    { name: "twitter:image", content: imageUrl },
+    { name: "twitter:image", content: chapterMetaData[chapter].image },
     { name: "og:site_name", content: "Data by Design" },
+    {
+      name: "citation_title",
+      content: `${chapterMetaData[chapter].title}: ${chapterMetaData[chapter].subtitle}`,
+    },
+    { name: "DC.type", content: "web page" },
+    { name: "DC.isPartOf", content: "Data by Design" },
+    { name: "citation_authors", content: authors.join("; ") },
+    ...authors.map((author) => {
+      return { name: "DC.creators", content: author };
+    }),
   ];
 };

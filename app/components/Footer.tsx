@@ -1,4 +1,5 @@
 import SiteTitle from "./home/SiteTitle";
+import { authorsString } from "~/data/projectMeta";
 
 export default function Footer() {
   return (
@@ -44,9 +45,7 @@ export default function Footer() {
       <div className="col-span-12 md:col-span-4 flex flex-col space-y-4 font-neueMontrealLight leading-6 md:px-12 text-sm md:text-xs">
         <p className="uppercase font-neueMontreal">Cite as</p>
         <p className="font-neueMontreal">
-          Lauren Klein, Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams,
-          Nicholas Yang, Dan Jutan, Jianing Fu, Anna Mola, Zhou Fang, Yang Li,
-          and Silas Munro. Data by Design: An Interactive History of Data
+          {authorsString}. Data by Design: An Interactive History of Data
           Visualization, 1789-1900. 2024 public beta.
         </p>
         <p>
@@ -103,7 +102,7 @@ export default function Footer() {
           <input
             placeholder="Email address here"
             type="email"
-            className="required email bg-transparent focus:bg-transparent active:bg-transparent autofill:bg-transparent text-offblack active:text-offblack focus:bg-playfairPrimary border-b-2 border-offwhite placeholder-offwhite font-neueMontrealLight tracking font-light text-2xl w-full text-white"
+            className="required email bg-transparent focus:bg-transparent active:bg-transparent autofill:bg-transparent active:text-offblack focus:bg-playfairPrimary border-b-2 border-offwhite placeholder-offwhite font-neueMontrealLight tracking font-light text-2xl w-full text-white"
             name="EMAIL"
             id="mce-EMAIL"
             required
