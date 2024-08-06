@@ -10,7 +10,6 @@ const fetchTileSource = async (figure: TFigure) => {
   );
   const result = await response.json();
   result.service[0].id = result.id;
-  console.log("🚀 ~ fetchTileSource ~ result:", result);
   return { ...result, tileFormat: "png" };
 };
 
@@ -28,9 +27,10 @@ const openSeadragonConfig: Options = {
 
 interface Props {
   figure: TFigure;
+  modalOpen: boolean;
 }
 
-const IIIFViewer = ({ figure }: Props) => {
+const IIIFViewer = ({ figure, modalOpen = true }: Props) => {
   const [tileSource, setTileSource] = useState<
     LabeledIIIFExternalWebResource | undefined
   >(undefined);
@@ -45,10 +45,9 @@ const IIIFViewer = ({ figure }: Props) => {
     }
   }, [figure]);
 
-  if (tileSource) {
-    console.log("🚀 ~ IIIFViewer ~ tileSource:", tileSource);
+  if (tileSource && modalOpen) {
     return (
-      <div className="h-[66vh] bg-offblack">
+      <div className="h-full bg-offblack w-full aspect-[1.75]">
         <CloverImage
           body={tileSource}
           isTiledImage

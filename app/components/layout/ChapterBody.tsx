@@ -15,6 +15,7 @@ interface Props {
 
 export default function ChapterBody({ children, className }: Props) {
   const scrollerRef = useRef<ScrollamaInstance | undefined>(undefined);
+  const containerRef = useRef<HTMLElement>(null);
   const [chapterProgressState, setChapterProgressState] = useState<number>(0.0);
   const [fixedNav, setFixedNav] = useState<boolean>(false);
   const { mainContentSize, windowSize } = useResizeObserver();
@@ -29,17 +30,24 @@ export default function ChapterBody({ children, className }: Props) {
       // the image containers the size of the image. Maybe later...
       // https://github.com/russellsamora/scrollama/issues/145
       scrollerRef.current.resize();
-    } else {
+    } else if (
+      containerRef.current &&
+      document.body.contains(containerRef.current)
+    ) {
       scrollerRef.current = scrollama();
-      scrollerRef.current
-        .setup({
-          step: ".chapter-body",
-          progress: true,
-          debug: false,
-          // @ts-ignore Maybe a bug in Scrollama type. String is acceptable.
-          offset: `${mainContentSize.topOffset}px`,
-        })
-        .onStepProgress(({ progress }) => setChapterProgressState(progress));
+      try {
+        scrollerRef.current
+          .setup({
+            step: `#${containerRef.current.id}`,
+            progress: true,
+            debug: false,
+            // @ts-ignore Maybe a bug in Scrollama type. String is acceptable.
+            offset: `${mainContentSize.topOffset}px`,
+          })
+          .onStepProgress(({ progress }) => setChapterProgressState(progress));
+      } catch {
+        scrollerRef.current = undefined;
+      }
     }
 
     return () => {
@@ -54,6 +62,7 @@ export default function ChapterBody({ children, className }: Props) {
 
   return (
     <main
+      ref={containerRef}
       className={`chapter-body w-screen selection:bg-${backgroundColor} selection:text-white ${
         className ?? ""
       }`}

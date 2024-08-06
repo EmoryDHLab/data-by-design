@@ -60,6 +60,7 @@ export function useResizeObserver() {
   useEffect(() => {
     // Handler to call on window resize
     function handleResize() {
+      if (document.fullscreenElement) return;
       const mainContentElement = document.getElementById("main-content");
       // Set window width/height to state
       setViewportSize({

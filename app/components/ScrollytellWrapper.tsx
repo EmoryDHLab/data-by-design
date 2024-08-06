@@ -93,7 +93,7 @@ export default function ScrollytellWrapper({
     try {
       scrollerRef.current?.resize();
     } catch (error) {
-      console.error("file: Consent.tsx:38 ~ useEffect ~ error:", error);
+      return;
     }
   }, [documentSize]);
 
