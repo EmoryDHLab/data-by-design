@@ -5,6 +5,8 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useRouteError,
+  isRouteErrorResponse,
 } from "@remix-run/react";
 import Navbar from "./components/Navbar.client";
 // @ts-ignore
@@ -13,9 +15,14 @@ import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
 import { ClientOnly } from "remix-utils/client-only";
 import Banner from "./components/layout/Banner";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import Analytics from "./components/Analytics";
 import Loading from "./components/layout/Loading";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type { ReactNode } from "react";
+
+interface WrapperProps {
+  children: ReactNode;
+}
 
 export const meta: MetaFunction = () => {
   return [
@@ -29,7 +36,7 @@ export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: styles }];
 };
 
-export default function App() {
+export const Layout = ({ children }: WrapperProps) => {
   useEffect(() => {
     if (process.env.NODE_ENV == "production") {
       // @ts-ignore
@@ -58,7 +65,7 @@ export default function App() {
         <LinkToMain />
         <ClientOnly>{() => <Navbar />}</ClientOnly>
         <Banner>Public Beta</Banner>
-        <Outlet />
+        {children}
         <Loading />
         <Analytics />
         <ScrollRestoration />
@@ -66,4 +73,36 @@ export default function App() {
       </body>
     </html>
   );
-}
+};
+
+const App = () => {
+  return <Outlet />;
+};
+
+const ErrorContainer = ({ children }: WrapperProps) => {
+  return (
+    <div
+      className={`fixed flex items-center text-center w-screen h-screen top-0 bg-offwhite`}
+    >
+      <div className="relative grow text-6xl text-offblack uppercase font-duboisWide tracking-widest">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export const ErrorBoundary = () => {
+  const error = useRouteError();
+  console.error("ErrorBoundary ~ error:", error);
+  return (
+    <ErrorContainer>
+      {isRouteErrorResponse(error)
+        ? `${error.status} ${error.statusText}`
+        : error instanceof Error
+        ? error.message
+        : "Unknown Error"}
+    </ErrorContainer>
+  );
+};
+
+export default App;

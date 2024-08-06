@@ -1,16 +1,17 @@
 import ChapterDropdown from "~/components/ChapterDropdown";
-import { Link } from "@remix-run/react";
+import { Link, useRouteError } from "@remix-run/react";
 import { classNames } from "~/utils";
 import { useWindowScroll } from "@uidotdev/usehooks";
 
 export default function Navbar() {
   const [{ y }] = useWindowScroll();
+  const error = useRouteError();
 
   return (
     <nav
       className={classNames(
         "fixed text-white w-full z-50 duration-700 transition-colors",
-        (y || 0) > 30 && "bg-black"
+        (y || 0) > 30 || error ? "bg-black" : ""
       )}
     >
       <ul className="w-3/4 flex items-center justify-around py-1 md:py-2">
