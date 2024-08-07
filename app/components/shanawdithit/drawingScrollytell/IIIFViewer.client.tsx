@@ -44,21 +44,19 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
       );
     };
 
-    console.log("🚀 ~ return ~ viewerRef.current:", viewerRef.current);
-
     if (!viewerRef.current) {
-      initViewer().then((result) => {
+      initViewer().then(() => {
         setOSD(viewerRef.current);
       });
     }
 
     return () => {
       viewerRef.current?.destroy();
+      viewerRef.current = undefined;
     };
-  }, [figure, osdOptions]);
+  }, [figure]);
 
   useEffect(() => {
-    console.log("🚀 ~ IIIFViewer ~ scrollProgress:", scrollProgress, osd);
     switch (true) {
       case scrollProgress >= 1.7 && scrollProgress <= 2.7:
         viewerRef.current?.viewport.panTo(
@@ -77,10 +75,10 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         break;
       case scrollProgress >= 3.7 && scrollProgress <= 4.7:
         viewerRef.current?.viewport.panTo(
-          new OpenSeadragon.Point(0.5653966599842921, 0.24441564991246267),
+          new OpenSeadragon.Point(0.5955321823876885, 0.241167595912629),
           false
         );
-        viewerRef.current?.viewport.zoomTo(11.55526618093977);
+        viewerRef.current?.viewport.zoomTo(9.841851071303127);
         break;
       case scrollProgress >= 4.7 && scrollProgress <= 5.7:
         viewerRef.current?.viewport.panTo(
@@ -98,7 +96,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         break;
       case scrollProgress >= 6.7 && scrollProgress <= 7.7:
         viewerRef.current?.viewport.panTo(
-          new OpenSeadragon.Point(0.8193386053978049, 0.2573826949479137),
+          new OpenSeadragon.Point(0.5006641373527644, 0.16022488474264154),
           false
         );
         viewerRef.current?.viewport.zoomTo(3.8896404485347955);
