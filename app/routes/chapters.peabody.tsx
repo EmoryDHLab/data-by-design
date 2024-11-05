@@ -862,8 +862,8 @@ export default function PeabodyPage() {
           </p>
         </CenteredLayout>
         <ChapterSectionTitle section={sections[2]} />
-        <TwoColumnLayout>
-          <Column>
+        <CenteredLayout>
+          {/* <Column> */}
             <p className="first-paragraph">
               An additional aspect of Peabody's participatory pedagogy were the
               “mural charts,” or “painted centuries” as she also sometimes
@@ -919,15 +919,8 @@ export default function PeabodyPage() {
               by an archive but instead kept in her sister's attic, where they
               remain today. )<InlineFootnote index={33}></InlineFootnote>
             </p>
-          </Column>
-          <Column className="md:ml-12" shouldPin={true}>
-            {/*
-            TODO: Originally this used images found at:
-            /images/ch4-clark1.webp and /images/ch4-clark2.webp
-            The above clark2 is actually clark1.
-            figures["ch4-clark2"] looks like a photo of a damaged
-            chart.
-          */}
+          {/* </Column> */}
+          {/* <Column className="md:ml-12" shouldPin={true}>
             <Figure
               className="grid grid-cols-2 gap-4 md:ml-12"
               figures={[figures["ch4-clarke1"], figures["ch4-clarke2"]]}
@@ -946,8 +939,8 @@ export default function PeabodyPage() {
                 </>
               }
             />
-          </Column>
-        </TwoColumnLayout>
+          </Column> */}
+        </CenteredLayout>
         <TwoColumnLayout>
           <Column shouldPin={true}>
             <p>
