@@ -42,8 +42,6 @@ export default function Figure({
   groupCaption,
   imageClassName,
   id,
-  figureHeight,
-  figureWidth,
 }: Props) {
   const { hideSensitiveState } = useContext(ChapterContext);
 

@@ -26,7 +26,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
     const initViewer = async () => {
       if (viewerRef.current) return;
       const response = await fetch(
-        `https://iip.readux.io/iiif/3/dxd/shanawdithit/${figure}.tiff/info.json`
+        `https://iiif.ecds.io/iiif/3/dxd/shanawdithit/${figure}.tiff/info.json`
       );
 
       const info: TileSource = await response.json();

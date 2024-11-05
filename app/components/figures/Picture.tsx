@@ -26,6 +26,7 @@ const Picture = ({ figure, className, center = true }: Props) => {
         }
         title={figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? figure.fileName}
         draggable={!hideSensitiveState}
+        loading="lazy"
       />
     </picture>
   );

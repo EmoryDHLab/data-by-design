@@ -7,7 +7,7 @@ import { ClientOnly } from "remix-utils/client-only";
 
 const fetchTileSource = async (figure: TFigure) => {
   const response = await fetch(
-    `https://iip.readux.io/iiif/3/dxd/${figure.chapter}/${figure.fileName}.tiff/info.json`
+    `https://iiif.ecds.io/iiif/3/dxd/${figure.chapter}/${figure.fileName}.tiff/info.json`
   );
   const result = await response.json();
   result.service[0].id = result.id;
@@ -49,7 +49,6 @@ const IIIFViewer = ({
       };
       fetchSource();
     }
-    console.log("🚀 ~ figure:", figure);
   }, [figure]);
 
   if (tileSource && modalOpen) {

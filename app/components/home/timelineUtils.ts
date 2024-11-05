@@ -6,30 +6,31 @@ import playfairFigures from "~/data/figures/playfair.json";
 import shanawdithitFigures from "~/data/figures/shanawdithit.json";
 import type { TFigure } from "~/types/figureType";
 
-export type TFilteredFigures = (string | TFigure)[];
+export type TFilteredFigures = [string, TFigure];
 
 export enum TimelineType {
   Draggable,
   Ordered,
 }
 
-export const timelineImages = () => {
-  const shanawdithit: TFilteredFigures[] = Object.entries(
-    shanawdithitFigures
-  ).filter((figures) => figures[1].frontPage);
+const filterFigures = (figures: TFilteredFigures) => {
+  console.log("🚀 ~ filterFigures ~ figures:", figures);
+  return figures[1].frontPage && figures[1].width;
+};
 
-  const description: TFilteredFigures[] = Object.entries(
-    descriptionFigures
-  ).filter((figures) => figures[1].frontPage);
-  const allDubois: TFilteredFigures[] = Object.entries(duboisFigures).filter(
-    (figures) => figures[1].frontPage
-  );
-  const peabody: TFilteredFigures[] = Object.entries(peabodyFigures).filter(
-    (figures) => figures[1].frontPage
-  );
-  const playfair: TFilteredFigures[] = Object.entries(playfairFigures).filter(
-    (figures) => figures[1].frontPage
-  );
+export const timelineImages = () => {
+  const shanawdithit: TFilteredFigures[] =
+    Object.entries(shanawdithitFigures).filter(filterFigures);
+
+  const description: TFilteredFigures[] =
+    Object.entries(descriptionFigures).filter(filterFigures);
+
+  const allDubois: TFilteredFigures[] =
+    Object.entries(duboisFigures).filter(filterFigures);
+  const peabody: TFilteredFigures[] =
+    Object.entries(peabodyFigures).filter(filterFigures);
+  const playfair: TFilteredFigures[] =
+    Object.entries(playfairFigures).filter(filterFigures);
 
   const shuffledDubois = d3.shuffle(allDubois);
   const dubois: TFilteredFigures[] = shuffledDubois.slice(

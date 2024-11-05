@@ -46,18 +46,15 @@ export default function OrderedTimeline({
 
   useEffect(() => {
     if (!selectedImage) return;
-    const selectedImageSelector = `img[src="/images/${selectedImage.chapter}/${selectedImage.fileName}.jpg`;
+    const selectedImageSelector = `img[src="https://iiif.ecds.io/iiif/3/dxd/${selectedImage.chapter}/${selectedImage.fileName}.tiff/full/150,/0/default.jpg`;
     if (!sliderRef.current) return;
     sliderRef.current
       .querySelector<HTMLElement>(selectedImageSelector)
       ?.focus();
+    sliderRef.current
+      .querySelector<HTMLElement>(selectedImageSelector)
+      ?.scrollIntoView({ block: "end", behavior: "smooth", inline: "center"});
   }, [selectedImage]);
-
-  useEffect(() => {
-    setSelectedImage(sortedImages[currentImageIndex]);
-    // TODO: Rethink after homepage design changes
-    // sliderRef.current.scrollIntoView({ block: "end", behavior: "smooth" });
-  }, [setSelectedImage, currentImageIndex, sliderRef]);
 
   const mouseDown = (pageX: number) => {
     if (!sliderRef.current) return;
@@ -122,26 +119,36 @@ export default function OrderedTimeline({
                 selectedImage?.chapter === image.chapter &&
                 selectedImage?.fileName === image.fileName;
               return (
-                <img
-                  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-to-interactive-role
-                  role="button"
+                <button
                   key={`otl-${image.fileName}`}
                   tabIndex={0}
                   onClick={() => updateSelected(image)}
                   onFocus={() => setSelectedImage(image)}
                   onKeyUp={() => setSelectedImage(image)}
-                  className={classNames(
-                    "absolute w-[150px] min-h-36 min-w-36 border border-red-400 bg-offwhite",
-                    isSelected && "border-4 border-red-500"
-                  )}
-                  style={{
-                    left: `${index * 10}px`,
-                    top: "0",
-                    zIndex: isSelected ? images.length + 1 : index + 1,
-                  }}
-                  src={`https://iip.readux.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/100,/0/color.jpg`}
-                  alt={image.altText ?? ""}
-                />
+                >
+                  <picture>
+                    <source srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/default.webp`} type="image/webp" />
+                    <source srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/default.png`} type="image/png" />
+                    <source srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/default.jpg`} type="image/jpg" />
+                    <img
+                      className={classNames(
+                        "absolute w-[150px] min-h-36 min-w-36 border border-red-400 bg-offwhite",
+                        isSelected && "border-4 border-red-500"
+                      )}
+                      style={{
+                        left: `${index * 10}px`,
+                        top: "0",
+                        zIndex: isSelected ? images.length + 1 : index + 1,
+                      }}
+                      src={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/default.jpg`}
+                      alt={image.altText ?? ""}
+                      width={150}
+                      height={image.height && image.width ? Math.ceil(
+                        (image.height / image.width) * 150
+                      ) : 150}
+                    />
+                  </picture>
+                </button>
               );
             })}
           </div>

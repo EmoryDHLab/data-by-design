@@ -25,7 +25,7 @@ export default function DraggableTimeline({
 }: Props) {
   const { windowSize } = useResizeObserver();
   const svgRef = useRef<SVGSVGElement>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(selectedImage ? shuffledImages.indexOf(selectedImage) : 0);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [startPosition, setStartPosition] = useState<startPosition | undefined>(
     undefined
@@ -137,20 +137,22 @@ export default function DraggableTimeline({
       className="relative z-10 right-0 focus:outline-none"
       style={{ bottom: "39px" }}
     >
-      {shuffledImages.map((img, index) => {
+      {shuffledImages.map((image, index) => {
         const isSelected =
-          img.chapter === selectedImage?.chapter &&
-          img.fileName === selectedImage?.fileName;
+          image.chapter === selectedImage?.chapter &&
+          image.fileName === selectedImage?.fileName;
         return (
-          <g key={img.fileName} id={img.fileName}>
+          <g key={image.fileName} id={image.fileName}>
             <image
-              className={isSelected ? "outline outline-4 outline-red-500" : ""}
+              className={`cursor-pointer ${isSelected ? "outline outline-4 outline-red-500" : ""}`}
               id={`index-${index}`}
               style={{ cursor: "pointer" }}
-              // href={`/images/${img.chapter}/${img.fileName}.jpg`}
-              href={`https://iip.readux.io/iiif/3/dxd/${img.chapter}/${img.fileName}.tiff/full/75,/0/color.png`}
+              href={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/color.webp`}
               width={150}
-              transform={getTransform(index)}
+              height={image.height && image.width ? Math.ceil(
+                (image.height / image.width) * 150
+              ) : 150}
+      transform={getTransform(index)}
               onMouseDown={() => {
                 setIsDragging(true);
                 setCurrentImageIndex(index);

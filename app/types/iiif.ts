@@ -7,7 +7,7 @@ export type TInfo = {
   height: number;
   sizes: dimensions[];
   tiles: tiles[];
-  id: "http://iip.readux.io/iiif/3/FaldaHighlight_0001.tiff";
+  id: "http://iiif.ecds.io/iiif/3/FaldaHighlight_0001.tiff";
   type: "ImageService3";
   profile: "level2";
   maxWidth: number;

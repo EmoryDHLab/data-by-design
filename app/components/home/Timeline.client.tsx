@@ -23,6 +23,7 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
     setShuffledImages(randomTimelineImages(IMAGE_COUNT));
   }, [shouldShuffle]);
 
+
   useEffect(() => {
     setSelectedImage(shuffledImages[0]);
   }, [shuffledImages, setSelectedImage]);
@@ -33,12 +34,12 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
         <button
           onClick={() => {
             setTimelineType(TimelineType.Draggable);
-            setShouldShuffle((shouldShuffle) => !shouldShuffle);
+            setShouldShuffle(!shouldShuffle);
           }}
           type="button"
         >
           <img
-            className="w-14 m-2"
+            className="w-14 m-2 cursor-pointer"
             src={
               timelineType === TimelineType.Draggable
                 ? "/images/ui/shuffle_click.png"
@@ -52,7 +53,7 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
           onClick={() => setTimelineType(TimelineType.Ordered)}
         >
           <img
-            className="w-14 m-2"
+            className="w-14 m-2 cursor-pointer"
             src={
               timelineType === TimelineType.Ordered
                 ? "/images/ui/sort_selected.png"
