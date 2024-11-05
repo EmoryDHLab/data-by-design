@@ -76,25 +76,52 @@ export default function OrderedTimeline({
     setCurrentImageIndex(sortedImages.indexOf(image));
   };
 
-  const keyUp = (event: KeyboardEvent) => {
-    const { key } = event;
+  const toStart = () => {
+    setSelectedImage(sortedImages[0])
+    setCurrentImageIndex(0);
+  }
+
+  const toEnd = () => {
+    setSelectedImage(sortedImages[sortedImages.length - 1])
+    setCurrentImageIndex(sortedImages.length - 1);
+  }
+
+  const moveRight = () => {
+    setSelectedImage(sortedImages[currentImageIndex + 1])
+    setCurrentImageIndex(currentImageIndex + 1);
+  }
+
+  const moveLeft = () => {
+    setSelectedImage(sortedImages[currentImageIndex - 1])
+    setCurrentImageIndex(currentImageIndex - 1);
+  }
+
+  const keyUp = (event: KeyboardEvent, image: TFigure) => {
+    event.preventDefault();
+    const { key, shiftKey } = event;
     switch (key) {
       case "ArrowRight":
         if (currentImageIndex < imageData.length - 1) {
-          setCurrentImageIndex(currentImageIndex + 1);
+          moveRight()
         } else {
-          setCurrentImageIndex(0);
+          toStart()
         }
         break;
       case "ArrowLeft":
         if (currentImageIndex > 0) {
-          setCurrentImageIndex(currentImageIndex - 1);
+          moveLeft()
         } else {
-          setCurrentImageIndex(imageData.length - 1);
+          toEnd()
+        }
+        break;
+      case "Tab":
+        if (shiftKey) {
+          moveLeft()
+        } else {
+          moveRight()
         }
         break;
     }
-    event.preventDefault();
   };
 
   return (
@@ -105,10 +132,9 @@ export default function OrderedTimeline({
       onMouseDown={({ pageX }) => mouseDown(pageX)}
       onMouseUp={() => setMouseIsDown(false)}
       onMouseMove={(event) => mouseMove(event)}
-      onKeyDown={keyUp}
       tabIndex={0}
-      // TODO: Rethink after homepage design changes
-      // onFocus={() => sliderRef.current.scrollIntoView({ block: "end" })}
+      onKeyDown={(event) => event.preventDefault()}
+      onKeyUp={(event) => event.preventDefault()}
     >
       {Object.entries(imagesByYear).map(([year, images]) => (
         <div key={year} style={{ minWidth: `${images.length * 10 + 150}px` }}>
@@ -123,8 +149,8 @@ export default function OrderedTimeline({
                   key={`otl-${image.fileName}`}
                   tabIndex={0}
                   onClick={() => updateSelected(image)}
-                  onFocus={() => setSelectedImage(image)}
-                  onKeyUp={() => setSelectedImage(image)}
+                  onFocus={() => setSelectedImage(sortedImages[currentImageIndex])}
+                  onKeyUp={(event) => keyUp(event, image)}
                 >
                   <picture>
                     <source srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/default.webp`} type="image/webp" />

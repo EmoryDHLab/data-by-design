@@ -14,7 +14,6 @@ export enum TimelineType {
 }
 
 const filterFigures = (figures: TFilteredFigures) => {
-  console.log("🚀 ~ filterFigures ~ figures:", figures);
   return figures[1].frontPage && figures[1].width;
 };
 
