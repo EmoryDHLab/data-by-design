@@ -4,10 +4,11 @@ import { leftControls, rightControls, noControl } from "../layout/SlideShow";
 import figures from "~/data/figures/dubois.json";
 import FigureModal from "../figures/FigureModal";
 import { ClientOnly } from "remix-utils/client-only";
+import Picture from "../figures/Picture";
 
 const figureGroups = [
   {
-    figures: [figures["service-pnp-cph-3"], figures["925"]],
+    figures: [figures["service-pnp-cph-3c00000-3c03000-3c03300-3c03393r"], figures["925"]],
     caption:
       "Side-by-side of photograph of African American men, women and children outside of church and chart of Statistics of Negro Church Organizations.",
   },
@@ -17,12 +18,12 @@ const figureGroups = [
       "Side-by-side of photograph of Press room of the Planet newspaper, Richmond, Virginia and chart of American Negro newspapers and periodicals.",
   },
   {
-    figures: [figures["service-pnp-cph-1"], figures["888"]],
+    figures: [figures["service-pnp-cph-3a30000-3a36000-3a36100-3a36174r"], figures["888"]],
     caption:
       "Side-by-side of photograph Portrait of African American Carpenters union, Jacksonville, Florida and chart of Occupations of Georgia Negroes.",
   },
   {
-    figures: [figures["service-pnp-cph-2"], figures["879"]],
+    figures: [figures["service-pnp-cph-3b40000-3b47000-3b47300-3b47387r"], figures["879"]],
     caption:
       "Side-by-side of photograph Extempo club of Fisk University, Nashville, Tenn. and chart of Number of Negro students taking the various courses of study offered in Georgia schools.",
   },
@@ -55,7 +56,7 @@ function DoubleSlideShow() {
                       figure={figure}
                       id={`${figure.fileName}-double-slide`}
                     >
-                      <picture>
+                      {/* <picture>
                         <source
                           srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`}
                         />
@@ -74,7 +75,8 @@ function DoubleSlideShow() {
                             figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? ""
                           }
                         />
-                      </picture>
+                      </picture> */}
+                      <Picture figure={figure} />
                     </FigureModal>
                   );
                 })}
