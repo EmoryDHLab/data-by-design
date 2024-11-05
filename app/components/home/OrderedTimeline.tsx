@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { classNames } from "~/utils";
+import { timelineImages } from "./timelineUtils";
 import type {
   Dispatch,
   SetStateAction,
@@ -6,8 +8,6 @@ import type {
   KeyboardEvent,
 } from "react";
 import type { TFigure } from "~/types/figureType";
-import { classNames } from "~/utils";
-import { timelineImages } from "./timelineUtils";
 
 const imageData: TFigure[] = timelineImages();
 
@@ -73,6 +73,7 @@ export default function OrderedTimeline({
   };
 
   const updateSelected = (image: TFigure) => {
+    setSelectedImage(image)
     setCurrentImageIndex(sortedImages.indexOf(image));
   };
 
@@ -87,13 +88,21 @@ export default function OrderedTimeline({
   }
 
   const moveRight = () => {
-    setSelectedImage(sortedImages[currentImageIndex + 1])
+    if (currentImageIndex < imageData.length - 1) {
+      setSelectedImage(sortedImages[currentImageIndex + 1])
     setCurrentImageIndex(currentImageIndex + 1);
+    } else {
+      toStart()
+    }
   }
 
   const moveLeft = () => {
-    setSelectedImage(sortedImages[currentImageIndex - 1])
-    setCurrentImageIndex(currentImageIndex - 1);
+    if (currentImageIndex > 0) {
+      setSelectedImage(sortedImages[currentImageIndex - 1])
+      setCurrentImageIndex(currentImageIndex - 1);
+    } else {
+      toEnd()
+    }
   }
 
   const keyUp = (event: KeyboardEvent, image: TFigure) => {
@@ -101,18 +110,10 @@ export default function OrderedTimeline({
     const { key, shiftKey } = event;
     switch (key) {
       case "ArrowRight":
-        if (currentImageIndex < imageData.length - 1) {
           moveRight()
-        } else {
-          toStart()
-        }
         break;
       case "ArrowLeft":
-        if (currentImageIndex > 0) {
           moveLeft()
-        } else {
-          toEnd()
-        }
         break;
       case "Tab":
         if (shiftKey) {
@@ -127,7 +128,7 @@ export default function OrderedTimeline({
   return (
     <div
       ref={sliderRef}
-      className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5 w-full ml-3 focus:outline-none"
+      className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5 w-full ml-3 focus:outline-none select-none"
       role="button"
       onMouseDown={({ pageX }) => mouseDown(pageX)}
       onMouseUp={() => setMouseIsDown(false)}
@@ -158,7 +159,7 @@ export default function OrderedTimeline({
                     <source srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/default.jpg`} type="image/jpg" />
                     <img
                       className={classNames(
-                        "absolute w-[150px] min-h-36 min-w-36 border border-red-400 bg-offwhite",
+                        "absolute w-[150px] border border-red-400 bg-offwhite",
                         isSelected && "border-4 border-red-500"
                       )}
                       style={{
