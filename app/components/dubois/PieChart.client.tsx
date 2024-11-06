@@ -13,6 +13,7 @@ interface Props {
   containerSize?: number;
   interactive?: boolean;
   activeStudent?: string;
+  extra?: boolean;
 }
 
 const OFFSET = Math.PI * 1.1;
@@ -41,6 +42,8 @@ function createNewCircle(
   // in order to get a better distribution:
   // http://www.anderswallin.net/2009/05/uniform-random-points-in-a-circle-using-polar-coordinates/
   const r = pieChartRadius * Math.sqrt(p5.random(0, 1));
+  // console.log("🚀 ~ pieChartRadius:", pieChartRadius)
+
   // And a random angle
   const angle = p5.random(startAngle, endAngle);
   // Convert to cartesian
@@ -60,6 +63,8 @@ function createNewCircle(
     }
   }
 
+  const content = student ? `${student.name}\n${student.location}\n${student.year}` : "unknown"
+
   return new Circle(
     p5,
     x,
@@ -67,7 +72,7 @@ function createNewCircle(
     circleDiameter,
     id,
     circles,
-    `${student.name}\n${student.location}\n${student.year}`,
+    content,
     interactive
   );
 }
@@ -79,9 +84,11 @@ function placeCategoryCircles(
   currentAngle: number,
   categoryAngle: number,
   students: any[],
-  interactive: boolean
+  interactive: boolean,
+  extra: boolean
 ) {
-  const diameter = p5.width * (15 / 466);
+  let diameter = p5.width * (15 / 466);
+  if (extra) diameter = diameter / 6
   const center = {
     x: p5.width / 2,
     y: p5.height / 2,
@@ -90,7 +97,9 @@ function placeCategoryCircles(
   // do the overlap check only for the category circles.
   const categoryCircles = [];
 
-  for (let i = 0; i < students.length; i++) {
+  const extraCount = extra ? Math.floor(p5.map(students.length, 0, 163, 0, 3693)) : 0
+
+  for (let i = 0; i < (students.length + extraCount); i++) {
     while (true) {
       const circle = createNewCircle(
         p5,
@@ -127,7 +136,8 @@ function placeCategories(
   studentData: StudentData,
   circles: Circle[],
   labels: Label[],
-  interactive: boolean
+  interactive: boolean,
+  extra: boolean
 ) {
   const { count, categories } = studentData;
   let currentAngle = OFFSET;
@@ -141,7 +151,8 @@ function placeCategories(
       currentAngle,
       categoryAngle,
       students,
-      interactive
+      interactive,
+      extra
     );
     currentAngle += categoryAngle;
   }
@@ -178,6 +189,7 @@ export default function PieChart({
   containerSize,
   interactive = true,
   activeStudent,
+  extra = false
 }: Props) {
   const { isMobile } = useDeviceContext();
   const { windowSize } = useResizeObserver();
@@ -186,6 +198,11 @@ export default function PieChart({
   useEffect(() => {
     activeStudentRef.current = activeStudent;
   }, [activeStudent]);
+
+  useEffect(() => {
+
+    console.log("🚀 ~ extra:", extra)
+  }, [extra]);
 
   useEffect(() => {
     function script(p5: p5) {
@@ -206,7 +223,7 @@ export default function PieChart({
       p5.setup = function () {
         p5.createCanvas(pieSize, pieSize).parent(id);
 
-        placeCategories(p5, studentData, circles, labels, interactive);
+        placeCategories(p5, studentData, circles, labels, interactive, extra);
       };
 
       p5.draw = function () {
@@ -237,7 +254,7 @@ export default function PieChart({
     return () => {
       p5Copy.remove();
     };
-  }, [studentData, isMobile, windowSize, containerSize, id]);
+  }, [studentData, isMobile, windowSize, containerSize, id, interactive, extra]);
 
   return (
     <div

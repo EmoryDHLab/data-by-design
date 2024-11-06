@@ -6,6 +6,7 @@ import PieChart from "~/components/dubois/PieChart.client";
 import { ClientOnly } from "remix-utils/client-only";
 import { map } from "~/utils";
 
+console.log("🚀 ~ studentData:", studentData)
 const faded = 10;
 
 const largeText = 22;
@@ -21,6 +22,7 @@ interface Props {
   activeStudent?: string;
   topOffset: number;
   leftOffset?: number;
+  showExtra?: boolean;
 }
 
 export default function StudentChartTwo({
@@ -31,6 +33,7 @@ export default function StudentChartTwo({
   activeStudent = undefined,
   topOffset,
   leftOffset = 0,
+  showExtra = false,
 }: Props) {
   const { windowSize } = useResizeObserver();
   const [chartWidth, setChartWidth] = useState<number>(800);
@@ -42,6 +45,11 @@ export default function StudentChartTwo({
     if (!windowSize.height || !windowSize.width) return;
     setChartWidth(windowSize.width / 2);
   }, [windowSize]);
+
+  useEffect(() => {
+    console.log("🚀 ~ showExtra:", showExtra)
+
+  }, [showExtra]);
 
   useEffect(() => {
     if (!windowSize.height) return;
@@ -264,6 +272,7 @@ export default function StudentChartTwo({
               interactive={interactive}
               activeStudent={activeStudent}
               containerSize={pieChartWidth}
+              extra={showExtra}
             />
           )}
         </ClientOnly>
