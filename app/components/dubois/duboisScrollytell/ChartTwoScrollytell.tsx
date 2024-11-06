@@ -17,7 +17,6 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
   const minScrollProgress = 10.5;
 
   useEffect(() => {
-      console.log("🚀 ~ useEffect ~ scrollProgress:", scrollProgress)
     switch (true) {
       case scrollProgress < minScrollProgress + 4:
         setActiveStudent(undefined);

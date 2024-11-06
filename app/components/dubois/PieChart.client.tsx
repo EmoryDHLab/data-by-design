@@ -42,7 +42,6 @@ function createNewCircle(
   // in order to get a better distribution:
   // http://www.anderswallin.net/2009/05/uniform-random-points-in-a-circle-using-polar-coordinates/
   const r = pieChartRadius * Math.sqrt(p5.random(0, 1));
-  // console.log("🚀 ~ pieChartRadius:", pieChartRadius)
 
   // And a random angle
   const angle = p5.random(startAngle, endAngle);
@@ -198,11 +197,6 @@ export default function PieChart({
   useEffect(() => {
     activeStudentRef.current = activeStudent;
   }, [activeStudent]);
-
-  useEffect(() => {
-
-    console.log("🚀 ~ extra:", extra)
-  }, [extra]);
 
   useEffect(() => {
     function script(p5: p5) {
