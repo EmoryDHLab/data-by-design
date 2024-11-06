@@ -24,7 +24,7 @@ function ChartThreeScrollytell({ triggers }: { triggers: ReactElement[] }) {
       >
         <div
           className="flex flex-col md:flex-row justify-between"
-          id="scrollytell-2"
+          id="scrollytell-3"
         >
           <div className="sticky p-8 md:p-0 top-0 h-min bias-full w-full md:bias-1/2 md:w-1/2 md:order-last">
             <div
@@ -44,7 +44,7 @@ function ChartThreeScrollytell({ triggers }: { triggers: ReactElement[] }) {
                 <div
                   key={`brooks-trigger-${trigger.key}`}
                   data-step={index}
-                  className={`pointer-events-none chart-three-step text-xl content-center relative h-screen text-${accentTextColor}`}
+                  className={`pointer-events-none chart-three-step step text-xl content-center relative h-screen text-${accentTextColor}`}
                 >
                   <p
                     className={`p-6 md:p-0 bg-${

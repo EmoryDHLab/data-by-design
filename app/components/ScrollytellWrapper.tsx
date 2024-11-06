@@ -63,7 +63,7 @@ export default function ScrollytellWrapper({
         .setup({
           // @ts-ignore may be a Scrollama bug. offset does allow strings.
           offset: "60px",
-          step: ".step",
+          step: stepClassName ?? ".step",
           progress: true,
           debug,
           parent,

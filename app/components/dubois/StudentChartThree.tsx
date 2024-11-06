@@ -31,6 +31,7 @@ const StudentChartThreeV2 = ({
   const [plOpacity, setPlOpacity] = useState<number>(100);
 
   useEffect(() => {
+    console.log("🚀 ~ useEffect ~ scrollProgress:", scrollProgress)
     if (!scrollProgress) return;
 
     switch (true) {
