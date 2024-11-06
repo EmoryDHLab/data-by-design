@@ -40,7 +40,7 @@ function SketchScrollytell({ figure, triggers }: Props) {
         </div>
         <div
           ref={steps}
-          className="bias-full w-full md:bias-1/2 md:w-2/5 relative"
+          className="bias-full w-full md:bias-1/2 md:w-2/5 relative "
         >
           {triggers.map((trigger, index) => {
             return (
@@ -49,7 +49,7 @@ function SketchScrollytell({ figure, triggers }: Props) {
                 data-step={index}
                 className={`pointer-events-none step text-xl content-center relative min-h-screen text-${accentTextColor}`}
               >
-                {trigger}
+                <span className="bg-shanawdithitPrimary/75">{trigger}</span>
               </div>
             );
           })}

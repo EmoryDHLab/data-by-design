@@ -100,7 +100,7 @@ export default function FigureModal({
                   <Close className="hover:text-offwhite text-offwhite hover:fill-offblack" />
                 </Button>
               </DialogTitle>
-              <div className="flex flex-col justify-between">
+              <div className="flex flex-col justify-between h-full">
                 <ClientOnly>
                   {() => <IIIFViewer figure={figure} modalOpen={isOpen} />}
                 </ClientOnly>

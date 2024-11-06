@@ -51,26 +51,24 @@ const IIIFViewer = ({
     }
   }, [figure]);
 
-  if (tileSource && modalOpen) {
     return (
       <div className="h-full bg-offblack w-full aspect-[1.75]">
-        <ClientOnly>
-          {() => (
-            <CloverImage
-              body={tileSource}
-              isTiledImage
-              openSeadragonConfig={{
-                ...openSeadragonConfig,
-                ...openSeadragonOptions,
-              }}
-            />
-          )}
-        </ClientOnly>
+        {modalOpen &&
+          <ClientOnly>
+            {() => (
+              <CloverImage
+                body={tileSource}
+                isTiledImage
+                openSeadragonConfig={{
+                  ...openSeadragonConfig,
+                  ...openSeadragonOptions,
+                }}
+              />
+            )}
+          </ClientOnly>
+        }
       </div>
     );
-  }
-
-  return null;
 };
 
 export default IIIFViewer;
