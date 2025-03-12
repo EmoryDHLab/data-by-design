@@ -94,7 +94,7 @@ export default function PlymouthCommitteeScrollytell({
   return (
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
-        bgColor="descriptionSecondary"
+        bgColor="brooksSecondary"
         setScrollProgress={setScrollProgress}
         triggers={triggers}
         steps={steps}
@@ -125,9 +125,7 @@ export default function PlymouthCommitteeScrollytell({
                 <g>
                   <path
                     className={`transition-all duration-1000 fill-${
-                      scrollProgress > 4.5
-                        ? "descriptionSecondary"
-                        : "peabodyOrange"
+                      scrollProgress > 4.5 ? "brooksSecondary" : "peabodyOrange"
                     } opacity-${hideSensitiveState ? 100 : 0}`}
                     stroke="rgb(28 24 23)"
                     strokeWidth={scrollProgress > 4.5 ? 3 : 0}
@@ -159,7 +157,7 @@ export default function PlymouthCommitteeScrollytell({
 
                   <path
                     strokeWidth={0}
-                    className="fill-descriptionSecondary"
+                    className="fill-brooksSecondary"
                     mask="url(#focus)"
                     d={paths.outline}
                   />
@@ -175,7 +173,7 @@ export default function PlymouthCommitteeScrollytell({
 
                   <path
                     className={`transition-all duration-1000 fill-${
-                      hideSensitiveState ? "descriptionSecondary" : "offblack"
+                      hideSensitiveState ? "brooksSecondary" : "offblack"
                     } opacity-${fadeOpacity * 100}`}
                     strokeWidth={0}
                     mask="url(#fade)"
@@ -230,7 +228,7 @@ export default function PlymouthCommitteeScrollytell({
                 data-step={index}
                 className={`pointer-events-none step text-xl content-center p-5 md:px-20 relative h-screen text-${accentTextColor}`}
               >
-                <p className="bg-descriptionSecondary-translucent p-3 md:p-12 w-9/12">
+                <p className="bg-brooksSecondary-translucent p-3 md:p-12 w-9/12">
                   {trigger}
                 </p>
               </div>
