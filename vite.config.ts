@@ -16,6 +16,9 @@ const robotOption = {
 };
 
 export default defineConfig({
+  server: {
+    allowedHosts: [".dataxdesign.io"],
+  },
   plugins: [
     remix({
       ignoredRouteFiles: ["**/*.css"],
@@ -55,12 +58,6 @@ export default defineConfig({
   ssr: {
     noExternal: [
       "@samvera_clover-iiif",
-      "react-dnd",
-      "react-dnd-html5-backend",
-      "dnd-core",
-      "@react-dnd/invariant",
-      "@react-dnd/asap",
-      "@react-dnd/shallowequal",
       "d3",
       "d3-array",
       "internmap",
