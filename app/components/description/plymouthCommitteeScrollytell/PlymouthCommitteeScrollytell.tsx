@@ -108,7 +108,7 @@ export default function PlymouthCommitteeScrollytell({
           >
             ↓
           </div>
-          <div className="mb-6">
+          <div className="mb-12">
             <div className="w-11/12 m-auto">
               <svg
                 viewBox="0 0 713.52 291.12"
@@ -213,7 +213,9 @@ export default function PlymouthCommitteeScrollytell({
                   strokeWidth={scrollProgress >= 4.5 ? 1 : 3}
                 />
               </svg>
-              <figcaption></figcaption>
+              <figcaption className="mt-2 text-offblack/80 text-sm">
+                Image courtesy of the Library of the Society of Friends
+              </figcaption>
             </div>
           </div>
         </div>
