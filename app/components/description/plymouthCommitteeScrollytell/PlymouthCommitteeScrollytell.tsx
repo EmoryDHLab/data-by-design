@@ -94,7 +94,7 @@ export default function PlymouthCommitteeScrollytell({
   return (
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
-        bgColor="brooksSecondary"
+        bgColor="descriptionSecondary"
         setScrollProgress={setScrollProgress}
         triggers={triggers}
         steps={steps}
@@ -108,7 +108,7 @@ export default function PlymouthCommitteeScrollytell({
           >
             ↓
           </div>
-          <div className="mb-6">
+          <div className="mb-12">
             <div className="w-11/12 m-auto">
               <svg
                 viewBox="0 0 713.52 291.12"
@@ -125,7 +125,9 @@ export default function PlymouthCommitteeScrollytell({
                 <g>
                   <path
                     className={`transition-all duration-1000 fill-${
-                      scrollProgress > 4.5 ? "brooksSecondary" : "peabodyOrange"
+                      scrollProgress > 4.5
+                        ? "descriptionSecondary"
+                        : "peabodyOrange"
                     } opacity-${hideSensitiveState ? 100 : 0}`}
                     stroke="rgb(28 24 23)"
                     strokeWidth={scrollProgress > 4.5 ? 3 : 0}
@@ -157,7 +159,7 @@ export default function PlymouthCommitteeScrollytell({
 
                   <path
                     strokeWidth={0}
-                    className="fill-brooksSecondary"
+                    className="fill-descriptionSecondary"
                     mask="url(#focus)"
                     d={paths.outline}
                   />
@@ -173,7 +175,7 @@ export default function PlymouthCommitteeScrollytell({
 
                   <path
                     className={`transition-all duration-1000 fill-${
-                      hideSensitiveState ? "brooksSecondary" : "offblack"
+                      hideSensitiveState ? "descriptionSecondary" : "offblack"
                     } opacity-${fadeOpacity * 100}`}
                     strokeWidth={0}
                     mask="url(#fade)"
@@ -203,12 +205,17 @@ export default function PlymouthCommitteeScrollytell({
                 </g>
                 <Areas
                   strokeOpacity={
-                    scrollProgress < 0.25 || (scrollProgress >= 4.5 && hideSensitiveState) ? 1.0 : 0.0
+                    scrollProgress < 0.25 ||
+                    (scrollProgress >= 4.5 && hideSensitiveState)
+                      ? 1.0
+                      : 0.0
                   }
                   strokeWidth={scrollProgress >= 4.5 ? 1 : 3}
                 />
               </svg>
-              <figcaption></figcaption>
+              <figcaption className="mt-2 text-offblack/80 text-sm">
+                Image courtesy of the Library of the Society of Friends
+              </figcaption>
             </div>
           </div>
         </div>
@@ -223,7 +230,7 @@ export default function PlymouthCommitteeScrollytell({
                 data-step={index}
                 className={`pointer-events-none step text-xl content-center p-5 md:px-20 relative h-screen text-${accentTextColor}`}
               >
-                <p className="bg-brooksSecondary-translucent p-3 md:p-12 w-9/12">
+                <p className="bg-descriptionSecondary-translucent p-3 md:p-12 w-9/12">
                   {trigger}
                 </p>
               </div>
