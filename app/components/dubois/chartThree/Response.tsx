@@ -69,10 +69,10 @@ function Response({
       let curveStart = [100, 100];
 
       response.lines.forEach((line, lineIndex) => {
-        let words = Array.from({ length: line.split(' ').length});
-        let curveSegment: Array<Array<number>> = [];
-        let straightSegment: Array<Array<number>> = [];
-        let wadSegment: Array<Array<number>> = [];
+        const words = Array.from({ length: line.split(' ').length});
+        const curveSegment: Array<Array<number>> = [];
+        const straightSegment: Array<Array<number>> = [];
+        const wadSegment: Array<Array<number>> = [];
         words.forEach((word, wordIndex) => {
           wadSegment.push([d3.randomInt(99, 101)(), d3.randomInt(99, 101)()]);
           straightSegment.push([(220 / words.length) * wordIndex, (10 * (lineIndex + 1) + (97 - (response.lines.length * 5)))]);
@@ -96,7 +96,7 @@ function Response({
       });
 
       wadSegments.current.forEach((line, index) => {
-        let segment = svgRef.current.select(`#segment-${response.id}-${index}`)
+        const segment = svgRef.current.select(`#segment-${response.id}-${index}`)
                             .attr("d", line)
                             .attr("stroke-width", 0)
                             .attr("fill", "none")
@@ -194,7 +194,7 @@ function Response({
       rect.attr("width", 0).transition(transition).attr("width", 200);
       rect.attr("height", 0).transition(transition).attr("height", 10 * response.lines.length + 5);
       curvedSegments.current.forEach((curve, index) => {
-        let segment = d3.select(`#segment-${response.id}-${index}`);
+        const segment = d3.select(`#segment-${response.id}-${index}`);
         segment.attr('d', curve).transition(transition).attr('d', straightSegments.current[index]);
         segment.attr('stroke-width', 0.2).transition(transition).attr('stroke-width', 0);
         const textLength = 180;

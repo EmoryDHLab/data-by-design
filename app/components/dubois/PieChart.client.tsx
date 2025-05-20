@@ -200,8 +200,8 @@ export default function PieChart({
 
   useEffect(() => {
     function script(p5: p5) {
-      let circles: Circle[] = [];
-      let labels: Label[] = [];
+      const circles: Circle[] = [];
+      const labels: Label[] = [];
 
       let pieSize = 100;
 

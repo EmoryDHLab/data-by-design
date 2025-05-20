@@ -87,7 +87,7 @@ const PeopleVersions = () => {
   ) => {
     if (key && key !== "Enter") return;
 
-    let indexOfSelected = activeVersions.indexOf(selectedVersion);
+    const indexOfSelected = activeVersions.indexOf(selectedVersion);
     if (indexOfSelected >= 0) {
       setActiveVersions(activeVersions.toSpliced(indexOfSelected, 1));
     } else {

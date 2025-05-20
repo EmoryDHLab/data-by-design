@@ -1,6 +1,6 @@
 import scrollama from "scrollama";
 import { useContext, useEffect, useRef, useState } from "react";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 import { ChapterNav } from "~/components/ChapterNav";
 import { useResizeObserver } from "~/hooks";
 import type { ReactNode } from "react";
@@ -74,9 +74,7 @@ export default function ChapterBody({ children, className }: Props) {
       id="main-content"
     >
       <ClientOnly>
-        {() => (
-          <ChapterNav progress={chapterProgressState} fixedNav={fixedNav} />
-        )}
+        <ChapterNav progress={chapterProgressState} fixedNav={fixedNav} />
       </ClientOnly>
       <FootnoteToggle />
       {children}

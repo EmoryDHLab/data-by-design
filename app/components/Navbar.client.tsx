@@ -1,5 +1,5 @@
 import ChapterDropdown from "~/components/ChapterDropdown";
-import { Link, useRouteError } from "@remix-run/react";
+import { Link, useRouteError } from "react-router";
 import { classNames } from "~/utils";
 import { useWindowScroll } from "@uidotdev/usehooks";
 

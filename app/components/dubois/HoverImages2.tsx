@@ -3,7 +3,7 @@ import { ChapterContext } from "~/chapterContext";
 import Carousel from "nuka-carousel";
 import Figure from "../figures/Figure";
 import figures from "~/data/figures/dubois.json";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 
 const FIGURES = [
   figures["ch5-05a-countries"],
@@ -77,25 +77,23 @@ export default function HoverImages2() {
   return (
     <div className="ml-24 hidden md:block max-w-3xl" id="hover2">
       <ClientOnly>
-        {() => (
-          <Carousel
-            withoutControls
-            slideIndex={currentHover}
-            swiping={false}
-            animation="fade"
-          >
-            {FIGURES.map((figure, index) => {
-              return (
-                <Figure
-                  key={`${figure.fileName}-hover2`}
-                  figure={figure}
-                  className="w-full"
-                  id={`hover-2-${index}`}
-                />
-              );
-            })}
-          </Carousel>
-        )}
+        <Carousel
+          withoutControls
+          slideIndex={currentHover}
+          swiping={false}
+          animation="fade"
+        >
+          {FIGURES.map((figure, index) => {
+            return (
+              <Figure
+                key={`${figure.fileName}-hover2`}
+                figure={figure}
+                className="w-full"
+                id={`hover-2-${index}`}
+              />
+            );
+          })}
+        </Carousel>
       </ClientOnly>
     </div>
   );

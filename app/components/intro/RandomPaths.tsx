@@ -3,7 +3,7 @@ import { ScrollytellContext } from "~/scrollytellContext";
 import p5 from "p5";
 import { useResizeObserver } from "~/hooks";
 
-let anchors = [];
+const anchors = [];
 
 for (let i = 0; i < 10; i++) {
   const strokeWeight = 2 + Math.random() * 3;
@@ -126,7 +126,7 @@ export default function RandomPaths() {
       console.error("no p5!");
       return;
     }
-    let endX = Math.min(p5Ref.current.width * 0.8, 500);
+    const endX = Math.min(p5Ref.current.width * 0.8, 500);
     if (scrollProgress < 1.2) {
       p5Ref.current.push();
       p5Ref.current.strokeWeight(2);

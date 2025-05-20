@@ -25,10 +25,10 @@ export default function RandomOrTimelineRectangles() {
   );
 }
 
-let rectangles: ReactElement[] = [];
+const rectangles: ReactElement[] = [];
 for (let i = 0; i < 5; i++) {
   const num = Math.floor(Math.random() * 5) + 1;
-  let temp = [];
+  const temp = [];
   for (let j = 0; j < num; j++) {
     temp.push(
       <div

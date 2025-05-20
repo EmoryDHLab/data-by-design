@@ -3,14 +3,14 @@
 import { useState } from "react";
 import ChapterCardGrid from "~/components/home/ChapterCardGrid";
 import Timeline from "~/components/home/Timeline.client";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import SelectedImage from "~/components/home/SelectedImage.client";
 import SiteTitle from "~/components/home/SiteTitle";
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
-import type { MetaFunction, LinksFunction } from "@remix-run/node";
+import type { MetaFunction, LinksFunction } from "react-router";
 import type { TFigure } from "~/types/figureType";
 import type { ChapterTitle } from "~/types/chapterMetaTags";
 
@@ -85,19 +85,17 @@ export default function Index() {
           </figure>
           <div className="hidden h-96 lg:block">
             <ClientOnly>
-              {() => <SelectedImage selectedImage={selectedImage} />}
+              <SelectedImage selectedImage={selectedImage} />
             </ClientOnly>
           </div>
         </div>
         <div className="hidden lg:block w-screen my-2 mb-8 pt-10">
           <div className="flex items-center w-full h-96 fancyborder ">
             <ClientOnly>
-              {() => (
-                <Timeline
-                  selectedImage={selectedImage}
-                  setSelectedImage={setSelectedImage}
-                />
-              )}
+              <Timeline
+                selectedImage={selectedImage}
+                setSelectedImage={setSelectedImage}
+              />
             </ClientOnly>
           </div>
         </div>

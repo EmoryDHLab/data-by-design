@@ -1,5 +1,4 @@
-// import { remixPlugin as remix } from "@remix-run/dev";
-import { remixVitePlugin as remix } from "@remix-run/dev/dist/vite/plugin";
+import { reactRouter } from "@react-router/dev/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import SiteMap from "vite-plugin-sitemap";
@@ -15,14 +14,14 @@ const robotOption = {
   [process.env.NODE_ENV === "production" ? "allow" : "disallow"]: "/",
 };
 
-export default defineConfig({
-  server: {
-    allowedHosts: [".dataxdesign.io"],
+export default defineConfig(({ isSsrBuild }) => ({
+  server: { port: 3000, allowedHosts: [".dataxdesign.io"] },
+
+  build: {
+    rollupOptions: isSsrBuild ? { input: "./server/app.js" } : undefined,
   },
   plugins: [
-    remix({
-      ignoredRouteFiles: ["**/*.css"],
-    }),
+    reactRouter(),
     tsconfigPaths(),
     SiteMap({
       hostname: "https://dataxdesign.io",
@@ -42,18 +41,16 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: [
-      "react-router",
       "nuka-carousel",
       "scrollama",
       "@headlessui/react",
       "react-tooltip",
-      "remix-utils/client-only",
       "@uidotdev/usehooks",
       "d3",
       "@samvera/clover-iiif/image",
       "p5",
-      "react-router-dom",
     ],
+    exclude: ["virtual:react-router/server-build"],
   },
   ssr: {
     noExternal: [
@@ -93,7 +90,6 @@ export default defineConfig({
       "delaunator",
       "robust-predicates",
       "@uidotdev/usehooks",
-      "remix-utils",
     ],
   },
-});
+}));

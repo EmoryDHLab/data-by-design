@@ -3,7 +3,7 @@ import { useContext } from "react";
 
 export default function ShanawdithitMap() {
   const { scrollProgress } = useContext(ScrollytellContext);
-  let offset = Math.max(50 - (scrollProgress - 16.5) * 200, 0);
+  const offset = Math.max(50 - (scrollProgress - 16.5) * 200, 0);
   let zoom;
   if (scrollProgress > 18.5) {
     zoom = 5;

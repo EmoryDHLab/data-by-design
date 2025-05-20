@@ -16,7 +16,7 @@ import FootnotesList from "~/components/FootnotesList";
 import Quotation from "~/components/Quotation";
 import figures from "~/data/figures/playfair.json";
 import { chapterMeta } from "~/utils";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "react-router";
 import type { TVizAnchors } from "~/chapterContext";
 import ChapterBody from "~/components/layout/ChapterBody";
 import ProjectTimelineScrollytell from "~/components/playfair/projectTimeline/ProjectTimelineScrollytell";

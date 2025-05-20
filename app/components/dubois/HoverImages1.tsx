@@ -3,7 +3,7 @@ import Figure from "../figures/Figure";
 import { useContext, useEffect, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import figures from "~/data/figures/dubois.json";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 
 const FIGURES = [
   figures["ch5-03-georgia"],
@@ -37,25 +37,23 @@ export default function HoverImages1() {
   return (
     <div className="ml-24 hidden md:block" id="hover1">
       <ClientOnly>
-        {() => (
-          <Carousel
-            withoutControls
-            slideIndex={currentHover}
-            swiping={false}
-            animation="fade"
-          >
-            {FIGURES.map((figure, index) => {
-              return (
-                <Figure
-                  key={figure.fileName}
-                  figure={figure}
-                  className="w-full"
-                  id={`hover-1-${index}`}
-                />
-              );
-            })}
-          </Carousel>
-        )}
+        <Carousel
+          withoutControls
+          slideIndex={currentHover}
+          swiping={false}
+          animation="fade"
+        >
+          {FIGURES.map((figure, index) => {
+            return (
+              <Figure
+                key={figure.fileName}
+                figure={figure}
+                className="w-full"
+                id={`hover-1-${index}`}
+              />
+            );
+          })}
+        </Carousel>
       </ClientOnly>
     </div>
   );

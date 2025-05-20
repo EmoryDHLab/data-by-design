@@ -15,7 +15,7 @@ const rectangleTypes = [
 ];
 
 function generateRectangles() {
-  let rectangles: {
+  const rectangles: {
     x: number;
     y: number;
     width: number;

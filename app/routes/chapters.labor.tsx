@@ -2,12 +2,12 @@ import { useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ChapterTitle from "~/components/ChapterTitle";
 import { chapterMeta } from "~/utils";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "react-router";
 import { laborFootnotes } from "~/footnotes";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import PeopleVersions from "~/components/labor/peopleVersions/PeopleVersions.client";
 import Footer from "~/components/Footer";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 import Treemap from "~/components/labor/treemap/Treemap.client";
 import Quotation from "~/components/Quotation";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -208,7 +208,9 @@ export default function LabourPage() {
           </p>
         </CenteredLayout>
 
-        <ClientOnly>{() => <Treemap />}</ClientOnly>
+        <ClientOnly>
+          <Treemap />
+        </ClientOnly>
 
         <ChapterSectionTitle section={sections[2]} />
 
@@ -224,7 +226,9 @@ export default function LabourPage() {
           </p>
         </CenteredLayout>
 
-        <ClientOnly>{() => <PeopleVersions />}</ClientOnly>
+        <ClientOnly>
+          <PeopleVersions />
+        </ClientOnly>
 
         <CenteredLayout>
           <p className="first-paragraph py-10">

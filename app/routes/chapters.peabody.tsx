@@ -27,10 +27,10 @@ import ChapterBody from "~/components/layout/ChapterBody";
 import eventData from "~/data/peabody/eventData.json";
 import PeabodyActors from "~/components/peabody/PeabodyActors";
 import TutorialKey from "~/components/peabody/tutorial/TutorialKey";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 
 export const meta: MetaFunction = () => {
   return chapterMeta("peabody");
@@ -174,7 +174,9 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <ClientOnly>{() => <PromotionalTourMap />}</ClientOnly>
+            <ClientOnly>
+              <PromotionalTourMap />
+            </ClientOnly>
           </Column>
         </TwoColumnLayout>
 
@@ -864,61 +866,59 @@ export default function PeabodyPage() {
         <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
           {/* <Column> */}
-            <p className="first-paragraph">
-              An additional aspect of Peabody's participatory pedagogy were the
-              “mural charts,” or “painted centuries” as she also sometimes
-              described them, that she created in order to center classroom
-              discussion. <InlineFootnote index={26}></InlineFootnote> These
-              were the charts she traveled with on her national promotional
-              tour, as mentioned at the outset of this chapter, and by all
-              accounts they were dazzling: triangles and squares of crimson,
-              ochre, and forest green, set against a sharp black grid. In her
-              version of a sales pitch, Peabody would “lay [a] chart down on the
-              floor” and invite her would-be textbook adopters to sit around it
-              and contemplate the colors and patterns they perceived.
-              <InlineFootnote index={27}></InlineFootnote>
-            </p>
-            <p>
-              The pedagogical impact of this embodied interaction was, as best
-              we can gather, nothing short of transformative. “I have never
-              known a system which placed the events of the history of all
-              nations before the mind with such clearness, so little confusion,
-              and so much permanency,” wrote Eliphalet Nott, then president of
-              Union College, who participated in one of Peabody's teaching
-              demonstrations.
-              <InlineFootnote index={28}></InlineFootnote>
-              Anticipating a decidedly twenty-first-century view of the value of
-              data visceralization, Peabody staged an encounter with the data
-              that involved the whole body. This was an interaction that, she
-              hoped, would in turn stimulate the imagination to new heights.
-              Indeed, if visualization is to continue to offer “richer
-              understandings [of data] that enable researchers to ask bolder
-              questions,” as esteemed visualization researcher Ben Shneiderman
-              asserts, then the mural chart seems to represent an early
-              apotheosis.
-              <InlineFootnote index={29}></InlineFootnote>
-            </p>
-            <p>
-              And yet, because the mural charts were not valued as objects of
-              knowledge in their own time, not a single one has been preserved.
-              <InlineFootnote index={30}></InlineFootnote>
-              Scholars even remain uncertain as to many of their basic features.
-              Peabody's biographer, Bruce Ronda, speculates that they “must have
-              been much larger than even folio size.”
-              <InlineFootnote index={31}></InlineFootnote>
-              And while he does not provide any more specificity, Peabody's
-              nephew Julian's recollection of the “huge, colored charts” which
-              “hung on the walls of our sitting room” offers a first-hand
-              account of the impression they made.
-              <InlineFootnote index={32}></InlineFootnote>
-              As an additional datapoint, one might consider the “poster-sized
-              timelines” created by Peabody's contemporary, Anne Laura Clarke,
-              who created her timelines with the help of her sister, also named
-              Elizabeth, to accompany a series of lectures on history which she
-              delivered across the country. (Clarke's charts were not acquired
-              by an archive but instead kept in her sister's attic, where they
-              remain today. )<InlineFootnote index={33}></InlineFootnote>
-            </p>
+          <p className="first-paragraph">
+            An additional aspect of Peabody's participatory pedagogy were the
+            “mural charts,” or “painted centuries” as she also sometimes
+            described them, that she created in order to center classroom
+            discussion. <InlineFootnote index={26}></InlineFootnote> These were
+            the charts she traveled with on her national promotional tour, as
+            mentioned at the outset of this chapter, and by all accounts they
+            were dazzling: triangles and squares of crimson, ochre, and forest
+            green, set against a sharp black grid. In her version of a sales
+            pitch, Peabody would “lay [a] chart down on the floor” and invite
+            her would-be textbook adopters to sit around it and contemplate the
+            colors and patterns they perceived.
+            <InlineFootnote index={27}></InlineFootnote>
+          </p>
+          <p>
+            The pedagogical impact of this embodied interaction was, as best we
+            can gather, nothing short of transformative. “I have never known a
+            system which placed the events of the history of all nations before
+            the mind with such clearness, so little confusion, and so much
+            permanency,” wrote Eliphalet Nott, then president of Union College,
+            who participated in one of Peabody's teaching demonstrations.
+            <InlineFootnote index={28}></InlineFootnote>
+            Anticipating a decidedly twenty-first-century view of the value of
+            data visceralization, Peabody staged an encounter with the data that
+            involved the whole body. This was an interaction that, she hoped,
+            would in turn stimulate the imagination to new heights. Indeed, if
+            visualization is to continue to offer “richer understandings [of
+            data] that enable researchers to ask bolder questions,” as esteemed
+            visualization researcher Ben Shneiderman asserts, then the mural
+            chart seems to represent an early apotheosis.
+            <InlineFootnote index={29}></InlineFootnote>
+          </p>
+          <p>
+            And yet, because the mural charts were not valued as objects of
+            knowledge in their own time, not a single one has been preserved.
+            <InlineFootnote index={30}></InlineFootnote>
+            Scholars even remain uncertain as to many of their basic features.
+            Peabody's biographer, Bruce Ronda, speculates that they “must have
+            been much larger than even folio size.”
+            <InlineFootnote index={31}></InlineFootnote>
+            And while he does not provide any more specificity, Peabody's nephew
+            Julian's recollection of the “huge, colored charts” which “hung on
+            the walls of our sitting room” offers a first-hand account of the
+            impression they made.
+            <InlineFootnote index={32}></InlineFootnote>
+            As an additional datapoint, one might consider the “poster-sized
+            timelines” created by Peabody's contemporary, Anne Laura Clarke, who
+            created her timelines with the help of her sister, also named
+            Elizabeth, to accompany a series of lectures on history which she
+            delivered across the country. (Clarke's charts were not acquired by
+            an archive but instead kept in her sister's attic, where they remain
+            today. )<InlineFootnote index={33}></InlineFootnote>
+          </p>
           {/* </Column> */}
           {/* <Column className="md:ml-12" shouldPin={true}>
             <Figure

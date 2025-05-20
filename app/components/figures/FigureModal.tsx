@@ -16,7 +16,7 @@ import ChevronUp from "../icons/ChevronUp";
 import IIIFViewer from "./IIIFViewer.client";
 import type { TFigure } from "~/types/figureType";
 import type { ReactNode } from "react";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 
 interface Props {
   figure: TFigure;
@@ -102,7 +102,7 @@ export default function FigureModal({
               </DialogTitle>
               <div className="flex flex-col justify-between h-full">
                 <ClientOnly>
-                  {() => <IIIFViewer figure={figure} modalOpen={isOpen} />}
+                  <IIIFViewer figure={figure} modalOpen={isOpen} />
                 </ClientOnly>
                 <Caption figure={figure} className="md:mb-2" />
                 <div className="mx-auto w-full rounded-2xl bg-white p-2">

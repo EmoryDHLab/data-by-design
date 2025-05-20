@@ -12,12 +12,12 @@ export function getEventYFromIndex(index: number, size?: number) {
 export const YEAR_WIDTH = 9;
 
 export function getYearXFromIndex(index: number, width?: number) {
-  let column = index % 10;
+  const column = index % 10;
   return 3 + column * (width ?? YEAR_WIDTH) + (column > 4 ? 3 : 0);
 }
 
 export function getYearYFromIndex(index: number, width?: number) {
-  let row = Math.floor(index / 10);
+  const row = Math.floor(index / 10);
   return 3 + row * (width ?? YEAR_WIDTH) + (row > 4 ? 3 : 0);
 }
 

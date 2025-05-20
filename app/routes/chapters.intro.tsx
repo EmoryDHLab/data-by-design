@@ -13,7 +13,7 @@ import figures from "~/data/figures/intro.json";
 import Figure from "~/components/figures/Figure";
 import ChapterBody from "~/components/layout/ChapterBody";
 import type { TVizAnchors } from "~/chapterContext";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return chapterMeta("intro");

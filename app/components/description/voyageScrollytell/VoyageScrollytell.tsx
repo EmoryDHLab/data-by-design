@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 import Picture from "~/components/layout/Picture";
 import PullQuote from "~/components/PullQuote";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
@@ -158,18 +158,16 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
           }`}
         >
           <ClientOnly>
-            {() => (
-              <VoyagesVis
-                id="sample-voyages"
-                startYear={1587}
-                endYear={1589}
-                showSlider={false}
-                allVoyages
-                background={BACKGROUND}
-                fullColor={true}
-                heightAdjust={1}
-              />
-            )}
+            <VoyagesVis
+              id="sample-voyages"
+              startYear={1587}
+              endYear={1589}
+              showSlider={false}
+              allVoyages
+              background={BACKGROUND}
+              fullColor={true}
+              heightAdjust={1}
+            />
           </ClientOnly>{" "}
         </div>
 
@@ -180,18 +178,16 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
           }`}
         >
           <ClientOnly>
-            {() => (
-              <VoyagesVis
-                startYear={initialStartYear}
-                endYear={initialEndYear}
-                background={BACKGROUND}
-                showSlider={false}
-                showAxis={false}
-                allVoyages={false}
-                id="resistance-only"
-                heightAdjust={1}
-              />
-            )}
+            <VoyagesVis
+              startYear={initialStartYear}
+              endYear={initialEndYear}
+              background={BACKGROUND}
+              showSlider={false}
+              showAxis={false}
+              allVoyages={false}
+              id="resistance-only"
+              heightAdjust={1}
+            />
           </ClientOnly>
           <div className="absolute top-28 text-center w-screen mx-auto font-dubois text-xl">
             <span className="bg-offwhite py-6 px-16">Begin Voyage</span>
@@ -226,15 +222,13 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
           }`}
         >
           <ClientOnly>
-            {() => (
-              <VoyagesVis
-                id="scrolling-voyage-all"
-                allVoyages={true}
-                fullColor={false}
-                startYear={1756}
-                endYear={1766}
-              />
-            )}
+            <VoyagesVis
+              id="scrolling-voyage-all"
+              allVoyages={true}
+              fullColor={false}
+              startYear={1756}
+              endYear={1766}
+            />
           </ClientOnly>
         </div>
         {/* 18 */}
@@ -244,16 +238,14 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
           }`}
         >
           <ClientOnly>
-            {() => (
-              <VoyagesVis
-                id="all-full-color-1756"
-                startYear={1756}
-                endYear={1766}
-                showSlider={true}
-                allVoyages={true}
-                fullColor={true}
-              />
-            )}
+            <VoyagesVis
+              id="all-full-color-1756"
+              startYear={1756}
+              endYear={1766}
+              showSlider={true}
+              allVoyages={true}
+              fullColor={true}
+            />
           </ClientOnly>
         </div>
         <div
@@ -262,18 +254,16 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
           }`}
         >
           <ClientOnly>
-            {() => (
-              <VoyagesVis
-                startYear={1776}
-                endYear={1786}
-                background={[224, 220, 242]}
-                showSlider={false}
-                showAxis={false}
-                id="scrollytell-allVoyageContainer"
-                heightAdjust={1.02}
-                widthAdjust={1}
-              />
-            )}
+            <VoyagesVis
+              startYear={1776}
+              endYear={1786}
+              background={[224, 220, 242]}
+              showSlider={false}
+              showAxis={false}
+              id="scrollytell-allVoyageContainer"
+              heightAdjust={1.02}
+              widthAdjust={1}
+            />
           </ClientOnly>
         </div>
       </div>

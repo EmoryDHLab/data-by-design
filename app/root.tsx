@@ -7,18 +7,18 @@ import {
   ScrollRestoration,
   useRouteError,
   isRouteErrorResponse,
-} from "@remix-run/react";
+} from "react-router";
 import Navbar from "./components/Navbar.client";
 // @ts-ignore
 import styles from "./index.css?url";
 import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
-import { ClientOnly } from "remix-utils/client-only";
 import Banner from "./components/layout/Banner";
 import Analytics from "./components/Analytics";
 import Loading from "./components/layout/Loading";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "react-router";
 import type { ReactNode } from "react";
+import ClientOnly from "./components/ClientOnly";
 
 interface WrapperProps {
   children: ReactNode;
@@ -63,7 +63,9 @@ export const Layout = ({ children }: WrapperProps) => {
       <body className="overflow-x-hidden">
         <ScrollToHashElement />
         <LinkToMain />
-        <ClientOnly>{() => <Navbar />}</ClientOnly>
+        <ClientOnly>
+          <Navbar />
+        </ClientOnly>
         <Banner>Public Beta</Banner>
         {children}
         <Loading />

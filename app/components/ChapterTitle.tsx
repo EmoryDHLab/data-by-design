@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { spacesToHyphens } from "~/utils";

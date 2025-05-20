@@ -3,7 +3,7 @@ import { useDeviceContext } from "~/hooks";
 import type { ControlProps } from "nuka-carousel";
 import type { ReactElement } from "react";
 import type { TFigure } from "~/types/figureType";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 
 interface Props {
   figures?: Array<TFigure>;
@@ -56,44 +56,42 @@ const SlideShow = ({ figures, className, children }: Props) => {
   return (
     <div className={`w-full mx-auto ${className ?? ""}`}>
       <ClientOnly>
-        {() => (
-          <Carousel
-            renderCenterLeftControls={isDesktop ? leftControls : noControl}
-            renderCenterRightControls={isDesktop ? rightControls : noControl}
-            renderBottomCenterControls={noControl}
-            renderBottomLeftControls={isMobile ? leftControls : noControl}
-            renderBottomRightControls={isMobile ? rightControls : noControl}
-            wrapAround
-          >
-            {figures?.map((figure) => {
-              return (
-                <figure key={figure.fileName} className="text-center">
-                  <picture>
-                    <source
-                      srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`}
-                    />
-                    <source
-                      srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`}
-                    />
-                    <img
-                      className="max-h-96 md:max-h-max mx-auto max-w-xs md:max-w-none"
-                      src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
-                      alt={figure.altText ?? ""}
-                      title={figure.title ?? ""}
-                    />
-                  </picture>
-                  <figcaption
-                    className="font-dubois mt-3 w-1/2 mx-auto"
-                    dangerouslySetInnerHTML={{
-                      __html: figure.caption ?? "",
-                    }}
+        <Carousel
+          renderCenterLeftControls={isDesktop ? leftControls : noControl}
+          renderCenterRightControls={isDesktop ? rightControls : noControl}
+          renderBottomCenterControls={noControl}
+          renderBottomLeftControls={isMobile ? leftControls : noControl}
+          renderBottomRightControls={isMobile ? rightControls : noControl}
+          wrapAround
+        >
+          {figures?.map((figure) => {
+            return (
+              <figure key={figure.fileName} className="text-center">
+                <picture>
+                  <source
+                    srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`}
                   />
-                </figure>
-              );
-            })}
-            {children}
-          </Carousel>
-        )}
+                  <source
+                    srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+                  />
+                  <img
+                    className="max-h-96 md:max-h-max mx-auto max-w-xs md:max-w-none"
+                    src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+                    alt={figure.altText ?? ""}
+                    title={figure.title ?? ""}
+                  />
+                </picture>
+                <figcaption
+                  className="font-dubois mt-3 w-1/2 mx-auto"
+                  dangerouslySetInnerHTML={{
+                    __html: figure.caption ?? "",
+                  }}
+                />
+              </figure>
+            );
+          })}
+          {children}
+        </Carousel>
       </ClientOnly>
     </div>
   );

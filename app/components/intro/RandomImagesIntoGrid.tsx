@@ -36,7 +36,7 @@ function Image({ x, y, angle, isSelected }: ImageProps) {
   );
 }
 
-let images = [];
+const images = [];
 for (let i = 0; i < 100; i++) {
   const isSelected = Math.random() > 0.7;
   const col = i % 10;

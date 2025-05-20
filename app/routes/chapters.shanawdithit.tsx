@@ -20,8 +20,8 @@ import WillardScrollytell from "~/components/shanawdithit/WillardScrollytell";
 import ChapterBody from "~/components/layout/ChapterBody";
 import FootnotesList from "~/components/FootnotesList";
 import Takeaways from "~/components/layout/Takeaways";
-import { ClientOnly } from "remix-utils/client-only";
-import type { MetaFunction } from "@remix-run/node";
+import ClientOnly from "~/components/ClientOnly";
+import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 
 export const meta: MetaFunction = () => {
@@ -116,24 +116,24 @@ export default function ShanawdithitPage() {
           <p>
             The Beothuk had been navigating their relationships with Europeans
             for centuries. Some speculate that the Icelandic Sagas' mention of
-            “Skraelings” refers to ancestors of the Beothuk, which would date a
+            "Skraelings" refers to ancestors of the Beothuk, which would date a
             first encounter to the eleventh century.{" "}
             <InlineFootnote index={0} /> A second phase of more sustained
             relation began shortly after the Italian explorer John Cabot's
             initial visit to the island, in 1497, and persisted for over two
-            hundred years. During this time, “fishing crews from Spain,
+            hundred years. During this time, "fishing crews from Spain,
             Portugal, France, and Britain would spend the summer months catching
-            and processing cod before returning home for the winter,” as
+            and processing cod before returning home for the winter," as
             environmental humanities scholar Fiona Polack explains.
             <InlineFootnote index={1} /> These seasonal incursions granted the
-            Beothuk “periods of unimpeded access to valuable materials, such as
+            Beothuk "periods of unimpeded access to valuable materials, such as
             metal objects left in unattended fishing stations, and reduced the
-            need for them to interact directly with the invaders.”{" "}
+            need for them to interact directly with the invaders."{" "}
             <InlineFootnote index={2} /> Polack also documents how this
             arrangement—to which, of course, the Beothuk had no choice but to
-            consent—began to strain as “increasing numbers of people from the
+            consent—began to strain as "increasing numbers of people from the
             British isles began to settle permanently on the island and compete
-            directly with the Beothuk for resources.”{" "}
+            directly with the Beothuk for resources."{" "}
             <InlineFootnote index={3} /> It was this competition for resources,
             compounded over centuries, that in no small part led the British to
             Beothuk Lake that day.
@@ -144,15 +144,15 @@ export default function ShanawdithitPage() {
             surprised the same British settlers as they were preparing for a
             trip to market. Hidden in a canoe under a wharf at Lower Sandy
             Point, in the Bay of Exploits—north and east of Beothuk Lake, where
-            its waters met up with the sea—the Beothuk waited for the “dense
-            darkness” of night and then absconded with a boat carrying the
+            its waters met up with the sea—the Beothuk waited for the "dense
+            darkness" of night and then absconded with a boat carrying the
             season's catch of salmon, and possibly some furs.
-            <InlineFootnote index={4} /> This “theft and act of destruction”
+            <InlineFootnote index={4} /> This "theft and act of destruction"
             provided the rationale for John Peyton Jr., the owner of the boat,
             whose personal narrative serves as the source of the direct
             quotations here, to request formal authorization from the governor
-            of colonial Newfoundland to “search for his stolen property and, if
-            possible, try and capture one of the Indians alive.”
+            of colonial Newfoundland to "search for his stolen property and, if
+            possible, try and capture one of the Indians alive."
             <InlineFootnote index={5} />
           </p>
           <p>
@@ -160,14 +160,14 @@ export default function ShanawdithitPage() {
             when they awoke that morning in March. But within minutes, the
             settlers' goal became clear. When the Beothuk fled to the woods, one
             woman, Demasduit, fell behind and was immediately set upon by the
-            British. She “pointed out to the white men her full breasts to show
+            British. She "pointed out to the white men her full breasts to show
             that she had a child, and pointed up to the heavens to implore them,
-            in God's mercy, to allow her to return to her child,” but they “took
-            hold of her,” recalled John Paul, a Mi'kmaq-Innu man whose
+            in God's mercy, to allow her to return to her child," but they "took
+            hold of her," recalled John Paul, a Mi'kmaq-Innu man whose
             grandfather had been alive (but not present) at the time of the
             original events.
             <InlineFootnote index={6} /> Demasduit's partner, a man named
-            Nonosabasut, “came to her aid,” but Peyton shot and killed him.{" "}
+            Nonosabasut, "came to her aid," but Peyton shot and killed him.{" "}
             <InlineFootnote index={7} /> Two days later, the child of Demasduit
             and Nonosabasut died as well—likely the result of starvation. One
             other young woman, Shanawdithit, who was then around seventeen, bore
@@ -266,15 +266,15 @@ export default function ShanawdithitPage() {
             ceremony, held over the course of several months the next spring.
             But the British would not learn of Shanawdithit until four years
             later, in April 1823, when Shanawdithit was herself captured, along
-            with her mother and her sister. The three women had been heading “to
-            the seacoast in search of mussels to subsist on,” following another
+            with her mother and her sister. The three women had been heading "to
+            the seacoast in search of mussels to subsist on," following another
             winter in which food had been scarce and illness had been plentiful.
             A different group of British settlers—furriers, this time—came
             across them.
             <InlineFootnote index={14} /> Concluding that it had become too
             difficult to continue to keep themselves alive, according to another
-            British account, Shanawdithit and her kin “allowed themselves in
-            despair to be quietly captured.” <InlineFootnote index={15} />
+            British account, Shanawdithit and her kin "allowed themselves in
+            despair to be quietly captured." <InlineFootnote index={15} />
           </p>
           <p>
             Like Demsaduit before them, the three women were taken to
@@ -288,7 +288,7 @@ export default function ShanawdithitPage() {
             <InlineFootnote index={16} /> Cormack, the Newfoundland-born son of
             Scottish settlers who'd earned early fame as for his natural history
             of the island's interior, was the one to supply Shanawdithit with
-            “paper and pencils of various colours,” and who through some
+            "paper and pencils of various colours," and who through some
             combination of enticement or coercion—we can never know—prompted her
             to create her maps.
             <InlineFootnote index={17} />
@@ -302,7 +302,7 @@ export default function ShanawdithitPage() {
 
             <Fragment key={"64563aa58b66"}>
               <p className="pl-4 md:pl0 w-9/12">
-                This map, known as “Drawing II,” is second in a sequence of five
+                This map, known as "Drawing II," is second in a sequence of five
                 maps and five additional drawings. It presents a syncretic
                 picture of the series of encounters between the Beothuk and the
                 British that culminated in Demasduit's capture and eventual
@@ -329,7 +329,7 @@ export default function ShanawdithitPage() {
                 <InlineFootnote index={19} /> The two red figures oriented in
                 the opposite direction may be the two Beothuk who briefly
                 traveled with the British back to their camp before they were
-                “told by signals to give chase,” as John Paul reports.
+                "told by signals to give chase," as John Paul reports.
                 <InlineFootnote index={20} />
               </p>
               <p className="h-[50vh]" />
@@ -427,10 +427,10 @@ export default function ShanawdithitPage() {
           <p>
             Already, the inextricability of the maps' creation from the larger
             colonial project should be quite clear. But Cormack's own words lay
-            the extractive nature of this project bare: “I keep her pretty
+            the extractive nature of this project bare: "I keep her pretty
             busily employed in drawing historical representations of everything
             that suggests itself relating to her tribe, which I find is the best
-            and readiest way of gathering information from her,” as he wrote in
+            and readiest way of gathering information from her," as he wrote in
             a letter to the Bishop of Nova Scotia in January 1829.
             <InlineFootnote index={25} /> Cormack's sense of entitlement to
             Shanawdihit's knowledge is here apparent.
@@ -440,7 +440,7 @@ export default function ShanawdithitPage() {
             the textual annotations, which were penned not by Shanawdithit but
             by Cormack himself, likely at the same time that Shanawdithit set
             her own lines to the page. Cormack's handwriting encircles
-            Shanawdithit's image, registering the “information” he sought to
+            Shanawdithit's image, registering the "information" he sought to
             extract from her and even more: the power that he held over her as
             her captor, power that also colors the information presented on the
             map.
@@ -471,7 +471,7 @@ export default function ShanawdithitPage() {
             While we made the decision not to convert this information into GIS
             data and plot it on a map of our own, we are still also actors in
             this extractive process. For as much as we have sought to keep our
-            emphasis on the map's colonial frame, rather than the “information”
+            emphasis on the map's colonial frame, rather than the "information"
             about the Beothuk that it contains, our model of interactive
             explanation—the same we use to structure the start of each chapter
             of this book—reflects an uncomfortably similar approach to the one
@@ -497,7 +497,7 @@ export default function ShanawdithitPage() {
             similar principles might be applied to visualization, since the
             process of extracting knowledge from those who originally possess it
             is not limited to the collection phase of the data analysis
-            “pipeline” alone.
+            "pipeline" alone.
             <InlineFootnote index={30} />
           </p>
           <Figure figure={figures["Illustration2"]} />
@@ -570,12 +570,12 @@ export default function ShanawdithitPage() {
             precisely, that Shanawdithit had pictured on the page, we can also
             perceive its divergence from the spatial perspective that was (and
             remains) characteristic of colonial maps. Cormack crosses out one of
-            his earlier incorrect labels, “The Taking of Mary March,” which he
+            his earlier incorrect labels, "The Taking of Mary March," which he
             had first positioned on the south side of the lake, and rewrites in
             a more accurate location on the north side.
             <InlineFootnote index={33} /> He also adds in a clarifying note at
             the top left of the map, just below the reference number he has
-            provided: “2 different Scenes & times.” The note is underlined for
+            provided: "2 different Scenes & times." The note is underlined for
             emphasis. It appears that Cormack himself requires this note in
             order to remind himself of what was depicted, even as the link
             between the two scenes was (presumably) self-evident in
@@ -585,19 +585,19 @@ export default function ShanawdithitPage() {
             Another indicator of how Shanawdithit understood her map as only one
             piece of a larger system can be seen her decision to include human
             figures on her map. This exemplifies what Pearce characterizes as an
-            emphasis on place as it is experienced, “as opposed to the Western
+            emphasis on place as it is experienced, "as opposed to the Western
             convention of depicting space as universal, homogenized, and devoid
-            of human experience.”
+            of human experience."
             <InlineFootnote index={34} /> This is what geographer Laura Harjo
             (Mvskoke) has theorized with respect to Mvskoke conceptions of space
-            as a “kin-space-time lens,” which she similarly contrasts with
-            “Cartesian mapping.”
+            as a "kin-space-time lens," which she similarly contrasts with
+            "Cartesian mapping."
             <InlineFootnote index={35} /> In his analysis of Shanawdithit's
             maps, geographer Matthew Sparke observes something similar, noting
             how even the symbolic components of the map, such as the paths
             across the lake, push back against Western orthodoxies of space and
-            scale. By depicting “the uneven possibilities of travel by foot
-            across uneven landscape,” he suggests, Shanawdithit incorporates an
+            scale. By depicting "the uneven possibilities of travel by foot
+            across uneven landscape," he suggests, Shanawdithit incorporates an
             embodied dimension into the elements of the map that would otherwise
             be interpreted only for the geographical information that they
             convey.
@@ -611,17 +611,17 @@ export default function ShanawdithitPage() {
             Before moving forward, there are several additional features of the
             map that are important to underscore. First, it is incredibly
             accurate; Howley is among several settlers who comment on the maps'
-            “extraordinary minuteness of topographical detail.”
+            "extraordinary minuteness of topographical detail."
             <InlineFootnote index={38} /> Second, Shanawdithit was not simply
             drawing her land and her people; she was actually drawing herself.
             Shanawdithit appears on the map in multiple places and in multiple
             forms: as one of the thirty-seven tick marks on the south side of
             the lake, and again on the north side as one of the figures in red
             that sought shelter in the woods. While she may have been recording
-            “information” about her people for Cormack, to return to his words,
+            "information" about her people for Cormack, to return to his words,
             she was also testifying to the events of her own life. It follows,
             then, that there is also an interpretation of the map as evidence of
-            Shanawdithit's “survivance,” to enlist a term coined by Chippewa
+            Shanawdithit's "survivance," to enlist a term coined by Chippewa
             scholar Gerald Vizenor, which he intends to emphasize how, in the
             continued unfolding of colonial violence, survival constitutes an
             act of resistance in and of itself.
@@ -630,19 +630,19 @@ export default function ShanawdithitPage() {
             With that said, the violence that surrounds the creation of the
             map—the same violence that it records—ensures that it can never be
             upheld as an example of triumph alone. For even if it epitomizes a
-            “kin-space-time lens,” it also vivifies the violence that is the
+            "kin-space-time lens," it also vivifies the violence that is the
             reason it was even set to the page.
             <InlineFootnote index={39} /> An additional biographical detail
             underscores this point. The art historian Nicholas Chare, who has
             written on Shanawdithit's maps through the lens of trauma studies,
             locates in a note written by Cormack the otherwise unremarked upon
-            fact that Shanawdithit “received two gunshot wounds at two different
+            fact that Shanawdithit "received two gunshot wounds at two different
             times, from shots fired at the band she was with by the English
-            people at Exploits,” and that “one wound was that [of] a slug or
-            buck shot thro[ugh] the palm of her hand.”
+            people at Exploits," and that "one wound was that [of] a slug or
+            buck shot thro[ugh] the palm of her hand."
             <InlineFootnote index={40} /> While it is unknown which hand
-            Shanawdithit employed to draw her sketches, “it may well have been
-            the hand she sketched with,” Chare suggests.{" "}
+            Shanawdithit employed to draw her sketches, "it may well have been
+            the hand she sketched with," Chare suggests.{" "}
             <InlineFootnote index={41} /> Regardless, the wound and the scar it
             left on her skin—one which Cormack reports that he saw—serves as a
             visceral reminder of how Shanawdithit's maps were a direct output of
@@ -658,17 +658,17 @@ export default function ShanawdithitPage() {
             By excavating the layers of knowledge extraction, and outright
             violence, that surround Shanawdithit's creation of her map, we are
             further guided by the approach of literary scholar Mishuana Goeman
-            (Seneca), who emphasizes the importance of “examining the
-            theoretical dimensions of power” so as to resist the “utopian” yet
+            (Seneca), who emphasizes the importance of "examining the
+            theoretical dimensions of power" so as to resist the "utopian" yet
             ultimately impossible goal of recovery.
             <InlineFootnote index={42} /> No magnitude of desire or strength of
-            effort, as Goeman explains, can gain us access to “an original and
-            pure point in history,” nor can we ever fully account for
+            effort, as Goeman explains, can gain us access to "an original and
+            pure point in history," nor can we ever fully account for
             colonialism's ongoing effects.
             <InlineFootnote index={43} /> The most generative form of knowledge
             we might pursue, Goeman suggests, and which this chapter sets as its
-            goal, is an understanding of “the relationships set forth during
-            colonialism that continue to mark us today.”{" "}
+            goal, is an understanding of "the relationships set forth during
+            colonialism that continue to mark us today."{" "}
             <InlineFootnote index={44} />
           </p>
           <p>
@@ -677,7 +677,7 @@ export default function ShanawdithitPage() {
             power. Maps can literally create nations and dismantle others—a
             lesson that most Indigenous inhabitants of Turtle Island had learned
             well before the encounter between the Beothuk and Peyton and his
-            men. Consider the example of the so-called “Walking Purchase,” which
+            men. Consider the example of the so-called "Walking Purchase," which
             dates to 1737, nearly a century before Shanawdithit set her maps to
             paper, when the Lenape leader Teedyuscung agreed to sell a parcel of
             land to the Penn family (of the then-colony of Pennsylvania) that
@@ -686,10 +686,10 @@ export default function ShanawdithitPage() {
             through the land and hired three of the fastest runners he knew to
             run along it, resulting in the Lenape ceding a swath of land twice
             as long as was initially envisioned. In response to the
-            “fraud”—Teedyuscung's own characterization in his report to colonial
+            "fraud"—Teedyuscung's own characterization in his report to colonial
             officials—he subsequently, according to Lisa Brooks (Abenaki),
-            “insisted on drawing his own map to delineate [the Lenape] territory
-            and solidify their rights.”
+            "insisted on drawing his own map to delineate [the Lenape] territory
+            and solidify their rights."
             <InlineFootnote index={45} />
           </p>
           <p>
@@ -702,7 +702,7 @@ export default function ShanawdithitPage() {
             what lay further north and west, Ac ko mok ki traced in the
             snow—from memory—a map of more than 200,000 square miles of the
             continent, narrating the features of the map as he drew. Fidler then
-            copied the map onto paper “reduced ¼ from the original,” annotated
+            copied the map onto paper "reduced ¼ from the original," annotated
             it with the information he'd heard Ac ko mok ki speak aloud, and
             then sent the map back to the headquarters of the Hudson Bay Company
             in London.
@@ -714,7 +714,7 @@ export default function ShanawdithitPage() {
             <InlineFootnote index={47} /> Their mission is widely recognized as
             authorizing the United States' future claims to the full width of
             the continent, and establishing the foundation for the idea of
-            “manifest destiny” that would guide US territorial expansion into
+            "manifest destiny" that would guide US territorial expansion into
             the next century and beyond.
           </p>
         </CenteredLayout>
@@ -768,18 +768,20 @@ export default function ShanawdithitPage() {
                 "Ninth Map or Map of 1826"
               </HoverText>
               , which depicts the then-present day, Willard presents a
-              “cumulative statement of nationhood,” as historian Susan Schulten
+              "cumulative statement of nationhood," as historian Susan Schulten
               explains, one which enlists the consolidating power of the map in
               the service of a story of America's national emergence.{" "}
               <InlineFootnote index={49} /> As Willard herself explains, her
-              maps connect otherwise isolated historical “facts” in history and
-              as a result, “contribute[s] much… to the growth of wholesome
-              national feeling.”
+              maps connect otherwise isolated historical "facts" in history and
+              as a result, "contribute[s] much… to the growth of wholesome
+              national feeling."
               <InlineFootnote index={50} />
             </p>
           </Column>
           <Column shouldPin>
-            <ClientOnly>{() => <ColonialMaps />}</ClientOnly>
+            <ClientOnly>
+              <ColonialMaps />
+            </ClientOnly>
           </Column>
         </TwoColumnLayout>
 
@@ -809,21 +811,21 @@ export default function ShanawdithitPage() {
             <Fragment key={"849298f5b0bd"}>
               <p className="pl-4 md:pl0 w-9/12">
                 She also circles each of the tribe's names, with the size of the
-                circle indicating its “size and relative influence.”{" "}
+                circle indicating its "size and relative influence."{" "}
               </p>
             </Fragment>,
 
             <Fragment key={"9b7e0221a7b7"}>
               <p className="pl-4 md:pl0 mb-0 pb-2 md:pb-0 w-9/12">
                 The color of the circles and the lines connecting them indicate
-                affiliation and “migration,” in Willard's terms, although a more
+                affiliation and "migration," in Willard's terms, although a more
                 accurate word would be displacement.{" "}
               </p>
             </Fragment>,
 
             <Fragment key={"81d65ca3c699"}>
               <p className="pl-4 md:pl0 mb-0 w-9/12">
-                The perspective inhabited by the “Introductory Map” is somewhat
+                The perspective inhabited by the "Introductory Map" is somewhat
                 contradictory. Willard makes the clear choice to label certain
                 geographic features with names intended to evoke an Indigenous
                 worldview, as evidenced by how the same features are labeled
@@ -832,7 +834,7 @@ export default function ShanawdithitPage() {
               <p className="pl-4 md:pl0 mb-0 w-9/12">
                 {" "}
                 Instead of the Atlantic Ocean, for example, the body of water is
-                here labeled “Salt water Lake or Great Water,” which she
+                here labeled "Salt water Lake or Great Water," which she
                 explains in the accompanying chapter of the textbook are two
                 names given to it by the Delaware at various times. {" "}
               </p>
@@ -844,31 +846,31 @@ export default function ShanawdithitPage() {
 
         <CenteredLayout>
           <p>
-            Yet Willard also chooses to present this map as “introductory,”
-            rather than accord it the position of “First Map.” This she reserves
+            Yet Willard also chooses to present this map as "introductory,"
+            rather than accord it the position of "First Map." This she reserves
             for the map depicting the voyages of the European explorers, as
             previously discussed. More pointedly, Willard also fails to
             incorporate any of the Indigenous nations she marks here into the
             rest of the story she tells about the emergence of the United
-            States. This choice “reinforced the [then] contemporary assumption
+            States. This choice "reinforced the [then] contemporary assumption
             that Native Americans existed in a timeless space prior to human
-            history,” Schulten explains. <InlineFootnote index={52} /> Nations
+            history," Schulten explains. <InlineFootnote index={52} /> Nations
             such as the Beothuk are not granted a place in the future of North
             America, only its past.
           </p>
           <p>
             This view is confirmed in when considering Willard's map as an
-            example of the “thematic map” genre. Such maps can be analyzed in
+            example of the "thematic map" genre. Such maps can be analyzed in
             terms of the layers of data that they visualize, and the designer's
             choices about how to order them.
             <InlineFootnote index={53} /> Because the data that is plotted as
             the bottom layer of the map is presumed to be stable and true--the
-            “base data” over which new layers can be added, and through which
+            "base data" over which new layers can be added, and through which
             new insight can emerge—it accords whatever dataset is placed at the
             bottom the status of incontrovertible fact, as historian and
             cartographer Bill Rankin has observed.
-            <InlineFootnote index={54} /> In the case of “Locations and
-            Wanderings of the Aboriginal Tribes,” Willard places the state
+            <InlineFootnote index={54} /> In the case of "Locations and
+            Wanderings of the Aboriginal Tribes," Willard places the state
             borders of the not-yet-actually-extant United States in the
             background of the map, presenting them as the literal ground truth
             on which Native peoples are only temporarily superimposed.
@@ -877,7 +879,7 @@ export default function ShanawdithitPage() {
             With our eyes attuned to the layers of Willard's map and the claims
             implied by each, it is worth returning to Shanawdithit's maps once
             more in order to consider the parallel claims implied by its
-            "kin-space-time lens,” to return to Harjo's phrase. In rejecting the
+            "kin-space-time lens," to return to Harjo's phrase. In rejecting the
             distinction between foreground and background, and by presenting
             people, place, and time in a single visual plane, Shanawdithit
             insists on her cultural as well as geographic authority. By contrast
@@ -891,10 +893,10 @@ export default function ShanawdithitPage() {
             stories that order the relations between the map and ourselves
             today. These are signaled by Cormack's annotations, and point to the
             relations between colonizer and colonized, and between knowledge and
-            knower. These are not “good relations,” but they are necessary to
+            knower. These are not "good relations," but they are necessary to
             acknowledge and to understand, because these relations—to recall the
             words of Mishauna Goeman that began this section—are those that
-            “continue to mark us today.”
+            "continue to mark us today."
           </p>
         </CenteredLayout>
         <ChapterSectionTitle section={sections[3]} />
@@ -956,18 +958,18 @@ export default function ShanawdithitPage() {
           <p>
             But contemporary artist, Sarah Sense (Chitimacha/Choctaw),
             demonstrates how these current insights can be contested and further
-            transformed. In her digital artwork, “Birch Bark,” she employs her
+            transformed. In her digital artwork, "Birch Bark," she employs her
             own ancestral basket weaving techniques as a way to interrupt the
             unidirectional process of knowledge extraction that the Banbrigge
-            map records. Her own process “re-Indigenizes” the map, as she
+            map records. Her own process "re-Indigenizes" the map, as she
             explains in the accompanying artist's statement, redirecting some of
             the map's meaning-making force. <InlineFootnote index={58} /> Here,
-            the “warp” of the image—what in basket-weaving practice is viewed as
+            the "warp" of the image—what in basket-weaving practice is viewed as
             the more passive layer, since it serves as the basket's base—is a
             reproduction of the Banbrigge map. Woven through the map, in
             patterns derived from Sense's own Chitimacha and Choctaw heritage,
             is a photograph of the land. Considered as a thematic map, Sense's
-            choice to make the land the more active “weft” controlling the
+            choice to make the land the more active "weft" controlling the
             pattern that is produced contests the authority of the map that
             serves as its base.
           </p>
@@ -1029,8 +1031,8 @@ export default function ShanawdithitPage() {
             bottom of the page, is the suggestion of a version of the events
             that contests the authority of Peyton's account. In this version,
             Shanawdithit serves as the authoritative source of knowledge, since
-            she “was present all the time and knew every incident connected with
-            this event.” Peyton, meanwhile, only learns “the full particulars”
+            she "was present all the time and knew every incident connected with
+            this event." Peyton, meanwhile, only learns "the full particulars"
             from Shanawdithit after that act.{" "}
           </p>
 
@@ -1039,11 +1041,11 @@ export default function ShanawdithitPage() {
             surveillance of the Beothuk in advance of his own attack structures
             his entire narrative.
             <InlineFootnote index={59} /> Even as it contains details that
-            stretch back decades, the narrative is titled “Capture of Mary March
-            (Demasduit) on Red Indian Lake, in the month of March 1819.” But
+            stretch back decades, the narrative is titled "Capture of Mary March
+            (Demasduit) on Red Indian Lake, in the month of March 1819." But
             here is evidence of an earlier phase of surveillance, one far more
-            sustained, in which the Beothuk “observed Peyton's movements” for
-            “several days preceding the depredation.” In the account suggested
+            sustained, in which the Beothuk "observed Peyton's movements" for
+            "several days preceding the depredation." In the account suggested
             by the footnote, it is the Beothuk—and not the British—who are in
             control.{" "}
           </p>
@@ -1076,15 +1078,15 @@ export default function ShanawdithitPage() {
           <Figure figure={figures["speck-lookout-tree"]} />
 
           <p>
-            This lookout tree is not the same as the “tall birch tree” that
+            This lookout tree is not the same as the "tall birch tree" that
             Shanawdithit told Peyton about, as Speck labels it as being located
             at Red Indian Point. He also identifies it not as a birch but a
-            “large white spruce,” as he describes in the textual account of his
+            "large white spruce," as he describes in the textual account of his
             trip.
             <InlineFootnote index={60} /> Speck provides a second photo of the
-            view from the top of the tree, which he “climbed to experience the
+            view from the top of the tree, which he "climbed to experience the
             sensation of observing these wastes [sic] from the vantage point of
-            the ancients.” <InlineFootnote index={61} /> For Speck, the view
+            the ancients." <InlineFootnote index={61} /> For Speck, the view
             from the lookout tree suggests a window in an unmediated past—a
             sense of what the Beothuk themselves might have seen.{" "}
           </p>
@@ -1094,7 +1096,7 @@ export default function ShanawdithitPage() {
           <p>
             But what if we understood Speck's view from the lookout tree
             differently—in terms our distance from the past. Here, it is not the
-            “vantage point of the ancients” that Speck hoped to document, but
+            "vantage point of the ancients" that Speck hoped to document, but
             his own photograph that gives us meaning. Looking closely at the
             photo, we can see that the center of the image is clouded over, in
             contrast to the crispness of the ripples of the water that appear

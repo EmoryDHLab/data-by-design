@@ -9,7 +9,7 @@ const yScale = yearScale(visHeight());
 
 const createScale = (date: Date) => {
   if (date.getMonth() >= 8 && date.getMonth() <= 11) {
-    let xScale = d3
+    const xScale = d3
       .scaleTime()
       .domain([
         new Date(date.getFullYear(), 8, 1),
@@ -18,7 +18,7 @@ const createScale = (date: Date) => {
       .range([0, visWidth() * 0.9]);
     return xScale(date);
   } else {
-    let xScale = d3
+    const xScale = d3
       .scaleTime()
       .domain([
         new Date(date.getFullYear() - 1, 8, 1),

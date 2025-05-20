@@ -3,7 +3,7 @@ import { useContext } from "react";
 
 export default function ShanawdithitAndMinard() {
   const { scrollProgress } = useContext(ScrollytellContext);
-  let offset = Math.min(Math.max((scrollProgress - 20) * 25, 0), 22);
+  const offset = Math.min(Math.max((scrollProgress - 20) * 25, 0), 22);
 
   let leftOpacity;
   let rightOpacity;

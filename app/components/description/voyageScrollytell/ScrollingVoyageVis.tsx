@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 import VoyagesVis from "../voyages/VoyagesVis.client";
 
 const ScrollingVoyageVis = ({ scrollProgress }: { scrollProgress: number }) => {

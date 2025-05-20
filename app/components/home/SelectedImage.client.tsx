@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import FigureModal from "../figures/FigureModal";
 import type { TFigure } from "~/types/figureType";
 
@@ -45,8 +44,7 @@ const SelectedImage = ({
           <p
             className="font-dubois italic text-base"
             dangerouslySetInnerHTML={{
-              __html:
-                `by ${selectedImage.artist} (${selectedImage.year})` ?? "",
+              __html: `by ${selectedImage.artist} (${selectedImage.year})`,
             }}
           />
           <p className="text-stone-400 md:text-sm md:w-full text-sm">

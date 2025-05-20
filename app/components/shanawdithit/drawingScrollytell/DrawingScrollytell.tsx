@@ -3,7 +3,7 @@ import { ChapterContext } from "~/chapterContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import type { TFigure } from "~/types/figureType";
 import type { ReactElement } from "react";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 import IIIFViewer from "./IIIFViewer.client";
 
 interface Props {
@@ -28,14 +28,12 @@ function SketchScrollytell({ figure, triggers }: Props) {
         className={`flex flex-col md:flex-row justify-between`}
         id="scrollytell-one"
       >
-        <div className="sticky p-8 md:p-0 top-24 h-min mt-16 mr-6 bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
+        <div className="sticky p-8 md:p-0 top-24 h-min mt-16 mr-6 bias-full w-full md:bias-1/2 md:w-7/12 md:order-last rounded-md drop-shadow-lg">
           <ClientOnly>
-            {() => (
-              <IIIFViewer
-                figure={figure.fileName}
-                scrollProgress={scrollProgress}
-              />
-            )}
+            <IIIFViewer
+              figure={figure.fileName}
+              scrollProgress={scrollProgress}
+            />
           </ClientOnly>
         </div>
         <div

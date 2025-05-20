@@ -1,39 +1,15 @@
 export type PolygonTransform =
   | {
-    transform: string
-    transformOrigin: string
-  }
-  | {}
+      transform: string;
+      transformOrigin: string;
+    }
+  | object;
 
-export type PeabodyCentury =
-  | 1500
-  | 1600
-  | 1700
-  | 1800;
+export type PeabodyCentury = 1500 | 1600 | 1700 | 1800;
 
-export type PeabodySquare =
-  | 1
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6
-  | 7
-  | 8
-  | 9
-  | "full"
+export type PeabodySquare = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | "full";
 
-export type QuizStepCount =
-  | 0
-  | 1
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6
-  | 7
-  | 8
-  | 9
+export type QuizStepCount = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 export type PeabodyActor =
   | "England"
@@ -57,22 +33,22 @@ export type PeabodyEvent =
 
 export type ActivePeabodyEvent =
   | {
-    event: PeabodyEvent;
-    type: number;
-    absoluteIndex?: number;
-  }
+      event: PeabodyEvent;
+      type: number;
+      absoluteIndex?: number;
+    }
   | undefined;
 
 export type QuizStep = {
-  solvedEvents: Array<PeabodySquare>,
-  stepEvent: PeabodyEvent,
-  instructions: string,
-  notes: string
+  solvedEvents: Array<PeabodySquare>;
+  stepEvent: PeabodyEvent;
+  instructions: string;
+  notes: string;
 };
 
 export type QuizFeedbackType =
- | {
-    message: string,
-    correct: boolean,
-  }
- | undefined;
+  | {
+      message: string;
+      correct: boolean;
+    }
+  | undefined;

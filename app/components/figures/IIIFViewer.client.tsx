@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import type { Options } from "openseadragon";
 import type { LabeledIIIFExternalWebResource } from "@samvera/clover-iiif/image";
 import type { TFigure } from "~/types/figureType";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 
 const fetchTileSource = async (figure: TFigure) => {
   const response = await fetch(
@@ -51,24 +51,22 @@ const IIIFViewer = ({
     }
   }, [figure]);
 
-    return (
-      <div className="h-full bg-offblack w-full aspect-[1.75]">
-        {modalOpen &&
-          <ClientOnly>
-            {() => (
-              <CloverImage
-                body={tileSource}
-                isTiledImage
-                openSeadragonConfig={{
-                  ...openSeadragonConfig,
-                  ...openSeadragonOptions,
-                }}
-              />
-            )}
-          </ClientOnly>
-        }
-      </div>
-    );
+  return (
+    <div className="h-full bg-offblack w-full aspect-[1.75]">
+      {modalOpen && (
+        <ClientOnly>
+          <CloverImage
+            body={tileSource}
+            isTiledImage
+            openSeadragonConfig={{
+              ...openSeadragonConfig,
+              ...openSeadragonOptions,
+            }}
+          />
+        </ClientOnly>
+      )}
+    </div>
+  );
 };
 
 export default IIIFViewer;

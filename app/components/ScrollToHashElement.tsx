@@ -1,18 +1,18 @@
 import { useMemo, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 
 const ScrollToHashElement = () => {
-  let location = useLocation();
+  const location = useLocation();
 
-  let hashElement = useMemo(() => {
-    let hash = location.hash;
+  const hashElement = useMemo(() => {
+    const hash = location.hash;
     const removeHashCharacter = (str: string) => {
       const result = str.slice(1);
       return result;
     };
 
     if (hash) {
-      let element = document.getElementById(removeHashCharacter(hash));
+      const element = document.getElementById(removeHashCharacter(hash));
       return element;
     } else {
       return null;

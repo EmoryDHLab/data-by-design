@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 import { useResizeObserver } from "~/hooks";
 import PieChart from "~/components/dubois/PieChart.client";
 import studentData from "~/data/dubois/studentChartOne.json";

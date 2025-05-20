@@ -1,6 +1,6 @@
-import type { Options, TileSource, Viewer } from "openseadragon";
 import OpenSeadragon from "openseadragon";
 import { useEffect, useMemo, useRef, useState } from "react";
+import type { Options, TileSource, Viewer } from "openseadragon";
 
 interface Props {
   figure: string;

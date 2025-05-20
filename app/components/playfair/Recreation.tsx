@@ -72,8 +72,8 @@ export default function Recreation({
   scrollProgress: number;
 }) {
   const transitionInOut = (arrayIn: Array<number>, arrayOut: Array<number>) => {
-    let progToOpacityIn = scaleMapper([0.0, 1.0], arrayIn);
-    let progToOpacityOut = scaleMapper([1.0, 0.0], arrayOut);
+    const progToOpacityIn = scaleMapper([0.0, 1.0], arrayIn);
+    const progToOpacityOut = scaleMapper([1.0, 0.0], arrayOut);
     if (scrollProgress <= arrayIn[0]) {
       return 0;
     } else if (scrollProgress > arrayIn[0] && scrollProgress <= arrayIn[1]) {
@@ -90,7 +90,7 @@ export default function Recreation({
     if (scrollProgress <= array[0]) {
       return 0;
     } else if (scrollProgress > array[0] && scrollProgress <= array[1]) {
-      let progToOpacity = scaleMapper([0.0, 1.0], array);
+      const progToOpacity = scaleMapper([0.0, 1.0], array);
       return progToOpacity(scrollProgress);
     } else {
       return 1;

@@ -38,16 +38,16 @@ export class Circle {
 
   collide() {
     for (let i = this.id; i < this.others.length; i++) {
-      let dx = this.others[i].x - this.x;
-      let dy = this.others[i].y - this.y;
-      let distance = Math.sqrt(dx * dx + dy * dy);
-      let minDist = this.others[i].diameter / 2 + this.diameter / 2;
+      const dx = this.others[i].x - this.x;
+      const dy = this.others[i].y - this.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const minDist = this.others[i].diameter / 2 + this.diameter / 2;
       if (distance < minDist) {
-        let angle = Math.atan2(dy, dx);
-        let targetX = this.x + Math.cos(angle) * minDist;
-        let targetY = this.y + Math.sin(angle) * minDist;
-        let ax = (targetX - this.others[i].x) * 0.1;
-        let ay = (targetY - this.others[i].y) * 0.1;
+        const angle = Math.atan2(dy, dx);
+        const targetX = this.x + Math.cos(angle) * minDist;
+        const targetY = this.y + Math.sin(angle) * minDist;
+        const ax = (targetX - this.others[i].x) * 0.1;
+        const ay = (targetY - this.others[i].y) * 0.1;
         this.x -= ax;
         this.y -= ay;
         this.others[i].x += ax;
@@ -64,7 +64,7 @@ export class Circle {
       this.p5.fill("white");
       this.p5.stroke("#FEF6D8");
     } else {
-      let c = this.p5.color("#FAF1E9");
+      const c = this.p5.color("#FAF1E9");
       c.setAlpha(76.5);
       this.p5.fill(c);
       this.p5.stroke("#FEF6D8");
@@ -73,18 +73,18 @@ export class Circle {
   }
 
   wiggle() {
-    let dx = this.p5.random();
-    let dy = this.p5.random();
-    let sx = this.p5.random();
-    let sy = this.p5.random();
-    let t = this.p5.millis() * 0.01;
+    const dx = this.p5.random();
+    const dy = this.p5.random();
+    const sx = this.p5.random();
+    const sy = this.p5.random();
+    const t = this.p5.millis() * 0.01;
 
     this.x = this.x + this.p5.sin(this.p5.PI * dx + t * sx) * 0.1;
     this.y = this.y + this.p5.sin(this.p5.PI * dy + t * sy) * 0.1;
   }
 
   withinBounds() {
-    let wWidth = this.p5.width;
+    const wWidth = this.p5.width;
 
     const dx = this.x - this.p5.width / 2;
     const dy = this.y - this.p5.width / 2;

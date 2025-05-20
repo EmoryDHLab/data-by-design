@@ -16,3 +16,4 @@ node_modules*
 /public/sitemap.xml
 /public/robots.txt
 *.tiff
+.react-router/

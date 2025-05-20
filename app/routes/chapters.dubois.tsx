@@ -25,7 +25,7 @@ import SlideShow from "~/components/layout/SlideShow";
 import { chapterMeta } from "~/utils";
 import StudentCharts from "~/components/dubois/StudentCharts";
 import ChapterBody from "~/components/layout/ChapterBody";
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "react-router";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
 import ChartOneScrollytell from "~/components/dubois/duboisScrollytell/ChartOneScrollytell";

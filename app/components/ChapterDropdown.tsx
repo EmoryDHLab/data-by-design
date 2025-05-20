@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Link } from "@remix-run/react";
+import { Link } from "react-router";
 import { Menu, Transition } from "@headlessui/react";
 import { chapterMeta } from "~/data/chapterMeta";
 import type { TChapterMeta, ChapterTitle } from "~/types/chapterMetaTags";

@@ -3,10 +3,10 @@ import { useResizeObserver } from "~/hooks";
 import Legend from "~/components/dubois/pieChart/Legend";
 import studentData from "~/data/dubois/studentChartTwo.json";
 import PieChart from "~/components/dubois/PieChart.client";
-import { ClientOnly } from "remix-utils/client-only";
+import ClientOnly from "~/components/ClientOnly";
 import { map } from "~/utils";
 
-console.log("🚀 ~ studentData:", studentData)
+console.log("🚀 ~ studentData:", studentData);
 const faded = 10;
 
 const largeText = 22;
@@ -47,8 +47,7 @@ export default function StudentChartTwo({
   }, [windowSize]);
 
   useEffect(() => {
-    console.log("🚀 ~ showExtra:", showExtra)
-
+    console.log("🚀 ~ showExtra:", showExtra);
   }, [showExtra]);
 
   useEffect(() => {
