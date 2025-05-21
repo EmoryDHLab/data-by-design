@@ -17,6 +17,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install NPM Packages
+        run: npm install
+
+      - name: Add SSH key
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p /home/runner/.ssh
+          ssh-keyscan "${{ secrets.REMOTE_HOST}}" >> /home/runner/.ssh/known_hosts
+          echo "${{ secrets.SSH_KEY }}" > /home/runner/.ssh/github_actions
+          chmod 600 /home/runner/.ssh/github_actions
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add /home/runner/.ssh/github_actions
+
       - name: Move deploy script
         run: |
           mv ./.github/workflows/deploy.sh .
@@ -24,6 +38,7 @@ jobs:
 
       - name: Run Deploy
         env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
           BRANCH: ${{ github.head_ref || github.ref_name }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
