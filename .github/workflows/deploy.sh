@@ -18,7 +18,7 @@ echo "Copying Files"
 files=("./build" "./package.json" "./server.*" "./server" "./node_modules")
 for file in "${files[@]}"; do
   echo "Copying ${file} to ${REMOTE_PATH}"
-  rsync -ave "ssh" ${file} ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}
+  rsync -ae "ssh" ${file} ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}
 done
 
 echo "Running Remote Script"
