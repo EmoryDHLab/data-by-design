@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
-    "build_dev": "NODE_ENV=development node vite:build",
+    "build_dev": "NODE_ENV=development react-router build",
     "dev": "NODE_ENV=development node ./server.js",
     "start": "cross-env NODE_ENV=production node ./server.js",
     "start_dev": "cross-env NODE_ENV=development node ./server.js",
