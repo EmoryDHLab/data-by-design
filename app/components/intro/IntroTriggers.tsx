@@ -80,7 +80,7 @@ const IntroTriggers = [
     <div className="md:w-1/2">
       <img
         className="max-w-xs md:max-w-lg"
-        src="/images/peabody/1500s.webp"
+        src="/images/process/1500s.webp"
         alt=""
       />
     </div>

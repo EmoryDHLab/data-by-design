@@ -102,7 +102,7 @@ export default function Footer() {
           <input
             placeholder="Email address here"
             type="email"
-            className="required email bg-transparent focus:bg-transparent active:bg-transparent autofill:bg-transparent active:text-offblack focus:bg-playfairPrimary border-b-2 border-offwhite placeholder-offwhite font-neueMontrealLight tracking font-light text-2xl w-full text-white"
+            className="required email bg-transparent focus:bg-transparent active:bg-transparent autofill:bg-transparent active:text-offblack focus:bg-imagePrimary border-b-2 border-offwhite placeholder-offwhite font-neueMontrealLight tracking font-light text-2xl w-full text-white"
             name="EMAIL"
             id="mce-EMAIL"
             required
@@ -131,13 +131,13 @@ export default function Footer() {
           />
         </form>
         <div className="grid grid-cols-2 gap-4 md:flex md:flex-row flex-wrap space-y-6 items-start">
-          <div className="font-dubois text-4xl md:text-3xl mt-6 ">DH Lab</div>
+          <div className="font-power text-4xl md:text-3xl mt-6 ">DH Lab</div>
           <img
             className="h-auto sm:w-1/3 md:h-10  xl:h-12 md:w-auto"
             src="/images/footer/ecds.png"
             alt="Emory Center for Digital Scholarship"
           />
-          <div className="font-dubois text-4xl md:text-3xl md:mr-8 ">
+          <div className="font-power text-4xl md:text-3xl md:mr-8 ">
             <a href="https://polymode.studio/"> Polymode</a>
           </div>
           <img

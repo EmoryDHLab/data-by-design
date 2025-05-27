@@ -1,19 +1,20 @@
 export type ChapterTitle =
   | "intro"
-  | "description"
-  | "dubois"
-  | "peabody"
-  | "playfair"
-  | "shanawdithit"
-  | "labor";
+  | "data"
+  | "power"
+  | "process"
+  | "image"
+  | "people"
+  | "work"
+  | "preface";
 
 export type TChapterMeta = {
   [key in ChapterTitle]: {
     title: string;
     subtitle: string;
     description: string;
-    image: string;
-    bgImage: string;
+    image: string | undefined;
+    bgImage: string | undefined;
     imageWidth: string;
     imageHeight: string;
   };

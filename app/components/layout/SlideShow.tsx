@@ -82,7 +82,7 @@ const SlideShow = ({ figures, className, children }: Props) => {
                   />
                 </picture>
                 <figcaption
-                  className="font-dubois mt-3 w-1/2 mx-auto"
+                  className="font-power mt-3 w-1/2 mx-auto"
                   dangerouslySetInnerHTML={{
                     __html: figure.caption ?? "",
                   }}

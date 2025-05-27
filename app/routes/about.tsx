@@ -2,7 +2,7 @@ import ChapterTitle from "~/components/ChapterTitle";
 
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
-import { duboisFootnotes } from "~/footnotes";
+import { powerFootnotes } from "~/footnotes";
 
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
@@ -29,11 +29,11 @@ export default function AboutPage() {
     <div className="bg-offwhite">
       <ChapterContext.Provider
         value={{
-          backgroundColor: "duboisPrimary",
-          accentColor: "duboisSecondary",
-          footnoteTextColor: "duboisPrimary",
+          backgroundColor: "powerPrimary",
+          accentColor: "powerSecondary",
+          footnoteTextColor: "powerPrimary",
           primaryTextColor: "white",
-          footnotes: duboisFootnotes,
+          footnotes: powerFootnotes,
           sections,
         }}
       >
@@ -120,7 +120,7 @@ export default function AboutPage() {
               <div className="pt-16">
                 {" "}
                 <div className="pb-4">
-                  <span className="font-dubois"> Citation </span>
+                  <span className="font-power"> Citation </span>
                   <p>
                     <cite className="select-all">
                       L. Klein, T. Sharma, J. Varner, S. Li, M. Adams, N. Yang,
@@ -129,7 +129,7 @@ export default function AboutPage() {
                     </cite>
                   </p>
                 </div>
-                <p className="font-dubois"> Code </p>
+                <p className="font-power"> Code </p>
                 <p>https://github.com/EmoryDHLab/data-by-design</p>
               </div>
             </Column>
@@ -235,29 +235,29 @@ export default function AboutPage() {
           <div className="mb-32">
             <div className="">
               <details>
-                <summary className="text-xl  font-dubois py-2  mx-12 md:ml-[26rem] md:py-5 ">
+                <summary className="text-xl  font-power py-2  mx-12 md:ml-[26rem] md:py-5 ">
                   Project alpha (2021-2023){" "}
                 </summary>
                 {/* ALPHA  */}
                 <TwoColumnLayout>
                   <Column className="pr-18">
                     <p>
-                      <span className="font-dubois"> Citation </span>
+                      <span className="font-power"> Citation </span>
                       <span className="select-all">
                         L. Klein, T. Sharma, D. Jutan, N. Yang, J. Fu, A. Mola,
                         Z. Fang, and S. Monro. <cite>Data by Design.</cite> 2023
                         alpha.
                       </span>
                     </p>
-                    <p className="font-dubois  pt-5"> Code </p>
+                    <p className="font-power  pt-5"> Code </p>
                     <p>https://github.com/EmoryDHLab/2021-data-by-design</p>
-                    <p className="font-dubois pt-5 uppercase">
+                    <p className="font-power pt-5 uppercase">
                       Project director: Lauren Klein
                     </p>
-                    <p className="font-dubois pt-5 uppercase"> Designers: </p>
+                    <p className="font-power pt-5 uppercase"> Designers: </p>
                     Tanvi Sharma (NYU, MS Interactive Design and Media ‘23),
                     <p>Silas Monro (Polymode)</p>
-                    <p className="font-dubois pt-5 uppercase">
+                    <p className="font-power pt-5 uppercase">
                       {" "}
                       Developers:{" "}
                     </p>{" "}
@@ -306,13 +306,13 @@ export default function AboutPage() {
             </div>
             <div>
               <details>
-                <summary className="text-xl  font-dubois py-2  mx-12 md:ml-[26rem] md:py-5 ">
+                <summary className="text-xl  font-power py-2  mx-12 md:ml-[26rem] md:py-5 ">
                   Project prototype (2018-2021)
                 </summary>
                 <TwoColumnLayout>
                   <Column className="pr-18">
                     <p className="pb-4">
-                      <span className="font-dubois"> Credits Citation </span>
+                      <span className="font-power"> Credits Citation </span>
                     </p>
                     <p>
                       <span className="select-all">
@@ -320,16 +320,16 @@ export default function AboutPage() {
                         <cite>Data by Design.</cite> 2021 prototype.
                       </span>
                     </p>
-                    <p className="font-dubois"> Code </p>
+                    <p className="font-power"> Code </p>
                     <p>https://github.com/EmoryDHLab/2020-data-by-design</p>
-                    <p className="font-dubois pt-5  uppercase">
+                    <p className="font-power pt-5  uppercase">
                       {" "}
                       Project director:
                     </p>{" "}
                     <p>Lauren Klein</p>
-                    <p className="font-dubois pt-5 uppercase"> Designer: </p>
+                    <p className="font-power pt-5 uppercase"> Designer: </p>
                     <p>Qing Tian (Georgia Tech, MS Digital Media ‘19) </p>
-                    <p className="font-dubois pt-5 uppercase">
+                    <p className="font-power pt-5 uppercase">
                       {" "}
                       Developers:{" "}
                     </p>{" "}

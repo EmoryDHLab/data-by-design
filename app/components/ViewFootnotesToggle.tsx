@@ -16,7 +16,7 @@ export default function ViewFootnotesToggle({ className }: Props) {
           className={`rounded-full w-[15px] h-[15px] ml-[1px] bg-${backgroundColor}`}
         />
       </div>
-      <span className="font-dubois">view footnotes</span>
+      <span className="font-power">view footnotes</span>
     </div>
   );
 }

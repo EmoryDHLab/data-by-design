@@ -104,7 +104,7 @@ const PeopleVersions = () => {
         {windowSize && (
           <svg
             ref={svgRef}
-            className="font-dubois font-bold"
+            className="font-power font-bold"
             viewBox={`0 0 ${
               ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
             } ${((windowSize?.height || window.innerHeight) / 6) * 5}`}
@@ -262,7 +262,7 @@ const PeopleVersions = () => {
         <div className="overflow-y-hidden flex">
           {activeNode && (
             <div className="overflow-y-scroll">
-              <div className="p-2 text-xl font-dubois uppercase text-duboisSecondary">
+              <div className="p-2 text-xl font-power uppercase text-powerSecondary">
                 {activeNode.label}
               </div>
               <div className="grid grid-cols-3 grid-rows-2 mx-4 gap-4">
@@ -286,8 +286,8 @@ const PeopleVersions = () => {
         </div>
       </div>
       <div className="hidden md:block border-t-2 md:col-span-3 p-4">
-        <h3 className="text-4xl font-duboisWide">People across versions</h3>
-        <h4 className="text-2xl mt-2 font-duboisLightWide">Tag line?</h4>
+        <h3 className="text-4xl font-powerWide">People across versions</h3>
+        <h4 className="text-2xl mt-2 font-powerLightWide">Tag line?</h4>
       </div>
     </div>
   );

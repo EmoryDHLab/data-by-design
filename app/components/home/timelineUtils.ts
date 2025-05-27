@@ -1,9 +1,9 @@
 import * as d3 from "d3";
-import descriptionFigures from "~/data/figures/description.json";
-import duboisFigures from "~/data/figures/dubois.json";
-import peabodyFigures from "~/data/figures/peabody.json";
-import playfairFigures from "~/data/figures/playfair.json";
-import shanawdithitFigures from "~/data/figures/shanawdithit.json";
+import descriptionFigures from "~/data/figures/data.json";
+import powerFigures from "~/data/figures/power.json";
+import processFigures from "~/data/figures/process.json";
+import imageFigures from "~/data/figures/image.json";
+import peopleFigures from "~/data/figures/people.json";
 import type { TFigure } from "~/types/figureType";
 
 export type TFilteredFigures = [string, TFigure];
@@ -18,21 +18,21 @@ const filterFigures = (figures: TFilteredFigures) => {
 };
 
 export const timelineImages = () => {
-  const shanawdithit: TFilteredFigures[] =
-    Object.entries(shanawdithitFigures).filter(filterFigures);
+  const people: TFilteredFigures[] =
+    Object.entries(peopleFigures).filter(filterFigures);
 
   const description: TFilteredFigures[] =
     Object.entries(descriptionFigures).filter(filterFigures);
 
   const allDubois: TFilteredFigures[] =
-    Object.entries(duboisFigures).filter(filterFigures);
-  const peabody: TFilteredFigures[] =
-    Object.entries(peabodyFigures).filter(filterFigures);
+    Object.entries(powerFigures).filter(filterFigures);
+  const process: TFilteredFigures[] =
+    Object.entries(processFigures).filter(filterFigures);
   const playfair: TFilteredFigures[] =
-    Object.entries(playfairFigures).filter(filterFigures);
+    Object.entries(imageFigures).filter(filterFigures);
 
   const shuffledDubois = d3.shuffle(allDubois);
-  const dubois: TFilteredFigures[] = shuffledDubois.slice(
+  const power: TFilteredFigures[] = shuffledDubois.slice(
     0,
     allDubois.length / 8
   );
@@ -40,10 +40,10 @@ export const timelineImages = () => {
   const filteredFigures: TFigure[] = Object.values(
     Object.fromEntries([
       ...description,
-      ...dubois,
-      ...peabody,
+      ...power,
+      ...process,
       ...playfair,
-      ...shanawdithit,
+      ...people,
     ])
   );
 

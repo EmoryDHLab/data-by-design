@@ -22,7 +22,7 @@ export default function ChapterSectionTitle({ section }: Props) {
     >
       <a
         href={`#${section.id}`}
-        className={`py-4 font-dubois text-xl lg:text-3xl flex text-center`}
+        className={`py-4 font-power text-xl lg:text-3xl flex text-center`}
       >
         <Hyperlink
           className={`stroke-${backgroundColor} hover:stroke-${backgroundColor} hidden md:block w-12`}

@@ -34,7 +34,7 @@ const MonthScale = ({
       .attr("dx", xOffset)
       .attr("text-anchor", "middle")
       .attr("font-size", height / 1.5)
-      .attr("class", "font-dubois tracking-widest fill-offwhite");
+      .attr("class", "font-power tracking-widest fill-offwhite");
 
     d3.select(scaleRef.current)
       .selectAll("path")

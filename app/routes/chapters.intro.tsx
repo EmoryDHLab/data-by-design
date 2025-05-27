@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
-import { chapterMeta } from "~/utils";
+import { chapterMetaTags } from "~/utils";
 
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -16,7 +16,7 @@ import type { TVizAnchors } from "~/chapterContext";
 import type { MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
-  return chapterMeta("intro");
+  return chapterMetaTags("intro");
 };
 
 const sections = [
@@ -55,9 +55,9 @@ export default function IntroPage() {
       value={{
         backgroundColor: "offwhite",
         primaryTextColor: "black",
-        accentColor: "playfairPrimary",
+        accentColor: "imagePrimary",
         accentTextColor: "white",
-        footnoteTextColor: "playfairPrimary",
+        footnoteTextColor: "imagePrimary",
         footnotes: introFootnotes,
         sections,
         showFootnotes,

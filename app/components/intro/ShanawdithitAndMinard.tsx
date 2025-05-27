@@ -23,7 +23,7 @@ export default function ShanawdithitAndMinard() {
   //     <img
   //       style={{ right: `${offset}vw`, opacity: rightOpacity }}
   //       className="absolute max-w-lg top-12 transition"
-  //       src="/images/shanawdithit/1829-03.webp"
+  //       src="/images/people/1829-03.webp"
   //       alt=""
   //     />
   //   </div>
@@ -38,7 +38,7 @@ export default function ShanawdithitAndMinard() {
       />
       <img
         className="max-w-lg top-12 transition"
-        src="/images/shanawdithit/1829-03.webp"
+        src="/images/people/1829-03.webp"
         alt=""
       />
     </div>

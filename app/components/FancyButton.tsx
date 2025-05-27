@@ -80,7 +80,7 @@ export default function FancyButton({
         y={16}
         textAnchor="middle"
         dominantBaseline="central"
-        className={`font-dubois fill-${
+        className={`font-power fill-${
           isHovered && hoverColor ? hoverColor : textColor ?? "white"
         }`}
         fontSize={fontSize}

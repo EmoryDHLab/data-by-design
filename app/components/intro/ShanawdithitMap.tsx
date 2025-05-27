@@ -25,7 +25,7 @@ export default function ShanawdithitMap() {
           transformOrigin: origin,
           transition: "transform 1s, transform-origin 1s, filter .5s ease-out",
         }}
-        src="/images/shanawdithit/1829-03.webp"
+        src="/images/people/1829-03.webp"
         alt=""
       />
     </div>

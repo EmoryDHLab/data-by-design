@@ -1,0 +1,44 @@
+[
+  {
+    "key": "github",
+    "label": "GitHub",
+    "color": "powerPrimary",
+    "activeText": "white",
+    "inactiveText": "black"
+  },
+  {
+    "key": "figma",
+    "label": "Figma",
+    "color": "imagePrimary",
+    "activeText": "white",
+    "inactiveText": "black"
+  },
+  {
+    "key": "ical",
+    "label": "iCal",
+    "color": "processPrimary",
+    "activeText": "black",
+    "inactiveText": "black"
+  },
+  {
+    "key": "zotero",
+    "label": "Zotero",
+    "color": "peoplePrimary",
+    "activeText": "black",
+    "inactiveText": "black"
+  },
+  {
+    "key": "gdrive",
+    "label": "GDrive",
+    "color": "dataPrimary",
+    "activeText": "white",
+    "inactiveText": "white"
+  },
+  {
+    "key": "flat",
+    "label": "flat",
+    "color": "playfairChart",
+    "activeText": "transparent",
+    "inactiveText": "transparent"
+  }
+]

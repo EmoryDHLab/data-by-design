@@ -11,11 +11,11 @@ const actorColors = {
 
 async function run() {
   const baseYear = Deno.args[0];
-  const file = `../app/data/peabody${baseYear}s.json`;
-  const peabodyDataText = await Deno.readTextFile(file);
-  const peabodyData = JSON.parse(peabodyDataText);
+  const file = `../app/data/process${baseYear}s.json`;
+  const processDataText = await Deno.readTextFile(file);
+  const processData = JSON.parse(processDataText);
   const yearSquares = new Array(100);
-  for (let { year, squares, actors } of peabodyData) {
+  for (let { year, squares, actors } of processData) {
     if (squares === "full") {
       let eventSquares;
       if (actors.length === 3) {
@@ -74,7 +74,7 @@ async function run() {
   }
 
   await Deno.writeTextFile(
-    `../app/data/peabody/${baseYear}SquareColors.json`,
+    `../app/data/process/${baseYear}SquareColors.json`,
     JSON.stringify(yearSquares)
   );
 }

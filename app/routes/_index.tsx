@@ -59,7 +59,7 @@ export default function Index() {
   return (
     <ChapterContext.Provider
       value={{
-        backgroundColor: "playfairPrimary",
+        backgroundColor: "imagePrimary",
         primaryTextColor: "white",
         footnotes: [],
       }}
@@ -122,7 +122,7 @@ export default function Index() {
             </p>
             <p className="pt-6">
               <Link to="/chapters/intro" className="text-xl">
-                <span className="font-dubois uppercase">Read more</span>{" "}
+                <span className="font-power uppercase">Read more</span>{" "}
                 <span className="font-icons">b</span>
               </Link>
             </p>

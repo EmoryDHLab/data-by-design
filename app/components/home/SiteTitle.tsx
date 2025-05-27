@@ -13,7 +13,7 @@ const SiteTitle = ({ showTag = true, className }: Props) => {
       role="presentation"
       className={className ?? ""}
     >
-      <text x={0} y={67} fill="white" className="font-dubois md:font-light">
+      <text x={0} y={67} fill="white" className="font-power md:font-light">
         <tspan fontSize={96} className="font-bold uppercase">
           Data by
         </tspan>

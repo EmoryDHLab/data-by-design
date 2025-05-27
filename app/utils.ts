@@ -44,7 +44,7 @@ export const map = (
   }
 };
 
-export const chapterMeta = (chapter: ChapterTitle) => {
+export const chapterMetaTags = (chapter: ChapterTitle) => {
   const metaData: TChapterMeta = chapterMetaData;
   const hostName: string = "https://dev.dataxdesign.io";
   return [
@@ -60,10 +60,10 @@ export const chapterMeta = (chapter: ChapterTitle) => {
       content: `${chapterMetaData[chapter].title}: ${chapterMetaData[chapter].subtitle}`,
     },
     { name: "og:url", content: `${hostName}/chapters/${chapter}` },
-    { name: "description", content: chapterMetaData[chapter].description },
-    { name: "og:description", content: chapterMetaData[chapter].description },
+    { name: "data", content: chapterMetaData[chapter].description },
+    { name: "og:data", content: chapterMetaData[chapter].description },
     {
-      name: "twitter:description",
+      name: "twitter:data",
       content: chapterMetaData[chapter].description,
     },
     { name: "image", content: chapterMetaData[chapter].image },

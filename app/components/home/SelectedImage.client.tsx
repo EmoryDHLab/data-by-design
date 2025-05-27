@@ -36,13 +36,13 @@ const SelectedImage = ({
 
         <figcaption className="w-full text-white text-left max-w-lg">
           <p
-            className="font-dubois text-lg"
+            className="font-power text-lg"
             dangerouslySetInnerHTML={{
               __html: selectedImage.title ?? "",
             }}
           />
           <p
-            className="font-dubois italic text-base"
+            className="font-power italic text-base"
             dangerouslySetInnerHTML={{
               __html: `by ${selectedImage.artist} (${selectedImage.year})`,
             }}

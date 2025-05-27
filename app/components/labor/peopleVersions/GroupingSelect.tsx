@@ -28,7 +28,7 @@ const GroupingSelect = ({ setSelectedGrouping, activeGrouping }: Props) => {
               }
               className={`px-1 py-2 w-full text-left m-1 hover:opacity-100 focus:opacity-100 uppercase ${
                 grouping === activeGrouping
-                  ? "opacity-100 bg-duboisSecondary text-offblack"
+                  ? "opacity-100 bg-powerSecondary text-offblack"
                   : "opacity-60"
               }`}
               aria-label={`Sort people by ${grouping}`}

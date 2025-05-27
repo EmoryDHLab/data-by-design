@@ -7,7 +7,7 @@ const ChapterCardGrid = () => {
     <div className="bg-black ">
       <div className="grid md:grid-cols-2 grid-cols-1 md:grid-rows-3 3xl:mx-48">
         {Object.keys(chapterMeta as TChapterMeta)
-          .slice(1, 8)
+          .slice(2, 9)
           .map((chapterName) => {
             const chapter = chapterMeta[chapterName as ChapterTitle];
             return (

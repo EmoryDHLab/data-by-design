@@ -35,6 +35,7 @@ module.exports = {
       "error",
       { ignore: ["virtual:react-router/server-build"] },
     ],
+    "react/no-unescaped-entities": 0,
   },
 
   overrides: [
@@ -56,6 +57,9 @@ module.exports = {
           { name: "NavLink", linkAttribute: "to" },
         ],
         "import/resolver": { typescript: {} },
+      },
+      rules: {
+        "react/no-unescaped-entities": 0,
       },
     },
 

@@ -53,10 +53,10 @@ Saving this for future look into adding quotation marks. The font size needs wor
         <p className="flex justify-center">
           <span className="font-serif flex-none block text-9xl px-8">"</span>
           <span className="grow block">
-            <span className="font-duboisNarrow text-lg md:text-3xl tracking-wide block">
+            <span className="font-powerNarrow text-lg md:text-3xl tracking-wide block">
               {title}
             </span>
-            <span className="font-dubois text-sm md:text-xl py-4 block">
+            <span className="font-power text-sm md:text-xl py-4 block">
               {subtitle}
             </span>
           </span>

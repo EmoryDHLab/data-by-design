@@ -15,11 +15,11 @@ type TLaborSourceLabel =
   | string;
 
 type TLaborSourceColor =
-  | "descriptionPrimary"
-  | "shanawdithitPrimary"
-  | "peabodyPrimary"
-  | "playfairPrimary"
-  | "duboisPrimary"
+  | "dataPrimary"
+  | "peoplePrimary"
+  | "processPrimary"
+  | "imagePrimary"
+  | "powerPrimary"
   | string;
 
 type TLaborActiveColor = "white" | "black" | string;

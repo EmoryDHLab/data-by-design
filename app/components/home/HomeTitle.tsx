@@ -1,7 +1,7 @@
 // import ImageModal from "~/components/layout/ImageModal";
 // export default function HomeTitle() {
 //   return (
-//     <div className="sm:grid bg-black text-white sm:grid-cols-14 sm:grid-rows-30 font-dubois pt-10 sm:pt-5">
+//     <div className="sm:grid bg-black text-white sm:grid-cols-14 sm:grid-rows-30 font-power pt-10 sm:pt-5">
 //       <div className="flex flex-col items-center col-start-11 col-span-4 bg-nightingale_blue sm:p-16 pb-5 pt-10">
 //         <div className="flex flex-col items-center">
 //           <ImageModal
@@ -29,7 +29,7 @@
 //           <br />
 //           1786-1900
 //         </div>
-//         <div className="flex py-10 font-dubois font-light pb-15 sm:p-0 sm:contents justify-between col-start-4 pr-8">
+//         <div className="flex py-10 font-power font-light pb-15 sm:p-0 sm:contents justify-between col-start-4 pr-8">
 //           <div className="sm:text-xl italic text-sm sm:col-start-2 sm:col-span-2 sm:row-start-5">
 //             What is the story we tell
 //             <br /> about the rise of modern

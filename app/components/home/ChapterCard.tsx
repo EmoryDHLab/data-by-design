@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import type { ReactNodeLike } from "prop-types";
+import type { ReactNode } from "react";
 
 interface Props {
   to: string;
@@ -7,7 +7,7 @@ interface Props {
   title: string;
   subtitle: string;
   className: string;
-  children: ReactNodeLike;
+  children: ReactNode;
 }
 
 export default function ChapterCard({
@@ -21,9 +21,9 @@ export default function ChapterCard({
   return (
     <Link
       to={to}
-      className={"text-white font-dubois px-6 my-4 md:px-28 " + className}
+      className={"text-white font-power px-6 my-4 md:px-28 " + className}
     >
-      <div className="text-sm my-12 md:mt-10 mb-2 tracking-wider text-duboisSecondary ">
+      <div className="text-sm my-12 md:mt-10 mb-2 tracking-wider text-powerSecondary ">
         {status}
       </div>
       <div className="text-2xl md:text-3xl mb-3 font-bold">{title}</div>

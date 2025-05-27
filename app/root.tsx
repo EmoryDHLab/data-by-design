@@ -86,7 +86,7 @@ const ErrorContainer = ({ children }: WrapperProps) => {
     <div
       className={`fixed flex items-center text-center w-screen h-screen top-0 bg-offwhite`}
     >
-      <div className="relative grow text-6xl text-offblack uppercase font-duboisWide tracking-widest">
+      <div className="relative grow text-6xl text-offblack uppercase font-powerWide tracking-widest">
         {children}
       </div>
     </div>

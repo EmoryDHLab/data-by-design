@@ -36,15 +36,15 @@ export const rectColor = (source: string | undefined) => {
   if (!source) return;
   switch (source) {
     case "Github":
-      return "fill-duboisPrimary";
+      return "fill-powerPrimary";
     case "Figma":
-      return "fill-playfairPrimary";
+      return "fill-imagePrimary";
     case "Zotero":
-      return "fill-shanawdithitPrimary";
+      return "fill-peoplePrimary";
     case "iCalendar":
-      return "fill-peabodyPrimary";
+      return "fill-processPrimary";
     case "Google Drive":
-      return "fill-descriptionPrimary";
+      return "fill-dataPrimary";
     default:
       return "black";
   }

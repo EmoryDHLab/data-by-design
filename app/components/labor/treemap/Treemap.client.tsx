@@ -50,7 +50,7 @@ const Treemap = () => {
         {windowSize && (
           <svg
             ref={svgRef}
-            className="font-dubois font-bold text-white h-[95%] m-auto"
+            className="font-power font-bold text-white h-[95%] m-auto"
             viewBox={`0 0 ${
               ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
             } ${((windowSize?.height || window.innerHeight) / 6) * 5 + 20}`}
@@ -58,7 +58,7 @@ const Treemap = () => {
               setActiveMonth(undefined);
               setSelectedMonth(undefined);
             }}
-            aria-description="here is a long description"
+            aria-description="here is a long data"
           >
             <MonthScale
               year={2023}
@@ -112,14 +112,14 @@ const Treemap = () => {
           />
         </div>
         <div className="border border-t-1 border-x-0 border-b-0">
-          <h4 className="text-2xl font-duboisLightWide md:ml-6 md:mt-4">
+          <h4 className="text-2xl font-powerLightWide md:ml-6 md:mt-4">
             Contribution Activity
           </h4>
           {activeContribution && (
-            <ul className="leading-7 md:text-lg md:mx-6 font-duboisLightWide">
+            <ul className="leading-7 md:text-lg md:mx-6 font-powerLightWide">
               <li>{activeContribution.user}</li>
               <li>
-                <span className="font-duboisWide">
+                <span className="font-powerWide">
                   {activeContribution.source}:
                 </span>{" "}
                 {activeContribution.information}
@@ -129,8 +129,8 @@ const Treemap = () => {
         </div>
       </div>
       <div className="hidden md:block border-t-2 md:col-span-3 p-4">
-        <h3 className="text-4xl font-duboisWide">Contribution treemap</h3>
-        <h4 className="text-2xl mt-2 font-duboisLightWide">Tag line?</h4>
+        <h3 className="text-4xl font-powerWide">Contribution treemap</h3>
+        <h4 className="text-2xl mt-2 font-powerLightWide">Tag line?</h4>
       </div>
     </div>
   );

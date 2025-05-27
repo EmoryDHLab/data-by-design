@@ -5,7 +5,7 @@ export default function FakePage() {
         <div className="w-48 h-24 bg-white border-4 border-black"> </div>
         <div className="space-y-2">
           <div className="flex">
-            <span className="text-5xl font-bold font-dubois pr-2">B</span>
+            <span className="text-5xl font-bold font-power pr-2">B</span>
             <div className="grow space-y-2">
               <div className="h-2 bg-slate-500"></div>
               <div className="h-2 bg-slate-500"></div>
