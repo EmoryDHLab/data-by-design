@@ -807,9 +807,7 @@ export default function PlayfairPage() {
               contained with each visualization's depths.
             </p>
           </Column>
-          <Column shouldPin>
-            <Figure figure={figures["jevons"]} />
-          </Column>
+          <Column shouldPin>{/* NEED IMAGE */}</Column>
         </TwoColumnLayout>
         <Takeaways
           forDesigners={[
