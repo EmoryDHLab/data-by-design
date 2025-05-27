@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import VerticalGrid from "../elements/VerticalGrid";
@@ -49,7 +48,9 @@ export default function ProjectTimeline({
 
   useEffect(() => {
     const getData = async () => {
-      let fetchedCsvData: TLaborData = await d3.csv("/data/imageSemester.csv");
+      let fetchedCsvData: TLaborData = await d3.csv(
+        "/data/playfairSemester.csv"
+      );
       fetchedCsvData = fetchedCsvData.sort(function (a, b) {
         return new Date(a.date).getTime() - new Date(b.date).getTime();
       });
@@ -63,7 +64,9 @@ export default function ProjectTimeline({
     if (!csvData || !selectedSources) return;
     setMaxY(
       Math.max(
+        // @ts-expect-error: Boo
         Math.max(...csvData.map((d) => parseInt(d[selectedSources[0]?.label]))),
+        // @ts-expect-error: Boo
         Math.max(...csvData.map((d) => parseInt(d[selectedSources[1]?.label])))
       ) || 100
     );
@@ -77,55 +80,81 @@ export default function ProjectTimeline({
   useEffect(() => {
     const path1 = d3
       .area()
+      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
+      // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)))
+      // @ts-expect-error: Boo
       .y((d) => yScale(d[selectedSources[0]?.label] || height));
 
     const path2 = d3
       .area()
+      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
+      // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)) || height)
+      // @ts-expect-error: Boo
       .y((d) => yScale(d[selectedSources[1]?.label]) || height);
 
     const clipAbove = d3
       .area()
+      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
+      // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)) || height)
+      // @ts-expect-error: Boo
       .y1((d) => yScale(d[selectedSources[0]?.label]) || height)
       .y0(yScale(maxY) || 0);
 
     const clipBelow = d3
       .area()
+      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
+      // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)) || height)
+      // @ts-expect-error: Boo
       .y1((d) => yScale(d[selectedSources[1]?.label]) || height)
       .y0(yScale(maxY));
 
     const areaAbove = d3
       .area()
+      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
+      // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)) || 0)
+      // @ts-expect-error: Boo
       .y1((d) => yScale(d[selectedSources[0]?.label]) || height)
+      // @ts-expect-error: Boo
       .y0((d) => yScale(d[selectedSources[1]?.label]) || height);
 
     const areaBelow = d3
       .area()
+      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
+      // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)) || 0)
+      // @ts-expect-error: Boo
       .y1((d) => yScale(d[selectedSources[0]?.label]) || height)
+      // @ts-expect-error: Boo
       .y0((d) => yScale(d[selectedSources[1]?.label]) || height);
 
     if (maxY > 0) {
+      // @ts-expect-error: Boo
       d3.select(clipPathAboveRef.current).attr("d", clipAbove(csvData));
 
+      // @ts-expect-error: Boo
       d3.select(clipPathBelowRef.current).attr("d", clipBelow(csvData));
 
+      // @ts-expect-error: Boo
       d3.select(areaAboveRef.current).attr("d", areaAbove(csvData));
 
+      // @ts-expect-error: Boo
       d3.select(areaBelowRef.current).attr("d", areaBelow(csvData));
 
+      // @ts-expect-error: Boo
       d3.select(line1Ref.current).attr("d", path1(csvData));
 
+      // @ts-expect-error: Boo
       d3.select(line2Ref.current).attr("d", path2(csvData));
     }
   }, [yValues, selectedSources, csvData, maxY]);
