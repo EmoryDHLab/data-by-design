@@ -27,10 +27,11 @@ import ChapterBody from "~/components/layout/ChapterBody";
 import eventData from "~/data/process/eventData.json";
 import PeabodyActors from "~/components/process/PeabodyActors";
 import TutorialKey from "~/components/process/tutorial/TutorialKey";
-import type { MetaFunction } from "react-router";
-import type { HoverState, TVizAnchors } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
 import ClientOnly from "~/components/ClientOnly";
+import { chapterMeta } from "~/data/chapterMeta";
+import type { MetaFunction } from "react-router";
+import type { HoverState, TVizAnchors } from "~/chapterContext";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("process");
@@ -113,8 +114,8 @@ export default function PeabodyPage() {
       }}
     >
       <ChapterTitle
-        title="The Work of Knowledge"
-        subtitle="Elizabeth Palmer Peabody's Chronological Grids"
+        title={chapterMeta.process.title}
+        subtitle={chapterMeta.process.subtitle}
       />
       <ChapterBody>
         <CenteredLayout>

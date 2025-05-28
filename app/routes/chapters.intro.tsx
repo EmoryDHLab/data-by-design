@@ -12,6 +12,7 @@ import FootnotesList from "~/components/FootnotesList";
 import figures from "~/data/figures/intro.json";
 import Figure from "~/components/figures/Figure";
 import ChapterBody from "~/components/layout/ChapterBody";
+import { chapterMeta } from "~/data/chapterMeta";
 import type { TVizAnchors } from "~/chapterContext";
 import type { MetaFunction } from "react-router";
 
@@ -67,8 +68,8 @@ export default function IntroPage() {
       }}
     >
       <ChapterTitle
-        title="Introduction"
-        subtitle="A Prehistory of Visualization and Power"
+        title={chapterMeta.intro.title}
+        subtitle={chapterMeta.intro.subtitle}
       />
       <ChapterBody>
         <CenteredLayout>
