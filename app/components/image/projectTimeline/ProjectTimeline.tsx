@@ -80,7 +80,6 @@ export default function ProjectTimeline({
   useEffect(() => {
     const path1 = d3
       .area()
-      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
       // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)))
@@ -89,7 +88,6 @@ export default function ProjectTimeline({
 
     const path2 = d3
       .area()
-      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
       // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)) || height)
@@ -98,7 +96,6 @@ export default function ProjectTimeline({
 
     const clipAbove = d3
       .area()
-      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
       // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)) || height)
@@ -108,7 +105,6 @@ export default function ProjectTimeline({
 
     const clipBelow = d3
       .area()
-      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
       // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)) || height)
@@ -118,7 +114,6 @@ export default function ProjectTimeline({
 
     const areaAbove = d3
       .area()
-      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
       // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)) || 0)
@@ -129,7 +124,6 @@ export default function ProjectTimeline({
 
     const areaBelow = d3
       .area()
-      // @ts-expect-error: Boo
       .curve(d3.curveMonotoneX)
       // @ts-expect-error: Boo
       .x((d) => xScale(d3.isoParse(d.date)) || 0)

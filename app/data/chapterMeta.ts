@@ -35,7 +35,7 @@ export const chapterMeta: TChapterMeta = {
   },
   image: {
     title: "Image",
-    subtitle: "William Playfair's "Single View"",
+    subtitle: `William Playfair's "Single View"`,
     description:
       "Data visualization has never been neutral or objective. How can we learn to recognize the argument of each design?",
     image:
