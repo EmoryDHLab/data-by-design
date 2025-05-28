@@ -23,9 +23,9 @@ export const chapterMeta: TChapterMeta = {
   },
   data: {
     title: "Data",
-    subtitle: "The Plymouth Committee's Slave-Ship Diagram",
+    subtitle: "SEAST's Visualization Activism",
     description:
-      "Before there are data, there are people. How can visualization honor the lives that the data represent?",
+      "Before there is data, there are people. How can the lives behind the data guide our visualization work today?",
     image:
       "https://iiif.ecds.io/iiif/3/dxd/description/5-The_history_of_the_rise.tiff/square/800,/0/default.jpg",
     bgImage:
@@ -35,9 +35,9 @@ export const chapterMeta: TChapterMeta = {
   },
   image: {
     title: "Image",
-    subtitle: "William Playfair's Time-Series Charts",
+    subtitle: "William Playfair's "Single View"",
     description:
-      "Data visualization has never been neutral or objective. There is a meaning — and an argument — conveyed through each design.",
+      "Data visualization has never been neutral or objective. How can we learn to recognize the argument of each design?",
     image:
       "https://iiif.ecds.io/iiif/3/dxd/image/1-northamerica.tiff/square/800,/0/default.jpg",
     bgImage:
