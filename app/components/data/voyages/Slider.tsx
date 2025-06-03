@@ -20,7 +20,7 @@ const Slider = ({
 }: Props) => {
   const containerRef = useRef<SVGSVGElement>(null);
   const sliderRef = useRef<SVGGElement>(null);
-  const scaleRef = useRef<any>(null);
+  const scaleRef = useRef<d3.ScaleLinear<number, number, number>>();
   const maxX = useRef<number>(0);
   const { isDesktop } = useDeviceContext();
 
@@ -51,28 +51,25 @@ const Slider = ({
   }, [yearRange, width, interactive]);
 
   useEffect(() => {
-    if (!interactive) return;
-    // @ts-ignore
-    const startYear = Math.floor(scaleRef.current?.invert(sliderWidth[0]));
-    // @ts-ignore
-    const endYear = Math.floor(scaleRef.current?.invert(sliderWidth[1]));
+    if (!interactive || !scaleRef.current) return;
+    const startYear = Math.floor(scaleRef.current.invert(sliderWidth[0]));
+    const endYear = Math.floor(scaleRef.current.invert(sliderWidth[1]));
     setYearRange([startYear, endYear]);
   }, [sliderWidth, setYearRange, interactive]);
 
   useEffect(() => {
     if (isNaN(width)) return;
 
-    // @ts-ignore
     const svg = d3
       .select(containerRef.current)
-      .attr("width", width + 100)
-      .attr("height", 100)
+      .attr("width", isDesktop ? width + 100 : width + 20)
+      .attr("height", isDesktop ? 100 : 85)
       .attr("class", `${interactive ? "cursor-pointer" : ""}`);
 
     const scale = d3
       .scaleLinear()
       .domain([1565, 1858])
-      .range([0, width])
+      .range([0, width - 40])
       .clamp(true);
 
     const fullAxis = d3
@@ -80,29 +77,28 @@ const Slider = ({
       .ticks(isDesktop ? 20 : 5, "d")
       .tickSize(20);
 
-    // @ts-ignore
     const axisEnds = d3
       .axisBottom(scale)
       .tickSize(20)
       .tickValues(isDesktop ? [1565, 1858] : [1565])
-      // @ts-ignore
+      // @ts-expect-error: IDK, D3 amirite?
       .tickFormat((d) => d);
 
     d3.select(sliderRef.current)
       .append("g")
       .attr("class", "scale")
-      .attr("transform", `translate(70,40)`)
+      .attr("transform", `translate(${isDesktop ? 70 : 20},40)`)
       .attr("y", 76)
-      .style("font-size", "1rem")
-      // @ts-ignore
+      .style("font-size", isDesktop ? "1rem" : "0.75rem")
+      // @ts-expect-error: IDK, D3 amirite?
       .call(axisEnds);
 
     d3.select(sliderRef.current)
       .append("g")
       .attr("class", "scale")
-      .attr("transform", `translate(70,40)`)
+      .attr("transform", `translate(${isDesktop ? 70 : 20},40)`)
       .attr("y", 76)
-      .style("font-size", "1rem")
+      .style("font-size", isDesktop ? "1rem" : "0.75rem")
       .call(fullAxis);
 
     scaleRef.current = scale;

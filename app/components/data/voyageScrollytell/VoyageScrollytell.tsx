@@ -40,8 +40,8 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
       id="voyage-scrollytell"
       className="w-screen"
     >
-      <div className={`sticky h-screen top-24`}>
-        <div className="grid grid-cols-2 justify-items-center">
+      <div className={`sticky h-screen top-24 overflow-hidden`}>
+        <div className="flex flex-col-reverse md:flex-none md:grid grid-cols-2 justify-items-center">
           <div></div>
           <div className="h-3/4 w-3/4 my-auto">
             <div></div>
@@ -53,7 +53,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             >
               <Picture
                 figure={figures["PLACEHOLDERquery"]}
-                className={`drop-shadow-none p-6`}
+                className={`drop-shadow-none p-6 `}
               />
             </div>
             {/* 2 */}
@@ -69,11 +69,11 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             </div>
             {/* 3 */}
             <div
-              className={`absolute top-[6%] transition-opacity duration-1000 opacity-${
+              className={`absolute top-0 md:top-[6%] transition-opacity duration-1000 opacity-${
                 slideIndex === 2 ? 100 : 0
               }`}
             >
-              <div className="p-8 h-[75vh] content-center ">
+              <div className="p-8 h-screen align-top md:h-[75vh] content-center ">
                 <Variables />
               </div>
             </div>
@@ -144,7 +144,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
         </div>
         {/* 5 */}
         <div
-          className={`absolute -top-6 right-0 transition-opacity duration-1000 opacity-${
+          className={`absolute -top-[25%] md:-top-6 left-[25%] md:left-auto md:right-0 transition-opacity duration-1000 opacity-${
             slideIndex === 5 ? 100 : 0
           }`}
         >
@@ -153,7 +153,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
 
         {/* 6 */}
         <div
-          className={`absolute -top-4 ml-[70vw] transition-opacity duration-1000 opacity-${
+          className={`absolute -top-4 w-screen ml-0 md:w-auto md:ml-[70vw] transition-opacity duration-1000 opacity-${
             slideIndex === 6 ? 100 : 0
           }`}
         >

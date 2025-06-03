@@ -38,7 +38,7 @@ function VoyagesVis({
   interactive = false,
   id = "allVoyageContainer",
 }: Props) {
-  const { windowSize } = useResizeObserver();
+  const { windowSize, isDesktop } = useResizeObserver();
   const p5Ref = useRef<p5 | undefined>();
   const yearRangeRef = useRef<number[]>([startYear, endYear]);
   const backgroundRef = useRef<number[]>(background);
@@ -191,12 +191,12 @@ function VoyagesVis({
   }
 
   return (
-    <div className="w-screen relative z-10">
+    <div className="w-screen relative z-10 overflow-x-hidden">
       <div className="flex flex-col items-center text-white">
         {showSlider && (
           <div className={`bg-black ${interactive ? "" : "w-screen"}`}>
             <Slider
-              width={width}
+              width={isDesktop ? width - widthDiff : width}
               yearRange={yearRange}
               setYearRange={setYearRange}
               interactive={interactive}
