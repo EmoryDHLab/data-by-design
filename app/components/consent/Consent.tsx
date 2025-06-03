@@ -12,13 +12,9 @@ export default function Consent() {
   if (setHideSensitiveState && windowSize.height) {
     return (
       <div
-        className={`absolute z-50 right-8 mr-2 text-offblack pointer-events-auto`}
-        // 48 = offset for navbar
-        // 56 = height of icon (h-14, 3.5rem, 56px)
-        // 32 = offset to match right-8 (2rem, 32px)
-        style={{ top: `${windowSize.height - (48 + 56 + 32)}px` }}
+        className={`absolute z-50 md:hidden lg:block right-5 md:right-6 lg:right-14 top-[calc(100vh-6rem)] md:top-[calc(100vh-8rem)] lg:top-[calc(100vh-10rem)] text-offblack pointer-events-auto`}
       >
-        <ConsentToggle className="h-14 w-14" />
+        <ConsentToggle className="h-12 w-12 md:h-16 md:w-16 lg:h-18 lg:w-18" />
         <Tooltip id="consent-toggle" />
       </div>
     );

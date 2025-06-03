@@ -131,8 +131,8 @@ export function ChapterNav({ progress, fixedNav }: Props) {
             </span>
           );
         })}
-        {disclosure && <Consent />}
       </nav>
+      {disclosure && <Consent />}
     </div>
   );
 }

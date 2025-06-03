@@ -63,13 +63,14 @@ export default function SeraphiqueTour({ figure }: Props) {
 
   return (
     <FigureModal figure={figure} id={figure.fileName}>
-      <p
-        className={`absolute z-10 overflow-hidden font-neueMontreal text-xl p-6 m-6 transition-opacity duration-1000 opacity-${
+      <div
+        className={`absolute z-10 overflow-hidden font-neueMontreal text-lg m-6 transition-opacity duration-1000 opacity-${
           hideSensitiveState ? 100 : 0
         }`}
       >
-        {figure.altText?.split(".")[0]}. {figure.altText?.split(".")[1]}.
-      </p>
+        <p>{figure.altText?.split(".")[0]}.</p>{" "}
+        <p>{figure.altText?.split(".")[1]}.</p>
+      </div>
 
       <svg
         id={`fig-${figure.fileName}`}
@@ -109,8 +110,8 @@ export default function SeraphiqueTour({ figure }: Props) {
             href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
             width="100%"
             className={`duration-[2s] transition-all ease-in-out ${
-              tourLocations[hoverState ?? ""]?.transform ?? ""
-            } `}
+              hideSensitiveState ? "opacity-30" : "opacity-100"
+            } ${tourLocations[hoverState ?? ""]?.transform ?? ""} `}
           />
         </g>
       </svg>

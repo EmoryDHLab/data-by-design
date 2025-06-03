@@ -40,7 +40,7 @@ const ConsentToggle = ({ id, className }: Props) => {
   if (setHideSensitiveState) {
     return (
       <button
-        className={`inline-flex items-center justify-center border  border-offblack rounded-full drop-shadow-md bg-${accentColor} hover:bg-${backgroundColor} ${
+        className={`inline-flex items-center justify-center border  border-offblack rounded-full drop-shadow-lg active:drop-shadow-none bg-${accentColor} hover:bg-${backgroundColor} ${
           className ?? "h-8 w-8"
         }`}
         onMouseEnter={() => setIsHovered(true)}

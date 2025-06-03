@@ -3,10 +3,10 @@ import { useContext, useEffect, useRef, useState } from "react";
 import ClientOnly from "~/components/ClientOnly";
 import { ChapterNav } from "~/components/ChapterNav";
 import { useResizeObserver } from "~/hooks";
-import type { ReactNode } from "react";
-import type { ScrollamaInstance } from "scrollama";
 import FootnoteToggle from "../FootnoteToggle";
 import { ChapterContext } from "~/chapterContext";
+import type { ReactNode } from "react";
+import type { ScrollamaInstance } from "scrollama";
 
 interface Props {
   children: ReactNode;
@@ -40,7 +40,7 @@ export default function ChapterBody({ children, className }: Props) {
             step: `#${containerRef.current.id}`,
             progress: true,
             debug: false,
-            // @ts-ignore Maybe a bug in Scrollama type. String is acceptable.
+            // @ts-expect-error Maybe a bug in Scrollama type. String is acceptable.
             offset: `${mainContentSize.topOffset}px`,
           })
           .onStepProgress(({ progress }) => setChapterProgressState(progress));
