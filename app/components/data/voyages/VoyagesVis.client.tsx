@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useMemo } from "react";
-import { useResizeObserver } from "~/hooks";
+import { useDeviceContext, useResizeObserver } from "~/hooks";
 import p5 from "p5";
 import Voyage from "./Voyage";
 import Axis from "./Axis";
@@ -38,7 +38,8 @@ function VoyagesVis({
   interactive = false,
   id = "allVoyageContainer",
 }: Props) {
-  const { windowSize, isDesktop } = useResizeObserver();
+  const { windowSize } = useResizeObserver();
+  const { isDesktop } = useDeviceContext();
   const p5Ref = useRef<p5 | undefined>();
   const yearRangeRef = useRef<number[]>([startYear, endYear]);
   const backgroundRef = useRef<number[]>(background);

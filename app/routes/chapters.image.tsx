@@ -2,7 +2,7 @@ import { useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
-import PullQuote from "~/components/PullQuote";
+import PullQuote from "~/components/layout/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import ProjectTimelineInteractive from "~/components/image/projectTimeline/ProjectTimelineInteractive";
@@ -186,8 +186,8 @@ export default function PlayfairPage() {
               who can most benefit from its insights.
             </p>
             <PullQuote
-              title="These views—about why, how, and for whom a visualization has been designed—"
-              subtitle="are what we describe in this chapter as a visualization's argument."
+              quote="These views—about why, how, and for whom a visualization has been designed—"
+              subquote="are what we describe in this chapter as a visualization's argument."
             />
             <p>
               These views—about why, how, and for whom a visualization has been
@@ -421,7 +421,7 @@ export default function PlayfairPage() {
               of their political and economic power, which directly follows from
               the clarifying and consolidating design of the charts themselves.
             </p>
-            <PullQuote title="The result of this picture is a further consolidation of their political and economic power, which directly follows from the clarifying and consolidating design of the charts themselves." />
+            <PullQuote quote="The result of this picture is a further consolidation of their political and economic power, which directly follows from the clarifying and consolidating design of the charts themselves." />
             <p>
               How, more concretely, is this consolidation of political and
               economic power achieved? We might now contemplate the
@@ -733,7 +733,7 @@ export default function PlayfairPage() {
         <TwoColumnLayout>
           <Column>
             <p className="first-paragraph">
-              ​​Playfair clearly longed to be recognized for his graphical
+              Playfair clearly longed to be recognized for his graphical
               innovations. In 1787, one year after the initial publication of
               the Commercial and Political Atlas, he authored an account—almost
               certainly fictitious—of a dialogue between Benjamin Franklin and
@@ -783,7 +783,7 @@ export default function PlayfairPage() {
               Playfair's charts, in the present, has in many ways become
               synonymous with the value of visualization itself.
             </p>
-            <PullQuote title="...the value of Playfair's charts, in the present, has in many ways become synonymous with the value of visualization itself." />
+            <PullQuote quote="...the value of Playfair's charts, in the present, has in many ways become synonymous with the value of visualization itself." />
             <p>
               Because of this, the error that Playfair inscribed into his chart
               of "Exports & Imports to and from all of North America," which has

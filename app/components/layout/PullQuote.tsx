@@ -1,17 +1,17 @@
-import type { ReactNodeLike } from "prop-types";
 import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
+import type { ReactNode } from "react";
 
 interface Props {
-  title: string;
-  subtitle?: string;
-  children?: ReactNodeLike;
+  quote: string;
+  subquote?: string;
+  children?: ReactNode;
   className?: string;
 }
 
 export default function PullQuote({
-  title,
-  subtitle,
+  quote,
+  subquote,
   children,
   className,
 }: Props) {
@@ -25,14 +25,16 @@ export default function PullQuote({
 
   return (
     <aside ref={asideRef} className={classList}>
-      <blockquote className={`border-l-4 border-l-${backgroundColor} md:pl-10`}>
+      <blockquote
+        className={`border-l-4 border-l-${backgroundColor} pl-2 md:pl-10`}
+      >
         <p className="my-0">
           <span className="font-neueMontreal text-xl md:text-3xl tracking-tight block">
-            {title}
+            {quote}
           </span>
-          {subtitle && (
-            <span className="font-neueMontrealLight text-l lg:text-2xl font-light pt-4 block">
-              {subtitle}
+          {subquote && (
+            <span className="font-neueMontrealLight text-base lg:text-2xl font-light pt-4 block">
+              {subquote}
             </span>
           )}
         </p>
@@ -57,7 +59,7 @@ Saving this for future look into adding quotation marks. The font size needs wor
               {title}
             </span>
             <span className="font-power text-sm md:text-xl py-4 block">
-              {subtitle}
+              {subquote}
             </span>
           </span>
           <span className="font-serif flex-none block text-9xl px-8 self-end">"</span>

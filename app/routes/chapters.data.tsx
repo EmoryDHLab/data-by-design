@@ -2,7 +2,7 @@ import { useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
-import PullQuote from "~/components/PullQuote";
+import PullQuote from "~/components/layout/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
@@ -484,8 +484,8 @@ export default function BrooksPage() {
               data at the same time that we consider what is gained.
             </p>
             <PullQuote
-              title="The abstraction that is required to produce insight always—and, necessarily—"
-              subtitle="comes at the expense of the full complexity of the phenomenon that it represents."
+              quote="The abstraction that is required to produce insight always—and, necessarily—"
+              subquote="comes at the expense of the full complexity of the phenomenon that it represents."
             />
             <p>
               Elford's diagram also reminds us, with its subject most profound,
@@ -768,7 +768,7 @@ export default function BrooksPage() {
             would need a visual strategy for showing just how much about these
             lives the data could not and could never show.
           </p>
-          <PullQuote title="To honor the enslaved as they lived, and not as they were reduced to data, we would need a visual strategy for showing just how much about these lives the data could not show." />
+          <PullQuote quote="To honor the enslaved as they lived, and not as they were reduced to data, we would need a visual strategy for showing just how much about these lives the data could not show." />
         </CenteredLayout>
 
         <VoyageScrollytell
@@ -983,7 +983,7 @@ export default function BrooksPage() {
             missing from the chart. Most notably, the name of Olaudah Equiano,
             or of any other Black abolitionist, is nowhere to be found.
           </p>
-          <PullQuote title="And yet, certain key contributors are missing from the chart. Most notably,  the name of Olaudah Equiano, or of any other Black abolitionist, is nowhere to be found." />
+          <PullQuote quote="And yet, certain key contributors are missing from the chart. Most notably,  the name of Olaudah Equiano, or of any other Black abolitionist, is nowhere to be found." />
           <p>
             As with "Description of a Slave Ship," the question of audience
             returns to the fore. This chart was also not designed for those who
@@ -1007,7 +1007,7 @@ export default function BrooksPage() {
             dehumanization that enslavement brought about—as the anchoring
             metaphor of his account?
           </p>
-          <PullQuote title="Why would Clarkson use water—the very site of the dehumanization that enslavement brought about—as the anchoring metaphor of his account?" />
+          <PullQuote quote="Why would Clarkson use water—the very site of the dehumanization that enslavement brought about—as the anchoring metaphor of his account?" />
           <p>
             But Clarkson was anchoring his diagram in some stable ground:
             namely, the then-prevalent use of water and streams to visually
@@ -1052,7 +1052,7 @@ export default function BrooksPage() {
             impression of vision, and consequently, one act of memory."
             <InlineFootnote index={56} />{" "}
           </p>
-          <PullQuote title="But to simply slot Clarkson into the standard history of the field would miss much of the point." />
+          <PullQuote quote="But to simply slot Clarkson into the standard history of the field would miss much of the point." />
           <p>
             But to simply slot Clarkson into the standard history of the field
             would miss much of the point. For Clarkson's visualizations, both
@@ -1078,8 +1078,8 @@ export default function BrooksPage() {
             additional insights that it can never convey.{" "}
           </p>
           <PullQuote
-            title="It also underscores how, if the goal of a visualization is to bring about change,"
-            subtitle="then it must necessarily be accompanied by action."
+            quote="It also underscores how, if the goal of a visualization is to bring about change,"
+            subquote="then it must necessarily be accompanied by action."
           />
           <p>
             We will never know if these are some of the questions that Equiano

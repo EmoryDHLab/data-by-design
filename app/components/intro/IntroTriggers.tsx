@@ -1,4 +1,4 @@
-import PullQuote from "~/components/PullQuote";
+import PullQuote from "~/components/layout/PullQuote";
 import RandomImagesIntoGrid from "~/components/intro/RandomImagesIntoGrid";
 import ShanawdithitAndMinard from "~/components/intro/ShanawdithitAndMinard";
 import InlineFootnote from "../InlineFootnote";

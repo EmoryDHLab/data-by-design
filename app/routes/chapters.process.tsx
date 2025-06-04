@@ -3,7 +3,7 @@ import SlideShow from "~/components/layout/SlideShow";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
-import PullQuote from "~/components/PullQuote";
+import PullQuote from "~/components/layout/PullQuote";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
@@ -193,8 +193,8 @@ export default function PeabodyPage() {
 
         <CenteredLayout>
           <PullQuote
-            title="Peabody designed her charts to be abstract rather than intuitive;"
-            subtitle="to promote sustained reflection rather than immediate insight. "
+            quote="Peabody designed her charts to be abstract rather than intuitive;"
+            subquote="to promote sustained reflection rather than immediate insight. "
           />
         </CenteredLayout>
 
@@ -604,8 +604,8 @@ export default function PeabodyPage() {
 
         <CenteredLayout>
           <PullQuote
-            title="Our ways of knowing are all shaped by asymmetrical power-"
-            subtitle="and data visualization is no exception."
+            quote="Our ways of knowing are all shaped by asymmetrical power-"
+            subquote="and data visualization is no exception."
           />
           <p>
             With a renewed sense of the value of multiple perspectives in
@@ -727,8 +727,8 @@ export default function PeabodyPage() {
               thought.
             </p>
             <PullQuote
-              title="By prompting her students to create new narratives of the past, "
-              subtitle="they would also imagine alternative possible futures."
+              quote="By prompting her students to create new narratives of the past, "
+              subquote="they would also imagine alternative possible futures."
             />
             <p>
               Peabody’s goal with the Polish-American system was to create a
@@ -920,27 +920,6 @@ export default function PeabodyPage() {
             an archive but instead kept in her sister's attic, where they remain
             today. )<InlineFootnote index={33}></InlineFootnote>
           </p>
-          {/* </Column> */}
-          {/* <Column className="md:ml-12" shouldPin={true}>
-            <Figure
-              className="grid grid-cols-2 gap-4 md:ml-12"
-              figures={[figures["ch4-clarke1"], figures["ch4-clarke2"]]}
-              groupCaption={
-                <>
-                  <p>
-                    <strong>Left:</strong> One of the timelines created by Anne
-                    Laura Clarke, as explored by Granville Ganter in his essay
-                    on Clarke's traveling lectures.
-                  </p>
-                  <p>
-                    <strong>Right:</strong> Another timeline as it was first
-                    encountered by Ganter. Photos by Granville Ganter. Courtesy
-                    of Granville Ganter.
-                  </p>
-                </>
-              }
-            />
-          </Column> */}
         </CenteredLayout>
         <TwoColumnLayout>
           <Column shouldPin={true}>
@@ -988,8 +967,8 @@ export default function PeabodyPage() {
               that is made by human hands.
             </p>
             <PullQuote
-              title="Who else are we missing"
-              subtitle="when we fail to include examples like these in the stories we tell about the emergence of data visualization?"
+              quote="Who else are we missing"
+              subquote="when we fail to include examples like these in the stories we tell about the emergence of data visualization?"
             />
           </Column>
           <Column>

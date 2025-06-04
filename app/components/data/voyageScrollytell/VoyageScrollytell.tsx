@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ClientOnly from "~/components/ClientOnly";
 import Picture from "~/components/layout/Picture";
-import PullQuote from "~/components/PullQuote";
+import PullQuote from "~/components/layout/PullQuote";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import figures from "~/data/figures/data.json";
 import FiskColors from "./FiskColors";
@@ -97,10 +97,10 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             >
               <div className="p-8 h-2/5 grid content-center md:mt-56">
                 <PullQuote
-                  title={
+                  quote={
                     'Fisk\'s "representation [of the river] is one of unbridled tangles, and recursively looped waterways that flow, spread, and interrupt each other, a cacophony of effusion, a watery din."'
                   }
-                  subtitle={
+                  subquote={
                     '— Romi Morrison, "Gaps between the digits: On the fleshy unknowns of  the HUMAN" (2019)'
                   }
                 />
@@ -135,8 +135,8 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             >
               <div className="p-8 h-2/5 grid content-center md:mt-56">
                 <PullQuote
-                  title="This argument for quiet aims to give up resistance as a framework in search of what is lost in its all-encompassing reach."
-                  subtitle='— Kevin Quashie, "The Sovereignty of Quiet: Beyond Resistance in Black Culture" p5. (2012)'
+                  quote="This argument for quiet aims to give up resistance as a framework in search of what is lost in its all-encompassing reach."
+                  subquote='— Kevin Quashie, "The Sovereignty of Quiet: Beyond Resistance in Black Culture" p5. (2012)'
                 />
               </div>
             </div>
