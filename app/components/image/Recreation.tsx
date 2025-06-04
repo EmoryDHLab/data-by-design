@@ -1,4 +1,3 @@
-// @ts-nocheck
 import * as d3 from "d3";
 import VerticalGrid from "./elements/VerticalGrid";
 import HorizontalGrid from "./elements/HorizontalGrid";
@@ -139,7 +138,7 @@ export default function Recreation({
           width={(width / 11) * 10}
           opacity={0.2}
         ></rect>
-        {xValues.map((xValue, index) => {
+        {xValues.map((xValue, _) => {
           return (
             <VerticalGrid
               key={xValue}
@@ -151,7 +150,7 @@ export default function Recreation({
             />
           );
         })}
-        {yValues.map((yValue, index) => {
+        {yValues.map((yValue, _) => {
           return (
             <HorizontalGrid
               key={yValue}
@@ -221,13 +220,13 @@ export default function Recreation({
           }
         />
         {/* Detail lines */}
-        {xMinorValues.map((xValue, index) => {
+        {xMinorValues.map((xValue, _) => {
           return (
             <VerticalGrid
               key={xValue}
               xValue={xMinorScale(xValue)}
               xOffset={(width / 11) * 7 + 5.5}
-              offset={(width / 11) * 7 + 5.5}
+              // offset={(width / 11) * 7 + 5.5}
               text={" "}
               opacity={
                 scrollProgress >= 2.75 && scrollProgress < 4
@@ -299,7 +298,7 @@ export default function Recreation({
         <g opacity={scrollProgress > 9 ? transitionIn([9, 9.25]) : 0}>
           <image
             transform="scale(1.17, 1.07)"
-            href="/images/playfair/1-northamerica.jpg"
+            href="/images/image/1-northamerica.jpg"
             width={105}
             height={55}
             x={-7.5}
