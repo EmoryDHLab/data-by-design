@@ -22,6 +22,7 @@ interface Props {
   heightAdjust?: number;
   isSample?: boolean;
   interactive?: boolean;
+  className?: string;
 }
 
 function VoyagesVis({
@@ -37,6 +38,7 @@ function VoyagesVis({
   heightAdjust = 0.45,
   interactive = false,
   id = "allVoyageContainer",
+  className,
 }: Props) {
   const { windowSize } = useResizeObserver();
   const { isDesktop } = useDeviceContext();
@@ -192,12 +194,12 @@ function VoyagesVis({
   }
 
   return (
-    <div className="w-screen relative z-10 overflow-x-hidden">
+    <div className={`w-screen relative z-10 overflow-x-hidden ${className}`}>
       <div className="flex flex-col items-center text-white">
         {showSlider && (
           <div className={`bg-black ${interactive ? "" : "w-screen"}`}>
             <Slider
-              width={isDesktop ? width - widthDiff : width}
+              width={isDesktop ? width : width}
               yearRange={yearRange}
               setYearRange={setYearRange}
               interactive={interactive}

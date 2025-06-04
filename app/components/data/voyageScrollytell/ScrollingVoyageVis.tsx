@@ -31,17 +31,15 @@ const ScrollingVoyageVis = ({ scrollProgress }: { scrollProgress: number }) => {
 
   return (
     <>
-      <div>
-        <ClientOnly>
-          <VoyagesVis
-            id="scrolling-voyage"
-            allVoyages={false}
-            fullColor={false}
-            startYear={startYear}
-            endYear={endYear}
-          />
-        </ClientOnly>
-      </div>
+      <ClientOnly>
+        <VoyagesVis
+          id="scrolling-voyage"
+          allVoyages={false}
+          fullColor={false}
+          startYear={startYear}
+          endYear={endYear}
+        />
+      </ClientOnly>
     </>
   );
 };

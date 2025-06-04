@@ -1,26 +1,24 @@
-const fontSize = 2;
-const lineHeight = fontSize + 0.5;
-const lineSpacing = fontSize + 1;
+const fontSize = 11;
+const lineHeight = fontSize + 1.2;
+const lineSpacing = fontSize + 2.2;
+const top = 100;
+const end = 300;
 const x1 = 0;
-const x2 = 30;
-const x3 = 60;
-const y1 = 3;
-const y2 = lineHeight * 3.75;
-const y3 = lineHeight * 6.5;
-const y4 = lineHeight * 10.5;
-const y5 = lineHeight * 17.5;
-const y6 = lineHeight * 25.5;
-const y7 = lineHeight * 33.5;
-const y8 = lineHeight * 38.5;
-const y9 = lineHeight * 42.5;
+const x2 = 100;
+const x3 = end - 100;
+const y1 = 3 + fontSize;
+const y2 = lineHeight * 3.75 + top;
+const y3 = lineHeight * 6.5 + top;
+const y4 = lineHeight * 10.5 + top;
+const y5 = lineHeight * 17.5 + top;
+const y6 = lineHeight * 25.5 + top;
+const y7 = lineHeight * 33.5 + top;
+const y8 = lineHeight * 39.5 + top;
+const y9 = lineHeight * 44.5 + top;
 
 const Variables = () => {
   return (
-    <svg
-      viewBox={`0 0 90 ${lineHeight * 43}`}
-      fontSize={fontSize}
-      className="h-full w-11/12"
-    >
+    <g fontSize={fontSize}>
       <text x={x1} y={y1} fontWeight="bold">
         Variable name
       </text>
@@ -60,7 +58,10 @@ const Variables = () => {
         </tspan>
       </text>
       <text x={x1} y={y4}>
-        Total Embarked [IMP]
+        <tspan>Total Embarked</tspan>
+        <tspan dy={lineHeight + 1} x={x1}>
+          [IMP]
+        </tspan>
       </text>
       <text y={y4} x={x2}>
         <tspan>The total number of</tspan>
@@ -81,7 +82,10 @@ const Variables = () => {
         </tspan>
       </text>
       <text y={y5} x={x1}>
-        Total Disembarked [IMP]
+        <tspan>Total Disembarked</tspan>
+        <tspan dy={lineHeight + 1} x={x1}>
+          [IMP]
+        </tspan>
       </text>
       <text y={y5} x={x2}>
         <tspan>The total number of</tspan>
@@ -144,18 +148,20 @@ const Variables = () => {
         </tspan>
       </text>
       <text x={x3} y={y7}>
-        <tspan>
-          Derived by subtracting <tspan fontStyle="italic">Total</tspan>
-        </tspan>
+        <tspan>Derived by subtracting</tspan>
         <tspan x={x3} dy={lineHeight}>
+          <tspan fontStyle="italic">Total</tspan>{" "}
           <tspan fontStyle="italic">Disembarked</tspan> from{" "}
-          <tspan fontStyle="italic">Total</tspan>
         </tspan>
         <tspan x={x3} dy={lineHeight}>
-          <tspan fontStyle="italic">Embarked</tspan> and dividing the
+          <tspan fontStyle="italic">Total</tspan>{" "}
+          <tspan fontStyle="italic">Embarked</tspan> and
         </tspan>
         <tspan x={x3} dy={lineHeight}>
-          result by the <tspan fontStyle="italic">Total Embarked</tspan>.
+          dividing the result by the
+        </tspan>
+        <tspan x={x3} dy={lineHeight}>
+          <tspan fontStyle="italic">Total Embarked</tspan>.
         </tspan>
       </text>
       <text x={x1} y={y8}>
@@ -168,19 +174,21 @@ const Variables = () => {
         </tspan>
       </text>
       <text x={x3} y={y8}>
-        <tspan>Derived by calculating the</tspan>
+        <tspan>Derived by calculating</tspan>
         <tspan x={x3} dy={lineHeight}>
-          number of days between <tspan fontStyle="italic">Start</tspan>
+          the number of days
         </tspan>
         <tspan x={x3} dy={lineHeight}>
-          <tspan fontStyle="italic">Date</tspan> and{" "}
+          between <tspan fontStyle="italic">Start Date</tspan> and{" "}
+        </tspan>
+        <tspan x={x3} dy={lineHeight}>
           <tspan fontStyle="italic">End Dote</tspan>.
         </tspan>
       </text>
-      <line x1={0} x2={90} y1={0.2} y2={0.2} strokeWidth={0.2} stroke="black" />
+      <line x1={0} x2={90} y1={0} y2={0} strokeWidth={0.2} stroke="black" />
       <line
         x1={0}
-        x2={90}
+        x2={end}
         y1={y2 - lineSpacing}
         y2={y2 - lineSpacing}
         strokeWidth={0.2}
@@ -188,7 +196,7 @@ const Variables = () => {
       />
       <line
         x1={0}
-        x2={90}
+        x2={end}
         y1={y3 - lineSpacing}
         y2={y3 - lineSpacing}
         strokeWidth={0.2}
@@ -196,7 +204,7 @@ const Variables = () => {
       />
       <line
         x1={0}
-        x2={90}
+        x2={end}
         y1={y4 - lineSpacing}
         y2={y4 - lineSpacing}
         strokeWidth={0.2}
@@ -204,7 +212,7 @@ const Variables = () => {
       />
       <line
         x1={0}
-        x2={90}
+        x2={end}
         y1={y5 - lineSpacing}
         y2={y5 - lineSpacing}
         strokeWidth={0.2}
@@ -212,7 +220,7 @@ const Variables = () => {
       />
       <line
         x1={0}
-        x2={90}
+        x2={end}
         y1={y6 - lineSpacing}
         y2={y6 - lineSpacing}
         strokeWidth={0.2}
@@ -220,7 +228,7 @@ const Variables = () => {
       />
       <line
         x1={0}
-        x2={90}
+        x2={end}
         y1={y7 - lineSpacing}
         y2={y7 - lineSpacing}
         strokeWidth={0.2}
@@ -228,7 +236,7 @@ const Variables = () => {
       />
       <line
         x1={0}
-        x2={90}
+        x2={end}
         y1={y8 - lineSpacing}
         y2={y8 - lineSpacing}
         strokeWidth={0.2}
@@ -236,13 +244,13 @@ const Variables = () => {
       />
       <line
         x1={0}
-        x2={90}
+        x2={end}
         y1={y9 - lineSpacing}
         y2={y9 - lineSpacing}
         strokeWidth={0.2}
         stroke="black"
       />
-    </svg>
+    </g>
   );
 };
 

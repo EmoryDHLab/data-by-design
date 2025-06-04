@@ -1,6 +1,6 @@
 import { useResizeObserver } from "~/hooks";
 
-const FiskColors = () => {
+const FiskColors = ({ className }: { className: string }) => {
   const { windowSize } = useResizeObserver();
 
   return (
@@ -10,7 +10,7 @@ const FiskColors = () => {
       viewBox="0 0 329 747"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="mx-auto"
+      className={className}
     >
       <g clipPath="url(#clip0_8493_36824)">
         <rect

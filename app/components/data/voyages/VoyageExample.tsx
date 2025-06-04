@@ -2,7 +2,7 @@ function VoyageExample() {
   return (
     <svg viewBox="0 0 296.27 274.49" className="w-full h-full">
       <path
-        d="m167.49,50.84c0-25.17-22.59-28.16-32.39-50.34h38.89c7.64,16.99,14.5,12.15,14.5,59.15,0,67.4-95.37-3.19-97.5,89.39-2.13,92.57,108.5,17.92,108.5,68.68,0,40.61-43.93,44.3-43.93,46.43l-17.07,1.5c0-16.21,54-2.89,54-43.5,0-29.33-27.59-16.21-58.5-19.5-22.58-2.4-51.37-14.53-50.47-53.61,2.13-92.58,83.97-30.79,83.97-98.2Z"
+        d="M167.49,69.7c0-34.6-22.59-38.71-32.39-69.2h38.89c7.64,23.36,14.5,16.7,14.5,81.31,0,92.65-95.37-4.39-97.5,122.88-2.13,127.26,108.5,24.63,108.5,94.41,0,55.83-43.93,60.9-43.93,63.83l-17.07,2.06c0-22.28,54-3.97,54-59.8,0-40.32-27.59-22.28-58.5-26.81-22.58-3.3-51.37-19.97-50.47-73.7,2.13-127.27,83.97-42.33,83.97-134.99h0Z"
         fill="#DE003B"
         stroke="black"
       />
@@ -10,13 +10,13 @@ function VoyageExample() {
         x1={138}
         x2={138}
         y1={10}
-        y2={264}
+        y2={364}
         stroke="black"
         strokeDasharray={4}
       />
       <g>
         <text
-          x={159}
+          x={153}
           y={24}
           textAnchor="middle"
           dominantBaseline="middle"
@@ -27,7 +27,7 @@ function VoyageExample() {
           u
         </text>
         <text
-          x={181.5}
+          x={179}
           y={24}
           textAnchor="middle"
           dominantBaseline="middle"
@@ -38,7 +38,7 @@ function VoyageExample() {
           s
         </text>
         <line
-          x1={161}
+          x1={156}
           x2={179}
           y1={23.5}
           y2={23.5}
@@ -47,52 +47,58 @@ function VoyageExample() {
         />
       </g>
       <text
-        x={200}
+        x={195}
         y={20}
-        fontSize={10}
+        fontSize={12}
         fontFamily="VTC Du Bois, serif"
         className="font-bold uppercase"
       >
         <tspan>Number of people</tspan>
-        <tspan x={200} dy={12}>
+        <tspan x={195} dy={14}>
           at the beginning.
         </tspan>
       </text>
 
       <text
-        x={200}
-        y={250}
-        fontSize={10}
+        x={195}
+        y={340}
+        fontSize={12}
         fontFamily="VTC Du Bois, serif"
         className="font-bold uppercase"
       >
         <tspan>Number of people</tspan>
-        <tspan x={200} dy={12}>
+        <tspan x={195} dy={14}>
           at the end.
         </tspan>
       </text>
 
       <text
-        x={10}
+        x={5}
         y={140}
-        fontSize={10}
+        fontSize={15}
         fontFamily="VTC Du Bois, serif"
         className="font-bold uppercase"
       >
         <tspan>If the</tspan>
-        <tspan x={10} dy={12}>
-          duration of
+        <tspan x={5} dy={14}>
+          duration
         </tspan>
-        <tspan x={10} dy={12}>
-          the voyage is
+        <tspan x={5} dy={14}>
+          of the
         </tspan>
-        <tspan x={10} dy={12}>
-          +++ then the
+        <tspan x={5} dy={14}>
+          voyage is
         </tspan>
-        <tspan x={10} dy={12}>
+        <tspan x={5} dy={14}>
+          +++++++
+        </tspan>
+        <tspan x={5} dy={14}>
+          then the
+        </tspan>
+        <tspan x={5} dy={14}>
           amplitude
         </tspan>
-        <tspan x={10} dy={12}>
+        <tspan x={5} dy={14}>
           increases
         </tspan>
       </text>
@@ -100,7 +106,7 @@ function VoyageExample() {
       <g>
         <text
           x={95}
-          y={150}
+          y={200}
           textAnchor="middle"
           dominantBaseline="middle"
           fill="black"
@@ -111,7 +117,7 @@ function VoyageExample() {
         </text>
         <text
           x={134}
-          y={150}
+          y={200}
           textAnchor="middle"
           dominantBaseline="middle"
           fill="black"
@@ -123,8 +129,8 @@ function VoyageExample() {
         <line
           x1={98}
           x2={131}
-          y1={149.5}
-          y2={149.5}
+          y1={199}
+          y2={199}
           stroke="black"
           strokeDasharray={4}
         />

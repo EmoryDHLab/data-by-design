@@ -7,7 +7,6 @@ interface Props {
   sliderWidth: Array<number>;
   maxX: number;
   setSliderWidth: Dispatch<SetStateAction<Array<number>>>;
-  yearRange: Array<number>;
   children: ReactNode;
   interactive: boolean;
 }
@@ -21,7 +20,6 @@ interface EventProps {
 function SliderJoin({
   sliderWidth,
   setSliderWidth,
-  yearRange,
   maxX,
   children,
   interactive,
@@ -82,12 +80,12 @@ function SliderJoin({
 
     if (isDesktop) {
       d3.select(rectRef.current).call(
-        // @ts-ignore
+        // @ts-expect-error: IDK, D3
         d3.drag().on("start", dragRectStart).on("drag", dragRect)
       );
     } else {
       d3.select(circleRef.current).call(
-        // @ts-ignore
+        // @ts-expect-error: IDK, D3
         d3.drag().on("drag", dragCircle).on("end", dragCircle)
       );
     }

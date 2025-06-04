@@ -125,7 +125,6 @@ const Slider = ({
         <SliderJoin
           sliderWidth={sliderWidth}
           setSliderWidth={setSliderWidth}
-          yearRange={yearRange}
           maxX={maxX.current}
           interactive={interactive}
         >
