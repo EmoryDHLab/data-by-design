@@ -66,7 +66,7 @@ export const Layout = ({ children }: WrapperProps) => {
         <ClientOnly>
           <Navbar />
         </ClientOnly>
-        <Banner>Public Beta</Banner>
+        <Banner>Dev Build</Banner>
         {children}
         <Loading />
         <Analytics />
