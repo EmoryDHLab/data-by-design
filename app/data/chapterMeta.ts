@@ -23,7 +23,7 @@ export const chapterMeta: TChapterMeta = {
   },
   data: {
     title: "Data",
-    subtitle: "SEAST's Visualization Activism",
+    subtitle: "SEAST’s Visualization Activism",
     description:
       "Before there is data, there are people. How can the lives behind the data guide our visualization work today?",
     image:

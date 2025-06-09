@@ -57,7 +57,7 @@ export default function IntroPage() {
         backgroundColor: "offwhite",
         primaryTextColor: "black",
         accentColor: "imagePrimary",
-        accentTextColor: "white",
+        accentTextColor: "imagePrimary",
         footnoteTextColor: "imagePrimary",
         footnotes: introFootnotes,
         sections,
