@@ -35,7 +35,7 @@ export const chapterMeta: TChapterMeta = {
   },
   image: {
     title: "Image",
-    subtitle: `William Playfair's "Single View"`,
+    subtitle: `William Playfair’s “Single View”`,
     description:
       "Data visualization has never been neutral or objective. How can we learn to recognize the argument of each design?",
     image:
@@ -47,7 +47,7 @@ export const chapterMeta: TChapterMeta = {
   },
   people: {
     title: "People",
-    subtitle: "Shanawdithit's Thematic Maps",
+    subtitle: "Shanawdithit’s Thematic Maps",
     description:
       "Maps can represent reality and can contest it. How can we learn to see the lines of power that they encode?",
     image:
@@ -59,7 +59,7 @@ export const chapterMeta: TChapterMeta = {
   },
   process: {
     title: "Process",
-    subtitle: "Elizabeth Palmer Peabody's Chronological Grids",
+    subtitle: "Elizabeth Palmer Peabody’s Chronological Grids",
     description:
       "We have explored only part of the history of data visualization. What possibilities can we imagine when we expand our view of the past?",
     image:
@@ -71,7 +71,7 @@ export const chapterMeta: TChapterMeta = {
   },
   power: {
     title: "Power",
-    subtitle: "W.E.B. Du Bois's “Data Portraits”",
+    subtitle: "W.E.B. Du Bois’s “Data Portraits”",
     description:
       "How can data visualization bear witness to oppression? How can we hold space for what cannot be conveyed through data alone?",
     image:
