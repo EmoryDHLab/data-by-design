@@ -88,20 +88,19 @@ const Month = ({
 
     const root = d3
       .stratify()
-      // @ts-ignore
-
+      // @ts-expect-error: IDK, D3 amirite?
       .id(({ source }) => source)
-      // @ts-ignore
+      // @ts-expect-error: IDK, D3 amirite?
       .parentId(({ month }) => month)([
       { source: monthlyData.month },
       ...monthlyData.sources,
     ]);
 
-    // @ts-ignore
+    // @ts-expect-error: IDK, D3 amirite?
     root.sum(({ count }) => {
       return count;
     });
-    // @ts-ignore
+    // @ts-expect-error: IDK, D3 amirite?
     root.sort((a, b) => b.height - a.height || b.value - a.value);
     if (setBoxSize) {
       setBoxSize({ width: boxDimension, height: boxDimension });
@@ -114,23 +113,23 @@ const Month = ({
       .data(root.leaves())
       .join("rect")
       .attr("x", (d) => {
-        // @ts-ignore
+        // @ts-expect-error: IDK, D3 amirite?
         return d.x0;
       })
       .attr("y", (d) => {
-        // @ts-ignore
+        // @ts-expect-error: IDK, D3 amirite?
         return d.y0;
       })
       .attr("width", (d) => {
-        // @ts-ignore
+        // @ts-expect-error: IDK, D3 amirite?
         return d.x1 - d.x0;
       })
       .attr("height", (d) => {
-        // @ts-ignore
+        // @ts-expect-error: IDK, D3 amirite?
         return d.y1 - d.y0;
       })
       .style("stroke", "black")
-      // @ts-ignore
+      // @ts-expect-error: IDK, D3 amirite?
       .attr("class", (d) => rectColor(d.data.source));
 
     const refCopy = monthRef.current;

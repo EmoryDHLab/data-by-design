@@ -9,7 +9,6 @@ import {
   isRouteErrorResponse,
 } from "react-router";
 import Navbar from "./components/Navbar.client";
-// @ts-ignore
 import styles from "./index.css?url";
 import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
@@ -39,7 +38,7 @@ export const links: LinksFunction = () => {
 export const Layout = ({ children }: WrapperProps) => {
   useEffect(() => {
     if (process.env.NODE_ENV == "production") {
-      // @ts-ignore
+      // @ts-expect-error: This is added via a script tag. Will be removed in final version.
       window.hypothesisConfig = function () {
         return {
           openSidebar: false,

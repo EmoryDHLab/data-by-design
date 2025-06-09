@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { rectColor } from "./data";
 import type { TContribution } from "./data";
 import type { Dispatch, SetStateAction } from "react";
+import type { TWeekData } from "./weeklyData";
 
 interface Props {
   contributions: TContribution[] | undefined | Array<undefined>;
-  week: any;
+  week: TWeekData;
   barX: number;
   width: number;
   setActiveContribution: Dispatch<SetStateAction<TContribution | undefined>>;
@@ -18,16 +19,7 @@ const WeekBar = ({
   width,
   setActiveContribution,
 }: Props) => {
-  const ref = useRef<SVGGElement>(null);
   const [height, setHeight] = useState(0);
-  useEffect(() => {
-    const refCopy = ref.current;
-    return () => {
-      if (refCopy) {
-        refCopy.innerHTML = "";
-      }
-    };
-  }, []);
 
   useEffect(() => {
     if (!contributions || !contributions.length) return;
@@ -35,7 +27,7 @@ const WeekBar = ({
   }, [contributions]);
 
   return (
-    <g ref={ref}>
+    <g>
       <rect
         x={barX}
         y={15}

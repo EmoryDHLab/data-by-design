@@ -58,7 +58,7 @@ const Treemap = () => {
               setActiveMonth(undefined);
               setSelectedMonth(undefined);
             }}
-            aria-description="here is a long data"
+            aria-description="here is a long description"
           >
             <MonthScale
               year={2023}

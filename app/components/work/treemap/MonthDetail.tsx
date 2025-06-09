@@ -72,7 +72,7 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
     return "";
   };
 
-  if (contributions) {
+  if (contributions && weeks) {
     const total = contributions
       .map((c) => (c.length == 0 ? 1 : c.length))
       .reduce((p, a) => p + a, 0);
@@ -85,13 +85,14 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
         className="font-power mt-2 h-full"
       >
         <g>
-          {weeks?.map((week, index) => {
+          {weeks.map((week, index) => {
             let accumulatedWidth = 0;
             const barWidth =
               contributions[index] && contributions[index].length > 0
                 ? xScale(contributions[index].length)
                 : xScale(1);
             accumulatedWidth += 10;
+            console.log("🚀 ~ {weeks.map ~ barWidth:", barWidth);
             return (
               <WeekBar
                 key={`${week.week.toDateString()}-${accumulatedWidth}`}
@@ -134,7 +135,7 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
     );
   }
 
-  return null;
+  return <></>;
 };
 
 export default MonthDetail;
