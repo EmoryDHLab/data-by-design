@@ -395,8 +395,21 @@ export default function BrooksPage() {
             here.
           </p>
           <p>
-            This is the reason we have delayed reproducing any of the SEAST
-            diagrams until this point. But they remain as viscerally affecting
+            As some of you may have also already experienced, we provide a
+            parallel choice for visitors to this site who rely on alt-text. In
+            this case the toggle switches between generalized and detailed
+            descriptions of the images. Both modes of encounter are supported by
+            a form of progressive disclosure, a concept formulated by Silas
+            Munro, a member of our project team, characterized by a gradual
+            introduction of the individual elements of each image, so that the
+            reader is not subjected to the same experience of immediate horror
+            that SEAST originally intended to produce with their charts. While
+            this decision runs counter to the Society’s original goal, our
+            encounter with these images over two hundred years after they were
+            first shown serves a different purpose: to understand how their
+            designers were able to leverage a combination of abstraction and
+            detail in order to achieve their catalyzing effects.  Even
+            progressively disclosed, these charts remain as viscerally affecting
             as they are visually impossible. In the original Elford diagram—the
             one that Equiano saw—viewers see the ship from above, as if they are
             gods in the heavens. The top deck of the ship has been removed, so
@@ -546,26 +559,32 @@ export default function BrooksPage() {
               subquote="comes at the expense of the full complexity of the phenomenon that it represents."
             />
             <p>
-              Elford's diagram also reminds us, with its subject most profound,
-              that there are aspects of human experience that data visualization
-              cannot and can never convey. No diagram can ever express the full
+              “Plan of an African Ship” also reminds us, with its subject most
+              profound, that there are always aspects of human experience that
+              visualization cannot convey. No diagram can ever express the full
               extent of the brutality and degradation that was required to
               enforce the enslavement of otherwise equals. No diagram can ever
-              fully communicate the "horror almost inconceivable," to return to
-              Equiano's chilling words, to those who did not personally
+              fully communicate the “horror almost inconceivable”—to return to
+              Equiano’s chilling words—to those who did not personally
               experience it; nor can any diagram appropriately convey the
               additional trauma that others, like Cugoano, chose to keep
               suppressed. As above, the lesson is not of the futility of
               visualizing data. It is, rather, one of hope: that with the image
-              of the slave ship indelibly etched in our minds, we will keep the
-              uses and limits of data visualization together in view. The power
-              to produce an "instantaneous impression" in the eyes of viewers
-              remains among the greatest strengths of data visualization.
-              <InlineFootnote index={19} /> But as we consider this tremendous
-              power, we must also—always—consider our responsibility for the
-              insights that we design our visualizations in order to prompt, the
-              knowledge they may lead to, and the detail and context—and in this
-              case, the lives—that visualization alone cannot convey.
+              of the slave ship indelibly etched in our minds, we will keep both
+              the power and limits of data visualization together in view.
+            </p>
+            <p>
+              Indeed, the power to produce an “instantaneous impression” in the
+              eyes of viewers remains among the greatest strengths of data
+              visualization. In <cite>Data Feminism</cite>, Catherine D’Ignazio
+              and I quote visualization designer Fernanda Viégas—who created the
+              “Wind Map” that appears in this book’s Introduction—in describing
+              this strength as a “superpower.” <InlineFootnote index={21} /> Her
+              words could not be more revealing. Because just as we consider
+              this tremendous power, we must also consider our responsibility
+              for the insights that we design our visualizations to produce,
+              just as we do for the detail and context—and in this case, the
+              lives—that visualization on its own cannot convey.
             </p>
           </Column>
           <Column shouldPin>
@@ -817,34 +836,36 @@ export default function BrooksPage() {
             version of the "god trick" at work.
           </p>
           <p>
-            Reflecting on this visualization in the context of the questions
-            posed above enabled our project team to clarify our task. We first
-            considered the provenance of the dataset, and reflected on the fact
-            that the shipping logs and other data tables that served as its
-            primary sources were created by the enslavers, and not the enslaved.
-            This reminded us of the power relations embedded in the data, those
+            Passage might be possible, enabled us to clarify our task. We first
+            considered the provenance of the dataset, and contemplated how the
+            shipping logs and other data tables that served as its primary
+            sources were created by the enslavers, and not the enslaved. This in
+            turn reminded us of the power relations embedded in the data, those
             that could never be removed, as well as of how that power
-            contributed to a range of omissions and gaps. We also reflected on
-            our own subject positions, and the fact that, among the five of us
-            collaborating on this particular visualization, only one of us had
-            ancestors who had themselves been enslaved. This prompted a
+            contributed to a range of omissions and gaps. We also considered our
+            own subject positions, and the fact that, among the five of us
+            collaborating on this particular visualization, only one of us could
+            point to ancestors who had themselves been enslaved. This prompted a
             recognition on behalf of the group that there were certain stories
-            about the data that we could not tell, and should be left for others
-            to convey. Finally, we reflected on Jessica Marie Johnson's powerful
-            statement that "there is nothing neutral, even in a digital
-            environment, about doing histories of slavery."
-            <InlineFootnote index={40} /> This called us back to the range of
+            about the data that were not ours to tell, and following Hartman,
+            should be left for others to convey. Finally, we returned to Jessica
+            Marie Johnson’s powerful statement, in her “Markup Bodies” essay,
+            that “there is nothing neutral, even in a digital environment, about
+            doing histories of slavery.”
+            <InlineFootnote index={42} /> This called us back to the range of
             harms that can be brought about by engaging with this history, as
             discussed earlier in this chapter, and to how data visualization is
-            not immune. We saw the potential for "second-order violence," as
+            not immune. We saw the potential for “second-order violence,” as
             Hartman terms it, both in the act of reanimating a dataset that, in
             its original form, conscribed the people it represented to living
             death; and in the act of controlling the layout and motion of this
             dataset which itself documented the forced migration of so many.
-            From this process, our goal became more refined. In order to honor
-            the enslaved as they lived, and not as they were reduced to data, we
-            would need a visual strategy for showing just how much about these
-            lives the data could not and could never show.
+            From this process, our goal became more refined. In order to better
+            represent the enslaved as they lived, and not further reinforce how
+            they were reduced to data, we would need a visual strategy that
+            could draw out meaningful facets of the dataset while also
+            reinforcing just how much about each life the data could not show.
+            <InlineFootnote index={43} />
           </p>
           <PullQuote quote="To honor the enslaved as they lived, and not as they were reduced to data, we would need a visual strategy for showing just how much about these lives the data could not show." />
         </CenteredLayout>
@@ -870,7 +891,7 @@ export default function BrooksPage() {
               voyage, and the total number of the individuals who disembarked,
               would allow us to provide a basic picture of each of the 572
               voyages that contained a documented act of resistance.
-              <InlineFootnote index={41} />
+              <InlineFootnote index={44} />
             </span>,
             <span key="442c2e00">
               Because our initial motivation was to visualize the dataset from
@@ -878,7 +899,7 @@ export default function BrooksPage() {
               frequent observation made about the experience of the Middle
               Passage: that the captives did not experience time as linear while
               in the hold of the ship.
-              <InlineFootnote index={42} />
+              <InlineFootnote index={45} />
             </span>,
             <span key="cd4ac8ca">
               Drawing visual inspiration from Harold Fisk's alluvial diagram of
@@ -887,7 +908,7 @@ export default function BrooksPage() {
               showing a comparative view of its various paths over time, we
               arrived at an idea to use bends and turns to represent the
               non-linearity of the Middle Passage.
-              <InlineFootnote index={43} />
+              <InlineFootnote index={46} />
             </span>,
             <span key="156434b0">
               We also kept the vertical orientation of the visualization so as
@@ -949,7 +970,7 @@ export default function BrooksPage() {
             <span key="2deac1f9">
               With the additional voyages also plotted, the binds transform into
               life-affirming arteries within the sinews of human flesh.
-              <InlineFootnote index={44} />
+              <InlineFootnote index={47} />
             </span>,
             <span key="1c73c2f3">
               But as evocative as this visual representation may be, there are
@@ -975,7 +996,7 @@ export default function BrooksPage() {
               refused to eat; and when his captor attempted to give him a new
               name, depriving him of his identity and his Ibo roots, “I refused
               to answer to my new name,” Equiano explains.
-              <InlineFootnote index={45} /> Equiano's more “quiet” forms of
+              <InlineFootnote index={48} /> Equiano's more “quiet” forms of
               resistance, as Kevin Quashie might term them, were also real, and
               also meaningful, even as they remain difficult to represent as
               data ever at all.
@@ -1021,7 +1042,7 @@ export default function BrooksPage() {
             generally credit “Description of a Slave Ship,” and Thomas Clarkson
             in particular, for playing a significant part in the campaign’s
             success.
-            <InlineFootnote index={46} /> Clarkson himself likely contributed to
+            <InlineFootnote index={49} /> Clarkson himself likely contributed to
             this narrative; in 1808, one year after the formal Act of
             Parliament, he published a celebratory two-volume tome,
             <cite>
@@ -1029,7 +1050,7 @@ export default function BrooksPage() {
               Abolition of the Slave Trade by the British Parliament
             </cite>
             , which provided his own first-hand account of British abolition.
-            <InlineFootnote index={47} />
+            <InlineFootnote index={50} />
           </p>
           <p>
             Interspersed among the <cite>History’s </cite> nearly 1,200 pages
@@ -1059,7 +1080,7 @@ export default function BrooksPage() {
             elsewhere analogized the British antislavery movement to the
             distributed functioning of a human body, with “every limb...
             essentially necessary for the completion of a perfect work.”
-            <InlineFootnote index={49} />
+            <InlineFootnote index={51} />
             And yet, Clarkson’s sense of “completion” is irrevocably flawed:
             certain key contributors are missing from his chart. Most notably,
             the name of Olaudah Equiano, or of any other Black abolitionist, is
@@ -1078,13 +1099,13 @@ export default function BrooksPage() {
             the cause requires a coherent descriptive model which is capable of
             overriding the heterogeneity of the names and writings he has
             furnished” in the text of his volume, Wood asserts.
-            <InlineFootnote index={50} /> Indeed, Clarkson’s account overrides
+            <InlineFootnote index={52} /> Indeed, Clarkson’s account overrides
             the same heterogeneity of the figures involved in the abolitionist
             movement overall. It follows then, that in his diagram, the success
             of the movement “belong[s] to no single abolitionist but to a
             mysterious sea, into which, in a strange reversal of the generative
             metaphor, all the tributaries pour.”
-            <InlineFootnote index={51} /> he sea metaphor is further clouded by
+            <InlineFootnote index={53} /> he sea metaphor is further clouded by
             the role that actual water—namely, the Atlantic Ocean—played in the
             slave trade. Why would Clarkson use water—the very site of the
             dehumanization that was required of the condition of enslavement—as
@@ -1107,7 +1128,7 @@ export default function BrooksPage() {
             forcibly on the mind, than the stiff regularity of the straight
             line,” as William Bell, the English translator of Strass’s chart,
             explained
-            <InlineFootnote index={53} />
+            <InlineFootnote index={54} />
           </p>
         </CenteredLayout>
 
@@ -1125,16 +1146,16 @@ export default function BrooksPage() {
             created by Strass and Bell, as well as their more linear
             antecedents, "cleared the way for statistical graphics" by
             introducing the idea of consistent scale.
-            <InlineFootnote index={54} /> This argument is confirmed by the
+            <InlineFootnote index={55} /> This argument is confirmed by the
             purported "pioneer" of statistical graphics himself, William
             Playfair, the subject of the next chapter, who praised the genre for
             "making space represent time," and for using "a line of proportional
             length and in a suitable position."
-            <InlineFootnote index={55} /> As we will learn, Playfair described
+            <InlineFootnote index={56} /> As we will learn, Playfair described
             the purpose of his own visualizations in terms quite similar to
             Clarkson's: to unite "a number of separate ideas… under one simple
             impression of vision, and consequently, one act of memory."
-            <InlineFootnote index={56} />{" "}
+            <InlineFootnote index={57} />{" "}
           </p>
           <PullQuote quote="But to simply slot Clarkson into the standard history of the field would miss much of the point." />
           <p>
@@ -1168,7 +1189,7 @@ export default function BrooksPage() {
             published a letter in
             <cite>The Public Advertiser</cite>, a prominent London newspaper, in
             which he acknowledged "having seen" the chart.
-            <InlineFootnote index={57} /> nterestingly, Equiano does not comment
+            <InlineFootnote index={58} /> nterestingly, Equiano does not comment
             directly on the image, choosing instead to affirm the work of the
             abolitionist movement overall. But I believe that we can still learn
             from Equiano’s statement about what he saw. In the diagram, Equiano
