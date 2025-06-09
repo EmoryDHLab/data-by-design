@@ -151,7 +151,7 @@ export default function BrooksPage() {
             became acquainted with Thomas Clarkson, a leading white abolitionist
             and key member of the London Committee of the Society for Effecting
             the Abolition of the Slave Trade (SEAST).
-            <InlineFootnote index={42} /> When, in early 1789, Clarkson received
+            <InlineFootnote index={2} /> When, in early 1789, Clarkson received
             a copy of a diagram created by the Plymouth Committee of SEAST
             entitled, “Plan of an African Ship’s Lower Deck with Negroes in the
             Proportion of Only One to a Ton,” he knew exactly who he should ask
@@ -215,7 +215,7 @@ export default function BrooksPage() {
             Given Clarkson’s choice of words—in particular, the “instantaneous
             impression”—it is safe to say that the diagram represented the
             culmination of over two centuries of thinking about the value of
-            empirical evidence and the impact of giving it visual form.{" "}
+            empirical evidence and the impact of giving it visual form.
             <InlineFootnote index={6} /> As we have just learned in the
             Introduction, the idea that quantitative information could be
             visualized as data, perceived by the eyes, and then processed into
@@ -301,14 +301,15 @@ export default function BrooksPage() {
             specifically, we seek to visualize the data included in the
             Trans-Atlantic Slave Trade Database, a decades-long project to
             compile a comprehensive dataset of every slaving voyage known to
-            have taken place. <InlineFootnote index={7} /> We discuss how the
-            questions raised by Clarkson’s image, and Elford’s, shaped our
-            attempt to use the power of visualization to prompt generative new
-            insights about the data the slave trade left in its wake. We discuss
-            the theories and examples that informed our design decisions, and
-            conclude by presenting our own visualization in its final
-            interactive form—one that infuses a degree of humanity back into the
-            data while also underscoring what data cannot hope to show.{" "}
+            have taken place.
+            <InlineFootnote index={7} /> We discuss how the questions raised by
+            Clarkson’s image, and Elford’s, shaped our attempt to use the power
+            of visualization to prompt generative new insights about the data
+            the slave trade left in its wake. We discuss the theories and
+            examples that informed our design decisions, and conclude by
+            presenting our own visualization in its final interactive form—one
+            that infuses a degree of humanity back into the data while also
+            underscoring what data cannot hope to show.{" "}
           </p>
           <p>
             We then return to the standard story of visualization’s emergence
@@ -381,18 +382,18 @@ export default function BrooksPage() {
             slavery without warning, context, or consent. These harms may be
             retrospective, in the influential words of literary scholar Saidiya
             Hartman, the result of “the uncertain line between witness and
-            spectator” that scholars of slavery often must walk.{" "}
+            spectator” that scholars of slavery often must walk.
             <InlineFootnote index={11} /> They may also carry into the future,
             in the form of the desensitization brought about by evermore
             depictions of the “routinized violence of slavery,” as Hartman
-            further explains. <InlineFootnote index={12} />
-            For viewers whose own ancestors were enslaved, such depictions can
-            also exacerbate existing intergenerational trauma, as historian
-            Jennifer Morgan describes. <InlineFootnote index={13} /> Those who
-            choose to view Elford’s version of the diagram may do so now by
-            clicking the toggle at the top left. Or you may choose to continue
-            to read generalized descriptions of the images of slavery included
-            here.
+            further explains.
+            <InlineFootnote index={12} /> For viewers whose own ancestors were
+            enslaved, such depictions can also exacerbate existing
+            intergenerational trauma, as historian Jennifer Morgan describes.{" "}
+            <InlineFootnote index={13} /> Those who choose to view Elford’s
+            version of the diagram may do so now by clicking the toggle at the
+            top left. Or you may choose to continue to read generalized
+            descriptions of the images of slavery included here.
           </p>
           <p>
             As some of you may have also already experienced, we provide a
@@ -446,7 +447,8 @@ export default function BrooksPage() {
               Together, these “scaled inequalities,” as Black feminist theorist
               Hortense Spillers describes them, literalize the process of
               “dehumanizing, ungendering, and defacing” at the heart of the
-              Middle Passage. <InlineFootnote index={11} />
+              Middle Passage.
+              <InlineFootnote index={11} />
             </span>,
           ]}
         />
@@ -516,13 +518,13 @@ export default function BrooksPage() {
               this process of dehumanization, however inadvertently. A large
               part of how the diagram achieves its visual impact is how its 297
               human souls are drawn as nearly identical figures—what literary
-              scholar Marcus Wood describes as a “mass of black human flesh.”{" "}
-              <InlineFootnote index={17} />
-              The figures’ collective rather than individual significance is
-              further accentuated by their being set against the clean lines of
-              the ship <InlineFootnote index={18} /> The labels associated with
-              each area, engraved in neat script, underscore this reduction in
-              complexity—which is, of course, a reduction in humanity as well.
+              scholar Marcus Wood describes as a “mass of black human flesh.”
+              <InlineFootnote index={17} /> The figures’ collective rather than
+              individual significance is further accentuated by their being set
+              against the clean lines of the ship <InlineFootnote index={18} />{" "}
+              The labels associated with each area, engraved in neat script,
+              underscore this reduction in complexity—which is, of course, a
+              reduction in humanity as well.
             </p>
             <p>
               It is here that the significance of the diagram for the larger
@@ -777,7 +779,7 @@ export default function BrooksPage() {
                 of each other; rather, some have variously crossed arms,
                 different gestures, or seem to turn to face one another, while
                 some stare and look back at the gaze from nowhere, and in so
-                being the <cite> Description of a Slave Ship can</cite> also be
+                being the <cite> Description of a Slave Ship</cite> can also be
                 understood as depicting black looks and the trauma of Middle
                 Passage as multiply experienced and survived.
                 <InlineFootnote index={36} />
@@ -1139,22 +1141,22 @@ export default function BrooksPage() {
           />
 
           <p>
-            Indeed, there is a version of the history of data visualization that
-            need not be significantly reconfigured in order to provide Clarkson
-            with a more prominent place. Many scholars, including Rosenberg and
-            Grafton, have made the case that chronological charts such as those
-            created by Strass and Bell, as well as their more linear
-            antecedents, "cleared the way for statistical graphics" by
-            introducing the idea of consistent scale.
+            Indeed, there is a version of the history of data visualization
+            that, without too much reconfiguring, provides Clarkson with a more
+            prominent place. Many scholars, including Rosenberg and Grafton,
+            have made the case that chronological charts such as those created
+            by Strass and Bell, as well as their more linear antecedents,
+            “cleared the way for statistical graphics” by introducing the idea
+            of consistent scale.
             <InlineFootnote index={55} /> This argument is confirmed by the
-            purported "pioneer" of statistical graphics himself, William
+            purported “pioneer” of statistical graphics himself, William
             Playfair, the subject of the next chapter, who praised the genre for
-            "making space represent time," and for using "a line of proportional
-            length and in a suitable position."
+            “making space represent time,” and for using “a line of proportional
+            length and in a suitable position.”
             <InlineFootnote index={56} /> As we will learn, Playfair described
             the purpose of his own visualizations in terms quite similar to
-            Clarkson's: to unite "a number of separate ideas… under one simple
-            impression of vision, and consequently, one act of memory."
+            Clarkson's: to unite “a number of separate ideas… under one simple
+            impression of vision, and consequently, one act of memory.”
             <InlineFootnote index={57} />{" "}
           </p>
           <PullQuote quote="But to simply slot Clarkson into the standard history of the field would miss much of the point." />
@@ -1188,17 +1190,18 @@ export default function BrooksPage() {
             conversation that transpired. Several weeks later, however, Equiano
             published a letter in
             <cite>The Public Advertiser</cite>, a prominent London newspaper, in
-            which he acknowledged "having seen" the chart.
-            <InlineFootnote index={58} /> nterestingly, Equiano does not comment
-            directly on the image, choosing instead to affirm the work of the
-            abolitionist movement overall. But I believe that we can still learn
-            from Equiano’s statement about what he saw. In the diagram, Equiano
-            saw clear evidence that its designers sought to “contribute to so
-            important a moral and religious duty as that of” ending the slave
-            trade. But he also saw that the chart alone would not be enough. As
-            a person who had himself been enslaved, Equiano understood
-            first-hand that ending “one of the greatest evils now existing on
-            earth” would require more than the chart alone could convey.
+            which he acknowledged “having seen” the chart.
+            <InlineFootnote index={58} /> Interestingly, Equiano does not
+            comment directly on the image, choosing instead to affirm the work
+            of the abolitionist movement overall. But I believe that we can
+            still learn from Equiano’s statement about what he saw. In the
+            diagram, Equiano saw clear evidence that its designers sought to
+            “contribute to so important a moral and religious duty as that of”
+            ending the slave trade. But he also saw that the chart alone would
+            not be enough. As a person who had himself been enslaved, Equiano
+            understood first-hand that ending “one of the greatest evils now
+            existing on earth” would require more than the chart alone could
+            convey.
           </p>
           <p>
             With this statement we return, for a final time, to this chapter’s
@@ -1233,7 +1236,7 @@ export default function BrooksPage() {
               Balance between abstraction and detail with intention
             </span>,
             <span key="6440631a">
-              Ask for and by whom any visualization has been designed
+              Ask who may benefit and who may be harmed
             </span>,
             <span key="2f317172">Probe any missing data and ask why</span>,
             <span key="2f317173">
