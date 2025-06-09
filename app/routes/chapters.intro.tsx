@@ -73,6 +73,20 @@ export default function IntroPage() {
         subtitle="A Counterhistory of Data Visualization"
       />
       <ChapterBody>
+        <CenteredLayout className="pb-10 font-dubois">
+          <p> There is a new version of this introduction!</p>{" "}
+          <p>
+            Please{" "}
+            <a
+              className="underline"
+              href="https://dev.dataxdesign.io/chapters/intro"
+            >
+              visit the dev site{" "}
+            </a>{" "}
+            to read the most up-to-date version of this text.
+          </p>
+        </CenteredLayout>
+        <hr></hr>
         <TwoColumnLayout>
           <Column>
             <p className="first-paragraph py-10">
