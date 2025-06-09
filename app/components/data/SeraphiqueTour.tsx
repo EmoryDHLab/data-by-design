@@ -64,7 +64,7 @@ export default function SeraphiqueTour({ figure }: Props) {
   return (
     <FigureModal figure={figure} id={figure.fileName}>
       <div
-        className={`absolute z-10 overflow-hidden font-neueMontreal text-lg m-6 transition-opacity duration-1000 opacity-${
+        className={`absolute z-10 overflow-hidden  p-6  text-xl font-neueMontreal transition-opacity duration-1000 opacity-${
           hideSensitiveState ? 100 : 0
         }`}
       >
@@ -115,7 +115,7 @@ export default function SeraphiqueTour({ figure }: Props) {
           />
         </g>
       </svg>
-      <figcaption className="font-power md:text-center text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
+      <figcaption className="font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
         <span id={`fig-label-${figure.fileName}`} className="sr-only">
           {figure.caption}
         </span>
