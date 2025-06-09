@@ -27,7 +27,7 @@ export default function IntroPage() {
         backgroundColor: "offwhite",
         primaryTextColor: "black",
         accentColor: "imagePrimary",
-        accentTextColor: "white",
+        accentTextColor: "peopleSecondary",
         footnoteTextColor: "imagePrimary",
         footnotes: prefaceFootnotes,
         showFootnotes,

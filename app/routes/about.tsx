@@ -42,15 +42,12 @@ export default function AboutPage() {
         <ChapterSectionTitle section={sections[0]}></ChapterSectionTitle>
         <main id="main-content pb-36">
           <CenteredLayout>
-            <p className="first-paragraph py-10">
-              This site is optimised for and best experienced on Desktop.
-            </p>
-
             <p>
-              We’re now going through each of the comments from the community
-              review, and implementing new changes every day. Our plan is to
-              release a new web version of the project in the fall, when the
-              print book officially enters production.
+              This site is optimised for and best experienced on Desktop. We’re
+              now going through each of the comments from the community review,
+              and implementing new changes every day. Our plan is to release a
+              new web version of the project in the fall, when the print book
+              officially enters production.
             </p>
           </CenteredLayout>
 
