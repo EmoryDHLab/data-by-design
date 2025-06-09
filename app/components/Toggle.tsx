@@ -48,7 +48,7 @@ export default function Toggle({
                 ? `translate-x-[16px] md:translate-x-[24px] bg-white`
                 : `translate-x-[2px] md:translate-x-[4px]`
             }
-              pointer-events-none inline-block h-3 w-3 md:h-4 md:w-4 transform rounded-full shadow-lg ring-0 transition duration-200 ease-in-out`}
+              pointer-events-none inline-block h-3 w-3 md:h-4 md:w-4 transform rounded-full shadow-lg ring-0 transition duration-200 border border-black border-2 ease-in-out`}
         />
       </Switch>
       <Label className="block w-min ps-1 text-xs lg:text-sm lg:w-auto cursor-pointer">

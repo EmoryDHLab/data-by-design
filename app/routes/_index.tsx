@@ -69,13 +69,7 @@ export default function Index() {
           Data by Design: An Interactive History of Data Visualization 1786-1900
         </h1>
 
-        <div
-          id="desktop-gradient"
-          style={{
-            backgroundImage: "url('/images/8-dark@tinypng.7abc66a1.png')",
-          }}
-          className="absolute inset-0 bg-no-repeat pointer-events-none"
-        />
+        <div />
         <div className="md:flex md:items-center md:justify-around md:grid-rows-2 pt-10 md:pt-5 h-full md:h-[600px] z-20 3xl:mx-48">
           <figure
             aria-hidden

@@ -11,8 +11,8 @@ import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 
 const sections = [
   {
-    title: "About this Review",
-    id: "about-this-review",
+    title: "About this Site",
+    id: "about-this-site",
   },
   {
     title: "About this Project",
@@ -43,73 +43,14 @@ export default function AboutPage() {
         <main id="main-content pb-36">
           <CenteredLayout>
             <p className="first-paragraph py-10">
-              Welcome to the community review for <em>Data by Design</em>, and
-              thank you for your generosity and time. The review period for this
-              draft will close on June 14th, 2024, although the ability to leave
-              comments will still be available after that point.
+              This site is optimised for and best experienced on Desktop.
             </p>
 
             <p>
-              We chose to invite community feedback on this draft for several
-              reasons. First, Lauren's prior experience with open community
-              review while she and Catherine were drafting{" "}
-              <em>Data Feminism</em> was among the most meaningful sources of
-              feedback that they received while writing and revising the book.
-              Readers were overwhelmingly generous with their comments-and their
-              tough critiques–in ways that neither of us could have anticipated.
-              This feedback greatly enriched the revision process and made the
-              book so much better as a result.
-            </p>
-
-            <p>
-              Second, this project takes on some difficult topics-some that
-              certain members of our project team have studied, and others that
-              certain members have directly experienced, but in no cases do we
-              claim perfect knowledge or understanding about. In both our words
-              and our design choices, we have almost certainly made mistakes. As
-              a team, we have always sought to be reflexive and accountable-both
-              to each other and to you, our readers, who we include in our
-              community as well. We hope to learn from you about places where
-              we've gotten things wrong, and about how we can do better.
-            </p>
-
-            <p>
-              Finally, this is a project that aspires to speak to multiple
-              audiences. These include visualization designers and researchers,
-              data journalists and data scientists, and activists, organizers,
-              and others who work with data and visualization as part of their
-              jobs. Additional audiences include students and scholars from a
-              range of academic fields, including digital humanities, literary
-              and cultural studies, women's and gender studies, critical race
-              studies, Indigenous studies, media studies, information
-              science/studies, STS, and HCI, among others. We welcome your help
-              in pointing out any places that may require additional
-              explanation, that are missing crucial context, or where
-              theoretical concepts are not clearly explained. 
-            </p>
-
-            <p>
-              One of the mantras of this project team is that direct and
-              critical words are a generous act. We interpret them as a vote of
-              confidence in our ability to hear them and be transformed by them.
-            </p>
-
-            <p>
-              Please email Lauren at{" "}
-              <a href="mailto:lauren.klein@emory.edu">lauren.klein@emory.edu</a>{" "}
-              with any comments that can't be registered via Hypothesis, or that
-              you would rather not publicly disclose.
-            </p>
-
-            <p>
-              Thank you, once again,<br></br>
-              Lauren Klein, on behalf of the <em>Data by Design</em> project
-              team
-              <br></br>
-              Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams, Nick Yang, Dan
-              Jutan, Jianing Fu, Anna Mola, Zhou Fang, Yang Li, and Silas Munro
-              <br></br>
-              May 1, 2024
+              We’re now going through each of the comments from the community
+              review, and implementing new changes every day. Our plan is to
+              release a new web version of the project in the fall, when the
+              print book officially enters production.
             </p>
           </CenteredLayout>
 
