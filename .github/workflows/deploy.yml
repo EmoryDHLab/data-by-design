@@ -15,22 +15,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Checkout Docker configs
+      - name: Install NPM Packages
+        run: npm install
+
+      - name: Add SSH key
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          mkdir -p /home/runner/.ssh
+          ssh-keyscan "${{ secrets.REMOTE_HOST}}" >> /home/runner/.ssh/known_hosts
+          echo "${{ secrets.SSH_KEY }}" > /home/runner/.ssh/github_actions
+          chmod 600 /home/runner/.ssh/github_actions
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add /home/runner/.ssh/github_actions
+
+      - name: Move deploy script
         run: |
           mv ./.github/workflows/deploy.sh .
           chmod +x deploy.sh
 
-      - name: Configure AWS credentials from AWS account
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ secrets.AWS_ROLE }}
-          aws-region: us-east-1
-          role-session-name: GitHub-OIDC-frontend
-
       - name: Run Deploy
         env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
           BRANCH: ${{ github.head_ref || github.ref_name }}
-          AWS_ECR: ${{ secrets.AWS_ECR }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          SSH_KEY: ${{ secrets.SSH_KEY }}
+          DEV_REMOTE_PATH: ${{ secrets.DEV_REMOTE_PATH }}
+          DEV_RESTART_COMMAND: ${{ secrets.DEV_RESTART_COMMAND }}
+          PROD_REMOTE_PATH: ${{ secrets.PROD_REMOTE_PATH }}
+          PROD_RESTART_COMMAND: ${{ secrets.PROD_RESTART_COMMAND }}
         run: ./deploy.sh

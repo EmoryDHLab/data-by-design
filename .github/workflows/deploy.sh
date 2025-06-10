@@ -1,23 +1,25 @@
 #!/bin/bash
+set -e
 echo "Running deploy script"
-TAG=$([ "$BRANCH" == "main" ] && echo "latest" || echo "dev")
 
-echo "Logging in to AWS"
-aws ecr get-login-password --region us-east-1 | \
-docker login --username AWS --password-stdin "${AWS_ECR}"
-echo "Logged in successfully"
+REMOTE_PATH=$([ "$BRANCH" == "main" ] && echo $PROD_REMOTE_PATH || echo $DEV_REMOTE_PATH)
+RESTART_COMMAND=$([ "$BRANCH" == "main" ] && echo $PROD_RESTART_COMMAND || echo $DEV_RESTART_COMMAND)
 
-echo "Building Docker image for ${BRANCH}"
-if [ "$BRANCH" == "main" ]; then
-  docker build -t data-by-design --no-cache .
+if [ $BRANCH = "main" ]; then
+  export NODE_ENV="production"
 else
-  docker build -t data-by-design --no-cache --file Dockerfile-dev .
+  export NODE_ENV="develop"
 fi
 
-echo "Tagging image with ${TAG}"
-docker tag data-by-design "${AWS_ECR}/data-by-design:${TAG}"
+echo "Building for ${NODE_ENV}"
+npm run build
 
-echo "Pushing image"
-docker push "${AWS_ECR}/data-by-design:${TAG}"
+echo "Copying Files"
+files=("./build" "./package.json" "./server.*" "./server" "./node_modules")
+for file in "${files[@]}"; do
+  echo "Copying ${file} to ${REMOTE_PATH}"
+  rsync -ae "ssh" ${file} ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_PATH}
+done
 
-echo "Pushed succesfully"
+echo "Running Remote Script"
+ssh ${REMOTE_USER}@${REMOTE_HOST} ${RESTART_COMMAND}
