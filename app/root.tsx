@@ -8,16 +8,17 @@ import {
   useRouteError,
   isRouteErrorResponse,
 } from "react-router";
-import Navbar from "./components/Navbar.client";
+import Navbar from "./components/layout/Navbar.client";
 import styles from "./index.css?url";
 import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
 import Banner from "./components/layout/Banner";
 import Analytics from "./components/Analytics";
 import Loading from "./components/layout/Loading";
+import ClientOnly from "./components/ClientOnly";
 import type { LinksFunction, MetaFunction } from "react-router";
 import type { ReactNode } from "react";
-import ClientOnly from "./components/ClientOnly";
+import SiteNav from "./components/layout/SiteNav";
 
 interface WrapperProps {
   children: ReactNode;
@@ -62,9 +63,10 @@ export const Layout = ({ children }: WrapperProps) => {
       <body className="overflow-x-hidden">
         <ScrollToHashElement />
         <LinkToMain />
-        <ClientOnly>
+        {/* <ClientOnly>
           <Navbar />
-        </ClientOnly>
+        </ClientOnly> */}
+        <SiteNav />
         <Banner>Dev Build</Banner>
         {children}
         <Loading />

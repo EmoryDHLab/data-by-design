@@ -102,7 +102,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
     <div
       className={`w-full z-[15] ${
         fixedNav ? "fixed" : "sticky"
-      } top-7 md:top-12 bg-offwhite mx-auto`}
+      } top-7 md:top-0 bg-offwhite mx-auto`}
     >
       <nav className="h-8">
         <div
