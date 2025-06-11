@@ -846,6 +846,7 @@ export default function IntroPage() {
             recognized the generative potential unleashed by translating
             quantitative information into visual form.
           </p>
+          <Figure figure={figures["quipu"]} className="w-3/4" />
           {/* <Figure
             figures={[figures["quipu"], figures["quipu"], figures["quipu"]]}
             className="grid grid-cols-2 md:grid-cols-3 gap-2 md:ml-12"
