@@ -15,6 +15,8 @@ import ChapterBody from "~/components/layout/ChapterBody";
 import { chapterMeta } from "~/data/chapterMeta";
 import type { TVizAnchors } from "~/chapterContext";
 import type { MetaFunction } from "react-router";
+import FigureModal from "~/components/figures/FigureModal";
+import Picture from "~/components/figures/Picture";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("intro");
@@ -96,7 +98,7 @@ export default function IntroPage() {
             more accurately, his royal cosmographer—had requested a map.
           </p>
 
-          <Figure figure={figures.placeholder1} />
+          <Figure figure={figures["9-teozacoalco"]} />
 
           <p>
             The cosmographer was hoping the King would benefit from something we
@@ -137,7 +139,7 @@ export default function IntroPage() {
             Map," first released on the web in 2012, now hangs in the third
             floor gallery of New York's Museum of Modern Art.
           </p>
-          <Figure figure={figures.placeholder2} />
+          {/* <Figure Wind Map /> */}
           <p>
             But the allure of visualization is precisely its danger. Because
             maps and charts (and their interactive analogues) all promise ease
@@ -373,7 +375,7 @@ export default function IntroPage() {
             in the service of advancing knowledge.
             <InlineFootnote index={18} />
           </p>
-          <Figure figure={figures.placeholder3} />
+          {/* <Figure figure={figures.placeholder3} /> */}
           <p>
             I find this definition helpful for how it highlights the specific
             contributions of the field of visualization research. At the same
@@ -438,16 +440,18 @@ export default function IntroPage() {
             not, what else might they be called?
           </p>
 
-          <Figure
-            figures={[
-              figures.placeholder4,
-              figures.placeholder4,
-              figures.placeholder4,
-              figures.placeholder4,
-              figures.placeholder4,
-              figures.placeholder4,
-              figures.placeholder4,
-            ]}
+          {/* <Figure
+            figures={
+              [
+                figures.placeholder4,
+                figures.placeholder4,
+                figures.placeholder4,
+                figures.placeholder4,
+                figures.placeholder4,
+                figures.placeholder4,
+                figures.placeholder4,
+              ]
+            }
             className="grid grid-cols-2 md:grid-cols-4 gap-2 md:ml-12"
             groupCaption={
               <p>
@@ -459,7 +463,7 @@ export default function IntroPage() {
                 Ruest, "A Piece of the Pie Chart" (2017).
               </p>
             }
-          />
+          /> */}
           <p>
             More generally, I am less interested in asking what is or is not a
             data visualization as I am in asking how we—as viewers, designers,
@@ -573,7 +577,21 @@ export default function IntroPage() {
             to consider how they might acquire knowledge through what they saw.
             <InlineFootnote index={26} />
           </p>
-          <Figure figure={figures.placeholder5} />
+          <Figure
+            className="grid grid-cols-1 md:grid-cols-2"
+            figures={[figures["3-anonymous"], figures["4-oresme"]]}
+            groupCaption={
+              <p>
+                Two prominent examples of proto-data visualizations, first
+                surfaced by Howard Funkhauser in 1937 and (justifiably!)
+                celebrated through the present day. Little is known about the
+                image on the left, an anonymous tenth-century diagram of the
+                changing locations of constellations in the night sky. On the
+                right is a set of fourteenth-century charts of the relationships
+                between quantities created by French philosopher Nichole Oresme.
+              </p>
+            }
+          />
           <p>
             While there had been earlier examples of chart-like forms—an
             anonymous tenth-century diagram of the changing locations of
@@ -602,26 +620,59 @@ export default function IntroPage() {
             Enlightenment thought—the flowering of data visualization was set to
             begin.
           </p>
-          <Figure
-            figures={[
-              figures.placeholder4,
-              figures.placeholder2,
-              figures.placeholder3,
-            ]}
-            className="grid grid-cols-2 md:grid-cols-4 gap-2 md:ml-12"
-            groupCaption={
-              <p>
-                Clockwise from top left: An early graph of daily barometric
-                pressure in Oxford, England, that appears in Robert Plot's
-                "History of the Weather" (1685); three graphs from Lambert's
-                Hygrometric Studies, which show the relationship between air,
-                water, heat, and evaporation; and William Playfair's "Chart of
-                all the import and exports to and from England from the year
-                1700 to 1782," from the third edition of the Commercial and
-                Political Atlas (1801).
-              </p>
-            }
-          />
+          <div className="grid gird-cos-1 md:grid-cols-2 auto-rows-fr place-items-center justify-items-center gap-2 md:gap-4">
+            <div className="h">
+              <FigureModal
+                figure={figures["plot-plots2"]}
+                id={`fig-${figures["plot-plots2"].fileName}`}
+              >
+                <Picture
+                  className=" w-3/4 drop-shadow-lg"
+                  figure={figures["plot-plots2"]}
+                />
+              </FigureModal>
+            </div>
+            <div>
+              <FigureModal
+                figure={figures["6-lambert"]}
+                id={`fig-${figures["plot-plots2"].fileName}`}
+              >
+                <Picture
+                  className="w-1/2 drop-shadow-lg"
+                  figure={figures["6-lambert"]}
+                />
+              </FigureModal>
+            </div>
+            <div className="md:col-span-2">
+              <FigureModal
+                figure={
+                  figures[
+                    "7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782"
+                  ]
+                }
+                id={`fig-${figures["plot-plots2"].fileName}`}
+              >
+                <Picture
+                  className="w-3/4 drop-shadow-lg"
+                  figure={
+                    figures[
+                      "7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782"
+                    ]
+                  }
+                />
+              </FigureModal>
+            </div>
+            <p className="md:col-span-2 font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12">
+              Clockwise from top left: An early graph of daily barometric
+              pressure in Oxford, England, that appears in Robert Plot's
+              "History of the Weather" (1685); three graphs from Lambert's
+              Hygrometric Studies, which show the relationship between air,
+              water, heat, and evaporation; and William Playfair's "Chart of all
+              the import and exports to and from England from the year 1700 to
+              1782," from the third edition of the Commercial and Political
+              Atlas (1801).
+            </p>
+          </div>
 
           <p>
             With this clear and compact story, we would seem to have left the
@@ -664,7 +715,13 @@ export default function IntroPage() {
             resources could be found.
             <InlineFootnote index={31} />
           </p>
-          <Figure figure={figures.placeholder6} />
+        </CenteredLayout>
+        <Figure
+          className="mx-2 md:mx-12 text-sm md:text-base"
+          captionClassName="mx-12"
+          figure={figures["8-Edmond_Halley_s_map_of_the_trade_winds_1686"]}
+        />
+        <CenteredLayout>
           <p>
             This practical dependency on data and mapping, and the tools and
             methods of measurement that were required to produce them, would
@@ -789,12 +846,8 @@ export default function IntroPage() {
             recognized the generative potential unleashed by translating
             quantitative information into visual form.
           </p>
-          <Figure
-            figures={[
-              figures.placeholder4,
-              figures.placeholder2,
-              figures.placeholder3,
-            ]}
+          {/* <Figure
+            figures={[figures["quipu"], figures["quipu"], figures["quipu"]]}
             className="grid grid-cols-2 md:grid-cols-3 gap-2 md:ml-12"
             groupCaption={
               <p>
@@ -804,7 +857,7 @@ export default function IntroPage() {
                 proto-cuneiform tablet documenting the distribution of grain.
               </p>
             }
-          />
+          /> */}
           <p>
             This global history, even in abridged form, prompts a key question:
             what do I mean by the phrase "modern data visualization"? The term

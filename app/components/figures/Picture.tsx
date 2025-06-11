@@ -19,7 +19,7 @@ const Picture = ({ figure, className, center = true }: Props) => {
   useEffect(() => {
     if (figure.width) {
       setFigurePath(
-        `https://iiif.ecds.io/iiif/3/dxd/${figure.chapter}/${figure.fileName}.tiff/full/max/0/color`
+        `https://iiif.ecds.io/iiif/3/dxd/${figure.chapter}/${figure.fileName}.tiff/full/max/0/default`
       );
     }
   }, [figure]);
@@ -29,7 +29,10 @@ const Picture = ({ figure, className, center = true }: Props) => {
       <source srcSet={`${figurePath}.webp`} />
       <source srcSet={`${figurePath}.jpg`} />
       <img
-        className={classNames(center ? "mx-auto" : "mx-0", className)}
+        className={classNames(
+          center ? "mx-auto drop-shadow-lg" : "mx-0 drop-shadow-lg",
+          className
+        )}
         src={`${figurePath}.jpg`}
         alt={
           figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
