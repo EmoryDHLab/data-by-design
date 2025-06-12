@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useResizeObserver } from "~/hooks";
+import { useDeviceContext, useResizeObserver } from "~/hooks";
 import Legend from "~/components/power/pieChart/Legend";
 import studentData from "~/data/power/studentChartTwo.json";
 import PieChart from "~/components/power/PieChart.client";
@@ -35,6 +35,7 @@ export default function StudentChartTwo({
   showExtra = false,
 }: Props) {
   const { windowSize } = useResizeObserver();
+  const { isMobile } = useDeviceContext();
   const [chartWidth, setChartWidth] = useState<number>(800);
   const [pieChartTop, setPieChartTop] = useState<number>(100);
   const [pieChartLeft, setPieChartLeft] = useState<number>(100);
@@ -42,12 +43,8 @@ export default function StudentChartTwo({
 
   useEffect(() => {
     if (!windowSize.height || !windowSize.width) return;
-    setChartWidth(windowSize.width / 2);
-  }, [windowSize]);
-
-  useEffect(() => {
-    console.log("🚀 ~ showExtra:", showExtra);
-  }, [showExtra]);
+    setChartWidth(isMobile ? windowSize.width * 0.8 : windowSize.width / 2);
+  }, [windowSize, isMobile]);
 
   useEffect(() => {
     if (!windowSize.height) return;

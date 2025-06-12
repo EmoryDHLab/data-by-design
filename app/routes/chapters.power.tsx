@@ -9,29 +9,25 @@ import { useState } from "react";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
-
 import FootnotesList from "~/components/FootnotesList";
-
 import figures from "~/data/figures/power.json";
-
 import Quotation from "~/components/Quotation";
 import HoverText from "~/components/HoverText";
 import HoverImages1 from "~/components/power/HoverImages1";
 import HoverImages2 from "~/components/power/HoverImages2";
-
 import DoubleSlideShow from "~/components/power/DoubleSlideShow";
 import Figure from "~/components/figures/Figure";
 import SlideShow from "~/components/layout/SlideShow";
 import { chapterMetaTags } from "~/utils";
 import StudentCharts from "~/components/power/StudentCharts";
 import ChapterBody from "~/components/layout/ChapterBody";
-import type { MetaFunction } from "react-router";
-import type { TVizAnchors, HoverState } from "~/chapterContext";
 import Takeaways from "~/components/layout/Takeaways";
 import ChartOneScrollytell from "~/components/power/duboisScrollytell/ChartOneScrollytell";
 import ChartTwoScrollytell from "~/components/power/duboisScrollytell/ChartTwoScrollytell";
 import ChartThreeScrollytell from "~/components/power/duboisScrollytell/ChartThreeScrollytell";
 import { chapterMeta } from "~/data/chapterMeta";
+import type { MetaFunction } from "react-router";
+import type { TVizAnchors, HoverState } from "~/chapterContext";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("power");
@@ -393,7 +389,6 @@ export default function DuboisChapter() {
             <HoverImages1 />
           </Column>
         </TwoColumnLayout>
-
         <SlideShow
           className="block md:hidden bg-black text-white w-full py-10 mb-8"
           figures={[
@@ -974,6 +969,7 @@ export default function DuboisChapter() {
         {/* Here is where the first scrollytell will be*/}
         <ChartOneScrollytell
           triggers={[
+            <div key="5cab8b07"></div>,
             <div key="59880c59">
               <p>
                 As have others, we noted the fact that the introductory chart of
@@ -1068,6 +1064,7 @@ export default function DuboisChapter() {
                 students ahead.
               </p>
             </div>,
+            <div key="0a538c37"></div>,
           ]}
         />
 
@@ -1187,6 +1184,7 @@ export default function DuboisChapter() {
         {/* start of second scrollytell */}
         <ChartTwoScrollytell
           triggers={[
+            <div key="5b68ea84"></div>,
             <div key="94a7a3b2">
               <p>
                 In this expanded chart that visualizes the data from the 1910
@@ -1250,6 +1248,7 @@ export default function DuboisChapter() {
             <div key="9b862bca">
               <p>Hover over the dots to data for each individual student</p>
             </div>,
+            <div key="14dafa36"></div>,
           ]}
         />
         <CenteredLayout>
@@ -1285,9 +1284,11 @@ export default function DuboisChapter() {
             qualitative in form.
           </p>
         </CenteredLayout>
+
         {/* start of third scrollytell */}
         <ChartThreeScrollytell
           triggers={[
+            <span key="386100cc"></span>,
             <span key="1119d19f">
               The survey that Du Bois and the seniors in that year’s sociology
               course created, and sent out across the United States, in addition
@@ -1327,6 +1328,7 @@ export default function DuboisChapter() {
               acknowledge the limits of what data--and, by extension, data
               visualization--could do.
             </span>,
+            <span key="65225a73"></span>,
           ]}
         />
 

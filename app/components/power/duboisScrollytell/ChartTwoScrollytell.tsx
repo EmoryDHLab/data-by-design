@@ -2,8 +2,9 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
-import type { ReactElement } from "react";
 import StudentChartTwo from "../StudentChartTwo";
+import { useDeviceContext } from "~/hooks";
+import type { ReactElement } from "react";
 
 function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
   const { accentTextColor } = useContext(ChapterContext);
@@ -13,6 +14,7 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
   );
   const [interactive, setInteractive] = useState<boolean>(false);
   const steps = useRef<HTMLDivElement>(null);
+  const { isMobile } = useDeviceContext();
 
   const minScrollProgress = 10.5;
 
@@ -40,8 +42,10 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
         break;
       case scrollProgress >= minScrollProgress + 5:
         setInteractive(true);
+        break;
       default:
         setActiveStudent(undefined);
+        break;
     }
   }, [scrollProgress]);
 
@@ -65,8 +69,8 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
               <StudentChartTwo
                 id="student-chart-two-scrolly"
                 interactive={interactive}
-                topOffset={80}
-                leftOffset={16}
+                topOffset={isMobile ? 150 : 80}
+                leftOffset={isMobile ? -16 : 16}
                 highlightChart={
                   scrollProgress >= minScrollProgress + 2 &&
                   scrollProgress <= minScrollProgress + 3
@@ -96,11 +100,11 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
                   className={`pointer-events-none step text-xl content-center relative h-screen text-${accentTextColor}`}
                 >
                   <div
-                    className={`p-6 m-16 text-offwhite md:p-0 bg-${
+                    className={`p-6 m-0 md:m-16 text-offwhite md:p-0 bg-${
                       index == 0 || index == triggers.length - 1
                         ? ""
                         : "powerPrimary-translucent"
-                    } w-9/12`}
+                    } w-full md:w-9/12`}
                   >
                     {trigger}
                   </div>

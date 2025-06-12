@@ -237,11 +237,11 @@ const ChartOneScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                   className={`pointer-events-none step text-xl content-center relative h-screen text-${accentTextColor}`}
                 >
                   <div
-                    className={`p-6 m-16 text-offwhite md:p-0 bg-${
+                    className={`p-6 m-0 md:m-16 text-offwhite md:p-0 bg-${
                       index == 0 || index == triggers.length - 1
                         ? ""
                         : "powerPrimary-translucent"
-                    } w-9/12`}
+                    } w-full md:w-9/12`}
                   >
                     {trigger}
                   </div>

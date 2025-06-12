@@ -1,7 +1,7 @@
 import scrollama from "scrollama";
 import { useContext, useEffect, useRef, useState } from "react";
 import ClientOnly from "~/components/ClientOnly";
-import { ChapterNav } from "~/components/ChapterNav";
+import { ChapterNav } from "~/components/layout/ChapterNav";
 import { useResizeObserver } from "~/hooks";
 import FootnoteToggle from "../FootnoteToggle";
 import { ChapterContext } from "~/chapterContext";

@@ -84,7 +84,7 @@ function placeCategoryCircles(
   labels: Label[],
   currentAngle: number,
   categoryAngle: number,
-  students: any[],
+  students: Student[],
   interactive: boolean,
   extra: boolean
 ) {
@@ -103,6 +103,7 @@ function placeCategoryCircles(
     : 0;
 
   for (let i = 0; i < students.length + extraCount; i++) {
+    // eslint-disable-next-line
     while (true) {
       const circle = createNewCircle(
         p5,
@@ -265,7 +266,7 @@ export default function PieChart({
   return (
     <div
       id={id}
-      className={`flex justify-center md:items-center ${className ?? ""}`}
+      className={`flex justify-center items-center w-full ${className ?? ""}`}
     />
   );
 }

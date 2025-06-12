@@ -31,7 +31,6 @@ const StudentChartThreeV2 = ({
   const [plOpacity, setPlOpacity] = useState<number>(100);
 
   useEffect(() => {
-    console.log("🚀 ~ useEffect ~ scrollProgress:", scrollProgress);
     if (!scrollProgress) return;
 
     switch (true) {
@@ -347,7 +346,7 @@ const StudentChartThreeV2 = ({
       </g>
 
       <g id="response_text">
-        {responseData.elt.map((response, index) => {
+        {responseData.elt.map((response) => {
           return (
             <ResponseV2
               key={response.id}
@@ -362,7 +361,7 @@ const StudentChartThreeV2 = ({
             />
           );
         })}
-        {responseData.cedu.map((response, index) => {
+        {responseData.cedu.map((response) => {
           return (
             <ResponseV2
               key={response.id}
@@ -377,7 +376,7 @@ const StudentChartThreeV2 = ({
             />
           );
         })}
-        {responseData.hind.map((response, index) => {
+        {responseData.hind.map((response) => {
           return (
             <ResponseV2
               key={response.id}
@@ -397,7 +396,7 @@ const StudentChartThreeV2 = ({
             />
           );
         })}
-        {responseData.pl.map((response, index) => {
+        {responseData.pl.map((response) => {
           return (
             <ResponseV2
               key={response.id}

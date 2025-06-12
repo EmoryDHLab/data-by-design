@@ -51,7 +51,7 @@ function ChartThreeScrollytell({ triggers }: { triggers: ReactElement[] }) {
                       index == 0 || index == triggers.length - 1
                         ? ""
                         : "powerPrimary-translucent"
-                    } w-9/12 text-offwhite`}
+                    } w-full md:w-9/12 text-offwhite`}
                   >
                     {trigger}
                   </p>

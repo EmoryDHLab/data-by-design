@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ClientOnly from "~/components/ClientOnly";
-import { useResizeObserver } from "~/hooks";
+import { useDeviceContext, useResizeObserver } from "~/hooks";
 import PieChart from "~/components/power/PieChart.client";
 import studentData from "~/data/power/studentChartOne.json";
 import Legend from "~/components/power/pieChart/Legend";
@@ -9,7 +9,7 @@ import type { TFocusShape } from "~/types/scrollytellTypes";
 
 const largeText = 22;
 const smallText = 15;
-const regularText = 15;
+const regularText = 14;
 const leftMargin = 15;
 
 interface Props {
@@ -44,6 +44,7 @@ export default function StudentChartOne({
   focusShape,
 }: Props) {
   const { windowSize } = useResizeObserver();
+  const { isMobile, isDesktop } = useDeviceContext();
   const [chartWidth, setChartWidth] = useState<number>(800);
   const [pieChartTop, setPieChartTop] = useState<number>(100);
   const [pieChartLeft, setPieChartLeft] = useState<number>(100);
@@ -69,7 +70,7 @@ export default function StudentChartOne({
     if (!windowSize.height) return;
     setPieChartTop(
       map(
-        480, // Y value for pie chart
+        477, // Y value for pie chart
         0,
         1000, // Height of SVG viewbox
         0,
@@ -200,7 +201,7 @@ export default function StudentChartOne({
 
           <g>
             <text
-              y={790}
+              y={787}
               fontSize={regularText}
               className={`uppercase font-powerWide tracking-wider transition-opacity duration-1000 opacity-100`}
             >
@@ -223,7 +224,7 @@ export default function StudentChartOne({
               <tspan x={leftMargin} dy={largeText}>
                 the chart.
               </tspan>
-              <tspan x={leftMargin} dy={largeText * 1.5} textLength={775}>
+              <tspan x={leftMargin} dy={largeText * 1.25} textLength={775}>
                 Several graduates are positioned outside of the chart, closest
                 to the occupations
               </tspan>
@@ -259,15 +260,24 @@ export default function StudentChartOne({
           }`}
         >
           <rect
-            y={460}
+            y={457}
             x={0}
             width={800}
             height={320}
             className="fill-offwhite"
           />
+          {isMobile && (
+            <image
+              href="/images/power/pie.png"
+              height={250}
+              width={250}
+              y={480}
+              x={275}
+            />
+          )}
           <Legend
             x={40}
-            y={510}
+            y={507}
             maxX={800}
             width={chartWidth}
             radius={largeText / 2}
@@ -395,20 +405,22 @@ export default function StudentChartOne({
           left: `${pieChartLeft}px`,
         }}
       >
-        <ClientOnly>
-          <PieChart
-            id={id ?? "student-chart-one"}
-            studentData={studentData}
-            className={`pointer-events-${
-              interactive ? "auto" : "none"
-            } order-last md:order-none transition-opacity duration-1000 translate-x-6 opacity-${
-              showPieChart ? 100 : 0
-            }`}
-            interactive={interactive}
-            activeStudent={activeStudent}
-            containerSize={pieChartWidth}
-          />
-        </ClientOnly>
+        {isDesktop && (
+          <ClientOnly>
+            <PieChart
+              id={id ?? "student-chart-one"}
+              studentData={studentData}
+              className={`pointer-events-${
+                interactive ? "auto" : "none"
+              } order-last md:order-none transition-opacity duration-1000 translate-x-6 opacity-${
+                showPieChart ? 100 : 0
+              }`}
+              interactive={interactive}
+              activeStudent={activeStudent}
+              containerSize={pieChartWidth}
+            />
+          </ClientOnly>
+        )}
       </div>
     </>
   );
