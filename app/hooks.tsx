@@ -65,8 +65,8 @@ export function useResizeObserver() {
       // Set window width/height to state
       setViewportSize({
         windowSize: {
-          width: window.innerWidth,
-          height: window.innerHeight,
+          width: window.outerWidth,
+          height: window.outerHeight,
         },
         documentSize: {
           width: calcDocumentWidth(),
