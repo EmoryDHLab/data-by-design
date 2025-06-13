@@ -110,7 +110,7 @@ function SketchScrollytell({ figure, triggers }: Props) {
         triggers={triggers}
         steps={steps}
         className="w-screen"
-        bgColor="peopleAccent"
+        // bgColor="peopleAccent"
       >
         <div
           className={`flex flex-col md:flex-row justify-between`}
