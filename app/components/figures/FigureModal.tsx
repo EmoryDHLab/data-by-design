@@ -96,8 +96,13 @@ export default function FigureModal({
                     }}
                   />
                 )}
-                <Button onClick={() => setIsOpen(false)} className="self-start">
-                  <Close className="hover:text-offwhite text-offwhite hover:fill-offblack" />
+                <Button
+                  onClick={() => setIsOpen(false)}
+                  className="self-start"
+                  title="Close"
+                >
+                  <span className="sr-only">Close Button</span>
+                  <Close className="hover:text-offwhite hover:bg-white text-offwhite hover:fill-offblack text-lg h-6 w-6" />
                 </Button>
               </DialogTitle>
               <div className="flex flex-col justify-between h-full">
