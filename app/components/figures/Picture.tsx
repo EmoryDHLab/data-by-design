@@ -26,8 +26,16 @@ const Picture = ({ figure, className, center = true }: Props) => {
 
   return (
     <picture ref={pictureRef}>
-      <source srcSet={`${figurePath}.webp`} />
-      <source srcSet={`${figurePath}.jpg`} />
+      <source
+        srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`}
+        type="image/webp"
+      />
+      <source
+        srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+        type="image/jpeg"
+      />
+      <source srcSet={`${figurePath}.webp`} type="image/webp" />
+      <source srcSet={`${figurePath}.jpg`} type="image/webp" />
       <img
         className={classNames(
           center ? "mx-auto drop-shadow-lg" : "mx-0 drop-shadow-lg",

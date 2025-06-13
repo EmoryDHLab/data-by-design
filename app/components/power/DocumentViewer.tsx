@@ -4,6 +4,7 @@ import figures from "~/data/figures/power.json";
 import Picture from "../figures/Picture";
 import Figure from "../figures/Figure";
 import type { TFigure as FigureType } from "~/types/figureType";
+import SlideShow from "../layout/SlideShow";
 
 type ImageSet = {
   [key: string]: FigureType[];
@@ -90,7 +91,7 @@ export default function DocumentViewer() {
       className="py-10 my-10 bg-black w-full flex flex-col items-center pb-10"
       id="doc-viewer"
     >
-      <div className="max-w-5xl flex">
+      <div className="hidden md:flex max-w-5xl">
         <div className="py-10 px-5 flex flex-col items-center w-1/6 space-y-5">
           <button
             onClick={() => {
@@ -213,6 +214,13 @@ export default function DocumentViewer() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="block md:hidden bg-offblack text-offwhite w-full">
+        <p className="ms-8 mt-0 font-power text-xl">Set One</p>
+        <SlideShow className="mb-4" figures={imageSets.setOne} />
+        <hr />
+        <p className="ms-8 font-power text-xl">Set Two</p>
+        <SlideShow className="" figures={imageSets.setTwo} />
       </div>
     </div>
   );
