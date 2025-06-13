@@ -1605,4 +1605,4 @@ export const powerFootnotes = [
   </span>,
 ];
 
-export const laborFootnotes = [];
+export const workFootnotes = [];

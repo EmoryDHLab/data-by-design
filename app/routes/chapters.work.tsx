@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ChapterTitle from "~/components/ChapterTitle";
 import { chapterMetaTags } from "~/utils";
-import { laborFootnotes } from "~/footnotes";
+import { workFootnotes } from "~/footnotes";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import PeopleVersions from "~/components/work/peopleVersions/PeopleVersions.client";
 import Footer from "~/components/Footer";
@@ -55,10 +55,10 @@ export default function LabourPage() {
   return (
     <ChapterContext.Provider
       value={{
-        backgroundColor: "laborPrimary",
-        accentColor: "laborPrimary",
-        footnoteTextColor: "laborPrimary",
-        footnotes: laborFootnotes,
+        backgroundColor: "workPrimary",
+        accentColor: "workSecondary",
+        footnoteTextColor: "workPrimary",
+        footnotes: workFootnotes,
         sections,
         visualizations,
         showFootnotes,
