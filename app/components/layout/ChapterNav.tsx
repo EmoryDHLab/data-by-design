@@ -36,7 +36,7 @@ interface Props {
 export function ChapterNav({ progress, fixedNav }: Props) {
   const { chapterFigures, visualizations, disclosure } =
     useContext(ChapterContext);
-  const { documentSize, mainContentSize, windowSize } = useResizeObserver();
+  const { documentSize, mainContentSize } = useResizeObserver();
   const [anchorMap, setAnchorMap] = useState<TAnchorPosition[]>([]);
 
   useEffect(() => {
@@ -94,12 +94,6 @@ export function ChapterNav({ progress, fixedNav }: Props) {
     const sortedAnchors = anchorPositions.sort(function (a, b) {
       return a.offset - b.offset;
     });
-    console.log(
-      "🚀 ~ ChapterNav ~ documentSize:",
-      documentSize,
-      mainContentSize,
-      windowSize
-    );
 
     setAnchorMap(sortedAnchors);
   }, [documentSize, mainContentSize, visualizations, chapterFigures]);
