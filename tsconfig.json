@@ -37,4 +37,5 @@
     "emitDeclarationOnly": true,
     "allowImportingTsExtensions": true,
   },
+  "exclude": ["./scripts"]
 }

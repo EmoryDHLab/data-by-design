@@ -13,6 +13,7 @@ export const app = express();
 app.use(
   createRequestHandler({
     build: () => import("virtual:react-router/server-build"),
+    // @ts-expect-error: This is directly from the template.
     getLoadContext() {
       return { VALUE_FROM_EXPRESS: "Hello from Express" };
     },
