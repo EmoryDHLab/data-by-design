@@ -39,6 +39,10 @@ export const meta: MetaFunction = () => {
 
 const sections = [
   {
+    title: "Chart of The Chapter ",
+    id: "chart-of-the-chapter",
+  },
+  {
     title: "Insight and Abstraction ",
     id: "insight-and-abstraction",
   },
