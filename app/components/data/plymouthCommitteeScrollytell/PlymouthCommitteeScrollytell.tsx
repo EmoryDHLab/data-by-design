@@ -212,7 +212,14 @@ export default function PlymouthCommitteeScrollytell({
                 />
               </svg>
               <figcaption className="mt-2 text-offblack/80 text-sm">
-                Image courtesy of the Library of the Society of Friends
+                The first published version of the slave ship diagram,{" "}
+                <cite>
+                  Plan of an African Ship’s Lower Deck with Negroes in the
+                  Proportion of Only One to a Ton,
+                </cite>{" "}
+                created by the Plymouth Committee of the Society for Effecting
+                the Abolition of the Slave Trade in England in 1788. © Religious
+                Society of Friends (Quakers) in Britain.
               </figcaption>
             </div>
           </div>

@@ -39,7 +39,7 @@ export const meta: MetaFunction = () => {
 
 const sections = [
   {
-    title: "Chart of The Chapter ",
+    title: "A Chart of This Chapter ",
     id: "chart-of-the-chapter",
   },
   {
@@ -333,7 +333,7 @@ export default function BrooksPage() {
           </p>
         </CenteredLayout>
 
-        <ChapterSectionTitle section={sections[0]}></ChapterSectionTitle>
+        <ChapterSectionTitle section={sections[1]}></ChapterSectionTitle>
         <CenteredLayout>
           <p className="first-paragraph">
             The original engraving that Clarkson showed to Equiano, and that
@@ -598,7 +598,7 @@ export default function BrooksPage() {
           </Column>
         </TwoColumnLayout>
 
-        <ChapterSectionTitle section={sections[1]} />
+        <ChapterSectionTitle section={sections[2]} />
 
         <TwoColumnLayout>
           <Column shouldPin>
@@ -810,7 +810,7 @@ export default function BrooksPage() {
           </p>
         </CenteredLayout>
 
-        <ChapterSectionTitle section={sections[2]} />
+        <ChapterSectionTitle section={sections[3]} />
         <CenteredLayout>
           <p className="first-paragraph">
             These were the very questions that I, Lauren, brought to the{" "}
@@ -1038,7 +1038,7 @@ export default function BrooksPage() {
           />
         </ClientOnly>
 
-        <ChapterSectionTitle section={sections[3]} />
+        <ChapterSectionTitle section={sections[4]} />
         <CenteredLayout>
           <p className="first-paragraph">
             While it would take another nine years for the British Parliament to
