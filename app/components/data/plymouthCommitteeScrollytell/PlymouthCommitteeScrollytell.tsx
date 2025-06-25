@@ -114,7 +114,12 @@ export default function PlymouthCommitteeScrollytell({
                 viewBox="0 0 713.52 291.12"
                 className="w-full md:h-full mt-12 md:mt-0"
               >
+                <filter id="ship-blur">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+                </filter>
+
                 <image
+                  filter={hideSensitiveState ? "url(#clarkson-blur)" : ""}
                   href="/images/data/1-sof_slaveship.jpg"
                   width="2973"
                   height="1213"
@@ -123,14 +128,6 @@ export default function PlymouthCommitteeScrollytell({
                   y={-0.45}
                 />
                 <g>
-                  <path
-                    className={`transition-all duration-1000 fill-${
-                      scrollProgress > 4.5 ? "dataSecondary" : "processOrange"
-                    } opacity-${hideSensitiveState ? 100 : 0}`}
-                    stroke="rgb(28 24 23)"
-                    strokeWidth={scrollProgress > 4.5 ? 3 : 0}
-                    d={paths.outline}
-                  />
                   <Labels />
                 </g>
                 <g
