@@ -20,9 +20,9 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
   const steps = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (scrollProgress > minScrollProgress && scrollProgress % 1 > 0.25) {
+    if (scrollProgress > minScrollProgress && scrollProgress % 1 > 0.5) {
       setSlideIndex(Math.ceil(scrollProgress) - minScrollProgress);
-    } else if (scrollProgress <= minScrollProgress + 0.25) {
+    } else if (scrollProgress <= minScrollProgress + 0.5) {
       setSlideIndex(0);
     }
   }, [scrollProgress]);
@@ -275,12 +275,14 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                   ? "md:w-full md:px-52"
                   : "md:w-1/2"
               } ${
-                index + 1 === triggers.length ? "h-auto" : "h-screen"
+                index + 1 === triggers.length
+                  ? "min-h-screen"
+                  : "min-h-screen md:mb-64"
               } text-${accentTextColor}`}
             >
-              <p className="bg-dataSecondary-translucent p-3 md:p-12">
+              <div className="bg-dataSecondary-translucent p-3 md:p-12">
                 {trigger}
-              </p>
+              </div>
             </div>
           );
         })}
