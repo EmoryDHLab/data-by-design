@@ -413,7 +413,7 @@ export default function BrooksPage() {
             encounter with these images over two hundred years after they were
             first shown serves a different purpose: to understand how their
             designers were able to leverage a combination of abstraction and
-            detail in order to achieve their catalyzing effects.  Even
+            detail in order to achieve their catalyzing effects. Even
             progressively disclosed, these charts remain as viscerally affecting
             as they are visually impossible. In the original Elford diagram—the
             one that Equiano saw—viewers see the ship from above, as if they are
@@ -879,151 +879,211 @@ export default function BrooksPage() {
         <VoyageScrollytell
           triggers={[
             <span key="490b6e1c">
-              One variable included in the dataset, labeled “Resistance,” seemed
-              to hold the key to this work.
+              We began our prototyping process, as many do, by examining the
+              summary statistics of our dataset. But having articulated our
+              ethical framework and our design goals, few facets of the
+              data—counts of ships and people, and, more chillingly,
+              prices—seemed seemed to hold any possibility for being reframed in
+              ways that would not further reinscribe the violence of the
+              original numbers, as Johnson and others have intoned. However, one
+              variable, labeled “resistance,” seemed to provide a small opening
+              that we thought we could further extend. It contained seven
+              different subcategories of resistance that might have taken place
+              on any particular journey. These included attempts at insurrection
+              while at sea, both those that were successful and those that were
+              thwarted while underway; attacks on the ship (or larger fleet)
+              while on shore; and unspecified acts of resistance undertaken by
+              “three or more” of captives at a single time. Could we use this
+              “resistance” variable to create a visualization that, to recall
+              Browne’s phrase, “looked back at the gaze from nowhere”?
             </span>,
-            <span key="38d0f8a6">
-              It contained seven categories for indicating the form of
-              resistance that took place on any particular trip. Could we use
-              the “Resistance” variable to create a visualization that, to
-              recall Browne's phrase, “looked back at the gaze from nowhere”? We
-              began by pulling out the voyages that had any form of “resistance”
-              associated with them, as well as six of the more basic variables
-              that were associated with each trip.
+            <span className="block" key="38d0f8a6">
+              However, one variable, labeled “resistance,” seemed to provide a
+              small opening that we thought we could further extend.
             </span>,
-            <span key="8e1ece04">
-              The additional variables we selected, the voyage's start date, its
-              end date, the total number of individuals who “embarked” on the
-              voyage, and the total number of the individuals who disembarked,
-              would allow us to provide a basic picture of each of the 572
-              voyages that contained a documented act of resistance.
-              <InlineFootnote index={44} />
+            <span className="block" key="8e1ece04">
+              It contained seven different subcategories of resistance that
+              might have taken place on any particular journey. These included
+              attempts at insurrection while at sea, both those that were
+              successful and those that were thwarted while underway; attacks on
+              the ship (or larger fleet) while on shore; and unspecified acts of
+              resistance undertaken by “three or more” of captives at a single
+              time.
             </span>,
-            <span key="442c2e00">
+            <span className="block" key="442c2e00">
+              Could we use this “resistance” variable to create a visualization
+              that, to recall Browne’s phrase, “looked back at the gaze from
+              nowhere”?
+            </span>,
+            <span className="block" key="cd4ac8ca">
+              We began by pulling out the voyages that had any form of
+              resistance associated with them, as well as six of the more basic
+              variables that were associated with each journey. The additional
+              variables we selected—the voyage’s start date, its end date, the
+              total number of individuals who “embarked” on the voyage, and the
+              total number of the individuals who disembarked—would allow us to
+              provide a basic picture of each of the 572 voyages that contained
+              a documented act of resistance.
+            </span>,
+            <span className="block" key="156434b0">
               Because our initial motivation was to visualize the dataset from
-              the perspective of the enslaved, our design departed from a
-              frequent observation made about the experience of the Middle
-              Passage: that the captives did not experience time as linear while
-              in the hold of the ship.
-              <InlineFootnote index={45} />
+              the perspective of the enslaved, our design process began by
+              focusing on a frequent observation made about the experience of
+              the Middle Passage: that the captives did not experience time as
+              linear while in the hold of the ship.
             </span>,
-            <span key="cd4ac8ca">
-              Drawing visual inspiration from Harold Fisk's alluvial diagram of
+            <span className="block" key="963d2d76">
+              Drawing visual inspiration from Harold Fisk’s alluvial diagram of
               the Mississippi River, which, as artist and scholar Romi Morrison
               explains, “deemphasizes the linearity of the river” in favor of
               showing a comparative view of its various paths over time, we
-              arrived at an idea to use bends and turns to represent the
-              non-linearity of the Middle Passage.
-              <InlineFootnote index={46} />
+              decided to use bends and turns to represent the non-linearity of
+              the Middle Passage.
             </span>,
-            <span key="156434b0">
-              We also kept the vertical orientation of the visualization so as
-              to ensure that the viewer could not interpret the paths of the
+            <span className="block" key="a2565c78">
+              We retained the vertical orientation of the Fisk diagram so as to
+              ensure that the viewer could not interpret the paths of the
               voyages as corresponding to any actual location on a map.
             </span>,
-            <span key="963d2d76">
-              Borrowing the color palette from the Fisk diagram, but muting the
-              colors so as to ensure that this visualization of an experience of
-              trauma would not inadvertently become beautiful to perceive, we
-              represented each voyage as a snaking line determined by the number
-              of captives held on each ship.
-            </span>,
-            <span key="a2565c78">
-              In the final visualization, the width at the top of each “bind,”
-              as we came to call them, corresponds to the number of captives who
-              departed from Africa on each ship. The width at the bottom
-              corresponds to the number who arrived in the Americas having
-              survived. The duration of each voyage is conveyed through the
-              amplitude of each bind, but plotted from the side.
-            </span>,
             <span key="d4c5b977">
-              While Fisk's original design superimposes the floodplains of the
-              Mississippi from all points in time on a single image, we chose to
-              retain the start date of each voyage, since the rise and fall of
-              the slave trade—and the resistance that met it throughout—remained
-              important for us to convey. Here the binds are arranged
-              chronologically, from the first recorded act of resistance aboard
-              a slave ship in 1565, through the last in 1865.
+              <span className="block mb-8">
+                We then represented each voyage as a snaking line, its color
+                randomly selected from our Fisk-inspire palette, but its width
+                precisely determined by the number of captives held on the ship.
+              </span>
+              <span className="block">
+                Shiyao Li, the primary computer science visualization researcher
+                on our project team, had the idea to call these rivulets
+                “binds,” since what they represented was not the freedom of
+                movement that comes with flowing water, but its opposite: a form
+                of bondage often described as “living death.”
+              </span>
             </span>,
-            <span key="2356b657">
-              Since the majority of the voyages lacked data on the month or day
-              of departure, we grouped the voyages by year. While the visual
-              effect of this decision is not visible when viewing the voyages as
-              a whole.
+            <span className="block" key="2356b657">
+              In the final visualization, the width at the top of each bind
+              corresponds to the number of captives who departed from any
+              location in Africa. The width at the bottom corresponds to the
+              number who arrived in the Americas having survived.
             </span>,
-            <span key="577fe346">
+            <span className="block" key="577fe346">
+              The duration of each voyage is conveyed through the amplitude of
+              each bind, but plotted from side-to-side. Encoded in this way, the
+              longer voyages have wider sideways curves, and the shorter voyages
+              narrower and more direct paths.
+            </span>,
+            <span key="90c3c7eb">
+              <span className="block mb-8">
+                While Fisk’s original design superimposes the floodplains of the
+                Mississippi from all points in time on a single image, we chose
+                to retain the start and end date of each voyage, since the rise
+                and fall of the slave trade—and the resistance that met it
+                throughout—seemed important for us to still convey.
+              </span>
+              <span className="block">
+                In our visualization, the binds are arranged chronologically,
+                from the first recorded act of resistance aboard a slave ship in
+                1565, through the last in 1865. Since the majority of the
+                voyages lacked data on the month or day of departure, we grouped
+                the voyages by year. While the visual effect of this decision is
+                not visible when viewing the voyages all at once, zooming in on
+                a particular time span exposes these clusters for closer
+                inspection.
+              </span>
+            </span>,
+            <span className="block" key="cf140bd8">
+              While the visual effect of this decision is not visible when
+              viewing the voyages all at once,
+            </span>,
+            <span className="block" key="2deac1f9">
               Zooming in on a particular time span exposes these clusters for
               closer inspection.
             </span>,
-            <span key="90c3c7eb">
+            <span className="block" key="1c73c2f3">
+              But as evocative as this visual representation may be, there are
+              many other forms of resistance, large and small, that this
+              visualization does not convey.
+            </span>,
+            <span className="block" key="7ed03972">
               As an example, we might consider the time-span between 1756 and
               1766, the decade during which Olaudah Equiano was enslaved. Within
               each year, we can also see that the binds themselves overlap—what
               is called “occlusion” in visualization design. While generally
               viewed as a design problem, and something to avoid, we made the
-              decision not to further space out the voyages because of viewing
-              them together communicates the collective force of these acts of
-              resistance, as well as the additional nuance that a single
-              inclusion criterion—resistance or not—cannot convey.
+              decision not to further separate the voyages because viewing them
+              together communicates their collective force.
             </span>,
-            <span key="cf140bd8">
+            <span className="block" key="8562b8b3">
               The voyage that took Equiano from Benin to Barbados and on to
-              Virginia is not pictured in this chart, however, for it did not
-              include a form of resistance that was documented in the database.
-              But it might have been included among the 35,504 additional
-              voyages that the database currently contains.
+              Virginia is not pictured in this chart, however, because it did
+              not include a form of resistance that was documented in the
+              database. But it might have been included among the 35,578
+              additional voyages that the database currently contains.
             </span>,
-            <span key="2deac1f9">
-              With the additional voyages also plotted, the binds transform into
-              life-affirming arteries within the sinews of human flesh.
-              <InlineFootnote index={47} />
+            <span className="block" key="f754f6ea">
+              This was our inspiration to plot these voyages alongside the
+              “resistance” voyages, so as to further trouble the distinction
+              between the voyages that included documented acts of resistance
+              and those that did not. With these additional voyages plotted,
+              distinguished from the resistance voyages by their lack of color
+              fill, we observed a visual transformation we had not intended, but
+              that nevertheless aligned with our conceptual goals: the binds
+              were transformed into life-affirming arteries, enclosed within the
+              sinews of human flesh.
             </span>,
-            <span key="1c73c2f3">
-              But as evocative as this visual representation may be, there are
-              many other forms of resistance, large and small, that this
-              visualization does not convey.
+            <span className="block" key="c7a66f59">
+              As evocative as this image may be, there are many other forms of
+              resistance, large and small, that it does not represent.
             </span>,
-            <span key="7ed03972">
+            <span className="block" key="0b8820f6">
               In his autobiography, for example, Equiano recalls observing acts
               of resistance aboard the ship that were set in motion, but
-              ultimately “prevented by the ship's crew.” These acts of
+              ultimately “prevented by the ship’s crew.” These acts of
               resistance likely had concrete effects, both for the crew which—in
-              their need to suppress them—perhaps also attuned them to the
-              odious nature of the acts in which they were engaged; and for the
-              captives, who perhaps might have taken heart—or inspiration—in the
-              possibilities to push back against their likely fate. But as
-              unfinished acts of resistance, they would have gone unrecorded in
-              the dataset.
+              their need to suppress them—perhaps also attuned them to their own
+              complicity; and for the captives, who perhaps might have taken
+              heart in—or inspiration from—the possibility of pushing back
+              against their likely fate. But as unfinished acts of resistance,
+              they would have gone unrecorded in the dataset, as they did not
+              meet its criteria for resistance or not.
             </span>,
-            <span key="8562b8b3">
+            <span className="block" key="8f72225a">
               We might also consider the myriad number of smaller acts of
               resistance, including those in which Equiano himself engaged. Upon
               first being captured, for example, Equiano described how he
-              refused to eat; and when his captor attempted to give him a new
-              name, depriving him of his identity and his Ibo roots, “I refused
-              to answer to my new name,” Equiano explains.
-              <InlineFootnote index={48} /> Equiano's more “quiet” forms of
-              resistance, as Kevin Quashie might term them, were also real, and
-              also meaningful, even as they remain difficult to represent as
-              data ever at all.
+              refused to eat; and when his captor attempted to rename him,
+              depriving him of his identity and his Ibo roots, “I refused to
+              answer to my new name,” Equiano explains. Equiano’s more “quiet”
+              forms of resistance, as literary scholar Kevin Quashie might term
+              them, were also real, and also meaningful, even as they remain
+              difficult to represent as data at all.
             </span>,
-            <span key="f754f6ea">
-              It was here, again, that we turned to the power of data
-              visualization to bring these quiet acts of resistance to light. In
-              the final view, we display all 36,079 voyages with a color fill,
-              implying that every single journey involved acts of
-              resistance—some that are recorded in the dataset, some that took
-              place but went unrecorded, and some that defied recording at all.
-              What we were visualizing, our process allowed us to see, was not
-              actually the slave trade, but the data it had left in its wake.
+            <span className="block" key="c68f1d3b">
+              In our final interactive view, which you can soon explore, we
+              decided to leverage the power of visualization to amplify these
+              otherwise quiet acts. In the final view, we decided to display all
+              36,150 voyages with a color fill, selected from the same color
+              palette as the original visualization of only the resistance
+              voyages. The implication of this choice, we hope, is clear: that
+              every single journey documented in the TAST database involved acts
+              of resistance: some that are recorded as “resistance,” some that
+              took place but went unrecorded as data, and some that defied
+              recording at all. What we were visualizing in the end, our process
+              allowed us to see, was not actually the Middle Passage, but the
+              data it had left in its wake.
             </span>,
-            <span key="c7a66f59">
-              But as the additional voyages are layered into the frame, the
-              viewer can no longer see clearly enough to deduce anything about a
-              specific voyage. This is intentional, because the insight that we
-              seek to prompt exceeds the data on display: that there are certain
-              phenomena, such as the slave trade itself, which we can never
-              fully understand.
+            <span className="block" key="cdd173c9">
+              In order to underscore this point, we drew from an array of common
+              visualization techniques. But we did not use them in the way that
+              they are most often employed. For example, instead of providing an
+              overview first, and then “details on demand,” our visualization
+              inverts this process. We begin with the details of the
+              “resistance” voyages, but as the additional voyages are layered
+              into the frame, the viewer can no longer see clearly enough to
+              deduce anything about a specific voyage. This is intentional,
+              because the insight that we seek to prompt exceeds the data on
+              display: it is that there are certain phenomena, such as the
+              profound and personal trauma of the experience of the Middle
+              Passage, which we can never fully understand.
             </span>,
           ]}
         />

@@ -3,18 +3,14 @@ import { ChapterContext } from "~/chapterContext";
 import ClientOnly from "~/components/ClientOnly";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import figures from "~/data/figures/data.json";
-import FiskColors from "./FiskColors";
 import VoyageExample from "../voyages/VoyageExample";
 import VoyagesVis from "../voyages/VoyagesVis.client";
-import ScrollingVoyageVis from "./ScrollingVoyageVis";
 import Variables from "./Variables";
 import type { ReactElement } from "react";
 import { useResizeObserver } from "~/hooks";
 
 const minScrollProgress = 16;
-const BACKGROUND = [224, 220, 242];
-const initialStartYear = 1565;
-const initialEndYear = 1865;
+const fullWidthSlides = [0, 3, 12, 13, 14, 15, 16, 17, 18, 21, 22];
 
 const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
   const { accentTextColor } = useContext(ChapterContext);
@@ -47,32 +43,32 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             <svg
               viewBox="0 0 329 747"
               width={windowSize.width ? windowSize.width * 0.45 : 300}
-              className=" md:h-full flex md:ml-6 p-3 md:p-6 pt-10 md:pt-0 absolute left-[25%] md:left-auto md:right-0"
+              className=" md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0 absolute left-[25%] md:left-auto md:right-0"
             >
               {/* 1 */}
               <image
-                x={0}
-                y="25%"
+                x={-50}
+                y="15%"
                 width="100%"
                 href={`/images/data/${figures["PLACEHOLDERquery"].fileName}.jpg`}
-                className={`absolute transition-opacity duration-1000 opacity-${
-                  slideIndex === 0 ? 100 : 0
+                className={`absolute scale-100 md:scale-125 transition-opacity duration-1000 opacity-${
+                  slideIndex === 1 ? 100 : 0
                 }`}
               />
               {/* 2 */}
               <image
-                x={0}
+                x={-50}
                 y="25%"
                 width="100%"
                 href={`/images/data/${figures["PLACEHOLDERquery2"].fileName}.jpg`}
-                className={`absolute transition-opacity duration-1000 opacity-${
-                  slideIndex === 1 ? 100 : 0
+                className={`absolute scale-100 md:scale-125 transition-opacity duration-1000 opacity-${
+                  slideIndex === 2 ? 100 : 0
                 }`}
               />
               {/* 3 */}
               <g
                 className={`transition-opacity duration-1000 opacity-${
-                  slideIndex === 2 ? 100 : 0
+                  slideIndex === 4 ? 100 : 0
                 }`}
               >
                 <Variables />
@@ -84,25 +80,25 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 width="100%"
                 href={`/images/data/${figures["fisk-plate22sheet09"].fileName}.jpg`}
                 className={`absolute transition-opacity duration-1000 opacity-${
-                  slideIndex === 3 ? 100 : 0
+                  slideIndex === 5 ? 100 : 0
                 }`}
               />
               {/* 5 */}
               <g
                 className={`absolute transition-opacity duration-1000 opacity-${
-                  slideIndex === 4 ? 100 : 0
+                  slideIndex === 6 ? 100 : 0
                 }`}
               >
                 <line
                   x1={0}
                   x2={0}
-                  y1={285}
-                  y2={500}
+                  y1={235}
+                  y2={470}
                   strokeWidth={3}
                   stroke="#8C20E1"
                 />
 
-                <text fontSize={20} y={300} className="font-neueMontreal block">
+                <text fontSize={20} y={250} className="font-neueMontreal block">
                   <tspan x={10} dy={0}>
                     Fisk's "representation &#91;of the
                   </tspan>
@@ -128,7 +124,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 <text
                   fontSize={18}
                   x={5}
-                  y={450}
+                  y={420}
                   className="font-neueMontrealLight font-light"
                 >
                   <tspan x={10} dy={0}>
@@ -143,33 +139,33 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 </text>
               </g>
 
-              {/* 16 */}
+              {/* 19 */}
               <image
                 x={0}
-                y="33%"
+                y="25%"
                 width="100%"
                 href={`/images/data/${figures["equiano-narrative"].fileName}.jpg`}
                 className={`absolute transition-opacity duration-1000 opacity-${
-                  slideIndex === 15 ? 100 : 0
+                  slideIndex === 19 ? 100 : 0
                 }`}
               />
 
-              {/* 17 */}
+              {/* 20 */}
               <g
                 className={`absolute transition-opacity duration-1000 opacity-${
-                  slideIndex === 16 ? 100 : 0
+                  slideIndex === 20 ? 100 : 0
                 }`}
               >
                 <line
                   x1={0}
                   x2={0}
-                  y1={285}
-                  y2={464}
+                  y1={235}
+                  y2={414}
                   strokeWidth={3}
                   stroke="#8C20E1"
                 />
 
-                <text fontSize={20} y={300} className="font-neueMontreal block">
+                <text fontSize={20} y={250} className="font-neueMontreal block">
                   <tspan x={10} dy={0}>
                     This argument for quiet aims
                   </tspan>
@@ -189,7 +185,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 <text
                   fontSize={18}
                   x={5}
-                  y={420}
+                  y={370}
                   className="font-neueMontrealLight font-light"
                 >
                   <tspan x={10} dy={0}>
@@ -203,138 +199,66 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                   </tspan>
                 </text>
               </g>
+              <VoyageExample slideIndex={slideIndex} />
             </svg>
-            {/* 6 */}
-            <FiskColors
-              className={`absolute -top-[25%] md:top-1 left-[25%] md:left-auto md:right-0 transition-opacity duration-1000 opacity-${
-                slideIndex === 5 ? 100 : 0
-              }`}
-            />
-            {/* 7 */}
-            <div
-              className={`absolute transition-opacity duration-1000 opacity-${
-                slideIndex === 6 ? 100 : 0
-              }`}
-            >
-              <ClientOnly>
-                <VoyagesVis
-                  id="sample-voyages"
-                  startYear={1587}
-                  endYear={1589}
-                  showSlider={false}
-                  allVoyages
-                  background={BACKGROUND}
-                  fullColor
-                  heightAdjust={1}
-                  showAxis={false}
-                />
-              </ClientOnly>{" "}
+          </div>
+        </div>
+        <ClientOnly>
+          <>
+            <div className="absolute top-4 md:top-18 mt-8 scale-90">
+              <VoyagesVis
+                className={`${slideIndex === 12 ? "opacity-100" : "opacity-0"}`}
+                id="all-voyage"
+                allVoyages={true}
+                fullColor={true}
+                startYear={1565}
+                endYear={1858}
+                showSlider={false}
+              />
             </div>
-            {/* 8 */}
-            <div
-              className={`absolute transition-opacity duration-1000 opacity-${
-                slideIndex === 7 ? 100 : 0
-              }`}
-            >
-              <div className="p-8 h-screen content-center ">
-                <VoyageExample />
-              </div>
+            <div className="absolute top-4 md:top-18 mt-8 scale-90">
+              <VoyagesVis
+                className={`${
+                  slideIndex >= 13 && slideIndex <= 16
+                    ? "opacity-100"
+                    : "opacity-0"
+                }`}
+                id="zoomed-voyage"
+                allVoyages={false}
+                fullColor={true}
+                startYear={1708}
+                endYear={1719}
+                showSlider={false}
+              />
             </div>
-          </div>
-        </div>
-        {/* 8 */}
-        <div
-          className={`absolute -top-4 md:top-0 transition-opacity duration-1000 opacity-${
-            slideIndex === 8 ? 100 : 0
-          }`}
-        >
-          <ClientOnly>
-            <VoyagesVis
-              startYear={initialStartYear}
-              endYear={initialEndYear}
-              background={BACKGROUND}
-              showSlider={false}
-              showAxis={false}
-              allVoyages={false}
-              id="resistance-only"
-              heightAdjust={1}
-            />
-          </ClientOnly>
-          <div className="absolute top-28 text-center w-screen mx-auto font-power text-xl z-10">
-            <span className="bg-offwhite py-2 px-8">Begin Voyage</span>
-          </div>
-          <div className="absolute bottom-28 text-center w-screen mx-auto font-power text-xl z-10">
-            <span className="bg-offwhite py-2 px-8">End Voyage</span>
-          </div>
-          <div className="absolute top-[40vh] left-12 text-center mx-auto font-power text-xl z-10">
-            <span className="bg-offwhite py-2 px-8">1565</span>
-          </div>
-          <div className="absolute top-[40vh] right-12 text-center mx-auto font-power text-xl z-10">
-            <span className="bg-offwhite py-2 px-8">1858</span>
-          </div>
-        </div>
-
-        {/* 9 - 12 */}
-        <div
-          className={`absolute top-4 md:top-18 transition-opacity duration-1000 opacity-${
-            slideIndex >= 9 && slideIndex <= 12 ? 100 : 0
-          }`}
-        >
-          <ScrollingVoyageVis scrollProgress={scrollProgress} />
-        </div>
-
-        {/* 13, 17 */}
-        <div className={`absolute top-4 md:top-18`}>
-          <ClientOnly>
-            <VoyagesVis
-              id="scrolling-voyage-all"
-              allVoyages={true}
-              fullColor={false}
-              startYear={1756}
-              endYear={1766}
-              className={`transition-opacity duration-1000 opacity-${
-                (slideIndex >= 12 && slideIndex <= 13) ||
-                (scrollProgress >= 32 && scrollProgress <= 33)
-                  ? 100
-                  : 0
-              }`}
-            />
-          </ClientOnly>
-        </div>
-        {/* 18 */}
-        <div className={`absolute top-4 md:top-18`}>
-          <ClientOnly>
-            <VoyagesVis
-              id="all-full-color-1756"
-              startYear={1756}
-              endYear={1766}
-              showSlider={true}
-              allVoyages={true}
-              fullColor={true}
-              className={`transition-opacity duration-1000 opacity-${
-                scrollProgress >= 32.85 && scrollProgress <= 33.3 ? 100 : 0
-              }`}
-            />
-          </ClientOnly>
-        </div>
-        <div
-          className={`absolute -top-4 transition-opacity duration-1000 opacity-${
-            scrollProgress >= 33.3 ? 100 : 0
-          }`}
-        >
-          <ClientOnly>
-            <VoyagesVis
-              startYear={1776}
-              endYear={1786}
-              background={[224, 220, 242]}
-              showSlider={false}
-              showAxis={false}
-              id="scrollytell-allVoyageContainer"
-              heightAdjust={1.02}
-              widthAdjust={1}
-            />
-          </ClientOnly>
-        </div>
+            <div className="absolute top-4 md:top-18 mt-8 scale-90">
+              <VoyagesVis
+                className={`${
+                  slideIndex >= 17 && slideIndex <= 18
+                    ? "opacity-100"
+                    : "opacity-0"
+                }`}
+                id="all-not-full-color-voyage"
+                allVoyages={true}
+                fullColor={false}
+                startYear={1708}
+                endYear={1719}
+                showSlider={false}
+              />
+            </div>
+            <div className="absolute top-4 md:top-18 mt-8 scale-90">
+              <VoyagesVis
+                className={`${slideIndex === 21 ? "opacity-100" : "opacity-0"}`}
+                id="all-full-color"
+                allVoyages={true}
+                fullColor={true}
+                startYear={1708}
+                endYear={1719}
+                showSlider={false}
+              />
+            </div>
+          </>
+        </ClientOnly>
       </div>
 
       <div
@@ -346,8 +270,12 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             <div
               key={`voyageScrollytell-${trigger.key}`}
               data-step={index}
-              className={`pointer-events-none step text-xl p-5 md:px-20 relative w-auto md:w-1/2 md:mb-64 ${
-                index + 1 === triggers.length ? "h-screen" : "h-screen"
+              className={`pointer-events-none step text-xl p-5 md:px-20 relative w-auto ${
+                fullWidthSlides.includes(index)
+                  ? "md:w-full md:px-52"
+                  : "md:w-1/2"
+              } md:mb-64 ${
+                index + 1 === triggers.length ? "h-auto" : "h-screen"
               } text-${accentTextColor}`}
             >
               <p className="bg-dataSecondary-translucent p-3 md:p-12">

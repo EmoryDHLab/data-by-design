@@ -93,4 +93,13 @@ export const chapterMeta: TChapterMeta = {
     imageWidth: "800",
     imageHeight: "800",
   },
+  epilogue: {
+    title: "Epilogue",
+    subtitle: "",
+    description: "",
+    image: "/images/dxd.jpg",
+    bgImage: "/images/dxd.jpg",
+    imageWidth: "800",
+    imageHeight: "800",
+  },
 };

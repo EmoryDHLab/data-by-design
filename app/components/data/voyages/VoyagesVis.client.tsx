@@ -194,7 +194,9 @@ function VoyagesVis({
   }
 
   return (
-    <div className={`w-screen relative z-10 overflow-x-hidden ${className}`}>
+    <div
+      className={`w-screen relative z-10 overflow-x-hidden transition-opacity duration-1000 ${className}`}
+    >
       <div className="flex flex-col items-center text-white">
         {showSlider && (
           <div className={`bg-black ${interactive ? "" : "w-screen"}`}>
