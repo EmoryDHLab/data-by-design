@@ -274,7 +274,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 fullWidthSlides.includes(index)
                   ? "md:w-full md:px-52"
                   : "md:w-1/2"
-              } md:mb-64 ${
+              } ${
                 index + 1 === triggers.length ? "h-auto" : "h-screen"
               } text-${accentTextColor}`}
             >

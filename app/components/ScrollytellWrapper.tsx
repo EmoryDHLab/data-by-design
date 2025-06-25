@@ -61,7 +61,7 @@ export default function ScrollytellWrapper({
       scrollerRef.current = scrollama();
       scrollerRef.current
         .setup({
-          // @ts-ignore may be a Scrollama bug. offset does allow strings.
+          // @ts-expect-error may be a Scrollama bug. offset does allow strings.
           offset: "60px",
           step: stepClassName ?? ".step",
           progress: true,
@@ -118,7 +118,7 @@ export default function ScrollytellWrapper({
       className={classNames(
         `bg-${bgColor ?? backgroundColor}`,
         className,
-        "my-8 md:my-12 relative z-10"
+        "my-8 md:mt-12 md:mb-0 relative z-10"
       )}
     >
       {children}
