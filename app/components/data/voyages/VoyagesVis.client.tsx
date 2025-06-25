@@ -10,6 +10,9 @@ import type { TVoyage } from "~/types/voyage";
 const INITIAL_YEAR_RANGE = [1565, 1575];
 
 interface Props {
+  axisBg?: string;
+  axisColor?: string;
+  border?: boolean;
   startYear?: number;
   endYear?: number;
   background?: number[];
@@ -26,6 +29,9 @@ interface Props {
 }
 
 function VoyagesVis({
+  axisBg,
+  axisColor,
+  border = true,
   startYear = INITIAL_YEAR_RANGE[0],
   endYear = INITIAL_YEAR_RANGE[1],
   background = [253, 249, 246],
@@ -55,6 +61,7 @@ function VoyagesVis({
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
   const [widthDiff, setWidthDiff] = useState<number>(0);
+  const borderRef = useRef<boolean>(border);
 
   // We make a bunch of refs so we can use properties in the initial setup.
   // We don't want the initial setup to run each time one of these is updated,
@@ -119,8 +126,12 @@ function VoyagesVis({
       filteredVoyages.current = [];
 
       p5.setup = () => {
-        p5.createCanvas(width + widthDiff, height).parent(idRef.current);
-
+        const canvas = p5
+          .createCanvas(width + widthDiff, height)
+          .parent(idRef.current);
+        if (borderRef.current) {
+          canvas.addClass("border-2 border-offblack");
+        }
         (voyageData as TVoyage[]).forEach((voyage: TVoyage) => {
           voyages.current.push(
             new Voyage(
@@ -208,7 +219,7 @@ function VoyagesVis({
             />
           </div>
         )}
-        <div id={id}></div>
+        <div className="" id={id}></div>
         {width && (
           <div
             className={`opacity-${
@@ -219,7 +230,8 @@ function VoyagesVis({
               width={width - widthDiff}
               yearRange={yearRange}
               widthAdjustment={45}
-              color="black"
+              color={axisColor ?? "black"}
+              background={axisBg ?? undefined}
             />
           </div>
         )}

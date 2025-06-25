@@ -3,13 +3,20 @@ import { useEffect, useRef } from "react";
 import { useDeviceContext, useResizeObserver } from "~/hooks";
 
 interface Props {
+  background?: string | undefined;
   width: number;
   color?: string;
   yearRange: Array<number>;
   widthAdjustment?: number;
 }
 
-function Axis({ width, color, yearRange, widthAdjustment = 0 }: Props) {
+function Axis({
+  background,
+  width,
+  color,
+  yearRange,
+  widthAdjustment = 0,
+}: Props) {
   const axisContainerRef = useRef<HTMLDivElement>(null);
   const axisRef = useRef<SVGSVGElement>(null);
   const { isDesktop } = useDeviceContext();
@@ -42,7 +49,10 @@ function Axis({ width, color, yearRange, widthAdjustment = 0 }: Props) {
   }, [yearRange, width, color, widthAdjustment, isDesktop, windowSize]);
 
   return (
-    <div ref={axisContainerRef}>
+    <div
+      className={`${background ?? ""} pt-8 w-screen flex justify-center`}
+      ref={axisContainerRef}
+    >
       {/* <div id="x-axis"></div> */}
       <svg ref={axisRef}></svg>
     </div>

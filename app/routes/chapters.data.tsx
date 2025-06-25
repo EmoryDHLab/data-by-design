@@ -30,6 +30,7 @@ import { chapterMeta } from "~/data/chapterMeta";
 
 import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
+import VoyageVisContainer from "~/components/data/voyages/VoyageVisContainer";
 
 const chapterFigures = Object.values(figures);
 
@@ -79,7 +80,7 @@ const visualizations: TVizAnchors[] = [
   {
     type: "visualization",
     id: "voyage-interactive",
-    title: "Visualization Four",
+    title: "Resistance Voyages",
   },
   {
     type: "scrollytell",
@@ -1089,13 +1090,18 @@ export default function BrooksPage() {
         />
 
         <ClientOnly>
-          <VoyagesVis
-            id="voyage-interactive"
-            allVoyages
-            fullColor
-            // widthAdjust={1}
-            interactive
-          />
+          <VoyageVisContainer>
+            <>
+              <VoyagesVis
+                id="voyage-interactive"
+                allVoyages
+                fullColor
+                interactive
+                axisBg="bg-offwhite"
+                border={false}
+              />
+            </>
+          </VoyageVisContainer>
         </ClientOnly>
 
         <ChapterSectionTitle section={sections[4]} />
