@@ -1606,3 +1606,5 @@ export const powerFootnotes = [
 ];
 
 export const workFootnotes = [];
+
+export const epilogueFootnotes = [];

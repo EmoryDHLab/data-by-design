@@ -6,7 +6,8 @@ export type ChapterTitle =
   | "image"
   | "people"
   | "work"
-  | "preface";
+  | "preface"
+  | "epilogue";
 
 export type TChapterMeta = {
   [key in ChapterTitle]: {

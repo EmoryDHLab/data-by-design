@@ -42,7 +42,7 @@ const SiteNav = () => {
                 key={chapter}
               >
                 <Link to={`/chapters/${chapter}`} className="">
-                  {index < 2 ? (
+                  {index < 2 || index >= 8 ? (
                     ""
                   ) : (
                     <div className="text-xs pt-2 ps-8 md:ps-2">
