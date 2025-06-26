@@ -8,6 +8,7 @@ import VoyagesVis from "../voyages/VoyagesVis.client";
 import Variables from "./Variables";
 import type { ReactElement } from "react";
 import { useResizeObserver } from "~/hooks";
+import ScrollingVoyageVis from "./ScrollingVoyageVis";
 
 const minScrollProgress = 16;
 const fullWidthSlides = [0, 3, 12, 13, 14, 15, 16, 17, 18, 21, 22];
@@ -203,9 +204,13 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             </svg>
           </div>
         </div>
+        <ScrollingVoyageVis
+          scrollProgress={scrollProgress}
+          slideIndex={slideIndex}
+        />
         <ClientOnly>
           <>
-            <div className="absolute top-4 md:top-18 mt-8 scale-90">
+            {/* <div className="absolute top-4 md:top-18 mt-8 scale-90">
               <VoyagesVis
                 className={`${slideIndex === 12 ? "opacity-100" : "opacity-0"}`}
                 id="all-voyage"
@@ -230,11 +235,12 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 endYear={1719}
                 showSlider={false}
               />
-            </div>
+            </div> */}
             <div className="absolute top-4 md:top-18 mt-8 scale-90">
               <VoyagesVis
                 className={`${
-                  slideIndex >= 17 && slideIndex <= 18
+                  (slideIndex >= 17 && slideIndex <= 18) ||
+                  (scrollProgress >= 36.4 && scrollProgress <= 36.7)
                     ? "opacity-100"
                     : "opacity-0"
                 }`}
@@ -248,7 +254,11 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             </div>
             <div className="absolute top-4 md:top-18 mt-8 scale-90">
               <VoyagesVis
-                className={`${slideIndex === 21 ? "opacity-100" : "opacity-0"}`}
+                className={`${
+                  slideIndex === 21 && scrollProgress >= 36.7
+                    ? "opacity-100"
+                    : "opacity-0"
+                }`}
                 id="all-full-color"
                 allVoyages={true}
                 fullColor={true}
