@@ -6,7 +6,7 @@ interface Props {
 
 const VoyageVisContainer = ({ children }: Props) => {
   return (
-    <div className="hidden h-screen md:grid grid-cols-1 md:grid-cols-2 bg-black text-left gap-x-0 md:gap-x-32 md:gap-y-2 text-white w-full p-6 relative z-10">
+    <div className="hidden h-screen md:grid grid-cols-1 md:grid-cols-2 bg-black text-left gap-x-0 md:gap-x-32 md:gap-y-2 text-white w-full relative z-10">
       {children}
       <div className="hidden md:grid px-32 grid-cols-2 border-t-2 md:col-span-3 p-4">
         <div>

@@ -232,6 +232,7 @@ function VoyagesVis({
               widthAdjustment={45}
               color={axisColor ?? "black"}
               background={axisBg ?? undefined}
+              interactive={interactive}
             />
           </div>
         )}

@@ -8,11 +8,13 @@ interface Props {
   color?: string;
   yearRange: Array<number>;
   widthAdjustment?: number;
+  interactive?: boolean;
 }
 
 function Axis({
   background,
   width,
+  interactive = false,
   color,
   yearRange,
   widthAdjustment = 0,
@@ -50,7 +52,9 @@ function Axis({
 
   return (
     <div
-      className={`${background ?? ""} pt-8 w-screen flex justify-center`}
+      className={`${background ?? ""} ${
+        interactive ? "pt-0" : "pt-8"
+      } w-screen flex justify-center`}
       ref={axisContainerRef}
     >
       {/* <div id="x-axis"></div> */}
