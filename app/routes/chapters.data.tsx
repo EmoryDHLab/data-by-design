@@ -1099,6 +1099,7 @@ export default function BrooksPage() {
                 interactive
                 axisBg="bg-offwhite"
                 border={false}
+                className="scale-x-90"
               />
             </>
           </VoyageVisContainer>
