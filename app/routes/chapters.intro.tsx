@@ -17,6 +17,7 @@ import type { TVizAnchors } from "~/chapterContext";
 import type { MetaFunction } from "react-router";
 import FigureModal from "~/components/figures/FigureModal";
 import Picture from "~/components/figures/Picture";
+import TeozacoalcoScrollytell from "~/components/intro/TeozacoalcoScrollytell";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("intro");
@@ -253,9 +254,88 @@ export default function IntroPage() {
             intended viewer—to easily understand.
             <InlineFootnote index={11} />
           </p>
-          <p>
-            [ ADD IN CLOSE-UPS OF LINES ON LEFT AND LINE EXTENDING FROM TOWN]
-          </p>
+        </CenteredLayout>
+        <TeozacoalcoScrollytell
+          triggers={[
+            <span key="81b19ca">
+              It would take somewhere between one and three years for the “Mapa
+              de Teozacoalco” to travel back across the Atlantic; a 1583
+              document signed by the royal cosmographer indicates his receipt of
+              the map in a folder of “maps and plans” returned from New Spain.
+              But there is no equivalent record that can attest to whether the
+              King ever saw the map, let alone what insight he might have
+              acquired. On the basis of what we know about his viewing
+              perspective, however—European, educated, and elite; focused on
+              questions of land and resources; and fixated on financial gain—we
+              can speculate about which parts of the map might have first struck
+              his eye.
+            </span>,
+            <span key="7fd2b6d8">
+              Perhaps the bold brown footpaths that indicate the region’s major
+              roads?
+            </span>,
+            <span key="9c18c00d">
+              Or the vine-like turquoise lines that reflect its many rivers?
+              (Lest they be confused as embellishment, note that they are
+              populated every-so-often by a scaley white fish.)
+            </span>,
+            <span key="3398344f">
+              The King would also likely have noted the numerous mountain
+              ranges,
+            </span>,
+            <span key="d6cdac87">
+              <span className="mb-8">
+                and the church-like icons that represent each of the towns in
+                the larger community, or yuhuiayu.
+              </span>
+              <span>
+                Evidently, these icons were plotted so precisely in relation to
+                the map’s natural features that they have been used by
+                present-day archaeologists to pinpoint the locations of these
+                historical towns.
+              </span>
+            </span>,
+            <span key="da06cb47">
+              But would the King have noted the belltower, the feature added to
+              icon representing the town of Teozacoalco to indicate its status
+              as a colonial center as well as an enduring seat of Native
+              lordship?
+            </span>,
+            <span key="08166519">
+              Would he have known how to interpret the map’s circular
+              projection, intended to signify the yuhuiayu’s unity and
+              wholeness, largely unfamiliar to European viewers, but typical of
+              Mesoamerican mapping techniques of the time?
+            </span>,
+            <span key="44731eb1">
+              Scholars of Ñudzahui history have documented each of the figures
+              in this genealogical diagram,{" "}
+            </span>,
+            <span key="ff2d855d">
+              as they have the longer family lines that appear on the left of
+              the page. But they have also documented something more: that there
+              was not only significance to the information encoded in these
+              diagrams; there was also significance to the manner in which they
+              were drawn. For the vertical genealogical structure that would
+              have been legible to the Spanish King was not how the Ñudzahui
+              people themselves understood their own history, as historian Yanna
+              Yannakakis explains.
+            </span>,
+            <span key="0f12b1e2">
+              In a culture in which marriages across ruling families were
+              employed to forge political alliances, and to build collective
+              strength, the Ñudzahui conceived of the relationships among the
+              ruling families of the region as more of a network, rather than
+              two discrete lines. By depicting these lineages as visibly
+              distinct from each other, even as their genealogies were known to
+              be deeply intertwined, the mapmaker was thus deliberately
+              representing the history of his people in a visual language
+              designed for the King of Spain—his intended viewer—to easily
+              understand.
+            </span>,
+          ]}
+        />
+        <CenteredLayout>
           <p>
             This is just one example of what can be gained by placing a map or
             chart in the specific context of its creation, and over the course
