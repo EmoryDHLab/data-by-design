@@ -4,6 +4,7 @@ import * as d3 from "d3";
 interface Props {
   innerWidth: number;
   yValue: number;
+  millions: boolean;
   text: string | number;
   opacity: number;
   xOffset?: number;
@@ -12,10 +13,12 @@ interface Props {
 export default function HorizontalGrid({
   innerWidth,
   yValue,
+  millions,
   text,
   opacity,
   xOffset = 0,
 }: Props) {
+  console.log("🚀 ~ yValue:", text);
   const lineRef = useRef<SVGLineElement>(null);
   const textRef = useRef<SVGTextElement>(null);
 
@@ -44,18 +47,26 @@ export default function HorizontalGrid({
         y2={5.5}
         stroke="black"
         opacity={0}
-        strokeWidth="0.2"
+        strokeWidth="0.4"
       ></line>
       <text
         ref={textRef}
         fill="black"
         x={innerWidth + 0.5}
         y={5.5}
-        fontFamily="Arial"
-        fontSize={1.5}
+        fontFamily="Chancery Cursive"
+        fontSize={2}
         opacity={0}
+        // className="font-extrabold"
       >
         {text ?? yValue}
+        <tspan letterSpacing={0.2} dx={0.5} fontSize={1.35}>
+          {millions
+            ? typeof text === "number" && text > 1
+              ? "Millions"
+              : "Million"
+            : ""}
+        </tspan>
       </text>
     </g>
   );

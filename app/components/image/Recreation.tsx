@@ -7,6 +7,7 @@ import ScatterPlot from "./elements/ScatterPlot";
 import StippleHatch from "./elements/StippleHatch";
 import ColorArea from "./elements/ColorArea";
 import { Paths } from "./scrollytellElements/Paths";
+import { useEffect, useState } from "react";
 
 const height = 44;
 const width = 94;
@@ -51,13 +52,17 @@ const scatterExport = playfairData
   .slice(0, 21);
 
 const formatYValue = (value: number) => {
-  if (value < interval || value >= 6_000_000) return " ";
-  if (value === interval) return "200,000";
-  if (value < 1_000_000) return value / 100_000;
+  if (value < interval || value >= 6_000_000)
+    return { formattedValue: " ", millions: false };
+  if (value === interval) return { formattedValue: "200,000", millions: false };
+  if (value < 1_000_000)
+    return { formattedValue: value / 100_000, millions: false };
   const shortValue = value / 1_000_000;
-  if (shortValue === 1 && shortValue % 1 === 0) return `${shortValue} Million`;
-  if (shortValue % 1 === 0) return `${shortValue} Millions`;
-  return value / 1_000_000;
+  if (shortValue === 1 && shortValue % 1 === 0)
+    return { formattedValue: `${shortValue}`, millions: true };
+  if (shortValue % 1 === 0)
+    return { formattedValue: `${shortValue}`, millions: true };
+  return { formattedValue: value / 1_000_000, millions: false };
 };
 
 const scaleMapper = (sOut: Array<number>, sIn: Array<number>) => {
@@ -70,6 +75,7 @@ export default function Recreation({
 }: {
   scrollProgress: number;
 }) {
+  const [errorPath, setErrorPath] = useState<string>();
   const transitionInOut = (arrayIn: Array<number>, arrayOut: Array<number>) => {
     const progToOpacityIn = scaleMapper([0.0, 1.0], arrayIn);
     const progToOpacityOut = scaleMapper([1.0, 0.0], arrayOut);
@@ -95,6 +101,38 @@ export default function Recreation({
       return 1;
     }
   };
+
+  // useEffect(() => {
+  //   const errorPaths = [
+  //     "M86.35,32.91c.77-.03,1.6-.09,2.47-.19.76-.09,1.49-.19,2.17-.31",
+  //     "M86.35,32.91c.21-.13,1.42-.85,2.87-.44.84.24,1.37.75,1.61,1.01",
+  //     // "M86.12,33.07c1.02-.07,1.74-.19,2.22-.29.4-.08.81-.16,1.21-.24.21-.04.49-.1.88-.17.21-.03.38-.05.5-.07",
+  //     "M86.35,32.91c.38.07,1.6.24,2.87-.44.93-.5,1.44-1.22,1.66-1.57",
+  //   ];
+
+  //   const wiggle = (error) => {
+  //     const interval = setInterval(() => {
+  //       console.log("🚀 ~ interval ~ errorPathIndex:", error);
+  //       setErrorPath(errorPaths[error]);
+  //       error++;
+
+  //       if (error > 2) {
+  //         error = 1;
+  //       }
+  //     }, 700);
+  //     return interval;
+  //   };
+
+  //   const interval = wiggle(0);
+
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log("🚀 ~ errorPath:", errorPath);
+  // }, [errorPath]);
 
   return (
     <svg
@@ -151,11 +189,16 @@ export default function Recreation({
           );
         })}
         {yValues.map((yValue, _) => {
+          const { formattedValue, millions } = formatYValue(yValue) as {
+            formattedValue: number | string;
+            millions: boolean;
+          };
           return (
             <HorizontalGrid
               key={yValue}
               yValue={yScale(yValue)}
-              text={formatYValue(yValue)}
+              text={formattedValue}
+              millions={millions}
               innerWidth={innerGridWidth}
               opacity={(yValue / 1_000_000) % 1 === 0 ? 0.2 : 0.1}
             />
@@ -198,6 +241,16 @@ export default function Recreation({
               : 0
           }
         >
+          <g opacity="1">
+            <path
+              className="transition-all duration-700 ease-out"
+              d={errorPath}
+              stroke="#F4B20C"
+              strokeWidth=".2px"
+              fill="none"
+            />
+          </g>
+
           <path
             d={Paths.import1stEd}
             stroke="#F4B20C"
@@ -211,6 +264,16 @@ export default function Recreation({
             fill="none"
           />
         </g>
+        <g opacity="1">
+          <path
+            className="transition-all duration-700 ease-out"
+            d={errorPath}
+            stroke="#F4B20C"
+            strokeWidth=".2px"
+            fill="none"
+          />
+        </g>
+
         {/* Shaded area */}
         <StippleHatch
           opacity={
