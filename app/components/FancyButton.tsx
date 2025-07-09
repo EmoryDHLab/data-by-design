@@ -14,6 +14,7 @@ interface Props {
   fontSize?: number;
   x?: number;
   y?: number;
+  shadowColor?: string;
 }
 
 export default function FancyButton({
@@ -27,6 +28,7 @@ export default function FancyButton({
   width,
   height,
   fontSize,
+  shadowColor,
   x,
   y,
 }: Props) {
@@ -71,7 +73,9 @@ export default function FancyButton({
         }`}
         style={{
           filter: action
-            ? `drop-shadow(2px 4px 1px rgb(0 0 0 / ${isHovered ? 0.1 : 0.3}))`
+            ? `drop-shadow(2px 4px 1px rgb(${shadowColor ?? "255 255 255"} / ${
+                isHovered ? 0.1 : 0.3
+              }))`
             : "none",
         }}
       ></path>
