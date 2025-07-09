@@ -181,13 +181,25 @@ const ProjectTimelineScrollytell = ({
                   {" "}
                 </div>
                 <div
-                  className={`ml-2 opacity-${
-                    selectedSources[0]?.label === "flat" ? 0 : 100
+                  className={`absolute ml-8 opacity-${
+                    selectedSources[0]?.label === "Zotero" ? 100 : 0
                   } transition-opacity duration-1000`}
                 >
-                  {selectedSources[0]?.label !== "flat"
-                    ? selectedSources[0]?.label
-                    : ""}
+                  Zotero
+                </div>
+                <div
+                  className={`absolute ml-8 opacity-${
+                    selectedSources[0]?.label === "Figma" ? 100 : 0
+                  } transition-opacity duration-1000`}
+                >
+                  Figma
+                </div>
+                <div
+                  className={`absolute ml-8 opacity-${
+                    selectedSources[0]?.label === "iCal" ? 100 : 0
+                  } transition-opacity duration-1000`}
+                >
+                  iCal
                 </div>
               </div>
 
@@ -206,12 +218,10 @@ const ProjectTimelineScrollytell = ({
                 </div>
                 <div
                   className={`ml-2 opacity-${
-                    selectedSources[1]?.label === "flat" ? 0 : 100
+                    selectedSources[1]?.label === "GitHub" ? 100 : 0
                   } transition-opacity duration-1000`}
                 >
-                  {selectedSources[1]?.label !== "flat"
-                    ? selectedSources[1]?.label
-                    : ""}
+                  GitHub
                 </div>
               </div>
             </div>
