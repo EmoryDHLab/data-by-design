@@ -8,17 +8,15 @@ import {
   useRouteError,
   isRouteErrorResponse,
 } from "react-router";
-import Navbar from "./components/layout/Navbar.client";
 import styles from "./index.css?url";
 import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
 import Banner from "./components/layout/Banner";
 import Analytics from "./components/Analytics";
 import Loading from "./components/layout/Loading";
-import ClientOnly from "./components/ClientOnly";
+import SiteNav from "./components/layout/SiteNav";
 import type { LinksFunction, MetaFunction } from "react-router";
 import type { ReactNode } from "react";
-import SiteNav from "./components/layout/SiteNav";
 
 interface WrapperProps {
   children: ReactNode;
