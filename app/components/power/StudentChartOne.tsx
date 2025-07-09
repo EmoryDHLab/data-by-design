@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ClientOnly from "~/components/ClientOnly";
 import { useDeviceContext, useResizeObserver } from "~/hooks";
 import PieChart from "~/components/power/PieChart.client";
@@ -23,7 +23,6 @@ interface Props {
   showGoogleSheet?: boolean;
   activeStudent?: string;
   topOffset: number;
-  leftOffset?: number;
   focusShape?: TFocusShape;
   highlightNames?: boolean;
 }
@@ -40,7 +39,6 @@ export default function StudentChartOne({
   highlightNames = false,
   activeStudent = undefined,
   topOffset,
-  leftOffset = 0,
   focusShape,
 }: Props) {
   const { windowSize } = useResizeObserver();
@@ -50,11 +48,16 @@ export default function StudentChartOne({
   const [pieChartLeft, setPieChartLeft] = useState<number>(100);
   const [pieChartWidth, setPieChartWidth] = useState<number>(100);
   const [recreationOpacity, setRecreationOpacity] = useState<number>(100);
+  const pieContainerRef = useRef<SVGRectElement>(null);
 
   useEffect(() => {
-    if (!windowSize.height || !windowSize.width) return;
-    setChartWidth(windowSize.width / 2);
-  }, [windowSize, activeStudent]);
+    if (!pieContainerRef.current || !windowSize.height || !windowSize.width)
+      return;
+    setChartWidth(
+      pieContainerRef.current?.getBoundingClientRect().width -
+        pieContainerRef.current.getBoundingClientRect().height / 2
+    );
+  }, [windowSize, activeStudent, focusShape]);
 
   useEffect(() => {
     if (showRecreation) {
@@ -70,20 +73,23 @@ export default function StudentChartOne({
     if (!windowSize.height) return;
     setPieChartTop(
       map(
-        477, // Y value for pie chart
+        450, // Y value for pie chart
         0,
         1000, // Height of SVG viewbox
         0,
         windowSize.height + topOffset
       )
     );
-  }, [windowSize, pieChartWidth, topOffset]);
+  }, [windowSize, topOffset]);
 
   useEffect(() => {
-    setPieChartLeft(map(250, 0, 800, 0, chartWidth) - leftOffset);
-
-    setPieChartWidth(map(350, 0, 1000, 0, chartWidth));
-  }, [chartWidth, leftOffset]);
+    if (!pieContainerRef.current) return;
+    setPieChartLeft(
+      pieContainerRef.current?.getBoundingClientRect().width / 2 -
+        pieContainerRef.current.getBoundingClientRect().height / 4
+    );
+    setPieChartWidth(pieContainerRef.current?.getBoundingClientRect().height);
+  }, [chartWidth]);
 
   return (
     <>
@@ -397,6 +403,13 @@ export default function StudentChartOne({
             />
           </g>
         </g>
+        <rect
+          ref={pieContainerRef}
+          y={500}
+          width={800}
+          height={250}
+          fill="none"
+        />
       </svg>
       <div
         className="absolute"

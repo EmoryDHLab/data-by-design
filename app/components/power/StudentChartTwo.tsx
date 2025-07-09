@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDeviceContext, useResizeObserver } from "~/hooks";
 import Legend from "~/components/power/pieChart/Legend";
 import studentData from "~/data/power/studentChartTwo.json";
@@ -20,7 +20,6 @@ interface Props {
   highlightChart?: boolean;
   activeStudent?: string;
   topOffset: number;
-  leftOffset?: number;
   showExtra?: boolean;
 }
 
@@ -31,7 +30,6 @@ export default function StudentChartTwo({
   highlightMap = false,
   activeStudent = undefined,
   topOffset,
-  leftOffset = 0,
   showExtra = false,
 }: Props) {
   const { windowSize } = useResizeObserver();
@@ -40,6 +38,7 @@ export default function StudentChartTwo({
   const [pieChartTop, setPieChartTop] = useState<number>(100);
   const [pieChartLeft, setPieChartLeft] = useState<number>(100);
   const [pieChartWidth, setPieChartWidth] = useState<number>(100);
+  const pieContainerRef = useRef<SVGRectElement>(null);
 
   useEffect(() => {
     if (!windowSize.height || !windowSize.width) return;
@@ -61,10 +60,15 @@ export default function StudentChartTwo({
   }, [windowSize, pieChartWidth, topOffset]);
 
   useEffect(() => {
-    setPieChartLeft(map(250, 0, 800, 0, chartWidth) - leftOffset);
-
-    setPieChartWidth(map(350, 0, 1000, 0, chartWidth));
-  }, [chartWidth, leftOffset]);
+    if (!pieContainerRef.current) return;
+    setPieChartLeft(
+      pieContainerRef.current?.getBoundingClientRect().width / 2 -
+        pieContainerRef.current.getBoundingClientRect().height / 4
+    );
+    setPieChartWidth(
+      pieContainerRef.current?.getBoundingClientRect().height ?? 500
+    );
+  }, [chartWidth]);
 
   return (
     <>
@@ -202,6 +206,13 @@ export default function StudentChartTwo({
             radius={largeText / 2}
             height={regularText}
             catagories={studentData.categories}
+          />
+          <rect
+            ref={pieContainerRef}
+            y={500}
+            width={800}
+            height={250}
+            fill="none"
           />
         </g>
         <g>

@@ -69,8 +69,7 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
               <StudentChartTwo
                 id="student-chart-two-scrolly"
                 interactive={interactive}
-                topOffset={isMobile ? 150 : 80}
-                leftOffset={isMobile ? -16 : 16}
+                topOffset={isMobile ? 150 : 0}
                 highlightChart={
                   scrollProgress >= minScrollProgress + 2 &&
                   scrollProgress <= minScrollProgress + 3

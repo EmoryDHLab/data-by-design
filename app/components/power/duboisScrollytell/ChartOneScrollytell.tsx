@@ -211,7 +211,6 @@ const ChartOneScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 id="student-chart-one-scrolly"
                 interactive={interactive}
                 topOffset={80}
-                leftOffset={16}
                 activeStudent={activeStudent}
                 focusShape={focusShape}
                 showDataTable={showDataTable}
