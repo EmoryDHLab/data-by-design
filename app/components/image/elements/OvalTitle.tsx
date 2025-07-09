@@ -1,15 +1,15 @@
 type Ellipse = {
-  cx: number,
-  cy: number,
-  rx: number,
-  ry: number,
-}
+  cx: number;
+  cy: number;
+  rx: number;
+  ry: number;
+};
 
 type Text = {
-  text: string,
-  x: number,
-  y: number
-}
+  text: string;
+  x: number;
+  y: number;
+};
 
 interface Props {
   color: string;
@@ -20,7 +20,14 @@ interface Props {
   botText: Text;
 }
 
-export default function OvalTitle({ color, ellipse, opacity, topText, midText, botText }: Props) {
+export default function OvalTitle({
+  color,
+  ellipse,
+  opacity,
+  topText,
+  midText,
+  botText,
+}: Props) {
   return (
     <g opacity={opacity}>
       <ellipse
@@ -31,35 +38,37 @@ export default function OvalTitle({ color, ellipse, opacity, topText, midText, b
         fill={color}
         stroke="black"
         strokeWidth="0.2"
-      >
-      </ellipse>
+      ></ellipse>
       <text
         fill="black"
-        x={topText.x}
+        x={ellipse.cx}
         y={topText.y}
         fontFamily="Maranallo"
         fontSize="2.7"
+        textAnchor="middle"
       >
         {topText.text}
       </text>
       <text
         fill="black"
-        x={midText.x}
+        x={ellipse.cx}
         y={midText.y}
         fontFamily="Chancery Cursive"
         fontSize="2.9"
+        textAnchor="middle"
       >
         {midText.text}
       </text>
       <text
         fill="black"
-        x={botText.x}
+        x={ellipse.cx}
         y={botText.y}
         fontFamily="Maranallo"
         fontSize="3"
+        textAnchor="middle"
       >
         {botText.text}
       </text>
     </g>
-  )
+  );
 }

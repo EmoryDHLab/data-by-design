@@ -4,6 +4,7 @@ import VerticalGrid from "../elements/VerticalGrid";
 import HorizontalGrid from "../elements/HorizontalGrid";
 import ProjectTimelineContainer from "./ProjectTimelineContainer";
 import type { TLaborSource, TLaborData } from "~/types/laborSourceTypes";
+import OvalTitle from "../elements/OvalTitle";
 
 const height = 44;
 const width = 98;
@@ -39,6 +40,9 @@ export default function ProjectTimeline({
   const [csvData, setCsvData] = useState<TLaborData | undefined>(undefined);
   const [maxY, setMaxY] = useState<number>(0);
   const [yValues, setYValues] = useState<number[]>([0, 100]);
+  const [selectedSourcesLabels, setSelectedSourcesLabels] = useState<
+    string | undefined
+  >(undefined);
   const line1Ref = useRef<SVGPathElement>(null);
   const line2Ref = useRef<SVGPathElement>(null);
   const areaAboveRef = useRef<SVGPathElement>(null);
@@ -153,6 +157,15 @@ export default function ProjectTimeline({
     }
   }, [yValues, selectedSources, csvData, maxY]);
 
+  useEffect(() => {
+    const sourceLabels = selectedSources.map((source) => source?.label);
+    if (sourceLabels.includes("flat")) {
+      setSelectedSourcesLabels(sourceLabels.find((label) => label !== "flat"));
+    } else {
+      setSelectedSourcesLabels(sourceLabels.join(" & "));
+    }
+  }, [selectedSources]);
+
   return (
     <div className={className}>
       <ProjectTimelineContainer
@@ -208,6 +221,7 @@ export default function ProjectTimeline({
                 yValue={yValues.includes(yValue) ? yScale(yValue) : -1}
                 text={yValue}
                 innerWidth={innerGridWidth}
+                millions={false}
                 opacity={yValues.includes(yValue) ? 0.2 : 0}
               />
             );
@@ -259,6 +273,18 @@ export default function ProjectTimeline({
             />
           </g>
         )}
+        <OvalTitle
+          color="#FCE2B0"
+          ellipse={{ cx: 38, cy: 19, rx: (width / 11) * 1.9, ry: 10 }}
+          topText={{
+            text: selectedSourcesLabels ?? "",
+            x: 38,
+            y: 17,
+          }}
+          midText={{ text: "contributions", x: 32, y: 20.5 }}
+          botText={{ text: "2012 - 2024", x: 25, y: 24 }}
+          opacity={1}
+        />
         <g>
           <mask id="focus">
             <rect

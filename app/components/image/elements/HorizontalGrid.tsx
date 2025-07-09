@@ -18,7 +18,6 @@ export default function HorizontalGrid({
   opacity,
   xOffset = 0,
 }: Props) {
-  console.log("🚀 ~ yValue:", text);
   const lineRef = useRef<SVGLineElement>(null);
   const textRef = useRef<SVGTextElement>(null);
 

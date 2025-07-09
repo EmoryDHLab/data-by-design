@@ -7,7 +7,7 @@ import ScatterPlot from "./elements/ScatterPlot";
 import StippleHatch from "./elements/StippleHatch";
 import ColorArea from "./elements/ColorArea";
 import { Paths } from "./scrollytellElements/Paths";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const height = 44;
 const width = 94;
@@ -75,7 +75,7 @@ export default function Recreation({
 }: {
   scrollProgress: number;
 }) {
-  const [errorPath, setErrorPath] = useState<string>();
+  // const [errorPath, setErrorPath] = useState<string>();
   const transitionInOut = (arrayIn: Array<number>, arrayOut: Array<number>) => {
     const progToOpacityIn = scaleMapper([0.0, 1.0], arrayIn);
     const progToOpacityOut = scaleMapper([1.0, 0.0], arrayOut);
@@ -242,13 +242,13 @@ export default function Recreation({
           }
         >
           <g opacity="1">
-            <path
+            {/* <path
               className="transition-all duration-700 ease-out"
               d={errorPath}
               stroke="#F4B20C"
               strokeWidth=".2px"
               fill="none"
-            />
+            /> */}
           </g>
 
           <path
@@ -265,13 +265,13 @@ export default function Recreation({
           />
         </g>
         <g opacity="1">
-          <path
+          {/* <path
             className="transition-all duration-700 ease-out"
             d={errorPath}
             stroke="#F4B20C"
             strokeWidth=".2px"
             fill="none"
-          />
+          /> */}
         </g>
 
         {/* Shaded area */}
