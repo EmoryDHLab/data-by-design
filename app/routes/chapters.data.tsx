@@ -25,12 +25,11 @@ import ChapterBody from "~/components/layout/ChapterBody";
 import VoyageScrollytell from "~/components/data/voyageScrollytell/VoyageScrollytell";
 import Takeaways from "~/components/layout/Takeaways";
 import ConsentToggle from "~/components/consent/Toggle";
-import Ship from "~/components/data/Ship";
 import { chapterMeta } from "~/data/chapterMeta";
+import VoyageVisContainer from "~/components/data/voyages/VoyageVisContainer";
 
 import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
-import VoyageVisContainer from "~/components/data/voyages/VoyageVisContainer";
 
 const chapterFigures = Object.values(figures);
 
@@ -184,7 +183,23 @@ export default function BrooksPage() {
             <InlineFootnote index={5} />
           </p>
 
-          <Ship figure={figures["1-sof_slaveship"]} />
+          {/* blur-none does not transition, that's whats up with the blur-[0px] */}
+          <div className="flex justify-center w-96 m-auto">
+            <img
+              className={`h-96 p-4 drop-shadow-md transition-all duration-1000 ${
+                hideSensitiveState ? "blur-md" : "blur-[0px]"
+              }`}
+              src="/public/images/intro/Thomas_Clarkson_by_Carl_Frederik_von_Breda.jpg"
+              alt=""
+            />
+            <img
+              className={`h-96 p-4 drop-shadow-md transition-all duration-1000 ${
+                hideSensitiveState ? "blur-md" : "blur-[0px]"
+              }`}
+              src="/public/images/intro/Equiano-D8546.jpg"
+              alt=""
+            />
+          </div>
           <p className="font-bold block md:hidden ms-8 text-lg">
             This chapter contains images of enslavement.
           </p>
