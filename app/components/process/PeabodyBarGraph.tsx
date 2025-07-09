@@ -12,7 +12,7 @@ import type { PeabodyEvent, ActivePeabodyEvent } from "~/types/process";
 
 const centuries = [1500, 1600, 1700, 1800];
 
-export default function PeabodyBarGraph() {
+export const PeabodyBarGraph = () => {
   const [currentCentury, setCurrentCentury] = useState(centuries[2]);
   const [currentCenturyEvents, setCurrentCenturyEvents] = useState<
     Array<PeabodyEvent>
@@ -73,4 +73,4 @@ export default function PeabodyBarGraph() {
       </div>
     </BarGraphContext.Provider>
   );
-}
+};
