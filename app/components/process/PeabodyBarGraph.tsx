@@ -74,3 +74,5 @@ export const PeabodyBarGraph = () => {
     </BarGraphContext.Provider>
   );
 };
+
+export default PeabodyBarGraph;
