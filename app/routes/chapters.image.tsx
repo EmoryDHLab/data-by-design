@@ -302,7 +302,67 @@ export default function PlayfairPage() {
           </Column>
         </TwoColumnLayout>
         <span id={visualizations[0].id}>
-          <PlayfairScrollytell />
+          <PlayfairScrollytell
+            triggers={[
+              <span key="7e80c3fc"></span>,
+              <span key="6830c50a">
+                The tables in the first and second editions of the{" "}
+                <cite>Atlas</cite> include annual data for the years between
+                1770 and 1782. For the years between 1700 and 1770, there is
+                only data for each decade.
+              </span>,
+              <span key="8340a9d4">
+                He shaded the area between the two data lines in order to
+                illustrate the balance of trade between the two nations.
+                Stippled dots indicate periods of time when the amount of
+                imports from North America to England exceeded the amount of
+                exports from England to North America. Diagonal lines indicate
+                the times when exports from England to North America exceeded
+                imports.
+              </span>,
+              <span key="8ceb9cdd">
+                In the accompanying chart, Playfair includes both major and
+                minor gridlines along the y-axis of the chart, but he includes
+                minor gridlines along the x-axis only for the twelve years for
+                which he possesses annual data. Presumably, this indicates the
+                greater granularity of those years’ data.
+              </span>,
+              <span key="8e121b42">
+                In the third edition of the <cite>Atlas</cite>, however, these
+                minor gridlines disappear—along with the data tables.
+              </span>,
+              <span key="585d79be">
+                Playfair extends the endpoint of the x-axis to 1800—what was
+                then the present. In addition, the data-lines become less
+                precise. The lines of imports and exports also become
+                smoother--a reflection of either his desire to convey a more
+                “simple” idea, or his improved engraving technique, or both.
+              </span>,
+              <span key="dab6327f">
+                In this edition, he also makes significant improvements to the
+                charts’ design. He replaces the hachure and stippled dots
+                employed in the second edition to indicate the difference
+                between the periods of trade in favor of and against England
+                with hand-stained color.
+              </span>,
+              <span key="55b81857">
+                He (or more likely, the master-engraver Neele) also placed the
+                titles in oval superimposed upon the chart, rather than above,
+                and decided to remove the explanatory notes about the charts’
+                scale.
+              </span>,
+              <span key="56df66b8">
+                He labeled the axes and modified the scale markers of the
+                charts—each of which also improved legibility.
+              </span>,
+              <span key="a74c7264">
+                The overall effect was to solidify the authority of the “simple
+                and complete idea” that he envisioned from the start.
+                <InlineFootnote index={12} />
+              </span>,
+              <span key="e6a1c5ea"></span>,
+            ]}
+          />
         </span>
         <CenteredLayout>
           <p>
@@ -711,10 +771,7 @@ export default function PlayfairPage() {
           />
         </span>
 
-        <CenteredLayout>
-          <span id={visualizations[1].id}>
-            <ProjectTimelineInteractive />
-          </span>
+        <ProjectTimelineInteractive>
           <p>
             The picture that this chart presents to the viewer is indeed
             revealing, but it remains only a "single view." Created not through
@@ -727,7 +784,7 @@ export default function PlayfairPage() {
             questions raised by Playfair's chart: about not only how but why it
             was designed, as well as who it was designed for.
           </p>
-        </CenteredLayout>
+        </ProjectTimelineInteractive>
 
         <ChapterSectionTitle section={sections[3]} />
         <TwoColumnLayout>
