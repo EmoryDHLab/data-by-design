@@ -189,14 +189,14 @@ export default function BrooksPage() {
               className={`h-96 p-4 drop-shadow-md transition-all duration-1000 ${
                 hideSensitiveState ? "blur-md" : "blur-[0px]"
               }`}
-              src="/public/images/intro/Thomas_Clarkson_by_Carl_Frederik_von_Breda.jpg"
+              src="/images/intro/Thomas_Clarkson_by_Carl_Frederik_von_Breda.jpg"
               alt=""
             />
             <img
               className={`h-96 p-4 drop-shadow-md transition-all duration-1000 ${
                 hideSensitiveState ? "blur-md" : "blur-[0px]"
               }`}
-              src="/public/images/intro/Equiano-D8546.jpg"
+              src="/images/intro/Equiano-D8546.jpg"
               alt=""
             />
           </div>
