@@ -82,7 +82,7 @@
       {
         "year": 1540,
         "actors": ["France"],
-        "squares": [9],
+        "squares": [8],
         "event": "Roberval and Cartier try in vain to colonize Canada."
       }
     ],
@@ -1080,7 +1080,8 @@
         "year": 1783,
         "event": "England acknowledges Independence of U.S.",
         "squares": [3],
-        "actors": ["Americas", "England"]
+        "actors": ["Americas", "England"],
+        "transform": [-90, "center"]
       },
       {
         "year": 1783,
@@ -1092,7 +1093,8 @@
         "year": 1783,
         "event": "England acknowledges Independence of U.S.",
         "squares": [7],
-        "actors": ["England", "Americas"]
+        "actors": ["England", "Americas"],
+        "transform": [-90, "center"]
       },
       {
         "year": 1783,
