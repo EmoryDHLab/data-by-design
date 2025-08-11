@@ -18,7 +18,7 @@ const images: FigureType[] = [
   figures["Willard9"],
 ];
 
-export default function DocumentViewer() {
+const DocumentViewer = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const selectedImage: FigureType = images[selectedImageIndex];
 
@@ -54,7 +54,7 @@ export default function DocumentViewer() {
               figure={selectedImage as FigureType}
               className="max-w-md text-white"
               id={`doc-viewer-${selectedImage.fileName}`}
-              figureHeight={600}
+              imageClassName="h-72 w-auto"
             />
             <div className="flex text-white justify-around w-full">
               <button
@@ -90,4 +90,6 @@ export default function DocumentViewer() {
       </div>
     </div>
   );
-}
+};
+
+export default DocumentViewer;
