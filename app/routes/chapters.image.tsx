@@ -304,12 +304,23 @@ export default function PlayfairPage() {
         <span id={visualizations[0].id}>
           <PlayfairScrollytell
             triggers={[
-              <span key="7e80c3fc"></span>,
+              <span key="1218601d"></span>,
+              <span key="149fff42">
+                The tables in the first and second editions of the Atlas 1786.
+              </span>,
+              <span key="eac31668">1787</span>,
+              <span key="7e80c3fc">
+                For the years between 1700 and 1770, there is only data for each
+                decade.
+              </span>,
               <span key="6830c50a">
                 The tables in the first and second editions of the{" "}
                 <cite>Atlas</cite> include annual data for the years between
-                1770 and 1782. For the years between 1700 and 1770, there is
-                only data for each decade.
+                1770 and 1782.
+              </span>,
+              <span key="5bd252c7">
+                For the years between 1700 and 1770, there is only data for each
+                decade.
               </span>,
               <span key="8340a9d4">
                 He shaded the area between the two data lines in order to
