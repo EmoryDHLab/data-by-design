@@ -286,35 +286,45 @@ export default function Recreation({
           </g>
           {/* First edition lines */}
           <g
-            transform="scale(0.106, 0.09) translate(52,185)"
-            opacity={
-              scrollProgress >= 4 && scrollProgress < 8.5
-                ? transitionInOut([4, 4.5], [8, 8.5])
-                : 0
-            }
+            // transform={
+            //   scrollProgress <= 6
+            //     ? "scale(0.106, 0.09) translate(52,185)"
+            //     : "scale(0.22, 0.195) translate(25,70)"
+            // }
+            opacity={scrollProgress >= 4 ? transitionIn([4, 4.5]) : 0}
           >
             <path
-              d={Paths.import1stEd}
+              d={scrollProgress <= 8 ? Paths.import1stEd : Paths.import3rdEd}
               stroke="#F4B20C"
-              strokeWidth="3px"
+              strokeWidth="0.3px"
               fill="none"
               className="transition-all duration-1000"
-              strokeDasharray={823.4462890625}
+              strokeDasharray={
+                scrollProgress <= 8 ? 83.06825256347656 : 111.74638366699219
+              }
               strokeDashoffset={
-                scrollProgress >= 4.5 && scrollProgress < 8.5
+                scrollProgress >= 4.5
                   ? 0
-                  : 823.4462890625
+                  : scrollProgress <= 8
+                  ? 83.06825256347656
+                  : 111.74638366699219
               }
             />
             <path
-              d={Paths.export1stEd}
+              d={scrollProgress <= 8 ? Paths.export1stEd : Paths.export3rdEd}
               stroke="#56190F"
-              strokeWidth="3px"
+              strokeWidth="0.3px"
               fill="none"
               className="transition-all duration-1000"
-              strokeDasharray={1473.53}
+              strokeDasharray={
+                scrollProgress <= 8 ? 139.813720703125 : 157.01263427734375
+              }
               strokeDashoffset={
-                scrollProgress >= 4.5 && scrollProgress < 8.5 ? 0 : 1473.53
+                scrollProgress >= 4.5
+                  ? 0
+                  : scrollProgress <= 8
+                  ? 139.813720703125
+                  : 157.01263427734375
               }
             />
           </g>
@@ -343,28 +353,6 @@ export default function Recreation({
               />
             );
           })}
-          {/* 3rd edition lines */}
-          <g
-            transform="scale(0.22, 0.195) translate(25,70)"
-            // opacity={scrollProgress >= 8 ? transitionIn([8, 8.5]) : 0}
-          >
-            <path
-              d={Paths.import3rdEd}
-              stroke="#F4B20C"
-              fill="none"
-              className="transition-all duration-1000"
-              strokeDasharray={532.515380859375}
-              strokeDashoffset={scrollProgress >= 8.25 ? 0 : 532.515380859375}
-            />
-            <path
-              d={Paths.export3rdEd}
-              stroke="#56190F"
-              fill="none"
-              className="transition-all duration-1000"
-              strokeDasharray={772.435791015625}
-              strokeDashoffset={scrollProgress >= 8.25 ? 0 : 772.435791015625}
-            />
-          </g>
           {/* Labels */}
           <g opacity={scrollProgress >= 9.5 ? transitionIn([9.5, 10]) : 0}>
             <text
