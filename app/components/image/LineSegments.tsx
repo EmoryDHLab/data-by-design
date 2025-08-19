@@ -91,7 +91,13 @@ const LineSegments = ({ scrollProgress }: Props) => {
         <g transform="translate(10, 1) scale(0.89, 1)">
           {xValues.map((xValue) => {
             return (
-              <text fill="black" x={xScale(xValue)} y={50} fontSize={1.75}>
+              <text
+                key={xValue}
+                fill="black"
+                x={xScale(xValue)}
+                y={50}
+                fontSize={1.75}
+              >
                 {xValue}
               </text>
             );
