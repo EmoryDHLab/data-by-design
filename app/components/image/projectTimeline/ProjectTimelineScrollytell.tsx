@@ -8,7 +8,7 @@ import type { ReactElement } from "react";
 
 const noSource = laborSources.find((source) => source.label === "flat");
 
-const minScrollProgress = 11.25;
+const minScrollProgress = 0;
 const defaultAreaOpacity = 0.5;
 
 const ProjectTimelineScrollytell = ({
@@ -128,8 +128,7 @@ const ProjectTimelineScrollytell = ({
         setStrokeWidth([0.1, 0.05]);
         break;
 
-      case scrollProgress >= minScrollProgress + 10 &&
-        scrollProgress < minScrollProgress + 13:
+      case scrollProgress >= minScrollProgress + 10:
         setAreaOpacity([defaultAreaOpacity, defaultAreaOpacity]);
         setSelectedSources([
           laborSources.find((source) => source.label === "Figma"),
@@ -148,6 +147,7 @@ const ProjectTimelineScrollytell = ({
       setScrollProgress={setScrollProgress}
       triggers={triggers}
       steps={steps}
+      stepClassName=".scrollytell2"
     >
       <div className={`bg-${backgroundColor} md:flex justify-between`}>
         <div className="sticky top-16 md:top-0 h-screen mt-16 md:mt-0 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last md:pb-[60px]">
@@ -236,7 +236,7 @@ const ProjectTimelineScrollytell = ({
               <div
                 key={trigger.key}
                 data-step={index}
-                className={`step text-xl content-center p-5 md:px-20 ${
+                className={`scrollytell2 text-xl content-center p-5 md:px-20 ${
                   index == 0 ? "md:h-[60vh]" : "h-screen"
                 } text-${primaryTextColor}`}
               >

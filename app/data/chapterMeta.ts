@@ -35,9 +35,9 @@ export const chapterMeta: TChapterMeta = {
   },
   image: {
     title: "Image",
-    subtitle: `William Playfair’s “Single View”`,
+    subtitle: `William Playfair's “Simple and Complete” View`,
     description:
-      "Data visualization has never been neutral or objective. How can we learn to recognize the argument of each design?",
+      "Data visualization has never been neutral or objective. How can we learn to recognize the human decisions that shape each design?",
     image:
       "https://iiif.ecds.io/iiif/3/dxd/image/1-northamerica.tiff/square/800,/0/default.jpg",
     bgImage:

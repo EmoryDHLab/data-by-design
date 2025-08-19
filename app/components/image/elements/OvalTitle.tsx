@@ -18,6 +18,7 @@ interface Props {
   topText: Text;
   midText: Text;
   botText: Text;
+  transform?: string;
 }
 
 export default function OvalTitle({
@@ -27,9 +28,10 @@ export default function OvalTitle({
   topText,
   midText,
   botText,
+  transform = "",
 }: Props) {
   return (
-    <g opacity={opacity}>
+    <g opacity={opacity} transform={transform}>
       <ellipse
         cx={ellipse.cx}
         cy={ellipse.cy}

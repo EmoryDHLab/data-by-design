@@ -3,12 +3,13 @@ import Recreation from "./Recreation";
 import { ChapterContext } from "~/chapterContext";
 import ScrollytellWrapper from "../ScrollytellWrapper";
 import type { ReactElement } from "react";
+import LineSegments from "./LineSegments";
 
-export default function PlayfairScrollytell({
+const LineSegmentsScrollytell = ({
   triggers,
 }: {
   triggers: ReactElement[];
-}) {
+}) => {
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   const steps = useRef<HTMLDivElement>(null);
@@ -18,13 +19,14 @@ export default function PlayfairScrollytell({
       setScrollProgress={setScrollProgress}
       triggers={triggers}
       steps={steps}
+      stepClassName=".line-segments"
     >
       <div className={`bg-${backgroundColor} md:flex justify-between md:mb-8`}>
         <div className="sticky top-16 md:top-0 h-screen mt-16 md:mt-0 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last md:pb-[60px]">
           <div className="text-3xl relative md:top-[calc(100vh-12rem)] right-[35vw] text-white hidden md:block">
             ↓
           </div>
-          <Recreation scrollProgress={scrollProgress} />
+          <LineSegments scrollProgress={scrollProgress} />
         </div>
         <div
           ref={steps}
@@ -35,7 +37,7 @@ export default function PlayfairScrollytell({
               <div
                 key={trigger.key}
                 data-step={index}
-                className={`step text-xl content-center p-5 md:px-20 ${
+                className={`line-segments text-xl content-center p-5 md:px-20 ${
                   index + 1 === triggers.length || index == 0
                     ? `${index !== 0 ? "h-[65vh]" : ""} md:h-[60vh]`
                     : "h-screen"
@@ -55,4 +57,6 @@ export default function PlayfairScrollytell({
       </div>
     </ScrollytellWrapper>
   );
-}
+};
+
+export default LineSegmentsScrollytell;

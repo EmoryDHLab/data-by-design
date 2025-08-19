@@ -8,7 +8,7 @@ import Column from "~/components/layout/Column";
 import ProjectTimelineInteractive from "~/components/image/projectTimeline/ProjectTimelineInteractive";
 import Figure from "~/components/figures/Figure";
 import CenteredLayout from "~/components/layout/CenteredLayout";
-import PlayfairScrollytell from "~/components/image/PlayfairScrollytell";
+import PlayfairScrollytell from "~/components/image/RecreationScrollytell";
 import Footer from "~/components/Footer";
 import InlineFootnote from "~/components/InlineFootnote";
 import { imageFootnotes } from "~/footnotes";
@@ -22,6 +22,7 @@ import Takeaways from "~/components/layout/Takeaways";
 import { chapterMeta } from "~/data/chapterMeta";
 import type { MetaFunction } from "react-router";
 import type { TVizAnchors } from "~/chapterContext";
+import LineSegmentsScrollytell from "~/components/image/LineSegmentsScrollytell";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("image");
@@ -718,66 +719,34 @@ export default function PlayfairPage() {
         </TwoColumnLayout>
 
         <span id={visualizations[2].id}>
-          <ProjectTimelineScrollytell
+          <LineSegmentsScrollytell
             triggers={[
               <span key="0dec3ef1"></span>,
               <span key="3d7009ac">
-                Plotting the Zotero data against the GitHub data over the years
-                between 2013 and 2024, when this project took place, the
-                immediate impression is of how each source dominates its own
-                particular time span.
+                1. D3 Rendering of what Playfair’s data alone looks like when
+                plotted w/ D3 interpolating paths.
               </span>,
-              <span key="6125bb46">
-                The first year of the project is characterized by a profusion of
-                Zotero data, corresponding to the beginning of the archival
-                research.
-              </span>,
+              <span key="6125bb46">2. Overlay onto original image </span>,
               <span key="7acf0c9e">
-                Between 2016 and 2018 is a gap, when my attention was elsewhere.
+                3. Expand to include uncropped scan from LCP
               </span>,
-              <span key="96d84379">
-                In 2018, the implementation work begins, gradually increasing
-                through the project's final release. Even as this image presents
-                the lifespan of the project in a “single view,” it is not the
-                source of the data's most generative insights.
-              </span>,
+              <span key="96d84379">4. Tanvi’s path over scan in Figma</span>,
               <span key="34853e5e">
-                But plotting the iCal data against the GitHub data affirms the
-                value of visualization when a particular dataset is aligned with
-                an appropriate visual form.
+                5. Image of just path w/ points accentuated (also screenshot
+                from Figma)
               </span>,
               <span key="242462af">
-                Here we see the introduction of the web development team in
-                2017, and with it, the rise in contributions to the project's
-                codebase.
+                6. Some sort of nice way of showing the 4 SVG paths as data
+                (screenshot or something?) – or just showing how one of the
+                circles becomes a coordinate pair?
               </span>,
-              <span key="3aa2a407">
-                This is set against the weekly meetings that also began in 2017,
-                with the expansion of the project team.
-              </span>,
-              <span key="1ccdb8e8">
-                The contrast between the cyclical structure of the meetings data
-                and the upward slope of the GitHub commits accentuates the two
-                major structuring forces of the project: the first the
-                consistency provided by the steady rhythm of the weekly
-                meetings, and the second the increasing momentum generated as
-                the project progressed.
-              </span>,
+              <span key="3aa2a407">show path again</span>,
+              <span key="1ccdb8e8">interpolate into digital recreation</span>,
               <span key="f21de6d9">
-                A third comparison, between Figma and GitHub, reflects the
-                further maturation of the project, when Tanvi, a trained
-                designer, joined the team.
+                9. Final slide that is the same as the final recreation from
+                first scrollytell.
               </span>,
-              <span key="4a1acf89">
-                The Figma data begins only in 2019, when Tanvi introduced it
-                into the project's workflow, but plotted against the GitHub
-                commits, a lead-lag relationship soon begins to emerge.
-              </span>,
-              <span key="e7256507">
-                This reflects the process by which Tanvi would complete the
-                design work for a feature and then pass it off to the
-                development team
-              </span>,
+              <span key="4a1acf89"></span>,
             ]}
           />
         </span>

@@ -5,7 +5,8 @@ interface Props {
   text: string | number;
   textXOffset?: number;
   textYOffset?: number;
-  yOffset?: number;
+  y1Offset?: number;
+  y2Offset?: number;
 }
 
 export default function VerticalGrid({
@@ -15,15 +16,16 @@ export default function VerticalGrid({
   text,
   textXOffset = 0,
   textYOffset = 0,
-  yOffset = 0,
+  y1Offset = 0,
+  y2Offset = 0,
 }: Props) {
   return (
     <g>
       <line
         x1={xValue + xOffset}
-        y1={5.5 + yOffset}
+        y1={5.5 + y1Offset}
         x2={xValue + xOffset}
-        y2={49.5 + yOffset}
+        y2={49.5 + y2Offset}
         opacity={opacity ?? "0.4"}
         stroke="black"
         strokeWidth={0.1}
