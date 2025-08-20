@@ -50,14 +50,15 @@ const LineSegments = ({ scrollProgress }: Props) => {
     useState<number>(20);
 
   useEffect(() => {
+    console.log("🚀 ~ LineSegments ~ scrollProgress:", scrollProgress);
     if (
-      (scrollProgress > 6 && scrollProgress < 7) ||
-      (scrollProgress > 3 && scrollProgress < 5)
+      (scrollProgress > 6.5 && scrollProgress < 7.5) ||
+      (scrollProgress > 3.5 && scrollProgress < 5.5)
     )
       setRecreationScrollProgress(20);
-    if (scrollProgress > 7 && scrollProgress < 8)
+    if (scrollProgress > 7.5 && scrollProgress < 8.5)
       setRecreationScrollProgress(12.5);
-    if (scrollProgress > 8) setRecreationScrollProgress(13);
+    if (scrollProgress > 8.5) setRecreationScrollProgress(13);
   }, [scrollProgress]);
 
   return (
@@ -72,12 +73,12 @@ const LineSegments = ({ scrollProgress }: Props) => {
         height={55}
         x={0}
         y={0}
-        opacity={scrollProgress > 1 && scrollProgress < 2 ? 1 : 0}
+        opacity={scrollProgress > 1.5 && scrollProgress < 2.5 ? 1 : 0}
         className="transition-opacity duration-1000"
       />
       <g
         className={`transition-opacity duration-1000 ${
-          scrollProgress > 1 ? "opacity-0" : "opacity-100"
+          scrollProgress > 1.5 ? "opacity-0" : "opacity-100"
         }`}
       >
         <rect
@@ -152,7 +153,7 @@ const LineSegments = ({ scrollProgress }: Props) => {
       </g>
       <g
         className={`transition-opacity duration-1000 ${
-          scrollProgress < 2 ? "opacity-100" : "opacity-0"
+          scrollProgress < 2.5 ? "opacity-100" : "opacity-0"
         }`}
         transform="translate(11, 5) scale(0.9, 1)"
       >
@@ -175,7 +176,9 @@ const LineSegments = ({ scrollProgress }: Props) => {
       </g>
       <g
         className={`transition-opacity duration-1000 ${
-          scrollProgress > 2 && scrollProgress < 3 ? "opacity-100" : "opacity-0"
+          scrollProgress > 2.5 && scrollProgress < 3.5
+            ? "opacity-100"
+            : "opacity-0"
         }`}
       >
         <image
@@ -188,7 +191,9 @@ const LineSegments = ({ scrollProgress }: Props) => {
       </g>
       <g
         className={`transition-opacity duration-1000 ${
-          scrollProgress > 5 && scrollProgress < 6 ? "opacity-100" : "opacity-0"
+          scrollProgress > 5.5 && scrollProgress < 6.5
+            ? "opacity-100"
+            : "opacity-0"
         }`}
       >
         <rect x={5.75} y={0} height={55} width={93.5} fill="white" />
@@ -219,12 +224,14 @@ const LineSegments = ({ scrollProgress }: Props) => {
       </g>
       <g
         className={`transition-opacity duration-1000 ${
-          scrollProgress > 6 && scrollProgress < 7 ? "opacity-100" : "opacity-0"
+          scrollProgress > 6.5 && scrollProgress < 7.5
+            ? "opacity-100"
+            : "opacity-0"
         }`}
       ></g>
       <g
         className={`transition-opacity duration-1000 ${
-          scrollProgress > 6 || (scrollProgress > 3 && scrollProgress < 5)
+          scrollProgress > 6.5 || (scrollProgress > 3.5 && scrollProgress < 5.5)
             ? "opacity-100"
             : "opacity-0"
         }`}
@@ -235,7 +242,7 @@ const LineSegments = ({ scrollProgress }: Props) => {
           height={55}
           width={93.5}
           fill={white}
-          fillOpacity={scrollProgress < 7 ? 1 : 0}
+          fillOpacity={scrollProgress < 7.5 ? 1 : 0}
           className="transition-all duration-1000"
         />
         <Recreation scrollProgress={recreationScrollProgress} />
@@ -243,7 +250,9 @@ const LineSegments = ({ scrollProgress }: Props) => {
       <g
         transform="translate(6.25, -0.75) scale(0.9, 1)"
         className={`transition-opacity duration-1000 ${
-          scrollProgress > 4 && scrollProgress < 5 ? "opacity-100" : "opacity-0"
+          scrollProgress > 4.5 && scrollProgress < 5.5
+            ? "opacity-100"
+            : "opacity-0"
         }`}
       >
         {scatterImport.map((plot) => {
