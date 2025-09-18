@@ -18,6 +18,13 @@ const ConsentToggle = ({ id, className }: Props) => {
     backgroundColor,
   } = useContext(ChapterContext);
 
+  const getBackgroundColor = () => {
+    if (isHovered) {
+      return backgroundColor === 'dataPrimary' ? '#8B5CF6' : backgroundColor === 'white' ? '#FFFFFF' : '#000000';
+    }
+    return accentColor === 'dataSecondary' ? '#F3F4F6' : accentColor === 'black' ? '#000000' : '#8B5CF6';
+  };
+
   const renderButton = () => {
     if (hideSensitiveState) {
       return (
@@ -40,9 +47,13 @@ const ConsentToggle = ({ id, className }: Props) => {
   if (setHideSensitiveState) {
     return (
       <button
-        className={`inline-flex items-center justify-center border  border-offblack border-2 rounded-full drop-shadow-lg active:drop-shadow-none bg-${accentColor} hover:bg-${backgroundColor} ${
+        className={`inline-flex items-center justify-center border-2 border-offblack rounded-full drop-shadow-lg active:drop-shadow-none transition-all duration-200 ${
           className ?? "h-8 w-8"
         }`}
+        style={{
+          backgroundColor: getBackgroundColor(),
+          transform: 'translateZ(0)', // Force hardware acceleration to prevent layout shifts
+        }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setHideSensitiveState(!hideSensitiveState)}

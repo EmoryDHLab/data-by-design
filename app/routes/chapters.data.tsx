@@ -200,31 +200,32 @@ export default function BrooksPage() {
               alt=""
             />
           </div>
-          <p className="font-bold block md:hidden ms-8 text-lg">
-            This chapter contains images of enslavement.
-          </p>
 
           <div
             id="consent-explain"
-            className="flex text-lg md:text-xl flex-row ms-8 md:ms-0 pt-12 space-x-6 md:mb-8"
+            className="flex text-lg md:text-xl flex-row items-center ms-8 md:ms-0 pt-12 space-x-6 md:mb-8"
           >
-            <div className="w-auto md:w-1/6 self-start mb-auto md:self-center text-right md:text-start">
+            <div className="w-auto md:w-1/6 flex justify-center">
               <span
-                className={`inline-flex justify-start md:justify-center border h-auto w-auto border-offblack rounded-full bg-dataSecondary hover:bg-dataPrimary`}
+                className={`inline-flex justify-center`}
               >
                 <ConsentToggle
-                  className="h-16 w-16 md:h-28 md:w-28 p-0.5 md:p-2"
+                  className="h-12 w-12 md:h-20 md:w-20 p-0.5 md:p-2"
                   id="big-toggle"
                 />
               </span>
             </div>
-            <div className="font-power md:w-5/6 text-lg md:text-2xl">
-              <p className="font-bold hidden md:block">
-                This chapter contains images of enslavement.
-              </p>
-              <p>
-                This button will show or hide sensitive images. <p></p>It will
-                remain below throughout the chapter.
+            <div
+              id="toggle-description"
+              className="font-power md:w-4/6 text-lg leading-tight md:text-xl"
+            >
+              <p className="  md:block">
+                <span className="font-bold">
+                  {" "}
+                  This chapter contains images of enslavement.{" "}
+                </span>{" "}
+                This button will show or hide sensitive images. It will remain
+                below throughout the chapter.
               </p>
             </div>
           </div>

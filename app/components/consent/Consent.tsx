@@ -12,7 +12,7 @@ export default function Consent() {
   if (setHideSensitiveState && windowSize.height) {
     return (
       <div
-        className={`absolute z-50 md:hidden lg:block right-5 md:right-6 lg:right-14 top-[calc(100vh-6rem)] md:top-[calc(100vh-8rem)] lg:top-[calc(100vh-8rem)] text-offblack pointer-events-auto`}
+        className={`absolute z-50 md:hidden lg:block right-3 md:right-4 lg:right-10 top-[calc(100vh-4rem)] md:top-[calc(100vh-5rem)] lg:top-[calc(100vh-6rem)] text-offblack pointer-events-auto`}
       >
         <ConsentToggle className="h-12 w-12 md:h-16 md:w-16 lg:h-18 lg:w-18 p-1.5" />
         <Tooltip id="consent-toggle" />
