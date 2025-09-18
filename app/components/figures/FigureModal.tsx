@@ -79,68 +79,64 @@ export default function FigureModal({
 
       <Dialog
         as="div"
-        className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-4 transition duration-300 ease-out data-[closed]:opacity-0 z-50"
+        className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-2 transition duration-300 ease-out data-[closed]:opacity-0 z-50"
         open={isOpen}
         transition
         onClose={() => setIsOpen(false)}
       >
-        <div className="fixed inset-0 w-screen overflow-y-auto p-4">
-          <div className="flex min-h-full items-center justify-center modal-backdrop">
-            <DialogPanel className="space-y-4 w-screen md:w-1/2 lg:w-[66vw] border bg-offblack text-white p-6 rounded-xl">
-              <DialogTitle as="div" className="flex justify-end">
-                {figure?.title && (
-                  <div
-                    className="text-sm md:text-lg font-medium leading-6 grow self-center px-3"
-                    dangerouslySetInnerHTML={{
-                      __html: figure.title,
-                    }}
-                  />
-                )}
-                <Button
-                  onClick={() => setIsOpen(false)}
-                  className="self-start"
-                  title="Close"
-                >
-                  <span className="sr-only">Close Button</span>
-                  <Close className="hover:text-offwhite hover:bg-white text-offwhite hover:fill-offblack text-lg h-6 w-6" />
-                </Button>
-              </DialogTitle>
-              <div className="flex flex-col justify-between h-full">
-                <ClientOnly>
-                  <IIIFViewer figure={figure} modalOpen={isOpen} />
-                </ClientOnly>
-                <Caption figure={figure} className="md:mb-2" />
-                <div className="mx-auto w-full rounded-2xl bg-white p-2">
-                  <Disclosure>
-                    {({ open }) => (
-                      <>
-                        <DisclosureButton
-                          className={classNames(
-                            "flex w-full justify-between rounded-lg text-offblack",
-                            `bg-${accentColor}`,
-                            "px-4 py-2 text-left text-sm font-medium",
-                            // `text-${backgroundColor}`,
-                            `hover:bg-${backgroundColor}/75`
-                          )}
-                        >
-                          <span>Alt Text</span>
-                          <ChevronUp
-                            className={classNames(
-                              `text-${backgroundColor}`,
-                              "transition-transform",
-                              open ? "rotate-180 transform" : ""
-                            )}
+        <div className="fixed inset-0 w-screen overflow-y-auto p-2">
+          <div className="flex min-h-full items-center justify-center modal-backdrop py-4">
+            <DialogPanel className="space-y-4 w-screen md:w-1/2 lg:w-[66vw] max-h-[95vh] border bg-offblack text-white p-4 rounded-xl flex flex-col">
+              <div className="flex flex-col flex-1 min-h-0 overflow-hidden">
+                <div className="flex-1 min-h-0 overflow-hidden relative">
+                  <Button
+                    onClick={() => setIsOpen(false)}
+                    className="absolute top-2 right-2 z-10 bg-black/50 hover:bg-black/75 rounded-full p-2 transition-colors"
+                    title="Close"
+                  >
+                    <span className="sr-only">Close Button</span>
+                    <Close className="text-white h-4 w-4" />
+                  </Button>
+                  <ClientOnly>
+                    <IIIFViewer figure={figure} modalOpen={isOpen} />
+                  </ClientOnly>
+                </div>
+                <div className="flex-shrink-0 space-y-4 mt-4">
+                  {figure?.title && (
+                    <div
+                      className="text-sm md:text-base font-bold leading-2 text-white"
+                      dangerouslySetInnerHTML={{
+                        __html: figure.title,
+                      }}
+                    />
+                  )}
+                  <Caption figure={figure} className="md:mb-2" />
+                  <div className="mx-auto w-full rounded-2xl bg-transparent ">
+                    <Disclosure>
+                      {({ open }) => (
+                        <>
+                          <DisclosureButton
+                            className="flex items-center gap-2 text-left text-sm font-medium text-gray-400 hover:text-white transition-colors group"
+                          >
+                            <span>Alt Text</span>
+                            <ChevronUp
+                              className={classNames(
+                                "text-gray-400 group-hover:text-white w-4 h-4",
+                                "transition-all",
+                                open ? "rotate-180 transform" : ""
+                              )}
+                            />
+                          </DisclosureButton>
+                          <DisclosurePanel
+                            className=" pb-2 pt-4 text-sm text-left text-white max-h-32 overflow-y-auto"
+                            dangerouslySetInnerHTML={{
+                              __html: figure?.altText ?? "",
+                            }}
                           />
-                        </DisclosureButton>
-                        <DisclosurePanel
-                          className="px-4 pb-2 pt-4 text-sm text-left text-offblack"
-                          dangerouslySetInnerHTML={{
-                            __html: figure?.altText ?? "",
-                          }}
-                        />
-                      </>
-                    )}
-                  </Disclosure>
+                        </>
+                      )}
+                    </Disclosure>
+                  </div>
                 </div>
               </div>
             </DialogPanel>
