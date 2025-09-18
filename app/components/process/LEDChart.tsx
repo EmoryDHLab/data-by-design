@@ -166,14 +166,7 @@ export default function LEDChart() {
                 />
               </g>
             </svg>
-            <figcaption className="font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
-              Women's work of various forms has much to contribute to larger
-              narratives about the development of most scholarly disciplines and
-              professional fields. A final example helps to underscore this
-              point: most contemporary viewers, when seeing Peabody's charts for
-              the first time, observe that they look like paintings by Piet
-              Mondrian, the famous Dutch modernist.
-            </figcaption>
+            <figcaption className="font-power mt-3 md:mt-6 mb-6 md:mb-12 col-span-full"></figcaption>
           </figure>
           <div ref={stepsRef} className="relative">
             {Triggers.map((trigger) => {

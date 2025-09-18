@@ -1,64 +1,43 @@
-import { Fragment, useContext } from "react";
+import { memo, useContext, useCallback } from "react";
 import { QuizContext } from "./QuizContext";
-import { useDeviceContext } from "~/hooks";
 
-const IntroText = () => {
-  return (
-    <section className="text-white">
-      <h2 className="text-4xl md:text-[14px] font-power leading-normal md:leading-[15px]">
-        Creating historical knowledge
-      </h2>
-      <h3 className="text-2xl md:text-[7px] font-powerLightNarrow leading-loose md:leading-[8px] mt-[2px]">
-        interacting with Peabody's Pedagogy
-      </h3>
-      <p className="md:text-[8px] leading-normal md:leading-[9px] text-offwhite font-thin">
-        Peabody intended the process of learning to be interactive.
-      </p>
-      <p className="md:text-[8px] leading-normal md:leading-[9px] text-offwhite font-[1]">
-        Follow the instruction in italics to participate in Peabody's process of
-        knowledge production.
-      </p>
-    </section>
-  );
-};
+const IntroContent = memo(() => (
+  <div className="text-white">
+    <h2 className="text-2xl md:text-3xl font-power font-bold leading-normal">
+      Creating historical knowledge
+    </h2>
+    <h3 className="text-lg md:text-xl font-power leading-normal mt-2">
+      Interacting with Peabody's Pedagogy
+    </h3>
+    <p className="text-base md:text-lg leading-normal text-offwhite font-thin mt-3">
+      Peabody intended the process of learning to be interactive.
+    </p>
+    <p className="text-base md:text-lg leading-normal text-offwhite font-thin mt-2">
+      Follow the instruction in italics to participate in Peabody's process of
+      knowledge production.
+    </p>
+  </div>
+));
 
-export default function QuizIntro({ className }: { className?: string }) {
+IntroContent.displayName = "IntroContent";
+
+export default memo(function QuizIntro({ className }: { className?: string }) {
   const { setCurrentStepCount } = useContext(QuizContext);
-  const { isMobile, isDesktop } = useDeviceContext();
 
-  if (isMobile) {
-    return <IntroText />;
-  } else if (isDesktop) {
-    return (
-      <svg>
-        <g className={`hidden md:block ${className}`}>
-          <foreignObject x={50} y={20} width={200} height={100}>
-            <IntroText />
-          </foreignObject>
-          <text
-            y={120}
-            x={50}
-            width={20}
-            height={20}
-            fill="white"
-            role="button"
-            tabIndex={0}
-            onClick={() => setCurrentStepCount(1)}
-            onKeyUp={({ key }) => {
-              if (key === "Enter" || key === "Space") setCurrentStepCount(1);
-            }}
-            fontSize={10}
-            className="font-powerLightNarrow italic focus:outline-none focus:underline hover:underline"
-          >
-            BEGIN
-            <tspan dx={2} className="font-icons">
-              b
-            </tspan>
-          </text>
-        </g>
-      </svg>
-    );
-  }
+  const handleBeginClick = useCallback(() => {
+    setCurrentStepCount(1);
+  }, [setCurrentStepCount]);
 
-  return <></>;
-}
+  return (
+    <div className={`p-6 md:p-12 ${className || ""}`}>
+      <IntroContent />
+      <button
+        onClick={handleBeginClick}
+        className="mt-6 text-xl md:text-2xl font-powerLightNarrow italic text-white focus:outline-none focus:underline hover:underline cursor-pointer"
+      >
+        BEGIN
+        <span className="font-icons ml-2">b</span>
+      </button>
+    </div>
+  );
+});

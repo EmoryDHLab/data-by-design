@@ -801,8 +801,8 @@ export default function PeabodyPage() {
                 figures["ch4-12"],
               ]}
               groupCaption={
-                <p>
-                  <cite>The Polish-American System</cite>
+                <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
+                  <cite>The Polish-American System </cite>
                   housed at the American Antiquarian Society. Courtesy of the
                   American Antiquarian Society. Photos by Lauren Klein.
                 </p>
@@ -980,7 +980,7 @@ export default function PeabodyPage() {
               ]}
               className="md:ml-12"
               groupCaption={
-                <p>
+                <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
                   The layers of the touch interface, built with copper tape and
                   a foam spacer; the assembled touch interface; a view of the
                   modular circuit boards for communicating with the LEDs; a
@@ -1093,11 +1093,11 @@ export default function PeabodyPage() {
             ]}
             groupCaption={
               <>
-                <p>
+                <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
                   <strong>Left:</strong> "Housetop," by Rachel Carey George, ca.
                   1935.
                 </p>
-                <p>
+                <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
                   <strong>Right:</strong> "Housetop" variation, design by Mary
                   Lee Bendolph. 1998, quilted by Essie Bendolph Pettaway, 2001.
                   Photos courtesy of Tinwood Media.

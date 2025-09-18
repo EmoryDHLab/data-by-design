@@ -27,169 +27,182 @@ export default function QuizNav() {
         fill="#1c1817"
         fillOpacity={0.7}
       />
-      <svg
-        y={y}
-        x={x}
-        width={side}
-        height={side}
-        // className="font-powerLightNarrow italic focus:outline-none focus:underline hover:underline"
-        className={`focus:outline-none ${
+      
+      {/* START button */}
+      <g
+        className={`cursor-pointer ${
           currentStepCount === 0
-            ? "opacity-50 cursor-not-allowed"
-            : "opacity-75 hover:opacity-100 focus:opacity-100"
+            ? "opacity-50 pointer-events-none"
+            : "opacity-75 hover:opacity-100"
         }`}
-        tabIndex={currentStepCount > 0 ? 0 : -1}
-        role={currentStepCount > 0 ? "button" : ""}
-        aria-roledescription="Button to restart the quiz."
-        onClick={() => setCurrentStepCount(0)}
-        onKeyUp={({ key }) => {
-          if (key === "Enter") setCurrentStepCount(0);
+        onClick={() => {
+          if (currentStepCount > 0) setCurrentStepCount(0);
         }}
       >
-        <line stroke="white" strokeWidth={0.75} x1={6} x2={6} y1={3} y2={8} />
+        <rect
+          x={x}
+          y={y}
+          width={side}
+          height={side}
+          fill="transparent"
+        />
+        <line stroke="white" strokeWidth={0.75} x1={x + 6} x2={x + 6} y1={y + 3} y2={y + 8} />
         <text
-          x="50%"
-          y="25%"
+          x={x + side/2}
+          y={y + side/4}
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fafbfd"
           fontSize={10}
           fontFamily="DxD Icons"
+          pointerEvents="none"
         >
           c
-          <tspan
-            dy={8}
-            fontSize={4}
-            x="50%"
-            fontFamily="neue-haas-unica, sans-serif"
-          >
-            START
-          </tspan>
         </text>
-      </svg>
+        <text
+          x={x + side/2}
+          y={y + side/4 + 8}
+          fontSize={4}
+          textAnchor="middle"
+          fill="#fafbfd"
+          fontFamily="neue-haas-unica, sans-serif"
+          pointerEvents="none"
+        >
+          START
+        </text>
+      </g>
 
-      <svg
-        y={y}
-        x={x + side}
-        width={side}
-        height={side}
-        className={`focus:outline-none ${
+      {/* BACK button */}
+      <g
+        className={`cursor-pointer ${
           currentStepCount === 0
-            ? "opacity-50 cursor-not-allowed"
-            : "opacity-75 hover:opacity-100 focus:opacity-100"
+            ? "opacity-50 pointer-events-none"
+            : "opacity-75 hover:opacity-100"
         }`}
-        tabIndex={currentStepCount > 0 ? 0 : -1}
-        role={currentStepCount > 0 ? "button" : ""}
-        aria-roledescription="Button to restart the quiz."
         onClick={() => {
           if (currentStepCount > 0)
             setCurrentStepCount((currentStepCount - 1) as QuizStepCount);
         }}
-        onKeyUp={({ key }) => {
-          if (key === "Enter" && currentStepCount > 0) setCurrentStepCount(0);
-        }}
       >
+        <rect
+          x={x + side}
+          y={y}
+          width={side}
+          height={side}
+          fill="transparent"
+        />
         <text
-          x="50%"
-          y="25%"
+          x={x + side + side/2}
+          y={y + side/4}
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fafbfd"
           fontSize={10}
           fontFamily="DxD Icons"
+          pointerEvents="none"
         >
           c
-          <tspan
-            dy={8}
-            fontSize={4}
-            x="50%"
-            fontFamily="neue-haas-unica, sans-serif"
-          >
-            BACK
-          </tspan>
         </text>
-      </svg>
+        <text
+          x={x + side + side/2}
+          y={y + side/4 + 8}
+          fontSize={4}
+          textAnchor="middle"
+          fill="#fafbfd"
+          fontFamily="neue-haas-unica, sans-serif"
+          pointerEvents="none"
+        >
+          BACK
+        </text>
+      </g>
 
-      <svg
-        y={y}
-        x={x + side * 2}
-        width={side}
-        height={side}
-        className={`focus:outline-none ${
+      {/* NEXT button */}
+      <g
+        className={`cursor-pointer ${
           currentStepCount === 9
-            ? "opacity-50 cursor-not-allowed"
-            : "opacity-75 hover:opacity-100 focus:opacity-100"
+            ? "opacity-50 pointer-events-none"
+            : "opacity-75 hover:opacity-100"
         }`}
-        tabIndex={currentStepCount < 9 ? 0 : -1}
-        role={currentStepCount < 9 ? "button" : ""}
-        aria-roledescription="Button to restart the quiz."
         onClick={() => {
           if (currentStepCount < 9)
             setCurrentStepCount((currentStepCount + 1) as QuizStepCount);
         }}
-        onKeyUp={({ key }) => {
-          if (key === "Enter" && currentStepCount < 9) setCurrentStepCount(0);
-        }}
       >
+        <rect
+          x={x + side * 2}
+          y={y}
+          width={side}
+          height={side}
+          fill="transparent"
+        />
         <text
-          x="50%"
-          y="25%"
+          x={x + side * 2 + side/2}
+          y={y + side/4}
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fafbfd"
           fontSize={10}
           fontFamily="DxD Icons"
+          pointerEvents="none"
         >
           b
-          <tspan
-            dy={8}
-            fontSize={4}
-            x="50%"
-            fontFamily="neue-haas-unica, sans-serif"
-          >
-            NEXT
-          </tspan>
         </text>
-      </svg>
-      <svg
-        y={y}
-        x={x + side * 3}
-        width={side}
-        height={side}
-        className={`focus:outline-none ${
+        <text
+          x={x + side * 2 + side/2}
+          y={y + side/4 + 8}
+          fontSize={4}
+          textAnchor="middle"
+          fill="#fafbfd"
+          fontFamily="neue-haas-unica, sans-serif"
+          pointerEvents="none"
+        >
+          NEXT
+        </text>
+      </g>
+
+      {/* END button */}
+      <g
+        className={`cursor-pointer ${
           currentStepCount === 9
-            ? "opacity-50 cursor-not-allowed"
-            : "opacity-75 hover:opacity-100 focus:opacity-100"
+            ? "opacity-50 pointer-events-none"
+            : "opacity-75 hover:opacity-100"
         }`}
-        tabIndex={currentStepCount < 9 ? 0 : -1}
-        role={currentStepCount < 9 ? "button" : ""}
-        aria-roledescription="Button to restart the quiz."
-        onClick={() => setCurrentStepCount(8)}
-        onKeyUp={({ key }) => {
-          if (key === "Enter") setCurrentStepCount(8);
+        onClick={() => {
+          if (currentStepCount < 9) setCurrentStepCount(8);
         }}
       >
-        <line stroke="white" strokeWidth={0.75} x1={14} x2={14} y1={3} y2={8} />
+        <rect
+          x={x + side * 3}
+          y={y}
+          width={side}
+          height={side}
+          fill="transparent"
+        />
+        <line stroke="white" strokeWidth={0.75} x1={x + side * 3 + 14} x2={x + side * 3 + 14} y1={y + 3} y2={y + 8} />
         <text
-          x="50%"
-          y="25%"
+          x={x + side * 3 + side/2}
+          y={y + side/4}
           textAnchor="middle"
           dominantBaseline="middle"
           fill="#fafbfd"
           fontSize={10}
           fontFamily="DxD Icons"
+          pointerEvents="none"
         >
           b
-          <tspan
-            dy={8}
-            fontSize={4}
-            x="50%"
-            fontFamily="neue-haas-unica, sans-serif"
-          >
-            END
-          </tspan>
         </text>
-      </svg>
+        <text
+          x={x + side * 3 + side/2}
+          y={y + side/4 + 8}
+          fontSize={4}
+          textAnchor="middle"
+          fill="#fafbfd"
+          fontFamily="neue-haas-unica, sans-serif"
+          pointerEvents="none"
+        >
+          END
+        </text>
+      </g>
     </g>
   );
 }

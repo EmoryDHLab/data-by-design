@@ -32,10 +32,139 @@ export default function Quiz() {
   const [feedback, setFeedback] = useState<QuizFeedbackType>(undefined);
   const quizRef = useRef<SVGSVGElement>(null);
   const endRef = useRef<HTMLDivElement>(null);
+  const desktopSectionRef = useRef<HTMLElement>(null);
+  const mobileSectionRef = useRef<HTMLDivElement>(null);
 
+  // Removed scrollIntoView to prevent unwanted screen movement during quiz navigation
+
+  // Add snap scrolling behavior when quiz section is in view (only when scrolling down)
   useEffect(() => {
-    if (currentStepCount > 0 && currentStepCount < 9 && quizRef.current)
-      quizRef.current.scrollIntoView({ behavior: "smooth" });
+    const targetRef = desktopSectionRef.current || mobileSectionRef.current;
+    if (!targetRef) return;
+
+    let lastScrollY = window.scrollY;
+    let hasSnapped = false;
+    let scrollTimer: NodeJS.Timeout | null = null;
+    let userInteracting = false;
+    let stepChangeTimer: NodeJS.Timeout | null = null;
+
+    const smoothScrollToTarget = () => {
+      const rect = targetRef.getBoundingClientRect();
+      const targetPosition = window.scrollY + rect.top;
+
+      // Use a custom smooth scroll with easing
+      const startPosition = window.scrollY;
+      const distance = targetPosition - startPosition;
+      const duration = 800; // Longer duration for smoother feel
+      let startTime: number | null = null;
+
+      const easeInOutCubic = (t: number): number => {
+        return t < 0.5
+          ? 4 * t * t * t
+          : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      };
+
+      const animation = (currentTime: number) => {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+
+        const easedProgress = easeInOutCubic(progress);
+        const currentPosition = startPosition + distance * easedProgress;
+
+        window.scrollTo(0, currentPosition);
+
+        if (progress < 1) {
+          requestAnimationFrame(animation);
+        }
+      };
+
+      requestAnimationFrame(animation);
+    };
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const isScrollingDown = currentScrollY > lastScrollY;
+      const rect = targetRef.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Clear any existing timer
+      if (scrollTimer) {
+        clearTimeout(scrollTimer);
+      }
+
+      // Debounce scroll events for smoother detection
+      scrollTimer = setTimeout(() => {
+        if (
+          isScrollingDown &&
+          !hasSnapped &&
+          !userInteracting &&
+          !stepChangeTimer
+        ) {
+          // Check if quiz section is partially visible with a larger trigger zone
+          if (
+            rect.top < viewportHeight * 0.7 &&
+            rect.top > 0 &&
+            rect.top < viewportHeight * 0.6
+          ) {
+            hasSnapped = true;
+            smoothScrollToTarget();
+
+            // Reset snap flag after animation completes
+            setTimeout(() => {
+              hasSnapped = false;
+            }, 1200);
+          }
+        }
+
+        // Reset snap flag when scrolled away from quiz
+        if (rect.bottom < 0 || rect.top > viewportHeight) {
+          hasSnapped = false;
+        }
+      }, 50); // Debounce delay
+
+      lastScrollY = currentScrollY;
+    };
+
+    const handleInteractionStart = () => {
+      userInteracting = true;
+    };
+
+    const handleInteractionEnd = () => {
+      setTimeout(() => {
+        userInteracting = false;
+      }, 1000); // Longer delay to prevent snap during quiz step transitions
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    targetRef.addEventListener("mousedown", handleInteractionStart);
+    targetRef.addEventListener("touchstart", handleInteractionStart);
+    targetRef.addEventListener("click", handleInteractionStart);
+    targetRef.addEventListener("mouseup", handleInteractionEnd);
+    targetRef.addEventListener("touchend", handleInteractionEnd);
+
+    // Disable snap scroll temporarily when currentStepCount changes
+    if (stepChangeTimer) {
+      clearTimeout(stepChangeTimer);
+    }
+    stepChangeTimer = setTimeout(() => {
+      stepChangeTimer = null;
+    }, 1500); // Disable snap for 1.5s after step change
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      targetRef.removeEventListener("mousedown", handleInteractionStart);
+      targetRef.removeEventListener("touchstart", handleInteractionStart);
+      targetRef.removeEventListener("click", handleInteractionStart);
+      targetRef.removeEventListener("mouseup", handleInteractionEnd);
+      targetRef.removeEventListener("touchend", handleInteractionEnd);
+      if (scrollTimer) {
+        clearTimeout(scrollTimer);
+      }
+      if (stepChangeTimer) {
+        clearTimeout(stepChangeTimer);
+      }
+    };
   }, [currentStepCount]);
 
   useEffect(() => {
@@ -79,8 +208,6 @@ export default function Quiz() {
   useEffect(() => {
     setCurrentStep((quizSteps as Array<QuizStep>)[currentStepCount]);
     setSelectedCategories([]);
-    if (currentStepCount === 9 && endRef.current)
-      endRef.current.scrollIntoView({ block: "end", behavior: "smooth" });
   }, [currentStepCount, setCurrentStep, setSelectedCategories]);
 
   const handleYearClick = (year: number) => {
@@ -162,88 +289,129 @@ export default function Quiz() {
       }}
     >
       <section
-        className="bg-black w-full h-[100vw] hidden md:block relative z-10"
+        ref={desktopSectionRef}
+        className="bg-black w-full h-screen hidden md:block relative z-10 overflow-hidden scroll-mt-0"
         id="quiz"
       >
-        <svg
-          ref={quizRef}
-          viewBox="0 0 300 200"
-          className="h-screen m-auto w-11/12 sticky top-0"
+        <div
+          className={`absolute inset-0 flex items-center justify-center z-20 pointer-events-none transition-all duration-1000 ${
+            currentStepCount === 0 ? "opacity-100" : "opacity-0"
+          }`}
         >
-          {currentStepCount <= 1 && (
-            <QuizIntro
-              className={`transition-all duration-1000 ${
-                currentStepCount > 0 ? "-translate-x-full" : ""
+          <QuizIntro
+            className={`transition-all duration-1000 pointer-events-auto ${
+              currentStepCount === 0
+                ? "translate-x-0 scale-100"
+                : "-translate-x-full scale-95"
+            }`}
+          />
+        </div>
+
+        <div className="relative">
+          {/* Text content flexbox */}
+          <div className="hidden md:flex absolute top-0 left-0 w-full h-full pointer-events-none">
+            <div
+              className={`flex flex-col font-power py-28 gap-4 max-w-2xl transition-all duration-500 ease-out ${
+                currentStepCount === 1
+                  ? "pl-24 md:pl-48 lg:pl-64 xl:pl-96"
+                  : "pl-12 md:pl-24 lg:pl-32 xl:pl-48"
               }`}
-            />
-          )}
-
-          {currentStepCount > 0 && (
-            <QuizConclusion
-              className={`transition-opacity duration-1000 ${
-                currentStepCount === 8 ? "opacity-100 delay-300" : "opacity-0"
-              }`}
-            />
-          )}
-
-          <QuizFinal />
-
-          <QuizFeedback />
-
-          <g
-            className={`md:scale-${
-              currentStepCount >= 2 ? 100 : 0
-            } transition-all duration-1000 origin-bottom-right`}
-          >
-            <QuizSquare defaultX={165} defaultY={45} />
-          </g>
-
-          <g
-            className={`${
-              currentStepCount === 0 ? "hidden translate-x-full" : ""
-            } ${
-              currentStepCount >= 2 && currentStepCount < 8
-                ? "-translate-x-8 translate-y-2 scale-75 opacity-100"
-                : ""
-            } ${
-              currentStepCount >= 8 ? "-translate-x-full opacity-0" : ""
-            } transition-all duration-1000`}
-          >
-            <text x={60} y={61} fontSize={6} fill="white" className={`opacity`}>
-              EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
-            </text>
-            <text
-              x={60}
-              y={75}
-              fontSize={12}
-              fill="white"
-              fontFamily="VTC Du Bois, serif"
             >
-              {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
-            </text>
+              <div className="pointer-events-auto ">
+                <QuizFeedback />
+              </div>
+              <div className="pointer-events-auto">
+                <QuizInstructions />
+              </div>
 
-            <g className={` transition-all duration-700 delay-100`}>
-              <QuizSelectActors />
-              {currentStepCount > 1 && currentStepCount < 9 && (
-                <QuizEventCategoryList />
-              )}
+              {/* Event text - right below instructions */}
+              <div
+                className={`pointer-events-auto  ${
+                  currentStepCount === 0
+                    ? "opacity-0 translate-y-8 scale-95"
+                    : ""
+                } ${
+                  currentStepCount >= 1 && currentStepCount < 8
+                    ? "opacity-100 translate-y-0 scale-100"
+                    : ""
+                } ${
+                  currentStepCount >= 8
+                    ? "opacity-0 -translate-y-8 scale-95"
+                    : ""
+                } transition-all duration-700 ease-out delay-200`}
+              >
+                <div className="text-white text-sm opacity-100">
+                  EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
+                </div>
+                <div className="text-white text-xl font-sans mt-2">
+                  {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
+                </div>
+              </div>
+
+              {/* Conclusion text */}
+              <div
+                className={`pointer-events-auto transition-all duration-1000 ${
+                  currentStepCount === 8
+                    ? "opacity-100 translate-y-0 scale-100 delay-300"
+                    : "opacity-0 translate-y-4 scale-95"
+                }`}
+              >
+                <QuizConclusion />
+              </div>
+            </div>
+          </div>
+
+          <svg
+            ref={quizRef}
+            viewBox="0 0 300 200"
+            className="h-screen m-auto w-11/12 sticky top-0"
+          >
+            <QuizFinal />
+
+            <g
+              className={`md:scale-${
+                currentStepCount >= 2 ? 100 : 0
+              } transition-all duration-1000 origin-bottom-right`}
+            >
+              <QuizSquare defaultX={165} defaultY={45} />
             </g>
-          </g>
 
-          <QuizInstructions />
+            <g
+              className={`${
+                currentStepCount === 0 ? "hidden translate-x-full" : ""
+              } ${
+                currentStepCount >= 2 && currentStepCount < 8
+                  ? "-translate-x-8 translate-y-2 scale-75 opacity-100"
+                  : ""
+              } ${
+                currentStepCount >= 8 ? "-translate-x-full opacity-0" : ""
+              } transition-all duration-1000`}
+            >
+              <g className={` transition-all duration-700 delay-100`}>
+                <QuizSelectActors />
+                {currentStepCount > 1 && currentStepCount < 9 && (
+                  <QuizEventCategoryList />
+                )}
+              </g>
+            </g>
 
-          <QuizNav />
+            <QuizNav />
+          </svg>
 
-          <text x={280} y={205} fill="white" fontSize={3}>
+          {/* Progress text */}
+          <div className="hidden md:block absolute bottom-0 right-4 text-white text-xs">
             {currentStepCount} of 9
-          </text>
-        </svg>
+          </div>
+        </div>
       </section>
 
       {/* MOBILE */}
-      <div className="bg-black h-[200vh] relative w-full md:hidden">
+      <div
+        ref={mobileSectionRef}
+        className="bg-black h-screen relative w-full md:hidden overflow-hidden scroll-mt-0"
+      >
         <div
-          className={`flex flex-col h-screen sticky top-12 transition-opacity duration-1000 ${
+          className={`flex flex-col h-full font-power transition-opacity duration-1000 ${
             currentStepCount == 0 ? "opacity-100" : "opacity-100"
           }`}
         >
@@ -251,47 +419,39 @@ export default function Quiz() {
             className={`absolute h-1/4 mx-12 items-center justify-center top-12 transition-all duration-1000 ${
               currentStepCount > 0
                 ? "opacity-0 h-0 pointer-events-none"
-                : "opacity-100"
+                : "opacity-100 pointer-events-auto"
             }`}
           >
             <QuizIntro />
-            <button
-              className="font-powerLightNarrow italic text-white focus:outline-none focus:underline hover:underline text-3xl my-6"
-              tabIndex={0}
-              onClick={() => setCurrentStepCount(1)}
-            >
-              BEGIN
-              <span className="font-icons ml-4">b</span>
-            </button>
           </div>
 
           <div
             className={`transition-all duration-1000 ${
               currentStepCount == 8
-                ? "opacity-100 h-64 mx-12 mb-10"
+                ? "opacity-100 h-auto max-h-96 mx-6 mb-6 px-4 py-6"
                 : "opacity-0 h-0 pointer-events-none"
             }`}
           >
             <QuizConclusion />
           </div>
-          <div className="grid place-content-center pointer-events-none">
+          <div className="grid place-content-center pointer-events-none px-6">
             <QuizFeedback />
           </div>
-          <div className="grid place-content-center text-white">
+          <div className="grid place-content-center text-white pt-8 px-6">
             <QuizInstructions />
           </div>
 
           <div
-            className={`grid place-content-start text-white transition-opacity duration-1000 ${
+            className={`grid place-content-start text-white px-6 transition-opacity duration-1000 ${
               currentStepCount > 0 && currentStepCount < 8
                 ? "opacity-100"
                 : "opacity-0 h-0"
             }`}
           >
-            <p className="ml-3 mb-0 text-sm">
+            <p className="ml-20 mt-10mb-0 text-sm">
               EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
             </p>
-            <p className="mx-3 my-0 text-2xl">
+            <p className="ml-20 my-0 font-sans text-xl">
               {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
             </p>
           </div>
