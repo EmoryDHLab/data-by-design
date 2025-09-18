@@ -26,7 +26,7 @@ export default function PullQuote({
   return (
     <aside ref={asideRef} className={classList}>
       <blockquote
-        className={`border-l-4 border-l-${backgroundColor} pl-2 md:pl-10`}
+        className={`border-l-4 border-l-${backgroundColor} pl-2 md:pl-6`}
       >
         <p className="my-0">
           <span className="font-neueMontreal text-xl md:text-3xl tracking-tight block">
