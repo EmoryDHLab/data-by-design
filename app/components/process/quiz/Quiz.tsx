@@ -312,8 +312,8 @@ export default function Quiz() {
           <div className="hidden md:flex absolute top-0 left-0 w-full h-full pointer-events-none">
             <div
               className={`flex flex-col font-power py-28 gap-4 max-w-2xl transition-all duration-500 ease-out ${
-                currentStepCount === 1 
-                  ? "pl-24 md:pl-48 lg:pl-64 xl:pl-96" 
+                currentStepCount === 1
+                  ? "pl-24 md:pl-48 lg:pl-64 xl:pl-96"
                   : "pl-12 md:pl-24 lg:pl-32 xl:pl-48"
               }`}
             >
@@ -411,7 +411,7 @@ export default function Quiz() {
         className="bg-black h-screen relative w-full md:hidden overflow-hidden scroll-mt-0"
       >
         <div
-          className={`flex flex-col h-full transition-opacity duration-1000 ${
+          className={`flex flex-col h-full font-power transition-opacity duration-1000 ${
             currentStepCount == 0 ? "opacity-100" : "opacity-100"
           }`}
         >
@@ -419,18 +419,10 @@ export default function Quiz() {
             className={`absolute h-1/4 mx-12 items-center justify-center top-12 transition-all duration-1000 ${
               currentStepCount > 0
                 ? "opacity-0 h-0 pointer-events-none"
-                : "opacity-100"
+                : "opacity-100 pointer-events-auto"
             }`}
           >
             <QuizIntro />
-            <button
-              className="font-powerLightNarrow italic text-white focus:outline-none focus:underline hover:underline text-3xl my-6"
-              tabIndex={0}
-              onClick={() => setCurrentStepCount(1)}
-            >
-              BEGIN
-              <span className="font-icons ml-4">b</span>
-            </button>
           </div>
 
           <div
@@ -442,24 +434,24 @@ export default function Quiz() {
           >
             <QuizConclusion />
           </div>
-          <div className="grid place-content-center pointer-events-none">
+          <div className="grid place-content-center pointer-events-none px-6">
             <QuizFeedback />
           </div>
-          <div className="grid place-content-center text-white pt-8">
+          <div className="grid place-content-center text-white pt-8 px-6">
             <QuizInstructions />
           </div>
 
           <div
-            className={`grid place-content-start text-white transition-opacity duration-1000 ${
+            className={`grid place-content-start text-white px-6 transition-opacity duration-1000 ${
               currentStepCount > 0 && currentStepCount < 8
                 ? "opacity-100"
                 : "opacity-0 h-0"
             }`}
           >
-            <p className="ml-3 mb-0 text-sm">
+            <p className="ml-20 mt-10mb-0 text-sm">
               EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
             </p>
-            <p className="mx-3 my-0 text-2xl">
+            <p className="ml-20 my-0 font-sans text-xl">
               {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
             </p>
           </div>

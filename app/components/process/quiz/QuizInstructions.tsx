@@ -62,7 +62,7 @@ export default function QuizInstructions() {
               : "opacity-0 h-0"
           }`}
         >
-          CATEGORIZE THE EVENT.!!!!!!
+          CATEGORIZE THE EVENT
         </InstructionsContent>
       </>
     );
@@ -71,13 +71,21 @@ export default function QuizInstructions() {
   return (
     <div
       className={`h-6 relative opacity-${
-        currentStepCount === 0 || currentStepCount === 8 || currentStepCount === 9 ? "0" : "100"
+        currentStepCount === 0 ||
+        currentStepCount === 8 ||
+        currentStepCount === 9
+          ? "0"
+          : "100"
       }`}
     >
       <div className="absolute inset-0">
         <InstructionsContent
           className={`
-          ${currentStepCount === 1 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}
+          ${
+            currentStepCount === 1
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-8"
+          }
           transition-all duration-700 ease-out
           `}
         >
@@ -87,7 +95,11 @@ export default function QuizInstructions() {
       <div className="absolute inset-0">
         <InstructionsContent
           className={`
-          ${currentStepCount === 2 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}
+          ${
+            currentStepCount === 2
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-8"
+          }
           transition-all duration-700 ease-out delay-100
           `}
         >
@@ -97,7 +109,11 @@ export default function QuizInstructions() {
       <div className="absolute inset-0">
         <InstructionsContent
           className={`
-          ${currentStepCount >= 3 && currentStepCount <= 6 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}
+          ${
+            currentStepCount >= 3 && currentStepCount <= 6
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-8"
+          }
           transition-all duration-700 ease-out delay-200
           `}
         >
