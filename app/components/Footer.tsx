@@ -2,7 +2,7 @@ import SiteTitle from "./home/SiteTitle";
 
 export default function Footer() {
   return (
-    <footer className="grid md:grid-cols-12  md:gap-x-12 px-8 md:p-32 md:pt-12 font-neueMontreal bg-offblack text-offwhite">
+    <footer className="grid md:grid-cols-12 gap-x-6 md:gap-x-12 p-8 md:p-16 lg:p-24 xl:p-32 xl:pt-12 font-neueMontreal bg-offblack text-offwhite">
       <div className="col-span-12  md:col-span-3 flex flex-col">
         <cite className="sr-only">Data by Design</cite>
         <SiteTitle showTag={false} className="" />
@@ -41,8 +41,8 @@ export default function Footer() {
         </svg>
       </div>
       {/* SECOND COL */}
-      <div className="col-span-12 md:col-span-4 flex flex-col space-y-4 font-neueMontrealLight leading-6 md:px-12 text-sm md:text-xs">
-        <p className="uppercase font-neueMontreal">Cite as</p>
+      <div className="col-span-12 md:col-span-4 flex flex-col space-y-4 font-neueMontrealLight leading-6 pt-8 md:pt-0 md:px-8 lg:px-12 text-sm md:text-xs">
+        <p className="uppercase text-xs font-neueMontreal">Cite as</p>
         <p className="font-neueMontreal">
           Lauren Klein, Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams,
           Nicholas Yang, Dan Jutan, Jianing Fu, Anna Mola, Zhou Fang, Yang Li,
@@ -90,26 +90,51 @@ export default function Footer() {
         </p>
       </div>
       {/* THIRD COL */}
-      <div className="col-span-12 md:col-span-5 flex flex-col space-y-4 pt-12 md:pt-0 p-4 md:p-0">
+      <div className="col-span-12 md:col-span-5 my-20 md:my-0 flex flex-col space-y-4 pt-8 md:pt-0">
         <p className="uppercase text-xs font-neueMontreal">
           Sign up for project updates:
         </p>
         <form
-          className="flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-8 items-baseline validate mb-8"
+          className="relative w-full max-w-md mb-8"
           action="https://dataxdesign.us22.list-manage.com/subscribe/post?u=6d2b8677087077c76d5d9940a&amp;id=7cff42ff53&amp;f_id=00a6c7e1f0"
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
           target="_blank"
         >
-          <input
-            placeholder="Email address here"
-            type="email"
-            className="required email bg-transparent focus:bg-transparent active:bg-transparent autofill:bg-transparent text-offblack active:text-offblack focus:bg-playfairPrimary border-b-2 border-offwhite placeholder-offwhite font-neueMontrealLight tracking font-light text-2xl w-full text-white"
-            name="EMAIL"
-            id="mce-EMAIL"
-            required
-          />
+          <div className="relative">
+            <input
+              placeholder="Email address"
+              type="email"
+              className="w-full bg-transparent border-b border-offwhite pb-2 pr-12 placeholder-gray-500 text-offwhite font-neueMontrealLight text-lg focus:outline-none focus:border-white transition-colors"
+              name="EMAIL"
+              id="mce-EMAIL"
+              required
+            />
+            <button
+              type="submit"
+              name="subscribe"
+              id="mc-embedded-subscribe"
+              className="absolute right-0 bottom-2 text-offwhite hover:text-white transition-colors"
+              aria-label="Subscribe"
+            >
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 12H19M19 12L12 5M19 12L12 19"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
           <div aria-hidden="true" className="sr-only">
             {/*
                 Note from MailChimp - example real people should not fill this
@@ -124,44 +149,43 @@ export default function Footer() {
               readOnly
             />
           </div>
-
-          <input
-            type="submit"
-            name="subscribe"
-            id="mc-embedded-subscribe"
-            value="Subscribe"
-            className={`button border border-2 border-offwhite rounded-full px-6 py-4 text-center me-2 mb-2 hover:bg-offwhite cursor-pointer hover:text-offblack`}
-          />
         </form>
-        <div className="flex flex-col md:flex-row flex-wrap space-y-6 items-start">
-          <div className="font-dubois md:text-3xl xl:text-4xl mt-6 md:mr-8">
-            DH Lab
-          </div>
+
+        {/* Logos  */}
+
+        <div className="grid grid-cols-2  pt-20 sm:grid-cols-3 md:flex md:flex-row md:flex-wrap gap-8 md:gap-8 items-center justify-items-center">
           <img
-            className="h-auto w-full md:h-10 md:mr-8 xl:h-12 md:w-auto"
+            className="h-10 md:h-12 w-auto object-contain"
             src="/images/footer/ecds.png"
             alt="Emory Center for Digital Scholarship"
           />
-          <div className="font-dubois md:text-3xl md:mr-8 xl:text-4xl">
-            Polymode
-          </div>
           <img
-            className="h-auto w-full md:h-10 xl:h-12 md:w-auto md:mr-8"
+            className="h-8 md:h-8 w-auto object-contain"
+            src="/images/footer/DHlab.svg"
+            alt="Digital Humanities Lab"
+          />
+          <img
+            className="h-10 md:h-12 w-auto object-contain"
+            src="/images/footer/polymode.svg"
+            alt="Polymode Studio"
+          />
+          <img
+            className="h-10 md:h-12 w-auto object-contain"
             src="/images/footer/DigitalPublishingHumanities.png"
             alt="Emory Digital Humanities Lab"
           />
           <img
-            className="h-auto w-full md:h-10 xl:h-12 md:w-auto md:mr-8"
+            className="h-10 md:h-12 w-auto object-contain"
             src="/images/footer/neh.png"
             alt="The National Endowment for the Humanities"
           />
           <img
-            className="h-auto w-full md:h-10 xl:h-12 md:w-auto md:mr-8"
+            className="h-10 md:h-12 w-auto object-contain"
             src="/images/footer/mellon.jpeg"
             alt="Andrew W. Mellon Foundation"
           />
           <img
-            className="h-auto w-1/2 md:h-10 xl:h-12 md:w-auto md:mr-8"
+            className="h-8 md:h-10 w-auto object-contain col-span-2 sm:col-span-1"
             src="/images/footer/mit.svg"
             alt="MIT Press"
           />
