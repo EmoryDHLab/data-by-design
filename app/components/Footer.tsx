@@ -90,7 +90,7 @@ export default function Footer() {
         </p>
       </div>
       {/* THIRD COL */}
-      <div className="col-span-12 md:col-span-5 flex flex-col space-y-16 pt-12 md:pt-0 p-4 md:p-0">
+      <div className="col-span-12 md:col-span-5 flex flex-col space-y-4 pt-12 md:pt-0 p-4 md:p-0">
         <p className="uppercase text-xs font-neueMontreal">
           Sign up for project updates:
         </p>
