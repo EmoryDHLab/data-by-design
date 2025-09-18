@@ -143,9 +143,9 @@ export default function Tutorial() {
               strokeWidth={focusShapeSize.s}
             />
           </svg>
-          <figcaption className="text-center p-6 opacity-0 md:opacity-100">
+          {/* <figcaption className="text-center p-6 opacity-0 md:opacity-100">
             An interactive explanation of the Peabody's Polish-American System
-          </figcaption>
+          </figcaption> */}
         </figure>
       </div>
     </div>

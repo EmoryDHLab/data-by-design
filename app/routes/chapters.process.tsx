@@ -602,7 +602,7 @@ export default function PeabodyPage() {
           </Column>
         </TwoColumnLayout>
 
-        <CenteredLayout>
+        <CenteredLayout className="pb-24">
           <PullQuote
             quote="Our ways of knowing are all shaped by asymmetrical power-"
             subquote="and data visualization is no exception."
