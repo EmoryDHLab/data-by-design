@@ -104,7 +104,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
         fixedNav ? "fixed" : "sticky"
       } top-0 bg-offwhite mx-auto`}
     >
-      <nav className="h-8">
+      <nav className="h-4 md:h-8">
         <div
           className={`bg-black relative left-0 top-0 h-full`}
           style={{ width: `${progress * 100}%` }}
