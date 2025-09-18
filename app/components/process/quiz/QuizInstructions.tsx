@@ -72,7 +72,7 @@ export default function QuizInstructions() {
               : "opacity-0 h-0"
           }`}
         >
-          CATEGORIZE THE EVENT.!!!!!!
+          CATEGORIZE THE EVENT.
         </InstructionsContent>
       </>
     );

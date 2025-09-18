@@ -20,13 +20,13 @@ export default function PullQuote({
   const asideRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    setClassList(`flex flex-col py-6 md:py-24 md:-ml-4 ${className ?? ""}`);
+    setClassList(`flex flex-col py-12 md:py-24 md:-ml-4 ${className ?? ""}`);
   }, [className, backgroundColor, primaryTextColor]);
 
   return (
     <aside ref={asideRef} className={classList}>
       <blockquote
-        className={`border-l-4 border-l-${backgroundColor} pl-2 md:pl-6`}
+        className={`border-l-4 border-l-${backgroundColor}  pl-4 md:pl-6`}
       >
         <p className="my-0">
           <span className="font-neueMontreal text-xl md:text-3xl tracking-tight block">
