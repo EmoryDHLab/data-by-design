@@ -29,7 +29,7 @@ export default function QuizConclusion({ className }: { className?: string }) {
     <div className={`text-white ${className || ""}`}>
       <ConclusionContent />
       <button
-        className="font-powerLightNarrow italic focus:outline-none focus:underline hover:underline text-base mt-4 pointer-events-auto cursor-pointer"
+        className="font-powerLightNarrow italic focus:outline-none focus:underline hover:underline text-xl md:text-2xl mt-6 pointer-events-auto cursor-pointer"
         tabIndex={0}
         onClick={() => setCurrentStepCount(9)}
         onKeyUp={({ key }) => {

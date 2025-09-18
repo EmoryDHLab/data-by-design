@@ -3,11 +3,11 @@ import { QuizContext } from "./QuizContext";
 
 const IntroContent = memo(() => (
   <div className="text-white">
-    <h2 className="text-2xl md:text-3xl font-power leading-normal">
+    <h2 className="text-2xl md:text-3xl font-power font-bold leading-normal">
       Creating historical knowledge
     </h2>
-    <h3 className="text-lg md:text-xl font-powerLightNarrow leading-normal mt-2">
-      interacting with Peabody's Pedagogy
+    <h3 className="text-lg md:text-xl font-power leading-normal mt-2">
+      Interacting with Peabody's Pedagogy
     </h3>
     <p className="text-base md:text-lg leading-normal text-offwhite font-thin mt-3">
       Peabody intended the process of learning to be interactive.

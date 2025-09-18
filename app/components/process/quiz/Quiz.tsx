@@ -95,7 +95,12 @@ export default function Quiz() {
 
       // Debounce scroll events for smoother detection
       scrollTimer = setTimeout(() => {
-        if (isScrollingDown && !hasSnapped && !userInteracting) {
+        if (
+          isScrollingDown &&
+          !hasSnapped &&
+          !userInteracting &&
+          !stepChangeTimer
+        ) {
           // Check if quiz section is partially visible with a larger trigger zone
           if (
             rect.top < viewportHeight * 0.7 &&
@@ -138,6 +143,14 @@ export default function Quiz() {
     targetRef.addEventListener("mouseup", handleInteractionEnd);
     targetRef.addEventListener("touchend", handleInteractionEnd);
 
+    // Disable snap scroll temporarily when currentStepCount changes
+    if (stepChangeTimer) {
+      clearTimeout(stepChangeTimer);
+    }
+    stepChangeTimer = setTimeout(() => {
+      stepChangeTimer = null;
+    }, 1500); // Disable snap for 1.5s after step change
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       targetRef.removeEventListener("mousedown", handleInteractionStart);
@@ -147,6 +160,9 @@ export default function Quiz() {
       targetRef.removeEventListener("touchend", handleInteractionEnd);
       if (scrollTimer) {
         clearTimeout(scrollTimer);
+      }
+      if (stepChangeTimer) {
+        clearTimeout(stepChangeTimer);
       }
     };
   }, [currentStepCount]);
@@ -277,12 +293,16 @@ export default function Quiz() {
         className="bg-black w-full h-screen hidden md:block relative z-10 overflow-hidden scroll-mt-0"
         id="quiz"
       >
-        <div className={`absolute inset-0 flex items-center justify-center z-20 pointer-events-none transition-all duration-1000 ${
-          currentStepCount === 0 ? "opacity-100" : "opacity-0"
-        }`}>
+        <div
+          className={`absolute inset-0 flex items-center justify-center z-20 pointer-events-none transition-all duration-1000 ${
+            currentStepCount === 0 ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <QuizIntro
             className={`transition-all duration-1000 pointer-events-auto ${
-              currentStepCount === 0 ? "translate-x-0 scale-100" : "-translate-x-full scale-95"
+              currentStepCount === 0
+                ? "translate-x-0 scale-100"
+                : "-translate-x-full scale-95"
             }`}
           />
         </div>
@@ -291,11 +311,13 @@ export default function Quiz() {
           {/* Text content flexbox */}
           <div className="hidden md:flex absolute top-0 left-0 w-full h-full pointer-events-none">
             <div
-              className={`flex flex-col py-28 gap-4 max-w-2xl transition-all duration-500 ease-out ${
-                currentStepCount === 1 ? "pl-96" : "pl-48"
+              className={`flex flex-col font-power py-28 gap-4 max-w-2xl transition-all duration-500 ease-out ${
+                currentStepCount === 1 
+                  ? "pl-24 md:pl-48 lg:pl-64 xl:pl-96" 
+                  : "pl-12 md:pl-24 lg:pl-32 xl:pl-48"
               }`}
             >
-              <div className="pointer-events-auto">
+              <div className="pointer-events-auto ">
                 <QuizFeedback />
               </div>
               <div className="pointer-events-auto">
@@ -304,7 +326,7 @@ export default function Quiz() {
 
               {/* Event text - right below instructions */}
               <div
-                className={`pointer-events-auto ${
+                className={`pointer-events-auto  ${
                   currentStepCount === 0
                     ? "opacity-0 translate-y-8 scale-95"
                     : ""
@@ -321,7 +343,7 @@ export default function Quiz() {
                 <div className="text-white text-sm opacity-100">
                   EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
                 </div>
-                <div className="text-white text-lg font-serif mt-2">
+                <div className="text-white text-xl font-sans mt-2">
                   {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
                 </div>
               </div>
@@ -329,7 +351,9 @@ export default function Quiz() {
               {/* Conclusion text */}
               <div
                 className={`pointer-events-auto transition-all duration-1000 ${
-                  currentStepCount === 8 ? "opacity-100 translate-y-0 scale-100 delay-300" : "opacity-0 translate-y-4 scale-95"
+                  currentStepCount === 8
+                    ? "opacity-100 translate-y-0 scale-100 delay-300"
+                    : "opacity-0 translate-y-4 scale-95"
                 }`}
               >
                 <QuizConclusion />
