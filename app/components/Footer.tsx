@@ -47,7 +47,7 @@ export default function Footer() {
           Lauren Klein, Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams,
           Nicholas Yang, Dan Jutan, Jianing Fu, Anna Mola, Zhou Fang, Yang Li,
           and Silas Munro. Data by Design: An Interactive History of Data
-          Visualization, 1789-1900. 2024 public beta.
+          Visualization, 1789-1900. 2025 public beta.
         </p>
         <p>
           Data by Design has been designed and developed by the Emory Digital
@@ -91,9 +91,11 @@ export default function Footer() {
       </div>
       {/* THIRD COL */}
       <div className="col-span-12 md:col-span-5 flex flex-col space-y-16 pt-12 md:pt-0 p-4 md:p-0">
-        <p className="uppercase">Sign up for project updates:</p>
+        <p className="uppercase text-xs font-neueMontreal">
+          Sign up for project updates:
+        </p>
         <form
-          className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 items-baseline validate mb-8"
+          className="flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-8 items-baseline validate mb-8"
           action="https://dataxdesign.us22.list-manage.com/subscribe/post?u=6d2b8677087077c76d5d9940a&amp;id=7cff42ff53&amp;f_id=00a6c7e1f0"
           method="post"
           id="mc-embedded-subscribe-form"
@@ -128,7 +130,7 @@ export default function Footer() {
             name="subscribe"
             id="mc-embedded-subscribe"
             value="Subscribe"
-            className={`button border border-offwhite rounded-3xl px-5 py-4 text-center me-2 mb-2 hover:bg-offwhite cursor-pointer hover:text-offblack`}
+            className={`button border border-2 border-offwhite rounded-full px-6 py-4 text-center me-2 mb-2 hover:bg-offwhite cursor-pointer hover:text-offblack`}
           />
         </form>
         <div className="flex flex-col md:flex-row flex-wrap space-y-6 items-start">

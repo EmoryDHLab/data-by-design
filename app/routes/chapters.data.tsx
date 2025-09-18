@@ -184,7 +184,7 @@ export default function BrooksPage() {
           </p>
 
           {/* blur-none does not transition, that's whats up with the blur-[0px] */}
-          <div className="flex justify-center w-96 m-auto">
+          <div className="flex justify-center w-96 pt-12 m-auto">
             <img
               className={`h-96 p-4 drop-shadow-md transition-all duration-1000 ${
                 hideSensitiveState ? "blur-md" : "blur-[0px]"
@@ -206,9 +206,9 @@ export default function BrooksPage() {
 
           <div
             id="consent-explain"
-            className="flex text-lg md:text-xl flex-row ms-8 md:ms-0 space-x-6 lg:space-x-4 md:mb-8"
+            className="flex text-lg md:text-xl flex-row ms-8 md:ms-0 pt-12 space-x-6 md:mb-8"
           >
-            <div className="w-auto md:w-1/3 self-start mb-auto md:self-center text-right md:text-center">
+            <div className="w-auto md:w-1/6 self-start mb-auto md:self-center text-right md:text-start">
               <span
                 className={`inline-flex justify-start md:justify-center border h-auto w-auto border-offblack rounded-full bg-dataSecondary hover:bg-dataPrimary`}
               >
@@ -218,13 +218,13 @@ export default function BrooksPage() {
                 />
               </span>
             </div>
-            <div className="font-power text-lg md:text-2xl">
+            <div className="font-power md:w-5/6 text-lg md:text-2xl">
               <p className="font-bold hidden md:block">
                 This chapter contains images of enslavement.
               </p>
               <p>
-                This button will show or hide sensitive images. It will remain
-                below throughout the chapter.
+                This button will show or hide sensitive images. <p></p>It will
+                remain below throughout the chapter.
               </p>
             </div>
           </div>
@@ -523,7 +523,7 @@ export default function BrooksPage() {
               considered what he would give visual form and what he would not.
               As evidence, consider how, in contrast to the diagram of the Marie
               Séraphique, the two areas of Elford's diagram labeled "store room"
-              are left blank, even as they were presumably packed with same
+              are left blank, even as they were presumably packed with same{" "}
               <HoverText hoverState="nonhumanCargo">
                 barrels and other dry goods
               </HoverText>{" "}
