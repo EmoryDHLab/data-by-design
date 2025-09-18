@@ -36,29 +36,18 @@ export default function QuizFeedback() {
   }
 
   return (
-    <svg
-      width={300}
-      height={10}
-      y={34}
-      className={`hidden md:block opacity-${
+    <div
+      className={`opacity-${
         currentStepCount === 0 || currentStepCount === 8 ? "0" : "100"
       }`}
     >
-      <text
-        fontSize={6}
-        x="50%"
-        y="50%"
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fill={feedback?.correct ? "green" : "red"}
-        fontFamily="VTC Du Bois Narrow, serif"
-        fontStyle="italic"
-        className={`transition-opacity duration-700 tracking-widest opacity-${
-          show ? "100" : "0"
-        }`}
+      <div
+        className={`transition-all duration-500 ease-out tracking-widest text-base font-power italic whitespace-nowrap ${
+          show ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-2 scale-95"
+        } ${feedback?.correct ? "text-green-400" : "text-red-500"}`}
       >
         {feedback?.message}
-      </text>
-    </svg>
+      </div>
+    </div>
   );
 }

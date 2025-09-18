@@ -14,7 +14,7 @@ const InstructionsContent = ({ className, children }: Props) => {
   if (isMobile) {
     return (
       <span
-        className={`duration-1000 transition-opacity w-screen text-center italic ${className}`}
+        className={`duration-1000 transition-opacity w-screen text-center  ${className}`}
       >
         {children}
       </span>
@@ -23,21 +23,11 @@ const InstructionsContent = ({ className, children }: Props) => {
 
   if (isDesktop) {
     return (
-      <svg>
-        <text
-          fontSize={10}
-          x="50%"
-          y="50%"
-          textAnchor="middle"
-          dominantBaseline="middle"
-          fill="white"
-          fontFamily="VTC Du Bois Narrow, serif"
-          fontStyle="italic"
-          className={`hidden md:block transition-transform duration-1000 tracking-widest ${className}`}
-        >
-          {children}
-        </text>
-      </svg>
+      <div
+        className={`transition-transform duration-1000 tracking-widest text-white text-base font-power h-6 flex items-center whitespace-nowrap ${className}`}
+      >
+        {children}
+      </div>
     );
   }
 
@@ -79,38 +69,41 @@ export default function QuizInstructions() {
   }
 
   return (
-    <svg
-      width={300}
-      height={10}
-      y={20}
-      className={`hidden md:block opacity-${
-        currentStepCount === 0 || currentStepCount === 8 ? "0" : "100"
+    <div
+      className={`h-6 relative opacity-${
+        currentStepCount === 0 || currentStepCount === 8 || currentStepCount === 9 ? "0" : "100"
       }`}
     >
-      <InstructionsContent
-        className={`
-        ${currentStepCount < 1 ? "translate-x-[100vw]" : ""}
-        ${currentStepCount > 1 ? "-translate-x-[100vw]" : ""}
-        `}
-      >
-        SELECT THE TWO COUNTRIES INVOLVED.
-      </InstructionsContent>
-      <InstructionsContent
-        className={`
-        ${currentStepCount < 2 ? "translate-x-[100vw]" : ""}
-        ${currentStepCount > 2 ? "-translate-x-[100vw]" : ""}
-        `}
-      >
-        SELECT THE YEAR 1644.
-      </InstructionsContent>
-      <InstructionsContent
-        className={`
-        ${currentStepCount < 3 ? "translate-x-[100vw]" : ""}
-        ${currentStepCount > 6 ? "-translate-x-[100vw]" : ""}
-        `}
-      >
-        CATEGORIZE THE EVENT.
-      </InstructionsContent>
-    </svg>
+      <div className="absolute inset-0">
+        <InstructionsContent
+          className={`
+          ${currentStepCount === 1 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}
+          transition-all duration-700 ease-out
+          `}
+        >
+          SELECT THE TWO COUNTRIES INVOLVED.
+        </InstructionsContent>
+      </div>
+      <div className="absolute inset-0">
+        <InstructionsContent
+          className={`
+          ${currentStepCount === 2 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}
+          transition-all duration-700 ease-out delay-100
+          `}
+        >
+          SELECT THE YEAR 1644.
+        </InstructionsContent>
+      </div>
+      <div className="absolute inset-0">
+        <InstructionsContent
+          className={`
+          ${currentStepCount >= 3 && currentStepCount <= 6 ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}
+          transition-all duration-700 ease-out delay-200
+          `}
+        >
+          CATEGORIZE THE EVENT.
+        </InstructionsContent>
+      </div>
+    </div>
   );
 }
