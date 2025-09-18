@@ -27,6 +27,7 @@ import Takeaways from "~/components/layout/Takeaways";
 import ConsentToggle from "~/components/consent/Toggle";
 import { chapterMeta } from "~/data/chapterMeta";
 import VoyageVisContainer from "~/components/data/voyages/VoyageVisContainer";
+import BackToTop from "~/components/BackToTop";
 
 import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
@@ -1350,6 +1351,7 @@ export default function BrooksPage() {
         <FootnotesList footnotes={dataFootnotes} />
       </CenteredLayout>
       <Footer />
+      <BackToTop />
     </ChapterContext.Provider>
   );
 }
