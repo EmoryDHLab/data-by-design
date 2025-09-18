@@ -14,7 +14,7 @@ export default function ChapterDropdown() {
   return (
     <Menu as="div" className="relative inline-block text-left z-30">
       <div>
-        <MenuButton>CHAPTERS</MenuButton>
+        <MenuButton className="h-full flex items-center hover:bg-white/10 px-3 rounded transition-colors font-power text-sm tracking-wider">CHAPTERS</MenuButton>
       </div>
       <Transition
         as={Fragment}
@@ -28,12 +28,12 @@ export default function ChapterDropdown() {
         <MenuItems className="absolute left-0 mt-2 origin-top-right text-lg divide-gray-100 rounded-md shadow-md shadow-gray-700 ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="grid-wrapper w-max divide-y border">
             {Object.keys(chapterMeta as TChapterMeta).map((chapter, index) => (
-              <MenuItem key={chapter}>
+              <MenuItem key={chapter} as="div" className="h-12">
                 {({ active }) => (
                   <Link
                     className={`${
                       active ? "bg-imagePrimary" : "bg-black"
-                    } inline-block focus:bg-imagePrimary hover:bg-imagePrimary pl-2 pr-3 pb-0.5 pt-0.5`}
+                    } block focus:bg-imagePrimary hover:bg-imagePrimary px-3 h-full flex items-center w-full transition-colors text-sm leading-tight`}
                     to={`/chapters/${chapter}`}
                   >
                     {index < 2 ? "" : `${index - 1}. `}

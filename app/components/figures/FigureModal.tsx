@@ -87,16 +87,18 @@ export default function FigureModal({
         <div className="fixed inset-0 w-screen overflow-y-auto p-2">
           <div className="flex min-h-full items-center justify-center modal-backdrop py-4">
             <DialogPanel className="space-y-4 w-screen md:w-1/2 lg:w-[66vw] max-h-[95vh] border bg-offblack text-white p-4 rounded-xl flex flex-col">
+              <DialogTitle as="div" className="flex justify-end flex-shrink-0">
+                <Button
+                  onClick={() => setIsOpen(false)}
+                  className="self-start"
+                  title="Close"
+                >
+                  <span className="sr-only">Close Button</span>
+                  <Close className="hover:text-offwhite hover:bg-white text-offwhite hover:fill-offblack text-lg h-6 w-6" />
+                </Button>
+              </DialogTitle>
               <div className="flex flex-col flex-1 min-h-0 overflow-hidden">
-                <div className="flex-1 min-h-0 overflow-hidden relative">
-                  <Button
-                    onClick={() => setIsOpen(false)}
-                    className="absolute top-2 right-2 z-10 bg-black/50 hover:bg-black/75 rounded-full p-2 transition-colors"
-                    title="Close"
-                  >
-                    <span className="sr-only">Close Button</span>
-                    <Close className="text-white h-4 w-4" />
-                  </Button>
+                <div className="flex-1 min-h-0 overflow-hidden">
                   <ClientOnly>
                     <IIIFViewer figure={figure} modalOpen={isOpen} />
                   </ClientOnly>

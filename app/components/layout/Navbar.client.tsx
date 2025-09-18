@@ -14,15 +14,15 @@ export default function Navbar() {
         (y || 0) > 30 || error ? "bg-black" : ""
       )}
     >
-      <ul className="w-3/4 flex items-center justify-around py-1 md:py-2">
-        <li className="font-power md:text-2xl text-xl px-0 md:px-2 inline-block">
-          <Link to="/">DxD</Link>
+      <ul className="w-3/4 flex items-stretch justify-around py-1 md:py-2 h-10">
+        <li className="flex items-center">
+          <Link to="/" className="font-power md:text-2xl text-xl h-full flex items-center hover:bg-white/10 px-3 rounded transition-colors">DxD</Link>
         </li>
-        <li className="inline-block font-power text-sm tracking-wider">
+        <li className="flex items-center">
           <ChapterDropdown />
         </li>
-        <li className="inline-block">
-          <Link to="/about" className="font-power text-sm tracking-wider">
+        <li className="flex items-center">
+          <Link to="/about" className="font-power text-sm tracking-wider h-full flex items-center hover:bg-white/10 px-3 rounded transition-colors">
             ABOUT
           </Link>
         </li>
