@@ -24,6 +24,7 @@ import ClientOnly from "~/components/ClientOnly";
 import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import { chapterMeta } from "~/data/chapterMeta";
+import MapsExploration from "~/components/people/MapsExploration.tsx";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("people");
@@ -95,6 +96,7 @@ export default function ShanawdithitPage() {
       />
       <ChapterBody>
         <CenteredLayout>
+          <MapsExploration></MapsExploration>
           <Quotation
             quote={
               <>
