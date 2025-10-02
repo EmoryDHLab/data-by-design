@@ -8,8 +8,8 @@ export default function ImageTooltips() {
   const tooltips = [
     {
       id: 1,
-      x: 54,
-      y: 51.2,
+      x: 54.7,
+      y: 52.5,
       title: "1818",
       description: "Ship theft",
     },
@@ -62,7 +62,7 @@ export default function ImageTooltips() {
           </p>
 
           {/* Image Container */}
-          <div className="relative w-full aspect-square bg-slate-100 rounded-xl overflow-hidden">
+          <div className="relative w-full bg-slate-100 rounded-xl overflow-hidden">
             {/* Replace this img src with your own image URL */}
             <img
               src="/images/people/Untitled_Artwork.png"
@@ -89,7 +89,7 @@ export default function ImageTooltips() {
                       activeTooltip === tooltip.id ? null : tooltip.id
                     )
                   }
-                  className="w-3 h-3 bg-black hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
+                  className="w-3 h-3 bg-blue-300 hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
                 ></button>
               </div>
             ))}
