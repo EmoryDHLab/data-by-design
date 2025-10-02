@@ -8,31 +8,45 @@ export default function ImageTooltips() {
   const tooltips = [
     {
       id: 1,
-      x: 55, // percentage from left
-      y: 60, // percentage from top
-      title: "Core Layer",
-      description: "The innermost ring represents the foundation",
+      x: 54,
+      y: 51.2,
+      title: "1818",
+      description: "Ship theft",
     },
     {
       id: 2,
-      x: 58,
-      y: 39,
-      title: "Data Points 1",
-      description: "Multiple data markers distributed across segments",
+      x: 56.2,
+      y: 48.3,
+      title: "1819",
+      description: "Attack on winter camp and campture of Demasduit",
     },
     {
       id: 3,
-      x: 75,
-      y: 80,
-      title: "Outer Ring",
-      description: "Concentric circles showing progression",
+      x: 58.2,
+      y: 38.9,
+      title: "~1819-1914",
+      description: "Grandfather tells John Paul his account",
     },
     {
       id: 4,
-      x: 50,
-      y: 20,
-      title: "Section A",
-      description: "Upper segment with specific metrics",
+      x: 64.8,
+      y: 50,
+      title: "1829",
+      description: "Shanawdithit creates maps",
+    },
+    {
+      id: 5,
+      x: 53.7,
+      y: 71,
+      title: "1871",
+      description: "Peyton relates narrative ",
+    },
+    {
+      id: 6,
+      x: 56.6,
+      y: 74.5,
+      title: "1914",
+      description: "John Paul's narrative is recorded",
     },
   ];
 
@@ -67,7 +81,6 @@ export default function ImageTooltips() {
                   transform: "translate(-50%, -50%)",
                 }}
               >
-                {/* Marker Button */}
                 <button
                   onMouseEnter={() => setActiveTooltip(tooltip.id)}
                   onMouseLeave={() => setActiveTooltip(null)}
@@ -76,13 +89,38 @@ export default function ImageTooltips() {
                       activeTooltip === tooltip.id ? null : tooltip.id
                     )
                   }
-                  className="relative z-10 w-3 h-3 bg-blue-600 hover:bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
+                  className="w-3 h-3 bg-black hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
                 ></button>
+              </div>
+            ))}
 
-                {/* Tooltip Content */}
-                {activeTooltip === tooltip.id && (
-                  <div className="absolute left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-lg shadow-2xl border border-slate-200 p-4 z-20 animate-in fade-in slide-in-from-top-2 duration-200">
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-l border-t border-slate-200 rotate-45"></div>
+            {/* Tooltip Content - Rendered separately with higher z-index */}
+            {tooltips.map((tooltip) => {
+              // Check if tooltip would be cut off at bottom (if y position > 70%)
+              const isNearBottom = tooltip.y > 70;
+
+              return (
+                activeTooltip === tooltip.id && (
+                  <div
+                    key={`tooltip-${tooltip.id}`}
+                    className="absolute z-50 w-64 bg-white rounded-lg shadow-2xl border border-slate-200 p-4 pointer-events-none"
+                    style={{
+                      left: `${tooltip.x}%`,
+                      top: isNearBottom
+                        ? `calc(${tooltip.y}% - 20px)`
+                        : `calc(${tooltip.y}% + 20px)`,
+                      transform: isNearBottom
+                        ? "translate(-50%, -100%)"
+                        : "translateX(-50%)",
+                    }}
+                  >
+                    <div
+                      className={`absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-slate-200 rotate-45 ${
+                        isNearBottom
+                          ? "bottom-0 translate-y-1/2 border-r border-b"
+                          : "-top-2 border-l border-t"
+                      }`}
+                    ></div>
                     <h3 className="font-semibold font-power text-slate-900 mb-1">
                       {tooltip.title}
                     </h3>
@@ -90,9 +128,9 @@ export default function ImageTooltips() {
                       {tooltip.description}
                     </p>
                   </div>
-                )}
-              </div>
-            ))}
+                )
+              );
+            })}
           </div>
 
           {/* Instructions */}
