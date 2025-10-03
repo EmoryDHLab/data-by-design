@@ -7,58 +7,137 @@ export default function ImageTooltips() {
   // Define tooltip positions and content
   const tooltips = [
     {
+      id: 0,
+      x: 50,
+      y: 54.5,
+      title: "1810-1811",
+      description: "Beothuk encounter David Buchan",
+    },
+    {
       id: 1,
-      x: 55,
-      y: 52.5,
+      x: 53,
+      y: 51,
       title: "1818",
       description: "Ship theft",
     },
     {
       id: 2,
-      x: 58.2,
-      y: 47.8,
+      x: 48.2,
+      y: 46.2,
       title: "1819",
       description: "Attack on winter camp and campture of Demasduit",
     },
     {
       id: 3,
-      x: 62,
-      y: 34.3,
-      title: "1829",
-      description: "Shanawdithit creates maps ",
+      x: 53.3,
+      y: 58.7,
+      title: "~1819-1914",
+      description: "Grandfather tells John Paul his account",
     },
     {
       id: 4,
-      x: 72.3,
-      y: 50.4,
-      title: "1871",
-      description: "Peyton relates narrative",
+      x: 46,
+      y: 38,
+      title: "1829",
+      description: "Shanawdithit creates maps",
     },
     {
       id: 5,
-      x: 55,
-      y: 81.5,
-      title: "~1819-1914",
-      description: "Grandfather tells John Paul his account ",
+      x: 63,
+      y: 48,
+      title: "1829",
+      description: "Cormack annotates Shanawdithit’s maps",
     },
     {
       id: 6,
-      x: 60,
-      y: 87,
+      x: 58.8,
+      y: 38.5,
+
+      title: "1871",
+      description: "Peyton relates narrative ",
+    },
+    {
+      id: 7,
+      x: 63,
+      y: 66,
       title: "1914",
       description: "John Paul's narrative is recorded",
+    },
+    {
+      id: 8,
+      x: 64.5,
+      y: 40.3,
+      title: "1915",
+      description: "Howley publishes book",
+    },
+    {
+      id: 9,
+      x: 68,
+      y: 46,
+      title: "1915",
+      description: "Howley redraws Shanawdithit’s maps",
+    },
+    {
+      id: 10,
+      x: 63.4,
+      y: 73.5,
+      title: "1922",
+      description: "Speck publishes book",
+    },
+    {
+      id: 11,
+      x: 71,
+      y: 80,
+      title: "2008",
+      description: "Speck book scanned and uploaded to Internet Archive",
+    },
+    {
+      id: 12,
+      x: 50,
+      y: 87,
+      title: "2021",
+      description: "LK begins research on this chapter",
+    },
+    {
+      id: 13,
+      x: 40,
+      y: 87,
+      title: "2022",
+      description: "TS begins designing visualization",
+    },
+    {
+      id: 14,
+      x: 60,
+      y: 77,
+      title: "2023",
+      description: "LK visits The Rooms in St. John’s ",
+    },
+    {
+      id: 15,
+      x: 60,
+      y: 67,
+      title: "2024",
+      description:
+        "DxD team receives approval to include scanned image of map in this project",
+    },
+    {
+      id: 16,
+      x: 60,
+      y: 17,
+      title: "2025",
+      description: "Chapter is complete",
     },
   ];
 
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen ">
       <div className="max-w-4xl mx-auto">
         <div>
           {/* Image Container */}
           <div className="relative w-full rounded-xl overflow-hidden">
             {/* Replace this img src with your own image URL */}
             <img
-              src="/images/people/1.png"
+              src="/images/people/2.png"
               alt="Annotated diagram"
               className="w-full h-full object-cover"
             />
@@ -82,7 +161,7 @@ export default function ImageTooltips() {
                       activeTooltip === tooltip.id ? null : tooltip.id
                     )
                   }
-                  className="w-4 h-4 bg-blue-300  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
+                  className="md:w-3 md:h-3 w-2 h-2  bg-blue-300  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
                 ></button>
               </div>
             ))}
@@ -127,14 +206,26 @@ export default function ImageTooltips() {
           </div>
 
           {/* Instructions */}
-          {/* <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
-            <p className="text-sm text-blue-900">
-              
-              <strong>Tip:</strong> You can customize the tooltip positions by
-              adjusting the x and y values in the tooltips array. Values are
-              percentages (0-100) from the top-left corner.
-            </p>
-          </div> */}
+          <div className="mt-6 p-4 rounded-lg flex flex-row border-blue-100">
+            <div>
+              <img
+                src="/images/people/key.png"
+                alt="Annotated diagram"
+                className="w-auto h-60 object-cover"
+              />
+            </div>
+            <div className=" py-6 font-power  text-sm">
+              <ul>
+                <li className="pb-2"> All sources</li>
+                <li className="pb-2"> Speck</li>
+                <li className="pb-2">Howley</li>
+                <li className="pb-3"> Shanawdithit</li>
+                <li className="pb-3"> Unrecorded history</li>
+                <li className="pb-3"> Recorded history</li>
+                <li className="">Source </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -25,6 +25,7 @@ import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import { chapterMeta } from "~/data/chapterMeta";
 import MapsExploration from "~/components/people/MapsExploration.tsx";
+import MapsExploration2 from "~/components/people/MapsExploration2.tsx";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("people");
@@ -95,8 +96,11 @@ export default function ShanawdithitPage() {
         subtitle={chapterMeta.people.subtitle}
       />
       <ChapterBody>
+        <MapsExploration2></MapsExploration2>
+
         <CenteredLayout>
           <MapsExploration></MapsExploration>
+
           <Quotation
             quote={
               <>
