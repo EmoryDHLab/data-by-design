@@ -23,14 +23,14 @@ export default function ImageTooltips() {
     {
       id: 3,
       x: 62,
-      y: 33.9,
+      y: 34.3,
       title: "~1819-1914",
       description: "Grandfather tells John Paul his account",
     },
     {
       id: 4,
-      x: 72.8,
-      y: 50.1,
+      x: 72.3,
+      y: 50.4,
       title: "1829",
       description: "Shanawdithit creates maps",
     },
@@ -89,7 +89,7 @@ export default function ImageTooltips() {
                       activeTooltip === tooltip.id ? null : tooltip.id
                     )
                   }
-                  className="w-3 h-3 bg-blue-300 hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
+                  className="w-4 h-4 bg-blue-300  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
                 ></button>
               </div>
             ))}
