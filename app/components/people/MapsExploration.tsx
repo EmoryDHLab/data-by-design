@@ -8,7 +8,7 @@ export default function ImageTooltips() {
   const tooltips = [
     {
       id: 1,
-      x: 54.7,
+      x: 55,
       y: 52.5,
       title: "1818",
       description: "Ship theft",
