@@ -98,7 +98,7 @@ export default {
           DEFAULT: "#DFD2DE",
         },
         processPrimaryHalfOpacity: "#9ae4c180",
-        peoplePrimary: "#fb9318",
+        peoplePrimary: "#FFE4D0",
         peopleSecondary: "#fac88d",
         peopleAccent:"#FEFFC9",
         processChartBackground: "#d9bb9f",

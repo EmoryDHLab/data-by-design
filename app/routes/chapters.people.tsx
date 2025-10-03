@@ -96,11 +96,7 @@ export default function ShanawdithitPage() {
         subtitle={chapterMeta.people.subtitle}
       />
       <ChapterBody>
-        <MapsExploration2></MapsExploration2>
-
         <CenteredLayout>
-          <MapsExploration></MapsExploration>
-
           <Quotation
             quote={
               <>
@@ -194,7 +190,7 @@ export default function ShanawdithitPage() {
             considered alongside any knowledge that the maps themselves bring to
             light.
           </p>
-          <Figure figure={figures["Illustration1"]} />
+          <MapsExploration></MapsExploration>
           <p>
             The diagram above attempts to give this colonial frame visual
             presence, accentuating the three primary sources that allow us,
@@ -507,7 +503,6 @@ export default function ShanawdithitPage() {
             "pipeline" alone.
             <InlineFootnote index={30} />
           </p>
-          <Figure figure={figures["Illustration2"]} />
           <p>
             Adding Cormack and Howley, along with ourselves, to our diagram of
             sources accentuates the layers of mediation that separate us from
@@ -531,6 +526,7 @@ export default function ShanawdithitPage() {
             our visualizations in their final form.
           </p>
         </CenteredLayout>
+        <MapsExploration2></MapsExploration2>
 
         <ChapterSectionTitle section={sections[1]} />
         <CenteredLayout>
