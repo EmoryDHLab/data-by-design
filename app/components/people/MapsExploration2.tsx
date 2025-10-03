@@ -30,7 +30,7 @@ export default function ImageTooltips() {
     {
       id: 3,
       x: 53.3,
-      y: 58.7,
+      y: 59,
       title: "~1819-1914",
       description: "Grandfather tells John Paul his account",
     },
@@ -43,8 +43,8 @@ export default function ImageTooltips() {
     },
     {
       id: 5,
-      x: 63,
-      y: 48,
+      x: 63.2,
+      y: 48.3,
       title: "1829",
       description: "Cormack annotates Shanawdithit’s maps",
     },
@@ -65,15 +65,15 @@ export default function ImageTooltips() {
     },
     {
       id: 8,
-      x: 64.5,
-      y: 40.3,
+      x: 64,
+      y: 41,
       title: "1915",
       description: "Howley publishes book",
     },
     {
       id: 9,
-      x: 68,
-      y: 46,
+      x: 67.6,
+      y: 46.5,
       title: "1915",
       description: "Howley redraws Shanawdithit’s maps",
     },
@@ -93,14 +93,14 @@ export default function ImageTooltips() {
     },
     {
       id: 12,
-      x: 79,
-      y: 31.7,
+      x: 79.8,
+      y: 25,
       title: "2021",
       description: "LK begins research on this chapter",
     },
     {
       id: 13,
-      x: 84.8,
+      x: 85.2,
       y: 30.6,
       title: "2022",
       description: "TS begins designing visualization",
@@ -108,8 +108,8 @@ export default function ImageTooltips() {
     {
       id: 14,
 
-      x: 45,
-      y: 8.8,
+      x: 41.5,
+      y: 7.4,
       title: "2023",
       description: "LK visits The Rooms in St. John’s ",
     },
@@ -117,14 +117,14 @@ export default function ImageTooltips() {
       id: 15,
 
       x: 50,
-      y: 8.1,
+      y: 6.8,
       title: "2024",
       description:
         "DxD team receives approval to include scanned image of map in this project",
     },
     {
       id: 16,
-      x: 91,
+      x: 91.5,
       y: 34.5,
       title: "2025",
       description: "Chapter is complete",
