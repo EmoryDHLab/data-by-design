@@ -97,7 +97,6 @@ export default function ShanawdithitPage() {
         subtitle={chapterMeta.people.subtitle}
       />
       <ChapterBody>
-        <MapsExploration3></MapsExploration3>
         <CenteredLayout>
           <Quotation
             quote={
@@ -1210,52 +1209,83 @@ export default function ShanawdithitPage() {
           </p>
 
           <p>
-            One hundred years after Speck's visit to the Beothuk's winter camp,
-            where the attack by the British took place, we can now employ
-            sophisticated visualization tools in addition to digital photography
-            in order to prompt fresh insights about the past. But these insights
-            are also limited by our distance from the original events—as they
-            are by the colonial archive and the historical evidence that it
-            contains. Rather than view the limitations of what we can render
-            visible with data as the end of our knowledge, however, we must each
-            expand our own personal frame. When we consider our relationships
-            with our sources and the people who created them, as well as the
-            knowledge that, through our own work, we seek to enable, we come to
-            see our responsibilities to them as well. This is the clarity that
-            Speck's clouded image ultimately leads towards—more intentional and
-            ethical design choices, a more precise sense of what we can or
-            should seek to know, and what we must leave to others to explore.{" "}
+            Over one hundred years after Speck’s visit to the Beothuk winter
+            camp, and another hundred years after the British attack and the
+            devastation that ensued, it would seem that we have an unprecedented
+            ability to capture the conditions of the present, just as we do to
+            understand the complexities of the past. From the ever-increasing
+            array of sophisticated mapping and visualization tools, to the
+            always expanding capabilities of digital photography, now coupled
+            with AI, it is tempting to assume that our potential insights are
+            limited only by our ability to imagine how we might fill in missing
+            data, leading to knowledge previously cloaked by metaphorical (or
+            actual) clouds. But as this chapter has sought to show, we can learn
+            as much from the clouds themselves as we can from the knowledge they
+            hide. Once we learn to see what separates us from the sources of
+            information that we rely upon in our work, we can begin the work of
+            repair: of identifying the additional people whose perspectives
+            might completement our own; the relationships we might begin to (or
+            better) cultivate in order to ensure true collective benefit; and
+            the responsibilities we carry—to the people who will seek insight
+            from our work in the future, to those we work with in the present,
+            and to those who created our sources of data in the past.
           </p>
+
+          <p>
+            {" "}
+            We thus close with a final diagram of the sources of this chapter
+            recentered around the lookout tree. <InlineFootnote index={74} /> It
+            remains an incomplete picture, but its incompleteness—like Speck’s
+            clouds over Beothuk Lake—is intended as a guide: of how we can
+            pursue more complete knowledge just as we recognize what we must
+            leave for others to explore.
+          </p>
+        </CenteredLayout>
+        <MapsExploration3></MapsExploration3>
+        <CenteredLayout>
+          This book will soon move on to consider alternative visual forms and
+          epistemological frameworks, those that reject the unidirectional path
+          of knowledge production in favor of a more balanced exchange of ideas
+          (Chapter 4). We will also consider examples of how more conventional
+          visual forms can push back against extractive aims by centering
+          otherwise overlooked perspectives, and by including methods that might
+          otherwise be set to the side (Chapter 5). In short, we will move from
+          lessons of limits to those of possibility. But the colonial context
+          that explicitly frames Shanawdithit’s work, and implicitly frames so
+          much more, should remain the context for these chapters as well. And
+          along with this context, we hope, is a lesson of intention and
+          care—care for how we choose to frame future knowledge, as well as care
+          for our relationships with the people, past and present, who have
+          enabled our work and whose knowledge we seek to steward and share.
         </CenteredLayout>
 
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Consider your relationship to the data being visualized
+              Examine your responsibility to your data and its stewards
             </span>,
             <span key="6440631a">
-              Consider your responsibility to the data and its stewards
+              Aspire to keep your data more connected to its source
             </span>,
             <span key="2f317172">
-              Be attentive to the distance between the data and your knowledge
+              Build relationships with the people who enable your visualizations
             </span>,
             <span key="2f317173">
-              Remember that some knowledge is not yours to share
+              Hold space for the possibility of not visualizing at all
             </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Examine your relationships to your data and its stewards
+              Resist the extraction of knowledge from its source
             </span>,
             <span key="6d2691fc">
-              Take seriously and act on your responsibilities to them
+              Consider your relation to the colonial frame
             </span>,
             <span key="9650286d">
-              Consider how to keep your data more connected to its source
+              Recognize the people who enable our knowledge
             </span>,
             <span key="2f317174">
-              Consider when your data might require additional or alternative
-              protocols
+              Accept when that knowledge is not yours to own
             </span>,
           ]}
         />
