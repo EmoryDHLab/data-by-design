@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import QuizConclusion from "./QuizConclusion";
 import QuizEventCategoryList from "./QuizEventCategoryList";
 import QuizFeedback from "./QuizFeedback";
@@ -20,9 +20,10 @@ import type {
 import QuizSquareMask from "./QuizSquareMask";
 
 export default function Quiz() {
-  const [currentStep, setCurrentStep] = useState<QuizStep>(
-    (quizSteps as Array<QuizStep>)[0]
-  );
+  // Memoize quiz steps to prevent recreation
+  const memoizedQuizSteps = useMemo(() => quizSteps as Array<QuizStep>, []);
+  
+  const [currentStep, setCurrentStep] = useState<QuizStep>(memoizedQuizSteps[0]);
   const [currentStepCount, setCurrentStepCount] = useState<QuizStepCount>(0);
   const [selectedCategories, setSelectedCategories] = useState<
     Array<PeabodySquare>
@@ -206,27 +207,27 @@ export default function Quiz() {
   }, [selectedCategories, currentStep, setFeedback]);
 
   useEffect(() => {
-    setCurrentStep((quizSteps as Array<QuizStep>)[currentStepCount]);
+    setCurrentStep(memoizedQuizSteps[currentStepCount]);
     setSelectedCategories([]);
-  }, [currentStepCount, setCurrentStep, setSelectedCategories]);
+  }, [currentStepCount, memoizedQuizSteps]);
 
-  const handleYearClick = (year: number) => {
+  const handleYearClick = useCallback((year: number) => {
     if (year === 1644 && currentStepCount === 2) {
       setCurrentStepCount(
         (currentStepCount) => (currentStepCount + 1) as QuizStepCount
       );
       setSelectedYears([]);
       setFeedback({
-        message: `YES it was 1644. Now select how Peabody would categorize ${quizSteps[2].stepEvent.event}`,
+        message: `YES it was 1644. Now select how Peabody would categorize ${memoizedQuizSteps[2].stepEvent.event}`,
         correct: true,
       });
     } else {
-      setSelectedYears([...selectedYears, year]);
+      setSelectedYears(prev => [...prev, year]);
     }
-  };
+  }, [currentStepCount, memoizedQuizSteps]);
 
   // Called when an event square or category is selected
-  const handleCategoryClick = (selected: number) => {
+  const handleCategoryClick = useCallback((selected: number) => {
     if (currentStepCount === 3 && selected == 0) {
       setCurrentStepCount(4);
       setFeedback({
@@ -255,11 +256,11 @@ export default function Quiz() {
     } else if (
       !(currentStep.solvedEvents as Array<number>).includes(selected)
     ) {
-      setSelectedCategories([selected as PeabodySquare, ...selectedCategories]);
+      setSelectedCategories(prev => [selected as PeabodySquare, ...prev]);
     }
-  };
+  }, [currentStepCount, currentStep.solvedEvents]);
 
-  const allowOption = (index: PeabodySquare) => {
+  const allowOption = useCallback((index: PeabodySquare) => {
     if (currentStepCount > 2 && currentStepCount < 7) {
       if (
         selectedCategories.includes(index) ||
@@ -269,25 +270,36 @@ export default function Quiz() {
       }
     }
     return true;
-  };
+  }, [currentStepCount, selectedCategories, currentStep.solvedEvents]);
+
+  // Memoize context value to prevent unnecessary re-renders
+  const contextValue = useMemo(() => ({
+    allowOption,
+    currentStep,
+    currentStepCount,
+    setCurrentStepCount,
+    focusedCategory,
+    setFocusedCategory,
+    handleCategoryClick,
+    selectedCategories,
+    selectedYears,
+    handleYearClick,
+    feedback,
+    setFeedback,
+  }), [
+    allowOption,
+    currentStep,
+    currentStepCount,
+    focusedCategory,
+    handleCategoryClick,
+    selectedCategories,
+    selectedYears,
+    handleYearClick,
+    feedback,
+  ]);
 
   return (
-    <QuizContext.Provider
-      value={{
-        allowOption,
-        currentStep,
-        currentStepCount,
-        setCurrentStepCount,
-        focusedCategory,
-        setFocusedCategory,
-        handleCategoryClick,
-        selectedCategories,
-        selectedYears,
-        handleYearClick,
-        feedback,
-        setFeedback,
-      }}
-    >
+    <QuizContext.Provider value={contextValue}>
       <section
         ref={desktopSectionRef}
         className="bg-black w-full h-screen hidden md:block relative z-10 overflow-hidden scroll-mt-0"
@@ -416,13 +428,13 @@ export default function Quiz() {
           }`}
         >
           <div
-            className={`absolute h-1/4 mx-12 items-center justify-center top-12 transition-all duration-1000 ${
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 z-30 ${
               currentStepCount > 0
-                ? "opacity-0 h-0 pointer-events-none"
+                ? "opacity-0 pointer-events-none"
                 : "opacity-100 pointer-events-auto"
             }`}
           >
-            <QuizIntro />
+            <QuizIntro className="mx-6" />
           </div>
 
           <div
@@ -434,10 +446,10 @@ export default function Quiz() {
           >
             <QuizConclusion />
           </div>
-          <div className="grid place-content-center pointer-events-none px-6">
+          <div className="grid place-content-center pointer-events-none px-6 mb-4">
             <QuizFeedback />
           </div>
-          <div className="grid place-content-center text-white pt-8 px-6">
+          <div className="grid place-content-center text-white px-6">
             <QuizInstructions />
           </div>
 

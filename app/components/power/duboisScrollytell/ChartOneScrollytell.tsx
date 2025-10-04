@@ -1,8 +1,9 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState, lazy, Suspense } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
-import StudentChartOne from "../StudentChartOne";
+
+const StudentChartOne = lazy(() => import("../StudentChartOne"));
 import type { ReactElement } from "react";
 import type { TFocusShape } from "~/types/scrollytellTypes";
 
@@ -207,20 +208,22 @@ const ChartOneScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             <div
               className={`bg-powerPrimary h-[calc(100vh-80px)] mt-20 my-auto flex flex-col mr-4`}
             >
-              <StudentChartOne
-                id="student-chart-one-scrolly"
-                interactive={interactive}
-                topOffset={80}
-                activeStudent={activeStudent}
-                focusShape={focusShape}
-                showDataTable={showDataTable}
-                showCroppedDataTable={showCroppedDataTable}
-                showOriginal={showOriginal}
-                showGoogleSheet={showGoogleSheet}
-                showRecreation={showRecreation}
-                highlightNames={highlightNames}
-                showPieChart={showPieChart}
-              />
+              <Suspense fallback={<div className="text-white p-4">Loading chart...</div>}>
+                <StudentChartOne
+                  id="student-chart-one-scrolly"
+                  interactive={interactive}
+                  topOffset={80}
+                  activeStudent={activeStudent}
+                  focusShape={focusShape}
+                  showDataTable={showDataTable}
+                  showCroppedDataTable={showCroppedDataTable}
+                  showOriginal={showOriginal}
+                  showGoogleSheet={showGoogleSheet}
+                  showRecreation={showRecreation}
+                  highlightNames={highlightNames}
+                  showPieChart={showPieChart}
+                />
+              </Suspense>
             </div>
           </div>
 

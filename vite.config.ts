@@ -18,7 +18,24 @@ export default defineConfig(({ isSsrBuild }) => ({
   server: { port: 3000, allowedHosts: [".dataxdesign.io"] },
 
   build: {
-    rollupOptions: isSsrBuild ? { input: "./server/app.js" } : undefined,
+    rollupOptions: isSsrBuild 
+      ? { input: "./server/app.js" } 
+      : {
+          output: {
+            manualChunks: {
+              'd3': ['d3'],
+              'react-vendor': ['react', 'react-dom', 'react-router'],
+              'chart-components': [
+                './app/components/power/StudentChartOne.tsx',
+                './app/components/power/StudentChartTwo.tsx',
+                './app/components/power/StudentChartThree.tsx'
+              ],
+              'p5': ['p5']
+            }
+          }
+        },
+    chunkSizeWarningLimit: 600,
+    sourcemap: process.env.NODE_ENV === 'development'
   },
   plugins: [
     reactRouter(),

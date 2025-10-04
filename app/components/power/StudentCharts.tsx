@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
-import StudentChartOne from "./StudentChartOne";
-import StudentChartThreeV2 from "./StudentChartThree";
-import StudentChartTwo from "./StudentChartTwo";
+import { useEffect, useState, lazy, Suspense } from "react";
 import Figure from "../figures/Figure";
 import type { TFigure } from "~/types/figureType";
+
+const StudentChartOne = lazy(() => import("./StudentChartOne"));
+const StudentChartThreeV2 = lazy(() => import("./StudentChartThree"));
+const StudentChartTwo = lazy(() => import("./StudentChartTwo"));
 
 const StudentCharts = ({ figure }: { figure: TFigure }) => {
   const [currentChart, setCurrentChart] = useState<string>("original");
@@ -24,12 +25,20 @@ const StudentCharts = ({ figure }: { figure: TFigure }) => {
               <Figure figure={figure} imageClassName="m-auto" />
             )}
             {currentChart === "one" && (
-              <StudentChartOne topOffset={-80} leftOffset={16} />
+              <Suspense fallback={<div className="text-white p-4">Loading chart...</div>}>
+                <StudentChartOne topOffset={-80} leftOffset={16} />
+              </Suspense>
             )}
             {currentChart === "two" && (
-              <StudentChartTwo topOffset={-80} leftOffset={16} />
+              <Suspense fallback={<div className="text-white p-4">Loading chart...</div>}>
+                <StudentChartTwo topOffset={-80} leftOffset={16} />
+              </Suspense>
             )}
-            {currentChart === "three" && <StudentChartThreeV2 interactive />}
+            {currentChart === "three" && (
+              <Suspense fallback={<div className="text-white p-4">Loading chart...</div>}>
+                <StudentChartThreeV2 interactive />
+              </Suspense>
+            )}
           </div>
         </div>
         <nav className="bias-full w-full md:bias-1/2 md:w-2/5 relative self-center">
