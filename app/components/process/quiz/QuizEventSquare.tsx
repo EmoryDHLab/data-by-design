@@ -19,7 +19,7 @@ interface Props {
   index: number;
   year: number;
   yearEvents: Array<PeabodyEvent>;
-  isVertical: boolean;
+  size: number;
 }
 
 export default function RecreatedEventSquare({
@@ -27,7 +27,7 @@ export default function RecreatedEventSquare({
   index,
   year,
   yearEvents,
-  isVertical,
+  size = 30,
 }: Props) {
   const {
     allowOption,
@@ -164,12 +164,12 @@ export default function RecreatedEventSquare({
 
   return (
     <svg
-      viewBox="0 0 30 30"
+      viewBox={`0 0 ${size} ${size}`}
       width={30}
       height={30}
       x={getEventXFromIndex(index)}
       y={getEventYFromIndex(index)}
-      className={`w-full h-auto ${isOption ? "" : "cursor-not-allowed"}`}
+      className={` ${isOption ? "" : "cursor-not-allowed"}`}
       {...interactiveOptions}
     >
       {currentStepCount >= 3 && currentStepCount < 8 && year === 1644 && (

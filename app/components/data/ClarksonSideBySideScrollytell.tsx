@@ -182,7 +182,7 @@ function ClarksonSideBySideScrollytell() {
               <image
                 filter={hideSensitiveState ? "url(#clarkson-blur)" : ""}
                 mask="url(#clarkson-mask)"
-                href="/images/data/4-description-1789.jpg"
+                href="/images/data/0104-description.jpg"
                 className={`transition-all origin-center duration-1000`}
                 width={width * zoom}
                 height={height * zoom}

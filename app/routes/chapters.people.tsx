@@ -21,12 +21,12 @@ import ChapterBody from "~/components/layout/ChapterBody";
 import FootnotesList from "~/components/FootnotesList";
 import Takeaways from "~/components/layout/Takeaways";
 import ClientOnly from "~/components/ClientOnly";
-import type { MetaFunction } from "react-router";
-import type { HoverState, TVizAnchors } from "~/chapterContext";
 import { chapterMeta } from "~/data/chapterMeta";
 import MapsExploration from "~/components/people/MapsExploration.tsx";
 import MapsExploration2 from "~/components/people/MapsExploration2";
 import MapsExploration3 from "~/components/people/MapsExploration3";
+import type { MetaFunction } from "react-router";
+import type { HoverState, TVizAnchors } from "~/chapterContext";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("people");
@@ -335,7 +335,7 @@ export default function ShanawdithitPage() {
         </CenteredLayout>
 
         <SketchScrollytell
-          figure={figures["DRW-II"]}
+          figure={figures["0302-DRW-II"]}
           triggers={[
             <p key={"e39ab69e6343"}></p>,
 
@@ -480,7 +480,7 @@ export default function ShanawdithitPage() {
               </p>
             </Fragment>,
 
-            <p key={"fe50d3cdad8d"} className="h-[50vh] md:h-auto"></p>,
+            <p key={"fe50d3cdad8d"} className="h-screen md:h-auto"></p>,
           ]}
         />
 
@@ -515,8 +515,6 @@ export default function ShanawdithitPage() {
             extractive process, in that the act of datafication very often also
             becomes one of severing information from its source.
           </p>
-
-          <Figure figure={figures["howley-sketch2"]} />
 
           <p>
             With this in mind, our project team made the decision not to follow
@@ -693,7 +691,10 @@ export default function ShanawdithitPage() {
             “space-time-story graphic” does not include kin.
           </p>
 
-          {/* Images here  */}
+          <Figure
+            className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6 items-baseline"
+            figures={[figures["0313-howley-sketch2"], figures["0314-minard"]]}
+          />
 
           <p>
             {" "}
@@ -812,7 +813,7 @@ export default function ShanawdithitPage() {
           </p>
         </CenteredLayout>
         <CenteredLayout>
-          <Figure figure={figures["fidler-large-HBCA-E3-2-225"]} />
+          <Figure figure={figures["0315-fidler-large-HBCA-E3-2-225"]} />
         </CenteredLayout>
         <TwoColumnLayout>
           <Column>
@@ -839,18 +840,18 @@ export default function ShanawdithitPage() {
               viewers to reject complexity and overlook potential harm. In
               Willard’s maps, we find a similar simplification, here enlisted in
               the service of a story of nation formation. From the
-              <HoverText hoverState="Willard1">
+              <HoverText hoverState="0317-Willard1">
                 "First Map or Map of 1578"
               </HoverText>{" "}
               which depicts the routes taken by European explorers—including
               John Cabot to Newfoundland—to the
-              <HoverText hoverState="Willard2">
+              <HoverText hoverState="0318-Willard2">
                 "Second Map or Map of 1620
               </HoverText>
               which depicts the colony of Virginia (along with an inset
               documenting the Pilgrims’ landing at Plymouth Rock), and onto the
               final
-              <HoverText hoverState="Willard9">
+              <HoverText hoverState="0319-Willard3">
                 "Ninth Map or Map of 1826"
               </HoverText>
               which depicts the then-present day, Willard presents a “cumulative
@@ -883,7 +884,7 @@ export default function ShanawdithitPage() {
           appears before the map labeled “First.”
         </p>
         <WillardScrollytell
-          figure={figures["Willard0"]}
+          figure={figures["0326-Willard0"]}
           triggers={[
             <p key={"7bd3ce1c5c9e"} className="h-[50vh]"></p>,
 
@@ -1013,7 +1014,7 @@ export default function ShanawdithitPage() {
         </CenteredLayout>
 
         <Figure
-          figure={figures["birch-bark-1841"]}
+          figure={figures["0327-birch-bark-1841"]}
           className="mx-2 md:mx-12 text-sm md:text-base"
           captionClassName="text-center	"
         />
@@ -1074,7 +1075,7 @@ export default function ShanawdithitPage() {
         </CenteredLayout>
 
         <Figure
-          figure={figures["BirchBark"]}
+          figure={figures["0328-BirchBark"]}
           captionClassName="text-center	md:mx-8"
         />
 
@@ -1163,7 +1164,7 @@ export default function ShanawdithitPage() {
             1914. One of these photographs is of a lookout tree.
           </p>
 
-          <Figure figure={figures["speck-lookout-tree"]} />
+          <Figure figure={figures["0329-speck-tree-p13"]} />
 
           <p>
             This lookout tree is not the same as the “tall birch tree” that
@@ -1184,7 +1185,7 @@ export default function ShanawdithitPage() {
             terms of his own “vantage point,” and ours?
           </p>
 
-          <Figure figure={figures["speck-treetop"]} />
+          <Figure figure={figures["0330-speck-tree-p14"]} />
 
           <p>
             When I first encountered this photo, in a low-res scan of Speck’s

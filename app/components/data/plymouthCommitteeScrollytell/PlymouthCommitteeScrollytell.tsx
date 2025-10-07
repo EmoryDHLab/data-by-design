@@ -120,7 +120,7 @@ export default function PlymouthCommitteeScrollytell({
 
                 <image
                   filter={hideSensitiveState ? "url(#clarkson-blur)" : ""}
-                  href="/images/data/1-sof_slaveship.jpg"
+                  href="/images/data/0103-africanship.jpg"
                   width="2973"
                   height="1213"
                   transform="scale(.24)"

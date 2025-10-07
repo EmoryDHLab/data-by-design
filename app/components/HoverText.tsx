@@ -1,11 +1,11 @@
-import type { ReactNodeLike } from "prop-types";
-import type { HoverState } from "~/chapterContext";
 import { ChapterContext } from "~/chapterContext";
 import { useContext } from "react";
+import type { ReactNode } from "react";
+import type { HoverState } from "~/chapterContext";
 
 interface Props {
   className?: string;
-  children?: ReactNodeLike;
+  children?: ReactNode;
   hoverState: HoverState;
 }
 

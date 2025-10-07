@@ -116,7 +116,7 @@ export default function PlayfairPage() {
             he had invested in producing the twenty-eight plates for the third
             edition of his Atlas; it was also the expense.
           </p>
-          <Figure figure={figures["1-northamerica"]} />
+          <Figure figure={figures["0201-playfair-northam"]} />
           <p>
             Today, Playfair is widely celebrated for his leading role in the
             development of modern data visualization. His bar charts, pie
@@ -142,80 +142,102 @@ export default function PlayfairPage() {
             <InlineFootnote index={4} />
           </p>
         </CenteredLayout>
-        <TwoColumnLayout>
-          <Column>
-            <p>
-              To produce engravings like Playfair's, a thin copper plate is
-              first coated with a "ground": a layer of wax, varnish, chalk, or
-              soot. Using a stylus, the engraver traces an outline of the design
-              in mirror image into the ground. The wax (or equivalent) layer is
-              then removed, but a faint impression remains, which the engraver
-              then uses as a guide to carve the image into the copper plate. The
-              engraving is made with a metal tool called a burin, which,
-              somewhat counter-intuitively, is held still while the engraver
-              rotates the underlying plate.
-              <InlineFootnote index={5} /> Playfair's error was thus a common
-              one, a slip of a tired or sweaty hand. It wouldn't even be very
-              noticeable one the colored paint was overlayed. But neither of
-              these excuses would have made it more tolerable to the man who was
-              already, by his own account, "long anxious" to be acknowledged for
-              the "invention" of data visualization.
-              <InlineFootnote index={6} /> Unlike the array of software
-              platforms and programming libraries used to create data
-              visualizations today, each of which allow for (relatively) easy
-              revision, the engraving process employed by Playfair resulted in
-              an image that was irreversibly inscribed into copper. When we also
-              consider the time and money invested in the work, it might as well
-              have been set in proverbial stone.
-            </p>
-            <p>
-              This chapter takes up the processes involved in transforming data
-              into image, material as well as conceptual, in order to continue
-              our exploration into the relationship between data and its visual
-              display. While it's easy to assume that any particular
-              visualization—or, at least, any good one—offers a direct
-              representation of the data underneath; that its visual form is
-              neutral; and that there is no additional significance imparted by
-              the choice of visual form, these are each only assumptions, as the
-              example of "Description of a Slave Ship" has already begun to
-              confirm. Turning now to Playfair's canonical time-series charts,
-              so often upheld as the epitome of the form, will allow us to see
-              how all visualizations of data carry with them additional
-              meaning—meaning. This meaning is, again, not neutral; it reflects
-              a particular view of the significance of the data, of the value of
-              visualizing it in a particular form, and of the particular people
-              who can most benefit from its insights.
-            </p>
-            <PullQuote
-              quote="These views—about why, how, and for whom a visualization has been designed—"
-              subquote="are what we describe in this chapter as a visualization's argument."
+        <CenteredLayout>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-center">
+            <Figure figure={figures["0202-buache"]} showCaption={false} />
+            <Figure
+              figure={figures["0203-playfair-scotland"]}
+              showCaption={false}
             />
-            <p>
-              These views—about why, how, and for whom a visualization has been
-              designed—are what we describe in this chapter as a visualization's
-              argument. That a designer may not be aware of the argument that
-              they are making through their design choices does not mean that it
-              is not present, nor does it invalidate the insights that the
-              visualization has been designed to produce. On the contrary, an
-              awareness of this argument enables us, as viewers, to come to a
-              better understanding of what we are actually looking at, and what
-              inferences we may properly draw. Here, the enduring nature of
-              Playfair's time-series charts, including the engraving errors they
-              contain, together lead to the second lesson of this book: that the
-              specific tools with which a visualization is created, and the
-              specific purposes for which—and people for whom—it is designed are
-              sources of insight in and of themselves. By opening ourselves up
-              to these additional insights, and the knowledge that they point
-              towards, we come to see the arguments that are embedded in every
-              data visualization that we on the one hand encounter, and on the
-              other create.
+            <Figure
+              figure={figures["0204-playfair-pie"]}
+              showCaption={false}
+              className="md:col-span-2"
+            />
+            <p className="md:col-span-2 font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
+              Top left: “A bar chart from 1770 created by the French mapmaking
+              team of Philippe Buache and Guillaume de L’Isle. William Playfair
+              included a less ornate bar chart in his Commerical and Political
+              Atlas, and returned the form later in life.” Image from the David
+              Rumsey Map Collection courtesy Stanford University Libraries.
+              Digitized by the David Rumsey Map Collection, Cartography
+              Associates. Top right: “The bar chart included in the first
+              edition of Playfair's Commercial and Political Atlas, considered
+              one of the first examples of the bar chart form.” Image courtesy
+              of Wikimedia Commons. Bottom: Playfair’s “Chart Representing the
+              Extent, Population & Revenues, of the Principal Nations in Europe,
+              after the Division of Poland & Treaty of Luneville,” published in
+              the Statistical Breviary (1801). The pie charts included in this
+              volume are considered the first of their kind. Image courtesy of
+              Wikimedia Commons.
             </p>
-          </Column>
-          <Column shouldPin>
-            <Figure figure={figures["3-pie"]} />
-            <Figure figure={figures["PLACEHOLDER-early-bar-chart"]} />
-          </Column>
-        </TwoColumnLayout>
+          </div>
+          <p>
+            To produce engravings like Playfair's, a thin copper plate is first
+            coated with a "ground": a layer of wax, varnish, chalk, or soot.
+            Using a stylus, the engraver traces an outline of the design in
+            mirror image into the ground. The wax (or equivalent) layer is then
+            removed, but a faint impression remains, which the engraver then
+            uses as a guide to carve the image into the copper plate. The
+            engraving is made with a metal tool called a burin, which, somewhat
+            counter-intuitively, is held still while the engraver rotates the
+            underlying plate.
+            <InlineFootnote index={5} /> Playfair's error was thus a common one,
+            a slip of a tired or sweaty hand. It wouldn't even be very
+            noticeable one the colored paint was overlayed. But neither of these
+            excuses would have made it more tolerable to the man who was
+            already, by his own account, "long anxious" to be acknowledged for
+            the "invention" of data visualization.
+            <InlineFootnote index={6} /> Unlike the array of software platforms
+            and programming libraries used to create data visualizations today,
+            each of which allow for (relatively) easy revision, the engraving
+            process employed by Playfair resulted in an image that was
+            irreversibly inscribed into copper. When we also consider the time
+            and money invested in the work, it might as well have been set in
+            proverbial stone.
+          </p>
+          <p>
+            This chapter takes up the processes involved in transforming data
+            into image, material as well as conceptual, in order to continue our
+            exploration into the relationship between data and its visual
+            display. While it's easy to assume that any particular
+            visualization—or, at least, any good one—offers a direct
+            representation of the data underneath; that its visual form is
+            neutral; and that there is no additional significance imparted by
+            the choice of visual form, these are each only assumptions, as the
+            example of "Description of a Slave Ship" has already begun to
+            confirm. Turning now to Playfair's canonical time-series charts, so
+            often upheld as the epitome of the form, will allow us to see how
+            all visualizations of data carry with them additional
+            meaning—meaning. This meaning is, again, not neutral; it reflects a
+            particular view of the significance of the data, of the value of
+            visualizing it in a particular form, and of the particular people
+            who can most benefit from its insights.
+          </p>
+          <PullQuote
+            quote="These views—about why, how, and for whom a visualization has been designed—"
+            subquote="are what we describe in this chapter as a visualization's argument."
+          />
+          <p>
+            These views—about why, how, and for whom a visualization has been
+            designed—are what we describe in this chapter as a visualization's
+            argument. That a designer may not be aware of the argument that they
+            are making through their design choices does not mean that it is not
+            present, nor does it invalidate the insights that the visualization
+            has been designed to produce. On the contrary, an awareness of this
+            argument enables us, as viewers, to come to a better understanding
+            of what we are actually looking at, and what inferences we may
+            properly draw. Here, the enduring nature of Playfair's time-series
+            charts, including the engraving errors they contain, together lead
+            to the second lesson of this book: that the specific tools with
+            which a visualization is created, and the specific purposes for
+            which—and people for whom—it is designed are sources of insight in
+            and of themselves. By opening ourselves up to these additional
+            insights, and the knowledge that they point towards, we come to see
+            the arguments that are embedded in every data visualization that we
+            on the one hand encounter, and on the other create.
+          </p>
+        </CenteredLayout>
         <ChapterSectionTitle section={sections[0]} />
         <TwoColumnLayout>
           <Column>
@@ -299,7 +321,8 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column className="md:ml-12" shouldPin={true}>
-            <Figure figure={figures["table-1787"]} />
+            <Figure figure={figures["0205-am1787pla-741-q-24"]} />
+            <Figure figure={figures["0206-am1787pla-741-q-65"]} />
           </Column>
         </TwoColumnLayout>
         <span id={visualizations[0].id}>
@@ -508,7 +531,7 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <Figure figure={figures["5-minard"]} />
+            <Figure figure={figures["0212-minard"]} />
           </Column>
         </TwoColumnLayout>
         <TwoColumnLayout>
@@ -571,7 +594,8 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <Figure figure={figures["PLACEHOLDER-west-indies"]} />
+            <Figure figure={figures["0213-periscopic"]} />
+            <Figure figure={figures["0214-activeshooters"]} />
           </Column>
         </TwoColumnLayout>
         <ChapterSectionTitle section={sections[2]} />
@@ -616,14 +640,9 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <Figure figure={figures["6-snow"]} />
-            <Figure figure={figures["7-nightingale"]} />
+            <Figure figure={figures["0215-playfair-indies"]} />
           </Column>
         </TwoColumnLayout>
-
-        <CenteredLayout>
-          <Figure figure={figures["2-wheat"]} />
-        </CenteredLayout>
 
         <TwoColumnLayout>
           <Column>
@@ -713,10 +732,14 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <Figure figure={figures["wood"]} />
-            <Figure figure={figures["10-camoes"]} />
+            <Figure figure={figures["0216-playfair-wheat"]} />
+            <Figure figure={figures["0217-camoes"]} />
           </Column>
         </TwoColumnLayout>
+
+        <CenteredLayout>
+          <Figure figure={figures["0218-wood"]} />
+        </CenteredLayout>
 
         <span id={visualizations[2].id}>
           <LineSegmentsScrollytell
@@ -844,7 +867,11 @@ export default function PlayfairPage() {
               contained with each visualization's depths.
             </p>
           </Column>
-          <Column shouldPin>{/* NEED IMAGE */}</Column>
+          <Column shouldPin className="md:ms-12">
+            <Figure
+              figures={[figures["0225-jevons002"], figures["0226-jevons001"]]}
+            />
+          </Column>
         </TwoColumnLayout>
         <Takeaways
           forDesigners={[

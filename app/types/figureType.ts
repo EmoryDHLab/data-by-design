@@ -6,6 +6,7 @@ export type TFigure = {
   caption: string | undefined | null;
   altText: string | undefined | null;
   sensitive: boolean | string | undefined | null;
+  sensitiveAltText: string | undefined | null;
   creditLine: string | undefined | null;
   digitizedLine: string | undefined | null;
   source: string | undefined | null;
@@ -17,7 +18,8 @@ export type TFigure = {
   width: number | null;
   height: number | null;
   iiif: boolean;
+  cleanCaption: string | undefined | null;
+  cleanAltText: string | undefined | null;
+  cleanSensitiveAltText: string | undefined | null;
+  cleanTitle: string | string | undefined | null;
 };
-// export type ChapterFigure = {
-//   [key: string]: Figure;
-// }

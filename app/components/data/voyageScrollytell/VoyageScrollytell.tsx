@@ -48,20 +48,21 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             >
               {/* 1 */}
               <image
-                x={-50}
+                // x={-50}
                 y="15%"
-                width="100%"
-                href={`/images/data/${figures["PLACEHOLDERquery"].fileName}.jpg`}
+                width="80%"
+                href={`/images/missing/PLACEHOLDERquery.jpg`}
+                // href={`/images/data/${figures["PLACEHOLDERquery"].fileName}.jpg`}
                 className={`absolute scale-100 md:scale-125 transition-opacity duration-1000 opacity-${
                   slideIndex === 1 ? 100 : 0
                 }`}
               />
               {/* 2 */}
               <image
-                x={-50}
                 y="25%"
                 width="100%"
-                href={`/images/data/${figures["PLACEHOLDERquery2"].fileName}.jpg`}
+                href={`/images/missing/PLACEHOLDERquery2.jpg`}
+                // href={`/images/data/${figures["PLACEHOLDERquery2"].fileName}.jpg`}
                 className={`absolute scale-100 md:scale-125 transition-opacity duration-1000 opacity-${
                   slideIndex === 2 ? 100 : 0
                 }`}
@@ -79,7 +80,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 x={0}
                 y="20%"
                 width="100%"
-                href={`/images/data/${figures["fisk-plate22sheet09"].fileName}.jpg`}
+                href={`/images/data/${figures["0106-fisk"].fileName}.jpg`}
                 className={`absolute transition-opacity duration-1000 opacity-${
                   slideIndex === 5 ? 100 : 0
                 }`}
@@ -145,7 +146,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 x={0}
                 y="25%"
                 width="100%"
-                href={`/images/data/${figures["equiano-narrative"].fileName}.jpg`}
+                href={`/images/data/${figures["0105-narrative"].fileName}.jpg`}
                 className={`absolute transition-opacity duration-1000 opacity-${
                   slideIndex === 19 ? 100 : 0
                 }`}
@@ -210,32 +211,6 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
         />
         <ClientOnly>
           <>
-            {/* <div className="absolute top-4 md:top-18 mt-8 scale-90">
-              <VoyagesVis
-                className={`${slideIndex === 12 ? "opacity-100" : "opacity-0"}`}
-                id="all-voyage"
-                allVoyages={true}
-                fullColor={true}
-                startYear={1565}
-                endYear={1858}
-                showSlider={false}
-              />
-            </div>
-            <div className="absolute top-4 md:top-18 mt-8 scale-90">
-              <VoyagesVis
-                className={`${
-                  slideIndex >= 13 && slideIndex <= 16
-                    ? "opacity-100"
-                    : "opacity-0"
-                }`}
-                id="zoomed-voyage"
-                allVoyages={false}
-                fullColor={true}
-                startYear={1708}
-                endYear={1719}
-                showSlider={false}
-              />
-            </div> */}
             <div className="absolute top-4 md:top-18 mt-8 scale-90">
               <VoyagesVis
                 className={`${

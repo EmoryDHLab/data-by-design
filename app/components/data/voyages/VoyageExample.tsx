@@ -9,7 +9,7 @@ const VoyageExample = ({ slideIndex }: { slideIndex: number }) => {
 
   return (
     <g
-      className={`-translate-x-44 transition-opacity duration-1000 ${
+      className={`md:-translate-x-16 md:scale-[0.7] xl:-translate-x-20 xl:scale-[0.75] transition-opacity duration-1000 ${
         show ? "opacity-100" : "opacity-0"
       }`}
     >

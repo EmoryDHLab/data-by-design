@@ -189,14 +189,14 @@ export default function BrooksPage() {
               className={`h-96 p-4 drop-shadow-md transition-all duration-1000 ${
                 hideSensitiveState ? "blur-md" : "blur-[0px]"
               }`}
-              src="/images/intro/Thomas_Clarkson_by_Carl_Frederik_von_Breda.jpg"
+              src={`/images/${figures["0114-stream"].chapter}/${figures["0114-stream"].fileName}.jpg`}
               alt=""
             />
             <img
               className={`h-96 p-4 drop-shadow-md transition-all duration-1000 ${
                 hideSensitiveState ? "blur-md" : "blur-[0px]"
               }`}
-              src="/images/intro/Equiano-D8546.jpg"
+              src={`/images/${figures["0102-equiano"].chapter}/${figures["0102-equiano"].fileName}.jpg`}
               alt=""
             />
           </div>
@@ -206,9 +206,7 @@ export default function BrooksPage() {
             className="flex text-lg md:text-xl flex-row items-center ms-8 md:ms-0 pt-12 space-x-6 md:mb-8"
           >
             <div className="w-auto md:w-1/6 flex justify-center">
-              <span
-                className={`inline-flex justify-center`}
-              >
+              <span className={`inline-flex justify-center`}>
                 <ConsentToggle
                   className="h-12 w-12 md:h-20 md:w-20 p-0.5 md:p-2"
                   id="big-toggle"
@@ -611,7 +609,7 @@ export default function BrooksPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <SeraphiqueTour figure={figures["2-1468px-Plan"]} />
+            <SeraphiqueTour figure={figures["0103-marieseraphique"]} />
           </Column>
         </TwoColumnLayout>
 
@@ -703,7 +701,7 @@ export default function BrooksPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <Figure figure={figures["4-description-1789"]} />
+            <Figure figure={figures["0104-description"]} />
           </Column>
         </TwoColumnLayout>
 
@@ -1158,7 +1156,7 @@ export default function BrooksPage() {
             <InlineFootnote index={48} />
           </p>
 
-          <Figure figure={figures["5-The_history_of_the_rise"]} />
+          <Figure figure={figures["0113-history"]} />
 
           <p>
             On the surface, the metaphor of abolition as a network of streams
@@ -1224,7 +1222,8 @@ export default function BrooksPage() {
         <CenteredLayout>
           <Figure
             className="md:grid grid-cols-2 gap-4"
-            figures={[figures["6-stream"], figures["7-Bell"]]}
+            imageClassName="h-full"
+            figures={[figures["0114-stream"], figures["0115-bell"]]}
           />
 
           <p>

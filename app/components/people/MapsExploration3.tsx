@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Info } from "lucide-react";
 
 export default function ImageTooltips() {
-  const [activeTooltip, setActiveTooltip] = useState(null);
+  const [activeTooltip, setActiveTooltip] = useState<number | undefined>(
+    undefined
+  );
 
   // Define tooltip positions and content
   const tooltips = [
@@ -193,7 +194,7 @@ export default function ImageTooltips() {
           <div className="relative w-full rounded-xl overflow-hidden">
             {/* Replace this img src with your own image URL */}
             <img
-              src="/images/people/3.png"
+              src="/images/people/extras/3.png"
               alt="Annotated diagram"
               className="w-full h-full object-cover"
             />
@@ -211,10 +212,10 @@ export default function ImageTooltips() {
               >
                 <button
                   onMouseEnter={() => setActiveTooltip(tooltip.id)}
-                  onMouseLeave={() => setActiveTooltip(null)}
+                  onMouseLeave={() => setActiveTooltip(undefined)}
                   onClick={() =>
                     setActiveTooltip(
-                      activeTooltip === tooltip.id ? null : tooltip.id
+                      activeTooltip === tooltip.id ? undefined : tooltip.id
                     )
                   }
                   className="md:w-2 md:h-2 w-2 h-2  bg-blue-300  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
@@ -265,7 +266,7 @@ export default function ImageTooltips() {
           <div className="mt-6 p-4 rounded-lg flex flex-row border-blue-100">
             <div>
               <img
-                src="/images/people/key.png"
+                src="/images/people/extras/key.png"
                 alt="Annotated diagram"
                 className="w-auto h-60 object-cover"
               />
