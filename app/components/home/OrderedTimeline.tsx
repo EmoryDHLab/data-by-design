@@ -32,10 +32,7 @@ interface Props {
   setSelectedImage: Dispatch<SetStateAction<TFigure | undefined>>;
 }
 
-export default function OrderedTimeline({
-  setSelectedImage,
-  selectedImage,
-}: Props) {
+const OrderedTimeline = ({ setSelectedImage, selectedImage }: Props) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(
     selectedImage ? sortedImages.indexOf(selectedImage) : 0
@@ -128,7 +125,7 @@ export default function OrderedTimeline({
   return (
     <div
       ref={sliderRef}
-      className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5 w-full ml-3 focus:outline-none select-none"
+      className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5 w-full ml-3 focus:outline-none select-none ordered-timeline"
       role="button"
       onMouseDown={({ pageX }) => mouseDown(pageX)}
       onMouseUp={() => setMouseIsDown(false)}
@@ -186,4 +183,6 @@ export default function OrderedTimeline({
       ))}
     </div>
   );
-}
+};
+
+export default OrderedTimeline;
