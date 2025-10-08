@@ -25,7 +25,9 @@ export default function DraggableTimeline({
 }: Props) {
   const { windowSize } = useResizeObserver();
   const svgRef = useRef<SVGSVGElement>(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState<number>(selectedImage ? shuffledImages.indexOf(selectedImage) : 0);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(
+    selectedImage ? shuffledImages.indexOf(selectedImage) : 0
+  );
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [startPosition, setStartPosition] = useState<startPosition | undefined>(
     undefined
@@ -35,15 +37,7 @@ export default function DraggableTimeline({
     { x: number; y: number; r: number }[]
   >([]);
 
-  // useEffect(() => {
-  //   if (selectedImage && !images.includes(selectedImage)) {
-  //     images.splice(0, 0, selectedImage);
-  //     setCurrentImageIndex(0);
-  //   }
-  // }, [selectedImage, images]);
-
   useEffect(() => {
-    // setImages(randomTimelineImages(IMAGE_COUNT));
     setImagePositions(
       Array.from({ length: 30 + 1 }, () => {
         const windowWidth = windowSize.width ?? 200;
@@ -144,15 +138,19 @@ export default function DraggableTimeline({
         return (
           <g key={image.fileName} id={image.fileName}>
             <image
-              className={`cursor-pointer ${isSelected ? "outline outline-4 outline-red-500" : ""}`}
+              className={`cursor-pointer ${
+                isSelected ? "outline outline-4 outline-red-500" : ""
+              }`}
               id={`index-${index}`}
               style={{ cursor: "pointer" }}
-              href={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/color.webp`}
+              href={`/images/${image.chapter}/thumbnails/${image.fileName}.webp`}
               width={150}
-              height={image.height && image.width ? Math.ceil(
-                (image.height / image.width) * 150
-              ) : 150}
-      transform={getTransform(index)}
+              height={
+                image.height && image.width
+                  ? Math.ceil((image.height / image.width) * 150)
+                  : 150
+              }
+              transform={getTransform(index)}
               onMouseDown={() => {
                 setIsDragging(true);
                 setCurrentImageIndex(index);
