@@ -20,14 +20,14 @@ interface Props {
   isVertical?: boolean;
 }
 
-export default function RecreatedEventSquare({
+const RecreatedEventSquare = ({
   absoluteIndex,
   index,
   year,
   yearEvents,
   isFull,
   isVertical = false,
-}: Props) {
+}: Props) => {
   const { activeEvent, setActiveEvent } = useContext(BarGraphContext);
 
   const [squareEvent, setSquareEvent] = useState<PeabodyEvent | undefined>(
@@ -119,7 +119,7 @@ export default function RecreatedEventSquare({
         height={30}
         x={getEventXFromIndex(index)}
         y={getEventYFromIndex(index)}
-        className="w-full h-auto"
+        className={`${isVertical ? "w-full h-auto" : ""}`}
         onMouseEnter={() =>
           setActiveEvent({ type: index, event: squareEvent, absoluteIndex })
         }
@@ -150,4 +150,6 @@ export default function RecreatedEventSquare({
   }
 
   return <></>;
-}
+};
+
+export default RecreatedEventSquare;

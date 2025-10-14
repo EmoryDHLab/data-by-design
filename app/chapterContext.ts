@@ -38,9 +38,9 @@ export type HoverState =
   | "Religion"
   | "Occupation"
   | "Map"
-  | "Willard1"
-  | "Willard2"
-  | "Willard9"
+  | "0317-Willard1"
+  | "0318-Willard2"
+  | "0319-Willard3"
   | undefined;
 
 export type TVizAnchors = {

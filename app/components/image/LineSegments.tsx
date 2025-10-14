@@ -68,7 +68,7 @@ const LineSegments = ({ scrollProgress }: Props) => {
       className="w-full md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0"
     >
       <image
-        href="/images/image/1-northamerica.jpg"
+        href="/images/image/extras/0201-playfair-northam-cropped.jpg"
         width={105}
         height={55}
         x={0}
@@ -182,7 +182,7 @@ const LineSegments = ({ scrollProgress }: Props) => {
         }`}
       >
         <image
-          href="/images/image/playfairscan.jpg"
+          href="/images/image/0201-playfair-northam.jpg"
           width={105}
           height={55}
           x={0}

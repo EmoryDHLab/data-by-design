@@ -15,12 +15,23 @@ const Picture = ({ figure, className, center = true }: Props) => {
   const [figurePath, setFigurePath] = useState<string>(
     `/images/${figure.chapter}/${figure.fileName}`
   );
+  const [altText, setAltText] = useState<string>(figure.altText || "");
 
   useEffect(() => {
     if (figure.width) {
       setFigurePath(
         `https://iiif.ecds.io/iiif/3/dxd/${figure.chapter}/${figure.fileName}.tiff/full/max/0/default`
       );
+    }
+  }, [figure]);
+
+  useEffect(() => {
+    if (hideSensitiveState && figure.cleanSensitiveAltText) {
+      setAltText(figure.cleanSensitiveAltText.replace(/(<i>|<\/i>)/gi, '"'));
+    } else if (!hideSensitiveState && figure.cleanAltText) {
+      setAltText(figure.cleanAltText.replace(/(<i>|<\/i>)/gi, '"'));
+    } else if (figure.cleanTitle) {
+      setAltText(figure.cleanTitle.replace(/(<i>|<\/i>)/gi, '"'));
     }
   }, [figure]);
 
@@ -42,12 +53,8 @@ const Picture = ({ figure, className, center = true }: Props) => {
           className
         )}
         src={`${figurePath}.jpg`}
-        alt={
-          figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
-          figure.title?.replace(/(<i>|<\/i>)/gi, '"') ??
-          ""
-        }
-        title={figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? figure.fileName}
+        alt={altText}
+        title={figure.cleanTitle ?? figure.fileName}
         draggable={!hideSensitiveState}
         loading="lazy"
         width={figure.width ?? 0}

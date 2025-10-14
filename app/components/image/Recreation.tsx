@@ -372,7 +372,7 @@ export default function Recreation({
         opacity={scrollProgress > 1.5 && scrollProgress < 2.5 ? 1 : 0}
       >
         <image
-          href="/images/image/chart-1787.jpg"
+          href="/images/image/extras/0224-playfair1787-cropped.jpg"
           width={105}
           height={55}
           x={0}
@@ -384,7 +384,7 @@ export default function Recreation({
         opacity={scrollProgress > 2.5 && scrollProgress < 3.5 ? 1 : 0}
       >
         <image
-          href="/images/image/1789.jpg"
+          href="/images/image/1786.jpg"
           width={105}
           height={55}
           x={0}
@@ -397,7 +397,7 @@ export default function Recreation({
         opacity={scrollProgress > 2.5 && scrollProgress < 3.5 ? 1 : 0}
       >
         <image
-          href="/images/image/1-northamerica.jpg"
+          href="/images/image/extras/0201-playfair-northam-cropped.jpg"
           width={105}
           height={55}
           x={0}
@@ -411,7 +411,7 @@ export default function Recreation({
         // opacity={scrollProgress > 12.5 ? transitionIn([12.5, 12.75]) : 0}
       >
         <image
-          href="/images/image/1-northamerica.jpg"
+          href="/images/image/extras/0201-playfair-northam-cropped.jpg"
           width={105}
           height={55}
           x={0}

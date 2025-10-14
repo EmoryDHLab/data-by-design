@@ -8,7 +8,7 @@ interface Props {
   year: number;
 }
 
-export default function BarGraphYears({ year }: Props) {
+const BarGraphYears = ({ year }: Props) => {
   const { currentCenturyEvents } = useContext(BarGraphContext);
   const [yearEvents, setYearEvents] = useState<Array<PeabodyEvent>>(
     currentCenturyEvents.filter((event) => event?.year === year)
@@ -44,4 +44,6 @@ export default function BarGraphYears({ year }: Props) {
       )}
     </div>
   );
-}
+};
+
+export default BarGraphYears;

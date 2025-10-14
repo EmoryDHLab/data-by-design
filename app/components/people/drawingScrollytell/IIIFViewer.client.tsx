@@ -59,7 +59,9 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
 
   useEffect(() => {
     switch (true) {
-      case scrollProgress >= 1.7 && scrollProgress <= 2.7:
+      case scrollProgress < 1:
+        viewerRef.current?.setMouseNavEnabled(false);
+      case scrollProgress >= 1 && scrollProgress <= 2:
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.7188385493768735, 0.4972938512246431)
         );
@@ -67,7 +69,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.setMouseNavEnabled(false);
         break;
-      case scrollProgress >= 2.7 && scrollProgress <= 3.7:
+      case scrollProgress >= 2 && scrollProgress <= 3:
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.24222051942640613, 0.3844618819642727),
@@ -75,7 +77,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         );
         viewerRef.current?.viewport.zoomTo(2.0736);
         break;
-      case scrollProgress >= 3.7 && scrollProgress <= 4.7:
+      case scrollProgress >= 3 && scrollProgress <= 4:
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.5955321823876885, 0.241167595912629),
@@ -83,7 +85,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         );
         viewerRef.current?.viewport.zoomTo(9.841851071303127);
         break;
-      case scrollProgress >= 4.7 && scrollProgress <= 5.7:
+      case scrollProgress >= 4 && scrollProgress <= 5:
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.188242050880771, 0.19818732218542576),
@@ -91,7 +93,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         );
         viewerRef.current?.viewport.zoomTo(6.687075336191998);
         break;
-      case scrollProgress >= 5.7 && scrollProgress <= 6.7:
+      case scrollProgress >= 5 && scrollProgress <= 6:
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.8193386053978049, 0.2573826949479137),
@@ -99,7 +101,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         );
         viewerRef.current?.viewport.zoomTo(11.614404145077721);
         break;
-      case scrollProgress >= 6.7 && scrollProgress <= 7.7:
+      case scrollProgress >= 6 && scrollProgress <= 7:
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.5006641373527644, 0.16022488474264154),
@@ -107,7 +109,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         );
         viewerRef.current?.viewport.zoomTo(3.8896404485347955);
         break;
-      case scrollProgress >= 7.7 && scrollProgress <= 8.7:
+      case scrollProgress >= 7 && scrollProgress <= 8:
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.6400570005410656, 0.29101118609510107),
@@ -115,7 +117,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         );
         viewerRef.current?.viewport.zoomTo(8.065558434081751);
         break;
-      case scrollProgress >= 8.7 && scrollProgress <= 9.7:
+      case scrollProgress >= 8 && scrollProgress <= 8.75:
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.8001552893113767, 0.27226857830922),

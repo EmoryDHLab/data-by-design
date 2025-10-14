@@ -6,16 +6,16 @@ import Figure from "../figures/Figure";
 import type { TFigure as FigureType } from "~/types/figureType";
 
 const images: FigureType[] = [
-  figures["Willard0"],
-  figures["Willard1"],
-  figures["Willard2"],
-  figures["Willard3"],
-  figures["Willard4"],
-  figures["Willard5"],
-  figures["Willard6"],
-  figures["Willard7"],
-  figures["Willard8"],
-  figures["Willard9"],
+  figures["0316-Willard0"],
+  figures["0317-Willard1"],
+  figures["0318-Willard2"],
+  figures["0319-Willard3"],
+  figures["0320-Willard4"],
+  figures["0321-Willard5"],
+  figures["0322-Willard6"],
+  figures["0323-Willard7"],
+  figures["0324-Willard8"],
+  figures["0325-Willard9"],
 ];
 
 const DocumentViewer = () => {

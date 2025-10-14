@@ -14,7 +14,7 @@ interface Props {
   groupCaption?: ReactElement;
   id?: string;
   figureHeight?: number;
-  figureWidth?: number;
+  showCaption?: boolean;
 }
 
 export const Caption = ({ figure, className }: Props) => {
@@ -42,7 +42,7 @@ export default function Figure({
   groupCaption,
   imageClassName,
   id,
-  figureHeight,
+  showCaption = true,
 }: Props) {
   const { hideSensitiveState } = useContext(ChapterContext);
 
@@ -56,7 +56,12 @@ export default function Figure({
               figure={figure}
               id={id ?? `fig-${figures[0]?.fileName}`}
             >
-              <Picture figure={figure} />
+              {hideSensitiveState && figure.sensitive && (
+                <div className="absolute p-6 z-10 text-xl font-neueMontreal">
+                  {figure.sensitiveAltText}
+                </div>
+              )}
+              <Picture figure={figure} className={imageClassName} />
             </FigureModal>
           );
         })}
@@ -81,7 +86,7 @@ export default function Figure({
       >
         {hideSensitiveState && figure.sensitive && (
           <div className="absolute p-6 z-10 text-xl font-neueMontreal">
-            {figure.altText?.split(".")[0]}. {figure.altText?.split(".")[1]}.
+            {figure.sensitiveAltText}
           </div>
         )}
         <Picture
@@ -92,7 +97,9 @@ export default function Figure({
               : ""
           }`}
         />
-        <Caption figure={figure} className={captionClassName} />
+        {showCaption && (
+          <Caption figure={figure} className={captionClassName} />
+        )}
       </FigureModal>
     );
   }

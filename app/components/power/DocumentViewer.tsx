@@ -165,7 +165,7 @@ export default function DocumentViewer() {
                   className={classNames(
                     index === selectedImageIndex &&
                       "p-1 hover:border-white-700 border-solid border-white border-2 rounded-md",
-                    "max-w-[70px]"
+                    "max-w-[70px] text-offwhite"
                   )}
                 />
               </button>

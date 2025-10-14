@@ -106,7 +106,7 @@ function WillardScrollytell({ figure, triggers }: Props) {
           className={`flex flex-col md:flex-row justify-between drop-shadow-lg`}
           id="scrollytell-two"
         >
-          <div className="sticky p-8 md:p-0 top-20 h-min bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
+          <div className="sticky p-8 md:p-0 top-0 h-min bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
             <svg
               viewBox={`0 0 ${width} ${height}`}
               className="max-h-[80vh] max-w-[90%] md:my-16 mx-auto  transition-all duration-1000"

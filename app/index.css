@@ -15,11 +15,10 @@
 
 .fancyborder {
   width: 100px;
-   height: 100px;
-   /* dashed border */
-   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23FFFFFF54' stroke-width='2' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  height: 100px;
+  /* dashed border */
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23FFFFFF54' stroke-width='2' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
-
 
 .first-paragraph::first-letter {
   float: left;
@@ -36,7 +35,7 @@
   grid-template-columns: 1fr min(111ch, 100%) 1fr;
 }
 
-.grid-wrapper>* {
+.grid-wrapper > * {
   grid-column: 2;
 }
 
@@ -45,7 +44,7 @@
   grid-template-columns: 1fr min(45ch, 100%) 1fr;
 }
 
-.column-grid-wrapper>* {
+.column-grid-wrapper > * {
   grid-column: 2;
 }
 
@@ -85,19 +84,25 @@
 }
 
 .cut-corners {
-  clip-path: polygon(0 10px,
-      10px 0,
-      calc(100% - 10px) 0,
-      100% 10px,
-      100% calc(100% - 10px),
-      calc(100% - 10px) 100%,
-      10px 100%,
-      0 calc(100% - 10px));
+  clip-path: polygon(
+    0 10px,
+    10px 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
 }
 
 .scrollytell-shape-focus {
   transition: cx 0.7s, cy 0.7s, rx 0.7s, ry 0.7s, x 0.7s, y 0.7s, height 0.7s,
     width 0.7s;
+}
+
+.ordered-timeline::-webkit-scrollbar {
+  height: 0;
 }
 
 main p {
@@ -277,7 +282,7 @@ input[type="range"]::-webkit-slider-thumb::before {
     url("/fonts/VTCDubois/VTCDuBois-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
-  font-feature-settings: 'ss06' on;
+  font-feature-settings: "ss06" on;
 }
 
 @font-face {
@@ -286,7 +291,7 @@ input[type="range"]::-webkit-slider-thumb::before {
     url("/fonts/VTCDubois/VTCDuBois-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-feature-settings: 'ss06' on;
+  font-feature-settings: "ss06" on;
 }
 
 @font-face {
@@ -295,7 +300,7 @@ input[type="range"]::-webkit-slider-thumb::before {
     url("/fonts/VTCDubois/VTCDuBois-Italic.woff") format("woff2");
   font-weight: normal;
   font-style: italic;
-  font-feature-settings: 'ss06' on;
+  font-feature-settings: "ss06" on;
 }
 
 @font-face {
@@ -304,7 +309,7 @@ input[type="range"]::-webkit-slider-thumb::before {
     url("/fonts/VTCDubois/VTCDuBois-RItalic.woff") format("woff2");
   font-weight: normal;
   font-style: oblique;
-  font-feature-settings: 'ss06' on;
+  font-feature-settings: "ss06" on;
 }
 
 @font-face {
@@ -313,9 +318,8 @@ input[type="range"]::-webkit-slider-thumb::before {
     url("/fonts/VTCDubois/VTCDuBois-BoldRitalic.woff2") format("woff2");
   font-weight: bold;
   font-style: oblique;
-  font-feature-settings: 'ss06' on;
+  font-feature-settings: "ss06" on;
 }
-
 
 @font-face {
   font-family: "VTC Du Bois Bold Italic";
@@ -331,10 +335,7 @@ input[type="range"]::-webkit-slider-thumb::before {
     url("/fonts/VTCDubois/VTCDuBois-Light.woff2") format("woff2");
   font-weight: 200;
   font-style: normal;
-
 }
-
-
 
 @font-face {
   font-family: "VTC Du Bois Light Italic";
@@ -344,16 +345,12 @@ input[type="range"]::-webkit-slider-thumb::before {
   font-style: italic;
 }
 
-
-
-
 /* ========  wide ======== */
 @font-face {
   font-family: "VTC Du Bois Bold Wide";
   src: url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff2") format("woff2");
   font-weight: bold;
-
 }
 
 @font-face {
@@ -361,9 +358,7 @@ input[type="range"]::-webkit-slider-thumb::before {
   src: url("/fonts/VTCDubois/VTCDuBois-ItalicWide.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-ItalicWide.woff2") format("woff2");
   font-style: italic;
-
 }
-
 
 @font-face {
   font-family: "VTC Du Bois Bold Italic Wide";
@@ -371,7 +366,6 @@ input[type="range"]::-webkit-slider-thumb::before {
     url("/fonts/VTCDubois/VTCDuBois-BoldItalicWide.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
-
 }
 
 @font-face {
@@ -380,7 +374,6 @@ input[type="range"]::-webkit-slider-thumb::before {
     url("/fonts/VTCDubois/VTCDuBois-BoldRitalicWide.woff2") format("woff2");
   font-weight: bold;
   font-style: oblique;
-
 }
 
 @font-face {
@@ -388,7 +381,6 @@ input[type="range"]::-webkit-slider-thumb::before {
   src: url("/fonts/VTCDubois/VTCDuBois-RegularWide.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-RegularWide.woff2") format("woff2");
   font-weight: 400;
-
 }
 
 @font-face {
@@ -396,9 +388,7 @@ input[type="range"]::-webkit-slider-thumb::before {
   src: url("/fonts/VTCDubois/VTCDuBois-LightWide.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-LightWide.woff2") format("woff2");
   font-weight: lighter;
-
 }
-
 
 /* ------ narrow ------ */
 
@@ -407,16 +397,13 @@ input[type="range"]::-webkit-slider-thumb::before {
   src: url("/fonts/VTCDubois/VTCDuBois-RegularNarrow.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-RegularNarrow.woff2") format("woff2");
   font-weight: normal;
-
 }
-
 
 @font-face {
   font-family: "VTC Du Bois Bold Narrow";
   src: url("/fonts/VTCDubois/VTCDuBois-BoldNarrow.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-BoldNarrow.woff2") format("woff2");
   font-weight: bold;
-
 }
 
 @font-face {
@@ -424,7 +411,6 @@ input[type="range"]::-webkit-slider-thumb::before {
   src: url("/fonts/VTCDubois/VTCDuBois-LightNarrow.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-LightNarrow.woff2") format("woff2");
   font-weight: lighter;
-
 }
 
 @font-face {
@@ -433,16 +419,13 @@ input[type="range"]::-webkit-slider-thumb::before {
     url("/fonts/VTCDubois/VTCDuBois-LightItalicNarrow.woff2") format("woff2");
   font-style: italic;
   font-weight: lighter;
-
 }
-
 
 @font-face {
   font-family: "VTC Du Bois Italic Narrow";
   src: url("/fonts/VTCDubois/VTCDuBois-ItalicNarrow.woff") format("woff"),
     url("/fonts/VTCDubois/VTCDuBois-ItalicNarrow.woff2") format("woff2");
   font-style: italic;
-
 }
 
 @font-face {
@@ -451,7 +434,6 @@ input[type="range"]::-webkit-slider-thumb::before {
     url("/fonts/VTCDubois/VTCDuBois-BoldItalicNarrow.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
-
 }
 
 @font-face {
@@ -466,7 +448,7 @@ input[type="range"]::-webkit-slider-thumb::before {
   font-family: "PPNeueMontreal";
   src: url("/fonts/NeueMontreal/PPNeueMontreal-Regular.woff") format("woff"),
     url("/fonts/NeueMontreal/PPNeueMontreal-Regular.woff2") format("woff2");
-  font-weight: normal
+  font-weight: normal;
 }
 
 @font-face {
@@ -484,8 +466,6 @@ input[type="range"]::-webkit-slider-thumb::before {
 }
 
 /* Neue Haas Unica from Typekit */
-
-
 
 @font-face {
   font-family: neue-haas-unica, sans-serif;

@@ -23,7 +23,6 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
     setShuffledImages(randomTimelineImages(IMAGE_COUNT));
   }, [shouldShuffle]);
 
-
   useEffect(() => {
     setSelectedImage(shuffledImages[0]);
   }, [shuffledImages, setSelectedImage]);

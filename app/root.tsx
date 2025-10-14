@@ -58,7 +58,7 @@ export const Layout = ({ children }: WrapperProps) => {
         <Meta />
         <Links />
       </head>
-      <body className="overflow-x-hidden">
+      <body className="overflow-x-hidden w-screen">
         <ScrollToHashElement />
         <LinkToMain />
         {/* <ClientOnly>

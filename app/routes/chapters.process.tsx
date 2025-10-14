@@ -8,8 +8,6 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import Footer from "~/components/Footer";
-import PromotionalTourMap from "~/components/process/PromotionalTourMap.client";
-import HoverText from "~/components/HoverText";
 import HoverZoomPeabodySquare from "~/components/process/HoverZoomPeabodySquare";
 import InlineFootnote from "~/components/InlineFootnote";
 import { processFootnotes } from "~/footnotes";
@@ -129,73 +127,44 @@ export default function PeabodyPage() {
             }
           />
         </CenteredLayout>
-        <TwoColumnLayout>
-          <Column shouldPin={true}>
-            <p className="first-paragraph">
-              Elizabeth Palmer Peabody was born in 1804, within only a year or
-              two of Shanawdithit. But her life circumstances—the stability of
-              food and family, her membership in the Boston intellectual elite,
-              and the gift of good health—enabled her to live for nearly a
-              century. By the time that she died, in 1894, she left her mark on
-              any number of fields. But in the early 1850s, at the prime of her
-              life, Peabody set out from her home in Boston to ride the rails.
-              She traveled as far north as{" "}
-              <HoverText hoverState="Rochester">Rochester, NY</HoverText>; as
-              far west as{" "}
-              <HoverText hoverState="Louisville">Louisville, KY</HoverText>; and
-              as far south as{" "}
-              <HoverText hoverState="Richmond">Richmond, VA</HoverText>, in
-              order to promote the pair of history textbooks she had recently
-              written, <cite>The Polish-American System of Chronology</cite>{" "}
-              (1850) and{" "}
-              <cite>A Chronological History of the United States</cite> (1856).
-              In the textbooks, Peabody described a new method of visual
-              learning—the Polish-American system, she came to call it—a method
-              with data visualization at its core.
-            </p>
-            <p>
-              Today, Peabody is still most widely recognized for her proximity
-              to more famous men—in particular, to the writers of the American
-              Renaissance, such as Ralph Waldo Emerson and Nathaniel Hawthorne,
-              and to early champions of educational reform, such as Bronson
-              Alcott and Horace Mann. <InlineFootnote index={0} /> She is
-              certainly not accorded a prominent place in any major history of
-              data visualization. But her contributions to each of these areas,
-              including visualization, were substantial. The bookstore that she
-              ran out of her home, at Boston's 13 West Street, functioned as the
-              de facto salon for the transcendentalist movement. She edited and
-              published the first version of Henry David Thoreau's essay on
-              civil disobedience. She can be credited with starting the first
-              kindergarten in the United States. And, as this chapter will
-              assert, she offered a transformative view of the uses and value of
-              data visualization, one which challenges the teleological account
-              of the field's emergence, as well as the epistemological
-              assumptions that—as a result of this account—have become embedded
-              in the field. <InlineFootnote index={1} />
-            </p>
-          </Column>
-          <Column shouldPin>
-            <ClientOnly>
-              <PromotionalTourMap />
-            </ClientOnly>
-          </Column>
-        </TwoColumnLayout>
-
-        <SlideShow
-          className="block md:hidden bg-processPrimary w-full py-10"
-          figures={[
-            figures["railroadscaled"],
-            figures["rochester"],
-            figures["louisville"],
-            figures["richmond"],
-          ]}
-        />
-
         <CenteredLayout>
-          <PullQuote
-            quote="Peabody designed her charts to be abstract rather than intuitive;"
-            subquote="to promote sustained reflection rather than immediate insight. "
-          />
+          <p className="first-paragraph">
+            Elizabeth Palmer Peabody was born in 1804, within only a year or two
+            of Shanawdithit. But her life circumstances—the stability of food
+            and family, her membership in the Boston intellectual elite, and the
+            gift of good health—enabled her to live for nearly a century. By the
+            time that she died, in 1894, she left her mark on any number of
+            fields. But in the early 1850s, at the prime of her life, Peabody
+            set out from her home in Boston to ride the rails. She traveled as
+            far north as Rochester, NY; as far west as Louisville, KY; and as
+            far south as Richmond, VA, in order to promote the pair of history
+            textbooks she had recently written,{" "}
+            <cite>The Polish-American System of Chronology</cite> (1850) and{" "}
+            <cite>A Chronological History of the United States</cite> (1856). In
+            the textbooks, Peabody described a new method of visual learning—the
+            Polish-American system, she came to call it—a method with data
+            visualization at its core.
+          </p>
+          <p>
+            Today, Peabody is still most widely recognized for her proximity to
+            more famous men—in particular, to the writers of the American
+            Renaissance, such as Ralph Waldo Emerson and Nathaniel Hawthorne,
+            and to early champions of educational reform, such as Bronson Alcott
+            and Horace Mann. <InlineFootnote index={0} /> She is certainly not
+            accorded a prominent place in any major history of data
+            visualization. But her contributions to each of these areas,
+            including visualization, were substantial. The bookstore that she
+            ran out of her home, at Boston's 13 West Street, functioned as the
+            de facto salon for the transcendentalist movement. She edited and
+            published the first version of Henry David Thoreau's essay on civil
+            disobedience. She can be credited with starting the first
+            kindergarten in the United States. And, as this chapter will assert,
+            she offered a transformative view of the uses and value of data
+            visualization, one which challenges the teleological account of the
+            field's emergence, as well as the epistemological assumptions
+            that—as a result of this account—have become embedded in the field.{" "}
+            <InlineFootnote index={1} />
+          </p>
         </CenteredLayout>
 
         <TwoColumnLayout>
@@ -274,10 +243,10 @@ export default function PeabodyPage() {
             <Figure
               className="md:ml-24 md:grid grid-cols-2 gap-4"
               figures={[
-                figures["fig1-1500s-rect"],
-                figures["fig2-1600s-rect"],
-                figures["fig3-1700s-rect"],
-                figures["fig4-1800s-rect"],
+                figures["0401-1500s"],
+                figures["0402-1600s"],
+                figures["0403-1700s"],
+                figures["0404-1800s"],
               ]}
             />
           </Column>
@@ -598,7 +567,9 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column className="md:ml-12" shouldPin={true}>
-            <HoverZoomPeabodySquare figure={figures["fig2-1600s-rect"]} />
+            <HoverZoomPeabodySquare
+              figure={figures["0405-Jazwinski-10588000"]}
+            />
           </Column>
         </TwoColumnLayout>
 
@@ -679,7 +650,7 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column>
-            <Figure figure={figures["ch4-blank-chart"]} />
+            <Figure figure={figures["0417-student3"]} />
           </Column>
         </TwoColumnLayout>
 
@@ -791,14 +762,14 @@ export default function PeabodyPage() {
             <Figure
               className="grid grid-cols-2 md:grid-cols-4 gap-2 md:ml-12"
               figures={[
-                figures["ch4-5"],
-                figures["ch4-6"],
-                figures["ch4-7"],
-                figures["ch4-8"],
-                figures["ch4-9"],
-                figures["ch4-10"],
-                figures["ch4-11"],
-                figures["ch4-12"],
+                figures["0415-student1"],
+                figures["0416-student2"],
+                figures["0417-student3"],
+                figures["0418-student4"],
+                figures["0419-student5"],
+                figures["0420-student6"],
+                figures["0421-student7"],
+                figures["0422-student8"],
               ]}
               groupCaption={
                 <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
@@ -811,7 +782,7 @@ export default function PeabodyPage() {
           </Column>
         </TwoColumnLayout>
         <CenteredLayout>
-          <Figure figure={figures["ch4-13-willard"]} />
+          <Figure figure={figures["0423-willard-temple"]} />
           <p>
             While sharply divergent from Peabody's charts in terms of visual
             form, Peabody nevertheless identified Willard as a major source of
@@ -974,9 +945,9 @@ export default function PeabodyPage() {
           <Column>
             <Figure
               figures={[
-                figures["ch4-15-fc-touch"],
-                figures["ch4-16-fc-led-boards"],
-                figures["ch4-18-rendering"],
+                figures["0424-Caldas-AJB03_M0514"],
+                figures["0425-Caldas-AJB03_M0526"],
+                figures["0426-Caldas-AJB03_M0529"],
               ]}
               className="md:ml-12"
               groupCaption={
@@ -991,6 +962,16 @@ export default function PeabodyPage() {
             />
           </Column>
         </TwoColumnLayout>
+
+        <CenteredLayout>
+          <Figure
+            figure={
+              figures[
+                "0427-Humboldt-Geographie_der_Pflanzen_in_den_Tropen-Landern"
+              ]
+            }
+          />
+        </CenteredLayout>
 
         <TwoColumnLayout>
           <Column shouldPin={true}>
@@ -1080,7 +1061,13 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column>
-            <LEDChart />
+            <Figure
+              className="md:ml-12"
+              figures={[
+                figures["0431-clarke-1-4000BC-ps-30x43-2"],
+                figures["0432-Tattered map in attic"],
+              ]}
+            />
           </Column>
         </TwoColumnLayout>
 
@@ -1088,8 +1075,8 @@ export default function PeabodyPage() {
           <Figure
             className="grid grid-cols-2 items-center middle-full gap-x-4"
             figures={[
-              figures["ch4-19-rachel-carey-george"],
-              figures["ch4-20-gbq-q030-06"],
+              figures["0428-am1829-phelps-67941-d-p1"],
+              figures["0429-Willard-4545001"],
             ]}
             groupCaption={
               <>
@@ -1108,6 +1095,9 @@ export default function PeabodyPage() {
               </>
             }
           />
+
+          <Figure figure={figures["0430-priestley-new-chart"]} />
+
           <p>
             Pictured above are two quilts from the area of Alabama known as
             Gee's Bend, a small, rural Black community, 35 miles south of Selma,
@@ -1124,6 +1114,9 @@ export default function PeabodyPage() {
             cousins."
             <InlineFootnote index={41}></InlineFootnote>
           </p>
+
+          <Figure figure={figures["0431-clarke-1-4000BC-ps-30x43-2"]} />
+
           <p>
             As Black women who pursued their art while enslaved, and have
             continued to persist through slavery's perpetual wake, the life

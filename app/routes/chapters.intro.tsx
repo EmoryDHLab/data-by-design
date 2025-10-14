@@ -10,14 +10,16 @@ import Footer from "~/components/Footer";
 import { introFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import figures from "~/data/figures/intro.json";
+import peopleFigures from "~/data/figures/people.json";
+import imageFigures from "~/data/figures/image.json";
 import Figure from "~/components/figures/Figure";
 import ChapterBody from "~/components/layout/ChapterBody";
 import { chapterMeta } from "~/data/chapterMeta";
-import type { TVizAnchors } from "~/chapterContext";
-import type { MetaFunction } from "react-router";
 import FigureModal from "~/components/figures/FigureModal";
 import Picture from "~/components/figures/Picture";
 import TeozacoalcoScrollytell from "~/components/intro/TeozacoalcoScrollytell";
+import type { TVizAnchors } from "~/chapterContext";
+import type { MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("intro");
@@ -99,7 +101,7 @@ export default function IntroPage() {
             more accurately, his royal cosmographer—had requested a map.
           </p>
 
-          <Figure figure={figures["9-teozacoalco"]} />
+          <Figure figure={figures["0001-teozalcoalco"]} />
 
           <p>
             The cosmographer was hoping the King would benefit from something we
@@ -140,7 +142,7 @@ export default function IntroPage() {
             Map," first released on the web in 2012, now hangs in the third
             floor gallery of New York's Museum of Modern Art.
           </p>
-          {/* <Figure Wind Map /> */}
+          <Figure figure={figures["0002-windmap"]} />
           <p>
             But the allure of visualization is precisely its danger. Because
             maps and charts (and their interactive analogues) all promise ease
@@ -455,7 +457,7 @@ export default function IntroPage() {
             in the service of advancing knowledge.
             <InlineFootnote index={18} />
           </p>
-          {/* <Figure figure={figures.placeholder3} /> */}
+          <Figure figure={figures["0004-table"]} />
           <p>
             I find this definition helpful for how it highlights the specific
             contributions of the field of visualization research. At the same
@@ -489,6 +491,7 @@ export default function IntroPage() {
               https://reproductiverights.org/maps/abortion-laws-by-state/
             </a>
           </p>
+          <Figure figure={figures["0005-reprorights"]} />
           <p>
             While I could point to recent trends in the field of visualization
             research to support this more inclusive definition, or observe that
@@ -520,30 +523,34 @@ export default function IntroPage() {
             not, what else might they be called?
           </p>
 
-          {/* <Figure
-            figures={
-              [
-                figures.placeholder4,
-                figures.placeholder4,
-                figures.placeholder4,
-                figures.placeholder4,
-                figures.placeholder4,
-                figures.placeholder4,
-                figures.placeholder4,
-              ]
-            }
-            className="grid grid-cols-2 md:grid-cols-4 gap-2 md:ml-12"
-            groupCaption={
-              <p>
-                Examples of data visualization, clockwise from top left: Mona
-                Chalabi, "US Workers on Strike\" (2023); Shirley Wu, "Hong Kong
-                Artists, Women" (2020); Stephanie Posavec, "A Week of Clocks,"
-                from Giorgia Lupi and Stephanie Posavec, Dear Data (2016), Ambos
-                Project, Border Quipu / Quipu Fronterizo (2016-2018, and Annina
-                Ruest, "A Piece of the Pie Chart" (2017).
-              </p>
-            }
-          /> */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <Figure
+              showCaption={false}
+              className="md:col-span-2"
+              figure={figures["0006-usworkers"]}
+            />
+            <Figure
+              showCaption={false}
+              className="md:row-span-2"
+              figure={figures["0008-deardata"]}
+            />
+            <Figure
+              showCaption={false}
+              className="md:col-span-2"
+              figure={figures["0007-hkwomen"]}
+            />
+            <Figure showCaption={false} figure={figures["0009-borderquipu1"]} />
+            <Figure showCaption={false} figure={figures["0010-borderquipu2"]} />
+            <Figure showCaption={false} figure={figures["0011-ruest"]} />
+            <p className="font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
+              Examples of data visualization, clockwise from top left: Mona
+              Chalabi, "US Workers on Strike\" (2023); Shirley Wu, "Hong Kong
+              Artists, Women" (2020); Stephanie Posavec, "A Week of Clocks,"
+              from Giorgia Lupi and Stephanie Posavec, Dear Data (2016), Ambos
+              Project, Border Quipu / Quipu Fronterizo (2016-2018, and Annina
+              Ruest, "A Piece of the Pie Chart" (2017).
+            </p>
+          </div>
           <p>
             More generally, I am less interested in asking what is or is not a
             data visualization as I am in asking how we—as viewers, designers,
@@ -658,8 +665,8 @@ export default function IntroPage() {
             <InlineFootnote index={26} />
           </p>
           <Figure
-            className="grid grid-cols-1 md:grid-cols-2"
-            figures={[figures["3-anonymous"], figures["4-oresme"]]}
+            className="grid grid-cols-1 md:grid-cols-2 items-center"
+            figures={[figures["0012-anon"], figures["0013-oresme"]]}
             groupCaption={
               <p>
                 Two prominent examples of proto-data visualizations, first
@@ -700,48 +707,14 @@ export default function IntroPage() {
             Enlightenment thought—the flowering of data visualization was set to
             begin.
           </p>
-          <div className="grid gird-cos-1 md:grid-cols-2 auto-rows-fr place-items-center justify-items-center gap-2 md:gap-4">
-            <div className="h">
-              <FigureModal
-                figure={figures["plot-plots2"]}
-                id={`fig-${figures["plot-plots2"].fileName}`}
-              >
-                <Picture
-                  className=" w-3/4 drop-shadow-lg"
-                  figure={figures["plot-plots2"]}
-                />
-              </FigureModal>
-            </div>
-            <div>
-              <FigureModal
-                figure={figures["6-lambert"]}
-                id={`fig-${figures["plot-plots2"].fileName}`}
-              >
-                <Picture
-                  className="w-1/2 drop-shadow-lg"
-                  figure={figures["6-lambert"]}
-                />
-              </FigureModal>
-            </div>
-            <div className="md:col-span-2">
-              <FigureModal
-                figure={
-                  figures[
-                    "7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782"
-                  ]
-                }
-                id={`fig-${figures["plot-plots2"].fileName}`}
-              >
-                <Picture
-                  className="w-3/4 drop-shadow-lg"
-                  figure={
-                    figures[
-                      "7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782"
-                    ]
-                  }
-                />
-              </FigureModal>
-            </div>
+          <div className="grid gird-cos-1 md:grid-cols-2 items-center gap-2 md:gap-4">
+            <Figure figure={figures["0014-plot"]} showCaption={false} />
+            <Figure figure={figures["0015-lambert"]} showCaption={false} />
+            <Figure
+              className="md:col-span-2"
+              figure={figures["0016-playfair"]}
+              showCaption={false}
+            />
             <p className="md:col-span-2 font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12">
               Clockwise from top left: An early graph of daily barometric
               pressure in Oxford, England, that appears in Robert Plot's
@@ -799,7 +772,7 @@ export default function IntroPage() {
         <Figure
           className="mx-2 md:mx-12 text-sm md:text-base"
           captionClassName="mx-12"
-          figure={figures["8-Edmond_Halley_s_map_of_the_trade_winds_1686"]}
+          figure={figures["0017-halley"]}
         />
         <CenteredLayout>
           <p>
@@ -926,10 +899,13 @@ export default function IntroPage() {
             recognized the generative potential unleashed by translating
             quantitative information into visual form.
           </p>
-          <Figure figure={figures["quipu"]} className="w-3/4" />
-          {/* <Figure
-            figures={[figures["quipu"], figures["quipu"], figures["quipu"]]}
-            className="grid grid-cols-2 md:grid-cols-3 gap-2 md:ml-12"
+          <Figure
+            className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-baseline"
+            figures={[
+              figures["0018-quipu"],
+              figures["0019-rods"],
+              figures["0020-cuneiform"],
+            ]}
             groupCaption={
               <p>
                 Examples of data visualization that predate our story. Left to
@@ -938,7 +914,7 @@ export default function IntroPage() {
                 proto-cuneiform tablet documenting the distribution of grain.
               </p>
             }
-          /> */}
+          />
           <p>
             This global history, even in abridged form, prompts a key question:
             what do I mean by the phrase "modern data visualization"? The term

@@ -32,10 +32,7 @@ interface Props {
   setSelectedImage: Dispatch<SetStateAction<TFigure | undefined>>;
 }
 
-export default function OrderedTimeline({
-  setSelectedImage,
-  selectedImage,
-}: Props) {
+const OrderedTimeline = ({ setSelectedImage, selectedImage }: Props) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(
     selectedImage ? sortedImages.indexOf(selectedImage) : 0
@@ -46,14 +43,14 @@ export default function OrderedTimeline({
 
   useEffect(() => {
     if (!selectedImage) return;
-    const selectedImageSelector = `img[src="https://iiif.ecds.io/iiif/3/dxd/${selectedImage.chapter}/${selectedImage.fileName}.tiff/full/150,/0/default.jpg`;
+    const selectedImageSelector = `img[src="/images/${selectedImage.chapter}/thumbnails/${selectedImage.fileName}.jpg`;
     if (!sliderRef.current) return;
     sliderRef.current
       .querySelector<HTMLElement>(selectedImageSelector)
       ?.focus();
     sliderRef.current
       .querySelector<HTMLElement>(selectedImageSelector)
-      ?.scrollIntoView({ block: "end", behavior: "smooth", inline: "center"});
+      ?.scrollIntoView({ block: "end", behavior: "smooth", inline: "center" });
   }, [selectedImage]);
 
   const mouseDown = (pageX: number) => {
@@ -73,53 +70,53 @@ export default function OrderedTimeline({
   };
 
   const updateSelected = (image: TFigure) => {
-    setSelectedImage(image)
+    setSelectedImage(image);
     setCurrentImageIndex(sortedImages.indexOf(image));
   };
 
   const toStart = () => {
-    setSelectedImage(sortedImages[0])
+    setSelectedImage(sortedImages[0]);
     setCurrentImageIndex(0);
-  }
+  };
 
   const toEnd = () => {
-    setSelectedImage(sortedImages[sortedImages.length - 1])
+    setSelectedImage(sortedImages[sortedImages.length - 1]);
     setCurrentImageIndex(sortedImages.length - 1);
-  }
+  };
 
   const moveRight = () => {
     if (currentImageIndex < imageData.length - 1) {
-      setSelectedImage(sortedImages[currentImageIndex + 1])
-    setCurrentImageIndex(currentImageIndex + 1);
+      setSelectedImage(sortedImages[currentImageIndex + 1]);
+      setCurrentImageIndex(currentImageIndex + 1);
     } else {
-      toStart()
+      toStart();
     }
-  }
+  };
 
   const moveLeft = () => {
     if (currentImageIndex > 0) {
-      setSelectedImage(sortedImages[currentImageIndex - 1])
+      setSelectedImage(sortedImages[currentImageIndex - 1]);
       setCurrentImageIndex(currentImageIndex - 1);
     } else {
-      toEnd()
+      toEnd();
     }
-  }
+  };
 
   const keyUp = (event: KeyboardEvent, image: TFigure) => {
     event.preventDefault();
     const { key, shiftKey } = event;
     switch (key) {
       case "ArrowRight":
-          moveRight()
+        moveRight();
         break;
       case "ArrowLeft":
-          moveLeft()
+        moveLeft();
         break;
       case "Tab":
         if (shiftKey) {
-          moveLeft()
+          moveLeft();
         } else {
-          moveRight()
+          moveRight();
         }
         break;
     }
@@ -128,7 +125,7 @@ export default function OrderedTimeline({
   return (
     <div
       ref={sliderRef}
-      className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5 w-full ml-3 focus:outline-none select-none"
+      className="flex overflow-x-scroll space-x-10 h-96 py-10 px-5 w-full ml-3 focus:outline-none select-none ordered-timeline"
       role="button"
       onMouseDown={({ pageX }) => mouseDown(pageX)}
       onMouseUp={() => setMouseIsDown(false)}
@@ -150,16 +147,23 @@ export default function OrderedTimeline({
                   key={`otl-${image.fileName}`}
                   tabIndex={0}
                   onClick={() => updateSelected(image)}
-                  onFocus={() => setSelectedImage(sortedImages[currentImageIndex])}
+                  onFocus={() =>
+                    setSelectedImage(sortedImages[currentImageIndex])
+                  }
                   onKeyUp={(event) => keyUp(event, image)}
                 >
                   <picture>
-                    <source srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/default.webp`} type="image/webp" />
-                    <source srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/default.png`} type="image/png" />
-                    <source srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/default.jpg`} type="image/jpg" />
+                    <source
+                      srcSet={`/images/${image.chapter}/thumbnails/${image.fileName}.webp`}
+                      type="image/webp"
+                    />
+                    <source
+                      srcSet={`/images/${image.chapter}/thumbnails/${image.fileName}.jpg`}
+                      type="image/jpg"
+                    />
                     <img
                       className={classNames(
-                        "absolute w-[150px] border border-red-400 bg-offwhite",
+                        "absolute border  bg-offwhite",
                         isSelected && "border-4 border-red-500"
                       )}
                       style={{
@@ -167,12 +171,8 @@ export default function OrderedTimeline({
                         top: "0",
                         zIndex: isSelected ? images.length + 1 : index + 1,
                       }}
-                      src={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/150,/0/default.jpg`}
+                      src={`/images/${image.chapter}/thumbnails/${image.fileName}.jpg`}
                       alt={image.altText ?? ""}
-                      width={150}
-                      height={image.height && image.width ? Math.ceil(
-                        (image.height / image.width) * 150
-                      ) : 150}
                     />
                   </picture>
                 </button>
@@ -183,4 +183,6 @@ export default function OrderedTimeline({
       ))}
     </div>
   );
-}
+};
+
+export default OrderedTimeline;

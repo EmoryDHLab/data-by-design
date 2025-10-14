@@ -171,14 +171,8 @@ const TeozacoalcoScrollytell = ({ triggers }: Props) => {
                   }
                   width={width}
                   height={height}
-                  href="/images/intro/9-teozacoalco.jpeg"
+                  href="/images/intro/0001-teozalcoalco.jpg"
                 />
-                {/* <image
-              x={220}
-              width={width * 0.58}
-              height={height}
-              href="/images/intro/circular.png"
-            /> */}
               </g>
               <g data-name="major-roads">
                 <path
