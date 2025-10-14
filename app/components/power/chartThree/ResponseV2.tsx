@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import * as d3 from "d3";
+import { select, selectAll, line, curveNatural, type Selection } from "~/utils/d3-imports";
 import type { Dispatch, SetStateAction } from "react";
 import type { ResponseData } from "../types";
 
@@ -36,19 +36,19 @@ function ResponseV2({
   id,
 }: Props) {
   const pathRef = useRef<
-    d3.Selection<SVGPathElement, null, HTMLElement, any> | undefined
+    Selection<SVGPathElement, null, HTMLElement, any> | undefined
   >(undefined);
   const textRef = useRef<
-    d3.Selection<SVGTextElement, null, HTMLElement, any> | undefined
+    Selection<SVGTextElement, null, HTMLElement, any> | undefined
   >(undefined);
   const textPathRef = useRef<
-    d3.Selection<SVGTextPathElement, null, HTMLElement, any> | undefined
+    Selection<SVGTextPathElement, null, HTMLElement, any> | undefined
   >(undefined);
   const containerRef = useRef<
-    d3.Selection<SVGRectElement, null, HTMLElement, any> | undefined
+    Selection<SVGRectElement, null, HTMLElement, any> | undefined
   >(undefined);
   const contentRef = useRef<
-    d3.Selection<SVGTextElement, null, HTMLElement, any> | undefined
+    Selection<SVGTextElement, null, HTMLElement, any> | undefined
   >(undefined);
   const previousActiveRef = useRef<string | undefined>(activeResponse);
   const wadRef = useRef<string | null>(null);
@@ -168,11 +168,11 @@ function ResponseV2({
 
     boxX.current = response.x;
     boxY.current = response.y;
-    textRef.current = d3.select(`#text-${response.id}-${id}`);
-    containerRef.current = d3.select(`#container-${response.id}-${id}`);
-    contentRef.current = d3.select(`#content-${response.id}-${id}`);
-    pathRef.current = d3.select(`#path-${response.id}-${id}`);
-    textPathRef.current = d3.select(`#text-path-${response.id}-${id}`);
+    textRef.current = select(`#text-${response.id}-${id}`);
+    containerRef.current = select(`#container-${response.id}-${id}`);
+    contentRef.current = select(`#content-${response.id}-${id}`);
+    pathRef.current = select(`#path-${response.id}-${id}`);
+    textPathRef.current = select(`#text-path-${response.id}-${id}`);
 
     if (response.x + WIDTH > canvasWidth) {
       const leftOffSet = response.x + WIDTH - canvasWidth;
@@ -191,7 +191,7 @@ function ResponseV2({
       boxX.current + 25,
       boxY.current,
     ]);
-    wadRef.current = d3.line().curve(d3.curveNatural)(wad);
+    wadRef.current = line().curve(curveNatural)(wad);
 
     const knot: Array<[number, number]> = [
       [boxX.current, boxY.current],
@@ -203,7 +203,7 @@ function ResponseV2({
       [boxX.current + 150, boxY.current + 110],
     ];
 
-    knotRef.current = d3.line().curve(d3.curveNatural)(knot);
+    knotRef.current = line().curve(curveNatural)(knot);
 
     pathRef.current?.attr("d", wadRef.current);
     wadLengthRef.current =
@@ -243,7 +243,7 @@ function ResponseV2({
 
       textPathRef.current?.attr("fill-opacity", 1);
 
-      d3.selectAll(`.button-text-${response.id}`)
+      selectAll(`.button-text-${response.id}`)
         .attr("font-size", 10)
         .attr("x", boxX.current + WIDTH / 2)
         .attr("y", boxY.current + 130)
@@ -267,7 +267,7 @@ function ResponseV2({
       containerRef.current?.node()?.focus();
       contentRef.current?.attr("font-size", 18);
 
-      const tSpans: any[] = d3.selectAll(`.line-${response.id}`).nodes() || [
+      const tSpans: any[] = selectAll(`.line-${response.id}`).nodes() || [
         undefined,
       ];
 
@@ -281,7 +281,7 @@ function ResponseV2({
         boxX.current = boxX.current - leftOffSet;
       }
 
-      d3.selectAll(`.line-${response.id}`).attr(
+      selectAll(`.line-${response.id}`).attr(
         "x",
         boxWidth / 2 + boxX.current
       );
@@ -343,9 +343,9 @@ function ResponseV2({
       textRef.current?.transition().duration(700).attr("textLength", 0);
       textPathRef.current?.transition().delay(300).attr("fill-opacity", 0);
 
-      d3.selectAll(`.button-text-${response.id}`).attr("fill-opacity", 0);
+      selectAll(`.button-text-${response.id}`).attr("fill-opacity", 0);
 
-      d3.selectAll(`.button-text-${response.id}`).attr("font-size", 0);
+      selectAll(`.button-text-${response.id}`).attr("font-size", 0);
     }
   }, [isCollapsed, response]);
 

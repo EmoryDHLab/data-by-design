@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -19,7 +19,8 @@ import Figure from "~/components/figures/Figure";
 import figures from "~/data/figures/data.json";
 import ClarksonSideBySideScrollytell from "~/components/data/ClarksonSideBySideScrollytell";
 import ClientOnly from "~/components/ClientOnly";
-import VoyagesVis from "~/components/data/voyages/VoyagesVis.client";
+
+const VoyagesVis = lazy(() => import("~/components/data/voyages/VoyagesVis.client"));
 import { chapterMetaTags } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
 import VoyageScrollytell from "~/components/data/voyageScrollytell/VoyageScrollytell";
@@ -1105,7 +1106,7 @@ export default function BrooksPage() {
 
         <ClientOnly>
           <VoyageVisContainer>
-            <>
+            <Suspense fallback={<div className="p-4">Loading visualization...</div>}>
               <VoyagesVis
                 id="voyage-interactive"
                 allVoyages
@@ -1115,7 +1116,7 @@ export default function BrooksPage() {
                 border={false}
                 className="scale-x-90"
               />
-            </>
+            </Suspense>
           </VoyageVisContainer>
         </ClientOnly>
 
