@@ -151,6 +151,23 @@ export default function DuboisChapter() {
             <InlineFootnote index={3} />
           </p>
 
+          <Figure
+            figures={[
+              figures["0501-paris-expo-loc"],
+              figures["0502-Group-XVI-floorplan"],
+            ]}
+            className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-baseline"
+            captionClassName="text-center"
+            groupCaption={
+              <p>
+                Left: A photograph of the “Exhibit of American Negroes” at the
+                1900 Exposition Universelle. Right: The floor plan of the Place
+                of Social Economy; the exhibit was installed in the south-east
+                corner of the hall.
+              </p>
+            }
+          />
+
           <p>
             Little did Mack know—or, for that matter, did her professor—that the
             shape of the 1899-1900 winter-term sociology course was about to
