@@ -1274,33 +1274,34 @@ export default function DuboisChapter() {
         <CenteredLayout>
           <p>
             As our project team considered how we might inhabit Du Bois’s
-            revised approach to his research methods, and commit ourselves to
-            pursue the greater knowledge that became his goal, we also knew that
-            we could not claim to understand the full extent of the charge that
-            Du Bois experienced upon hearing the news of Sam Hose’s murder. By
-            the same token, we recognized that we could not uniformly, as a
-            group, understand the effects of anti-Black racism first-hand.{" "}
-            <InlineFootnote index={27}></InlineFootnote> But there was an
-            experience that we shared with Du Bois and his students: the fact
-            that we, too, were a majority-student visualization team. And among
-            the lessons that we had learned from our own process of creating the
-            visualizations for this site is that each contributor to the project
-            has their own story, one which helps to further contextualize the
-            visualizations they helped to create—and, therefore, augments the
-            insights that it prompts. We wondered if there might be additional
-            context we might uncover if we brought our own range of methods and
-            disciplinary expertise to bear on the student creators of the
-            charts—and, in turn, what additional knowledge this context might
-            help to prompt.
+            approach to visualization, we were unsure of how to proceed in light
+            of his changed views about the utility of data and “facts.” We were
+            certain about one thing, however: we did not want to simply recreate
+            Du Bois’s charts wholesale. We thus returned to our own focal point
+            for this chapter: the students whose contributions had been effaced,
+            and asked ourselves what other stories about their lives we might be
+            able to use visualization to tell.
           </p>
 
           <p>
-            As have others, we noted the fact that the introductory chart of the
-            second series of charts, the one with national focus, credited the
-            charts' creation to “Negro students under the direction of Atlanta
-            University.” We found it additionally intriguing that the
-            visualization below the introductory text visualized data about
-            Atlanta University students as well.
+            In all of our research involving the Atlanta University{" "}
+            <em>Catalogues</em>, which we had used to surface many of the
+            details about the students' lives, we had noticed another detail
+            about the charts that seemed to have gone unremarked upon in the
+            existing scholarship: the count of the total number of graduates of
+            Atlanta University—330—matches exactly with the total number
+            provided in a data table included in the <em>Catalogue</em>{" "}
+            published the previous year.
+            <InlineFootnote index={67} /> The table includes counts of everyone
+            who had graduated from one of the university's three degree programs
+            since its founding, in 1867, as well as summary statistics about
+            their occupations. Presumably, this table was how Du Bois and his
+            students had determined the occupations pictured in the pie chart:
+            teachers, ministers, government service, and business; a catch-call
+            category for "other professions" below those top four; and then
+            "house wives," the shorthand selected for the category of "Married
+            Women not otherwise designated" in the original data table.
+            <InlineFootnote index={68} />
           </p>
 
           <Figure
@@ -1313,375 +1314,235 @@ export default function DuboisChapter() {
               </p>
             }
           />
-        </CenteredLayout>
-
-        {/* Here is where the first scrollytell will be*/}
-        <ChartOneScrollytell
-          triggers={[
-            <div key="5cab8b07"></div>,
-            <div key="59880c59">
-              <p>
-                As have others, we noted the fact that the introductory chart of
-                the second series of charts, the one with national focus,
-                credited the charts’ creation to “Negro students under the
-                direction of Atlanta University.”
-              </p>
-            </div>,
-            <div key="5151297c">
-              <p>
-                We found it additionally intriguing that the visualization below
-                the introductory text visualized data about Atlanta University
-                students as well.
-              </p>
-            </div>,
-            <div key="c05853e8">
-              <p>
-                The pie chart at the center of the image gives visual form to
-                the occupations of 330 graduates of Atlanta University, all
-                those who had graduated from one of its three degree programs
-                since its founding in 1867 through 1898, the year before the
-                chart was made.
-              </p>
-            </div>,
-            <div key="621891f0">
-              <p>
-                The slices of the pie correspond to four categories of
-                occupation and professional field–teachers, ministers,
-                government service, and business–as well as additional
-                categories for “other professions” and “house wives”—that the
-                graduates would go on to pursue.
-              </p>
-            </div>,
-            <div key="ba410bc0">
-              <p>
-                While Du Bois does not disclose the source of his data on the
-                chart, the number of graduates matches exactly with the number
-                of alumni listed in the 1898-1899 Catalogue of the Officers and
-                Students of Atlanta University, which Lauren had consulted in
-                her background research. The total graduates and occupations for
-                each type of degree—college, normal, and theological—are
-                summarized in a data table at the end of the book.
-              </p>
-            </div>,
-            <div key="88c7a06f">
-              <p>
-                In the pages before the table appears, the alumni are listed by
-                degree, and then according to their year of graduation,
-                alphabetically by name, along with their current occupation and
-                place of residence.
-              </p>
-            </div>,
-            <div key="83071a27">
-              <p>
-                Scanning the page which records the earliest graduates of
-                Atlanta University provides fleeting glimpses into their lives.
-                (1) William Henry Crogman, class of 1876, stayed in Atlanta to
-                become a professor at Clark University. (2) Samuel Benjamin
-                Morse moved to Savannah, 250 miles away on the Georgia coast, to
-                become a music teacher. (3) London Humes Waters was deceased.
-              </p>
-            </div>,
-            <div key="62bc6638">
-              <p>
-                To bring these traces back into the chart itself, Tanvi first
-                transcribed all of the names and associated information from the
-                scanned version of the catalog into a spreadsheet.
-              </p>
-            </div>,
-            <div key="ea89f8d3">
-              <p>
-                Then, on the basis of Tanvi’s design, Anna and Nick recreated
-                the original chart, placing the 255 alumni with known
-                occupations in the appropriate section of the pie.
-              </p>
-            </div>,
-            <div key="da9219cf">
-              <p>
-                Hovering on each dot reveals the person’s name, occupation, and
-                place of residence. Additional categories represent the 35
-                alumni with unknown occupations, and the 42 alumni who were
-                recorded in the catalog as “Deceased.”
-              </p>
-            </div>,
-            <div key="f358e08a">
-              <p>
-                These are the actual people behind the data in the original pie
-                chart, those whose education and accomplishments mattered so
-                much to Du Bois that he devoted the majority of the space of the
-                chart itself to testify to them, and to issue a call for
-                additional funding that would ensure such opportunities for
-                students ahead.
-              </p>
-            </div>,
-            <div key="0a538c37"></div>,
-          ]}
-        />
-
-        <CenteredLayout>
-          <p className="first-paragraph">
-            But these were not the same students who themselves created the
-            charts. Their identities are more difficult to pinpoint with
-            precision. An article from the May 1900{" "}
-            <cite>Atlanta University Bulletin</cite> describes how the work “was
-            done entirely by Negroes--Dr. Du Bois and his assistants, most of
-            whom are Atlanta University graduates.”{" "}
-            <InlineFootnote index={28}></InlineFootnote> Du Bois himself
-            provides only a bit more detail, recalling in his third and final
-            autobiographical text, written late in life, “I got a couple of my
-            best students and put a series of facts into charts,” resulting in
-            the “most interesting set of drawings” that were displayed in Paris.{" "}
-            <InlineFootnote index={29}></InlineFootnote> And while he goes on to
-            describe the contents of the charts as well as how “the details of
-            finishing these fifty or more charts, in colors, with accuracy, was
-            terribly difficult with little money, limited time, and not too much
-            encouragement,” he does not name any of the students who seemingly
-            helped to ease this challenging task.
-          </p>
-          <p>
-            Newspaper reportage does name one former student, William Andrew
-            Rogers, as responsible for having “executed” the charts, and the
-            1899-1900 Catalogue of the Officers and Students confirms this role,
-            listing Rogers's occupation as “Work on Paris Exhibit.”{" "}
-            <InlineFootnote index={30}></InlineFootnote> (Rogers had graduated
-            the previous year.) But “based on the volume of the designs, each
-            piece's complexity and detail, and the compressed project timeline,”
-            as Silas Munro confirms, “it seems implausible that Rogers and Du
-            Bois worked alone to complete the project.”{" "}
-            <InlineFootnote index={31}></InlineFootnote> The fact that the first
-            set of charts are more sophisticated in their visual design, and
-            more professional in their execution, suggests that Rogers and Du
-            Bois might have worked on the first series together, while enlisting
-            other students in the design and execution of the second set of
-            charts.
-          </p>
-
-          <Figure
-            figure={figures["0526-data-table"]}
-            className="mx-2 md:mx-12 text-sm md:text-base"
-            captionClassName="mx-12"
-          />
 
           <p>
-            If this were true, it would not have been the first time that Du
-            Bois enlisted his own students in a collaborative research project.
-            Among the defining intellectual contributions of the early years of
-            Atlanta University were the Atlanta University Studies, annual
-            data-driven reports on specific areas of Black life that were
-            presented each spring at a large public conference. In fact, Du Bois
-            was recruited to the university in large part to assume direction of
-            the studies, which had begun only two years before his arrival. To
-            complete this work, Du Bois drew from “two tiers of volunteer
-            researchers,” as sociologist Aldon Morris explains: recent graduates
-            of HBCUs across the nation, and his own graduate and undergraduate
-            students. <InlineFootnote index={32}></InlineFootnote> Their work
-            together became the basis for what Morris names the Du Bois-Atlanta
-            School of Sociology, the first “scientific,” or data-driven,
+            We were enthralled with the idea that the students who had
+            collected, analyzed, and visualized the data that appeared in the
+            charts—Mack, Westmorland, Simon, and Lee—were also included in the
+            data they visualized. But there was one problem with this particular
+            line of thinking: the data had been collected the year before, so it
+            did not include the four seniors, who would graduate—and become part
+            of the dataset—the following spring.
+          </p>
+          <p>
+            These students could not place themselves in the dataset; but this
+            was a task that our project team could take on. More than that, we
+            could connect the data to richer stories—those suggested by the
+            individual alumni listings that also appeared in the book.
+          </p>
+          <p>
+            To bring these stories back into the chart itself, Tanvi first
+            transcribed all of the names and associated information from the
+            1898-99 <em>Catalogue</em> into a spreadsheet. Then, she designed an
+            expanded version of the original chart in which datapoints
+            representing each of the students in the original dataset, as well
+            as the four members of the Class of 1900 who had contribute to the
+            creation of the original chart, were placed in the appropriate slice
+            of a pie. It was not lost on us that our work was also student-led:
+            Anna and Nick implemented Tanvi's design, which Jay later finessed
+            into its final form.
+          </p>
+
+          {/* Here is where the first viz will be*/}
+
+          <p>
+            Hovering on each dot of our expanded visualization reveals the
+            person's name, self-reported occupation, and place of residence.
+            Additional categories represent the 35 alumni with no occupation
+            provided, and the 42 alumni who were recorded in the catalog as
+            "Deceased." These were the lives behind the data in the original
+            chart, those whose education and accomplishments mattered so much to
+            Du Bois and his students that they devoted the central image of the
+            chart to testify to them (and, in turn, as justification for the
+            call for funding that appears below the image, ensuring similar
+            opportunities for students ahead).
+          </p>
+
+          <p>
+            But even as this visualization provided a more detailed picture—more
+            "facts," if you will—of the students in the dataset, we knew from
+            our research that this was not the only way in which the students of
+            Atlanta University contributed to Du Bois's larger intellectual
+            project. In order to acquire the data for each Atlanta University
+            Study, as sociologist Aldon Morris has described, Du Bois drew not
+            only from his current students, but from all those who had ever
+            taken his three-part course. Together, the students and alumni
+            constituted "two tiers of volunteer researchers," Morris explains.
+            <InlineFootnote index={69} /> While the current class of seniors
+            would prepare the surveys and, when returned, help to analyze the
+            results, it was members of the Atlanta University alumni network
+            who, each year, became unofficial field-site supervisors as they
+            were asked to further distribute the surveys in their own
+            communities and ensure that they were completed and returned. This
+            collaborative work became the basis for what Morris has
+            retrospectively honored as the "Du Bois-Atlanta School of
+            Sociology," a means of formally recognizing the first data-driven
             sociology program in the United States.
+            <InlineFootnote index={70} />
           </p>
 
           <p>
-            Among the innovations of the Du Bois-Atlanta school was its required
-            coursework. Long before any elite university offered training in
-            data collection or analysis methods, Du Bois instructed his students
-            in a full year of such methods, culminating in a term of applied
-            research on “the social and economic conditions of the American
-            Negro” during their senior year.{" "}
-            <InlineFootnote index={33}></InlineFootnote> While there is minimal
-            evidence as to the specific research tasks these students performed,
-            it is generally acknowledged that this coursework was the mechanism
-            by which Du Bois prepared his students for the roles they would play
-            after graduation as unofficial field sites for the data collection
-            required to continue to produce the annual reports.{" "}
-            <InlineFootnote index={34}></InlineFootnote>
+            Was there a way to testify to these students' role in this
+            monumental achievement, even as we could not trace them to any
+            particular location or source? We returned to the form of the
+            introductory chart. This time, however, we did not look to the
+            Atlanta University <em>Catalogues</em> as our source of data; we
+            looked to the Atlanta University Studies themselves. We had known
+            that the study that the Class of 1900 ultimately produced was,
+            appropriately, on the subject of college education.
+            <InlineFootnote index={71} /> We also knew that, during the 1909-10,
+            Du Bois had returned to the topic, conducting a follow-up study
+            entitled <em>The College-Bred Negro American</em>, based on a new
+            survey of all known living Black college graduates across the
+            country. Per the published report, 800 responses were received.
+            <InlineFootnote index={72} />
           </p>
 
           <p>
-            Several of the charts displayed in the Paris Exposition make use of
-            the data that was collected for the study,{" "}
-            <cite>The College-Bred Negro</cite>, that would be published later
-            that year. The data on the Atlanta University graduates that is
-            visualized in the opening chart, for example, is the same that
-            appears in the published report. Thus while the specific
-            contributions of individual students remain lost to time, we can
-            look up the names of the students who were enrolled in Du Bois's
-            sociology course that year in the corresponding <em>Catalogue</em>.
-            There were four: Henry Napoleon Lee, Lula Iola Mack, Edward Lee
-            Simon, and William George Westmoreland. A slightly revised version
-            of the chart above includes these names, positioned outside of the
-            pie itself, closest to the occupation that—according to their own
-            alumni records—they would soon take on.
+            Among the responses were, presumably, many graduates of Atlanta
+            University whom Du Bois had personally taught—perhaps even Mack, who
+            had by that point returned with her daughter to her hometown of
+            Athens, Georgia; or some of the others who had contributed to the
+            original study and charts. In the end, we cannot know with certainty
+            who, specifically, responded to the survey, as few individual
+            responses have been preserved. But we do know that Mack, along with
+            Lee, Simon, Westmoreland, and Rogers, were counted in the
+            descriptive statistics about Atlanta University graduates that were,
+            once again, featured prominently in the report. Our project team had
+            found its final charge.
           </p>
 
-          {/* add in chart w/ extra four students here? or put at left */}
+          <p>
+            We created an expanded version of our initial chart with the
+            additional data from the 1910 study. In the original, a map at the
+            top of the page informs the viewer of the location of Atlanta
+            University. We added the locations of the 140 additional colleges
+            also included in the follow-up report. In our chart, the location of
+            Atlanta University (which is also, notably, the location of the
+            majority of our own research team) is still marked with a star.
+          </p>
+
+          {/* Viz 2 here, updated version.  */}
 
           <p>
-            But the role of these students in Du Bois's sociological project—and
-            is pedagogical legacy—was not limited to their assistance with
-            collection and analysis of the data that appeared on the charts, or
-            whatever their role in visualizing that data might have been. In the
-            1909-1910 academic year, Du Bois and a new team of students
-            undertook a follow-up study to the College-Bred Negro, based on a
-            survey of 3856 Black college graduates across the country. Among the
-            responses were 163 graduates of the “college course” of Atlanta
-            University-including the five students who contributed to the making
-            of the original chart. A decade on, their lives had become data that
-            further testified to the enduring value of Du Bois's pedagogical
-            aims.
+            We also expanded the pie chart. In this version, we document all
+            3,856 of the Black college graduates described by the study, living
+            or dead, whether they returned the survey or not. The 163 graduates
+            of the "college course" at Atlanta University, whom Du Bois
+            describes in the study in depth, are named in our chart. We once
+            again used the alumni section of that year's <em>Catalogue</em> to
+            position the graduates in the appropriate area of the pie chart.
+            Mack is positioned as a "house wife." Westmoreland is positioned in
+            "government service." Simon and Rogers are positioned as "teachers."
+            As in our own previous chart, we've added categories to represent
+            those with unknown occupations, as well as those—at that point also
+            including Lee—who were recorded as "Deceased."
+          </p>
+
+          <p>
+            An additional 3,693 gray dots represent the graduates of the other
+            140 colleges included in the study, whose names and exact
+            occupations we do not know.
+            <InlineFootnote index={73} /> We used the counts of the occupations
+            reported by the 800 survey respondents to calculate the approximate
+            proportion of dots to place in each category, which we see as
+            holding visual space for each graduate's contributions to the study,
+            even if we do not know their exact occupation or name.
+          </p>
+
+          <p>
+            We do know something more about the students who returned the
+            survey, however: we know what they thought. In addition to the
+            quantitative data that was collected and presented in the published
+            study, there was also data that was qualitative in form. The survey
+            that Du Bois and the seniors in that year's sociology course created
+            and sent out across the United States, and that perhaps Mack, Simon,
+            Westmoreland, and Rogers, helped to further distribute, did not just
+            solicit information about the lives and accomplishments of graduates
+            that could be compiled as statistics; it also included four
+            questions that encouraged long-form response.
+          </p>
+
+          <p>
+            These included the respondents' reflections on their "early life and
+            training," their plans to educate their own children, the "chief
+            hindrances" they had faced since graduation, and their "present
+            practical philosophy in regard to the Negro race in America," which
+            was abbreviated in the published study as "philosophy of life." This
+            information seemed, to us, a reflection of Du Bois's own desire to
+            arrive at the truth through additional, qualitative means. We saw
+            then that our chart required revision, again, to incorporate this
+            data into the picture we wanted to show. Lauren and Tanvi used
+            optical character recognition (OCR) to create a machine-readable
+            dataset of the responses, and then hand-corrected any errors. In
+            place of the pie chart that occupied the center of our previous
+            chart, we plotted dots representing each of these responses,
+            color-coded by the question at hand. Adapting a method of
+            interaction developed by visualization designer Tommaso Elli and his
+            team, also involving long-form textual data, we designed a mechanism
+            such that clicking each dot displays a key phrase from the response
+            it represents.
+            <InlineFootnote index={74} /> (Lauren was the one to select these
+            phrases). Clicking again on the phrase reveals the full response
+            from which it is drawn. We see these textual responses as
+            contributing to our goal of more complete knowledge about these
+            students' lives, even as their specific source remains unnamed.
+          </p>
+
+          {/* Viz 3 here.  */}
+
+          <p>
+            The result is a visualization that at once draws directly from the
+            original Paris Exposition charts, and diverges sharply from it. We
+            do not present all of the information it contains "at a glance," to
+            return to Du Bois' original words. Instead, the user must interact
+            with the image at length, and with sustained effort, in order to
+            derive insight from the information it contains. The information is
+            also, for the most part, not quantitative. Instead, in a callback to
+            the photographs presented alongside the charts in Paris, it consists
+            of qualitative response. We do not know which of these responses, if
+            any, can be attributed to Mack, Simon, Westmoreland, or Rogers,
+            although there are some tantalizing echoes of the stories they might
+            have told. Like Mack, several respondents report having daughters.
+            On the subject of education, one writes: "I plan to give her a
+            college education in southern, eastern and European institutions."
+            "I shall teach the importance of attainment of the highest possible
+            type of culture and refinement and the importance of possessing
+            something that people who have money want," another proclaims. "I
+            will try to educate my children according to their inclinations. I
+            am not partial," writes a third.
+          </p>
+
+          <p>
+            Were any of these respondents Mack herself? We will never be able to
+            say.
+            <InlineFootnote index={75} /> But we can still use this
+            visualization to expand our knowledge about the "small nation of
+            people" it seeks to represent if we allow it to direct us from the
+            chart to additional sources, and additional methods, that we might
+            enlist in the unfinished project of working towards change. Thinking
+            back to where we began our own story—with Thomas Clarkson and his
+            "Description of a Slave Ship," discussed in Chapter 1—we might
+            reflect upon how his "immediate impression of horror" contributed to
+            abolition in the context these accounts from individuals an ocean
+            and a century away. Their testimony confirms the progress that had
+            indeed been made, as well as the work that undeniably remained. Here
+            we might come to see both visualizations—the one prompting immediate
+            insight, and the other requiring sustained thought—as contributing
+            to a shared task: of illuminating knowledge through all available
+            methods so that the necessary change can take place. Just as Du Bois
+            sought to show with his charts and photographs at the Paris
+            Exposition, these visualizations, together, illustrate a deeper
+            truth: while very often valuable, visualizations cannot stand on
+            their own. They must be accompanied by additional methods of
+            knowledge-making, broader context, and a commitment to look beyond
+            our own expertise when our own methods fall short. This is data
+            visualization's essential role: not to serve a sole arbiter of "the
+            truth," but as one vital method among many in bringing that truth to
+            light.
+            <InlineFootnote index={76} />
           </p>
         </CenteredLayout>
-
-        {/* start of second scrollytell */}
-        <ChartTwoScrollytell
-          triggers={[
-            <div key="5b68ea84"></div>,
-            <div key="94a7a3b2">
-              <p>
-                In this expanded chart that visualizes the data from the 1910
-                Atlanta University Study, the colorful map that informs the
-                viewer of the location of Atlanta University has been expanded
-                to include the locations of the 140 additional colleges also
-                included in the study.
-              </p>
-            </div>,
-            <div key="63ba9abc">
-              <p>
-                As in the original, the location of Atlanta University is marked
-                with a star.
-              </p>
-            </div>,
-            <div key="1a7c90eb">
-              <p>
-                In this pie chart, the 163 graduates of Atlanta University as of
-                1909 with known occupations (as determined by the alumni section
-                of the 1909-1910 catalog) are positioned in the appropriate area
-                of the pie chart. Additional categories represent the nine
-                graduates with unknown occupations, and the 21 graduates who
-                were recorded as “Deceased.”
-              </p>
-            </div>,
-            <div key="5448c43e">
-              <p>
-                An additional 3693 gray dots represent the graduates of the
-                other 140 colleges included in the study whose names were not
-                recorded as data. They are placed in the appropriate area as
-                determined by the summary statistics of occupations included in
-                the study. These dots hold space for these students’
-                contributions to the study, even if we do not know their names.
-              </p>
-            </div>,
-            <div key="06e375fc">
-              <p>
-                Here we can see the five students who contributed to the
-                original charts, now placed in the area corresponding to the
-                profession they held in 1909.
-              </p>
-              <ol className="list-decimal list-outside ml-4">
-                <li className="py-2">
-                  Lula Iola Mack became a housewife, married to a Mr. F.H.
-                  Wilkins, and was living in the city of Athens, Georgia.
-                </li>
-                <li className="py-2">
-                  Edward Lee Simon became a supervisor of industrial work in the
-                  Memphis Public Schools.
-                </li>
-                <li className="py-2">
-                  William George Westmoreland stayed in Atlanta, working as a
-                  mail carrier.
-                </li>
-                <li className="py-2">
-                  Henry Napoleon Lee, three years earlier, in 1907, was
-                  deceased.
-                </li>
-              </ol>
-            </div>,
-            <div key="9b862bca">
-              <p>Hover over the dots to data for each individual student</p>
-            </div>,
-            <div key="14dafa36"></div>,
-          ]}
-        />
-        <CenteredLayout>
-          <p>
-            There is little more that we can learn about Lee's abbreviated life
-            from the extant data. The catalogs of the years after the Paris
-            Exposition show that, evidently, Lee moved to Memphis with Edward
-            Lee Simon immediately upon graduation. While Simon became the
-            superintendent of the printing department at LeMoyne Institute, Lee
-            worked as a teacher in the industrial department of the same school.
-            The next year, he moved to Denver, then to Hot Springs, Arkansas,
-            then back to Atlanta. In 1905, he was working in Macon, Georgia, as
-            a teacher at the Ballard Normal School, along with several other
-            alumni of Atlanta University who had found employment there.
-            According to the catalog, Lee lived and worked in Macon until he
-            passed away.
-          </p>
-
-          <p>
-            There are many questions we might think to ask about Lee and his
-            abbreviated life—about his reasons for traveling the country, about
-            his experiences in those far-flung locals, and his relationships
-            with the other Atlanta University alumni who welcomed him as a
-            colleague when he returned to his home state. But the answers to
-            these questions are not found in the extant data. This truth, to
-            return to Onuoha's formulation, is likely not recorded as data at
-            all.
-          </p>
-          <p>
-            Yet there are other truths we might gesture towards with our
-            visualization work. In addition to the quantitative data presented
-            in the 1910 Atlanta University Study, there was also data that was
-            qualitative in form.
-          </p>
-        </CenteredLayout>
-
-        {/* start of third scrollytell */}
-        <ChartThreeScrollytell
-          triggers={[
-            <span key="386100cc"></span>,
-            <span key="1119d19f">
-              The survey that Du Bois and the seniors in that year’s sociology
-              course created, and sent out across the United States, in addition
-              to soliciting information about their lives and accomplishments
-              that could be compiled as statistics, also included four questions
-              that encouraged long-form response.
-            </span>,
-            <span key="8a675777">
-              These included their thoughts on their own “early life and
-              training,” their plans to educate their children, the “chief
-              hindrances” they had faced, and their “present practical
-              philosophy in regard to the Negro race in America,” which was
-              abbreviated in the published study as “philosophy of life.”
-            </span>,
-            <span key="ffe08fa4">
-              About 800 responses to the survey were received, which were
-              published in the 1910 study.
-            </span>,
-            <span key="9fdc6bc3">
-              We visualize these four sets of responses here. Each of the
-              responses are represented as a dot, placed under the appropriate
-              question.
-            </span>,
-            <span key="4a7176fc">
-              Clicking each dot displays a key phrase from the response it
-              represents.
-            </span>,
-            <span key="d957876f">
-              Clicking on the phrase reveals the full response from which it is
-              drawn, providing a window into that person’s thoughts even as they
-              remain unnamed.
-            </span>,
-            <span key="94ea0708">
-              Thus we close this chapter, and this project, with our own
-              contribution to Du Bois’s project: a visualization of the
-              meaning-making power of data, which we hope also holds space to
-              acknowledge the limits of what data--and, by extension, data
-              visualization--could do.
-            </span>,
-            <span key="65225a73"></span>,
-          ]}
-        />
-
-        <StudentCharts figure={figures["0525-899-series"]} />
 
         <Takeaways
           forDesigners={[
