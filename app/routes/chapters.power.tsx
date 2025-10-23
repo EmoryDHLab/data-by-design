@@ -1284,7 +1284,7 @@ export default function DuboisChapter() {
             finessed into its final form.
           </p>
 
-          {/* Here is where the first viz will be*/}
+        <h1> Viz 1 </h1>>
 
           <p>
             Hovering on each dot of our expanded visualization reveals the
@@ -1359,7 +1359,7 @@ export default function DuboisChapter() {
             majority of our own research team) is still marked with a star.
           </p>
 
-          {/* Viz 2 here, updated version.  */}
+       <h1> Viz 2 here, updated version.  </h1>
 
           <p>
             We also expanded the pie chart. In this version, we document all
@@ -1425,7 +1425,7 @@ export default function DuboisChapter() {
             students' lives, even as their specific source remains unnamed.
           </p>
 
-          {/* Viz 3 here.  */}
+       <h1> Viz 3 here </h1>
 
           <p>
             The result is a visualization that at once draws directly from the
