@@ -275,9 +275,9 @@ export default function DuboisChapter() {
             Black man in the United States, Du Bois was as attuned to the limits
             of visualization as he was to its uses. His scholarly expertise and
             lived experience both pointed to the fact that visualization
-            <em>on its own</em>could not hope to convey a complete picture of
+             <em>on its own</em> could not hope to convey a complete picture of
             the progress of Black Americans to date, just as visualization
-            <em>on its own </em> could not create the change that that would be
+             <em>on its own </em> could not create the change that that would be
             required to achieve a true experience of freedom.
           </p>
           <p>
@@ -615,7 +615,7 @@ export default function DuboisChapter() {
               of {/* <HoverText hoverState="Value" className="font-medium"> */}
               increasingly novel visual forms
               {/* </HoverText>{" "} */}
-              that characterizes the <em>Georgia Negro</em> series charts seems
+              that characterizes the <em>Georgia Negro</em>{" "}series charts seems
               to ask viewers to imagine future Black progress through the lens
               of Black creativity: what might come to be if the future of Black
               America, like the expressive possibilities of data visualization,
