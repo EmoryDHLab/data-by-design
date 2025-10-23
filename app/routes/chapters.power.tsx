@@ -142,10 +142,9 @@ export default function DuboisChapter() {
             analysis, she likely approached the first day of class feeling calm
             and prepared for what she thought would come next: a project
             involving “a general survey of social conditions,” just as the
-            course was described in the
+            course was described in the {" "}
             <cite>
               Catalogue of the Officers and Students of Atlanta University
-            </cite>
             , which served as every student’s main reference text, and just as
             the course had been structured the year before.{" "}
             <InlineFootnote index={3} />
@@ -225,13 +224,13 @@ export default function DuboisChapter() {
             The 63 (or 64) poster-sized charts that Mack, Du Bois, and the other
             Atlanta University students made for the Paris Exposition were
             organized into two sets, as visually compelling as they were
-            sociologically profound. <InlineFootnote index={9} /> The first,
+            sociologically profound. <InlineFootnote index={9} /> The first,{" "}
             <cite>The Georgia Negro: A Sociological Study</cite>, consisted of
             36 charts visualizing statistics related to the Black population of
             that state. Scholars generally believe that Rogers, the graduate
             from the year before, was responsible for much of the design and
             implementation of this set of charts. <InlineFootnote index={10} />
-            The second set,
+            The second set,{" "}
             <cite>
               A Series of Statistical Charts Illustrating the Condition of the
               Descendants of Former Slaves Now in Residence in the United States
@@ -377,7 +376,7 @@ export default function DuboisChapter() {
             In the exhibition space, Du Bois mounted the introductory chart of
             each set—a title page of sorts—directly at eye-level against the far
             wall. Clearly, Du Bois wanted these charts to be seen. In the
-            center-left position was the introductory chart of
+            center-left position was the introductory chart of{" "}
             <cite>The Georgia Negro</cite>
             series, comprised of a pair of Mercator projections, one of Africa
             and the other of the Americas, their connection indicated by lines
@@ -417,7 +416,7 @@ export default function DuboisChapter() {
           <p>
             This was the same context that, just a few years earlier, had
             prompted the investigative journalist Ida B. Wells to compile the
-            first comprehensive dataset on lynching, which she published as
+            first comprehensive dataset on lynching, which she published as{" "}
             <cite>
               A Red Record: Tabulated Statistics and Alleged Causes of Lynchings
               in the United States in 1895
@@ -500,7 +499,7 @@ export default function DuboisChapter() {
           <p>
             In a later chart in the series, which documents the decrease in the
             rate of “illiteracy” in the years between 1860 and 1900, the team
-            makes use of what graphic designer (and <cite>Data by Design</cite>
+            makes use of what graphic designer (and <cite>Data by Design</cite>{" "}
             contributor) Silas Munro describes as a “lattice-like arrangement,”
             in which an otherwise standard bar is folded at a right angle in
             order to accentuate the decreasing rate of illiteracy over time.
@@ -561,14 +560,14 @@ export default function DuboisChapter() {
           {/* // Insert 3 charts  */}
           <p>
             The illustrated edition of the 1890 census in which the Gannett
-            chart also appeared, formally titled
+            chart also appeared, formally titled{" "}
             <cite>
               Statistical Atlas of the United States, based on the results of
               the eleventh census
             </cite>
             , had been published just a year earlier, in 1898, and must have
             also been a topic of classroom discussion. This is evident in the
-            visual similarity between a chart that appears in the
+            visual similarity between a chart that appears in the{" "}
             <cite>Atlas</cite>, “Growth of the Elements of the Population:
             1790-1890,” and the graduated area chart, “The Amalgamation of White
             and Black elements of the population in the United States,” which
@@ -583,7 +582,7 @@ export default function DuboisChapter() {
             no associated statistics for) “whites,” are that remain in the
             students' chart as visual indicators of what has been excluded. But
             there is no mistaking the reason why the white population has been
-            excluded here: by mirroring the form of the chart in the
+            excluded here: by mirroring the form of the chart in the{" "}
             <cite>Atlas</cite>, but focusing on the Black population alone, the
             charts reinforce the idea Du Bois put into words later that year
             when recalling the show: that this “small nation of people” within
@@ -735,7 +734,7 @@ export default function DuboisChapter() {
           <p>
             While race was certainly of concern in the census—indeed, it remains
             one of the lighting rod issues of the census even today—it was not
-            the <cite>Statistical Atlas's </cite>
+            the <cite>Statistical Atlas's </cite>{" "}
             main concern. Reading further into the intent conveyed through the
             sequence of maps, after an early series of charts that visualize the
             nation's Black population, the focus of the atlas shifts, turning
