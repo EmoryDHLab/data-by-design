@@ -452,8 +452,8 @@ export default function DuboisChapter() {
         <CenteredLayout>
           <p>
             This combination of enthusiasm, curiosity, and conviction is clearly
-            evident in the charts. Intent on demonstrating the "progress and
-            prospects" of Black Americans in spite of the constraints on their
+            evident in the charts. Intent on demonstrating the “progress and
+            prospects” of Black Americans in spite of the constraints on their
             freedom they faced, Du Bois and his students took active steps to
             ensure that there would be no misinterpretation of the insights they
             hoped that their charts would convey.
@@ -499,9 +499,9 @@ export default function DuboisChapter() {
           {/* // Insert ZigZag Chart  */}
           <p>
             In a later chart in the series, which documents the decrease in the
-            rate of "illiteracy" in the years between 1860 and 1900, the team
+            rate of “illiteracy” in the years between 1860 and 1900, the team
             makes use of what graphic designer (and <cite>Data by Design</cite>
-            contributor) Silas Munro describes as a "lattice-like arrangement,"
+            contributor) Silas Munro describes as a “lattice-like arrangement,”
             in which an otherwise standard bar is folded at a right angle in
             order to accentuate the decreasing rate of illiteracy over time.
             <InlineFootnote index={29} /> As a result of the fold, the dark
@@ -513,17 +513,17 @@ export default function DuboisChapter() {
             else might be possible—in terms of contributions to visualization
             design as to the nation—if these students and all Black Americans
             could engineer their own charts, and their futures, unconstrained by
-            the "color line"?
+            the “color line”?
           </p>
           {/* // Insert Modified Bar  Chart  */}
           <p>
             The second set of charts—the set more often attributed to Du Bois's
-            students—continues to communicate this narrative of "progress and
-            prospects" against the backdrop the color line. This set is
+            students—continues to communicate this narrative of “progress and
+            prospects” against the backdrop the color line. This set is
             distinguished from the first for how it makes use of comparisons to
             other populations, as well as to other charts. At the same time that
-            Du Bois was teaching his students how to conduct "a general survey
-            of social conditions" and analyze its results, as the course
+            Du Bois was teaching his students how to conduct “a general survey
+            of social conditions” and analyze its results, as the course
             catalogue described the focus of his winter term course, Du Bois was
             himself carrying out survey work for the US Bureau of Labor
             Statistics.
@@ -539,20 +539,20 @@ export default function DuboisChapter() {
             released a pamphlet that compiled and visualized statistics on Black
             Americans on the basis of one hundred years of US Census data.
             <InlineFootnote index={31} /> Among the charts was one labeled,
-            "Conjugal Condition of the Negro Element," which Gannett marshalled
+            "Conjugal Condition of the Negro Element,” which Gannett marshalled
             in the service of a eugenicist argument about the relative weakness
             of the US Black population in relation to the white one.
             <InlineFootnote index={32} /> (A similar chart of the entire US
             population appears in the illustrated edition of 1890 US Census,
             also overseen by Gannett).
             <InlineFootnote index={33} /> For the Paris Exposition, Du Bois and
-            his students recreate the original Gannett chart as "Conjugal
-            Condition of American Negroes according to Age Periods" as the
+            his students recreate the original Gannett chart as “Conjugal
+            Condition of American Negroes according to Age Periods” as the
             seventeenth of their twenty-seven charts. Seemingly akin to how,
             earlier in the century, abolitionists such as David Walker advocated
             that Black citizens read the racist arguments made by Thomas
             Jefferson, and other white people of the time, so as to be able to
-            directly refute them—or, as might be termed "counter-visualization"
+            directly refute them—or, as might be termed “counter-visualization”
             today—Du Bois seemingly sought to enlist his students in refuting
             Gannett's arguments through the same form that had been used to
             advance them in the first place: the chart.
@@ -569,24 +569,24 @@ export default function DuboisChapter() {
             , had been published just a year earlier, in 1898, and must have
             also been a topic of classroom discussion. This is evident in the
             visual similarity between a chart that appears in the
-            <cite>Atlas</cite>, "Growth of the Elements of the Population:
-            1790-1890," and the graduated area chart, "The Amalgamation of White
-            and Black elements of the population in the United States," which
-            immediately follows the "Conjugal Condition" chart in the student
+            <cite>Atlas</cite>, “Growth of the Elements of the Population:
+            1790-1890,” and the graduated area chart, “The Amalgamation of White
+            and Black elements of the population in the United States,” which
+            immediately follows the “Conjugal Condition” chart in the student
             set. The notable difference, here, is the focus on the US Black
             population alone. Whereas in Gannett's version, the white
-            population—titled "native stock"—is in the center of the diagram, Du
+            population—titled “native stock”—is in the center of the diagram, Du
             Bois and his students shift the frame to focus on the Black
             population, which in this version is shaded black, so as to command
             the visual attention it deserves. A thin jagged line at the top,
             grid lines that extend off the side of the page, and the label (but
-            no associated statistics for) "whites," are that remain in the
+            no associated statistics for) “whites,” are that remain in the
             students' chart as visual indicators of what has been excluded. But
             there is no mistaking the reason why the white population has been
             excluded here: by mirroring the form of the chart in the
             <cite>Atlas</cite>, but focusing on the Black population alone, the
             charts reinforce the idea Du Bois put into words later that year
-            when recalling the show: that this "small nation of people" within
+            when recalling the show: that this “small nation of people” within
             the larger United States, its triumphs and its challenges, deserved
             to have a national statistical atlas of its own.
             <InlineFootnote index={35} />
@@ -836,12 +836,12 @@ export default function DuboisChapter() {
             every Black-authored text that had been published to that point,
             along with a more complete 1,400 item bibliography. There were
             physical artifacts, including a bronze statuette of Frederick
-            Douglass and a "remarkable" wood frame carved by a man who was
+            Douglass and a “remarkable” wood frame carved by a man who was
             formerly enslaved, among other examples of wood and metalwork from
             students and faculty at the Tuskegee and Hampton Institutes, and
             other Black colleges and industrial schools.
             <InlineFootnote index={36} /> There was a three-volume compilation
-            that Du Bois titled "Black Codes of Georgia," which contained a
+            that Du Bois titled “Black Codes of Georgia,” which contained a
             catalog of all of the discriminatory laws enacted in the state since
             the end of the Civil War, one of the few explicit acknowledgements
             in the exhibit of the harsh reality of being Black in the
@@ -858,12 +858,12 @@ export default function DuboisChapter() {
             who were then juniors, representing the largest cohort of women
             students at Atlanta University to that point? Alternately, or in
             addition, did any of these women students live with Mack in the
-            "plain four story brick building" on the corner of West Hunter and
+            “plain four story brick building” on the corner of West Hunter and
             Vine Streets that served as the women's dorm?
             <InlineFootnote index={38} /> We cannot answer these questions with
             certainty, but we can say what Du Bois (or more accurately, the
             photographer Thomas Askew) was trying to achieve with this shot: an
-            overturning of "conventional American ideas" about what the nation's
+            overturning of “conventional American ideas” about what the nation's
             Black citizenry looked like, what social and professional roles they
             occupied, and in the case of these four women, what they had yet to
             achieve.
@@ -875,8 +875,8 @@ export default function DuboisChapter() {
             The art historian Shawn Michelle Smith connects the Paris Exposition
             photographs to Du Bois's idea of double consciousness, as
             articulated most famously in <cite>The Souls of Black Folk</cite> as
-            "the sense of always looking at one's self through the eyes of
-            another."
+            “the sense of always looking at one's self through the eyes of
+            another.”
             <InlineFootnote index={40} /> With the photographs, which not only
             featured Black people but were also created by them, Du Bois sought
             to present to a predominantly white international audience a view of
@@ -933,12 +933,12 @@ export default function DuboisChapter() {
             to Atlanta, which by February or March of 1900 had become
             particularly intense. As he recalls in his 1940 autobiography,{" "}
             <cite>Dusk of Dawn</cite>, he had moved to Atlanta full of optimism
-            and ambition: "I was going to study the facts, any and all facts,
+            and ambition: “I was going to study the facts, any and all facts,
             concerning the American Negro and his plight, and by measurement and
             comparison and research, work up to any valid generalization which I
-            could."
+            could.”
             <InlineFootnote index={43} /> Here we see the strength of Du Bois's
-            belief in the power of "facts"—the more facts the better—when they
+            belief in the power of “facts”—the more facts the better—when they
             could analyzed and aggregated to point towards larger claims.
           </p>
           <p>
@@ -949,16 +949,16 @@ export default function DuboisChapter() {
             introduction of any new method but instead by his own first-hand
             evidence of how white supremacy constrained any and all of the work
             that he might do. In <cite>Dusk of Dawn</cite>, Du Bois narrates
-            this realization in almost metaphysical terms: "At the very time
+            this realization in almost metaphysical terms: “At the very time
             when my studies were most successful, there cut across this plan
-            which I had as a scientist, a red ray which could not be ignored."
+            which I had as a scientist, a red ray which could not be ignored.”
             <InlineFootnote index={44} />
           </p>
 
           <Figure figure={figures["0517-perfecscope-zbHCp_orig-zoom"]} />
 
           <p>
-            This "red ray" was no abstraction. It had a specific and horrific
+            This “red ray” was no abstraction. It had a specific and horrific
             source: the lynching of a man named Sam Hose, which had taken place
             just outside of Atlanta, on April 23, 1899. Ten days before, Hose
             and his employer had gotten into an argument after Hose requested
@@ -969,8 +969,8 @@ export default function DuboisChapter() {
             about the incident for the <cite>Atlanta Constitution</cite>, the
             leading newspaper of the South. He intended to approach it as he
             would any other inquiry: through a social-scientific lens. He
-            recalls how drafted a "careful and reasoned statement concerning the
-            evident facts."
+            recalls how drafted a “careful and reasoned statement concerning the
+            evident facts.”
             <InlineFootnote index={46} /> But while walking from the Atlanta
             University campus to the newspaper office—he planned to deliver his
             draft in person—Du Bois learned of a gruesome new turn of events:
@@ -981,7 +981,7 @@ export default function DuboisChapter() {
             <InlineFootnote index={47} />
           </p>
           <p>
-            While Du Bois's desire to publish a statement on the "facts" of the
+            While Du Bois's desire to publish a statement on the “facts” of the
             case was extinguished at that point, he continued to
             contemplate—deeply—the larger function of his research. As he
             narrates in <cite>Dusk of Dawn</cite>:
@@ -1012,10 +1012,10 @@ export default function DuboisChapter() {
             interview recorded in 1961—it becomes clear that he emerged from the
             incident with a greater awareness of the limits of his data-driven
             approach to advancing knowledge. He goes on to explain how,
-            previously, he had "regarded it as axiomatic that the world wanted
+            previously, he had “regarded it as axiomatic that the world wanted
             to learn the truth and if the truth was sought with even approximate
             accuracy and painstaking devotion, the world would gladly support
-            the effort."
+            the effort.”
             <InlineFootnote index={49} /> But the violence brought about by
             centuries of white supremacy, Du Bois realized at that moment,
             demanded an epistemological charge greater than what could ever be
@@ -1088,7 +1088,7 @@ export default function DuboisChapter() {
           <p>
             But even as Du Bois may have shifted his own methods of inquiry and
             instruction from that point forward, going so far as to declare
-            certain aspects of human nature "undiscovered and undiscoverable" by
+            certain aspects of human nature “undiscovered and undiscoverable” by
             quantitative means, the charts that he and his students made for the
             Paris Exposition continue to function as valuable guides—not only
             for the issues of structural racism that they illuminate, which
@@ -1110,16 +1110,16 @@ export default function DuboisChapter() {
             to adhere as closely as possible to the original methods, Chalabi
             decided to draw her updated charts by hand. While similarly
             dazzling, the picture of progress that they paint is, in Chalabi's
-            words, "bleak."
+            words, “bleak.”
             <InlineFootnote index={61} /> In her analysis of the data on
             literacy levels in the US in 2010, as compiled by the National
-            Center for Education Statistics, she discovered that "illiteracy
+            Center for Education Statistics, she discovered that “illiteracy
             among black Americans was still four times higher than it was for
-            white Americans." Her updating of the chart of "assessed value of
-            household and kitchen furniture" owned by Black Georgians, which led
+            white Americans.” Her updating of the chart of “assessed value of
+            household and kitchen furniture” owned by Black Georgians, which led
             her to US Census Bureau data on net worth, resulted in a picture
-            that documented how, "for every dollar a black household in America
-            has in net assets, a white household has 16.5 more."
+            that documented how, “for every dollar a black household in America
+            has in net assets, a white household has 16.5 more.”
           </p>
           <Figure
             figure={figures["0519-chalabi-illiteracy"]}
@@ -1182,9 +1182,9 @@ export default function DuboisChapter() {
             user to compare their current interest rate to others and in the
             process, informs them as to how a change in rate or monthly payment
             amount could lead to a different payoff date or total amount owed.
-            On the "About" page, this purpose is made more explicit:
-            visualizations "are able to reveal what might be either changed or
-            strengthened through policy and individual action."
+            On the “About” page, this purpose is made more explicit:
+            visualizations “are able to reveal what might be either changed or
+            strengthened through policy and individual action.”
             <InlineFootnote index={63} />
           </p>
           <Figure
@@ -1198,16 +1198,16 @@ export default function DuboisChapter() {
             recognize how, very often, those experiencing the negative effects
             of, for example, student loan debt, do not need additional data to
             prove to them the existence of the problem they face, nor do the
-            need visualization to "reveal" its nature; they live with the
+            need visualization to “reveal” its nature; they live with the
             problem every day.
             <InlineFootnote index={64} /> This is a point made by another
             project based on Du Bois's charts, by the artist and educator Mimi
-            Ọnụọha. "In Absentia" consists of six charts that reference the
+            Ọnụọha. “In Absentia” consists of six charts that reference the
             sequence and visual forms of the original charts. Their purpose is
             not to provide additional evidence of what is already known to be
-            true, however. Instead, in Ọnụọha's own words, the charts "form a
+            true, however. Instead, in Ọnụọha's own words, the charts “form a
             meditation on interpretability, questioning why such a fact [about
-            racism] should need proving."
+            racism] should need proving.”
             <InlineFootnote index={65} />
           </p>
           <p>
@@ -1218,7 +1218,7 @@ export default function DuboisChapter() {
             document the spatial relation between three seemingly unrelated
             events and phenomena: the Indigenous lands that were claimed by the
             US government through the Indian Removal Act of 1830; the locations
-            in which "convict leasing" was practiced in the 1870s; (this was the
+            in which "convict leasing” was practiced in the 1870s; (this was the
             practice of prisons profiting by requiring those they imprisoned to
             work for private companies with no compensation for the imprisoned
             themselves; and the states with, as of 2019, the highest
@@ -1229,10 +1229,10 @@ export default function DuboisChapter() {
             some of the series's more experimental forms to offer commentary on
             the continual need for evidence. A chart that resembles the
             spiraling bar-chart of the value of household possessions, discussed
-            above, here consists of lines labeled "What," "are we," trying to
-            prove." A final chart is simply a circle, fully shaded, labeled "A
-            space for truths that cannot be shown." The chart is titled, "It
-            Could Never Be Large Enough."
+            above, here consists of lines labeled What," "are we," trying to
+            prove." A final chart is simply a circle, fully shaded, labeled “A
+            space for truths that cannot be shown.” The chart is titled, “It
+            Could Never Be Large Enough.”
           </p>
           <div className="sm:grid grid-cols-3 gap-4 ">
             <Figure
@@ -1252,7 +1252,7 @@ export default function DuboisChapter() {
           </div>
           <p>
             In the context of Du Bois's autobiographical writing about the
-            difficulty of connecting data with "the truth," Ọnụọha's use of this
+            difficulty of connecting data with “the truth,” Ọnụọha's use of this
             term speaks volumes. It reminds us—both those of us who seek to
             create visualizations that bear witness to oppression, and those of
             us eager to celebrate the images that result—that we often need no
@@ -1284,13 +1284,13 @@ export default function DuboisChapter() {
           </p>
 
           <p>
-            In all of our research involving the Atlanta University{" "}
+            In all of our research involving the Atlanta University
             <em>Catalogues</em>, which we had used to surface many of the
             details about the students' lives, we had noticed another detail
             about the charts that seemed to have gone unremarked upon in the
             existing scholarship: the count of the total number of graduates of
             Atlanta University—330—matches exactly with the total number
-            provided in a data table included in the <em>Catalogue</em>{" "}
+            provided in a data table included in the <em>Catalogue</em>
             published the previous year.
             <InlineFootnote index={67} /> The table includes counts of everyone
             who had graduated from one of the university's three degree programs
@@ -1298,9 +1298,9 @@ export default function DuboisChapter() {
             their occupations. Presumably, this table was how Du Bois and his
             students had determined the occupations pictured in the pie chart:
             teachers, ministers, government service, and business; a catch-call
-            category for "other professions" below those top four; and then
-            "house wives," the shorthand selected for the category of "Married
-            Women not otherwise designated" in the original data table.
+            category for “other professions” below those top four; and then
+            “house wives,” the shorthand selected for the category of “Married
+            Women not otherwise designated” in the original data table.
             <InlineFootnote index={68} />
           </p>
 
@@ -1339,8 +1339,8 @@ export default function DuboisChapter() {
             as the four members of the Class of 1900 who had contribute to the
             creation of the original chart, were placed in the appropriate slice
             of a pie. It was not lost on us that our work was also student-led:
-            Anna and Nick implemented Tanvi's design, which Jay later finessed
-            into its final form.
+            Anna and Nicholas implemented Tanvi's design, which Jay later
+            finessed into its final form.
           </p>
 
           {/* Here is where the first viz will be*/}
@@ -1350,7 +1350,7 @@ export default function DuboisChapter() {
             person's name, self-reported occupation, and place of residence.
             Additional categories represent the 35 alumni with no occupation
             provided, and the 42 alumni who were recorded in the catalog as
-            "Deceased." These were the lives behind the data in the original
+            “Deceased.” These were the lives behind the data in the original
             chart, those whose education and accomplishments mattered so much to
             Du Bois and his students that they devoted the central image of the
             chart to testify to them (and, in turn, as justification for the
@@ -1360,14 +1360,14 @@ export default function DuboisChapter() {
 
           <p>
             But even as this visualization provided a more detailed picture—more
-            "facts," if you will—of the students in the dataset, we knew from
+            “facts,” if you will—of the students in the dataset, we knew from
             our research that this was not the only way in which the students of
             Atlanta University contributed to Du Bois's larger intellectual
             project. In order to acquire the data for each Atlanta University
             Study, as sociologist Aldon Morris has described, Du Bois drew not
             only from his current students, but from all those who had ever
             taken his three-part course. Together, the students and alumni
-            constituted "two tiers of volunteer researchers," Morris explains.
+            constituted “two tiers of volunteer researchers,” Morris explains.
             <InlineFootnote index={69} /> While the current class of seniors
             would prepare the surveys and, when returned, help to analyze the
             results, it was members of the Atlanta University alumni network
@@ -1375,8 +1375,8 @@ export default function DuboisChapter() {
             were asked to further distribute the surveys in their own
             communities and ensure that they were completed and returned. This
             collaborative work became the basis for what Morris has
-            retrospectively honored as the "Du Bois-Atlanta School of
-            Sociology," a means of formally recognizing the first data-driven
+            retrospectively honored as the “Du Bois-Atlanta School of
+            Sociology,” a means of formally recognizing the first data-driven
             sociology program in the United States.
             <InlineFootnote index={70} />
           </p>
@@ -1428,26 +1428,26 @@ export default function DuboisChapter() {
             We also expanded the pie chart. In this version, we document all
             3,856 of the Black college graduates described by the study, living
             or dead, whether they returned the survey or not. The 163 graduates
-            of the "college course" at Atlanta University, whom Du Bois
+            of the “college course” at Atlanta University, whom Du Bois
             describes in the study in depth, are named in our chart. We once
             again used the alumni section of that year's <em>Catalogue</em> to
             position the graduates in the appropriate area of the pie chart.
-            Mack is positioned as a "house wife." Westmoreland is positioned in
-            "government service." Simon and Rogers are positioned as "teachers."
+            Mack is positioned as a “house wife.” Westmoreland is positioned in
+            “government service.” Simon and Rogers are positioned as “teachers.”
             As in our own previous chart, we've added categories to represent
             those with unknown occupations, as well as those—at that point also
-            including Lee—who were recorded as "Deceased."
+            including Lee—who were recorded as “Deceased.
           </p>
 
           <p>
             An additional 3,693 gray dots represent the graduates of the other
             140 colleges included in the study, whose names and exact
-            occupations we do not know.
-            <InlineFootnote index={73} /> We used the counts of the occupations
-            reported by the 800 survey respondents to calculate the approximate
-            proportion of dots to place in each category, which we see as
-            holding visual space for each graduate's contributions to the study,
-            even if we do not know their exact occupation or name.
+            occupations we do not know. <InlineFootnote index={73} />
+            We used the counts of the occupations reported by the 800 survey
+            respondents to calculate the approximate proportion of dots to place
+            in each category, which we see as holding visual space for each
+            graduate's contributions to the study, even if we do not know their
+            exact occupation or name.
           </p>
 
           <p>
@@ -1464,11 +1464,11 @@ export default function DuboisChapter() {
           </p>
 
           <p>
-            These included the respondents' reflections on their "early life and
-            training," their plans to educate their own children, the "chief
-            hindrances" they had faced since graduation, and their "present
-            practical philosophy in regard to the Negro race in America," which
-            was abbreviated in the published study as "philosophy of life." This
+            These included the respondents' reflections on their “early life and
+            training,” their plans to educate their own children, the “chief
+            hindrances” they had faced since graduation, and their “present
+            practical philosophy in regard to the Negro race in America,” which
+            was abbreviated in the published study as “philosophy of life.” This
             information seemed, to us, a reflection of Du Bois's own desire to
             arrive at the truth through additional, qualitative means. We saw
             then that our chart required revision, again, to incorporate this
@@ -1494,7 +1494,7 @@ export default function DuboisChapter() {
           <p>
             The result is a visualization that at once draws directly from the
             original Paris Exposition charts, and diverges sharply from it. We
-            do not present all of the information it contains "at a glance," to
+            do not present all of the information it contains “at a glance,” to
             return to Du Bois' original words. Instead, the user must interact
             with the image at length, and with sustained effort, in order to
             derive insight from the information it contains. The information is
@@ -1504,11 +1504,11 @@ export default function DuboisChapter() {
             any, can be attributed to Mack, Simon, Westmoreland, or Rogers,
             although there are some tantalizing echoes of the stories they might
             have told. Like Mack, several respondents report having daughters.
-            On the subject of education, one writes: "I plan to give her a
-            college education in southern, eastern and European institutions."
-            "I shall teach the importance of attainment of the highest possible
+            On the subject of education, one writes: “I plan to give her a
+            college education in southern, eastern and European institutions.”
+            “I shall teach the importance of attainment of the highest possible
             type of culture and refinement and the importance of possessing
-            something that people who have money want," another proclaims. "I
+            something that people who have money want,” another proclaims. “I
             will try to educate my children according to their inclinations. I
             am not partial," writes a third.
           </p>
@@ -1517,13 +1517,13 @@ export default function DuboisChapter() {
             Were any of these respondents Mack herself? We will never be able to
             say.
             <InlineFootnote index={75} /> But we can still use this
-            visualization to expand our knowledge about the "small nation of
-            people" it seeks to represent if we allow it to direct us from the
+            visualization to expand our knowledge about the “small nation of
+            people” it seeks to represent if we allow it to direct us from the
             chart to additional sources, and additional methods, that we might
             enlist in the unfinished project of working towards change. Thinking
             back to where we began our own story—with Thomas Clarkson and his
-            "Description of a Slave Ship," discussed in Chapter 1—we might
-            reflect upon how his "immediate impression of horror" contributed to
+            “Description of a Slave Ship,” discussed in Chapter 1—we might
+            reflect upon how his “immediate impression of horror” contributed to
             abolition in the context these accounts from individuals an ocean
             and a century away. Their testimony confirms the progress that had
             indeed been made, as well as the work that undeniably remained. Here
@@ -1537,7 +1537,7 @@ export default function DuboisChapter() {
             their own. They must be accompanied by additional methods of
             knowledge-making, broader context, and a commitment to look beyond
             our own expertise when our own methods fall short. This is data
-            visualization's essential role: not to serve a sole arbiter of "the
+            visualization's essential role: not to serve a sole arbiter of “the
             truth," but as one vital method among many in bringing that truth to
             light.
             <InlineFootnote index={76} />
