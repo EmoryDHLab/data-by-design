@@ -26,12 +26,12 @@ const StudentCharts = ({ figure }: { figure: TFigure }) => {
             )}
             {currentChart === "one" && (
               <Suspense fallback={<div className="text-white p-4">Loading chart...</div>}>
-                <StudentChartOne topOffset={-80} leftOffset={16} />
+                <StudentChartOne topOffset={-80} />
               </Suspense>
             )}
             {currentChart === "two" && (
               <Suspense fallback={<div className="text-white p-4">Loading chart...</div>}>
-                <StudentChartTwo topOffset={-80} leftOffset={16} />
+                <StudentChartTwo topOffset={-80} />
               </Suspense>
             )}
             {currentChart === "three" && (

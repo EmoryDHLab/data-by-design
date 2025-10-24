@@ -6,21 +6,21 @@ import figures from "~/data/figures/power.json";
 import ClientOnly from "~/components/ClientOnly";
 
 const FIGURES = [
-  figures["ch5-05a-countries"],
-  figures["ch5-05a-countries"],
-  figures["ch5-05b-occupations"],
-  figures["ch5-05c-freedom"],
-  figures["ch5-05d-newspapers"],
-  figures["ch5-06b-map"],
-  figures["ch5-04d-value"],
-  figures["ch5-07a-populations"],
-  figures["ch5-07b-gender"],
-  figures["ch5-07c-race"],
-  figures["ch5-07d-race-distrib"],
-  figures["ch5-07e-foreign"],
-  figures["ch5-07f-age-sex"],
-  figures["ch5-07g-religion"],
-  figures["ch5-07h-occupation"],
+  figures["0505a-countries"],
+  figures["0505a-countries"],
+  figures["0505b-occupations"],
+  figures["0505c-freedom"],
+  figures["0505d-newspapers"],
+  figures["0506b-map"],
+  figures["0504d-value"],
+  figures["0507a-populations"],
+  figures["0507b-gender"],
+  figures["0507c-race"],
+  figures["0507d-race-distrib"],
+  figures["0507e-foreign"],
+  figures["0507f-age-sex"],
+  figures["0507g-religion"],
+  figures["0507h-occupation"],
 ];
 
 export default function HoverImages2() {

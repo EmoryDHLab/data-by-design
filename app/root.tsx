@@ -76,9 +76,9 @@ export const Layout = ({ children }: WrapperProps) => {
   );
 };
 
-const App = () => {
+export default function App() {
   return <Outlet />;
-};
+}
 
 const ErrorContainer = ({ children }: WrapperProps) => {
   return (
@@ -105,5 +105,3 @@ export const ErrorBoundary = () => {
     </ErrorContainer>
   );
 };
-
-export default App;
