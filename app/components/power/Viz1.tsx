@@ -7,19 +7,20 @@ interface Props {
 }
 
 const colorMapping: Record<string, string> = {
-  "Teachers": "#D92944",
-  "Ministers": "#5A7BC3",
+  Teachers: "#D92944",
+  Ministers: "#5A7BC3",
   "Government Service": "#FFD3D3",
-  "Business": "#CDCE9D",
+  Business: "#CDCE9D",
   "Other Professions": "#2F4F4F",
   "House Wives": "#FEC313",
-  "Deceased": "#C4C4C4",
-  "Unknown": "#B5CCFF"
+  Deceased: "#C4C4C4",
+  Unknown: "#B5CCFF",
 };
 
 export default function Viz1({ interactive = false }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const [hoveredSlice, setHoveredSlice] = useState<string | null>(null);
+  const [hoveredStudent, setHoveredStudent] = useState<any>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -28,161 +29,293 @@ export default function Viz1({ interactive = false }: Props) {
     d3.select(svgRef.current).selectAll("*").remove();
 
     // Set dimensions
-    const width = 1000;
-    const height = 800;
-    const radius = Math.min(width, height) / 2 - 120;
+    const width = 900;
+    const height = 700;
+    const radius = Math.min(width, height) / 2 - 160;
 
     // Process data - count students in each category
-    const pieData = studentData.categories.map(category => ({
+    const pieData = studentData.categories.map((category) => ({
       name: category.displayName,
       value: category.students.length,
-      color: colorMapping[category.displayName] || "#999"
+      color: colorMapping[category.displayName] || "#999",
     }));
 
     // Create SVG
-    const svg = d3.select(svgRef.current)
+    const svg = d3
+      .select(svgRef.current)
       .attr("viewBox", `0 0 ${width} ${height}`)
       .attr("width", "100%")
       .attr("height", "100%");
 
-    const g = svg.append("g")
+    const g = svg
+      .append("g")
       .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
     // Create pie generator
-    const pie = d3.pie<any>()
-      .value(d => d.value)
+    const pie = d3
+      .pie<any>()
+      .value((d) => d.value)
       .sort(null);
 
     // Create arc generator
-    const arc = d3.arc<any>()
-      .innerRadius(0)
-      .outerRadius(radius);
+    const arc = d3.arc<any>().innerRadius(0).outerRadius(radius);
 
     // Create hover arc (slightly larger)
-    const hoverArc = d3.arc<any>()
+    const hoverArc = d3
+      .arc<any>()
       .innerRadius(0)
       .outerRadius(radius + 10);
 
     // Create pie slices
-    const arcs = g.selectAll(".arc")
+    const arcs = g
+      .selectAll(".arc")
       .data(pie(pieData))
-      .enter().append("g")
+      .enter()
+      .append("g")
       .attr("class", "arc");
 
     // Add pie slices
-    arcs.append("path")
+    arcs
+      .append("path")
       .attr("d", arc)
-      .attr("fill", d => d.data.color)
+      .attr("fill", (d) => d.data.color)
       .attr("stroke", "white")
-      .attr("stroke-width", 2)
-      .style("cursor", interactive ? "pointer" : "default")
-      .on("mouseenter", interactive ? function(event: any, d: any) {
-        setHoveredSlice(d.data.name);
-        d3.select(this)
-          .transition()
-          .duration(200)
-          .attr("d", hoverArc);
-      } : null)
-      .on("mouseleave", interactive ? function(event: any, d: any) {
-        setHoveredSlice(null);
-        d3.select(this)
-          .transition()
-          .duration(200)
-          .attr("d", arc);
-      } : null);
+      .attr("stroke-width", 2);
 
-    // Add labels for slices with more than 5% of the pie
-    const totalStudents = pieData.reduce((sum, d) => sum + d.value, 0);
-    
-    arcs.each(function(d: any) {
-      const percent = (d.data.value / totalStudents) * 100;
-      if (percent > 5) {
-        const [x, y] = arc.centroid(d);
-        
-        d3.select(this).append("text")
-          .attr("transform", `translate(${x}, ${y})`)
-          .attr("text-anchor", "middle")
-          .attr("font-size", "14px")
-          .attr("font-weight", "bold")
-          .attr("fill", "white")
-          .style("pointer-events", "none")
-          .text(d.data.name);
-          
-        d3.select(this).append("text")
-          .attr("transform", `translate(${x}, ${y + 18})`)
-          .attr("text-anchor", "middle")
-          .attr("font-size", "12px")
-          .attr("fill", "white")
-          .style("pointer-events", "none")
-          .text(`${d.data.value} (${percent.toFixed(1)}%)`);
-      }
+    // Add individual student dots within each slice
+    const allDots: Array<{ x: number; y: number; radius: number }> = [];
+    const dotRadius = 4;
+    const minDistance = dotRadius * 2 + 2; // Minimum distance between dot centers
+
+    pieData.forEach((categoryData, categoryIndex) => {
+      const pieSlice = pie(pieData)[categoryIndex];
+      const students =
+        studentData.categories.find(
+          (cat) => cat.displayName === categoryData.name
+        )?.students || [];
+
+      // Create a seeded random function for consistent randomization
+      const seededRandom = (seed: number) => {
+        const x = Math.sin(seed) * 10000;
+        return x - Math.floor(x);
+      };
+
+      // Function to check if a point is within the pie slice
+      const isInSlice = (x: number, y: number, slice: any) => {
+        const angle = Math.atan2(y, x) + Math.PI / 2;
+        const normalizedAngle = angle < 0 ? angle + 2 * Math.PI : angle;
+        const distance = Math.sqrt(x * x + y * y);
+
+        return (
+          distance >= 35 &&
+          distance <= radius - 25 &&
+          normalizedAngle >= slice.startAngle &&
+          normalizedAngle <= slice.endAngle
+        );
+      };
+
+      // Function to check collision with existing dots
+      const hasCollision = (x: number, y: number) => {
+        return allDots.some((dot) => {
+          const distance = Math.sqrt((x - dot.x) ** 2 + (y - dot.y) ** 2);
+          return distance < minDistance;
+        });
+      };
+
+      // Calculate positions for students within this slice
+      students.forEach((student, studentIndex) => {
+        // Use student name hash as seed for consistent placement
+        const seed = student.name
+          .split("")
+          .reduce((acc, char) => acc + char.charCodeAt(0), studentIndex);
+
+        let x: number, y: number;
+        let attempts = 0;
+        const maxAttempts = 100;
+
+        // Try to find a non-overlapping position
+        do {
+          // Random angle within the slice with some padding
+          const sliceAngle = pieSlice.endAngle - pieSlice.startAngle;
+          const anglePadding = sliceAngle * 0.07; // 7% padding on each side
+          const availableAngle = sliceAngle - 2 * anglePadding;
+          const randomAngle =
+            pieSlice.startAngle +
+            anglePadding +
+            seededRandom(seed + attempts) * availableAngle;
+
+          // Random radius within the slice
+          const maxRadius = radius - 25;
+          const minRadius = 35;
+          const randomRadius =
+            minRadius +
+            seededRandom(seed + 1000 + attempts) * (maxRadius - minRadius);
+
+          // Convert polar to cartesian coordinates
+          x = Math.cos(randomAngle - Math.PI / 2) * randomRadius;
+          y = Math.sin(randomAngle - Math.PI / 2) * randomRadius;
+
+          attempts++;
+        } while (
+          (hasCollision(x, y) || !isInSlice(x, y, pieSlice)) &&
+          attempts < maxAttempts
+        );
+
+        // Only add the dot if we found a good position
+        if (attempts < maxAttempts) {
+          allDots.push({ x, y, radius: dotRadius });
+
+          // Add dot for student
+          const dotElement = g
+            .append("circle")
+            .attr("cx", x)
+            .attr("cy", y)
+            .attr("r", dotRadius)
+            .attr("fill", categoryData.color)
+            .attr("stroke", "white")
+            .attr("stroke-width", 1)
+            .style("cursor", interactive ? "pointer" : "default")
+            .on(
+              "mouseenter",
+              interactive
+                ? function (event: any) {
+                    setHoveredStudent(student);
+                    const rect = svgRef.current?.getBoundingClientRect();
+                    if (rect) {
+                      setMousePosition({
+                        x: event.clientX - rect.left,
+                        y: event.clientY - rect.top,
+                      });
+                    }
+                  }
+                : null
+            )
+            .on(
+              "mouseleave",
+              interactive
+                ? function () {
+                    setHoveredStudent(null);
+                  }
+                : null
+            );
+
+          // Add subtle wiggle animation
+          const wiggleAnimation = () => {
+            const baseSeed = seed + studentIndex;
+            const time = Date.now() * 0.001; // Slightly faster for more visible movement
+            const wiggleX = Math.sin(time + baseSeed * 0.1) * 2; // Increased amplitude
+            const wiggleY = Math.cos(time * 1.2 + baseSeed * 0.15) * 2; // Increased amplitude
+
+            dotElement
+              .transition()
+              .duration(2500 + (baseSeed % 1500)) // Shorter, more varied durations
+              .ease(d3.easeSinInOut) // Smoother easing
+              .attr("cx", x + wiggleX)
+              .attr("cy", y + wiggleY)
+              .on("end", wiggleAnimation);
+          };
+
+          // Start wiggle animation immediately with small random delay
+          setTimeout(() => {
+            wiggleAnimation();
+          }, (seed + studentIndex) % 2000); // Reduced delay range
+        }
+      });
     });
 
     // Add legend - split between left and right
     const leftLegendData = pieData.slice(0, 4);
     const rightLegendData = pieData.slice(4);
-    
+
     // Left side legend
-    const leftLegend = svg.append("g")
-      .attr("transform", `translate(20, ${height / 2 - leftLegendData.length * 15})`);
+    const leftLegend = svg
+      .append("g")
+      .attr(
+        "transform",
+        `translate(50, ${height / 2 - leftLegendData.length * 22})`
+      );
 
-    const leftLegendItems = leftLegend.selectAll(".legend-item-left")
+    const leftLegendItems = leftLegend
+      .selectAll(".legend-item-left")
       .data(leftLegendData)
-      .enter().append("g")
+      .enter()
+      .append("g")
       .attr("class", "legend-item-left")
-      .attr("transform", (d, i) => `translate(0, ${i * 30})`);
+      .attr("transform", (d, i) => `translate(0, ${i * 35})`);
 
-    leftLegendItems.append("rect")
-      .attr("width", 18)
-      .attr("height", 18)
-      .attr("fill", d => d.color)
+    leftLegendItems
+      .append("rect")
+      .attr("width", 15)
+      .attr("height", 15)
+      .attr("fill", (d) => d.color)
       .attr("stroke", "white")
       .attr("stroke-width", 1);
 
-    leftLegendItems.append("text")
-      .attr("x", 24)
-      .attr("y", 9)
-      .attr("dy", "0.35em")
-      .attr("font-size", "13px")
+    leftLegendItems
+      .append("text")
+      .attr("x", 20)
+      .attr("y", 10)
+      .attr("dy", "0.2em")
+      .attr("font-size", "16px")
+      .attr("font-family", "VTC Du Bois, serif")
+      .attr("text-transform", "uppercase")
       .attr("font-weight", "500")
-      .text(d => `${d.name} (${d.value})`);
+      .text((d) => `${d.name} `);
 
-    // Right side legend  
-    const rightLegend = svg.append("g")
-      .attr("transform", `translate(${width - 180}, ${height / 2 - rightLegendData.length * 15})`);
+    // Right side legend
+    const rightLegend = svg
+      .append("g")
+      .attr(
+        "transform",
+        `translate(${width - 210}, ${height / 2 - rightLegendData.length * 22})`
+      );
 
-    const rightLegendItems = rightLegend.selectAll(".legend-item-right")
+    const rightLegendItems = rightLegend
+      .selectAll(".legend-item-right")
       .data(rightLegendData)
-      .enter().append("g")
+      .enter()
+      .append("g")
       .attr("class", "legend-item-right")
-      .attr("transform", (d, i) => `translate(0, ${i * 30})`);
+      .attr("transform", (d, i) => `translate(0, ${i * 35})`);
 
-    rightLegendItems.append("rect")
-      .attr("width", 18)
-      .attr("height", 18)
-      .attr("fill", d => d.color)
+    rightLegendItems
+      .append("rect")
+      .attr("width", 15)
+      .attr("height", 15)
+      .attr("fill", (d) => d.color)
       .attr("stroke", "white")
       .attr("stroke-width", 1);
 
-    rightLegendItems.append("text")
-      .attr("x", 24)
-      .attr("y", 9)
-      .attr("dy", "0.35em")
-      .attr("font-size", "13px")
+    rightLegendItems
+      .append("text")
+      .attr("x", 20)
+      .attr("y", 10)
+      .attr("dy", "0.2em")
+      .attr("font-size", "16px")
+      .attr("font-family", "VTC Du Bois, serif")
+      .attr("text-transform", "uppercase")
       .attr("font-weight", "500")
-      .text(d => `${d.name} (${d.value})`);
-
+      .text((d) => `${d.name} `);
   }, [interactive]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center relative">
       <svg ref={svgRef} className="max-w-full"></svg>
-      {interactive && hoveredSlice && (
-        <div className="mt-4 p-4 bg-gray-100 rounded text-center">
-          <p className="font-bold text-lg">{hoveredSlice}</p>
-          <p className="text-sm text-gray-600">
-            {studentData.categories.find(c => c.displayName === hoveredSlice)?.students.length} alumni
-          </p>
+      {interactive && hoveredStudent && (
+        <div
+          className="absolute z-10 p-3 bg-black text-white rounded shadow-lg pointer-events-none"
+          style={{
+            left: mousePosition.x + 10,
+            top: mousePosition.y - 10,
+            fontFamily: "VTC Du Bois, serif",
+          }}
+        >
+          <ul>
+            <li className="font-bold text-sm">{hoveredStudent.name}</li>
+            {/* <li className="text-xs">{hoveredStudent.profession}</li> */}
+            <li className="text-xs">{hoveredStudent.location}</li>
+            <li className="text-xs">Class of {hoveredStudent.year}</li>
+          </ul>
         </div>
       )}
     </div>

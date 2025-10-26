@@ -1334,11 +1334,12 @@ export default function DuboisChapter() {
             Anna and Nicholas implemented Tanvi's design, which Jay later
             finessed into its final form.
           </p>
+        </CenteredLayout>
 
-          <div className="my-8 md:my-12">
-            <Viz1 interactive />
-          </div>
-
+        <div className="my-8 md:my-12 w-full max-w-7xl mx-auto">
+          <Viz1 interactive />
+        </div>
+        <CenteredLayout>
           <p>
             Hovering on each dot of our expanded visualization reveals the
             person's name, self-reported occupation, and place of residence.
