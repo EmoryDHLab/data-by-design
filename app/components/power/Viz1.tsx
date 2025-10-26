@@ -202,30 +202,24 @@ export default function Viz1({ interactive = false }: Props) {
             .attr("fill", categoryData.color)
             .attr("stroke", "black")
             .attr("stroke-width", 1)
-            .style("cursor", interactive ? "pointer" : "default")
-            .on(
-              "mouseenter",
-              interactive
-                ? function (event: any) {
-                    setHoveredStudent(student);
-                    const rect = svgRef.current?.getBoundingClientRect();
-                    if (rect) {
-                      setMousePosition({
-                        x: event.clientX - rect.left,
-                        y: event.clientY - rect.top,
-                      });
-                    }
-                  }
-                : null
-            )
-            .on(
-              "mouseleave",
-              interactive
-                ? function () {
-                    setHoveredStudent(null);
-                  }
-                : null
-            );
+            .style("cursor", interactive ? "pointer" : "default");
+          
+          if (interactive) {
+            dotElement
+              .on("mouseenter", function (event: any) {
+                setHoveredStudent(student);
+                const rect = svgRef.current?.getBoundingClientRect();
+                if (rect) {
+                  setMousePosition({
+                    x: event.clientX - rect.left,
+                    y: event.clientY - rect.top,
+                  });
+                }
+              })
+              .on("mouseleave", function () {
+                setHoveredStudent(null);
+              });
+          }
 
           // Add subtle wiggle animation
           const wiggleAnimation = () => {

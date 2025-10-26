@@ -21,6 +21,7 @@ import SlideShow from "~/components/layout/SlideShow";
 import { chapterMetaTags } from "~/utils";
 import StudentCharts from "~/components/power/StudentCharts";
 import Viz1 from "~/components/power/Viz1";
+import Viz3 from "~/components/power/Viz3";
 
 import StudentChartThreeV2 from "~/components/power/StudentChartThree";
 import ChapterBody from "~/components/layout/ChapterBody";
@@ -1352,7 +1353,6 @@ export default function DuboisChapter() {
             call for funding that appears below the image, ensuring similar
             opportunities for students ahead).
           </p>
-
           <p>
             But even as this visualization provided a more detailed picture—more
             “facts,” if you will—of the students in the dataset, we knew from
@@ -1375,7 +1375,6 @@ export default function DuboisChapter() {
             sociology program in the United States.
             <InlineFootnote index={70} />
           </p>
-
           <p>
             Was there a way to testify to these students' role in this
             monumental achievement, even as we could not trace them to any
@@ -1392,7 +1391,6 @@ export default function DuboisChapter() {
             country. Per the published report, 800 responses were received.
             <InlineFootnote index={72} />
           </p>
-
           <p>
             Among the responses were, presumably, many graduates of Atlanta
             University whom Du Bois had personally taught—perhaps even Mack, who
@@ -1406,45 +1404,62 @@ export default function DuboisChapter() {
             once again, featured prominently in the report. Our project team had
             found its final charge.
           </p>
+          <p></p>
+        </CenteredLayout>
 
-          <p>
-            We created an expanded version of our initial chart with the
-            additional data from the 1910 study. In the original, a map at the
-            top of the page informs the viewer of the location of Atlanta
-            University. We added the locations of the 140 additional colleges
-            also included in the follow-up report. In our chart, the location of
-            Atlanta University (which is also, notably, the location of the
-            majority of our own research team) is still marked with a star.
-          </p>
+        <ChartTwoScrollytell
+          triggers={[
+            <span key="94a7a3b2">
+              We created an expanded version of our initial chart with the
+              additional data from the 1910 study. In the original, a map at the
+              top of the page informs the viewer of the location of Atlanta
+              University. We added the locations of the 140 additional colleges
+              also included in the follow-up report.
+            </span>,
+            <span key="63ba9abc">
+              In our chart, the location of Atlanta University (which is also,
+              notably, the location of the majority of our own research team) is
+              still marked with a star.
+            </span>,
+            <span key="1a7c90eb">
+              In this pie chart, the 133 graduates of Atlanta University as of
+              1909 with known occupations (as determined by the alumni section
+              of the 1909-1910 catalog) are positioned in the appropriate area
+              of the pie chart. Additional categories represent the nine
+              graduates with unknown occupations, and the 21 graduates who were
+              recorded as “Deceased.”
+            </span>,
 
-          <h1> Viz 2 here, updated version. </h1>
+            <span key="06e375fc">
+              We also expanded the pie chart. In this version, we document all
+              3,856 of the Black college graduates described by the study,
+              living or dead, whether they returned the survey or not. The 163
+              graduates of the “college course” at Atlanta University, whom Du
+              Bois describes in the study in depth, are named in our chart. We
+              once again used the alumni section of that year's{" "}
+              <em>Catalogue</em> to position the graduates in the appropriate
+              area of the pie chart. Mack is positioned as a “house wife.”
+              Westmoreland is positioned in “government service.” Simon and
+              Rogers are positioned as “teachers.” As in our own previous chart,
+              we've added categories to represent those with unknown
+              occupations, as well as those—at that point also including Lee—who
+              were recorded as “Deceased.
+            </span>,
 
-          <p>
-            We also expanded the pie chart. In this version, we document all
-            3,856 of the Black college graduates described by the study, living
-            or dead, whether they returned the survey or not. The 163 graduates
-            of the “college course” at Atlanta University, whom Du Bois
-            describes in the study in depth, are named in our chart. We once
-            again used the alumni section of that year's <em>Catalogue</em> to
-            position the graduates in the appropriate area of the pie chart.
-            Mack is positioned as a “house wife.” Westmoreland is positioned in
-            “government service.” Simon and Rogers are positioned as “teachers.”
-            As in our own previous chart, we've added categories to represent
-            those with unknown occupations, as well as those—at that point also
-            including Lee—who were recorded as “Deceased.
-          </p>
-
-          <p>
-            An additional 3,693 gray dots represent the graduates of the other
-            140 colleges included in the study, whose names and exact
-            occupations we do not know. <InlineFootnote index={73} />
-            We used the counts of the occupations reported by the 800 survey
-            respondents to calculate the approximate proportion of dots to place
-            in each category, which we see as holding visual space for each
-            graduate's contributions to the study, even if we do not know their
-            exact occupation or name.
-          </p>
-
+            <span key="5448c43e">
+              An additional 3,693 gray dots represent the graduates of the other
+              140 colleges included in the study, whose names and exact
+              occupations we do not know. <InlineFootnote index={73} />
+              We used the counts of the occupations reported by the 800 survey
+              respondents to calculate the approximate proportion of dots to
+              place in each category, which we see as holding visual space for
+              each graduate's contributions to the study, even if we do not know
+              their exact occupation or name.
+            </span>,
+            <span key="9b862bca"></span>,
+          ]}
+        />
+        <CenteredLayout className="mt-20">
           <p>
             We do know something more about the students who returned the
             survey, however: we know what they thought. In addition to the
@@ -1457,7 +1472,6 @@ export default function DuboisChapter() {
             that could be compiled as statistics; it also included four
             questions that encouraged long-form response.
           </p>
-
           <p>
             These included the respondents' reflections on their “early life and
             training,” their plans to educate their own children, the “chief
@@ -1483,9 +1497,10 @@ export default function DuboisChapter() {
             contributing to our goal of more complete knowledge about these
             students' lives, even as their specific source remains unnamed.
           </p>
-
-          <h1> Viz 3 here </h1>
-
+        </CenteredLayout>
+        <h1> Viz 3 here </h1>
+        <Viz3></Viz3>
+        <CenteredLayout>
           <p>
             The result is a visualization that at once draws directly from the
             original Paris Exposition charts, and diverges sharply from it. We
@@ -1507,7 +1522,6 @@ export default function DuboisChapter() {
             will try to educate my children according to their inclinations. I
             am not partial," writes a third.
           </p>
-
           <p>
             Were any of these respondents Mack herself? We will never be able to
             say.
