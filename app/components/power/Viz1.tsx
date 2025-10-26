@@ -21,6 +21,8 @@ export default function Viz1({ interactive = false }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [hoveredStudent, setHoveredStudent] = useState<any>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [showPieChart, setShowPieChart] = useState(true);
+  const [useCircularArrangement, setUseCircularArrangement] = useState(false);
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -30,8 +32,8 @@ export default function Viz1({ interactive = false }: Props) {
 
     // Set dimensions
     const width = 900;
-    const height = 700;
-    const radius = Math.min(width, height) / 2 - 160;
+    const height = 500;
+    const radius = Math.min(width, height) / 2 - 80;
 
     // Process data - count students in each category
     const pieData = studentData.categories.map((category) => ({
@@ -66,7 +68,30 @@ export default function Viz1({ interactive = false }: Props) {
       .innerRadius(0)
       .outerRadius(radius + 10);
 
-    // Add individual student dots in circular arrangement
+    // Create pie slices (conditional)
+    let arcs: any;
+    if (showPieChart) {
+      arcs = g
+        .selectAll(".arc")
+        .data(pie(pieData))
+        .enter()
+        .append("g")
+        .attr("class", "arc");
+
+      // Add pie slices
+      arcs
+        .append("path")
+        .attr("d", arc)
+        .attr("fill", "none")
+
+        // for color in pie slices:
+        // .attr("fill", (d) => d.data.color)
+
+        .attr("stroke", "black")
+        .attr("stroke-width", 2);
+    }
+
+    // Add individual student dots
     const allDots: Array<{ x: number; y: number; radius: number }> = [];
     const dotRadius = 4;
     const minDistance = dotRadius * 2 + 2; // Minimum distance between dot centers
@@ -77,10 +102,23 @@ export default function Viz1({ interactive = false }: Props) {
       return x - Math.floor(x);
     };
 
-    // Function to check if a point is within the circular area
-    const isInCircle = (x: number, y: number) => {
+    // Function to check if a point is within the allowed area
+    const isValidPosition = (x: number, y: number, slice?: any) => {
       const distance = Math.sqrt(x * x + y * y);
-      return distance >= 35 && distance <= radius - 8;
+      const baseCheck = distance >= 20 && distance <= radius - 8;
+
+      if (useCircularArrangement) {
+        return baseCheck;
+      } else {
+        // Check if within pie slice
+        const angle = Math.atan2(y, x) + Math.PI / 2;
+        const normalizedAngle = angle < 0 ? angle + 2 * Math.PI : angle;
+        return (
+          baseCheck &&
+          normalizedAngle >= slice.startAngle &&
+          normalizedAngle <= slice.endAngle
+        );
+      }
     };
 
     // Function to check collision with existing dots
@@ -103,31 +141,51 @@ export default function Viz1({ interactive = false }: Props) {
         // Use student name hash as seed for consistent placement
         const seed = student.name
           .split("")
-          .reduce((acc, char) => acc + char.charCodeAt(0), studentIndex + categoryIndex * 1000);
+          .reduce(
+            (acc, char) => acc + char.charCodeAt(0),
+            studentIndex + categoryIndex * 1000
+          );
 
         let x: number, y: number;
         let attempts = 0;
         const maxAttempts = 100;
+        let currentSlice: any = null;
 
         // Try to find a non-overlapping position
         do {
-          // Random angle anywhere in the circle
-          const randomAngle = seededRandom(seed + attempts) * 2 * Math.PI;
+          let randomAngle: number;
 
-          // Random radius within the circular area
+          if (useCircularArrangement) {
+            // Random angle anywhere in the circle
+            randomAngle = seededRandom(seed + attempts) * 2 * Math.PI;
+            currentSlice = null;
+          } else {
+            // Random angle within the slice with padding
+            const pieSlice = pie(pieData)[categoryIndex];
+            currentSlice = pieSlice;
+            const sliceAngle = pieSlice.endAngle - pieSlice.startAngle;
+            const anglePadding = sliceAngle * 0.07;
+            const availableAngle = sliceAngle - 2 * anglePadding;
+            randomAngle =
+              pieSlice.startAngle +
+              anglePadding +
+              seededRandom(seed + attempts) * availableAngle;
+          }
+
+          // Random radius within the area
           const maxRadius = radius - 8;
-          const minRadius = 35;
+          const minRadius = 20;
           const randomRadius =
             minRadius +
             seededRandom(seed + 1000 + attempts) * (maxRadius - minRadius);
 
           // Convert polar to cartesian coordinates
-          x = Math.cos(randomAngle) * randomRadius;
-          y = Math.sin(randomAngle) * randomRadius;
+          x = Math.cos(randomAngle - Math.PI / 2) * randomRadius;
+          y = Math.sin(randomAngle - Math.PI / 2) * randomRadius;
 
           attempts++;
         } while (
-          (hasCollision(x, y) || !isInCircle(x, y)) &&
+          (hasCollision(x, y) || !isValidPosition(x, y, currentSlice)) &&
           attempts < maxAttempts
         );
 
@@ -266,11 +324,29 @@ export default function Viz1({ interactive = false }: Props) {
       .attr("text-transform", "uppercase")
       .attr("font-weight", "500")
       .text((d) => `${d.name.toUpperCase()} `);
-  }, [interactive]);
+  }, [interactive, showPieChart, useCircularArrangement]);
 
   return (
     <div className="flex flex-col items-center relative">
       <svg ref={svgRef} className="max-w-full"></svg>
+      {interactive && (
+        <div className="-mt-2 flex gap-4">
+          <button
+            onClick={() => setShowPieChart(!showPieChart)}
+            className="px-3 py-1 bg-powerPrimary text-white rounded font-power text-sm hover:bg-opacity-80 transition-opacity"
+          >
+            {showPieChart ? "HIDE PIE CHART" : "SHOW PIE CHART"}
+          </button>
+          <button
+            onClick={() => setUseCircularArrangement(!useCircularArrangement)}
+            className="px-3 py-1 bg-powerSecondary text-black rounded font-power text-sm hover:bg-opacity-80 transition-opacity"
+          >
+            {useCircularArrangement
+              ? "PIE ARRANGEMENT"
+              : "CIRCULAR ARRANGEMENT"}
+          </button>
+        </div>
+      )}
       {interactive && hoveredStudent && (
         <div
           className="absolute z-10 p-3 bg-black text-white rounded shadow-lg pointer-events-none"
