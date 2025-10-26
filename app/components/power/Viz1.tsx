@@ -79,7 +79,7 @@ export default function Viz1({ interactive = false }: Props) {
       .append("path")
       .attr("d", arc)
       .attr("fill", (d) => d.data.color)
-      .attr("stroke", "white")
+      .attr("stroke", "black")
       .attr("stroke-width", 2);
 
     // Add individual student dots within each slice
@@ -108,7 +108,7 @@ export default function Viz1({ interactive = false }: Props) {
 
         return (
           distance >= 35 &&
-          distance <= radius - 25 &&
+          distance <= radius - 8 &&
           normalizedAngle >= slice.startAngle &&
           normalizedAngle <= slice.endAngle
         );
@@ -145,7 +145,7 @@ export default function Viz1({ interactive = false }: Props) {
             seededRandom(seed + attempts) * availableAngle;
 
           // Random radius within the slice
-          const maxRadius = radius - 25;
+          const maxRadius = radius - 8;
           const minRadius = 35;
           const randomRadius =
             minRadius +
@@ -172,7 +172,7 @@ export default function Viz1({ interactive = false }: Props) {
             .attr("cy", y)
             .attr("r", dotRadius)
             .attr("fill", categoryData.color)
-            .attr("stroke", "white")
+            .attr("stroke", "black")
             .attr("stroke-width", 1)
             .style("cursor", interactive ? "pointer" : "default")
             .on(
@@ -248,7 +248,7 @@ export default function Viz1({ interactive = false }: Props) {
       .attr("width", 15)
       .attr("height", 15)
       .attr("fill", (d) => d.color)
-      .attr("stroke", "white")
+      .attr("stroke", "black")
       .attr("stroke-width", 1);
 
     leftLegendItems
@@ -260,7 +260,7 @@ export default function Viz1({ interactive = false }: Props) {
       .attr("font-family", "VTC Du Bois, serif")
       .attr("text-transform", "uppercase")
       .attr("font-weight", "500")
-      .text((d) => `${d.name} `);
+      .text((d) => `${d.name.toUpperCase()} `);
 
     // Right side legend
     const rightLegend = svg
@@ -283,7 +283,7 @@ export default function Viz1({ interactive = false }: Props) {
       .attr("width", 15)
       .attr("height", 15)
       .attr("fill", (d) => d.color)
-      .attr("stroke", "white")
+      .attr("stroke", "black")
       .attr("stroke-width", 1);
 
     rightLegendItems
@@ -295,7 +295,7 @@ export default function Viz1({ interactive = false }: Props) {
       .attr("font-family", "VTC Du Bois, serif")
       .attr("text-transform", "uppercase")
       .attr("font-weight", "500")
-      .text((d) => `${d.name} `);
+      .text((d) => `${d.name.toUpperCase()} `);
   }, [interactive]);
 
   return (
