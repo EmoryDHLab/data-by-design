@@ -66,68 +66,44 @@ export default function Viz1({ interactive = false }: Props) {
       .innerRadius(0)
       .outerRadius(radius + 10);
 
-    // Create pie slices
-    const arcs = g
-      .selectAll(".arc")
-      .data(pie(pieData))
-      .enter()
-      .append("g")
-      .attr("class", "arc");
-
-    // Add pie slices
-    arcs
-      .append("path")
-      .attr("d", arc)
-      .attr("fill", (d) => d.data.color)
-      .attr("stroke", "black")
-      .attr("stroke-width", 2);
-
-    // Add individual student dots within each slice
+    // Add individual student dots in circular arrangement
     const allDots: Array<{ x: number; y: number; radius: number }> = [];
     const dotRadius = 4;
     const minDistance = dotRadius * 2 + 2; // Minimum distance between dot centers
 
+    // Create a seeded random function for consistent randomization
+    const seededRandom = (seed: number) => {
+      const x = Math.sin(seed) * 10000;
+      return x - Math.floor(x);
+    };
+
+    // Function to check if a point is within the circular area
+    const isInCircle = (x: number, y: number) => {
+      const distance = Math.sqrt(x * x + y * y);
+      return distance >= 35 && distance <= radius - 8;
+    };
+
+    // Function to check collision with existing dots
+    const hasCollision = (x: number, y: number) => {
+      return allDots.some((dot) => {
+        const distance = Math.sqrt((x - dot.x) ** 2 + (y - dot.y) ** 2);
+        return distance < minDistance;
+      });
+    };
+
+    // Add all students from all categories
     pieData.forEach((categoryData, categoryIndex) => {
-      const pieSlice = pie(pieData)[categoryIndex];
       const students =
         studentData.categories.find(
           (cat) => cat.displayName === categoryData.name
         )?.students || [];
 
-      // Create a seeded random function for consistent randomization
-      const seededRandom = (seed: number) => {
-        const x = Math.sin(seed) * 10000;
-        return x - Math.floor(x);
-      };
-
-      // Function to check if a point is within the pie slice
-      const isInSlice = (x: number, y: number, slice: any) => {
-        const angle = Math.atan2(y, x) + Math.PI / 2;
-        const normalizedAngle = angle < 0 ? angle + 2 * Math.PI : angle;
-        const distance = Math.sqrt(x * x + y * y);
-
-        return (
-          distance >= 35 &&
-          distance <= radius - 8 &&
-          normalizedAngle >= slice.startAngle &&
-          normalizedAngle <= slice.endAngle
-        );
-      };
-
-      // Function to check collision with existing dots
-      const hasCollision = (x: number, y: number) => {
-        return allDots.some((dot) => {
-          const distance = Math.sqrt((x - dot.x) ** 2 + (y - dot.y) ** 2);
-          return distance < minDistance;
-        });
-      };
-
-      // Calculate positions for students within this slice
+      // Calculate positions for students within the circular area
       students.forEach((student, studentIndex) => {
         // Use student name hash as seed for consistent placement
         const seed = student.name
           .split("")
-          .reduce((acc, char) => acc + char.charCodeAt(0), studentIndex);
+          .reduce((acc, char) => acc + char.charCodeAt(0), studentIndex + categoryIndex * 1000);
 
         let x: number, y: number;
         let attempts = 0;
@@ -135,16 +111,10 @@ export default function Viz1({ interactive = false }: Props) {
 
         // Try to find a non-overlapping position
         do {
-          // Random angle within the slice with some padding
-          const sliceAngle = pieSlice.endAngle - pieSlice.startAngle;
-          const anglePadding = sliceAngle * 0.07; // 7% padding on each side
-          const availableAngle = sliceAngle - 2 * anglePadding;
-          const randomAngle =
-            pieSlice.startAngle +
-            anglePadding +
-            seededRandom(seed + attempts) * availableAngle;
+          // Random angle anywhere in the circle
+          const randomAngle = seededRandom(seed + attempts) * 2 * Math.PI;
 
-          // Random radius within the slice
+          // Random radius within the circular area
           const maxRadius = radius - 8;
           const minRadius = 35;
           const randomRadius =
@@ -152,12 +122,12 @@ export default function Viz1({ interactive = false }: Props) {
             seededRandom(seed + 1000 + attempts) * (maxRadius - minRadius);
 
           // Convert polar to cartesian coordinates
-          x = Math.cos(randomAngle - Math.PI / 2) * randomRadius;
-          y = Math.sin(randomAngle - Math.PI / 2) * randomRadius;
+          x = Math.cos(randomAngle) * randomRadius;
+          y = Math.sin(randomAngle) * randomRadius;
 
           attempts++;
         } while (
-          (hasCollision(x, y) || !isInSlice(x, y, pieSlice)) &&
+          (hasCollision(x, y) || !isInCircle(x, y)) &&
           attempts < maxAttempts
         );
 
