@@ -14,7 +14,7 @@ const colorMapping: Record<string, string> = {
   "Other Professions": "#2F4F4F",
   "House Wives": "#FEC313",
   Deceased: "#C4C4C4",
-  Unknown: "#B5CCFF",
+  Unreported: "#B5CCFF",
 };
 
 export default function Viz1({ interactive = false }: Props) {
@@ -88,7 +88,7 @@ export default function Viz1({ interactive = false }: Props) {
         // .attr("fill", (d) => d.data.color)
 
         .attr("stroke", "black")
-        .attr("stroke-width", 2);
+        .attr("stroke-width", 1.5);
     }
 
     // Add individual student dots
@@ -272,9 +272,10 @@ export default function Viz1({ interactive = false }: Props) {
       .attr("transform", (d, i) => `translate(0, ${i * 35})`);
 
     leftLegendItems
-      .append("rect")
-      .attr("width", 15)
-      .attr("height", 15)
+      .append("circle")
+      .attr("cx", 7.5)
+      .attr("cy", 7.5)
+      .attr("r", 7.5)
       .attr("fill", (d) => d.color)
       .attr("stroke", "black")
       .attr("stroke-width", 1);
@@ -282,8 +283,8 @@ export default function Viz1({ interactive = false }: Props) {
     leftLegendItems
       .append("text")
       .attr("x", 20)
-      .attr("y", 10)
-      .attr("dy", "0.2em")
+      .attr("y", 7.5)
+      .attr("dy", "0.35em")
       .attr("font-size", "16px")
       .attr("font-family", "VTC Du Bois, serif")
       .attr("text-transform", "uppercase")
@@ -307,9 +308,10 @@ export default function Viz1({ interactive = false }: Props) {
       .attr("transform", (d, i) => `translate(0, ${i * 35})`);
 
     rightLegendItems
-      .append("rect")
-      .attr("width", 15)
-      .attr("height", 15)
+      .append("circle")
+      .attr("cx", 7.5)
+      .attr("cy", 7.5)
+      .attr("r", 7.5)
       .attr("fill", (d) => d.color)
       .attr("stroke", "black")
       .attr("stroke-width", 1);
@@ -317,8 +319,8 @@ export default function Viz1({ interactive = false }: Props) {
     rightLegendItems
       .append("text")
       .attr("x", 20)
-      .attr("y", 10)
-      .attr("dy", "0.2em")
+      .attr("y", 7.5)
+      .attr("dy", "0.35em")
       .attr("font-size", "16px")
       .attr("font-family", "VTC Du Bois, serif")
       .attr("text-transform", "uppercase")
