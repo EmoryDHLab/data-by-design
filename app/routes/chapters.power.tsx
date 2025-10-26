@@ -20,6 +20,9 @@ import Figure from "~/components/figures/Figure";
 import SlideShow from "~/components/layout/SlideShow";
 import { chapterMetaTags } from "~/utils";
 import StudentCharts from "~/components/power/StudentCharts";
+import Viz1 from "~/components/power/Viz1";
+
+import StudentChartThreeV2 from "~/components/power/StudentChartThree";
 import ChapterBody from "~/components/layout/ChapterBody";
 import Takeaways from "~/components/layout/Takeaways";
 import ChartOneScrollytell from "~/components/power/duboisScrollytell/ChartOneScrollytell";
@@ -125,49 +128,32 @@ export default function DuboisChapter() {
       {/* <div className="chapter-body container"> */}
       <ChapterBody>
         <CenteredLayout>
-          <p className="first-paragraph py-10">
+          <p className="first-paragraph">
             The last week of December 1899 had been cold and exceptionally
             rainy. <InlineFootnote index={0} /> But on the day after Christmas,
             when Lula Iola Mack crossed the “high and narrow iron bridge” from
             the women’s dormitory to the main campus of Atlanta University, one
             of the nation’s flagship Black colleges, to begin the winter term of
             her senior year, she likely walked with a confident step.
-            <InlineFootnote index={1} /> She had already been awarded high
-            honors after her sophomore year—the only member of her class to
-            receive such recognition—and she was on track to repeat the feat
-            when honors would be bestowed again at graduation.
-            <InlineFootnote index={2} /> As she’d already concluded her
-            preparatory coursework in sociology the previous term, having
-            learned a range of state-of-the-art methods for data collection and
-            analysis, she likely approached the first day of class feeling calm
-            and prepared for what she thought would come next: a project
-            involving “a general survey of social conditions,” just as the
-            course was described in the{" "}
+            <InlineFootnote index={1} />
+            She had already been awarded high honors after her sophomore
+            year—the only member of her class to receive such recognition—and
+            she was on track to repeat the feat when honors would be bestowed
+            again at graduation.
+            <InlineFootnote index={2} />
+            As she’d already concluded her preparatory coursework in sociology
+            the previous term, having learned a range of state-of-the-art
+            methods for data collection and analysis, she likely approached the
+            first day of class feeling calm and prepared for what she thought
+            would come next: a project involving “a general survey of social
+            conditions,” just as the course was described in the{" "}
             <cite>
               Catalogue of the Officers and Students of Atlanta University{" "}
             </cite>
             , which served as every student’s main reference text, and just as
-            the course had been structured the year before.{" "}
+            the course had been structured the year before.
             <InlineFootnote index={3} />
           </p>
-
-          <Figure
-            figures={[
-              figures["0501-paris-expo-loc"],
-              figures["0502-Group-XVI-floorplan"],
-            ]}
-            className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-baseline"
-            captionClassName="text-center"
-            groupCaption={
-              <p>
-                Left: A photograph of the “Exhibit of American Negroes” at the
-                1900 Exposition Universelle. Right: The floor plan of the Place
-                of Social Economy; the exhibit was installed in the south-east
-                corner of the hall.
-              </p>
-            }
-          />
-
           <p>
             Little did Mack know—or, for that matter, did her professor—that the
             shape of the 1899-1900 winter-term sociology course was about to
@@ -178,18 +164,20 @@ export default function DuboisChapter() {
             Paris the following spring, and Calloway was determined that the
             United States should install an “Exhibit of American Negroes,” which
             would stand alongside the other celebratory displays of national
-            might and ingenuity that were typical of World’s Fairs at the time.{" "}
+            might and ingenuity that were typical of World’s Fairs at the time.
             <InlineFootnote index={4} />
           </p>
           <p>
             On January 25th, 1900—one month to the day after the winter term at
             Atlanta University had begun—Calloway received a financial
             commitment from the federal government and began to plan the exhibit
-            in earnest. <InlineFootnote index={5} /> He tasked Daniel A.P.
-            Murray, then the Assistant Librarian of Congress, with assembling a
-            set of books by Black writers to put on display, while reaching out
-            to a college friend to conceptualize the “social study” he also had
-            in mind. <InlineFootnote index={6} />
+            in earnest.
+            <InlineFootnote index={5} />
+            He tasked Daniel A.P. Murray, then the Assistant Librarian of
+            Congress, with assembling a set of books by Black writers to put on
+            display, while reaching out to a college friend to conceptualize the
+            “social study” he also had in mind.
+            <InlineFootnote index={6} />
             This friend was Mack’s professor, none other than the esteemed
             sociologist, author, and activist W.E.B. Du Bois. And for the next
             three months, Mack, Du Bois, the three other students enrolled in
@@ -197,30 +185,35 @@ export default function DuboisChapter() {
             Andrews Rogers—who had graduated the previous spring, threw
             themselves into the work that would culminate in a set of “plans,
             charts, and figures” for the Paris Exposition, as the event was also
-            called. <InlineFootnote index={7} /> Once installed in the southeast
-            corner of the Palace of Social Economy, the charts would be viewed
-            over fifty million visitors from around the world who would travel
-            to Paris over the course of the Exposition’s seven-month run.{" "}
+            called.
+            <InlineFootnote index={7} />
+            Once installed in the southeast corner of the Palace of Social
+            Economy, the charts would be viewed over fifty million visitors from
+            around the world who would travel to Paris over the course of the
+            Exposition’s seven-month run.
             <InlineFootnote index={8} />
           </p>
-        </CenteredLayout>
-        <div className="flex md:flex-row flex-col max-w-5xl ">
-          <div className="basis-1/2">
-            <Figure
-              figure={figures["0501-paris-expo-loc"]}
-              className="mx-2 md:mx-12 text-sm md:text-base"
-              captionClassName="text-center"
-            />
-          </div>
-          <div className="basis-1/2">
-            <Figure
-              figure={figures["0502-Group-XVI-floorplan"]}
-              className="mx-2 md:mx-12 text-sm md:text-base"
-              captionClassName="mx-12"
-            />
-          </div>
-        </div>
-        <CenteredLayout>
+          <Figure
+            figures={[
+              figures["0501-paris-expo-loc"],
+              figures["0502-Group-XVI-floorplan"],
+            ]}
+            className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-baseline"
+            captionClassName=""
+            groupCaption={
+              <div>
+                <p>
+                  Left: A photograph of the “Exhibit of American Negroes” at the
+                  1900 Exposition Universelle.
+                </p>
+                <p>
+                  Right: The floor plan of the Place of Social Economy; the
+                  exhibit was installed in the south-east corner of the hall.
+                </p>{" "}
+              </div>
+            }
+          />
+
           <p>
             The 63 (or 64) poster-sized charts that Mack, Du Bois, and the other
             Atlanta University students made for the Paris Exposition were
@@ -1342,7 +1335,9 @@ export default function DuboisChapter() {
             finessed into its final form.
           </p>
 
-          <h1> Viz 1 </h1>
+          <div className="my-8 md:my-12">
+            <Viz1 interactive />
+          </div>
 
           <p>
             Hovering on each dot of our expanded visualization reveals the
