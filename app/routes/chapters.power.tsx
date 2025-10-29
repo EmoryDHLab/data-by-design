@@ -324,8 +324,8 @@ export default function DuboisChapter() {
         {/* This sections layout needs to be figured out  */}
         <ChapterSectionTitle section={sections[0]} />
 
-        <CenteredLayout>
-          <p>
+        <CenteredLayout className="pb-20">
+          <p className="first-paragraph">
             Lula Mack and the other students who co-created the charts—Henry
             Napoleon Lee, Edward Lee Simon, and William George
             Westmoreland—would have needed to wait until Du Bois returned from
@@ -366,7 +366,7 @@ export default function DuboisChapter() {
 
         <DocumentViewer />
 
-        <CenteredLayout>
+        <CenteredLayout className="pt-20">
           <p>
             In the exhibition space, Du Bois mounted the introductory chart of
             each set—a title page of sorts—directly at eye-level against the far
@@ -819,7 +819,7 @@ export default function DuboisChapter() {
 
         <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             Today, the charts of the Paris Exposition are often shared as single
             images, embedded in a post on social media, or—as in the case of{" "}
             <cite>W.E.B. Du Bois's Data Portraits</cite>, bound as a dazzling,
@@ -1265,7 +1265,7 @@ export default function DuboisChapter() {
         <ChapterSectionTitle section={sections[3]} />
 
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             As our project team considered how we might inhabit Du Bois’s
             approach to visualization, we were unsure of how to proceed in light
             of his changed views about the utility of data and “facts.” We were
@@ -1500,7 +1500,7 @@ export default function DuboisChapter() {
         </CenteredLayout>
         <h1> Viz 3 here </h1>
         <Viz3></Viz3>
-        <CenteredLayout>
+        <CenteredLayout className="pt-20">
           <p>
             The result is a visualization that at once draws directly from the
             original Paris Exposition charts, and diverges sharply from it. We

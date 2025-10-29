@@ -26,8 +26,8 @@ export default function ChapterTitle({ title, subtitle }: Props) {
       </div>
       {sections && (
         <nav className="hidden lg:block text-offwhite font-powerWide">
-          <div className="border-b-2 border-b-white uppercase w-2/3 pb-2">
-            Section
+          <div className="text-neutral-400 tracking-wider text-sm uppercase w-2/3 pb-1">
+            Sections
           </div>
           <ul className="mt-4">
             {sections?.map((section) => {

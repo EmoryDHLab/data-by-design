@@ -253,7 +253,7 @@ export default function PeabodyPage() {
         </TwoColumnLayout>
 
         <ChapterSectionTitle section={sections[0]} />
-        <CenteredLayout>
+        <CenteredLayout className="pb-20">
           <p className="first-paragraph">
             Peabody's method of visualizing events of historical significance
             was inspired by a system developed in Poland in the 1820s, and
@@ -487,7 +487,7 @@ export default function PeabodyPage() {
 
         {/* <!-- add in this text with the final grid: Returning to the overall view of the century, that teal square at once represents the power of commemoration and the insufficiency of a colored box standing for a human life, however overlayed with meaning as it may be.  --> */}
 
-        <TwoColumnLayout>
+        <TwoColumnLayout className="pt-20">
           <Column>
             <p>
               Chronology—or, the study of events in time—is not, of course, the
@@ -573,7 +573,7 @@ export default function PeabodyPage() {
           </Column>
         </TwoColumnLayout>
 
-        <CenteredLayout className="pb-24">
+        <CenteredLayout className="pb-20">
           <PullQuote
             quote="Our ways of knowing are all shaped by asymmetrical power-"
             subquote="and data visualization is no exception."
@@ -622,7 +622,7 @@ export default function PeabodyPage() {
         <PeabodyBarGraph />
 
         <ChapterSectionTitle section={sections[1]} />
-        <TwoColumnLayout>
+        <TwoColumnLayout className="pb-20">
           <Column>
             <p className="first-paragraph">
               Peabody was a lifelong proponent of what might be described today
@@ -656,7 +656,7 @@ export default function PeabodyPage() {
 
         <Quiz />
 
-        <TwoColumnLayout>
+        <TwoColumnLayout className="pt-20">
           <Column>
             <p>
               If you, like all of us, found this exercise virtually impossible,
@@ -698,8 +698,8 @@ export default function PeabodyPage() {
               thought.
             </p>
             <PullQuote
-              quote="By prompting her students to create new narratives of the past, "
-              subquote="they would also imagine alternative possible futures."
+              quote="By prompting her students to create new narratives of the past, they would also imagine alternative possible futures. "
+              subquote=""
             />
             <p>
               Peabody’s goal with the Polish-American system was to create a
@@ -937,10 +937,6 @@ export default function PeabodyPage() {
               required, and the resultant fatigue, of any large-scale project
               that is made by human hands.
             </p>
-            <PullQuote
-              quote="Who else are we missing"
-              subquote="when we fail to include examples like these in the stories we tell about the emergence of data visualization?"
-            />
           </Column>
           <Column>
             <Figure
@@ -964,6 +960,10 @@ export default function PeabodyPage() {
         </TwoColumnLayout>
 
         <CenteredLayout>
+          <PullQuote
+            quote="Who else are we missing when we fail to include examples like these in the stories we tell about the emergence of data visualization?"
+            subquote=""
+          />
           <Figure
             figure={
               figures[
@@ -1152,11 +1152,10 @@ export default function PeabodyPage() {
             me—along with no small degree of pleasure—upon discovering that a
             quilt created by Loretta Pettway, one of the Gee's Bend quilters,
             graces the cover of Edward Tufte's most recent book,{" "}
-            <cite>Seeing with Fresh Eyes</cite>
-            (2020). More than merely a compelling image—"unorthodox, fresh,
-            amazing" is the extent of how Tufte describes it in the text—we must
-            learn to see Pettaway's quilt, like Peabody's chart, as a system of
-            knowledge making.
+            <cite>Seeing with Fresh Eyes</cite> (2020). More than merely a
+            compelling image—"unorthodox, fresh, amazing" is the extent of how
+            Tufte describes it in the text—we must learn to see Pettaway's
+            quilt, like Peabody's chart, as a system of knowledge making.
             <InlineFootnote index={45}></InlineFootnote>
             These two systems of knowledge-making, moreover, helpfully converge.
             Both employ shape and color in order to represent and recall past
