@@ -217,11 +217,19 @@ export default function DocumentViewer() {
         </div>
       </div>
       <div className="block md:hidden bg-offblack text-offwhite w-full">
-        <p className="ms-8 mt-0 font-power text-xl">Set One</p>
-        <SlideShow className="mb-4" figures={imageSets.setOne} />
-        <hr />
-        <p className="ms-8 font-power text-xl">Set Two</p>
-        <SlideShow className="" figures={imageSets.setTwo} />
+        <div className="h-screen">
+          <p className=" font-power text-neutral-400 text-sm uppercase   pb-2 text-center">
+            Set One
+          </p>
+          <SlideShow className="mb-4" figures={imageSets.setOne} />
+        </div>
+        <br></br>
+        <div className="h-screen">
+          <p className=" font-power text-neutral-400  text-sm uppercase  py-2 text-center">
+            Set Two
+          </p>
+          <SlideShow className="" figures={imageSets.setTwo} />
+        </div>
       </div>
     </div>
   );
