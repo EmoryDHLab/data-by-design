@@ -801,19 +801,19 @@ export default function DuboisChapter() {
                 showCaption={false}
                 imageClassName="h-full w-auto"
               />
-              <p className="font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
-                Left to right: The chart of marriage statistics that appeared in
-                Henry Gannett’s 1894 Statistics of the Negroes in the United
-                States; a visually similiar chart of mariage statistics of all
-                races that appeared in the illustrated edition of the 1890
-                census, also edited by Gannett; and the chart created by Du Bois
-                and his students, again visualizing the Black population only,
-                that was created for the Paris Exibition. Images courtesy of the
-                Library of Congress, Rare Book and Special Collections Division;
-                Geography and Map Division; and Prints & Photographs Division,
-                LC-DIG-ppmsca-33915.
-              </p>
             </div>
+            <figcaption className="font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
+              Left to right: The chart of marriage statistics that appeared in
+              Henry Gannett’s 1894 Statistics of the Negroes in the United
+              States; a visually similiar chart of mariage statistics of all
+              races that appeared in the illustrated edition of the 1890 census,
+              also edited by Gannett; and the chart created by Du Bois and his
+              students, again visualizing the Black population only, that was
+              created for the Paris Exibition. Images courtesy of the Library of
+              Congress, Rare Book and Special Collections Division; Geography
+              and Map Division; and Prints & Photographs Division,
+              LC-DIG-ppmsca-33915.
+            </figcaption>
           </Column>
         </TwoColumnLayout>
 
@@ -900,8 +900,11 @@ export default function DuboisChapter() {
             the double-projection layout of the <cite>Georgia Negro</cite>'s
             introductory chart.
           </p>
-          {/* 
-          Insert Image of Stereoscope */}
+
+          <Figure
+            className="mix-blend-multiply"
+            figure={figures["0517-perfecscope-zbHCp_orig-zoom"]}
+          />
           <p>
             The stereoscope was a device that spliced together two views of the
             same image, one in each eye, creating the illusion of
@@ -947,8 +950,6 @@ export default function DuboisChapter() {
             which I had as a scientist, a red ray which could not be ignored.”
             <InlineFootnote index={44} />
           </p>
-
-          <Figure figure={figures["0517-perfecscope-zbHCp_orig-zoom"]} />
 
           <p>
             This “red ray” was no abstraction. It had a specific and horrific
@@ -1117,12 +1118,10 @@ export default function DuboisChapter() {
           <Figure
             figure={figures["0519-chalabi-illiteracy"]}
             className="mx-2 md:mx-12 text-sm md:text-base"
-            captionClassName="mx-12"
           />
           <Figure
             figure={figures["0520-chalabi-worth"]}
-            className="mx-2 md:mx-12 text-sm md:text-base"
-            captionClassName="mx-12"
+            className="mx-2 mix-blend-multiply md:mx-12 text-sm md:text-base"
           />
           <p>
             Seeing some of the most distinctive of the charts recreated with
