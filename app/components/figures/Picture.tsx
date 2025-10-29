@@ -48,10 +48,7 @@ const Picture = ({ figure, className, center = true }: Props) => {
       <source srcSet={`${figurePath}.webp`} type="image/webp" />
       <source srcSet={`${figurePath}.jpg`} type="image/webp" />
       <img
-        className={classNames(
-          center ? "mx-auto drop-shadow-lg" : "mx-0 drop-shadow-lg",
-          className
-        )}
+        className={classNames(center ? "mx-auto " : "mx-0 ", className)}
         src={`${figurePath}.jpg`}
         alt={altText}
         title={figure.cleanTitle ?? figure.fileName}

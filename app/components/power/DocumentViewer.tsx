@@ -88,7 +88,7 @@ export default function DocumentViewer() {
 
   return (
     <div
-      className="py-10 my-10 bg-black w-full flex flex-col items-center pb-10"
+      className="py-20 my-10 bg-black w-full flex flex-col items-center pb-10"
       id="doc-viewer"
     >
       <div className="hidden md:flex max-w-5xl">
@@ -171,47 +171,48 @@ export default function DocumentViewer() {
               </button>
             ))}
           </div>
-          <div className="flex flex-col items-center">
-            <Figure
-              figure={selectedImage as FigureType}
-              className="max-w-xs text-white"
-              id={`doc-viewer-${selectedImage.fileName}`}
-            />
-            <div className="flex text-white justify-around w-full">
-              <button
-                aria-label="Select previous image"
-                onClick={() => {
-                  setSelectedImageIndex(
-                    (i) =>
-                      (i + imageSets[selectedSet].length - 1) %
-                      imageSets[selectedSet].length
-                  );
-                }}
-              >
-                <img
-                  className="w-[27.5px] h-[19.5px] mt-5"
-                  src="/images/ui/leftarrow.png"
-                  alt=""
-                  role="presentation"
-                />
-              </button>
+          <div className="flex items-center justify-center gap-8 h-[500px] mb-40">
+            <button
+              aria-label="Select previous image"
+              onClick={() => {
+                setSelectedImageIndex(
+                  (i) =>
+                    (i + imageSets[selectedSet].length - 1) %
+                    imageSets[selectedSet].length
+                );
+              }}
+            >
+              <img
+                className="w-[27.5px] h-[19.5px]"
+                src="/images/ui/leftarrow.png"
+                alt=""
+                role="presentation"
+              />
+            </button>
 
-              <button
-                aria-label="Select next image"
-                onClick={() => {
-                  setSelectedImageIndex(
-                    (i) => (i + 1) % imageSets[selectedSet].length
-                  );
-                }}
-              >
-                <img
-                  className="w-[27.5px] h-[19.5px] mt-5"
-                  src="/images/ui/rightarrow.png"
-                  alt=""
-                  role="presentation"
-                />
-              </button>
+            <div className="flex flex-col items-center justify-start h-full pt-2">
+              <Figure
+                figure={selectedImage as FigureType}
+                className="max-w-xs text-white"
+                id={`doc-viewer-${selectedImage.fileName}`}
+              />
             </div>
+
+            <button
+              aria-label="Select next image"
+              onClick={() => {
+                setSelectedImageIndex(
+                  (i) => (i + 1) % imageSets[selectedSet].length
+                );
+              }}
+            >
+              <img
+                className="w-[27.5px] h-[19.5px]"
+                src="/images/ui/rightarrow.png"
+                alt=""
+                role="presentation"
+              />
+            </button>
           </div>
         </div>
       </div>

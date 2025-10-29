@@ -49,42 +49,43 @@ const DocumentViewer = () => {
               </button>
             ))}
           </div>
-          <div className="flex flex-col items-center">
-            <Figure
-              figure={selectedImage as FigureType}
-              className="max-w-md text-white"
-              id={`doc-viewer-${selectedImage.fileName}`}
-              imageClassName="h-72 w-auto"
-            />
-            <div className="flex text-white justify-around w-full">
-              <button
-                aria-label="Select previous image"
-                onClick={() => {
-                  setSelectedImageIndex(
-                    (i) => (i + images.length - 1) % images.length
-                  );
-                }}
-              >
-                <img
-                  className="w-[27.5px] h-[19.5px] mt-5"
-                  src="/images/ui/leftarrow.png"
-                  alt=""
-                />
-              </button>
-
-              <button
-                aria-label="Select next image"
-                onClick={() => {
-                  setSelectedImageIndex((i) => (i + 1) % images.length);
-                }}
-              >
-                <img
-                  className="w-[27.5px] h-[19.5px] mt-5"
-                  src="/images/ui/rightarrow.png"
-                  alt=""
-                />
-              </button>
+          <div className="flex items-center justify-center gap-8 h-[500px] pb-8">
+            <button
+              aria-label="Select previous image"
+              onClick={() => {
+                setSelectedImageIndex(
+                  (i) => (i + images.length - 1) % images.length
+                );
+              }}
+            >
+              <img
+                className="w-[27.5px] h-[19.5px]"
+                src="/images/ui/leftarrow.png"
+                alt=""
+              />
+            </button>
+            
+            <div className="flex flex-col items-center justify-start h-full pt-8">
+              <Figure
+                figure={selectedImage as FigureType}
+                className="max-w-md text-white"
+                id={`doc-viewer-${selectedImage.fileName}`}
+                imageClassName="w-auto object-contain"
+              />
             </div>
+            
+            <button
+              aria-label="Select next image"
+              onClick={() => {
+                setSelectedImageIndex((i) => (i + 1) % images.length);
+              }}
+            >
+              <img
+                className="w-[27.5px] h-[19.5px]"
+                src="/images/ui/rightarrow.png"
+                alt=""
+              />
+            </button>
           </div>
         </div>
       </div>
