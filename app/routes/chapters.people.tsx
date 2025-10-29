@@ -282,7 +282,7 @@ export default function ShanawdithitPage() {
 
         <ChapterSectionTitle section={sections[0]} />
 
-        <CenteredLayout>
+        <CenteredLayout className="pb-20">
           <p className="first-paragraph">
             With the importance of relationships and responsibilities in mind,
             we now return to the story of Shanawdithit and her maps as it
@@ -484,7 +484,7 @@ export default function ShanawdithitPage() {
           ]}
         />
 
-        <CenteredLayout>
+        <CenteredLayout className="py-20">
           <p>
             But Cormack’s direct extraction of Shanawdithit’s knowledge was only
             the first layer of how her knowledge has been mined.
@@ -935,7 +935,7 @@ export default function ShanawdithitPage() {
           ]}
         />
 
-        <CenteredLayout>
+        <CenteredLayout className="pt-20">
           <p>
             Yet Willard also chooses to present this map as “introductory,”
             rather than accord it the position of “First Map.” That is reserved
@@ -1016,10 +1016,10 @@ export default function ShanawdithitPage() {
         <Figure
           figure={figures["0327-birch-bark-1841"]}
           className="mx-2 md:mx-12 text-sm md:text-base"
-          captionClassName="text-center	"
+          captionClassName="text-center"
         />
 
-        <CenteredLayout>
+        <CenteredLayout className="pb-20">
           <p>
             We do not know whether the other members of the group ever saw the
             map. We do know, however, that it was seen by one Captain
@@ -1243,21 +1243,25 @@ export default function ShanawdithitPage() {
           </p>
         </CenteredLayout>
         <MapsExploration3></MapsExploration3>
+
         <CenteredLayout>
-          This book will soon move on to consider alternative visual forms and
-          epistemological frameworks, those that reject the unidirectional path
-          of knowledge production in favor of a more balanced exchange of ideas
-          (Chapter 4). We will also consider examples of how more conventional
-          visual forms can push back against extractive aims by centering
-          otherwise overlooked perspectives, and by including methods that might
-          otherwise be set to the side (Chapter 5). In short, we will move from
-          lessons of limits to those of possibility. But the colonial context
-          that explicitly frames Shanawdithit’s work, and implicitly frames so
-          much more, should remain the context for these chapters as well. And
-          along with this context, we hope, is a lesson of intention and
-          care—care for how we choose to frame future knowledge, as well as care
-          for our relationships with the people, past and present, who have
-          enabled our work and whose knowledge we seek to steward and share.
+          <p>
+            This book will soon move on to consider alternative visual forms and
+            epistemological frameworks, those that reject the unidirectional
+            path of knowledge production in favor of a more balanced exchange of
+            ideas (Chapter 4). We will also consider examples of how more
+            conventional visual forms can push back against extractive aims by
+            centering otherwise overlooked perspectives, and by including
+            methods that might otherwise be set to the side (Chapter 5). In
+            short, we will move from lessons of limits to those of possibility.
+            But the colonial context that explicitly frames Shanawdithit’s work,
+            and implicitly frames so much more, should remain the context for
+            these chapters as well. And along with this context, we hope, is a
+            lesson of intention and care—care for how we choose to frame future
+            knowledge, as well as care for our relationships with the people,
+            past and present, who have enabled our work and whose knowledge we
+            seek to steward and share.
+          </p>
         </CenteredLayout>
 
         <Takeaways

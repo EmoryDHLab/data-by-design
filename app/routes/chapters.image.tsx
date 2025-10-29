@@ -399,7 +399,7 @@ export default function PlayfairPage() {
             ]}
           />
         </span>
-        <CenteredLayout>
+        <CenteredLayout className="pt-20">
           <p>
             Playfair's belief in the simplicity and ease of data visualization
             has carried forward into the present, along with "permanent" visual

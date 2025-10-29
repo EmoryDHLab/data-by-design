@@ -475,7 +475,7 @@ export default function BrooksPage() {
           ]}
         />
 
-        <TwoColumnLayout className="py-20">
+        <TwoColumnLayout className="pt-20">
           <Column shouldPin={true}>
             <p>
               We do not know with certainty whether Elford was familiar with an
