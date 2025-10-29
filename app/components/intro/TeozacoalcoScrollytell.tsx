@@ -30,7 +30,7 @@ const TeozacoalcoScrollytell = ({ triggers }: Props) => {
         bgColor="processPrimary"
       >
         <div
-          className={`flex flex-col md:flex-row justify-between drop-shadow-lg`}
+          className={`flex flex-col md:flex-row justify-between `}
           id="scrollytell-two"
         >
           <div className="sticky p-8 md:p-0 top-20 h-min bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">

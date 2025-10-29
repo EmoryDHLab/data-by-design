@@ -64,7 +64,7 @@ export default function SeraphiqueTour({ figure }: Props) {
   return (
     <FigureModal figure={figure} id={figure.fileName}>
       <div
-        className={`absolute z-10 overflow-hidden  p-6  text-xl font-neueMontreal transition-opacity duration-1000 opacity-${
+        className={`absolute z-10 overflow-hidden   p-6  text-xl font-neueMontreal transition-opacity duration-1000 opacity-${
           hideSensitiveState ? 100 : 0
         }`}
       >
@@ -77,7 +77,7 @@ export default function SeraphiqueTour({ figure }: Props) {
         viewBox="0 0 50 70"
         role="img"
         aria-describedby={`fig-label-${figure.fileName}`}
-        className={`transition-all duration-1000 drop-shadow-lg blur-${
+        className={`transition-all duration-1000 blur-${
           hideSensitiveState ? "xl" : "none"
         }`}
       >

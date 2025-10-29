@@ -59,9 +59,9 @@ export default function IntroPage() {
   return (
     <ChapterContext.Provider
       value={{
-        backgroundColor: "offwhite",
+        backgroundColor: "imagePrimary",
         primaryTextColor: "black",
-        accentColor: "imagePrimary",
+        accentColor: "imageSecondary",
         accentTextColor: "imageSecondary",
         footnoteTextColor: "imagePrimary",
         footnotes: introFootnotes,
@@ -142,7 +142,11 @@ export default function IntroPage() {
             Map," first released on the web in 2012, now hangs in the third
             floor gallery of New York's Museum of Modern Art.
           </p>
-          <Figure figure={figures["0002-windmap"]} />
+          <Figure
+            figure={figures["0002-windmap"]}
+            className="mix-blend-multiply
+            "
+          />
           <p>
             But the allure of visualization is precisely its danger. Because
             maps and charts (and their interactive analogues) all promise ease
@@ -337,7 +341,7 @@ export default function IntroPage() {
             </span>,
           ]}
         />
-        <CenteredLayout>
+        <CenteredLayout className="pt-20">
           <p>
             This is just one example of what can be gained by placing a map or
             chart in the specific context of its creation, and over the course
@@ -403,7 +407,7 @@ export default function IntroPage() {
         </CenteredLayout>
         <ChapterSectionTitle section={sections[1]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             Before moving forward, it is worth pausing to address a set of
             questions that have been to this point left unaddressed: What do I
             mean when I say "visualization"? Is there a difference between data
@@ -607,7 +611,7 @@ export default function IntroPage() {
           </p>
         </CenteredLayout>
         <ChapterSectionTitle section={sections[2]} />
-        <CenteredLayout>
+        <CenteredLayout className="pb-20">
           <p>
             In the very same year that the Ñudzahui mapmaker was weighing what
             power he might wield as the creator of a map for the King of Spain,
@@ -665,7 +669,8 @@ export default function IntroPage() {
             <InlineFootnote index={26} />
           </p>
           <Figure
-            className="grid grid-cols-1 md:grid-cols-2 items-center"
+            className="grid mix-blend-multiply
+            grid-cols-1 md:grid-cols-2 items-center"
             figures={[figures["0012-anon"], figures["0013-oresme"]]}
             groupCaption={
               <p>
@@ -707,7 +712,10 @@ export default function IntroPage() {
             Enlightenment thought—the flowering of data visualization was set to
             begin.
           </p>
-          <div className="grid gird-cos-1 md:grid-cols-2 items-center gap-2 md:gap-4">
+          <div
+            className="grid grid-cols-1 mix-blend-multiply
+ md:grid-cols-2 items-center gap-2 md:gap-4"
+          >
             <Figure figure={figures["0014-plot"]} showCaption={false} />
             <Figure figure={figures["0015-lambert"]} showCaption={false} />
             <Figure
@@ -770,11 +778,11 @@ export default function IntroPage() {
           </p>
         </CenteredLayout>
         <Figure
-          className="mx-2 md:mx-12 text-sm md:text-base"
+          className="mx-2  md:mx-12 text-sm md:text-base"
           captionClassName="mx-12"
           figure={figures["0017-halley"]}
         />
-        <CenteredLayout>
+        <CenteredLayout className="pt-20">
           <p>
             This practical dependency on data and mapping, and the tools and
             methods of measurement that were required to produce them, would
@@ -874,7 +882,7 @@ export default function IntroPage() {
         </CenteredLayout>
         <ChapterSectionTitle section={sections[3]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             The "Mapa de Teozacoalco" is not, of course, the earliest instance
             of data visualization that we know. We have already discussed a
             contemporary example of quipu—a system that derives from the Inkan
@@ -1009,7 +1017,7 @@ export default function IntroPage() {
         </CenteredLayout>
         <ChapterSectionTitle section={sections[4]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             Our story follows a chronological arc from the final years of the
             eighteenth century, where—as we have learned—the starting point of
             modern data visualization is generally placed, up to the turn of the
@@ -1176,7 +1184,7 @@ export default function IntroPage() {
         </CenteredLayout>
         <ChapterSectionTitle section={sections[5]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             We are a team of visualization designers, software engineers, and
             humanities researchers. As such, we have always intended for the
             ideas of this project to be put into use. We envision Data by Design

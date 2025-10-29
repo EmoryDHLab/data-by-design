@@ -612,7 +612,10 @@ export default function BrooksPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <SeraphiqueTour figure={figures["0103-marieseraphique"]} />
+            <SeraphiqueTour
+            
+              figure={figures["0103-marieseraphique"]}
+            />
           </Column>
         </TwoColumnLayout>
 
