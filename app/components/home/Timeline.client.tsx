@@ -45,6 +45,10 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
                 : "/images/ui/shuffle_unclick.png"
             }
             alt="Shuffle"
+            loading="eager"
+            decoding="async"
+            width={56}
+            height={56}
           />
         </button>
         <button
@@ -59,6 +63,10 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
                 : "/images/ui/sort_unselected.png"
             }
             alt="Sort"
+            loading="eager"
+            decoding="async"
+            width={56}
+            height={56}
           />
         </button>
       </div>

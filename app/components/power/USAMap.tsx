@@ -9,6 +9,8 @@ export default function USAMap() {
           src={`/images/power/map.jpg`}
           alt=""
           title=""
+          loading="lazy"
+          decoding="async"
         />
       </picture>
       <p className="flex items-center justify-center font-power uppercase mt-0">

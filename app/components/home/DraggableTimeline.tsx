@@ -41,9 +41,9 @@ export default function DraggableTimeline({
     setImagePositions(
       Array.from({ length: 30 + 1 }, () => {
         const windowWidth = windowSize.width ?? 200;
-        const x = Math.random() * (windowWidth - 300);
+        const x = Math.random() * (windowWidth - 400); // Account for larger image width
         const y = Math.max(
-          PART_ONE_START + Math.random() * PART_ONE_HEIGHT - 200,
+          PART_ONE_START + Math.random() * PART_ONE_HEIGHT - 250, // Account for larger image height
           70
         );
         const r = Math.random() * 60 - 30;
@@ -137,25 +137,48 @@ export default function DraggableTimeline({
           image.fileName === selectedImage?.fileName;
         return (
           <g key={image.fileName} id={image.fileName}>
-            <image
+            <foreignObject
               className={`cursor-pointer ${
                 isSelected ? "outline outline-4 outline-red-500" : ""
               }`}
               id={`index-${index}`}
-              style={{ cursor: "pointer" }}
-              href={`/images/${image.chapter}/thumbnails/${image.fileName}.webp`}
-              width={150}
+              width={200}
               height={
                 image.height && image.width
-                  ? Math.ceil((image.height / image.width) * 150)
-                  : 150
+                  ? Math.ceil((image.height / image.width) * 200)
+                  : 200
               }
               transform={getTransform(index)}
               onMouseDown={() => {
                 setIsDragging(true);
                 setCurrentImageIndex(index);
               }}
-            />
+            >
+              <picture>
+                <source
+                  srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/400,/0/default.webp`}
+                  type="image/webp"
+                />
+                <source
+                  srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/400,/0/default.jpg`}
+                  type="image/jpeg"
+                />
+                <img
+                  style={{ cursor: "pointer" }}
+                  src={`/images/${image.chapter}/thumbnails/${image.fileName}.webp`}
+                  alt={image.altText || image.cleanTitle || image.fileName}
+                  width={200}
+                  height={
+                    image.height && image.width
+                      ? Math.ceil((image.height / image.width) * 200)
+                      : 200
+                  }
+                  loading="lazy"
+                  decoding="async"
+                  draggable={false}
+                />
+              </picture>
+            </foreignObject>
           </g>
         );
       })}

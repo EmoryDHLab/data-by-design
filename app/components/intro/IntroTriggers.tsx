@@ -82,6 +82,8 @@ const IntroTriggers = [
         className="max-w-xs md:max-w-lg"
         src="/images/process/1500s.webp"
         alt=""
+        loading="lazy"
+        decoding="async"
       />
     </div>
   </div>,
@@ -125,8 +127,8 @@ const IntroTriggers = [
       <InlineFootnote index={9} />
     </p>
     <div>
-      <img src="/images/intro/tufte-quote.png" alt="" />
-      <img src="/images/intro/tufte-quote-2.png" alt="" />
+      <img src="/images/intro/tufte-quote.png" alt="" loading="lazy" decoding="async" />
+      <img src="/images/intro/tufte-quote-2.png" alt="" loading="lazy" decoding="async" />
     </div>
   </div>,
   <div key="6eebc10a" className="z-20 bg-offwhite p-5">

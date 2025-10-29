@@ -54,8 +54,11 @@ const Picture = ({ figure, className, center = true }: Props) => {
         title={figure.cleanTitle ?? figure.fileName}
         draggable={!hideSensitiveState}
         loading="lazy"
+        decoding="async"
+        fetchPriority="auto"
         width={figure.width ?? 0}
         height={figure.height ?? 0}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
     </picture>
   );

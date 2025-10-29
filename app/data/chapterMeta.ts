@@ -17,7 +17,7 @@ export const chapterMeta: TChapterMeta = {
     image:
       "https://iip.readux/io/iiif/3/dxd/intro/7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiif/3/dxd/intro/7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.tiff/193,274,721,264/full/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd/intro/7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.tiff/193,274,721,264/1200,/0/default.webp",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -29,7 +29,7 @@ export const chapterMeta: TChapterMeta = {
     image:
       "https://iiif.ecds.io/iiif/3/dxd/description/5-The_history_of_the_rise.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiif/3/dxd/description/5-The_history_of_the_rise.tiff/7,625,662,263/full/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd/description/5-The_history_of_the_rise.tiff/7,625,662,263/1200,/0/default.webp",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -41,7 +41,7 @@ export const chapterMeta: TChapterMeta = {
     image:
       "https://iiif.ecds.io/iiif/3/dxd/image/1-northamerica.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiif/3/dxd/image/1-northamerica.tiff/190,242,1094,283/full/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd/image/1-northamerica.tiff/190,242,1094,283/1200,/0/default.webp",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -53,7 +53,7 @@ export const chapterMeta: TChapterMeta = {
     image:
       "https://iiif.ecds.io/iiif/3/dxd/people/DRW-II.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiif/3/dxd/people/DRW-II.tiff/2384,4586,3446,1470/800,/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd/people/DRW-II.tiff/2384,4586,3446,1470/1200,/0/default.webp",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -65,7 +65,7 @@ export const chapterMeta: TChapterMeta = {
     image:
       "https://iiif.ecds.io/iiif/3/dxd/process/1600s.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiif/3/dxd/process/1600s.tiff/513,41,403,138/full/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd/process/1600s.tiff/513,41,403,138/1200,/0/default.webp",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -77,7 +77,7 @@ export const chapterMeta: TChapterMeta = {
     image:
       "https://iiif.ecds.io/iiif/3/dxd/power/887.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiif/2/dxd/power/887.tiff/9,320,771,440/full/0/default.jpg",
+      "https://iiif.ecds.io/iiif/2/dxd/power/887.tiff/9,320,771,440/1200,/0/default.webp",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -89,7 +89,7 @@ export const chapterMeta: TChapterMeta = {
     image:
       "https://iiif.ecds.io/iiif/3/dxd/work/data-traces.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiif/3/dxd/work/data-traces.tiff/870,221,686,260/full/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd/work/data-traces.tiff/870,221,686,260/1200,/0/default.webp",
     imageWidth: "800",
     imageHeight: "800",
   },

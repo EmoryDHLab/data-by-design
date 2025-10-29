@@ -43,7 +43,7 @@ const OrderedTimeline = ({ setSelectedImage, selectedImage }: Props) => {
 
   useEffect(() => {
     if (!selectedImage) return;
-    const selectedImageSelector = `img[src="/images/${selectedImage.chapter}/thumbnails/${selectedImage.fileName}.jpg`;
+    const selectedImageSelector = `img[src="/images/${selectedImage.chapter}/thumbnails/${selectedImage.fileName}.jpg"]`;
     if (!sliderRef.current) return;
     sliderRef.current
       .querySelector<HTMLElement>(selectedImageSelector)
@@ -154,16 +154,16 @@ const OrderedTimeline = ({ setSelectedImage, selectedImage }: Props) => {
                 >
                   <picture>
                     <source
-                      srcSet={`/images/${image.chapter}/thumbnails/${image.fileName}.webp`}
+                      srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/300,/0/default.webp`}
                       type="image/webp"
                     />
                     <source
-                      srcSet={`/images/${image.chapter}/thumbnails/${image.fileName}.jpg`}
-                      type="image/jpg"
+                      srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/300,/0/default.jpg`}
+                      type="image/jpeg"
                     />
                     <img
                       className={classNames(
-                        "absolute border  bg-offwhite",
+                        "absolute border bg-offwhite w-32 h-auto object-cover",
                         isSelected && "border-4 border-red-500"
                       )}
                       style={{
@@ -173,6 +173,10 @@ const OrderedTimeline = ({ setSelectedImage, selectedImage }: Props) => {
                       }}
                       src={`/images/${image.chapter}/thumbnails/${image.fileName}.jpg`}
                       alt={image.altText ?? ""}
+                      loading="lazy"
+                      decoding="async"
+                      width={128}
+                      height="auto"
                     />
                   </picture>
                 </button>
