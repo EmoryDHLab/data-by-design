@@ -20,7 +20,9 @@ import figures from "~/data/figures/data.json";
 import ClarksonSideBySideScrollytell from "~/components/data/ClarksonSideBySideScrollytell";
 import ClientOnly from "~/components/ClientOnly";
 
-const VoyagesVis = lazy(() => import("~/components/data/voyages/VoyagesVis.client"));
+const VoyagesVis = lazy(
+  () => import("~/components/data/voyages/VoyagesVis.client")
+);
 import { chapterMetaTags } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
 import VoyageScrollytell from "~/components/data/voyageScrollytell/VoyageScrollytell";
@@ -350,7 +352,7 @@ export default function BrooksPage() {
         </CenteredLayout>
 
         <ChapterSectionTitle section={sections[1]}></ChapterSectionTitle>
-        <CenteredLayout>
+        <CenteredLayout className="pb-20">
           <p className="first-paragraph">
             The original engraving that Clarkson showed to Equiano, and that
             provided him with the visual model for his own, is attributed to the
@@ -473,7 +475,7 @@ export default function BrooksPage() {
           ]}
         />
 
-        <TwoColumnLayout>
+        <TwoColumnLayout className="py-20">
           <Column shouldPin={true}>
             <p>
               We do not know with certainty whether Elford was familiar with an
@@ -1106,7 +1108,9 @@ export default function BrooksPage() {
 
         <ClientOnly>
           <VoyageVisContainer>
-            <Suspense fallback={<div className="p-4">Loading visualization...</div>}>
+            <Suspense
+              fallback={<div className="p-4">Loading visualization...</div>}
+            >
               <VoyagesVis
                 id="voyage-interactive"
                 allVoyages
