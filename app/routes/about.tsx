@@ -63,7 +63,7 @@ export default function AboutPage() {
                     <cite className="select-all">
                       L. Klein, T. Sharma, J. Varner, S. Li, M. Adams, N. Yang,
                       D. Jutan, J. Fu, A. Mola, Z. Fang, Y. Li, and S. Munro.
-                      Data by Design. 2024 public beta.
+                      Data by Design. 2025 public beta.
                     </cite>
                   </p>
                 </div>

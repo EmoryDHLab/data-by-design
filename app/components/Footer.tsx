@@ -153,39 +153,39 @@ export default function Footer() {
 
         {/* Logos  */}
 
-        <div className="grid grid-cols-2  pt-20 sm:grid-cols-3 md:flex md:flex-row md:flex-wrap gap-8 md:gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-row md:flex-wrap gap-4 md:gap-8 pt-12 md:pt-20 items-center justify-items-center">
           <img
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             src="/images/footer/ecds.png"
             alt="Emory Center for Digital Scholarship"
           />
           <img
-            className="h-8 md:h-8 w-auto object-contain"
+            className="h-6 sm:h-8 md:h-8 w-auto object-contain"
             src="/images/footer/DHlab.svg"
             alt="Digital Humanities Lab"
           />
           <img
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             src="/images/footer/polymode.svg"
             alt="Polymode Studio"
           />
           <img
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             src="/images/footer/DigitalPublishingHumanities.png"
             alt="Emory Digital Humanities Lab"
           />
           <img
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             src="/images/footer/neh.png"
             alt="The National Endowment for the Humanities"
           />
           <img
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             src="/images/footer/mellon.jpeg"
             alt="Andrew W. Mellon Foundation"
           />
           <img
-            className="h-8 md:h-10 w-auto object-contain col-span-2 sm:col-span-1"
+            className="h-6 sm:h-8 md:h-10 w-auto object-contain col-span-3 sm:col-span-4 md:col-span-1 justify-self-center"
             src="/images/footer/mit.svg"
             alt="MIT Press"
           />
