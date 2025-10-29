@@ -102,22 +102,26 @@ export default function DocumentViewer() {
           >
             {selectedSet === "setOne" ? (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/ui/stack1.png" alt="" role="presentation" />
+                <img src="/images/ui/stack1.png" alt="" role="presentation" loading="lazy" decoding="async" />
                 <img
                   className="w-full"
                   src="/images/ui/set1.png"
                   alt=""
                   role="presentation"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             ) : (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/ui/eyeframe.png" alt="" role="presentation" />
+                <img src="/images/ui/eyeframe.png" alt="" role="presentation" loading="lazy" decoding="async" />
                 <img
                   className="w-full"
                   src="/images/ui/set1.png"
                   alt=""
                   role="presentation"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             )}
@@ -129,22 +133,26 @@ export default function DocumentViewer() {
           >
             {selectedSet === "setTwo" ? (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/ui/stack2.png" alt="" role="presentation" />
+                <img src="/images/ui/stack2.png" alt="" role="presentation" loading="lazy" decoding="async" />
                 <img
                   className="w-full"
                   src="/images/ui/set2.png"
                   alt=""
                   role="presentation"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             ) : (
               <div className="space-y-5 max-w-[70px]">
-                <img src="/images/ui/eyeframe.png" alt="" role="presentation" />
+                <img src="/images/ui/eyeframe.png" alt="" role="presentation" loading="lazy" decoding="async" />
                 <img
                   className="w-full"
                   src="/images/ui/set2.png"
                   alt=""
                   role="presentation"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             )}
@@ -187,6 +195,8 @@ export default function DocumentViewer() {
                 src="/images/ui/leftarrow.png"
                 alt=""
                 role="presentation"
+                loading="lazy"
+                decoding="async"
               />
             </button>
 
@@ -211,6 +221,8 @@ export default function DocumentViewer() {
                 src="/images/ui/rightarrow.png"
                 alt=""
                 role="presentation"
+                loading="lazy"
+                decoding="async"
               />
             </button>
           </div>

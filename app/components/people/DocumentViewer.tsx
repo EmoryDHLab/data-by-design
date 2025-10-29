@@ -62,6 +62,8 @@ const DocumentViewer = () => {
                 className="w-[27.5px] h-[19.5px]"
                 src="/images/ui/leftarrow.png"
                 alt=""
+                loading="lazy"
+                decoding="async"
               />
             </button>
             
@@ -84,6 +86,8 @@ const DocumentViewer = () => {
                 className="w-[27.5px] h-[19.5px]"
                 src="/images/ui/rightarrow.png"
                 alt=""
+                loading="lazy"
+                decoding="async"
               />
             </button>
           </div>

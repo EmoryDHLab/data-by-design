@@ -158,36 +158,50 @@ export default function Footer() {
             className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             src="/images/footer/ecds.png"
             alt="Emory Center for Digital Scholarship"
+            loading="lazy"
+            decoding="async"
           />
           <img
             className="h-6 sm:h-8 md:h-8 w-auto object-contain"
             src="/images/footer/DHlab.svg"
             alt="Digital Humanities Lab"
+            loading="lazy"
+            decoding="async"
           />
           <img
             className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             src="/images/footer/polymode.svg"
             alt="Polymode Studio"
+            loading="lazy"
+            decoding="async"
           />
           <img
             className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             src="/images/footer/DigitalPublishingHumanities.png"
             alt="Emory Digital Humanities Lab"
+            loading="lazy"
+            decoding="async"
           />
           <img
             className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             src="/images/footer/neh.png"
             alt="The National Endowment for the Humanities"
+            loading="lazy"
+            decoding="async"
           />
           <img
             className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             src="/images/footer/mellon.jpeg"
             alt="Andrew W. Mellon Foundation"
+            loading="lazy"
+            decoding="async"
           />
           <img
             className="h-6 sm:h-8 md:h-10 w-auto object-contain col-span-3 sm:col-span-4 md:col-span-1 justify-self-center"
             src="/images/footer/mit.svg"
             alt="MIT Press"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>
