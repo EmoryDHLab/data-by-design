@@ -70,14 +70,14 @@ export default function Index() {
         </h1>
 
         <div />
-        <div className="md:flex md:items-center md:justify-around md:grid-rows-2 pt-10 md:pt-5 h-full md:h-[600px] z-20 3xl:mx-48">
+        <div className="md:flex md:items-center pt-10 md:pt-5 h-full md:h-[600px] z-20 3xl:mx-48">
           <figure
             aria-hidden
-            className="my-10 px-5 md:px-0 md:mt-18 md:w-[500px]"
+            className="my-10 px-5 md:px-0 md:mt-18 md:w-[500px] flex-shrink-0"
           >
             <SiteTitle />
           </figure>
-          <div className="hidden h-96 lg:block">
+          <div className="hidden h-96 lg:block flex-1 flex justify-center">
             <ClientOnly>
               <SelectedImage selectedImage={selectedImage} />
             </ClientOnly>
