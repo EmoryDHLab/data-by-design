@@ -41,10 +41,11 @@ export default function DraggableTimeline({
     setImagePositions(
       Array.from({ length: 30 + 1 }, () => {
         const windowWidth = windowSize.width ?? 200;
-        const x = Math.random() * (windowWidth - 400); // Account for larger image width
+        // Use more of the full width, accounting for button controls (about 120px) and some margin
+        const x = 120 + Math.random() * Math.max(windowWidth - 320, 600);
         const y = Math.max(
-          PART_ONE_START + Math.random() * PART_ONE_HEIGHT - 250, // Account for larger image height
-          70
+          PART_ONE_START + Math.random() * (PART_ONE_HEIGHT + 50) - 150, // Reduce top offset to prevent cropping
+          50 // Keep images safely below top edge
         );
         const r = Math.random() * 60 - 30;
         return { x, y, r };

@@ -70,21 +70,23 @@ export default function Index() {
         </h1>
 
         <div />
-        <div className="md:flex md:items-center pt-10 md:pt-5 h-full md:h-[600px] z-20 3xl:mx-48">
-          <figure
-            aria-hidden
-            className="my-10 px-5 md:px-0 md:mt-18 md:w-[500px] flex-shrink-0"
-          >
-            <SiteTitle />
-          </figure>
-          <div className="hidden h-96 lg:block flex-1 flex justify-center">
-            <ClientOnly>
-              <SelectedImage selectedImage={selectedImage} />
-            </ClientOnly>
+        <div className="md:flex md:items-center pl-44  pt-10 md:pt-5 h-full md:h-[500px] z-20 3xl:mx-48">
+          <div className="md:flex md:items-start md:gap-80">
+            <figure
+              aria-hidden
+              className="my-10 px-5 md:px-0 md:mt-18 md:w-[500px]  flex-shrink-0"
+            >
+              <SiteTitle className="pt-20" />
+            </figure>
+            <div className="hidden h-96 lg:block flex-1  flex justify-center">
+              <ClientOnly>
+                <SelectedImage selectedImage={selectedImage} />
+              </ClientOnly>
+            </div>
           </div>
         </div>
-        <div className="hidden lg:block w-screen my-2 mb-8 pt-10">
-          <div className="flex items-center w-full h-96 fancyborder ">
+        <div className="hidden lg:block w-screen my-2 mb-8 pt-48 xl:pt:28">
+          <div className="flex items-center w-full h-96  fancyborder ">
             <ClientOnly>
               <Timeline
                 selectedImage={selectedImage}
