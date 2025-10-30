@@ -85,8 +85,8 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="hidden lg:block w-screen my-2 mb-8 pt-48 xl:pt:28">
-          <div className="flex items-center w-full h-96  fancyborder ">
+        <div className="hidden lg:block w-screen my-2 mb-8 pt-32 xxl:pt-48">
+          <div className="flex items-center w-full h-96 xxl:h-[40rem]  fancyborder ">
             <ClientOnly>
               <Timeline
                 selectedImage={selectedImage}
