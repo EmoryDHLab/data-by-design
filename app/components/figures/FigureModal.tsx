@@ -112,12 +112,14 @@ export default function FigureModal({
                       }}
                     />
                   )}
-                  <Caption figure={figure} className="md:mb-2 text-pretty" />
+                  <Caption figure={figure} className="md:mb-2" />
                   <div className="mx-auto w-full rounded-2xl bg-transparent ">
                     <Disclosure>
                       {({ open }) => (
                         <>
-                          <DisclosureButton className="flex items-center gap-2 text-left text-sm font-medium uppercase font-power trackin-wider text-gray-400 hover:text-white transition-colors group">
+                          <DisclosureButton
+                            className="flex items-center gap-2 text-left text-sm font-medium text-gray-400 hover:text-white transition-colors group"
+                          >
                             <span>Alt Text</span>
                             <ChevronUp
                               className={classNames(

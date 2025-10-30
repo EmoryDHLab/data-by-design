@@ -17,7 +17,6 @@
     "@react-router/express": "^7.5.3",
     "@react-router/node": "^7.0.0",
     "@samvera/clover-iiif": "^2.9.1",
-    "@tailwindcss/typography": "^0.5.19",
     "@uidotdev/usehooks": "^2.4.1",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",

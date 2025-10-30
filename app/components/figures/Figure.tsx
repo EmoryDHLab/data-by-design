@@ -20,7 +20,7 @@ interface Props {
 export const Caption = ({ figure, className }: Props) => {
   return (
     <figcaption
-      className={`font-neueMontreal max-w-[65ch] text-pretty text-xs md:text-sm leading-5 text-left mt-6 md:mt-8 mb-6 md:mb-8 col-span-full ${
+      className={`font-neueMontreal text-xs md:text-sm leading-5 text-left mt-6 md:mt-8 mb-6 md:mb-8 col-span-full ${
         className ?? ""
       }`}
       dangerouslySetInnerHTML={{
@@ -57,7 +57,7 @@ export default function Figure({
               id={id ?? `fig-${figures[0]?.fileName}`}
             >
               {hideSensitiveState && figure.sensitive && (
-                <div className="absolute p-6 z-10 max-w-[65ch] text-xl font-neueMontreal">
+                <div className="absolute p-6 z-10 text-xl font-neueMontreal">
                   {figure.sensitiveAltText}
                 </div>
               )}
@@ -67,7 +67,7 @@ export default function Figure({
         })}
         {groupCaption && (
           <figcaption
-            className={`font-neueMontreal max-w-[65ch] text-pretty text-sm leading-tight text-left mt-6 md:mt-8 mb-6 md:mb-8  col-span-full ${
+            className={`font-neueMontreal text-sm leading-tight text-left mt-6 md:mt-8 mb-6 md:mb-8 col-span-full ${
               captionClassName ?? ""
             }`}
           >
@@ -85,13 +85,13 @@ export default function Figure({
         id={id ?? `fig-${figure.fileName}`}
       >
         {hideSensitiveState && figure.sensitive && (
-          <div className="absolute p-6 z-10 max-w-[65ch] text-pretty text-xl font-neueMontreal">
+          <div className="absolute p-6 z-10 text-xl font-neueMontreal">
             {figure.sensitiveAltText}
           </div>
         )}
         <Picture
           figure={figure}
-          className={`transition-all duration-1000  ${imageClassName} ${
+          className={`transition-all duration-1000 ${imageClassName} ${
             hideSensitiveState && figure.sensitive
               ? "blur-md border-2 border-offblack"
               : ""
