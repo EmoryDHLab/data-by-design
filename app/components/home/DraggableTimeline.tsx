@@ -48,7 +48,7 @@ export default function DraggableTimeline({
         const x = controlsWidth + Math.random() * availableWidth;
         const y = Math.max(
           PART_ONE_START + Math.random() * (PART_ONE_HEIGHT + 50) - 150, // Reduce top offset to prevent cropping
-          50 // Keep images safely below top edge
+          80 // Give images more room at the top to prevent cropping
         );
         const r = Math.random() * 60 - 30;
         return { x, y, r };
