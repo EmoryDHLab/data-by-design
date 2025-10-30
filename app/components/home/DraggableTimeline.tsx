@@ -41,8 +41,11 @@ export default function DraggableTimeline({
     setImagePositions(
       Array.from({ length: 30 + 1 }, () => {
         const windowWidth = windowSize.width ?? 200;
-        // Use more of the full width, accounting for button controls (about 120px) and some margin
-        const x = 120 + Math.random() * Math.max(windowWidth - 320, 600);
+        // Use the full width of container, accounting for button controls and image width
+        const controlsWidth = 120; // Width of button controls
+        const imageWidth = 200; // Approximate image width
+        const availableWidth = Math.max(windowWidth - controlsWidth - imageWidth, 600);
+        const x = controlsWidth + Math.random() * availableWidth;
         const y = Math.max(
           PART_ONE_START + Math.random() * (PART_ONE_HEIGHT + 50) - 150, // Reduce top offset to prevent cropping
           50 // Keep images safely below top edge
@@ -51,7 +54,7 @@ export default function DraggableTimeline({
         return { x, y, r };
       })
     );
-  }, [windowSize.width]);
+  }, [windowSize.width, shuffledImages]);
 
   function getTransform(index: number) {
     const position = imagePositions[index];
