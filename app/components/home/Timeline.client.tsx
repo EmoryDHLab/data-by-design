@@ -28,8 +28,8 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
   }, [shuffledImages, setSelectedImage]);
 
   return (
-    <>
-      <div className="flex flex-col px-4">
+    <div className="relative w-full h-full flex">
+      <div className="flex flex-col items-center justify-center px-4 z-20">
         <button
           onClick={() => {
             setTimelineType(TimelineType.Draggable);
@@ -71,19 +71,21 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
         </button>
       </div>
 
-      {timelineType === TimelineType.Draggable ? (
-        <DraggableTimeline
-          selectedImage={selectedImage}
-          setSelectedImage={setSelectedImage}
-          shuffledImages={shuffledImages}
-        />
-      ) : (
-        <OrderedTimeline
-          selectedImage={selectedImage}
-          setSelectedImage={setSelectedImage}
-        />
-      )}
-    </>
+      <div className="flex-1 relative">
+        {timelineType === TimelineType.Draggable ? (
+          <DraggableTimeline
+            selectedImage={selectedImage}
+            setSelectedImage={setSelectedImage}
+            shuffledImages={shuffledImages}
+          />
+        ) : (
+          <OrderedTimeline
+            selectedImage={selectedImage}
+            setSelectedImage={setSelectedImage}
+          />
+        )}
+      </div>
+    </div>
   );
 };
 

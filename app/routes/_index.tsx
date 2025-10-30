@@ -70,20 +70,24 @@ export default function Index() {
         </h1>
 
         <div />
-        <div className="md:flex md:items-center md:justify-around md:grid-rows-2 pt-10 md:pt-5 h-full md:h-[600px] z-20 3xl:mx-48">
-          <figure
-            aria-hidden
-            className="my-10 px-5 md:px-0 md:mt-18 md:w-[500px]"
-          >
-            <SiteTitle />
-          </figure>
-          <div className="hidden h-96 lg:block">
-            <ClientOnly>
-              <SelectedImage selectedImage={selectedImage} />
-            </ClientOnly>
+        <div className="relative w-full py-20 pt-20 pl-52 h-full md:h-[500px] z-20 3xl:mx-48">
+          <div className="md:flex md:items-start md:gap-96">
+            <figure
+              aria-hidden
+              className="my-10 px-5 md:px-0 md:pt-0 md:mt-18 md:w-[500px] flex-shrink-0"
+            >
+              <SiteTitle className="pt-20" />
+            </figure>
+            <div className="hidden lg:block w-96 h-96 flex-shrink-0">
+              <div className="w-full h-full flex items-start justify-start">
+                <ClientOnly>
+                  <SelectedImage selectedImage={selectedImage} />
+                </ClientOnly>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="hidden lg:block w-screen my-2 mb-8 pt-10">
+        <div className="hidden lg:block w-screen my-2 mb-8 pt-60">
           <div className="flex items-center w-full h-96 fancyborder ">
             <ClientOnly>
               <Timeline

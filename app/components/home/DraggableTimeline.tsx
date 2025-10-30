@@ -41,16 +41,18 @@ export default function DraggableTimeline({
     setImagePositions(
       Array.from({ length: 30 + 1 }, () => {
         const windowWidth = windowSize.width ?? 200;
-        const x = Math.random() * (windowWidth - 400); // Account for larger image width
+        // Account for controls on left (about 120px) and margins, plus larger image width
+        const availableWidth = windowWidth - 320; // Reduced margin for more spread
+        const x = 120 + Math.random() * Math.max(availableWidth, 600); // Increased minimum spread
         const y = Math.max(
-          PART_ONE_START + Math.random() * PART_ONE_HEIGHT - 250, // Account for larger image height
-          70
+          PART_ONE_START + Math.random() * (PART_ONE_HEIGHT + 100) - 200, // Increased vertical spread
+          50 // Reduced minimum y to allow images closer to top
         );
-        const r = Math.random() * 60 - 30;
+        const r = Math.random() * 80 - 40; // Increased rotation range for more variety
         return { x, y, r };
       })
     );
-  }, [windowSize.width]);
+  }, [windowSize.width, shuffledImages]);
 
   function getTransform(index: number) {
     const position = imagePositions[index];
@@ -117,18 +119,15 @@ export default function DraggableTimeline({
     <svg
       ref={svgRef}
       width="100%"
-      height="120%"
+      height="100%"
       onMouseMove={moveDraggedImage}
       onMouseUp={() => {
         setIsDragging(false);
         setStartPosition(undefined);
       }}
       onKeyUp={({ key }) => keyUp(key)}
-      // Scroll the timeline up to show reveal image detail above
-      // TODO: Rethink after homepage design changes
-      // onFocus={() => svgRef.current.scrollIntoView({ block: "end" })}
       tabIndex={0}
-      className="relative z-10 right-0 focus:outline-none"
+      className="absolute inset-0 z-10 focus:outline-none"
       style={{ bottom: "39px" }}
     >
       {shuffledImages.map((image, index) => {
