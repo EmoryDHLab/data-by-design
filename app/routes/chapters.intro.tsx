@@ -194,7 +194,7 @@ export default function IntroPage() {
         </CenteredLayout>
         <ChapterSectionTitle section={sections[0]} />
         <CenteredLayout>
-          <p>
+          <p className="first-paragraph">
             It would take somewhere between one and three years for the "Mapa de
             Teozacoalco" to travel back across the Atlantic; a 1583 document
             signed by the royal cosmographer indicates his receipt of the map in
@@ -612,7 +612,7 @@ export default function IntroPage() {
         </CenteredLayout>
         <ChapterSectionTitle section={sections[2]} />
         <CenteredLayout className="pb-20">
-          <p>
+          <p className="first-paragraph">
             In the very same year that the Ñudzahui mapmaker was weighing what
             power he might wield as the creator of a map for the King of Spain,
             Galileo Galilei—whose famed observations about the moon and the
