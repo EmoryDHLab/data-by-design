@@ -61,7 +61,7 @@ export default function OverlaidEventSquare({
         <rect
           onMouseEnter={() =>
             setActiveEvent({
-              type: index,
+              type: index + 1,
               event: squareEvent,
               absoluteIndex,
             } as ActivePeabodyEvent)
@@ -72,7 +72,7 @@ export default function OverlaidEventSquare({
           fillOpacity={0}
           width={30}
           height={30}
-          className={strokeClass}
+          className={`cursor-pointer ${strokeClass}`}
         />
       </svg>
     );

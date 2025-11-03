@@ -16,13 +16,13 @@ export default function BarGraphActors() {
   }, [setCurrentActors, currentCentury]);
 
   return (
-    <div className="flex">
+    <div className="flex flex-row">
       {currentActors.map((actor) => {
         return (
           <PeabodyActors
             key={`bg-${actor}`}
             actor={actor}
-            className={`mr-0 md:mr-4 ${
+            className={`mr-0 md:mr-4 md:mb-2 flex-1 ${
               activeEvent?.event?.actors?.includes(actor)
                 ? "outline outline-white"
                 : ""

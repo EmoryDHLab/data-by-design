@@ -14,6 +14,7 @@ export default function CenturySelect() {
             <FancyButton
               outlineColor={currentCentury === century ? "gold" : "white"}
               textColor={currentCentury === century ? "yellow-500" : "white"}
+              shadowColor="white"
               action={() => setCurrentCentury(century)}
             >
               {century}s
