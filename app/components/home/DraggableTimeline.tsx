@@ -149,9 +149,12 @@ export default function DraggableTimeline({
                 isSelected ? "outline outline-4 outline-red-500" : ""
               }`}
               id={`index-${index}`}
-              style={{ cursor: "pointer" }}
-              href={`/images/${image.chapter}/thumbnails/${image.fileName}.webp`}
-              width={150}
+              width={200}
+              height={
+                image.height && image.width
+                  ? Math.ceil((image.height / image.width) * 200)
+                  : 200
+              }
               transform={getTransform(index)}
               onMouseDown={() => {
                 setIsDragging(true);
