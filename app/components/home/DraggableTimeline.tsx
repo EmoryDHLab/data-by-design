@@ -44,7 +44,10 @@ export default function DraggableTimeline({
         // Use the full width of container, accounting for button controls and image width
         const controlsWidth = 120; // Width of button controls
         const imageWidth = 200; // Approximate image width
-        const availableWidth = Math.max(windowWidth - controlsWidth - imageWidth, 600);
+        const availableWidth = Math.max(
+          windowWidth - controlsWidth - imageWidth,
+          600
+        );
         const x = controlsWidth + Math.random() * availableWidth;
         const y = Math.max(
           PART_ONE_START + Math.random() * (PART_ONE_HEIGHT + 50) - 150, // Reduce top offset to prevent cropping
@@ -146,12 +149,9 @@ export default function DraggableTimeline({
                 isSelected ? "outline outline-4 outline-red-500" : ""
               }`}
               id={`index-${index}`}
-              width={200}
-              height={
-                image.height && image.width
-                  ? Math.ceil((image.height / image.width) * 200)
-                  : 200
-              }
+              style={{ cursor: "pointer" }}
+              href={`/images/${image.chapter}/thumbnails/${image.fileName}.webp`}
+              width={150}
               transform={getTransform(index)}
               onMouseDown={() => {
                 setIsDragging(true);
