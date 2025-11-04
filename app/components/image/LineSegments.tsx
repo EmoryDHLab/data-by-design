@@ -30,10 +30,11 @@ const LineSegments = ({ scrollProgress }: Props) => {
     transform: "",
   });
   const [chartTransform, setChartTransform] = useState<string>(
-    "scale(1) translate(0) rotate(0)"
+    "scale(1.42, 1.3) translate(-17.1,-13.6) rotate(-1)"
   );
 
   useEffect(() => {
+    console.log("🚀 ~ LineSegments ~ scrollProgress:", scrollProgress);
     if (scrollProgress < 2.5 || scrollProgress >= 3.5) {
       setFocusShape({
         x: 21,
@@ -56,12 +57,12 @@ const LineSegments = ({ scrollProgress }: Props) => {
 
     if (scrollProgress > 8.5) setRecreationScrollProgress(13);
 
-    if (scrollProgress <= 2.5) {
-      setChartTransform("scale(1.42, 1.3) translate(-17.1,-13.6) rotate(-1)");
-    } else if (scrollProgress >= 3.5) {
+    if (scrollProgress >= 2.5 && scrollProgress <= 3.5) {
+      setChartTransform("scale(1) translate(0) rotate(0)");
+    } else if (scrollProgress >= 3.5 && scrollProgress <= 4.5) {
       setChartTransform("scale(1.41, 1.38) translate(-17.1,-13.5) rotate(-1)");
     } else {
-      setChartTransform("scale(1) translate(0) rotate(0)");
+      setChartTransform("scale(1.42, 1.3) translate(-17.1,-13.6) rotate(-1)");
     }
   }, [scrollProgress]);
 
