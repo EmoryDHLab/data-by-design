@@ -418,24 +418,6 @@ export default function Recreation({
           y={0}
         />
       </g>
-      <g
-        opacity={scrollProgress === 20 ? 1 : 0}
-        transform="translate(6, -0.4) scale(0.9, 1)"
-        className="transition-opacity duration-1000"
-      >
-        <path
-          d={Paths.import3rdEd}
-          stroke="#F4B20C"
-          strokeWidth="0.3px"
-          fill="none"
-        />
-        <path
-          d={Paths.export3rdEd}
-          stroke="#56190F"
-          strokeWidth="0.3px"
-          fill="none"
-        />
-      </g>
     </svg>
   );
 }

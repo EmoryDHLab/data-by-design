@@ -4,6 +4,9 @@ import playfairData from "../../data/image/playfairImportExport.json";
 import { Paths } from "./scrollytellElements/Paths";
 import ScatterPlot from "./elements/ScatterPlot";
 import Recreation from "./Recreation";
+import LineSegmentDots from "./LineSegmentDots";
+import D3Chart from "./line_segment_elements/D3Chart";
+import RawPath from "./line_segment_elements/RawPath";
 
 interface Props {
   scrollProgress: number;
@@ -11,54 +14,55 @@ interface Props {
 
 const blue = "#3B4BE0";
 const gold = "#db882a";
-const exportColor = "#56190F";
-const importColor = "#F4B20C";
 const white = "#F3ECCB";
 const height = 44;
 const width = 94;
-const maxImport = 3300000; // Math.max(...playfairData.map((d: PlayfairData) => d.Imports))
-const maxExport = 4900000; // Math.max(...playfairData.map((d: PlayfairData) => d.Exports))
-const maxY = Math.max(maxImport, maxExport + 1_000_000);
-
-const xScaleDomain = [1700, 1800]; // d3.extent(playfairData.map(d => d.Years))
-const xScale = d3
-  .scaleLinear()
-  .range([0, (width / 11) * 10])
-  .domain(xScaleDomain);
-const xValues = xScale.ticks();
-
-const yScale = d3
-  .scaleLinear()
-  .range([height, 0])
-  .domain([0, maxY + 200_000]);
-
-const yValues = [0, 1_000_000, 2_000_000, 3_000_000, 4_000_000, 5_000_000];
-
-const scatterImport = playfairData.map((d) => ({
-  x: d.Years,
-  y: d.Imports,
-}));
-
-const scatterExport = playfairData.map((d) => ({
-  x: d.Years,
-  y: d.Exports,
-}));
 
 const LineSegments = ({ scrollProgress }: Props) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [recreationScrollProgress, setRecreationScrollProgress] =
-    useState<number>(20);
+    useState<number>(50);
+  const [focusShape, setFocusShape] = useState<object>({
+    x: 0,
+    y: 0,
+    width,
+    height,
+    transform: "",
+  });
+  const [chartTransform, setChartTransform] = useState<string>(
+    "scale(1) translate(0) rotate(0)"
+  );
 
   useEffect(() => {
-    console.log("🚀 ~ LineSegments ~ scrollProgress:", scrollProgress);
-    if (
-      (scrollProgress > 6.5 && scrollProgress < 7.5) ||
-      (scrollProgress > 3.5 && scrollProgress < 5.5)
-    )
+    if (scrollProgress < 2.5 || scrollProgress >= 3.5) {
+      setFocusShape({
+        x: 21,
+        y: 13.6,
+        width: 66,
+        height: 39,
+        transform: "rotate(1)",
+      });
+    } else {
+      setFocusShape({ x: 0, y: -17, width: 200, height: 200 });
+    }
+  }, [scrollProgress]);
+
+  useEffect(() => {
+    if (scrollProgress > 6.7 && scrollProgress < 7.5)
       setRecreationScrollProgress(20);
+
     if (scrollProgress > 7.5 && scrollProgress < 8.5)
       setRecreationScrollProgress(12.5);
+
     if (scrollProgress > 8.5) setRecreationScrollProgress(13);
+
+    if (scrollProgress <= 2.5) {
+      setChartTransform("scale(1.42, 1.3) translate(-17.1,-13.6) rotate(-1)");
+    } else if (scrollProgress >= 3.5) {
+      setChartTransform("scale(1.41, 1.38) translate(-17.1,-13.5) rotate(-1)");
+    } else {
+      setChartTransform("scale(1) translate(0) rotate(0)");
+    }
   }, [scrollProgress]);
 
   return (
@@ -67,168 +71,79 @@ const LineSegments = ({ scrollProgress }: Props) => {
       viewBox="0 0 105 55"
       className="w-full md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0"
     >
-      <image
-        href="/images/image/extras/0201-playfair-northam-cropped.jpg"
-        width={105}
-        height={55}
-        x={0}
-        y={0}
-        opacity={scrollProgress > 1.5 && scrollProgress < 2.5 ? 1 : 0}
-        className="transition-opacity duration-1000"
-      />
+      {/* Original Chart */}
+      <g
+        className={`transition-opacity duration-1000 ${
+          scrollProgress >= 3.5 ? "delay-1000" : ""
+        } ${scrollProgress <= 3.5 ? "opacity-100" : "opacity-100"}`}
+      >
+        <mask id="northam-mask">
+          <rect
+            {...focusShape}
+            fill="white"
+            fillOpacity={1}
+            className="transition-all duration-1000"
+          />
+        </mask>
+
+        <image
+          mask="url(#northam-mask)"
+          className="transition-all duration-1000"
+          href="/images/image/0201-playfair-northam.jpg"
+          width={100}
+          x={5}
+          y={scrollProgress < 2.5 || scrollProgress >= 3.5 ? -25 : -15}
+          transform={chartTransform}
+        />
+      </g>
+
+      {/* D3 Chart  under 1.5*/}
       <g
         className={`transition-opacity duration-1000 ${
           scrollProgress > 1.5 ? "opacity-0" : "opacity-100"
         }`}
       >
-        <rect
-          x={0}
-          y={0}
-          height={55}
-          width={105}
-          fill={white}
-          fillOpacity={1}
-        />
-        <g transform="translate(10, 1) scale(0.89, 1)">
-          {xValues.map((xValue) => {
-            return (
-              <text
-                key={xValue}
-                fill="black"
-                x={xScale(xValue)}
-                y={50}
-                fontSize={1.75}
-              >
-                {xValue}
-              </text>
-            );
-          })}
-        </g>
-        <g transform="translate(0, 5.5)">
-          {yValues.map((yValue, index) => {
-            return (
-              <g key={yValue}>
-                <text
-                  fill="black"
-                  x={index === 0 ? 9 : 3.5}
-                  y={yScale(yValue)}
-                  fontSize={1.5}
-                  opacity={1}
-                >
-                  {d3.format(",")(yValue)}
-                </text>
-              </g>
-            );
-          })}
-        </g>
-        <text fontSize={3} y={5.5} x={4}>
-          British Exports and Imports (1700-1800)
-        </text>
-        <g transform="translate(12, 34.25)">
-          <rect x={1.5} y={1.5} height={2} width={2} fill={blue} />
-          <text x={4.25} y={3.25} fontSize={2}>
-            Exports
-          </text>
-          <rect x={1.5} y={4.5} height={2} width={2} fill={gold} />
-          <text x={4.25} y={6.25} fontSize={2}>
-            Imports
-          </text>
-        </g>
-        <line
-          x1={11.1}
-          x2={11.1}
-          y1={12}
-          y2={49.1}
-          stroke="black"
-          strokeWidth={0.25}
-        />
-        <line
-          x1={11.1}
-          x2={88}
-          y1={49}
-          y2={49}
-          stroke="black"
-          strokeWidth={0.25}
-        />
+        <D3Chart height={height} width={width} />
       </g>
-      <g
-        className={`transition-opacity duration-1000 ${
-          scrollProgress < 2.5 ? "opacity-100" : "opacity-0"
-        }`}
-        transform="translate(11, 5) scale(0.9, 1)"
-      >
+
+      {/* D3 Lines between 0.5 and 2.5 */}
+      <g transform="translate(11, 5.5) scale(0.905)">
         <path
           d={Paths.import3rdEdD3}
-          stroke={blue}
-          fill="none"
-          strokeLinecap="butt"
-          strokeWidth={0.5}
-          className="transition-all duration-1000"
-        />
-        <path
-          d={Paths.export3rdEdD3}
           stroke={gold}
           fill="none"
           strokeLinecap="butt"
           strokeWidth={0.5}
           className="transition-all duration-1000"
+          strokeDasharray={114.47510528564453}
+          strokeDashoffset={
+            scrollProgress < 0.5 || scrollProgress > 2.5
+              ? 114.47510528564453
+              : 0
+          }
+        />
+        <path
+          d={Paths.export3rdEdD3}
+          stroke={blue}
+          fill="none"
+          strokeLinecap="butt"
+          strokeWidth={0.5}
+          className="transition-all duration-1000"
+          strokeDasharray={180.4506378173828}
+          strokeDashoffset={
+            scrollProgress < 0.5 || scrollProgress > 2.5 ? 180.4506378173828 : 0
+          }
         />
       </g>
-      <g
-        className={`transition-opacity duration-1000 ${
-          scrollProgress > 2.5 && scrollProgress < 3.5
-            ? "opacity-100"
-            : "opacity-0"
-        }`}
-      >
-        <image
-          href="/images/image/0201-playfair-northam.jpg"
-          width={105}
-          height={55}
-          x={0}
-          y={0}
-        />
+
+      {/* Full scan image from above between 2.5 and 3.5 */}
+
+      {/* Background for drawn lines when scrolling up between 6.5 and 7.5 */}
+      <g className={scrollProgress >= 6.5 ? "opacity-100" : "opacity-0"}>
+        <rect x={5.75} y={0} height={55} width={93.5} fill={white} />
       </g>
-      <g
-        className={`transition-opacity duration-1000 ${
-          scrollProgress > 5.5 && scrollProgress < 6.5
-            ? "opacity-100"
-            : "opacity-0"
-        }`}
-      >
-        <rect x={5.75} y={0} height={55} width={93.5} fill="white" />
-        <line x1={10} x2={10} y1={0} y2={55} strokeWidth={0} stroke="black" />
-        <line x1={95} x2={95} y1={0} y2={55} strokeWidth={0} stroke="black" />
-        <text x={11} y={15} fontSize={2}>
-          {`<path`}
-          <tspan x={12} dy={2.75}>
-            d="M0,42.702L8.545,42.557L17.091,42.485L25.636,41.259L34.182,40.393L42.727,37.148L51.273,
-          </tspan>
-          <tspan x={12} dy={2.75}>
-            30.295L58.109,16.59L59.818,11.18L60.673,10.603L61.527,18.033L62.382,26.22L63.236,
-          </tspan>
-          <tspan x={12} dy={2.75}>
-            16.302L64.091,36.895L64.945,35.416L65.8,30.439L66.655,35.705L67.509,34.118L68.364,
-          </tspan>
-          <tspan x={12} dy={2.75}>
-            30.98L69.218,32.856L70.073,37.472L76.909,15.869L85.455,8.656"
-          </tspan>
-          <tspan x={12} dy={2.75}>
-            stroke="#db882a" fill="none" stroke-width="0.5"
-          </tspan>
-          <tspan x={12} dy={2.75}>
-            transform="translate(11, 5) scale(0.9, 1)"
-          </tspan>
-          <tspan x={11} dy={2.75}>{`/>`}</tspan>
-        </text>
-      </g>
-      <g
-        className={`transition-opacity duration-1000 ${
-          scrollProgress > 6.5 && scrollProgress < 7.5
-            ? "opacity-100"
-            : "opacity-0"
-        }`}
-      ></g>
+
+      {/* Drawn line between 3.5 and 5.5 and at 6.5 */}
       <g
         className={`transition-opacity duration-1000 ${
           scrollProgress > 6.5 || (scrollProgress > 3.5 && scrollProgress < 5.5)
@@ -242,47 +157,66 @@ const LineSegments = ({ scrollProgress }: Props) => {
           height={55}
           width={93.5}
           fill={white}
-          fillOpacity={scrollProgress < 7.5 ? 1 : 0}
-          className="transition-all duration-1000"
+          fillOpacity={scrollProgress > 3.5 && scrollProgress < 7.5 ? 100 : 0}
+          className="transition-all duration-1000 delay-1000"
         />
-        <Recreation scrollProgress={recreationScrollProgress} />
+
+        <g
+          opacity={scrollProgress >= 3.5 ? 1 : 0}
+          transform="translate(6, -0.4) scale(0.9, 1)"
+          className="transition-opacity duration-1000"
+        >
+          <path
+            d={Paths.import3rdEd}
+            stroke="#F4B20C"
+            strokeWidth="0.3px"
+            fill="none"
+            className="transition-all duration-1000"
+            strokeDasharray={112.31173706054688}
+            strokeDashoffset={scrollProgress >= 3.5 ? 0 : 112.31173706054688}
+          />
+          <path
+            d={Paths.export3rdEd}
+            stroke="#56190F"
+            strokeWidth="0.3px"
+            fill="none"
+            className="transition-all duration-1000"
+            strokeDasharray={157.57818603515625}
+            strokeDashoffset={scrollProgress >= 3.5 ? 0 : 157.57818603515625}
+          />
+        </g>
       </g>
+
+      {/* Dots between 4.5 and 5.5 */}
       <g
-        transform="translate(6.25, -0.75) scale(0.9, 1)"
+        transform="translate(5.6, 0) scale(1)"
         className={`transition-opacity duration-1000 ${
           scrollProgress > 4.5 && scrollProgress < 5.5
             ? "opacity-100"
             : "opacity-0"
         }`}
       >
-        {scatterImport.map((plot) => {
-          return (
-            <ScatterPlot
-              key={plot.x + plot.y}
-              xValue={xScale(plot.x)}
-              yValue={yScale(plot.y)}
-              stroke={importColor}
-              radius={1.25}
-              strokeWidth={0.5}
-              strokeOpacity={0.8}
-              color={white}
-            />
-          );
-        })}
-        {scatterExport.map((plot) => {
-          return (
-            <ScatterPlot
-              key={plot.x + plot.y}
-              xValue={xScale(plot.x)}
-              yValue={yScale(plot.y)}
-              stroke={exportColor}
-              radius={1.25}
-              strokeWidth={0.5}
-              strokeOpacity={0.8}
-              color={white}
-            />
-          );
-        })}
+        <LineSegmentDots />
+      </g>
+
+      {/* Raw Path Element between 5.5 and 6.5 */}
+      <g
+        className={`transition-opacity duration-1000 ${
+          scrollProgress > 5.5 && scrollProgress < 6.5
+            ? "opacity-100"
+            : "opacity-0"
+        }`}
+      >
+        <RawPath />
+      </g>
+
+      {/* Recreation above 7.5 */}
+      <g
+        className={`transition-opacity duration-1000 ${
+          scrollProgress >= 7.5 ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <Recreation scrollProgress={recreationScrollProgress} />
       </g>
     </svg>
   );

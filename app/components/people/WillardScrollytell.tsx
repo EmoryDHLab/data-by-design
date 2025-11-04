@@ -119,7 +119,6 @@ function WillardScrollytell({ figure, triggers }: Props) {
                   height={height}
                   fill="white"
                   fillOpacity={0.3}
-                  // className="transition-all duration-[3s]"
                 />
                 <rect
                   {...focusShapeSize}
@@ -140,27 +139,8 @@ function WillardScrollytell({ figure, triggers }: Props) {
                   transform: `scale(${zoom}) translateY(${translateY}px) translateX(${translateX}px)`,
                 }}
               />
-              {/* <g>
-                <rect
-                  {...focusShapeSize}
-                  fill="none"
-                  stroke="black"
-                  strokeWidth={3}
-                  className="transition-all duration-[3s]"
-                  style={{ transform: `skew(${skewX}deg, ${skewY}deg)` }}
-                />
-                <rect
-                  mask="url(#willard-mask)"
-                  x={0}
-                  y={0}
-                  width={width}
-                  height={height}
-                  className="transition-all duration-[3s]"
-                />
-              </g> */}
             </svg>
             <figcaption></figcaption>
-            {/* <div className={`text-3xl relative md:bottom-0 ml-4 text-black hidden md:${scrollProgress >= 13.5 ? "hidden" : "block"}`} tabIndex={-1}>↓</div> */}
           </div>
           <div
             ref={steps}
