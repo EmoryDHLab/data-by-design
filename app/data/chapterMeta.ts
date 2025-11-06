@@ -12,7 +12,7 @@ export const chapterMeta: TChapterMeta = {
   },
   intro: {
     title: "Introduction",
-    subtitle: "A Prehistory of Visualization and Power",
+    subtitle: "A History of Visualization and Power",
     description: "",
     image:
       "https://iip.readux/io/iiif/3/dxd/intro/7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.tiff/square/800,/0/default.jpg",
@@ -23,9 +23,9 @@ export const chapterMeta: TChapterMeta = {
   },
   data: {
     title: "Data",
-    subtitle: "SEAST’s Visualization Activism",
+    subtitle: "The Society for Effecting the Abolition of the Slave Trade and Responsible Visualization Design",
     description:
-      "Before there is data, there are people. How can the lives behind the data guide our visualization work today?",
+      "Before there are data, there are people. How can the lives behind the data guide our visualization work?",
     image:
       "https://iiif.ecds.io/iiif/3/dxd/description/5-The_history_of_the_rise.tiff/square/800,/0/default.jpg",
     bgImage:
@@ -35,9 +35,9 @@ export const chapterMeta: TChapterMeta = {
   },
   image: {
     title: "Image",
-    subtitle: `William Playfair's “Simple and Complete” View`,
+    subtitle: "William Playfair and the Politics of the “Simple View",
     description:
-      "Data visualization has never been neutral or objective. How can we learn to recognize the human decisions that shape each design?",
+      "Visualization has never been neutral or objective. How can we learn to recognize the human decisions that shape each design?",
     image:
       "https://iiif.ecds.io/iiif/3/dxd/image/1-northamerica.tiff/square/800,/0/default.jpg",
     bgImage:
@@ -47,9 +47,9 @@ export const chapterMeta: TChapterMeta = {
   },
   people: {
     title: "People",
-    subtitle: "Shanawdithit’s Thematic Maps",
+    subtitle: "Shanawdithit and our Place in the Colonial Frame",
     description:
-      "Maps can represent reality and can contest it. How can we learn to see the lines of power that they encode?",
+      "Maps, like all visualizations, tell stories. How can we learn to see the lines of power that they draw?",
     image:
       "https://iiif.ecds.io/iiif/3/dxd/people/DRW-II.tiff/square/800,/0/default.jpg",
     bgImage:
@@ -58,10 +58,10 @@ export const chapterMeta: TChapterMeta = {
     imageHeight: "800",
   },
   process: {
-    title: "Process",
-    subtitle: "Elizabeth Palmer Peabody’s Chronological Grids",
+    title: "Knowledge",
+    subtitle: "Elizabeth Palmer Peabody and the Idea of Epistemology",
     description:
-      "We have explored only part of the history of data visualization. What possibilities can we imagine when we expand our view of the past?",
+      "Visualization can produce knowledge in many ways. What ideas do we gain when we expand our view of the past?",
     image:
       "https://iiif.ecds.io/iiif/3/dxd/process/1600s.tiff/square/800,/0/default.jpg",
     bgImage:
@@ -70,10 +70,10 @@ export const chapterMeta: TChapterMeta = {
     imageHeight: "800",
   },
   power: {
-    title: "Power",
-    subtitle: "W.E.B. Du Bois’s “Data Portraits”",
+    title: "Change",
+    subtitle: "Lula Iola Mack, W.E.B. Du Bois, and the Path to Liberatory Data Visualization",
     description:
-      "How can data visualization bear witness to oppression? How can we hold space for what cannot be conveyed through data alone?",
+      "Visualization can bear powerful witness to oppression. How can we use charts to make change in the world?",
     image:
       "https://iiif.ecds.io/iiif/3/dxd/power/887.tiff/square/800,/0/default.jpg",
     bgImage:
@@ -82,10 +82,10 @@ export const chapterMeta: TChapterMeta = {
     imageHeight: "800",
   },
   work: {
-    title: "Work",
-    subtitle: "The Making of Data by Design",
+    title: "Labor",
+    subtitle: "Data by Design and What We Learn from Visualization Work",
     description:
-      "Any digital project is the work of many hands. How can this work be visualized? What remains out of sight?",
+      "Any visualization project is the work of many hands. How can we surface the significance of this labor?",
     image:
       "https://iiif.ecds.io/iiif/3/dxd/work/data-traces.tiff/square/800,/0/default.jpg",
     bgImage:
