@@ -36,6 +36,7 @@ const SiteNav = () => {
         </ol>
         <ol className="overflow-y-scroll w-full">
           {Object.keys(chapterMeta as TChapterMeta).map((chapter, index) => {
+            console.log("🚀 ~ SiteNav ~ chapter:", chapter);
             return (
               <li
                 className="border-b border-dashed border-offwhite/20 focus:bg-imagePrimary hover:bg-imagePrimary"

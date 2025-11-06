@@ -23,7 +23,8 @@ export const chapterMeta: TChapterMeta = {
   },
   data: {
     title: "Data",
-    subtitle: "The Society for Effecting the Abolition of the Slave Trade and Responsible Visualization Design",
+    subtitle:
+      "The Society for Effecting the Abolition of the Slave Trade and Responsible Visualization Design",
     description:
       "Before there are data, there are people. How can the lives behind the data guide our visualization work?",
     image:
@@ -57,7 +58,7 @@ export const chapterMeta: TChapterMeta = {
     imageWidth: "800",
     imageHeight: "800",
   },
-  process: {
+  knowledge: {
     title: "Knowledge",
     subtitle: "Elizabeth Palmer Peabody and the Idea of Epistemology",
     description:
@@ -69,9 +70,10 @@ export const chapterMeta: TChapterMeta = {
     imageWidth: "800",
     imageHeight: "800",
   },
-  power: {
+  change: {
     title: "Change",
-    subtitle: "Lula Iola Mack, W.E.B. Du Bois, and the Path to Liberatory Data Visualization",
+    subtitle:
+      "Lula Iola Mack, W.E.B. Du Bois, and the Path to Liberatory Data Visualization",
     description:
       "Visualization can bear powerful witness to oppression. How can we use charts to make change in the world?",
     image:
@@ -81,7 +83,7 @@ export const chapterMeta: TChapterMeta = {
     imageWidth: "800",
     imageHeight: "800",
   },
-  work: {
+  labor: {
     title: "Labor",
     subtitle: "Data by Design and What We Learn from Visualization Work",
     description:

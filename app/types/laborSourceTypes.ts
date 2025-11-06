@@ -17,9 +17,9 @@ type TLaborSourceLabel =
 type TLaborSourceColor =
   | "dataPrimary"
   | "peoplePrimary"
-  | "processPrimary"
+  | "knowledgePrimary"
   | "imagePrimary"
-  | "powerPrimary"
+  | "changePrimary"
   | string;
 
 type TLaborActiveColor = "white" | "black" | string;

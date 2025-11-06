@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 import descriptionFigures from "~/data/figures/data.json";
-import powerFigures from "~/data/figures/power.json";
-import processFigures from "~/data/figures/process.json";
+import powerFigures from "~/data/figures/change.json";
+import processFigures from "~/data/figures/knowledge.json";
 import imageFigures from "~/data/figures/image.json";
 import peopleFigures from "~/data/figures/people.json";
 import type { TFigure } from "~/types/figureType";

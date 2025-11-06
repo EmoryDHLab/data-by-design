@@ -75,8 +75,8 @@ interface IChapterContext {
 }
 
 const ChapterContext = createContext<IChapterContext>({
-  backgroundColor: "powerPrimary",
-  accentColor: "powerSecondary",
+  backgroundColor: "changePrimary",
+  accentColor: "changeSecondary",
   accentTextColor: "black",
   primaryTextColor: "white",
   footnoteTextColor: "black",

@@ -27,7 +27,7 @@ const TeozacoalcoScrollytell = ({ triggers }: Props) => {
         setScrollProgress={setScrollProgress}
         triggers={triggers}
         steps={steps}
-        bgColor="processPrimary"
+        bgColor="knowledgePrimary"
       >
         <div
           className={`flex flex-col md:flex-row justify-between `}

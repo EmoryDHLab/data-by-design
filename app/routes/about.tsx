@@ -29,9 +29,9 @@ export default function AboutPage() {
     <div className="bg-offwhite">
       <ChapterContext.Provider
         value={{
-          backgroundColor: "powerPrimary",
-          accentColor: "powerSecondary",
-          footnoteTextColor: "powerPrimary",
+          backgroundColor: "changePrimary",
+          accentColor: "changeSecondary",
+          footnoteTextColor: "changePrimary",
           primaryTextColor: "white",
           footnotes: powerFootnotes,
           sections,

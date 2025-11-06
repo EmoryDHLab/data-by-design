@@ -1,11 +1,11 @@
 export type ChapterTitle =
   | "intro"
   | "data"
-  | "power"
-  | "process"
+  | "change"
+  | "knowledge"
   | "image"
   | "people"
-  | "work"
+  | "labor"
   | "preface"
   | "epilogue";
 

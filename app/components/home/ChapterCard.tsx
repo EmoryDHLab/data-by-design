@@ -23,7 +23,7 @@ export default function ChapterCard({
       to={to}
       className={"text-white font-power px-6 my-4 md:px-28 " + className}
     >
-      <div className="text-sm my-12 md:mt-10 mb-2 tracking-wider text-powerSecondary ">
+      <div className="text-sm my-12 md:mt-10 mb-2 tracking-wider text-changeSecondary ">
         {status}
       </div>
       <div className="text-2xl md:text-3xl mb-3 font-bold">{title}</div>

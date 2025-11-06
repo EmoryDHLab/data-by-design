@@ -2,7 +2,7 @@
   {
     "key": "github",
     "label": "GitHub",
-    "color": "powerPrimary",
+    "color": "changePrimary",
     "activeText": "white",
     "inactiveText": "black"
   },
@@ -16,7 +16,7 @@
   {
     "key": "ical",
     "label": "iCal",
-    "color": "processPrimary",
+    "color": "knowledgePrimary",
     "activeText": "black",
     "inactiveText": "black"
   },
