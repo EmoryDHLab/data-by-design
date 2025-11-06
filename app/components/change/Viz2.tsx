@@ -108,8 +108,10 @@ export default function Viz2({ interactive = false }: Props) {
       });
 
     // Filter out Unknown/Deceased from pie chart since it goes outside
-    const pieDataWithoutUnknown = pieData.filter(category => category.name !== "Unknown/Deceased");
-    
+    const pieDataWithoutUnknown = pieData.filter(
+      (category) => category.name !== "Unknown/Deceased"
+    );
+
     // Combine matching categories from both datasets (excluding unknown/deceased)
     const combinedPieData = pieDataWithoutUnknown.map((category) => {
       const matchingRespondent = respondentsPieData.find(
@@ -194,7 +196,7 @@ export default function Viz2({ interactive = false }: Props) {
 
     // Add individual student dots
     const allDots: Array<{ x: number; y: number; radius: number }> = [];
-    const dotRadius = 4;
+    const dotRadius = 4.4;
     const minDistance = dotRadius * 2 + 1; // Minimum distance between dot centers
 
     // Create a seeded random function for consistent randomization
@@ -230,21 +232,24 @@ export default function Viz2({ interactive = false }: Props) {
         // Check if within pie slice with smaller buffer for small slices
         const angle = Math.atan2(y, x) + Math.PI / 2;
         const normalizedAngle = angle < 0 ? angle + 2 * Math.PI : angle;
-        
+
         // Dynamic buffer based on slice size - smaller slices get smaller buffers
         const sliceAngle = slice.endAngle - slice.startAngle;
         const minBuffer = 0.005; // Minimum 0.005 radians (~0.3 degrees)
         const maxBuffer = 0.015; // Maximum 0.015 radians (~0.9 degrees)
-        const angleBuffer = Math.max(minBuffer, Math.min(maxBuffer, sliceAngle * 0.02));
-        
+        const angleBuffer = Math.max(
+          minBuffer,
+          Math.min(maxBuffer, sliceAngle * 0.02)
+        );
+
         const bufferedStartAngle = slice.startAngle + angleBuffer;
         const bufferedEndAngle = slice.endAngle - angleBuffer;
-        
+
         // Less restrictive center and edge checks
         const distanceFromCenter = Math.sqrt(x * x + y * y);
         const tooCloseToCenter = distanceFromCenter < 25;
         const tooCloseToEdge = distanceFromCenter > radius - 10;
-        
+
         return (
           baseCheck &&
           !tooCloseToCenter &&
@@ -267,19 +272,24 @@ export default function Viz2({ interactive = false }: Props) {
     // Function to check if point is too close to pie chart strokes
     const isTooCloseToStroke = (x: number, y: number, currentSlice: any) => {
       if (!currentSlice || !showPieChart) return false;
-      
+
       const pointAngle = Math.atan2(y, x) + Math.PI / 2;
-      const normalizedAngle = pointAngle < 0 ? pointAngle + 2 * Math.PI : pointAngle;
+      const normalizedAngle =
+        pointAngle < 0 ? pointAngle + 2 * Math.PI : pointAngle;
       const distance = Math.sqrt(x * x + y * y);
-      
+
       // Check distance to slice boundaries
-      const distToStartBoundary = Math.abs(normalizedAngle - currentSlice.startAngle);
-      const distToEndBoundary = Math.abs(normalizedAngle - currentSlice.endAngle);
-      
+      const distToStartBoundary = Math.abs(
+        normalizedAngle - currentSlice.startAngle
+      );
+      const distToEndBoundary = Math.abs(
+        normalizedAngle - currentSlice.endAngle
+      );
+
       // Convert angular distance to linear distance at the point's radius
       const linearDistToStart = distToStartBoundary * distance;
       const linearDistToEnd = distToEndBoundary * distance;
-      
+
       // Very small buffer for stroke avoidance - only 2 pixels
       return linearDistToStart < 2 || linearDistToEnd < 2;
     };
@@ -310,9 +320,12 @@ export default function Viz2({ interactive = false }: Props) {
       }));
 
       // Combine and shuffle students and respondents for better mixing
-      const students = originalStudents.map((s) => ({ ...s, isRespondent: false }));
+      const students = originalStudents.map((s) => ({
+        ...s,
+        isRespondent: false,
+      }));
       const allPeople = [];
-      
+
       // Interleave students and respondents for better distribution
       const maxLength = Math.max(students.length, respondents.length);
       for (let i = 0; i < maxLength; i++) {
@@ -339,7 +352,8 @@ export default function Viz2({ interactive = false }: Props) {
         let currentSlice: any = null;
 
         // Check if this person should be a diamond before position calculation
-        const isDiamond = !person.isRespondent && diamondStudents.includes(person.name);
+        const isDiamond =
+          !person.isRespondent && diamondStudents.includes(person.name);
 
         // Try to find a non-overlapping position
         do {
@@ -354,23 +368,27 @@ export default function Viz2({ interactive = false }: Props) {
             const pieSlice = pie(combinedPieData)[categoryIndex];
             currentSlice = pieSlice;
             const sliceAngle = pieSlice.endAngle - pieSlice.startAngle;
-            
+
             if (categoryData.name === "Teachers") {
               // For Teachers (red dots), use systematic distribution with some randomness
               const totalDots = allPeople.length;
               const dotIndex = personIndex;
-              
+
               // Create a more uniform distribution across the slice
               const baseAngle = (dotIndex / totalDots) * sliceAngle;
-              
+
               // Add controlled randomness to prevent grid patterns
-              const randomOffset = (seededRandom(seed + attempts) - 0.5) * (sliceAngle * 0.08);
-              
+              const randomOffset =
+                (seededRandom(seed + attempts) - 0.5) * (sliceAngle * 0.08);
+
               // Ensure we use the full width of the slice
               const minAnglePadding = 0.003; // Very small padding
               const maxAngle = sliceAngle - 2 * minAnglePadding;
-              const clampedAngle = Math.max(minAnglePadding, Math.min(maxAngle, baseAngle + randomOffset));
-              
+              const clampedAngle = Math.max(
+                minAnglePadding,
+                Math.min(maxAngle, baseAngle + randomOffset)
+              );
+
               randomAngle = pieSlice.startAngle + clampedAngle;
             } else {
               // Other categories use original logic with smaller padding
@@ -386,16 +404,20 @@ export default function Viz2({ interactive = false }: Props) {
           // Random radius within the area with better distribution for Teachers
           const maxRadius = radius - 8;
           const minRadius = 20;
-          
+
           let randomRadius;
           if (categoryData.name === "Teachers") {
             // For Teachers, encourage more even radial distribution
             const radiusRange = maxRadius - minRadius;
             const systematicRadius = (personIndex % 5) / 4; // Create 5 radial bands
             const randomComponent = seededRandom(seed + 1000 + attempts);
-            randomRadius = minRadius + (systematicRadius * 0.7 + randomComponent * 0.3) * radiusRange;
+            randomRadius =
+              minRadius +
+              (systematicRadius * 0.7 + randomComponent * 0.3) * radiusRange;
           } else {
-            randomRadius = minRadius + seededRandom(seed + 1000 + attempts) * (maxRadius - minRadius);
+            randomRadius =
+              minRadius +
+              seededRandom(seed + 1000 + attempts) * (maxRadius - minRadius);
           }
 
           // Convert polar to cartesian coordinates
@@ -404,9 +426,9 @@ export default function Viz2({ interactive = false }: Props) {
 
           attempts++;
         } while (
-          (hasCollision(x, y) || 
-           !isValidPosition(x, y, currentSlice) || 
-           isTooCloseToStroke(x, y, currentSlice)) &&
+          (hasCollision(x, y, isDiamond) ||
+            !isValidPosition(x, y, currentSlice) ||
+            isTooCloseToStroke(x, y, currentSlice)) &&
           attempts < maxAttempts
         );
 
@@ -518,9 +540,11 @@ export default function Viz2({ interactive = false }: Props) {
 
     // Add unknown/deceased students and respondents outside the pie chart
     const unknownDeceasedCount = respondentsData["unknown/deceased"] || 0;
-    const unknownDeceasedStudents = pieData.find(cat => cat.name === "Unknown/Deceased")?.students || [];
-    const totalUnknownCount = unknownDeceasedCount + unknownDeceasedStudents.length;
-    
+    const unknownDeceasedStudents =
+      pieData.find((cat) => cat.name === "Unknown/Deceased")?.students || [];
+    const totalUnknownCount =
+      unknownDeceasedCount + unknownDeceasedStudents.length;
+
     if (totalUnknownCount > 0) {
       const outerRadius = radius + 500;
       const innerRadius = radius + 30; // All unknown data starts close to perimeter
@@ -532,58 +556,64 @@ export default function Viz2({ interactive = false }: Props) {
         let x: number, y: number;
         let attempts = 0;
         const maxAttempts = 100;
-        
+
         // Try to find non-overlapping position
         do {
           const angle = (dotIndex / totalUnknownCount) * 2 * Math.PI;
-          const angleOffset = (seededRandom(studentIndex * 1000 + attempts) - 0.5) * 0.3; // Small angular variation
+          const angleOffset =
+            (seededRandom(studentIndex * 1000 + attempts) - 0.5) * 0.3; // Small angular variation
           const finalAngle = angle + angleOffset;
-          
+
           // Students mixed throughout the outer area
-          const randomRadius = innerRadius + seededRandom(studentIndex * 2000 + attempts) * (outerRadius - innerRadius);
+          const randomRadius =
+            innerRadius +
+            seededRandom(studentIndex * 2000 + attempts) *
+              (outerRadius - innerRadius);
           x = Math.cos(finalAngle) * randomRadius;
           y = Math.sin(finalAngle) * randomRadius;
-          
+
           attempts++;
         } while (
-          outerDots.some(dot => {
+          outerDots.some((dot) => {
             const distance = Math.sqrt((x - dot.x) ** 2 + (y - dot.y) ** 2);
             return distance < minDistance;
-          }) && attempts < maxAttempts
+          }) &&
+          attempts < maxAttempts
         );
-        
+
         // Only add if we found a good position
         if (attempts < maxAttempts) {
           outerDots.push({ x, y, radius: dotRadius });
 
-        const dotElement = g.append("circle")
-          .attr("cx", x)
-          .attr("cy", y)
-          .attr("r", dotRadius)
-          .attr("fill", colorMapping["Unknown/Deceased"])
-          .attr("stroke", "black")
-          .attr("stroke-width", 1)
-          .style("cursor", interactive ? "pointer" : "default")
-          .style("opacity", 1.0);
+          const dotElement = g
+            .append("circle")
+            .attr("cx", x)
+            .attr("cy", y)
+            .attr("r", dotRadius)
+            .attr("fill", colorMapping["Unknown/Deceased"])
+            .attr("stroke", "black")
+            .attr("stroke-width", 1)
+            .style("cursor", interactive ? "pointer" : "default")
+            .style("opacity", 1.0);
 
-        if (interactive) {
-          dotElement
-            .on("mouseenter", function (event: any) {
-              d3.select(this).attr("fill", "black");
-              setHoveredStudent(student);
-              const rect = svgRef.current?.getBoundingClientRect();
-              if (rect) {
-                setMousePosition({
-                  x: event.clientX - rect.left,
-                  y: event.clientY - rect.top,
-                });
-              }
-            })
-            .on("mouseleave", function () {
-              d3.select(this).attr("fill", colorMapping["Unknown/Deceased"]);
-              setHoveredStudent(null);
-            });
-        }
+          if (interactive) {
+            dotElement
+              .on("mouseenter", function (event: any) {
+                d3.select(this).attr("fill", "black");
+                setHoveredStudent(student);
+                const rect = svgRef.current?.getBoundingClientRect();
+                if (rect) {
+                  setMousePosition({
+                    x: event.clientX - rect.left,
+                    y: event.clientY - rect.top,
+                  });
+                }
+              })
+              .on("mouseleave", function () {
+                d3.select(this).attr("fill", colorMapping["Unknown/Deceased"]);
+                setHoveredStudent(null);
+              });
+          }
           dotIndex++;
         }
       });
@@ -593,63 +623,67 @@ export default function Viz2({ interactive = false }: Props) {
         let x: number, y: number;
         let attempts = 0;
         const maxAttempts = 100;
-        
+
         // Try to find non-overlapping position
         do {
           const angle = (dotIndex / totalUnknownCount) * 2 * Math.PI;
           const angleOffset = (seededRandom(i * 3000 + attempts) - 0.5) * 0.3; // Small angular variation
           const finalAngle = angle + angleOffset;
-          
+
           // Respondents mixed throughout the same outer area as students
-          const randomRadius = innerRadius + seededRandom(i * 4000 + attempts) * (outerRadius - innerRadius);
+          const randomRadius =
+            innerRadius +
+            seededRandom(i * 4000 + attempts) * (outerRadius - innerRadius);
           x = Math.cos(finalAngle) * randomRadius;
           y = Math.sin(finalAngle) * randomRadius;
-          
+
           attempts++;
         } while (
-          outerDots.some(dot => {
+          outerDots.some((dot) => {
             const distance = Math.sqrt((x - dot.x) ** 2 + (y - dot.y) ** 2);
             return distance < minDistance;
-          }) && attempts < maxAttempts
+          }) &&
+          attempts < maxAttempts
         );
-        
+
         // Only add if we found a good position
         if (attempts < maxAttempts) {
           outerDots.push({ x, y, radius: dotRadius });
 
-        const dotElement = g.append("circle")
-          .attr("cx", x)
-          .attr("cy", y)
-          .attr("r", dotRadius)
-          .attr("fill", colorMapping["Unknown/Deceased"])
-          .attr("stroke", "black")
-          .attr("stroke-width", 1)
-          .attr("stroke-dasharray", "3,3")
-          .style("cursor", interactive ? "pointer" : "default")
-          .style("opacity", 0.6);
+          const dotElement = g
+            .append("circle")
+            .attr("cx", x)
+            .attr("cy", y)
+            .attr("r", dotRadius)
+            .attr("fill", colorMapping["Unknown/Deceased"])
+            .attr("stroke", "black")
+            .attr("stroke-width", 1)
+            .attr("stroke-dasharray", "3,3")
+            .style("cursor", interactive ? "pointer" : "default")
+            .style("opacity", 0.6);
 
-        if (interactive) {
-          dotElement
-            .on("mouseenter", function (event: any) {
-              d3.select(this).attr("fill", "black");
-              setHoveredStudent({
-                name: "1910 Survey Respondent",
-                profession: "Unknown/Deceased",
-                isRespondent: true,
-              });
-              const rect = svgRef.current?.getBoundingClientRect();
-              if (rect) {
-                setMousePosition({
-                  x: event.clientX - rect.left,
-                  y: event.clientY - rect.top,
+          if (interactive) {
+            dotElement
+              .on("mouseenter", function (event: any) {
+                d3.select(this).attr("fill", "black");
+                setHoveredStudent({
+                  name: "1910 Survey Respondent",
+                  // profession: "Unknown/Deceased",
+                  isRespondent: true,
                 });
-              }
-            })
-            .on("mouseleave", function () {
-              d3.select(this).attr("fill", colorMapping["Unknown/Deceased"]);
-              setHoveredStudent(null);
-            });
-        }
+                const rect = svgRef.current?.getBoundingClientRect();
+                if (rect) {
+                  setMousePosition({
+                    x: event.clientX - rect.left,
+                    y: event.clientY - rect.top,
+                  });
+                }
+              })
+              .on("mouseleave", function () {
+                d3.select(this).attr("fill", colorMapping["Unknown/Deceased"]);
+                setHoveredStudent(null);
+              });
+          }
           dotIndex++;
         }
       }
@@ -668,7 +702,7 @@ export default function Viz2({ interactive = false }: Props) {
       legendItems.push({
         name: "Unknown/Deceased (1910 only)",
         color: colorMapping["Unknown/Deceased"],
-        displayText: "UNKNOWN/DECEASED (1910 ONLY)",
+        displayText: "UNKNOWN/DECEASED ",
         hasStudents: false,
         hasRespondents: true,
         isDotted: true,
@@ -717,10 +751,7 @@ export default function Viz2({ interactive = false }: Props) {
       <div className="w-full max-w-4xl px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {legendData.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center bg-white border border-gray-200 rounded-lg p-3 shadow-sm"
-            >
+            <div key={index} className="flex items-center p-3 ">
               <div className="flex items-center mr-3">
                 {item.hasStudents && (
                   <div
@@ -750,7 +781,7 @@ export default function Viz2({ interactive = false }: Props) {
                   className="text-xs text-gray-600"
                   style={{ fontFamily: "VTC Du Bois, serif" }}
                 >
-                  {item.hasStudents &&
+                  {/* {item.hasStudents &&
                     item.hasRespondents &&
                     `Students: ${item.studentsCount} | 1910: ${item.respondentsCount}`}
                   {item.hasStudents &&
@@ -758,7 +789,7 @@ export default function Viz2({ interactive = false }: Props) {
                     `Students: ${item.studentsCount}`}
                   {!item.hasStudents &&
                     item.hasRespondents &&
-                    `1910: ${item.respondentsCount}`}
+                    `1910: ${item.respondentsCount}`} */}
                 </div>
               </div>
             </div>
