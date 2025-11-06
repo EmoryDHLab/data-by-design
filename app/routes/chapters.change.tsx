@@ -22,6 +22,7 @@ import { chapterMetaTags } from "~/utils";
 import StudentCharts from "~/components/change/StudentCharts";
 import Viz1 from "~/components/change/Viz1";
 import Viz3 from "~/components/change/Viz3";
+import Viz2 from "~/components/change/Viz2";
 
 import StudentChartThreeV2 from "~/components/change/StudentChartThree";
 import ChapterBody from "~/components/layout/ChapterBody";
@@ -1458,6 +1459,7 @@ export default function DuboisChapter() {
             <span key="9b862bca"></span>,
           ]}
         />
+        <Viz2 interactive={true}></Viz2>
         <CenteredLayout className="mt-20">
           <p>
             We do know something more about the students who returned the
