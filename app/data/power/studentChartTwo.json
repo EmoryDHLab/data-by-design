@@ -1445,7 +1445,7 @@
           "name": "Drayton Hardy Maffet",
           "degree": "Sc.",
           "profession": "",
-          "location": "Unknown",
+          "location": "",
           "year": 1880,
           "type": "College Graduates",
           "professionCategory": "unknown"
@@ -1466,7 +1466,7 @@
           "location": "New York, N. Y.",
           "year": 1891,
           "type": "College Graduates",
-          "professionCategory": "unknown"
+          "professionCategory": "other professions"
         },
         {
           "name": "William Oscar Murphy",

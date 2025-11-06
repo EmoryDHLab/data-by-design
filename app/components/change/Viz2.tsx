@@ -716,7 +716,7 @@ export default function Viz2({ interactive = false }: Props) {
   }, [interactive, showPieChart, useCircularArrangement, redrawKey]);
 
   return (
-    <div className="flex flex-col items-center relative">
+    <div className="flex flex-col items-center relative ">
       <svg
         ref={svgRef}
         className="max-w-full"
@@ -749,9 +749,9 @@ export default function Viz2({ interactive = false }: Props) {
 
       {/* HTML-based legend */}
       <div className="w-full max-w-4xl px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
           {legendData.map((item, index) => (
-            <div key={index} className="flex items-center p-3 ">
+            <div key={index} className="flex items-center p-2 ">
               <div className="flex items-center mr-3">
                 {item.hasStudents && (
                   <div
