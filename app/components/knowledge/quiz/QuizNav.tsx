@@ -17,7 +17,7 @@ export default function QuizNav() {
   }, [isMobile]);
 
   return (
-    <g role="navigation">
+    <g role="navigation" className="pointer-events-auto relative z-[70]">
       <rect
         x={x - 2}
         y={y - 2}
@@ -30,9 +30,9 @@ export default function QuizNav() {
       
       {/* START button */}
       <g
-        className={`cursor-pointer ${
+        className={`cursor-pointer pointer-events-auto ${
           currentStepCount === 0
-            ? "opacity-50 pointer-events-none"
+            ? "opacity-50"
             : "opacity-75 hover:opacity-100"
         }`}
         onClick={() => {
@@ -74,9 +74,9 @@ export default function QuizNav() {
 
       {/* BACK button */}
       <g
-        className={`cursor-pointer ${
+        className={`cursor-pointer pointer-events-auto ${
           currentStepCount === 0
-            ? "opacity-50 pointer-events-none"
+            ? "opacity-50"
             : "opacity-75 hover:opacity-100"
         }`}
         onClick={() => {
@@ -118,9 +118,9 @@ export default function QuizNav() {
 
       {/* NEXT button */}
       <g
-        className={`cursor-pointer ${
+        className={`cursor-pointer pointer-events-auto ${
           currentStepCount === 9
-            ? "opacity-50 pointer-events-none"
+            ? "opacity-50"
             : "opacity-75 hover:opacity-100"
         }`}
         onClick={() => {
@@ -162,9 +162,9 @@ export default function QuizNav() {
 
       {/* END button */}
       <g
-        className={`cursor-pointer ${
+        className={`cursor-pointer pointer-events-auto ${
           currentStepCount === 9
-            ? "opacity-50 pointer-events-none"
+            ? "opacity-50"
             : "opacity-75 hover:opacity-100"
         }`}
         onClick={() => {

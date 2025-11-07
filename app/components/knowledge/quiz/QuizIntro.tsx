@@ -13,8 +13,8 @@ const IntroContent = memo(() => (
       Peabody intended the process of learning to be interactive.
     </p>
     <p className="text-base md:text-lg leading-normal text-offwhite font-thin mt-2">
-      Follow the instruction in italics to participate in Peabody's process of
-      knowledge production.
+      Follow the instructions to participate in Peabody's process of knowledge
+      production.
     </p>
   </div>
 ));
@@ -33,8 +33,8 @@ export default memo(function QuizIntro({ className }: { className?: string }) {
       <IntroContent />
       <button
         onClick={handleBeginClick}
-        className="mt-6 text-xl md:text-2xl font-powerLightNarrow italic text-white focus:outline-none focus:underline hover:underline active:underline cursor-pointer relative z-50 p-2 -m-2"
-        style={{ WebkitTapHighlightColor: 'transparent' }}
+        className="mt-6 text-xl md:text-2xl font-powerLightNarrow italic text-white focus:outline-none focus:underline hover:underline active:underline cursor-pointer relative z-[200] p-2 -m-2 pointer-events-auto bg-red-500"
+        style={{ WebkitTapHighlightColor: "transparent" }}
       >
         BEGIN
         <span className="font-icons ml-2">b</span>

@@ -23,7 +23,7 @@ export default function QuizFeedback() {
       <span
         className={`
         transition-all duration-700 tracking-widest
-        text-center absolute top-10 bg-black z-10
+        text-start absolute top-10 bg-black z-10
         ${
           show ? "opacity-100 w-full px-3 pb-3 h-20" : "opacity-0 px-0 pb-0 h-0"
         }
@@ -42,9 +42,11 @@ export default function QuizFeedback() {
       }`}
     >
       <div
-        className={`transition-all duration-500 ease-out tracking-widest text-base font-power italic whitespace-nowrap ${
-          show ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-2 scale-95"
-        } ${feedback?.correct ? "text-green-400" : "text-red-500"}`}
+        className={`transition-all duration-500 ease-out tracking-widest text-base font-power italic whitespace-nowrap text-wrap prose px-2 ${
+          show
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 translate-y-2 scale-95"
+        } ${feedback?.correct ? "text-green-400" : "text-red-400"}`}
       >
         {feedback?.message}
       </div>

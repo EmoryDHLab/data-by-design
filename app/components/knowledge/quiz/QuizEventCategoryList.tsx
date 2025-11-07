@@ -22,7 +22,7 @@ export default function QuizEventCategoryList() {
   if (isMobile) {
     return (
       <ol
-        className={`md:hidden list-decimal list-inside ml-4 text-sm overflow-y-hidden transition-[height] duration-1000 ${mobileHeight}`}
+        className={`md:hidden list-decimal list-inside text-sm overflow-y-hidden transition-[height] duration-1000 ${mobileHeight}`}
       >
         {eventData.eventTypes.map((type, index) => {
           return (
@@ -41,7 +41,7 @@ export default function QuizEventCategoryList() {
       <svg>
         <text
           fill="white"
-          x={60}
+          x={18}
           y={105}
           fillOpacity={0}
           className="hidden md:block"
@@ -67,14 +67,12 @@ export default function QuizEventCategoryList() {
             onKeyUp={({ key }) => {
               if (key === "Enter" || key === "Space") setCurrentStepCount(8);
             }}
-            x={60}
+            x={55}
             fontFamily="VTC Du Bois Narrow, serif"
             fontStyle="italic"
           >
             CONTINUE
-            <tspan dx={2} className="font-icons">
-              b
-            </tspan>
+            <tspan dx={2} className="font-icons"></tspan>
           </tspan>
         </text>
       </svg>

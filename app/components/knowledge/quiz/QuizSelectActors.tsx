@@ -25,10 +25,18 @@ export default function QuizSelectActors() {
   const { isMobile } = useDeviceContext();
 
   useEffect(() => {
-    setStartX(isMobile ? 0 : 60);
+    if (isMobile) {
+      setStartX(0);
+    } else {
+      if (currentStepCount === 1 || currentStepCount === 2) {
+        setStartX(45);
+      } else {
+        setStartX(58);
+      }
+    }
     setStartY(isMobile ? 0 : 86);
     setActors(isMobile ? quizActors.slice(0, -1) : quizActors);
-  }, [isMobile]);
+  }, [isMobile, currentStepCount]);
 
   useEffect(() => {
     if (currentStepCount <= 1) {
