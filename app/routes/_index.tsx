@@ -70,13 +70,13 @@ export default function Index() {
         </h1>
 
         <div />
-        <div className="md:flex md:items-center pl-44   pt-10 md:pt-5 h-full md:h-[500px] z-20 3xl:mx-48">
+        <div className="md:flex md:items-center pl-0 md:pl-44 pt-10 md:pt-5 h-full md:h-[500px] z-20 3xl:mx-48">
           <div className="md:flex md:items-start gap-44 xl:gap:72">
             <figure
               aria-hidden
-              className="my-10 px-5 md:px-0 md:mt-18 md:w-[500px]  flex-shrink-0"
+              className="my-10 px-5 md:px-0 md:mt-18 md:w-[500px] flex-shrink-0 w-full md:w-auto"
             >
-              <SiteTitle className="pt-20" />
+              <SiteTitle className="pt-20 md:pt-20 w-full" />
             </figure>
             <div className="hidden h-96 lg:block flex-1  flex justify-center">
               <ClientOnly>
