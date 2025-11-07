@@ -1233,29 +1233,30 @@ export default function PeabodyPage() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Commit to a capacious definition of what counts as knowledge
+              Draw inspiration from multiple ways of knowing
             </span>,
             <span key="6440631a">
-              Commit to a capacious definition of what counts as visualization
+              Empower users in the process of knowledge production
             </span>,
             <span key="2f317172">
-              Consider who might be missing from the field of visualization
+              Design to support increased knowledge, not complete knowledge
             </span>,
-            <span key="2f317173">Consider the reasons why</span>,
+            <span key="2f317173">
+              Probe the history of visualization for future ideas 
+            </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Focus on supporting the process of knowledge production
+              Remember that histories are shaped by power 
             </span>,
             <span key="6d2691fc">
-              Enable interactions among multiple representational forms (text,
-              image, etc)
+              Expand your ideas about what visualization can be
             </span>,
             <span key="9650286d">
-              Consider alternatives to ease and efficiency
+              Recognize that you can create knowledge 
             </span>,
             <span key="2f317175">
-              Consider modes of representing data beyond the visual form
+              Ask whose knowledge is missing from what you see
             </span>,
           ]}
         />
