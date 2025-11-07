@@ -20,7 +20,7 @@ export default function QuizSelectActors() {
   const [actors, setActors] = useState(quizActors);
   const [solvedActors, setSolvedActors] = useState<Array<PeabodyActor>>([]);
   const [selectedActors, setSelectedActors] = useState<Array<PeabodyActor>>([]);
-  const [startX, setStartX] = useState<number>(60);
+  const [startX, setStartX] = useState<number>(45);
   const [startY, setStartY] = useState<number>(86);
   const { isMobile } = useDeviceContext();
 

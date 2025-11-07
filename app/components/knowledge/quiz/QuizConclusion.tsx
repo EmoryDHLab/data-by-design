@@ -5,15 +5,17 @@ import { useDeviceContext } from "~/hooks";
 const ConclusionContent = () => {
   return (
     <>
-      <p className=" prose leading-relaxed text-offwhite font-thin">
-        Once you've learned to recognize the Gold and Burgundy triangles as
-        visual representation of Indigenous and colonial conflict.
-      </p>
-      <p className=" prose leading-relaxed text-offwhite font-light mt-2">
-        You come to see how the 17th century is increasingly dominated by
-        similar conflicts, documenting the devastation brought about by British
-        colonial expansion
-      </p>
+      <div className="lg:-translate-x-12 max-w-[65ch] place-content-start">
+        <p className=" font-sans  leading-relaxed text-offwhite font-thin">
+          Once you've learned to recognize the Gold and Burgundy triangles as
+          visual representation of Indigenous and colonial conflict.
+        </p>
+        <p className="  font-sans leading-relaxed text-offwhite font-light mt-2">
+          You come to see how the 17th century is increasingly dominated by
+          similar conflicts, documenting the devastation brought about by
+          British colonial expansion
+        </p>
+      </div>
     </>
   );
 };
@@ -29,7 +31,7 @@ export default function QuizConclusion({ className }: { className?: string }) {
     <div className={`text-white ${className || ""}`}>
       <ConclusionContent />
       <button
-        className="font-powerLightNarrow italic focus:outline-none focus:underline hover:underline text-xl md:text-2xl mt-6 pointer-events-auto cursor-pointer"
+        className="lg:-translate-x-12 font-powerLightNarrow italic focus:outline-none focus:underline hover:underline text-xl md:text-2xl mt-6 pointer-events-auto cursor-pointer"
         tabIndex={0}
         onClick={() => setCurrentStepCount(9)}
         onKeyUp={({ key }) => {

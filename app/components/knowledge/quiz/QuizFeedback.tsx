@@ -23,11 +23,11 @@ export default function QuizFeedback() {
       <span
         className={`
         transition-all duration-700 tracking-widest
-        text-start absolute top-10 bg-black z-10
+        text-start text-sm absolute top-10 bg-black z-10 
         ${
-          show ? "opacity-100 w-full px-3 pb-3 h-20" : "opacity-0 px-0 pb-0 h-0"
+          show ? "opacity-100 w-full px-1 pb-3 h-20" : "opacity-0 px-0 pb-0 h-0"
         }
-        text-${feedback?.correct ? "green-400" : "red-600"}
+        text-${feedback?.correct ? "green-400" : "red-400"}
       `}
       >
         {feedback?.message ?? " "}
