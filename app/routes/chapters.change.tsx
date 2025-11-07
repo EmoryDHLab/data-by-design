@@ -1557,32 +1557,30 @@ export default function DuboisChapter() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Always recall the power of visualization (again)
+              Connect your visualization with the world it represents
             </span>,
             <span key="6440631a">
-              Consider when that power should be aligned with political goals
+              Consider when change should be your goal
             </span>,
             <span key="2f317172">
-              Consider how to combine visualization with a commitment to act
+              Explore how to combine visualization with other methods 
             </span>,
             <span key="2f317173">
-              Reorient towards a goal of knowledge or justice, not visualization
-              itself
+              Teach the next generation to continue the work
             </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Align your visualization projects with your values
+              Combine visualization with other sources of insight
             </span>,
             <span key="6d2691fc">
-              Honor and credit the contributions of each team member
+              Always aspire to more complete knowledge 
             </span>,
             <span key="9650286d">
-              Consider how to combine visualization with other knowledge-making
-              forms
+              Recognize when knowledge demands change  
             </span>,
             <span key="9650286e">
-              Know that change also requires a commitment to act
+              Know that change requires a commitment to act
             </span>,
           ]}
         />
