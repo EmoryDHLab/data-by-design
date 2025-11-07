@@ -338,6 +338,36 @@ export default function LabourPage() {
             lives, the land, the lessons-beyond what is pictured.
           </p>
         </CenteredLayout>
+       <Takeaways
+          forDesigners={[
+            <span key="">
+              Name and celebrate all contributors to your project
+            </span>,
+            <span key="">
+              Acknowledge the role of process is visualization work 
+            </span>,
+            <span key="">
+              Recognize the many forms of labor that go into making visualization 
+            </span>,
+            <span key="">
+              Approach visualization as a practice of freedom 
+            </span>,
+          ]}
+          forViewers={[
+            <span key="">
+              Reorient practical questions from tools to process 
+            </span>,
+            <span key="">
+              Probe for significance in any/all design decisions 
+            </span>,
+            <span key="">
+              Ask who designed any visualization that you see  
+            </span>,
+            <span key="">
+              Place yourself in the meaning-making process 
+            </span>,
+          ]}
+        />
       </ChapterBody>
       <Footer />
     </ChapterContext.Provider>
