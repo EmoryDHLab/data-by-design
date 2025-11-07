@@ -1270,10 +1270,10 @@ export default function ShanawdithitPage() {
               Examine your responsibility to your data and its stewards
             </span>,
             <span key="6440631a">
-              Aspire to keep your data more connected to its source
+              Aim to keep your data more connected to its source
             </span>,
             <span key="2f317172">
-              Build relationships with the people who enable your visualizations
+              Balance clarity with context and connection 
             </span>,
             <span key="2f317173">
               Hold space for the possibility of not visualizing at all
@@ -1287,10 +1287,10 @@ export default function ShanawdithitPage() {
               Consider your relation to the colonial frame
             </span>,
             <span key="9650286d">
-              Recognize the people who enable our knowledge
+              Honor the people who provide us with knowledge 
             </span>,
             <span key="2f317174">
-              Accept when that knowledge is not yours to own
+              Recognize when knowledge is not yours to own
             </span>,
           ]}
         />
