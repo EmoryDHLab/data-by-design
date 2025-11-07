@@ -876,27 +876,31 @@ export default function PlayfairPage() {
         <Takeaways
           forDesigners={[
             <span key="df782d45">
-              Presume that visualization is not neutral
+              Acknowledge your decision-making power
             </span>,
             <span key="6440631a">
-              Consider the context that might inform the choice of
-              visual/interactive form
+              Question any decision to adhere to the default 
             </span>,
             <span key="2f317172">
-              Consider the nature of the insights that are prompted by that
-              particular form
+              Consider the capabilities and constraints of your chosen tools 
             </span>,
-            <span key="2f317173">Ask who will most benefit from them</span>,
+            <span key="2f317173">
+              Ask who will view your visualization and what they will need to know 
+            </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Examine any assumptions about your viewership
+              Reject the “aura of objectivity” that visualization commands
             </span>,
-            <span key="6d2691fc">Accept no best practices by default</span>,
+            <span key="6d2691fc">
+              Ask for what purposes any chart has been designed
+            </span>,
             <span key="9650286d">
-              Consider which visual/interactive forms your tools enable
+              Consider what is rendered visible and what is not
             </span>,
-            <span key="9650286e">Consider which forms they do not</span>,
+            <span key="9650286e">
+              Recognize that human decisions guide all visualization work
+            </span>,
           ]}
         />
       </ChapterBody>
