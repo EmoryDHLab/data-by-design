@@ -54,7 +54,7 @@ export default function QuizFinal() {
               Scroll down to continue reading
             </p>
             <button
-              className="focus:outline-none focus:underline hover:underline text-xs text-white/60 hover:text-white transition-colors bg-red-500 p-2"
+              className="focus:outline-none focus:underline hover:underline text-xs text-white/60 hover:text-white transition-colors pointer-events-auto relative z-50"
               onClick={() => {
                 console.log("Retake Quiz clicked");
                 setCurrentStepCount(1);

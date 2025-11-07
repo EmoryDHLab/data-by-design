@@ -17,7 +17,7 @@ export default function QuizNav() {
   }, [isMobile]);
 
   return (
-    <g role="navigation" className="pointer-events-auto relative z-[70]">
+    <g role="navigation" className="pointer-events-auto" style={{zIndex: 100}}>
       <rect
         x={x - 2}
         y={y - 2}

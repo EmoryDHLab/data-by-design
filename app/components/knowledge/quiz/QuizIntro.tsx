@@ -33,7 +33,7 @@ export default memo(function QuizIntro({ className }: { className?: string }) {
       <IntroContent />
       <button
         onClick={handleBeginClick}
-        className="mt-6 text-xl md:text-2xl font-powerLightNarrow italic text-white focus:outline-none focus:underline hover:underline active:underline cursor-pointer relative z-[200] p-2 -m-2 pointer-events-auto bg-red-500"
+        className="mt-6 text-xl md:text-2xl font-powerLightNarrow italic text-white focus:outline-none focus:underline hover:underline active:underline cursor-pointer relative z-50 p-2 -m-2 pointer-events-auto"
         style={{ WebkitTapHighlightColor: "transparent" }}
       >
         BEGIN
