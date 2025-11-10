@@ -35,7 +35,7 @@ export default function Quiz() {
   const [feedback, setFeedback] = useState<QuizFeedbackType>(undefined);
   const quizRef = useRef<SVGSVGElement>(null);
   const endRef = useRef<HTMLDivElement>(null);
-  const desktopSectionRef = useRef<HTMLElement>(null);
+  const desktopSectionRef = useRef<HTMLDivElement>(null);
   const mobileSectionRef = useRef<HTMLDivElement>(null);
 
   // Removed scrollIntoView to prevent unwanted screen movement during quiz navigation
@@ -220,8 +220,8 @@ export default function Quiz() {
           (currentStepCount) => (currentStepCount + 1) as QuizStepCount
         );
         setSelectedYears([]);
-        setFeedback({
-          message: `YES it was 1644. Now select how Peabody would categorize ${memoizedQuizSteps[2].stepEvent.event}`,
+        const step = setFeedback({
+          message: `YES it was 1644. Now select how Peabody would categorize ${memoizedQuizSteps[2].stepEvent?.event}`,
           correct: true,
         });
       } else {
@@ -315,14 +315,17 @@ export default function Quiz() {
 
   return (
     <QuizContext.Provider value={contextValue}>
-      <section
+      <div
         ref={desktopSectionRef}
-        className="bg-black w-full h-screen hidden md:block relative z-10 overflow-hidden scroll-mt-0"
+        className="bg-black w-full h-screen hidden md:block z-10 relative overflow-hidden scroll-mt-0"
         id="quiz"
       >
         <div
+          id="quiz-intro"
           className={`absolute inset-0 flex items-center justify-center z-50 transition-all duration-1000 ${
-            currentStepCount === 0 ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+            currentStepCount === 0
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
           }`}
         >
           <QuizIntro
@@ -334,7 +337,7 @@ export default function Quiz() {
           />
         </div>
 
-        <div className="relative">
+        <div className="absolute">
           {/* Grid container for text and SVG alignment */}
           <div className="hidden md:grid grid-cols-12 absolute top-0 left-0 w-full h-full pointer-events-none z-20">
             <div
@@ -344,15 +347,16 @@ export default function Quiz() {
                   : "col-start-2 md:col-start-2 lg:col-start-2 xl:col-start-2"
               }`}
             >
-              <div className="pointer-events-auto ">
+              <div id="quiz-feedback" className="pointer-events-auto ">
                 <QuizFeedback />
               </div>
-              <div className="pointer-events-auto">
+              <div id="quiz-instructions" className="pointer-events-auto">
                 <QuizInstructions />
               </div>
 
               {/* Event text - right below instructions */}
               <div
+                id="event-text"
                 className={`pointer-events-auto  ${
                   currentStepCount === 0
                     ? "opacity-0 translate-y-8 scale-95"
@@ -377,6 +381,7 @@ export default function Quiz() {
 
               {/* Conclusion text */}
               <div
+                id="quiz-conclusion"
                 className={`pointer-events-auto transition-all duration-1000 ${
                   currentStepCount === 8
                     ? "opacity-100 translate-y-0 scale-100 delay-300"
@@ -387,16 +392,20 @@ export default function Quiz() {
               </div>
 
               {/* Enhanced end screen for step 9 - now in QuizFinal component */}
-              <div className="flex items-start justify-center w-full pt-16 pointer-events-auto relative z-40">
+              <div
+                id="quiz-final"
+                className="flex items-start justify-center w-full pointer-events-auto relative z-40"
+              >
                 <QuizFinal />
               </div>
             </div>
           </div>
 
           <svg
+            id="quiz-recreation"
             ref={quizRef}
             viewBox="0 0 300 200"
-            className="h-screen m-auto w-11/12 sticky top-0 relative z-30"
+            className="h-screen m-auto w-11/12 top-0 z-30"
           >
             <g
               className={`md:scale-${
@@ -439,7 +448,7 @@ export default function Quiz() {
             {currentStepCount} of 9
           </div>
         </div>
-      </section>
+      </div>
 
       {/* MOBILE */}
       <div
@@ -483,7 +492,7 @@ export default function Quiz() {
                     SELECT THE TWO COUNTRIES INVOLVED.
                   </p>
                 )}
-                {currentStepCount === 2 && (
+                {currentStepCount > 1 && currentStepCount < 3 && (
                   <p className="text-start uppercase">SELECT THE YEAR 1644.</p>
                 )}
                 {currentStepCount >= 3 && currentStepCount <= 6 && (
