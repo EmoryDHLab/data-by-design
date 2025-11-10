@@ -5,7 +5,7 @@ import {
   strokeDasharray,
 } from "~/components/knowledge/peabodyUtils";
 import { useContext, useEffect, useRef, useState } from "react";
-import BarGraphContext from "./BarGraphContext";
+import BarGraphContext from "./TimelineContext";
 import eventData from "~/data/process/eventData.json";
 import type { PeabodyEvent, PolygonTransform } from "~/types/process";
 
@@ -125,6 +125,22 @@ const RecreatedEventSquare = ({
         }
         onMouseLeave={() => setActiveEvent(undefined)}
       >
+        <defs>
+          <pattern
+            id="nativeHatch"
+            patternUnits="userSpaceOnUse"
+            width="4"
+            height="8"
+            patternTransform="rotate(90 2 2)"
+          >
+            <rect
+              width={30}
+              height={30}
+              fill={eventData.actorColors.Americas}
+            />
+            <path d="M -1,2 l 6,0" stroke="white" stroke-width="3" />
+          </pattern>
+        </defs>
         {eventPolygons.map((p, i) => {
           return (
             <polygon

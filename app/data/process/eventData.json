@@ -1757,7 +1757,7 @@
     "Holland": "rgb(68,108,73)",
     "Sweden": "rgb(217,182,17)",
     "Spain": "rgb(209, 42, 5)",
-    "Native": "url(#diagonalHatch)",
+    "Native": "url(#nativeHatch)",
     "Mexico": "rgb(209, 42, 5)"
   },
   "eventTypes": [

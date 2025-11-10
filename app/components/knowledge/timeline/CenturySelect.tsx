@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import BarGraphContext from "./BarGraphContext";
+import TimelineContext from "./TimelineContext";
 import FancyButton from "~/components/FancyButton";
 
 export default function CenturySelect() {
   const { centuries, currentCentury, setCurrentCentury } =
-    useContext(BarGraphContext);
+    useContext(TimelineContext);
 
   return (
     <div className="flex justify-start mb-6">

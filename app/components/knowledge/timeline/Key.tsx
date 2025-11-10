@@ -1,13 +1,13 @@
 import { useContext } from "react";
-import BarGraphContext from "./BarGraphContext";
+import TimelineContext from "./TimelineContext";
 import eventData from "~/data/process/eventData.json";
 
 export function Key() {
-  const { activeEvent } = useContext(BarGraphContext);
+  const { activeEvent } = useContext(TimelineContext);
 
   return (
     <div className="grid grid-cols-1 gap-6 text-left w-auto mx-auto mt-6 md:mt-0">
-      <div className=" text-left">
+      <div className="text-left">
         <p className="font-power text-base italic font-bold small-caps">
           Hover over an event
           <svg viewBox="0 0 30 30" className="w-6 ml-4 inline">
@@ -20,13 +20,6 @@ export function Key() {
               height={30}
             ></rect>
           </svg>
-        </p>
-        <p className="font-power text-xl min-h-[2rem]">
-          {activeEvent?.event && (
-            <span>
-              {activeEvent.event.year}: {activeEvent?.event.event}
-            </span>
-          )}
         </p>
       </div>
       <ol className="grid grid-cols-3 text-sm gap-y-2 gap-x-8 list-decimal ml-4 md:mx-auto">
@@ -43,6 +36,15 @@ export function Key() {
           );
         })}
       </ol>
+      <div className="font-power text-xl text-left">
+        <p className="min-h-16">
+          {activeEvent?.event && (
+            <span>
+              {activeEvent.event.year}: {activeEvent?.event.event}
+            </span>
+          )}
+        </p>
+      </div>
     </div>
   );
 }

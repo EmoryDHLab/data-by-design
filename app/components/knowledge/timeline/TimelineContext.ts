@@ -4,7 +4,7 @@ import type { ActivePeabodyEvent, PeabodyEvent } from "~/types/process";
 
 export type PeabodyCentury = 1500 | 1600 | 1700 | 1800;
 
-interface IBarGraphContext {
+interface ITimelineContext {
   currentCentury: PeabodyCentury | number;
   setCurrentCentury: Dispatch<SetStateAction<PeabodyCentury | number>>;
   currentCenturyEvents: Array<PeabodyEvent>;
@@ -14,7 +14,7 @@ interface IBarGraphContext {
   centuries: Array<number>;
 }
 
-const BarGraphContext = createContext<IBarGraphContext>({
+const TimelineContext = createContext<ITimelineContext>({
   currentCentury: 1700,
   setCurrentCentury: (_: SetStateAction<PeabodyCentury | number>) => {
     console.error(
@@ -36,4 +36,4 @@ const BarGraphContext = createContext<IBarGraphContext>({
   centuries: [],
 });
 
-export default BarGraphContext;
+export default TimelineContext;

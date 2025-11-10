@@ -1,4 +1,5 @@
 import type { Dispatch, SetStateAction } from "react";
+import { nativeBgPattern } from "tailwind.config";
 import eventData from "~/data/process/eventData.json";
 import type { PeabodyActor } from "~/types/process";
 
@@ -22,7 +23,9 @@ export default function PeabodyActors({
   highlight,
 }: Props) {
   const textColor = (actorName: PeabodyActor) => {
-    return actorName === "Americas" || actorName === "Sweden"
+    return actorName === "Americas" ||
+      actorName === "Sweden" ||
+      actorName === "Native"
       ? "black"
       : "white";
   };
@@ -43,9 +46,11 @@ export default function PeabodyActors({
   if (actor) {
     return (
       <span
-        className={`font-normal bg-${actor} text-${textColor(
-          actor as PeabodyActor
-        )} p-2 border-2 border-black ${className ?? ""}`}
+        className={`font-normal ${
+          actor === "Native" ? nativeBgPattern : `bg-${actor}`
+        } text-${textColor(actor as PeabodyActor)} p-2 border-2 border-black ${
+          className ?? ""
+        }`}
       >
         {actor}
       </span>
@@ -59,9 +64,9 @@ export default function PeabodyActors({
           return (
             <div
               key={`actor-${actor}`}
-              className={`font-normal bg-${actor} text-${textColor(
-                actor
-              )} p-2 border-2  ${
+              className={`font-normal ${
+                actor === "Native" ? nativeBgPattern : `bg-${actor}`
+              } text-${textColor(actor)}  p-2 border-2  ${
                 highlight?.includes(actor) ? "border-white" : "border-black"
               }`}
               {...interactiveOptions}

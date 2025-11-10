@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import BarGraphContext from "./BarGraphContext";
+import TimelineContext from "./TimelineContext";
 import { numberRange } from "~/utils";
 
 const textOffset = (index: number) => {
@@ -9,7 +9,7 @@ const textOffset = (index: number) => {
 };
 
 export default function Timeline() {
-  const { currentCentury } = useContext(BarGraphContext);
+  const { currentCentury } = useContext(TimelineContext);
   return (
     <svg className="w-full md:w-11/12" viewBox="0 0 300 10">
       <line x1="0" y1="0" x2="300" y2="0" stroke="white" strokeWidth="0.5" />

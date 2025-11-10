@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import BarGraphContext from "./BarGraphContext";
+import TimelineContext from "./TimelineContext";
 import {
   getEventXFromIndex,
   getEventYFromIndex,
@@ -22,7 +22,7 @@ export default function OverlaidEventSquare({
   yearEvents,
   isFull,
 }: Props) {
-  const { activeEvent, setActiveEvent } = useContext(BarGraphContext);
+  const { activeEvent, setActiveEvent } = useContext(TimelineContext);
 
   const [squareEvent, setSquareEvent] = useState<object | undefined>(undefined);
   const [strokeClass, setStrokeClass] = useState<string | undefined>(undefined);

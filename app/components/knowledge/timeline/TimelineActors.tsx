@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
-import BarGraphContext from "./BarGraphContext";
+import TimelineContext from "./TimelineContext";
 import PeabodyActors from "../PeabodyActors";
 import eventData from "~/data/process/eventData.json";
 
 export default function BarGraphActors() {
-  const { activeEvent, currentCentury } = useContext(BarGraphContext);
+  const { activeEvent, currentCentury } = useContext(TimelineContext);
   const [currentActors, setCurrentActors] = useState<Array<string>>(
     (eventData.actors as { [key: string]: Array<string> })[currentCentury]
   );

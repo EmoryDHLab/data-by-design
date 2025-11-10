@@ -1,5 +1,8 @@
 import {chapterMeta} from "./app/data/chapterMeta";
+import eventData from "./app/data/process/eventData.json";
 import type { Config } from 'tailwindcss'
+
+export const nativeBgPattern = `inset-0 bg-[linear-gradient(90deg,#E9CB79_3px,${eventData.actorColors.Americas}_3px)] bg-[size:15px_100%]`
 
 export default {
   content: ["./app/**/*.{js,ts,jsx,tsx}"],
@@ -110,7 +113,7 @@ export default {
         Holland: "rgb(68,108,73)",
         Sweden: "rgb(217,182,17)",
         Spain: "rgb(209, 42, 5)",
-        Native: "url(#diagonalHatch)",
+        Native: "url(#nativeHatch)",
         Mexico: "rgb(209, 42, 5)",
         playfairChart: "#F3ECCB",
       },
@@ -273,5 +276,6 @@ export default {
     ...Object.keys(chapterMeta).map((chapter) => `selection:bg-${chapter}Secondary`),
     ...Object.keys(chapterMeta).map((chapter) => `outline-${chapter}Primary`),
     ...Object.keys(chapterMeta).map((chapter) => `outline-${chapter}Secondary`),
+    nativeBgPattern   
   ],
 } satisfies Config;

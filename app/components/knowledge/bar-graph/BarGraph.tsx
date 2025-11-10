@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import BarGraphContext from "./BarGraphContext";
+import TimelineContext from "../timeline/TimelineContext";
 import { numberRange } from "~/utils";
-import BarGraphYears from "./BarGraphYears";
+import BarGraphYears from "../timeline/TimelineYears";
 
 const BarGraph = () => {
-  const { currentCentury } = useContext(BarGraphContext);
+  const { currentCentury } = useContext(TimelineContext);
 
   return (
     <div className="flex w-full md:w-11/12">

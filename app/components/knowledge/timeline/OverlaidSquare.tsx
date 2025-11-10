@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import BarGraphContext from "./BarGraphContext";
+import TimelineContext from "./TimelineContext";
 import { numberRange } from "~/utils";
 import OverlaidYearSquare from "./OverlaidYearSquare";
 
 // Overlaid Peabody Square is a layer on top of the Peabody square image that
 // allows a user to hover over the various squares
 export default function OverlaidSquare() {
-  const { currentCentury } = useContext(BarGraphContext);
+  const { currentCentury } = useContext(TimelineContext);
   const [image, setImage] = useState<string>("0403-1700s.jpg");
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function OverlaidSquare() {
   return (
     <svg viewBox="0 0 99 99">
       <image
-        href={`/images/process/${image}`}
+        href={`/images/knowledge/${image}`}
         x="-3.5"
         y="-3.5"
         width="105.5"

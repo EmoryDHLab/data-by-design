@@ -16,7 +16,7 @@ import FootnotesList from "~/components/FootnotesList";
 import Scrollytell from "~/components/knowledge/PeabodyScrollytell";
 import Quotation from "~/components/Quotation";
 import Quiz from "~/components/knowledge/quiz/Quiz";
-import PeabodyBarGraph from "~/components/knowledge/PeabodyBarGraph";
+import PeabodyTimeline from "~/components/knowledge/PeabodyTimeline";
 import LEDChart from "~/components/knowledge/LEDChart";
 import figures from "~/data/figures/knowledge.json";
 import Figure from "~/components/figures/Figure";
@@ -30,6 +30,7 @@ import ClientOnly from "~/components/ClientOnly";
 import { chapterMeta } from "~/data/chapterMeta";
 import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
+import PeabodyBarGraph from "~/components/knowledge/PeabodyBarGraph";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("knowledge");
@@ -572,6 +573,8 @@ export default function PeabodyPage() {
             />
           </Column>
         </TwoColumnLayout>
+
+        <PeabodyTimeline />
 
         <CenteredLayout className="pb-20">
           <PullQuote
@@ -1242,19 +1245,17 @@ export default function PeabodyPage() {
               Design to support increased knowledge, not complete knowledge
             </span>,
             <span key="2f317173">
-              Probe the history of visualization for future ideas 
+              Probe the history of visualization for future ideas
             </span>,
           ]}
           forViewers={[
             <span key="75cf526a">
-              Remember that histories are shaped by power 
+              Remember that histories are shaped by power
             </span>,
             <span key="6d2691fc">
               Expand your ideas about what visualization can be
             </span>,
-            <span key="9650286d">
-              Recognize that you can create knowledge 
-            </span>,
+            <span key="9650286d">Recognize that you can create knowledge</span>,
             <span key="2f317175">
               Ask whose knowledge is missing from what you see
             </span>,

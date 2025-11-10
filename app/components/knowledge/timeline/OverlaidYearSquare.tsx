@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import BarGraphContext from "./BarGraphContext";
+import TimelineContext from "./TimelineContext";
 import { numberRange } from "~/utils";
 import OverlaidEventSquare from "./OverlaidEventSquare";
 import {
@@ -16,7 +16,7 @@ interface Props {
 }
 
 export default function OverlaidYearSquare({ index, year }: Props) {
-  const { currentCenturyEvents } = useContext(BarGraphContext);
+  const { currentCenturyEvents } = useContext(TimelineContext);
   const [yearEvents, setYearEvents] =
     useState<Array<PeabodyEvent>>(currentCenturyEvents);
   const [isFull, setIsFull] = useState<boolean>(false);

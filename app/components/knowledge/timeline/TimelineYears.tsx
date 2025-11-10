@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import BarGraphContext from "./BarGraphContext";
+import TimelineContext from "./TimelineContext";
 import RecreatedEventSquare from "./RecreatedEventSquare";
 import { numberRange } from "~/utils";
 import type { PeabodyEvent } from "~/types/process";
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const BarGraphYears = ({ year }: Props) => {
-  const { currentCenturyEvents } = useContext(BarGraphContext);
+  const { currentCenturyEvents } = useContext(TimelineContext);
   const [yearEvents, setYearEvents] = useState<Array<PeabodyEvent>>(
     currentCenturyEvents.filter((event) => event?.year === year)
   );
