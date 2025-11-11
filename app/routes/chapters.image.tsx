@@ -21,8 +21,10 @@ import ProjectTimelineScrollytell from "~/components/image/projectTimeline/Proje
 import Takeaways from "~/components/layout/Takeaways";
 import { chapterMeta } from "~/data/chapterMeta";
 import type { MetaFunction } from "react-router";
-import type { TVizAnchors } from "~/chapterContext";
+import type { HoverState, TVizAnchors } from "~/chapterContext";
 import LineSegmentsScrollytell from "~/components/image/LineSegmentsScrollytell";
+import Error from "~/components/image/Error";
+import HoverText from "~/components/HoverText";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("image");
@@ -69,6 +71,8 @@ const visualizations: TVizAnchors[] = [
 
 export default function PlayfairPage() {
   const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
+  const [hoverState, setHoverState] = useState<HoverState>(undefined);
+
   return (
     <ChapterContext.Provider
       value={{
@@ -83,6 +87,8 @@ export default function PlayfairPage() {
         sections,
         showFootnotes,
         setShowFootnotes,
+        hoverState,
+        setHoverState,
       }}
     >
       <ChapterTitle
@@ -102,21 +108,24 @@ export default function PlayfairPage() {
           />
           <p className="first-paragraph">
             We can only imagine the choice words William Playfair (1759-1823)
-            exclaimed when he realized the error that he had engraved into his
-            most recent chart, "Exports & Imports to and from all of North
-            America." It was 1801, twelve years since Thomas Clarkson had first
-            published his slave ship diagram, and fifteen since Playfair had
-            published the first edition of The Commercial and Political Atlas,
-            in which an early version of his own chart first appeared. Engraving
-            was then, as now, an incredibly time-consuming process. Albrecht
-            Dürer, the Renaissance printmaker credited with elevating engraving
-            into an art form, took over three months to complete his famed
-            Knight, Death, and Devil (1513), a print not much larger than an
-            iPad. In the case of Playfair, however, it was not merely the time
-            he had invested in producing the twenty-eight plates for the third
-            edition of his Atlas; it was also the expense.
+            exclaimed when he realized the{" "}
+            <HoverText hoverState="showError">error</HoverText> that he had
+            engraved into his most recent chart, "Exports & Imports to and from
+            all of North America." It was 1801, twelve years since Thomas
+            Clarkson had first published his slave ship diagram, and fifteen
+            since Playfair had published the first edition of The Commercial and
+            Political Atlas, in which an early version of his own chart first
+            appeared. Engraving was then, as now, an incredibly time-consuming
+            process. Albrecht Dürer, the Renaissance printmaker credited with
+            elevating engraving into an art form, took over three months to
+            complete his famed Knight, Death, and Devil (1513), a print not much
+            larger than an iPad. In the case of Playfair, however, it was not
+            merely the time he had invested in producing the twenty-eight plates
+            for the third edition of his Atlas; it was also the expense.
           </p>
-          <Figure figure={figures["0201-playfair-northam"]} />
+
+          <Error />
+
           <p>
             Today, Playfair is widely celebrated for his leading role in the
             development of modern data visualization. His bar charts, pie
@@ -143,35 +152,35 @@ export default function PlayfairPage() {
           </p>
         </CenteredLayout>
         <CenteredLayout>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-center">
-            <Figure figure={figures["0202-buache"]} showCaption={false} />
-            <Figure
-              figure={figures["0203-playfair-scotland"]}
-              showCaption={false}
-            />
-            <Figure
-              figure={figures["0204-playfair-pie"]}
-              showCaption={false}
-              className="md:col-span-2"
-            />
-            <p className="md:col-span-2 font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
-              Top left: “A bar chart from 1770 created by the French mapmaking
-              team of Philippe Buache and Guillaume de L’Isle. William Playfair
-              included a less ornate bar chart in his Commerical and Political
-              Atlas, and returned the form later in life.” Image from the David
-              Rumsey Map Collection courtesy Stanford University Libraries.
-              Digitized by the David Rumsey Map Collection, Cartography
-              Associates. Top right: “The bar chart included in the first
-              edition of Playfair's Commercial and Political Atlas, considered
-              one of the first examples of the bar chart form.” Image courtesy
-              of Wikimedia Commons. Bottom: Playfair’s “Chart Representing the
-              Extent, Population & Revenues, of the Principal Nations in Europe,
-              after the Division of Poland & Treaty of Luneville,” published in
-              the Statistical Breviary (1801). The pie charts included in this
-              volume are considered the first of their kind. Image courtesy of
-              Wikimedia Commons.
-            </p>
-          </div>
+          <Figure
+            className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-center"
+            classNames={["", "", "md:col-span-2"]}
+            figures={[
+              figures["0202-buache"],
+              figures["0203-playfair-scotland"],
+              figures["0204-playfair-pie"],
+            ]}
+            groupCaption={
+              <p className="md:col-span-2 font-neueMontreal text-xs md:text-sm leading-5 text-left mb-6 md:mb-12 col-span-full">
+                Top left: “A bar chart from 1770 created by the French mapmaking
+                team of Philippe Buache and Guillaume de L’Isle. William
+                Playfair included a less ornate bar chart in his Commerical and
+                Political Atlas, and returned the form later in life.” Image
+                from the David Rumsey Map Collection courtesy Stanford
+                University Libraries. Digitized by the David Rumsey Map
+                Collection, Cartography Associates. Top right: “The bar chart
+                included in the first edition of Playfair's Commercial and
+                Political Atlas, considered one of the first examples of the bar
+                chart form.” Image courtesy of Wikimedia Commons. Bottom:
+                Playfair’s “Chart Representing the Extent, Population &
+                Revenues, of the Principal Nations in Europe, after the Division
+                of Poland & Treaty of Luneville,” published in the Statistical
+                Breviary (1801). The pie charts included in this volume are
+                considered the first of their kind. Image courtesy of Wikimedia
+                Commons.
+              </p>
+            }
+          />
           <p>
             To produce engravings like Playfair's, a thin copper plate is first
             coated with a "ground": a layer of wax, varnish, chalk, or soot.
@@ -875,17 +884,16 @@ export default function PlayfairPage() {
         </TwoColumnLayout>
         <Takeaways
           forDesigners={[
-            <span key="df782d45">
-              Acknowledge your decision-making power
-            </span>,
+            <span key="df782d45">Acknowledge your decision-making power</span>,
             <span key="6440631a">
-              Question any decision to adhere to the default 
+              Question any decision to adhere to the default
             </span>,
             <span key="2f317172">
-              Consider the capabilities and constraints of your chosen tools 
+              Consider the capabilities and constraints of your chosen tools
             </span>,
             <span key="2f317173">
-              Ask who will view your visualization and what they will need to know 
+              Ask who will view your visualization and what they will need to
+              know
             </span>,
           ]}
           forViewers={[

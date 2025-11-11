@@ -41,7 +41,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
 
   useEffect(() => {
     if (!documentSize.height) return;
-    const getOffset = (id: string) => {
+    const offset = (id: string) => {
       const element = document.getElementById(id);
       const mainElement = document.getElementById("main-content");
       if (
@@ -67,7 +67,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
     const anchorPositions: TAnchorPosition[] = [];
     if (chapterFigures) {
       for (const figure of chapterFigures) {
-        const offsets = getOffset(`fig-${figure.fileName}`);
+        const offsets = offset(`fig-${figure.fileName}`);
         if (offsets.offsetPercent > 0) {
           anchorPositions.push({
             type: "figure",
@@ -81,7 +81,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
 
     if (visualizations) {
       for (const viz of visualizations) {
-        const offsets = getOffset(viz.id);
+        const offsets = offset(viz.id);
         anchorPositions.push({
           type: viz.type,
           hash: viz.id,

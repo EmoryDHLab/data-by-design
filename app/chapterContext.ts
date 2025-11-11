@@ -41,6 +41,7 @@ export type HoverState =
   | "0317-Willard1"
   | "0318-Willard2"
   | "0319-Willard3"
+  | "showError"
   | undefined;
 
 export type TVizAnchors = {

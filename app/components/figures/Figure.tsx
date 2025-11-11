@@ -15,6 +15,7 @@ interface Props {
   id?: string;
   figureHeight?: number;
   showCaption?: boolean;
+  classNames?: string[];
 }
 
 export const Caption = ({ figure, className }: Props) => {
@@ -43,18 +44,20 @@ export default function Figure({
   imageClassName,
   id,
   showCaption = true,
+  classNames = [],
 }: Props) {
   const { hideSensitiveState } = useContext(ChapterContext);
 
   if (figures) {
     return (
       <div className={className ?? ""} id={id ?? `fig-${figures[0]?.fileName}`}>
-        {figures.map((figure) => {
+        {figures.map((figure, index) => {
           return (
             <FigureModal
               key={`${figure?.fileName}`}
               figure={figure}
               id={id ?? `fig-${figures[0]?.fileName}`}
+              className={classNames.length >= index ? classNames[index] : ""}
             >
               {hideSensitiveState && figure.sensitive && (
                 <div className="absolute p-6 z-10 text-xl font-neueMontreal">
@@ -67,7 +70,7 @@ export default function Figure({
         })}
         {groupCaption && (
           <figcaption
-            className={`font-neueMontreal text-sm leading-tight text-left mt-6 md:mt-8 mb-6 md:mb-8 col-span-full ${
+            className={`font-neueMontreal text-sm leading-tight text-left mt-3 md:mt-6 mb-6 md:mb-8 col-span-full ${
               captionClassName ?? ""
             }`}
           >
