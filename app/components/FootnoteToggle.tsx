@@ -8,7 +8,7 @@ const FootnoteToggle = () => {
   const { showFootnotes, setShowFootnotes } = useContext(ChapterContext);
   if (setShowFootnotes) {
     return (
-      <div className="hidden md:flex sticky top-24 ml-4 lg:ml-8 mt-8 text-xs md:text-sm flex-col font-power">
+      <div className="hidden w-fit md:flex sticky top-24 ml-4 lg:ml-8 mt-8 text-xs md:text-sm flex-col font-power">
         <Toggle
           onChange={setShowFootnotes}
           checked={showFootnotes ?? false}
