@@ -354,7 +354,7 @@ export default function Viz1({ interactive = false }: Props) {
         >
           <ul>
             <li className="font-bold text-sm">{hoveredStudent.name}</li>
-            {/* <li className="text-xs">{hoveredStudent.profession}</li> */}
+          <li className="text-xs">{hoveredStudent.profession}</li> 
             <li className="text-xs">{hoveredStudent.location}</li>
             <li className="text-xs">Class of {hoveredStudent.year}</li>
           </ul>

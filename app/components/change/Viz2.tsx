@@ -813,7 +813,7 @@ export default function Viz2({ interactive = false }: Props) {
               </li>
             ) : (
               <>
-                {/* <li className="text-xs">{hoveredStudent.profession}</li> */}
+            <li className="text-xs">{hoveredStudent.profession}</li> 
                 <li className="text-xs">{hoveredStudent.location}</li>
                 <li className="text-xs">Class of {hoveredStudent.year}</li>
               </>
