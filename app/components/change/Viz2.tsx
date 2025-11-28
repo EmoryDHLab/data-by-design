@@ -773,14 +773,14 @@ export default function Viz2({ interactive = false }: Props) {
   }, [interactive, showPieChart, useCircularArrangement, redrawKey]);
 
   return (
-    <div className="flex flex-col items-center relative ">
+    <div className="flex flex-col  items-center relative ">
       <svg
         ref={svgRef}
         className="max-w-full"
         style={{ height: "800px" }}
       ></svg>
       {interactive && (
-        <div className="-mt-2 flex gap-4 mb-4">
+        <div className="mt-8 flex gap-4 mb-8">
           <button
             onClick={() => setShowPieChart(!showPieChart)}
             className="px-3 py-1 bg-changePrimary text-white rounded font-power text-sm hover:bg-opacity-80 transition-opacity"
@@ -857,11 +857,10 @@ export default function Viz2({ interactive = false }: Props) {
           <div className="flex items-center p-2">
             <div className="flex items-center mr-3">
               <div
-                className="w-3 h-3 border border-black mr-1"
+                className="w-2.5 h-2.5 border-2 border-black mr-1"
                 style={{
                   backgroundColor: "transparent",
                   transform: "rotate(45deg)",
-                  borderWidth: "2.8px",
                 }}
               />
             </div>
