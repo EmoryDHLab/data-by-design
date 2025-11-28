@@ -1,5 +1,6 @@
 import { useState } from "react";
 import studentResponses from "~/data/power/studentResponses.json";
+import TracksVisualization from "./TracksVisualization";
 
 interface ResponseData {
   id: string;
@@ -29,6 +30,7 @@ export default function Viz3() {
     useState<keyof typeof categories>("elt");
   const [currentResponseIndex, setCurrentResponseIndex] = useState(0);
   const [isUnraveled, setIsUnraveled] = useState(false);
+  const [straightTextMode, setStraightTextMode] = useState(false);
 
   const responses =
     (studentResponses as StudentResponsesData)[selectedCategory] || [];
@@ -105,21 +107,16 @@ export default function Viz3() {
       <div className="w-1/2 p-8 flex flex-col justify-center">
         {/* Response card stack */}
 
-        {/* Response text area */}
-        <div className="relative mb-6 h-[500px]">
-          <div className="h-full overflow-y-auto text-base font-power text-white leading-relaxed p-6 border border-gray-600 rounded">
-            <div
-              dangerouslySetInnerHTML={{
-                __html:
-                  currentResponse?.lines
-                    .join(" ")
-                    .replace(
-                      /class="underline"/g,
-                      'class="underline decoration-white decoration-2"'
-                    ) || "",
-              }}
-            />
-          </div>
+        {/* Tracks Visualization */}
+        <div className="relative mb-6 h-[700px]">
+          <TracksVisualization 
+            key={`${selectedCategory}-${currentResponseIndex}`}
+            text={currentResponse?.selection || ""} 
+            lines={currentResponse?.lines || []}
+            width={700} 
+            height={700}
+            straightTextMode={straightTextMode}
+          />
         </div>
 
         {/* Navigation controls */}
@@ -132,8 +129,16 @@ export default function Viz3() {
             � Previous
           </button>
 
-          <div className="text-white font-power text-sm">
-            {currentResponseIndex + 1} of {responses.length}
+          <div className="flex items-center gap-4">
+            <div className="text-white font-power text-sm">
+              {currentResponseIndex + 1} of {responses.length}
+            </div>
+            <button
+              onClick={() => setStraightTextMode(!straightTextMode)}
+              className="px-4 py-2 bg-blue-600 text-white rounded font-power text-sm hover:bg-blue-700 transition-colors"
+            >
+              {straightTextMode ? "Show Track" : "Make Text Readable"}
+            </button>
           </div>
 
           <button
