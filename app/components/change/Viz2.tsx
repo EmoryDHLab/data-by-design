@@ -15,8 +15,8 @@ const colorMapping: Record<string, string> = {
   "Other Professions": "#2F4F4F",
   "House Wives": "#FEC313",
   Deceased: "#C4C4C4",
+  Unknown: "#C4C4C4",
   Unreported: "#C4C4C4",
-  "Unknown/Deceased": "#C4C4C4",
   // 1910-Respondents categories
   teachers: "#D92944",
   ministers: "#5A7BC3",
@@ -24,7 +24,7 @@ const colorMapping: Record<string, string> = {
   business: "#CDCE9D",
   "other professions": "#2F4F4F",
   housewives: "#FEC313",
-  "unknown/deceased": "#C4C4C4",
+  unknown: "#C4C4C4",
 };
 
 export default function Viz2({ interactive = false }: Props) {
@@ -48,7 +48,7 @@ export default function Viz2({ interactive = false }: Props) {
     const vizHeight = 800; // Increased visualization height
     const radius = Math.min(width, vizHeight - 160) / 2 - 80; // Increased radius
 
-    // Process data - count students in each category, combining Deceased and Unreported
+    // Process data - count students in each category, combining Deceased and Unknown
     const rawPieData = studentData.categories.map((category) => ({
       name: category.displayName,
       value: category.students.length,
@@ -57,32 +57,52 @@ export default function Viz2({ interactive = false }: Props) {
       students: category.students,
     }));
 
-    // Combine Deceased and Unreported into Unknown/Deceased
+    // Log total students and categories from studentChartTwo
+    const totalStudents = studentData.categories.reduce(
+      (sum, cat) => sum + cat.students.length,
+      0
+    );
+    console.log("📊 StudentChartTwo Data Summary:");
+    console.log(`Total students: ${totalStudents}`);
+    console.log(
+      "Categories:",
+      studentData.categories.map(
+        (cat) => `${cat.displayName}: ${cat.students.length}`
+      )
+    );
+
+    // Separate Unknown and Deceased - Unknown goes outside, Deceased stays in pie
     const pieData: any[] = [];
-    let unknownDeceasedData: any = null;
+    let unknownStudentsData: any = null;
 
     rawPieData.forEach((category) => {
-      if (category.name === "Deceased" || category.name === "Unreported") {
-        if (!unknownDeceasedData) {
-          unknownDeceasedData = {
-            name: "Unknown/Deceased",
-            value: category.value,
-            color: colorMapping["Unknown/Deceased"],
-            isDotted: false,
-            students: [...category.students],
-          };
-        } else {
-          unknownDeceasedData.value += category.value;
-          unknownDeceasedData.students.push(...category.students);
-        }
+      if (category.name === "Unknown") {
+        unknownStudentsData = {
+          name: "Unknown",
+          value: category.value,
+          color: colorMapping["Unknown"],
+          isDotted: false,
+          students: [...category.students],
+        };
+        console.log(
+          `📍 Moving ${category.value} Unknown students outside pie chart`
+        );
       } else {
+        // Include Deceased in the pie chart
         pieData.push(category);
+        console.log(
+          `🥧 Adding ${category.name} (${category.value} students) to pie chart`
+        );
       }
     });
 
-    if (unknownDeceasedData) {
-      pieData.push(unknownDeceasedData);
-    }
+    const pieStudentCount = pieData.reduce((sum, cat) => sum + cat.value, 0);
+    const unknownStudentCount = unknownStudentsData?.value || 0;
+    console.log(
+      `✅ Data allocation: ${pieStudentCount} in pie + ${unknownStudentCount} outside = ${
+        pieStudentCount + unknownStudentCount
+      } total`
+    );
 
     // Add 1910-Respondents data with dotted borders
     const categoryMapping: Record<string, string> = {
@@ -92,11 +112,10 @@ export default function Viz2({ interactive = false }: Props) {
       business: "Business",
       "other professions": "Other Professions",
       housewives: "House Wives",
-      "unknown/deceased": "Unknown/Deceased",
     };
 
     const respondentsPieData = Object.entries(respondentsData)
-      .filter(([key]) => key !== "title" && key !== "unknown/deceased")
+      .filter(([key]) => key !== "title" && key !== "unknown")
       .map(([key, value]) => {
         const mappedCategory = categoryMapping[key] || key;
         return {
@@ -107,12 +126,10 @@ export default function Viz2({ interactive = false }: Props) {
         };
       });
 
-    // Filter out Unknown/Deceased from pie chart since it goes outside
-    const pieDataWithoutUnknown = pieData.filter(
-      (category) => category.name !== "Unknown/Deceased"
-    );
+    // pieData already has Unknown filtered out, so use it directly
+    const pieDataWithoutUnknown = pieData;
 
-    // Combine matching categories from both datasets (excluding unknown/deceased)
+    // Combine matching categories from both datasets for proportional representation
     const combinedPieData = pieDataWithoutUnknown.map((category) => {
       const matchingRespondent = respondentsPieData.find(
         (r) => r.name === category.name
@@ -295,41 +312,48 @@ export default function Viz2({ interactive = false }: Props) {
     };
 
     // Add all students from all categories
+    console.log(
+      "Processing categories:",
+      combinedPieData.map((d) => d.name)
+    );
     combinedPieData.forEach((categoryData, categoryIndex) => {
       // Get original students for this category
       let originalStudents: any[] = [];
 
-      if (categoryData.name === "Unknown/Deceased") {
-        // For combined category, get students from the processed pieData
-        const combinedCategory = pieData.find(
-          (cat) => cat.name === "Unknown/Deceased"
-        );
-        originalStudents = combinedCategory?.students || [];
-      } else {
-        originalStudents =
-          studentData.categories.find(
-            (cat) => cat.displayName === categoryData.name
-          )?.students || [];
-      }
+      originalStudents =
+        studentData.categories.find(
+          (cat) => cat.displayName === categoryData.name
+        )?.students || [];
 
-      // Create synthetic respondents for this category
+      // Create actual respondent dots for this category
       const respondentsCount = categoryData.respondentsCount || 0;
       const respondents = Array.from({ length: respondentsCount }, (_, i) => ({
-        name: `${categoryData.name}_respondent_${i}`,
+        name: `1910 Survey Respondent ${i + 1}`,
+        profession: categoryData.name,
         isRespondent: true,
       }));
 
-      // Combine and shuffle students and respondents for better mixing
+      // Combine students and respondents
       const students = originalStudents.map((s) => ({
         ...s,
         isRespondent: false,
       }));
+
+      // Sort to put diamond students first for priority placement
+      const diamondFirst = [...students].sort((a, b) => {
+        const aIsDiamond = diamondStudents.includes(a.name);
+        const bIsDiamond = diamondStudents.includes(b.name);
+        if (aIsDiamond && !bIsDiamond) return -1;
+        if (!aIsDiamond && bIsDiamond) return 1;
+        return 0;
+      });
+
       const allPeople = [];
 
-      // Interleave students and respondents for better distribution
-      const maxLength = Math.max(students.length, respondents.length);
+      // Interleave students (with diamonds first) and respondents for better distribution
+      const maxLength = Math.max(diamondFirst.length, respondents.length);
       for (let i = 0; i < maxLength; i++) {
-        if (i < students.length) allPeople.push(students[i]);
+        if (i < diamondFirst.length) allPeople.push(diamondFirst[i]);
         if (i < respondents.length) allPeople.push(respondents[i]);
       }
 
@@ -348,12 +372,11 @@ export default function Viz2({ interactive = false }: Props) {
 
         let x: number, y: number;
         let attempts = 0;
-        const maxAttempts = 200;
-        let currentSlice: any = null;
-
-        // Check if this person should be a diamond before position calculation
+        // Give diamond students more attempts to find a good position
         const isDiamond =
           !person.isRespondent && diamondStudents.includes(person.name);
+        const maxAttempts = isDiamond ? 1000 : 500;
+        let currentSlice: any = null;
 
         // Try to find a non-overlapping position
         do {
@@ -437,10 +460,6 @@ export default function Viz2({ interactive = false }: Props) {
           allDots.push({ x, y, radius: dotRadius });
           successfulPlacements++;
 
-          // Check if this person should be a diamond
-          const isDiamond =
-            !person.isRespondent && diamondStudents.includes(person.name);
-
           let dotElement: any;
 
           if (isDiamond) {
@@ -450,7 +469,7 @@ export default function Viz2({ interactive = false }: Props) {
               .attr("d", createDiamondPath(x, y, dotRadius + 1))
               .attr("fill", categoryData.color)
               .attr("stroke", "black")
-              .attr("stroke-width", 1.5)
+              .attr("stroke-width", 2.5)
               .style("opacity", 1.0)
               .style("cursor", interactive ? "pointer" : "default");
           } else {
@@ -534,37 +553,56 @@ export default function Viz2({ interactive = false }: Props) {
           }, (seed + personIndex) % 2000); // Reduced delay range
         } else {
           failedPlacements++;
+          // Log if a diamond student failed to be placed
+          if (!person.isRespondent && diamondStudents.includes(person.name)) {
+            console.warn(
+              "Failed to place diamond student:",
+              person.name,
+              "in category:",
+              categoryData.name
+            );
+          }
         }
       });
+
+      // Log placement statistics for each category
+      console.log(
+        `Category ${categoryData.name}: ${successfulPlacements} placed, ${failedPlacements} failed, total students: ${originalStudents.length}, total respondents: ${respondentsCount}`
+      );
+      if (failedPlacements > 0) {
+        console.warn(
+          `⚠️ Category ${categoryData.name}: ${failedPlacements} failed placements out of ${allPeople.length} total people`
+        );
+      }
     });
 
-    // Add unknown/deceased students and respondents outside the pie chart
-    const unknownDeceasedCount = respondentsData["unknown/deceased"] || 0;
-    const unknownDeceasedStudents =
-      pieData.find((cat) => cat.name === "Unknown/Deceased")?.students || [];
-    const totalUnknownCount =
-      unknownDeceasedCount + unknownDeceasedStudents.length;
+    // Add unknown students outside the pie chart
 
-    if (totalUnknownCount > 0) {
+    // Add unknown students and unknown respondents from 1910 survey outside
+    const unknownStudents = unknownStudentsData?.students || [];
+    const unknownRespondentsCount = respondentsData["unknown"] || 0;
+    const totalOutsideCount = unknownStudents.length + unknownRespondentsCount;
+
+    if (totalOutsideCount > 0) {
       const outerRadius = radius + 500;
-      const innerRadius = radius + 30; // All unknown data starts close to perimeter
-      const outerDots: Array<{ x: number; y: number; radius: number }> = []; // Track outer dots for collision
+      const innerRadius = radius + 30;
+      const outerDots: Array<{ x: number; y: number; radius: number }> = [];
+
       let dotIndex = 0;
 
-      // Add unknown/deceased students (solid dots) - mixed with respondents
-      unknownDeceasedStudents.forEach((student, studentIndex) => {
+      // Add unknown students (solid dots with diamonds for special students)
+      unknownStudents.forEach((student, studentIndex) => {
         let x: number, y: number;
         let attempts = 0;
         const maxAttempts = 100;
 
         // Try to find non-overlapping position
         do {
-          const angle = (dotIndex / totalUnknownCount) * 2 * Math.PI;
+          const angle = (dotIndex / totalOutsideCount) * 2 * Math.PI;
           const angleOffset =
-            (seededRandom(studentIndex * 1000 + attempts) - 0.5) * 0.3; // Small angular variation
+            (seededRandom(studentIndex * 1000 + attempts) - 0.5) * 0.3;
           const finalAngle = angle + angleOffset;
 
-          // Students mixed throughout the outer area
           const randomRadius =
             innerRadius +
             seededRandom(studentIndex * 2000 + attempts) *
@@ -585,16 +623,36 @@ export default function Viz2({ interactive = false }: Props) {
         if (attempts < maxAttempts) {
           outerDots.push({ x, y, radius: dotRadius });
 
-          const dotElement = g
-            .append("circle")
-            .attr("cx", x)
-            .attr("cy", y)
-            .attr("r", dotRadius)
-            .attr("fill", colorMapping["Unknown/Deceased"])
-            .attr("stroke", "black")
-            .attr("stroke-width", 1)
-            .style("cursor", interactive ? "pointer" : "default")
-            .style("opacity", 1.0);
+          // Check if this student should be a diamond
+          const isDiamond = diamondStudents.includes(student.name);
+
+          let dotElement: any;
+
+          if (isDiamond) {
+            // Create diamond shape
+            dotElement = g
+              .append("path")
+              .attr("d", createDiamondPath(x, y, dotRadius + 1))
+              .attr("fill", colorMapping["Unknown"])
+              .attr("stroke", "black")
+              .attr("stroke-width", 2.5)
+              .attr("stroke-dasharray", "3,3")
+              .style("cursor", interactive ? "pointer" : "default")
+              .style("opacity", 0.6);
+          } else {
+            // Create regular circle
+            dotElement = g
+              .append("circle")
+              .attr("cx", x)
+              .attr("cy", y)
+              .attr("r", dotRadius)
+              .attr("fill", colorMapping["Unknown"])
+              .attr("stroke", "black")
+              .attr("stroke-width", 1)
+              .attr("stroke-dasharray", "3,3")
+              .style("cursor", interactive ? "pointer" : "default")
+              .style("opacity", 0.6);
+          }
 
           if (interactive) {
             dotElement
@@ -610,7 +668,7 @@ export default function Viz2({ interactive = false }: Props) {
                 }
               })
               .on("mouseleave", function () {
-                d3.select(this).attr("fill", colorMapping["Unknown/Deceased"]);
+                d3.select(this).attr("fill", colorMapping["Unknown"]);
                 setHoveredStudent(null);
               });
           }
@@ -618,19 +676,18 @@ export default function Viz2({ interactive = false }: Props) {
         }
       });
 
-      // Add unknown/deceased respondents (dotted dots) - mixed with students
-      for (let i = 0; i < unknownDeceasedCount; i++) {
+      // Add unknown respondents (dotted dots) outside the pie
+      for (let i = 0; i < unknownRespondentsCount; i++) {
         let x: number, y: number;
         let attempts = 0;
         const maxAttempts = 100;
 
         // Try to find non-overlapping position
         do {
-          const angle = (dotIndex / totalUnknownCount) * 2 * Math.PI;
-          const angleOffset = (seededRandom(i * 3000 + attempts) - 0.5) * 0.3; // Small angular variation
+          const angle = (dotIndex / totalOutsideCount) * 2 * Math.PI;
+          const angleOffset = (seededRandom(i * 3000 + attempts) - 0.5) * 0.3;
           const finalAngle = angle + angleOffset;
 
-          // Respondents mixed throughout the same outer area as students
           const randomRadius =
             innerRadius +
             seededRandom(i * 4000 + attempts) * (outerRadius - innerRadius);
@@ -655,7 +712,7 @@ export default function Viz2({ interactive = false }: Props) {
             .attr("cx", x)
             .attr("cy", y)
             .attr("r", dotRadius)
-            .attr("fill", colorMapping["Unknown/Deceased"])
+            .attr("fill", colorMapping["unknown"])
             .attr("stroke", "black")
             .attr("stroke-width", 1)
             .attr("stroke-dasharray", "3,3")
@@ -668,7 +725,7 @@ export default function Viz2({ interactive = false }: Props) {
                 d3.select(this).attr("fill", "black");
                 setHoveredStudent({
                   name: "1910 Survey Respondent",
-                  // profession: "Unknown/Deceased",
+                  profession: "Unknown",
                   isRespondent: true,
                 });
                 const rect = svgRef.current?.getBoundingClientRect();
@@ -680,7 +737,7 @@ export default function Viz2({ interactive = false }: Props) {
                 }
               })
               .on("mouseleave", function () {
-                d3.select(this).attr("fill", colorMapping["Unknown/Deceased"]);
+                d3.select(this).attr("fill", colorMapping["unknown"]);
                 setHoveredStudent(null);
               });
           }
@@ -697,18 +754,18 @@ export default function Viz2({ interactive = false }: Props) {
       hasRespondents: d.respondentsCount > 0,
     }));
 
-    // Add unknown/deceased category for legend
-    if (unknownDeceasedCount > 0) {
+    // Add unknown category for legend
+    if (totalOutsideCount > 0) {
       legendItems.push({
-        name: "Unknown/Deceased (1910 only)",
-        color: colorMapping["Unknown/Deceased"],
-        displayText: "UNKNOWN/DECEASED ",
-        hasStudents: false,
-        hasRespondents: true,
-        isDotted: true,
-        value: unknownDeceasedCount,
-        studentsCount: 0,
-        respondentsCount: unknownDeceasedCount,
+        name: "Unknown",
+        color: colorMapping["Unknown"],
+        displayText: "UNKNOWN",
+        hasStudents: unknownStudents.length > 0,
+        hasRespondents: unknownRespondentsCount > 0,
+        isDotted: false,
+        value: totalOutsideCount,
+        studentsCount: unknownStudents.length,
+        respondentsCount: unknownRespondentsCount,
       });
     }
 
@@ -747,19 +804,20 @@ export default function Viz2({ interactive = false }: Props) {
         </div>
       )}
 
-      {/* HTML-based legend */}
+      {/* HTML-based Legend */}
       <div className="w-full max-w-4xl px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
           {legendData.map((item, index) => (
             <div key={index} className="flex items-center p-2 ">
               <div className="flex items-center mr-3">
-                {item.hasStudents && (
+                {item.hasStudents && item.name !== "Unknown" && (
                   <div
                     className="w-3 h-3 rounded-full border border-black mr-1"
                     style={{ backgroundColor: item.color }}
                   />
                 )}
-                {item.hasRespondents && (
+                {(item.hasRespondents ||
+                  (item.hasStudents && item.name === "Unknown")) && (
                   <div
                     className="w-3 h-3 rounded-full border border-black opacity-60"
                     style={{
@@ -794,6 +852,28 @@ export default function Viz2({ interactive = false }: Props) {
               </div>
             </div>
           ))}
+
+          {/* Diamond legend item */}
+          <div className="flex items-center p-2">
+            <div className="flex items-center mr-3">
+              <div
+                className="w-3 h-3 border border-black mr-1"
+                style={{
+                  backgroundColor: "transparent",
+                  transform: "rotate(45deg)",
+                  borderWidth: "2.8px",
+                }}
+              />
+            </div>
+            <div className="flex-1">
+              <div
+                className="text-sm uppercase font-semibold text-gray-800"
+                style={{ fontFamily: "VTC Du Bois, serif" }}
+              >
+                Student Contributor to Data Portraits
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {interactive && hoveredStudent && (
@@ -813,7 +893,7 @@ export default function Viz2({ interactive = false }: Props) {
               </li>
             ) : (
               <>
-            <li className="text-xs">{hoveredStudent.profession}</li> 
+                <li className="text-xs">{hoveredStudent.profession}</li>
                 <li className="text-xs">{hoveredStudent.location}</li>
                 <li className="text-xs">Class of {hoveredStudent.year}</li>
               </>
