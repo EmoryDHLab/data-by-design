@@ -42,7 +42,6 @@ let c1, c2, c3, c4, c5, c6;
 
 // Toggle for straight text mode
 let straightTextMode = false;
-let toggleButton;
 
 function preload() {
   font0 = loadFont("../fonts/VTCDubois/VTCDuBois-Regular.woff");
@@ -83,17 +82,6 @@ function setup() {
     rSpeed[r] = rs / 20;
   }
 
-  // Create toggle button
-  toggleButton = createButton("Make Text Readable");
-  toggleButton.position(10, height - 40);
-  toggleButton.style("padding", "10px 20px");
-  toggleButton.style("font-size", "14px");
-  toggleButton.style("background-color", "#000000");
-  toggleButton.style("color", "#ffffff");
-  toggleButton.style("border", "none");
-  toggleButton.style("cursor", "pointer");
-  toggleButton.mousePressed(toggleTextMode);
-
   initTracksPreset();
 }
 
@@ -108,7 +96,7 @@ function draw() {
   }
 
   push();
-  translate(-width / 2, -height / 2);
+  translate(-width / 2, -height / 2.5);
 
   // Draw preview line when dragging to create new point (hide when in straight text mode)
   if (!straightTextMode) {
@@ -210,13 +198,8 @@ function draw() {
     }
   }
 
-  // Draw track textures or straight text
-  if (straightTextMode) {
-    drawStraightText();
-  } else {
-    hideReadableText();
-    drawCurvedTracks();
-  }
+  // Draw track textures
+  drawCurvedTracks();
 
   translate(0, 0, 1);
   for (var n = 0; n < squiggleCount; n++) {
@@ -435,59 +418,6 @@ function drawCurvedTracks() {
   }
 }
 
-let readableTextDiv = null;
-
-function drawStraightText() {
-  // Create or update HTML div for selectable text
-  if (!readableTextDiv) {
-    readableTextDiv = createDiv();
-    readableTextDiv.style('position', 'absolute');
-    readableTextDiv.style('top', '50%');
-    readableTextDiv.style('left', '50%');
-    readableTextDiv.style('transform', 'translate(-50%, -50%)');
-    readableTextDiv.style('color', 'white');
-    readableTextDiv.style('font-family', 'VTC Du Bois, serif');
-    readableTextDiv.style('font-size', '20px');
-    readableTextDiv.style('text-align', 'center');
-    readableTextDiv.style('line-height', '1.2');
-    readableTextDiv.style('max-width', '80%');
-    readableTextDiv.style('pointer-events', 'auto');
-    readableTextDiv.style('user-select', 'text');
-    readableTextDiv.style('z-index', '1000');
-  }
-
-  // Use readableLines if available, otherwise fall back to mainText1
-  let linesToShow = [];
-  if (typeof readableLines !== "undefined" && readableLines.length > 0) {
-    // Clean HTML tags from lines
-    linesToShow = readableLines
-      .map((line) => line.replace(/<[^>]*>/g, "").trim())
-      .filter((line) => line.length > 0);
-  } else {
-    // Fall back to breaking up mainText1
-    linesToShow = [mainText1];
-  }
-
-  // Update div content
-  readableTextDiv.html(linesToShow.join('<br>'));
-  readableTextDiv.show();
-}
-
-function hideReadableText() {
-  if (readableTextDiv) {
-    readableTextDiv.hide();
-  }
-}
-
-function toggleTextMode() {
-  straightTextMode = !straightTextMode;
-  if (straightTextMode) {
-    toggleButton.html("Show Curved Tracks");
-  } else {
-    toggleButton.html("Make Text Readable");
-  }
-}
-
 function initTracksPreset() {
   for (var n = 0; n < squiggleCount; n++) {
     while (particles[n] && particles[n].length > 0) {
@@ -504,11 +434,12 @@ function initTracksPreset() {
   for (var j = 0; j < 28; j++) {
     let angleStep = map(j, 0, 28, 0, 19 * PI) + PI / 4;
 
+    // change values here to adjust rendering
     particles[0][j] = new Particle(
-      width / 2 + cos(angleStep) * random(0, width / 2),
-      height / 2 - 100 + sin(angleStep / PI) * random(0, height / 2),
+      width / 2 + cos(angleStep) * random(0, width * 0.4),
+      height / 2 - 100 + sin(angleStep / PI) * random(0, height * 0.4),
       angleStep - PI / 2,
-      random((width * 1) / 8, width / 4)
+      random((width * 1) / 12, width / 6)
     );
   }
 }

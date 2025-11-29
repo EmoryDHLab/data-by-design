@@ -16,8 +16,6 @@
   <script src="particle.js"></script>
   <script src="sketch.js"></script>
   <script>
-    let readableLines = [];
-    
     // Function to update text from parent
     window.updateTrackText = function(newText) {
       console.log('Updating track text:', newText);
@@ -35,18 +33,11 @@
       }
     };
     
-    // Function to update readable lines
-    window.updateReadableLines = function(newLines) {
-      readableLines = newLines || [];
-    };
     
     // Function to toggle straight text mode
     window.toggleStraightText = function() {
       if (typeof straightTextMode !== 'undefined') {
         straightTextMode = !straightTextMode;
-        if (typeof toggleButton !== 'undefined') {
-          toggleButton.html(straightTextMode ? "Show Track" : "Make Text Readable");
-        }
       }
     };
   </script>

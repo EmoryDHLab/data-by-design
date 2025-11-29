@@ -1211,7 +1211,7 @@ export default function DuboisChapter() {
             document the spatial relation between three seemingly unrelated
             events and phenomena: the Indigenous lands that were claimed by the
             US government through the Indian Removal Act of 1830; the locations
-            in which "convict leasing” was practiced in the 1870s; (this was the
+            in which “convict leasing” was practiced in the 1870s; (this was the
             practice of prisons profiting by requiring those they imprisoned to
             work for private companies with no compensation for the imprisoned
             themselves; and the states with, as of 2019, the highest
@@ -1563,7 +1563,7 @@ export default function DuboisChapter() {
               Consider when change should be your goal
             </span>,
             <span key="2f317172">
-              Explore how to combine visualization with other methods 
+              Explore how to combine visualization with other methods
             </span>,
             <span key="2f317173">
               Teach the next generation to continue the work
@@ -1574,11 +1574,9 @@ export default function DuboisChapter() {
               Combine visualization with other sources of insight
             </span>,
             <span key="6d2691fc">
-              Always aspire to more complete knowledge 
+              Always aspire to more complete knowledge
             </span>,
-            <span key="9650286d">
-              Recognize when knowledge demands change  
-            </span>,
+            <span key="9650286d">Recognize when knowledge demands change</span>,
             <span key="9650286e">
               Know that change requires a commitment to act
             </span>,

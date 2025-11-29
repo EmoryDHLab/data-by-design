@@ -109,45 +109,60 @@ export default function Viz3() {
 
         {/* Tracks Visualization */}
         <div className="relative mb-6 h-[700px]">
-          <TracksVisualization 
-            key={`${selectedCategory}-${currentResponseIndex}`}
-            text={currentResponse?.selection || ""} 
-            lines={currentResponse?.lines || []}
-            width={700} 
-            height={700}
-            straightTextMode={straightTextMode}
-          />
+          <div className={`transition-opacity duration-500 ease-in-out ${straightTextMode ? 'opacity-0' : 'opacity-100'}`}>
+            <TracksVisualization
+              key={`${selectedCategory}-${currentResponseIndex}`}
+              text={currentResponse?.selection || ""}
+              width={700}
+              height={700}
+              straightTextMode={straightTextMode}
+            />
+          </div>
+
+          {/* Readable Text Overlay */}
+          <div className={`absolute inset-0 flex items-center justify-center bg-[#2A2423] transition-opacity duration-500 ease-in-out ${straightTextMode ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'}`}>
+            <div className="text-white font-power text-xl text-justify leading-tight max-w-[90%] select-text">
+              {currentResponse && currentResponse.lines && currentResponse.lines.length > 0
+                ? currentResponse.lines
+                    .map((line) => line.replace(/<[^>]*>/g, "").trim())
+                    .filter((line) => line.length > 0)
+                    .join(" ")
+                : currentResponse?.selection || ""}
+            </div>
+          </div>
         </div>
 
         {/* Navigation controls */}
-        <div className="flex justify-between items-center">
-          <button
-            onClick={handlePrevious}
-            disabled={responses.length === 0}
-            className="px-4 py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            � Previous
-          </button>
-
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col items-center space-y-2">
+          <div className="flex justify-between items-center">
             <div className="text-white font-power text-sm">
               {currentResponseIndex + 1} of {responses.length}
             </div>
+          </div>
+          <div className="flex justify-between items-center w-full">
+            <button
+              onClick={handlePrevious}
+              disabled={responses.length === 0}
+              className="px-4 py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              � Previous
+            </button>
+
             <button
               onClick={() => setStraightTextMode(!straightTextMode)}
               className="px-4 py-2 bg-blue-600 text-white rounded font-power text-sm hover:bg-blue-700 transition-colors"
             >
               {straightTextMode ? "Show Track" : "Make Text Readable"}
             </button>
-          </div>
 
-          <button
-            onClick={handleNext}
-            disabled={responses.length === 0}
-            className="px-4 py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Next �
-          </button>
+            <button
+              onClick={handleNext}
+              disabled={responses.length === 0}
+              className="px-4 py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Next �
+            </button>
+          </div>
         </div>
       </div>
     </div>
