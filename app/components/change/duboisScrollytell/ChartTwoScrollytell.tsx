@@ -13,6 +13,9 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
     undefined
   );
   const [interactive, setInteractive] = useState<boolean>(false);
+  const [highlightOccupations, setHighlightOccupations] = useState<string[]>([]);
+  const [showConnections, setShowConnections] = useState<boolean>(false);
+  const [showImage, setShowImage] = useState<string | null>(null);
   const steps = useRef<HTMLDivElement>(null);
   const { isMobile } = useDeviceContext();
 
@@ -20,31 +23,97 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
 
   useEffect(() => {
     switch (true) {
-      case scrollProgress < minScrollProgress + 4:
+      // Initial state - show overview
+      case scrollProgress < minScrollProgress + 1:
         setActiveStudent(undefined);
+        setHighlightOccupations([]);
+        setShowConnections(false);
+        setShowImage(null);
         break;
-      case scrollProgress >= minScrollProgress + 4 &&
-        scrollProgress <= minScrollProgress + 4.25:
+        
+      // Show image 899.webp for trigger 94a7a3b3
+      case scrollProgress >= minScrollProgress + 1 && scrollProgress < minScrollProgress + 2:
+        setActiveStudent(undefined);
+        setHighlightOccupations([]);
+        setShowConnections(true);
+        setShowImage("899.webp");
+        break;
+        
+      // Highlight pie chart phase  
+      case scrollProgress >= minScrollProgress + 2 && scrollProgress < minScrollProgress + 3:
+        setActiveStudent(undefined);
+        setHighlightOccupations(["Teaching", "Government Service"]);
+        setShowConnections(false);
+        setShowImage(null);
+        break;
+        
+      // Show Atlanta University graduates
+      case scrollProgress >= minScrollProgress + 3 && scrollProgress < minScrollProgress + 3.5:
+        setActiveStudent(undefined);
+        setHighlightOccupations([]);
+        setShowConnections(false);
+        break;
+        
+      // Highlight specific occupations gradually
+      case scrollProgress >= minScrollProgress + 3.5 && scrollProgress < minScrollProgress + 3.75:
+        setActiveStudent(undefined);
+        setHighlightOccupations(["Teaching"]);
+        setShowConnections(false);
+        break;
+        
+      case scrollProgress >= minScrollProgress + 3.75 && scrollProgress < minScrollProgress + 4:
+        setActiveStudent(undefined);
+        setHighlightOccupations(["Teaching", "House Wives"]);
+        setShowConnections(false);
+        break;
+        
+      // Individual student highlights
+      case scrollProgress >= minScrollProgress + 4 && scrollProgress < minScrollProgress + 4.2:
         setActiveStudent("Lula Iola");
+        setHighlightOccupations(["House Wives"]);
+        setShowConnections(false);
         break;
-      case scrollProgress >= minScrollProgress + 4.25 &&
-        scrollProgress <= minScrollProgress + 4.5:
+        
+      case scrollProgress >= minScrollProgress + 4.2 && scrollProgress < minScrollProgress + 4.4:
         setActiveStudent("Edward Lee");
+        setHighlightOccupations(["Deceased"]);
+        setShowConnections(false);
         break;
-      case scrollProgress >= minScrollProgress + 4.5 &&
-        scrollProgress <= minScrollProgress + 4.75:
+        
+      case scrollProgress >= minScrollProgress + 4.4 && scrollProgress < minScrollProgress + 4.6:
         setActiveStudent("William George");
+        setHighlightOccupations(["Government Service"]);
+        setShowConnections(false);
         break;
-      case scrollProgress >= minScrollProgress + 4.75 &&
-        scrollProgress <= minScrollProgress + 5:
+        
+      case scrollProgress >= minScrollProgress + 4.6 && scrollProgress < minScrollProgress + 4.8:
         setActiveStudent("Henry Napoleon");
+        setHighlightOccupations(["Teaching"]);
+        setShowConnections(false);
         setInteractive(false);
         break;
+        
+      // Show all students together
+      case scrollProgress >= minScrollProgress + 4.8 && scrollProgress < minScrollProgress + 5:
+        setActiveStudent(undefined);
+        setHighlightOccupations(["Teaching", "Government Service", "House Wives", "Deceased"]);
+        setShowConnections(false);
+        setInteractive(false);
+        break;
+        
+      // Enable interaction
       case scrollProgress >= minScrollProgress + 5:
+        setActiveStudent(undefined);
+        setHighlightOccupations([]);
+        setShowConnections(false);
         setInteractive(true);
         break;
+        
       default:
         setActiveStudent(undefined);
+        setHighlightOccupations([]);
+        setShowConnections(false);
+        setShowImage(null);
         break;
     }
   }, [scrollProgress]);
@@ -74,15 +143,14 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
                   scrollProgress >= minScrollProgress + 2 &&
                   scrollProgress <= minScrollProgress + 3
                 }
-                highlightMap={
-                  scrollProgress >= minScrollProgress + 1 &&
-                  scrollProgress <= minScrollProgress + 2
-                }
+                highlightMap={showConnections}
                 activeStudent={activeStudent}
                 showExtra={
                   scrollProgress >= minScrollProgress + 3 &&
                   scrollProgress <= minScrollProgress + 5
                 }
+                highlightOccupations={highlightOccupations}
+                showConnections={showConnections}
               />
             </div>
           </div>

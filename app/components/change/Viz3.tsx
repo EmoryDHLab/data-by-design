@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import studentResponses from "~/data/power/studentResponses.json";
 import TracksVisualization from "./TracksVisualization";
 
@@ -31,6 +31,19 @@ export default function Viz3() {
   const [currentResponseIndex, setCurrentResponseIndex] = useState(0);
   const [isUnraveled, setIsUnraveled] = useState(false);
   const [straightTextMode, setStraightTextMode] = useState(false);
+  const [windowSize, setWindowSize] = useState({ width: 700, height: 700 });
+
+  useEffect(() => {
+    const updateSize = () => {
+      const width = window.innerWidth < 768 ? 350 : window.innerWidth < 1024 ? 500 : 700;
+      const height = window.innerWidth < 768 ? 400 : window.innerWidth < 1024 ? 500 : 700;
+      setWindowSize({ width, height });
+    };
+
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
 
   const responses =
     (studentResponses as StudentResponsesData)[selectedCategory] || [];
@@ -54,9 +67,9 @@ export default function Viz3() {
   };
 
   return (
-    <div className="min-h-screen bg-[#2A2423] text-offwhite flex max-w-none">
+    <div className="min-h-screen bg-[#2A2423] text-offwhite flex flex-col lg:flex-row max-w-none">
       {/* Left side - Question */}
-      <div className="w-1/2 p-8 flex flex-col justify-center">
+      <div className="w-full lg:w-1/2 p-4 lg:p-8 flex flex-col justify-center">
         {/* Category selection */}
         <div className="mb-8">
           <div className="mb-6">
@@ -72,7 +85,7 @@ export default function Viz3() {
                 onClick={() =>
                   handleCategoryChange(key as keyof typeof categories)
                 }
-                className={`block w-full text-left p-3 rounded font-power font-bold  transition-colors text-3xl ${
+                className={`block w-full text-left p-3 rounded font-power font-bold transition-colors text-xl lg:text-3xl ${
                   selectedCategory === key
                     ? "text-white "
                     : "bg-transparent text-neutral-600 hover:text-white hover:bg-neutral-600"
@@ -82,7 +95,7 @@ export default function Viz3() {
                   <>
                     {label.split("(")[0].trim()}
                     {label.includes("(") && (
-                      <span className="text-xl font-normal">
+                      <span className="text-lg lg:text-xl font-normal">
                         {" (" + label.split("(")[1]}
                       </span>
                     )}
@@ -104,24 +117,24 @@ export default function Viz3() {
       </div>
 
       {/* Right side - Responses */}
-      <div className="w-1/2 p-8 flex flex-col justify-center">
+      <div className="w-full lg:w-1/2 p-4 lg:p-8 flex flex-col justify-center">
         {/* Response card stack */}
 
         {/* Tracks Visualization */}
-        <div className="relative mb-6 h-[700px]">
+        <div className="relative mb-6 h-[400px] md:h-[500px] lg:h-[700px]">
           <div className={`transition-opacity duration-500 ease-in-out ${straightTextMode ? 'opacity-0' : 'opacity-100'}`}>
             <TracksVisualization
               key={`${selectedCategory}-${currentResponseIndex}`}
               text={currentResponse?.selection || ""}
-              width={700}
-              height={700}
+              width={windowSize.width}
+              height={windowSize.height}
               straightTextMode={straightTextMode}
             />
           </div>
 
           {/* Readable Text Overlay */}
           <div className={`absolute inset-0 flex items-center justify-center bg-[#2A2423] transition-opacity duration-500 ease-in-out ${straightTextMode ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'}`}>
-            <div className="text-white font-power text-xl text-justify leading-tight max-w-[90%] select-text">
+            <div className="text-white font-power text-lg md:text-xl text-justify leading-tight max-w-[90%] select-text px-4">
               {currentResponse && currentResponse.lines && currentResponse.lines.length > 0
                 ? currentResponse.lines
                     .map((line) => line.replace(/<[^>]*>/g, "").trim())
@@ -133,34 +146,36 @@ export default function Viz3() {
         </div>
 
         {/* Navigation controls */}
-        <div className="flex flex-col items-center space-y-2">
-          <div className="flex justify-between items-center">
-            <div className="text-white font-power text-sm">
-              {currentResponseIndex + 1} of {responses.length}
-            </div>
+        <div className="flex flex-col items-center space-y-3">
+          <div className="text-white font-power text-sm">
+            {currentResponseIndex + 1} of {responses.length}
           </div>
-          <div className="flex justify-between items-center w-full">
-            <button
-              onClick={handlePrevious}
-              disabled={responses.length === 0}
-              className="px-4 py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              � Previous
-            </button>
+          
+          {/* Mobile: Stack buttons vertically */}
+          <div className="flex flex-col md:flex-row justify-between items-center w-full space-y-3 md:space-y-0 md:space-x-4">
+            <div className="flex justify-between w-full md:w-auto space-x-4">
+              <button
+                onClick={handlePrevious}
+                disabled={responses.length === 0}
+                className="flex-1 md:flex-none px-4 py-3 md:py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                ← Previous
+              </button>
+
+              <button
+                onClick={handleNext}
+                disabled={responses.length === 0}
+                className="flex-1 md:flex-none px-4 py-3 md:py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Next →
+              </button>
+            </div>
 
             <button
               onClick={() => setStraightTextMode(!straightTextMode)}
-              className="px-4 py-2 bg-blue-600 text-white rounded font-power text-sm hover:bg-blue-700 transition-colors"
+              className="w-full md:w-auto px-4 py-3 md:py-2 bg-blue-600 text-white rounded font-power text-sm hover:bg-blue-700 transition-colors"
             >
               {straightTextMode ? "Show Track" : "Make Text Readable"}
-            </button>
-
-            <button
-              onClick={handleNext}
-              disabled={responses.length === 0}
-              className="px-4 py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Next �
             </button>
           </div>
         </div>

@@ -1411,11 +1411,14 @@ export default function DuboisChapter() {
           triggers={[
             <span key="94a7a3b2">
               We created an expanded version of our initial chart with the
-              additional data from the 1910 study. In the original, a map at the
-              top of the page informs the viewer of the location of Atlanta
-              University. We added the locations of the 140 additional colleges
-              also included in the follow-up report.
+              additional data from the 1910 study.
             </span>,
+            <span key="94a7a3b3">
+              In the original, a map at the top of the page informs the viewer
+              of the location of Atlanta University. We added the locations of
+              the 140 additional colleges also included in the follow-up report.
+            </span>,
+
             <span key="63ba9abc">
               In our chart, the location of Atlanta University (which is also,
               notably, the location of the majority of our own research team) is

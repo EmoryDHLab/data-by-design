@@ -74,7 +74,7 @@ export default function Index() {
           <div className="md:flex md:items-start gap-44 xl:gap:72">
             <figure
               aria-hidden
-              className="my-10 px-5 md:px-0 md:mt-18 md:w-[550px] flex-shrink-0 w-full md:w-auto"
+              className="my-10 px-5 md:px-0 md:mt-18 md:w-[510px] flex-shrink-0 w-full md:w-auto"
             >
               <SiteTitle className="pt-20 md:pt-20 w-full" />
             </figure>
