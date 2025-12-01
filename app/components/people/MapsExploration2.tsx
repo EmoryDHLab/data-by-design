@@ -12,14 +12,14 @@ export default function ImageTooltips() {
       x: 50,
       y: 54.5,
       title: "1810-1811",
-      description: "Beothuk encounter David Buchan",
+      description: "Beothuk encounter David Buchan and his men",
     },
     {
       id: 1,
       x: 53,
       y: 51,
       title: "1818",
-      description: "Ship theft",
+      description: "'Theft' of Peyton's boat",
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ export default function ImageTooltips() {
       x: 46,
       y: 38,
       title: "1829",
-      description: "Shanawdithit creates maps",
+      description: "Shanawdithit creates her maps",
     },
     {
       id: 5,
@@ -55,21 +55,21 @@ export default function ImageTooltips() {
       y: 38.5,
 
       title: "1871",
-      description: "Peyton relates narrative ",
+      description: "Peyton relates his narrative to Howley",
     },
     {
       id: 7,
       x: 63,
       y: 66,
       title: "1914",
-      description: "John Paul's narrative is recorded",
+      description: "Speck records John Paul’s narrative",
     },
     {
       id: 8,
       x: 64,
       y: 41,
       title: "1915",
-      description: "Howley publishes book",
+      description: "Howley publishes his book",
     },
     {
       id: 9,
@@ -83,14 +83,14 @@ export default function ImageTooltips() {
       x: 63.4,
       y: 73.5,
       title: "1922",
-      description: "Speck publishes book",
+      description: "Speck publishes his book",
     },
     {
       id: 11,
       x: 71,
       y: 80,
       title: "2008",
-      description: "Speck book scanned and uploaded to Internet Archive",
+      description: "Speck's book scanned and uploaded to Internet Archive",
     },
     {
       id: 12,
@@ -104,7 +104,7 @@ export default function ImageTooltips() {
       x: 85.2,
       y: 30.6,
       title: "2022",
-      description: "TS begins designing visualization",
+      description: "TS begins designing visualizations for this chapter",
     },
     {
       id: 14,
@@ -112,7 +112,7 @@ export default function ImageTooltips() {
       x: 41.5,
       y: 7.4,
       title: "2023",
-      description: "LK visits The Rooms in St. John’s ",
+      description: "LK visits The Rooms in St. John’s, Newfoundland",
     },
     {
       id: 15,
@@ -121,7 +121,7 @@ export default function ImageTooltips() {
       y: 6.8,
       title: "2024",
       description:
-        "DxD team receives approval to include scanned image of map in this project",
+        "DxD team receives approval to include scanned image of map in this chapter",
     },
     {
       id: 16,

@@ -483,8 +483,10 @@ export default function BrooksPage() {
               Séraphique, which dates to around 1770. This image, “Plan,
               Profile, et Distribution du Navire La Marie Seraphique,”
               commissioned by the ship’s owner to commemorate the “successful”
-              return of its first slaving voyage, presents a
-              <HoverText hoverState="hold">a view of the hold—and</HoverText>{" "}
+              return of its first slaving voyage, presents
+              <HoverText hoverState="hold">
+                a view of the hold—and
+              </HoverText>{" "}
               the captives within it—as one of{" "}
               <HoverText hoverState="crossSections">
                 four cross-sections of each of the ship
@@ -509,9 +511,9 @@ export default function BrooksPage() {
               them, the captives depicted here are each individually drawn.
               <InlineFootnote index={13} /> They are shown lying on their sides.{" "}
               <HoverText hoverState="nakedPeople">
-                Most are naked, but several are clothed
+                Most are naked, but several are clothed. 
               </HoverText>
-              . The{" "}
+           The{" "}
               <HoverText hoverState="shackledMen">men are shackled</HoverText>
               —some with their arms and legs shackled to each other; others
               shackled to two-by-two.{" "}
@@ -612,10 +614,7 @@ export default function BrooksPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <SeraphiqueTour
-            
-              figure={figures["0103-marieseraphique"]}
-            />
+            <SeraphiqueTour figure={figures["0103-marieseraphique"]} />
           </Column>
         </TwoColumnLayout>
 
