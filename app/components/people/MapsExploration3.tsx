@@ -80,22 +80,22 @@ export default function ImageTooltips() {
     },
     {
       id: 10,
-      x: 63,
-      y: 66,
+      x: 61.5,
+      y: 66.3,
       title: "1914",
       description: "Speck photographs lookout tree (spruce) at Beothuk Point",
     },
     {
       id: 11,
-      x: 60,
-      y: 68,
+      x: 58.8,
+      y: 68.7,
       title: "1914",
       description: "Speck climbs lookout tree (spruce) at Beothuk Point ",
     },
     {
       id: 12,
-      x: 58,
-      y: 70,
+      x: 54.8,
+      y: 71.4,
       title: "1914",
       description: "Speck records John Paul’s narrative",
     },
@@ -129,8 +129,8 @@ export default function ImageTooltips() {
     },
     {
       id: 17,
-      x: 76.7,
-      y: 29.5,
+      x: 75.8,
+      y: 29.1,
       title: "2021",
       description: "LK begins research on this chapter",
     },
@@ -222,7 +222,7 @@ export default function ImageTooltips() {
                       activeTooltip === tooltip.id ? undefined : tooltip.id
                     )
                   }
-                  className="md:w-2 md:h-2 w-2 h-2  hover:w-2.5 hover:h-2.5 bg-blue-900  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
+                  className="md:w-2 md:h-2 w-2 h-2  hover:w-2.5 hover:h-2.5 bg-gray-900  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
                 ></button>
               </div>
             ))}
@@ -264,28 +264,6 @@ export default function ImageTooltips() {
                 )
               );
             })}
-          </div>
-
-          {/* Instructions */}
-          <div className="mt-6 p-4 rounded-lg flex flex-row border-blue-100">
-            <div>
-              <img
-                src="/images/people/extras/key.png"
-                alt="Annotated diagram"
-                className="w-auto h-60 object-cover"
-              />
-            </div>
-            <div className=" py-6 font-power  text-sm">
-              <ul>
-                <li className="pb-2"> All sources</li>
-                <li className="pb-2"> Speck</li>
-                <li className="pb-2">Howley</li>
-                <li className="pb-3"> Shanawdithit</li>
-                <li className="pb-3"> Unrecorded history</li>
-                <li className="pb-3"> Recorded history</li>
-                <li className="">Source </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

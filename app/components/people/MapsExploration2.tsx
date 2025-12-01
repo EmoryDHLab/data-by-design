@@ -59,15 +59,15 @@ export default function ImageTooltips() {
     },
     {
       id: 7,
-      x: 63,
-      y: 66,
+      x: 63.2,
+      y: 66.2,
       title: "1914",
       description: "Speck records John Paul’s narrative",
     },
     {
       id: 8,
-      x: 64,
-      y: 41,
+      x: 63.7,
+      y: 40.8,
       title: "1915",
       description: "Howley publishes his book",
     },
@@ -81,14 +81,14 @@ export default function ImageTooltips() {
     {
       id: 10,
       x: 63.4,
-      y: 73.5,
+      y: 73.7,
       title: "1922",
       description: "Speck publishes his book",
     },
     {
       id: 11,
-      x: 71,
-      y: 80,
+      x: 71.3,
+      y: 80.3,
       title: "2008",
       description: "Speck's book scanned and uploaded to Internet Archive",
     },
@@ -101,8 +101,8 @@ export default function ImageTooltips() {
     },
     {
       id: 13,
-      x: 85.2,
-      y: 30.6,
+      x: 85.4,
+      y: 30.4,
       title: "2022",
       description: "TS begins designing visualizations for this chapter",
     },
@@ -164,7 +164,7 @@ export default function ImageTooltips() {
                       activeTooltip === tooltip.id ? undefined : tooltip.id
                     )
                   }
-                  className="md:w-3 md:h-3 w-2 h-2  bg-blue-300  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
+                  className="md:w-3 md:h-3 w-2 h-2 hover:w-3.5 hover:h-3.5 bg-gray-800  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
                 ></button>
               </div>
             ))}
@@ -208,27 +208,8 @@ export default function ImageTooltips() {
             })}
           </div>
 
-          {/* Instructions */}
-          <div className="mt-6 p-4 rounded-lg flex flex-row border-blue-100">
-            <div>
-              <img
-                src="/images/people/extras/key.png"
-                alt="Annotated diagram"
-                className="w-auto h-60 object-cover"
-              />
-            </div>
-            <div className=" py-6 font-power  text-sm">
-              <ul>
-                <li className="pb-2"> All sources</li>
-                <li className="pb-2"> Speck</li>
-                <li className="pb-2">Howley</li>
-                <li className="pb-3"> Shanawdithit</li>
-                <li className="pb-3"> Unrecorded history</li>
-                <li className="pb-3"> Recorded history</li>
-                <li className="">Source </li>
-              </ul>
-            </div>
-          </div>
+
+        
         </div>
       </div>
     </div>

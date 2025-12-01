@@ -27,6 +27,7 @@ import MapsExploration2 from "~/components/people/MapsExploration2";
 import MapsExploration3 from "~/components/people/MapsExploration3";
 import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
+import Legend from "~/components/people/Legend.tsx";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("people");
@@ -195,6 +196,7 @@ export default function ShanawdithitPage() {
             that the maps themselves bring to light.
           </p>
           <MapsExploration></MapsExploration>
+          <Legend></Legend>
           <p>
             This is the reason we are breaking the mold of the previous chapters
             by presenting you with this diagram before we present the original
@@ -571,6 +573,7 @@ export default function ShanawdithitPage() {
         <MapsExploration2></MapsExploration2>
 
         <CenteredLayout>
+          <Legend></Legend>
           <p>
             In this version of the diagram, we add Cormack and Howley, along
             with ourselves, to our diagram of sources accentuates the layers of
@@ -1245,6 +1248,7 @@ export default function ShanawdithitPage() {
         <MapsExploration3></MapsExploration3>
 
         <CenteredLayout>
+          <Legend></Legend>
           <p>
             This book will soon move on to consider alternative visual forms and
             epistemological frameworks, those that reject the unidirectional
@@ -1273,7 +1277,7 @@ export default function ShanawdithitPage() {
               Aim to keep your data more connected to its source
             </span>,
             <span key="2f317172">
-              Balance clarity with context and connection 
+              Balance clarity with context and connection
             </span>,
             <span key="2f317173">
               Hold space for the possibility of not visualizing at all
@@ -1287,7 +1291,7 @@ export default function ShanawdithitPage() {
               Consider your relation to the colonial frame
             </span>,
             <span key="9650286d">
-              Honor the people who provide us with knowledge 
+              Honor the people who provide us with knowledge
             </span>,
             <span key="2f317174">
               Recognize when knowledge is not yours to own
