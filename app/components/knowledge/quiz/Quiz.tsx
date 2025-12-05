@@ -23,9 +23,7 @@ export default function Quiz() {
   // Memoize quiz steps to prevent recreation
   const memoizedQuizSteps = useMemo(() => quizSteps as Array<QuizStep>, []);
 
-  const [currentStep, setCurrentStep] = useState<QuizStep>(
-    memoizedQuizSteps[0]
-  );
+  const [currentStep, setCurrentStep] = useState<QuizStep>(memoizedQuizSteps[0]);
   const [currentStepCount, setCurrentStepCount] = useState<QuizStepCount>(0);
   const [selectedCategories, setSelectedCategories] = useState<
     Array<PeabodySquare>
@@ -35,7 +33,7 @@ export default function Quiz() {
   const [feedback, setFeedback] = useState<QuizFeedbackType>(undefined);
   const quizRef = useRef<SVGSVGElement>(null);
   const endRef = useRef<HTMLDivElement>(null);
-  const desktopSectionRef = useRef<HTMLDivElement>(null);
+  const desktopSectionRef = useRef<HTMLElement>(null);
   const mobileSectionRef = useRef<HTMLDivElement>(null);
 
   // Removed scrollIntoView to prevent unwanted screen movement during quiz navigation
@@ -213,111 +211,98 @@ export default function Quiz() {
     setSelectedCategories([]);
   }, [currentStepCount, memoizedQuizSteps]);
 
-  const handleYearClick = useCallback(
-    (year: number) => {
-      if (year === 1644 && currentStepCount === 2) {
-        setCurrentStepCount(
-          (currentStepCount) => (currentStepCount + 1) as QuizStepCount
-        );
-        setSelectedYears([]);
-        const step = setFeedback({
-          message: `YES it was 1644. Now select how Peabody would categorize ${memoizedQuizSteps[2].stepEvent?.event}`,
-          correct: true,
-        });
-      } else {
-        setSelectedYears((prev) => [...prev, year]);
-      }
-    },
-    [currentStepCount, memoizedQuizSteps]
-  );
+  const handleYearClick = useCallback((year: number) => {
+    if (year === 1644 && currentStepCount === 2) {
+      setCurrentStepCount(
+        (currentStepCount) => (currentStepCount + 1) as QuizStepCount
+      );
+      setSelectedYears([]);
+      setFeedback({
+        message: `YES it was 1644. Now select how Peabody would categorize ${memoizedQuizSteps[2].stepEvent.event}`,
+        correct: true,
+      });
+    } else {
+      setSelectedYears(prev => [...prev, year]);
+    }
+  }, [currentStepCount, memoizedQuizSteps]);
 
   // Called when an event square or category is selected
-  const handleCategoryClick = useCallback(
-    (selected: number) => {
-      if (currentStepCount === 3 && selected == 0) {
-        setCurrentStepCount(4);
-        setFeedback({
-          message:
-            "Peabody identified other events that took place in the year.",
-          correct: true,
-        });
-      } else if (currentStepCount === 4 && selected == 1) {
-        setCurrentStepCount(5);
-        setFeedback({
-          message:
-            "The third event that Peabody identified taking place later that year is...",
-          correct: true,
-        });
-      } else if (currentStepCount === 5 && selected == 2) {
-        setCurrentStepCount(6);
-        setFeedback({
-          message: "One more...",
-          correct: true,
-        });
-      } else if (currentStepCount === 6 && selected == 5) {
-        setCurrentStepCount(7);
-        setFeedback({
-          message: "All done!",
-          correct: true,
-        });
-      } else if (
-        !(currentStep.solvedEvents as Array<number>).includes(selected)
-      ) {
-        setSelectedCategories((prev) => [selected as PeabodySquare, ...prev]);
-      }
-    },
-    [currentStepCount, currentStep.solvedEvents]
-  );
+  const handleCategoryClick = useCallback((selected: number) => {
+    if (currentStepCount === 3 && selected == 0) {
+      setCurrentStepCount(4);
+      setFeedback({
+        message: "Peabody identified other events that took place in the year.",
+        correct: true,
+      });
+    } else if (currentStepCount === 4 && selected == 1) {
+      setCurrentStepCount(5);
+      setFeedback({
+        message:
+          "The third event that Peabody identified taking place later that year is...",
+        correct: true,
+      });
+    } else if (currentStepCount === 5 && selected == 2) {
+      setCurrentStepCount(6);
+      setFeedback({
+        message: "One more...",
+        correct: true,
+      });
+    } else if (currentStepCount === 6 && selected == 5) {
+      setCurrentStepCount(7);
+      setFeedback({
+        message: "All done!",
+        correct: true,
+      });
+    } else if (
+      !(currentStep.solvedEvents as Array<number>).includes(selected)
+    ) {
+      setSelectedCategories(prev => [selected as PeabodySquare, ...prev]);
+    }
+  }, [currentStepCount, currentStep.solvedEvents]);
 
-  const allowOption = useCallback(
-    (index: PeabodySquare) => {
-      if (currentStepCount > 2 && currentStepCount < 7) {
-        if (
-          selectedCategories.includes(index) ||
-          (currentStep.solvedEvents as Array<PeabodySquare>).includes(index)
-        ) {
-          return false;
-        }
+  const allowOption = useCallback((index: PeabodySquare) => {
+    if (currentStepCount > 2 && currentStepCount < 7) {
+      if (
+        selectedCategories.includes(index) ||
+        (currentStep.solvedEvents as Array<PeabodySquare>).includes(index)
+      ) {
+        return false;
       }
-      return true;
-    },
-    [currentStepCount, selectedCategories, currentStep.solvedEvents]
-  );
+    }
+    return true;
+  }, [currentStepCount, selectedCategories, currentStep.solvedEvents]);
 
   // Memoize context value to prevent unnecessary re-renders
-  const contextValue = useMemo(
-    () => ({
-      allowOption,
-      currentStep,
-      currentStepCount,
-      setCurrentStepCount,
-      focusedCategory,
-      setFocusedCategory,
-      handleCategoryClick,
-      selectedCategories,
-      selectedYears,
-      handleYearClick,
-      feedback,
-      setFeedback,
-    }),
-    [
-      allowOption,
-      currentStep,
-      currentStepCount,
-      focusedCategory,
-      handleCategoryClick,
-      selectedCategories,
-      selectedYears,
-      handleYearClick,
-      feedback,
-    ]
-  );
+  const contextValue = useMemo(() => ({
+    allowOption,
+    currentStep,
+    currentStepCount,
+    setCurrentStepCount,
+    focusedCategory,
+    setFocusedCategory,
+    handleCategoryClick,
+    selectedCategories,
+    selectedYears,
+    handleYearClick,
+    feedback,
+    setFeedback,
+  }), [
+    allowOption,
+    currentStep,
+    currentStepCount,
+    focusedCategory,
+    handleCategoryClick,
+    selectedCategories,
+    selectedYears,
+    handleYearClick,
+    feedback,
+  ]);
 
   return (
     <QuizContext.Provider value={contextValue}>
-      <div
+      <section
         ref={desktopSectionRef}
-        className="bg-black w-full h-screen hidden md:block z-10 relative overflow-hidden scroll-mt-0"
+        className="bg-black w-full h-screen hidden md:block relative z-10 overflow-hidden scroll-mt-0"
         id="quiz"
       >
         <div
@@ -337,14 +322,14 @@ export default function Quiz() {
           />
         </div>
 
-        <div className="absolute">
-          {/* Grid container for text and SVG alignment */}
-          <div className="hidden md:grid grid-cols-12 absolute top-0 left-0 w-full h-full pointer-events-none z-20">
+        <div className="relative">
+          {/* Text content flexbox */}
+          <div className="hidden md:flex absolute top-0 left-0 w-full h-full pointer-events-none">
             <div
-              className={`col-span-7 flex flex-col font-power py-32 gap-4 transition-all duration-500 ease-out ${
-                currentStepCount === 1 || currentStepCount === 2
-                  ? "col-start-2 md:col-start-3 lg:col-start-3 xl:col-start-3"
-                  : "col-start-2 md:col-start-2 lg:col-start-2 xl:col-start-2"
+              className={`flex flex-col font-power py-28 gap-4 max-w-2xl transition-all duration-500 ease-out ${
+                currentStepCount === 1
+                  ? "pl-24 md:pl-48 lg:pl-64 xl:pl-96"
+                  : "pl-12 md:pl-24 lg:pl-32 xl:pl-48"
               }`}
             >
               <div id="quiz-feedback" className="pointer-events-auto ">
@@ -356,7 +341,6 @@ export default function Quiz() {
 
               {/* Event text - right below instructions */}
               <div
-                id="event-text"
                 className={`pointer-events-auto  ${
                   currentStepCount === 0
                     ? "opacity-0 translate-y-8 scale-95"
@@ -390,7 +374,6 @@ export default function Quiz() {
               >
                 <QuizConclusion />
               </div>
-
               {/* Enhanced end screen for step 9 - now in QuizFinal component */}
               <div
                 id="quiz-final"
@@ -405,8 +388,10 @@ export default function Quiz() {
             id="quiz-recreation"
             ref={quizRef}
             viewBox="0 0 300 200"
-            className="h-screen m-auto w-11/12 top-0 z-30"
+            className="h-screen m-auto w-11/12 sticky top-0"
           >
+            <QuizFinal />
+
             <g
               className={`md:scale-${
                 currentStepCount >= 2 ? 100 : 0
@@ -419,14 +404,8 @@ export default function Quiz() {
               className={`${
                 currentStepCount === 0 ? "hidden translate-x-full" : ""
               } ${
-                currentStepCount === 1
-                  ? "md:translate-x-8 lg:translate-x-8 xl:translate-x-0 opacity-100"
-                  : ""
-              } ${
-                currentStepCount === 2 ? "md:-translate-x-2 opacity-100" : ""
-              } ${
-                currentStepCount >= 3 && currentStepCount < 8
-                  ? "md:-translate-x-8 translate-y-2 scale-75 opacity-100"
+                currentStepCount >= 2 && currentStepCount < 8
+                  ? "-translate-x-8 translate-y-2 scale-75 opacity-100"
                   : ""
               } ${
                 currentStepCount >= 8 ? "-translate-x-full opacity-0" : ""
@@ -434,7 +413,7 @@ export default function Quiz() {
             >
               <g className={` transition-all duration-700 delay-100`}>
                 <QuizSelectActors />
-                {currentStepCount > 2 && currentStepCount < 9 && (
+                {currentStepCount > 1 && currentStepCount < 9 && (
                   <QuizEventCategoryList />
                 )}
               </g>
@@ -448,7 +427,7 @@ export default function Quiz() {
             {currentStepCount} of 9
           </div>
         </div>
-      </div>
+      </section>
 
       {/* MOBILE */}
       <div
@@ -458,7 +437,7 @@ export default function Quiz() {
         <div
           className={`flex flex-col h-full font-power transition-opacity duration-1000 ${
             currentStepCount == 0 ? "opacity-100" : "opacity-100"
-          } ${currentStepCount === 1 ? "items-center justify-center" : ""}`}
+          }`}
         >
           <div
             className={`absolute inset-0 flex items-center justify-center transition-all duration-1000 z-30 ${
@@ -479,85 +458,42 @@ export default function Quiz() {
           >
             <QuizConclusion />
           </div>
-
-          {/* Centered layout for step 1 */}
-          {currentStepCount === 1 ? (
-            <div className="flex flex-col items-start space-y-1 px-6 text-start pt-32">
-              <div className="pointer-events-none">
-                <QuizFeedback />
-              </div>
-              <div className="text-white text-base font-power tracking-wide">
-                {currentStepCount === 1 && (
-                  <p className="text-start pt-16 uppercase">
-                    SELECT THE TWO COUNTRIES INVOLVED.
-                  </p>
-                )}
-                {currentStepCount > 1 && currentStepCount < 3 && (
-                  <p className="text-start uppercase">SELECT THE YEAR 1644.</p>
-                )}
-                {currentStepCount >= 3 && currentStepCount <= 6 && (
-                  <p className="text-start uppercase">CATEGORIZE THE EVENT</p>
-                )}
-              </div>
-              <div className="text-white">
-                <p className="mb-2 text-sm">
-                  EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
-                </p>
-                <p className=" font-sans text-xl">
-                  {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
-                </p>
-              </div>
-              <div className="text-white">
-                <svg viewBox="0 0 120 20" className="w-full h-full max-w-xs">
-                  <QuizSelectActors />
-                </svg>
-              </div>
-            </div>
-          ) : (
-            <div className="flex flex-col items-start justify-start space-y-3 px-6 text-start pt-16">
-              <div className="pointer-events-none">
-                <QuizFeedback />
-              </div>
-              <div className="text-white text-base font-power tracking-wide">
-                {currentStepCount === 2 && (
-                  <p className="text-start uppercase">SELECT THE YEAR 1644.</p>
-                )}
-                {currentStepCount >= 3 && currentStepCount <= 6 && (
-                  <p className="text-start uppercase">CATEGORIZE THE EVENT</p>
-                )}
-              </div>
-
-              <div
-                className={`text-white transition-opacity duration-1000 ${
-                  currentStepCount > 0 && currentStepCount < 8
-                    ? "opacity-100"
-                    : "opacity-0 h-0"
-                }`}
-              >
-                <p className="mb-2 text-sm text-start">
-                  EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
-                </p>
-                <p className="font-sans text-xl text-start">
-                  {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
-                </p>
-              </div>
-
-              <div
-                className={`text-white transition-opacity duration-100 ${
-                  currentStepCount > 0 && currentStepCount < 8
-                    ? "opacity-100"
-                    : "opacity-0 h-0"
-                }`}
-              >
-                <svg viewBox="0 0 120 20" className="w-full h-full max-w-xs">
-                  <QuizSelectActors />
-                </svg>
-              </div>
-            </div>
-          )}
+          <div className="grid place-content-center pointer-events-none px-6 mb-4">
+            <QuizFeedback />
+          </div>
+          <div className="grid place-content-center text-white px-6">
+            <QuizInstructions />
+          </div>
 
           <div
-            className={`flex flex-col items-start text-white transition-opacity duration-600 px-6 ${
+            className={`grid place-content-start text-white px-6 transition-opacity duration-1000 ${
+              currentStepCount > 0 && currentStepCount < 8
+                ? "opacity-100"
+                : "opacity-0 h-0"
+            }`}
+          >
+            <p className="ml-20 mt-10mb-0 text-sm">
+              EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
+            </p>
+            <p className="ml-20 my-0 font-sans text-xl">
+              {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
+            </p>
+          </div>
+
+          <div
+            className={`grid place-content-center text-white ml-4 mt-4 transition-opacity duration-100 ${
+              currentStepCount > 0 && currentStepCount < 8
+                ? "opacity-100"
+                : "opacity-0 h-0"
+            }`}
+          >
+            <svg viewBox="0 0 120 20" className="w-full h-full">
+              <QuizSelectActors />
+            </svg>
+          </div>
+
+          <div
+            className={`grid place-content-start text-white transition-opacity duration-600 ${
               currentStepCount > 2 && currentStepCount < 8
                 ? "opacity-100"
                 : "opacity-0"
@@ -567,7 +503,6 @@ export default function Quiz() {
             {currentStepCount == 7 && (
               <div
                 role="button"
-                className="font-power text-2xl italic mt-4"
                 onClick={() => setCurrentStepCount(8)}
                 onKeyUp={({ key }) => setCurrentStepCount(8)}
                 tabIndex={0}
@@ -619,6 +554,29 @@ export default function Quiz() {
                 FINISH
                 <span className="font-icons mr-2">b</span>
               </button>
+            </p>
+          </div>
+
+          <div
+            className={`grid place-content-center text-white text-2xl text-center font-powerLightNarrow transition-opacity duration-1000 ${
+              currentStepCount == 9
+                ? "opacity-100"
+                : "opacity-0 pointer-events-none h-0"
+            }`}
+          >
+            <p className="m-0">
+              <button
+                className="focus:outline-none focus:underline hover:underline my-6"
+                tabIndex={0}
+                onClick={() => setCurrentStepCount(1)}
+              >
+                <span className="font-icons mr-2">e</span>
+                START OVER
+              </button>
+            </p>
+            <p className="m-0">CONTINUE READING</p>
+            <p className="m-0 motion-safe:animate-[bounce_2.5s_ease-in-out_infinite]">
+              <span className="font-icons text-5xl">t</span>
             </p>
           </div>
         </div>
