@@ -23,6 +23,7 @@ import StudentCharts from "~/components/change/StudentCharts";
 import Viz1 from "~/components/change/Viz1";
 import Viz3 from "~/components/change/Viz3";
 import Viz2 from "~/components/change/Viz2";
+import Viz4 from "~/components/change/Viz4";
 
 import StudentChartThreeV2 from "~/components/change/StudentChartThree";
 import ChapterBody from "~/components/layout/ChapterBody";
@@ -1407,6 +1408,8 @@ export default function DuboisChapter() {
           <p></p>
         </CenteredLayout>
 
+    
+
         <ChartTwoScrollytell
           triggers={[
             <span key="94a7a3b2">
@@ -1557,6 +1560,9 @@ export default function DuboisChapter() {
           </p>
         </CenteredLayout>
 
+
+
+    <Viz4 interactive={true}></Viz4>
         <Takeaways
           forDesigners={[
             <span key="df782d45">

@@ -28,7 +28,7 @@ function SketchScrollytell({ figure, triggers }: Props) {
         className={`flex flex-col md:flex-row justify-between`}
         id="scrollytell-one"
       >
-        <div className="sticky p-8 md:p-0 top-0 h-min mt-16 mr-6 bias-full w-full md:bias-1/2 md:w-7/12 md:order-last rounded-md drop-shadow-lg">
+        <div className="sticky p-8 md:p-0 top-0 h-min mt-16 mr-6 bias-full w-full md:bias-1/2 md:w-7/12 md:order-last rounded-md ">
           <ClientOnly>
             <IIIFViewer
               figure={figure.fileName}

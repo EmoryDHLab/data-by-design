@@ -12,7 +12,7 @@ export default function ImageTooltips() {
       x: 56.8,
       y: 50.5,
       title: "1818",
-      description: "Ship theft",
+      description: "'Theft' of Peyton's boat",
     },
     {
       id: 2,
@@ -26,14 +26,14 @@ export default function ImageTooltips() {
       x: 45,
       y: 35.6,
       title: "1829",
-      description: "Shanawdithit creates maps ",
+      description: "Shanawdithit creates her maps ",
     },
     {
       id: 4,
       x: 72.3,
       y: 40.4,
       title: "1871",
-      description: "Peyton relates narrative",
+      description: "Peyton relates his narrative",
     },
     {
       id: 5,
@@ -52,12 +52,11 @@ export default function ImageTooltips() {
   ];
 
   return (
-    <div className="min-h-screen p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen z-90 p-8">
+      <div className="max-w-5xl mx-auto">
         <div>
           {/* Image Container */}
           <div className="relative w-full rounded-xl overflow-hidden">
-            {/* Replace this img src with your own image URL */}
             <img
               src="/images/people/extras/1.png"
               alt="Annotated diagram"
@@ -83,7 +82,7 @@ export default function ImageTooltips() {
                       activeTooltip === tooltip.id ? undefined : tooltip.id
                     )
                   }
-                  className="w-4 h-4 bg-blue-300  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
+                  className="w-4 h-4 bg-gray-800  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
                 ></button>
               </div>
             ))}
@@ -127,15 +126,7 @@ export default function ImageTooltips() {
             })}
           </div>
 
-          {/* Instructions */}
-          {/* <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
-            <p className="text-sm text-blue-900">
-              
-              <strong>Tip:</strong> You can customize the tooltip positions by
-              adjusting the x and y values in the tooltips array. Values are
-              percentages (0-100) from the top-left corner.
-            </p>
-          </div> */}
+     
         </div>
       </div>
     </div>
