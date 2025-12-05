@@ -80,6 +80,23 @@ export default function QuizSelectActors() {
     }
   };
 
+  // HTML buttons for step 2 onwards (mobile and desktop)
+  if (currentStepCount >= 2) {
+    return (
+      <div className="flex gap-2">
+        {correctActors.map((actor) => (
+          <div
+            key={`html-${actor}`}
+            className="px-3 py-1 text-sm border border-white"
+            style={{ backgroundColor: fillColors[actor], color: actor === "Americas" ? "black" : "white" }}
+          >
+            {actor}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <g className={`transition-all duration-1000`}>
       {actors.map((actor, index) => {

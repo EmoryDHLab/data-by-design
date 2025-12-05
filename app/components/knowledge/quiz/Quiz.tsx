@@ -361,12 +361,26 @@ export default function Quiz() {
                 <div className="text-white text-xl font-sans mt-2">
                   {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
                 </div>
+
+                {/* Actor buttons - HTML for step 2+ */}
+                {currentStepCount >= 2 && currentStepCount < 8 && (
+                  <div className="mt-4">
+                    <QuizSelectActors />
+                  </div>
+                )}
+
+                {/* Category list - HTML for step 2+ */}
+                {currentStepCount > 1 && currentStepCount < 9 && (
+                  <div className="mt-4">
+                    <QuizEventCategoryList />
+                  </div>
+                )}
               </div>
 
               {/* Conclusion text */}
               <div
                 id="quiz-conclusion"
-                className={`pointer-events-auto transition-all duration-1000 ${
+                className={`pointer-events-auto transition-all duration-1000 -mt-40 ${
                   currentStepCount === 8
                     ? "opacity-100 translate-y-0 scale-100 delay-300"
                     : "opacity-0 translate-y-4 scale-95"
@@ -400,22 +414,16 @@ export default function Quiz() {
               <QuizSquare defaultX={165} defaultY={45} />
             </g>
 
+            {/* SVG actors - only show for step 1 */}
             <g
               className={`${
                 currentStepCount === 0 ? "hidden translate-x-full" : ""
               } ${
-                currentStepCount >= 2 && currentStepCount < 8
-                  ? "-translate-x-8 translate-y-2 scale-75 opacity-100"
-                  : ""
-              } ${
-                currentStepCount >= 8 ? "-translate-x-full opacity-0" : ""
+                currentStepCount >= 2 ? "hidden" : ""
               } transition-all duration-1000`}
             >
-              <g className={` transition-all duration-700 delay-100`}>
+              <g className="transition-all duration-700 delay-100">
                 <QuizSelectActors />
-                {currentStepCount > 1 && currentStepCount < 9 && (
-                  <QuizEventCategoryList />
-                )}
               </g>
             </g>
 
@@ -458,9 +466,6 @@ export default function Quiz() {
           >
             <QuizConclusion />
           </div>
-          <div className="grid place-content-center pointer-events-none px-6 mb-4">
-            <QuizFeedback />
-          </div>
           <div className="grid place-content-center text-white px-6">
             <QuizInstructions />
           </div>
@@ -481,35 +486,29 @@ export default function Quiz() {
           </div>
 
           <div
-            className={`grid place-content-center text-white ml-4 mt-4 transition-opacity duration-100 ${
+            className={`text-white ml-4 mt-4 transition-opacity duration-100 ${
               currentStepCount > 0 && currentStepCount < 8
                 ? "opacity-100"
                 : "opacity-0 h-0"
             }`}
           >
-            <svg viewBox="0 0 120 20" className="w-full h-full">
+            {currentStepCount === 1 ? (
+              <svg viewBox="0 0 120 20" className="w-80 h-16">
+                <QuizSelectActors />
+              </svg>
+            ) : (
               <QuizSelectActors />
-            </svg>
+            )}
           </div>
 
           <div
-            className={`grid place-content-start text-white transition-opacity duration-600 ${
+            className={`text-white ml-4 mt-4 transition-opacity duration-600 ${
               currentStepCount > 2 && currentStepCount < 8
                 ? "opacity-100"
                 : "opacity-0"
             }`}
           >
             <QuizEventCategoryList />
-            {currentStepCount == 7 && (
-              <div
-                role="button"
-                onClick={() => setCurrentStepCount(8)}
-                onKeyUp={({ key }) => setCurrentStepCount(8)}
-                tabIndex={0}
-              >
-                CONTINUE <span className="font-icons">b</span>
-              </div>
-            )}
           </div>
 
           <div

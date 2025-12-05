@@ -38,44 +38,32 @@ export default function QuizEventCategoryList() {
     );
   } else if (isDesktop) {
     return (
-      <svg>
-        <text
-          fill="white"
-          x={18}
-          y={105}
-          fillOpacity={0}
-          className="hidden md:block"
-        >
-          {eventData.eventTypes.map((type, index) => {
-            return (
-              <QuizEventCategoryItem
-                key={type}
-                index={index}
-                type={type}
-                unused={unusedCategories.includes(index)}
-              />
-            );
-          })}
-          <tspan
-            className="transition-[fill-opacity] duration-1000 font-powerLightNarrow italic focus:outline-none focus:underline hover:underline"
-            dy={24}
-            fillOpacity={currentStepCount >= 7 ? 1.0 : 0.0}
-            fontSize={8}
-            role={currentStepCount === 7 ? "button" : ""}
-            tabIndex={currentStepCount === 7 ? 0 : -1}
-            onClick={() => setCurrentStepCount(8)}
-            onKeyUp={({ key }) => {
-              if (key === "Enter" || key === "Space") setCurrentStepCount(8);
-            }}
-            x={60}
-            fontFamily="VTC Du Bois Narrow, serif"
-            fontStyle="italic"
-          >
-            CONTINUE
-            <tspan dx={2} className="font-icons"></tspan>
-          </tspan>
-        </text>
-      </svg>
+      <ol className="list-decimal list-inside text-base text-white space-y-1">
+        {eventData.eventTypes.map((type, index) => {
+          return (
+            <QuizEventCategoryItem
+              key={type}
+              index={index}
+              type={type}
+              unused={unusedCategories.includes(index)}
+            />
+          );
+        })}
+        {currentStepCount >= 7 && (
+          <li className="list-none mt-4">
+            {/* <button
+              className="font-powerLightNarrow italic focus:outline-none focus:underline hover:underline cursor-pointer text-white"
+              onClick={() => setCurrentStepCount(8)}
+              onKeyUp={({ key }) => {
+                if (key === "Enter" || key === "Space") setCurrentStepCount(8);
+              }}
+            >
+              CONTINUE
+              <span className="font-icons ml-2">b</span>
+            </button> */}
+          </li>
+        )}
+      </ol>
     );
   }
 

@@ -8,8 +8,8 @@ export default function QuizFinal() {
     <div
       className={`transition-all duration-1000 ${
         currentStepCount === 9
-          ? "opacity-100 md:-translate-y-48 md:-translate-x-24 lg:-translate-y-28 lg:-translate-x-72 scale-100 delay-300 pointer-events-auto"
-          : "opacity-0 md:-translate-y-48 md:-translate-x-24 lg:-translate-y-28 lg:-translate-x-72 scale-100 pointer-events-none"
+          ? "opacity-100 md:-translate-y-48 md:-translate-x-24 lg:-translate-y-28 lg:-translate-x-32 scale-100 delay-300 pointer-events-auto"
+          : "opacity-0 md:-translate-y-48 md:-translate-x-24 lg:-translate-y-28 lg:-translate-x-32 scale-100 pointer-events-none"
       }`}
     >
       <div className="text-white px-12 space-y-6 max-w-7xl">
