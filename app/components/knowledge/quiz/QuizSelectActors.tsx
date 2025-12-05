@@ -28,7 +28,7 @@ export default function QuizSelectActors() {
     if (isMobile) {
       setStartX(0);
     } else {
-      if (currentStepCount === 1 || currentStepCount === 2) {
+      if (currentStepCount === 1) {
         setStartX(45);
       } else {
         setStartX(58);
