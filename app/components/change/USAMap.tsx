@@ -5,7 +5,7 @@ export default function USAMap() {
         <source srcSet={`/images/power/map.webp`} />
         <source srcSet={`/images/power/map.jpg`} />
         <img
-          className="drop-shadow-lg mx-auto"
+          className=" mx-auto"
           src={`/images/power/map.jpg`}
           alt=""
           title=""

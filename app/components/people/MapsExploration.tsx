@@ -82,7 +82,7 @@ export default function ImageTooltips() {
                       activeTooltip === tooltip.id ? undefined : tooltip.id
                     )
                   }
-                  className="w-4 h-4 bg-gray-800  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
+                  className="w-4 h-4 bg-gray-800  hover:bg-gray-800 text-white rounded-full  flex items-center justify-center transition-colors duration-200"
                 ></button>
               </div>
             ))}
@@ -96,7 +96,7 @@ export default function ImageTooltips() {
                 activeTooltip === tooltip.id && (
                   <div
                     key={`tooltip-${tooltip.id}`}
-                    className="absolute z-50 w-64 bg-white rounded-lg shadow-lg border border-slate-200 p-4 pointer-events-none"
+                    className="absolute z-50 w-64 bg-white rounded-lg border border-slate-200 p-4 pointer-events-none"
                     style={{
                       left: `${tooltip.x}%`,
                       top: isNearBottom

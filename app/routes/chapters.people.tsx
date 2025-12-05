@@ -80,9 +80,9 @@ export default function ShanawdithitPage() {
     <ChapterContext.Provider
       value={{
         backgroundColor: "peoplePrimary",
-        primaryTextColor: "white",
+        primaryTextColor: "black",
         accentColor: "peopleSecondary",
-        footnoteTextColor: "peoplePrimary",
+        footnoteTextColor: "peopleSecondary",
         footnotes: peopleFootnotes,
         hoverState,
         setHoverState,
