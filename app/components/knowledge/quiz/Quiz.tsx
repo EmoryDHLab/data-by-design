@@ -457,6 +457,7 @@ export default function Quiz() {
             <QuizIntro className="mx-6" />
           </div>
 
+<div className="mt-12">
           <div
             className={`transition-all duration-1000 ${
               currentStepCount == 8
@@ -466,25 +467,29 @@ export default function Quiz() {
           >
             <QuizConclusion />
           </div>
-          <div className="grid place-content-center text-white px-6">
+          <div className="grid place-content-start items-leg text-white px-6">
             <QuizInstructions />
           </div>
 
           <div
-            className={`grid place-content-start text-white px-6 transition-opacity duration-1000 ${
+            className={`text-white px-6 transition-opacity duration-1000 ${
               currentStepCount > 0 && currentStepCount < 8
                 ? "opacity-100"
                 : "opacity-0 h-0"
             }`}
           >
-            <p className="ml-20 mt-10mb-0 text-sm">
+            <p className="mt-10 mb-0 text-sm text-left">
               EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
             </p>
-            <p className="ml-20 my-0 font-sans text-xl">
+            <p className=" my-0 font-sans text-xl">
               {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
             </p>
           </div>
+</div>
 
+
+
+<div className="pl-2">
           <div
             className={`text-white ml-4 mt-4 transition-opacity duration-100 ${
               currentStepCount > 0 && currentStepCount < 8
@@ -510,7 +515,7 @@ export default function Quiz() {
           >
             <QuizEventCategoryList />
           </div>
-
+</div>
           <div
             className={`text-white transition-all duration-1000 opacity-${
               currentStepCount > 1 ? 100 : 0
@@ -557,26 +562,13 @@ export default function Quiz() {
           </div>
 
           <div
-            className={`grid place-content-center text-white text-2xl text-center font-powerLightNarrow transition-opacity duration-1000 ${
+            className={`transition-opacity duration-1000 ${
               currentStepCount == 9
                 ? "opacity-100"
                 : "opacity-0 pointer-events-none h-0"
             }`}
           >
-            <p className="m-0">
-              <button
-                className="focus:outline-none focus:underline hover:underline my-6"
-                tabIndex={0}
-                onClick={() => setCurrentStepCount(1)}
-              >
-                <span className="font-icons mr-2">e</span>
-                START OVER
-              </button>
-            </p>
-            <p className="m-0">CONTINUE READING</p>
-            <p className="m-0 motion-safe:animate-[bounce_2.5s_ease-in-out_infinite]">
-              <span className="font-icons text-5xl">t</span>
-            </p>
+            <QuizFinal />
           </div>
         </div>
       </div>
