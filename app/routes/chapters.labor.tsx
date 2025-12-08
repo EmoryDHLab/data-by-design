@@ -14,6 +14,7 @@ import ChapterBody from "~/components/layout/ChapterBody";
 import { chapterMeta } from "~/data/chapterMeta";
 import type { MetaFunction } from "react-router";
 import type { TVizAnchors } from "~/chapterContext";
+import Takeaways from "~/components/layout/Takeaways";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("labor");
