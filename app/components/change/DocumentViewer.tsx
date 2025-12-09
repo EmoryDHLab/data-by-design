@@ -88,11 +88,12 @@ export default function DocumentViewer() {
 
   return (
     <div
-      className="py-20 my-10 bg-black w-full flex flex-col items-center pb-10"
+      className=" my-10 bg-black w-full flex flex-col items-center "
       id="doc-viewer"
     >
-      <div className="hidden md:flex max-w-5xl">
-        <div className="py-10 px-5 flex flex-col items-center w-1/6 space-y-5">
+      <div className="hidden md:grid grid-cols-[auto_1fr_1fr] max-w-7xl w-full h-screen items-center">
+        {/* Column 1: Set selectors */}
+        <div className="py-10 px-5 flex flex-col items-center space-y-12">
           <button
             onClick={() => {
               setSelectedSet("setOne");
@@ -182,8 +183,10 @@ export default function DocumentViewer() {
             )}
           </button>
         </div>
-        <div>
-          <div className="grid grid-cols-4 md:grid-cols-9 gap-8 py-5 px-20">
+
+        {/* Column 2: Image grid */}
+        <div className="py-5 px-8 overflow-y-auto">
+          <div className="grid grid-cols-6 gap-4">
             {imageSets[selectedSet].map((figure, index) => (
               <button
                 key={`doc-viewer-${figure.fileName}`}
@@ -203,7 +206,11 @@ export default function DocumentViewer() {
               </button>
             ))}
           </div>
-          <div className="flex items-center justify-center gap-8 h-[500px] mb-40">
+        </div>
+
+        {/* Column 3: Selected image with caption (full height) */}
+        <div className="flex flex-col items-center justify-center h-full px-8">
+          <div className="flex items-center gap-4">
             <button
               aria-label="Select previous image"
               onClick={() => {
@@ -224,13 +231,11 @@ export default function DocumentViewer() {
               />
             </button>
 
-            <div className="flex flex-col items-center justify-start h-full pt-2">
-              <Figure
-                figure={selectedImage as FigureType}
-                className="max-w-xs text-white"
-                id={`doc-viewer-${selectedImage.fileName}`}
-              />
-            </div>
+            <Figure
+              figure={selectedImage as FigureType}
+              className="max-w-sm text-white"
+              id={`doc-viewer-${selectedImage.fileName}`}
+            />
 
             <button
               aria-label="Select next image"
