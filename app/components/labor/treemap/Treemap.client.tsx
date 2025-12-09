@@ -44,7 +44,7 @@ const Treemap = () => {
   return (
     <div
       id="contribution-treemap"
-      className="bg-offblack w-screen grid grid-cols-1 md:grid-cols-3 md:grid-rows-6 md:h-screen text-white"
+      className="bg-offblack px-6  w-screen grid grid-cols-1 md:grid-cols-3 md:grid-rows-6 md:h-screen text-white"
     >
       <div className="col-span-1 md:col-span-2 md:row-span-5">
         {windowSize && (
@@ -112,14 +112,14 @@ const Treemap = () => {
           />
         </div>
         <div className="border border-t-1 border-x-0 border-b-0">
-          <h4 className="text-2xl font-powerLightWide md:ml-6 md:mt-4">
+          <h4 className="text-2xl font-power font-bold md:ml-6 md:mt-4">
             Contribution Activity
           </h4>
           {activeContribution && (
-            <ul className="leading-7 md:text-lg md:mx-6 font-powerLightWide">
-              <li>{activeContribution.user}</li>
-              <li>
-                <span className="font-powerWide">
+            <ul className="leading-7 md:text-lg md:mx-6 font-power">
+              <li className="pt-3">{activeContribution.user}</li>
+              <li className="pt-3">
+                <span className="font-power  font-bold">
                   {activeContribution.source}:
                 </span>{" "}
                 {activeContribution.information}
@@ -128,9 +128,16 @@ const Treemap = () => {
           )}
         </div>
       </div>
-      <div className="hidden md:block border-t-2 md:col-span-3 p-4">
-        <h3 className="text-4xl font-powerWide">Contribution treemap</h3>
-        <h4 className="text-2xl mt-2 font-powerLightWide">Tag line?</h4>
+
+ 
+      <div className="hidden md:block md:col-span-3 pb-4 px-4 text-left w-full ">
+              <hr className=" col-span-3 mt-11"></hr>
+         <h3 className="mb-4 font-power text-xl pt-6 md:text-3xl">
+Conttribution Across Time
+          </h3>
+          <h4 className="mb-6 font-power font-light text-base md:text-xl">
+           The Making of DxD, file by file 
+          </h4>
       </div>
     </div>
   );

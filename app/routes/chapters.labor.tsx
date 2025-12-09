@@ -80,7 +80,7 @@ export default function LabourPage() {
               </>
             }
           />
-          <p className="first-paragraph py-10">
+          <p className="first-paragraph pt-10">
             In nearly every meeting, as different specialists moved in and out
             of the project, or between different facets of it, someone uttered
             the name of an absent presence. Over time, it seemed like an
@@ -117,7 +117,7 @@ export default function LabourPage() {
         <ChapterSectionTitle section={sections[0]} />
 
         <CenteredLayout>
-          <p className="first-paragraph py-10">
+          <p className="first-paragraph pt-10">
             Any digital project is the work of many hands, eyes, ears, and, of
             course, the various technologies we employ to make it. When viewing
             a complicated website such as this one, with multiple interactions,
@@ -135,7 +135,7 @@ export default function LabourPage() {
             databases, browsers, and hosting platforms to bring this project to
             fruition. More specifically, this project was created with HTML,
             JavaScript, and CSS, using the React.js and Tailwind frameworks. We
-            used a combination of D3, P5, and raw SVG to create the
+            used a combination of D3.js, p5.js, and raw SVG to create the
             visualizations that appear on the site. It is hosted on a server
             maintained by Emory's Center for Digital Scholarship Center, using
             content delivered by AWS. You can find the entire project code on
@@ -148,7 +148,7 @@ export default function LabourPage() {
         <ChapterSectionTitle section={sections[1]} />
 
         <CenteredLayout>
-          <p className="first-paragraph py-10">
+          <p className="first-paragraph pt-10">
             Beyond the official “tech stack,” there are more tools we used on a
             daily basis to help us build our work up to the implementation
             stage. Cumulatively, all team members used a number of various
@@ -211,13 +211,15 @@ export default function LabourPage() {
         </CenteredLayout>
 
         <ClientOnly>
+          <div className="py-20"> 
           <Treemap />
+          </div>
         </ClientOnly>
 
         <ChapterSectionTitle section={sections[2]} />
 
         <CenteredLayout>
-          <p className="first-paragraph py-10">
+          <p className="first-paragraph pt-10">
             Of course, a large part of how this website came together is still
             missing from this account: the people who employed these tools,
             guided by their decisions and their expertise. Both in terms of
@@ -229,11 +231,13 @@ export default function LabourPage() {
         </CenteredLayout>
 
         <ClientOnly>
+             <div className="py-20"> 
           <PeopleVersions />
+          </div>
         </ClientOnly>
 
         <CenteredLayout>
-          <p className="first-paragraph py-10">
+          <p className="first-paragraph pt-10">
             This visualization shows that it is not just the aforementioned
             platforms that connect people, though that is of course a part of
             it; people's own networks connect us. And, while we cannot name
@@ -251,7 +255,7 @@ export default function LabourPage() {
         <ChapterSectionTitle section={sections[3]} />
 
         <CenteredLayout>
-          <p className="first-paragraph py-10">
+          <p className="first-paragraph pt-10">
             A very particular postlude from Margy: Though I in no way can assume
             a neutral role in observing the final numerous (potentially
             uncountable) pushes of this project over the last year and a half, I

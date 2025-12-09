@@ -33,7 +33,8 @@ const WeekBar = ({
         y={15}
         width={width}
         height={80}
-        className="fill-offwhite"
+        strokeWidth={0.3}
+        className="fill-offwhite stroke-black"
       />
       {contributions && (
         <>
@@ -46,10 +47,10 @@ const WeekBar = ({
                 y={height * index + 15}
                 width={width}
                 height={height}
-                strokeWidth={0.1}
+                strokeWidth={0.3}
                 className={`${rectColor(
                   contribution?.source
-                )} hover:fill-changeSecondary stroke-offwhite cursor-pointer`}
+                )} hover:fill-changeSecondary stroke-black cursor-pointer`}
                 onMouseEnter={() => setActiveContribution(contribution)}
                 onMouseLeave={() => setActiveContribution(undefined)}
               />
