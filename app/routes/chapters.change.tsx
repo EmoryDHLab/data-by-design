@@ -1278,13 +1278,13 @@ export default function DuboisChapter() {
           </p>
 
           <p>
-            In all of our research involving the Atlanta University
+            In all of our research involving the Atlanta University 
             <em>Catalogues</em>, which we had used to surface many of the
             details about the students' lives, we had noticed another detail
             about the charts that seemed to have gone unremarked upon in the
             existing scholarship: the count of the total number of graduates of
             Atlanta University—330—matches exactly with the total number
-            provided in a data table included in the <em>Catalogue</em>
+            provided in a data table included in the <em>Catalogue</em> {" "}
             published the previous year.
             <InlineFootnote index={67} /> The table includes counts of everyone
             who had graduated from one of the university's three degree programs
