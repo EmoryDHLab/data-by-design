@@ -98,12 +98,13 @@ const PersonBox = ({
       <rect
         ref={boxRef}
         id={`person-box-${person.firstName}`}
-        stroke="lightgray"
+        stroke="#1C1817"
         strokeWidth={1.5}
         strokeOpacity={opacity}
         width={boxWidth}
         height={boxHeight}
-        fill={person == activeNode ? "#FFD3D3" : "#1C1817"}
+        
+        fill={person == activeNode ? "#D92944" : "#1C1817"}
         x={center.x - boxWidth / 2}
         y={center.y}
         rx={20}
@@ -115,9 +116,11 @@ const PersonBox = ({
         y={center.y + boxHeight / 2}
         textAnchor="middle"
         dominantBaseline="middle"
-        fill={person === activeNode ? "#1C1817" : "#FAF1E9"}
+        fill={person === activeNode ? "#FFFFFF" : "#FAF1E9"}
         fillOpacity={opacity}
-        fontSize={boxHeight / 2.25}
+        fontSize={boxHeight / 3}
+
+        letterSpacing="0.05em"
         className="transition-colors duration-700"
       >
         {person.label}

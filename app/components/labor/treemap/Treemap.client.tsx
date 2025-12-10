@@ -133,7 +133,7 @@ const Treemap = () => {
       <div className="hidden md:block md:col-span-3 pb-4 px-4 text-left w-full ">
               <hr className=" col-span-3 mt-11"></hr>
          <h3 className="mb-4 font-power text-xl pt-6 md:text-3xl">
-Conttribution Across Time
+Contribution Across Time
           </h3>
           <h4 className="mb-6 font-power font-light text-base md:text-xl">
            The Making of DxD, file by file 

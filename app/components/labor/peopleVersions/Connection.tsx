@@ -11,9 +11,10 @@ interface Props {
   y2: number;
   dragging: boolean;
   opacity?: 0 | 100;
+  isActive?: boolean;
 }
 
-const Connection = ({ person, x2, y2, dragging, opacity = 100 }: Props) => {
+const Connection = ({ person, x2, y2, dragging, opacity = 100, isActive = false }: Props) => {
   const { windowSize } = useResizeObserver();
   const lineRef = useRef<SVGLineElement>(null);
 
@@ -39,7 +40,7 @@ const Connection = ({ person, x2, y2, dragging, opacity = 100 }: Props) => {
         person.getY(person.y, windowSize.height || 0) +
         visHeight(windowSize.height) / 40
       }
-      stroke="#D9D9D9"
+      stroke={isActive ? "#D92944" : "#000000"}
       strokeWidth={1.5}
       className={`opacity-${opacity} transition-opacity duration-700`}
     />

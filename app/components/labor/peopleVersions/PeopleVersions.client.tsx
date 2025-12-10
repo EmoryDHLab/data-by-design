@@ -46,15 +46,8 @@ const PeopleVersions = () => {
   }, [windowSize]);
 
   useEffect(() => {
-    if (activeVersions.length > 0) {
-      setActiveGrouping(undefined);
-    }
-  }, [activeVersions]);
-
-  useEffect(() => {
     for (const person of peopleData) {
       if (activeGrouping) {
-        setActiveVersions([]);
         person.x = person.groupingsXY[activeGrouping].x;
         person.y = person.groupingsXY[activeGrouping].y;
       } else {
@@ -65,17 +58,11 @@ const PeopleVersions = () => {
     setPeople([...peopleData]);
   }, [activeGrouping]);
 
-  useEffect(() => {
-    if (!activeGrouping) {
-      setActiveVersions(Object.keys(versionData));
-    }
-  }, [activeGrouping]);
-
   const updatedPerson = (index: number, x: number, y: number) => {
     if (x < visWidthRef.current && x > 0) {
       people[index].x = x / (visWidth(windowSize.width) || 1);
     }
-    if (y > versionHeightRef.current * 1.5 && y < visHeightRef.current) {
+    if (y > 0 && y < visHeightRef.current) {
       people[index].y = y / (visHeight(windowSize.height) || 1);
     }
     setPeople([...people]);
@@ -98,16 +85,16 @@ const PeopleVersions = () => {
   return (
     <div
       id="people-across-versions"
-      className="bg-offblack w-screen grid grid-cols-1 md:grid-cols-3 md:grid-rows-6 md:h-screen text-white"
+      className="bg-[#D7E6D2] w-screen grid grid-cols-1 md:grid-cols-3 md:grid-rows-[1fr_auto] md:h-[95vh] text-black"
     >
-      <div className="col-span-1 md:col-span-2 md:row-span-5">
+      <div className="col-span-1 md:col-span-2 md:row-span-1 md:order-2 flex flex-col">
         {windowSize && (
           <svg
             ref={svgRef}
-            className="font-power font-bold"
+            className="font-power font-bold flex-1"
             viewBox={`0 0 ${
               ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
-            } ${((windowSize?.height || window.innerHeight) / 6) * 5}`}
+            } ${((windowSize?.height || window.innerHeight) / 7) * 5}`}
           >
             {activeGrouping && (
               <>
@@ -131,6 +118,7 @@ const PeopleVersions = () => {
                               visHeight(windowSize.height) / 40
                             }
                             dragging={dragging}
+                            isActive={person === activeNode}
                           />
                         );
                       })}
@@ -139,52 +127,7 @@ const PeopleVersions = () => {
                 })}
               </>
             )}
-            {activeVersions.length > 0 && (
-              <>
-                {people.map((person) => {
-                  return (
-                    <g key={`links-${person.firstName}`}>
-                      {person.versions.map((version) => {
-                        return (
-                          <Connection
-                            key={`version-link-${person.id}-${version.id}`}
-                            person={person}
-                            x2={version.getMidX(
-                              Object.keys(versionData).indexOf(version.id),
-                              windowSize.width ?? 0
-                            )}
-                            y2={version.getBottomY(windowSize.height || 0)}
-                            dragging={dragging}
-                            opacity={
-                              activeVersions.includes(version.id) ? 100 : 0
-                            }
-                          />
-                        );
-                      })}
-                    </g>
-                  );
-                })}
-              </>
-            )}
-            <g id="versions">
-              {Object.keys(versionData).map((version, index) => {
-                return (
-                  <Version
-                    key={version}
-                    versionName={version}
-                    x={versionData[version].getX(index, windowSize.width ?? 0)}
-                    y={versionData[version].getY(windowSize.height ?? 0)}
-                    width={versionWidth(windowSize.width)}
-                    height={versionHeight(windowSize.height)}
-                    active={activeVersions.includes(version)}
-                    handleVersionSelect={handleVersionSelect}
-                  >
-                    {version}
-                  </Version>
-                );
-              })}
-            </g>
-            <g id="groupings">
+                        <g id="groupings">
               {Object.keys(groupingData).map((grouping) => {
                 return (
                   <g key={`${grouping}-group`} id={`${grouping}-group`}>
@@ -199,7 +142,7 @@ const PeopleVersions = () => {
                           <GroupingBox
                             key={`grouping-box-${grouping}-${group}`}
                             index={index}
-                            boxHeight={visHeight(windowSize.height) / 20}
+                            boxHeight={visHeight(windowSize.height) / 15}
                             grouping={
                               groupingData[grouping as keyof TGroupingData][
                                 group
@@ -225,7 +168,7 @@ const PeopleVersions = () => {
                     index={index}
                     activeNode={activeNode}
                     setActiveNode={setActiveNode}
-                    boxHeight={visHeight(windowSize.height) / 20}
+                    boxHeight={visHeight(windowSize.height) / 15}
                     center={{
                       x: visWidth(windowSize.width) / 2,
                       y: visHeight(windowSize.height) / 2,
@@ -246,26 +189,44 @@ const PeopleVersions = () => {
             </g>
           </svg>
         )}
-      </div>
-      <div className="border-l-2 md:row-span-5 flex flex-col">
-        <div className="text-xl md:text-2xl p-2 border border-b-1 uppercase">
-          View by:
-        </div>
-        <div className="flex pb-4 md:pb-0 border border-b-1">
-          <div>
-            <GroupingSelect
-              setSelectedGrouping={setActiveGrouping}
-              activeGrouping={activeGrouping}
-            />
+        <div className="hidden md:flex border-black border-t-2 p-8 justify-between items-center" id="title">
+          <div className="grow pr-8">
+            <h3 className="text-4xl font-power font-bold">People across versions</h3>
+            <h4 className="text-xl mt-2 font-power">Mapping human involvement across Data
+              by Design</h4>
+          </div>
+          <div className="flex gap-3">
+            {Object.keys(versionData).map((version) => (
+              <button
+                key={version}
+                onClick={() => handleVersionSelect(version, undefined)}
+                className={`px-6 py-3 text-6xl border-2 border-white rounded-[3rem] font-power font-bold transition-all text-white ${
+                  activeVersions.includes(version)
+                    ? "bg-changePrimary"
+                    : "bg-[#1C1817] opacity-40"
+                }`}
+              >
+                {version}
+              </button>
+            ))}
           </div>
         </div>
-        <div className="overflow-y-hidden flex">
+      </div>
+      <div className="border-r-2 border-black md:row-span-2 flex flex-col md:order-1">
+      
+        <div className="text-center font-power light">
+          <GroupingSelect
+            setSelectedGrouping={setActiveGrouping}
+            activeGrouping={activeGrouping}
+          />
+        </div>
+        <div className="overflow-y-hidden flex flex-1">
           {activeNode && (
             <div className="overflow-y-scroll">
-              <div className="p-2 text-xl font-power uppercase text-changeSecondary">
+              <div className="p-2 text-3xl font-power font-bold  ">
                 {activeNode.label}
               </div>
-              <div className="grid grid-cols-3 grid-rows-2 mx-4 gap-4">
+              <div className="grid grid-cols-3 grid-rows-2 mx-4 gap-x-4 gap-y-8">
                 <PersonGroupingList person={activeNode} grouping="location" />
                 <PersonGroupingList person={activeNode} grouping="department" />
                 <PersonGroupingList
@@ -284,10 +245,6 @@ const PeopleVersions = () => {
             </div>
           )}
         </div>
-      </div>
-      <div className="hidden md:block border-t-2 md:col-span-3 p-4">
-        <h3 className="text-4xl font-powerWide">People across versions</h3>
-        <h4 className="text-2xl mt-2 font-powerLightWide">Tag line?</h4>
       </div>
     </div>
   );

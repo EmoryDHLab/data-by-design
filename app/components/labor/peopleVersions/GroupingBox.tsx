@@ -20,10 +20,7 @@ const GroupingBox = ({
 }: Props) => {
   const boxRef = useRef<SVGRectElement>(null);
   const { windowSize } = useResizeObserver();
-  const boxWidth: number = Math.max(
-    (grouping.label.length + 3) * (boxHeight / 5),
-    70
-  );
+  const boxWidth: number = (grouping.label.length + 3) * (boxHeight / 4);
 
   return (
     <g
@@ -39,14 +36,14 @@ const GroupingBox = ({
       <rect
         ref={boxRef}
         id={`grouping-box-${grouping.id}`}
-        stroke="lightgray"
-        strokeWidth={0.5}
+      stroke="#1C1817"
+        strokeWidth={1}
         width={boxWidth}
         height={boxHeight}
         fill="#FAF1E9"
         x={grouping.getX(grouping.x, windowSize.width || 0) - boxWidth / 2}
         y={grouping.getY(grouping.y, windowSize.height || 0)}
-        rx={22}
+        rx={20}
       />
       <text
         x={grouping.getX(grouping.x, windowSize.width || 0)}
@@ -55,7 +52,9 @@ const GroupingBox = ({
         dominantBaseline="middle"
         className="pointer-events-none select-none"
         fill="#1C1817"
-        fontSize={boxHeight / 2.25}
+      
+        fontSize={boxHeight / 3}
+        letterSpacing="0.05em"
       >
         {grouping.label}
       </text>

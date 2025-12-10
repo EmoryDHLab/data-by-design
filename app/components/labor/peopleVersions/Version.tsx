@@ -55,7 +55,7 @@ const Version = ({
         height={height}
         fill="gray"
         fillOpacity={focused ? 0.2 : 0}
-        stroke="#FAF1E9"
+        stroke="#1C1817"
         strokeWidth={focused ? 2 : 1}
       />
       <text
@@ -63,9 +63,9 @@ const Version = ({
         y={(y + height) / 2 + fontSize / 4}
         textAnchor="middle"
         dominantBaseline={"middle"}
-        fill="#FAF1E9"
+        fill="#1C1817"
         fillOpacity={active ? 1 : 0.2}
-        stroke="#FAF1E9"
+        stroke="#1C1817"
         strokeWidth={0.75}
         fontSize={fontSize}
         className="transition-all duration-1000"

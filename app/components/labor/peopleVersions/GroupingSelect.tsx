@@ -17,19 +17,19 @@ const GroupingSelect = ({ setSelectedGrouping, activeGrouping }: Props) => {
   };
 
   return (
-    <ul>
+    <ul className="w-full">
       {Object.keys(groupingData).map((grouping) => {
         return (
-          <li key={grouping} className="">
+          <li key={grouping}>
             <button
               onClick={() => handleSelect(grouping as Groupings)}
               onMouseLeave={({ target }) =>
                 (target as HTMLButtonElement).blur()
               }
-              className={`px-1 py-2 w-full text-left m-1 hover:opacity-100 focus:opacity-100 uppercase ${
+              className={`w-full py-4 text-center border-b border-black border-1.5 hover:opacity-100 focus:opacity-100 uppercase ${
                 grouping === activeGrouping
-                  ? "opacity-100 bg-changeSecondary text-offblack"
-                  : "opacity-60"
+                  ? "opacity-100 bg-changePrimary text-white"
+                  : "opacity-100"
               }`}
               aria-label={`Sort people by ${grouping}`}
             >
