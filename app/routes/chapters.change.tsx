@@ -92,12 +92,27 @@ const visualizations: TVizAnchors[] = [
   {
     type: "scrollytell",
     id: "scrollytell-2",
-    title: "Scrollytell Two",
+    title: "Scrollytell",
   },
   {
     type: "scrollytell",
     id: "scrollytell-3",
     title: "Scrollytell Three",
+  },
+  {
+    type: "visualization",
+    id: "viz-1",
+    title: "Viz 1: Alumni Occupations",
+  },
+  {
+    type: "visualization",
+    id: "viz-2",
+    title: "Viz 2: Survey Respondents",
+  },
+  {
+    type: "visualization",
+    id: "viz-3",
+    title: "Viz 3: Student Responses",
   },
 ];
 
@@ -1338,7 +1353,7 @@ export default function DuboisChapter() {
           </p>
         </CenteredLayout>
 
-        <div className="my-8 md:my-12 w-full max-w-7xl mx-auto">
+        <div id="viz-1" className="my-8 md:my-12 w-full max-w-7xl mx-auto">
           <Viz1 interactive />
         </div>
         <CenteredLayout>
@@ -1465,7 +1480,9 @@ export default function DuboisChapter() {
             <span key="9b862bca"></span>,
           ]}
         />
-        <Viz2 interactive={true}></Viz2>
+        <div id="viz-2">
+          <Viz2 interactive={true}></Viz2>
+        </div>
         <CenteredLayout className="mt-20">
           <p>
             We do know something more about the students who returned the
@@ -1505,8 +1522,9 @@ export default function DuboisChapter() {
             students' lives, even as their specific source remains unnamed.
           </p>
         </CenteredLayout>
-        <h1> Viz 3 here </h1>
-        <Viz3></Viz3>
+        <div id="viz-3">
+          <Viz3></Viz3>
+        </div>
         <CenteredLayout className="pt-20">
           <p>
             The result is a visualization that at once draws directly from the
@@ -1562,7 +1580,7 @@ export default function DuboisChapter() {
 
 
 
-    <Viz4 interactive={true}></Viz4>
+    {/* <Viz4 interactive={true}></Viz4> */}
         <Takeaways
           forDesigners={[
             <span key="df782d45">

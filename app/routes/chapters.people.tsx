@@ -56,9 +56,24 @@ const chapterFigures = Object.values(figures);
 
 const visualizations: TVizAnchors[] = [
   {
+    type: "visualization",
+    id: "source map",
+    title: "Sources Diagram",
+  },
+  {
     type: "scrollytell",
     id: "scrollytell-one",
-    title: "Scrollytell 1",
+    title: "Shanawdithit's Maps",
+  },
+  {
+    type: "visualization",
+    id: "source map-2",
+    title: "Sources with Mediation",
+  },
+  {
+    type: "visualization",
+    id: "colonial-maps",
+    title: "Colonial Maps",
   },
   {
     type: "visualization",
@@ -68,7 +83,12 @@ const visualizations: TVizAnchors[] = [
   {
     type: "scrollytell",
     id: "scrollytell-two",
-    title: "Scrollytell 2",
+    title: "Willard Scrollytell",
+  },
+  {
+    type: "visualization",
+    id: "maps-exploration-3",
+    title: "Complete Diagram",
   },
 ];
 
@@ -195,7 +215,9 @@ export default function ShanawdithitPage() {
             <em>colonial frame</em>—must be considered alongside any knowledge
             that the maps themselves bring to light.
           </p>
-          <MapsExploration></MapsExploration>
+          <div id="source map">
+            <MapsExploration></MapsExploration>
+          </div>
           <Legend></Legend>
           <p>
             This is the reason we are breaking the mold of the previous chapters
@@ -570,7 +592,9 @@ export default function ShanawdithitPage() {
           </p>
         </CenteredLayout>
 
-        <MapsExploration2></MapsExploration2>
+        <div id="source map-2">
+          <MapsExploration2></MapsExploration2>
+        </div>
 
         <CenteredLayout>
           <Legend></Legend>
@@ -870,7 +894,9 @@ export default function ShanawdithitPage() {
           </Column>
           <Column shouldPin>
             <ClientOnly>
-              <ColonialMaps />
+              <div id="colonial-maps">
+                <ColonialMaps />
+              </div>
             </ClientOnly>
           </Column>
         </TwoColumnLayout>
@@ -1245,10 +1271,12 @@ export default function ShanawdithitPage() {
             leave for others to explore.
           </p>
         </CenteredLayout>
-        <MapsExploration3></MapsExploration3>
+        <div id="maps-exploration-3">
+          <MapsExploration3></MapsExploration3>
+        </div>
 
         <CenteredLayout>
-          <Legend></Legend>
+         <div className="mx-auto place-content-center"><Legend></Legend></div> 
           <p>
             This book will soon move on to consider alternative visual forms and
             epistemological frameworks, those that reject the unidirectional
