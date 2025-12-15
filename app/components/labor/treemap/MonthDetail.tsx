@@ -8,11 +8,11 @@ import type { TWeekData } from "./weeklyData";
 import type { Dispatch, SetStateAction } from "react";
 
 interface Props {
-  activeMonth: string | undefined;
+  selectedMonth: string | undefined;
   setActiveContribution: Dispatch<SetStateAction<TContribution | undefined>>;
 }
 
-const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
+const MonthDetail = ({ selectedMonth, setActiveContribution }: Props) => {
   const [weeks, setWeeks] = useState<TWeekData[] | undefined>(undefined);
   const [csvData, setCSVData] = useState<TContribution[] | undefined>();
   const [contributions, setContributions] = useState<
@@ -40,16 +40,16 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
   }, [weeks]);
 
   useEffect(() => {
-    if (activeMonth) {
+    if (selectedMonth) {
       setWeeks(
-        weeklyData[activeMonth].sort((a, b) =>
+        weeklyData[selectedMonth].sort((a, b) =>
           a.weekNum > b.weekNum ? 1 : b.weekNum > a.weekNum ? -1 : 0
         )
       );
     } else {
       setWeeks(undefined);
     }
-  }, [activeMonth]);
+  }, [selectedMonth]);
 
   useEffect(() => {
     if (!weeks || !csvData) return;
@@ -62,7 +62,7 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
       );
     }
     setContributions(_contributions);
-  }, [weeks, csvData, activeMonth]);
+  }, [weeks, csvData, selectedMonth]);
 
   const monthYear = () => {
     if (!contributions || contributions.length === 0) return "";
@@ -82,7 +82,7 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
       <svg
         ref={svgRef}
         viewBox="0 0 100 110"
-        className="font-power mt-2 h-full"
+        className="font-power mt-2 h-full uppercase"
       >
         <g>
           {weeks.map((week, index) => {
@@ -92,7 +92,6 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
                 ? xScale(contributions[index].length)
                 : xScale(1);
             accumulatedWidth += 10;
-            console.log("🚀 ~ {weeks.map ~ barWidth:", barWidth);
             return (
               <WeekBar
                 key={`${week.week.toDateString()}-${accumulatedWidth}`}
@@ -116,7 +115,7 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
               />
             );
           })}
-          {activeMonth && (
+          {selectedMonth && (
             <>
               <text
                 y={5}
@@ -135,7 +134,11 @@ const MonthDetail = ({ activeMonth, setActiveContribution }: Props) => {
     );
   }
 
-  return <></>;
+  return (
+    <h4 className="text-2xl font-powerLightWide md:mt-4">
+      Click a treemap for details.
+    </h4>
+  );
 };
 
 export default MonthDetail;

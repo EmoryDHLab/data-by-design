@@ -14,7 +14,6 @@ const Treemap = () => {
   const { windowSize } = useResizeObserver();
   const svgRef = useRef<SVGSVGElement>(null);
   const [width, setWidth] = useState<number | undefined>(undefined);
-  const [activeMonth, setActiveMonth] = useState<string | undefined>(undefined);
   const [selectedMonth, setSelectedMonth] = useState<string | undefined>(
     undefined
   );
@@ -30,12 +29,7 @@ const Treemap = () => {
   }, [windowSize]);
 
   useEffect(() => {
-    setActiveMonth(selectedMonth);
-  }, [selectedMonth]);
-
-  useEffect(() => {
     return () => {
-      setActiveMonth(undefined);
       setSelectedMonth(undefined);
       setActiveContribution(undefined);
     };
@@ -55,7 +49,6 @@ const Treemap = () => {
               ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
             } ${((windowSize?.height || window.innerHeight) / 6) * 5 + 20}`}
             onClick={() => {
-              setActiveMonth(undefined);
               setSelectedMonth(undefined);
             }}
             aria-description="here is a long description"
@@ -63,7 +56,7 @@ const Treemap = () => {
             <MonthScale
               year={2023}
               width={width}
-              height={(boxSize?.height || 1) / 2.5}
+              height={(boxSize?.height || 1) / 1.5}
               xOffset={(boxSize?.width || 1) / 2}
             />
             {monthlyData.map((monthlyData) => {
@@ -72,8 +65,6 @@ const Treemap = () => {
                   key={`month-${monthlyData.month}-${monthlyData.total}`}
                   monthlyData={monthlyData}
                   width={width}
-                  setActiveMonth={setActiveMonth}
-                  activeMonth={activeMonth}
                   selectedMonth={selectedMonth}
                   setSelectedMonth={setSelectedMonth}
                   setBoxSize={
@@ -89,7 +80,7 @@ const Treemap = () => {
                 <g key={`year-${year}`} role="presentation">
                   <YearLabel
                     year={year}
-                    height={(boxSize?.height || 1) / 2.5}
+                    height={(boxSize?.height || 1) / 1.5}
                   />
                   {index > 0 && (
                     <YearDivider
@@ -105,9 +96,9 @@ const Treemap = () => {
         )}
       </div>
       <div className="border-l-2 md:row-span-5 flex flex-col">
-        <div className="text-xl md:text-2xl mx-6 uppercase h-1/2">
+        <div className="text-xl md:text-2xl mx-6 h-1/2">
           <MonthDetail
-            activeMonth={activeMonth}
+            selectedMonth={selectedMonth}
             setActiveContribution={setActiveContribution}
           />
         </div>

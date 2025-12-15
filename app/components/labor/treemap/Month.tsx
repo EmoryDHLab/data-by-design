@@ -47,11 +47,9 @@ const calcTransform = (date: Date, treemapHeight: number) => {
 interface Props {
   monthlyData: TMontData;
   width: number | undefined;
-  setActiveMonth: Dispatch<SetStateAction<string | undefined>>;
   setBoxSize?: Dispatch<
     SetStateAction<{ height: number; width: number } | undefined>
   >;
-  activeMonth: string | undefined;
   selectedMonth: string | undefined;
   setSelectedMonth: Dispatch<SetStateAction<string | undefined>>;
 }
@@ -59,8 +57,6 @@ interface Props {
 const Month = ({
   monthlyData,
   width,
-  activeMonth,
-  setActiveMonth,
   setBoxSize,
   selectedMonth,
   setSelectedMonth,
@@ -139,38 +135,21 @@ const Month = ({
         refCopy.innerHTML = "";
       }
     };
-  }, [monthlyData, width, setActiveMonth, setBoxSize]);
-
-  useEffect(() => {
-    if (activeMonth == key && transformRef.current && dimensionRef.current) {
-      d3.select(monthRef.current)
-        .append("rect")
-        .attr("height", dimensionRef.current)
-        .attr("width", dimensionRef.current)
-        .attr("id", key)
-        .attr("class", "stroke-offwhite stroke-2 fill-none");
-    } else {
-      d3.select(`#${key}`).remove();
-    }
-  }, [activeMonth, key]);
+  }, [monthlyData, width, setBoxSize]);
 
   return (
-    <g
-      ref={monthRef}
-      id={`${monthlyData.month.getFullYear()}-${monthlyData.month.getMonth()}`}
-      className="cursor-pointer"
-      onMouseEnter={() => {
-        if (!selectedMonth) {
-          setActiveMonth(key);
-        }
-      }}
-      onClick={(event) => {
-        event.stopPropagation();
-        setSelectedMonth(key);
-      }}
-      onFocus={() => setActiveMonth(key)}
-      aria-description={monthlyData.month.toDateString()}
-    />
+    <>
+      <g
+        ref={monthRef}
+        id={`${monthlyData.month.getFullYear()}-${monthlyData.month.getMonth()}`}
+        className="cursor-pointer"
+        onClick={(event) => {
+          event.stopPropagation();
+          setSelectedMonth(key);
+        }}
+        aria-description={monthlyData.month.toDateString()}
+      />
+    </>
   );
 };
 

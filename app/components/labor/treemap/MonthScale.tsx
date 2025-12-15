@@ -28,12 +28,12 @@ const MonthScale = ({
 
     d3.select(scaleRef.current)
       .append("g")
-      .attr("transform", `translate(100, ${height / 1.35})`)
+      .attr("transform", `translate(100, ${height * 0.1})`)
       .call(xAxisYear, 0)
       .selectAll("text")
       .attr("dx", xOffset)
       .attr("text-anchor", "middle")
-      .attr("font-size", height / 1.5)
+      .attr("font-size", height)
       .attr("class", "font-power tracking-widest fill-offwhite");
 
     d3.select(scaleRef.current)
