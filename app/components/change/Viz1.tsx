@@ -21,7 +21,7 @@ export default function Viz1({ interactive = false }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [hoveredStudent, setHoveredStudent] = useState<any>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [showPieChart, setShowPieChart] = useState(true);
+  const [showPieChart, setShowPieChart] = useState(false);
   const [useCircularArrangement, setUseCircularArrangement] = useState(false);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function Viz1({ interactive = false }: Props) {
 
     // Set dimensions
     const width = 900;
-    const height = 500;
+    const height = 420;
     const radius = Math.min(width, height) / 2 - 80;
 
     // Process data - count students in each category
@@ -324,6 +324,7 @@ export default function Viz1({ interactive = false }: Props) {
 
   return (
     <div className="flex flex-col items-center relative">
+      <h3 className="font-dubois text-2xl mb-0 font-power font-bold">1898-99 Catalogue Students</h3>
       <svg ref={svgRef} className="max-w-full"></svg>
       {interactive && (
         <div className="-mt-2 flex gap-4">
