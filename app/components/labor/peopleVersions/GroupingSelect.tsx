@@ -7,6 +7,8 @@ interface Props {
   activeGrouping: Groupings | undefined;
 }
 
+const groupingOrder: Groupings[] = ["location", "institution", "department", "position", "role"];
+
 const GroupingSelect = ({ setSelectedGrouping, activeGrouping }: Props) => {
   const handleSelect = (selectedGrouping: Groupings) => {
     if (selectedGrouping === activeGrouping) {
@@ -18,7 +20,7 @@ const GroupingSelect = ({ setSelectedGrouping, activeGrouping }: Props) => {
 
   return (
     <ul className="w-full">
-      {Object.keys(groupingData).map((grouping) => {
+      {groupingOrder.map((grouping) => {
         return (
           <li key={grouping}>
             <button
