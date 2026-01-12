@@ -14,7 +14,7 @@ interface Props {
 
 const blue = "#3B4BE0";
 const gold = "#db882a";
-const white = "#F3ECCB";
+const white = "#FFEBD7";
 const height = 44;
 const width = 94;
 

@@ -117,7 +117,7 @@ export default function Recreation({
         //   scrollProgress > 3.25 && scrollProgress < 13 ? 1 : 0.85
         // })`}
       >
-        <rect width="100%" height="100%" fill="#F3ECCB"></rect>
+        <rect width="100%" height="100%" fill="#FFEBD7"></rect>
         <rect
           x={0.25}
           y={0.25}
@@ -322,7 +322,7 @@ export default function Recreation({
             </text>
           </g>
           <OvalTitle
-            color="#FCE2B0"
+            color="#FAD1B5"
             ellipse={{ cx: 28, cy: 19, rx: (width / 11) * 1.9, ry: 10 }}
             topText={{ text: "EXPORTS & IMPORTS", x: 14, y: 17 }}
             midText={{ text: "to and from all", x: 22, y: 20.5 }}

@@ -30,7 +30,7 @@ const D3Chart = ({ width, height }: Props) => {
         y={0}
         height={55}
         width={105}
-        fill="#F3ECCB"
+        fill="#FFEBD7"
         fillOpacity={1}
       />
       <g transform="translate(10, 1) scale(0.89, 1)">
