@@ -222,19 +222,16 @@ const PeopleVersions = () => {
         </div>
         <div className="overflow-y-hidden flex flex-1">
           {activeNode && (
-            <div className="overflow-y-scroll">
-              <div className="p-2 text-3xl font-power font-bold  ">
+            <div className="overflow-y-scroll px-6 py-5" id="selection-info">
+              <div className="text-2xl font-power font-bold mb-6">
                 {activeNode.label}
               </div>
-              <div className="grid grid-cols-3 grid-rows-2 mx-4 gap-x-4 gap-y-8">
-                <PersonGroupingList person={activeNode} grouping="location" />
-                <PersonGroupingList person={activeNode} grouping="department" />
-                <PersonGroupingList
-                  person={activeNode}
-                  grouping="institution"
-                />
+              <div className="grid grid-cols-2 gap-x-8 gap-y-6">
                 <PersonGroupingList person={activeNode} grouping="role" />
                 <PersonGroupingList person={activeNode} grouping="position" />
+                <PersonGroupingList person={activeNode} grouping="department" />
+                <PersonGroupingList person={activeNode} grouping="institution" />
+                <PersonGroupingList person={activeNode} grouping="location" />
               </div>
             </div>
           )}

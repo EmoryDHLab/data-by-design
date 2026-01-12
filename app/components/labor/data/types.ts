@@ -49,10 +49,10 @@ export enum Versions {
 }
 
 export enum Institutions {
-  E = "Emory",
+  E = "Emory University",
   T = "Georgia Tech",
-  N = "NYU",
-  B = "Berkeley",
+  N = "New York University",
+  B = "UC Berkeley",
   P = "Polymode",
 }
 
@@ -67,7 +67,7 @@ export enum Departments {
   E = "English",
   L = "Literature",
   MC = "Media & Communication",
-  Q = "Quantitative Theory & Methods",
+  Q = "Data & Decision Sciences",
   G = "Graphic Design",
   I = "Integrated Design & Media",
   ECDS = "Emory Center for Digital Scholarship",
@@ -78,7 +78,7 @@ export enum Departments {
 
 export enum Positions {
   F = "Faculty",
-  U = "Undergraduate",
+  U = "Undergraduate Student",
   G = "MS Student",
   R = "Research Staff",
   D = "PhD Student",
@@ -87,7 +87,7 @@ export enum Positions {
 
 export enum Locations {
   ATL = "Atlanta",
-  NY = "New York",
+  NY = "New York City",
   BK = "Berkeley",
   LA = "Los Angeles",
   SHI = "Shanghai",

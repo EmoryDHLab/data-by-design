@@ -8,14 +8,14 @@ interface Props {
 const PersonGroupingList = ({ person, grouping }: Props) => {
   return (
     <div>
-      <span className="uppercase">{grouping}</span>
-      <ul className="ml-4">
+      <span className="uppercase font-power font-bold tracking-wide">{grouping}</span>
+      <ul>
         {/* @ts-ignore */}
         {person[`${grouping}s`].map((group) => {
           return (
             <li
               key={`${person.id}-${grouping}-${group.id}`}
-              className="my-2 leading-6 font-power "
+              className="my-2 leading-6 font-sans"
             >
               {group.label}
             </li>
