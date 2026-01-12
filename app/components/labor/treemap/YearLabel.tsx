@@ -15,7 +15,7 @@ const YearLabel = ({
       className="fill-offwhite font-power tracking-widest"
       transform={`translate(0, ${yScale(new Date(year, 8, 1))})`}
       dominantBaseline="middle"
-      fontSize={(height || 0) / 1.35}
+      fontSize={(height || 0) / 1.7}
     >
       {year}/{year - 1999}
     </text>

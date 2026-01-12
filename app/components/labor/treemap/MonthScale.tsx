@@ -33,7 +33,7 @@ const MonthScale = ({
       .selectAll("text")
       .attr("dx", xOffset)
       .attr("text-anchor", "middle")
-      .attr("font-size", height)
+      .attr("font-size", height * 0.5)
       .attr("class", "font-power tracking-widest fill-offwhite");
 
     d3.select(scaleRef.current)
