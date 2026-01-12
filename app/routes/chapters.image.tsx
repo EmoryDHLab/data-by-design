@@ -124,32 +124,32 @@ export default function PlayfairPage() {
             for the third edition of his Atlas; it was also the expense.
           </p>
 
-          <Error />
-
-          <p>
-            Today, Playfair is widely celebrated for his leading role in the
-            development of modern data visualization. His bar charts, pie
-            charts, and time series charts are frequently heralded as among the
-            earliest of their kind.
-            <InlineFootnote index={0} /> In the opening lines of The Visual
-            Display of Quantitative Information, visualization luminary Edward
-            Tufte describes Playfair's work as "remarkable," and most other
-            historians of visualization have followed suit.
-            <InlineFootnote index={1} /> But in his own time, Playfair remained
-            "largely unacknowledged" for his innovations.
-            <InlineFootnote index={2} /> More to the point, he was almost always
-            nearly broke.
-            <InlineFootnote index={3} /> And so while Playfair chose to
-            commission one of the most skilled engravers in all of London,
-            Samuel John Neele, to produce the plates for his book, he also
-            likely requested that Neele work at speed so as to minimize the
-            costly detailing and other flourishes for which he was known. It is
-            hypothesized that Neele engraved the charts' decoration, framing,
-            titles, and other lettering, leaving Playfair—who had previously
-            trained as an engineer—to engrave the lines of imports and exports
-            by himself.
-            <InlineFootnote index={4} />
-          </p>
+          <Error>
+            <p>
+              Today, Playfair is widely celebrated for his leading role in the
+              development of modern data visualization. His bar charts, pie
+              charts, and time series charts are frequently heralded as among
+              the earliest of their kind.
+              <InlineFootnote index={0} /> In the opening lines of The Visual
+              Display of Quantitative Information, visualization luminary Edward
+              Tufte describes Playfair's work as "remarkable," and most other
+              historians of visualization have followed suit.
+              <InlineFootnote index={1} /> But in his own time, Playfair
+              remained "largely unacknowledged" for his innovations.
+              <InlineFootnote index={2} /> More to the point, he was almost
+              always nearly broke.
+              <InlineFootnote index={3} /> And so while Playfair chose to
+              commission one of the most skilled engravers in all of London,
+              Samuel John Neele, to produce the plates for his book, he also
+              likely requested that Neele work at speed so as to minimize the
+              costly detailing and other flourishes for which he was known. It
+              is hypothesized that Neele engraved the charts' decoration,
+              framing, titles, and other lettering, leaving Playfair—who had
+              previously trained as an engineer—to engrave the lines of imports
+              and exports by himself.
+              <InlineFootnote index={4} />
+            </p>
+          </Error>
         </CenteredLayout>
         <CenteredLayout>
           <Figure
