@@ -212,7 +212,7 @@ const PeopleVersions = () => {
           </div>
         </div>
       </div>
-      <div className="border-r-2 border-black md:row-span-2 flex flex-col md:order-1">
+      <div className="border-r-2 border-black md:row-span-2 flex flex-col md:order-1" id="view-by">
       
         <div className="text-center font-power light">
           <GroupingSelect
@@ -220,13 +220,13 @@ const PeopleVersions = () => {
             activeGrouping={activeGrouping}
           />
         </div>
-        <div className="overflow-y-hidden flex flex-1">
+        <div className="overflow-y-hidden flex flex-1 w-full">
           {activeNode && (
-            <div className="overflow-y-scroll px-6 py-5" id="selection-info">
+            <div className="overflow-y-scroll px-6 py-5 w-full" id="selection-info">
               <div className="text-2xl font-power font-bold mb-6">
                 {activeNode.label}
               </div>
-              <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+              <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-8 gap-y-6 w-full">
                 <PersonGroupingList person={activeNode} grouping="role" />
                 <PersonGroupingList person={activeNode} grouping="position" />
                 <PersonGroupingList person={activeNode} grouping="department" />
