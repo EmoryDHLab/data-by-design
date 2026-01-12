@@ -123,12 +123,41 @@ const Treemap = () => {
  
       <div className="hidden md:block md:col-span-3 pb-4 px-4 text-left w-full ">
               <hr className=" col-span-3 mt-11"></hr>
-         <h3 className="mb-4 font-power text-xl pt-6 md:text-3xl">
-Contribution Across Time
-          </h3>
-          <h4 className="mb-6 font-power font-light text-base md:text-xl">
-           The Making of DxD, file by file 
-          </h4>
+        <div className="grid grid-cols-2 gap-8 pt-6">
+          <div>
+            <h3 className="mb-4 font-power text-xl md:text-3xl">
+              Contribution Across Time
+            </h3>
+            <h4 className="mb-6 font-power font-light text-base md:text-xl">
+              The Making of DxD, file by file
+            </h4>
+          </div>
+          <div>
+            <h3 className="mb-4 font-power small-caps text-large tracking-wide">Key</h3>
+            <ul className="font-power text-base md:text-lg grid grid-cols-2 gap-2">
+              <li className="flex items-center gap-3">
+                <span className="w-4 h-4 bg-changePrimary inline-block"></span>
+                Github
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-4 h-4 bg-imagePrimary inline-block"></span>
+                Figma
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-4 h-4 bg-peoplePrimary inline-block"></span>
+                Zotero
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-4 h-4 bg-knowledgePrimary inline-block"></span>
+                iCalendar
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-4 h-4 bg-dataPrimary inline-block"></span>
+                Google Drive
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
