@@ -202,7 +202,7 @@ const PeopleVersions = () => {
                 onClick={() => handleVersionSelect(version, undefined)}
                 className={`px-6 py-3 text-6xl border-2 border-white rounded-[3rem] font-power font-bold transition-all text-white ${
                   activeVersions.includes(version)
-                    ? "bg-changePrimary"
+                    ? "bg-[#1C1817]"
                     : "bg-[#1C1817] opacity-40"
                 }`}
               >
