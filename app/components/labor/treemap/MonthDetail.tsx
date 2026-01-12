@@ -135,7 +135,7 @@ const MonthDetail = ({ selectedMonth, setActiveContribution }: Props) => {
   }
 
   return (
-    <h4 className="text-2xl font-powerLightWide md:mt-4">
+    <h4 className="text-2xl font-power font-bold md:mt-4">
       Click a treemap for details.
     </h4>
   );

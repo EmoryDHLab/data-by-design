@@ -31,7 +31,7 @@ export default function Viz2({ interactive = false }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [hoveredStudent, setHoveredStudent] = useState<any>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [showPieChart, setShowPieChart] = useState(true);
+  const [showPieChart, setShowPieChart] = useState(false);
   const [useCircularArrangement, setUseCircularArrangement] = useState(false);
   const [redrawKey, setRedrawKey] = useState(0);
   const [legendData, setLegendData] = useState<any[]>([]);
@@ -774,11 +774,14 @@ export default function Viz2({ interactive = false }: Props) {
 
   return (
     <div className="flex flex-col  items-center relative ">
-      <svg
-        ref={svgRef}
-        className="max-w-full"
-        style={{ height: "800px" }}
-      ></svg>
+      <h3 className="font-dubois text-2xl mt-12 mb-0 font-bold font-power relative z-10">1900 Students Professions</h3>
+      <div className="w-full" style={{ clipPath: "inset(-150px 0 0 0)" }}>
+        <svg
+          ref={svgRef}
+          className="max-w-full -mt-20"
+          style={{ height: "750px" }}
+        ></svg>
+      </div>
       {interactive && (
         <div className="mt-8 flex gap-4 mb-8">
           <button
@@ -795,17 +798,17 @@ export default function Viz2({ interactive = false }: Props) {
               ? "PIE ARRANGEMENT"
               : "CIRCULAR ARRANGEMENT"}
           </button>
-          <button
+          {/* <button
             onClick={() => setRedrawKey((prev) => prev + 1)}
             className="px-3 py-1 bg-gray-600 text-white rounded font-power text-sm hover:bg-opacity-80 transition-opacity"
           >
             REDRAW
-          </button>
+          </button> */}
         </div>
       )}
 
       {/* HTML-based Legend */}
-      <div className="w-full max-w-4xl px-4">
+      <div className="w-full max-w-4xl px-4 py-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
           {legendData.map((item, index) => (
             <div key={index} className="flex items-center p-2 ">
