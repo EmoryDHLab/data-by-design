@@ -51,7 +51,7 @@ const ChartOneScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
         break;
       case scrollProgress >= 0.5 && scrollProgress <= 1.5:
         setShowOriginal(true);
-        setFocusShape({ x: 10, y: 230, width: chartWidth - 20, height: 145 });
+        setFocusShape({ x: 10, y: 180, width: chartWidth - 20, height: 305 });
 
         setActiveStudent(undefined);
         setHighlightNames(false);
@@ -64,7 +64,7 @@ const ChartOneScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
         break;
       case scrollProgress >= 1.5 && scrollProgress <= 2.5:
         setShowOriginal(true);
-        setFocusShape({ x: 220, y: 410, width: 350, height: 350 });
+        setFocusShape({ x: 0, y: 0, width: 800, height: 1000 });
 
         setActiveStudent(undefined);
         setHighlightNames(false);

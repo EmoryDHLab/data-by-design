@@ -161,7 +161,7 @@ export default function StudentChartOne({
             </text>
           </g>
           <g className={`transition-opacity duration-1000 opacity-100`}>
-            <image x={450} y={120} height={160} href="/images/power/map.png" />
+            <image x={450} y={120} height={160} href="/images/change/map.png" />
             <path
               d={`M13.94 27.108C21.248 27.108 27.116 21.204 27.116 13.932C27.116 6.768 21.356 0.827998 13.94 0.827998C6.74 0.827998 0.836 6.516 0.836 13.932C0.836 21.204 6.704 27.108 13.94 27.108ZM6.812 23.58L9.548 15.444L2.924 10.98H11.06L13.94 2.196L16.892 10.98H25.028L18.404 15.444L21.14 23.58L13.94 18.396L6.812 23.58Z`}
               fill="black"
@@ -274,7 +274,7 @@ export default function StudentChartOne({
           />
           {isMobile && (
             <image
-              href="/images/power/pie.png"
+              href="/images/change/pie.png"
               height={250}
               width={250}
               y={480}
@@ -322,7 +322,7 @@ export default function StudentChartOne({
 
             <image
               mask="url(#chart1-scrolly-mask)"
-              href="/images/power/ch5-12-series.jpg"
+              href="/images/change/0525-899-series.jpg"
               width={800}
             />
             {focusShape && (
@@ -343,7 +343,7 @@ export default function StudentChartOne({
             <image
               height={1000}
               width={800}
-              href="/images/power/1898-1899-catalog-data-table-cropped.jpg"
+              href="/images/change/1898-1899-catalog-data-table-cropped.jpg"
             />
           </g>
           <g
@@ -357,7 +357,7 @@ export default function StudentChartOne({
             <image
               width={800}
               height={1000}
-              href="/images/power/1898-1899-catalog-alumni-page.jpg"
+              href="/images/change/1898-1899-catalog-alumni-page.jpg"
             />
             <rect
               x={180}
@@ -399,7 +399,7 @@ export default function StudentChartOne({
             <image
               width={800}
               height={1000}
-              href="/images/power/screenshot-grad-google-sheet.jpg"
+              href="/images/change/screenshot-grad-google-sheet.jpg"
             />
           </g>
         </g>

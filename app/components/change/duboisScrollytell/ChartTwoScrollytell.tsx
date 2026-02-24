@@ -19,7 +19,7 @@ function ChartTwoScrollytell({ triggers }: { triggers: ReactElement[] }) {
   const steps = useRef<HTMLDivElement>(null);
   const { isMobile } = useDeviceContext();
 
-  const minScrollProgress = 10.5;
+  const minScrollProgress = 0;
 
   useEffect(() => {
     switch (true) {

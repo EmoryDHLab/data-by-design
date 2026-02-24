@@ -31,6 +31,7 @@ import Takeaways from "~/components/layout/Takeaways";
 import ChartOneScrollytell from "~/components/change/duboisScrollytell/ChartOneScrollytell";
 import ChartTwoScrollytell from "~/components/change/duboisScrollytell/ChartTwoScrollytell";
 import ChartThreeScrollytell from "~/components/change/duboisScrollytell/ChartThreeScrollytell";
+import ScrollytellTwo from "~/components/change/scrollytell_two/ScrollytellTwo";
 import { chapterMeta } from "~/data/chapterMeta";
 import type { MetaFunction } from "react-router";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
@@ -1293,13 +1294,13 @@ export default function DuboisChapter() {
           </p>
 
           <p>
-            In all of our research involving the Atlanta University 
+            In all of our research involving the Atlanta University
             <em>Catalogues</em>, which we had used to surface many of the
             details about the students' lives, we had noticed another detail
             about the charts that seemed to have gone unremarked upon in the
             existing scholarship: the count of the total number of graduates of
             Atlanta University—330—matches exactly with the total number
-            provided in a data table included in the <em>Catalogue</em> {" "}
+            provided in a data table included in the <em>Catalogue</em>{" "}
             published the previous year.
             <InlineFootnote index={67} /> The table includes counts of everyone
             who had graduated from one of the university's three degree programs
@@ -1423,63 +1424,67 @@ export default function DuboisChapter() {
           <p></p>
         </CenteredLayout>
 
-    
-
-        <ChartTwoScrollytell
+        <ScrollytellTwo
           triggers={[
             <span key="94a7a3b2">
-              We created an expanded version of our initial chart with the
-              additional data from the 1910 study.
+              We thus created an updated version of our initial chart with the
+              additional data from the 1910 Atlanta University Study.
             </span>,
             <span key="94a7a3b3">
-              In the original, a map at the top of the page informs the viewer
-              of the location of Atlanta University. We added the locations of
-              the 140 additional colleges also included in the follow-up report.
+              In the original chart, a map at the top of the page informed
+              viewers of the location of Atlanta University.{" "}
             </span>,
-
             <span key="63ba9abc">
-              In our chart, the location of Atlanta University (which is also,
-              notably, the location of the majority of our own research team) is
-              still marked with a star.
+              In our version, we added the locations of the 140 additional
+              colleges also included in this study.{" "}
             </span>,
-            <span key="1a7c90eb">
-              In this pie chart, the 133 graduates of Atlanta University as of
-              1909 with known occupations (as determined by the alumni section
-              of the 1909-1910 catalog) are positioned in the appropriate area
-              of the pie chart. Additional categories represent the nine
-              graduates with unknown occupations, and the 21 graduates who were
+            <span key="06e375fc">
+              The location of Atlanta University (which is also, notably, the
+              location of the majority of our own research team) is still marked
+              with a star.
+            </span>,
+            <span key="5448c43e">
+              We also expanded the pie chart. We documented all 3,856 of the
+              Black college graduates described by the study, living or dead,
+              whether they returned the survey or not.{" "}
+            </span>,
+            <span key="9b862bca">
+              The 163 graduates of the “college course” at Atlanta University,
+              whom Du Bois describes in the study in depth, are named in our
+              chart.
+            </span>,
+            <span key="6bb49ec4">Mack is positioned as a “house wife.”</span>,
+            <span key="9802732f">
+              Westmoreland is positioned in “government service.”
+            </span>,
+            <span key="590917b7">
+              Simon and Rogers are positioned as “teachers.”
+            </span>,
+            <span key="d5f4d889">
+              As in our own previous chart, we've added categories to represent
+              those with unknown occupations,{" "}
+            </span>,
+            <span key="e00e084e">
+              as well as those—at that point also including Lee—who were
               recorded as “Deceased.”
             </span>,
-
-            <span key="06e375fc">
-              We also expanded the pie chart. In this version, we document all
-              3,856 of the Black college graduates described by the study,
-              living or dead, whether they returned the survey or not. The 163
-              graduates of the “college course” at Atlanta University, whom Du
-              Bois describes in the study in depth, are named in our chart. We
-              once again used the alumni section of that year's{" "}
-              <em>Catalogue</em> to position the graduates in the appropriate
-              area of the pie chart. Mack is positioned as a “house wife.”
-              Westmoreland is positioned in “government service.” Simon and
-              Rogers are positioned as “teachers.” As in our own previous chart,
-              we've added categories to represent those with unknown
-              occupations, as well as those—at that point also including Lee—who
-              were recorded as “Deceased.
+            <span key="0bcc9198">
+              <span className="block mb-8">
+                We used the counts of the occupations reported by the 800 survey
+                respondents to calculate the approximate proportion of dots to
+                place in each category, which we see as holding visual space for
+                each graduate's contributions to the study, even if we do not
+                know their exact occupation or name.
+              </span>
+              <span className="block">
+                An additional 3,693 gray dots represent the graduates of the
+                other 140 colleges included in the study, whose names and exact
+                occupations we do not know.
+              </span>
             </span>,
-
-            <span key="5448c43e">
-              An additional 3,693 gray dots represent the graduates of the other
-              140 colleges included in the study, whose names and exact
-              occupations we do not know. <InlineFootnote index={73} />
-              We used the counts of the occupations reported by the 800 survey
-              respondents to calculate the approximate proportion of dots to
-              place in each category, which we see as holding visual space for
-              each graduate's contributions to the study, even if we do not know
-              their exact occupation or name.
-            </span>,
-            <span key="9b862bca"></span>,
           ]}
         />
+        <p className="h-16"> need some break here</p>
         <div id="viz-2">
           <Viz2 interactive={true}></Viz2>
         </div>
@@ -1578,9 +1583,7 @@ export default function DuboisChapter() {
           </p>
         </CenteredLayout>
 
-
-
-    {/* <Viz4 interactive={true}></Viz4> */}
+        {/* <Viz4 interactive={true}></Viz4> */}
         <Takeaways
           forDesigners={[
             <span key="df782d45">
@@ -1590,7 +1593,8 @@ export default function DuboisChapter() {
               Consider when change should be your goal
             </span>,
             <span key="2f317172">
-              Explore how to combine visualization with other methods
+              Explore how to combine visualization with other methods Explore
+              how to combine visualization with other methods
             </span>,
             <span key="2f317173">
               Teach the next generation to continue the work
@@ -1601,8 +1605,10 @@ export default function DuboisChapter() {
               Combine visualization with other sources of insight
             </span>,
             <span key="6d2691fc">
-              Always aspire to more complete knowledge
+              Always aspire to more complete knowledge Always aspire to more
+              complete knowledge
             </span>,
+            <span key="9650286d">Recognize when knowledge demands change</span>,
             <span key="9650286d">Recognize when knowledge demands change</span>,
             <span key="9650286e">
               Know that change requires a commitment to act
