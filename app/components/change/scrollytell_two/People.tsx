@@ -15,12 +15,12 @@ const People = ({ width, height }: Props) => {
   return (
     <g
       className={`${
-        scrollProgress >= 5.25 ? "opacity-100" : "opacity-0"
+        scrollProgress >= 6.25 ? "opacity-100" : "opacity-0"
       } transition-opacity duration-1000`}
     >
       <g
         className={`${
-          scrollProgress >= 5.25 && scrollProgress <= 7.25
+          scrollProgress >= 6.25 && scrollProgress <= 8.25
             ? "opacity-100"
             : "opacity-0"
         } transition-opacity duration-1000`}
@@ -34,7 +34,7 @@ const People = ({ width, height }: Props) => {
         `}
           strokeWidth={10}
           className={`stroke-offblack transition-all duration-1000 ${
-            scrollProgress >= 5.25 && scrollProgress <= 6.25
+            scrollProgress >= 6.25 && scrollProgress <= 7.25
               ? "fill-[#FEC313]"
               : "fill-[#FFD3D3]"
           }`}
@@ -49,7 +49,7 @@ const People = ({ width, height }: Props) => {
         />
         <g
           className={`${
-            scrollProgress >= 5.25 && scrollProgress <= 6.25
+            scrollProgress >= 6.25 && scrollProgress <= 7.25
               ? "opacity-100"
               : "opacity-0"
           } transition-opacity duration-1000`}
@@ -80,7 +80,7 @@ const People = ({ width, height }: Props) => {
         </g>
         <g
           className={`${
-            scrollProgress >= 6.25 && scrollProgress <= 7.25
+            scrollProgress >= 7.25 && scrollProgress <= 8.25
               ? "opacity-100"
               : "opacity-0"
           } transition-opacity duration-1000`}
@@ -119,7 +119,7 @@ const People = ({ width, height }: Props) => {
       </g>
       <g
         className={`${
-          scrollProgress >= 7.25 && scrollProgress <= 8.25
+          scrollProgress >= 8.25 && scrollProgress <= 9.25
             ? "opacity-100"
             : "opacity-0"
         } transition-opacity duration-1000`}
@@ -143,7 +143,13 @@ const People = ({ width, height }: Props) => {
             rx={20}
             className="fill-offblack"
           />
-          <g className={``}>
+          <g
+            className={`${
+              scrollProgress >= 8.25 && scrollProgress <= 9.25
+                ? "opacity-100"
+                : "opacity-0"
+            } transition-opacity duration-1000`}
+          >
             <text
               y={height / 5 + 25}
               x={width * 0.15 + 25}
@@ -231,7 +237,7 @@ const People = ({ width, height }: Props) => {
       </g>
       <g
         className={`${
-          scrollProgress >= 9.25 && scrollProgress <= 10.25
+          scrollProgress >= 10.25 && scrollProgress <= 12.25
             ? "opacity-100"
             : "opacity-0"
         } transition-opacity duration-1000`}
