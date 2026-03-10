@@ -21,8 +21,8 @@ export default function Legend({ width, height }: Props) {
 
   return (
     <g
-      className={`transition-opacity duration-1000 ${
-        scrollProgress >= 8.25 && scrollProgress <= 9.25
+      className={`transition-opacity duration-1000 scale-95 ${
+        scrollProgress >= 9.25 && scrollProgress <= 10.25
           ? "opacity-100"
           : "opacity-0"
       }`}
@@ -42,7 +42,7 @@ export default function Legend({ width, height }: Props) {
         ></circle>
         <text
           fontSize={largeText}
-          x={column1 + radius * 5}
+          x={column1 + radius * 4}
           y={row1}
           dominantBaseline="central"
           className="font-power uppercase text-offblack"
@@ -63,7 +63,7 @@ export default function Legend({ width, height }: Props) {
         ></circle>
         <text
           fontSize={largeText}
-          x={column2 + radius * 5}
+          x={column2 + radius * 4}
           y={row1}
           dominantBaseline="central"
           className="font-power uppercase text-offblack"
@@ -84,7 +84,7 @@ export default function Legend({ width, height }: Props) {
         ></circle>
         <text
           fontSize={largeText}
-          x={column3 + radius * 5}
+          x={column3 + radius * 4}
           y={row1}
           dominantBaseline="central"
           className="font-power uppercase text-offblack"
@@ -107,7 +107,7 @@ export default function Legend({ width, height }: Props) {
         ></circle>
         <text
           fontSize={largeText}
-          x={column1 + radius * 5}
+          x={column1 + radius * 4}
           y={row2}
           dominantBaseline="central"
           className="font-power uppercase text-offblack"
@@ -128,13 +128,13 @@ export default function Legend({ width, height }: Props) {
         ></circle>
         <text
           fontSize={largeText}
-          x={column2 + radius * 5}
+          x={column2 + radius * 4}
           y={row2}
           dominantBaseline="auto"
           className="font-power uppercase text-offblack"
         >
           <tspan>Other</tspan>
-          <tspan x={column2 + radius * 5} dy={largeText}>
+          <tspan x={column2 + radius * 4} dy={largeText}>
             Professions
           </tspan>
         </text>
@@ -152,7 +152,7 @@ export default function Legend({ width, height }: Props) {
         ></circle>
         <text
           fontSize={largeText}
-          x={column3 + radius * 5}
+          x={column3 + radius * 4}
           y={row2}
           dominantBaseline="central"
           className="font-power uppercase text-offblack"
@@ -169,7 +169,7 @@ export default function Legend({ width, height }: Props) {
         ></circle>
         <text
           fontSize={largeText}
-          x={column1 + radius * 5}
+          x={column1 + radius * 4}
           y={row3}
           dominantBaseline="central"
           className="font-power uppercase text-offblack"
@@ -190,7 +190,7 @@ export default function Legend({ width, height }: Props) {
         ></circle>
         <text
           fontSize={largeText}
-          x={column2 + radius * 5}
+          x={column2 + radius * 4}
           y={row3}
           dominantBaseline="central"
           className="font-power uppercase text-offblack"
@@ -210,13 +210,13 @@ export default function Legend({ width, height }: Props) {
 
         <text
           fontSize={largeText}
-          x={column3 + radius * 5}
+          x={column3 + radius * 4}
           y={row3}
           dominantBaseline="auto"
           className="font-power uppercase text-offblack"
         >
           <tspan>Student Contributor</tspan>
-          <tspan x={column3 + radius * 5} dy={largeText}>
+          <tspan x={column3 + radius * 4} dy={largeText}>
             to Data Portraits
           </tspan>
         </text>

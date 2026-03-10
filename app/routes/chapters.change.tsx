@@ -1434,15 +1434,16 @@ export default function DuboisChapter() {
               In the original chart, a map at the top of the page informed
               viewers of the location of Atlanta University.{" "}
             </span>,
-            <span key="63ba9abc">
-              In our version, we added the locations of the 140 additional
-              colleges also included in this study.{" "}
-            </span>,
             <span key="06e375fc">
               The location of Atlanta University (which is also, notably, the
               location of the majority of our own research team) is still marked
               with a star.
             </span>,
+            <span key="63ba9abc">
+              In addition we add in locations of the 34 additional colleges
+              included in the study.{" "}
+            </span>,
+            <span key="f52202ee">????????????????????</span>,
             <span key="5448c43e">
               We also expanded the pie chart. We documented all 3,856 of the
               Black college graduates described by the study, living or dead,
@@ -1468,23 +1469,25 @@ export default function DuboisChapter() {
               as well as those—at that point also including Lee—who were
               recorded as “Deceased.”
             </span>,
-            <span key="0bcc9198">
-              <span className="block mb-8">
+            <div
+              key="239180fe"
+              className="bg-changePrimary text-offwhite text-xl h-screen w-screen flex flex-col justify-center z-10 relative px-8 md:p-x48 lg:px-64"
+            >
+              <p className="mb-8 mt-0 tracking-wider leading-8">
                 We used the counts of the occupations reported by the 800 survey
                 respondents to calculate the approximate proportion of dots to
                 place in each category, which we see as holding visual space for
                 each graduate's contributions to the study, even if we do not
                 know their exact occupation or name.
-              </span>
-              <span className="block">
+              </p>
+              <p className="tracking-wider leading-8">
                 An additional 3,693 gray dots represent the graduates of the
                 other 140 colleges included in the study, whose names and exact
                 occupations we do not know.
-              </span>
-            </span>,
+              </p>
+            </div>,
           ]}
         />
-        <p className="h-16"> need some break here</p>
         <div id="viz-2">
           <Viz2 interactive={true}></Viz2>
         </div>

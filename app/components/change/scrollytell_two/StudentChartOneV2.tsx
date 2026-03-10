@@ -1,5 +1,6 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ScrollytellContext } from "~/scrollytellContext";
+import Map from "./Map";
 
 interface Props {
   className?: string;
@@ -7,60 +8,27 @@ interface Props {
   height: number;
 }
 
-const fillOpacity = (row: number, column: number) => {
-  switch (true) {
-    case row <= 2:
-    case row === 3 && column < 22:
-    case row === 4 && column > 2:
-    case row === 5 && column > 8 && column < 20:
-    case row === 6 && (column < 13 || column > 21):
-    case row === 7 && column < 3:
-    case row === 7 && column < 18:
-      return "opacity-50";
-
-    default:
-      return "opacity-100";
-  }
-};
-
-const fillColor = (row: number, column: number) => {
-  switch (true) {
-    case row <= 3 || (row === 4 && column < 3):
-    case row === 7 && column < 18:
-      return "fill-red-500";
-    case row === 4 && column > 2:
-    case row === 5 && column < 9:
-      return "fill-blue-500";
-    case row === 5:
-      return "fill-yellow-500";
-    case row === 6:
-    case row === 7 && column < 3:
-      return "fill-green-800";
-    default:
-      return "fill-gray-300";
-  }
-};
-
 const StudentChartOneV2 = ({ className, width, height }: Props) => {
-  const largeText = 32;
-  const smallText = 22;
-  const regularText = 26;
-  const top = 50;
+  const largeText = 30;
+  const smallText = 16;
+  const regularText = 24;
+  const marginLeft = 20;
   const padding = 90;
-  const sectionBreak = padding / 4;
-  const mapSectionHeight =
-    (largeText + 5) * 3 + // top three lines
-    top +
-    sectionBreak +
-    (smallText / 3 + smallText) * 8 + // Space taking by all lines on the left
-    sectionBreak +
-    (regularText + 4) * 3 +
-    (regularText + 18) * 2;
-  const mapTopSpacing = height / 2 - mapSectionHeight / 2;
-
-  const radius = (width / 27) * 0.3;
-  const circleSectionHeight = radius * 3 * 12;
-  const circleTopSpacing = height / 2 - circleSectionHeight / 2;
+  const sectionBreak = padding / 3;
+  const smallTextLineHeight = smallText + 6;
+  const sectionOneHeight = (largeText + 5) * 3;
+  const sectionTwoHeight = (regularText + 4) * 3 + sectionBreak;
+  const sectionThreeHeight = smallTextLineHeight * 7 + sectionBreak;
+  const sectionFourHeight = smallText * 2;
+  const sectionFiveHeight = smallTextLineHeight * 4;
+  const topOffset =
+    height / 2 -
+    (sectionOneHeight +
+      sectionTwoHeight +
+      sectionThreeHeight +
+      sectionFourHeight +
+      sectionFiveHeight) /
+      2;
 
   const { scrollProgress } = useContext(ScrollytellContext);
 
@@ -69,103 +37,145 @@ const StudentChartOneV2 = ({ className, width, height }: Props) => {
       {/* CHART */}
       <g
         className={`${
-          scrollProgress >= 2.25 && scrollProgress <= 3.25
+          scrollProgress >= 1.25 && scrollProgress <= 3.25
             ? "opacity-100"
             : "opacity-0"
         } transition-opacity duration-1000`}
       >
-        <rect
-          x={0}
-          y={mapTopSpacing - largeText / 2}
-          width={width}
-          height={mapSectionHeight}
-          className="fill-offwhite"
-        />
         <g>
           <text
-            x={width / 2}
-            y={mapTopSpacing}
+            x={marginLeft}
+            y={topOffset}
             className={`text-black font-powerWide transition-opacity duration-1000 opacity-100
             }`}
-            textAnchor="middle"
+            textAnchor=""
             dominantBaseline="hanging"
             fontSize={largeText}
           >
-            <tspan x={width / 2}>
-              A STATISTICAL CHART ILLUSTRATING INFORMATION
+            <tspan x={marginLeft}>
+              A STATISTICAL CHART, ILLUSTRATING THE CONDITION
             </tspan>
-            <tspan x={width / 2} dy={largeText + 5}>
-              ABOUT THE GRADUATES OF ATLANTA UNIVERSITY
+            <tspan x={marginLeft} dy={largeText + 5}>
+              OF THE DESCENDANTS OF FORMER AFRICAN SLAVES
             </tspan>
-            <tspan x={width / 2} dy={largeText + 5}>
-              CONTRIBUTED TO DU BOIS'S RESEARCH.
+            <tspan x={marginLeft} dy={largeText + 5}>
+              NOW RESIDENT IN THE UNITED STATES OF AMERICA.
             </tspan>
           </text>
         </g>
         <g>
           <text
+            y={topOffset + sectionOneHeight}
+            fontSize={regularText}
+            className="font-powerLightNarrow text-changePrimary fill-changePrimary-translucent tracking-wider"
+          >
+            <tspan x={marginLeft * 2} dy={regularText + 4}>
+              UNE SÉRIE DE CARTES EST DIAGRAMMES STATISTIQUES MONTRANT LA
+              CONDITION
+            </tspan>
+            <tspan x={marginLeft} dy={regularText + 4}>
+              PREÉSENTE DES DESCENDANTS DES ANCIENS ESCLAVES AFRICANS
+              ACTUELLEMENT
+            </tspan>
+            <tspan x={marginLeft} dy={regularText + 4}>
+              ÉRABLIS DANS LES ETAS UNIS D'AMÉRIQUE.
+            </tspan>
+          </text>
+        </g>
+
+        <g>
+          <text
             x={width / 4}
-            y={(largeText + 5) * 3 + mapTopSpacing + sectionBreak}
+            y={topOffset + sectionOneHeight + sectionTwoHeight}
             textAnchor="middle"
             dominantBaseline="hanging"
             fontSize={smallText}
-            className={`uppercase font-powerWide tracking-wider transition-opacity duration-1000 opacity-100`}
+            className={`uppercase font-powerWide tracking-tighter transition-opacity duration-1000 opacity-100`}
           >
-            <tspan x={width / 4}>Prepared and executed by,</tspan>
-            <tspan x={width / 4} dy={smallText + smallText / 3}>
-              Tanvi Sharma, Anna Mola,
+            <tspan x={width / 6}>PREPARED AND EXECUTED BY,</tspan>
+            <tspan x={width / 6} dy={smallTextLineHeight}>
+              NEGRO STUDENTS UND THE
             </tspan>
-            <tspan x={width / 4} dy={smallText + smallText / 3}>
-              Nicholas Yang, Yang Li
+            <tspan x={width / 6} dy={smallTextLineHeight}>
+              DIRECTION OF
             </tspan>
-            <tspan x={width / 4} dy={smallText + smallText / 3}>
-              Jay Varner, and Lauren Klein
+            <tspan x={width / 6} dy={smallTextLineHeight}>
+              ATLANTA UNIVERSITY,
             </tspan>
-            <tspan x={width / 4} dy={smallText + smallText / 3}>
-              Under the Auspices of the{" "}
+            <tspan x={width / 6} dy={smallTextLineHeight}>
+              ATLANTA, GA.
             </tspan>
-            <tspan x={width / 4} dy={smallText + smallText / 3}>
-              Digital Humanities Lab
-            </tspan>
-            <tspan x={width / 4} dy={smallText + smallText / 3}>
-              Emory University, Atlanta, GA.
-            </tspan>
-            <tspan x={width / 4} dy={smallText + smallText / 3}>
-              United States of America
+            <tspan x={width / 6} dy={smallTextLineHeight}>
+              UNITED STATES OF AMERICA
             </tspan>
           </text>
         </g>
         <g className={`transition-opacity duration-1000 opacity-100`}>
-          <g x={width / 2}></g>
           <image
-            // 1.54 is the width height ratio of the original image
-            x={
-              width / 2 +
-              (width / 2 - (smallText + smallText / 3) * 7 * 1.54) / 2
-            }
-            y={(largeText + 5) * 3 + mapTopSpacing}
-            // 1.54 is the width height ratio of the original image
-            width={(smallText + smallText / 3) * 7 * 1.54}
-            // height={(smallText + smallText / 3) * 7}
-            href="/images/change/map.png"
+            x={width / 3.175}
+            y={topOffset + sectionOneHeight + sectionTwoHeight - 12}
+            width={regularText * 7 * 1.75}
+            href="/images/change/extras/map.png"
           />
+          <image
+            x={width / 3.175}
+            y={topOffset + sectionOneHeight + sectionTwoHeight - 12}
+            width={regularText * 7 * 1.75}
+            href="/images/change/extras/map_all.png"
+            className={`transition-opacity duration-1000 ${
+              scrollProgress >= 2.25 ? "opacity-100" : "opacity-0"
+            }`}
+          />
+          {/* <Map /> */}
+        </g>
+        <g>
+          <text
+            x={width / 4}
+            y={topOffset + sectionOneHeight + sectionTwoHeight}
+            textAnchor="middle"
+            dominantBaseline="hanging"
+            fontSize={smallText}
+            className={`uppercase font-powerWide tracking-tighter transition-opacity duration-1000 opacity-100 fill-changePrimary`}
+          >
+            <tspan x={width * 0.83}>PRÉPARÉES ET EXECUTÉES PAR</tspan>
+            <tspan x={width * 0.83} dy={smallTextLineHeight}>
+              DES ÉTUDIANTS NÉGRES SOUS
+            </tspan>
+            <tspan x={width * 0.83} dy={smallTextLineHeight}>
+              LA DIRECTION DE L' UNIVERSITÉ
+            </tspan>
+            <tspan x={width * 0.83} dy={smallTextLineHeight}>
+              D' ATLANTA,
+            </tspan>
+            <tspan x={width * 0.83} dy={smallTextLineHeight}>
+              ETAT DE GÊORGIE.
+            </tspan>
+            <tspan x={width * 0.83} dy={smallTextLineHeight}>
+              ETATS UNS D' AMERIQUE.
+            </tspan>
+          </text>
+        </g>
+
+        <g>
           <path
             d={`M13.94 27.108C21.248 27.108 27.116 21.204 27.116 13.932C27.116 6.768 21.356 0.827998 13.94 0.827998C6.74 0.827998 0.836 6.516 0.836 13.932C0.836 21.204 6.704 27.108 13.94 27.108ZM6.812 23.58L9.548 15.444L2.924 10.98H11.06L13.94 2.196L16.892 10.98H25.028L18.404 15.444L21.14 23.58L13.94 18.396L6.812 23.58Z`}
             fill="black"
-            transform={`translate(${width * 0.75 - smallText * 6.1}, ${
-              (largeText + 5) * 3 + // top three lines
-              mapTopSpacing +
-              sectionBreak +
-              (smallText / 3 + smallText) * 7
+            transform={`translate(${width * 0.495 - smallText * 6.25}, ${
+              topOffset +
+              sectionOneHeight +
+              sectionTwoHeight +
+              sectionThreeHeight -
+              2.5
             }) scale(0.59)`}
           />
+
           <text
-            x={width * 0.75}
+            x={width * 0.5}
             y={
-              (largeText + 5) * 3 + // top three lines
-              mapTopSpacing +
-              sectionBreak +
-              (smallText / 3 + smallText) * 7 // Space taking by all but last line on the left
+              topOffset +
+              sectionOneHeight +
+              sectionTwoHeight +
+              sectionThreeHeight
             }
             fill="black"
             fontSize={smallText}
@@ -176,88 +186,45 @@ const StudentChartOneV2 = ({ className, width, height }: Props) => {
             Atlanta University
           </text>
         </g>
+
         <g>
           <text
             x={width / 2}
             y={
-              (largeText + 5) * 3 + // top three lines
-              mapTopSpacing +
-              sectionBreak +
-              (smallText / 3 + smallText) * 8 + // Space taking by all lines on the left
-              sectionBreak
+              topOffset +
+              sectionOneHeight +
+              sectionTwoHeight +
+              sectionThreeHeight +
+              sectionFourHeight
             }
             textAnchor="middle"
             dominantBaseline="hanging"
-            fontSize={regularText}
+            fontSize={smallText}
             className={`uppercase font-powerWide transition-opacity duration-1000 opacity-100`}
           >
             <tspan x={width / 2}>
-              The original chart visualized the occupations of the
+              THE UNIVERSITY WAS FOUNDED IN 1867. IT HAS INSTRUCTED 6000 NEGRO
+              STUDENTS
             </tspan>
-            <tspan x={width / 2} dy={regularText + 4}>
-              330 Black Americans who had graduated from Atlanta
+            <tspan
+              className="fill-changePrimary"
+              x={width / 2}
+              dy={regularText}
+            >
+              L'UNIVERSITÉ A ÉTÉ FONDÉE EN 1867. ELLE A DONNÉL" INSTRUCTION A'
+              6000 ÉTUDIANTS NEGRES.
             </tspan>
-            <tspan x={width / 2} dy={regularText + 4}>
-              University as of 1898.
+            <tspan x={width / 2} dy={regularText}>
+              IT HAS GRADUATED 330 NEGROES AMONG WHOM ARE:
             </tspan>
-            <tspan x={width / 2} dy={regularText + 16}>
-              The 1898-1899 Catalogue lists these same graduates
-            </tspan>
-            <tspan x={width / 2} dy={regularText + 16}>
-              by name, along with their degree(s) earned, current
-            </tspan>
-            <tspan x={width / 2} dy={regularText + 4}>
-              occupation, and place of residence.
+            <tspan
+              className="fill-changePrimary"
+              x={width / 2}
+              dy={regularText}
+            >
+              ELLE A DÉLIVRE DES DIPLOMES A 330 NÉGRES DONT:
             </tspan>
           </text>
-        </g>
-      </g>
-      {/* CIRCLES */}
-      <g
-        className={`${
-          scrollProgress >= 3.25 && scrollProgress <= 5.25
-            ? "opacity-100"
-            : "opacity-0"
-        } transition-opacity duration-1000`}
-      >
-        <rect
-          x={0}
-          y={circleTopSpacing - radius * 2}
-          width={width}
-          height={circleSectionHeight + radius}
-          className="fill-offwhite"
-        />
-        <g className="scale-95 origin-center">
-          {Array.from({ length: 12 }).map((_, rowIdx) => {
-            const y = radius * 3 * rowIdx + circleTopSpacing;
-            return (
-              <>
-                {Array.from({ length: 27 }).map((_, circleIdx) => {
-                  const x =
-                    (width / 27) * circleIdx + radius + width / (radius * 27);
-                  return (
-                    <circle
-                      r={radius}
-                      cx={x}
-                      cy={y}
-                      className={`stroke-offblack transition-all duration-1000 ${
-                        scrollProgress >= 4.25
-                          ? fillOpacity(rowIdx, circleIdx)
-                          : "opacity-100"
-                      }
-                          ${
-                            scrollProgress >= 4.25
-                              ? fillColor(rowIdx, circleIdx)
-                              : "fill-offwhite"
-                          }`}
-                      // stroke="black"
-                      // strokeWidth={3}
-                    />
-                  );
-                })}
-              </>
-            );
-          })}
         </g>
       </g>
     </g>
