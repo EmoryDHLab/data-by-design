@@ -35,6 +35,7 @@ import ScrollytellTwo from "~/components/change/scrollytell_two/ScrollytellTwo";
 import { chapterMeta } from "~/data/chapterMeta";
 import type { MetaFunction } from "react-router";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
+import ScrollytellOne from "~/components/change/scrollytell_one/ScrollytellOne";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("change");
@@ -1278,6 +1279,79 @@ export default function DuboisChapter() {
             and share it.
           </p>
         </CenteredLayout>
+
+        <ScrollytellOne
+          triggers={[
+            <span key="8c0fec2c"></span>,
+            <span key="e99a6717">
+              Over the course of our research involving the Atlanta University
+              Catalogues, which we had used to surface the details of these five
+              students' lives,
+            </span>,
+            <span key="0a178185">
+              We had noticed another detail about the Paris Exposition charts
+              that seemed to have gone unremarked upon: the count of the total
+              number of graduates of Atlanta University that is featured (and
+              visualized) on the second series' introductory chart—330—
+            </span>,
+            <span key="45f79374">
+              —matches exactly with the total number provided in a data table
+              included in the 1899 Catalogue.[i] [i] Catalogue of the Officers
+              and Students of Atlanta University, 1898-1899 (Atlanta University
+              Press, 1899), p. 43.
+            </span>,
+            <span key="2359b7ba">
+              The data table in the catalogue also includes summary statistics
+              about the 330 students' occupations. Presumably, this table served
+              as the original data source for the occupations pictured in the
+              central pie chart that was displayed on the wall in Paris.[i]
+            </span>,
+            <span key="b7ff9342">
+              Presumably, this table served as the original data source for the
+              occupations pictured in the central pie chart that was displayed
+              on the wall in Paris.[i]
+            </span>,
+            <span
+              key="239180fe"
+              className="block mt-0 tracking-wider leading-8 w-screen text-center relative z-10 px-8 md:p-x48 lg:px-64"
+            >
+              We were enthralled with the idea that the students who had
+              collected, analyzed, and visualized the data that appeared in the
+              charts were also included in the dataset itself.
+            </span>,
+            <span key="673261f8">It starts with students from 1876</span>,
+            <span key="b466d3f2">
+              But there was one problem with this particular line of thinking:
+              the data for the chart had been collected during the previous
+              year, so it only included Rogers.
+            </span>,
+            <span
+              key="352j5j7e"
+              className="text-offblack text-xl h-screen w-screen block z-10 relative px-8 md:p-x48 lg:px-64"
+            >
+              <img
+                src="https://iip.readux.io/iiif/3/dxd/change/alumni.tiff/99,1472,1399,329/full/0/default.jpg"
+                alt=""
+              />
+            </span>,
+            <span key="e11395da">Insert more on William Henry Crogman</span>,
+            <span key="ea07f516">Insert more on William Henry Crogman</span>,
+            <span key="283fd3dd">Insert more on William Henry Crogman</span>,
+            <span key="7ce0131d">
+              It did not include the four seniors—Mack, Westmorland, Simon, and
+              Lee—who would graduate, and only then become part of the alumni
+              dataset, the following spring. We had found our charge.
+            </span>,
+            <span key="ea918e8b">
+              [i] Saidiya Hartman, Wayward Lives, Beautiful Experiments:
+              Intimate Histories of Social Upheaval (Norton, 2019), p. xiii.
+              Later in the book, Hartman in fact speculates about another women
+              photographed for the Paris Exposition, as she does—very
+              briefly—about Du Bois's charts. See pp. 17-19 for the photograph,
+              and pp. 109-113 for the charts.
+            </span>,
+          ]}
+        />
 
         <ChapterSectionTitle section={sections[3]} />
 

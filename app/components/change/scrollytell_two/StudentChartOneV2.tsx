@@ -48,7 +48,6 @@ const StudentChartOneV2 = ({ className, width, height }: Props) => {
             y={topOffset}
             className={`text-black font-powerWide transition-opacity duration-1000 opacity-100
             }`}
-            textAnchor=""
             dominantBaseline="hanging"
             fontSize={largeText}
           >
