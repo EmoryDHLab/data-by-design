@@ -14,11 +14,19 @@ const StudentChartOneV2 = ({ className, width, height }: Props) => {
   const regularText = 24;
   const marginLeft = 20;
   const padding = 90;
+  const mapWidth = width / 3;
   const sectionBreak = padding / 3;
-  const smallTextLineHeight = smallText + 6;
+  const smallTextLineHeight = smallText + 8;
   const sectionOneHeight = (largeText + 5) * 3;
   const sectionTwoHeight = (regularText + 4) * 3 + sectionBreak;
-  const sectionThreeHeight = smallTextLineHeight * 7 + sectionBreak;
+  // Map viewbox is 0 0 2563 1778.13
+  const mapAspectRatio = 1778.13 / 2563;
+  const mapHeight = mapWidth * mapAspectRatio;
+  const sectionThreeHeight = Math.max(
+    mapHeight,
+    smallTextLineHeight * 7 + sectionBreak,
+  );
+
   const sectionFourHeight = smallText * 2;
   const sectionFiveHeight = smallTextLineHeight * 4;
   const topOffset =
@@ -109,24 +117,6 @@ const StudentChartOneV2 = ({ className, width, height }: Props) => {
             </tspan>
           </text>
         </g>
-        <g className={`transition-opacity duration-1000 opacity-100`}>
-          <image
-            x={width / 3.175}
-            y={topOffset + sectionOneHeight + sectionTwoHeight - 12}
-            width={regularText * 7 * 1.75}
-            href="/images/change/extras/map.png"
-          />
-          <image
-            x={width / 3.175}
-            y={topOffset + sectionOneHeight + sectionTwoHeight - 12}
-            width={regularText * 7 * 1.75}
-            href="/images/change/extras/map_all.png"
-            className={`transition-opacity duration-1000 ${
-              scrollProgress >= 2.25 ? "opacity-100" : "opacity-0"
-            }`}
-          />
-          {/* <Map /> */}
-        </g>
         <g>
           <text
             x={width / 4}
@@ -153,7 +143,14 @@ const StudentChartOneV2 = ({ className, width, height }: Props) => {
               ETATS UNS D' AMERIQUE.
             </tspan>
           </text>
+          <Map
+            width={mapWidth}
+            x={(width - mapWidth) / 2}
+            y={40}
+            showColleges={scrollProgress >= 2.25}
+          />
         </g>
+
         <g>
           <text
             x={width / 2}
