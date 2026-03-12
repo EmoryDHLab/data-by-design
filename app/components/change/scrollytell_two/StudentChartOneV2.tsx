@@ -154,38 +154,6 @@ const StudentChartOneV2 = ({ className, width, height }: Props) => {
             </tspan>
           </text>
         </g>
-
-        <g>
-          <path
-            d={`M13.94 27.108C21.248 27.108 27.116 21.204 27.116 13.932C27.116 6.768 21.356 0.827998 13.94 0.827998C6.74 0.827998 0.836 6.516 0.836 13.932C0.836 21.204 6.704 27.108 13.94 27.108ZM6.812 23.58L9.548 15.444L2.924 10.98H11.06L13.94 2.196L16.892 10.98H25.028L18.404 15.444L21.14 23.58L13.94 18.396L6.812 23.58Z`}
-            fill="black"
-            transform={`translate(${width * 0.495 - smallText * 6.25}, ${
-              topOffset +
-              sectionOneHeight +
-              sectionTwoHeight +
-              sectionThreeHeight -
-              2.5
-            }) scale(0.59)`}
-          />
-
-          <text
-            x={width * 0.5}
-            y={
-              topOffset +
-              sectionOneHeight +
-              sectionTwoHeight +
-              sectionThreeHeight
-            }
-            fill="black"
-            fontSize={smallText}
-            className="uppercase font-powerWide"
-            textAnchor="middle"
-            dominantBaseline="hanging"
-          >
-            Atlanta University
-          </text>
-        </g>
-
         <g>
           <text
             x={width / 2}

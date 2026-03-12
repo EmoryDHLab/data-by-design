@@ -51,7 +51,7 @@ const ScrollytellOne = ({ triggers }: { triggers: ReactElement[] }) => {
       >
         <div
           className="flex flex-col md:flex-row justify-between"
-          id="scrollytell-2"
+          id="scrollytell-1"
         >
           <div className="sticky p-8 md:p-0 top-0 h-min bias-full w-full md:bias-1/2 md:w-1/2 md:order-last bg-changePrimary">
             <div

@@ -70,7 +70,7 @@ const Students = ({ width, height }: { width: number; height: number }) => {
           {Array.from({ length: 63 }).map((_, rowIdx) => {
             const y = radius * 3 * rowIdx + circleTopSpacing;
             return (
-              <>
+              <g key={rowIdx}>
                 {Array.from({ length: 62 }).map((_, circleIdx) => {
                   const x =
                     (width / columns) * circleIdx +
@@ -81,6 +81,7 @@ const Students = ({ width, height }: { width: number; height: number }) => {
                   if (count < total) {
                     return (
                       <circle
+                        key={circleIdx}
                         r={smallRadius}
                         cx={x}
                         cy={y}
@@ -90,7 +91,7 @@ const Students = ({ width, height }: { width: number; height: number }) => {
                     );
                   }
                 })}
-              </>
+              </g>
             );
           })}
         </g>
@@ -106,7 +107,7 @@ const Students = ({ width, height }: { width: number; height: number }) => {
             {Array.from({ length: 13 }).map((_, rowIdx) => {
               const y = radius * 3 * rowIdx + circleTopSpacing;
               return (
-                <>
+                <g key={rowIdx}>
                   {Array.from({ length: 13 }).map((_, circleIdx) => {
                     const x =
                       (width / columns) * circleIdx +
@@ -117,6 +118,7 @@ const Students = ({ width, height }: { width: number; height: number }) => {
                     if (count < total) {
                       return (
                         <circle
+                          key={circleIdx}
                           r={radius}
                           cx={x}
                           cy={y}
@@ -131,7 +133,7 @@ const Students = ({ width, height }: { width: number; height: number }) => {
                       );
                     }
                   })}
-                </>
+                </g>
               );
             })}
           </>

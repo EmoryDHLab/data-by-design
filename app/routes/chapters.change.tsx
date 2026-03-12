@@ -94,7 +94,7 @@ const visualizations: TVizAnchors[] = [
   {
     type: "scrollytell",
     id: "scrollytell-2",
-    title: "Scrollytell",
+    title: "Scrollytell Two",
   },
   {
     type: "scrollytell",
@@ -1685,7 +1685,6 @@ export default function DuboisChapter() {
               Always aspire to more complete knowledge Always aspire to more
               complete knowledge
             </span>,
-            <span key="9650286d">Recognize when knowledge demands change</span>,
             <span key="9650286d">Recognize when knowledge demands change</span>,
             <span key="9650286e">
               Know that change requires a commitment to act
