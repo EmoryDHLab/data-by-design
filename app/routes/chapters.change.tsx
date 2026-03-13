@@ -33,9 +33,9 @@ import ChartTwoScrollytell from "~/components/change/duboisScrollytell/ChartTwoS
 import ChartThreeScrollytell from "~/components/change/duboisScrollytell/ChartThreeScrollytell";
 import ScrollytellTwo from "~/components/change/scrollytell_two/ScrollytellTwo";
 import { chapterMeta } from "~/data/chapterMeta";
+import ScrollytellOne from "~/components/change/scrollytell_one/ScrollytellOne";
 import type { MetaFunction } from "react-router";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
-import ScrollytellOne from "~/components/change/scrollytell_one/ScrollytellOne";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("change");
@@ -1279,7 +1279,6 @@ export default function DuboisChapter() {
             and share it.
           </p>
         </CenteredLayout>
-
         <ScrollytellOne
           triggers={[
             <span key="8c0fec2c"></span>,
