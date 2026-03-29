@@ -1158,6 +1158,15 @@
           "year": 1909,
           "type": "College Graduates",
           "professionCategory": "other"
+        },
+        {
+          "name": "Thomas Jefferson Bell",
+          "degree": "",
+          "profession": "Sec'y Y. M. C. A.",
+          "location": "New York, N. Y.",
+          "year": 1891,
+          "type": "College Graduates",
+          "professionCategory": "other professions"
         }
       ]
     },
@@ -1458,15 +1467,6 @@
           "year": 1887,
           "type": "College Graduates",
           "professionCategory": "unknown"
-        },
-        {
-          "name": "Thomas Jefferson Bell",
-          "degree": "",
-          "profession": "Sec'y Y. M. C. A.",
-          "location": "New York, N. Y.",
-          "year": 1891,
-          "type": "College Graduates",
-          "professionCategory": "other professions"
         },
         {
           "name": "William Oscar Murphy",

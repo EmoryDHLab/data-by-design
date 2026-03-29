@@ -31,7 +31,9 @@ import Takeaways from "~/components/layout/Takeaways";
 import ChartOneScrollytell from "~/components/change/duboisScrollytell/ChartOneScrollytell";
 import ChartTwoScrollytell from "~/components/change/duboisScrollytell/ChartTwoScrollytell";
 import ChartThreeScrollytell from "~/components/change/duboisScrollytell/ChartThreeScrollytell";
+import ScrollytellTwo from "~/components/change/scrollytell_two/ScrollytellTwo";
 import { chapterMeta } from "~/data/chapterMeta";
+import ScrollytellOne from "~/components/change/scrollytell_one/ScrollytellOne";
 import type { MetaFunction } from "react-router";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
 
@@ -92,7 +94,7 @@ const visualizations: TVizAnchors[] = [
   {
     type: "scrollytell",
     id: "scrollytell-2",
-    title: "Scrollytell",
+    title: "Scrollytell Two",
   },
   {
     type: "scrollytell",
@@ -1277,6 +1279,78 @@ export default function DuboisChapter() {
             and share it.
           </p>
         </CenteredLayout>
+        <ScrollytellOne
+          triggers={[
+            <span key="8c0fec2c"></span>,
+            <span key="e99a6717">
+              Over the course of our research involving the Atlanta University
+              Catalogues, which we had used to surface the details of these five
+              students' lives,
+            </span>,
+            <span key="0a178185">
+              We had noticed another detail about the Paris Exposition charts
+              that seemed to have gone unremarked upon: the count of the total
+              number of graduates of Atlanta University that is featured (and
+              visualized) on the second series' introductory chart—330—
+            </span>,
+            <span key="45f79374">
+              —matches exactly with the total number provided in a data table
+              included in the 1899 Catalogue.[i] [i] Catalogue of the Officers
+              and Students of Atlanta University, 1898-1899 (Atlanta University
+              Press, 1899), p. 43.
+            </span>,
+            <span key="2359b7ba">
+              The data table in the catalogue also includes summary statistics
+              about the 330 students' occupations. Presumably, this table served
+              as the original data source for the occupations pictured in the
+              central pie chart that was displayed on the wall in Paris.[i]
+            </span>,
+            <span key="b7ff9342">
+              Presumably, this table served as the original data source for the
+              occupations pictured in the central pie chart that was displayed
+              on the wall in Paris.[i]
+            </span>,
+            <span
+              key="239180fe"
+              className="block mt-0 tracking-wider leading-8 w-screen text-center relative z-10 px-8 md:p-x48 lg:px-64"
+            >
+              We were enthralled with the idea that the students who had
+              collected, analyzed, and visualized the data that appeared in the
+              charts were also included in the dataset itself.
+            </span>,
+            <span key="673261f8">It starts with students from 1876</span>,
+            <span key="b466d3f2">
+              But there was one problem with this particular line of thinking:
+              the data for the chart had been collected during the previous
+              year, so it only included Rogers.
+            </span>,
+            <span
+              key="352j5j7e"
+              className="text-offblack text-xl h-screen w-screen block z-10 relative px-8 md:p-x48 lg:px-64"
+            >
+              <img
+                src="https://iip.readux.io/iiif/3/dxd/change/alumni.tiff/99,1472,1399,329/full/0/default.jpg"
+                alt=""
+              />
+            </span>,
+            <span key="e11395da">Insert more on William Henry Crogman</span>,
+            <span key="ea07f516">Insert more on William Henry Crogman</span>,
+            <span key="283fd3dd">Insert more on William Henry Crogman</span>,
+            <span key="7ce0131d">
+              It did not include the four seniors—Mack, Westmorland, Simon, and
+              Lee—who would graduate, and only then become part of the alumni
+              dataset, the following spring. We had found our charge.
+            </span>,
+            <span key="ea918e8b">
+              [i] Saidiya Hartman, Wayward Lives, Beautiful Experiments:
+              Intimate Histories of Social Upheaval (Norton, 2019), p. xiii.
+              Later in the book, Hartman in fact speculates about another women
+              photographed for the Paris Exposition, as she does—very
+              briefly—about Du Bois's charts. See pp. 17-19 for the photograph,
+              and pp. 109-113 for the charts.
+            </span>,
+          ]}
+        />
 
         <ChapterSectionTitle section={sections[3]} />
 
@@ -1293,13 +1367,13 @@ export default function DuboisChapter() {
           </p>
 
           <p>
-            In all of our research involving the Atlanta University 
+            In all of our research involving the Atlanta University
             <em>Catalogues</em>, which we had used to surface many of the
             details about the students' lives, we had noticed another detail
             about the charts that seemed to have gone unremarked upon in the
             existing scholarship: the count of the total number of graduates of
             Atlanta University—330—matches exactly with the total number
-            provided in a data table included in the <em>Catalogue</em> {" "}
+            provided in a data table included in the <em>Catalogue</em>{" "}
             published the previous year.
             <InlineFootnote index={67} /> The table includes counts of everyone
             who had graduated from one of the university's three degree programs
@@ -1423,61 +1497,68 @@ export default function DuboisChapter() {
           <p></p>
         </CenteredLayout>
 
-    
-
-        <ChartTwoScrollytell
+        <ScrollytellTwo
           triggers={[
             <span key="94a7a3b2">
-              We created an expanded version of our initial chart with the
-              additional data from the 1910 study.
+              We thus created an updated version of our initial chart with the
+              additional data from the 1910 Atlanta University Study.
             </span>,
             <span key="94a7a3b3">
-              In the original, a map at the top of the page informs the viewer
-              of the location of Atlanta University. We added the locations of
-              the 140 additional colleges also included in the follow-up report.
+              In the original chart, a map at the top of the page informed
+              viewers of the location of Atlanta University.{" "}
             </span>,
-
+            <span key="06e375fc">
+              The location of Atlanta University (which is also, notably, the
+              location of the majority of our own research team) is still marked
+              with a star.
+            </span>,
             <span key="63ba9abc">
-              In our chart, the location of Atlanta University (which is also,
-              notably, the location of the majority of our own research team) is
-              still marked with a star.
+              In addition we add in locations of the 34 additional colleges
+              included in the study.{" "}
             </span>,
-            <span key="1a7c90eb">
-              In this pie chart, the 133 graduates of Atlanta University as of
-              1909 with known occupations (as determined by the alumni section
-              of the 1909-1910 catalog) are positioned in the appropriate area
-              of the pie chart. Additional categories represent the nine
-              graduates with unknown occupations, and the 21 graduates who were
+            <span key="f52202ee">????????????????????</span>,
+            <span key="5448c43e">
+              We also expanded the pie chart. We documented all 3,856 of the
+              Black college graduates described by the study, living or dead,
+              whether they returned the survey or not.{" "}
+            </span>,
+            <span key="9b862bca">
+              The 163 graduates of the “college course” at Atlanta University,
+              whom Du Bois describes in the study in depth, are named in our
+              chart.
+            </span>,
+            <span key="6bb49ec4">Mack is positioned as a “house wife.”</span>,
+            <span key="9802732f">
+              Westmoreland is positioned in “government service.”
+            </span>,
+            <span key="590917b7">
+              Simon and Rogers are positioned as “teachers.”
+            </span>,
+            <span key="d5f4d889">
+              As in our own previous chart, we've added categories to represent
+              those with unknown occupations,{" "}
+            </span>,
+            <span key="e00e084e">
+              as well as those—at that point also including Lee—who were
               recorded as “Deceased.”
             </span>,
-
-            <span key="06e375fc">
-              We also expanded the pie chart. In this version, we document all
-              3,856 of the Black college graduates described by the study,
-              living or dead, whether they returned the survey or not. The 163
-              graduates of the “college course” at Atlanta University, whom Du
-              Bois describes in the study in depth, are named in our chart. We
-              once again used the alumni section of that year's{" "}
-              <em>Catalogue</em> to position the graduates in the appropriate
-              area of the pie chart. Mack is positioned as a “house wife.”
-              Westmoreland is positioned in “government service.” Simon and
-              Rogers are positioned as “teachers.” As in our own previous chart,
-              we've added categories to represent those with unknown
-              occupations, as well as those—at that point also including Lee—who
-              were recorded as “Deceased.
-            </span>,
-
-            <span key="5448c43e">
-              An additional 3,693 gray dots represent the graduates of the other
-              140 colleges included in the study, whose names and exact
-              occupations we do not know. <InlineFootnote index={73} />
-              We used the counts of the occupations reported by the 800 survey
-              respondents to calculate the approximate proportion of dots to
-              place in each category, which we see as holding visual space for
-              each graduate's contributions to the study, even if we do not know
-              their exact occupation or name.
-            </span>,
-            <span key="9b862bca"></span>,
+            <div
+              key="239180fe"
+              className="bg-changePrimary text-offwhite text-xl h-screen w-screen flex flex-col justify-center z-10 relative px-8 md:p-x48 lg:px-64"
+            >
+              <p className="mb-8 mt-0 tracking-wider leading-8">
+                We used the counts of the occupations reported by the 800 survey
+                respondents to calculate the approximate proportion of dots to
+                place in each category, which we see as holding visual space for
+                each graduate's contributions to the study, even if we do not
+                know their exact occupation or name.
+              </p>
+              <p className="tracking-wider leading-8">
+                An additional 3,693 gray dots represent the graduates of the
+                other 140 colleges included in the study, whose names and exact
+                occupations we do not know.
+              </p>
+            </div>,
           ]}
         />
         <div id="viz-2">
@@ -1578,9 +1659,7 @@ export default function DuboisChapter() {
           </p>
         </CenteredLayout>
 
-
-
-    {/* <Viz4 interactive={true}></Viz4> */}
+        {/* <Viz4 interactive={true}></Viz4> */}
         <Takeaways
           forDesigners={[
             <span key="df782d45">
@@ -1590,7 +1669,8 @@ export default function DuboisChapter() {
               Consider when change should be your goal
             </span>,
             <span key="2f317172">
-              Explore how to combine visualization with other methods
+              Explore how to combine visualization with other methods Explore
+              how to combine visualization with other methods
             </span>,
             <span key="2f317173">
               Teach the next generation to continue the work
@@ -1601,7 +1681,8 @@ export default function DuboisChapter() {
               Combine visualization with other sources of insight
             </span>,
             <span key="6d2691fc">
-              Always aspire to more complete knowledge
+              Always aspire to more complete knowledge Always aspire to more
+              complete knowledge
             </span>,
             <span key="9650286d">Recognize when knowledge demands change</span>,
             <span key="9650286e">

@@ -5,6 +5,7 @@ import respondentsData from "~/data/power/1910-Respondents.json";
 
 interface Props {
   interactive?: boolean;
+  showLegend?: boolean;
 }
 
 const colorMapping: Record<string, string> = {
@@ -27,7 +28,10 @@ const colorMapping: Record<string, string> = {
   unknown: "#C4C4C4",
 };
 
-export default function Viz2({ interactive = false }: Props) {
+export default function Viz2({
+  interactive = false,
+  showLegend = true,
+}: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [hoveredStudent, setHoveredStudent] = useState<any>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -60,15 +64,15 @@ export default function Viz2({ interactive = false }: Props) {
     // Log total students and categories from studentChartTwo
     const totalStudents = studentData.categories.reduce(
       (sum, cat) => sum + cat.students.length,
-      0
+      0,
     );
     console.log("📊 StudentChartTwo Data Summary:");
     console.log(`Total students: ${totalStudents}`);
     console.log(
       "Categories:",
       studentData.categories.map(
-        (cat) => `${cat.displayName}: ${cat.students.length}`
-      )
+        (cat) => `${cat.displayName}: ${cat.students.length}`,
+      ),
     );
 
     // Separate Unknown and Deceased - Unknown goes outside, Deceased stays in pie
@@ -85,13 +89,13 @@ export default function Viz2({ interactive = false }: Props) {
           students: [...category.students],
         };
         console.log(
-          `📍 Moving ${category.value} Unknown students outside pie chart`
+          `📍 Moving ${category.value} Unknown students outside pie chart`,
         );
       } else {
         // Include Deceased in the pie chart
         pieData.push(category);
         console.log(
-          `🥧 Adding ${category.name} (${category.value} students) to pie chart`
+          `🥧 Adding ${category.name} (${category.value} students) to pie chart`,
         );
       }
     });
@@ -101,7 +105,7 @@ export default function Viz2({ interactive = false }: Props) {
     console.log(
       `✅ Data allocation: ${pieStudentCount} in pie + ${unknownStudentCount} outside = ${
         pieStudentCount + unknownStudentCount
-      } total`
+      } total`,
     );
 
     // Add 1910-Respondents data with dotted borders
@@ -132,7 +136,7 @@ export default function Viz2({ interactive = false }: Props) {
     // Combine matching categories from both datasets for proportional representation
     const combinedPieData = pieDataWithoutUnknown.map((category) => {
       const matchingRespondent = respondentsPieData.find(
-        (r) => r.name === category.name
+        (r) => r.name === category.name,
       );
       if (matchingRespondent) {
         return {
@@ -151,7 +155,7 @@ export default function Viz2({ interactive = false }: Props) {
 
     // Add any respondent categories that don't have matching student categories
     const unmatchedRespondents = respondentsPieData.filter(
-      (r) => !pieDataWithoutUnknown.some((p) => p.name === r.name)
+      (r) => !pieDataWithoutUnknown.some((p) => p.name === r.name),
     );
 
     combinedPieData.push(
@@ -159,7 +163,7 @@ export default function Viz2({ interactive = false }: Props) {
         ...r,
         respondentsCount: r.value,
         studentsCount: 0,
-      }))
+      })),
     );
 
     // Create SVG
@@ -256,7 +260,7 @@ export default function Viz2({ interactive = false }: Props) {
         const maxBuffer = 0.015; // Maximum 0.015 radians (~0.9 degrees)
         const angleBuffer = Math.max(
           minBuffer,
-          Math.min(maxBuffer, sliceAngle * 0.02)
+          Math.min(maxBuffer, sliceAngle * 0.02),
         );
 
         const bufferedStartAngle = slice.startAngle + angleBuffer;
@@ -297,10 +301,10 @@ export default function Viz2({ interactive = false }: Props) {
 
       // Check distance to slice boundaries
       const distToStartBoundary = Math.abs(
-        normalizedAngle - currentSlice.startAngle
+        normalizedAngle - currentSlice.startAngle,
       );
       const distToEndBoundary = Math.abs(
-        normalizedAngle - currentSlice.endAngle
+        normalizedAngle - currentSlice.endAngle,
       );
 
       // Convert angular distance to linear distance at the point's radius
@@ -314,7 +318,7 @@ export default function Viz2({ interactive = false }: Props) {
     // Add all students from all categories
     console.log(
       "Processing categories:",
-      combinedPieData.map((d) => d.name)
+      combinedPieData.map((d) => d.name),
     );
     combinedPieData.forEach((categoryData, categoryIndex) => {
       // Get original students for this category
@@ -322,7 +326,7 @@ export default function Viz2({ interactive = false }: Props) {
 
       originalStudents =
         studentData.categories.find(
-          (cat) => cat.displayName === categoryData.name
+          (cat) => cat.displayName === categoryData.name,
         )?.students || [];
 
       // Create actual respondent dots for this category
@@ -367,7 +371,7 @@ export default function Viz2({ interactive = false }: Props) {
           .split("")
           .reduce(
             (acc, char) => acc + char.charCodeAt(0),
-            personIndex + categoryIndex * 1000
+            personIndex + categoryIndex * 1000,
           );
 
         let x: number, y: number;
@@ -409,7 +413,7 @@ export default function Viz2({ interactive = false }: Props) {
               const maxAngle = sliceAngle - 2 * minAnglePadding;
               const clampedAngle = Math.max(
                 minAnglePadding,
-                Math.min(maxAngle, baseAngle + randomOffset)
+                Math.min(maxAngle, baseAngle + randomOffset),
               );
 
               randomAngle = pieSlice.startAngle + clampedAngle;
@@ -559,7 +563,7 @@ export default function Viz2({ interactive = false }: Props) {
               "Failed to place diamond student:",
               person.name,
               "in category:",
-              categoryData.name
+              categoryData.name,
             );
           }
         }
@@ -567,11 +571,11 @@ export default function Viz2({ interactive = false }: Props) {
 
       // Log placement statistics for each category
       console.log(
-        `Category ${categoryData.name}: ${successfulPlacements} placed, ${failedPlacements} failed, total students: ${originalStudents.length}, total respondents: ${respondentsCount}`
+        `Category ${categoryData.name}: ${successfulPlacements} placed, ${failedPlacements} failed, total students: ${originalStudents.length}, total respondents: ${respondentsCount}`,
       );
       if (failedPlacements > 0) {
         console.warn(
-          `⚠️ Category ${categoryData.name}: ${failedPlacements} failed placements out of ${allPeople.length} total people`
+          `⚠️ Category ${categoryData.name}: ${failedPlacements} failed placements out of ${allPeople.length} total people`,
         );
       }
     });
@@ -774,7 +778,11 @@ export default function Viz2({ interactive = false }: Props) {
 
   return (
     <div className="flex flex-col  items-center relative ">
-      <h3 className="font-dubois text-2xl mt-12 mb-0 font-bold font-power relative z-10">1900 Students Professions</h3>
+      {showLegend && (
+        <h3 className="font-dubois text-2xl mt-12 mb-0 font-bold font-power relative z-10">
+          1900 Students Professions
+        </h3>
+      )}
       <div className="w-full" style={{ clipPath: "inset(-150px 0 0 0)" }}>
         <svg
           ref={svgRef}
@@ -808,41 +816,42 @@ export default function Viz2({ interactive = false }: Props) {
       )}
 
       {/* HTML-based Legend */}
-      <div className="w-full max-w-4xl px-4 py-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
-          {legendData.map((item, index) => (
-            <div key={index} className="flex items-center p-2 ">
-              <div className="flex items-center mr-3">
-                {item.hasStudents && item.name !== "Unknown" && (
-                  <div
-                    className="w-3 h-3 rounded-full border border-black mr-1"
-                    style={{ backgroundColor: item.color }}
-                  />
-                )}
-                {(item.hasRespondents ||
-                  (item.hasStudents && item.name === "Unknown")) && (
-                  <div
-                    className="w-3 h-3 rounded-full border border-black opacity-60"
-                    style={{
-                      backgroundColor: item.color,
-                      borderStyle: "dashed",
-                      borderWidth: "1px",
-                    }}
-                  />
-                )}
-              </div>
-              <div className="flex-1">
-                <div
-                  className="text-sm font-semibold text-gray-800"
-                  style={{ fontFamily: "VTC Du Bois, serif" }}
-                >
-                  {item.displayText}
+      {showLegend && (
+        <div className="w-full max-w-4xl px-4 py-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
+            {legendData.map((item, index) => (
+              <div key={index} className="flex items-center p-2 ">
+                <div className="flex items-center mr-3">
+                  {item.hasStudents && item.name !== "Unknown" && (
+                    <div
+                      className="w-3 h-3 rounded-full border border-black mr-1"
+                      style={{ backgroundColor: item.color }}
+                    />
+                  )}
+                  {(item.hasRespondents ||
+                    (item.hasStudents && item.name === "Unknown")) && (
+                    <div
+                      className="w-3 h-3 rounded-full border border-black opacity-60"
+                      style={{
+                        backgroundColor: item.color,
+                        borderStyle: "dashed",
+                        borderWidth: "1px",
+                      }}
+                    />
+                  )}
                 </div>
-                <div
-                  className="text-xs text-gray-600"
-                  style={{ fontFamily: "VTC Du Bois, serif" }}
-                >
-                  {/* {item.hasStudents &&
+                <div className="flex-1">
+                  <div
+                    className="text-sm font-semibold text-gray-800"
+                    style={{ fontFamily: "VTC Du Bois, serif" }}
+                  >
+                    {item.displayText}
+                  </div>
+                  <div
+                    className="text-xs text-gray-600"
+                    style={{ fontFamily: "VTC Du Bois, serif" }}
+                  >
+                    {/* {item.hasStudents &&
                     item.hasRespondents &&
                     `Students: ${item.studentsCount} | 1910: ${item.respondentsCount}`}
                   {item.hasStudents &&
@@ -851,33 +860,34 @@ export default function Viz2({ interactive = false }: Props) {
                   {!item.hasStudents &&
                     item.hasRespondents &&
                     `1910: ${item.respondentsCount}`} */}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
 
-          {/* Diamond legend item */}
-          <div className="flex items-center p-2">
-            <div className="flex items-center mr-3">
-              <div
-                className="w-2.5 h-2.5 border-2 border-black mr-1"
-                style={{
-                  backgroundColor: "transparent",
-                  transform: "rotate(45deg)",
-                }}
-              />
-            </div>
-            <div className="flex-1">
-              <div
-                className="text-sm uppercase font-semibold text-gray-800"
-                style={{ fontFamily: "VTC Du Bois, serif" }}
-              >
-                Student Contributor to Data Portraits
+            {/* Diamond legend item */}
+            <div className="flex items-center p-2">
+              <div className="flex items-center mr-3">
+                <div
+                  className="w-2.5 h-2.5 border-2 border-black mr-1"
+                  style={{
+                    backgroundColor: "transparent",
+                    transform: "rotate(45deg)",
+                  }}
+                />
+              </div>
+              <div className="flex-1">
+                <div
+                  className="text-sm uppercase font-semibold text-gray-800"
+                  style={{ fontFamily: "VTC Du Bois, serif" }}
+                >
+                  Student Contributor to Data Portraits
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       {interactive && hoveredStudent && (
         <div
           className="absolute z-10 p-3 bg-black text-white rounded shadow-lg pointer-events-none"
