@@ -2,6 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import studentData from "~/data/power/studentChartOne.json";
 
+
+
+///data for this needs to get updated to include 1900 students so Rogers gets included. Task for Cece. 
+
+
 interface Props {
   interactive?: boolean;
 }
