@@ -47,20 +47,11 @@ const calcTransform = (date: Date, treemapHeight: number) => {
 interface Props {
   monthlyData: TMontData;
   width: number | undefined;
-  setBoxSize?: Dispatch<
-    SetStateAction<{ height: number; width: number } | undefined>
-  >;
-  selectedMonth: string | undefined;
+  setBoxSize?: Dispatch<SetStateAction<{ height: number; width: number }>>;
   setSelectedMonth: Dispatch<SetStateAction<string | undefined>>;
 }
 
-const Month = ({
-  monthlyData,
-  width,
-  setBoxSize,
-  selectedMonth,
-  setSelectedMonth,
-}: Props) => {
+const Month = ({ monthlyData, width, setBoxSize, setSelectedMonth }: Props) => {
   const monthRef = useRef<SVGGElement>(null);
   const transformRef = useRef<string | undefined>(undefined);
   const dimensionRef = useRef<number | undefined>(undefined);
@@ -77,7 +68,7 @@ const Month = ({
     dimensionRef.current = boxDimension;
     const { translateX, translateY } = calcTransform(
       monthlyData.month,
-      boxDimension
+      boxDimension,
     );
 
     transformRef.current = `translate(${translateX + 10}, ${translateY + 12})`;
@@ -114,7 +105,7 @@ const Month = ({
       })
       .attr("y", (d) => {
         // @ts-expect-error: IDK, D3 amirite?
-        return d.y0;
+        return d.y0 + 10;
       })
       .attr("width", (d) => {
         // @ts-expect-error: IDK, D3 amirite?
@@ -145,10 +136,11 @@ const Month = ({
         className="cursor-pointer"
         onClick={(event) => {
           event.stopPropagation();
+          setSelectedMonth(undefined);
           setSelectedMonth(key);
         }}
         aria-description={monthlyData.month.toDateString()}
-      />
+      ></g>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useResizeObserver } from "~/hooks";
 import { visWidth } from "../data/functions";
-import monthlyData from "./monthlyData";
+import { monthlyData } from "./monthlyData";
 import { YEARS } from "./data";
 import MonthScale from "./MonthScale";
 import Month from "./Month";
@@ -15,14 +15,15 @@ const Treemap = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [width, setWidth] = useState<number | undefined>(undefined);
   const [selectedMonth, setSelectedMonth] = useState<string | undefined>(
-    undefined
+    undefined,
   );
   const [activeContribution, setActiveContribution] = useState<
     TContribution | undefined
   >();
-  const [boxSize, setBoxSize] = useState<
-    { width: number; height: number } | undefined
-  >(undefined);
+  const [boxSize, setBoxSize] = useState<{ width: number; height: number }>({
+    width: 1,
+    height: 1,
+  });
 
   useEffect(() => {
     setWidth(visWidth() * 0.9);
@@ -44,17 +45,17 @@ const Treemap = () => {
         {windowSize && (
           <svg
             ref={svgRef}
-            className="font-power font-bold text-white h-[95%] m-auto"
+            className="font-power font-bold text-white m-auto"
             viewBox={`0 0 ${
               ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
-            } ${((windowSize?.height || window.innerHeight) / 6) * 5 + 20}`}
+            } ${((windowSize?.height || window.innerHeight) / 1) * 5 + 20}`}
             onClick={() => {
               setSelectedMonth(undefined);
             }}
             aria-description="here is a long description"
           >
             <MonthScale
-              year={2023}
+              year={2025}
               width={width}
               height={(boxSize?.height || 1) / 1.5}
               xOffset={(boxSize?.width || 1) / 2}
@@ -65,13 +66,8 @@ const Treemap = () => {
                   key={`month-${monthlyData.month}-${monthlyData.total}`}
                   monthlyData={monthlyData}
                   width={width}
-                  selectedMonth={selectedMonth}
                   setSelectedMonth={setSelectedMonth}
-                  setBoxSize={
-                    monthlyData.month.getFullYear() == 2022
-                      ? setBoxSize
-                      : undefined
-                  }
+                  setBoxSize={setBoxSize}
                 />
               );
             })}
@@ -86,7 +82,7 @@ const Treemap = () => {
                     <YearDivider
                       year={year}
                       width={width}
-                      yOffset={(boxSize?.height || 1) / 2 + 8}
+                      yOffset={(boxSize?.height || 1) / 1.25 + 10}
                     />
                   )}
                 </g>
@@ -120,9 +116,8 @@ const Treemap = () => {
         </div>
       </div>
 
- 
       <div className="hidden md:block md:col-span-3 pb-4 px-4 text-left w-full ">
-              <hr className=" col-span-3 mt-11"></hr>
+        <hr className=" col-span-3 mt-11"></hr>
         <div className="grid grid-cols-2 gap-8 pt-6">
           <div>
             <h3 className="mb-4 font-power text-xl md:text-3xl">
@@ -133,7 +128,9 @@ const Treemap = () => {
             </h4>
           </div>
           <div>
-            <h3 className="mb-4 font-power small-caps text-large tracking-wide">Key</h3>
+            <h3 className="mb-4 font-power small-caps text-large tracking-wide">
+              Key
+            </h3>
             <ul className="font-power text-base md:text-lg grid grid-cols-2 gap-2">
               <li className="flex items-center gap-3">
                 <span className="w-4 h-4 bg-changePrimary inline-block"></span>

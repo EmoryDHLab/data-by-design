@@ -8,7 +8,7 @@ export const visHeight = (windowHeight = window.innerHeight) => {
 
 export const visSize = (
   windowHeight = window.innerHeight,
-  windowWidth = window.innerWidth
+  windowWidth = window.innerWidth,
 ) => {
   return {
     width: visWidth(windowWidth),

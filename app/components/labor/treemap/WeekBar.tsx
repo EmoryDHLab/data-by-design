@@ -39,22 +39,24 @@ const WeekBar = ({
       {contributions && (
         <>
           {contributions.map((contribution, index) => {
-            return (
-              <rect
-                key={`${contribution?.timestamp}-${contribution?.source}-${contribution?.information}`}
-                id={`${week.week.toISOString()}-${height * index}`}
-                x={barX}
-                y={height * index + 15}
-                width={width}
-                height={height}
-                strokeWidth={0.3}
-                className={`${rectColor(
-                  contribution?.source
-                )} hover:fill-changeSecondary stroke-black cursor-pointer`}
-                onMouseEnter={() => setActiveContribution(contribution)}
-                onMouseLeave={() => setActiveContribution(undefined)}
-              />
-            );
+            if (contribution) {
+              return (
+                <rect
+                  key={contribution.uuid}
+                  id={`${week.week.toISOString()}-${height * index}`}
+                  x={barX}
+                  y={height * index + 15}
+                  width={width}
+                  height={height}
+                  strokeWidth={0.3}
+                  className={`${rectColor(
+                    contribution?.source,
+                  )} hover:fill-changeSecondary stroke-black cursor-pointer`}
+                  onMouseEnter={() => setActiveContribution(contribution)}
+                  onMouseLeave={() => setActiveContribution(undefined)}
+                />
+              );
+            }
           })}
         </>
       )}

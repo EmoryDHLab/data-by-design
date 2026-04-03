@@ -1,11 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { peopleData, versionData, groupingData } from "../data/versions";
-import {
-  visWidth,
-  visHeight,
-  versionHeight,
-  versionWidth,
-} from "../data/functions";
+import { visWidth, visHeight, versionHeight } from "../data/functions";
 import PersonBox from "./PersonBox";
 import GroupingSelect from "./GroupingSelect";
 import { useResizeObserver } from "~/hooks";
@@ -15,7 +10,6 @@ import type {
   TGroupingData,
   TGroupingNode,
 } from "../data/types";
-import Version from "./Version";
 import GroupingBox from "./GroupingBox";
 import Connection from "./Connection";
 import PersonGroupingList from "./PersonGroupingList";
@@ -23,14 +17,14 @@ import PersonGroupingList from "./PersonGroupingList";
 const PeopleVersions = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [activeVersions, setActiveVersions] = useState<string[]>(
-    Object.keys(versionData)
+    Object.keys(versionData),
   );
   const [people, setPeople] = useState<TPerson[]>(peopleData);
   const [activeNode, setActiveNode] = useState<
     TPerson | TGroupingNode | undefined
   >(undefined);
   const [activeGrouping, setActiveGrouping] = useState<Groupings | undefined>(
-    undefined
+    undefined,
   );
   const [dragging, setDragging] = useState<boolean>(false);
 
@@ -70,7 +64,7 @@ const PeopleVersions = () => {
 
   const handleVersionSelect = (
     selectedVersion: string,
-    key: string | undefined
+    key: string | undefined,
   ) => {
     if (key && key !== "Enter") return;
 
@@ -85,16 +79,19 @@ const PeopleVersions = () => {
   return (
     <div
       id="people-across-versions"
-      className="bg-[#D7E6D2] w-screen grid grid-cols-1 md:grid-cols-3 md:grid-rows-[1fr_auto] md:h-[95vh] text-black"
+      className="bg-[#D7E6D2] w-screen grid grid-cols-1 md:grid-cols-3 md:grid-rows-[1fr_auto] text-black"
     >
       <div className="col-span-1 md:col-span-2 md:row-span-1 md:order-2 flex flex-col">
         {windowSize && (
           <svg
             ref={svgRef}
             className="font-power font-bold flex-1"
+            // onClick={() => {
+            //   if (activeNode) setActiveNode(undefined);
+            // }}
             viewBox={`0 0 ${
               ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
-            } ${((windowSize?.height || window.innerHeight) / 7) * 5}`}
+            } ${((windowSize?.height || window.innerHeight) / 7) * 4.25}`}
           >
             {activeGrouping && (
               <>
@@ -108,12 +105,12 @@ const PeopleVersions = () => {
                             person={person}
                             x2={grouping.getX(
                               grouping.x,
-                              windowSize.width || 0
+                              windowSize.width || 0,
                             )}
                             y2={
                               grouping.getY(
                                 grouping.y,
-                                windowSize.height || 0
+                                windowSize.height || 0,
                               ) +
                               visHeight(windowSize.height) / 40
                             }
@@ -127,12 +124,12 @@ const PeopleVersions = () => {
                 })}
               </>
             )}
-                        <g id="groupings">
+            <g id="groupings">
               {Object.keys(groupingData).map((grouping) => {
                 return (
                   <g key={`${grouping}-group`} id={`${grouping}-group`}>
                     {Object.keys(
-                      groupingData[grouping as keyof TGroupingData]
+                      groupingData[grouping as keyof TGroupingData],
                     ).map((group, index) => {
                       return (
                         <g
@@ -178,7 +175,7 @@ const PeopleVersions = () => {
                     opacity={
                       activeVersions.length > 0 &&
                       !person.versions.some((personVersion) =>
-                        activeVersions.includes(personVersion.label)
+                        activeVersions.includes(personVersion.label),
                       )
                         ? 0.5
                         : 1
@@ -189,11 +186,17 @@ const PeopleVersions = () => {
             </g>
           </svg>
         )}
-        <div className="hidden md:flex border-black border-t-2 p-8 justify-between items-center" id="title">
+        <div
+          className="hidden md:flex border-black border-t-2 p-8 justify-between items-center"
+          id="title"
+        >
           <div className="grow pr-8">
-            <h3 className="text-4xl font-power font-bold">People across versions</h3>
-            <h4 className="text-xl mt-2 font-power">Mapping human involvement across Data
-              by Design</h4>
+            <h3 className="text-4xl font-power font-bold">
+              People across versions
+            </h3>
+            <h4 className="text-xl mt-2 font-power">
+              Mapping human involvement across Data by Design
+            </h4>
           </div>
           <div className="flex gap-3">
             {Object.keys(versionData).map((version) => (
@@ -212,8 +215,10 @@ const PeopleVersions = () => {
           </div>
         </div>
       </div>
-      <div className="border-r-2 border-black md:row-span-2 flex flex-col md:order-1" id="view-by">
-      
+      <div
+        className="border-r-2 border-black md:row-span-2 flex flex-col md:order-1"
+        id="view-by"
+      >
         <div className="text-center font-power light">
           <GroupingSelect
             setSelectedGrouping={setActiveGrouping}
@@ -222,15 +227,25 @@ const PeopleVersions = () => {
         </div>
         <div className="overflow-y-hidden flex flex-1 w-full">
           {activeNode && (
-            <div className="overflow-y-scroll px-6 py-5 w-full" id="selection-info">
-              <div className="text-2xl font-power font-bold mb-6">
-                {activeNode.label}
+            <div className="px-6 py-5 w-full" id="selection-info">
+              <div className="text-2xl font-power font-bold mb-6 flex flex-row w-full">
+                <h3 className="grow">{activeNode.label}</h3>
+                <button
+                  aria-label="Unselect Person"
+                  className="border-2 rounded-full border-offblack/75 text-offblack/75 hover:border-offblack hover:text-offblack hover:bg-offblack/5 px-1.5 text-sm h-6 self-start"
+                  onClick={() => setActiveNode(undefined)}
+                >
+                  X
+                </button>
               </div>
               <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-8 gap-y-6 w-full">
                 <PersonGroupingList person={activeNode} grouping="role" />
                 <PersonGroupingList person={activeNode} grouping="position" />
                 <PersonGroupingList person={activeNode} grouping="department" />
-                <PersonGroupingList person={activeNode} grouping="institution" />
+                <PersonGroupingList
+                  person={activeNode}
+                  grouping="institution"
+                />
                 <PersonGroupingList person={activeNode} grouping="location" />
               </div>
             </div>

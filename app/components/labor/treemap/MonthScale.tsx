@@ -21,19 +21,19 @@ const MonthScale = ({
 
     const xAxisYear = d3
       .axisBottom(xScaleYear)
-      // @ts-ignore
+      // @ts-expect-error D3 type bug
       .tickFormat(d3.timeFormat("%b"))
       .tickSize(0)
       .ticks(d3.timeMonth.every(1));
 
     d3.select(scaleRef.current)
       .append("g")
-      .attr("transform", `translate(100, ${height * 0.1})`)
+      .attr("transform", `translate(100, -${height * 0.1})`)
       .call(xAxisYear, 0)
       .selectAll("text")
       .attr("dx", xOffset)
       .attr("text-anchor", "middle")
-      .attr("font-size", height * 0.5)
+      .attr("font-size", height * 0.75)
       .attr("class", "font-power tracking-widest fill-offwhite");
 
     d3.select(scaleRef.current)

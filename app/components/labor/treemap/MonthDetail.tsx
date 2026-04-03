@@ -29,8 +29,8 @@ const MonthDetail = ({ selectedMonth, setActiveContribution }: Props) => {
       for (const week of weeks) {
         _contributions.push(
           data.filter(
-            (c) => c.monday.toDateString() == week.week.toDateString()
-          )
+            (c) => c.monday.toDateString() == week.week.toDateString(),
+          ),
         );
       }
       setContributions(_contributions);
@@ -41,11 +41,7 @@ const MonthDetail = ({ selectedMonth, setActiveContribution }: Props) => {
 
   useEffect(() => {
     if (selectedMonth) {
-      setWeeks(
-        weeklyData[selectedMonth].sort((a, b) =>
-          a.weekNum > b.weekNum ? 1 : b.weekNum > a.weekNum ? -1 : 0
-        )
-      );
+      setWeeks(weeklyData[selectedMonth]);
     } else {
       setWeeks(undefined);
     }
@@ -57,22 +53,26 @@ const MonthDetail = ({ selectedMonth, setActiveContribution }: Props) => {
     for (const week of weeks) {
       _contributions.push(
         csvData.filter(
-          (c) => c.monday.toDateString() == week.week.toDateString()
-        )
+          (c) => c.monday.toDateString() == week.week.toDateString(),
+        ),
       );
     }
     setContributions(_contributions);
   }, [weeks, csvData, selectedMonth]);
 
   const monthYear = () => {
-    if (!contributions || contributions.length === 0) return "";
-    const firstContribution = contributions.find((c) => c.length > 0);
-    if (firstContribution)
-      return d3.timeFormat("%B %Y")(new Date(firstContribution[0].timestamp));
-    return "";
+    if (!selectedMonth || !contributions || contributions.length === 0)
+      return "";
+
+    const parts: number[] = selectedMonth
+      .replace("m", "")
+      .split("_")
+      .map((p) => parseInt(p))
+      .reverse();
+    return d3.timeFormat("%B %Y")(new Date(...(parts as [number, number])));
   };
 
-  if (contributions && weeks) {
+  if (selectedMonth && contributions && weeks) {
     const total = contributions
       .map((c) => (c.length == 0 ? 1 : c.length))
       .reduce((p, a) => p + a, 0);
@@ -94,12 +94,14 @@ const MonthDetail = ({ selectedMonth, setActiveContribution }: Props) => {
             accumulatedWidth += 10;
             return (
               <WeekBar
-                key={`${week.week.toDateString()}-${accumulatedWidth}`}
+                key={`${week.week.toDateString()}-${accumulatedWidth}-${
+                  week.weekNum
+                }`}
                 week={week}
                 contributions={
                   contributions[index]
                     ? contributions[index].sort((a, b) =>
-                        a.source > b.source ? 1 : b.source > a.source ? -1 : 0
+                        a.source > b.source ? 1 : b.source > a.source ? -1 : 0,
                       )
                     : []
                 }
@@ -107,7 +109,7 @@ const MonthDetail = ({ selectedMonth, setActiveContribution }: Props) => {
                   contributions
                     .slice(0, index)
                     .map((c) => (c.length == 0 ? 1 : c.length))
-                    .reduce((p, a) => p + a, 0)
+                    .reduce((p, a) => p + a, 0),
                 )}
                 width={barWidth}
                 // Prop drilling :( - Not worth setting up context here.

@@ -8,10 +8,11 @@ export type TContribution = {
   dateString: string;
   information: string;
   monday: Date;
+  uuid: string;
 };
 
 export const YEARS = [
-  2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023,
+  2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025
 ];
 
 export const csvData = async () => {
@@ -28,7 +29,7 @@ export const csvData = async () => {
 export const yearScale = (visHeight: number) => {
   return d3
     .scaleTime()
-    .domain([new Date(2024, 8, 1), new Date(2012, 7, 1)])
+    .domain([new Date(2026, 4, 1), new Date(2012, 7, 1)])
     .range([0, visHeight + 50]);
 };
 

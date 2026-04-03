@@ -1,4 +1,3 @@
-import { groupingData } from "../data/versions";
 import type { Groupings } from "../data/types";
 import type { Dispatch, SetStateAction } from "react";
 
@@ -7,7 +6,13 @@ interface Props {
   activeGrouping: Groupings | undefined;
 }
 
-const groupingOrder: Groupings[] = ["location", "institution", "department", "position", "role"];
+const groupingOrder = [
+  "location",
+  "institution",
+  "department",
+  "position",
+  "role",
+];
 
 const GroupingSelect = ({ setSelectedGrouping, activeGrouping }: Props) => {
   const handleSelect = (selectedGrouping: Groupings) => {
@@ -24,7 +29,7 @@ const GroupingSelect = ({ setSelectedGrouping, activeGrouping }: Props) => {
         return (
           <li key={grouping}>
             <button
-              onClick={() => handleSelect(grouping as Groupings)}
+              onClick={() => handleSelect(`${grouping}s` as Groupings)}
               onMouseLeave={({ target }) =>
                 (target as HTMLButtonElement).blur()
               }

@@ -77,13 +77,13 @@ const PersonBox = ({
       .attr("y", person.getY(person.y, windowSize.height || 0) + boxHeight / 2);
 
     d3.select(boxRef.current).call(
-      // @ts-ignore
-      d3.drag().on("drag", drag).on("start", dragStart).on("end", dragEnd)
+      // @ts-expect-error D3 type bug
+      d3.drag().on("drag", drag).on("start", dragStart).on("end", dragEnd),
     );
 
     d3.select(textRef.current).call(
-      // @ts-ignore
-      d3.drag().on("drag", drag).on("start", dragStart).on("end", dragEnd)
+      // @ts-expect-error D3 type bug
+      d3.drag().on("drag", drag).on("start", dragStart).on("end", dragEnd),
     );
   });
 
@@ -91,7 +91,7 @@ const PersonBox = ({
     <g
       className="person cursor-grab"
       id={`person-${person.firstName}`}
-      onClick={() => setActiveNode(person)}
+      onClick={() => setActiveNode(activeNode === person ? undefined : person)}
       // onMouseEnter={() => setActiveNode(person)}
       // onMouseLeave={() => setActiveNode(undefined)}
     >
@@ -101,14 +101,14 @@ const PersonBox = ({
         stroke="#1C1817"
         strokeWidth={1.5}
         strokeOpacity={opacity}
+        // fillOpacity={opacity}
         width={boxWidth}
         height={boxHeight}
-        
         fill={person == activeNode ? "#D92944" : "#1C1817"}
         x={center.x - boxWidth / 2}
         y={center.y}
         rx={20}
-        className="transition-colors duration-700"
+        className={`transition-colors duration-700`}
       />
       <text
         ref={textRef}
@@ -119,7 +119,6 @@ const PersonBox = ({
         fill={person === activeNode ? "#FFFFFF" : "#FAF1E9"}
         fillOpacity={opacity}
         fontSize={boxHeight / 3}
-
         letterSpacing="0.05em"
         className="transition-colors duration-700"
       >
