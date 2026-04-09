@@ -33,9 +33,10 @@ import ChartTwoScrollytell from "~/components/change/duboisScrollytell/ChartTwoS
 import ChartThreeScrollytell from "~/components/change/duboisScrollytell/ChartThreeScrollytell";
 import ScrollytellTwo from "~/components/change/scrollytell_two/ScrollytellTwo";
 import { chapterMeta } from "~/data/chapterMeta";
-import ScrollytellOne from "~/components/change/scrollytell_one/ScrollytellOne";
 import type { MetaFunction } from "react-router";
 import type { TVizAnchors, HoverState } from "~/chapterContext";
+import ScrollytellOne from "~/components/change/scrollytell_one/ScrollytellOne";
+import Map from "~/components/change/scrollytell_two/Map";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("change");
@@ -1329,8 +1330,8 @@ export default function DuboisChapter() {
               className="text-offblack text-xl h-screen w-screen block z-10 relative px-8 md:p-x48 lg:px-64"
             >
               <img
-                src="https://iip.readux.io/iiif/3/dxd/change/alumni.tiff/99,1472,1399,329/full/0/default.jpg"
-                alt=""iiif/3/dxd%2f
+                src="https://iip.readux.io/iiif/3%2fdxd%2fchange/alumni.tiff/99,1472,1399,329/full/0/default.jpg"
+                alt=""
               />
             </span>,
             <span key="e11395da">Insert more on William Henry Crogman</span>,

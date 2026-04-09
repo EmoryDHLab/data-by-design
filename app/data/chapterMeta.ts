@@ -17,7 +17,7 @@ export const chapterMeta: TChapterMeta = {
     image:
       "https://iip.readux/io/iiif/3/dxd%2fintro/7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2ftro/7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.tiff/193,274,721,264/1200,/0/default.webp",
+      "https://iiif.ecds.io/iiif/3/dxd%2ftro/7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.tiff/193,274,721,264/1200,/0/default.png",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -28,9 +28,9 @@ export const chapterMeta: TChapterMeta = {
     description:
       "Before there are data, there are people. How can the lives behind the data guide our visualization work?",
     image:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2fscription/5-The_history_of_the_rise.tiff/square/800,/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd%2fscription/5-The_history_of_the_rise.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2fscription/5-The_history_of_the_rise.tiff/7,625,662,263/1200,/0/default.webp",
+      "https://iiif.ecds.io/iiif/3/dxd%2fscription/5-The_history_of_the_rise.tiff/7,625,662,263/1200,/0/default.png",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -40,9 +40,9 @@ export const chapterMeta: TChapterMeta = {
     description:
       "Visualization has never been neutral or objective. How can we learn to recognize the human decisions that shape each design?",
     image:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2fage/1-northamerica.tiff/square/800,/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd%2fage/1-northamerica.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2fage/1-northamerica.tiff/190,242,1094,283/1200,/0/default.webp",
+      "https://iiif.ecds.io/iiif/3/dxd%2fage/1-northamerica.tiff/190,242,1094,283/1200,/0/default.png",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -52,9 +52,9 @@ export const chapterMeta: TChapterMeta = {
     description:
       "Maps, like all visualizations, tell stories. How can we learn to see the lines of power that they draw?",
     image:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2fople/DRW-II.tiff/square/800,/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd%2fople/DRW-II.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2fople/DRW-II.tiff/2384,4586,3446,1470/1200,/0/default.webp",
+      "https://iiif.ecds.io/iiif/3/dxd%2fople/DRW-II.tiff/2384,4586,3446,1470/1200,/0/default.png",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -64,9 +64,9 @@ export const chapterMeta: TChapterMeta = {
     description:
       "Visualization can produce knowledge in many ways. What ideas do we gain when we expand our view of the past?",
     image:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2focess/1600s.tiff/square/800,/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd%2focess/1600s.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2focess/1600s.tiff/513,41,403,138/1200,/0/default.webp",
+      "https://iiif.ecds.io/iiif/3/dxd%2focess/1600s.tiff/513,41,403,138/1200,/0/default.png",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -77,9 +77,9 @@ export const chapterMeta: TChapterMeta = {
     description:
       "Visualization can bear powerful witness to oppression. How can we use charts to make change in the world?",
     image:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2fwer/887.tiff/square/800,/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd%2fwer/887.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiif/2/dxd/power/887.tiff/9,320,771,440/1200,/0/default.webp",
+      "https://images.ecds.io/iiif/2/dxd/power/887.tiff/9,320,771,440/1200,/0/default.png",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -89,9 +89,9 @@ export const chapterMeta: TChapterMeta = {
     description:
       "Any visualization project is the work of many hands. How can we surface the significance of this labor?",
     image:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2frk/data-traces.tiff/square/800,/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd%2frk/data-traces.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiiiif/3/dxd%2frk/data-traces.tiff/870,221,686,260/1200,/0/default.webp",
+      "https://iiif.ecds.io/iiif/3/dxd%2frk/data-traces.tiff/870,221,686,260/1200,/0/default.png",
     imageWidth: "800",
     imageHeight: "800",
   },

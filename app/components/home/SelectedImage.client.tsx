@@ -15,13 +15,13 @@ const SelectedImage = ({
       >
         <picture>
           <source
-            srcSet={`https://iiif.ecds.io/iiif/3/dxd%2fselectedImage.chapter}/${selectedImage.fileName}.tiff/full/,256/0/color.webp`}
+            srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,256/0/color.png`}
           />
           <source
-            srcSet={`https://iiif.ecds.io/iiif/3/dxd%2fselectedImage.chapter}/${selectedImage.fileName}.tiff/full/,256/0/color.jpg`}
+            srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,256/0/color.jpg`}
           />
           <img
-            src={`https://iiif.ecds.io/iiif/3/dxd%2fselectedImage.chapter}/${selectedImage.fileName}.tiff/full/,256/0/color.jpg`}
+            src={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,256/0/color.jpg`}
             alt={
               selectedImage.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
               selectedImage.title?.replace(/(<i>|<\/i>)/gi, '"') ??
