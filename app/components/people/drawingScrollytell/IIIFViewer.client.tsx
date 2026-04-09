@@ -28,7 +28,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
   useEffect(() => {
     const initViewer = async () => {
       const response = await fetch(
-        `https://iiif.ecds.io/iiiiif/3/dxd%2fople/${figure}.tiff/info.json`,
+        `https://iiif.ecds.io/iiif/3/dxd%2fople/${figure}.tiff/info.json`,
       );
 
       const info: TileSource = await response.json();

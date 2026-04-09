@@ -154,11 +154,11 @@ const OrderedTimeline = ({ setSelectedImage, selectedImage }: Props) => {
                 >
                   <picture>
                     <source
-                      srcSet={`https://iiif.ecds.io/iiiiif/3/dxd%2fimage.chapter}/${image.fileName}.tiff/full/300,/0/default.webp`}
+                      srcSet={`https://iiif.ecds.io/iiif/3/dxd%2fimage.chapter}/${image.fileName}.tiff/full/300,/0/default.webp`}
                       type="image/webp"
                     />
                     <source
-                      srcSet={`https://iiif.ecds.io/iiiiif/3/dxd%2fimage.chapter}/${image.fileName}.tiff/full/300,/0/default.jpg`}
+                      srcSet={`https://iiif.ecds.io/iiif/3/dxd%2fimage.chapter}/${image.fileName}.tiff/full/300,/0/default.jpg`}
                       type="image/jpeg"
                     />
                     <img

@@ -20,7 +20,7 @@ const Picture = ({ figure, className, center = true }: Props) => {
   useEffect(() => {
     if (figure.width) {
       setFigurePath(
-        `https://iiif.ecds.io/iiiiif/3/dxd%2ffigure.chapter}/${figure.fileName}.tiff/full/max/0/default`,
+        `https://iiif.ecds.io/iiif/3/dxd%2ffigure.chapter}/${figure.fileName}.tiff/full/max/0/default`,
       );
     }
   }, [figure]);
@@ -55,7 +55,6 @@ const Picture = ({ figure, className, center = true }: Props) => {
         draggable={!hideSensitiveState}
         loading="lazy"
         decoding="async"
-        fetchPriority="auto"
         width={figure.width ?? 0}
         height={figure.height ?? 0}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
