@@ -100,7 +100,7 @@ const ScrollytellOne = ({ triggers }: { triggers: ReactElement[] }) => {
                       ? "-translate-y-[36rem] scale-125"
                       : "translate-y-0 scale-100"
                   } transition-all duration-1000`}
-                  href="https://iip.readux.io/iiif/3/dxd/change/alumni.tiff/44,53,1646,2636/full/0/default.jpg"
+                  href="https://iip.readux.io/iiif/3/dxd%2fchange/alumni.tiff/44,53,1646,2636/full/0/default.jpg"
                   mask="url(#scrollytell-one-mask"
                 />
 
@@ -137,7 +137,7 @@ const ScrollytellOne = ({ triggers }: { triggers: ReactElement[] }) => {
                       ? "opacity-100"
                       : "opacity-0"
                   } transition-opacity duration-1000`}
-                  href="https://iip.readux.io/iiif/3/dxd/change/0501-paris-expo-loc.tiff/8,131,710,750/full/0/default.jpg"
+                  href="https://iip.readux.io/iiif/3/dxd%2fchange/0501-paris-expo-loc.tiff/8,131,710,750/full/0/default.jpg"
                 />
 
                 <g
@@ -152,7 +152,7 @@ const ScrollytellOne = ({ triggers }: { triggers: ReactElement[] }) => {
                     width={752}
                     height={chartHeight}
                     className={`drop-shadow-md scale-90 origin-center`}
-                    href="https://iip.readux.io/iiif/3/dxd/change/catalog.tiff/56,239,1475,2275/full/0/default.jpg"
+                    href="https://iip.readux.io/iiif/3/dxd%2fchange/catalog.tiff/56,239,1475,2275/full/0/default.jpg"
                   />
                   <rect
                     width={555}

@@ -13,14 +13,14 @@ const Picture = ({ figure, className, center = true }: Props) => {
   const { hideSensitiveState } = useContext(ChapterContext);
   const pictureRef = useRef<HTMLPictureElement>(null);
   const [figurePath, setFigurePath] = useState<string>(
-    `/images/${figure.chapter}/${figure.fileName}`
+    `/images/${figure.chapter}/${figure.fileName}`,
   );
   const [altText, setAltText] = useState<string>(figure.altText || "");
 
   useEffect(() => {
     if (figure.width) {
       setFigurePath(
-        `https://iiif.ecds.io/iiif/3/dxd/${figure.chapter}/${figure.fileName}.tiff/full/max/0/default`
+        `https://iiif.ecds.io/iiiiif/3/dxd%2ffigure.chapter}/${figure.fileName}.tiff/full/max/0/default`,
       );
     }
   }, [figure]);

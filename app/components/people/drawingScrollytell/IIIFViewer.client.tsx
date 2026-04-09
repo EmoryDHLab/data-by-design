@@ -20,7 +20,7 @@ const osdOptions: Options = {
 
 const IIIFViewer = ({ figure, scrollProgress }: Props) => {
   const viewerContainerRef = useRef<HTMLDivElement>(
-    document.createElement("div")
+    document.createElement("div"),
   );
   const viewerRef = useRef<Viewer | undefined>(undefined);
   const [osd, setOSD] = useState<Viewer | undefined>(undefined);
@@ -28,7 +28,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
   useEffect(() => {
     const initViewer = async () => {
       const response = await fetch(
-        `https://iiif.ecds.io/iiif/3/dxd/people/${figure}.tiff/info.json`
+        `https://iiif.ecds.io/iiiiif/3/dxd%2fople/${figure}.tiff/info.json`,
       );
 
       const info: TileSource = await response.json();
@@ -44,7 +44,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
       viewerRef.current.navigator.element.classList.add(
         "duration-1000",
         "transition-opacity",
-        "opacity-0"
+        "opacity-0",
       );
       setOSD(viewerRef.current);
     };
@@ -63,7 +63,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         viewerRef.current?.setMouseNavEnabled(false);
       case scrollProgress >= 1 && scrollProgress <= 2:
         viewerRef.current?.viewport.panTo(
-          new OpenSeadragon.Point(0.7188385493768735, 0.4972938512246431)
+          new OpenSeadragon.Point(0.7188385493768735, 0.4972938512246431),
         );
         viewerRef.current?.viewport.zoomTo(5.159780351999999);
         viewerRef.current?.navigator.element.classList.add("opacity-100");
@@ -73,7 +73,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.24222051942640613, 0.3844618819642727),
-          false
+          false,
         );
         viewerRef.current?.viewport.zoomTo(2.0736);
         break;
@@ -81,7 +81,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.5955321823876885, 0.241167595912629),
-          false
+          false,
         );
         viewerRef.current?.viewport.zoomTo(9.841851071303127);
         break;
@@ -89,7 +89,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.188242050880771, 0.19818732218542576),
-          false
+          false,
         );
         viewerRef.current?.viewport.zoomTo(6.687075336191998);
         break;
@@ -97,7 +97,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.8193386053978049, 0.2573826949479137),
-          false
+          false,
         );
         viewerRef.current?.viewport.zoomTo(11.614404145077721);
         break;
@@ -105,7 +105,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.5006641373527644, 0.16022488474264154),
-          false
+          false,
         );
         viewerRef.current?.viewport.zoomTo(3.8896404485347955);
         break;
@@ -113,7 +113,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.6400570005410656, 0.29101118609510107),
-          false
+          false,
         );
         viewerRef.current?.viewport.zoomTo(8.065558434081751);
         break;
@@ -121,7 +121,7 @@ const IIIFViewer = ({ figure, scrollProgress }: Props) => {
         viewerRef.current?.navigator.element.classList.add("opacity-100");
         viewerRef.current?.viewport.panTo(
           new OpenSeadragon.Point(0.8001552893113767, 0.27226857830922),
-          false
+          false,
         );
         viewerRef.current?.viewport.zoomTo(9.6786701208981);
         viewerRef.current?.setMouseNavEnabled(false);

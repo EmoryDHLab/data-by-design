@@ -1330,7 +1330,7 @@ export default function DuboisChapter() {
             >
               <img
                 src="https://iip.readux.io/iiif/3/dxd/change/alumni.tiff/99,1472,1399,329/full/0/default.jpg"
-                alt=""
+                alt=""iiif/3/dxd%2f
               />
             </span>,
             <span key="e11395da">Insert more on William Henry Crogman</span>,

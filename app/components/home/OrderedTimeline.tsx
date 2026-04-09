@@ -35,7 +35,7 @@ interface Props {
 const OrderedTimeline = ({ setSelectedImage, selectedImage }: Props) => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(
-    selectedImage ? sortedImages.indexOf(selectedImage) : 0
+    selectedImage ? sortedImages.indexOf(selectedImage) : 0,
   );
   const [mouseIsDown, setMouseIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -154,17 +154,17 @@ const OrderedTimeline = ({ setSelectedImage, selectedImage }: Props) => {
                 >
                   <picture>
                     <source
-                      srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/300,/0/default.webp`}
+                      srcSet={`https://iiif.ecds.io/iiiiif/3/dxd%2fimage.chapter}/${image.fileName}.tiff/full/300,/0/default.webp`}
                       type="image/webp"
                     />
                     <source
-                      srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/300,/0/default.jpg`}
+                      srcSet={`https://iiif.ecds.io/iiiiif/3/dxd%2fimage.chapter}/${image.fileName}.tiff/full/300,/0/default.jpg`}
                       type="image/jpeg"
                     />
                     <img
                       className={classNames(
                         "absolute border bg-offwhite w-32 h-auto object-cover",
-                        isSelected && "border-4 border-red-500"
+                        isSelected && "border-4 border-red-500",
                       )}
                       style={{
                         left: `${index * 10}px`,

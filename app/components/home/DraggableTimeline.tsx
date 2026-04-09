@@ -26,11 +26,11 @@ export default function DraggableTimeline({
   const { windowSize } = useResizeObserver();
   const svgRef = useRef<SVGSVGElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(
-    selectedImage ? shuffledImages.indexOf(selectedImage) : 0
+    selectedImage ? shuffledImages.indexOf(selectedImage) : 0,
   );
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [startPosition, setStartPosition] = useState<startPosition | undefined>(
-    undefined
+    undefined,
   );
 
   const [imagePositions, setImagePositions] = useState<
@@ -46,16 +46,16 @@ export default function DraggableTimeline({
         const imageWidth = 200; // Approximate image width
         const availableWidth = Math.max(
           windowWidth - controlsWidth - imageWidth,
-          600
+          600,
         );
         const x = controlsWidth + Math.random() * availableWidth;
         const y = Math.max(
           PART_ONE_START + Math.random() * (PART_ONE_HEIGHT + 50) - 150, // Reduce top offset to prevent cropping
-          80 // Give images more room at the top to prevent cropping
+          80, // Give images more room at the top to prevent cropping
         );
         const r = Math.random() * 60 - 30;
         return { x, y, r };
-      })
+      }),
     );
   }, [windowSize.width, shuffledImages]);
 
@@ -163,11 +163,11 @@ export default function DraggableTimeline({
             >
               <picture>
                 <source
-                  srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/400,/0/default.webp`}
+                  srcSet={`https://iiif.ecds.io/iiiiif/3/dxd%2fimage.chapter}/${image.fileName}.tiff/full/400,/0/default.webp`}
                   type="image/webp"
                 />
                 <source
-                  srcSet={`https://iiif.ecds.io/iiif/3/dxd/${image.chapter}/${image.fileName}.tiff/full/400,/0/default.jpg`}
+                  srcSet={`https://iiif.ecds.io/iiiiif/3/dxd%2fimage.chapter}/${image.fileName}.tiff/full/400,/0/default.jpg`}
                   type="image/jpeg"
                 />
                 <img
