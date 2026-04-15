@@ -33,6 +33,10 @@ export default function Viz3() {
   const [straightTextMode, setStraightTextMode] = useState(false);
   const [viewAllMode, setViewAllMode] = useState(false);
   const [windowSize, setWindowSize] = useState({ width: 700, height: 700 });
+  const [unravelingIndex, setUnravelingIndex] = useState<number | null>(null);
+  const [hiddenKnot, setHiddenKnot] = useState<number | null>(null);
+  const [ravelingIndex, setRavelingIndex] = useState<number | null>(null);
+  const [showBigViz, setShowBigViz] = useState(true);
 
   useEffect(() => {
     const updateSize = () => {
@@ -66,6 +70,7 @@ export default function Viz3() {
     setSelectedCategory(category);
     setCurrentResponseIndex(0);
     setViewAllMode(false);
+    setHiddenKnot(null);
   };
 
   const scrollToResponse = (index: number) => {
@@ -168,7 +173,143 @@ export default function Viz3() {
           <>
             {/* Tracks Visualization */}
             <div className="relative mb-6 h-[400px] md:h-[500px] lg:h-[700px]">
-              <div className={`transition-opacity duration-500 ease-in-out ${straightTextMode ? 'opacity-0' : 'opacity-100'}`}>
+              {/* Background mini-knots for navigation */}
+              <div className="absolute inset-0 z-[2] overflow-hidden pointer-events-none">
+                <style>{`
+                  @keyframes unravel-stroke {
+                    0% { stroke-dashoffset: 0; opacity: 1; }
+                    80% { opacity: 0.3; }
+                    100% { stroke-dashoffset: -350; opacity: 0; }
+                  }
+                  @keyframes ravel-stroke {
+                    0% { stroke-dashoffset: 350; opacity: 0; }
+                    20% { opacity: 0.3; }
+                    100% { stroke-dashoffset: 0; opacity: 1; }
+                  }
+                `}</style>
+                {responses.map((_, index) => {
+                  const seed = index * 137.508;
+                  const left = ((seed * 7.3) % 86) + 4;
+                  const top = ((seed * 3.7) % 82) + 6;
+                  const rotation = ((seed * 2.1) % 70) - 35;
+                  const size = 50 + (index % 4) * 10;
+                  const isActive = index === currentResponseIndex;
+                  const isUnraveling = unravelingIndex === index;
+
+                  // Procedurally generate a unique knot path per category+index
+                  // using a simple seeded pseudo-random number generator
+                  const catOffset = { elt: 0, cedu: 1000, hind: 2000, pl: 3000 }[selectedCategory] || 0;
+                  const hash = (index + 1) * 2654435761 + catOffset;
+                  const rand = (n: number) => {
+                    const v = Math.sin(hash * 0.001 + n * 127.1) * 43758.5453;
+                    return v - Math.floor(v); // 0..1
+                  };
+
+                  // Generate 4-6 control point clusters for the knot
+                  const numLoops = 3 + Math.floor(rand(0) * 3); // 3-5 loops
+                  const points: number[][] = [];
+
+                  // Entry point (bottom-left area)
+                  points.push([rand(1) * 15, 75 + rand(2) * 20]);
+
+                  // Interior tangle points — each loop crosses back
+                  for (let k = 0; k < numLoops; k++) {
+                    const t = (k + 1) / (numLoops + 1);
+                    // Alternate sides to create crossings
+                    const baseX = 15 + t * 65;
+                    const baseY = 20 + rand(10 + k * 3) * 60;
+                    // Control points that swing wide to create loops
+                    const swingX = baseX + (rand(20 + k) - 0.5) * 40;
+                    const swingY = baseY + (rand(30 + k) - 0.5) * 40;
+                    points.push([
+                      Math.max(5, Math.min(95, swingX)),
+                      Math.max(5, Math.min(95, swingY)),
+                    ]);
+                  }
+
+                  // Exit point (top-right area)
+                  points.push([85 + rand(3) * 15, rand(4) * 20]);
+
+                  // Build the path with cubic beziers between points
+                  let d = `M${points[0][0].toFixed(1)},${points[0][1].toFixed(1)}`;
+                  for (let k = 1; k < points.length; k++) {
+                    const prev = points[k - 1];
+                    const curr = points[k];
+                    // Generate unique control points per segment
+                    const cp1x = prev[0] + (rand(40 + k * 7) - 0.3) * 45;
+                    const cp1y = prev[1] + (rand(50 + k * 7) - 0.6) * 50;
+                    const cp2x = curr[0] + (rand(60 + k * 7) - 0.7) * 45;
+                    const cp2y = curr[1] + (rand(70 + k * 7) - 0.4) * 50;
+                    d += ` C${cp1x.toFixed(1)},${cp1y.toFixed(1)} ${cp2x.toFixed(1)},${cp2y.toFixed(1)} ${curr[0].toFixed(1)},${curr[1].toFixed(1)}`;
+                  }
+
+                  const isRaveling = ravelingIndex === index;
+                  const isHidden = hiddenKnot === index && !isRaveling;
+                  if (isHidden) return null;
+
+                  return (
+                    <button
+                      key={`nav-knot-${index}`}
+                      onClick={() => {
+                        if (unravelingIndex !== null) return;
+                        // Bring back old knot with ravel-in animation
+                        const oldHidden = hiddenKnot;
+                        if (oldHidden !== null && oldHidden !== index) {
+                          setRavelingIndex(oldHidden);
+                          setTimeout(() => setRavelingIndex(null), 400);
+                        }
+                        setUnravelingIndex(index);
+                        setShowBigViz(false);
+                        setTimeout(() => {
+                          setHiddenKnot(index);
+                          setCurrentResponseIndex(index);
+                          setUnravelingIndex(null);
+                          setTimeout(() => setShowBigViz(true), 150);
+                        }, 400);
+                      }}
+                      className={`absolute pointer-events-auto cursor-pointer ${
+                        isActive ? "z-10" : "z-0"
+                      }`}
+                      style={{
+                        left: `${left}%`,
+                        top: `${top}%`,
+                        transform: `rotate(${rotation}deg)`,
+                      }}
+                      title={`Response ${index + 1}`}
+                    >
+                      <svg
+                        width={size}
+                        height={size}
+                        viewBox="0 0 100 100"
+                        overflow="visible"
+                        className={`transition-opacity duration-300 ${
+                          isActive
+                            ? "opacity-70"
+                            : "opacity-20 hover:opacity-55"
+                        }`}
+                      >
+                        <path
+                          d={d}
+                          stroke={isActive ? "#fff" : "#ccc"}
+                          strokeWidth={2}
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeDasharray={isUnraveling || isRaveling ? "350" : "none"}
+                          style={isUnraveling ? {
+                            animation: "unravel-stroke 400ms ease-in forwards",
+                          } : isRaveling ? {
+                            animation: "ravel-stroke 400ms ease-out forwards",
+                          } : undefined}
+                        />
+                      </svg>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Tracks viz */}
+              <div className={`relative z-[1] transition-opacity duration-500 ease-in-out ${straightTextMode || !showBigViz ? 'opacity-0' : 'opacity-100'}`}>
                 <TracksVisualization
                   key={`${selectedCategory}-${currentResponseIndex}`}
                   text={currentResponse?.selection || ""}
@@ -178,8 +319,42 @@ export default function Viz3() {
                 />
               </div>
 
-              {/* Readable Text Overlay */}
-              <div className={`absolute inset-0 flex items-center justify-center bg-[#2A2423] transition-opacity duration-500 ease-in-out ${straightTextMode ? 'opacity-100 z-10' : 'opacity-0 pointer-events-none'}`}>
+              {/* Pin button — floats over the viz
+              <button
+                onClick={() => setStraightTextMode(!straightTextMode)}
+                className={`absolute z-[3] transition-all duration-300 group ${
+                  straightTextMode
+                    ? "top-3 right-3"
+                    : "bottom-3 right-3"
+                }`}
+                title={straightTextMode ? "Unpin — release the string" : "Pin flat — make text readable"}
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`transition-all duration-300 ${
+                    straightTextMode
+                      ? "stroke-white rotate-0 opacity-90"
+                      : "stroke-gray-500 rotate-45 opacity-40 group-hover:opacity-80 group-hover:stroke-white"
+                  }`}
+                >
+                  <line x1="12" y1="17" x2="12" y2="22" />
+                  <path d="M5 17h14" />
+                  <path d="M7.5 17l1-7h7l1 7" />
+                  <path d="M9.5 10V5.5a2.5 2.5 0 0 1 5 0V10" />
+                </svg>
+              </button>
+              */}
+
+              {/* Pinned / readable text overlay */}
+              <div
+                className={`absolute inset-0 flex flex-col items-center justify-center bg-[#2A2423] transition-all duration-500 ease-in-out ${straightTextMode ? 'opacity-100 z-[2]' : 'opacity-0 pointer-events-none'}`}
+              >
                 <div className="text-white font-power text-lg md:text-xl text-justify leading-tight max-w-[90%] select-text px-4">
                   {currentResponse && currentResponse.lines && currentResponse.lines.length > 0
                     ? currentResponse.lines
