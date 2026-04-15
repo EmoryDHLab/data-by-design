@@ -2,7 +2,8 @@ import ChapterTitle from "~/components/ChapterTitle";
 
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
-import { powerFootnotes } from "~/footnotes";
+import { aboutFootnotes } from "~/footnotes";
+import InlineFootnote from "~/components/InlineFootnote";
 
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
@@ -37,7 +38,7 @@ export default function AboutPage() {
           accentColor: "changeSecondary",
           footnoteTextColor: "changePrimary",
           primaryTextColor: "white",
-          footnotes: powerFootnotes,
+          footnotes: aboutFootnotes,
           sections,
         }}
       >
@@ -74,19 +75,23 @@ export default function AboutPage() {
             <h2 className="text-lg font-powerWide uppercase">References</h2>
             <p>
               Clicking on any inline reference (a number with a circle around
-              it) will expand the reference inline with the text. Should you
+              it)     <InlineFootnote index={0} /> will expand the reference inline with the text. Should you
               want to expand all of the references at once, click the “show
               references” toggle on the top-left of each chapter. Should you
               prefer to wait until the end of the chapter to view the
               references, they also appear at the bottom of the page.
             </p>
+           
             <h2 className="text-lg font-powerWide uppercase">Navigation</h2>
             <p>
               We are under no illusions: these chapters are long! Should you
               wish to navigate (or link) directly to a specific part of the
               chapter, you can use the chapter navigation bar at the top of the
-              page. Icons indicate archival images, new visualizations,
-              interactive features. Hovering over each icon will display the
+              page. Icons indicate archival images{" "}
+              <span className="font-icons text-xl">a</span>, new visualizations{" "}
+              <span className="font-icons text-xl">h</span>, interactive features{" "}
+              <span className="font-icons text-xl">g</span>. Hovering over each icon
+              will display the
               feature’s title. Clicking the icon will take you to that part of
               the chapter. A navigation bar displays your reading progress.
             </p>

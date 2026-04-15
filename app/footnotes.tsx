@@ -1605,6 +1605,13 @@ export const powerFootnotes = [
   </span>,
 ];
 
+export const aboutFootnotes = [
+  <span key="about-example-1">
+    Like this! This is an example of an inline reference. Click the numbered
+    button again to collapse it.
+  </span>,
+];
+
 export const workFootnotes = [];
 
 export const epilogueFootnotes = [];
