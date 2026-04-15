@@ -55,7 +55,7 @@ const sections = [
   },
   {
     title: "Visualizing Resistance ",
-    id: "visualizing-resistance ",
+    id: "visualizing-resistance",
   },
   {
     title: "The Alternate Streams of Data Visualization",
