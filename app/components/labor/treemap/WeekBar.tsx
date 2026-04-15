@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { rectColor } from "./data";
+import { rectColor, rectHoverColor } from "./data";
 import type { TContribution } from "./data";
 import type { Dispatch, SetStateAction } from "react";
 import type { TWeekData } from "./weeklyData";
@@ -34,7 +34,7 @@ const WeekBar = ({
         width={width}
         height={80}
         strokeWidth={0.3}
-        className="fill-offwhite stroke-black"
+        className="fill-offblack stroke-black"
       />
       {contributions && (
         <>
@@ -51,7 +51,9 @@ const WeekBar = ({
                   strokeWidth={0.3}
                   className={`${rectColor(
                     contribution?.source,
-                  )} hover:fill-changeSecondary stroke-black cursor-pointer`}
+                  )} ${rectHoverColor(
+                    contribution?.source,
+                  )} stroke-black cursor-pointer`}
                   onMouseEnter={() => setActiveContribution(contribution)}
                   onMouseLeave={() => setActiveContribution(undefined)}
                 />

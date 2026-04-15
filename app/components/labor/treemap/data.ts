@@ -51,6 +51,24 @@ export const rectColor = (source: string | undefined) => {
   }
 };
 
+export const rectHoverColor = (source: string | undefined) => {
+  if (!source) return;
+  switch (source) {
+    case "Github":
+      return "hover:fill-changeSecondary";
+    case "Figma":
+      return "hover:fill-imageSecondary";
+    case "Zotero":
+      return "hover:fill-peopleSecondary";
+    case "iCalendar":
+      return "hover:fill-knowledgeSecondary";
+    case "Google Drive":
+      return "hover:fill-dataSecondary";
+    default:
+      return "";
+  }
+};
+
 
 // let rows = []
 // for (const month of monthlyData) {
