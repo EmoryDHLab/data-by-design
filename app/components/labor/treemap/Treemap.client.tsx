@@ -67,6 +67,7 @@ const Treemap = () => {
                   monthlyData={monthlyData}
                   width={width}
                   setSelectedMonth={setSelectedMonth}
+                  selectedMonth={selectedMonth}
                   setBoxSize={setBoxSize}
                 />
               );

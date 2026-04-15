@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { visWidth, visHeight } from "../data/functions";
 import { yearScale, rectColor } from "./data";
 import type { TMontData } from "./monthlyData";
@@ -49,12 +49,23 @@ interface Props {
   width: number | undefined;
   setBoxSize?: Dispatch<SetStateAction<{ height: number; width: number }>>;
   setSelectedMonth: Dispatch<SetStateAction<string | undefined>>;
+  selectedMonth?: string;
 }
 
-const Month = ({ monthlyData, width, setBoxSize, setSelectedMonth }: Props) => {
+const Month = ({
+  monthlyData,
+  width,
+  setBoxSize,
+  setSelectedMonth,
+  selectedMonth,
+}: Props) => {
   const monthRef = useRef<SVGGElement>(null);
   const transformRef = useRef<string | undefined>(undefined);
   const dimensionRef = useRef<number | undefined>(undefined);
+  const [outline, setOutline] = useState<{
+    transform: string;
+    dim: number;
+  } | null>(null);
   const key = `m${monthlyData.month.getMonth()}_${monthlyData.month.getFullYear()}`;
 
   useEffect(() => {
@@ -72,6 +83,7 @@ const Month = ({ monthlyData, width, setBoxSize, setSelectedMonth }: Props) => {
     );
 
     transformRef.current = `translate(${translateX + 10}, ${translateY + 12})`;
+    setOutline({ transform: transformRef.current, dim: boxDimension });
 
     const root = d3
       .stratify()
@@ -128,6 +140,8 @@ const Month = ({ monthlyData, width, setBoxSize, setSelectedMonth }: Props) => {
     };
   }, [monthlyData, width, setBoxSize]);
 
+  const isSelected = selectedMonth === key;
+
   return (
     <>
       <g
@@ -141,6 +155,19 @@ const Month = ({ monthlyData, width, setBoxSize, setSelectedMonth }: Props) => {
         }}
         aria-description={monthlyData.month.toDateString()}
       ></g>
+      {isSelected && outline && (
+        <g transform={outline.transform} pointerEvents="none">
+          <rect
+            x={0}
+            y={10}
+            width={outline.dim}
+            height={outline.dim}
+            fill="none"
+            stroke="white"
+            strokeWidth={2}
+          />
+        </g>
+      )}
     </>
   );
 };
