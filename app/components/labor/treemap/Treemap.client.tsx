@@ -52,7 +52,7 @@ const Treemap = () => {
             onClick={() => {
               setSelectedMonth(undefined);
             }}
-            aria-description="here is a long description"
+            aria-description="Here is a long description"
           >
             <MonthScale
               year={2025}
@@ -93,18 +93,18 @@ const Treemap = () => {
         )}
       </div>
       <div className="border-l-2 md:row-span-5 flex flex-col">
-        <div className="text-xl md:text-2xl mx-6 h-1/2">
+        <div className="text-xl font-power text-center md:text-2xl mx-4 h-1/2">
           <MonthDetail
             selectedMonth={selectedMonth}
             setActiveContribution={setActiveContribution}
           />
         </div>
         <div className="border border-t-1 border-x-0 border-b-0">
-          <h4 className="text-2xl font-power font-bold md:ml-6 md:mt-4">
+          <h4 className="text-lg font-power  italic small-caps  tracking-wide md:ml-4 md:mt-4">
             Contribution Activity
           </h4>
           {activeContribution && (
-            <ul className="leading-7 md:text-lg md:mx-6 font-power">
+            <ul className="leading-7 md:text-lg md:mx-4 font-power">
               <li className="pt-3">{activeContribution.user}</li>
               <li className="pt-3">
                 <span className="font-power  font-bold">
@@ -121,7 +121,7 @@ const Treemap = () => {
         <hr className=" col-span-3 mt-11"></hr>
         <div className="grid grid-cols-2 gap-8 pt-6">
           <div>
-            <h3 className="mb-4 font-power text-xl md:text-3xl">
+            <h3 className="mb-4 font-power font-bold text-xl md:text-3xl">
               Contribution Across Time
             </h3>
             <h4 className="mb-6 font-power font-light text-base md:text-xl">

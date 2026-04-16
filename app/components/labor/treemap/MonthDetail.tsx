@@ -81,8 +81,8 @@ const MonthDetail = ({ selectedMonth, setActiveContribution }: Props) => {
     return (
       <svg
         ref={svgRef}
-        viewBox="0 0 100 110"
-        className="font-power mt-2 h-full uppercase"
+        viewBox="0 0 100 100"
+        className="font-power mb-2 h-full font-bold text-center"
       >
         <g>
           {weeks.map((week, index) => {
