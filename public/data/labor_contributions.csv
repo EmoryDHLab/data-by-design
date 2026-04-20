@@ -101,7 +101,6 @@ iCalendar,Lauren Klein; Tanvi Sharma,2025-10-24T16:00:00Z,"[External] Invitation
 iCalendar,Lauren Klein; Silas Munro; Tanvi Sharma,2025-10-23T15:00:00Z,"[External] Updated invitation: Lauren x Tanvi x Silas chat @ Thu Oct 23, 2025 3pm - 4pm (EDT) (lauren.klein@emory.edu)"
 iCalendar,Lauren Klein; Tanvi Sharma,2025-10-31T13:00:00Z,"[External] Updated invitation: DxD Dubois: LK + TS @ Fri Oct 31, 2025 1pm - 2:30pm (EDT) (lauren.klein@emory.edu)"
 iCalendar,Margy Adams; Tanvi Sharma; Jay Varner,2026-03-30T00:00:00Z,hold for tanvi in atlanta
-iCalendar,Lauren Klein; Tanvi Sharma,2026-01-07T13:00:00Z,"[External] Updated invitation: Zoom | Lauren, Tanvi, Shirley @ Wed Jan 7, 2026 1pm - 2pm (EST) (lauren.klein@emory.edu)"
 Zotero,Lauren Klein,2013-12-13T16:09:37Z,"The Polish-American system of chronology,: reproduced, with some modifications, from General Bem's Franco-Polish method"
 Zotero,Lauren Klein,2013-12-09T17:19:28Z,"Statistical tables;: exhibiting a view of all the states of Europe: showing, with the greatest accuracy, their population, military and marine strength, revenue and expenditures, form of government; with their seas, rivers, and mountains, climate, soil, and productions; division of each country, chief towns, situation, number of houses and inhabitants; historical occurrences, &c"
 Zotero,Lauren Klein,2013-12-09T17:20:12Z,"Geographical and statistical chart of the world,: published by J.F. Whitney & Co., to accompany their map of the Hudson River, &c. &c"
@@ -2751,20 +2750,12 @@ Github,Jay Varner,2024-05-10T00:03:00Z,Merge branch 'dev'
 Github,Jay Varner,2024-05-10T00:02:00Z,Add images to Du Bois chapter
 Github,Nicholas Yang,2024-05-09T05:46:00Z,Some Footer tweaks
 Github,Jay Varner,2024-05-09T01:14:00Z,Block robots on dev
-Github,Nicholas Yang,2024-05-09T05:46:00Z,Some Footer tweaks
-Github,Jay Varner,2024-05-09T01:14:00Z,Block robots on dev
 Github,Jay Varner,2024-05-09T00:49:00Z,Fix links for homepage grid
 Github,Jay Varner,2024-05-09T00:46:00Z,Fix sitemap config
 Github,Jay Varner,2024-05-09T00:42:00Z,Fix links
 Github,Jay Varner,2024-05-08T23:06:00Z,Forgot to include update to CardGrid
 Github,Nicholas Yang,2024-05-08T06:03:00Z,Fixing Tanvi's mistake
-Github,Jay Varner,2024-05-09T00:49:00Z,Fix links for homepage grid
-Github,Jay Varner,2024-05-09T00:46:00Z,Fix sitemap config
-Github,Jay Varner,2024-05-09T00:42:00Z,Fix links
-Github,Jay Varner,2024-05-08T23:06:00Z,Forgot to include update to CardGrid
 Github,Jay Varner,2024-05-08T22:47:00Z,Add sitemap and rename some images.
-Github,Jay Varner,2024-05-08T22:47:00Z,Add sitemap and rename some images.
-Github,Nicholas Yang,2024-05-08T06:03:00Z,Fixing Tanvi's mistake
 Github,Jay Varner,2024-05-08T00:22:00Z,Add referrer policy for tracking.
 Github,Jay Varner,2024-05-07T22:25:00Z,Add analytics update deploy
 Github,Jay Varner,2024-05-06T19:04:00Z,Remove debug
@@ -3471,14 +3462,12 @@ Github,Jay Varner,2023-01-17T18:39:00Z,Fix key overlapping chart
 Github,Nicholas Yang,2023-01-14T01:32:00Z,Mobile fixes
 Github,Tanvi Sharma,2023-01-13T20:25:00Z,remove dupe
 Github,Tanvi Sharma,2023-01-16T19:49:00Z,Merge branch 'main' of github.com:NicholasLYang/data-by-design
-Github,Nicholas Yang,2023-01-14T01:32:00Z,Mobile fixes
 Github,Jay Varner,2023-01-13T23:26:00Z,Account for fixed nav on scrolling pins
 Github,Jay Varner,2023-01-13T23:03:00Z,Peabody scrollytell
 Github,Jay Varner,2023-01-13T23:02:00Z,Allow color overrides for footnote button and text
 Github,Jay Varner,2023-01-13T23:01:00Z,Add ScrollytellContext
 Github,Nicholas Yang,2023-01-13T21:25:00Z,Fixed shuffle
 Github,Nicholas Yang,2023-01-13T20:55:00Z,Various fixes (#21)
-Github,Tanvi Sharma,2023-01-13T20:25:00Z,remove dupe
 Github,Nicholas Yang,2023-01-13T02:04:00Z,Added ImageModal
 Github,Tanvi Sharma,2023-01-13T02:03:00Z,fonts
 Github,Nicholas Yang,2023-01-13T01:21:00Z,Tweaked timeline dragging
@@ -3515,19 +3504,11 @@ This will all change haha!"
 Github,Tanvi Sharma,2023-01-10T02:21:00Z,"adding footnote component to playfair
 
 spacing tweaks needed"
-Github,Tanvi Sharma,2023-01-10T01:24:00Z,"Friendship Over with Footnotes
-
-Some are still missing in the Vue site, so they don't exist here either."
-Github,Tanvi Sharma,2023-01-09T23:37:00Z,"Adding more Footnotes
-
-This will all change haha!"
 Github,Jay Varner,2023-01-09T22:20:00Z,Requested changes
 Github,Jay Varner,2023-01-09T20:40:00Z,Merge branch 'main' into footnote-context
-Github,Jay Varner,2023-01-09T20:37:00Z,Use context to track when a footnote is opened/closed
 Github,Tanvi Sharma,2023-01-09T20:34:00Z,"ImageCaption component added!
 
 Not implemented everywhere yet ;)"
-Github,Jay Varner,2023-01-06T18:55:00Z,Small changes in response to feedback.
 Github,Jay Varner,2023-01-03T19:28:00Z,Add footer to Playfair
 Github,Nicholas Yang,2022-12-28T04:13:00Z,More peabody changes
 Github,Jay Varner,2022-12-28T04:10:00Z,First pass at scrollytell (#9)
@@ -4006,332 +3987,167 @@ Github,Dan Jutan,2021-03-20T03:30:00Z,untangle and remove old code
 Github,Jianing Fu,2021-03-12T08:56:00Z,add vis
 Github,Jianing Fu,2021-03-08T03:07:00Z,occupation draft
 Github,Dan Jutan,2021-03-02T19:09:00Z,remove debugger statements
-Github,Dan Jutan,2021-03-02T19:09:00Z,remove debugger statements
-Github,Dan Jutan,2021-03-02T18:47:00Z,move captions into IMG div
 Github,Dan Jutan,2021-03-02T18:47:00Z,move captions into IMG div
 Github,Dan Jutan,2021-02-24T20:24:00Z,fix dubois navline
-Github,Dan Jutan,2021-02-24T20:24:00Z,fix dubois navline
-Github,Dan Jutan,2021-02-24T19:14:00Z,add dubois chapter file
 Github,Dan Jutan,2021-02-24T19:14:00Z,add dubois chapter file
 Github,Lauren Klein,2021-02-17T00:20:00Z,"Merge pull request #95 from GeorgiaTechDHLab/du-bois
 
 Added Du Bois chapter and timeline images"
-Github,Lauren Klein,2021-02-17T00:20:00Z,"Merge pull request #95 from GeorgiaTechDHLab/du-bois
-
-Added Du Bois chapter and timeline images"
 Github,Lauren Klein,2021-02-17T00:19:00Z,Updated timeline on Home with thumbnails
-Github,Lauren Klein,2021-02-17T00:19:00Z,Updated timeline on Home with thumbnails
-Github,Lauren Klein,2021-02-16T23:00:00Z,Added Du Bois chapter and timeline images
 Github,Lauren Klein,2021-02-16T23:00:00Z,Added Du Bois chapter and timeline images
 Github,Jianing Fu,2021-01-09T01:47:00Z,"Merge pull request #94 from GeorgiaTechDHLab/playfair-fix
 
 change import export line color"
-Github,Jianing Fu,2021-01-09T01:47:00Z,"Merge pull request #94 from GeorgiaTechDHLab/playfair-fix
-
-change import export line color"
-Github,Jianing Fu,2021-01-09T01:46:00Z,change import export line colar
 Github,Jianing Fu,2021-01-09T01:46:00Z,change import export line colar
 Github,Dan Jutan,2021-01-09T00:13:00Z,merge
-Github,Dan Jutan,2021-01-09T00:13:00Z,merge
-Github,Dan Jutan,2021-01-09T00:11:00Z,navline fixes
 Github,Dan Jutan,2021-01-09T00:11:00Z,navline fixes
 Github,Dan Jutan,2021-01-08T23:27:00Z,update women's grid
-Github,Dan Jutan,2021-01-08T23:27:00Z,update women's grid
-Github,Dan Jutan,2021-01-08T23:27:00Z,update women's grid
-Github,Dan Jutan,2021-01-08T23:27:00Z,update women's grid
-Github,Dan Jutan,2021-01-08T20:12:00Z,adjust easing on playfair mapscroller
 Github,Dan Jutan,2021-01-08T20:12:00Z,adjust easing on playfair mapscroller
 Github,Lauren Klein,2021-01-08T09:33:00Z,Tweaked image sizes
-Github,Lauren Klein,2021-01-08T09:33:00Z,Tweaked image sizes
-Github,Lauren Klein,2021-01-08T09:20:00Z,Added missing caption
 Github,Lauren Klein,2021-01-08T09:20:00Z,Added missing caption
 Github,Lauren Klein,2021-01-08T09:12:00Z,Updated Playfair process vis text
-Github,Lauren Klein,2021-01-08T09:12:00Z,Updated Playfair process vis text
 Github,Dan Jutan,2021-01-08T07:54:00Z,finish todos
-Github,Dan Jutan,2021-01-08T07:54:00Z,finish todos
-Github,Dan Jutan,2021-01-08T06:25:00Z,(hopefull) fix glitchy second scrollytell
 Github,Dan Jutan,2021-01-08T06:25:00Z,(hopefull) fix glitchy second scrollytell
 Github,Jianing Fu,2021-01-08T01:53:00Z,"Merge pull request #92 from GeorgiaTechDHLab/playfair-fix
 
 added dot domain"
-Github,Jianing Fu,2021-01-08T01:53:00Z,"Merge pull request #92 from GeorgiaTechDHLab/playfair-fix
-
-added dot domain"
-Github,Jianing Fu,2021-01-08T01:53:00Z,added dot domain
 Github,Jianing Fu,2021-01-08T01:53:00Z,added dot domain
 Github,Dan Jutan,2021-01-07T22:59:00Z,finally much better collect
-Github,Dan Jutan,2021-01-07T22:59:00Z,finally much better collect
-Github,Lauren Klein,2021-01-07T21:06:00Z,Merge branch 'master' of https://github.com/GeorgiaTechDHLab/DataByDesign
 Github,Lauren Klein,2021-01-07T21:06:00Z,Merge branch 'master' of https://github.com/GeorgiaTechDHLab/DataByDesign
 Github,Lauren Klein,2021-01-07T21:06:00Z,Added floorchart images
-Github,Lauren Klein,2021-01-07T21:06:00Z,Added floorchart images
 Github,Dan Jutan,2021-01-07T20:52:00Z,Merge branch 'master' of github.com:GeorgiaTechDHLab/DataByDesign
-Github,Dan Jutan,2021-01-07T20:52:00Z,Merge branch 'master' of github.com:GeorgiaTechDHLab/DataByDesign
-Github,Dan Jutan,2021-01-07T20:52:00Z,grid todos
 Github,Dan Jutan,2021-01-07T20:52:00Z,grid todos
 Github,Jianing Fu,2021-01-07T03:56:00Z,"Merge pull request #91 from GeorgiaTechDHLab/playfair-fix
 
 fix d3 size"
-Github,Jianing Fu,2021-01-07T03:56:00Z,"Merge pull request #91 from GeorgiaTechDHLab/playfair-fix
-
-fix d3 size"
-Github,Jianing Fu,2021-01-07T03:56:00Z,fix d3 size
 Github,Jianing Fu,2021-01-07T03:56:00Z,fix d3 size
 Github,Dan Jutan,2021-01-06T20:27:00Z,"Merge pull request #90 from GeorgiaTechDHLab/playfair-todos
 
 Scrollytell and Header Adjustments"
-Github,Dan Jutan,2021-01-06T20:27:00Z,"Merge pull request #90 from GeorgiaTechDHLab/playfair-todos
-
-Scrollytell and Header Adjustments"
-Github,Dan Jutan,2021-01-06T20:26:00Z,playfair scrollytell
 Github,Dan Jutan,2021-01-06T20:26:00Z,playfair scrollytell
 Github,Dan Jutan,2021-01-06T06:50:00Z,Merge branch 'playfair-todos' of github.com:GeorgiaTechDHLab/DataByDesign into playfair-todos
-Github,Dan Jutan,2021-01-06T06:50:00Z,Merge branch 'playfair-todos' of github.com:GeorgiaTechDHLab/DataByDesign into playfair-todos
-Github,Dan Jutan,2021-01-06T06:39:00Z,fix offset accuracy; add pause feature
-Github,Dan Jutan,2021-01-06T06:39:00Z,fix offset accuracy; add pause feature
-Github,Dan Jutan,2021-01-06T06:39:00Z,fix offset accuracy; add pause feature
 Github,Dan Jutan,2021-01-06T06:39:00Z,fix offset accuracy; add pause feature
 Github,Dan Jutan,2021-01-05T20:41:00Z,align header with chapter when resizing
-Github,Dan Jutan,2021-01-05T20:41:00Z,align header with chapter when resizing
 Github,Dan Jutan,2021-01-05T20:11:00Z,adjust home page margin
-Github,Dan Jutan,2021-01-05T20:11:00Z,adjust home page margin
-Github,Dan Jutan,2021-01-05T20:06:00Z,make header less obtrusive
 Github,Dan Jutan,2021-01-05T20:06:00Z,make header less obtrusive
 Github,Jianing Fu,2021-01-04T10:08:00Z,"Merge pull request #88 from GeorgiaTechDHLab/playfair-fix
 
 fix stacked bar"
-Github,Jianing Fu,2021-01-04T10:08:00Z,"Merge pull request #88 from GeorgiaTechDHLab/playfair-fix
-
-fix stacked bar"
-Github,Jianing Fu,2021-01-04T10:08:00Z,Merge branch 'master' into playfair-fix
 Github,Jianing Fu,2021-01-04T10:08:00Z,Merge branch 'master' into playfair-fix
 Github,Jianing Fu,2021-01-04T10:07:00Z,fix stacked bar
-Github,Jianing Fu,2021-01-04T10:07:00Z,fix stacked bar
 Github,Lauren Klein,2021-01-04T09:06:00Z,Merge branch 'master' of https://github.com/GeorgiaTechDHLab/DataByDesign
-Github,Lauren Klein,2021-01-04T09:06:00Z,Merge branch 'master' of https://github.com/GeorgiaTechDHLab/DataByDesign
-Github,Lauren Klein,2021-01-04T09:06:00Z,Added/tweaked vis captions
 Github,Lauren Klein,2021-01-04T09:06:00Z,Added/tweaked vis captions
 Github,Jianing Fu,2021-01-04T08:50:00Z,"Merge pull request #87 from GeorgiaTechDHLab/playfair-fix
 
 add hover over"
-Github,Jianing Fu,2021-01-04T08:50:00Z,"Merge pull request #87 from GeorgiaTechDHLab/playfair-fix
-
-add hover over"
-Github,Jianing Fu,2021-01-04T08:50:00Z,Merge branch 'master' into playfair-fix
 Github,Jianing Fu,2021-01-04T08:50:00Z,Merge branch 'master' into playfair-fix
 Github,Jianing Fu,2021-01-04T08:49:00Z,add hover over
-Github,Jianing Fu,2021-01-04T08:49:00Z,add hover over
-Github,Lauren Klein,2021-01-04T08:33:00Z,Tweak caption of covid/income/women vis
 Github,Lauren Klein,2021-01-04T08:33:00Z,Tweak caption of covid/income/women vis
 Github,Jianing Fu,2021-01-04T03:29:00Z,"Merge pull request #86 from GeorgiaTechDHLab/playfair-fix
 
 minor fix"
-Github,Jianing Fu,2021-01-04T03:29:00Z,"Merge pull request #86 from GeorgiaTechDHLab/playfair-fix
-
-minor fix"
-Github,Jianing Fu,2021-01-04T03:28:00Z,minor fix
 Github,Jianing Fu,2021-01-04T03:28:00Z,minor fix
 Github,Dan Jutan,2021-01-03T09:51:00Z,fix priestly -> priestley
-Github,Dan Jutan,2021-01-03T09:51:00Z,fix priestly -> priestley
 Github,Dan Jutan,2021-01-03T09:45:00Z,begin removing unused files
-Github,Dan Jutan,2021-01-03T09:45:00Z,begin removing unused files
-Github,Dan Jutan,2021-01-03T09:23:00Z,"fix reduntant ""lines of exports"""
 Github,Dan Jutan,2021-01-03T09:23:00Z,"fix reduntant ""lines of exports"""
 Github,Jianing Fu,2021-01-03T08:35:00Z,"Merge pull request #85 from GeorgiaTechDHLab/homepage-fix
 
 picline fix"
-Github,Jianing Fu,2021-01-03T08:35:00Z,"Merge pull request #85 from GeorgiaTechDHLab/homepage-fix
-
-picline fix"
 Github,Jianing Fu,2021-01-03T08:34:00Z,picline fix
-Github,Jianing Fu,2021-01-03T08:34:00Z,picline fix
-Github,Lauren Klein,2021-01-03T08:26:00Z,Updated peabody chapter router link
 Github,Lauren Klein,2021-01-03T08:26:00Z,Updated peabody chapter router link
 Github,Lauren Klein,2021-01-03T08:04:00Z,"Merge pull request #84 from GeorgiaTechDHLab/dxd-text
 
 Replaced thumbnails in timeilne; updated chapter titles throughout"
-Github,Lauren Klein,2021-01-03T08:04:00Z,"Merge pull request #84 from GeorgiaTechDHLab/dxd-text
-
-Replaced thumbnails in timeilne; updated chapter titles throughout"
-Github,Lauren Klein,2021-01-03T08:04:00Z,Replaced thumbnails in timeilne; updated chapter titles throughout
 Github,Lauren Klein,2021-01-03T08:04:00Z,Replaced thumbnails in timeilne; updated chapter titles throughout
 Github,Lauren Klein,2021-01-02T01:41:00Z,"Merge pull request #83 from GeorgiaTechDHLab/dxd-text
 
 A few more text/image/caption additions to the Peabody and Playfair c…"
-Github,Lauren Klein,2021-01-02T01:41:00Z,"Merge pull request #83 from GeorgiaTechDHLab/dxd-text
-
-A few more text/image/caption additions to the Peabody and Playfair c…"
 Github,Lauren Klein,2021-01-02T01:41:00Z,Merge branch 'master' into dxd-text
-Github,Lauren Klein,2021-01-02T01:41:00Z,Merge branch 'master' into dxd-text
-Github,Lauren Klein,2021-01-02T01:37:00Z,A few more text/image/caption additions to the Peabody and Playfair chapters.
 Github,Lauren Klein,2021-01-02T01:37:00Z,A few more text/image/caption additions to the Peabody and Playfair chapters.
 Github,Jianing Fu,2021-01-01T03:58:00Z,"Merge pull request #82 from GeorgiaTechDHLab/playfair_fix
 
 playfair vis fix"
-Github,Jianing Fu,2021-01-01T03:58:00Z,"Merge pull request #82 from GeorgiaTechDHLab/playfair_fix
-
-playfair vis fix"
-Github,Jianing Fu,2021-01-01T03:57:00Z,playfair vis fix
 Github,Jianing Fu,2021-01-01T03:57:00Z,playfair vis fix
 Github,Dan Jutan,2021-01-01T01:30:00Z,"Merge pull request #81 from GeorgiaTechDHLab/modularize-docs-integration
 
 Modularize docs integration & fix image issues"
-Github,Dan Jutan,2021-01-01T01:30:00Z,"Merge pull request #81 from GeorgiaTechDHLab/modularize-docs-integration
-
-Modularize docs integration & fix image issues"
 Github,Dan Jutan,2021-01-01T01:27:00Z,DocRenderer in its own repo; CaptionedImage registers on the timeline as image; ChapterScaffold manages DocRenderer props
-Github,Dan Jutan,2021-01-01T01:27:00Z,DocRenderer in its own repo; CaptionedImage registers on the timeline as image; ChapterScaffold manages DocRenderer props
-Github,Dan Jutan,2021-01-01T00:31:00Z,fix img filename discrepancy
 Github,Dan Jutan,2021-01-01T00:31:00Z,fix img filename discrepancy
 Github,Lauren Klein,2020-12-31T20:23:00Z,"Merge pull request #80 from GeorgiaTechDHLab/dxd-text
 
 Updated Playfair chapter w/ captions and images; removed unused components. Also tweaked the labels of some of the new visualizations."
-Github,Lauren Klein,2020-12-31T20:23:00Z,"Merge pull request #80 from GeorgiaTechDHLab/dxd-text
-
-Updated Playfair chapter w/ captions and images; removed unused components. Also tweaked the labels of some of the new visualizations."
 Github,Lauren Klein,2020-12-31T10:23:00Z,Changed some label text and tweaked the label layout
-Github,Lauren Klein,2020-12-31T10:23:00Z,Changed some label text and tweaked the label layout
-Github,Lauren Klein,2020-12-31T10:22:00Z,Updated Playfair vis with final (?) images and captions; removed unused components
 Github,Lauren Klein,2020-12-31T10:22:00Z,Updated Playfair vis with final (?) images and captions; removed unused components
 Github,Lauren Klein,2020-12-31T08:21:00Z,"Merge pull request #79 from GeorgiaTechDHLab/dxd-text
 
 Fixed typo in legend and renamed items in key"
-Github,Lauren Klein,2020-12-31T08:21:00Z,"Merge pull request #79 from GeorgiaTechDHLab/dxd-text
-
-Fixed typo in legend and renamed items in key"
-Github,Lauren Klein,2020-12-31T08:21:00Z,Merge branch 'master' into dxd-text
 Github,Lauren Klein,2020-12-31T08:21:00Z,Merge branch 'master' into dxd-text
 Github,Lauren Klein,2020-12-31T08:07:00Z,Fixed typo in legend and renamed items in key
 Github,Dan Jutan,2020-12-29T08:55:00Z,Update README.md
-Github,Dan Jutan,2020-12-29T08:55:00Z,Update README.md
-Github,Jianing Fu,2020-12-29T03:09:00Z,"Merge pull request #78 from GeorgiaTechDHLab/timeline-fix
-
-fix homepage timeline hover layers"
 Github,Jianing Fu,2020-12-29T03:09:00Z,"Merge pull request #78 from GeorgiaTechDHLab/timeline-fix
 
 fix homepage timeline hover layers"
 Github,Jianing Fu,2020-12-29T03:09:00Z,fix homepage timeline hover layers
-Github,Jianing Fu,2020-12-29T03:09:00Z,fix homepage timeline hover layers
-Github,Dan Jutan,2020-12-28T05:17:00Z,remove notebooktypes console log
 Github,Dan Jutan,2020-12-28T05:17:00Z,remove notebooktypes console log
 Github,Dan Jutan,2020-12-28T05:05:00Z,playfair navline integration. extract common functionality into navlinemixin.js
-Github,Dan Jutan,2020-12-28T05:05:00Z,playfair navline integration. extract common functionality into navlinemixin.js
-Github,Lauren Klein,2020-12-26T08:25:00Z,"Merge pull request #77 from GeorgiaTechDHLab/dxd-text
-
-Added images for Playfair and Peabody chapters"
 Github,Lauren Klein,2020-12-26T08:25:00Z,"Merge pull request #77 from GeorgiaTechDHLab/dxd-text
 
 Added images for Playfair and Peabody chapters"
 Github,Lauren Klein,2020-12-26T08:25:00Z,Added one more Playfair image
 Github,Lauren Klein,2020-12-26T08:23:00Z,Adding images for Playfair and Peabody chapters; thumbnails for main timeline
 Github,Dan Jutan,2020-12-25T21:09:00Z,captioned image width fix
-Github,Dan Jutan,2020-12-25T21:09:00Z,captioned image width fix
-Github,Dan Jutan,2020-12-25T20:48:00Z,Merge branch 'master' of https://github.com/GeorgiaTechDHLab/DataByDesign
 Github,Dan Jutan,2020-12-25T20:48:00Z,Merge branch 'master' of https://github.com/GeorgiaTechDHLab/DataByDesign
 Github,Dan Jutan,2020-12-25T20:46:00Z,captionedimage component
-Github,Dan Jutan,2020-12-25T20:46:00Z,captionedimage component
-Github,Dan Jutan,2020-12-25T20:46:00Z,captionedimage component
-Github,Dan Jutan,2020-12-25T20:46:00Z,captionedimage component
 Github,Dan Jutan,2020-12-25T20:32:00Z,blockquote component
-Github,Dan Jutan,2020-12-25T20:32:00Z,blockquote component
-Github,Dan Jutan,2020-12-25T06:14:00Z,footnotes load from doc
 Github,Dan Jutan,2020-12-25T06:14:00Z,footnotes load from doc
 Github,Jianing Fu,2020-12-25T03:31:00Z,"Merge pull request #76 from GeorgiaTechDHLab/playfair-covid-vis
 
 second version"
-Github,Jianing Fu,2020-12-25T03:31:00Z,"Merge pull request #76 from GeorgiaTechDHLab/playfair-covid-vis
-
-second version"
-Github,Jianing Fu,2020-12-25T03:28:00Z,second version
 Github,Jianing Fu,2020-12-25T03:28:00Z,second version
 Github,Jianing Fu,2020-12-25T03:03:00Z,"Merge pull request #75 from GeorgiaTechDHLab/playfair-covid-vis
 
 adjust coxcomb"
-Github,Jianing Fu,2020-12-25T03:03:00Z,"Merge pull request #75 from GeorgiaTechDHLab/playfair-covid-vis
-
-adjust coxcomb"
-Github,Jianing Fu,2020-12-25T03:02:00Z,adjust coxcomb
 Github,Jianing Fu,2020-12-25T03:02:00Z,adjust coxcomb
 Github,Jianing Fu,2020-12-24T04:49:00Z,"Merge pull request #74 from GeorgiaTechDHLab/playfair-covid-vis
 
 add coxcomb, add dataSelection for covid, women, income"
-Github,Jianing Fu,2020-12-24T04:49:00Z,"Merge pull request #74 from GeorgiaTechDHLab/playfair-covid-vis
-
-add coxcomb, add dataSelection for covid, women, income"
-Github,Jianing Fu,2020-12-24T04:48:00Z,"add coxcomb, add dataSelection for covid, women, income"
 Github,Jianing Fu,2020-12-24T04:48:00Z,"add coxcomb, add dataSelection for covid, women, income"
 Github,Dan Jutan,2020-12-23T07:53:00Z,Merge branch 'master' of https://github.com/GeorgiaTechDHLab/DataByDesign
-Github,Dan Jutan,2020-12-23T07:53:00Z,Merge branch 'master' of https://github.com/GeorgiaTechDHLab/DataByDesign
-Github,Dan Jutan,2020-12-23T07:53:00Z,add script and mode-specific .env file to run remote server
 Github,Dan Jutan,2020-12-23T07:53:00Z,add script and mode-specific .env file to run remote server
 Github,Jianing Fu,2020-12-23T06:13:00Z,"Merge pull request #73 from GeorgiaTechDHLab/playfair-covid-vis
 
 Playfair covid vis"
-Github,Jianing Fu,2020-12-23T06:13:00Z,"Merge pull request #73 from GeorgiaTechDHLab/playfair-covid-vis
-
-Playfair covid vis"
-Github,Jianing Fu,2020-12-23T06:12:00Z,added vis
 Github,Jianing Fu,2020-12-23T06:12:00Z,added vis
 Github,Jianing Fu,2020-12-23T03:13:00Z,add more datasets
-Github,Jianing Fu,2020-12-23T03:13:00Z,add more datasets
-Github,Dan Jutan,2020-12-23T03:07:00Z,templates done
 Github,Dan Jutan,2020-12-23T03:07:00Z,templates done
 Github,Dan Jutan,2020-12-22T21:55:00Z,add prod script
-Github,Dan Jutan,2020-12-22T21:55:00Z,add prod script
 Github,Dan Jutan,2020-12-22T19:17:00Z,fix and clealeanup playfair Vue options (was previously a copy of Peabody)
-Github,Dan Jutan,2020-12-22T19:17:00Z,fix and clealeanup playfair Vue options (was previously a copy of Peabody)
-Github,Dan Jutan,2020-12-22T07:52:00Z,don't show title header for the introduction section
 Github,Dan Jutan,2020-12-22T07:52:00Z,don't show title header for the introduction section
 Github,Dan Jutan,2020-12-22T07:48:00Z,"Merge pull request #72 from GeorgiaTechDHLab/peabody-docs
 
 Full docs integration for Peabody"
-Github,Dan Jutan,2020-12-22T07:48:00Z,"Merge pull request #72 from GeorgiaTechDHLab/peabody-docs
-
-Full docs integration for Peabody"
 Github,Dan Jutan,2020-12-22T07:40:00Z,proper subsection tracking
-Github,Dan Jutan,2020-12-22T07:40:00Z,proper subsection tracking
-Github,Dan Jutan,2020-12-22T07:03:00Z,don't render empty paragraphs
 Github,Dan Jutan,2020-12-22T07:03:00Z,don't render empty paragraphs
 Github,Jianing Fu,2020-12-22T05:27:00Z,"Merge pull request #71 from GeorgiaTechDHLab/playfair-covid-vis
 
 complete covid data, bug fix, add router link to playfair chapter"
-Github,Jianing Fu,2020-12-22T05:27:00Z,"Merge pull request #71 from GeorgiaTechDHLab/playfair-covid-vis
-
-complete covid data, bug fix, add router link to playfair chapter"
-Github,Jianing Fu,2020-12-22T05:21:00Z,"complete covid data, bug fix, add router link to playfair chapter"
 Github,Jianing Fu,2020-12-22T05:21:00Z,"complete covid data, bug fix, add router link to playfair chapter"
 Github,Dan Jutan,2020-12-21T22:40:00Z,peabody is docs
-Github,Dan Jutan,2020-12-21T22:40:00Z,peabody is docs
-Github,Dan Jutan,2020-12-21T20:08:00Z,deal with objects before first section
 Github,Dan Jutan,2020-12-21T20:08:00Z,deal with objects before first section
 Github,Dan Jutan,2020-12-21T19:45:00Z,basic inline slot inner text support
-Github,Dan Jutan,2020-12-21T19:45:00Z,basic inline slot inner text support
-Github,Dan Jutan,2020-12-21T07:55:00Z,Merge branch 'master' of https://github.com/GeorgiaTechDHLab/DataByDesign
 Github,Dan Jutan,2020-12-21T07:55:00Z,Merge branch 'master' of https://github.com/GeorgiaTechDHLab/DataByDesign
 Github,Dan Jutan,2020-12-21T07:55:00Z,footnote & inline slot support
-Github,Dan Jutan,2020-12-21T07:55:00Z,footnote & inline slot support
-Github,Dan Jutan,2020-12-21T06:46:00Z,fix type function error
 Github,Dan Jutan,2020-12-21T06:46:00Z,fix type function error
 Github,Jianing Fu,2020-12-21T06:45:00Z,"Merge pull request #70 from GeorgiaTechDHLab/playfair-covid-vis
 
 added uk covid data"
-Github,Jianing Fu,2020-12-21T06:45:00Z,"Merge pull request #70 from GeorgiaTechDHLab/playfair-covid-vis
-
-added uk covid data"
-Github,Jianing Fu,2020-12-21T06:43:00Z,added uk covid data
 Github,Jianing Fu,2020-12-21T06:43:00Z,added uk covid data
 Github,Jianing Fu,2020-12-20T05:39:00Z,"Merge pull request #69 from GeorgiaTechDHLab/playfair-covid-vis
 
 added vis back"
-Github,Jianing Fu,2020-12-20T05:39:00Z,"Merge pull request #69 from GeorgiaTechDHLab/playfair-covid-vis
-
-added vis back"
 Github,Jianing Fu,2020-12-20T05:38:00Z,added vis back
-Github,Jianing Fu,2020-12-20T05:38:00Z,added vis back
-Github,Dan Jutan,2020-12-20T05:14:00Z,Merge branch 'docs-integration'
 Github,Dan Jutan,2020-12-20T05:14:00Z,Merge branch 'docs-integration'
 Github,Dan Jutan,2020-12-20T05:10:00Z,tag fixes in playfair
-Github,Dan Jutan,2020-12-20T04:44:00Z,no docsconfig file warning
 Github,Dan Jutan,2020-12-20T04:44:00Z,no docsconfig file warning
 Github,Dan Jutan,2020-12-19T03:09:00Z,"Merge pull request #67 from GeorgiaTechDHLab/dxd-text
 
@@ -4339,12 +4155,8 @@ Updated Playfair text and images"
 Github,Dan Jutan,2020-12-19T03:09:00Z,Merge branch 'master' into dxd-text
 Github,Lauren Klein,2020-12-19T02:09:00Z,Updated Playfair chapter text and images
 Github,Dan Jutan,2020-12-16T20:21:00Z,working parseInner function
-Github,Dan Jutan,2020-12-16T20:21:00Z,working parseInner function
-Github,Dan Jutan,2020-12-16T19:46:00Z,broken parseInner function
 Github,Dan Jutan,2020-12-16T19:46:00Z,broken parseInner function
 Github,Dan Jutan,2020-12-14T23:17:00Z,delete docs config from repo
-Github,Dan Jutan,2020-12-14T23:17:00Z,delete docs config from repo
-Github,Dan Jutan,2020-12-14T23:02:00Z,doc renderer supports sections
 Github,Dan Jutan,2020-12-14T23:02:00Z,doc renderer supports sections
 Github,Dan Jutan,2020-12-08T00:39:00Z,fix scrollytell glitching
 Github,Dan Jutan,2020-12-07T20:35:00Z,fix notebook stickiness
@@ -4380,7 +4192,6 @@ Github,Jianing Fu,2020-08-23T02:51:00Z,fixed homepage issues
 Github,Dan Jutan,2020-08-17T20:09:00Z,bunch of notebook/highlighting bug fixes
 Github,Dan Jutan,2020-08-15T03:55:00Z,fix conflicts
 Github,Dan Jutan,2020-08-15T03:49:00Z,get rid of double timeline bug in debugging
-Github,Dan Jutan,2020-08-15T03:49:00Z,get rid of double timeline bug in debugging
 Github,Dan Jutan,2020-08-15T03:32:00Z,filter out header elements when dividing subsections
 Github,Dan Jutan,2020-08-15T01:10:00Z,update peabody text
 Github,Dan Jutan,2020-08-14T23:38:00Z,peabody grid and peabody canvas interreactive
@@ -4393,7 +4204,6 @@ Github,Dan Jutan,2020-07-27T23:27:00Z,PeabodyCanvas works with v-modelgit add .
 Github,Dan Jutan,2020-07-20T21:47:00Z,added footnote system
 Github,Dan Jutan,2020-07-20T02:20:00Z,nearest color
 Github,Dan Jutan,2020-07-20T01:43:00Z,commit
-Github,Dan Jutan,2020-07-20T01:26:00Z,"mini overlay squares, and don't show when on border"
 Github,Dan Jutan,2020-07-20T01:26:00Z,"mini overlay squares, and don't show when on border"
 Github,Dan Jutan,2020-07-19T05:51:00Z,been working on the peabodycanvas last week and forgot to commit
 Github,Dan Jutan,2020-07-16T06:17:00Z,set highlight cursor to grab
@@ -4424,7 +4234,6 @@ Github,Dan Jutan,2020-06-17T23:59:00Z,"Merge pull request #63 from GeorgiaTechDH
 
 Merge new data architecture"
 Github,Dan Jutan,2020-06-17T23:57:00Z,Mutable data successfully saves/loads from server
-Github,Dan Jutan,2020-06-17T21:32:00Z,(stuff in progress)
 Github,Dan Jutan,2020-06-17T21:32:00Z,(stuff in progress)
 Github,Dan Jutan,2020-06-12T07:31:00Z,repair saving/loading highlights from server function
 Github,Dan Jutan,2020-06-11T22:22:00Z,use vuex for drag data
@@ -4627,7 +4436,6 @@ Github,Adam Hayward,2018-10-08T22:25:00Z,beginning notebook work
 Github,Adam Hayward,2018-08-08T22:29:00Z,added configurations for env variables through a .env file
 Github,Adam Hayward,2018-08-08T01:36:00Z,"Fixed authentication error in sign up, added npm commands for deployment"
 Github,Adam Hayward,2018-08-08T00:01:00Z,Merge branch 'dev' of github.com:GeorgiaTechDHLab/DataByDesign into dev
-Github,Adam Hayward,2018-08-08T00:01:00Z,Merge branch 'dev' of github.com:GeorgiaTechDHLab/DataByDesign into dev
 Github,Adam Hayward,2018-08-07T23:34:00Z,Merge branch 'dev' of github.com:GeorgiaTechDHLab/DataByDesign into dev
 Github,Adam Hayward,2018-08-07T23:34:00Z,preparing for deployment on server
 Github,Adam Hayward,2018-08-07T23:14:00Z,preparing for deployment on server
@@ -4693,7 +4501,6 @@ Github,Dan Jutan,2021-07-07T17:34:00Z,there's no harm in passing a default slot 
 Github,Dan Jutan,2021-07-07T17:33:00Z,slotDefs is in array of name checkers
 Github,Dan Jutan,2021-07-06T07:44:00Z,fix exports
 Github,Dan Jutan,2021-07-06T07:34:00Z,exports file
-Github,Dan Jutan,2021-07-06T07:34:00Z,exports file
 Github,Dan Jutan,2021-07-06T07:31:00Z,dots for nonexistant table entries
 Github,Dan Jutan,2021-07-06T02:50:00Z,0.1.6
 Github,Dan Jutan,2021-07-06T02:48:00Z,remove console log
@@ -4758,7 +4565,6 @@ Github,Dan Jutan,2021-06-09T01:12:00Z,fixed tests
 Github,Dan Jutan,2021-06-09T01:11:00Z,fixed texts
 Github,Dan Jutan,2021-06-09T00:37:00Z,Merge branch 'main' of github.com:Jutanium/docs-cms into main
 Github,Dan Jutan,2021-06-09T00:33:00Z,ts-jest attempt
-Github,Dan Jutan,2021-06-09T00:33:00Z,ts-jest attempt
 Github,Dan Jutan,2021-06-08T22:52:00Z,new package
 Github,Dan Jutan,2021-06-08T17:38:00Z,add root tsconfig to make IDE smarter
 Github,Dan Jutan,2021-06-07T22:55:00Z,rootMode upward for jest
@@ -4776,7 +4582,6 @@ Github,Dan Jutan,2021-06-02T18:09:00Z,combine text within paragraph
 Github,Dan Jutan,2021-06-02T18:00:00Z,text nodes
 Github,Dan Jutan,2021-06-02T16:47:00Z,matchers setup
 Github,Dan Jutan,2021-06-01T21:55:00Z,Merge branch 'main' of github.com:Jutanium/docs-cms into main
-Github,Dan Jutan,2021-06-01T21:54:00Z,"push the private stuff, for now"
 Github,Dan Jutan,2021-06-01T21:54:00Z,"push the private stuff, for now"
 Github,Dan Jutan,2021-05-31T21:56:00Z,tests for connect functions
 Github,Dan Jutan,2021-05-30T05:29:00Z,add root gitignore
@@ -4929,7 +4734,6 @@ iCalendar,Lauren Klein; Shiyao Li; Tanvi Sharma; Jay Varner; Nicholas Yang,2023-
 iCalendar,Lauren Klein; Shiyao Li; Tanvi Sharma; Jay Varner; Nicholas Yang,2023-04-06T13:00:00Z,DxD work session
 iCalendar,Lauren Klein; Shiyao Li; Tanvi Sharma; Jay Varner; Nicholas Yang,2023-03-16T11:00:00Z,DxD work session
 iCalendar,Lauren Klein; Shiyao Li; Tanvi Sharma; Jay Varner; Nicholas Yang,2023-04-13T13:00:00Z,DxD work session
-iCalendar,Lauren Klein; Shiyao Li; Tanvi Sharma; Jay Varner; Nicholas Yang,2023-02-09T13:00:00Z,DxD work session
 iCalendar,Margy Adams; Shiyao Li; Tanvi Sharma; Jay Varner; Nicholas Yang; Lauren Klein,2023-01-23T15:30:00Z,DxD weekly meeting - short one this week!
 iCalendar,Margy Adams; Shiyao Li; Tanvi Sharma; Jay Varner; Nicholas Yang; Lauren Klein,2023-01-30T15:30:00Z,DxD weekly meeting
 iCalendar,Margy Adams; Lauren Klein; Shiyao Li; Tanvi Sharma; Jay Varner; Nicholas Yang,2023-05-15T15:30:00Z,DxD weekly meeting
@@ -4971,3 +4775,1184 @@ iCalendar,Dan Jutan; Jianing Fu; Lauren Klein,2021-01-26T13:00:00Z,DxD mtg
 iCalendar,Dan Jutan; Jianing Fu; Lauren Klein,2021-04-13T13:30:00Z,DxD mtg
 iCalendar,Dan Jutan; Jianing Fu; Lauren Klein,2020-08-24T15:00:00Z,DxD mtg
 iCalendar,Dan Jutan; Lauren Klein,2020-05-29T14:00:00Z,Dxd mtg
+iCalendar,Everyone,2017-05-18T20:00:00Z,dh lab mtg
+iCalendar,Everyone,2017-05-25T20:00:00Z,dh lab mtg
+iCalendar,Everyone,2017-06-01T19:30:00Z,dh lab mtg
+iCalendar,Everyone,2017-06-05T20:00:00Z,dh lab mtg
+iCalendar,Everyone,2017-06-08T20:00:00Z,dh lab mtg
+iCalendar,Everyone,2017-08-22T15:55:00Z,lab group meeting
+iCalendar,Everyone,2017-08-30T18:30:00Z,dh lab meeting
+iCalendar,Everyone,2017-09-18T18:30:00Z,dh lab meeting
+iCalendar,Everyone,2017-09-25T18:30:00Z,dh lab meeting
+iCalendar,Everyone,2017-10-02T18:30:00Z,dh lab meeting
+iCalendar,Everyone,2017-10-16T18:30:00Z,dh lab meeting
+iCalendar,Everyone,2017-10-23T18:30:00Z,dh lab meeting
+iCalendar,Everyone,2017-10-30T18:30:00Z,dh lab meeting
+iCalendar,Everyone,2017-11-06T19:30:00Z,dh lab meeting
+iCalendar,Everyone,2017-11-13T19:30:00Z,dh lab meeting
+iCalendar,Everyone,2017-12-04T19:30:00Z,dh lab meeting
+iCalendar,Everyone,2018-01-18T18:00:00Z,lab group meeting
+iCalendar,Everyone,2018-01-24T18:30:00Z,zoe / dh lab mtg
+iCalendar,Everyone,2018-02-08T18:15:00Z,lab group meeting
+iCalendar,Everyone,2018-05-02T17:00:00Z,lab group meeting
+iCalendar,Everyone,2018-08-24T18:00:00Z,dh lab meeting?
+iCalendar,Everyone,2018-09-07T18:00:00Z,dh lab mtg
+iCalendar,Everyone,2018-09-17T18:00:00Z,dh lab mtg
+iCalendar,Everyone,2018-12-03T20:00:00Z,dh lab mtg -- maybe move to 2pm?
+iCalendar,Everyone,2020-01-13T20:00:00Z,dxd mtg
+iCalendar,Everyone,2020-03-30T18:30:00Z,dxd mtg
+Github,Tanvi Sharma,2026-04-16T02:04:25Z,font tweaks
+Github,Tanvi Sharma,2026-04-15T22:03:54Z,add select state to treemaps
+Github,Tanvi Sharma,2026-04-15T21:58:20Z,change hover state colors to be more consistent
+Github,Tanvi Sharma,2026-04-15T21:50:48Z,inline fun things for about page
+Github,Tanvi Sharma,2026-04-15T21:29:04Z,fixing broken anchor link
+Github,Jay Varner,2026-04-15T17:46:18Z,"Update contribution data, about page, remove debug logs."
+Github,Jay Varner,2026-04-09T14:21:27Z,Fix urls for ordered timeline
+Github,Jay Varner,2026-04-09T13:34:14Z,Fix IIIF urls
+Github,Jay Varner,2026-04-09T13:24:06Z,Fix typo
+Github,Jay Varner,2026-04-09T12:57:03Z,Fix IIIF urls
+Github,Jay Varner,2026-04-03T15:46:09Z,Add data to treemap and fix people - versions viz
+Github,Tanvi Sharma,2026-03-29T21:13:05Z,Merge branch 'dev' of https://github.com/EmoryDHLab/data-by-design into dev
+Github,Tanvi Sharma,2026-03-29T21:13:05Z,Note to update data for Viz 1
+Github,Jay Varner,2026-03-13T12:56:00Z,Remove map test
+Github,Jay Varner,2026-03-12T21:58:54Z,Map recreation improvements.
+Github,Jay Varner,2026-03-12T17:06:24Z,Add Indian Nations to map
+Github,Jay Varner,2026-03-11T14:07:20Z,Other new scrollytell
+Github,Jay Varner,2026-03-10T16:06:25Z,Adding forgotten file
+Github,Jay Varner,2026-03-10T15:59:15Z,DuBois scrollytell take 2
+Github,Jay Varner,2026-02-24T21:56:14Z,First try at all new DuBois scrollytell
+Github,Tanvi Sharma,2026-01-12T17:29:27Z,Adding title to Dubois Viz
+Github,Tanvi Sharma,2026-01-12T17:29:10Z,Matching colors in Playfair viz
+Github,Tanvi Sharma,2026-01-12T17:18:11Z,Edit grouping order in grouping select
+Github,Tanvi Sharma,2026-01-12T17:08:55Z,Update Viz1.tsx
+Github,Tanvi Sharma,2026-01-12T16:42:15Z,Update PeopleVersions.client.tsx
+Github,Tanvi Sharma,2026-01-12T16:41:30Z,fixing col width in people viz info section
+Github,Tanvi Sharma,2026-01-12T16:35:55Z,People Viz editing metadata
+Github,Tanvi Sharma,2026-01-12T16:27:19Z,Adding key to Treemap
+Github,Tanvi Sharma,2026-01-12T16:24:22Z,scale of type in treemap
+Github,Jay Varner,2026-01-12T14:50:48Z,Add scroll trigger to error highlight
+Github,Jay Varner,2025-12-15T19:07:07Z,Remove hover action on treemap viz
+Github,Tanvi Sharma,2025-12-10T20:20:50Z,People Viz design changes
+Github,Tanvi Sharma,2025-12-10T18:53:37Z,"Change and People chapter fixes
+
+- Adding view all responses for change chapter
+- Adding vizes to ChapterNav for people and change"
+Github,Tanvi Sharma,2025-12-09T17:57:37Z,Update chapters.change.tsx
+Github,Tanvi Sharma,2025-12-09T17:45:32Z,Update DocumentViewer to fit Desktop better
+Github,Tanvi Sharma,2025-12-09T01:53:16Z,small tweaks to labor
+Github,Tanvi Sharma,2025-12-08T23:57:05Z,Update DrawingScrollytell.tsx
+Github,Tanvi Sharma,2025-12-08T23:54:04Z,Update chapters.labor.tsx
+Github,Tanvi Sharma,2025-12-05T22:34:50Z,"fianl changes, adding back quizFinal component and aligning quiz on mobile"
+Github,Tanvi Sharma,2025-12-05T22:15:54Z,changing quiz to html for better modularity
+Github,Tanvi Sharma,2025-12-05T21:20:40Z,alignment changes for Quiz
+Github,Tanvi Sharma,2025-12-05T20:52:48Z,Update Quiz.tsx
+Github,Tanvi Sharma,2025-12-05T20:02:03Z,color and shadow changes
+Github,Tanvi Sharma,2025-12-05T19:13:38Z,Merge branch 'viz-3-scrollytell' into dev
+Github,Tanvi Sharma,2025-12-05T19:13:04Z,homepage logo fix
+Github,Tanvi Sharma,2025-12-01T02:32:22Z,Legend component
+Github,Tanvi Sharma,2025-12-01T00:03:37Z,fixing point positions and labels
+Github,Tanvi Sharma,2025-11-30T22:52:21Z,fixing key partially
+Github,Tanvi Sharma,2025-11-30T19:32:03Z,Update _index.tsx
+Github,Tanvi Sharma,2025-11-30T19:31:00Z,small changes
+Github,Tanvi Sharma,2025-11-29T00:06:10Z,adding animation
+Github,Tanvi Sharma,2025-11-28T22:48:48Z,working version for viz3
+Github,Tanvi Sharma,2025-11-28T22:08:50Z,"adding more space before buttons
+
+buttons need to be changed later."
+Github,Tanvi Sharma,2025-11-28T22:05:22Z,viz 2 updates from prev meeting
+Github,Tanvi Sharma,2025-11-20T23:42:44Z,Add specific occupations to atlanta grads in both dubois charts
+Github,Jay Varner,2025-11-11T16:41:56Z,Add error viz
+Github,Jay Varner,2025-11-11T16:39:04Z,Prevent footnote toggle from interfering with main content
+Github,Jay Varner,2025-11-10T15:20:04Z,Fix Peabody quiz
+Github,Jay Varner,2025-11-10T15:13:00Z,Split timeline and bar graph for Knowledge chapter
+Github,Lauren Klein,2025-11-07T19:20:20Z,Adding Labor chapter takeaways
+Github,Lauren Klein,2025-11-07T19:17:33Z,Updating Change chapter takeaways
+Github,Lauren Klein,2025-11-07T19:15:54Z,Updating Knowledge chapter takeaways
+Github,Lauren Klein,2025-11-07T19:13:31Z,Updating People chapter takeaways
+Github,Lauren Klein,2025-11-07T19:11:47Z,Updating Image chapter takeaways
+Github,Tanvi Sharma,2025-11-07T02:12:55Z,more type adjustments
+Github,Tanvi Sharma,2025-11-07T01:43:29Z,Homepage logo fullwidth on mobile
+Github,Tanvi Sharma,2025-11-07T01:42:06Z,fixing z-indexes
+Github,Tanvi Sharma,2025-11-07T01:39:56Z,typographic adjustments for quiz
+Github,Tanvi Sharma,2025-11-06T22:15:41Z,"fixing bugs
+
+Thomas Jefferson Bell — double check profession from source."
+Github,Tanvi Sharma,2025-11-06T22:11:00Z,"Update Viz2.tsx
+
+adding a little more buffer to the contributing students"
+Github,Tanvi Sharma,2025-11-06T22:04:26Z,"Update Viz2.tsx
+
+- Added other students, made adjustments to dots and placements etc"
+Github,Tanvi Sharma,2025-11-06T21:28:24Z,v1 of viz2
+Github,Jay Varner,2025-11-06T16:50:50Z,Rename files to match new chapter titles.
+Github,Jay Varner,2025-11-04T17:15:43Z,Minor fix for better image transform
+Github,Lauren Klein,2025-11-06T14:06:52Z,Updating chapter metadata
+Github,Jay Varner,2025-11-04T17:09:24Z,Add animations to second Playfair scrollytell
+Github,Jay Varner,2025-11-03T14:31:05Z,Rearrange Peabody timeline viz
+Github,Jay Varner,2025-11-03T13:54:46Z,Restore change
+Github,Jay Varner,2025-11-03T13:46:59Z,Increase thumbnail size.
+Github,Tanvi Sharma,2025-10-30T03:21:13Z,more transparency cleanup
+Github,Tanvi Sharma,2025-10-30T03:01:07Z,more transparency
+Github,Tanvi Sharma,2025-10-30T02:34:36Z,transparency!!!
+Github,Tanvi Sharma,2025-10-30T02:09:53Z,Update chapters.intro.tsx
+Github,Tanvi Sharma,2025-10-30T02:08:38Z,Update _index.tsx
+Github,Tanvi Sharma,2025-10-30T02:00:54Z,Update DraggableTimeline.tsx
+Github,Tanvi Sharma,2025-10-30T01:59:37Z,small adjustments
+Github,Tanvi Sharma,2025-10-30T01:49:46Z,adjust homepage sizing
+Github,Tanvi Sharma,2025-10-30T01:42:05Z,stop site title from moving
+Github,Tanvi Sharma,2025-10-30T00:59:22Z,"Revert ""editing homepage""
+
+This reverts commit 154414bfa88e4f711f7800fc20bbbb56e73356f8."
+Github,Tanvi Sharma,2025-10-30T00:22:09Z,editing homepage
+Github,Tanvi Sharma,2025-10-29T23:52:55Z,small optimization to images on homepage
+Github,Tanvi Sharma,2025-10-29T23:43:32Z,optimzing for loading
+Github,Tanvi Sharma,2025-10-29T23:40:28Z,update citation
+Github,Tanvi Sharma,2025-10-29T23:37:28Z,mobile optimizations
+Github,Tanvi Sharma,2025-10-29T23:31:33Z,"updating mobile document viewer.
+
+maybe this should be numbers, have instructions for swiping etc"
+Github,Tanvi Sharma,2025-10-29T23:22:25Z,removing shadows
+Github,Tanvi Sharma,2025-10-29T23:09:01Z,adjusting spacing
+Github,Tanvi Sharma,2025-10-29T22:57:16Z,editorial spacing changes
+Github,Tanvi Sharma,2025-10-29T22:46:50Z,adding custom classes to TwoColoumnLayout
+Github,Tanvi Sharma,2025-10-29T22:35:30Z,fixining documentviewer interactions so its doesnt jump around as much
+Github,Tanvi Sharma,2025-10-26T23:23:34Z,basic architecture
+Github,Tanvi Sharma,2025-10-26T22:10:36Z,unknown -> unreported
+Github,Tanvi Sharma,2025-10-26T22:02:41Z,no background color to pie chart
+Github,Tanvi Sharma,2025-10-26T21:38:34Z,shuffled without pie chart
+Github,Tanvi Sharma,2025-10-26T21:36:47Z,Update Viz1.tsx
+Github,Tanvi Sharma,2025-10-26T21:34:30Z,adding in dots with wiggle
+Github,Tanvi Sharma,2025-10-26T21:04:38Z,adding pie chart
+Github,Tanvi Sharma,2025-10-24T20:35:28Z,fix react router issue
+Github,Tanvi Sharma,2025-10-23T16:58:17Z,Update chapters.power.tsx
+Github,Tanvi Sharma,2025-10-23T16:55:31Z,Update chapters.power.tsx
+Github,Tanvi Sharma,2025-10-23T16:53:20Z,Update chapters.power.tsx
+Github,Tanvi Sharma,2025-10-23T16:52:12Z,space after and before citation
+Github,Tanvi Sharma,2025-10-23T16:48:51Z,smart quotes
+Github,Tanvi Sharma,2025-10-14T22:25:03Z,updating final section text
+Github,Tanvi Sharma,2025-10-14T22:03:11Z,Optimizations oct (#49)
+Github,Jay Varner,2025-10-08T19:55:27Z,Minor fixes for overflow and scroll bar
+Github,Jay Varner,2025-10-08T17:46:58Z,Use local thumbnails for home page shuffle
+Github,Jay Varner,2025-10-07T17:24:39Z,Update images and include sensitive alt text.
+Github,Jay Varner,2025-08-20T14:05:44Z,Update dependencies
+Github,Jay Varner,2025-10-04T22:09:26Z,"Merge pull request #48 from EmoryDHLab/maps-exploration-3
+
+Maps exploration 3"
+Github,Tanvi Sharma,2025-10-04T00:46:37Z,Update chapters.people.tsx
+Github,Tanvi Sharma,2025-10-04T00:44:31Z,Update chapters.people.tsx
+Github,Tanvi Sharma,2025-10-04T00:28:02Z,Update chapters.people.tsx
+Github,Tanvi Sharma,2025-10-03T23:54:09Z,moving points around
+Github,Tanvi Sharma,2025-10-03T18:28:59Z,fix colors
+Github,Tanvi Sharma,2025-10-03T18:14:57Z,Update MapsExploration.tsx
+Github,Tanvi Sharma,2025-10-03T18:11:09Z,updates
+Github,Tanvi Sharma,2025-10-03T00:12:59Z,Update MapsExploration.tsx
+Github,Tanvi Sharma,2025-10-03T00:06:57Z,Update MapsExploration.tsx
+Github,Tanvi Sharma,2025-10-03T00:02:10Z,Adjusting markers
+Github,Tanvi Sharma,2025-10-02T23:59:48Z,render full image
+Github,Tanvi Sharma,2025-10-02T23:58:39Z,adding all data descriptions
+Github,Tanvi Sharma,2025-10-02T17:54:23Z,prototype for hovering on points
+Github,Tanvi Sharma,2025-09-18T16:53:47Z,adjustments to toggle. making footnotes 2 col
+Github,Tanvi Sharma,2025-09-18T16:31:50Z,fixing hover on nav
+Github,Tanvi Sharma,2025-09-18T16:10:38Z,Update FigureModal.tsx
+Github,Tanvi Sharma,2025-09-18T15:58:18Z,Merge branch 'tanvi-quiz' into dev
+Github,Tanvi Sharma,2025-09-18T15:57:28Z,styling fixes
+Github,Tanvi Sharma,2025-09-18T15:46:42Z,mobile styling fixes
+Github,Tanvi Sharma,2025-09-18T15:41:01Z,Update TwoColumnLayout.tsx
+Github,Tanvi Sharma,2025-09-18T15:37:19Z,making footer better
+Github,Tanvi Sharma,2025-09-18T15:18:58Z,"cosmetic changes for mobile
+
+- decrease padding on text on mobile
+- decrease height of progress bar"
+Github,Tanvi Sharma,2025-09-18T02:48:59Z,Update Footer.tsx
+Github,Tanvi Sharma,2025-09-18T02:45:37Z,"some mobile fixes, will do rest later"
+Github,Tanvi Sharma,2025-09-18T02:39:04Z,adding fonts back in and fixing responsiveness
+Github,Tanvi Sharma,2025-09-18T02:32:43Z,smoothing!
+Github,Tanvi Sharma,2025-09-18T00:51:01Z,splitting into mobile and web component
+Github,Tanvi Sharma,2025-09-18T00:46:49Z,Update QuizIntro.tsx
+Github,Tanvi Sharma,2025-09-18T00:40:40Z,Update PullQuote.tsx
+Github,Tanvi Sharma,2025-09-18T00:35:01Z,stylistic fixes
+Github,Lauren Klein,2025-08-23T16:21:41Z,Adding a few new Du Bois images
+Github,Jay Varner,2025-08-20T13:52:05Z,Improve timing
+Github,Jay Varner,2025-08-19T23:43:33Z,Resolve errors
+Github,Jay Varner,2025-08-19T21:08:06Z,Improve recreation and add new scrollytell.
+Github,Jay Varner,2025-08-13T21:32:35Z,Smooth out paths
+Github,Jay Varner,2025-08-13T20:09:08Z,Morph lines
+Github,Jay Varner,2025-08-12T22:47:04Z,Update Playfair scrollytell
+Github,Jay Varner,2025-08-11T19:31:15Z,One more Peabody data fix
+Github,Jay Varner,2025-08-11T18:08:00Z,Some fixes to Peabody data
+Github,Jay Varner,2025-08-11T17:17:40Z,Add 1789
+Github,Jay Varner,2025-08-11T17:13:08Z,Update images
+Github,Jay Varner,2025-08-11T15:42:16Z,Update image
+Github,Jay Varner,2025-08-11T15:35:58Z,Rotate image
+Github,Jay Varner,2025-08-11T13:19:32Z,Constant height for Willard maps
+Github,Lauren Klein,2025-07-31T13:58:59Z,Adding missing final images
+Github,Lauren Klein,2025-07-25T19:51:35Z,Adding higher-res versions of Speck photos
+Github,Lauren Klein,2025-07-10T18:03:15Z,Adding Playfair chapter images
+Github,Jay Varner,2025-07-09T20:18:18Z,Fix pie chart sizing
+Github,Jay Varner,2025-07-09T15:26:57Z,Fix image links
+Github,Jay Varner,2025-07-09T14:36:45Z,Change images for sensitive image explainer.
+Github,Jay Varner,2025-07-09T14:16:39Z,Fix import/export of component
+Github,Jay Varner,2025-07-09T14:16:26Z,Add images
+Github,Jay Varner,2025-07-09T14:06:35Z,Remove unused imports
+Github,Jay Varner,2025-07-09T14:06:20Z,Bring vis inline with others.
+Github,Jay Varner,2025-07-09T13:49:13Z,Move scrollytell text to chapter.
+Github,Jay Varner,2025-07-09T13:48:45Z,Improve transitions
+Github,Jay Varner,2025-07-09T13:30:36Z,Rename file with new chapter name.
+Github,Jay Varner,2025-07-09T13:29:57Z,Add titles to team data chart
+Github,Jay Varner,2025-07-07T18:29:59Z,Fix y-axis font.
+Github,Jay Varner,2025-06-30T18:53:19Z,Intro scrollytell
+Github,Jay Varner,2025-06-30T14:09:34Z,Improve spacing
+Github,Jay Varner,2025-06-26T15:07:40Z,Animate voyage vis zooming
+Github,Jay Varner,2025-06-26T15:07:16Z,Lower opacity
+Github,Jay Varner,2025-06-26T15:06:52Z,Fix some spacing issues
+Github,Jay Varner,2025-06-25T21:01:27Z,Minor attempts to improve spacing.
+Github,Jay Varner,2025-06-25T20:36:21Z,Remove spacing between scrollytell and interactive vis
+Github,Jay Varner,2025-06-25T20:20:22Z,Style improvements.
+Github,Jay Varner,2025-06-25T18:25:38Z,Add padding to consent toggle
+Github,Jay Varner,2025-06-25T18:25:20Z,Add blur to ship scrollytell
+Github,Jay Varner,2025-06-25T17:58:17Z,Update voyage scrollytell
+Github,Jay Varner,2025-06-25T17:57:21Z,Add Epilogue
+Github,Jay Varner,2025-06-16T12:16:35Z,Fix type
+Github,Jay Varner,2025-06-16T12:16:28Z,Remove unused file
+Github,Jay Varner,2025-06-16T12:08:30Z,Remove debug
+Github,Jay Varner,2025-06-16T12:08:22Z,Adjust tsconfig
+Github,Tanvi Sharma,2025-06-23T15:40:57Z,fixing chapter 1 captions
+Github,Tanvi Sharma,2025-06-23T15:10:51Z,update chapter subtitles
+Github,Jay Varner,2025-06-13T14:43:37Z,Fix close button for image modal.
+Github,Jay Varner,2025-06-13T14:38:01Z,Improve site nav for mobile.
+Github,Jay Varner,2025-06-13T14:30:52Z,Update dependencies
+Github,Jay Varner,2025-06-13T14:29:22Z,Make scrollytell colors consistent
+Github,Jay Varner,2025-06-13T14:28:50Z,Update references for work chapter
+Github,Jay Varner,2025-06-13T14:27:44Z,Small improvements for mobile
+Github,Jay Varner,2025-06-12T19:53:33Z,Fix width when rotating device
+Github,Jay Varner,2025-06-12T19:32:16Z,Move chapter nav component
+Github,Jay Varner,2025-06-12T19:31:05Z,Improve scrollytells to prevent horz scroll
+Github,Jay Varner,2025-06-11T14:36:31Z,Include image
+Github,Jay Varner,2025-06-11T14:31:11Z,Add images to intro
+Github,Jay Varner,2025-06-10T18:03:50Z,Add site nav
+Github,Tanvi Sharma,2025-06-09T19:39:12Z,minor style changes
+Github,Jay Varner,2025-06-09T19:29:20Z,Fix vis and rename component dir to match chapter.
+Github,Tanvi Sharma,2025-06-09T02:22:26Z,making styles consistent
+Github,Tanvi Sharma,2025-06-09T02:13:25Z,updating takeaways and minor text updates
+Github,Tanvi Sharma,2025-06-09T01:54:30Z,updating text for data chapter minus scrollytells
+Github,Tanvi Sharma,2025-06-09T01:41:07Z,not fully adapted to new text but mostly there
+Github,Tanvi Sharma,2025-06-09T00:48:04Z,correcting punctuation
+Github,Tanvi Sharma,2025-06-09T00:37:35Z,minor changes
+Github,Tanvi Sharma,2025-06-08T22:01:46Z,update banner to say dev build
+Github,Jay Varner,2025-06-04T22:32:24Z,Some improvements to voyage scrollytell
+Github,Jay Varner,2025-06-04T14:21:51Z,Fix image for recreation
+Github,Jay Varner,2025-06-04T13:42:50Z,Improve PullQuote
+Github,Jay Varner,2025-06-03T22:46:04Z,Meager and inadequate attempts to improve mobile.
+Github,Jay Varner,2025-06-03T22:44:17Z,Make consent toggle a bit larger
+Github,Jay Varner,2025-06-03T19:44:10Z,Improve reference/footnote toggle
+Github,Jay Varner,2025-05-28T21:05:47Z,Fix drawing scrollytell.
+Github,Jay Varner,2025-05-28T20:11:39Z,Small fix for chapter meta and remove unneeded error expectations
+Github,Jay Varner,2025-05-28T20:07:53Z,Use configured chapter metadata
+Github,Lauren Klein,2025-05-28T17:24:40Z,Updating ch 1 and 2 subtitles and epigraphs
+Github,Jay Varner,2025-05-27T22:26:39Z,Fix link to chart data
+Github,Jay Varner,2025-05-27T21:59:16Z,Add note for missing image
+Github,Jay Varner,2025-05-27T20:05:20Z,Last ClientOnly fix
+Github,Jay Varner,2025-05-27T20:02:01Z,Update package-lock
+Github,Jay Varner,2025-05-27T19:52:46Z,Rename chapters and add preface
+Github,Jay Varner,2025-05-21T14:31:29Z,Remove verbose from rsync command
+Github,Jay Varner,2025-05-21T14:25:02Z,Set NODE_ENV for build
+Github,Jay Varner,2025-05-21T13:48:29Z,Another deploy fix
+Github,Jay Varner,2025-05-21T13:39:22Z,Fix deploy script
+Github,Jay Varner,2025-05-21T13:35:18Z,New deploy
+Github,Jay Varner,2025-05-20T16:36:27Z,Update to React 19 and React Router 7 part 2
+Github,Jay Varner,2025-05-20T16:35:50Z,Update to React 19 and React Router 7
+Github,Jay Varner,2025-05-19T23:14:14Z,Add image files
+Github,Jay Varner,2025-05-19T23:09:46Z,Use webp not png
+Github,Jay Varner,2025-05-19T22:51:15Z,New intro text
+Github,Jay Varner,2025-03-12T16:47:36Z,Add allowed hosts to vite config.
+Github,Jay Varner,2025-03-12T16:32:06Z,Add image credit.
+Github,Jay Varner,2024-11-06T15:17:53Z,Remove debug statements
+Github,Jay Varner,2024-11-06T14:38:31Z,Add dots for unrecorded students
+Github,Jay Varner,2024-11-06T14:37:51Z,Fix chart 3 scrollytell
+Github,Jay Varner,2024-11-06T12:55:10Z,Smooth out closing the modal
+Github,Jay Varner,2024-11-05T22:40:07Z,Fixes for ordered timeline.
+Github,Jay Varner,2024-11-05T22:03:10Z,Improve keyboard interactions on ordered timeline
+Github,Jay Varner,2024-11-05T20:42:40Z,Remove column with missing images.
+Github,Jay Varner,2024-11-05T20:18:51Z,Lazy load images and use IIIF versions.
+Github,Jay Varner,2024-11-05T18:41:16Z,IIIF and shuffle/timeline improvements
+Github,Tanvi Sharma,2024-08-30T19:52:32Z,Update about.tsx
+Github,Tanvi Sharma,2024-08-30T19:48:13Z,Update Footer.tsx
+Github,Jay Varner,2024-08-07T12:55:28Z,Fixes to scrollytell
+Github,Jay Varner,2024-08-06T19:40:31Z,Reword drawing scrollytell
+Github,Jay Varner,2024-08-06T16:23:32Z,Better Scrollama setup
+Github,Jay Varner,2024-08-06T16:23:05Z,Add error page
+Github,Jay Varner,2024-08-06T14:37:55Z,Improvements to figure modal.
+Github,Jay Varner,2024-08-06T14:37:18Z,Add some infrastructure for Zotero metadata.
+Github,Jay Varner,2024-08-01T16:51:18Z,Improve loading state
+Github,Jay Varner,2024-08-01T16:44:23Z,Merge branch 'main' into dev
+Github,Jay Varner,2024-08-01T15:47:30Z,Restore fonts
+Github,Jay Varner,2024-08-01T14:55:33Z,Add more optimize deps
+Github,Jay Varner,2024-08-01T14:52:18Z,Add optimizeDeps to vite config
+Github,Jay Varner,2024-08-01T14:35:27Z,Add Clover to noExternal
+Github,Jay Varner,2024-08-01T13:40:10Z,IIIF needs to be client only
+Github,Jay Varner,2024-08-01T13:05:17Z,Fix import
+Github,Jay Varner,2024-08-01T12:26:02Z,Use IIIF
+Github,Tanvi Sharma,2024-07-27T00:04:50Z,we dont use these fonts
+Github,Tanvi Sharma,2024-07-27T00:04:23Z,Update fonts.css
+Github,Tanvi Sharma,2024-07-26T23:50:52Z,Font update
+Github,Jay Varner,2024-07-19T15:04:00Z,Small fixes to pie chart
+Github,Jay Varner,2024-07-18T18:50:53Z,Fix first scrollytell frame and remove debug statement
+Github,Jay Varner,2024-07-18T18:36:20Z,Rework other charts and chart scrollytells
+Github,Jay Varner,2024-07-17T18:35:05Z,Rename scrollytell chart files and remove unused versions of charts.
+Github,Jay Varner,2024-07-17T18:18:17Z,Correct count typo
+Github,Jay Varner,2024-07-17T17:38:06Z,Deceased not Dead
+Github,Jay Varner,2024-07-17T17:12:19Z,Improve vertical alignment and pie chart placement.
+Github,Jay Varner,2024-07-16T21:07:03Z,More fixed positioning for chart
+Github,Jay Varner,2024-07-16T14:35:06Z,Updates to second Du Bois scrollytell
+Github,Jay Varner,2024-07-11T15:38:50Z,Fix deploy - again
+Github,Jay Varner,2024-07-11T14:33:58Z,Fix deploy settings
+Github,Jay Varner,2024-07-11T14:26:40Z,Update deploy
+Github,Jay Varner,2024-07-11T13:50:36Z,Safari fixes
+Github,Jay Varner,2024-07-11T13:49:55Z,Put footnote toggle behind vizs
+Github,Jay Varner,2024-07-07T17:18:03Z,Update chapter colors for description
+Github,Jay Varner,2024-07-07T15:40:49Z,Fix chapter links - again
+Github,Jay Varner,2024-07-07T15:19:46Z,Set selection colors
+Github,Jay Varner,2024-05-08T20:42:17Z,Fix links
+Github,Jay Varner,2024-05-08T19:06:44Z,Forgot to include update to CardGrid
+Github,Jay Varner,2024-05-08T18:47:07Z,Add sitemap and rename some images.
+Github,Jay Varner,2024-05-19T20:59:10Z,Further fix scrollytell states for real.
+Github,Jay Varner,2024-05-19T15:54:45Z,Minor fixes to blurs and masks.
+Github,Jay Varner,2024-05-11T01:25:06Z,Hiding hypothesis highlights
+Github,Jay Varner,2024-05-10T22:14:27Z,Improve homepage timeline
+Github,Lauren Klein,2024-05-10T20:25:37Z,FInal image swap
+Github,Lauren Klein,2024-05-10T19:38:39Z,Attempting to resort image names
+Github,Lauren Klein,2024-05-10T19:31:33Z,Adding webps
+Github,Lauren Klein,2024-05-10T18:34:52Z,Fixing illustration images links
+Github,Lauren Klein,2024-05-10T18:33:10Z,Correcting image order
+Github,Jay Varner,2024-05-10T17:07:30Z,Add z-index to chapter nav icons.
+Github,Jay Varner,2024-05-10T14:39:33Z,Adjust left margin
+Github,Jay Varner,2024-05-10T14:23:07Z,Make images side by side
+Github,Jay Varner,2024-05-10T13:21:21Z,A number of small fixes.
+Github,Lauren Klein,2024-05-10T04:50:07Z,Updated intro with correct text
+Github,Jay Varner,2024-05-09T23:10:44Z,Replace span tag with p
+Github,Jay Varner,2024-05-08T20:49:36Z,Fix links for homepage grid
+Github,Nicholas Yang,2024-05-08T02:03:18Z,Fixing Tanvi's mistake
+Github,Jay Varner,2024-06-18T14:51:33Z,Increase size of and spacing for consent toggle.
+Github,Jay Varner,2024-06-17T19:26:04Z,Fix top spacing on quiz to account for chapter nav.
+Github,Jay Varner,2024-06-17T18:54:45Z,Update workflow for deploy action
+Github,Jay Varner,2024-05-09T20:03:17Z,Merge branch 'dev'
+Github,Jay Varner,2024-05-09T20:02:42Z,Add images to Du Bois chapter
+Github,Nicholas Yang,2024-05-09T01:46:11Z,Some Footer tweaks
+Github,Jay Varner,2024-05-08T21:14:33Z,Block robots on dev
+Github,Jay Varner,2024-05-08T20:46:42Z,Fix sitemap config
+Github,Jay Varner,2024-05-07T20:22:25Z,Add referrer policy for tracking.
+Github,Jay Varner,2024-05-07T18:25:58Z,Add analytics update deploy
+Github,Jay Varner,2024-05-06T15:04:45Z,Remove debug
+Github,Nicholas Yang,2024-05-07T15:03:57Z,"Intro scrollytell 2 (#46)
+
+More work on intro scrollytell"
+Github,Lauren Klein,2024-05-07T12:45:57Z,Fixed typo
+Github,Lauren Klein,2024-05-06T22:06:11Z,Removing some images for now
+Github,Lauren Klein,2024-05-06T22:04:15Z,Now with webp!
+Github,Lauren Klein,2024-05-06T21:51:47Z,Updating Du Bois text
+Github,Lauren Klein,2024-05-06T21:44:09Z,Re-adding expo image
+Github,Lauren Klein,2024-05-06T21:38:50Z,Swapping out Callaway image
+Github,Jay Varner,2024-05-06T15:01:50Z,Improve blur
+Github,Jay Varner,2024-05-06T14:42:21Z,Missing image
+Github,Jay Varner,2024-05-06T14:27:41Z,Update figure data.
+Github,Jay Varner,2024-05-06T14:01:31Z,Intro footnotes
+Github,Jay Varner,2024-05-06T13:00:46Z,More missing images.
+Github,Jay Varner,2024-05-06T12:48:35Z,Fix image name and move last paragraph into main body
+Github,Jay Varner,2024-05-06T12:25:33Z,"Fix images, add chapter nav, general cleanup"
+Github,Jay Varner,2024-05-05T14:47:20Z,Small fix to make sure selected image is always in shuffle
+Github,Jay Varner,2024-05-04T21:22:54Z,Update figure data.
+Github,Jay Varner,2024-05-04T19:59:10Z,Enable Hypothesis
+Github,Jay Varner,2024-05-04T19:52:30Z,Add missing webp files
+Github,Jay Varner,2024-05-04T19:09:18Z,Replace file
+Github,Jay Varner,2024-05-04T19:08:42Z,Remove of image to force file name change
+Github,Jay Varner,2024-05-04T18:45:01Z,Update Images
+Github,Jay Varner,2024-05-04T16:08:20Z,Reduce number of Du Bois charts on home page
+Github,Jay Varner,2024-05-04T16:07:53Z,Save helper function for later
+Github,Jay Varner,2024-05-04T16:07:28Z,Add public beta banner
+Github,Jay Varner,2024-05-04T15:56:36Z,Fix formatting
+Github,Tanvi Sharma,2024-05-04T13:47:56Z,About page edits
+Github,Tanvi Sharma,2024-05-04T00:59:54Z,cropped an image
+Github,Tanvi Sharma,2024-05-04T00:56:30Z,Updating intro images as webp
+Github,Tanvi Sharma,2024-05-04T00:20:55Z,Design tweaks!
+Github,Tanvi Sharma,2024-05-03T23:48:42Z,Design tweaks
+Github,Tanvi Sharma,2024-05-03T22:51:11Z,adding shanawdithit illustrations
+Github,Tanvi Sharma,2024-05-03T22:31:32Z,Adding illustrations
+Github,Tanvi Sharma,2024-05-03T22:27:47Z,"Intro scrollytell 2 (#45)
+
+@jayvarner
+
+---------
+
+Co-authored-by: Nicholas Yang <nick@nicholasyang.com>"
+Github,Nicholas Yang,2024-05-03T22:15:01Z,Fixed bug in intro
+Github,Tanvi Sharma,2024-05-03T14:14:34Z,"Revert ""Intro scrollytell 2 Nick's updates (#44)""
+
+This reverts commit 921ef7d222346359fe9922ec3d386cfe68457fcf."
+Github,Tanvi Sharma,2024-05-03T14:11:29Z,"Intro scrollytell 2 Nick's updates (#44)
+
+Co-authored-by: Nicholas Yang <nick@nicholasyang.com>"
+Github,Tanvi Sharma,2024-05-03T14:06:50Z,"Reapply ""Update chapters.intro.tsx""
+
+This reverts commit b89372f6fe9efa04d415cae9a7c3a67c90b7116d."
+Github,Tanvi Sharma,2024-05-03T13:56:13Z,"Revert ""Update chapters.intro.tsx""
+
+This reverts commit ba97003ba8f5a1a85d2deb8981b4bd58011cef74."
+Github,Tanvi Sharma,2024-05-03T13:54:10Z,Update chapters.intro.tsx
+Github,Lauren Klein,2024-05-03T12:21:34Z,Tweaks to review text
+Github,Jay Varner,2024-05-03T03:33:12Z,Adjust top spacing
+Github,Jay Varner,2024-05-03T02:07:05Z,Fix id for first scrollytell
+Github,Jay Varner,2024-05-03T01:53:24Z,Add scrollytells to chapter nav
+Github,Jay Varner,2024-05-03T01:49:31Z,Incorporate Du Bois scrollytells.
+Github,Lauren Klein,2024-05-02T21:37:58Z,Adding peer review info
+Github,Yang Li,2024-05-02T19:29:10Z,Merge branch 'main' of https://github.com/EmoryDHLab/data-by-design
+Github,Yang Li,2024-05-02T19:28:28Z,Merge branch 'main' of https://github.com/EmoryDHLab/data-by-design
+Github,Lauren Klein,2024-05-02T19:24:51Z,Minor Du Bois text update
+Github,Yang Li,2024-05-02T19:24:42Z,add two scrollytells to the Du Bois chapter
+Github,Lauren Klein,2024-05-02T15:19:53Z,Updating front page image
+Github,Lauren Klein,2024-05-02T15:13:40Z,Merge branch 'main' of https://github.com/EmoryDHLab/data-by-design
+Github,Lauren Klein,2024-05-02T15:13:38Z,New front page text!
+Github,Jay Varner,2024-05-02T13:01:15Z,Add missing images
+Github,Jay Varner,2024-05-02T12:41:19Z,Remove unused images
+Github,Jay Varner,2024-05-02T12:31:41Z,Update images
+Github,Lauren Klein,2024-05-02T03:20:45Z,Merge branch 'main' of https://github.com/EmoryDHLab/data-by-design
+Github,Lauren Klein,2024-05-02T03:20:43Z,Adding takeaways
+Github,Jay Varner,2024-05-01T21:33:20Z,Add meta to home page
+Github,Jay Varner,2024-05-01T21:00:12Z,Minor adjustments to footnote toggle.
+Github,Jay Varner,2024-05-01T20:39:01Z,Increase margin above takeaways
+Github,Jay Varner,2024-05-01T19:03:38Z,Add footnote toggle and fix blur for Safari
+Github,Jay Varner,2024-05-01T19:02:12Z,Fix footnotes
+Github,Lauren Klein,2024-05-01T17:04:31Z,Updated Du Bois footnotes
+Github,Lauren Klein,2024-05-01T16:38:42Z,Update Peabody footnotes
+Github,Lauren Klein,2024-05-01T15:57:21Z,Update Shanawdithit footnotes
+Github,Lauren Klein,2024-05-01T15:40:24Z,Update Playfair footnotes
+Github,Lauren Klein,2024-05-01T15:23:52Z,Merge branch 'main' of https://github.com/EmoryDHLab/data-by-design
+Github,Lauren Klein,2024-05-01T15:23:43Z,"Updating ""Description"" footnotes"
+Github,Jay Varner,2024-05-01T15:19:59Z,Dark mode for Labor chapter
+Github,Lauren Klein,2024-05-01T15:04:59Z,Merge branch 'main' of https://github.com/EmoryDHLab/data-by-design
+Github,Lauren Klein,2024-05-01T15:04:57Z,Now with intro footnotes!
+Github,Jay Varner,2024-05-01T14:34:12Z,Fix background images on home page
+Github,Lauren Klein,2024-05-01T14:29:24Z,Quick update to credits
+Github,Lauren Klein,2024-05-01T14:08:02Z,Correct chapter order
+Github,Lauren Klein,2024-05-01T13:45:20Z,Tweak to footnotes header
+Github,Jay Varner,2024-05-01T13:05:06Z,Fix formatting
+Github,Lauren Klein,2024-05-01T12:46:44Z,Update labor chapter text
+Github,Lauren Klein,2024-05-01T00:28:25Z,Update Peabody images
+Github,Lauren Klein,2024-05-01T00:08:37Z,Adding high-res quipu image from NMAI
+Github,Lauren Klein,2024-05-01T00:08:14Z,Updating Shanawdithit images
+Github,Lauren Klein,2024-04-30T23:18:56Z,Merge branch 'main' of https://github.com/EmoryDHLab/data-by-design
+Github,Lauren Klein,2024-04-30T23:18:53Z,Update Playfair images
+Github,Jay Varner,2024-04-30T20:02:41Z,Dynamically tag container
+Github,Jay Varner,2024-04-30T19:46:26Z,Set branch name
+Github,Jay Varner,2024-04-30T19:38:41Z,Add dev branch
+Github,Jay Varner,2024-04-30T18:13:16Z,Chapter meta and more random shuffle on homepage
+Github,Jay Varner,2024-04-30T15:18:00Z,More deploy fixes
+Github,Jay Varner,2024-04-30T15:09:27Z,Fix repo url
+Github,Jay Varner,2024-04-30T14:59:50Z,Force deploy for now.
+Github,Jay Varner,2024-04-30T14:55:30Z,Better way to set tag
+Github,Jay Varner,2024-04-30T14:52:26Z,Debug deploy script
+Github,Jay Varner,2024-04-30T14:50:53Z,Debug deploy script
+Github,Jay Varner,2024-04-30T14:25:29Z,Use Vite and deploy to AWS
+Github,Jay Varner,2024-04-30T12:11:44Z,Small improvements to chart three
+Github,Jay Varner,2024-04-30T02:04:02Z,Fix images missing from chapter nav
+Github,Jay Varner,2024-04-30T01:48:42Z,Pull wide image out of CenterLayout
+Github,Jay Varner,2024-04-30T01:47:18Z,Put images in CenteredLayout
+Github,Jay Varner,2024-04-30T01:30:57Z,Fix chart 3
+Github,Jay Varner,2024-04-30T00:40:56Z,Add chart 3 scrollytell
+Github,Jay Varner,2024-04-30T00:37:22Z,Image updates
+Github,Jay Varner,2024-04-29T14:20:44Z,More scrollytell updates
+Github,Lauren Klein,2024-04-30T00:31:55Z,Update Description images
+Github,Lauren Klein,2024-04-29T23:49:50Z,Updated intro images
+Github,Lauren Klein,2024-04-29T18:52:18Z,Remove repeated Willard text
+Github,Lauren Klein,2024-04-29T18:23:55Z,Small footer tweaks
+Github,Lauren Klein,2024-04-29T18:19:01Z,"Update chapter titles, front page images"
+Github,Lauren Klein,2024-04-29T17:56:39Z,Update dropdown
+Github,Lauren Klein,2024-04-29T16:18:25Z,Update Du Bois text and images
+Github,Jay Varner,2024-04-29T14:02:36Z,Update scrollytell and images
+Github,Tanvi Sharma,2024-04-28T21:49:27Z,"Update chapters.intro.tsx
+
+indexing error fix"
+Github,Tanvi Sharma,2024-04-28T20:58:52Z,update Intro
+Github,Jay Varner,2024-04-28T19:05:40Z,Fix type
+Github,Jay Varner,2024-04-28T19:05:06Z,Fix build
+Github,Lauren Klein,2024-04-28T16:10:12Z,Update Peabody text
+Github,Nicholas Yang,2024-04-28T05:57:55Z,Some responsiveness tweaks
+Github,Nicholas Yang,2024-04-28T02:57:39Z,Implementing Minard in intro scrollytell
+Github,Tanvi Sharma,2024-04-27T12:24:30Z,Update Section Title Drop Cap
+Github,Nicholas Yang,2024-04-27T02:37:52Z,More intro scrollytell implementation
+Github,Jay Varner,2024-04-26T21:56:22Z,Fix formatting and add missing images.
+Github,Lauren Klein,2024-04-26T21:16:21Z,"Update chapters.shanawdithit.tsx
+
+Update Shanawdithit text"
+Github,Lauren Klein,2024-04-26T21:15:59Z,"Update Triggers.tsx
+
+Update Shanawdithit text"
+Github,Jay Varner,2024-04-26T20:46:09Z,Don't blur non-sensitive images.
+Github,Jay Varner,2024-04-26T20:17:20Z,Fix outline on ship shape.
+Github,Jay Varner,2024-04-26T19:58:35Z,Fix broken build
+Github,Jay Varner,2024-04-26T18:59:04Z,Update consent explainer
+Github,Nicholas Yang,2024-04-26T18:32:06Z,Intro scrollytell (#43)
+Github,Lauren Klein,2024-04-26T18:16:54Z,Update Shanawdithit chapter pt 1
+Github,Lauren Klein,2024-04-26T17:15:53Z,"Update chapters.playfair.tsx
+
+Tweaking Playfair text"
+Github,Lauren Klein,2024-04-26T17:07:34Z,"Update chapters.playfair.tsx
+
+Update Playfair chapter text"
+Github,Lauren Klein,2024-04-26T17:07:21Z,"Update PlayfairScrollytell.tsx
+
+Update text in Playfair scrollytell"
+Github,Lauren Klein,2024-04-26T16:30:58Z,Merge branch 'main' of https://github.com/EmoryDHLab/data-by-design
+Github,Lauren Klein,2024-04-26T16:30:30Z,"Update chapters.description.tsx
+
+Tweaks to Description"
+Github,Tanvi Sharma,2024-04-26T16:20:58Z,Update Footer.tsx
+Github,Lauren Klein,2024-04-26T16:18:03Z,Merge branch 'main' of https://github.com/EmoryDHLab/data-by-design
+Github,Lauren Klein,2024-04-26T16:17:27Z,"Update chapters.description.tsx
+
+Updating ""Description"" chapter text"
+Github,Tanvi Sharma,2024-04-26T16:01:28Z,Setting up intro
+Github,Jay Varner,2024-04-26T14:57:47Z,Remove bad file
+Github,Jay Varner,2024-04-26T14:48:57Z,Rename Brooks to Description
+Github,Jay Varner,2024-04-26T14:20:41Z,Update consent and image blur
+Github,Jay Varner,2024-04-25T15:20:06Z,Update images
+Github,Jay Varner,2024-04-25T14:35:50Z,Small adjustments to scrollytell
+Github,Jay Varner,2024-04-23T16:49:49Z,Add missing figures
+Github,Jay Varner,2024-04-22T17:27:07Z,Update figure json files.
+Github,Tanvi Sharma,2024-04-22T16:49:17Z,"Adding section for takeaways.
+
+Should this be in the section nav"
+Github,Tanvi Sharma,2024-04-21T16:57:01Z,"Update InlineFootnote.tsx
+
+update styling"
+Github,Jay Varner,2024-04-19T21:40:14Z,Update Playfair labor scrollytell mask
+Github,Jay Varner,2024-04-19T20:00:17Z,Move scrollytell text to chapter
+Github,Jay Varner,2024-04-19T19:22:58Z,Remove debug statement
+Github,Jay Varner,2024-04-19T19:02:46Z,Adjust slider width
+Github,Jay Varner,2024-04-19T18:54:02Z,Add intro text to home page
+Github,Jay Varner,2024-04-19T18:31:22Z,Add missing file
+Github,Jay Varner,2024-04-19T18:29:22Z,Voyage scrollytell
+Github,Jay Varner,2024-04-18T11:38:16Z,Add spacing to top of footer and bottom of footnotes
+Github,Jay Varner,2024-04-17T23:16:38Z,Shrink footer logos
+Github,Jay Varner,2024-04-17T23:05:13Z,Tweak to site title for reuse in footer
+Github,Jay Varner,2024-04-17T23:04:08Z,Footer redesign
+Github,Jay Varner,2024-04-17T23:03:07Z,Update Playfair primary color
+Github,Jay Varner,2024-04-17T23:01:28Z,Add takeaways section
+Github,Jay Varner,2024-04-17T16:43:14Z,Recognize Lauren's design contributions.
+Github,Jay Varner,2024-04-17T16:38:45Z,Recognize Lauren's contributions as a developer.
+Github,Jay Varner,2024-04-17T15:10:37Z,Update Playfair labor data
+Github,Jay Varner,2024-04-17T15:10:04Z,Remove debug
+Github,Jay Varner,2024-04-17T13:23:19Z,Remove unused files
+Github,Jay Varner,2024-04-17T13:21:59Z,Treemap improvements
+Github,Jay Varner,2024-04-17T12:50:52Z,Add some aria labels to buttons
+Github,Jay Varner,2024-04-16T21:46:18Z,Small adjustments
+Github,Jay Varner,2024-04-16T17:16:01Z,Adjust top spacing
+Github,Jay Varner,2024-04-16T17:12:32Z,Adjust size
+Github,Jay Varner,2024-04-16T17:07:37Z,Force treemaps to be square
+Github,Jay Varner,2024-04-16T13:59:05Z,Safari fix
+Github,Jay Varner,2024-04-16T13:48:27Z,More labor treemap
+Github,Nicholas Yang,2024-04-14T04:41:42Z,Some tweaks
+Github,Nicholas Yang,2024-04-14T01:56:03Z,More intro impl
+Github,Nicholas Yang,2024-04-13T19:34:24Z,Intro
+Github,Nicholas Yang,2024-04-13T02:34:43Z,Fix about page background color
+Github,Jay Varner,2024-04-12T20:44:33Z,Update labor
+Github,Jay Varner,2024-04-12T20:36:21Z,Initial treemap implementation
+Github,Jay Varner,2024-04-08T14:22:21Z,Only render Navbar on client to fix hydration error.
+Github,Lauren Klein,2024-04-07T19:34:26Z,Adding Speck photos
+Github,Nicholas Yang,2024-04-07T00:43:19Z,Homepage tweaks (#41)
+Github,Lauren Klein,2024-04-05T16:51:09Z,Adding final Shanawdithit image file
+Github,Jay Varner,2024-04-05T16:19:46Z,Picture alignment
+Github,Jay Varner,2024-04-05T15:59:33Z,Add new icons
+Github,Jay Varner,2024-04-05T15:57:23Z,Readd lock file
+Github,Jay Varner,2024-04-05T15:54:08Z,Align items at top of home page
+Github,Jay Varner,2024-04-05T15:39:55Z,Slow animations
+Github,Jay Varner,2024-04-05T13:43:14Z,Correct scrollytell in chapter nav
+Github,Jay Varner,2024-04-04T19:32:47Z,Updates to modal
+Github,Jay Varner,2024-04-04T14:10:51Z,Update footnote button color.
+Github,Jay Varner,2024-04-03T21:02:30Z,Updates to people labor vis
+Github,Jay Varner,2024-04-03T19:08:59Z,Set pointer events for images.
+Github,Jay Varner,2024-04-03T19:03:42Z,More home page work.
+Github,Jay Varner,2024-04-03T19:01:31Z,Remove chapter colors from chapter nav.
+Github,Jay Varner,2024-04-03T14:47:17Z,Font and stroke fixes for People vis
+Github,Jay Varner,2024-04-02T21:50:59Z,Some fixes for home page
+Github,Jay Varner,2024-04-02T18:17:54Z,Mobile home page fixes
+Github,Jay Varner,2024-04-02T17:58:57Z,Fix margin on mobile centered layout.
+Github,Jay Varner,2024-04-01T22:20:15Z,Updates to front page/timeline
+Github,Tanvi Sharma,2024-03-28T17:11:45Z,Adjust tracking for chapter body
+Github,Tanvi Sharma,2024-03-28T17:04:25Z,Spacing and type tweaks
+Github,Tanvi Sharma,2024-03-27T21:35:12Z,Change BG color. Footnotes. Typos -- -> —.
+Github,Tanvi Sharma,2024-03-26T20:39:37Z,Update PullQuote.tsx
+Github,Tanvi Sharma,2024-03-26T17:02:18Z,spacings changes
+Github,Jay Varner,2024-03-26T19:31:32Z,Balance column widths/margins
+Github,Jay Varner,2024-03-26T19:22:16Z,Remove debug statements.
+Github,Jay Varner,2024-03-26T19:03:23Z,Fix figure filename
+Github,Jay Varner,2024-03-26T19:01:52Z,Update figure filename
+Github,Jay Varner,2024-03-26T18:28:52Z,Update Playfair text.
+Github,Tanvi Sharma,2024-03-26T16:49:55Z,Adding Brooks images. Tweaks to pullquote font. Tweak to image caption alignment.
+Github,Tanvi Sharma,2024-03-26T16:32:40Z,"adding images to intro, brooks scrollytell screenshots
+
+from gdrive"
+Github,Jay Varner,2024-03-26T13:54:41Z,Update scrollytell text. Add new font CSS
+Github,Jay Varner,2024-03-25T20:18:13Z,Remove debug chars
+Github,Jay Varner,2024-03-25T19:41:45Z,Update font for pull quotes
+Github,Jay Varner,2024-03-25T17:16:49Z,Update Playfair scrollytell chart
+Github,Jay Varner,2024-03-25T17:06:45Z,Update image height to match partner.
+Github,Jay Varner,2024-03-25T16:18:10Z,Fix updating years on axis
+Github,Jay Varner,2024-03-22T21:05:36Z,Update Brooks text.
+Github,Jay Varner,2024-03-22T17:38:31Z,Add taper to voyage binds to represent the voyage's mortality rate.
+Github,Jay Varner,2024-03-21T17:52:04Z,Fix slider bug and reset initial year range.
+Github,Jay Varner,2024-03-21T17:32:46Z,Improve transition in voyage vis
+Github,Jay Varner,2024-03-21T16:38:13Z,Brooks vis scrollytell.
+Github,Tanvi Sharma,2024-03-20T20:35:53Z,"Update ChapterTitle.tsx
+
+Minor font and spacing changes"
+Github,Tanvi Sharma,2024-03-20T20:12:32Z,Adding Neue Montreal to fonts
+Github,Jay Varner,2024-03-20T03:25:41Z,Increase spacing of chapter title.
+Github,Jay Varner,2024-03-19T21:59:30Z,Add section links to chapter header
+Github,Jay Varner,2024-03-19T20:24:06Z,Update pull quotes and chapter titles.
+Github,Jay Varner,2024-03-19T15:54:43Z,Update chapter section title.
+Github,Jay Varner,2024-03-18T15:02:24Z,Add function or regenerate voyage seeds.
+Github,Jay Varner,2024-03-15T21:31:27Z,Make voyage lines curvier
+Github,Jay Varner,2024-03-15T12:19:15Z,Handel deselecting grouping
+Github,Jay Varner,2024-03-14T14:23:23Z,Mobile fixes/improvements for Brooks
+Github,Jay Varner,2024-03-14T11:49:40Z,Mobile improvement contribution scrollytell.
+Github,Jay Varner,2024-03-13T20:08:20Z,Remove buttons from contributions scrollytell
+Github,Jay Varner,2024-03-13T15:11:35Z,Feeble attempts to improve people vis on mobile.
+Github,Jay Varner,2024-03-13T15:08:28Z,Fix Peabody footnotes on mobile.
+Github,Jay Varner,2024-03-13T14:37:24Z,Fix Peabody for mobile.
+Github,Jay Varner,2024-03-13T12:29:32Z,Use D3 to position names.
+Github,Jay Varner,2024-03-13T11:55:22Z,Remove shadow if no action.
+Github,Jay Varner,2024-03-12T17:22:05Z,Improve mouse over.
+Github,Jay Varner,2024-03-12T15:43:36Z,Rework people vis.
+Github,Jay Varner,2024-03-08T13:58:33Z,Organize and clean up.
+Github,Jay Varner,2024-03-07T22:15:27Z,Add SVG map for Du Bois
+Github,Jay Varner,2024-03-07T16:21:52Z,Early progress on people across versions labor vis
+Github,Jay Varner,2024-03-06T02:25:09Z,Tidy up stack and comb charts.
+Github,Jay Varner,2024-03-04T22:45:38Z,Improve clarity of Playfair contributions scorllytell
+Github,Jay Varner,2024-03-04T18:25:12Z,Add initial row to contribution data and label Y axis.
+Github,Jay Varner,2024-03-04T17:29:33Z,Add dropshadow to buttons.
+Github,Jay Varner,2024-03-04T14:57:40Z,Fix stacked chart
+Github,Jay Varner,2024-03-01T18:02:37Z,Fix linting errors.
+Github,Jay Varner,2024-03-01T17:55:23Z,Move declarations of visualizations and figures for chapter context to prevent excessive re-renders
+Github,Jay Varner,2024-03-01T15:21:24Z,More chapter nav improvements and add missing Peabody vis to nav.
+Github,Jay Varner,2024-03-01T14:02:05Z,Adjust first Playfair scrollytell.
+Github,Jay Varner,2024-02-29T19:44:19Z,Add border to chart.
+Github,Jay Varner,2024-02-29T18:19:31Z,Fix Playfair interactive.
+Github,Jay Varner,2024-02-29T16:17:37Z,First pass at second Playfair scrollytell.
+Github,Jay Varner,2024-02-29T02:41:31Z,Adjust top spacing on chapter nav icons
+Github,Jay Varner,2024-02-28T20:53:13Z,Force blur on button when mouse leaves.
+Github,Jay Varner,2024-02-28T20:04:52Z,Clean up CSV
+Github,Jay Varner,2024-02-28T18:07:29Z,Improve chapter nav
+Github,Jay Varner,2024-02-28T15:55:07Z,Remove width from section title.
+Github,Jay Varner,2024-02-28T15:51:28Z,Add fill-black to Tailwind config
+Github,Jay Varner,2024-02-28T15:47:04Z,Update button styling/state
+Github,Jay Varner,2024-02-28T15:35:31Z,Fix section titles
+Github,Jay Varner,2024-02-28T13:16:40Z,Smooth out transitions
+Github,Jay Varner,2024-02-28T12:35:59Z,Improve grid spacing
+Github,Jay Varner,2024-02-27T21:52:21Z,Add keyboard events to Playfair vis
+Github,Jay Varner,2024-02-27T21:38:33Z,Remove package lock
+Github,Jay Varner,2024-02-27T20:56:15Z,Update TS
+Github,Jay Varner,2024-02-27T20:05:52Z,Up font size
+Github,Jay Varner,2024-02-27T20:01:41Z,First pass at Playfair interaction.
+Github,Jay Varner,2024-02-05T13:07:21Z,Preserve selected image when toggling between shuffle and sort on home page.
+Github,Jay Varner,2024-01-17T19:10:39Z,Enable Hypothesis
+Github,Jay Varner,2024-01-17T19:10:14Z,Add Du Bois primary bg color
+Github,Tanvi Sharma,2024-01-17T18:42:22Z,"design tweaks
+
+- body font size changes
+- add padding to top of chapters
+- add margin to chapter grid for 3xl super wide displays
+- make centered layout skinny-er"
+Github,Jay Varner,2024-01-16T19:22:00Z,Roll back
+Github,Jay Varner,2024-01-16T19:16:42Z,Test genius
+Github,Jay Varner,2024-01-16T15:12:40Z,Center sketch in scrollytell
+Github,Jay Varner,2024-01-02T19:50:20Z,Force with of main element.
+Github,Tanvi Sharma,2024-01-02T17:34:07Z,"Dubois tweaks
+
+- Fix accessibility on Slideshow (black text red background) on mobile
+- add max height to image"
+Github,Jay Varner,2023-12-21T17:50:31Z,Add main tag to about page
+Github,Jay Varner,2023-12-21T17:38:29Z,Change timeline heading element
+Github,Jay Varner,2023-12-21T17:28:46Z,More accessibility improvements
+Github,Jay Varner,2023-12-21T15:46:25Z,Add main element to index
+Github,Jay Varner,2023-12-21T15:23:26Z,One more tweak to chapter nav
+Github,Jay Varner,2023-12-20T23:32:46Z,Small fixes to chapter nav
+Github,Jay Varner,2023-12-20T17:08:01Z,Remove debug statement
+Github,Jay Varner,2023-12-20T16:43:32Z,Accessibility improvements
+Github,Jay Varner,2023-11-09T17:49:31Z,Performance improvement
+Github,Jay Varner,2023-11-09T17:41:04Z,Fix loading to specific section
+Github,Jay Varner,2023-11-09T17:30:52Z,Remove scrollytell debug
+Github,Jay Varner,2023-11-09T17:04:13Z,"Add offset to chapter nav, remove debug statement"
+Github,Jay Varner,2023-11-09T13:41:24Z,Add footnote list to Shanawdithit
+Github,Jay Varner,2023-11-08T19:14:57Z,Remove debug statement
+Github,Jay Varner,2023-11-08T19:15:38Z,"Merge pull request #35 from EmoryDHLab/dependabot/npm_and_yarn/postcss-8.4.31
+
+Bump postcss from 8.4.27 to 8.4.31"
+Github,Jay Varner,2023-11-08T19:13:15Z,"Merge pull request #34 from EmoryDHLab/dependabot/npm_and_yarn/babel/traverse-7.23.2
+
+Bump @babel/traverse from 7.22.10 to 7.23.2"
+Github,Jay Varner,2023-11-08T19:10:17Z,Add chapter nav to Shanawdithit
+Github,Jay Varner,2023-11-08T18:03:06Z,Add chapter nav to Du Bois
+Github,Jay Varner,2023-11-08T14:52:32Z,Restore mobile slideshow
+Github,Jay Varner,2023-11-08T14:34:09Z,Clean up
+Github,Jay Varner,2023-11-08T13:01:39Z,Scrollytell fixes
+Github,Jay Varner,2023-11-08T13:01:13Z,Add chapter nav to Peabody
+Github,Jay Varner,2023-11-07T12:59:27Z,Adjust offsets to account for chapter nav
+Github,Jay Varner,2023-11-06T17:19:35Z,Make voyage paths more uniform
+Github,Jay Varner,2023-11-01T17:40:09Z,Add scroll to hash component
+Github,Jay Varner,2023-11-01T17:36:59Z,Refine chapter nav and to Brooks
+Github,Jay Varner,2023-11-01T13:06:56Z,Replace window size hook
+Github,Jay Varner,2023-11-01T12:48:56Z,Remove use of docHeightState
+Github,Jay Varner,2023-10-31T15:29:04Z,Integration of chapter nav
+Github,Jay Varner,2023-10-31T13:36:46Z,Get most recent versions on chapter nav and body components
+Github,Jay Varner,2023-10-31T13:14:38Z,Add chapter nav and body components
+Github,Jay Varner,2023-10-30T22:22:31Z,Fix type warning
+Github,Jay Varner,2023-10-30T22:21:30Z,Lower opacity for people excluded by filter
+Github,Jay Varner,2023-10-30T22:01:35Z,First take on People Across Versions vis
+Github,Jay Varner,2023-10-26T15:53:50Z,Add Willard map scrollytell
+Github,Jay Varner,2023-10-26T13:16:59Z,Update scrollytell text
+Github,Jay Varner,2023-10-26T12:38:45Z,Updates to maps scrollytell
+Github,Shiyao Li,2023-10-25T14:55:18Z,shiyao added prototype
+Github,Jay Varner,2023-10-24T12:58:58Z,Increase width and use black stroke for voyage viz
+Github,Jay Varner,2023-10-24T12:39:20Z,Fix home page selected images
+Github,Tanvi Sharma,2023-10-22T02:24:53Z,Minot text changes
+Github,Tanvi Sharma,2023-10-22T02:07:34Z,"Update chapters.dubois.tsx
+
+changing """" to (“...”)"
+Github,Jay Varner,2023-10-20T15:46:54Z,Rework timeline image management
+Github,Jay Varner,2023-10-19T20:27:01Z,reduce image size
+Github,Jay Varner,2023-10-19T17:42:15Z,Remove debug
+Github,Jay Varner,2023-10-19T17:37:49Z,Thinner stroke
+Github,Jay Varner,2023-10-19T17:35:38Z,Sketch Scrollytell
+Github,Jay Varner,2023-10-19T16:09:54Z,Minor improvements to DuBois Chart 3
+Github,Jay Varner,2023-10-19T13:30:36Z,Add Shanawdithit for real
+Github,Jay Varner,2023-10-19T13:28:24Z,Add some images to Shanawdithit chapter
+Github,Jay Varner,2023-10-18T21:30:36Z,Fix unclosed tag
+Github,Jay Varner,2023-10-18T21:21:35Z,Fix initial viewport
+Github,Lauren Klein,2023-10-17T15:17:07Z,Adding dir for prototypes
+Github,Tanvi Sharma,2023-09-14T17:12:46Z,Update chapters.shanawdithit.tsx
+Github,Jay Varner,2023-10-05T16:56:36Z,Small fix for Playfair scrollytell
+Github,Jay Varner,2023-10-04T17:08:34Z,Rework home page timeline images to use central data.
+Github,Jay Varner,2023-10-04T17:07:24Z,More type rename
+Github,Jay Varner,2023-10-04T17:06:03Z,Rename type for figures
+Github,Jay Varner,2023-10-04T17:04:53Z,Fix conflicting keys
+Github,Jay Varner,2023-10-04T17:01:00Z,Fix image file names
+Github,Lauren Klein,2023-10-03T15:47:00Z,Adding first round of final images for Shanawdithit chapter
+Github,Jay Varner,2023-10-02T15:26:42Z,Update student chart copy
+Github,Jay Varner,2023-10-02T14:48:08Z,Use and underline response selections
+Github,Jay Varner,2023-09-15T12:03:40Z,Center original chart
+Github,Jay Varner,2023-09-14T17:03:17Z,Rework Du Bois Student Charts
+Github,Jay Varner,2023-09-08T16:17:11Z,Fix edge cases
+Github,Jay Varner,2023-09-08T14:40:21Z,Fixes for Firefox
+Github,Jay Varner,2023-09-08T13:08:37Z,Changes to chart 3
+Github,Jay Varner,2023-09-08T13:07:19Z,Markup for reading mode
+Github,Jay Varner,2023-09-01T13:40:47Z,Add missing metadata
+Github,Jay Varner,2023-08-31T21:43:15Z,Remove debugging messages
+Github,Jay Varner,2023-08-31T21:38:47Z,Safari...
+Github,Jay Varner,2023-08-31T21:28:56Z,more
+Github,Jay Varner,2023-08-31T21:21:54Z,Safari....
+Github,Jay Varner,2023-08-31T21:18:46Z,Safari debugging
+Github,Jay Varner,2023-08-31T21:14:43Z,Safari
+Github,Jay Varner,2023-08-31T21:05:44Z,Debugging Safari
+Github,Jay Varner,2023-08-31T20:56:48Z,Blind attempt to resolve Safari IntersectionObserver error
+Github,Jay Varner,2023-08-31T19:05:27Z,Add red
+Github,Jay Varner,2023-08-31T18:46:17Z,Fix opacity
+Github,Jay Varner,2023-08-31T18:43:38Z,Update image for real
+Github,Jay Varner,2023-08-31T18:39:13Z,Update all voyage image
+Github,Jay Varner,2023-08-31T18:09:36Z,Fix meta hostname
+Github,Jay Varner,2023-08-31T18:06:35Z,New colors
+Github,Jay Varner,2023-08-31T17:13:14Z,Fix width
+Github,Jay Varner,2023-08-31T17:13:03Z,Update doc viewer and small chart changes
+Github,Jay Varner,2023-08-31T17:12:20Z,Update remix
+Github,Jay Varner,2023-08-31T02:40:50Z,Fix centering
+Github,Jay Varner,2023-08-30T19:00:25Z,Make student charts smaller
+Github,Jay Varner,2023-08-30T12:38:59Z,Muted colors
+Github,Jay Varner,2023-08-29T16:15:18Z,Attempts to improve mobile
+Github,Jay Varner,2023-08-29T15:00:00Z,Adjust widths
+Github,Jay Varner,2023-08-29T13:53:32Z,Rework voyage visualizations
+Github,Jay Varner,2023-08-28T15:52:40Z,More voyage visualizations
+Github,Jay Varner,2023-08-21T21:07:23Z,Initial work on Du Bois Student Chart 3
+Github,Jay Varner,2023-08-15T14:15:07Z,Fixes to pull quote and footnote override
+Github,Jay Varner,2023-08-14T15:50:54Z,Yet more house cleaning
+Github,Jay Varner,2023-08-10T18:07:01Z,A whole bunch of clean up
+Github,Jay Varner,2023-08-08T23:42:20Z,Finish clean up of Brooks code
+Github,Jay Varner,2023-08-08T21:20:26Z,Add type interface
+Github,Jay Varner,2023-08-08T21:18:18Z,Add type for voyage
+Github,Jay Varner,2023-08-08T18:52:34Z,Code clean up
+Github,Jay Varner,2023-08-07T18:44:45Z,Fixes to Clarkson scrollytell layout
+Github,Jay Varner,2023-08-07T15:36:32Z,Fix spacing on section titles
+Github,Jay Varner,2023-08-07T15:36:05Z,Interaction improvements
+Github,Jay Varner,2023-08-07T15:34:19Z,Add focus to toggle
+Github,Jay Varner,2023-08-07T15:33:45Z,Layout improvements
+Github,Jay Varner,2023-08-04T17:47:02Z,Add keyboard access to voyage year range slider
+Github,Jay Varner,2023-08-03T19:24:07Z,Adjustable year ranges for viewable voyages
+Github,Jay Varner,2023-08-01T18:30:01Z,Initial work on final Brooks visualization
+Github,Jay Varner,2023-07-27T17:54:33Z,Rework of Clarkson scrollytell
+Github,Jay Varner,2023-07-25T20:01:09Z,Clarkson scrollytell
+Github,Jay Varner,2023-07-25T19:55:31Z,Remove console statement
+Github,Jay Varner,2023-07-24T13:41:04Z,Redraw based on window resize.
+Github,Jay Varner,2023-07-24T13:39:12Z,Add margin to top of footer
+Github,Jay Varner,2023-07-21T14:50:04Z,Small fix for section titles.
+Github,Jay Varner,2023-07-21T14:47:06Z,(Mobile) layout fixes for Du Bois
+Github,Jay Varner,2023-07-19T17:57:08Z,Du Bois layout adjustments
+Github,Jay Varner,2023-07-19T15:08:02Z,Du Bois slideshow
+Github,Jay Varner,2023-07-19T15:06:47Z,Update figure data
+Github,Jay Varner,2023-07-14T16:53:21Z,Mobile Peabody Quiz
+Github,Jay Varner,2023-07-06T15:30:58Z,More responsive fixes for the slideshow
+Github,Jay Varner,2023-07-05T16:25:01Z,Use existing figures for slideshow
+Github,Jay Varner,2023-07-05T16:07:01Z,Update figure json files
+Github,Jay Varner,2023-07-05T14:34:54Z,Responsive improvements for slideshow
+Github,Tanvi Sharma,2023-06-23T17:01:01Z,"adding slideshow to dubois
+
+incomplete, waiting for margy to update spreadsheet"
+Github,Tanvi Sharma,2023-06-23T16:10:39Z,Update peabody.tsx
+Github,Tanvi Sharma,2023-06-23T16:09:43Z,"Update peabody.tsx
+
+Fix Drop cap on Peabody"
+Github,Jay Varner,2023-06-23T16:03:00Z,Make Du Bois figures file readable
+Github,Jay Varner,2023-06-23T15:47:05Z,Clean up empty Shanawdithit
+Github,Lauren Klein,2023-06-14T19:16:18Z,Tweaks to credits page
+Github,Jay Varner,2023-06-09T17:39:57Z,Brooks mobile improvements
+Github,Jay Varner,2023-06-09T17:39:10Z,Peabody mobile improvements
+Github,Jay Varner,2023-06-09T17:37:23Z,Updates to figure component and usage
+Github,Jay Varner,2023-06-09T17:31:57Z,Individual files for chapter images
+Github,Jay Varner,2023-06-09T17:25:43Z,Mobile improvements
+Github,Jay Varner,2023-06-09T16:55:48Z,jpeg and webp versions of all images. Remove none Du Bois png files.
+Github,Tanvi Sharma,2023-06-08T15:17:05Z,Update favicon.ico
+Github,Jay Varner,2023-06-06T19:50:13Z,Hide timeline on mobile
+Github,Jay Varner,2023-06-06T17:55:32Z,LED chart improvements
+Github,Jay Varner,2023-06-06T16:10:50Z,Fix hydration error
+Github,Jay Varner,2023-06-06T14:52:29Z,Center chapter section titles
+Github,Jay Varner,2023-06-06T14:33:20Z,Layout fix
+Github,Jay Varner,2023-06-02T21:20:20Z,Add missing Playfair image
+Github,Jay Varner,2023-06-02T21:16:42Z,Fix Playfair images
+Github,Jay Varner,2023-06-02T20:45:52Z,Small fixes for Safari
+Github,Jay Varner,2023-06-02T17:35:52Z,Changes to Brooks scrollytell
+Github,Jay Varner,2023-05-30T18:25:26Z,Changes to Brooks scrollytell
+Github,Jay Varner,2023-05-19T16:38:47Z,Improved chapter nav
+Github,Jay Varner,2023-05-19T16:38:16Z,Add a11y eslint plugin
+Github,Jay Varner,2023-05-19T16:37:21Z,Clean up
+Github,Jay Varner,2023-05-19T15:37:00Z,Don't use index as key
+Github,Jay Varner,2023-05-19T13:29:54Z,Add label to toggle switch
+Github,Jay Varner,2023-05-18T20:46:12Z,Add hover highlights to Clarkson Plan +  consent and modal improvements.
+Github,Jay Varner,2023-05-17T20:50:14Z,Remove nausea inducing rotate
+Github,Jay Varner,2023-05-17T19:25:03Z,Minor fix
+Github,Jay Varner,2023-05-17T19:21:40Z,Changes to Brooks scrollytell
+Github,Jay Varner,2023-05-16T19:20:07Z,Updates to Peabody Quiz
+Github,Tanvi Sharma,2023-05-15T13:30:47Z,minor changes
+Github,Jay Varner,2023-05-15T12:09:26Z,No margin when in column
+Github,Tanvi Sharma,2023-05-14T15:58:38Z,minor changes
+Github,Jay Varner,2023-05-12T18:45:14Z,Add types for figures
+Github,Jay Varner,2023-05-12T18:43:41Z,First pass at consent for sensitive images
+Github,Jay Varner,2023-05-05T12:23:11Z,Fix always scrolling to quiz
+Github,Jay Varner,2023-05-04T20:50:20Z,Tweaks to Peabody Quiz based on feedback
+Github,Jay Varner,2023-05-03T19:57:58Z,Reworked Peabody Quiz
+Github,Tanvi Sharma,2023-05-01T19:59:15Z,"Update playfair.tsx
+
+adding <q> tags"
+Github,Tanvi Sharma,2023-05-01T19:23:38Z,adding quotes
+Github,Tanvi Sharma,2023-05-01T14:05:41Z,text edits
+Github,Jay Varner,2023-04-26T21:38:35Z,Add missing image file
+Github,Jay Varner,2023-04-26T20:17:34Z,Fix image source.
+Github,Tanvi Sharma,2023-04-26T01:10:00Z,"Update about.tsx
+
+type"
+Github,Tanvi Sharma,2023-04-26T00:21:10Z,type adjustments
+Github,Nicholas Yang,2023-04-25T23:36:24Z,Added linking to chapter sections
+Github,Jay Varner,2023-04-10T18:00:32Z,Fix scrollytell bug
+Github,Jay Varner,2023-04-10T16:01:14Z,Peabody LED Chart viz
+Github,Tanvi Sharma,2023-04-10T14:49:20Z,"fixing left padding on drop cap
+
+i want the padding for first-paragraph to be 0rem 0.5rem .5rem 0rem
+
+but it didnt quite work"
+Github,Tanvi Sharma,2023-04-10T14:43:05Z,"fixing left padding on drop cap
+
+-"
+Github,Tanvi Sharma,2023-04-10T14:36:29Z,mobile padding adjustments
+Github,Nicholas Yang,2023-04-09T03:13:41Z,"Homepage Changes (#32)
+
+This is not the full set of changes, but it's a little bit of
+refactoring and style changes towards the new homepage design."
+Github,Jay Varner,2023-04-03T14:50:41Z,Potential figure management
+Github,Tanvi Sharma,2023-03-26T15:21:35Z,"Adding Intro, editing about.
+
+-"
+Github,Jay Varner,2023-03-23T19:40:43Z,New Peabody Quiz
+Github,Tanvi Sharma,2023-03-22T16:42:26Z,"Fixing DuBois Hover,
+
+ should try to find a fix for changing caption automagically."
+Github,Tanvi Sharma,2023-03-22T16:13:23Z,minor spacing fixes
+Github,Tanvi Sharma,2023-03-22T15:58:57Z,"updating about page
+
+TO DO - styling, links"
+Github,Jay Varner,2023-03-21T14:18:01Z,Disable auto scrolling when timeline focus. Rethink after design updates
+Github,Jay Varner,2023-03-21T13:20:32Z,Move actors to left
+Github,Tanvi Sharma,2023-03-20T21:08:03Z,-
+Github,Tanvi Sharma,2023-03-20T21:06:08Z,spacing edits
+Github,Jay Varner,2023-03-16T15:50:36Z,Index fix
+Github,Tanvi Sharma,2023-03-16T15:35:06Z,Top to Bottom
+Github,Tanvi Sharma,2023-03-16T15:29:47Z,Merge branch 'homepage-alt-2'
+Github,Tanvi Sharma,2023-03-16T15:28:52Z,Update fonts.css
+Github,Tanvi Sharma,2023-03-14T23:54:40Z,fixing semantics
+Github,Jay Varner,2023-03-14T12:52:54Z,Remove errant import
+Github,Jay Varner,2023-03-14T12:18:07Z,Add responsive widths
+Github,Jay Varner,2023-03-14T12:12:33Z,Import as type
+Github,Jay Varner,2023-03-14T12:09:36Z,Pass sizes to button component
+Github,Jay Varner,2023-03-14T01:11:40Z,Fix for Playfair charts
+Github,Jay Varner,2023-03-13T13:15:07Z,Remove debug statement
+Github,Jay Varner,2023-03-13T13:06:24Z,Buttons smaller on Peabody bar graph viz
+Github,Jay Varner,2023-03-13T12:52:30Z,Cleanup hover text in Dubois visualization. Fixes #24
+Github,Tanvi Sharma,2023-03-10T22:51:31Z,"Permutation 2
+
+Probably need to add a gradient or something"
+Github,Tanvi Sharma,2023-03-10T21:09:30Z,"moving things around
+
+trial 1. this didnt necessarily work
+some edits incoming."
+Github,Jay Varner,2023-03-09T18:38:04Z,"New Brooks ""plan"" image"
+Github,Jay Varner,2023-03-09T18:37:22Z,Rename chapter context source file
+Github,Tanvi Sharma,2023-03-08T20:06:30Z,Merge branch 'main' of github.com:NicholasLYang/data-by-design
+Github,Tanvi Sharma,2023-03-08T20:06:28Z,Update about.tsx
+Github,Lauren Klein,2023-03-08T18:38:01Z,Tweaking tagline
+Github,Lauren Klein,2023-03-08T18:36:55Z,Adding abstract on front page
+Github,Jay Varner,2023-03-08T13:49:25Z,Remove references to IntroParagraph component
+Github,Jay Varner,2023-03-08T13:07:35Z,Slow down Seraphique tour
+Github,Jay Varner,2023-03-08T13:07:11Z,Hide some interactions on mobile
+Github,Jay Varner,2023-03-08T13:06:38Z,Keyboard control for scrollytell
+Github,Jay Varner,2023-03-07T15:12:11Z,Remove debug logs
+Github,Jay Varner,2023-03-07T15:01:32Z,Replace IntroSentence component with CSS - better for screen readers
+Github,Tanvi Sharma,2023-03-08T00:20:50Z,"Update PeabodySandbox.tsx
+
+Graphic Desiggggn"
+Github,Tanvi Sharma,2023-03-07T23:58:20Z,"design edits to Peabody component
+
+buttons need to be smaller but I couldn't figure out how without messing up"
+Github,Tanvi Sharma,2023-03-07T20:01:06Z,Editing About page
+Github,Tanvi Sharma,2023-03-06T20:37:07Z,Merge branch 'main' of github.com:NicholasLYang/data-by-design
+Github,Jay Varner,2023-03-06T18:42:50Z,Add hover text for the Marie Séraphique image
+Github,Tanvi Sharma,2023-03-06T15:50:34Z,Merge branch 'main' of github.com:NicholasLYang/data-by-design
+Github,Tanvi Sharma,2023-03-06T15:50:27Z,Dubois Hover fixes
+Github,Jay Varner,2023-03-06T14:34:52Z,Rework of Peabody scrollytell and timeline/bar graph
+Github,Jay Varner,2023-03-01T16:02:16Z,Show chapter card backgrounds on focus
+Github,Lauren Klein,2023-03-03T21:59:59Z,Adding in contact info too...
+Github,Lauren Klein,2023-03-03T21:39:46Z,Adding required funding details to footer
+Github,Tanvi Sharma,2023-03-03T17:13:00Z,img edits
+Github,Jay Varner,2023-03-01T13:35:01Z,Add keyboard navigation for homepage timeline
+Github,Tanvi Sharma,2023-02-27T15:24:35Z,"jpg -> png
+
+sorry i cant do it in one go"
+Github,Tanvi Sharma,2023-02-27T15:18:18Z,"dubois jpeg -> png
+
+one more time!"
+Github,Tanvi Sharma,2023-02-27T15:10:02Z,dubois jpeg->png
+Github,Tanvi Sharma,2023-02-27T15:04:29Z,fixing img file extensions
+Github,Tanvi Sharma,2023-02-27T06:01:23Z,made pngs. might still need to update the file extensions in the code
+Github,Nicholas Yang,2023-02-27T05:40:57Z,Fixing build error
+Github,Tanvi Sharma,2023-02-23T21:16:09Z,smol type changes
+Github,Lauren Klein,2023-02-23T18:23:45Z,Minor tweak to Peabody subtitle
+Github,Jay Varner,2023-02-22T20:58:38Z,Add alt text to buttons for accessibility
+Github,Jay Varner,2023-02-22T20:55:42Z,Accessibility and useability improvements to home page timeline
+Github,Jay Varner,2023-02-22T20:53:57Z,Refactor scrollytell components to use wrapper
+Github,Jay Varner,2023-02-21T13:05:09Z,Add numbers to footnote list
+Github,Jay Varner,2023-02-20T20:32:52Z,More Brooks scrollytell refinements
+Github,Jay Varner,2023-02-20T16:39:31Z,Safari fixes
+Github,Jay Varner,2023-02-20T15:16:00Z,Slightly refined Brooks scrollytell
+Github,Jay Varner,2023-02-18T17:31:01Z,"Merge pull request #31 from EmoryDHLab/front-page-text
+
+Updating chapter cards"
+Github,Lauren Klein,2023-02-17T22:19:50Z,Updating chapter cards
+Github,Jay Varner,2023-02-17T22:03:16Z,"Merge pull request #30 from EmoryDHLab/brooks
+
+Initial setup for Brooks"
+Github,Jay Varner,2023-02-17T22:02:40Z,Initial setup for Brooks
+Github,Jay Varner,2023-02-17T13:58:49Z,Peabody layout fixes
+Github,Jay Varner,2023-02-16T17:13:56Z,A step toward peabody mobile
+Github,Jay Varner,2023-02-16T14:24:22Z,Small spacing adjustments and removal of unnecessary tags
+Github,Jay Varner,2023-02-16T13:50:35Z,Fix chapter nav
+Github,Jay Varner,2023-02-15T15:18:53Z,Spacing fix for Playfair
+Github,Jay Varner,2023-02-14T18:48:56Z,"Merge pull request #29 from EmoryDHLab/playfar-mobile
+
+Playfair mobile"
+Github,Jay Varner,2023-02-14T16:11:28Z,Remove extra margins
+Github,Jay Varner,2023-02-13T20:28:05Z,Mobile adjustments
+Github,Jay Varner,2023-02-13T13:09:16Z,First steps toward mobile Scrollytell
+Github,Jay Varner,2023-02-14T16:21:46Z,Remove scrollprogress
+Github,Jay Varner,2023-02-14T14:58:53Z,"Merge pull request #28 from EmoryDHLab/new-peabody-scrollytell
+
+New peabody scrollytell"
+Github,Jay Varner,2023-02-14T14:48:36Z,Updated Peabody Scrollytell
+Github,Jay Varner,2023-02-14T14:48:19Z,Fix Peabody hover text and add keyboard support
+Github,Jay Varner,2023-02-13T15:32:42Z,More scrollytell work
+Github,Jay Varner,2023-02-10T15:16:32Z,First rework of Peabody Scrollytell
+Github,Jay Varner,2023-02-13T15:34:00Z,Timeline fix
+Github,Tanvi Sharma,2023-02-04T01:18:14Z,Adding TwoColumn to Dubois
+Github,Tanvi Sharma,2023-02-04T00:17:50Z,"Hoverrrr
+
+> Add underlines
+> Check w Nick if Hover things should be different components"
+Github,Tanvi Sharma,2023-02-03T18:11:26Z,"Adding some captions component where needed.
+
+Confused b/w the hierarchy of Figure / Image Modal / Image Caption.
+
+Can @NicholasLYang make a clean example for the first playfair chart that I can apply everywhere?"
+Github,Tanvi Sharma,2023-02-03T17:11:37Z,"dubois hovers
+
+Starting it out, components are made."
+Github,Jay Varner,2023-01-27T16:43:01Z,Adjust hover highlights
+Github,Jay Varner,2023-01-27T16:42:38Z,Add arrow to scrollytell
+Github,Jay Varner,2023-01-26T19:28:43Z,Add hover interactions to Peabody quiz
+Github,Jay Varner,2023-01-26T14:59:09Z,Merge branch 'peabody-quiz'
+Github,Jay Varner,2023-01-26T14:58:33Z,Peabody quiz improvements
+Github,Tanvi Sharma,2023-01-26T14:44:58Z,"Update Quotation.tsx
+
+semantic tag"
+Github,Tanvi Sharma,2023-01-26T14:44:17Z,"Update Playfair
+
+rearranging columns
+adding quotations"
+Github,Tanvi Sharma,2023-01-26T14:06:39Z,"Update peabody.tsx
+
+tweaks on column layout consistency"
+Github,Jay Varner,2023-01-25T21:34:44Z,"Merge pull request #27 from EmoryDHLab/peabody-quiz
+
+Peabody quiz"
+Github,Jay Varner,2023-01-25T21:33:17Z,Fix changing century
+Github,Jay Varner,2023-01-25T21:19:35Z,Adding Peabody quiz
+Github,Tanvi Sharma,2023-01-23T21:58:24Z,"tweaks
+
+> Rename to Shannadithit
+> Image modal is now larger
+> IntroParagraph -> IntroSentence
+> Reorganize Chapter Nav"
+Github,Jay Varner,2023-01-23T14:12:39Z,"Merge pull request #26 from EmoryDHLab/scrollama
+
+Switch to Scrollama for pinning and scrollytell"
+Github,Jay Varner,2023-01-23T14:09:05Z,Switch to Scrollama for pinning and scrollytell
+Github,Tanvi Sharma,2023-01-20T19:00:05Z,"new Quotation component
+
+this uses reactnode jsx thingy"
+Github,Tanvi Sharma,2023-01-20T18:50:46Z,"Update ChapterTitle.tsx
+
+for mobile"
+Github,Tanvi Sharma,2023-01-20T18:47:39Z,"fonts reset
+
+woe"
+Github,Tanvi Sharma,2023-01-19T19:48:16Z,tweak central ><
+Github,Tanvi Sharma,2023-01-19T19:32:35Z,Small Type Tweaks
+Github,Jay Varner,2023-01-18T14:15:56Z,Layout fix for quilt images for Peabody
+Github,Jay Varner,2023-01-18T12:26:29Z,Recalculate scroll triggers when images are lazy loaded
+Github,Jay Varner,2023-01-17T17:59:21Z,Small fixes to scroll triggers
+Github,Jay Varner,2023-01-17T13:50:00Z,"Merge pull request #22 from EmoryDHLab/peabody-scrolltell
+
+Peabody scrollytell"
+Github,Jay Varner,2023-01-17T13:49:14Z,Reorganize/rename tutorial files
+Github,Jay Varner,2023-01-17T13:39:54Z,Fix key overlapping chart
+Github,Nicholas Yang,2023-01-13T20:32:19Z,Mobile fixes
+Github,Tanvi Sharma,2023-01-13T15:25:05Z,remove dupe
+Github,Tanvi Sharma,2023-01-16T14:49:17Z,Merge branch 'main' of github.com:NicholasLYang/data-by-design
+Github,Jay Varner,2023-01-13T18:26:31Z,Account for fixed nav on scrolling pins
+Github,Jay Varner,2023-01-13T18:03:02Z,Peabody scrollytell
+Github,Jay Varner,2023-01-13T18:02:28Z,Allow color overrides for footnote button and text
+Github,Jay Varner,2023-01-13T18:01:39Z,Add ScrollytellContext
+Github,Nicholas Yang,2023-01-13T16:25:59Z,Fixed shuffle
+Github,Nicholas Yang,2023-01-13T15:55:03Z,Various fixes (#21)
+Github,Nicholas Yang,2023-01-12T21:04:43Z,Added ImageModal
+Github,Tanvi Sharma,2023-01-12T21:03:11Z,fonts
+Github,Nicholas Yang,2023-01-12T20:21:40Z,Tweaked timeline dragging
+Github,Tanvi Sharma,2023-01-12T19:34:39Z,"adding drop cap, messing around with pull quote format"
+Github,Nicholas Yang,2023-01-12T17:44:33Z,Mobile home page (#20)
+Github,Nicholas Yang,2023-01-11T21:08:49Z,Added footnotes at bottom
+Github,Nicholas Yang,2023-01-11T18:20:56Z,First run at making the Peabody sandbox
+Github,Tanvi Sharma,2023-01-11T17:53:59Z,tanvi font organise session
+Github,Tanvi Sharma,2023-01-11T17:22:48Z,"friendship over with font-william
+
+font-dubois is my best friend now"
+Github,Nicholas Yang,2023-01-11T16:59:05Z,Fixed dubois
+Github,Nicholas Yang,2023-01-10T21:39:59Z,More fixes and tweaks
+Github,Nicholas Yang,2023-01-10T20:46:01Z,Added timeline (#18)
+Github,Jay Varner,2023-01-10T16:46:22Z,Remove redundant keys.
+Github,Nicholas Yang,2023-01-10T16:02:44Z,Peabody Charts and Bug Fixes (#17)
+Github,Jay Varner,2023-01-10T15:04:50Z,Add footnote state
+Github,Jay Varner,2023-01-10T15:01:03Z,"Merge pull request #14 from EmoryDHLab/footnote-context
+
+Footnote context"
+Github,Jay Varner,2023-01-09T22:44:17Z,Remove redundant import
+Github,Jay Varner,2023-01-09T22:17:37Z,Merge branch 'main' into footnote-context
+Github,Jay Varner,2023-01-09T22:01:40Z,Fix footnote numbers
+Github,Jay Varner,2023-01-09T21:55:23Z,Restore InlineFootnote
+Github,Jay Varner,2023-01-09T21:47:07Z,Use InlineFootnote
+Github,Jay Varner,2023-01-09T15:37:54Z,Use context to track when a footnote is opened/closed
+Github,Jay Varner,2023-01-06T13:55:57Z,Small changes in response to feedback.
+Github,Tanvi Sharma,2023-01-09T20:24:46Z,"Friendship Over with Footnotes
+
+Some are still missing in the Vue site, so they don't exist here either."
+Github,Tanvi Sharma,2023-01-09T18:37:28Z,"Adding more Footnotes
+
+This will all change haha!"
+Github,Tanvi Sharma,2023-01-09T21:21:36Z,"adding footnote component to playfair
+
+spacing tweaks needed"
+Github,Jay Varner,2023-01-09T17:20:52Z,Requested changes
+Github,Jay Varner,2023-01-09T15:40:10Z,Merge branch 'main' into footnote-context
+Github,Tanvi Sharma,2023-01-09T15:34:57Z,"ImageCaption component added!
+
+Not implemented everywhere yet ;)"
+Github,Jay Varner,2023-01-03T14:28:38Z,Add footer to Playfair
+Github,Nicholas Yang,2022-12-27T23:13:35Z,More peabody changes
+Github,Jay Varner,2022-12-27T23:10:17Z,First pass at scrollytell (#9)
+Github,Nicholas Yang,2022-12-27T20:00:27Z,Fixing misc bugs
+Github,Nicholas Yang,2022-12-27T19:48:50Z,More peabody changes (#10)
+Github,Tanvi Sharma,2022-12-04T03:17:20Z,rename app.css
+Github,Tanvi Sharma,2022-12-04T02:44:01Z,Fix Remove styles/app.css from repo #8
+Github,Tanvi Sharma,2022-12-04T01:49:06Z,apply column-grid-wrapper -> children
+Github,Jay Varner,2022-12-04T01:33:24Z,Playfair (#5)
+Github,Tanvi Sharma,2022-11-25T21:52:38Z,Changed fonts
+Github,Tanvi Sharma,2022-11-25T20:42:21Z,Update app.css
+Github,Tanvi Sharma,2022-11-25T20:39:36Z,Dubois Yassification (#4)
+Github,Nicholas Yang,2022-11-25T20:23:13Z,Peabody Changes (#3)
+Github,Nicholas Yang,2022-11-12T23:34:57Z,Dubois fixes (#2)
+Github,Nicholas Yang,2022-11-12T23:21:43Z,Type check errors
+Github,Nicholas Yang,2022-11-12T21:40:13Z,Tweaking peabody
+Github,Nicholas Yang,2022-11-12T21:21:47Z,Finished rough layout for peabody
+Github,Nicholas Yang,2022-11-09T06:04:53Z,More peabody
+Github,Nicholas Yang,2022-11-08T02:04:50Z,More tweaks!
+Github,Nicholas Yang,2022-11-08T01:47:08Z,Adding layout components to make everything a little more semantic
+Github,Tanvi Sharma,2022-11-07T22:10:53Z,tanvi learns how to 2 column it up
+Github,Nicholas Yang,2022-11-07T04:21:55Z,More peabody layout
+Github,Nicholas Yang,2022-11-02T02:41:33Z,More peabody styles
+Github,Nicholas Yang,2022-11-02T02:27:55Z,More changes
+Github,Nicholas Yang,2022-10-26T05:03:09Z,More peabody
+Github,Nicholas Yang,2022-10-25T04:20:42Z,Peabody changes
+Github,Tanvi Sharma,2022-10-23T19:17:52Z,"adding footnotes. deleted 1 (#1)
+
+* adding footnotes. deleted 1
+
+* Fixed styling
+
+* Switched <span className=""italic""> to <cite>
+
+* Delete spaces
+
+Co-authored-by: Nicholas Yang <nick@nicholasyang.com>"
+Github,Tanvi Sharma,2022-10-23T18:00:45Z,tanvi's first rodeo
+Github,Nicholas Yang,2022-10-22T03:38:37Z,Starting to port peabody
+Github,Nicholas Yang,2022-10-22T00:35:03Z,More footnotes
+Github,Nicholas Yang,2022-10-21T22:23:16Z,Added PieChart for StudentChartTwo
+Github,Nicholas Yang,2022-10-21T01:23:11Z,Add p5
+Github,Nicholas Yang,2022-10-21T01:21:28Z,Added pie chart for first chart
+Github,Nicholas Yang,2022-10-16T23:04:21Z,Ported USAMap and more footnotes
+Github,Nicholas Yang,2022-10-16T21:49:07Z,Footnote theming and adding
+Github,Nicholas Yang,2022-10-16T04:10:15Z,"Starting dubois student chart, also added footer and fixed more images"
+Github,Nicholas Yang,2022-10-16T02:24:47Z,More tweaks to DocumentViewer and dubois
+Github,Nicholas Yang,2022-10-16T02:08:04Z,Working on document view for dubois
+Github,Nicholas Yang,2022-10-15T18:56:06Z,Some fixes and deletions
+Github,Nicholas Yang,2022-10-15T06:07:15Z,"- Replaced <a> with <Link> in navbar
+- Added about page"
+Github,Nicholas Yang,2022-10-15T06:00:51Z,"- Deployed to Vercel
+- Added all chapter pages
+- Starting to break up html into components"
+Github,Nicholas Yang,2022-10-14T04:47:45Z,Vercel!
+Github,Nicholas Yang,2022-10-14T04:44:03Z,Starting to port dubois
+Github,Nicholas Yang,2022-10-04T05:45:36Z,Some more work on Timeline
+Github,Nicholas Yang,2022-10-03T03:19:59Z,More migration of basic components. Gonna start work on Timeline
+Github,Nicholas Yang,2022-10-03T02:34:53Z,Doing a rewrite of Data By Design
