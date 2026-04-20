@@ -20,7 +20,7 @@ const GroupingBox = ({
 }: Props) => {
   const boxRef = useRef<SVGRectElement>(null);
   const { windowSize } = useResizeObserver();
-  const boxWidth: number = (grouping.label.length + 3) * (boxHeight / 4);
+  const boxWidth: number = grouping.label.length * (boxHeight / 5) + boxHeight / 2;
 
   return (
     <g

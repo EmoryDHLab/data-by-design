@@ -37,8 +37,8 @@ export default function Viz1({ interactive = false }: Props) {
 
     // Set dimensions
     const width = 900;
-    const height = 420;
-    const radius = Math.min(width, height) / 2 - 80;
+    const height = 450;
+    const radius = Math.min(width, height) / 2 - 70;
 
     // Process data - count students in each category
     const pieData = studentData.categories.map((category) => ({
@@ -99,7 +99,7 @@ export default function Viz1({ interactive = false }: Props) {
     // Add individual student dots
     const allDots: Array<{ x: number; y: number; radius: number }> = [];
     const dotRadius = 4;
-    const minDistance = dotRadius * 2 + 2; // Minimum distance between dot centers
+    const minDistance = dotRadius * 2 + 1; // Minimum distance between dot centers
 
     // Create a seeded random function for consistent randomization
     const seededRandom = (seed: number) => {
@@ -169,7 +169,8 @@ export default function Viz1({ interactive = false }: Props) {
             const pieSlice = pie(pieData)[categoryIndex];
             currentSlice = pieSlice;
             const sliceAngle = pieSlice.endAngle - pieSlice.startAngle;
-            const anglePadding = sliceAngle * 0.07;
+            const paddingRatio = categoryData.name === "Teachers" ? 0 : 0.07;
+            const anglePadding = sliceAngle * paddingRatio;
             const availableAngle = sliceAngle - 2 * anglePadding;
             randomAngle =
               pieSlice.startAngle +

@@ -1,17 +1,18 @@
-import { visHeight } from "../data/functions";
+import { useMemo } from "react";
 import { yearScale } from "./data";
-
-const yScale = yearScale(visHeight());
 
 const YearDivider = ({
   year,
   width,
   yOffset,
+  visHeight,
 }: {
   year: number;
   width: number | undefined;
   yOffset: number | undefined;
+  visHeight: number | undefined;
 }) => {
+  const yScale = useMemo(() => yearScale(visHeight || 0), [visHeight]);
   return (
     <line
       x1={100}

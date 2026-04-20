@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { useResizeObserver } from "~/hooks";
-import { visWidth } from "../data/functions";
 import { monthlyData } from "./monthlyData";
 import { YEARS } from "./data";
 import MonthScale from "./MonthScale";
@@ -13,7 +12,6 @@ import type { TContribution } from "./data";
 const Treemap = () => {
   const { windowSize } = useResizeObserver();
   const svgRef = useRef<SVGSVGElement>(null);
-  const [width, setWidth] = useState<number | undefined>(undefined);
   const [selectedMonth, setSelectedMonth] = useState<string | undefined>(
     undefined,
   );
@@ -26,29 +24,43 @@ const Treemap = () => {
   });
 
   useEffect(() => {
-    setWidth(visWidth() * 0.9);
-  }, [windowSize]);
-
-  useEffect(() => {
     return () => {
       setSelectedMonth(undefined);
       setActiveContribution(undefined);
     };
   }, []);
 
+  const [dims, setDims] = useState<{ w: number; h: number }>({ w: 0, h: 0 });
+
+  useEffect(() => {
+    const w = windowSize?.width ?? 0;
+    const h = windowSize?.height ?? 0;
+    if (w > 0 && w !== dims.w) {
+      setDims({ w, h });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [windowSize?.width]);
+
+  const visW = (dims.w / 3) * 2;
+  const visH = (dims.h / 7) * 5;
+  const svgWidth = visW;
+  const rowHeight = (visH + 50) / YEARS.length;
+  const svgHeight = visH + 50 + rowHeight * 2;
+  const chartWidth = visW * 0.9;
+  const isMobile = dims.w < 1024;
+  const dividerYOffset = (boxSize?.height || 1) / 1.25 + (isMobile ? 10 : 15);
+
   return (
     <div
       id="contribution-treemap"
-      className="bg-offblack px-6  w-screen grid grid-cols-1 md:grid-cols-3 md:grid-rows-6 md:h-screen text-white"
+      className="bg-offblack px-4 md:px-6 w-screen grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-[1fr_auto] lg:min-h-screen text-white"
     >
-      <div className="col-span-1 md:col-span-2 md:row-span-5">
-        {windowSize && (
+      <div className="col-span-1 lg:col-span-2 overflow-hidden min-h-[60vh] lg:min-h-0">
+        {dims.w > 0 && (
           <svg
             ref={svgRef}
-            className="font-power font-bold text-white m-auto"
-            viewBox={`0 0 ${
-              ((windowSize?.width || visWidth(windowSize.width)) / 3) * 2
-            } ${((windowSize?.height || window.innerHeight) / 1) * 5 + 20}`}
+            className="font-power font-bold text-white m-auto w-full"
+            viewBox={`0 0 ${svgWidth} ${svgHeight}`}
             onClick={() => {
               setSelectedMonth(undefined);
             }}
@@ -56,16 +68,18 @@ const Treemap = () => {
           >
             <MonthScale
               year={2025}
-              width={width}
+              width={chartWidth}
               height={(boxSize?.height || 1) / 1.5}
               xOffset={(boxSize?.width || 1) / 2}
             />
-            {monthlyData.map((monthlyData) => {
+            {monthlyData.map((md) => {
               return (
                 <Month
-                  key={`month-${monthlyData.month}-${monthlyData.total}`}
-                  monthlyData={monthlyData}
-                  width={width}
+                  key={`month-${md.month}-${md.total}`}
+                  monthlyData={md}
+                  width={chartWidth}
+                  visWidth={visW}
+                  visHeight={visH}
                   setSelectedMonth={setSelectedMonth}
                   selectedMonth={selectedMonth}
                   setBoxSize={setBoxSize}
@@ -78,12 +92,14 @@ const Treemap = () => {
                   <YearLabel
                     year={year}
                     height={(boxSize?.height || 1) / 1.5}
+                    visHeight={visH}
                   />
                   {index > 0 && (
                     <YearDivider
                       year={year}
-                      width={width}
-                      yOffset={(boxSize?.height || 1) / 1.25 + 10}
+                      width={chartWidth}
+                      yOffset={dividerYOffset}
+                      visHeight={visH}
                     />
                   )}
                 </g>
@@ -92,34 +108,32 @@ const Treemap = () => {
           </svg>
         )}
       </div>
-      <div className="border-l-2 md:row-span-5 flex flex-col">
-        <div className="text-xl font-power text-center md:text-2xl mx-4 h-1/2">
+      <div id="left-pane" className="border-t-[1px] pt-2 lg:border-t-0 lg:border-l-[1px] flex flex-col">
+        <div className="text-xl font-power text-center mt-6 lg:mt-0 md:text-2xl mx-4 h-1/2">
           <MonthDetail
             selectedMonth={selectedMonth}
             setActiveContribution={setActiveContribution}
           />
         </div>
-        <div className="border border-t-1 border-x-0 border-b-0">
-          <h4 className="text-lg font-power  italic small-caps  tracking-wide md:ml-4 md:mt-4">
+        <div className="border border-t-1 border-x-0 border-b-0 h-[180px] overflow-hidden">
+          <h4 className="text-lg font-power italic small-caps tracking-wide ml-4 mt-4">
             Contribution Activity
           </h4>
-          {activeContribution && (
-            <ul className="leading-7 md:text-lg md:mx-4 font-power">
-              <li className="pt-3">{activeContribution.user}</li>
-              <li className="pt-3">
-                <span className="font-power  font-bold">
-                  {activeContribution.source}:
-                </span>{" "}
-                {activeContribution.information}
-              </li>
-            </ul>
-          )}
+          <ul className="leading-7 md:text-lg mx-4 font-power" style={{ visibility: activeContribution ? 'visible' : 'hidden' }}>
+            <li className="pt-3">{activeContribution?.user ?? '\u00A0'}</li>
+            <li className="pt-3">
+              <span className="font-power font-bold">
+                {activeContribution?.source ? `${activeContribution.source}:` : '\u00A0'}
+              </span>{" "}
+              {activeContribution?.information ?? ''}
+            </li>
+          </ul>
         </div>
       </div>
 
-      <div className="hidden md:block md:col-span-3 pb-4 px-4 text-left w-full ">
-        <hr className=" col-span-3 mt-11"></hr>
-        <div className="grid grid-cols-2 gap-8 pt-6">
+      <div className="lg:col-span-3 pb-4 px-4 text-left w-full border-t-[1px]">
+        {/* <hr className="col-span-3 mt-11"></hr> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
           <div>
             <h3 className="mb-4 font-power font-bold text-xl md:text-3xl">
               Contribution Across Time

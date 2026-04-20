@@ -1,52 +1,14 @@
 import * as d3 from "d3";
-import { useEffect, useRef, useState } from "react";
-import { visWidth, visHeight } from "../data/functions";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { yearScale, rectColor } from "./data";
 import type { TMontData } from "./monthlyData";
 import type { Dispatch, SetStateAction } from "react";
 
-const yScale = yearScale(visHeight());
-
-const createScale = (date: Date) => {
-  if (date.getMonth() >= 8 && date.getMonth() <= 11) {
-    const xScale = d3
-      .scaleTime()
-      .domain([
-        new Date(date.getFullYear(), 8, 1),
-        new Date(date.getFullYear() + 1, 7, 31),
-      ])
-      .range([0, visWidth() * 0.9]);
-    return xScale(date);
-  } else {
-    const xScale = d3
-      .scaleTime()
-      .domain([
-        new Date(date.getFullYear() - 1, 8, 1),
-        new Date(date.getFullYear(), 7, 31),
-      ])
-      .range([0, visWidth() * 0.9]);
-    return xScale(date);
-  }
-};
-
-const calcTransform = (date: Date, treemapHeight: number) => {
-  if (date.getMonth() <= 7) {
-    return {
-      translateX: createScale(date) + 90,
-      translateY:
-        yScale(new Date(date.getFullYear(), 7, 1)) + treemapHeight / 2,
-    };
-  }
-  return {
-    translateX: createScale(date) + 90,
-    translateY:
-      yScale(new Date(date.getFullYear() + 1, 7, 1)) + treemapHeight / 2,
-  };
-};
-
 interface Props {
   monthlyData: TMontData;
   width: number | undefined;
+  visWidth: number | undefined;
+  visHeight: number | undefined;
   setBoxSize?: Dispatch<SetStateAction<{ height: number; width: number }>>;
   setSelectedMonth: Dispatch<SetStateAction<string | undefined>>;
   selectedMonth?: string;
@@ -55,6 +17,8 @@ interface Props {
 const Month = ({
   monthlyData,
   width,
+  visWidth: vw,
+  visHeight: vh,
   setBoxSize,
   setSelectedMonth,
   selectedMonth,
@@ -68,7 +32,48 @@ const Month = ({
   } | null>(null);
   const key = `m${monthlyData.month.getMonth()}_${monthlyData.month.getFullYear()}`;
 
+  const yScale = useMemo(() => yearScale(vh || 0), [vh]);
+
   useEffect(() => {
+    if (!vw || !vh) return;
+
+    const createScale = (date: Date) => {
+      if (date.getMonth() >= 8 && date.getMonth() <= 11) {
+        const xScale = d3
+          .scaleTime()
+          .domain([
+            new Date(date.getFullYear(), 8, 1),
+            new Date(date.getFullYear() + 1, 7, 31),
+          ])
+          .range([0, vw * 0.9]);
+        return xScale(date);
+      } else {
+        const xScale = d3
+          .scaleTime()
+          .domain([
+            new Date(date.getFullYear() - 1, 8, 1),
+            new Date(date.getFullYear(), 7, 31),
+          ])
+          .range([0, vw * 0.9]);
+        return xScale(date);
+      }
+    };
+
+    const calcTransform = (date: Date, treemapHeight: number) => {
+      if (date.getMonth() <= 7) {
+        return {
+          translateX: createScale(date) + 90,
+          translateY:
+            yScale(new Date(date.getFullYear(), 7, 1)) + treemapHeight / 2,
+        };
+      }
+      return {
+        translateX: createScale(date) + 90,
+        translateY:
+          yScale(new Date(date.getFullYear() + 1, 7, 1)) + treemapHeight / 2,
+      };
+    };
+
     const treemapWidth =
       createScale(new Date(2019, 2, 1)) -
       createScale(new Date(2019, 1, 1)) -
@@ -82,7 +87,8 @@ const Month = ({
       boxDimension,
     );
 
-    transformRef.current = `translate(${translateX + 10}, ${translateY + 12})`;
+    const verticalOffset = 10 + boxDimension * 0.3;
+    transformRef.current = `translate(${translateX + 10}, ${translateY + verticalOffset})`;
     setOutline({ transform: transformRef.current, dim: boxDimension });
 
     const root = d3
@@ -138,7 +144,7 @@ const Month = ({
         refCopy.innerHTML = "";
       }
     };
-  }, [monthlyData, width, setBoxSize]);
+  }, [monthlyData, width, vw, vh, yScale, setBoxSize]);
 
   const isSelected = selectedMonth === key;
 

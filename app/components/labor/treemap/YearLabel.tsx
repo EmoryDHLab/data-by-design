@@ -1,15 +1,17 @@
-import { visHeight } from "../data/functions";
+import { useMemo } from "react";
 import { yearScale } from "./data";
-
-const yScale = yearScale(visHeight());
 
 const YearLabel = ({
   year,
   height,
+  visHeight,
 }: {
   year: number;
   height: number | undefined;
+  visHeight: number | undefined;
 }) => {
+  const yScale = useMemo(() => yearScale(visHeight || 0), [visHeight]);
+
   return (
     <text
       className="fill-offwhite font-power tracking-widest"

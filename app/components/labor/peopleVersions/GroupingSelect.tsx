@@ -33,10 +33,10 @@ const GroupingSelect = ({ setSelectedGrouping, activeGrouping }: Props) => {
               onMouseLeave={({ target }) =>
                 (target as HTMLButtonElement).blur()
               }
-              className={`w-full py-4 text-center border-b border-black border-1.5 hover:opacity-100 focus:opacity-100 uppercase ${
-                grouping === activeGrouping
-                  ? "opacity-100 bg-changePrimary text-white"
-                  : "opacity-100"
+              className={`w-full py-4 text-center border-b border-black border-1.5 uppercase transition-colors ${
+                `${grouping}s` === activeGrouping
+                  ? "bg-changePrimary text-white"
+                  : "hover:bg-changePrimary/20"
               }`}
               aria-label={`Sort people by ${grouping}`}
             >

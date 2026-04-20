@@ -232,7 +232,7 @@ const PeopleVersions = () => {
                 <h3 className="grow">{activeNode.label}</h3>
                 <button
                   aria-label="Unselect Person"
-                  className="border-2 rounded-full border-offblack/75 text-offblack/75 hover:border-offblack hover:text-offblack hover:bg-offblack/5 px-1.5 text-sm h-6 self-start"
+                  className="border-2 font-power font-bold rounded-full border-offblack/75 text-offblack/75 hover:border-offblack hover:text-offblack hover:bg-offblack/5 px-1.5 text-sm h-6 self-start"
                   onClick={() => setActiveNode(undefined)}
                 >
                   X
