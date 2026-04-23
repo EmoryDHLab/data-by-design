@@ -96,7 +96,7 @@ function draw() {
   }
 
   push();
-  translate(-width / 2, -height / 2.5);
+  translate(-width / 2, -height / 2);
 
   // Draw preview line when dragging to create new point (hide when in straight text mode)
   if (!straightTextMode) {
@@ -437,7 +437,7 @@ function initTracksPreset() {
     // change values here to adjust rendering
     particles[0][j] = new Particle(
       width / 2 + cos(angleStep) * random(0, width * 0.4),
-      height / 2 - 100 + sin(angleStep / PI) * random(0, height * 0.4),
+      height / 2 + sin(angleStep / PI) * random(0, height * 0.4),
       angleStep - PI / 2,
       random((width * 1) / 12, width / 6)
     );

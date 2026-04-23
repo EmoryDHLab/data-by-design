@@ -205,42 +205,44 @@ export default function Viz3() {
                     return v - Math.floor(v); // 0..1
                   };
 
-                  // Generate 4-6 control point clusters for the knot
-                  const numLoops = 3 + Math.floor(rand(0) * 3); // 3-5 loops
-                  const points: number[][] = [];
+                  // Mirror the tracks preset: particles along a cos(angle), sin(angle/PI)
+                  // path, connected through perpendicular handles so the curve swings
+                  // into flowing ribbon loops rather than arbitrary zigzags.
+                  const numParticles = 5 + Math.floor(rand(0) * 3); // 5-7
+                  const angleStart = rand(1) * Math.PI * 2;
+                  const totalRot = 10 * Math.PI + rand(2) * 9 * Math.PI;
+                  const cx = 50;
+                  const cy = 50;
+                  const radiusX = 32 + rand(3) * 10;
+                  const radiusY = 28 + rand(4) * 14;
 
-                  // Entry point (bottom-left area)
-                  points.push([rand(1) * 15, 75 + rand(2) * 20]);
-
-                  // Interior tangle points — each loop crosses back
-                  for (let k = 0; k < numLoops; k++) {
-                    const t = (k + 1) / (numLoops + 1);
-                    // Alternate sides to create crossings
-                    const baseX = 15 + t * 65;
-                    const baseY = 20 + rand(10 + k * 3) * 60;
-                    // Control points that swing wide to create loops
-                    const swingX = baseX + (rand(20 + k) - 0.5) * 40;
-                    const swingY = baseY + (rand(30 + k) - 0.5) * 40;
-                    points.push([
-                      Math.max(5, Math.min(95, swingX)),
-                      Math.max(5, Math.min(95, swingY)),
-                    ]);
+                  type P = { x: number; y: number; hx: number; hy: number; althx: number; althy: number };
+                  const particles: P[] = [];
+                  for (let k = 0; k < numParticles; k++) {
+                    const t = k / (numParticles - 1);
+                    const angleStep = angleStart + t * totalRot;
+                    const rMul = 0.35 + rand(10 + k) * 0.65;
+                    const px = cx + Math.cos(angleStep) * radiusX * rMul;
+                    const py = cy + Math.sin(angleStep / Math.PI) * radiusY * rMul;
+                    const handleAngle = angleStep - Math.PI / 2;
+                    const handleLen = 14 + rand(20 + k) * 12;
+                    particles.push({
+                      x: px,
+                      y: py,
+                      hx: px + Math.cos(handleAngle) * handleLen,
+                      hy: py + Math.sin(handleAngle) * handleLen,
+                      althx: px - Math.cos(handleAngle) * handleLen,
+                      althy: py - Math.sin(handleAngle) * handleLen,
+                    });
                   }
 
-                  // Exit point (top-right area)
-                  points.push([85 + rand(3) * 15, rand(4) * 20]);
-
-                  // Build the path with cubic beziers between points
-                  let d = `M${points[0][0].toFixed(1)},${points[0][1].toFixed(1)}`;
-                  for (let k = 1; k < points.length; k++) {
-                    const prev = points[k - 1];
-                    const curr = points[k];
-                    // Generate unique control points per segment
-                    const cp1x = prev[0] + (rand(40 + k * 7) - 0.3) * 45;
-                    const cp1y = prev[1] + (rand(50 + k * 7) - 0.6) * 50;
-                    const cp2x = curr[0] + (rand(60 + k * 7) - 0.7) * 45;
-                    const cp2y = curr[1] + (rand(70 + k * 7) - 0.4) * 50;
-                    d += ` C${cp1x.toFixed(1)},${cp1y.toFixed(1)} ${cp2x.toFixed(1)},${cp2y.toFixed(1)} ${curr[0].toFixed(1)},${curr[1].toFixed(1)}`;
+                  // Connect particles with cubic beziers: prev.alt → curr.h → curr
+                  // (matches the drawCurvedTracks handle convention in sketch.js)
+                  let d = `M${particles[0].x.toFixed(1)},${particles[0].y.toFixed(1)}`;
+                  for (let k = 1; k < particles.length; k++) {
+                    const prev = particles[k - 1];
+                    const curr = particles[k];
+                    d += ` C${prev.althx.toFixed(1)},${prev.althy.toFixed(1)} ${curr.hx.toFixed(1)},${curr.hy.toFixed(1)} ${curr.x.toFixed(1)},${curr.y.toFixed(1)}`;
                   }
 
                   const isRaveling = ravelingIndex === index;
