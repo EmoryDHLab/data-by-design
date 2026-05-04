@@ -1,10 +1,12 @@
 import { useState } from "react";
+import Carousel from "nuka-carousel";
 import { classNames } from "~/utils";
 import figures from "~/data/figures/change.json";
 import Picture from "../figures/Picture";
 import Figure from "../figures/Figure";
+import FigureModal from "../figures/FigureModal";
+import ClientOnly from "~/components/ClientOnly";
 import type { TFigure as FigureType } from "~/types/figureType";
-import SlideShow from "../layout/SlideShow";
 
 type ImageSet = {
   [key: string]: FigureType[];
@@ -80,15 +82,33 @@ const imageSets: ImageSet = {
   ],
 };
 
+function PlateCaption({ figure }: { figure: FigureType }) {
+  return (
+    <figcaption className="mt-4 px-6 mx-auto max-w-md text-center">
+      {figure.title && (
+        <span className="block font-power text-base leading-snug text-offwhite">
+          {figure.title}
+        </span>
+      )}
+      {figure.creditLine && (
+        <span className="block font-sans text-xs leading-relaxed text-neutral-400 mt-2">
+          {figure.creditLine}
+        </span>
+      )}
+    </figcaption>
+  );
+}
+
 export default function DocumentViewer() {
   const [selectedSet, setSelectedSet] = useState<string>("setOne");
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [mobileSlideIndex, setMobileSlideIndex] = useState(0);
 
   const selectedImage: FigureType = imageSets[selectedSet][selectedImageIndex];
 
   return (
     <div
-      className=" my-10 bg-black w-full flex flex-col items-center "
+      className="my-10 bg-offblack w-full min-h-screen flex flex-col items-center justify-center"
       id="doc-viewer"
     >
       <div className="hidden md:grid grid-cols-[auto_1fr_1fr] max-w-7xl w-full h-screen items-center">
@@ -97,6 +117,7 @@ export default function DocumentViewer() {
           <button
             onClick={() => {
               setSelectedSet("setOne");
+              setSelectedImageIndex(0);
             }}
             aria-hidden
             aria-label="Set One"
@@ -140,7 +161,10 @@ export default function DocumentViewer() {
             )}
           </button>
           <button
-            onClick={() => setSelectedSet("setTwo")}
+            onClick={() => {
+              setSelectedSet("setTwo");
+              setSelectedImageIndex(0);
+            }}
             aria-hidden
             aria-label="Set Two"
           >
@@ -235,6 +259,7 @@ export default function DocumentViewer() {
               figure={selectedImage as FigureType}
               className="max-w-sm text-white"
               id={`doc-viewer-${selectedImage.fileName}`}
+              showCaption={false}
             />
 
             <button
@@ -255,22 +280,167 @@ export default function DocumentViewer() {
               />
             </button>
           </div>
+          <PlateCaption figure={selectedImage} />
+          <p className="font-sans text-xs text-neutral-400 text-center mt-3">
+            Plate {selectedImageIndex + 1} / {imageSets[selectedSet].length}
+          </p>
         </div>
       </div>
-      <div className="block md:hidden bg-offblack text-offwhite w-full">
-        <div className="h-screen">
-          <p className=" font-power text-neutral-400 text-sm uppercase   pb-2 text-center">
-            Set One
-          </p>
-          <SlideShow className="mb-4" figures={imageSets.setOne} />
+      <div className="block md:hidden bg-offblack text-offwhite w-full py-8">
+        {/* Set switcher (reuses desktop UI assets) */}
+        <div
+          className="flex justify-center items-end gap-10 px-6 mb-6"
+          role="tablist"
+          aria-label="Document set"
+        >
+          <button
+            type="button"
+            role="tab"
+            aria-selected={selectedSet === "setOne"}
+            aria-label="Set One"
+            onClick={() => {
+              setSelectedSet("setOne");
+              setSelectedImageIndex(0);
+              setMobileSlideIndex(0);
+            }}
+            className="flex flex-col items-center space-y-3 max-w-[60px] min-h-11"
+          >
+            <img
+              src={
+                selectedSet === "setOne"
+                  ? "/images/ui/stack1.png"
+                  : "/images/ui/eyeframe.png"
+              }
+              alt=""
+              role="presentation"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              className="w-full"
+              src="/images/ui/set1.png"
+              alt=""
+              role="presentation"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={selectedSet === "setTwo"}
+            aria-label="Set Two"
+            onClick={() => {
+              setSelectedSet("setTwo");
+              setSelectedImageIndex(0);
+              setMobileSlideIndex(0);
+            }}
+            className="flex flex-col items-center space-y-3 max-w-[60px] min-h-11"
+          >
+            <img
+              src={
+                selectedSet === "setTwo"
+                  ? "/images/ui/stack2.png"
+                  : "/images/ui/eyeframe.png"
+              }
+              alt=""
+              role="presentation"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              className="w-full"
+              src="/images/ui/set2.png"
+              alt=""
+              role="presentation"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
         </div>
-        <br></br>
-        <div className="h-screen">
-          <p className=" font-power text-neutral-400  text-sm uppercase  py-2 text-center">
-            Set Two
-          </p>
-          <SlideShow className="" figures={imageSets.setTwo} />
-        </div>
+
+        {/* Plate counter */}
+        <p
+          className="font-sans text-xs text-neutral-400 text-center mb-2"
+          aria-live="polite"
+        >
+          Plate {mobileSlideIndex + 1} / {imageSets[selectedSet].length}
+        </p>
+
+        {/* Carousel — uncontrolled; remounts on set change to reset to slide 0 */}
+        <ClientOnly>
+          <Carousel
+            key={selectedSet}
+            afterSlide={(i: number) => setMobileSlideIndex(i)}
+            renderCenterLeftControls={({ previousSlide }) => (
+              <button
+                type="button"
+                onClick={previousSlide}
+                aria-label="Previous plate"
+                className="font-icons text-3xl ml-1 min-w-11 min-h-11 flex items-center justify-center text-offwhite/80 hover:text-offwhite"
+              >
+                c
+              </button>
+            )}
+            renderCenterRightControls={({ nextSlide }) => (
+              <button
+                type="button"
+                onClick={nextSlide}
+                aria-label="Next plate"
+                className="font-icons text-3xl mr-1 min-w-11 min-h-11 flex items-center justify-center text-offwhite/80 hover:text-offwhite"
+              >
+                b
+              </button>
+            )}
+            renderBottomCenterControls={() => <></>}
+            // Progress bar — disabled for now
+            // renderBottomCenterControls={() => (
+            //   <div
+            //     className="w-32 h-0.5 bg-neutral-700 rounded-full overflow-hidden mt-3"
+            //     aria-hidden
+            //   >
+            //     <div
+            //       className="h-full bg-offwhite transition-all duration-300"
+            //       style={{
+            //         width: `${
+            //           ((selectedImageIndex + 1) /
+            //             imageSets[selectedSet].length) *
+            //           100
+            //         }%`,
+            //       }}
+            //     />
+            //   </div>
+            // )}
+            wrapAround
+          >
+            {imageSets[selectedSet].map((figure, idx) => (
+              <figure key={figure.fileName} className="text-center px-12">
+                <FigureModal
+                  figure={figure}
+                  id={`mobile-doc-${figure.fileName}`}
+                >
+                  <picture>
+                    <source
+                      srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`}
+                    />
+                    <source
+                      srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+                    />
+                    <img
+                      className="max-h-96 mx-auto max-w-xs"
+                      src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+                      alt={figure.altText ?? ""}
+                      title={figure.title ?? ""}
+                      loading={idx === mobileSlideIndex ? "eager" : "lazy"}
+                      decoding="async"
+                    />
+                  </picture>
+                </FigureModal>
+                <PlateCaption figure={figure} />
+              </figure>
+            ))}
+          </Carousel>
+        </ClientOnly>
       </div>
     </div>
   );
