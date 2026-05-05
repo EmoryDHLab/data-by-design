@@ -361,7 +361,7 @@ export default function DocumentViewer() {
 
         {/* Plate counter */}
         <p
-          className="font-sans text-xs text-neutral-400 text-center mb-2"
+          className="font-sans text-xs text-neutral-400 text-center mb-6"
           aria-live="polite"
         >
           Plate {mobileSlideIndex + 1} / {imageSets[selectedSet].length}
