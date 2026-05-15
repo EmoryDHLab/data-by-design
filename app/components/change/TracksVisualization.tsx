@@ -57,13 +57,14 @@ export default function TracksVisualization({
   };
 
   return (
-    <div className=" overflow-hidden">
+    <div className="flex justify-center overflow-hidden">
       <iframe
         ref={iframeRef}
         src="/tracks/index.html"
         width={width}
         height={height}
-        style={{ border: "none" }}
+        scrolling="no"
+        style={{ border: "none", overflow: "hidden", display: "block" }}
         onLoad={handleIframeLoad}
       />
     </div>
