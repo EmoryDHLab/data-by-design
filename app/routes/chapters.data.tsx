@@ -188,13 +188,7 @@ export default function BrooksPage() {
 
           {/* blur-none does not transition, that's whats up with the blur-[0px] */}
           <div className="flex justify-center w-96 pt-12 m-auto">
-            <img
-              className={`h-96 p-4 drop-shadow-md transition-all duration-1000 ${
-                hideSensitiveState ? "blur-md" : "blur-[0px]"
-              }`}
-              src={`/images/${figures["0114-stream"].chapter}/${figures["0114-stream"].fileName}.jpg`}
-              alt=""
-            />
+           
             <img
               className={`h-96 p-4 drop-shadow-md transition-all duration-1000 ${
                 hideSensitiveState ? "blur-md" : "blur-[0px]"

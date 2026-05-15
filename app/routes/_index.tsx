@@ -121,11 +121,9 @@ BARNES & NOBLE                </a>
           className="hidden lg:block relative w-screen h-auto  fancyborder pt-4"
         >
           <div className="max-w-6xl mx-auto px-6 md:px-10 pt-6 z-20">
-            <div className="flex justify-start">
-              <ClientOnly>
-                <SelectedImage selectedImage={selectedImage} />
-              </ClientOnly>
-            </div>
+            <ClientOnly>
+              <SelectedImage selectedImage={selectedImage} />
+            </ClientOnly>
           </div>
           <div className="pt-2">
             <div className="flex items-center w-full h-96 xxl:h-[40rem]">
