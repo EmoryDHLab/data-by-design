@@ -82,24 +82,20 @@ export default function Index() {
                 className="w-full h-auto"
               />
             </figure>
-            <div className="px-6 md:px-0 flex-1">
+            <div className="px-6 md:px-0 flex-1 flex flex-col">
               {/* <SiteTitle className="w-full max-w-[500px]" /> */}
-              <p className="font-power text-2xl prose">
+              <div className="order-1 font-power font-bold tracking-wider text-sm uppercase w-2/3 pb-1">
+                Available for Preorder Now
+              </div>
+              <p className="order-2 font-power text-2xl prose">
                 The history of data visualization holds the key to designing a more just future.
               </p>
-                <p>
-From maps of colonial empires to charts of national trade, data visualization has long been used to consolidate knowledge and power. But just as often, it has been used to uncover oppression and bring about change. Data by Design journeys across continents and over centuries to expose the power of visualization—and to show how it can be wielded back.
-              </p>
-                   <p>
-A book for those who love charts and graphs, and for those who create them, <cite>Data by Design</cite> offers historical grounding, ethical clarity—and the inspiration we need—to envision a more just future.
-
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="order-3 md:order-last mt-6 md:mt-8 flex flex-wrap gap-3">
                 <a
                   href="https://mitpress.mit.edu/9780262056182/data-by-design/"
                   className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
                 >
-                  Pre-order from MIT Press
+                  MIT Press
                 </a>
                 <a
                   href="https://bookshop.org/p/books/data-by-design-visualization-and-powerfrom-abolition-to-the-dawn-of-data-science-lauren-f-klein/60e85f080f3ef3b9?ean=9780262056182&next=t&next=t&affiliate=2238"
@@ -111,8 +107,15 @@ A book for those who love charts and graphs, and for those who create them, <cit
                   href="https://www.barnesandnoble.com/s/9780262056182/"
                   className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
                 >
-BARNES & NOBLE                </a>
+                  Barnes &amp; Noble
+                </a>
               </div>
+              <p className="order-4 md:order-3 mt-6 md:mt-0">
+                From maps of colonial empires to charts of national trade, data visualization has long been used to consolidate knowledge and power. But just as often, it has been used to uncover oppression and bring about change. Data by Design journeys across continents and over centuries to expose the power of visualization—and to show how it can be wielded back.
+              </p>
+              <p className="order-5 md:order-4">
+                A book for those who love charts and graphs, and for those who create them, <cite>Data by Design</cite> offers historical grounding, ethical clarity—and the inspiration we need—to envision a more just future.
+              </p>
             </div>
           </div>
         </section>
