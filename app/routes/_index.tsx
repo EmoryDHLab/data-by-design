@@ -70,31 +70,74 @@ export default function Index() {
         </h1>
 
         <div />
-        <div className="md:flex md:items-center pl-0 md:pl-44 pt-10 md:pt-5 h-full md:h-[500px] z-20 3xl:mx-48">
-          <div className="md:flex md:items-start gap-44 xl:gap:72">
-            <figure
-              aria-hidden
-              className="my-10 px-5 md:px-0 md:mt-18 flex-shrink-0 w-full md:w-[500px]"
-            >
-              <SiteTitle className="pt-20 md:pt-20 w-full" />
+        <section
+          aria-label="Pre-order"
+          className="bg-imagePrimary text-white"
+        >
+          <div className="max-w-6xl mx-auto md:flex md:items-center gap-16 xl:gap-24 px-6 md:px-10 py-12">
+            <figure className="my-10 px-5 md:px-0 flex-shrink-0 w-full md:w-[380px]">
+              <img
+                src="/images/bookcover.webp"
+                alt="Data by Design book cover"
+                className="w-full h-auto"
+              />
             </figure>
-            <div className="hidden h-96 lg:block flex-1  flex justify-center">
+            <div className="px-6 md:px-0 flex-1">
+              {/* <SiteTitle className="w-full max-w-[500px]" /> */}
+              <p className="font-power text-2xl prose">
+                How the history of data visualization holds the key to designing a more just future.
+              </p>
+                <p>
+From maps of colonial empires to charts of national trade, data visualization has long been used to consolidate knowledge and power. But just as often, it has been used to uncover oppression and bring about change. Data by Design journeys across continents and over centuries to expose the power of visualization—and to show how it can be wielded back.
+              </p>
+                   <p>
+A book for those who love charts and graphs, and for those who create them, <cite>Data by Design</cite> offers historical grounding, ethical clarity—and the inspiration we need—to envision a more just future.
+
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="https://mitpress.mit.edu/9780262056182/data-by-design/"
+                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors"
+                >
+                  Pre-order from MIT Press
+                </a>
+                <a
+                  href="https://bookshop.org/p/books/data-by-design-visualization-and-powerfrom-abolition-to-the-dawn-of-data-science-lauren-f-klein/60e85f080f3ef3b9?ean=9780262056182&next=t&next=t&affiliate=2238"
+                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors"
+                >
+                  Bookshop.org
+                </a>
+                <a
+                  href="https://www.barnesandnoble.com/s/9780262056182/"
+                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors"
+                >
+BARNES & NOBLE                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          aria-label="Timeline"
+          className="hidden lg:block relative w-screen h-auto  fancyborder py-4"
+        >
+          <div className="max-w-6xl mx-auto px-6 md:px-10 pt-6 pb-2 z-20">
+            <div className="flex justify-start">
               <ClientOnly>
                 <SelectedImage selectedImage={selectedImage} />
               </ClientOnly>
             </div>
           </div>
-        </div>
-        <div className="hidden lg:block w-screen my-2 mb-8 pt-32 xxl:pt-48">
-          <div className="flex items-center w-full h-96 xxl:h-[40rem]  fancyborder ">
-            <ClientOnly>
-              <Timeline
-                selectedImage={selectedImage}
-                setSelectedImage={setSelectedImage}
-              />
-            </ClientOnly>
+          <div className="pt-2">
+            <div className="flex items-center w-full h-96 xxl:h-[40rem]">
+              <ClientOnly>
+                <Timeline
+                  selectedImage={selectedImage}
+                  setSelectedImage={setSelectedImage}
+                />
+              </ClientOnly>
+            </div>
           </div>
-        </div>
+        </section>
         <div className="grid grid-cols-1 md:grid-cols-2 font-neueMontreal my-32 pb-0 md:pb-6">
           <div className="px-6 md:px-28">
             <p>

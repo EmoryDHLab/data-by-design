@@ -29,7 +29,7 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
 
   return (
     <>
-      <div className="flex flex-col px-4">
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 flex flex-col px-4">
         <button
           onClick={() => {
             setTimelineType(TimelineType.Draggable);
