@@ -41,61 +41,97 @@ export function ChapterNav({ progress, fixedNav }: Props) {
 
   useEffect(() => {
     if (!documentSize.height) return;
-    const offset = (id: string) => {
-      const element = document.getElementById(id);
-      const mainElement = document.getElementById("main-content");
-      if (
-        !element ||
-        !documentSize.height ||
-        !mainElement ||
-        !mainContentSize.height
-      )
-        return { offset: 0, offsetPercent: 0 };
-      const { top } = element.getBoundingClientRect();
-      const offsetPercent: number =
-        ((top - (mainContentSize.topOffset || 0) + window.scrollY) /
-          mainContentSize.height) *
-        100;
-      let offset: number =
-        (offsetPercent * window.outerWidth) / 100 - iconWidth;
-      if (offset < 0) {
-        offset = iconWidth / 2;
-      }
-      return { offset, offsetPercent };
-    };
 
-    const anchorPositions: TAnchorPosition[] = [];
-    if (chapterFigures) {
-      for (const figure of chapterFigures) {
-        const offsets = offset(`fig-${figure.fileName}`);
-        if (offsets.offsetPercent > 0) {
-          anchorPositions.push({
-            type: "figure",
-            hash: `fig-${figure.fileName}`,
-            title: figure.title || figure.fileName,
-            ...offsets,
-          });
+    const computeAnchors = () => {
+      const mainElement = document.getElementById("main-content");
+      if (!mainElement || !mainElement.offsetHeight) return;
+
+      const offset = (id: string) => {
+        const element = document.getElementById(id);
+        if (!element) return null;
+        const offsetPercent =
+          (element.offsetTop / mainElement.offsetHeight) * 100;
+        let offsetPx =
+          (offsetPercent * document.documentElement.clientWidth) / 100 -
+          iconWidth;
+        if (offsetPx < 0) offsetPx = iconWidth / 2;
+        return { offset: offsetPx, offsetPercent };
+      };
+
+      const next: TAnchorPosition[] = [];
+      if (chapterFigures) {
+        for (const figure of chapterFigures) {
+          const offsets = offset(`fig-${figure.fileName}`);
+          if (offsets && offsets.offsetPercent > 0) {
+            next.push({
+              type: "figure",
+              hash: `fig-${figure.fileName}`,
+              title: figure.title || figure.fileName,
+              ...offsets,
+            });
+          }
         }
       }
-    }
-
-    if (visualizations) {
-      for (const viz of visualizations) {
-        const offsets = offset(viz.id);
-        anchorPositions.push({
-          type: viz.type,
-          hash: viz.id,
-          title: viz.title,
-          ...offsets,
-        });
+      if (visualizations) {
+        for (const viz of visualizations) {
+          const offsets = offset(viz.id);
+          if (offsets && offsets.offsetPercent > 0) {
+            next.push({
+              type: viz.type,
+              hash: viz.id,
+              title: viz.title,
+              ...offsets,
+            });
+          }
+        }
       }
-    }
+      next.sort((a, b) => a.offset - b.offset);
 
-    const sortedAnchors = anchorPositions.sort(function (a, b) {
-      return a.offset - b.offset;
+      setAnchorMap((prev) => {
+        if (
+          prev.length === next.length &&
+          prev.every(
+            (p, i) =>
+              p.hash === next[i].hash &&
+              Math.abs(p.offset - next[i].offset) < 0.5
+          )
+        ) {
+          return prev;
+        }
+        return next;
+      });
+    };
+
+    let pending: number | undefined;
+    const schedule = () => {
+      if (pending !== undefined) cancelAnimationFrame(pending);
+      pending = requestAnimationFrame(computeAnchors);
+    };
+
+    schedule();
+
+    const mainElement = document.getElementById("main-content");
+    const observer =
+      mainElement && typeof MutationObserver !== "undefined"
+        ? new MutationObserver(schedule)
+        : null;
+    observer?.observe(mainElement!, {
+      childList: true,
+      subtree: true,
     });
 
-    setAnchorMap(sortedAnchors);
+    const onLoad = () => schedule();
+    window.addEventListener("load", onLoad);
+
+    if ("fonts" in document) {
+      document.fonts.ready.then(schedule).catch(() => {});
+    }
+
+    return () => {
+      if (pending !== undefined) cancelAnimationFrame(pending);
+      observer?.disconnect();
+      window.removeEventListener("load", onLoad);
+    };
   }, [documentSize, mainContentSize, visualizations, chapterFigures]);
 
   return (
