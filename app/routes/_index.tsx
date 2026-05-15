@@ -85,7 +85,7 @@ export default function Index() {
             <div className="px-6 md:px-0 flex-1">
               {/* <SiteTitle className="w-full max-w-[500px]" /> */}
               <p className="font-power text-2xl prose">
-                How the history of data visualization holds the key to designing a more just future.
+                The history of data visualization holds the key to designing a more just future.
               </p>
                 <p>
 From maps of colonial empires to charts of national trade, data visualization has long been used to consolidate knowledge and power. But just as often, it has been used to uncover oppression and bring about change. Data by Design journeys across continents and over centuries to expose the power of visualization—and to show how it can be wielded back.
@@ -118,7 +118,7 @@ BARNES & NOBLE                </a>
         </section>
         <section
           aria-label="Timeline"
-          className="hidden lg:block relative w-screen h-auto  fancyborder py-4"
+          className="hidden lg:block relative w-screen h-auto  fancyborder pt-4"
         >
           <div className="max-w-6xl mx-auto px-6 md:px-10 pt-6 z-20">
             <div className="flex justify-start">
@@ -138,7 +138,7 @@ BARNES & NOBLE                </a>
             </div>
           </div>
         </section>
-        <div className="grid grid-cols-1 md:grid-cols-2 font-neueMontreal my-32 pb-0 md:pb-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 font-neueMontreal my-32  md:pb-6">
           <div className="px-6 md:px-28">
             <p>
               Data visualization is not a recent innovation. Even in the
@@ -166,7 +166,7 @@ BARNES & NOBLE                </a>
               </Link>
             </p>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex md:items-center  w-full flex-col md:flex-row">
           <ChapterCardGrid />
