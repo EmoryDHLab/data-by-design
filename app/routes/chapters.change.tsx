@@ -386,7 +386,7 @@ export default function DuboisChapter() {
 
         <DocumentViewer />
 
-        <CenteredLayout className="pt-20">
+        <CenteredLayout>
           <p>
             In the exhibition space, Du Bois mounted the introductory chart of
             each set—a title page of sorts—directly at eye-level against the far
@@ -1428,7 +1428,7 @@ export default function DuboisChapter() {
           </p>
         </CenteredLayout>
 
-        <div id="viz-1" className="my-8 md:my-12 w-full max-w-7xl mx-auto">
+        <div id="viz-1" className="w-full max-w-7xl mx-auto">
           <Viz1 interactive />
         </div>
         <CenteredLayout>
@@ -1562,10 +1562,10 @@ export default function DuboisChapter() {
             </div>,
           ]}
         />
-        <div id="viz-2">
+        <div id="viz-2" className="py-16 md:py-24">
           <Viz2 interactive={true}></Viz2>
         </div>
-        <CenteredLayout className="mt-20">
+        <CenteredLayout>
           <p>
             We do know something more about the students who returned the
             survey, however: we know what they thought. In addition to the
@@ -1607,7 +1607,7 @@ export default function DuboisChapter() {
         <div id="viz-3">
           <Viz3></Viz3>
         </div>
-        <CenteredLayout className="pt-20">
+        <CenteredLayout>
           <p>
             The result is a visualization that at once draws directly from the
             original Paris Exposition charts, and diverges sharply from it. We

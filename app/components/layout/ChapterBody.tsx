@@ -77,7 +77,7 @@ export default function ChapterBody({ children, className }: Props) {
         <ChapterNav progress={chapterProgressState} fixedNav={fixedNav} />
       </ClientOnly>
       <FootnoteToggle />
-      {children}
+      <div className="space-y-24 md:space-y-32">{children}</div>
     </main>
   );
 }

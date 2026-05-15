@@ -470,7 +470,7 @@ export default function BrooksPage() {
           ]}
         />
 
-        <TwoColumnLayout className="pt-20">
+        <TwoColumnLayout>
           <Column shouldPin={true}>
             <p>
               We do not know with certainty whether Elford was familiar with an
