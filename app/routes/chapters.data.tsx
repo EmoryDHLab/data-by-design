@@ -89,6 +89,7 @@ const visualizations: TVizAnchors[] = [
     id: "voyage-scrollytell",
     title: "Scrollytell 3",
   },
+
 ];
 
 export default function BrooksPage() {
@@ -215,7 +216,7 @@ export default function BrooksPage() {
               className="font-power md:w-4/6 text-lg leading-tight md:text-xl"
             >
               <p className="  md:block">
-                <span className="font-bold">
+                <span className="font-bold prose">
                   {" "}
                   This chapter contains images of enslavement.{" "}
                 </span>{" "}
@@ -1102,23 +1103,26 @@ export default function BrooksPage() {
           ]}
         />
 
-        <ClientOnly>
-          <VoyageVisContainer>
-            <Suspense
-              fallback={<div className="p-4">Loading visualization...</div>}
-            >
-              <VoyagesVis
-                id="voyage-interactive"
-                allVoyages
-                fullColor
-                interactive
-                axisBg="bg-offwhite"
-                border={false}
-                className="scale-x-90"
-              />
-            </Suspense>
-          </VoyageVisContainer>
-        </ClientOnly>
+        <div id="voyage-interactive">
+          <ClientOnly>
+            <VoyageVisContainer>
+              <Suspense
+                fallback={<div className="p-4">Loading visualization...</div>}
+              >
+                <div className="scale-90 md:scale-100 origin-top">
+                  <VoyagesVis
+                    allVoyages
+                    fullColor
+                    interactive
+                    axisBg="bg-offwhite"
+                    border={false}
+                    className="md:scale-x-90"
+                  />
+                </div>
+              </Suspense>
+            </VoyageVisContainer>
+          </ClientOnly>
+        </div>
 
         <ChapterSectionTitle section={sections[4]} />
         <CenteredLayout>

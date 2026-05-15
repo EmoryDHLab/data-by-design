@@ -7,7 +7,7 @@ interface Props {
 const VoyageVisContainer = ({ children }: Props) => {
   return (
     <>
-      <div className="hidden h-screen md:grid grid-cols-1 md:grid-cols-2 bg-black text-left gap-x-0 md:gap-x-32 md:gap-y-2 text-white w-full relative z-10 py-12">
+      <div className="flex flex-col md:h-screen md:grid md:grid-cols-2 bg-black text-left gap-x-0 md:gap-x-32 md:gap-y-2 text-white w-full relative z-10 pt-0 pb-6 md:py-12">
         {children}
 
         <div className="hidden md:grid px-32 grid-cols-2 md:col-span-3 ">

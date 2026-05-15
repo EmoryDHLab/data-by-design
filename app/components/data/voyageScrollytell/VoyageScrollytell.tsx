@@ -9,6 +9,7 @@ import Variables from "./Variables";
 import type { ReactElement } from "react";
 import { useResizeObserver } from "~/hooks";
 import ScrollingVoyageVis from "./ScrollingVoyageVis";
+import PullQuote from "~/components/layout/PullQuote";
 
 const minScrollProgress = 16;
 const fullWidthSlides = [0, 3, 12, 13, 14, 15, 16, 17, 18, 21, 22];
@@ -39,12 +40,40 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
     >
       <div className={`sticky h-screen -top-0 overflow-hidden`}>
         <div className="flex flex-col-reverse md:flex-none md:grid grid-cols-2 justify-items-center">
-          <div className="h-screen w-3/4 my-auto md:col-start-2">
+          <div className="h-screen w-full md:w-3/4 my-auto md:col-start-2 relative">
             <div></div>
+            {/* Slide 5: Romi Morrison quote (HTML overlay) */}
+            <div
+              className="absolute top-[22%] left-0 right-0 px-6 md:px-0 md:right-auto md:left-0 md:w-[28rem] transition-opacity duration-1000 pointer-events-none"
+              style={{ opacity: slideIndex === 6 ? 1 : 0 }}
+            >
+              <PullQuote
+                quote={`Fisk's "representation [of the river] is one of unbridled tangles, and recursively looped waterways that flow, spread, and interrupt each other, a cacophony of effusion, a watery din."`}
+                subquote={`— Romi Morrison, "Gaps between the digits: On the fleshy unknowns of the HUMAN" (2019)`}
+                borderColor="#8C20E1"
+              />
+            </div>
+            {/* Slide 20: Kevin Quashie quote (HTML overlay) */}
+            <div
+              className="absolute top-[22%] left-0 right-0 px-6 md:px-0 md:right-auto md:left-0 md:w-[28rem] transition-opacity duration-1000 pointer-events-none"
+              style={{ opacity: slideIndex === 20 ? 1 : 0 }}
+            >
+              <PullQuote
+                quote={`This argument for quiet aims to give up resistance as a framework in search of what is lost in its all-encompassing reach.`}
+                subquote={`— Kevin Quashie, "The Sovereignty of Quiet: Beyond Resistance in Black Culture" p5. (2012)`}
+                borderColor="#8C20E1"
+              />
+            </div>
             <svg
               viewBox="0 0 329 747"
-              width={windowSize.width ? windowSize.width * 0.45 : 300}
-              className=" md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0 absolute left-[25%] md:left-auto md:right-0"
+              width={
+                windowSize.width
+                  ? windowSize.width < 768
+                    ? windowSize.width * 0.9
+                    : windowSize.width * 0.45
+                  : 300
+              }
+              className=" md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0 absolute left-[5%] md:left-auto md:right-0"
             >
               {/* 1 */}
               <image
@@ -85,62 +114,6 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                   slideIndex === 5 ? 100 : 0
                 }`}
               />
-              {/* 5 */}
-              <g
-                className={`absolute transition-opacity duration-1000 opacity-${
-                  slideIndex === 6 ? 100 : 0
-                }`}
-              >
-                <line
-                  x1={0}
-                  x2={0}
-                  y1={235}
-                  y2={470}
-                  strokeWidth={3}
-                  stroke="#8C20E1"
-                />
-
-                <text fontSize={20} y={250} className="font-neueMontreal block">
-                  <tspan x={10} dy={0}>
-                    Fisk's "representation &#91;of the
-                  </tspan>
-                  <tspan x={10} dy={21}>
-                    river&#93; is one of unbridled
-                  </tspan>
-                  <tspan x={10} dy={21}>
-                    tangles, and recursively looped
-                  </tspan>
-                  <tspan x={10} dy={21}>
-                    waterways that flow, spread,
-                  </tspan>
-                  <tspan x={10} dy={21}>
-                    and interrupt each other, a
-                  </tspan>
-                  <tspan x={10} dy={21}>
-                    cacophony of effusion, a watery
-                  </tspan>
-                  <tspan x={10} dy={21}>
-                    din."
-                  </tspan>
-                </text>
-                <text
-                  fontSize={18}
-                  x={5}
-                  y={420}
-                  className="font-neueMontrealLight font-light"
-                >
-                  <tspan x={10} dy={0}>
-                    — Romi Morrison, "Gaps between
-                  </tspan>
-                  <tspan x={10} dy={20}>
-                    the digits: On the fleshy unknowns
-                  </tspan>
-                  <tspan x={10} dy={20}>
-                    of the HUMAN" (2019)
-                  </tspan>
-                </text>
-              </g>
-
               {/* 19 */}
               <image
                 x={0}
@@ -151,56 +124,6 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                   slideIndex === 19 ? 100 : 0
                 }`}
               />
-
-              {/* 20 */}
-              <g
-                className={`absolute transition-opacity duration-1000 opacity-${
-                  slideIndex === 20 ? 100 : 0
-                }`}
-              >
-                <line
-                  x1={0}
-                  x2={0}
-                  y1={235}
-                  y2={414}
-                  strokeWidth={3}
-                  stroke="#8C20E1"
-                />
-
-                <text fontSize={20} y={250} className="font-neueMontreal block">
-                  <tspan x={10} dy={0}>
-                    This argument for quiet aims
-                  </tspan>
-                  <tspan x={10} dy={21}>
-                    to give up resistance as a
-                  </tspan>
-                  <tspan x={10} dy={21}>
-                    framework in search of what
-                  </tspan>
-                  <tspan x={10} dy={21}>
-                    is lost in its all-encompassing
-                  </tspan>
-                  <tspan x={10} dy={21}>
-                    reach.
-                  </tspan>
-                </text>
-                <text
-                  fontSize={18}
-                  x={5}
-                  y={370}
-                  className="font-neueMontrealLight font-light"
-                >
-                  <tspan x={10} dy={0}>
-                    — Kevin Quashie, "The
-                  </tspan>
-                  <tspan x={10} dy={20}>
-                    Sovereignty of Quiet: Beyond
-                  </tspan>
-                  <tspan x={10} dy={20}>
-                    Resistance in Black Culture" p5. (2012)
-                  </tspan>
-                </text>
-              </g>
               <VoyageExample slideIndex={slideIndex} />
             </svg>
           </div>

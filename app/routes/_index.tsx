@@ -120,12 +120,12 @@ BARNES & NOBLE                </a>
           aria-label="Timeline"
           className="hidden lg:block relative w-screen h-auto  fancyborder pt-4"
         >
-          <div className="max-w-6xl mx-auto px-6 md:px-10 pt-6 z-20">
+          <div className="max-w-6xl mx-auto px-6 md:px-10 pt-6 pb-16 z-20">
             <ClientOnly>
               <SelectedImage selectedImage={selectedImage} />
             </ClientOnly>
           </div>
-          <div className="pt-2">
+          <div className="pt-20">
             <div className="flex items-center w-full h-96 xxl:h-[40rem]">
               <ClientOnly>
                 <Timeline

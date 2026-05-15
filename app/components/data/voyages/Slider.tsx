@@ -90,6 +90,8 @@ const Slider = ({
       .attr("transform", `translate(${isDesktop ? 70 : 20},40)`)
       .attr("y", 76)
       .style("font-size", isDesktop ? "1rem" : "0.75rem")
+      .style("font-family", "VTC Du Bois, serif")
+      .style("letter-spacing", "0.025em")
       // @ts-expect-error: IDK, D3 amirite?
       .call(axisEnds);
 
@@ -99,6 +101,8 @@ const Slider = ({
       .attr("transform", `translate(${isDesktop ? 70 : 20},40)`)
       .attr("y", 76)
       .style("font-size", isDesktop ? "1rem" : "0.75rem")
+      .style("font-family", "VTC Du Bois, serif")
+      .style("letter-spacing", "0.025em")
       .call(fullAxis);
 
     scaleRef.current = scale;
@@ -119,8 +123,8 @@ const Slider = ({
     <svg ref={containerRef} onClick={handleClick}>
       <g ref={sliderRef}></g>
       <g
-        transform="translate(70,40)"
-        className={`${interactive ? "cursor-ew-resize" : ""}`}
+        transform={`translate(${isDesktop ? 70 : 20},40)`}
+        className={`${interactive ? "cursor-grab active:cursor-grabbing" : ""}`}
       >
         <SliderJoin
           sliderWidth={sliderWidth}

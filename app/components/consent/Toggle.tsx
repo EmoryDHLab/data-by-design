@@ -57,6 +57,10 @@ const ConsentToggle = ({ id, className }: Props) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setHideSensitiveState(!hideSensitiveState)}
+        aria-label={
+          hideSensitiveState ? "Show sensitive images" : "Hide sensitive images"
+        }
+        aria-pressed={!hideSensitiveState}
         data-tooltip-id={id ?? "consent-toggle"}
         data-tooltip-content={`${
           hideSensitiveState ? "Show" : "Block"

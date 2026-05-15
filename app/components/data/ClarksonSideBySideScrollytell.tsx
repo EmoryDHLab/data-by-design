@@ -176,11 +176,7 @@ function ClarksonSideBySideScrollytell() {
               viewBox={`0 0 ${width} ${height}`}
               className={`max-h-[80vh] max-w-[90%] md:my-16 mx-auto bg-dataSecondary transition-all duration-1000`}
             >
-              <filter id="clarkson-blur">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
-              </filter>
               <image
-                filter={hideSensitiveState ? "url(#clarkson-blur)" : ""}
                 mask="url(#clarkson-mask)"
                 href="/images/data/0104-description.jpg"
                 className={`transition-all origin-center duration-1000`}

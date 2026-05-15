@@ -78,12 +78,13 @@ function SliderHandle({
   }, [start, setSliderWidth, maxX, sliderWidth, interactive]);
 
   return (
-    <g ref={circleRef} className={`${interactive ? "cursor-ew-resize" : ""}`}>
+    <g ref={circleRef} className={`${interactive ? "cursor-grab active:cursor-grabbing" : ""}`}>
       <text
         x={start ? sliderWidth[0] - 20 : sliderWidth[1] - 20}
         y={-18}
         fill="white"
         fontSize={15}
+        className="font-power tracking-wide"
       >
         {`${year}`}
       </text>
@@ -93,12 +94,18 @@ function SliderHandle({
         r={8}
         tabIndex={interactive ? 0 : -1}
         fill="white"
+        className={
+          interactive
+            ? "transition-[stroke,stroke-width] duration-150 hover:stroke-white/60 hover:stroke-[6] focus:outline-none focus-visible:stroke-white focus-visible:stroke-[3]"
+            : ""
+        }
       />
       <circle
         cy={0}
         cx={start ? sliderWidth[0] : sliderWidth[1]}
         r={6}
         fill="#8C20E1"
+        className="pointer-events-none"
       />
     </g>
   );
