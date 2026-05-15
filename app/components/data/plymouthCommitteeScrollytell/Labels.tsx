@@ -15,7 +15,7 @@ const Labels = () => {
         y={125}
         fontSize={10}
         paintOrder="stroke"
-        className="fill-offwhite stroke-offblack"
+        className="fill-offblack"
       >
         <tspan>120 male bodies in</tspan>
         <tspan x={450} dy={12}>
@@ -28,7 +28,7 @@ const Labels = () => {
         y={120}
         fontSize={10}
         paintOrder="stroke"
-        className="fill-offwhite stroke-offblack"
+        className="fill-offblack"
       >
         <tspan>72 boy</tspan>
         <tspan x={325} dy={12}>
@@ -47,7 +47,7 @@ const Labels = () => {
         y={135}
         paintOrder="stroke"
         fontSize={10}
-        className="fill-offwhite stroke-offblack"
+        className="fill-offblack"
       >
         <tspan>84 female bodies in</tspan>
         <tspan x={180} dy={12}>
@@ -60,7 +60,7 @@ const Labels = () => {
         y={130}
         fontSize={10}
         paintOrder="stroke"
-        className="fill-offwhite stroke-offblack"
+        className="fill-offblack"
       >
         <tspan>30 girl</tspan>
         <tspan x={108} dy={12}>

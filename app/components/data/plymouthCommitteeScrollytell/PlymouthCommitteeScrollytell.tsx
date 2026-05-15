@@ -115,11 +115,10 @@ export default function PlymouthCommitteeScrollytell({
                 className="w-full md:h-full mt-12 md:mt-0"
               >
                 <filter id="ship-blur">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="60" />
                 </filter>
-
                 <image
-                  filter={hideSensitiveState ? "url(#clarkson-blur)" : ""}
+                  filter={hideSensitiveState ? "url(#ship-blur)" : ""}
                   href="/images/data/0103-africanship.jpg"
                   width="2973"
                   height="1213"

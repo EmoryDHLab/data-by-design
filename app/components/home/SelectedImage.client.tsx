@@ -13,53 +13,56 @@ const SelectedImage = ({
         figure={selectedImage}
         id={`selected-image-${selectedImage.fileName}`}
       >
-        <picture>
-          <source
-            srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,256/0/color.png`}
-          />
-          <source
-            srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,256/0/color.jpg`}
-          />
-          <img
-            src={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,256/0/color.jpg`}
-            alt={
-              selectedImage.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
-              selectedImage.title?.replace(/(<i>|<\/i>)/gi, '"') ??
-              ""
-            }
-            title={
-              selectedImage.title?.replace(/(<i>|<\/i>)/gi, '"') ??
-              selectedImage.fileName
-            }
-          />
-        </picture>
+        <div className="flex flex-col md:flex-row gap-16 xl:gap-24 items-start">
+          <picture className="flex-shrink-0 w-full md:w-[380px] h-[300px] flex items-center justify-center">
+            <source
+              srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,300/0/color.png`}
+            />
+            <source
+              srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,300/0/color.jpg`}
+            />
+            <img
+              src={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,300/0/color.jpg`}
+              alt={
+                selectedImage.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
+                selectedImage.title?.replace(/(<i>|<\/i>)/gi, '"') ??
+                ""
+              }
+              title={
+                selectedImage.title?.replace(/(<i>|<\/i>)/gi, '"') ??
+                selectedImage.fileName
+              }
+              className="max-w-full max-h-full object-contain"
+            />
+          </picture>
 
-        <figcaption className="w-full text-white text-left max-w-lg">
-          <p
-            className="font-power text-lg"
-            dangerouslySetInnerHTML={{
-              __html: selectedImage.title ?? "",
-            }}
-          />
-          <p
-            className="font-power italic text-base"
-            dangerouslySetInnerHTML={{
-              __html: `by ${selectedImage.artist} (${selectedImage.year})`,
-            }}
-          />
-          <p className="text-stone-400 md:text-sm md:w-full text-sm">
-            <span
+          <figcaption className="flex-1 max-w-lg text-white text-left">
+            <p
+              className="font-power text-lg"
               dangerouslySetInnerHTML={{
-                __html: selectedImage.creditLine ?? "",
-              }}
-            />{" "}
-            <span
-              dangerouslySetInnerHTML={{
-                __html: selectedImage.digitizedLine ?? "",
+                __html: selectedImage.title ?? "",
               }}
             />
-          </p>
-        </figcaption>
+            <p
+              className="font-power italic text-base"
+              dangerouslySetInnerHTML={{
+                __html: `by ${selectedImage.artist} (${selectedImage.year})`,
+              }}
+            />
+            <p className="text-stone-400 md:text-sm md:w-full text-sm">
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: selectedImage.creditLine ?? "",
+                }}
+              />{" "}
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: selectedImage.digitizedLine ?? "",
+                }}
+              />
+            </p>
+          </figcaption>
+        </div>
       </FigureModal>
     );
   }

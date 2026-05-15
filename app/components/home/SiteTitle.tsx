@@ -1,9 +1,10 @@
 interface Props {
   showTag?: boolean;
   className?: string;
+  fill?: string;
 }
 
-const SiteTitle = ({ showTag = true, className }: Props) => {
+const SiteTitle = ({ showTag = true, className, fill = "white" }: Props) => {
   return (
     <svg
       width="100%"
@@ -13,7 +14,7 @@ const SiteTitle = ({ showTag = true, className }: Props) => {
       role="presentation"
       className={className ?? ""}
     >
-      <text x={0} y={67} fill="white" className="font-power md:font-light">
+      <text x={0} y={67} fill={fill} className="font-power md:font-light">
         <tspan fontSize={96} className="font-bold uppercase">
           Data by
         </tspan>

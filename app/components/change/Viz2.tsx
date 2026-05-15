@@ -495,7 +495,7 @@ export default function Viz2({
             if (!person.isRespondent) {
               // Original student data - show full details
               dotElement
-                .on("mouseenter", function (event: any) {
+                .on("pointerenter", function (event: any) {
                   d3.select(this).attr("fill", "black");
                   setHoveredStudent(person);
                   const rect = svgRef.current?.getBoundingClientRect();
@@ -506,14 +506,14 @@ export default function Viz2({
                     });
                   }
                 })
-                .on("mouseleave", function () {
+                .on("pointerleave", function () {
                   d3.select(this).attr("fill", categoryData.color);
                   setHoveredStudent(null);
                 });
             } else {
               // 1910-Respondents data - show basic info
               dotElement
-                .on("mouseenter", function (event: any) {
+                .on("pointerenter", function (event: any) {
                   d3.select(this).attr("fill", "black");
                   setHoveredStudent({
                     name: "1910 Survey Respondent",
@@ -528,7 +528,7 @@ export default function Viz2({
                     });
                   }
                 })
-                .on("mouseleave", function () {
+                .on("pointerleave", function () {
                   d3.select(this).attr("fill", categoryData.color);
                   setHoveredStudent(null);
                 });
@@ -660,7 +660,7 @@ export default function Viz2({
 
           if (interactive) {
             dotElement
-              .on("mouseenter", function (event: any) {
+              .on("pointerenter", function (event: any) {
                 d3.select(this).attr("fill", "black");
                 setHoveredStudent(student);
                 const rect = svgRef.current?.getBoundingClientRect();
@@ -671,7 +671,7 @@ export default function Viz2({
                   });
                 }
               })
-              .on("mouseleave", function () {
+              .on("pointerleave", function () {
                 d3.select(this).attr("fill", colorMapping["Unknown"]);
                 setHoveredStudent(null);
               });
@@ -725,7 +725,7 @@ export default function Viz2({
 
           if (interactive) {
             dotElement
-              .on("mouseenter", function (event: any) {
+              .on("pointerenter", function (event: any) {
                 d3.select(this).attr("fill", "black");
                 setHoveredStudent({
                   name: "1910 Survey Respondent",
@@ -740,7 +740,7 @@ export default function Viz2({
                   });
                 }
               })
-              .on("mouseleave", function () {
+              .on("pointerleave", function () {
                 d3.select(this).attr("fill", colorMapping["unknown"]);
                 setHoveredStudent(null);
               });
@@ -778,20 +778,15 @@ export default function Viz2({
 
   return (
     <div className="flex flex-col  items-center relative ">
-      {showLegend && (
-        <h3 className="font-dubois text-2xl mt-12 mb-0 font-bold font-power relative z-10">
-          1900 Students Professions
-        </h3>
-      )}
-      <div className="w-full" style={{ clipPath: "inset(-150px 0 0 0)" }}>
+      <div className="w-full">
         <svg
           ref={svgRef}
-          className="max-w-full -mt-20"
-          style={{ height: "750px" }}
+          className="block w-full h-auto max-h-[85vh] md:max-h-[95vh] md:min-h-[70vh]"
+          style={{ aspectRatio: "1200 / 900" }}
         ></svg>
       </div>
       {interactive && (
-        <div className="mt-8 flex gap-4 mb-8">
+        <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 px-4 w-full sm:w-auto">
           <button
             onClick={() => setShowPieChart(!showPieChart)}
             className="px-3 py-1 bg-changePrimary text-white rounded font-power text-sm hover:bg-opacity-80 transition-opacity"
@@ -818,6 +813,9 @@ export default function Viz2({
       {/* HTML-based Legend */}
       {showLegend && (
         <div className="w-full max-w-4xl px-4 py-4">
+          <h3 className="font-dubois text-2xl mb-4 font-bold font-power md:text-center">
+            1900 Students Professions
+          </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
             {legendData.map((item, index) => (
               <div key={index} className="flex items-center p-2 ">
@@ -890,10 +888,16 @@ export default function Viz2({
       )}
       {interactive && hoveredStudent && (
         <div
-          className="absolute z-10 p-3 bg-black text-white rounded shadow-lg pointer-events-none"
+          className="absolute z-10 p-3 bg-black text-white rounded shadow-lg pointer-events-none max-w-[80vw]"
           style={{
-            left: mousePosition.x + 10,
-            top: mousePosition.y - 10,
+            left: Math.max(
+              8,
+              Math.min(
+                mousePosition.x + 10,
+                (svgRef.current?.getBoundingClientRect().width ?? 0) - 220
+              )
+            ),
+            top: Math.max(8, mousePosition.y - 10),
             fontFamily: "VTC Du Bois, serif",
           }}
         >

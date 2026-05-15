@@ -7,6 +7,7 @@ interface Props {
   subquote?: string;
   children?: ReactNode;
   className?: string;
+  borderColor?: string;
 }
 
 export default function PullQuote({
@@ -14,6 +15,7 @@ export default function PullQuote({
   subquote,
   children,
   className,
+  borderColor,
 }: Props) {
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   const [classList, setClassList] = useState<string | undefined>(undefined);
@@ -26,7 +28,8 @@ export default function PullQuote({
   return (
     <aside ref={asideRef} className={classList}>
       <blockquote
-        className={`border-l-4 border-l-${backgroundColor}  pl-4 md:pl-6`}
+        className={`border-l-4 border-l-${backgroundColor} pl-4 md:pl-6`}
+        style={borderColor ? { borderLeftColor: borderColor } : undefined}
       >
         <p className="my-0">
           <span className="font-neueMontreal text-xl md:text-3xl tracking-tight block">

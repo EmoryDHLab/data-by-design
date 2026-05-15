@@ -46,6 +46,8 @@ function Axis({
         `translate(${widthAdjustment > 0 ? widthAdjustment : 50},0)`
       )
       .style("font-size", "1.25rem")
+      .style("font-family", "VTC Du Bois, serif")
+      .style("letter-spacing", "0.025em")
       .style("color", color ?? "white")
       .call(xAxis);
   }, [yearRange, width, color, widthAdjustment, isDesktop, windowSize]);
