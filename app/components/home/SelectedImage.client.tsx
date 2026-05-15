@@ -13,16 +13,16 @@ const SelectedImage = ({
         figure={selectedImage}
         id={`selected-image-${selectedImage.fileName}`}
       >
-        <div className="flex flex-col md:flex-row gap-6 items-start">
-          <picture className="flex-shrink-0 w-[480px] h-[320px] flex items-center justify-center">
+        <div className="flex flex-col md:flex-row gap-16 xl:gap-24 items-start">
+          <picture className="flex-shrink-0 w-full md:w-[380px] h-[300px] flex items-center justify-center">
             <source
-              srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,320/0/color.png`}
+              srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,300/0/color.png`}
             />
             <source
-              srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,320/0/color.jpg`}
+              srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,300/0/color.jpg`}
             />
             <img
-              src={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,320/0/color.jpg`}
+              src={`https://iiif.ecds.io/iiif/3/dxd%2f${selectedImage.chapter}%2f${selectedImage.fileName}.tiff/full/,300/0/color.jpg`}
               alt={
                 selectedImage.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
                 selectedImage.title?.replace(/(<i>|<\/i>)/gi, '"') ??
@@ -36,7 +36,7 @@ const SelectedImage = ({
             />
           </picture>
 
-          <figcaption className="w-[28rem] flex-shrink-0 text-white text-left">
+          <figcaption className="flex-1 max-w-lg text-white text-left">
             <p
               className="font-power text-lg"
               dangerouslySetInnerHTML={{

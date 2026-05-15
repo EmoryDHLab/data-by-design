@@ -64,7 +64,7 @@ export default function Index() {
         footnotes: [],
       }}
     >
-      <main id="main-content" className="bg-black pb-32 text-white relative">
+      <main id="main-content" className="bg-black pb-32 text-black relative">
         <h1 className="sr-only">
           Data by Design: An Interactive History of Data Visualization 1786-1900
         </h1>
@@ -72,7 +72,7 @@ export default function Index() {
         <div />
         <section
           aria-label="Pre-order"
-          className="bg-imagePrimary text-white"
+          className="bg-offwhite text-black"
         >
           <div className="max-w-6xl mx-auto md:flex md:items-center gap-16 xl:gap-24 px-6 md:px-10 py-12">
             <figure className="my-10 px-5 md:px-0 flex-shrink-0 w-full md:w-[380px]">
@@ -97,19 +97,19 @@ A book for those who love charts and graphs, and for those who create them, <cit
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="https://mitpress.mit.edu/9780262056182/data-by-design/"
-                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors"
+                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
                 >
                   Pre-order from MIT Press
                 </a>
                 <a
                   href="https://bookshop.org/p/books/data-by-design-visualization-and-powerfrom-abolition-to-the-dawn-of-data-science-lauren-f-klein/60e85f080f3ef3b9?ean=9780262056182&next=t&next=t&affiliate=2238"
-                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors"
+                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
                 >
                   Bookshop.org
                 </a>
                 <a
                   href="https://www.barnesandnoble.com/s/9780262056182/"
-                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors"
+                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
                 >
 BARNES & NOBLE                </a>
               </div>
@@ -120,7 +120,7 @@ BARNES & NOBLE                </a>
           aria-label="Timeline"
           className="hidden lg:block relative w-screen h-auto  fancyborder py-4"
         >
-          <div className="max-w-6xl mx-auto px-6 md:px-10 pt-6 pb-2 z-20">
+          <div className="max-w-6xl mx-auto px-6 md:px-10 pt-6 z-20">
             <div className="flex justify-start">
               <ClientOnly>
                 <SelectedImage selectedImage={selectedImage} />
