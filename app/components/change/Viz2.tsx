@@ -781,7 +781,7 @@ export default function Viz2({
       <div className="w-full">
         <svg
           ref={svgRef}
-          className="block w-full h-auto max-h-[85vh]"
+          className="block w-full h-auto max-h-[85vh] md:max-h-[95vh] md:min-h-[70vh]"
           style={{ aspectRatio: "1200 / 900" }}
         ></svg>
       </div>
