@@ -74,7 +74,7 @@ export default function Index() {
           aria-label="Pre-order"
           className="bg-offwhite text-black"
         >
-          <div className="max-w-6xl mx-auto md:flex md:items-center gap-16 xl:gap-24 px-6 md:px-10 py-12">
+          <div className="max-w-6xl mx-auto md:flex md:items-center gap-16 xl:gap-24  md:px-10 py-12">
             <figure className="my-10 px-5 md:px-0 flex-shrink-0 w-full md:w-[380px]">
               <img
                 src="/images/bookcover.webp"
