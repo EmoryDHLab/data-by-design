@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
+import { useDeviceContext } from "~/hooks";
 import studentData from "~/data/power/studentChartTwo.json";
 import respondentsData from "~/data/power/1910-Respondents.json";
 
@@ -39,6 +40,7 @@ export default function Viz2({
   const [useCircularArrangement, setUseCircularArrangement] = useState(false);
   const [redrawKey, setRedrawKey] = useState(0);
   const [legendData, setLegendData] = useState<any[]>([]);
+  const { isMobile } = useDeviceContext();
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -50,7 +52,11 @@ export default function Viz2({
     const width = 1200;
     const height = 900; // Increased to give more room at top
     const vizHeight = 800; // Increased visualization height
-    const radius = Math.min(width, vizHeight - 160) / 2 - 80; // Increased radius
+    // Mobile uses a much bigger pie radius so dots inside are larger,
+    // better spaced, and more students fit before any get skipped.
+    const radius = isMobile
+      ? 400
+      : Math.min(width, vizHeight - 160) / 2 - 80;
 
     // Process data - count students in each category, combining Deceased and Unknown
     const rawPieData = studentData.categories.map((category) => ({
@@ -166,10 +172,17 @@ export default function Viz2({
       })),
     );
 
-    // Create SVG
+    // Create SVG. On mobile use a portrait viewBox so the SVG fills viewport
+    // height and the outer "ring" dots get scattered edge-to-edge instead.
+    // The g is translated to (600, 480), so this viewBox centers the pie
+    // both horizontally (x range 0..1200, center 600) and vertically (y range
+    // -420..1380, center 480).
     const svg = d3
       .select(svgRef.current)
-      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr(
+        "viewBox",
+        isMobile ? `0 -420 1200 1800` : `0 0 ${width} ${height}`
+      )
       .attr("width", "100%")
       .attr("height", "100%");
 
@@ -217,8 +230,12 @@ export default function Viz2({
 
     // Add individual student dots
     const allDots: Array<{ x: number; y: number; radius: number }> = [];
-    const dotRadius = 4.4;
-    const minDistance = dotRadius * 2 + 1; // Minimum distance between dot centers
+    // Larger dots on mobile so they're tappable; smaller on desktop for density.
+    // Mobile uses a wider viewBox (1200 vs 840), so dotRadius must scale up to
+    // remain visible at the same physical size.
+    const dotRadius = isMobile ? 16 : 5.5;
+    // Extra spacing on mobile so pie dots don't crowd each other.
+    const minDistance = dotRadius * 2 + (isMobile ? 4 : 1);
 
     // Create a seeded random function for consistent randomization
     const seededRandom = (seed: number) => {
@@ -459,8 +476,9 @@ export default function Viz2({
           attempts < maxAttempts
         );
 
-        // Only add the dot if we found a good position
-        if (attempts < maxAttempts) {
+        // Always place diamond students — they're historically significant
+        // and must never be dropped even if no clean position was found.
+        if (attempts < maxAttempts || isDiamond) {
           allDots.push({ x, y, radius: dotRadius });
           successfulPlacements++;
 
@@ -584,15 +602,38 @@ export default function Viz2({
 
     // Add unknown students and unknown respondents from 1910 survey outside
     const unknownStudents = unknownStudentsData?.students || [];
-    const unknownRespondentsCount = respondentsData["unknown"] || 0;
+    const fullUnknownRespondentsCount = respondentsData["unknown"] || 0;
+    const unknownRespondentsCount = fullUnknownRespondentsCount;
     const totalOutsideCount = unknownStudents.length + unknownRespondentsCount;
 
     if (totalOutsideCount > 0) {
-      const outerRadius = radius + 500;
-      const innerRadius = radius + 30;
+      // On mobile, extend the ring out further so the full set of gray dots
+      // wraps the pie densely and feels like the "scale of students" payoff.
+      const outerRadius = isMobile ? radius + 320 : radius + 500;
+      const innerRadius = radius + (isMobile ? 60 : 30);
+
+      // Mobile uses random rectangular scatter, so bounds rejection keeps dots
+      // from sitting flush against the viewBox edges (especially the bottom).
+      // Desktop uses circular ring math where dotIndex drives the angle and
+      // doesn't advance on rejected positions, so bounds rejection there
+      // creates angular bunching — leave desktop unbounded and address its
+      // bottom-crop separately by trimming the outerRadius instead.
+      const yPad = dotRadius + 10;
+      const xPad = dotRadius - 4;
+      const yMin = isMobile ? -900 + yPad : -Infinity;
+      const yMax = isMobile ? 900 - yPad : Infinity;
+      const xMin = isMobile ? -600 + xPad : -Infinity;
+      const xMax = isMobile ? 600 - xPad : Infinity;
       const outerDots: Array<{ x: number; y: number; radius: number }> = [];
 
       let dotIndex = 0;
+
+      // On mobile, scatter dots edge-to-edge across the portrait viewBox
+      // ("0 -420 1200 1800") with the pie reserved at the center. In g coords
+      // (g is translated to (600, 480)), x spans -600..600 and y spans -900..900.
+      const scatterHalfWidth = 600;
+      const scatterHalfHeight = 900;
+      const pieExclusionRadius = innerRadius;
 
       // Add unknown students (solid dots with diamonds for special students)
       unknownStudents.forEach((student, studentIndex) => {
@@ -602,33 +643,57 @@ export default function Viz2({
 
         // Try to find non-overlapping position
         do {
-          const angle = (dotIndex / totalOutsideCount) * 2 * Math.PI;
-          const angleOffset =
-            (seededRandom(studentIndex * 1000 + attempts) - 0.5) * 0.3;
-          const finalAngle = angle + angleOffset;
+          if (isMobile) {
+            x =
+              (seededRandom(studentIndex * 5000 + attempts) - 0.5) *
+              2 *
+              scatterHalfWidth;
+            y =
+              (seededRandom(studentIndex * 6000 + attempts) - 0.5) *
+              2 *
+              scatterHalfHeight;
+          } else {
+            const angle = (dotIndex / totalOutsideCount) * 2 * Math.PI;
+            const angleOffset =
+              (seededRandom(studentIndex * 1000 + attempts) - 0.5) * 0.3;
+            const finalAngle = angle + angleOffset;
 
-          const randomRadius =
-            innerRadius +
-            seededRandom(studentIndex * 2000 + attempts) *
-              (outerRadius - innerRadius);
-          x = Math.cos(finalAngle) * randomRadius;
-          y = Math.sin(finalAngle) * randomRadius;
+            const randomRadius =
+              innerRadius +
+              seededRandom(studentIndex * 2000 + attempts) *
+                (outerRadius - innerRadius);
+            x = Math.cos(finalAngle) * randomRadius;
+            y = Math.sin(finalAngle) * randomRadius;
+          }
 
           attempts++;
         } while (
-          outerDots.some((dot) => {
-            const distance = Math.sqrt((x - dot.x) ** 2 + (y - dot.y) ** 2);
-            return distance < minDistance;
-          }) &&
+          (y < yMin ||
+            y > yMax ||
+            x < xMin ||
+            x > xMax ||
+            (isMobile &&
+              Math.sqrt(x * x + y * y) < pieExclusionRadius) ||
+            outerDots.some((dot) => {
+              const distance = Math.sqrt(
+                (x - dot.x) ** 2 + (y - dot.y) ** 2
+              );
+              return distance < minDistance;
+            })) &&
           attempts < maxAttempts
         );
 
-        // Only add if we found a good position
-        if (attempts < maxAttempts) {
-          outerDots.push({ x, y, radius: dotRadius });
+        // Check if this student should be a diamond — diamonds always render.
+        const isDiamond = diamondStudents.includes(student.name);
 
-          // Check if this student should be a diamond
-          const isDiamond = diamondStudents.includes(student.name);
+        // Add if we found a good position OR if this is a diamond student.
+        if (attempts < maxAttempts || isDiamond) {
+          // For forced diamond placements, clamp to viewBox so they aren't cropped.
+          if (isDiamond) {
+            x = Math.max(xMin, Math.min(x, xMax));
+            y = Math.max(yMin, Math.min(y, yMax));
+          }
+          outerDots.push({ x, y, radius: dotRadius });
 
           let dotElement: any;
 
@@ -688,22 +753,42 @@ export default function Viz2({
 
         // Try to find non-overlapping position
         do {
-          const angle = (dotIndex / totalOutsideCount) * 2 * Math.PI;
-          const angleOffset = (seededRandom(i * 3000 + attempts) - 0.5) * 0.3;
-          const finalAngle = angle + angleOffset;
+          if (isMobile) {
+            x =
+              (seededRandom(i * 7000 + attempts) - 0.5) *
+              2 *
+              scatterHalfWidth;
+            y =
+              (seededRandom(i * 8000 + attempts) - 0.5) *
+              2 *
+              scatterHalfHeight;
+          } else {
+            const angle = (dotIndex / totalOutsideCount) * 2 * Math.PI;
+            const angleOffset =
+              (seededRandom(i * 3000 + attempts) - 0.5) * 0.3;
+            const finalAngle = angle + angleOffset;
 
-          const randomRadius =
-            innerRadius +
-            seededRandom(i * 4000 + attempts) * (outerRadius - innerRadius);
-          x = Math.cos(finalAngle) * randomRadius;
-          y = Math.sin(finalAngle) * randomRadius;
+            const randomRadius =
+              innerRadius +
+              seededRandom(i * 4000 + attempts) * (outerRadius - innerRadius);
+            x = Math.cos(finalAngle) * randomRadius;
+            y = Math.sin(finalAngle) * randomRadius;
+          }
 
           attempts++;
         } while (
-          outerDots.some((dot) => {
-            const distance = Math.sqrt((x - dot.x) ** 2 + (y - dot.y) ** 2);
-            return distance < minDistance;
-          }) &&
+          (y < yMin ||
+            y > yMax ||
+            x < xMin ||
+            x > xMax ||
+            (isMobile &&
+              Math.sqrt(x * x + y * y) < pieExclusionRadius) ||
+            outerDots.some((dot) => {
+              const distance = Math.sqrt(
+                (x - dot.x) ** 2 + (y - dot.y) ** 2
+              );
+              return distance < minDistance;
+            })) &&
           attempts < maxAttempts
         );
 
@@ -765,24 +850,23 @@ export default function Viz2({
         color: colorMapping["Unknown"],
         displayText: "UNKNOWN",
         hasStudents: unknownStudents.length > 0,
-        hasRespondents: unknownRespondentsCount > 0,
+        hasRespondents: fullUnknownRespondentsCount > 0,
         isDotted: false,
-        value: totalOutsideCount,
+        value: unknownStudents.length + fullUnknownRespondentsCount,
         studentsCount: unknownStudents.length,
-        respondentsCount: unknownRespondentsCount,
+        respondentsCount: fullUnknownRespondentsCount,
       });
     }
 
     setLegendData(legendItems);
-  }, [interactive, showPieChart, useCircularArrangement, redrawKey]);
+  }, [interactive, showPieChart, useCircularArrangement, redrawKey, isMobile]);
 
   return (
     <div className="flex flex-col  items-center relative ">
       <div className="w-full">
         <svg
           ref={svgRef}
-          className="block w-full h-auto max-h-[85vh] md:max-h-[95vh] md:min-h-[70vh]"
-          style={{ aspectRatio: "1200 / 900" }}
+          className="block w-full h-auto min-h-[80vh] max-h-[90vh] md:max-h-[95vh] md:min-h-[70vh] md:aspect-[1200/900]"
         ></svg>
       </div>
       {interactive && (

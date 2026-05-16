@@ -97,7 +97,7 @@ export default function Viz3() {
                 onClick={() =>
                   handleCategoryChange(key as keyof typeof categories)
                 }
-                className={`block w-full text-left p-3 rounded font-power font-bold transition-colors text-xl lg:text-3xl ${
+                className={`block w-full text-left p-3 font-power font-bold transition-colors text-xl lg:text-3xl ${
                   selectedCategory === key
                     ? "text-white "
                     : "bg-transparent text-neutral-600 hover:text-white hover:bg-neutral-600"
@@ -122,7 +122,7 @@ export default function Viz3() {
 
         {/* Response count */}
         <div className="mb-6">
-          <p className="text-sm text-gray-300 font-power">
+          <p className="text-sm text-gray-300 font-power px-3">
             {responses.length} responses available
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function Viz3() {
               </h3>
               <button
                 onClick={() => setViewAllMode(false)}
-                className="px-4 py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors"
+                className="px-4 py-2 border border-white text-white font-power text-sm hover:bg-white hover:text-black transition-colors"
               >
                 Back to Single View
               </button>
@@ -149,7 +149,7 @@ export default function Viz3() {
                 <button
                   key={response.id}
                   onClick={() => scrollToResponse(index)}
-                  className="w-full text-left p-4 bg-[#3A3433] rounded-lg hover:bg-[#4A4443] transition-colors border border-transparent hover:border-white/20"
+                  className="w-full text-left p-4 bg-[#3A3433] hover:bg-[#4A4443] transition-colors border border-transparent hover:border-white/20"
                 >
                   <div className="flex items-start gap-3">
                     <span className="text-gray-400 font-power text-sm min-w-[2rem]">
@@ -370,45 +370,56 @@ export default function Viz3() {
 
             {/* Navigation controls */}
             <div className="flex flex-col items-center space-y-3">
-              <div className="text-white font-power text-sm">
-                {currentResponseIndex + 1} of {responses.length}
+              <div className="flex items-center gap-6">
+                <button
+                  onClick={handlePrevious}
+                  disabled={responses.length === 0}
+                  aria-label="Previous response"
+                  className="p-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <img
+                    className="w-[27.5px] h-[19.5px]"
+                    src="/images/ui/leftarrow.png"
+                    alt=""
+                    role="presentation"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+                <div className="text-white font-power text-sm tabular-nums">
+                  {currentResponseIndex + 1} of {responses.length}
+                </div>
+                <button
+                  onClick={handleNext}
+                  disabled={responses.length === 0}
+                  aria-label="Next response"
+                  className="p-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <img
+                    className="w-[27.5px] h-[19.5px]"
+                    src="/images/ui/rightarrow.png"
+                    alt=""
+                    role="presentation"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
               </div>
 
-              {/* Mobile: Stack buttons vertically */}
-              <div className="flex flex-col md:flex-row justify-between items-center w-full space-y-3 md:space-y-0 md:space-x-4">
-                <div className="flex justify-between w-full md:w-auto space-x-4">
-                  <button
-                    onClick={handlePrevious}
-                    disabled={responses.length === 0}
-                    className="flex-1 md:flex-none px-4 py-3 md:py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    ← Previous
-                  </button>
+              <div className="flex flex-col md:flex-row w-full md:w-auto space-y-2 md:space-y-0 md:space-x-2">
+                <button
+                  onClick={() => setStraightTextMode(!straightTextMode)}
+                  className="w-full md:w-auto px-4 py-3 md:py-2 border border-white text-white font-power text-sm hover:bg-white hover:text-black transition-colors"
+                >
+                  {straightTextMode ? "Show Track" : "Make Text Readable"}
+                </button>
 
-                  <button
-                    onClick={handleNext}
-                    disabled={responses.length === 0}
-                    className="flex-1 md:flex-none px-4 py-3 md:py-2 bg-white text-black rounded font-power text-sm hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Next →
-                  </button>
-                </div>
-
-                <div className="flex flex-col md:flex-row w-full md:w-auto space-y-2 md:space-y-0 md:space-x-2">
-                  <button
-                    onClick={() => setStraightTextMode(!straightTextMode)}
-                    className="w-full md:w-auto px-4 py-3 md:py-2 bg-blue-600 text-white rounded font-power text-sm hover:bg-blue-700 transition-colors"
-                  >
-                    {straightTextMode ? "Show Track" : "Make Text Readable"}
-                  </button>
-
-                  <button
-                    onClick={() => setViewAllMode(true)}
-                    className="w-full md:w-auto px-4 py-3 md:py-2 bg-green-600 text-white rounded font-power text-sm hover:bg-green-700 transition-colors"
-                  >
-                    View All Responses
-                  </button>
-                </div>
+                <button
+                  onClick={() => setViewAllMode(true)}
+                  className="w-full md:w-auto px-4 py-3 md:py-2 border border-white text-white font-power text-sm hover:bg-white hover:text-black transition-colors"
+                >
+                  View All Responses
+                </button>
               </div>
             </div>
           </>

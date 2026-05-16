@@ -1562,7 +1562,7 @@ export default function DuboisChapter() {
             </div>,
           ]}
         />
-        <div id="viz-2" className="py-16 md:py-24">
+        <div id="viz-2" className="pb-16 md:pb-24">
           <Viz2 interactive={true}></Viz2>
         </div>
         <CenteredLayout>

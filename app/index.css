@@ -13,6 +13,12 @@
   }
 }
 
+/* Wins specificity battle vs. ChapterBody's space-y baseline so this viz
+   can sit flush against the scrollytell above. */
+#viz-2 {
+  margin-top: 0 !important;
+}
+
 .fancyborder {
   width: 100px;
   height: 100px;
