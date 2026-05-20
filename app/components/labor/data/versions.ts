@@ -126,15 +126,6 @@ export const groupingData: TGroupingData = {
       getY: nodeY,
       opacity: 0,
     },
-    [Departments.MC]: {
-      id: 2,
-      label: Departments.MC,
-      x: 0.81,
-      y: 0.24,
-      getX: nodeX,
-      getY: nodeY,
-      opacity: 0,
-    },
     [Departments.Q]: {
       id: 3,
       label: Departments.Q,
@@ -366,7 +357,6 @@ export const peopleData: TPerson[] = [
     departments: [
       groupingData[Groupings.D][Departments.E],
       groupingData[Groupings.D][Departments.L],
-      groupingData[Groupings.D][Departments.MC],
       groupingData[Groupings.D][Departments.Q],
     ],
     positions: [groupingData[Groupings.P][Positions.F]],
