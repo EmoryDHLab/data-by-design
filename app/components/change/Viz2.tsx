@@ -833,6 +833,58 @@ export default function Viz2({
           dotIndex++;
         }
       }
+
+      // Mobile-only: pack decorative gray dots into the leftover scatter area
+      // so the portrait viewBox doesn't feel half-empty. These are visual filler
+      // (no data, no interactivity) and reuse outerDots for collision packing.
+      if (isMobile) {
+        const fillerTarget = 600;
+        const consecutiveFailCap = 250;
+        let consecutiveFails = 0;
+        let placed = 0;
+
+        for (let i = 0; i < fillerTarget * 20; i++) {
+          if (placed >= fillerTarget) break;
+          if (consecutiveFails >= consecutiveFailCap) break;
+
+          const x =
+            (seededRandom(i * 9000 + 13) - 0.5) * 2 * scatterHalfWidth;
+          const y =
+            (seededRandom(i * 9000 + 17) - 0.5) * 2 * scatterHalfHeight;
+
+          if (
+            y < yMin ||
+            y > yMax ||
+            x < xMin ||
+            x > xMax ||
+            Math.sqrt(x * x + y * y) < pieExclusionRadius ||
+            outerDots.some((dot) => {
+              const distance = Math.sqrt(
+                (x - dot.x) ** 2 + (y - dot.y) ** 2
+              );
+              return distance < minDistance;
+            })
+          ) {
+            consecutiveFails++;
+            continue;
+          }
+
+          outerDots.push({ x, y, radius: dotRadius });
+          placed++;
+          consecutiveFails = 0;
+
+          g.append("circle")
+            .attr("cx", x)
+            .attr("cy", y)
+            .attr("r", dotRadius)
+            .attr("fill", colorMapping["Unknown"])
+            .attr("stroke", "black")
+            .attr("stroke-width", 1)
+            .attr("stroke-dasharray", "3,3")
+            .style("opacity", 0.6)
+            .style("pointer-events", "none");
+        }
+      }
     }
 
     // Create legend data for HTML legend
@@ -866,7 +918,7 @@ export default function Viz2({
       <div className="w-full">
         <svg
           ref={svgRef}
-          className="block w-full h-auto min-h-[80vh] max-h-[90vh] md:max-h-[95vh] md:min-h-[70vh] md:aspect-[1200/900]"
+          className="block w-full h-screen max-h-screen md:h-auto md:max-h-[95vh] md:min-h-[70vh] md:aspect-[1200/900]"
         ></svg>
       </div>
       {interactive && (

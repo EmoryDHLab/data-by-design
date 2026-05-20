@@ -83,7 +83,7 @@ export default function Viz3() {
       {/* Left side - Question */}
       <div className="w-full lg:w-1/2 p-4 lg:p-8 flex flex-col justify-center">
         {/* Category selection */}
-        <div className="mb-8">
+        <div className="mb-2 lg:mb-8">
           <div className="mb-6">
             {/* <h3 className="text-lg font-power mb-4 text-white">
               {categories[selectedCategory]}
@@ -121,7 +121,7 @@ export default function Viz3() {
         </div>
 
         {/* Response count */}
-        <div className="mb-6">
+        <div className="mb-6 hidden lg:block">
           <p className="text-sm text-gray-300 font-power px-3">
             {responses.length} responses available
           </p>
@@ -129,12 +129,12 @@ export default function Viz3() {
       </div>
 
       {/* Right side - Responses */}
-      <div className="w-full lg:w-1/2 p-4 lg:p-8 flex flex-col justify-center">
+      <div className="w-full lg:w-1/2 px-4 pb-4 pt-0 lg:p-8 flex flex-col justify-center">
         {viewAllMode ? (
           /* View All Mode - Scrollable list of all responses */
           <div className="flex flex-col h-[600px] md:h-[700px] lg:h-[800px]">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-white font-power text-lg">
+              <h3 className="text-white font-power text-sm">
                 All Responses ({responses.length})
               </h3>
               <button
