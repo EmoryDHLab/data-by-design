@@ -65,8 +65,7 @@ export enum Roles {
 
 export enum Departments {
   E = "English",
-  L = "Literature",
-  MC = "Media & Communication",
+  L = "Literature, Media & Communication",
   Q = "Data & Decision Sciences",
   G = "Graphic Design",
   I = "Integrated Design & Media",
