@@ -77,7 +77,7 @@ class Particle {
     strokeWeight(1);
     stroke(handleColor);
     if(this.dragging || this.draggingHandle || this.draggingHandleAlt){
-      fill(0,0,255);
+      fill(217, 41, 68);
     } else {
       noFill();
     }

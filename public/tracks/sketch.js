@@ -61,7 +61,7 @@ function setup() {
   stripCountChoice = 1;
   roundCap = false;
 
-  handleColor = color(0, 0, 255);
+  handleColor = color(217, 41, 68);
   selectedFont = font0;
 
   // Set tracks colors
@@ -102,7 +102,7 @@ function draw() {
   if (!straightTextMode) {
     let particleCt = particles[squiggleCount - 1].length;
     if (draggedIn) {
-      stroke(0, 0, 255);
+      stroke(217, 41, 68);
       strokeWeight(1);
       noFill();
       bezier(

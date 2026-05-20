@@ -130,20 +130,49 @@ export default function Viz3() {
 
       {/* Right side - Responses */}
       <div className="w-full lg:w-1/2 px-4 pb-4 pt-0 lg:p-8 flex flex-col justify-center">
+        {/* Toolbar — all view controls grouped at top, anchored across mode toggles */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-3 mb-4">
+          {!viewAllMode && (
+            <div
+              role="group"
+              aria-label="View mode"
+              className="inline-flex border border-white self-stretch md:self-auto"
+            >
+              <button
+                onClick={() => setStraightTextMode(false)}
+                aria-pressed={!straightTextMode}
+                className={`flex-1 md:flex-none px-4 py-3 md:py-2 font-power text-sm transition-colors ${
+                  !straightTextMode
+                    ? "bg-white text-black"
+                    : "bg-transparent text-white hover:bg-white/10"
+                }`}
+              >
+                Track View
+              </button>
+              <button
+                onClick={() => setStraightTextMode(true)}
+                aria-pressed={straightTextMode}
+                className={`flex-1 md:flex-none px-4 py-3 md:py-2 font-power text-sm transition-colors border-l border-white ${
+                  straightTextMode
+                    ? "bg-white text-black"
+                    : "bg-transparent text-white hover:bg-white/10"
+                }`}
+              >
+                Text View
+              </button>
+            </div>
+          )}
+          <button
+            onClick={() => setViewAllMode(!viewAllMode)}
+            className="w-full md:w-auto px-4 py-3 md:py-2 border border-white text-white font-power text-sm hover:bg-white hover:text-black transition-colors"
+          >
+            {viewAllMode ? "Back to Single View" : "View All Responses"}
+          </button>
+        </div>
+
         {viewAllMode ? (
           /* View All Mode - Scrollable list of all responses */
           <div className="flex flex-col h-[600px] md:h-[700px] lg:h-[800px]">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="text-white font-power text-sm">
-                All Responses ({responses.length})
-              </h3>
-              <button
-                onClick={() => setViewAllMode(false)}
-                className="px-4 py-2 border border-white text-white font-power text-sm hover:bg-white hover:text-black transition-colors"
-              >
-                Back to Single View
-              </button>
-            </div>
             <div className="flex-1 overflow-y-auto space-y-4 pr-2">
               {responses.map((response, index) => (
                 <button
@@ -403,22 +432,6 @@ export default function Viz3() {
                     loading="lazy"
                     decoding="async"
                   />
-                </button>
-              </div>
-
-              <div className="flex flex-col md:flex-row w-full md:w-auto space-y-2 md:space-y-0 md:space-x-2">
-                <button
-                  onClick={() => setStraightTextMode(!straightTextMode)}
-                  className="w-full md:w-auto px-4 py-3 md:py-2 border border-white text-white font-power text-sm hover:bg-white hover:text-black transition-colors"
-                >
-                  {straightTextMode ? "Show Track" : "Make Text Readable"}
-                </button>
-
-                <button
-                  onClick={() => setViewAllMode(true)}
-                  className="w-full md:w-auto px-4 py-3 md:py-2 border border-white text-white font-power text-sm hover:bg-white hover:text-black transition-colors"
-                >
-                  View All Responses
                 </button>
               </div>
             </div>

@@ -922,7 +922,7 @@ export default function Viz2({
         ></svg>
       </div>
       {interactive && (
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 px-4 w-full sm:w-auto">
+        <div className="mt-8 hidden sm:flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 px-4 w-full sm:w-auto">
           <button
             onClick={() => setShowPieChart(!showPieChart)}
             className="px-3 py-1 bg-changePrimary text-white rounded font-power text-sm hover:bg-opacity-80 transition-opacity"
