@@ -16,20 +16,20 @@ export default function Footer() {
         >
           <g>
             <foreignObject x={52} y={0} height={200} width={368}>
-              <p className="text-2xl font-neueMontrealLight">
+              <p className="md:text-2xl text-lg font-neueMontrealLight">
                 Final version forthcoming in print and online from{" "}
                 <a
-                  className="underline underline-offset-4 decoration-1 hover:decoration-2 focus:decoration-2"
+                  className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
                   href="https://mitpress.mit.edu/"
                 >
                   The MIT Press
                 </a>{" "}
                 in Fall 2026.
               </p>
-              <p className="text-lg font-neueMontrealLight mt-6">
+              <p className="md:text-lg text-sm font-neueMontrealLight mt-6">
                 Please contact the project director,{" "}
                 <a
-                  className="underline underline-offset-4 decoration-1 hover:decoration-2 focus:decoration-2"
+                  className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
                   href="mailto:lauren.klein@emory.edu"
                 >
                   Lauren Klein
@@ -104,9 +104,9 @@ export default function Footer() {
         >
           <div className="relative">
             <input
-              placeholder="Email address"
+              placeholder="Enter Email"
               type="email"
-              className="w-full bg-transparent border-b border-offwhite pb-2 pr-12 placeholder-gray-500 text-offwhite font-neueMontrealLight text-lg focus:outline-none focus:border-white transition-colors"
+              className="w-full bg-transparent border-b border-offwhite pb-2 pr-12 placeholder-stone-400 text-white font-bold tracking-wide text-lg focus:outline-none focus:border-white transition-colors autofill:shadow-[inset_0_0_0_1000px_theme(colors.offblack)] autofill:[-webkit-text-fill-color:theme(colors.white)] autofill:[caret-color:white]"
               name="EMAIL"
               id="mce-EMAIL"
               required
