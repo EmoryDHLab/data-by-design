@@ -92,7 +92,7 @@ export default function Footer() {
       {/* THIRD COL */}
       <div className="col-span-12 md:col-span-5 my-20 md:my-0 flex flex-col space-y-4 pt-8 md:pt-0">
         <p className="uppercase text-xs font-neueMontreal">
-          Sign up for project updates:
+          Sign up for project updates
         </p>
         <form
           className="relative w-full max-w-md mb-8"
