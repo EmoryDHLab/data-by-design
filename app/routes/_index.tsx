@@ -14,6 +14,18 @@ import type { MetaFunction, LinksFunction } from "react-router";
 import type { TFigure } from "~/types/figureType";
 import type { ChapterTitle } from "~/types/chapterMetaTags";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+function trackPreorder(retailer: string) {
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", "preorder_click", { retailer });
+  }
+}
+
 export const links: LinksFunction = () => {
   return Object.keys(chapterMeta).map((chapter) => {
     return {
@@ -93,18 +105,21 @@ export default function Index() {
               <div className="order-3 md:order-last mt-6 md:mt-8 flex flex-wrap gap-3">
                 <a
                   href="https://mitpress.mit.edu/9780262056182/data-by-design/"
+                  onClick={() => trackPreorder("MIT Press")}
                   className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
                 >
                   MIT Press
                 </a>
                 <a
                   href="https://bookshop.org/p/books/data-by-design-visualization-and-powerfrom-abolition-to-the-dawn-of-data-science-lauren-f-klein/60e85f080f3ef3b9?ean=9780262056182&next=t&next=t&affiliate=2238"
+                  onClick={() => trackPreorder("Bookshop.org")}
                   className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
                 >
                   Bookshop.org
                 </a>
                 <a
                   href="https://www.barnesandnoble.com/s/9780262056182/"
+                  onClick={() => trackPreorder("Barnes & Noble")}
                   className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
                 >
                   Barnes &amp; Noble
