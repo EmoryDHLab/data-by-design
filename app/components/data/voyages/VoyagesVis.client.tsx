@@ -121,13 +121,13 @@ function VoyagesVis({
   }, [startYear, endYear]);
 
   useEffect(() => {
-    const initP5 = (p5: p5) => {
+    const initP5 = (sketch: p5) => {
       voyages.current = []; // The array containing all the voyages
       filteredVoyages.current = [];
 
-      p5.setup = () => {
-        const canvas = p5
-          .createCanvas(width + widthDiff, height)
+      sketch.setup = () => {
+        const canvas = sketch
+          .createCanvas(width + widthDiff, height, (sketch as unknown as { SVG: string }).SVG)
           .parent(idRef.current);
         if (borderRef.current) {
           canvas.addClass("border-2 border-offblack");
@@ -135,7 +135,7 @@ function VoyagesVis({
         (voyageData as TVoyage[]).forEach((voyage: TVoyage) => {
           voyages.current.push(
             new Voyage(
-              p5,
+              sketch,
               voyage,
               yearRangeRef.current[0],
               yearRangeRef.current[1],
@@ -168,25 +168,33 @@ function VoyagesVis({
       };
 
       //The  main visualization
-      p5.draw = () => {
-        p5.background(backgroundRef.current);
+      sketch.draw = () => {
+        sketch.background(backgroundRef.current);
 
         for (const index in filteredVoyages.current) {
           filteredVoyages.current[index].show();
         }
 
-        p5.noLoop();
+        sketch.noLoop();
       };
     };
 
-    if (width && height) {
-      p5Ref.current = new p5(initP5);
-    }
+    if (!width || !height) return;
 
-    const p5Copy = p5Ref.current;
+    let cancelled = false;
+
+    (async () => {
+      // p5.js-svg's IIFE checks window.p5 at evaluation time — assign before importing
+      (window as Window & { p5?: typeof p5 }).p5 = p5;
+      await import("p5.js-svg");
+      if (cancelled) return;
+      p5Ref.current = new p5(initP5);
+    })();
 
     return () => {
-      p5Copy?.remove();
+      cancelled = true;
+      p5Ref.current?.remove();
+      p5Ref.current = undefined;
     };
   }, [width, height, widthDiff]);
 

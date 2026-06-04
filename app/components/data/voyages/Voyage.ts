@@ -29,7 +29,7 @@ class Voyage {
     height: number,
     width: number,
     widthAdjust: number,
-    fullColor: boolean = false
+    fullColor: boolean = false,
   ) {
     this.p5 = p5;
     ({
@@ -71,7 +71,7 @@ class Voyage {
       this.minEmbark,
       this.maxEmbark,
       0,
-      this.height
+      this.height,
     );
     const rat = voyageHeight / this.height;
     const yStart = -this.height / 2;
@@ -82,9 +82,9 @@ class Voyage {
         this.minYear,
         this.maxYear,
         this.widthAdjust,
-        this.width
+        this.width,
       ),
-      this.height / 2
+      this.height / 2,
     );
 
     // Add color
@@ -110,23 +110,23 @@ class Voyage {
 
     this.p5.curveVertex(
       this.points.c7 + this.offsets.c7,
-      this.height / 2 + 500 * rat
+      this.height / 2 + 500 * rat,
     );
     this.p5.curveVertex(
       this.points.c4 + this.offsets.c6,
-      yStart + (this.height / 5) * 4
+      yStart + (this.height / 5) * 4,
     );
     this.p5.curveVertex(
       this.points.c3 + this.offsets.c5,
-      yStart + (this.height / 5) * 3
+      yStart + (this.height / 5) * 3,
     );
     this.p5.curveVertex(
       this.points.c2 + this.offsets.c4,
-      yStart + (this.height / 5) * 2
+      yStart + (this.height / 5) * 2,
     );
     this.p5.curveVertex(
       this.points.c1 + this.offsets.c3,
-      yStart + (this.height / 5) * 1
+      yStart + (this.height / 5) * 1,
     );
     this.p5.curveVertex(this.points.c5 + this.offsets.c2, yStart - 300 * rat);
     this.p5.curveVertex(this.points.c6 + this.offsets.c1, yStart - 300 * rat);
