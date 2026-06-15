@@ -15,3 +15,8 @@ node_modules*
 .*.json
 /public/sitemap.xml
 /public/robots.txt
+
+# Benchmark artifacts (generated). Keep bench/baseline.json, budgets.json, README.md.
+/.lighthouseci
+/bench/latest.json
+/bench/lighthouse

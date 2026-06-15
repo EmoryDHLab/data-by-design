@@ -4,8 +4,23 @@ import p5 from "p5";
 import Voyage from "./Voyage";
 import Axis from "./Axis";
 import Slider from "./Slider";
-import voyageData from "~/data/description/voyages.json";
-import type { TVoyage } from "~/types/voyage";
+import type { TVoyage, TVoyageData } from "~/types/voyage";
+
+// The voyage dataset is ~11MB, so it is NOT bundled. It lives in public/ and is
+// fetched on demand the first time this client-only component mounts, keeping it
+// out of the description route's JS chunk. Cached at module scope so multiple
+// VoyagesVis instances on the page share a single fetch.
+const VOYAGES_URL = "/data/voyages.json";
+let voyageDataPromise: Promise<TVoyageData[]> | undefined;
+function loadVoyageData(): Promise<TVoyageData[]> {
+  if (!voyageDataPromise) {
+    voyageDataPromise = fetch(VOYAGES_URL).then((res) => {
+      if (!res.ok) throw new Error(`Failed to load voyages: ${res.status}`);
+      return res.json();
+    });
+  }
+  return voyageDataPromise;
+}
 
 const INITIAL_YEAR_RANGE = [1565, 1575];
 
@@ -48,6 +63,8 @@ function VoyagesVis({
   const isSampleRef = useRef<boolean>(isSample);
   const voyages = useRef<Array<Voyage>>([]);
   const filteredVoyages = useRef<Array<Voyage>>([]);
+  const voyageDataRef = useRef<TVoyageData[] | null>(null);
+  const [dataLoaded, setDataLoaded] = useState<boolean>(false);
   const [yearRange, setYearRange] = useState<number[]>([startYear, endYear]);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
@@ -79,6 +96,23 @@ function VoyagesVis({
   useEffect(() => {
     isSampleRef.current = isSample;
   }, [isSample]);
+
+  // Fetch the voyage dataset once on mount (shared module-level cache).
+  useEffect(() => {
+    let cancelled = false;
+    loadVoyageData()
+      .then((data) => {
+        if (cancelled) return;
+        voyageDataRef.current = data;
+        setDataLoaded(true);
+      })
+      .catch((err) => {
+        console.error("VoyagesVis: could not load voyage data", err);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (windowSize.width && windowSize.height) {
@@ -118,7 +152,7 @@ function VoyagesVis({
       p5.setup = () => {
         p5.createCanvas(width + widthDiff, height).parent(idRef.current);
 
-        (voyageData as TVoyage[]).forEach((voyage: TVoyage) => {
+        (voyageDataRef.current as unknown as TVoyage[]).forEach((voyage: TVoyage) => {
           voyages.current.push(
             new Voyage(
               p5,
@@ -165,7 +199,7 @@ function VoyagesVis({
       };
     };
 
-    if (width && height) {
+    if (width && height && voyageDataRef.current) {
       p5Ref.current = new p5(initP5);
     }
 
@@ -174,7 +208,7 @@ function VoyagesVis({
     return () => {
       p5Copy?.remove();
     };
-  }, [width, height, widthDiff]);
+  }, [width, height, widthDiff, dataLoaded]);
 
   if (isSample) {
     if (windowSize.width) {

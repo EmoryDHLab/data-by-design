@@ -1,0 +1,1194 @@
+{
+  "totals": {
+    "jsRaw": 11132857,
+    "jsGzip": 3239653,
+    "cssRaw": 85367,
+    "cssGzip": 13312,
+    "publicTotal": 529973727,
+    "largestChunkGzip": 2422629
+  },
+  "chunks": [
+    {
+      "name": "assets/chapters.description-DS4dThwd.js",
+      "raw": 8258657,
+      "gzip": 2422629
+    },
+    {
+      "name": "assets/p5.min-Ce2xTETi.js",
+      "raw": 1037919,
+      "gzip": 260487
+    },
+    {
+      "name": "assets/chapters.intro-CTOCJpoh.js",
+      "raw": 366757,
+      "gzip": 113141
+    },
+    {
+      "name": "assets/chapters.dubois-DBC9TcMG.js",
+      "raw": 274057,
+      "gzip": 72486
+    },
+    {
+      "name": "assets/components-DLFwNpIJ.js",
+      "raw": 169046,
+      "gzip": 54475
+    },
+    {
+      "name": "assets/chapters.peabody-DC_e-Dcb.js",
+      "raw": 139555,
+      "gzip": 39460
+    },
+    {
+      "name": "assets/chapters.playfair-WwbUCvov.js",
+      "raw": 85435,
+      "gzip": 32416
+    },
+    {
+      "name": "assets/dubois-UNR6fcai.js",
+      "raw": 129820,
+      "gzip": 28998
+    },
+    {
+      "name": "assets/chapters.labor-ymuIQPf8.js",
+      "raw": 121798,
+      "gzip": 24084
+    },
+    {
+      "name": "assets/index-CVgtYCty.js",
+      "raw": 63232,
+      "gzip": 21595
+    },
+    {
+      "name": "assets/chapters.shanawdithit-DS2vb2ny.js",
+      "raw": 59570,
+      "gzip": 20979
+    },
+    {
+      "name": "assets/footnotes-BKtruzcD.js",
+      "raw": 53329,
+      "gzip": 19903
+    },
+    {
+      "name": "assets/ChapterBody-BBi8cAeO.js",
+      "raw": 51155,
+      "gzip": 18790
+    },
+    {
+      "name": "assets/index-BP9AGHD9.css",
+      "raw": 85367,
+      "gzip": 13312
+    },
+    {
+      "name": "assets/transform-BuNV6_Z7.js",
+      "raw": 36922,
+      "gzip": 12445
+    },
+    {
+      "name": "assets/FigureObj-CUpZbopK.js",
+      "raw": 28374,
+      "gzip": 9764
+    },
+    {
+      "name": "assets/shanawdithit-DhCFEjG4.js",
+      "raw": 32016,
+      "gzip": 9254
+    },
+    {
+      "name": "assets/description-BtJmKc5m.js",
+      "raw": 20619,
+      "gzip": 6985
+    },
+    {
+      "name": "assets/index-C2XjU8oE.js",
+      "raw": 16350,
+      "gzip": 6375
+    },
+    {
+      "name": "assets/playfair-Db20wNd_.js",
+      "raw": 20091,
+      "gzip": 6113
+    },
+    {
+      "name": "assets/root-D5GUOinR.js",
+      "raw": 14964,
+      "gzip": 5918
+    },
+    {
+      "name": "assets/peabody-C4qNLfMB.js",
+      "raw": 23552,
+      "gzip": 5850
+    },
+    {
+      "name": "assets/time-5AfTmLSV.js",
+      "raw": 17042,
+      "gzip": 5701
+    },
+    {
+      "name": "assets/transition-BsYz8BWH.js",
+      "raw": 12842,
+      "gzip": 4986
+    },
+    {
+      "name": "assets/linear-B8sLqI7P.js",
+      "raw": 10268,
+      "gzip": 4271
+    },
+    {
+      "name": "assets/entry.client-N4GHBc47.js",
+      "raw": 11574,
+      "gzip": 4051
+    },
+    {
+      "name": "assets/about-VGekE-L2.js",
+      "raw": 14150,
+      "gzip": 3997
+    },
+    {
+      "name": "assets/_index-PNfKCg62.js",
+      "raw": 9500,
+      "gzip": 3757
+    },
+    {
+      "name": "assets/client-only-BpJvkg7z.js",
+      "raw": 7556,
+      "gzip": 3151
+    },
+    {
+      "name": "assets/hooks-u_oM-DKP.js",
+      "raw": 8564,
+      "gzip": 3044
+    },
+    {
+      "name": "assets/drag-Dns5NFXW.js",
+      "raw": 6601,
+      "gzip": 2592
+    },
+    {
+      "name": "assets/Footer-CaY39xQm.js",
+      "raw": 6815,
+      "gzip": 2449
+    },
+    {
+      "name": "assets/line-Co2p4suz.js",
+      "raw": 3690,
+      "gzip": 1508
+    },
+    {
+      "name": "assets/utils-CBumGPcz.js",
+      "raw": 3009,
+      "gzip": 1343
+    },
+    {
+      "name": "assets/manifest-07771377.js",
+      "raw": 8548,
+      "gzip": 1228
+    },
+    {
+      "name": "assets/FootnotesList-BmYmMxnh.js",
+      "raw": 1955,
+      "gzip": 1039
+    },
+    {
+      "name": "assets/SlideShow-CfIm3R-j.js",
+      "raw": 1621,
+      "gzip": 724
+    },
+    {
+      "name": "assets/FancyButton-DWFlcRTl.js",
+      "raw": 1033,
+      "gzip": 668
+    },
+    {
+      "name": "assets/timelineUtils-DsOuc1mT.js",
+      "raw": 936,
+      "gzip": 496
+    },
+    {
+      "name": "assets/PullQuote-BwLDmqyN.js",
+      "raw": 765,
+      "gzip": 446
+    },
+    {
+      "name": "assets/Takeaways-BuVK0CMh.js",
+      "raw": 878,
+      "gzip": 388
+    },
+    {
+      "name": "assets/HoverText-B9oQrObF.js",
+      "raw": 626,
+      "gzip": 381
+    },
+    {
+      "name": "assets/Column-Dv2z6Xf1.js",
+      "raw": 510,
+      "gzip": 334
+    },
+    {
+      "name": "assets/Quotation-B7SaiTzO.js",
+      "raw": 335,
+      "gzip": 240
+    },
+    {
+      "name": "assets/chapters-CbaUqmfg.js",
+      "raw": 211,
+      "gzip": 192
+    },
+    {
+      "name": "assets/scrollytellContext-6R6BAeKz.js",
+      "raw": 229,
+      "gzip": 183
+    },
+    {
+      "name": "assets/selectAll-1NO5uogQ.js",
+      "raw": 195,
+      "gzip": 172
+    },
+    {
+      "name": "assets/select-B2FhpEZo.js",
+      "raw": 186,
+      "gzip": 165
+    }
+  ],
+  "bigAssets": [
+    {
+      "name": "images/intro/quipu.png",
+      "raw": 83392662
+    },
+    {
+      "name": "images/intro/quipu.jpg",
+      "raw": 70675768
+    },
+    {
+      "name": "images/intro/quipu.webp",
+      "raw": 64467318
+    },
+    {
+      "name": "images/shanawdithit/DRW-II.jpg",
+      "raw": 13146926
+    },
+    {
+      "name": "images/shanawdithit/birch-bark-1841.jpg",
+      "raw": 11692707
+    },
+    {
+      "name": "images/shanawdithit/DRW-II.webp",
+      "raw": 10519626
+    },
+    {
+      "name": "images/shanawdithit/Willard-picture.jpg",
+      "raw": 7508386
+    },
+    {
+      "name": "images/intro/9-teozacoalco.jpeg",
+      "raw": 6535071
+    },
+    {
+      "name": "images/playfair/buache.jpg",
+      "raw": 6160430
+    },
+    {
+      "name": "images/shanawdithit/willard-picture of nations.png",
+      "raw": 6123837
+    },
+    {
+      "name": "images/description/equiano-narrative.jpg",
+      "raw": 6117219
+    },
+    {
+      "name": "images/shanawdithit/Willard_Aboriginal_Tribes.jpg",
+      "raw": 6073286
+    },
+    {
+      "name": "images/shanawdithit/Willard-picture.webp",
+      "raw": 5779624
+    },
+    {
+      "name": "images/shanawdithit/WRONG-howley-sketch2.svg",
+      "raw": 5081840
+    },
+    {
+      "name": "images/description/equiano-narrative.webp",
+      "raw": 4423786
+    },
+    {
+      "name": "images/intro/9-teozacoalco.webp",
+      "raw": 4402372
+    },
+    {
+      "name": "images/shanawdithit/placeholder-sketch4-original.jpg",
+      "raw": 4359735
+    },
+    {
+      "name": "images/peabody/Tattered map in attic.jpg",
+      "raw": 4076586
+    },
+    {
+      "name": "images/peabody/ch4-clarke2.jpg",
+      "raw": 4076586
+    },
+    {
+      "name": "prototypes/voyages/conceptual_map/lib/p5.js",
+      "raw": 3984128
+    },
+    {
+      "name": "images/playfair/buache.webp",
+      "raw": 3910734
+    },
+    {
+      "name": "images/shanawdithit/WRONG-howley-sketch2.jpg",
+      "raw": 3811201
+    },
+    {
+      "name": "images/intro/Equiano-D8546.jpg",
+      "raw": 3771437
+    },
+    {
+      "name": "images/dubois/ch5-14-rogers-highlighted.png",
+      "raw": 3688369
+    },
+    {
+      "name": "images/intro/5-plot-images-need-to-merge.pdf",
+      "raw": 3536714
+    },
+    {
+      "name": "images/shanawdithit/Willard-principal.jpg",
+      "raw": 3512148
+    },
+    {
+      "name": "images/shanawdithit/WRONG-howley-sketch2.webp",
+      "raw": 3488980
+    },
+    {
+      "name": "images/description/fisk-plate22sheet09.jpg",
+      "raw": 2874419
+    },
+    {
+      "name": "images/peabody/ch4-16-fc-led-boards.jpg",
+      "raw": 2777255
+    },
+    {
+      "name": "images/peabody/ch4-blank-chart.jpg",
+      "raw": 2501861
+    },
+    {
+      "name": "images/description/fisk-plate22sheet09.webp",
+      "raw": 2452726
+    },
+    {
+      "name": "images/intro/8-Edmond_Halley_s_map_of_the_trade_winds_1686.jpg",
+      "raw": 2420727
+    },
+    {
+      "name": "images/intro/3-anonymous.png",
+      "raw": 2390423
+    },
+    {
+      "name": "images/peabody/railroadscaled.jpg",
+      "raw": 2374609
+    },
+    {
+      "name": "images/intro/timeline-as-stacks.png",
+      "raw": 2221065
+    },
+    {
+      "name": "images/shanawdithit/DRW-IV lg.JPG",
+      "raw": 2199054
+    },
+    {
+      "name": "images/shanawdithit/BirchBark.jpg",
+      "raw": 2097845
+    },
+    {
+      "name": "images/shanawdithit/Willard-principal.webp",
+      "raw": 1959878
+    },
+    {
+      "name": "images/dubois/map.svg",
+      "raw": 1885263
+    },
+    {
+      "name": "images/dubois/chalabi-net-worth.webp",
+      "raw": 1783796
+    },
+    {
+      "name": "images/intro/Thomas_Clarkson_by_Carl_Frederik_von_Breda.jpg",
+      "raw": 1746118
+    },
+    {
+      "name": "images/peabody/ch4-17-leds.jpg",
+      "raw": 1740821
+    },
+    {
+      "name": "images/intro/8-Edmond_Halley_s_map_of_the_trade_winds_1686.webp",
+      "raw": 1737992
+    },
+    {
+      "name": "images/shanawdithit/Illustration2.jpg",
+      "raw": 1717467
+    },
+    {
+      "name": "images/peabody/railroadscaled.webp",
+      "raw": 1701968
+    },
+    {
+      "name": "images/dubois/chalabi-net-worth.jpg",
+      "raw": 1666936
+    },
+    {
+      "name": "images/intro/TAST-3.png",
+      "raw": 1607369
+    },
+    {
+      "name": "images/shanawdithit/BirchBark.webp",
+      "raw": 1505654
+    },
+    {
+      "name": "prototypes/voyages/conceptual_map/data/conceptual_vis.csv",
+      "raw": 1503064
+    },
+    {
+      "name": "images/description/1-sof_slaveship.jpg",
+      "raw": 1432794
+    },
+    {
+      "name": "images/dubois/ch5-14-rogers-highlighted.jpg",
+      "raw": 1393839
+    },
+    {
+      "name": "images/shanawdithit/Geographie_der_Pflanzen_in_den_Tropen-Ländern.jpg",
+      "raw": 1293980
+    },
+    {
+      "name": "images/dubois/ch5-14-rogers-highlighted.webp",
+      "raw": 1290054
+    },
+    {
+      "name": "images/intro/plot plots.png",
+      "raw": 1247784
+    },
+    {
+      "name": "images/dubois/ch5-01-phila.jpg",
+      "raw": 1196204
+    },
+    {
+      "name": "images/shanawdithit/Illustration1.jpg",
+      "raw": 1178067
+    },
+    {
+      "name": "images/peabody/illustration/3.png",
+      "raw": 1170576
+    },
+    {
+      "name": "images/shanawdithit/fidler-large-HBCA-E3-2-225.jpg",
+      "raw": 1146696
+    },
+    {
+      "name": "images/description/ch4-14-priestley-new-chart.jpg",
+      "raw": 1072575
+    },
+    {
+      "name": "images/peabody/ch4-14-priestley-new-chart.jpg",
+      "raw": 1072575
+    },
+    {
+      "name": "images/shanawdithit/1829-09.jpg",
+      "raw": 1019046
+    },
+    {
+      "name": "images/peabody/illustration/6.png",
+      "raw": 1006246
+    },
+    {
+      "name": "images/intro/TAST-3.jpg",
+      "raw": 952114
+    },
+    {
+      "name": "images/intro/TAST-2.png",
+      "raw": 934130
+    },
+    {
+      "name": "images/description/PLACEHOLDERautobiography.jpg",
+      "raw": 932765
+    },
+    {
+      "name": "prototypes/voyages/conceptual_map/lib/p5.min.js",
+      "raw": 913568
+    },
+    {
+      "name": "images/intro/TAST-1.png",
+      "raw": 909133
+    },
+    {
+      "name": "images/playfair/7-nightingale.jpg",
+      "raw": 894141
+    },
+    {
+      "name": "images/dubois/photographs/Desktop - 4.png",
+      "raw": 890758
+    },
+    {
+      "name": "images/peabody/illustration/8.png",
+      "raw": 884776
+    },
+    {
+      "name": "images/description/4-description-1789.webp",
+      "raw": 880858
+    },
+    {
+      "name": "images/intro/TAST-2.jpg",
+      "raw": 876462
+    },
+    {
+      "name": "images/dubois/ch5-07d-race-distrib.jpg",
+      "raw": 873728
+    },
+    {
+      "name": "images/dubois/ch5-07c-race.jpg",
+      "raw": 861860
+    },
+    {
+      "name": "images/description/PLACEHOLDERautobiography.webp",
+      "raw": 856166
+    },
+    {
+      "name": "images/description/2-1468px-Plan.jpg",
+      "raw": 853629
+    },
+    {
+      "name": "images/description/4-description-1789.jpg",
+      "raw": 838523
+    },
+    {
+      "name": "images/dubois/ch5-07b-gender.jpg",
+      "raw": 832137
+    },
+    {
+      "name": "images/dubois/ch5-01-phila.webp",
+      "raw": 818104
+    },
+    {
+      "name": "images/dubois/photographs/Desktop - 5.png",
+      "raw": 810653
+    },
+    {
+      "name": "images/dubois/photographs/Desktop - 3.png",
+      "raw": 796854
+    },
+    {
+      "name": "images/dubois/photographs/Desktop - 1.png",
+      "raw": 782041
+    },
+    {
+      "name": "images/dubois/ch5-06b-map.jpg",
+      "raw": 773887
+    },
+    {
+      "name": "images/dubois/ch5-14-rogers.jpg",
+      "raw": 771887
+    },
+    {
+      "name": "images/description/2-1468px-Plan.webp",
+      "raw": 764688
+    },
+    {
+      "name": "images/shanawdithit/Geographie_der_Pflanzen_in_den_Tropen-Ländern.webp",
+      "raw": 731486
+    },
+    {
+      "name": "images/shanawdithit/1829-10.jpg",
+      "raw": 721222
+    },
+    {
+      "name": "images/dubois/ch5-07d-race-distrib.webp",
+      "raw": 696714
+    },
+    {
+      "name": "images/description/ch4-14-priestley-new-chart.webp",
+      "raw": 683266
+    },
+    {
+      "name": "images/peabody/ch4-14-priestley-new-chart.webp",
+      "raw": 683266
+    },
+    {
+      "name": "images/dubois/ch5-07c-race.webp",
+      "raw": 671468
+    },
+    {
+      "name": "images/shanawdithit/placeholder-humboldt-sketch.jpg",
+      "raw": 665803
+    },
+    {
+      "name": "images/dubois/ch5-07b-gender.webp",
+      "raw": 643910
+    },
+    {
+      "name": "images/peabody/1700s.jpg",
+      "raw": 642420
+    },
+    {
+      "name": "images/peabody/fig3-1700s-rect.jpg",
+      "raw": 642420
+    },
+    {
+      "name": "images/shanawdithit/1829-11.jpg",
+      "raw": 632745
+    },
+    {
+      "name": "images/shanawdithit/willard-chronographer.jpg",
+      "raw": 629222
+    },
+    {
+      "name": "images/shanawdithit/willard-picture-of-nations.jpg",
+      "raw": 623449
+    },
+    {
+      "name": "images/shanawdithit/Willard_Aboriginal_Tribes.webp",
+      "raw": 608094
+    },
+    {
+      "name": "images/shanawdithit/1829-05.jpg",
+      "raw": 594067
+    },
+    {
+      "name": "images/peabody/1-4000BC-ps-30x43-2.jpg",
+      "raw": 592265
+    },
+    {
+      "name": "images/peabody/PLACEHOLDER-ch4-clarke1.jpg",
+      "raw": 592265
+    },
+    {
+      "name": "images/peabody/ch4-clarke1.jpg",
+      "raw": 592265
+    },
+    {
+      "name": "images/dubois/ch5-07a-populations.jpg",
+      "raw": 589672
+    },
+    {
+      "name": "images/shanawdithit/Illustration2.webp",
+      "raw": 586746
+    },
+    {
+      "name": "images/dubois/ch5-06b-map.webp",
+      "raw": 582172
+    },
+    {
+      "name": "images/peabody/1800s.jpg",
+      "raw": 565180
+    },
+    {
+      "name": "images/intro/3-anonymous.webp",
+      "raw": 559640
+    },
+    {
+      "name": "images/shanawdithit/1829-09.webp",
+      "raw": 551894
+    },
+    {
+      "name": "images/intro/TAST-1.jpg",
+      "raw": 551477
+    },
+    {
+      "name": "images/shanawdithit/Willard3.jpg",
+      "raw": 549951
+    },
+    {
+      "name": "images/shanawdithit/Willard2.jpg",
+      "raw": 537720
+    },
+    {
+      "name": "images/shanawdithit/Willard4.jpg",
+      "raw": 536644
+    },
+    {
+      "name": "images/dubois/ch5-07g-religion.jpg",
+      "raw": 533086
+    },
+    {
+      "name": "images/playfair/PLACEHOLDER-early-bar-chart.jpg",
+      "raw": 530295
+    },
+    {
+      "name": "images/peabody/fig4-1800s-rect.jpg",
+      "raw": 529678
+    },
+    {
+      "name": "images/description/1-sof_slaveship.webp",
+      "raw": 528450
+    },
+    {
+      "name": "images/peabody/illustration/2.png",
+      "raw": 524565
+    },
+    {
+      "name": "images/dubois/callaway-paris-expo-colored-american.jpg",
+      "raw": 523728
+    },
+    {
+      "name": "images/description/slaveship.webp",
+      "raw": 523066
+    },
+    {
+      "name": "images/shanawdithit/birch-bark-1841.webp",
+      "raw": 513736
+    },
+    {
+      "name": "images/shanawdithit/Willard5.jpg",
+      "raw": 511608
+    },
+    {
+      "name": "images/playfair/PLACEHOLDER-west-indies.jpg",
+      "raw": 508365
+    },
+    {
+      "name": "images/playfair/PLACEHOLDER-data-table-2.jpg",
+      "raw": 506780
+    },
+    {
+      "name": "images/peabody/blank.jpg",
+      "raw": 505127
+    },
+    {
+      "name": "images/shanawdithit/willard-woodbridge-1824.jpg",
+      "raw": 500776
+    },
+    {
+      "name": "images/shanawdithit/1829-13.jpg",
+      "raw": 498749
+    },
+    {
+      "name": "images/shanawdithit/willard-picture-of-nations.webp",
+      "raw": 497710
+    },
+    {
+      "name": "images/shanawdithit/Willard1.jpg",
+      "raw": 495591
+    },
+    {
+      "name": "images/dubois/ch5-14-rogers.webp",
+      "raw": 488354
+    },
+    {
+      "name": "prototypes/voyages/conceptual_map/lib/addons/p5.sound.js",
+      "raw": 488163
+    },
+    {
+      "name": "images/dubois/callaway-paris-expo-colored-american.webp",
+      "raw": 484400
+    },
+    {
+      "name": "images/shanawdithit/1829-14.jpg",
+      "raw": 484299
+    },
+    {
+      "name": "images/intro/timeline-as-stacks.jpg",
+      "raw": 473497
+    },
+    {
+      "name": "images/shanawdithit/willard-chronographer.webp",
+      "raw": 472466
+    },
+    {
+      "name": "images/shanawdithit/1829-15.jpg",
+      "raw": 471339
+    },
+    {
+      "name": "images/shanawdithit/1829-16.jpg",
+      "raw": 456245
+    },
+    {
+      "name": "images/intro/plot-plots.jpg",
+      "raw": 455078
+    },
+    {
+      "name": "images/playfair/7-nightingale.webp",
+      "raw": 441094
+    },
+    {
+      "name": "images/dubois/ch5-07f-age-sex.jpg",
+      "raw": 438723
+    },
+    {
+      "name": "images/description/7-Bell.jpg",
+      "raw": 435829
+    },
+    {
+      "name": "images/peabody/illustration/9.png",
+      "raw": 428910
+    },
+    {
+      "name": "images/peabody/illustration/4.png",
+      "raw": 421542
+    },
+    {
+      "name": "images/peabody/ch4-blank-chart.webp",
+      "raw": 418196
+    },
+    {
+      "name": "images/description/5-The_history_of_the_rise.jpg",
+      "raw": 410348
+    },
+    {
+      "name": "images/shanawdithit/Willard9.jpg",
+      "raw": 410118
+    },
+    {
+      "name": "images/playfair/1-northamerica.jpg",
+      "raw": 403754
+    },
+    {
+      "name": "images/dubois/1910-survey-p1.jpg",
+      "raw": 403172
+    },
+    {
+      "name": "images/intro/10-PLACEHOLDER-ledger1.png",
+      "raw": 402704
+    },
+    {
+      "name": "images/shanawdithit/Willard7.jpg",
+      "raw": 402509
+    },
+    {
+      "name": "images/shanawdithit/Illustration1.webp",
+      "raw": 401482
+    },
+    {
+      "name": "images/playfair/8-lyra.jpg",
+      "raw": 394471
+    },
+    {
+      "name": "images/intro/11-PLACEHOLDER-ledger2.png",
+      "raw": 392125
+    },
+    {
+      "name": "images/shanawdithit/Demasduit.jpg",
+      "raw": 389448
+    },
+    {
+      "name": "images/peabody/illustration/5.png",
+      "raw": 386858
+    },
+    {
+      "name": "images/shanawdithit/1829-12.jpg",
+      "raw": 378343
+    },
+    {
+      "name": "images/playfair/9-protovis.jpg",
+      "raw": 374884
+    },
+    {
+      "name": "images/footer/neh.png",
+      "raw": 370405
+    },
+    {
+      "name": "images/shanawdithit/willard-woodbridge-1824.webp",
+      "raw": 364178
+    },
+    {
+      "name": "images/intro/7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.jpg",
+      "raw": 362943
+    },
+    {
+      "name": "images/playfair/wood.jpg",
+      "raw": 359332
+    },
+    {
+      "name": "images/dubois/screenshot-grad-google-sheet.jpg",
+      "raw": 357233
+    },
+    {
+      "name": "images/shanawdithit/Willard3.webp",
+      "raw": 344998
+    },
+    {
+      "name": "images/intro/2-2-1468px-Plan.jpg",
+      "raw": 340527
+    },
+    {
+      "name": "images/shanawdithit/Willard4.webp",
+      "raw": 338002
+    },
+    {
+      "name": "images/shanawdithit/Willard2.webp",
+      "raw": 335978
+    },
+    {
+      "name": "images/peabody/ch4-clarke2.webp",
+      "raw": 332072
+    },
+    {
+      "name": "images/dubois/1910-survey-cover.jpg",
+      "raw": 329471
+    },
+    {
+      "name": "images/dubois/ch5-07a-populations.webp",
+      "raw": 329136
+    },
+    {
+      "name": "images/peabody/ch4-13-willard.jpg",
+      "raw": 327993
+    },
+    {
+      "name": "images/playfair/6-snow.jpg",
+      "raw": 327613
+    },
+    {
+      "name": "images/peabody/1600s.jpg",
+      "raw": 321490
+    },
+    {
+      "name": "images/peabody/fig2-1600s-rect.jpg",
+      "raw": 321490
+    },
+    {
+      "name": "images/peabody/PLACEHOLDER-ch4-clarke1.webp",
+      "raw": 318446
+    },
+    {
+      "name": "images/shanawdithit/Willard0.jpg",
+      "raw": 317233
+    },
+    {
+      "name": "images/shanawdithit/1829-10.webp",
+      "raw": 315764
+    },
+    {
+      "name": "images/intro/TAST-3.webp",
+      "raw": 314802
+    },
+    {
+      "name": "images/shanawdithit/Willard5.webp",
+      "raw": 314626
+    },
+    {
+      "name": "images/dubois/chart1-full.jpg",
+      "raw": 313603
+    },
+    {
+      "name": "images/playfair/westIndiesPLACEHOLDER.jpg",
+      "raw": 307787
+    },
+    {
+      "name": "images/peabody/ch4-16-fc-led-boards.webp",
+      "raw": 305268
+    },
+    {
+      "name": "images/Background.png",
+      "raw": 304241
+    },
+    {
+      "name": "images/shanawdithit/Willard1.webp",
+      "raw": 302816
+    },
+    {
+      "name": "images/dubois/ch5-07g-religion.webp",
+      "raw": 302342
+    },
+    {
+      "name": "images/dubois/ch5-07f-age-sex.webp",
+      "raw": 296246
+    },
+    {
+      "name": "images/intro/2-2-1468px-Plan.webp",
+      "raw": 295366
+    },
+    {
+      "name": "images/dubois/college-bred-negro.png",
+      "raw": 290250
+    },
+    {
+      "name": "images/dubois/ch5-07h-occupation.jpg",
+      "raw": 290054
+    },
+    {
+      "name": "images/labor/data-traces.jpg",
+      "raw": 287910
+    },
+    {
+      "name": "images/shanawdithit/Willard6.jpg",
+      "raw": 282441
+    },
+    {
+      "name": "images/peabody/1500s.jpg",
+      "raw": 282190
+    },
+    {
+      "name": "images/peabody/fig1-1500s-rect.jpg",
+      "raw": 282190
+    },
+    {
+      "name": "images/playfair/scottishImportExportPLACEHOLDER.jpg",
+      "raw": 278025
+    },
+    {
+      "name": "images/shanawdithit/Willard9.webp",
+      "raw": 276642
+    },
+    {
+      "name": "images/intro/13-PLACEHOLDER-TAST.png",
+      "raw": 273898
+    },
+    {
+      "name": "images/intro/TAST-2.webp",
+      "raw": 270672
+    },
+    {
+      "name": "images/intro/1-Carte_figurative_des_pertes_successives_Minard_Charles-Joseph.jpeg",
+      "raw": 265777
+    },
+    {
+      "name": "images/shanawdithit/placeholder-sketch4-original.webp",
+      "raw": 259606
+    },
+    {
+      "name": "images/shanawdithit/1829-11.webp",
+      "raw": 259012
+    },
+    {
+      "name": "images/shanawdithit/Willard7.webp",
+      "raw": 254956
+    },
+    {
+      "name": "images/shanawdithit/1829-13.webp",
+      "raw": 251018
+    },
+    {
+      "name": "images/intro/5-minard.jpg",
+      "raw": 250912
+    },
+    {
+      "name": "images/playfair/5-minard.jpg",
+      "raw": 250912
+    },
+    {
+      "name": "images/playfair/PLACEHOLDER-data-table-1.jpg",
+      "raw": 248596
+    },
+    {
+      "name": "images/description/7-Bell.webp",
+      "raw": 242476
+    },
+    {
+      "name": "images/dubois/paris-expo-loc.jpg",
+      "raw": 239887
+    },
+    {
+      "name": "images/playfair/westIndiesPLACEHOLDER.webp",
+      "raw": 239192
+    },
+    {
+      "name": "images/intro/tufte-quote-3.png",
+      "raw": 238776
+    },
+    {
+      "name": "images/dubois/ch5-07e-foreign.jpg",
+      "raw": 238383
+    },
+    {
+      "name": "data/labor_contributions.csv",
+      "raw": 237636
+    },
+    {
+      "name": "images/description/5-The_history_of_the_rise.webp",
+      "raw": 236812
+    },
+    {
+      "name": "images/dubois/paris-expo-loc.webp",
+      "raw": 235076
+    },
+    {
+      "name": "images/peabody/ch4-11.jpg",
+      "raw": 234505
+    },
+    {
+      "name": "images/playfair/6-snow.webp",
+      "raw": 232958
+    },
+    {
+      "name": "images/shanawdithit/1829-14.webp",
+      "raw": 231332
+    },
+    {
+      "name": "images/peabody/ch4-7.jpg",
+      "raw": 230737
+    },
+    {
+      "name": "images/shanawdithit/1829-00.jpg",
+      "raw": 229473
+    },
+    {
+      "name": "images/playfair/PLACEHOLDER-west-indies.webp",
+      "raw": 228796
+    },
+    {
+      "name": "images/shanawdithit/1829-18.jpg",
+      "raw": 228691
+    },
+    {
+      "name": "images/shanawdithit/willard-american-temple.jpg",
+      "raw": 228033
+    },
+    {
+      "name": "images/dubois/ch5-08c-conjugal.jpg",
+      "raw": 227607
+    },
+    {
+      "name": "images/description/all-resistance-voyages.jpg",
+      "raw": 227335
+    },
+    {
+      "name": "images/dubois/ch5-08a-population.jpg",
+      "raw": 226862
+    },
+    {
+      "name": "images/playfair/PLACEHOLDER-early-bar-chart.webp",
+      "raw": 224182
+    },
+    {
+      "name": "images/playfair/PLACEHOLDER-data-table-2.webp",
+      "raw": 223868
+    },
+    {
+      "name": "images/peabody/ch4-9.jpg",
+      "raw": 223691
+    },
+    {
+      "name": "images/shanawdithit/1829-06.jpg",
+      "raw": 222812
+    },
+    {
+      "name": "images/dubois/ch5-06a-letter.jpg",
+      "raw": 217346
+    },
+    {
+      "name": "images/shanawdithit/1829-15.webp",
+      "raw": 217194
+    },
+    {
+      "name": "images/peabody/ch4-6.jpg",
+      "raw": 216969
+    },
+    {
+      "name": "images/peabody/ch4-17-leds.webp",
+      "raw": 215512
+    },
+    {
+      "name": "images/dubois/ch5-09-exhibit.jpg",
+      "raw": 214994
+    },
+    {
+      "name": "images/shanawdithit/1829-16.webp",
+      "raw": 212362
+    },
+    {
+      "name": "images/peabody/ch4-8.jpg",
+      "raw": 209030
+    },
+    {
+      "name": "images/shanawdithit/willard-american-temple.webp",
+      "raw": 204898
+    }
+  ]
+}

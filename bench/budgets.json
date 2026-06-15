@@ -1,0 +1,7 @@
+{
+  "_comment": "Regression-guard budgets. RATCHET DOWN after each fix lands to lock in the win. End-goal targets are noted in bench/README.md. History: totalJsGzip/largestChunkGzip tightened after Fix #1 (voyages.json moved out of the bundle): 3.3MB->1.0MB total, 2.5MB->300KB largest chunk.",
+  "totalJsGzip": 1000000,
+  "largestChunkGzip": 300000,
+  "publicTotal": 560000000,
+  "maxAssetBytes": 85000000
+}

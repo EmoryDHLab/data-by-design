@@ -33,6 +33,27 @@ export default defineConfig({
       robots: [robotOption],
     }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        // Split heavy third-party libs into stable, long-cacheable vendor
+        // chunks so they aren't duplicated across route chunks and don't
+        // re-download when app code changes. Only affects the client build.
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return;
+          if (
+            /node_modules\/(d3|d3-[^/]+|internmap|delaunator|robust-predicates)\//.test(
+              id
+            )
+          )
+            return "vendor-d3";
+          if (/node_modules\/p5\//.test(id)) return "vendor-p5";
+          if (/node_modules\/(react-dnd|dnd-core|@react-dnd)[/-]/.test(id))
+            return "vendor-dnd";
+        },
+      },
+    },
+  },
   ssr: {
     noExternal: [
       "react-dnd",

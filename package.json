@@ -8,7 +8,11 @@
     "dev": "node ./server.js",
     "start": "cross-env NODE_ENV=production node ./server.js",
     "typecheck": "tsc",
-    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint --fix ./app/"
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint --fix ./app/",
+    "bench:bundle": "node scripts/bench-bundle.mjs",
+    "bench:baseline": "node scripts/bench-bundle.mjs --baseline",
+    "bench:lh": "lhci autorun --config=./lighthouserc.cjs",
+    "bench": "npm run build && npm run bench:bundle"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
@@ -33,6 +37,7 @@
     "scrollama": "^3.2.0"
   },
   "devDependencies": {
+    "@lhci/cli": "^0.15.1",
     "@remix-run/dev": "^2.9.1",
     "@remix-run/eslint-config": "^2.9.1",
     "@remix-run/serve": "^2.9.1",
