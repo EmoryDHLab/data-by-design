@@ -20,3 +20,4 @@ node_modules*
 /.lighthouseci
 /bench/latest.json
 /bench/lighthouse
+mise.toml
