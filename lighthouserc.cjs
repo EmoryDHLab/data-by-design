@@ -28,6 +28,15 @@ module.exports = {
       numberOfRuns: 3, // median of 3 to smooth run-to-run variance
       settings: {
         preset: "desktop",
+        // Performance-only. This is a perf-budget tool, and we assert solely on
+        // performance metrics. The accessibility category runs axe-core over the
+        // whole DOM via a single Runtime.evaluate; on the heaviest chapter
+        // (dubois, ~10.7k DOM nodes) that evaluation exceeds Chrome's protocol
+        // timeout once the machine is loaded mid-run, aborting the whole run
+        // with PROTOCOL_TIMEOUT. Scoping to performance skips that gatherer and
+        // makes the run reliable. (The DOM size itself is a separate, known
+        // finding — see the dom-size audit — left for a future content pass.)
+        onlyCategories: ["performance"],
       },
     },
     assert: {

@@ -46,7 +46,7 @@ export default function OrderedTimeline({
 
   useEffect(() => {
     if (!selectedImage) return;
-    const selectedImageSelector = `img[src="/images/${selectedImage.chapter}/${selectedImage.fileName}.jpg`;
+    const selectedImageSelector = `img[src="/images/${selectedImage.chapter}/${selectedImage.fileName}.webp`;
     if (!sliderRef.current) return;
     sliderRef.current
       .querySelector<HTMLElement>(selectedImageSelector)
@@ -139,8 +139,10 @@ export default function OrderedTimeline({
                     top: "0",
                     zIndex: isSelected ? images.length + 1 : index + 1,
                   }}
-                  src={`/images/${image.chapter}/${image.fileName}.jpg`}
+                  src={`/images/${image.chapter}/${image.fileName}.webp`}
                   alt={image.altText ?? ""}
+                  loading="lazy"
+                  decoding="async"
                 />
               );
             })}

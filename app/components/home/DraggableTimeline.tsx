@@ -147,7 +147,7 @@ export default function DraggableTimeline({
               className={isSelected ? "outline outline-4 outline-red-500" : ""}
               id={`index-${index}`}
               style={{ cursor: "pointer" }}
-              href={`/images/${img.chapter}/${img.fileName}.jpg`}
+              href={`/images/${img.chapter}/${img.fileName}.webp`}
               width={150}
               transform={getTransform(index)}
               onMouseDown={() => {

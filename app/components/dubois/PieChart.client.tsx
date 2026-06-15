@@ -1,6 +1,6 @@
 import p5 from "p5";
 import { Circle } from "~/components/dubois/Circle";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDeviceContext, useResizeObserver } from "~/hooks";
 import type { Student, StudentData } from "~/components/dubois/types";
 
@@ -28,7 +28,11 @@ function createNewCircle(
   circleDiameter: number,
   startAngle: number,
   endAngle: number,
-  center: { x: number; y: number }
+  center: { x: number; y: number },
+  // When true, skip the overlap check and place the circle regardless. Used as
+  // a fallback so placement always terminates even when the arc is too crowded
+  // to fit every circle without overlap (e.g. on small canvases).
+  force = false
 ) {
   // Using polar coordinates here
   // Get a random radius
@@ -46,12 +50,14 @@ function createNewCircle(
   const x = rx + center.x;
   const y = ry + center.y;
 
-  for (const circle of categoryCircles) {
-    const overlapsWithCircle =
-      p5.dist(x, y, circle.x, circle.y) < circle.diameter;
+  if (!force) {
+    for (const circle of categoryCircles) {
+      const overlapsWithCircle =
+        p5.dist(x, y, circle.x, circle.y) < circle.diameter;
 
-    if (overlapsWithCircle) {
-      return undefined;
+      if (overlapsWithCircle) {
+        return undefined;
+      }
     }
   }
 
@@ -81,9 +87,15 @@ function placeCategoryCircles(
   // do the overlap check only for the category circles.
   const categoryCircles = [];
 
+  // Cap the rejection-sampling retries per circle. When an arc is too crowded
+  // to ever place a circle without overlap (which happens on small canvases),
+  // an unbounded retry loop spins forever and locks up the main thread. After
+  // MAX_ATTEMPTS we force placement so setup always terminates.
+  const MAX_ATTEMPTS = 500;
   for (let i = 0; i < students.length; i++) {
-    while (true) {
-      const circle = createNewCircle(
+    let circle;
+    for (let attempt = 0; attempt < MAX_ATTEMPTS && !circle; attempt++) {
+      circle = createNewCircle(
         p5,
         circles,
         categoryCircles,
@@ -95,12 +107,23 @@ function placeCategoryCircles(
         currentAngle + categoryAngle,
         center
       );
-
-      if (circle) {
-        categoryCircles.push(circle);
-        break;
-      }
     }
+    if (!circle) {
+      circle = createNewCircle(
+        p5,
+        circles,
+        categoryCircles,
+        i,
+        students[i],
+        (p5.width - 20) / 2,
+        diameter,
+        currentAngle,
+        currentAngle + categoryAngle,
+        center,
+        true
+      );
+    }
+    categoryCircles.push(circle!);
   }
 
   // Then we add the category circles to the main circle
@@ -150,8 +173,33 @@ export default function PieChart({
 }: Props) {
   const { isMobile } = useDeviceContext();
   const { windowSize } = useResizeObserver();
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Defer the (expensive) p5 sketch until the chart is scrolled near the
+  // viewport. The chart lives far down the page, so running its circle-packing
+  // setup and continuous animation loop on mount wastes main-thread time while
+  // it's off-screen — enough to make headless audits (which never scroll) time
+  // out. IntersectionObserver lets us only start the work when it's visible.
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el || inView) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setInView(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) setInView(true);
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [inView]);
+
+  useEffect(() => {
+    if (!inView) return;
     function script(p5: p5) {
       let circles: Circle[] = [];
 
@@ -169,7 +217,6 @@ export default function PieChart({
           ? window.innerWidth - 100
           : Math.min(350, window.innerHeight * 0.2);
       }
-      console.log("🚀 ~ script ~ pieSize:", pieSize);
       // The p5.windowWidth does not seem to be reliable when the window is resized.
 
       p5.setup = function () {
@@ -213,10 +260,11 @@ export default function PieChart({
     return () => {
       p5Copy.remove();
     };
-  }, [studentData, isMobile, windowSize, containerSize, id]);
+  }, [inView, studentData, isMobile, windowSize, containerSize, id]);
 
   return (
     <div
+      ref={containerRef}
       id={id}
       className={`flex justify-center md:items-center ${className ?? ""}`}
     />
