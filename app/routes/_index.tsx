@@ -100,7 +100,7 @@ export default function Index() {
                 Available for Preorder Now
               </div>
               <p className="order-2 font-power text-xl md:text-2xl prose">
-                The history of data visualization holds the key to designing a more just future.
+                How the history of data visualization holds the key to designing a more just future.
               </p>
               <div className="order-3 md:order-last mt-6 md:mt-8 flex flex-wrap gap-3">
                 <a
