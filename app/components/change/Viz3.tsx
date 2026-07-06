@@ -176,25 +176,24 @@ export default function Viz3() {
             <div className="flex-1 overflow-y-auto space-y-4 pr-2">
               {responses.map((response, index) => (
                 <button
-                  key={response.id}
-                  onClick={() => scrollToResponse(index)}
-                  className="w-full text-left p-4 bg-[#3A3433] hover:bg-[#4A4443] transition-colors border border-transparent hover:border-white/20"
-                >
-                  <div className="flex items-start gap-3">
-<span className="text-gray-400 font-power text-sm md:text-base leading-relaxed min-w-[2rem]">
-  {index + 1}.
-</span>                    
-        
-                    <p className="text-white font-power text-sm md:text-base leading-relaxed line-clamp-4">
-                      {response.lines && response.lines.length > 0
-                        ? response.lines
-                            .map((line) => line.replace(/<[^>]*>/g, "").trim())
-                            .filter((line) => line.length > 0)
-                            .join(" ")
-                        : response.selection}
-                    </p>
-                  </div>
-                </button>
+  key={response.id}
+  onClick={() => scrollToResponse(index)}
+  className="w-full text-left p-4 bg-[#3A3433] hover:bg-[#4A4443] transition-colors border border-transparent hover:border-white/20"
+>
+  <div className="flex items-start mt-3 gap-3">
+    <span className="text-gray-400 font-power text-sm md:text-base leading-relaxed min-w-[2rem]">
+      {index + 1}.
+    </span>
+    <p className="text-white font-power text-sm md:text-base mt-0 leading-relaxed line-clamp-4">
+      {response.lines && response.lines.length > 0
+        ? response.lines
+            .map((line) => line.replace(/<[^>]*>/g, "").trim())
+            .filter((line) => line.length > 0)
+            .join(" ")
+        : response.selection}
+    </p>
+  </div>
+</button>
               ))}
             </div>
           </div>
