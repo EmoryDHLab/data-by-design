@@ -195,7 +195,7 @@ const PeopleVersions = () => {
               People across versions
             </h3>
             <h4 className="text-xl mt-2 font-power">
-              Mapping human involvement across Data by Design
+            The human connections that structure <span className="italic"> Data by Design </span>
             </h4>
           </div>
           <div className="flex gap-3">

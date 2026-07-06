@@ -181,9 +181,10 @@ export default function Viz3() {
                   className="w-full text-left p-4 bg-[#3A3433] hover:bg-[#4A4443] transition-colors border border-transparent hover:border-white/20"
                 >
                   <div className="flex items-start gap-3">
-                    <span className="text-gray-400 font-power text-sm min-w-[2rem]">
-                      {index + 1}.
-                    </span>
+<span className="text-gray-400 font-power text-sm md:text-base leading-relaxed min-w-[2rem]">
+  {index + 1}.
+</span>                    
+        
                     <p className="text-white font-power text-sm md:text-base leading-relaxed line-clamp-4">
                       {response.lines && response.lines.length > 0
                         ? response.lines

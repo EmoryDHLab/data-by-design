@@ -28,7 +28,7 @@ export default function ChapterSectionTitle({ section }: Props) {
           className={`stroke-${backgroundColor} hover:stroke-${backgroundColor} hidden md:block w-12`}
           strokeOpacity={isHovered ? 1 : 0.75}
         />
-        <h3 className="text-center w-full">{section.title}</h3>
+        <h3 className="text-center font-bold w-full">{section.title}</h3>
       </a>
     </CenteredLayout>
   );
