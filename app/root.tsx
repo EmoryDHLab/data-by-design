@@ -78,11 +78,11 @@ gtag('config', 'G-N80LYNLPB7');`,
           <Navbar />
         </ClientOnly> */}
         <SiteNav />
-        <Banner>Dev Build</Banner>
+        {/* <Banner>Dev Build</Banner> */}
         {children}
         <Loading />
         <Analytics />
-        <ScrollRestoration />
+        {/* <ScrollRestoration /> */}
         <Scripts />
       </body>
     </html>
