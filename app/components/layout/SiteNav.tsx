@@ -34,7 +34,7 @@ const SiteNav = () => {
             <Link to="about">About</Link>
           </li>
         </ol>
-        <ol className="overflow-y-scroll w-full">
+        {/* <ol className="overflow-y-scroll w-full">
           {Object.keys(chapterMeta as TChapterMeta).map((chapter, index) => {
             return (
               <li
@@ -61,7 +61,7 @@ const SiteNav = () => {
               </li>
             );
           })}
-        </ol>
+        </ol> */}
       </nav>
       <button
         title="Site Navigation"

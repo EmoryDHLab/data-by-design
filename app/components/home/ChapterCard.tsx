@@ -1,13 +1,13 @@
 import { Link } from "react-router";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 interface Props {
   to: string;
   status?: string;
   title: string;
   subtitle: string;
-  className: string;
   children: ReactNode;
+  bg: string;
 }
 
 export default function ChapterCard({
@@ -16,12 +16,31 @@ export default function ChapterCard({
   status,
   subtitle,
   children,
-  className,
+  bg,
 }: Props) {
+  // return (
+  //   <Link
+  //     to={to}
+  //     className={"text-white font-power px-6 my-4 md:px-28 " + className}
+  //   >
+  //     <div className="text-sm my-12 md:mt-10 mb-2 tracking-wider text-changeSecondary ">
+  //       {status}
+  //     </div>
+  //     <div className="text-2xl md:text-3xl mb-3 font-bold">{title}</div>
+  //     <div className="text-xl mb-2">{subtitle}</div>
+  //     <div className=" mb-4 md:mb-10 font-neueMontrealLight">{children}</div>
+  //   </Link>
+  // );
   return (
-    <Link
-      to={to}
-      className={"text-white font-power px-6 my-4 md:px-28 " + className}
+    <div
+      style={
+        {
+          "--bg-url": `linear-gradient(#00000080,#00000080), url("${bg}")`,
+        } as CSSProperties
+      }
+      className={
+        "text-white font-power px-6 my-4 md:px-28 hover:bg-[image:var(--bg-url)] bg-center bg-cover hover:text-white"
+      }
     >
       <div className="text-sm my-12 md:mt-10 mb-2 tracking-wider text-changeSecondary ">
         {status}
@@ -29,6 +48,6 @@ export default function ChapterCard({
       <div className="text-2xl md:text-3xl mb-3 font-bold">{title}</div>
       <div className="text-xl mb-2">{subtitle}</div>
       <div className=" mb-4 md:mb-10 font-neueMontrealLight">{children}</div>
-    </Link>
+    </div>
   );
 }

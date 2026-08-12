@@ -50,7 +50,11 @@ const OrderedTimeline = ({ setSelectedImage, selectedImage }: Props) => {
       ?.focus();
     sliderRef.current
       .querySelector<HTMLElement>(selectedImageSelector)
-      ?.scrollIntoView({ block: "end", behavior: "smooth", inline: "center" });
+      ?.scrollIntoView({
+        block: "nearest",
+        behavior: "smooth",
+        inline: "center",
+      });
   }, [selectedImage]);
 
   const mouseDown = (pageX: number) => {

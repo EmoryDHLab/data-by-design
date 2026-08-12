@@ -82,10 +82,7 @@ export default function Index() {
         </h1>
 
         <div />
-        <section
-          aria-label="Pre-order"
-          className="bg-offwhite text-black"
-        >
+        <section aria-label="Pre-order" className="bg-offwhite text-black">
           <div className="max-w-6xl mx-auto md:flex md:items-center gap-16 xl:gap-24  md:px-10 py-12">
             <figure className="my-10 px-5 md:px-0 flex-shrink-0 w-full md:w-[380px]">
               <img
@@ -100,7 +97,8 @@ export default function Index() {
                 Available for Preorder Now
               </div>
               <p className="order-2 font-power text-xl md:text-2xl prose">
-                How the history of data visualization holds the key to designing a more just future.
+                The history of data visualization holds the key to designing a
+                more just future.
               </p>
               <div className="order-3 md:order-last mt-6 md:mt-8 flex flex-wrap gap-3">
                 <a
@@ -126,10 +124,18 @@ export default function Index() {
                 </a>
               </div>
               <p className="order-4 md:order-3 mt-6 md:mt-0">
-                From maps of colonial empires to charts of national trade, data visualization has long been used to consolidate knowledge and power. But just as often, it has been used to uncover oppression and bring about change. Data by Design journeys across continents and over centuries to expose the power of visualization—and to show how it can be wielded back.
+                From maps of colonial empires to charts of national trade, data
+                visualization has long been used to consolidate knowledge and
+                power. But just as often, it has been used to uncover oppression
+                and bring about change. Data by Design journeys across
+                continents and over centuries to expose the power of
+                visualization—and to show how it can be wielded back.
               </p>
               <p className="order-5 md:order-4">
-                A book for those who love charts and graphs, and for those who create them, <cite>Data by Design</cite> offers historical grounding, ethical clarity—and the inspiration we need—to envision a more just future.
+                A book for those who love charts and graphs, and for those who
+                create them, <cite>Data by Design</cite> offers historical
+                grounding, ethical clarity—and the inspiration we need—to
+                envision a more just future.
               </p>
             </div>
           </div>

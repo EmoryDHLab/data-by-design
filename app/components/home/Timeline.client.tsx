@@ -14,7 +14,7 @@ interface Props {
 
 const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
   const [shuffledImages, setShuffledImages] = useState<TFigure[]>(
-    randomTimelineImages(IMAGE_COUNT)
+    randomTimelineImages(IMAGE_COUNT),
   );
   const [shouldShuffle, setShouldShuffle] = useState<boolean>(false);
   const [timelineType, setTimelineType] = useState(TimelineType.Draggable);
@@ -29,7 +29,7 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
 
   return (
     <>
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 flex flex-col px-4">
+      <div className="flex flex-col px-4">
         <button
           onClick={() => {
             setTimelineType(TimelineType.Draggable);
@@ -56,7 +56,7 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
           onClick={() => setTimelineType(TimelineType.Ordered)}
         >
           <img
-            className="w-14 m-2 cursor-pointer"
+            className="w-14 m-2 cursor-pointer z-100"
             src={
               timelineType === TimelineType.Ordered
                 ? "/images/ui/sort_selected.png"

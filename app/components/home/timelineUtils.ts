@@ -34,7 +34,7 @@ export const timelineImages = () => {
   const shuffledDubois = d3.shuffle(allDubois);
   const power: TFilteredFigures[] = shuffledDubois.slice(
     0,
-    allDubois.length / 8
+    allDubois.length / 8,
   );
 
   const filteredFigures: TFigure[] = Object.values(
@@ -44,7 +44,7 @@ export const timelineImages = () => {
       ...process,
       ...playfair,
       ...people,
-    ])
+    ]),
   );
 
   return filteredFigures || [];

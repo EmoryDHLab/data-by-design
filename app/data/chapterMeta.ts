@@ -15,7 +15,7 @@ export const chapterMeta: TChapterMeta = {
     subtitle: "A History of Visualization and Power",
     description: "",
     image:
-      "https://iip.readux/io/iiif/3/dxd|intro|7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.tiff/square/800,/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd|intro|7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.tiff/square/800,/0/default.jpg",
     bgImage:
       "https://iiif.ecds.io/iiif/3/dxd|intro|7-1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.tiff/193,274,721,264/1200,/0/default.png",
     imageWidth: "800",
@@ -64,9 +64,9 @@ export const chapterMeta: TChapterMeta = {
     description:
       "Visualization can produce knowledge in many ways. What ideas do we gain when we expand our view of the past?",
     image:
-      "https://iiif.ecds.io/iiif/3/dxd|knowledge|1600s.tiff/square/800,/0/default.jpg",
+      "https://iiif.ecds.io/iiif/3/dxd|knowledge|0402-1600s.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://iiif.ecds.io/iiif/3/dxd|knowledge|1600s.tiff/513,41,403,138/1200,/0/default.png",
+      "https://iiif.ecds.io/iiif/3/dxd|knowledge|0402-1600s.tiff/33,402,899,211/max/0/default.png",
     imageWidth: "800",
     imageHeight: "800",
   },
@@ -79,7 +79,7 @@ export const chapterMeta: TChapterMeta = {
     image:
       "https://iiif.ecds.io/iiif/3/dxd|change|0508-value.tiff/square/800,/0/default.jpg",
     bgImage:
-      "https://images.ecds.io/iiif/2/dxd|change|0508-value.tiff/9,320,771,440/1200,/0/default.png",
+      "https://iiif.ecds.io/iiif/2/dxd%2fchange%2f0508-value.tiff/123,352,593,252/full/0/default.png",
     imageWidth: "800",
     imageHeight: "800",
   },

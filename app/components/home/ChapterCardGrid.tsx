@@ -14,9 +14,9 @@ const ChapterCardGrid = () => {
               <ChapterCard
                 key={`card-${chapterName}`}
                 to={`/chapters/${chapterName}`}
-                className={`hover:bg-${chapterName} bg-center bg-cover hover:text-white`}
                 title={chapter.title}
                 subtitle={chapter.subtitle}
+                bg={chapter.bgImage}
               >
                 {chapter.description}
                 <link rel="prefetch" href={chapter.bgImage} />
