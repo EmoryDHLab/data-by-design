@@ -74,15 +74,12 @@ gtag('config', 'G-N80LYNLPB7');`,
       <body className="overflow-x-hidden w-screen">
         <ScrollToHashElement />
         <LinkToMain />
-        {/* <ClientOnly>
-          <Navbar />
-        </ClientOnly> */}
         <SiteNav />
-        {/* <Banner>Dev Build</Banner> */}
+        <Banner>Dev Build</Banner>
         {children}
         <Loading />
         <Analytics />
-        {/* <ScrollRestoration /> */}
+        <ScrollRestoration />
         <Scripts />
       </body>
     </html>

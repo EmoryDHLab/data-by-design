@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigation } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
-import type { TChapterMeta } from "~/types/chapterMetaTags";
 import MenuIcon from "../icons/Menu";
 import CloseIcon from "../icons/Close";
+import type { TChapterMeta } from "~/types/chapterMetaTags";
 
 const SiteNav = () => {
   const [show, setShow] = useState<boolean>(false);
@@ -34,7 +34,7 @@ const SiteNav = () => {
             <Link to="about">About</Link>
           </li>
         </ol>
-        {/* <ol className="overflow-y-scroll w-full">
+        <ol className="overflow-y-scroll w-full">
           {Object.keys(chapterMeta as TChapterMeta).map((chapter, index) => {
             return (
               <li
@@ -61,7 +61,7 @@ const SiteNav = () => {
               </li>
             );
           })}
-        </ol> */}
+        </ol>
       </nav>
       <button
         title="Site Navigation"
