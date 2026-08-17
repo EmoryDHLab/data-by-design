@@ -35,7 +35,7 @@ const SiteTitle = ({ showTag = true, className, fill = "white" }: Props) => {
               of Data Visualization
             </tspan>
             <tspan dy={-23} fontSize={15} x={311} className="tracking-wide">
-              1786-1900
+              1789-1900
             </tspan>
           </>
         )}

@@ -8,23 +8,31 @@ export default function Footer() {
         <SiteTitle showTag={false} className="" />
         <svg
           width="100%"
-          viewBox="0 0 420 200"
+          viewBox="0 0 420 220"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           role="presentation"
           className="fill-offwhite"
         >
           <g>
-            <foreignObject x={52} y={0} height={200} width={368}>
-              <p className="md:text-2xl text-lg font-neueMontrealLight">
-                Final version forthcoming in print and online from{" "}
+            <foreignObject x={52} y={0} height={220} width={368}>
+              <p className="md:text-base text-sm font-neueMontrealLight tracking-wide">
+                An Interactive History of Data Visualization, 1789-1900
+              </p>
+              <p className="md:text-2xl text-lg font-neueMontrealLight mt-4">
+                Expanded version available in print as{" "}
+                <cite>
+                  Data by Design: Visualization and Power from Abolition to
+                  the Dawn of Data Science
+                </cite>{" "}
+                (
                 <a
                   className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
                   href="https://mitpress.mit.edu/"
                 >
-                  The MIT Press
-                </a>{" "}
-                in Fall 2026.
+                  MIT Press
+                </a>
+                , 2026).
               </p>
               <p className="md:text-lg text-sm font-neueMontrealLight mt-6">
                 Please contact the project director,{" "}
@@ -44,10 +52,10 @@ export default function Footer() {
       <div className="col-span-12 md:col-span-4 flex flex-col space-y-4 font-neueMontrealLight leading-6 pt-8 md:pt-0 md:px-8 lg:px-12 text-sm md:text-xs">
         <p className="uppercase text-xs font-neueMontreal">Cite as</p>
         <p className="font-neueMontreal">
-          Lauren Klein, Tanvi Sharma, Jay Varner, Shiyao Li, Margy Adams,
+          Lauren Klein, Tanvi Sharma, Jay Varner, Margy Adams, Shiyao Li,
           Nicholas Yang, Dan Jutan, Jianing Fu, Anna Mola, Zhou Fang, Yang Li,
-          and Silas Munro. Data by Design: An Interactive History of Data
-          Visualization, 1789-1900. 2025 public beta.
+          and Silas Munro. <cite>Data by Design: An Interactive History of
+          Data Visualization, 1789-1900.</cite> MIT Press, 2026.
         </p>
         <p>
           Data by Design has been designed and developed by the Emory Digital
@@ -55,13 +63,14 @@ export default function Footer() {
           Scholarship and Polymode.
         </p>
         <p>
-          This project has been generously funded by a 2018-2019 NEH-Mellon
-          Fellowship for Digital Publication (FEL-257658-18), a 2021-2022 NEH
-          Office of Digital Humanities Advancement Grant (HAA-281011-21), and an
-          open access publication grant from Emory's Digital Publishing in the
-          Humanities initiative, which is supported by the Andrew W. Mellon
-          Foundation, the Emory College Office of Faculty, and the Fox Center
-          for Humanistic Inquiry.
+          This project has been generously funded by a 2018–2019 National
+          Endowment for the Humanities (NEH) and Andrew W. Mellon Foundation
+          Fellowship for Digital Publication (FEL-257658-18), a 2021–2022 NEH
+          Office of Digital Humanities Advancement Grant (HAA-281011-21), and
+          a 2023–2024 Emory College of Arts and Sciences Chronos Fellowship,
+          funded by the Abraham J. & Phyllis Katz Foundation. This book is
+          freely available in an open access edition thanks to the generous
+          support of Emory University and the Andrew W. Mellon Foundation.
         </p>
         <p>
           Additional research for this project was completed through fellowships
@@ -86,7 +95,7 @@ export default function Footer() {
           >
             The Rooms
           </a>
-          ."
+          .
         </p>
       </div>
       {/* THIRD COL */}
