@@ -8,18 +8,18 @@ export default function Footer() {
         <SiteTitle showTag={false} className="" />
         <svg
           width="100%"
-          viewBox="0 0 420 220"
+          viewBox="0 0 420 320"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           role="presentation"
           className="fill-offwhite"
         >
           <g>
-            <foreignObject x={52} y={0} height={220} width={368}>
-              <p className="md:text-base text-sm font-neueMontrealLight tracking-wide">
+            <foreignObject x={52} y={0} height={320} width={368}>
+              <p className="md:text-lg text-base font-power tracking-wide ">
                 An Interactive History of Data Visualization, 1789-1900
               </p>
-              <p className="md:text-2xl text-lg font-neueMontrealLight mt-4">
+              <p className="md:text-xl text-lg font-neueMontrealLight mt-4">
                 Expanded version available in print as{" "}
                 <cite>
                   Data by Design: Visualization and Power from Abolition to
@@ -28,7 +28,7 @@ export default function Footer() {
                 (
                 <a
                   className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
-                  href="https://mitpress.mit.edu/"
+                  href="https://mitpress.mit.edu/9780262056182/data-by-design/"
                 >
                   MIT Press
                 </a>

@@ -253,6 +253,9 @@ export default function Quiz() {
         message: "All done!",
         correct: true,
       });
+      setTimeout(() => {
+        setCurrentStepCount(8);
+      }, 3000);
     } else if (
       !(currentStep.solvedEvents as Array<number>).includes(selected)
     ) {

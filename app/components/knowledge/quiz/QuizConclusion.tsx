@@ -7,13 +7,14 @@ const ConclusionContent = () => {
     <>
       <div className="lg:-translate-x-12 max-w-[65ch] place-content-start">
         <p className=" font-sans  leading-relaxed text-offwhite font-thin">
-          Once you've learned to recognize the Gold and Burgundy triangles as
-          visual representation of Indigenous and colonial conflict.
+Once you learn to recognize this sequence of gold and burgundy triangles as a representation of settler-Indigenous conflict, you can see how the seventeenth century is increasingly dominated by similar conflicts.  
+
+
+
         </p>
         <p className="  font-sans leading-relaxed text-offwhite font-light mt-2">
-          You come to see how the 17th century is increasingly dominated by
-          similar conflicts, documenting the devastation brought about by
-          British colonial expansion
+       The repeating pattern throughout the century becomes a visual indicator of the recurrent violence brought about by British colonial expansion.
+
         </p>
       </div>
     </>

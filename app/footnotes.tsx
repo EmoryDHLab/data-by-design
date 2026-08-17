@@ -809,309 +809,129 @@ export const peopleFootnotes = [
 ];
 
 export const processFootnotes = [
-  //1
-  <span key="a3b5x7c9">
-    One of Peabody's sisters, Sophia Amelia Peabody, was married to Hawthorne;
-    and the other, Mary Tyler Peabody, was married to Mann.
+  <span key={"f9dace6a"}>
+    An earlier version of this chapter appears as “What Data Visualization Reveals: Elizabeth Palmer Peabody and the Work of Knowledge Production,” <cite>Harvard Data Science Review</cite> 4.2 (2022).
   </span>,
-  //2
-  <span key="a50176dd">
-    For more on Peabody's biography, see Bruce A. Rhoda,
-    <cite> Elizabeth Palmer Peabody: A Reformer on Her Own Terms </cite>
-    (Cambridge: Harvard Univ. Press, 1999), Megan Marshall,
-    <cite>
-      {" "}
-      The Peabody Sisters: Three Women Who Ignited American Romanticism{" "}
-    </cite>
-    (New York: Mariner, 2006), and Monika Elbert, Julie E. Hall, and Katharine
-    Rodier, eds., <cite> Reinventing the Peabody Sisters</cite> (Iowa City:
-    Univ. of Iowa Press, 2006).
+  <span key={"a398010b"}>
+    For more on Peabody’s biography, see Bruce A. Ronda, <cite>Elizabeth Palmer Peabody: A Reformer on Her Own Terms</cite> (Harvard UP, 1999), Megan Marshall, <cite>The Peabody Sisters: Three Women Who Ignited American Romanticism</cite> (New York: Mariner, 2006), and Monika Elbert, Julie E. Hall, and Katharine Rodier, eds., <cite>Reinventing the Peabody Sisters</cite> (U of Iowa Press, 2006).
   </span>,
-  //3
-  <span key="273a7b83">
-    {" "}
-    Elizabeth Palmer Peabody,{" "}
-    <cite>
-      The Polish-American System of Chronology, reproduced, with some
-      modifications, from General Bem's Franco-Polish Method
-    </cite>{" "}
-    (Boston, 1850), p. 3.
+  <span key={"ab8bb335"}>
+    Elizabeth Palmer Peabody, <cite>The Polish-American System of Chronology, Reproduced, with Some Modifications, from General Bem’s Franco-Polish Method</cite> (Boston, 1850), 3.
   </span>,
-  //4
-  <span key="ebb9d980">
-    While it exceeds the scope of this essay, it is worth noting the particular
-    appeal of Bem's Polish identity. Peabody had a particular interest in the
-    ideas coming out of central and eastern Europe as a result of her ongoing
-    engagement in theories of language. She had sustained correspondence with
-    the Hungarian philologist Charles Kraitsir throughout the 1840s, and he
-    traveled to Boston to meet with her in 1847. Peabody went on to support the
-    (failed) Hungarian Revolution of 1848, which she viewed as allied with the
-    aims of American Independence. Among her central concerns with standard
-    accounts of US History was that they were written from the perspective of
-    England. She would have likely imputed an anti-colonial stance inherent in
-    Bem's system. For more on her relationship with Kraitsir, see Ronda (1999,
-    pp. 225-226). For more on her support for the Hungarian Revolution and her
-    views on history, see Baym (1991).
+  <span key={"c704d09d"}>
+    The term “feminism” began to coalesce in the second half of the nineteenth century—first in France, and then in the United States, as historian Karen Offen has explored. While some credit the French utopian philosopher (and major influence on the transcendentalist movement) Charles Fourier with coining the term, this has not been borne out by the research. See Nancy Cott, <cite>The Grounding of Modern Feminism</cite> (Yale UP, 1987), and Karen Offen, “Defining Feminism: A Comparative Historical Approach,” <cite>Signs</cite> 14.1 (1988): 119–157.
   </span>,
-  //5
-  <span key="0f6c6877">
-    Daniel Rosenberg and Anthony Grafton,{" "}
-    <cite>Cartographies of Time: A History of the Timeline </cite> (Princeton:
-    Princeton Architectural Press, 2010), p. 205.
+  <span key={"33e1ac1f"}>
+    On Antoni Jażwiński and the Polish system, see Hunter Dukes and Adam Green, “Visualizing History: The Polish System,” <cite>Public Domain Review</cite>, May 5, 2021, and Daniel Rosenberg and Anthony Grafton, <cite>Cartographies of Time: A History of the Timeline</cite> (Princeton Architectural Press, 2010), 203–209. While it exceeds the scope of this chapter, it is worth noting the particular appeal for Peabody of the Polish origins of this method. Peabody had a particular interest in the ideas coming out of central and eastern Europe as a result of her ongoing engagement in theories of language. She had sustained correspondence with the Hungarian philologist Charles Kraitsir throughout the 1840s, and he traveled to Boston to meet with her in 1847. Peabody went on to support the (failed) Hungarian revolution of 1848, which she viewed as allied with the aims of American independence. Among her central concerns with standard accounts of US history was that they were written from the perspective of England. She would have likely seen an anticolonial stance as inherent in Bem’s system. For more on her relationship with Kraitsir, see Ronda, <cite>Elizabeth Palmer Peabody</cite>, 225–226. For more on her support for the Hungarian revolution and her views on history, see Nina Baym, “The Ann Sisters: Elizabeth Peabody’s Millennial Historicism,” <cite>American Literary History 3</cite>.1 (1991): 25–45.
   </span>,
-  //6
-  <span key="fd738318">Ronda, p. 227</span>,
-  //7
-  <span key="c3929d90">
-    Elizabeth Palmer Peabody, Chronological History of the United States.
-    Arranged with Plates on Bem's Principle (New York: 1856), p. 5
+  <span key={"13cae384"}>
+    Rosenberg and Grafton, <cite>Cartographies of Time</cite>, 205.
   </span>,
-  //8
-  <span key="94bac05d">
-    For more on the role of mnemonics in nineteenth-century US history
-    education, see "Mnemonics, Methods, and Memory: Organizing and Encoding the
-    American Story," in Barry Joyce, The First US History Textbooks:{" "}
-    <cite>
-      Constructing and Disseminating the American Tale in the Nineteenth Century{" "}
-    </cite>{" "}
-    (Lexington, KY: Lexington Books, 2015), pp. 61-100.
+  <span key={"390fc149"}>
+    Ronda, <cite>Elizabeth Palmer Peabody</cite>, 227.
   </span>,
-  //9
-  <span key="51e8a882">Peabody, Chronological History, p. 7.</span>,
-  //10
-  <span key="27616462">
-    Nikole Hannah-Jones et al., "The 1619 Project," The New York Times Magazine,
-    August 14, 2019.
-    https://www.nytimes.com/interactive/2019/08/14/magazine/1619-america-slavery.html
+  <span key={"e5c82e80"}>
+    Elizabeth Palmer Peabody, <cite>Chronological History of the United States: Arranged with Plates on Bem’s Principle</cite> (New York, 1856), 9.
   </span>,
-  //11
-  <span key="0676228e">
-    Jake Silverstein, "Why We Published the 1619 Project,"{" "}
-    <cite> The New York Times Magazine, </cite> December 20, 2019.{" "}
-    <NoteLink href="https://www.nytimes.com/interactive/2019/12/20/magazine/1619-intro.html.">
-      {" "}
-      https://www.nytimes.com/interactive/2019/12/20/magazine/1619-intro.html.{" "}
-    </NoteLink>
+  <span key={"051228e6"}>
+    Peabody, <cite>The Polish-American System</cite>, 10.
   </span>,
-  //12
-  <span key="07b2b314">
-    Katherine McKittrick, Dear Science and Other Stories (Durham: Duke Univ.
-    Press, 2021), p. 3.
+  <span key={"592e8076"}>
+    Scholars now date the death of Pocahontas to five years earlier, in 1617. She had been abroad in England with her husband (the British settler John Rolphe) and their child, where she served as the main draw in a campaign to attract new investment in the Jamestown colony. She had just begun the long ship voyage home, not yet out of the Thames, when she became sick and died shortly after being taken off the boat. This is another story that exceeds the scope of this chapter, but it is important to acknowledge the power relations that framed Pocahontas’s marriage to Rolphe, as well as how her story has been shaped over centuries to fit various colonial and national origin stories. See Rayna Green, “The Pocahontas Perplex: The Image of Indian Women in American Culture,” <cite>Massachusetts Review</cite> 16.4 (Autumn 1975): 698–714, and more recently Chris Finley, “Decolonizing the Queer Native Body (and Recovering the Native Bull-Dyke),” in <cite>Queer Indigenous Studies: Critical Interventions in Theory, Politics, and Literature</cite>, ed. Qwo-Li Driskill, Chris Finley, Brian Joseph Gilley, and Scott Lauria Morgensen (U of Arizona Press, 2011), 31–42.
   </span>,
-  //13
-  <span key="15457725">
-    Donna Haraway, "Situated Knowledges: The Science Question in Feminism and
-    the Privilege of Partial Perspective," <cite>Feminist Studies </cite> 14.1
-    (1988), pp. 575-599. In work with Catherine D'Ignazio, I have articulated a
-    general approach to countering the god trick, and to acknowledging the
-    situated nature of knowledge production in data visualization. See Catherine
-    D'Ignazio and Lauren Klein, "Feminist Data Visualization,"{" "}
-    <cite>
-      {" "}
-      VIS4DH: Proceedings of the Workshop on Visualization for the Digital
-      Humanities, IEEE VIS 2016{" "}
-    </cite>{" "}
-    (Baltimore: IEEE, 2016) and Catherine D'Ignazio and Lauren Klein,{" "}
-    <cite>Data Feminism</cite> (Cambridge: MIT Press, 2020).
+  <span key={"7672d765"}>
+    For more on the role of mnemonics in nineteenth-century  US history education, see “Mnemonics, Methods, and  Memory: Organizing and Encoding the American Story,” in  Barry Joyce, <cite>The First US History Textbooks: Constructing  and Disseminating the American Tale in the Nineteenth Century</cite>(Lexington Books, 2015), 61–100.
   </span>,
-  //14
-  <span key="8098566c">Haraway, p. 584.</span>,
-  //15
-  <span key="1976e6c9">
-    Peabody's nephew, Julian Hawthorne, who served as her first test subject,
-    recalled that she "labored during some years to teach me all the leading
-    dates of human history," but that he nevertheless remained "most inapt and
-    grievous" throughout the process, ultimately exhausting her patience (Ronda,
-    p. 227).
+  <span key={"7da50cb2"}>
+    Peabody, <cite>Chronological History</cite>, 7.
   </span>,
-  //16
-  <span key="3fe88ab3">
-    Peabody,{" "}
-    <cite>
-      Universal History; Arranged to Illustrate Bem's Charts of Chronology
-    </cite>{" "}
-    (New York: 1859), p. v.
+  <span key={"c5b0f0d1"}>
+    Elizabeth Palmer Peabody, <cite>Universal History; Arranged to Illustrate Bem’s Charts of Chronology</cite> (New York, 1859), v.
   </span>,
-  //17
-  <span key="46d66328">
-    In Peabody's own words, the Polish-American System "does not pretend to be
-    what an outline can never be, namely: a perfect frame work for history." See
-    "Bem's Method of History: An Appeal to Teachers and Boards of Education,"{" "}
-    <cite> The Indiana School Journal 1.2 </cite>(1856), p. 325.
+  <span key={"d3b9a409"}>
+    In Peabody’s own words, the Polish-American system “does not pretend to be what an outline can never be, namely: a perfect frame work for history.” See Elizabeth Palmer Peabody “Bem’s Method of History: An Appeal to Teachers and Boards of Education,” <cite>Indiana School Journal</cite> 1.2 (1856): 325.
   </span>,
-  //18
-  <span key="182146cf">
-    As also evident in the pedagogy surrounding her charts, Peabody believed
-    that self-directed play mattered as much as formal instruction, and that
-    knowledge was derived not from any external authority but instead from a
-    focused and sustained analysis of "the self-activity of the mind." See
-    Elizabeth Palmer Peabody, "The Origin and Growth of the Kindergarten,"{" "}
-    <cite> Education 2 (1882)</cite>, pp. 507-527. It is also worth noting that
-    while Peabody was the sister-in-law of famed educational innovator and
-    advocate Horace Mann, she did not maintain a close relationship with him
-    after he married her sister Mary. In fact, there was significant tension
-    between Elizabeth and Mary over the intensity of Elizabeth's intellectual
-    relationship with Mann. With that said, Mann's death in 1859 seems to have
-    reopened the possibility of the sisters' shared interest in theories (and
-    practices) of education. For more on this new phase of Peabody's educational
-    theories, developed in conversation with her sister, see Ronda pp. 269-317.
+  <span key={"afb3b705"}>
+    As evident in the pedagogy surrounding her charts, Peabody believed that self-directed play mattered as much as formal instruction, and that knowledge was derived not from any external authority but instead from a focused and sustained analysis of “the self-activity of the mind.” See Elizabeth Palmer Peabody, “The Origin and Growth of the Kindergarten,” <cite>Education</cite> 2 (1882): 507–527. Here it is also worth noting that, while Peabody was the sister-in-law of famed educational innovator and advocate Horace Mann, she did not maintain a close relationship with him after he married her sister Mary. In fact, there was significant tension between Elizabeth and Mary over the intensity of Elizabeth’s intellectual relationship with Mann. Only after Mann’s death in 1859 did the sisters’ shared interest in theories (and practices) of education become rekindled. For more on this new phase of Peabody’s educational theories, developed in conversation with her sister, see Ronda, <cite>Elizabeth Palmer Peabody</cite>, 269–317.
   </span>,
-  //19
-  <span key="e7958062">Ronda, p. 227.</span>,
-  //20
-  <span key="5581bcd5">Peabody, Chronological History, p. 7.</span>,
-  //21
-  <span key="6eb87894">
-    For an extended analysis of Willard's charts, see Susan Schulten, "Emma
-    Willard's Maps of Time," <cite>Public Domain Review </cite>(2020). Web.{" "}
-    <NoteLink href="https://publicdomainreview.org/essay/emma-willard-maps-of-time/">
-      https://publicdomainreview.org/essay/emma-willard-maps-of-time/
-    </NoteLink>
+  <span key={"db8db488"}>
+    Ronda, <cite>Elizabeth Palmer Peabody</cite>, 227.
   </span>,
-  //22
-  <span key="0dcc3597">
-    Elizabeth Palmer Peabody, "Bem's Method of History: An Appeal to Teachers
-    and Boards of Education," <cite>The Indiana School Journal</cite> 1.2
-    (1856), p. 326.
+  <span key={"6f418c50"}>
+    Caldas, a Colombian naturalist who roomed with Humboldt in Quito for eight months while the latter created his famed visualizations of Chimborazo, was in fact the person who first created the forms for which Humboldt would soon be renowned. See Jorge Cañizares-Esguerra, “Screwing Humboldt and His Hagiographers,” <cite>Medium,</cite> September 27, 2019,  <NoteLink href="https://jorgecanizaresesguerra.medium.com/screwing-in-two-positions-82c2cc5b09db">https://jorgecanizaresesguerra.medium.com/screwing-in-two-positions-82c2cc5b09db</NoteLink>, and in a more scholarly register, Mauricio Nieto Olarte, <cite>La obra cartográfica de Francisco José de Caldas</cite> (Universidad de los Andes, 2006).
   </span>,
-  //23
-  <span key="ef84765d">
-    Susan Schulten,
-    <cite>
-      Mapping the Nation: History and Cartography in Nineteenth-Century America
-    </cite>{" "}
-    (Chicago: Univ. of Chicago Press, 2012). p, 31.
+  <span key={"5997f9b3"}>
+    For an extended analysis of Willard’s charts, see Susan Schulten, “Emma Willard’s Maps of Time,” <cite>Public Domain Review</cite> (2020), <NoteLink href="https://publicdomainreview.org/essay/emma-willard-maps-of-time/">https://publicdomainreview.org/essay/emma-willard-maps-of-time/</NoteLink>.
   </span>,
-  //24
-  <span key="4a2799aa">
-    Peabody, Chronological History, p. 9. The LED system was prototyped by
-    Svyatoslav Kucheryavykh. The design was further refined by Courtney Allen
-    and Alexandra Beall. The final system was designed and implemented by
-    Courtney Allen, Gavin McGuire, and Sarah Schoemann. Noah Sutter wrote the
-    underlying code.
+  <span key={"24870f8c"}>
+    As an example of how domain experts might be enabled to contribute their own knowledge to a visualization system, see Haihan Lin, Derya Akbaba, Miriah Meyer, and Alexander Lex, “Data Hunches: Incorporating Personal Knowledge into Visualizations,” IEEE Transactions on Visualization and Computer Graphics (VIS) 29.1 (2022): 504–514.
   </span>,
-  //25
-  <span key="274b1094">
-    Elizabeth Palmer Peabody, "My Experience as a Teacher,"
-    <cite>American Journal of Education </cite> 32 (1882), p. 785.
+  <span key={"ce0e04f8"}>
+    Peabody, <cite>Chronological History</cite>, 9.
   </span>,
-  //26
-  <span key="a0633393">Ronda, p. 236.</span>,
-  //27
-  <span key="ce484926">
-    {" "}
-    Jessica Hullman, "The Purpose of Visualization is Insight, not Pictures: An
-    Interview with Ben Shneiderman," <cite> ACM Interactions. </cite> Web.{" "}
-    <NoteLink href="https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben">
-      https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben
-    </NoteLink>
+  <span key={"1fce8cd3"}>
+    Elizabeth Palmer Peabody, “My Experience as a Teacher,” <cite>American Journal of Education</cite> 32 (1882): 785.
   </span>,
-  //28
-  <span key="19b497e0">
-    Shortly before the time of this manuscript submission, I was alerted to the
-    recent acquisition of one of these mural charts by the David Rumsey Map
-    Collection, viewable here:
-    https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~358471~90126267:Christian-Era?sort=pub_list_no_initialsort%2Cpub_date%2Cpub_date%2Cpub_list_no&qvq=q:process;sort:pub_list_no_initialsort%2Cpub_date%2Cpub_date%2Cpub_list_no;lc:RUMSEY~8~1&mi=0&trs=14.
-    The final version of this chapter will incorporate this new information.
+  <span key={"58827d3e"}>
+    Ronda, <cite>Elizabeth Palmer Peabody</cite>, 236.
   </span>,
-  //29
-  <span key="df9e0afa">Ronda, p. 234.</span>,
-  //30
-  <span key="5dd4e4f4">Ronda, p. 227.</span>,
-  //31
-  <span key="ec240d31">
-    Evidently, they measure five feet by three-and-a-half feet. Photos of the
-    charts can be seen in an essay by Granville Ganter, "Mistress of Her Art:
-    Anne Laura Clarke, Traveling Lecturer of the 1820s,"{" "}
-    <cite>New England Quarterly </cite>87.4 (2014), pp. 709-746.
+  <span key={"d5ce3661"}>
+    Thanks to RJ Andrews for sending the email that alerted me to this fact. The mural chart, “Christian Era,” associated with her <cite>Universal History</cite> (1850), can now be viewed online via the David Rumsey Historical Map Collection, image number 15895000.jp2.
   </span>,
-  //32
-  <span key="3ca8ce1c">
-    For papers discussing this process, see Caroline Foster et al., "The Shape
-    of History: Reimagining Nineteenth-Century Data Visualization,"{" "}
-    <cite>Digital Humanities 2017 </cite>(Association of Digital Humanities
-    Organizations, 2017); and Alexandra Beall et al., "Reimagining Elizabeth
-    Palmer Peabody's Lost 'Mural Charts,'"<cite>Digital Humanities 2018 </cite>
-    (Association of Digital Humanities Organizations, 2018).
+  <span key={"6ba9a09b"}>
+    In his biography of Peabody, Ronda speculated that they “must have been much larger than even folio size” (<cite>Elizabeth Palmer Peabody</cite>, 234). The chart in the David Rumsey collection measures 176 by 148 centimeters.
   </span>,
-  //33
-  <span key="62d5afdf">
-    The touch matrix was prototyped by Angela Vujic and Maninder Japra. The
-    design was refined and further implemented by Courtney Allen, Alexandra
-    Beall, and Gavin McGuire.
+  <span key={"b743565d"}>
+    Thanks to Granville Ganter for sharing these photos and allowing me to reproduce them here. For Ganter’s work on Clarke, who created her timelines with the help of her sister, also named Elizabeth, see Granville Ganter, “Mistress of Her Art: Anne Laura Clarke, Traveling Lecturer of the 1820s,” <cite>New England Quarterly</cite> 87.4 (2014): 709–746.
   </span>,
-  //34
-  <span key="2325e2aa">
-    The fabric topper was designed and fabricated by Sarah Schoemann.
+  <span key={"61b060dc"}>
+    Papers discussing this process include: Caroline Foster et al., “The Shape of History: Reimagining Nineteenth-Century Data Visualization,” <cite>Digital Humanities 2017</cite> (Association of Digital Humanities Organizations, 2017); and Alexandra Beall et al., “Reimagining Elizabeth Palmer Peabody’s Lost ‘Mural Charts,’” <cite>Digital Humanities 2018</cite> (Association of Digital Humanities Organizations, 2018).
   </span>,
-  //35
-  <span key="9987bc65">
-    Elizabeth Peabody, Letter to Samuel Gray Ward, September 1850.
+  <span key={"73c97ce3"}>
+    The touch matrix was prototyped by Angela Vujic and Maninder Japra. The design was refined and further implemented by Courtney Allen, Alexandra Beall, and Gwendolyn McGuire.
   </span>,
-  //36
-  <span key="c62220bc">
-    For an overview of this gendered history of work, see "Show Your Work," in
-    D'Ignazio and Klein, <cite>Data Feminism,</cite> pp. 173-202.
+  <span key={"057b7d0d"}>
+    The fabric topper was designed and fabricated by S.E. Schoemann. The LED system was prototyped by Svyatoslav Kucheryavykh. The design was further refined by Courtney Allen and Alexandra Beall. The final system was designed and implemented by Courtney Allen, Gwendolyn McGuire, and S.E. Schoemann. Noah Sutter wrote the underlying code.
   </span>,
-  //37
-  <span key="9e75ae6d">
-    While not explored in this chapter, it's worth noting that the history of
-    computing provides another key example, one which&mdash;in the
-    object-oriented way in which Peabody structures her event dataPeabody might
-    also be engaged. On the history of women in computing, see Jennifer Light,
-    "When Computers Were Women. <cite>Technology and Culture</cite> 40.3 (1999),
-    pp. 455-83; Nathan Ensmenger,{" "}
-    <cite>
-      The Computer Boys Take Over: Computers, Programmers, and the Politics of
-      Technical Expertise
-    </cite>{" "}
-    (Cambridge: MIT Press, 2010)l and Mar Hicks,
-    <cite>
-      {" "}
-      Programmed Inequality: How Britain Discarded Women Technologists and Lots
-      Its Edge in Computing
-    </cite>
-    (Cambridge: MIT Press, 2017).
+  <span key={"f1632fad"}>
+    Neither focus nor fatigue are limited to the physical realm, of course. Chapter 6 addresses these considerations with respect to the making of the visualizations and other digital components of this project.
   </span>,
-  //38
-  <span key="ae11d60c">
-    See, for example, William Ferris, ed.,{" "}
-    <cite>fro-American Folk Art and Crafts</cite>A (Boston: G.K. Hall, 1983);
-    and S.J. Markowitz, "The Distinction between Art and Craft,"
-    <cite>A Journal of Aesthetic Education</cite>A 28.1 (Spring 1994): 55-70.
+  <span key={"b0586c3b"}>
+    Elizabeth Peabody to Samuel Gray Ward, September 1850, quoted in Ronda, <cite>Elizabeth Palmer Peabody</cite>, 235.
   </span>,
-  //39
-  <span key="f5d65b30">
-    See, for example, R. Kalina, "Gee's Bend Modern."
-    <cite>Art in America 10 </cite>(2003): 104-149; and S.A. Duncan, "From Cloth
-    to Canvas: Reinventing Gee's Bend Quilts in the Name of Art,"{" "}
-    <cite> Museum Anthropology</cite> 28.1 (March 2005): 27-28.
+  <span key={"08164b06"}>
+    The process of acquiring, restoring, and preserving historical artifacts is of course far from magic to those who participate in it. Alex Clausen, of Ruderman Antique Maps, reported in an email how the chart arrived in poor condition, and required significant restoration before it was resold to David Rumsey.
   </span>,
-  //40
-  <span key="1bea657c">
-    Ryan Leahy,"The Alabama Women Who Made Their Quilts a Part of Modern Art,"{" "}
-    <cite>Artsy</cite> (2018).{" "}
-    <NoteLink href="https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art">
-      https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art
-    </NoteLink>
+  <span key={"d3a0b099"}>
+    For an overview of this gendered history of work, see “Show Your Work,” in D’Ignazio and Klein, <cite>Data Feminism,</cite> 173–202.
   </span>,
-  //41
-  <span key="56d186b5">
-    Elsa Barkley Brown, "African-American Women's Quilting: A Framework for
-    Conceptualizing and Teaching African-American Women's History,"{" "}
-    <cite>Signs </cite>14.4 (1989), p. 926.
+  <span key={"1e465260"}>
+    E.g., William Ferris, ed., <cite>Afro-American Folk Art and Crafts</cite> (G. K. Hall, 1983); and S. J. Markowitz, “The Distinction between Art and Craft,” <cite>Journal of Aesthetic Education</cite> 28.1 (Spring 1994): 55–70.
   </span>,
-  //42
-  <span key="9c3a8b6d">Brown, p. 927.</span>,
-  //43
-  <span key="cc4bf901">Brown, p. 928.</span>,
-  //44
-  <span key="9a4c5c68">
-    Edward Tufte,{" "}
-    <cite>Seeing with Fresh Eyes: Meaning, Space, Data, Truth </cite>(Cheshire,
-    CT: Graphics Press 2020), p. 29.
+  <span key={"491522ec"}>
+    E.g., R. Kalina, “Gee’s Bend Modern,” <cite>Art in America</cite> 10 (2003): 104–149; and S. A. Duncan, “From Cloth to Canvas: Reinventing Gee’s Bend Quilts in the Name of Art,” <cite>Museum Anthropology</cite> 28.1 (March 2005): 27–28.
   </span>,
-  //45
+  <span key={"1361685b"}>
+    Ryan Leahy, “The Alabama Women Who Made Their Quilts a Part of Modern Art,” <cite>Artsy</cite> (2018), <NoteLink href="https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art">https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art</NoteLink>
+  </span>,
+  <span key={"852116b0"}>
+    Elsa Barkley Brown, “African-American Women’s Quilting: A Framework for Conceptualizing and Teaching African-American Women’s History,” <cite>Signs</cite> 14.4 (1989): 926.
+  </span>,
+  <span key={"4fc20a4d"}>
+    Barkley Brown, “African-American Women’s Quilting,” 927.
+  </span>,
+  <span key={"c2355427"}>
+    Barkley Brown, “African-American Women’s Quilting,” 928.
+  </span>,
+  <span key={"fedbdb83"}>
+    Edward Tufte, <cite>Seeing with Fresh Eyes: Meaning, Space, Data, Truth</cite> (Graphics Press, 2020), 29.
+  </span>,
+  <span key={"d435106d"}>
+    Katherine McKittrick, <cite>Dear Science and Other Stories</cite> (Duke UP, 2021), 3.
+  </span>,
+  <span key={"763e99e9"}>
+    Barkley Brown, “African-American Women’s Quilting,” 926.
+  </span>,
 ];
 
 export const powerFootnotes = [

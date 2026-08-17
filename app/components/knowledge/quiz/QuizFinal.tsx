@@ -24,16 +24,31 @@ export default function QuizFinal() {
         <div className="space-y-4">
   
 
-          <div className="bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-colors cursor-pointer">
+          <div
+            className="bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-colors cursor-pointer"
+            role="button"
+            tabIndex={0}
+            onClick={() =>
+              window.scrollBy({ top: window.innerHeight, behavior: "smooth" })
+            }
+            onKeyUp={({ key }) => {
+              if (key === "Enter" || key === " ") {
+                window.scrollBy({
+                  top: window.innerHeight,
+                  behavior: "smooth",
+                });
+              }
+            }}
+          >
             <div className="flex items-start gap-3">
               <span className="text-lg">📖</span>
               <div>
                 <p className="m-0 text-sm font-medium text-white mb-1">
-                  Continue the Story
+                  Continue Reading
                 </p>
                 <p className="m-0 text-xs text-offwhite leading-relaxed">
-                  Explore how these visualization techniques reveal hidden
-                  patterns in centuries of historical data
+          Learn how nineteenth-century students experienced this process.
+
                 </p>
               </div>
             </div>
