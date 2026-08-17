@@ -1,402 +1,248 @@
 export const prefaceFootnotes = [
+  <span key={"a1f4c802"}>
+    A “facsimile edition” is the term for a book that’s been scanned and
+    reprinted, its original formatting preserved. By contrast, a “modern
+    edition” (which we encounter far more often) is the term for a book that’s
+    been transcribed and reformatted so that its contents are presented in a
+    more contemporary style.
+  </span>,
   <span key={"d6651051"}>
-    Howard Wainer and Ian Spence, "Introduction," in William Playfair, The
-    Commercial and Political Atlas and Statistical Breviary, ed. Howard Wainer
-    and Ian Spence (New York: Cambridge UP, 2023 [1801]), p. 3.
+    Howard Wainer and Ian Spence, “Introduction,” in William Playfair,{" "}
+    <cite>
+      The Commercial and Political Atlas and Statistical Breviary,
+    </cite>{" "}
+    ed. Howard Wainer and Ian Spence (Cambridge UP, 2023 [1801]), p. 3.
   </span>,
   <span key={"5f9dd277"}>
-    Thomas Jefferson, The Writings of Thomas Jefferson, vol. 1. Memoir,
-    Correspondence, and Miscellanies from the Papers of Thomas Jefferson, ed.
-    Thomas Jefferson Randolph (Boston: Gray and Bowen, 1830), p. 2.
+    Thomas Jefferson, <cite>The Writings of Thomas Jefferson, </cite>
+    vol. 1,{" "}
+    <cite>
+      Memoir, Correspondence, and Miscellanies from the Papers of Thomas
+      Jefferson,
+    </cite>{" "}
+    ed. Thomas Jefferson Randolph (Gray and Bowen, 1830), p. 2.
   </span>,
   <span key={"28f35307"}>
-    Best practice would say that this reference should be to my dissertation.
-    But because I remain too embarrassed to ever reread it, let alone cite it, I
-    will instead refer you to the essay that this observation would become:
-    Lauren Klein, "The Image of Absence: Archival Silence, Data Visualization,
-    and James Hemings" American Literature 85.4 (2013).
+    Lauren Klein, “The Image of Absence: Archival Silence, Data Visualization,
+    and James Hemings,” <cite>American Literature</cite> 85.4 (2013): 661–88.
+  </span>,
+  <span key={"b3d09e61"}>
+    Notably, Adam Smith wrote against the practice of slavery in{" "}
+    <cite>The Theory of Moral Sentiments</cite> (1759) and touches on its
+    economic inefficiency in <cite>The Wealth of Nations</cite> (1776). He
+    stops short of challenging the racial hierarchies proposed by his
+    contemporaries, including Hume and Kames (and Jefferson).
   </span>,
   <span key={"69ca8ec2"}>
-    The idea of "modern data visualization" is not a phrase that should go
-    unexamined. See pp ##-## for this discussion.{" "}
+    “Modern data visualization” is not a phrase that should go unexamined. See
+    pp. 25–29 for this discussion.{" "}
+  </span>,
+  <span key={"c47a2e93"}>
+    The first,{" "}
+    <cite>
+      An Archive of Taste: Race and Eating in the Early United States
+    </cite>{" "}
+    (U of Minnesota Press, 2020), has a significant focus on Thomas Jefferson.
+    The second, <cite>Data Feminism</cite>, coauthored with Catherine
+    D’Ignazio (MIT Press, 2020), is characterized by a different blend of
+    humanistic theory and technical expertise.{" "}
   </span>,
   <span key={"e8c7fc35"}>
-    Rachel Sagner Buurma and Laura Heffernan, "Search and Replace: Josephine
-    Miles and the Origins of Distant Reading." Modernism/modernity 3.1 (2018).
+    The 2010s were not the first time that humanities scholars had thought to
+    use computers for their research, of course—that tradition dates back to
+    the 1940s, if not before. But the early 2010s were the years when more and
+    more scholars from the humanities—students, professors, and library and
+    research staff alike—were turning to the web as a platform for creating
+    “born digital” work. On the long history of the digital humanities, see
+    Rachel Sagner Buurma and Laura Heffernan, “Search and Replace: Josephine
+    Miles and the Origins of Distant Reading,” <cite>Modernism/modernity</cite>{" "}
+    3.1 (2018). For an overview of born digital scholarship, see Matthew
+    Kirschenbaum, “The .txtual Condition: Digital Humanities, Born-Digital
+    Archives, and the Future Literary,”{" "}
+    <cite>Digital Humanities Quarterly</cite> 7.1 (2013).{" "}
   </span>,
   <span key={"f88a7787"}>
-    Matthew Kirschenbaum, "The .txtual Condition: Digital Humanities,
-    Born-Digital Archives, and the Future Literary." Digital Humanities
-    Quarterly 7.1 (2013). Web.{" "}
-  </span>,
-  <span key={"95eb1706"}>
-    Evan Bissell, Erik Loyer, Tanya Orellana, Lisa Nowlain, and Josh Begley, The
-    Knotted Line (2014).{" "}
-    <a href="https://knottedline.com/">https://knottedline.com/</a>{" "}
-  </span>,
-  <span key={"3cb7a953"}>
-    In addition to exemplifying some of the most exciting possibilities for
-    digital humanities scholarship, Neatline also exemplifies intention and care
-    around its citational practices. As such, it is difficult to cite directly.
-    I direct interested readers to consult the "Credits and History" page of the
-    Neatline site:{" "}
-    <a href="https://www.neatline.org/credits/">
-      https://www.neatline.org/credits/
-    </a>
-    .{" "}
+    Lauren Klein, Tanvi Sharma, Jay Varner, Margy Adams, Shiyao Li, Dan Jutan,
+    Jianing Fu, Anna Mola, Nicholas Yang, Yang Li, Zhou Fang, and Silas Munro,{" "}
+    <cite>
+      Data by Design: An Interactive History of Visualization and Power,
+      1789–1900.
+    </cite>{" "}
+    Viewable at: dataxdesign.io.{" "}
   </span>,
 ];
 
 export const introFootnotes = [
-  //1
-  <span key="8a8b8ecd">
-    I came across this phrase through a Google Image search, and while I am
-    somewhat mortified that the very first citation of this Introduction is to a
-    tourism website, I have not been able to come up with a better descriptor
-    for Oaxaca's terrain on my own, nor have I encountered this phrase
-    elsewhere. Thus, Ivan Phillipsen, "The Natural Wonders of Oaxaca, Mexico,"
-    Wild Latitutes, https://wildlatitudes.com/natural-wonders-of-oaxaca-mexico/.
-    Accessed 16 May 2025.{" "}
+  <span key={"132052c6"}>
+    I came across this phrase through a Google Image search, and while I am somewhat mortified that the very first citation of this introduction is not to a scholarly text but instead to a tourism website, I have not been able to come up with a better descriptor for Oaxaca’s terrain on my own. Thus, Ivan Phillipsen, “The Natural Wonders of Oaxaca, Mexico,” <cite>Wild Latitudes</cite>, <a href="https://wildlatitudes.com/natural-wonders-of-oaxaca-mexico/">https://wildlatitudes.com/natural-wonders-of-oaxaca-mexico/</a>, accessed May 16, 2025.
   </span>,
-  //2
-  <span key="ca93c2bd">
-    The cosmographer was a man by the name of Juan López de Velasco, who had
-    been appointed Chief Cosmographer-Chronicler of the Indies a decade earlier,
-    in 1571. In this role, López de Velasco compiled several substantial texts
-    documenting colonial knowledge of the Americas as well as charts and maps of
-    his own. See Felipe E. Ruan, "Prudent Deferment: Cosmographer-Chronicler
-    Juan López de Velasco and the Historiography of the Indies," The Americas
-    74.1 (2017): 27-55.{" "}
+  <span key={"66e5c4d9"}>
+    The Ñudzahui, like the Mexica (Aztec), used both solar and sacred calendar systems, but did not count years in the same way as the Gregorian (European) calendar system. For more on Mesoamerican calendars and codices, see Alfonso Caso, <cite>Los calendarios prehispánicos</cite> (Universidad Nacional Autónoma de México, 1967), and more recently Maarten E. R. G. N. Jansen and Gabina Aurora Pérez Jiménez, “Chronological Correlations in Aztec and Mixtec History,” in <cite>Mesoamerican Manuscripts: New Scientific Approaches and Interpretations</cite>, edited by Maarten E. R. G. N. Jansen, Virginia Lladò-Buisán, and Ludo Snijders (Brill, 2019), 341–379.
   </span>,
-  //3
-  <span key="3fc53364">
-    Visualization researcher Ben Shneiderman is credited with the oft-quoted
-    phrase, "The purpose of visualization is insight, not pictures." See, for
-    example, Jessica Hullman, "The Purpose of Visualization is Insight, not
-    Pictures: An Interview with Ben Shneiderman," ACM Interactions, August 19th,
-    2019,
-    https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben.
-    Accessed 16 May 2025. For a more extended discussion of insight, including
-    its roots in Stuard Card, Jock Macinlay, and Shneiderman's "visualization
-    reference model," see Derya Akbaba, Lauren Klein, and Miriah Meyer,
-    "Entanglements for Visualization: Changing Research Outcomes through
-    Feminist Theory," IEEE Transactions on Visualization and Computer Graphics
-    31.1 (2025): 1279-89.{" "}
+  <span key={"74389e90"}>
+    The cosmographer was a man by the name of Juan López de Velasco, who had been appointed Chief Cosmographer-Chronicler of the Indies a decade earlier, in 1571. In this role, López de Velasco compiled several substantial texts documenting colonial knowledge of the Americas as well as charts and maps of his own. See Felipe E. Ruan, “Prudent Deferment: Cosmographer-Chronicler Juan López de Velasco and the Historiography of the Indies,” <cite>Americas</cite> 74.1 (2017): 27–55.
   </span>,
-  //4
-  <span key="bc6fe997">
-    This statement is inspired by the definition of "local data" as articulated
-    by Yanni Loukissas in All Data are Local: Thinking Critically in a
-    Data-Driven Society (MIT Press, 2019). There, he writes: "Data are cultural
-    artifacts created by people, and their dutiful machines, at a time, in a
-    place, and with the instruments at hand for audiences that are conditioned
-    to receive them" (2).{" "}
+  <span key={"83f16c5e"}>
+    Visualization researcher Ben Shneiderman is credited with the oft-quoted phrase, “The purpose of visualization is insight, not pictures.” See, for example, Jessica Hullman, “The Purpose of Visualization Is Insight, Not Pictures: An Interview with Ben Shneiderman,” <cite>ACM Interactions</cite>, August 19, 2019, <a href="https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben">https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben</a>, accessed May 16, 2025. For a more extended discussion of insight, including its roots in Stuart Card, Jock Mackinlay, and Shneiderman’s “visualization reference model,” see Derya Akbaba, Lauren Klein, and Miriah Meyer, “Entanglements for Visualization: Changing Research Outcomes through Feminist Theory,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 31.1 (2025): 1279–1289.
   </span>,
-  //5
-  <span key="f25a0e15">
-    Thank you to Jihan Sherman for alerting me to this method of attribution,
-    developed by the curators of "Hear Me Now: The Black Potters of Old
-    Edgefield, South Carolina" at the High Museum in Atlanta, GA, which ran from
-    Feburary 16th through May 12th, 2024. This method of attribution is intended
-    to acknowledge the social, historical, and political conditions that result
-    in the names of certain artists being preserved for posterity and others
-    not. See https://high.org/exhibition/hear-me-now/. Accessed May 16, 2025. On
-    the mapmaker's training as a painter, see Alex Hidalgo, Trail of Footprints:
-    A History of Indigenous Maps from Viceregal Mexico (Univ. of Texas Press,
-    2019), p. 40.{" "}
+  <span key={"02c73c9a"}>
+    This statement is inspired by the definition of “local data” as articulated by Yanni Loukissas in <cite>All Data Are Local: Thinking Critically in a Data-Driven Society</cite> (MIT Press, 2019). There he writes: “Data are cultural artifacts created by people, and their dutiful machines, at a time, in a place, and with the instruments at hand for audiences that are conditioned to receive them” (2).
   </span>,
-  //6
-  <span key="802babbc">
-    A later section of this introduction problematizes the framing of modernity.
-    For now, I employ scare quotes with all that they imply to indicate that
-    this designation requires significant contextualization, and significant
-    critique.{" "}
+  <span key={"2c04b226"}>
+    Thanks to Jihan Sherman for alerting me to this method of attribution, developed by the curators of “Hear Me Now: The Black Potters of Old Edgefield, South Carolina” at the High Museum in Atlanta, which ran from February 16 through May 12, 2024. It is intended to acknowledge the social, historical, and political conditions that result in the names of certain artists being preserved for posterity and others not. See <a href="https://high.org/exhibition/hear-me-now/">https://high.org/exhibition/hear-me-now/</a>, accessed May 16, 2025. On the mapmaker’s training as a painter, see Alex Hidalgo, <cite>Trail of Footprints: A History of Indigenous Maps from Viceregal Mexico</cite> (U of Texas Press, 2019), 40.
   </span>,
-  //7
-  <span key="de46dc90">
-    Howard F. Cline, "The Relaciones Geográficas of the Spanish Indies,
-    1577-1586," Hispanic American Historical Review 44.3 (1964): 341-75
+  <span key={"d5ab0c03"}>
+    A later section of this introduction problematizes the framing of modernity. For now, I employ scare quotes with all that they imply to indicate that this designation requires significant contextualization, and significant critique.
   </span>,
-  //8
-  <span key="e0c687b0">
-    Thank you to Yanna Yannakakis for her detailed feedback on an earlier
-    version of this Introduction, and in particular, her suggestion that I
-    introduce the concept of yuhuiayu so as to place Ñudzahui and Spanish
-    worldviews alongside each other. This reflets how Teozacoalco itself was a
-    place that was viewed through multiple lenses by multiple groups, often at
-    the same time. For more on the concept of yuhuiayu, see Yanna Yannakakis,
-    Since Time Immemorial: Native Custom & Law in Colonial Mexico (Duke UP,
-    2023) and Kevin Terraciano, The Mixtecs of Colonial Oaxaca: Ñudzahui
-    History, Sixteenth Through Eighteenth Centuries (Stanford UP, 2002).
+  <span key={"ac24343c"}>
+    Howard F. Cline, “The Relaciones Geográficas of the Spanish Indies, 1577–1586,” <cite>Hispanic American Historical Review</cite> 44.3 (1964): 341–374.
   </span>,
-  //9
-  <span key="ffb5943d">
-    David Shoemaker, "El Mapa de Teozacoalco" (Foundation for the Advancement of
-    Mesoamerican Studies, 1999).{" "}
+  <span key={"5f31e8cb"}>
+    Henry Kamen, <cite>Philip of Spain</cite> (Yale UP, 1997).
   </span>,
-  //10
-  <span key="54ed3f8d">
-    Both Barbara Mundy and Yanna Yannakakis provide detailed readings of these
-    diagrams. See Mundy, The Mapping of New Spain: Indigenous Cartography and
-    the Maps of the Relaciones Geographicas (Univ. of Chicago, 2000), p. 114 and
-    Yannakakis, Since Time Immemorial, p. 98
+  <span key={"13e314d0"}>
+    Thanks to Yanna Yannakakis for her detailed feedback on an earlier version of this introduction, and in particular her suggestion that I introduce the concept of <cite>yuhuiayu</cite> so as to place Ñudzahui and Spanish worldviews alongside each other. This reflets how Teozacoalco itself was a place that was viewed through multiple lenses by multiple groups, often at the same time. For more on the concept of <cite>yuhuiayu</cite>, see Yanna Yannakakis, <cite>Since Time Immemorial: Native Custom and Law in Colonial Mexico</cite> (Duke UP, 2023), and Kevin Terraciano, <cite>The Mixtecs of Colonial Oaxaca: Ñudzahui History, Sixteenth through Eighteenth Centuries</cite> (Stanford UP, 2002).
   </span>,
-  //11
-  <span key="0be0eef9">
-    In addition to Mundy, Hidalgo, and Yannakakis, see also Alfonso Caso, "El
-    Mapa de Teozacoa1co," Cuadernos Americanos 47.5 (1949): 145-81; René Acuña,
-    ed. Relaciones geográficas del siglo XVI (UNAM, 1984); and Francisco de
-    Solano, ed. Cuestionarios para la formación de las relaciones geográficas de
-    Indias: Siglos XVI/XIX (Consejo Superior de Investigaciones Científicas,
-    1988).
+  <span key={"f4c46200"}>
+    Both Barbara Mundy and Yanna Yannakakis provide detailed readings of these diagrams. See Mundy, <cite>The Mapping of New Spain: Indigenous Cartography and the Maps of the Relaciones Geográficas</cite> (U of Chicago Press, 2000), 114, and Yannakakis, <cite>Since Time Immemorial</cite>, 99.
   </span>,
-  //12
-  <span key="8db2da43">Yannakakis, Since Time Immemorial, p. 105</span>,
-  //13
-  <span key="5e6ad62e">
-    For an elaboration of this point, see Yannakakis, Since Time Immemorial, p.
-    106.{" "}
+  <span key={"3dd251b9"}>
+    In addition to Mundy, Hidalgo, and Yannakakis, see also Alfonso Caso, “El Mapa de Teozacoalco,” <cite>Cuadernos Americanos</cite> 47.5 (1949): 145–181; René Acuña, ed., <cite>Relaciones geográficas del siglo XVI</cite> (UNAM, 1984); and Francisco de Solano, ed., <cite>Cuestionarios para la formación de las relaciones geográficas de Indias: Siglos XVI/XIX</cite> (Consejo Superior de Investigaciones Científicas, 1988).
   </span>,
-  //14
-  <span key="dc89396a">
-    Orit Halpern, Beautiful Data: A History of Vision and Reason sine 1945 (Duke
-    UP, 2015), p. 20
+  <span key={"e4bee1c0"}>
+    Yannakakis, <cite>Since Time Immemorial</cite>, 106.
   </span>,
-  //15
-  <span key="3f84d18a">
-    RJ Andrews, "Don't say ‘data visualizations,' Chartography January 28, 2025.
-    https://www.chartography.net/p/dont-say-data-visualizations. Accessed 16 May
-    2025.{" "}
+  <span key={"7b2cfca4"}>
+    Orit Halpern, <cite>Beautiful Data: A History of Vision and Reason since 1945</cite> (Duke UP, 2015), 21.
   </span>,
-  //16
-  <span key="cd163bfd">
-    Howard Grey Funkhouser, "Historical Development of the Graphical
-    Representation of Statistical Data," Osiris 3 (1937): 269-404; Jacques
-    Bertin, Sémiologie graphique. Les diagrammes, les réseauz, les cartes
-    (Gauthier-Villars, 1967); Edward Tufte, Visual Display of Quantitative
-    Information (Cheshire Press, 1983). Another prominent work of this era is
-    John Tukey's Exploratory Data Analysis (Addison-Wesley, 1977), which
-    advances lightweight visualizations (e.g. scatter plots and bar charts) as
-    tools to support early, exploratory work with data.{" "}
+  <span key={"928c1b80"}>
+    “Chart, n.,” <cite>The Oxford English Dictionary</cite>, September 2025, <a href="https://doi.org/10.1093/OED/4890659491">https://doi.org/10.1093/OED/4890659491</a>. For an in-depth exploration of the history of the term, see the multivolume <cite>History of Cartography</cite> project, edited by J. B. Harley and David Woodward and published by the University of Chicago Press.
   </span>,
-  //17
-  <span key="b60ca222">Halpern, Beautiful Data, p. 21. </span>,
-  //18
-  <span key="94b5dee3">
-    Stuard Card, Jock Macinlay, and Ben Shneiderman, Readings in Information
-    Visualization: Using Vision to Think (Morgan Kaufman, 1999), p. 5
+  <span key={"ce75d220"}>
+    Daniel Rosenberg and Anthony Grafton, <cite>Cartographies of Time: A History of the Timeline</cite> (Princeton Architectural Press, 2012), 96–149.
   </span>,
-  //19
-  <span key="d14e4004">
-    This technical definition has been carried into the present largely
-    unchanged. See, for example, Michael Friendly and Daniel J. Denis,
-    "Varieties of Data Visualization," which accompanies their monumental
-    website, Milestones in the History of Thematic Cartography, Statistical
-    Graphics, and Data Visualization.
-    https://www.datavis.ca/milestones/index.php?page=varieties+of+data+visualization.
-    Accessed 16 May 2025.{" "}
+  <span key={"81c5c833"}>
+    Numerous large-scale visualizations of US Census data can be found in the catalogues of the American Antiquarian Society and the Library Company of Philadelphia, dating as far back as the 1840s; this was a trend I observed during my archival research. Beginning with the 1870 census, the Census Bureau itself published dazzling illustrated statistical atlases, discussed in depth in chapter 5.
   </span>,
-  //20
-  <span key="b248330b">
-    It is also worth noting that the field itself has begun to move in this
-    direction. The annual IEEE Visualization conference, which once defined
-    three independent tracks—one for scientific visualization, the other for
-    information visualization, and the third for visual analytics—merged into a
-    single weeklong conference, IEEE VIS, in 2016
+  <span key={"3b5ab145"}>
+    RJ Andrews, “Don’t Say ‘Data Visualizations,’” <cite>Chartograph</cite>, January 28, 2025, <a href="https://www.chartography.net/p/dont-say-data-visualizations">https://www.chartography.net/p/dont-say-data-visualizations</a>, accessed May 16, 2025.
   </span>,
-  //21
-  <span key="3dfd1358">
-    This argument largely parallels the argument about data science that I make,
-    alongside Catherine D'Ignazio, in Data Feminism (MIT Press, 2020), p. 21. It
-    also bears mention that I am not alone in rejecting binary distinctions
-    between visualization forms. In describing the relationship between
-    visualizations and infographics, for example, theorist-practitioner Alberto
-    Cairo, explains, "every infographic and every visualization has a
-    presentation and an exploration component: they present, but they also
-    facilitate the analysis of what they show, to different degrees." The
-    Functional Art: An Introduction to Information Graphics and Visualization
-    (New Riders, 2012), p. xvi.{" "}
+  <span key={"21fa273d"}>
+    In 2022, Georges Hattab and RJ Andrews published a modern English translation, <cite>The Graphic Method</cite> (Visionary Press).
   </span>,
-  //22
-  <span key="22405ba3">
-    While this anecdote has never been formally verified, it remains a part of
-    Galileo lore, viz. Steven Strogatz, "From a Swinging Chandelier to Global
-    Positioning Systems," American Scientist 109.2 (2021), p. 106.{" "}
+  <span key={"f4ad84e5"}>
+    Howard Grey Funkhouser, “Historical Development of the Graphical Representation of Statistical Data,” <cite>Osiris</cite> 3 (1936): 269–404; Jacques Bertin, <cite>Sémiologie graphique. Les diagrammes, les réseaux, les cartes</cite> (Gauthier-Villars, 1967); Edward R. Tufte, <cite>The Visual Display of Quantitative Information</cite> (Graphics Press, 1983). Another prominent work of this era is John Tukey’s <cite>Exploratory Data Analysis</cite> (Addison-Wesley, 1977), which advances lightweight visualizations (e.g., scatter plots and bar charts) as tools to support early, exploratory work with data.
   </span>,
-  //23
-  <span key="2a70c1bd">
-    See Funkhouser, "Historical Development," Tufte, Visual Display, and more
-    recently, Sandra Rendgen, History of Information Graphics (Taschen, 2019),
-    and Michael Friendly and Howard Wainer, A History of Data Visualization and
-    Graphic Communication (Harvard UP, 2021). While many of these describe how
-    the generally exploratory air of the Renaissance set these developments in
-    motion, especially with the example of illuminated manuscripts, it was the
-    Scientific Revolution's turn to empirical observation and measurement that
-    provided the data which modern visualization would require.{" "}
+  <span key={"ad575468"}>
+    See, for example, Michael Friendly and Daniel J. Denis, “Varieties of Data Visualization,” which accompanies their monumental website, <cite>Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization</cite>, <a href="https://www.datavis.ca/milestones/index.php?page=varieties+of+data+visualization">https://www.datavis.ca/milestones/index.php?page=varieties+of+data+visualization</a>, accessed May 16, 2025.
   </span>,
-  //24
-  <span key="cc770d53">
-    This is, of course, an exceedingly general gloss. In an Islamic
-    epistemology, for example, empirical evidence has been considered a part of
-    divine knowledge from its very inception. Even within Enlightenment Europe,
-    empiricism was not the only governing theory. The theory of rationalism, as
-    exemplified by figures such as René Descartes and Baruch Spinoza, offered a
-    wholly alternative explanation to how knowledge was produced, one which held
-    that certain core ideas, such as the notion of language or the shape of a
-    curve, came to be understood not by experiment but instead through the inner
-    workings of the mind. These fundamental concepts were not observable but
-    innate, the rationalists posited, and were transformed into knowledge by a
-    process of deduction: by moving from the abstract to the particular. This
-    process was the opposite of the inductive approach advanced by the
-    empiricists, who believed in moving from the particular to the abstract.{" "}
+  <span key={"2736b08a"}>
+    Tamara Munzner, <cite>Visualization Analysis and Design</cite> (CRC Press, 2014), 1. One could also point to the 2021 merging of the flagship IEEE VIS conferences on information visualization, scientific visualization, and visual analytics into a single conference now called IEEE VIS: Visualization & Visual Analytics. See Christoph Garth, Min Chen, Alex Endert, Petra Isenberg, Alexander Lex, Shixia Liu, and Anders Ynnerman, “Things Are Changing in 2021: The New VIS Conference,” <cite>IEEE VIS</cite> (blog), October 7, 2020, <a href="https://ieeevis.org/year/2024/blog/things-are-changing-2021">https://ieeevis.org/year/2024/blog/things-are-changing-2021</a>, accessed January 15, 2026.
   </span>,
-  //25
-  <span key="4075d947">
-    The idea of a hierarchy of the senses, in which sight is at the top, dates
-    to the ancient Greeks. In De Anima (ca. 350 BCE), for example, Aristotle
-    posits that the sense of sight is the highest sense because it can act
-    alone. In Sense and Sensibilia, he further articulates the five senses and
-    maintains that sight is at the top because it retains distance from its
-    objects of perception. For more of this history, see Carolyn Korsmeyer, "The
-    Hierarchy of the Senses," in Making Sense of Taste: Food and Philosophy
-    (Cornell UP, 2015), pp. 20-54
+  <span key={"344b1502"}>
+    On data physicalization, see Pierre Dragicevic, Yvonne Jansen, and Andrew Vande Moere, “Data Physicalization,” in the <cite>Springer Handbook of Human Computer Interaction</cite>, ed. Jean Vanderdonckt, Philippe Palanque, and Marco Winckler (Springer, 2021). On “data hunches,” see Haihan Lin, Derya Akbaba, Miriah Meyer, and Alexander Lex, “Data Hunches: Incorporating Personal Knowledge into Visualizations,” <cite>IEEE Transactions on Visualization and Computer Graphics (VIS)</cite> 29.1 (2022): 504–514. On “visualization vibes,” see Michelle Morgenstern, Amy Fox, Graham M. Jones, and Arvind Satyanarayan, “Visualization Vibes: The Socio-Indexical Function of Visualization Design,” <cite>IEEE Transactions on Visualization and Computer Graphics (VIS)</cite> 32.1 (2026): 1284–1294.
   </span>,
-  //26
-  <span key="5072a642">
-    His air pump experiments notwithstanding, Boyle's own visual impulse would
-    seem to be towards precision and detail, rather than abstraction, as evinced
-    by the detailed illustrations that accompanied his New Experiments, as
-    literary scholar Alex Sherman observes. Comment on open review, January 13,
-    2025. https://hyp.is/_GCQpNH6Ee-wcGtkgLC9FQ/dataxdesign.io/chapters/intro{" "}
+  <span key={"a1684040"}>
+    We should all now be familiar with the history of women “computers,” as documented by historians of technology such as Nathan Ensmenger and Mar Hicks, in which the introduction of formal technical credentialing requirements pushed out women who had taught themselves. But the phenomenon goes back further still. In <cite>Witches, Midwives, and Nurses: A History of Women Healers</cite>, Barbara Ehrenreich and Deirdre English detail the history of obstetrics in the United States, in which experience-directed women midwives were replaced by book-smart men obstetricians after the establishment of formal medical schools. The same pattern can be found in the kitchen, with women performing most home cooking without formal training (or recognition), while men attend culinary school to become celebrity chefs. See Ensmenger, <cite>The Computer Boys Take Over: Computers, Programmers, and the Politics of Technical Expertise</cite> (MIT Press, 2010); Hicks, <cite>Programmed Inequality: How Britain Discarded Women Technologists and Lost Its Edge in Computing</cite> (MIT Press, 2017); and Ehrenreich and English, <cite>Witches, Midwives, and Nurses: A History of Women Healers</cite> (New York: Feminist Press, [1973] 2010).
   </span>,
-  //27
-  <span key="487169ae">
-    If you are distressed to see the entirety of the Enlightenment summarized in
-    a single sentence, rest assured that this is not the last time we will
-    discuss the contributions associated with this pivotal time.{" "}
+  <span key={"f36b5a0a"}>
+    On the “continuum” between data visualization and data communication, see Alberto Cairo, <cite>The Functional Art: An Introduction to Information Graphics and Visualization</cite> (New Riders, 2012), 15.
   </span>,
-  //28
-  <span key="9b6f40eb">
-    Friendly and Wainer, History of Data Visualization, pp. 16
+  <span key={"04f23f9d"}>
+    On the significance of visualizations that occur naturally in the world, see Dietmar Offenhuber, <cite>Autographic Design: The Matter of Data in a Self-Inscribing World</cite> (MIT Press, 2023).
   </span>,
-  //29
-  <span key="c6eecaec">Ref role of barometer, Friendly and Wainer, p. 19</span>,
-  //30
-  <span key="5e5c1d34">Tufte, Visual Display, p. 21</span>,
-  //31
-  <span key="74aad6ad">
-    Halley would go on to captain the British naval vessel, the Paramour, on a
-    mission to the South Atlantic ocean that has been claimed as the first
-    "purely scientific voyage" to take place on a royal ship (Susan Borowski,
-    "The Multi-Layered Wisdom of Edmond Halley," American Association for the
-    Advancement of Science, 12 October, 2012). Forced to return due to personal
-    conflicts with his crew, Halley returned to the South Atlantic two more
-    times in the next three years, culminating a 1701 map showing the isogonic
-    lines of the entire Atlantic Ocean. This map was, in turn, used to ease
-    navigation across the Atlantic, not only for future scientific research, but
-    also for the trade of goods—goods which, at time, took human form.{" "}
+  <span key={"449087fe"}>
+    This argument largely parallels the argument about data science that I make, alongside Catherine D’Ignazio, in <cite>Data Feminism</cite> (MIT Press, 2020), 21. It also bears mention that I am not alone in rejecting binary distinctions between visualization forms. In describing the relationship between visualizations and infographics, for example, theorist-practitioner Alberto Cairo explains, “every infographic and every visualization has a <cite>presentation</cite> and an <cite>exploration</cite> component: they present, but they also facilitate the analysis of what they show, to different degrees.” Cairo, <cite>The Functional Art</cite>, xvi.
   </span>,
-  //32
-  <span key="a5c0b11c">
-    I am not the first to have made this argument. See, for example, Sylvia
-    Wynter, "1492: A New World View," in Race, Discourse, and the Origin of the
-    Americas: A New World View, eds. Vera Lawrence Hyatt and Rex Nettleford
-    (Smithsonian Institution Press, 1994): 5–57.{" "}
+  <span key={"b8201828"}>
+    While this anecdote has never been formally verified, it remains a part of Galileo lore, viz. Steven Strogatz, “From a Swinging Chandelier to Global Positioning Systems,” <cite>American Scientist</cite> 109.2 (2021): 106.
   </span>,
-  //33
-  <span key="d74d3166">
-    The impact of this devastation continues into the present, as contemporary
-    Indigenous scholars such as Mishauna Goeman (Seneca) and Max Liboiron
-    (Métis/Mechif) remind us, profoundly disordering social structures and
-    relationships (Goeman), as well as relations with land and resources
-    (Libioron). As Liboiron, citing Glen Sean Coulthard (Yellowknives Dene)
-    explains, "colonialism is a way to describe relationships characterized by
-    conquest and genocide that grant colonialists and settlers ‘ongoing state
-    access to land and resources that contradictorily provide the material and
-    spiritual sustenance of Indigenous societies on the one hand, and the
-    foundation of colonial state-formation, settlement, and capitalist
-    development on the other." Max Liboiron, Pollution is Colonialism (Duke UP,
-    2021), p. 9.{" "}
+  <span key={"1261d814"}>
+    See Funkhouser, “Historical Development,” Tufte, <cite>Visual Display</cite>, and more recently Sandra Rendgen, <cite>History of Information Graphics</cite> (Taschen, 2019), and Michael Friendly and Howard Wainer, <cite>A History of Data Visualization and Graphic Communication</cite> (Harvard UP, 2021). While many of these describe how the generally exploratory air of the Renaissance set these developments in motion, especially with the example of illuminated manuscripts, it was the Scientific Revolution’s turn to empirical observation and measurement that provided the data which modern visualization would require.
   </span>,
-  //34
-  <span key="cf48fd95">Liboiron, Pollution, p. 8</span>,
-  //35
-  <span key="d3c11ff4">Cline, "Relaciones Geográficas," p. 349</span>,
-  //36
-  <span key="b62de09d">
-    Ian Hacking, The Taming of Chance (Cambridge UP, 1990), p. 18. For a more
-    recent account of the rise of modern statistics, see Chris Wiggins and
-    Matthew L. Jones, How Data Happened: A History from the Age of Reason to the
-    Age of Algorithms (Norton, 2023).{" "}
+  <span key={"dcdfcf8b"}>
+    This is, of course, an exceedingly general gloss. In an Islamic epistemology, for example, empirical evidence has been considered a part of divine knowledge from its very inception. Even within Enlightenment Europe, empiricism was not the only governing theory. The theory of rationalism, as exemplified by Figures such as René Descartes and Baruch Spinoza, offered a wholly alternative explanation to how knowledge was produced, one that held that certain core ideas, such as the notion of language or the shape of a curve, came to be understood not by experiment but instead through the inner workings of the mind. These fundamental concepts were not observable but innate, the rationalists posited, and were transformed into knowledge by a process of deduction: by moving from the abstract to the particular. This process was the opposite of the inductive approach advanced by the empiricists, who believed in moving from the particular to the abstract.
   </span>,
-  //37
-  <span key="e71638a9">
-    Admittedly, not in as much depth or as much urgency as is deserved. As a
-    supplement, see Banu Subramaniam, Ghost Stories for Darwin: The Science of
-    Variation and the Politics of Diversity (Univ. of Illinois Press, 2014) and
-    Anita Chan, Predatory Data: Eugenics in Big Tech and Our Fight for an
-    Independent Future (Univ. of California Press, 2025).
+  <span key={"c0632e76"}>
+    The idea of a hierarchy of the senses, in which sight is at the top, dates to the ancient Greeks. In <cite>De anima</cite> (ca. 350 BCE), for example, Aristotle posits that the sense of sight is the highest sense because it can act alone. In <cite>Sense and Sensibilia</cite>, he further articulates the five senses and maintains that sight is at the top because it retains distance from its objects of perception. For more of this history, see Carolyn Korsmeyer, “The Hierarchy of the Senses,” in <cite>Making Sense of Taste: Food and Philosophy</cite> (Cornell UP, 2015), 20–53.
   </span>,
-  //38
-  <span key="6db458ac">
-    This is the enduring contribution of feminist science and technology studies
-    scholarship of the 1980s and 1990s, viz. Donna Haraway's "Situated
-    Knowledges: The Science Question in Feminism and the Privilege of Partial
-    Perspective," Feminist Studies 14.3 (1988): 575-599. It has since been
-    renewed and expanded by scholars such as Katherine McKittrick, whose Dear
-    Science and Other Stories (Duke UP, 2020), exposes the limits of even
-    Haraway's partial perspective; this work is discussed in Chapter 3
+  <span key={"1f95db45"}>
+    His air pump experiments notwithstanding, Boyle’s own visual impulse would seem to have been toward precision and detail rather than abstraction, as evinced by the detailed illustrations that accompanied his <cite>New Experiments</cite>, as literary scholar Alex Sherman observes. Comment on open review, January 13, 2025, <a href="https://hyp.is/_GCQpNH6Ee-wcGtkgLC9FQ/dataxdesign.io/chapters/intro">https://hyp.is/_GCQpNH6Ee-wcGtkgLC9FQ/dataxdesign.io/chapters/intro</a>.
   </span>,
-  //39
-  <span key="61508e19">
-    On Tawantinsuyu, or "the land of four parts," see The Inka Empire: A
-    Multidisciplinary Approach, ed. Izumi Shimada (Univ. of Texas Press, 2015).{" "}
+  <span key={"0db22997"}>
+    If you are distressed to see the entirety of the Enlightenment summarized in a single sentence, rest assured that this is not the last time we will discuss the contributions associated with this pivotal time.
   </span>,
-  //40
-  <span key="c4569577">
-    Xiyao Mei, Yu Zhang, Chaofan Yang, Rui Shi, and Xiaoru Yuan, "ZuantuSet: A
-    Collection of Historical Chinese Visualizations and Illustrations," arXiv
-    preprint, February 26, 2025, https://arxiv.org/pdf/2502.19093{" "}
+  <span key={"83d217ae"}>
+    Friendly and Wainer, <cite>A History of Data Visualization</cite>, 17.
   </span>,
-  //41
-  <span key="e54dfa4a">
-    Some, such as Bruno Latour, have argued that Europe has never been modern at
-    all, and that all claims to modernity that are founded on the distinctions
-    between science and culture that the Enlightenment would introduce are in
-    fact false distinctions, and therefore untrue. We Have Never Been Modern
-    (Harvard UP, 1993).
+  <span key={"dd607ae9"}>
+    On the role of the barometer, see Friendly and Wainer, <cite>A History of Data Visualization</cite>, 20.
   </span>,
-  //42
-  <span key="d145b34f">
-    The prominent Scottish philosopher David Hume, for example, claimed that
-    there was a racial hierarchy of "four or five different kinds" of humans,
-    with "all other species… naturally inferior to the whites." "On National
-    Characters," in Political Essays, ed. Knud Haakonsse (Cambridge UP, 2012),
-    pp. 78-93
+  <span key={"7227d1f0"}>
+    Friendly and Wainer, in the subtitle of their chapter on Playfair, call him “the father of modern graphics” (<cite>A History of Data Visualization</cite>, 95). Friendly and Daniel J. Denis’s website, <cite>Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization</cite>, which, before the publication of Friendly and Wainer’s book, served as the field’s most comprehensive history, is the source of the “golden age” terminology, defined as the period between 1840 and 1910. Also see Friendly with Matthew Sigal and Derek Harnanansingh, “The Milestones Project: A Database for the History of Data Visualization,” January 11, 2013, <a href="https://datavis.ca/papers/MilestonesProject.pdf">https://datavis.ca/papers/MilestonesProject.pdf</a>, accessed January 25, 2026.
   </span>,
-  //43
-  <span key="1c1ed8df">
-    Some readers may recognize this as a gloss of Michel Foucault's theorization
-    of counterhistory, which he develops in relation to the historiographic
-    theory of Friedrich Nietzsche; they would be right. For more on Foucault and
-    counterhistory, see "Nietzsche, Genealogy, History," in Language,
-    Counter-Memory, Practice: Selected Essays and Interviews, ed, D.F. Bouchard
-    (Cornell UP, 1977): 139-165
+  <span key={"9effb176"}>
+    Tufte, <cite>Visual Display</cite>, 24. On the mythology of John Snow and his visual and epidemiological antecedents, see Howard Brody et al., “Map-Making and Myth-Making in Broad Street: The London Cholera Epidemic, 1854,” <cite>The Lancet</cite> 356.9223 (2000): 64–68.
   </span>,
-  //44
-  <span key="9add9571">
-    Ruha Benjamin, Imagination: A Manifesto (Norton, 2024), p. 22
+  <span key={"3a361320"}>
+    The sole woman (sometimes) included in this chronology, Florence Nightingale, has been anointed a “master” but, significantly, never (at least to my knowledge) a “founder” or “pioneer” (or even a “mother”); e.g., Noel-Ann Bradshaw, “Florence Nightingale (1820–1910): An Unexpected Master of Data,” <cite>Patterns</cite> 8.1/2 (2020).
   </span>,
-  //45
-  <span key="f46e6892">
-    On racial capitalism, see Cedric Robinson, Black Marxism: The Making of the
-    Black Radical Tradition (Univ. of North Carolina Press, 1993) or just read
-    Chapter 1.{" "}
+  <span key={"491430f8"}>
+    Deborah Shapley, “The Da Vinci of Data,” <cite>New York Times,</cite> March 30, 1998; Tufte, <cite>Visual Display</cite>, 40. In <cite>The Minard System: The Complete Statistical Graphics of Charles-Joseph Minard</cite> (Princeton Architectural Press, 2018), Sandra Rendgen describes Minard as a “forefather of modern information visualization.” Friendly, in his early work on Minard, also calls him a “true pioneer.” See Friendly, “Visions and Re-Visions of Charles Joseph Minard,” <cite>Journal of Educational and Behavioral Statistics</cite> 27.1 (Spring 2002): 31.
   </span>,
-  //46
-  <span key="37bbb2a3">
-    On positivism as the dominant epistemology of visualization research, see
-    Akbaba et al.{" "}
+  <span key={"fcc2e489"}>
+    Tufte, <cite>Visual Display</cite>, 22.
+  </span>,
+  <span key={"b01d1692"}>
+    Halley would go on to captain the British naval vessel <cite>Paramour</cite> on a mission to the South Atlantic that has been claimed as the first “purely scientific voyage” to take place on a royal ship (Susan Borowski, “The Multi-layered Wisdom of Edmond Halley,” American Association for the Advancement of Science, October 12, 2012). Forced to return due to personal conflicts with his crew, Halley returned to the South Atlantic two more times in the next three years, his work there culminating in a 1701 map showing the isogonic lines of the entire Atlantic Ocean. This map was, in turn, used to ease navigation across the Atlantic, not only for future scientific research but also for the trade of goods—goods which, at times, took human form.
+  </span>,
+  <span key={"a354be52"}>
+    I am not the first to have made this argument. See, for example, Sylvia Wynter, “1492: A New World View,” in <cite>Race, Discourse, and the Origin of the Americas: A New World View</cite>, ed. Vera Lawrence Hyatt and Rex Nettleford (Smithsonian Institution Press, 1994), 5–57.
+  </span>,
+  <span key={"3ed960d6"}>
+    The impact of this devastation continues into the present, as contemporary Indigenous scholars such as Mishauna Goeman (Seneca) and Max Liboiron (Métis/Mechif) remind us, profoundly disordering social structures and relationships (Goeman), as well as relations with land and resources (Liboiron). As Liboiron, citing Glen Sean Coulthard (Yellowknives Dene) explains, “colonialism is a way to describe relationships characterized by conquest and genocide that grant colonialists and settlers ongoing state access to land and resources that contradictorily provide the material and spiritual sustenance of Indigenous societies on the one hand, and the foundation of colonial state-formation, settlement, and capitalist development on the other.” Max Liboiron, <cite>Pollution Is Colonialism</cite> (Duke UP, 2021), 9.
+  </span>,
+  <span key={"114ee019"}>
+    Russell Thornton, “Native American Demographic and Tribal Survival into the Twenty-first Century,” <cite>American Studies</cite> 46.3/4 (2005): 23–38.
+  </span>,
+  <span key={"ff1ea922"}>
+    Cline, “The Relaciones Geográficas of the Spanish Indies,” 350.
+  </span>,
+  <span key={"f6ef07ca"}>
+    In <cite>Horizons: The Globalization of Modern Science</cite> (Mariner, 2022) James Poskett documents how, in fact, the Spanish learned many methods of data collection from the Indigenous societies over which they sought to rule.
+  </span>,
+  <span key={"b579e3f4"}>
+    Ian Hacking, <cite>The Taming of Chance</cite> (Cambridge UP, 1990), 18. For a more recent account of the rise of modern statistics, see Chris Wiggins and Matthew L. Jones, <cite>How Data Happened: A History from the Age of Reason to the Age of Algorithms</cite> (Norton, 2023).
+  </span>,
+  <span key={"7fba6962"}>
+    On Tawantinsuyu, or “the land of four parts,” see <cite>The Inka Empire: A Multidisciplinary Approach</cite>, ed. Izumi Shimada (U of Texas Press, 2015).
+  </span>,
+  <span key={"22fb600e"}>
+    Xiyao Mei, Yu Zhang, Chaofan Yang, Rui Shi, and Xiaoru Yuan, “ZuantuSet: A Collection of Historical Chinese Visualizations and Illustrations,” arXiv preprint, February 26, 2025, <a href="https://arxiv.org/pdf/2502.19093">https://arxiv.org/pdf/2502.19093</a>.
+  </span>,
+  <span key={"8cd61ed9"}>
+    On the shogunal map and early modern Japanese mapping practices, see Mark Ravina, “Algorithmic Maps and the Political Geography of Early-Modern Japan,” <cite>Cultural Analytics</cite> 8.3, <a href="https://doi.org/10.22148/001c.84860">https://doi.org/10.22148/001c.84860</a>. On the map of Jambudvīpa, see Katherine Anne Paul, Richard A. Pegg, and Katie E. Osborne, “A Jain Cosmographic Map of the Rose-Apple Continent (Jambudvipa),” Norman B. Leventhal Map & Education Center, Boston Public Library, <a href="https://www.leventhalmap.org/projects/jain-map-chat/">https://www.leventhalmap.org/projects/jain-map-chat/</a>, accessed March 17, 2026.
+  </span>,
+  <span key={"c1529fc6"}>
+    Some, such as Bruno Latour, have argued that Europe has never been modern at all, and that all claims to modernity that are founded on the distinctions between science and culture that the Enlightenment would introduce are in fact false distinctions, and therefore untrue. Latour, <cite>We Have Never Been Modern</cite> (Harvard UP, 1993).
+  </span>,
+  <span key={"f0746a90"}>
+    The prominent Scottish philosopher David Hume, for example, claimed that there was a racial hierarchy of “four or five different kinds” of humans, with “all other species … naturally inferior to the whites.” “On National Characters,” in <cite>Political Essays</cite>, ed. Knud Haakonssen (Cambridge UP, 2012), 78–92.
+  </span>,
+  <span key={"5ad28343"}>
+    Some readers may recognize this as a gloss of Michel Foucault’s theorization of counterhistory, which he develops in relation to the historiographic theory of Friedrich Nietzsche. For more on Foucault and counterhistory, see Foucault, “Nietzsche, Genealogy, History,” in <cite>Language, Counter-Memory, Practice: Selected Essays and Interviews,</cite> ed. D. F. Bouchard (Cornell UP, 1977), 139–164.
+  </span>,
+  <span key={"95309193"}>
+    Ruha Benjamin, <cite>Imagination</cite>: <cite>A Manifesto</cite> (Norton, 2024), 23.
+  </span>,
+  <span key={"2e3e6dde"}>
+    E.g., Michael Friendly, “The Golden Age of Statistical Graphics,” <cite>Statistical Science</cite> 23.4 (2008): 502–535.
+  </span>,
+  <span key={"1b686467"}>
+    On racial capitalism, see Cedric Robinson, <cite>Black Marxism: The Making of the Black Radical Tradition</cite> (U of North Carolina Press, 1993), or just read chapter 1.
+  </span>,
+  <span key={"8eb56754"}>
+    On positivism as the dominant epistemology of visualization research, see Akbaba, Klein, and Meyer, “Entanglements for Visualization.”
   </span>,
 ];
 
