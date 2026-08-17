@@ -33,6 +33,9 @@ const SiteNav = () => {
           <li className="">
             <Link to="about">About</Link>
           </li>
+          <li className="">
+            <Link to="events">Events</Link>
+          </li>
         </ol>
         <ol className="overflow-y-scroll w-full">
           {Object.keys(chapterMeta as TChapterMeta).map((chapter, index) => {
