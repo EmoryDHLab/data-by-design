@@ -1,3 +1,5 @@
+import NoteLink from "~/components/NoteLink";
+
 export const prefaceFootnotes = [
   <span key={"a1f4c802"}>
     A “facsimile edition” is the term for a book that’s been scanned and
@@ -74,7 +76,7 @@ export const prefaceFootnotes = [
 
 export const introFootnotes = [
   <span key={"132052c6"}>
-    I came across this phrase through a Google Image search, and while I am somewhat mortified that the very first citation of this introduction is not to a scholarly text but instead to a tourism website, I have not been able to come up with a better descriptor for Oaxaca’s terrain on my own. Thus, Ivan Phillipsen, “The Natural Wonders of Oaxaca, Mexico,” <cite>Wild Latitudes</cite>, <a href="https://wildlatitudes.com/natural-wonders-of-oaxaca-mexico/">https://wildlatitudes.com/natural-wonders-of-oaxaca-mexico/</a>, accessed May 16, 2025.
+    I came across this phrase through a Google Image search, and while I am somewhat mortified that the very first citation of this introduction is not to a scholarly text but instead to a tourism website, I have not been able to come up with a better descriptor for Oaxaca’s terrain on my own. Thus, Ivan Phillipsen, “The Natural Wonders of Oaxaca, Mexico,” <cite>Wild Latitudes</cite>, <NoteLink href="https://wildlatitudes.com/natural-wonders-of-oaxaca-mexico/">https://wildlatitudes.com/natural-wonders-of-oaxaca-mexico/</NoteLink>, accessed May 16, 2025.
   </span>,
   <span key={"66e5c4d9"}>
     The Ñudzahui, like the Mexica (Aztec), used both solar and sacred calendar systems, but did not count years in the same way as the Gregorian (European) calendar system. For more on Mesoamerican calendars and codices, see Alfonso Caso, <cite>Los calendarios prehispánicos</cite> (Universidad Nacional Autónoma de México, 1967), and more recently Maarten E. R. G. N. Jansen and Gabina Aurora Pérez Jiménez, “Chronological Correlations in Aztec and Mixtec History,” in <cite>Mesoamerican Manuscripts: New Scientific Approaches and Interpretations</cite>, edited by Maarten E. R. G. N. Jansen, Virginia Lladò-Buisán, and Ludo Snijders (Brill, 2019), 341–379.
@@ -83,13 +85,13 @@ export const introFootnotes = [
     The cosmographer was a man by the name of Juan López de Velasco, who had been appointed Chief Cosmographer-Chronicler of the Indies a decade earlier, in 1571. In this role, López de Velasco compiled several substantial texts documenting colonial knowledge of the Americas as well as charts and maps of his own. See Felipe E. Ruan, “Prudent Deferment: Cosmographer-Chronicler Juan López de Velasco and the Historiography of the Indies,” <cite>Americas</cite> 74.1 (2017): 27–55.
   </span>,
   <span key={"83f16c5e"}>
-    Visualization researcher Ben Shneiderman is credited with the oft-quoted phrase, “The purpose of visualization is insight, not pictures.” See, for example, Jessica Hullman, “The Purpose of Visualization Is Insight, Not Pictures: An Interview with Ben Shneiderman,” <cite>ACM Interactions</cite>, August 19, 2019, <a href="https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben">https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben</a>, accessed May 16, 2025. For a more extended discussion of insight, including its roots in Stuart Card, Jock Mackinlay, and Shneiderman’s “visualization reference model,” see Derya Akbaba, Lauren Klein, and Miriah Meyer, “Entanglements for Visualization: Changing Research Outcomes through Feminist Theory,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 31.1 (2025): 1279–1289.
+    Visualization researcher Ben Shneiderman is credited with the oft-quoted phrase, “The purpose of visualization is insight, not pictures.” See, for example, Jessica Hullman, “The Purpose of Visualization Is Insight, Not Pictures: An Interview with Ben Shneiderman,” <cite>ACM Interactions</cite>, August 19, 2019, <NoteLink href="https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben">https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben</NoteLink>, accessed May 16, 2025. For a more extended discussion of insight, including its roots in Stuart Card, Jock Mackinlay, and Shneiderman’s “visualization reference model,” see Derya Akbaba, Lauren Klein, and Miriah Meyer, “Entanglements for Visualization: Changing Research Outcomes through Feminist Theory,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 31.1 (2025): 1279–1289.
   </span>,
   <span key={"02c73c9a"}>
     This statement is inspired by the definition of “local data” as articulated by Yanni Loukissas in <cite>All Data Are Local: Thinking Critically in a Data-Driven Society</cite> (MIT Press, 2019). There he writes: “Data are cultural artifacts created by people, and their dutiful machines, at a time, in a place, and with the instruments at hand for audiences that are conditioned to receive them” (2).
   </span>,
   <span key={"2c04b226"}>
-    Thanks to Jihan Sherman for alerting me to this method of attribution, developed by the curators of “Hear Me Now: The Black Potters of Old Edgefield, South Carolina” at the High Museum in Atlanta, which ran from February 16 through May 12, 2024. It is intended to acknowledge the social, historical, and political conditions that result in the names of certain artists being preserved for posterity and others not. See <a href="https://high.org/exhibition/hear-me-now/">https://high.org/exhibition/hear-me-now/</a>, accessed May 16, 2025. On the mapmaker’s training as a painter, see Alex Hidalgo, <cite>Trail of Footprints: A History of Indigenous Maps from Viceregal Mexico</cite> (U of Texas Press, 2019), 40.
+    Thanks to Jihan Sherman for alerting me to this method of attribution, developed by the curators of “Hear Me Now: The Black Potters of Old Edgefield, South Carolina” at the High Museum in Atlanta, which ran from February 16 through May 12, 2024. It is intended to acknowledge the social, historical, and political conditions that result in the names of certain artists being preserved for posterity and others not. See <NoteLink href="https://high.org/exhibition/hear-me-now/">https://high.org/exhibition/hear-me-now/</NoteLink>, accessed May 16, 2025. On the mapmaker’s training as a painter, see Alex Hidalgo, <cite>Trail of Footprints: A History of Indigenous Maps from Viceregal Mexico</cite> (U of Texas Press, 2019), 40.
   </span>,
   <span key={"d5ab0c03"}>
     A later section of this introduction problematizes the framing of modernity. For now, I employ scare quotes with all that they imply to indicate that this designation requires significant contextualization, and significant critique.
@@ -116,7 +118,7 @@ export const introFootnotes = [
     Orit Halpern, <cite>Beautiful Data: A History of Vision and Reason since 1945</cite> (Duke UP, 2015), 21.
   </span>,
   <span key={"928c1b80"}>
-    “Chart, n.,” <cite>The Oxford English Dictionary</cite>, September 2025, <a href="https://doi.org/10.1093/OED/4890659491">https://doi.org/10.1093/OED/4890659491</a>. For an in-depth exploration of the history of the term, see the multivolume <cite>History of Cartography</cite> project, edited by J. B. Harley and David Woodward and published by the University of Chicago Press.
+    “Chart, n.,” <cite>The Oxford English Dictionary</cite>, September 2025, <NoteLink href="https://doi.org/10.1093/OED/4890659491">https://doi.org/10.1093/OED/4890659491</NoteLink>. For an in-depth exploration of the history of the term, see the multivolume <cite>History of Cartography</cite> project, edited by J. B. Harley and David Woodward and published by the University of Chicago Press.
   </span>,
   <span key={"ce75d220"}>
     Daniel Rosenberg and Anthony Grafton, <cite>Cartographies of Time: A History of the Timeline</cite> (Princeton Architectural Press, 2012), 96–149.
@@ -125,7 +127,7 @@ export const introFootnotes = [
     Numerous large-scale visualizations of US Census data can be found in the catalogues of the American Antiquarian Society and the Library Company of Philadelphia, dating as far back as the 1840s; this was a trend I observed during my archival research. Beginning with the 1870 census, the Census Bureau itself published dazzling illustrated statistical atlases, discussed in depth in chapter 5.
   </span>,
   <span key={"3b5ab145"}>
-    RJ Andrews, “Don’t Say ‘Data Visualizations,’” <cite>Chartograph</cite>, January 28, 2025, <a href="https://www.chartography.net/p/dont-say-data-visualizations">https://www.chartography.net/p/dont-say-data-visualizations</a>, accessed May 16, 2025.
+    RJ Andrews, “Don’t Say ‘Data Visualizations,’” <cite>Chartograph</cite>, January 28, 2025, <NoteLink href="https://www.chartography.net/p/dont-say-data-visualizations">https://www.chartography.net/p/dont-say-data-visualizations</NoteLink>, accessed May 16, 2025.
   </span>,
   <span key={"21fa273d"}>
     In 2022, Georges Hattab and RJ Andrews published a modern English translation, <cite>The Graphic Method</cite> (Visionary Press).
@@ -134,10 +136,10 @@ export const introFootnotes = [
     Howard Grey Funkhouser, “Historical Development of the Graphical Representation of Statistical Data,” <cite>Osiris</cite> 3 (1936): 269–404; Jacques Bertin, <cite>Sémiologie graphique. Les diagrammes, les réseaux, les cartes</cite> (Gauthier-Villars, 1967); Edward R. Tufte, <cite>The Visual Display of Quantitative Information</cite> (Graphics Press, 1983). Another prominent work of this era is John Tukey’s <cite>Exploratory Data Analysis</cite> (Addison-Wesley, 1977), which advances lightweight visualizations (e.g., scatter plots and bar charts) as tools to support early, exploratory work with data.
   </span>,
   <span key={"ad575468"}>
-    See, for example, Michael Friendly and Daniel J. Denis, “Varieties of Data Visualization,” which accompanies their monumental website, <cite>Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization</cite>, <a href="https://www.datavis.ca/milestones/index.php?page=varieties+of+data+visualization">https://www.datavis.ca/milestones/index.php?page=varieties+of+data+visualization</a>, accessed May 16, 2025.
+    See, for example, Michael Friendly and Daniel J. Denis, “Varieties of Data Visualization,” which accompanies their monumental website, <cite>Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization</cite>, <NoteLink href="https://www.datavis.ca/milestones/index.php?page=varieties+of+data+visualization">https://www.datavis.ca/milestones/index.php?page=varieties+of+data+visualization</NoteLink>, accessed May 16, 2025.
   </span>,
   <span key={"2736b08a"}>
-    Tamara Munzner, <cite>Visualization Analysis and Design</cite> (CRC Press, 2014), 1. One could also point to the 2021 merging of the flagship IEEE VIS conferences on information visualization, scientific visualization, and visual analytics into a single conference now called IEEE VIS: Visualization & Visual Analytics. See Christoph Garth, Min Chen, Alex Endert, Petra Isenberg, Alexander Lex, Shixia Liu, and Anders Ynnerman, “Things Are Changing in 2021: The New VIS Conference,” <cite>IEEE VIS</cite> (blog), October 7, 2020, <a href="https://ieeevis.org/year/2024/blog/things-are-changing-2021">https://ieeevis.org/year/2024/blog/things-are-changing-2021</a>, accessed January 15, 2026.
+    Tamara Munzner, <cite>Visualization Analysis and Design</cite> (CRC Press, 2014), 1. One could also point to the 2021 merging of the flagship IEEE VIS conferences on information visualization, scientific visualization, and visual analytics into a single conference now called IEEE VIS: Visualization & Visual Analytics. See Christoph Garth, Min Chen, Alex Endert, Petra Isenberg, Alexander Lex, Shixia Liu, and Anders Ynnerman, “Things Are Changing in 2021: The New VIS Conference,” <cite>IEEE VIS</cite> (blog), October 7, 2020, <NoteLink href="https://ieeevis.org/year/2024/blog/things-are-changing-2021">https://ieeevis.org/year/2024/blog/things-are-changing-2021</NoteLink>, accessed January 15, 2026.
   </span>,
   <span key={"344b1502"}>
     On data physicalization, see Pierre Dragicevic, Yvonne Jansen, and Andrew Vande Moere, “Data Physicalization,” in the <cite>Springer Handbook of Human Computer Interaction</cite>, ed. Jean Vanderdonckt, Philippe Palanque, and Marco Winckler (Springer, 2021). On “data hunches,” see Haihan Lin, Derya Akbaba, Miriah Meyer, and Alexander Lex, “Data Hunches: Incorporating Personal Knowledge into Visualizations,” <cite>IEEE Transactions on Visualization and Computer Graphics (VIS)</cite> 29.1 (2022): 504–514. On “visualization vibes,” see Michelle Morgenstern, Amy Fox, Graham M. Jones, and Arvind Satyanarayan, “Visualization Vibes: The Socio-Indexical Function of Visualization Design,” <cite>IEEE Transactions on Visualization and Computer Graphics (VIS)</cite> 32.1 (2026): 1284–1294.
@@ -167,7 +169,7 @@ export const introFootnotes = [
     The idea of a hierarchy of the senses, in which sight is at the top, dates to the ancient Greeks. In <cite>De anima</cite> (ca. 350 BCE), for example, Aristotle posits that the sense of sight is the highest sense because it can act alone. In <cite>Sense and Sensibilia</cite>, he further articulates the five senses and maintains that sight is at the top because it retains distance from its objects of perception. For more of this history, see Carolyn Korsmeyer, “The Hierarchy of the Senses,” in <cite>Making Sense of Taste: Food and Philosophy</cite> (Cornell UP, 2015), 20–53.
   </span>,
   <span key={"1f95db45"}>
-    His air pump experiments notwithstanding, Boyle’s own visual impulse would seem to have been toward precision and detail rather than abstraction, as evinced by the detailed illustrations that accompanied his <cite>New Experiments</cite>, as literary scholar Alex Sherman observes. Comment on open review, January 13, 2025, <a href="https://hyp.is/_GCQpNH6Ee-wcGtkgLC9FQ/dataxdesign.io/chapters/intro">https://hyp.is/_GCQpNH6Ee-wcGtkgLC9FQ/dataxdesign.io/chapters/intro</a>.
+    His air pump experiments notwithstanding, Boyle’s own visual impulse would seem to have been toward precision and detail rather than abstraction, as evinced by the detailed illustrations that accompanied his <cite>New Experiments</cite>, as literary scholar Alex Sherman observes. Comment on open review, January 13, 2025, <NoteLink href="https://hyp.is/_GCQpNH6Ee-wcGtkgLC9FQ/dataxdesign.io/chapters/intro">https://hyp.is/_GCQpNH6Ee-wcGtkgLC9FQ/dataxdesign.io/chapters/intro</NoteLink>.
   </span>,
   <span key={"0db22997"}>
     If you are distressed to see the entirety of the Enlightenment summarized in a single sentence, rest assured that this is not the last time we will discuss the contributions associated with this pivotal time.
@@ -179,7 +181,7 @@ export const introFootnotes = [
     On the role of the barometer, see Friendly and Wainer, <cite>A History of Data Visualization</cite>, 20.
   </span>,
   <span key={"7227d1f0"}>
-    Friendly and Wainer, in the subtitle of their chapter on Playfair, call him “the father of modern graphics” (<cite>A History of Data Visualization</cite>, 95). Friendly and Daniel J. Denis’s website, <cite>Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization</cite>, which, before the publication of Friendly and Wainer’s book, served as the field’s most comprehensive history, is the source of the “golden age” terminology, defined as the period between 1840 and 1910. Also see Friendly with Matthew Sigal and Derek Harnanansingh, “The Milestones Project: A Database for the History of Data Visualization,” January 11, 2013, <a href="https://datavis.ca/papers/MilestonesProject.pdf">https://datavis.ca/papers/MilestonesProject.pdf</a>, accessed January 25, 2026.
+    Friendly and Wainer, in the subtitle of their chapter on Playfair, call him “the father of modern graphics” (<cite>A History of Data Visualization</cite>, 95). Friendly and Daniel J. Denis’s website, <cite>Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization</cite>, which, before the publication of Friendly and Wainer’s book, served as the field’s most comprehensive history, is the source of the “golden age” terminology, defined as the period between 1840 and 1910. Also see Friendly with Matthew Sigal and Derek Harnanansingh, “The Milestones Project: A Database for the History of Data Visualization,” January 11, 2013, <NoteLink href="https://datavis.ca/papers/MilestonesProject.pdf">https://datavis.ca/papers/MilestonesProject.pdf</NoteLink>, accessed January 25, 2026.
   </span>,
   <span key={"9effb176"}>
     Tufte, <cite>Visual Display</cite>, 24. On the mythology of John Snow and his visual and epidemiological antecedents, see Howard Brody et al., “Map-Making and Myth-Making in Broad Street: The London Cholera Epidemic, 1854,” <cite>The Lancet</cite> 356.9223 (2000): 64–68.
@@ -218,10 +220,10 @@ export const introFootnotes = [
     On Tawantinsuyu, or “the land of four parts,” see <cite>The Inka Empire: A Multidisciplinary Approach</cite>, ed. Izumi Shimada (U of Texas Press, 2015).
   </span>,
   <span key={"22fb600e"}>
-    Xiyao Mei, Yu Zhang, Chaofan Yang, Rui Shi, and Xiaoru Yuan, “ZuantuSet: A Collection of Historical Chinese Visualizations and Illustrations,” arXiv preprint, February 26, 2025, <a href="https://arxiv.org/pdf/2502.19093">https://arxiv.org/pdf/2502.19093</a>.
+    Xiyao Mei, Yu Zhang, Chaofan Yang, Rui Shi, and Xiaoru Yuan, “ZuantuSet: A Collection of Historical Chinese Visualizations and Illustrations,” arXiv preprint, February 26, 2025, <NoteLink href="https://arxiv.org/pdf/2502.19093">https://arxiv.org/pdf/2502.19093</NoteLink>.
   </span>,
   <span key={"8cd61ed9"}>
-    On the shogunal map and early modern Japanese mapping practices, see Mark Ravina, “Algorithmic Maps and the Political Geography of Early-Modern Japan,” <cite>Cultural Analytics</cite> 8.3, <a href="https://doi.org/10.22148/001c.84860">https://doi.org/10.22148/001c.84860</a>. On the map of Jambudvīpa, see Katherine Anne Paul, Richard A. Pegg, and Katie E. Osborne, “A Jain Cosmographic Map of the Rose-Apple Continent (Jambudvipa),” Norman B. Leventhal Map & Education Center, Boston Public Library, <a href="https://www.leventhalmap.org/projects/jain-map-chat/">https://www.leventhalmap.org/projects/jain-map-chat/</a>, accessed March 17, 2026.
+    On the shogunal map and early modern Japanese mapping practices, see Mark Ravina, “Algorithmic Maps and the Political Geography of Early-Modern Japan,” <cite>Cultural Analytics</cite> 8.3, <NoteLink href="https://doi.org/10.22148/001c.84860">https://doi.org/10.22148/001c.84860</NoteLink>. On the map of Jambudvīpa, see Katherine Anne Paul, Richard A. Pegg, and Katie E. Osborne, “A Jain Cosmographic Map of the Rose-Apple Continent (Jambudvipa),” Norman B. Leventhal Map & Education Center, Boston Public Library, <NoteLink href="https://www.leventhalmap.org/projects/jain-map-chat/">https://www.leventhalmap.org/projects/jain-map-chat/</NoteLink>, accessed March 17, 2026.
   </span>,
   <span key={"c1529fc6"}>
     Some, such as Bruno Latour, have argued that Europe has never been modern at all, and that all claims to modernity that are founded on the distinctions between science and culture that the Enlightenment would introduce are in fact false distinctions, and therefore untrue. Latour, <cite>We Have Never Been Modern</cite> (Harvard UP, 1993).
@@ -247,280 +249,183 @@ export const introFootnotes = [
 ];
 
 export const dataFootnotes = [
-  //1
-  <span key="560e48c1">
-    Carretta, explain evidence to doubt veracity of childhood in Africa.{" "}
+  <span key={"32d3160c"}>
+    Recent scholarship has raised questions about Equiano’s account of his early years in Benin. Literary scholar Vincent Carretta, most notably, has pointed to several later records that list Equiano’s birthplace as South Carolina. As Carretta himself makes clear, this evidence is “not absolutely conclusive” (xvi). Because of this lack of certainty, I have chosen to prioritize Equiano’s own account of his homeland and early life experiences. See Carretta, <cite>Equiano, the African: Biography of a Self-Made Man</cite> (U of Georgia Press, 2005).
   </span>,
-  //2
-  <span key="f2043330">Equiano 55, 58. </span>,
-  //3
-  <span key="b5c28022">
-    Say it out loud. Contemporary CS acronyms have nothing on C18 abolitionists!{" "}
+  <span key={"726a6def"}>
+    Olaudah Equiano, <cite>The Interesting Narrative of the Life of Olaudah Equiano, or Gustavus Vassa, the African, Written by Himself</cite>, ed. Werner Sollors (Norton, 2001), 39, 41.
   </span>,
-  //4
-  <span key="6cc8613f">
-    The art historian Cheryl Finley, in her landmark study of this image,
-    Committed to Memory: The Art of the Slave Ship Icon, makes clear that it's
-    important to identify which version Equiano saw. In particular, this was a
-    print accompanied 4-page pamphlet. Later, the Plymouth Committee printed
-    them together as a broadside. Finley also powerfully considers the impact of
-    this request from Equiano's perspective: "One can picture how [Equiano's]
-    eyes might have followed the contours of the darkly shaded figures, counting
-    each one, possibly imagining the face of someone he once knew. Fine black
-    lines representing the wall that divided groups of figures by age and sex
-    might have caused him to pause and think about which space he had occupied
-    or the people who had lived and died next to him. The combination of rows
-    and rows of black figures separated and surrounded by fine black lines
-    schematically mapped the space of the hold, marking a route to untold
-    horror" ##.
+  <span key={"c088623b"}>
+    Say it out loud. Contemporary computer science project acronyms have nothing on nineteenth-century abolitionists! More seriously, SEAST was a major (but of course not the only) force that led to the abolition of the slave trade in England. It coalesced in 1787, after a decade of increasing momentum around the movement to end slavery in England, and was run mostly by Quakers (although Clarkson himself was not one). As indicated by the distinction between the Plymouth Committee and the London Committee noted above, its structure was geographically distributed. Other committees existed in Manchester and Birmingham, among other British locales. The committees communicated with each other via letters, many of which have been preserved in local Quaker archives, as well as in the British National Archives. Clarkson himself, radicalized through his senior thesis work at St. John’s College, Cambridge, also traveled from committee to committee, circulating pamphlets and other documents and giving speeches of his own. SEAST was also a reference point for the abolitionist movement in the United States. In fact, that first “Plan of an African Ship’s Lower Deck” was copied and reengraved by the famed Philadelphia printer Matthew Carey, who circulated it throughout the young United States. As we know, however, it would take more than 50 years for full legal emancipation to take place in the United States, with its struggle for racial justice continuing into the present. For more on SEAST, see John Oldfield, <cite>Popular Politics and British Anti-Slavery: The Mobilization of Public Opinion against the Slave Trade, 1787–1807</cite> (Frank Cass, 1998) and Adam Hochschild, <cite>Bury the Chains: Prophets and Rebels in the Fight to Free an Empire’s Slaves</cite> (Houghton Mifflin, 2005). For more on Clarkson’s role in particular, see the texts cited throughout this chapter.
   </span>,
-  //5
-  <span key="97e782e7">
-    Equiano 58; add in more on Cugoano refusal, p. 15, connect to data refusal.{" "}
+  <span key={"09d956e4"}>
+    The meeting between Equiano and Clarkson can be confirmed by a public letter authored by Equiano and published in a London newspaper, <cite>The Public Advertiser</cite>, on February 14, 1789. In the letter, Equiano registers “having seen” the engraving sent to Clarkson, whom he describes as a “worthy friend of mine.” See “Letter to the Committee for the Abolition of the Slave Trade,” in Equiano, <cite>The Interesting Narrative</cite>, 205. While Equiano offers scant additional details about their exchange, the art historian Cheryl Finley, in her landmark study <cite>Committed to Memory: The Art of the Slave Ship Icon</cite> (Princeton UP, 2018), powerfully imagines the impact of this request from Equiano’s perspective (23). We will return to this letter, and the significance of the exchange between Equiano and Clarkson, in this chapter’s final section.
   </span>,
-  //6
-  <span key="ea40ed60">Clarkson, History</span>,
-  //7
-  <span key="8df7cc09">
-    Note about centrality of impression, Locke, senses, Schuller, Biopolitics of
-    Feeling. Also Hume, impressions vs. ideas.{" "}
+  <span key={"4c6b81d8"}>
+    Equiano, <cite>The Interesting Narrative</cite>, 41. Scholars have made much of Cugoano’s assessment, in his 1787 treatise, <cite>Thoughts and Sentiments on the Evils of Slavery</cite>, that his own experience “may be easier conceived than described” (15). As literary scholar Joanne Chassot explains, “His silence over the details of the experience might therefore be explained by a form of censorship, which could be imposed by white editors for reasons of decorum, or self-imposed either out of a personal or cultural aversion at relating such intimate matters or out of the psychological refusal to recall events that are too painful.” Chassot, <cite>Ghosts of the African Diaspora: Re-visioning History, Memory, and Identity</cite> (Dartmouth College Press, 2018), 41. In the context of our present discussion, we might draw generative connections between Cugoano’s narrative refusal and contemporary arguments for data refusal. See, for example, Marika Cifor, Patricia Garcia, TL Cowan, Jasmine Rault, Tonya Sutherland, Anita Say Chan, Jennifer Rode, Anna Lauren Hoffmann, Niloufar Salehi, and Lisa Nakamura, <cite>Feminist Data Manifest-No</cite> (2019), <NoteLink href="https://www.manifestno.com/">https://www.manifestno.com/</NoteLink>, accessed May 20, 2025.
   </span>,
-  //8
-  <span key="a63ef162"> Finley 34. </span>,
-  //9
-  <span key="325f4c91">Hartman, Scenes.</span>,
-  //10
-  <span key="c5520f54">Hartman, Scenes. </span>,
-  //11
-  <span key="a24478b3">Morgan, Reckoning with Slavery. </span>,
-  //12
-  <span key="a52fd08c">
-    Spillers 72. Also gloss critique of white space / modernism.
+  <span key={"7ea07106"}>
+    Thomas Clarkson, <cite>The History of the Rise, Progress, and Accomplishment of the Abolition of the African Slave-Trade by the British Parliament</cite>, vol. 2 (London, 1808), 111.
   </span>,
-  //13
-  <span key="43d4a6ec">Cite discussion in intro. </span>,
-  //14
-  <span key="0a123912">Spillers </span>,
-  //15
-  <span key="945f669a">
-    Finley makes a similar point with respect to another diagram of the Marie
-    Seraphique. (Note that both images are in high circulation because of the
-    process of amends-making by the Musée de Nantes)
+  <span key={"31367503"}>
+    The use of the word “impression” is the tell. For Enlightenment thinkers such as John Locke and David Hume, the impression that objects in the world make on sensory organs signals the start of the knowledge-making process. This epistemological theory would go on to influence British literary sentimentalism, as well as the sentimentalist undercurrent of white-led abolitionist movements, of which Clarkson was certainly a part. On literary sentimentalism and its relationship to empiricism, see Jessica Riskin, <cite>Science in the Age of Sensibility: The Sentimental Empiricists of the French Enlightenment</cite> (U of Chicago Press, 2002); on the colonial implications of sentimentalism, see Lynn Festa, <cite>Sentimental Figures of Empire in Eighteenth-Century Britain and France</cite> (Johns Hopkins UP, 2006); on the imbrications of racism and sentimentalism, and Clarkson’s in particular, see Ian Baucom, <cite>Specters of the Atlantic: Finance Capital, Slavery, and the Philosophy of History</cite> (Duke UP, 2005); on sentimentalism’s journey from the British empiricists to the United States, and its transformation into nineteenth-century race science, see Kyla Schuller, <cite>The Biopolitics of Feeling: Race, Sex, and Science in the Nineteenth Century</cite> (Duke UP, 2018).
   </span>,
-  //16
-  <span key="63940a2c">
-    Gordon Wood elaborates this point: "This image supports an abolitionist
-    cultural agenda which dictated that slaves were to be visualized in a manner
-    which emphasized their total passivity and prioritized their status as
-    helpless victims" (17). Can also gloss body vs. flesh, Spillers, Tiffany
-    King, Wood 28.
+  <span key={"d6d79c34"}>
+    While the Parrey report would become a central piece of evidence for the British abolitionist movement, one important fact that failed to enter the historical record was Parrey’s first name. See Finley, <cite>Committed to Memory</cite>, 34.
   </span>,
-  //17
-  <span key="8025cd1e">
-    Explain connection to Hurston, Ligon, "Against a sharp white background,"
-    and Senchyne/Fielder book. Bernier also lends her support to this
-    interpretation: "Working not to humanize but to propagandize black subjects
-    bought and sold into slavery, the iconographic emphasis across these
-    broadsides betrays a white British commitment to exposing slavery's
-    atrocities by imagining black women, men, and children not as individualized
-    subjects but as unindividualized objects defined solely by their
-    incarceration on board a slave ship" (998).
+  <span key={"61972934"}>
+    While not directly relevant to this chapter’s main argument, two points are worth noting here: first, that while the origin story of Clarkson’s “Description” usually begins with Elford’s “Plan,” in fact it has a longer and more diffuse history; and second, that while the story would seem to be one of the visual and moral acuity of the elite, the idea for the “Plan,” if not its application, originates with working-class sailors.
   </span>,
-  //18
-  <span key="45ac2174">
-    In fact, Otto and Marie Neurath, the inventors of the ISOTYPE icon system,
-    incorporated their isotype icons into a reproduction of the diagram in their
-    pamphlet on the history of global trade. They also held a ca. 1800 version
-    of the diagram, created by the German printmaker Jacob Xaver Schmunzer, in
-    their personal archive. It is possible to make an argument their icons, like
-    those on the slave ship, were intended to serve as abstract representations
-    of "observed particulars"—in their case, of the population of the world.
-    What's more, they similarly sought to enlist their icons in a political
-    cause. [ADD IN IMAGE HERE]
+  <span key={"69aaceba"}>
+    Finley, <cite>Committed to Memory</cite>, 34.
   </span>,
-  //19
-  <span key="7337f333">Tufte</span>,
-  //20
-  <span key="d688cb70">Viegas in Data Feminism.</span>,
-  //21
-  <span key="532d207a">
-    In an example of mixed methods research avant le letter, Clarkson also
-    published the transcripts of his interviews with these men at roughly the
-    same time as he released his revised version of the Plymouth Committee's
-    "Plan." For more on the interviews, see Riedeker 319-324.
+  <span key={"f316aeac"}>
+    These harms may be retrospective, in the influential words of literary scholar Saidiya Hartman, the result of “the uncertain line between witness and spectator” that scholars of slavery often must walk. They may also carry into the future, in the form of the desensitization brought about by ever more depictions of the “routinized violence of slavery,” as Hartman further explains. For viewers whose own ancestors were enslaved, such depictions can also exacerbate existing intergenerational trauma, as historian Jennifer Morgan describes. For this reason, we gave online viewers the choice to “opt in” to view these images by clicking a toggle at the top left of the screen. If they did not opt in, they would proceed with the default: to read short and intentionally generalized descriptions of the images discussed. (We also provided more detailed descriptions of the images, toggled when opting in, for users who rely on alt text as their primary means of encountering visual material.)Saidiya Hartman, <cite>Scenes of Subjection: Terror, Slavery, and Self-Making in Nineteenth-Century America</cite> (Oxford UP, 1997), 4; and Jennifer Morgan, <cite>Reckoning with Slavery: Gender, Kinship, and Capitalism in the Early Black Atlantic</cite> (Duke UP, 2021).
   </span>,
-  //22
-  <span key="afa3a6c1">
-    Cite chart, transcription in Finley 62-67. Clarkson, para 1.
+  <span key={"e3d99e92"}>
+    Hortense Spillers, “Mama’s Baby, Papa’s Maybe: An American Grammar Book,” <cite>Diacritics</cite> 17.2 (Summer 1987): 72.
   </span>,
-  //23
-  <span key="43ec2892">
-    27. Ref Marey. Also note about definition of visualization.{" "}
+  <span key={"3cb4508d"}>
+    As is true of the history of visualization, the history of data tables is also long, with examples drawn from all over the world. The earliest known data tables can be traced to the Neolithic cities of Sumerian Mesopotamia ca. 3500 BCE. For a short and accessible history, see “A Brief History of Data,” in Rahul Bhargava, <cite>Community Data: Creative Approaches to Empowering People with Information</cite> (Oxford UP, 2024), 16–50. For a visualization-oriented assessment of data tables as knowledge-making devices, see Lyn Bartram, Michael Correll, and Melanie Tory, “Untidy Data: The Unreasonable Effectiveness of Tables,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 28.1 (2002): 686–696.
   </span>,
-  //24
-  <span key="e7fc1e51">Wood 28</span>,
-  //25
-  <span key="17fe0afe">Wood</span>,
-  //26
-  <span key="f01ec097">
-    Clarkson's motivation for these design choices is, admittedly, difficult to
-    discern. Why leave the women unbound when evidence points to the fact that
-    they were also "known to organize, lead, and assist with rebellions aboard
-    slave ships," Finley wonders (59). Is the exaggerated sexuality of the women
-    figures a comment, on the part of Clarkson, about the "objectified status of
-    the black female body and the history of rape and sexual abuse to which
-    black female slaves were subjected by their white male captors," or because
-    of his own racist perceptions about the sexuality of Black women, Finley
-    further enquires (59). We may never be able to answer these questions with
-    any degree of certainty, but their possible answers expand our understanding
-    of the chart nonetheless. More specifically, they underscore the perspective
-    inhabited by the chart, and point to the additional perspectives we must
-    consider if we are to achieve a more complete picture of the actual subject
-    at hand.
+  <span key={"c8188e25"}>
+    Jessica Marie Johnson, “Markup Bodies: Black [Life] Studies and Slavery [Death] Studies at the Digital Crossroads,” <cite>Social Text</cite> 36.4 (2017): 70.
   </span>,
-  //27
-  <span key="1726a736">
-    Here, Ian Baucom argues, Clarkson mobilizes a central tenet of the Scottish
-    Enlightenment, which held that meaning was created first by verifiable
-    evidence and then through a responsibly used imagination. In this case,
-    Clarkson enlists the "facts" of the slave trade in the interest of engaging
-    the "otherwise disinterested spectator in the sufferings of an actually
-    unseen other" (Baucom ##). But for this transformation to take place, the
-    viewer would be required to enlist their own imagination in imagining the
-    suffering of others.
+  <span key={"7193907c"}>
+    Spillers, “Mama’s Baby,” 72.
   </span>,
-  //28
-  <span key="75812c99">Add in Clarkson quote. Para 22.</span>,
-  //29
-  <span key="0014505a">
-    Quoted in Baucom 218. Also ref wood model, and discussion in Critical
-    Visualization book.
+  <span key={"900f59c3"}>
+    There exist several commemorative engravings of the <cite>Marie-Séraphique</cite>. Finley makes a similar point with respect to a different image of this ship, which dates to 1772–1773, in <cite>Committed to Memory</cite>, 38–42.
   </span>,
-  //30
-  <span key="89b4a05f">Haraway, D'Ignazio and Klein.</span>,
-  //31
-  <span key="d0bd55aa">Browne 49. </span>,
-  //32
-  <span key="t7gY4Hu6">Haraway. </span>,
-  //33
-  <span key="5Br3Cv2X">Quoted in Baucom 267</span>,
-  //34
-  <span key="75fbde5b">
-    Browne 49. While on this note, Clarkson would also likely not disagree. In
-    the History, Clarkson proudly recalls how the chart "brought forth tears of
-    sympathy in behalf of the sufferers, and it fixed their sufferings in [the
-    viewer's] heart." Quoted in Baucom 267
+  <span key={"552607b9"}>
+    Wood’s use of the word “flesh” is also likely a reference to Spillers’s distinction between bodies and flesh, the latter resulting from the dehumanizing process of the Middle Passage. Marcus Wood, <cite>Blind Memory: Visual Representations of Slavery, 1780–1865</cite> (Manchester UP, 2000), 27.
   </span>,
-  //35
-  <span key="8b46db1c">Browne 50.</span>,
-  //36
-  <span key="24fa21d3">
-    The viewers intended to be affected by this image were white abolitionists,
-    and the response that was intended was one of imaginative, sympathetic
-    response. Clarkson himself frames the value of the image in these terms,
-    recalling how "No one saw it but he was impressed. It spoke to him in a
-    language, which was at once intelligible and irresistible. It brought forth
-    tears of sympathy in behalf of the sufferers, and it fixed their sufferings
-    in his heart" (##). Here, Ian Baucom argues, Clarkson mobilizes a central
-    tenet of the Scottish Enlightenment, which held that meaning was created
-    first by verifiable evidence and then through a responsibly used
-    imagination. In this case, Clarkson enlists the "facts" of the slave trade
-    in the interest of engaging the "otherwise disinterested spectator in the
-    sufferings of an actually unseen other" (Baucom ##). But for this
-    transformation to take place, the viewer would be required to enlist their
-    own imagination in imagining the suffering of others. As Finley also
-    explains, "The image is a starting point for the viewer – a point of
-    reference while the text enables the reader to elaborate on the image in her
-    mind" (##).
+  <span key={"e670decb"}>
+    Celeste-Marie Bernier also lends her support to this interpretation: “Working not to humanize but to propagandize black subjects bought and sold into slavery, the iconographic emphasis across these broadsides betrays a white British commitment to exposing slavery’s atrocities by imagining black women, men, and children not as individualized subjects but as unindividualized objects defined solely by their incarceration on board a slave ship.” Bernier, “The Slave Ship Imprint: Representing the Body, Memory, and History in Contemporary African American and Black British Painting,” <cite>Callaloo</cite> 37.4 (2014): 998. We might trace the visual contrast forward to the work of contemporary artist Glenn Ligon, whose 1992 screenprint <cite>Untitled (I Feel Most Colored When I Am Thrown against a Sharp White Background)</cite>, itself a quote from author Zora Neale Hurston, emphasizes the racialized dimensions of black-on-white design. This echoes a larger critique of modern art and design for its glorification of the color white, and therefore whiteness, alongside its other signal features of clean lines and other forms of visual minimalism. While not engaging the racialized dimension of modernism, Helen Kennedy, Rosemary Lucy Hill, Giorgia Aiello, and William Allen analyze how specific modernist visual conventions, such as clean lines and clearly demarcated boundaries, are strongly associated with the authoritativeness of visualization. Kennedy et al., “The Work that Visualization Conventions Do,” <cite>Information, Communication and Society</cite> 19.6 (2016): 715–735.
   </span>,
-  //37
-  <span key="37035873">
-    Add in cites to TAST database, history, and overview.{" "}
+  <span key={"0864daea"}>
+    In fact, Otto and Marie Neurath, the inventors of the Isotype icon system, incorporated their Isotype icons into a reproduction of Clarkson’s “Description” in their pamphlet on the history of global trade, <cite>Wereldverkeer</cite> (1935). They also held a ca. 1800 version of the “Description,” created by the German printmaker Jacob Xaver Schmunzer, in their personal archive, as Otto Neurath himself documents in <cite>From Hieroglyphics to Isotype: A Visual Autobiography</cite> (Hyphen Press, 2010). It is possible to make an argument that their icons, like those on the slave ship, were similarly intended to serve as abstract representations of “observed particulars”—in their case, of the population of the world. What’s more, they similarly sought to enlist their icons in a political cause, though their icons of human figures fell prey to the deeply offensive cultural stereotypes of non-European cultures in circulation at the time. For more on Isotype and the Neuraths in a visualization context, see Christopher Burke and Gunther Sandner, <cite>History and Legacy of Isotype</cite> (Bloomsbury, 2024).
   </span>,
-  //38
-  <span key="858f3e32">TAST, "History of Project"</span>,
-  //39
-  <span key="f1a4e3f8">
-    https://slate.com/news-and-politics/2021/09/atlantic-slave-trade-history-animated-interactive.html.
-    As Britt Rusert helpfully summarizes, "The Slate map has at least two direct
-    antecedents: a set of maps of the slave trade on the Trans-Atlantic Slave
-    Trade Database website, and David Eltis and David Richardson's 2010 print
-    volume, Atlas of the Transatlantic Slave Trade, whose maps were "constructed
-    from a set of estimates derived from the Trans-Atlantic Slave Trade Database
-    as it existed in January 2008— almost a year before the launch of the
-    Voyages Web site" (xxiv). These earlier iterations of maps derived from the
-    Trans-Atlantic Slave Trade Database are a reminder of the important
-    continuities between the "age of print" and the "digital age."
+  <span key={"a32ca9f3"}>
+    Edward R. Tufte, <cite>The Visual Display of Quantitative Information</cite> (Graphics Press, [1983] 2001), 13.
   </span>,
-  //40
-  <span key="a3b5X7c9">Ref Rusert, "New World." </span>,
-  //41
-  <span key="1Qw8Er2T">Ref Johnson, "Markup Bodies" </span>,
-  //42
-  <span key="z4X6cV8B">
-    Spillers, 1978; Hartman, 2002; Sharpe, 2016; King, 2019{" "}
+  <span key={"960d2d58"}>
+    Catherine D’Ignazio and Lauren F. Klein, <cite>Data Feminism</cite> (MIT Press, 2020), 92.
   </span>,
-  //43
-  <span key="9uI7mO5y">Morrison 2018. </span>,
-  //44
-  <span key="J2k4Lp6N">
-    A further connection to Spillers' theorization of the process of
-    dehumanization as the conversion of bodies into flesh that the Middle
-    Passage brought about.{" "}
+  <span key={"8eee3e01"}>
+    Notably, Clarkson also published the transcripts of his interviews with these men at roughly the same time as he released his revised version of the Plymouth Committee’s “Plan.” For more on the interviews, see Marcus Rediker, <cite>The Slave Ship: A Human History</cite> (Penguin, 2007), 319–324. On the concept of counterdata, see D’Ignazio and Klein, <cite>Data Feminism</cite>, as well as Seyi Olojo, “Counterdata,” in <cite>Keywords of the Datafied State</cite>, ed. Jenna Burrell, Ranjit Singh, and Patrick Davison (Data & Society, 2024),170–181. On the history of data being enlisted in the service of abolition, see Ellen Gruber Garvey, “‘facts and FACTS’: Abolitionists’ Database Innovations,” in <cite>“Raw Data” Is an Oxymoron</cite>, ed. Lisa Gitelman (MIT Press, 2013), 89–102.
   </span>,
-  //45
-  <span key="h3Gt5Fs7">First quote is ch 2, second ch 3. Need numbers. </span>,
-  //46
-  <span key="d9Az6Qx8">
-    Add in note about wide circulation, in England France and US. Finley
-    chapters 2 and 3.
+  <span key={"e329a7cb"}>
+    These lines come from the first paragraph of text included in the chart itself. Finley provides a full transcription in <cite>Committed to Memory</cite>, 62–67.
   </span>,
-  //47
-  <span key="7We4Ru1I">
-    "I was in possession of more facts on this subject than any other person,"
-    as he wrote in the second chapter of the 1200-page tome (Clarkson, History,
-    vol 1, p 31) Clarkson, History, vol 1, p 31.{" "}
+  <span key={"9f02e01f"}>
+    A notable recent exception is Peter A. Hall and Patricio Dávila’s <cite>Critical Visualization: Rethinking the Representation of Data</cite> (Bloomsbury, 2022). There, they herald the diagram as “one of the most impactful visualizations in the history of the genre” (55). For their full discussion, see 55–59.
   </span>,
-  //48
-  <span key="l2Vb5nM3">Cartographies of Time. </span>,
-  //49
-  <span key="6Sd9Fg4H">History ch 12. </span>,
-  //50
-  <span key="n1Jk8Lp2">
-    In adapting this particular style of image, the hydrographic map, to the
-    abolitionist movement, Clarkson also imposes the colonial valences of
-    mapping—and mapping waterways in particular—onto the abolitionist movement.
-    Here, however, it is not the discovery of new trade routes, but the
-    discovery of the horrors of slavery, that the image renders visible; and
-    these horrors were, of course, already viscerally known to those who
-    experienced the trade's direct effects. Wood 4.
+  <span key={"62aceb6f"}>
+    Michael Friendly and Howard Wainer, <cite>A History of Data Visualization and Graphic Communication</cite> (Harvard UP, 2021), 27.
   </span>,
-  //51
-  <span key="e8Qw1Oi9">Wood 4. </span>,
-  //52
-  <span key="c6Mf4Td7">
-    Strass "believed that a graphic representation of history held manifold
-    advantages over a textual one: it revealed order, scale, and synchronism
-    simply and without the trouble of memorization and calculation," Rosenberg
-    and Grafton explain (Cartographies of Time 143).
+  <span key={"643a1878"}>
+    The inclusion of the cross sections drew from the conventions of naval architectural plans, which were by that time strongly established. This had the rhetorical effect of securing the chart’s “graphic authority,” as Marcus Wood describes it, in ways similar to how drawing new national borders on an existing map leverages the power of its seemingly documentary form. <cite>Blind Memory</cite>, 28.
   </span>,
-  //53
-  <span key="3Ea7Kp9L">Bell, quoted in Cartographies of Time, p. 147.</span>,
-  //54
-  <span key="g2Uh5Ns8">
-    Cartographies of Time 136. Also gloss contribution of Priestley.{" "}
+  <span key={"43d25ff1"}>
+    Scholars have largely interpreted this choice as reflecting “an abolitionist cultural agenda which dictated that slaves were to be visualized in a manner which emphasized their total passivity and prioritized their status as helpless victims,” as Wood explains. <cite>Blind Memory</cite>, 19.
   </span>,
-  //55
-  <span key="Fj4Dr6Vy">Quoted in Cartographies of Time 136. </span>,
-  //56
-  <span key="9tC7Gb3I">
-    Ref Playfair, "Introduction," x. Also cite Clarkson, second version of his
-    goal: to "bring [the history of abolition] before the reader, that he may
-    comprehend the whole of it at a single view." Playfair also uses the phrase
-    "single view" in the title of his book.{" "}
+  <span key={"3c6de6ee"}>
+    Clarkson’s motivation for these design choices is difficult to discern. Why leave the women unbound when evidence points to the fact that they were also “known to organize, lead, and assist with rebellions aboard slave ships,” Finley wonders (<cite>Committed to Memory</cite>, 59). Is the exaggerated sexuality of the women figures a comment, on the part of Clarkson, about the “objectified status of the black female body and the history of rape and sexual abuse to which black female slaves were subjected by their white male captors,” or because of his own racist perceptions about the sexuality of Black women, Finley further enquires (59)? We may never be able to answer these questions with any degree of certainty, but their possible answers expand our understanding of the chart nonetheless. More specifically, they underscore the perspective inhabited by the chart, and point to the additional perspectives we must consider if we are to achieve a more complete picture of the actual subject at hand.
   </span>,
-  //57
-  <span key="q5Yx2We1">Ref Norton edition, p.205. </span>,
+  <span key={"478ff5d3"}>
+    Clarkson, para 22, reproduced in Finley, <cite>Committed to Memory</cite>, 67.
+  </span>,
+  <span key={"ee614d64"}>
+    Wilberforce, quoted in Baucom, <cite>Specters of the Atlantic</cite>, 218. Across Europe, other abolitionists shared Wilberforce’s sentiment. Upon seeing Clarkson’s diagram, the French Comte de Mirabeau went one step further, commissioning a wooden replica of the ship depicted in the chart about “one yard long,” with “little men and women” painted black, which he kept on his dining room mantel to show to potential converts to the cause (Finley, <cite>Committed to Memory</cite>, 78). Clarkson himself saw the replica, and when he told Wilberforce about it, Wilberforce had his own replica commissioned, which he brough to Parliament and “passed from hand to hand” (Finley, 81). In <cite>Community Data</cite>, Bhargava discusses this replica in the context of an argument about the value of data physicalization (125–127).
+  </span>,
+  <span key={"d8176ff1"}>
+    Donna Haraway, “Situated Knowledges: The Science Question in Feminism and the Privilege of Partial Perspective,” <cite>Feminist Studies</cite> 14.3 (1988): 589.
+  </span>,
+  <span key={"9b24d76a"}>
+    Simone Browne, <cite>Dark Matters: On the Surveillance of Blackness</cite> (Duke UP, 2015) 49.
+  </span>,
+  <span key={"c3283fa8"}>
+    Quoted in Baucom, <cite>Specters of the Atlantic</cite>, 267. Here, Baucom argues, Clarkson is mobilizing the central tenet of the Scottish strain of Enlightenment empiricism, which held that meaning was created first by verifiable evidence and then through a responsibly used imagination. In this case, Clarkson enlists the “facts” of the slave trade in the interest of engaging the “otherwise disinterested spectator in the sufferings of an actually unseen other” (268). But for this transformation to take place, the viewer would also be required to enlist their own imagination in imagining the suffering of others—the point at which theories of sentimentalism, as previously discussed, also enter in. There are many flaws in this theory. Note 18 discusses its implicit racism. Among the others is the presumption that all viewers, even limited to all white viewers, would respond in the same way.
+  </span>,
+  <span key={"f5a206c3"}>
+    Browne, <cite>Dark Matters</cite>, 49.
+  </span>,
+  <span key={"bd042b83"}>
+    Browne, <cite>Dark Matters</cite>, 50.
+  </span>,
+  <span key={"0b376fa7"}>
+    “Trans-Atlantic Slave Trade—Estimates,” <cite>Slave Voyages</cite>, <NoteLink href="https://www.slavevoyages.org/assessment/estimates">https://www.slavevoyages.org/assessment/estimates</NoteLink>, accessed May 23, 2025.
+  </span>,
+  <span key={"8b57e20c"}>
+    “History of the Project,” <cite>Slave Voyages</cite>, <NoteLink href="https://www.slavevoyages.org/about/about#history/1/en/">https://www.slavevoyages.org/about/about#history/1/en/</NoteLink>, accessed May 23, 2025.
+  </span>,
+  <span key={"80a94e8e"}>
+    To view Kahn and Bouie’s visualization and accompanying text, see Andrew Kahn and Jamelle Bouie, “The Atlantic Slave Trade in Two Minutes,” <cite>Slate</cite>, September 16, 2021, <NoteLink href="https://slate.com/news-and-politics/2021/09/atlantic-slave-trade-history-">https://slate.com/news-and-politics/2021/09/atlantic-slave-trade-history-</NoteLink> animated-interactive.html, accessed May 23, 2025. Note that the visualization was created and released in 2016, and rereleased in 2021 with no changes that we could detect. In “New World: The Impact of Digitization on the Study of Slavery,” literary scholar Britt Rusert helpfully summarizes the visualization’s history: “The <cite>Slate</cite> map has at least two direct antecedents: a set of maps of the slave trade on the Trans-Atlantic Slave Trade Database website, and David Eltis and David Richardson’s 2010 print volume, <cite>Atlas of the Transatlantic Slave Trade</cite>, whose maps were “constructed from a set of estimates derived from the Trans-Atlantic Slave Trade Database as it existed in January 2008—almost a year before the launch of the Voyages Web site.” Rusert, “New World: The Impact of Digitization on the Study of Slavery,” <cite>American Literary History</cite> 29.2 (2017): 274.
+  </span>,
+  <span key={"bfad50b5"}>
+    Rusert, “New World,” 275.
+  </span>,
+  <span key={"6db5dc9b"}>
+    By paraphrasing Rusert’s argument as “another version” of the god trick, I’m not giving full justice to the richness of her argument. In her observation about “invisible hands,” Rusert is at once referencing Adam Smith’s formulation of the “invisible hand of the market,” his famed articulation of the forces of free-market capitalism, and the literal invisible hands that seem to pluck the ships from the African coast and carry them across the Atlantic without ever being attached to the people responsible for setting that particular ship or the slave trade overall in motion. In the case of both free-market capitalism and the slave trade (which are themselves, in many ways, two halves of a whole), there emphatically are <cite>people</cite> responsible for the decisions that are presented by Smith and the visualization, respectively, as coming from “no body,” to return to Haraway’s phrase.
+  </span>,
+  <span key={"44efc7c0"}>
+    Johnson, “Markup Bodies,” 41.
+  </span>,
+  <span key={"747214ac"}>
+    We are not the only design team to have considered similar questions. Celia E. Naylor, Kirsten Akey, Madiha Zahrah Choksi, Alex Gil, Moacir P. de Sa Pereira, and Monique S. J. Williams, in “Un(silencing) Slavery: Remembering the Enslaved at Rose Hall Plantation, Jamaica,” similarly “aims to re-center the lives of the enslaved persons at Rose Hall Plantation by emphasizing the history of slavery and enslaved persons as that historical site.” See the interactive visualization and “About” page at <NoteLink href="https://unsilencing-slavery.org/about">https://unsilencing-slavery.org/about</NoteLink>, accessed May 26, 2025.
+  </span>,
+  <span key={"e30b3d0c"}>
+    The canonical essay in this regard is Katherine McKittrick’s “Mathematics Black Life,” <cite>Black Scholar</cite> 44.2 (Summer 2014): 18, in which she comments directly on the “descriptive analytics of violence.” More recently, Caitlin Rosenthal, in <cite>Accounting for Slavery: Masters and Management</cite> (Harvard UP, 2019) has returned to these numbers to support an argument about the management theory driving the plantation system, enlisting this violent data as evidence of the racism at the core of modern methods of industrial management. At the time that we began our design process, we did not consider the possibility that we might use this data as a form of “studying up” (cf. Laura Nader), but we note its continued possibilities in this regard.
+  </span>,
+  <span key={"2443856a"}>
+    See, for example, Stephanie Smallwood, <cite>Saltwater Slavery: A Middle Passage from Africa to American Diaspora</cite> (Harvard UP, 2007); Rusert, “New World”; Christina Sharpe, <cite>In the Wake: On Blackness and Being</cite> (Duke UP, 2016); Romi Morrison, “Gaps between the Digits: On the Fleshy Unknowns of the Human,” <cite>Information Design Journal</cite> 25.1 (2019): 56–70; Tiffany Lethabo King, <cite>The Black Shoals: Offshore Formations of Black and Native Studies</cite> (Duke UP, 2019).
+  </span>,
+  <span key={"90f5d0ad"}>
+    Morrison, “Gaps between the Digits,” 56.
+  </span>,
+  <span key={"ffd68aca"}>
+    Orlando Patterson, <cite>Slavery and Social Death: A Comparative Study</cite> (Harvard UP, 1982).
+  </span>,
+  <span key={"2226405c"}>
+    We also appreciated the further connection to Spillers’s theorization of the process of dehumanization as the conversion of bodies into flesh that the Middle Passage brought about. See Spillers, “Mama’s Baby.”
+  </span>,
+  <span key={"b62aa494"}>
+    Equiano, <cite>The Interesting Narrative</cite>, 39, 45.
+  </span>,
+  <span key={"f3d36c49"}>
+    Kevin Quashie, <cite>The Sovereignty of Quiet: Beyond Resistance in Black Culture</cite> (Rutgers UP, 2012).
+  </span>,
+  <span key={"6306bfd4"}>
+    On the wide circulation and impact of the “Description,” see Finley, <cite>Committed to Memory</cite>, 71–74. On Clarkson’s <cite>History</cite>, see Finley, 88–92.
+  </span>,
+  <span key={"6170e070"}>
+    As Clarkson explains in the second chapter of the 1200-page tome, “I was in possession of more facts on this subject than any other person” (<cite>History</cite>, 1:31).
+  </span>,
+  <span key={"af722495"}>
+    Daniel Rosenberg and Anthony Grafton, <cite>Cartographies of Time: A History of the Timeline</cite> (Princeton Architectural Press, 2012), 148.
+  </span>,
+  <span key={"0945dc76"}>
+    Clarkson’s “attempt to create a self-sufficient cultural history for the cause requires a coherent descriptive model which is capable of overriding the heterogeneity of the names and writings he has furnished” in the text of his volume, Wood asserts (4).
+  </span>,
+  <span key={"91baaf01"}>
+    As Rosenberg and Grafton explain, Strass “believed that a graphic representation of history held manifold advantages over a textual one: it revealed order, scale, and synchronism simply and without the trouble of memorization and calculation” (<cite>Cartographies of Time</cite>, 143).
+  </span>,
+  <span key={"b9ea561a"}>
+    Bell, quoted in Rosenberg and Grafton, <cite>Cartographies of Time</cite>, 147.
+  </span>,
+  <span key={"1dd46be2"}>
+    Rosenberg and Grafton, <cite>Cartographies of Time</cite>, 136.
+  </span>,
+  <span key={"ec7aa4c4"}>
+    Quoted in Rosenberg and Grafton, <cite>Cartographies of Time</cite>, 136.
+  </span>,
+  <span key={"3eacd98f"}>
+    William Playfair, introduction to <cite>The Commercial and Political Atlas</cite>, ed. Howard Wainer and Ian Spence (New York: Cambridge UP, 2023 [1801]),x. As we will learn in chapter 2, this is not the only instance of similar framing. Just as Playfair, in the subtitle to his <cite>Atlas</cite>, described his goal of providing a picture of British imports and exports in a “single view,” so too did Clarkson describe how he sought to “bring [the history of abolition] before the reader, that he may comprehend the whole of it at a single view” (<cite>History</cite>, 1:259).
+  </span>,
+  <span key={"e2fab226"}>
+    “Letter to the Committee for the Abolition of the Slave Trade,” in Equiano, <cite>The Interesting Narrative</cite>, 205.
+  </span>,
 ];
 
 export const imageFootnotes = [
@@ -582,9 +487,9 @@ export const imageFootnotes = [
     <cite>"From Paper to Copper: The Engraver's Process,"</cite> a demonstration
     by Andrew Stein Raftery, Associate Professor of Printmaking at the Rhode
     Island School of Design, viewable online at:
-    <a href=" https://www.youtube.com/watch?v=fQvghHs15hA">
+    <NoteLink href="https://www.youtube.com/watch?v=fQvghHs15hA">
       https://www.youtube.com/watch?v=fQvghHs15hA{" "}
-    </a>
+    </NoteLink>
   </span>,
   //7
   <span key="ca2c1aef">
@@ -983,10 +888,10 @@ export const processFootnotes = [
   <span key="0676228e">
     Jake Silverstein, "Why We Published the 1619 Project,"{" "}
     <cite> The New York Times Magazine, </cite> December 20, 2019.{" "}
-    <a href="https://www.nytimes.com/interactive/2019/12/20/magazine/1619-intro.html.">
+    <NoteLink href="https://www.nytimes.com/interactive/2019/12/20/magazine/1619-intro.html.">
       {" "}
       https://www.nytimes.com/interactive/2019/12/20/magazine/1619-intro.html.{" "}
-    </a>
+    </NoteLink>
   </span>,
   //12
   <span key="07b2b314">
@@ -1059,9 +964,9 @@ export const processFootnotes = [
   <span key="6eb87894">
     For an extended analysis of Willard's charts, see Susan Schulten, "Emma
     Willard's Maps of Time," <cite>Public Domain Review </cite>(2020). Web.{" "}
-    <a href="https://publicdomainreview.org/essay/emma-willard-maps-of-time/">
+    <NoteLink href="https://publicdomainreview.org/essay/emma-willard-maps-of-time/">
       https://publicdomainreview.org/essay/emma-willard-maps-of-time/
-    </a>
+    </NoteLink>
   </span>,
   //22
   <span key="0dcc3597">
@@ -1097,9 +1002,9 @@ export const processFootnotes = [
     {" "}
     Jessica Hullman, "The Purpose of Visualization is Insight, not Pictures: An
     Interview with Ben Shneiderman," <cite> ACM Interactions. </cite> Web.{" "}
-    <a href="https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben">
+    <NoteLink href="https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben">
       https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben
-    </a>
+    </NoteLink>
   </span>,
   //28
   <span key="19b497e0">
@@ -1186,9 +1091,9 @@ export const processFootnotes = [
   <span key="1bea657c">
     Ryan Leahy,"The Alabama Women Who Made Their Quilts a Part of Modern Art,"{" "}
     <cite>Artsy</cite> (2018).{" "}
-    <a href="https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art">
+    <NoteLink href="https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art">
       https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art
-    </a>
+    </NoteLink>
   </span>,
   //41
   <span key="56d186b5">
@@ -1240,12 +1145,9 @@ export const powerFootnotes = [
   <span key="36b913fb">
     {" "}
     Du Bois, "{" "}
-    <a
-      href="http://www.webpower.org/dbANParis.html"
-      className="underline text-blue-500"
-    >
+    <NoteLink href="http://www.webpower.org/dbANParis.html">
       The American Negro in Paris
-    </a>
+    </NoteLink>
     ," <cite>The American Monthly Review of Reviews</cite> 22.5 (November 1900),
     p. 576.
   </span>,
@@ -1272,9 +1174,9 @@ export const powerFootnotes = [
   <span key="661bce46">
     {" "}
     Du Bois, "
-    <a href="http://www.webpower.org/dbANParis.html">
+    <NoteLink href="http://www.webpower.org/dbANParis.html">
       The American Negro in Paris
-    </a>
+    </NoteLink>
     ," p. 577.{" "}
   </span>,
   //12
