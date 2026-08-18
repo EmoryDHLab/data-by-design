@@ -1255,6 +1255,55 @@ export const aboutFootnotes = [
   </span>,
 ];
 
-export const workFootnotes = [];
+export const workFootnotes = [
+  //1
+  <span key="02dfa847">
+    Andy Hertzfeld, “-2000 Lines of Code,” <cite>Folklore.org</cite> (February 1982), <NoteLink href="https://folklore.org/Negative_2000_Lines_Of_Code.html?sort=date">https://folklore.org/Negative_2000_Lines_Of_Code.html?sort=date</NoteLink>, accessed August 30, 2025.
+  </span>,
+  //2
+  <span key="5b947705">
+    In her study of Indigenous women’s impact on electronic manufacturing, Lisa Nakamura likewise highlights how digital work can literally be understood as “the work of the hands and its digits” (932), again accentuating the human involvement in the creation of digital technologies that often go under- (if not fully un-) recognized. Nakamura, “Indigenous Circuits: Navajo Women and the Racialization of Early Electronic Manufacture,” American Quarterly 66.4 (2014): 919–941, <NoteLink href="https://dx.doi.org/10.1353/aq.2014.0070">https://dx.doi.org/10.1353/aq.2014.0070</NoteLink>.
+  </span>,
+  //3
+  <span key="c22b9de3">
+    E.g., Jessica Bruder, “These Workers Have a New Demand: Stop Watching Us,” <cite>Nation</cite>, May 27, 2015; Ifeoma Ajunwa, <cite>The Quantified Worker: Law and Technology in the Modern Workplace</cite> (Cambridge UP, 2023); and more recently Milagros Miceli et al., “The Data-Workers Inquiry,” <NoteLink href="https://data-workers.org/">https://data-workers.org/</NoteLink>, accessed August 30, 2025.
+  </span>,
+  //4
+  <span key="f03e64c1">
+    For a more in-depth examination of this phase of the project in particular, see our collaborative essay “What Data Do and Do Not Represent: Visualizing the Archive of Slavery” in <cite>IEEE Computer Graphics and Applications</cite> 45.3 (May-June 2025): 45–57, doi: 10.1109/MCG.2025.3553412.
+  </span>,
+  //5
+  <span key="d9822d07">
+    Tina Campt, <cite>Listening to Images</cite> (Duke UP, 2017), 9.
+  </span>,
+  //6
+  <span key="40aa9014">
+    Here I use “grammar” in its basic sense. For the use of the term in a visualization context, see note 12.
+  </span>,
+  //7
+  <span key="706d219a">
+    I often think of Bruce Fink’s understanding of language as a force that we use and that also “uses” us. See Fink, <cite>The Lacanian Subject: Between Language and Jouissance</cite> (Princeton UP, 1997), 14.
+  </span>,
+  //8
+  <span key="d9f38750">
+    Campt, <cite>Listening to Images</cite>, 116, emphasis in original.
+  </span>,
+  //9
+  <span key="5e6920d0">
+    Campt, <cite>Listening to Images</cite>, 116.
+  </span>,
+  //10
+  <span key="732f8484">
+    Toni Morrison, “Cinderella’s Stepsisters,” in <cite>The Source of Self-Regard</cite> (Knopf, 2019), 111.
+  </span>,
+  //11
+  <span key="ab012992">
+    Campt, <cite>Listening to Images</cite>, 8–9.
+  </span>,
+  //12
+  <span key="8a08c46f">
+    Leland Wilkinson’s <cite>Grammar of Graphics</cite> (2001), also referenced in the introduction, has strongly influenced the design of many widely used contemporary visualization libraries, such as ggplot (the “g”s are for “grammar” and “graphics”) and Vega-Lite, as well as the commercial visualization platform Tableau.
+  </span>,
+];
 
 export const epilogueFootnotes = [];
