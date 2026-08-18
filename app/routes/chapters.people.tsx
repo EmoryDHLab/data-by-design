@@ -131,11 +131,11 @@ export default function ShanawdithitPage() {
             group of Beothuk people—the Indigenous inhabitants of the island
             now more commonly known as Newfoundland—were awakened by the
             sound of intruders.
-            <InlineFootnote index={0} /> The group had been asleep at their
+            <InlineFootnote index={0} />The group had been asleep at their
             winter camp on the north side of Beothuk Lake, a long and narrow
             body of water at the island’s center, when a half dozen or so
             British settlers surrounded them.
-            <InlineFootnote index={1} /> While the settlers’ intentions were
+            <InlineFootnote index={1} />While the settlers’ intentions were
             not yet known, the Beothuk had cause for alarm. Every previous
             encounter with the British had ended in destruction and death.
             This encounter would soon result in the same.
@@ -145,21 +145,21 @@ export default function ShanawdithitPage() {
             centuries. Some speculate that the mention of “scraelings” in the
             Norse sagas refers to ancestors of the Beothuk, which would date a
             first encounter to the eleventh century.
-            <InlineFootnote index={2} /> A second phase of more sustained
+            <InlineFootnote index={2} />A second phase of more sustained
             contact began shortly after the Italian explorer John Cabot’s
             initial visit to the island, in 1497, and persisted for the next
             two hundred years.
-            <InlineFootnote index={3} /> During this time, says environmental
+            <InlineFootnote index={3} />During this time, says environmental
             humanities scholar Fiona Polack, “fishing crews from Spain,
             Portugal, France, and Britain would spend the summer months
             catching and processing cod before returning home for the
             winter.”
-            <InlineFootnote index={4} /> Polack documents how this
+            <InlineFootnote index={4} />Polack documents how this
             arrangement—to which, of course, the Beothuk had no choice but to
             consent—began to strain as “increasing numbers of people from the
             British isles began to settle permanently on the island and
             compete directly with the Beothuk for resources.”
-            <InlineFootnote index={5} /> It was this competition for
+            <InlineFootnote index={5} />It was this competition for
             resources, compounded over centuries, that in no small part led
             the British to Beothuk Lake that day.
           </p>
@@ -172,7 +172,7 @@ export default function ShanawdithitPage() {
             waters met the sea—the Beothuk waited for the “dense darkness” of
             night and then absconded with a boat carrying the season’s catch
             of salmon, and possibly some furs.
-            <InlineFootnote index={6} /> This “theft and act of destruction”
+            <InlineFootnote index={6} />This “theft and act of destruction”
             provided the rationale for John Peyton Jr., the owner of the boat
             (whose personal narrative serves as the source of the direct
             quotations in this paragraph) to request formal authorization
@@ -192,7 +192,7 @@ export default function ShanawdithitPage() {
             allow her to return to her child,” but they “took hold of her,”
             recalled John Paul, a Mi’kmaq-Innu man whose grandfather had been
             alive (but not present) at the time of the original events.
-            <InlineFootnote index={8} /> Demasduit’s partner, a man named
+            <InlineFootnote index={8} />Demasduit’s partner, a man named
             Nonosabasut, “came to her aid,” but Peyton shot and killed him.
             Two days later, the child of Demasduit and Nonosabasut died as
             well—likely the result of starvation. One other young woman,
@@ -205,7 +205,7 @@ export default function ShanawdithitPage() {
             in exploring her maps, our goal is not to argue for the utility
             of Beothuk cartographic techniques for the field of data
             visualization.
-            <InlineFootnote index={10} /> Rather, we seek to surface the
+            <InlineFootnote index={10} />Rather, we seek to surface the
             colonial context that gave rise to the maps’ creation, and make
             the case for how that context—what we call here the{" "}
             <em>colonial frame</em>—must be considered alongside any new
@@ -241,18 +241,18 @@ export default function ShanawdithitPage() {
             1—we have been explicit about acknowledging the positions from
             which our work takes place. Here is another place where these
             positions matter.
-            <InlineFootnote index={11} /> Our project does not contain any
+            <InlineFootnote index={11} />Our project does not contain any
             Indigenous team members, and while Tanvi is from India, which has
             its own colonial history, and other team members call other
             countries home, our team is firmly based in the United
             States—on Mvskoke, Lenape, Tongva land.
-            <InlineFootnote index={12} /> As such, our work cannot by
+            <InlineFootnote index={12} />As such, our work cannot by
             definition be decolonial, as it is not led by Indigenous people
             and does not involve the repatriation of Indigenous culture or
             land.
-            <InlineFootnote index={13} /> Instead, we have adopted an
+            <InlineFootnote index={13} />Instead, we have adopted an
             anticolonial approach.
-            <InlineFootnote index={14} /> Having reflected on our team’s
+            <InlineFootnote index={14} />Having reflected on our team’s
             collective position over the course of creating this chapter, we
             have come to see our role—indeed, our responsibility—as
             illuminating the place of Shanawdithit and her maps in the long
@@ -264,7 +264,7 @@ export default function ShanawdithitPage() {
             which involve yet more instances of violence and harm, underscore
             how the maps at the center of this chapter cannot be separated
             from the inherent violence of colonialism.
-            <InlineFootnote index={15} /> While the history of visualization
+            <InlineFootnote index={15} />While the history of visualization
             often elides such violence—think back to Playfair’s “simple”
             view of British trade data, which hides the human sources of its
             profits and losses—this chapter asks what it would mean to
@@ -308,7 +308,7 @@ export default function ShanawdithitPage() {
             village of Twillingate and then in the spring, after the ice had
             cleared, to the colony of St. John’s. She made several attempts
             to escape her captors.
-            <InlineFootnote index={16} /> At some point during this time, she
+            <InlineFootnote index={16} />At some point during this time, she
             contracted tuberculosis. She succumbed to the disease less than a
             year later, while aboard a boat that was intended to return her
             to her family, the British ultimately achieving a deadly version
@@ -335,7 +335,7 @@ export default function ShanawdithitPage() {
             Shanawdithit was then brought to St. John’s, where she spent six
             of the final weeks of her life in the home of William Epps
             Cormack.
-            <InlineFootnote index={19} /> Cormack, the Newfoundland-born son
+            <InlineFootnote index={19} />Cormack, the Newfoundland-born son
             of Scottish settlers who had earned early fame for his natural
             history of the island’s interior, was the one to supply
             Shanawdithit with “paper and pencils of various colours,” and
@@ -347,7 +347,7 @@ export default function ShanawdithitPage() {
             documenting a different area of Beothuk Lake and the events
             connected to it. The map that anchors this chapter is the second
             in the roughly chronological sequence.
-            <InlineFootnote index={20} /> It presents a composite picture of
+            <InlineFootnote index={20} />It presents a composite picture of
             the series of encounters between the Beothuk and the British that
             culminated in Demasduit’s capture and eventual death. In this and
             all of the maps, time is anchored by place.
@@ -413,7 +413,7 @@ export default function ShanawdithitPage() {
                 paths would seem to represent both established foot trails
                 and the actual trajectories that culminated in the events
                 depicted.
-                <InlineFootnote index={23} /> The lines also serve a
+                <InlineFootnote index={23} />The lines also serve a
                 narrative purpose; they connect the series of events depicted
                 as well as the two sides of the lake.
               </p>
@@ -477,7 +477,7 @@ export default function ShanawdithitPage() {
                 surveillance of the Beothuk camp is a pair of figures, one
                 red and one black, which has been interpreted as Demasduit
                 and one of her captors—perhaps Peyton himself.
-                <InlineFootnote index={27} /> The man is leading her away
+                <InlineFootnote index={27} />The man is leading her away
                 from the home that she would never again visit alive.
               </p>
             </Fragment>,
@@ -496,7 +496,7 @@ export default function ShanawdithitPage() {
             everything that suggests itself relating to her tribe, which I
             find is the best and readiest way of gathering information from
             her,” as he wrote in a letter in January 1829.
-            <InlineFootnote index={28} /> Cormack’s sense of entitlement to
+            <InlineFootnote index={28} />Cormack’s sense of entitlement to
             Shanawdihit’s knowledge is here apparent.
           </p>
           <p>
@@ -510,7 +510,7 @@ export default function ShanawdithitPage() {
           <p>
             And yet, this was only the first layer of how Shanawdithit’s
             knowledge would continue to be mined.
-            <InlineFootnote index={29} /> In the early twentieth century, a
+            <InlineFootnote index={29} />In the early twentieth century, a
             British government official and geographer named James P. Howley
             redrew Shanawdithit’s maps for inclusion in his own book,{" "}
             <cite>
@@ -531,7 +531,7 @@ export default function ShanawdithitPage() {
             source. This observation mirrors the broader critique of early
             ethnography as it emerged as an academic practice in the late
             nineteenth and early twentieth centuries.
-            <InlineFootnote index={30} /> But we might push this claim
+            <InlineFootnote index={30} />But we might push this claim
             further still, observing that the act of converting information
             into data—a required step in the visualization process—shares
             uncomfortable similarities with the processes in which Cormack
@@ -549,7 +549,7 @@ export default function ShanawdithitPage() {
           <p>
             Today, we still presume that the goal of visualization should be
             to clarify, and to enable deeper exploration only if required.
-            <InlineFootnote index={31} /> But this approach leaves no room to
+            <InlineFootnote index={31} />But this approach leaves no room to
             consider how the process of clarifying the significance of the
             data runs the risk of further distancing the data from those who
             created it; or how enabling deeper exploration very often
@@ -582,10 +582,10 @@ export default function ShanawdithitPage() {
             Here we are guided by Seneca literary scholar Mishuana Goeman,
             who emphasizes the importance of resisting the “utopian” yet
             ultimately impossible goal of recovery.
-            <InlineFootnote index={32} /> No magnitude of desire or strength
+            <InlineFootnote index={32} />No magnitude of desire or strength
             of effort, Goeman explains, can gain us access to “an original
             and pure point in history” before which all can be known.
-            <InlineFootnote index={33} /> Shanawdithit’s maps exemplify this
+            <InlineFootnote index={33} />Shanawdithit’s maps exemplify this
             claim. Her direct knowledge is irrecoverable, and even if we
             could approximate it, the principles of Indigenous data
             sovereignty tell us that it is not ours to own.
@@ -598,11 +598,11 @@ export default function ShanawdithitPage() {
             when we think of data only through the (literal) marks and
             channels that represent it, we lose sight of how—and by
             whom—that data came to be.
-            <InlineFootnote index={34} /> When we enter into a visualization
+            <InlineFootnote index={34} />When we enter into a visualization
             project without sufficient regard for the data’s provenance, we
             often fail to recognize what knowledge may have already been
             lost in the process of separating that data from its source.
-            <InlineFootnote index={35} /> It also becomes all the more
+            <InlineFootnote index={35} />It also becomes all the more
             difficult to consider any responsibility we might have to the
             people who created the data, the people whose data our
             visualizations represent, and the people who interact with our
@@ -631,12 +631,12 @@ export default function ShanawdithitPage() {
             and sand paintings and the Nuwuvi Salt Song Trail.” They also
             span multiple forms and “may be gestural, chanted, or inscribed
             in stone, wood, wall, tattoo, leaf, or paper.”
-            <InlineFootnote index={36} /> What binds these examples together,
+            <InlineFootnote index={36} />What binds these examples together,
             for Pearce and Louis, as for other scholars of Indigenous
             cartography, is how they are understood as part of a larger{" "}
             <em>process</em> of knowledge-making, rather than as a
             definitive source of what is <em>there</em>.
-            <InlineFootnote index={37} /> This process is premised on
+            <InlineFootnote index={37} />This process is premised on
             relationships among people as well as places, relationships
             that continue to acquire meaning as they unfold.
           </p>
@@ -669,7 +669,7 @@ export default function ShanawdithitPage() {
             mapping. We might further connect this idea to Edward Tufte’s
             famed formulation, with respect to Charles Minard, of the
             “space-time-story graphic.”
-            <InlineFootnote index={39} /> Viewing Minard’s flow map alongside
+            <InlineFootnote index={39} />Viewing Minard’s flow map alongside
             Howley’s recreation of Shanawdithit’s map is startlingly
             revealing, as the map is both more closely connected to
             Minard’s and more distinct than might initially appear.
@@ -715,7 +715,7 @@ export default function ShanawdithitPage() {
             that most Indigenous inhabitants of Turtle Island had learned
             well before the encounter between the Beothuk and Peyton and his
             men.
-            <InlineFootnote index={42} /> Consider the end result of a
+            <InlineFootnote index={42} />Consider the end result of a
             seemingly innocuous encounter between Ac ko mok ki, a Siksika
             leader, and a surveyor for the Hudson’s Bay Company named Peter
             Fidler, which took place at an outpost just east of what is more
@@ -733,7 +733,7 @@ export default function ShanawdithitPage() {
             and which three years later would be used by Meriwether Lewis
             and William Clark to determine the route for their expedition
             to the west coast.
-            <InlineFootnote index={43} /> Their mission is widely recognized
+            <InlineFootnote index={43} />Their mission is widely recognized
             as authorizing the United States’ future claims to the full
             width of the continent, and seeding the idea of “manifest
             destiny” that would validate US territorial expansion into the
@@ -864,7 +864,7 @@ export default function ShanawdithitPage() {
             example of the “thematic map” genre. Such maps can be analyzed
             in terms of the layers of data that they visualize, and the
             designer’s choices about how to order them.
-            <InlineFootnote index={47} /> Generally, whatever data is
+            <InlineFootnote index={47} />Generally, whatever data is
             plotted as the bottom layer of the map is presumed to be stable
             and true. In this way, as historian and cartographer Bill
             Rankin has observed, it accords whatever dataset is placed at
@@ -929,7 +929,7 @@ export default function ShanawdithitPage() {
             icons used to indicate the camp, the canoe, and the men. He
             added an indication of the direction of the river and several
             other annotations, as well as a pejorative note.
-            <InlineFootnote index={49} /> He then sent the map back to
+            <InlineFootnote index={49} />He then sent the map back to
             England, where it eventually arrived at the British Library. As
             a result, it has earned distinction as the oldest known example
             of a birch bark map to have been preserved.
@@ -1055,7 +1055,7 @@ export default function ShanawdithitPage() {
             recorded in the twentieth century, by an American anthropologist
             named Frank Speck, who published it in his own book on the
             Beothuk and Mi’kmaq in 1922.
-            <InlineFootnote index={54} /> Speck’s book, interestingly, also
+            <InlineFootnote index={54} />Speck’s book, interestingly, also
             contains a series of photographs, which he took during his own
             visit to Newfoundland in the summer of 1914. One of these
             photographs is of a lookout tree.
@@ -1068,7 +1068,7 @@ export default function ShanawdithitPage() {
             Shanawdithit told Peyton about, as Speck labels it as being
             located at Red Indian (now Beothuk) Point and identifies it as a
             “large white spruce.”
-            <InlineFootnote index={55} /> But it remains resonant
+            <InlineFootnote index={55} />But it remains resonant
             nonetheless, especially since he provides a second photo: a view
             from the top.
           </p>
@@ -1079,7 +1079,7 @@ export default function ShanawdithitPage() {
             For Speck, the view from the top of the tree suggests a window
             in an unmediated past, a sense of what the Beothuk themselves
             might have seen.
-            <InlineFootnote index={55} /> “I climbed [the tree] to
+            <InlineFootnote index={55} />“I climbed [the tree] to
             experience the sensation of observing these wastes”—an archaic
             term for uncultivated land—“from the vantage point of the
             ancients,” he explains. Needless to say, his presumption that he
@@ -1098,7 +1098,7 @@ export default function ShanawdithitPage() {
             wasn’t until I traveled to St. John’s myself that I realized
             what was at the center of the image: a covering of low, dense
             clouds. Clouds are everywhere in St. John’s.
-            <InlineFootnote index={56} /> Evidently, they were in Speck’s
+            <InlineFootnote index={56} />Evidently, they were in Speck’s
             time as well. In the end, his clouded view may well have been
             similar to the “vantage point of the ancients” that he thought
             he could capture by his photo from the top of the tree. But I
@@ -1139,7 +1139,7 @@ export default function ShanawdithitPage() {
           <p>
             We thus close with a final diagram of the sources of this
             chapter, recentered around the lookout tree.
-            <InlineFootnote index={58} /> It remains an incomplete picture,
+            <InlineFootnote index={58} />It remains an incomplete picture,
             but its incompleteness—like Speck’s clouds over Beothuk
             Lake—is intended as a guide: of how we can pursue more complete
             knowledge in our design and viewing practices, just as we

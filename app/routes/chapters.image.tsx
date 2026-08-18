@@ -130,15 +130,15 @@ export default function PlayfairPage() {
               development of modern data visualization. His bar charts, pie
               charts, and time series charts are frequently heralded as among
               the earliest of their kind.
-              <InlineFootnote index={0} /> In the opening lines of The Visual
+              <InlineFootnote index={0} />In the opening lines of The Visual
               Display of Quantitative Information, visualization luminary Edward
               Tufte describes Playfair's work as "remarkable," and most other
               historians of visualization have followed suit.
-              <InlineFootnote index={1} /> But in his own time, Playfair
+              <InlineFootnote index={1} />But in his own time, Playfair
               remained "largely unacknowledged" for his innovations.
-              <InlineFootnote index={2} /> More to the point, he was almost
+              <InlineFootnote index={2} />More to the point, he was almost
               always nearly broke.
-              <InlineFootnote index={3} /> And so while Playfair chose to
+              <InlineFootnote index={3} />And so while Playfair chose to
               commission one of the most skilled engravers in all of London,
               Samuel John Neele, to produce the plates for his book, he also
               likely requested that Neele work at speed so as to minimize the
@@ -191,13 +191,13 @@ export default function PlayfairPage() {
             engraving is made with a metal tool called a burin, which, somewhat
             counter-intuitively, is held still while the engraver rotates the
             underlying plate.
-            <InlineFootnote index={5} /> Playfair's error was thus a common one,
+            <InlineFootnote index={5} />Playfair's error was thus a common one,
             a slip of a tired or sweaty hand. It wouldn't even be very
             noticeable one the colored paint was overlayed. But neither of these
             excuses would have made it more tolerable to the man who was
             already, by his own account, "long anxious" to be acknowledged for
             the "invention" of data visualization.
-            <InlineFootnote index={6} /> Unlike the array of software platforms
+            <InlineFootnote index={6} />Unlike the array of software platforms
             and programming libraries used to create data visualizations today,
             each of which allow for (relatively) easy revision, the engraving
             process employed by Playfair resulted in an image that was
@@ -263,7 +263,7 @@ export default function PlayfairPage() {
                 authority, and it will naturally be enquired from whence you
                 have derived your intelligence.
               </q>
-              <InlineFootnote index={7} /> Playfair thus dutifully compiled data
+              <InlineFootnote index={7} />Playfair thus dutifully compiled data
               tables to accompany each of his charts, which documented the
               figures he'd "derived" from the records of the London
               Custom-House, and included them in the first and second editions
@@ -278,7 +278,7 @@ export default function PlayfairPage() {
               contributions over the years, Playfair came to see the function of
               his charts as quite distinct from that of tables, or "figures," as
               he termed them.
-              <InlineFootnote index={9} /> In the Introduction to this new
+              <InlineFootnote index={9} />In the Introduction to this new
               edition, he explains:
             </p>
             <Quotation
@@ -421,10 +421,10 @@ export default function PlayfairPage() {
             accuracy; and that an absence of embellishment or superfluous detail
             is how to best encourage the viewer to think about the "substance"
             of the data, rather than the "methodology" underneath.
-            <InlineFootnote index={13} /> These best practices are, for Tufte,
+            <InlineFootnote index={13} />These best practices are, for Tufte,
             how visualizations can be made to <em>"reveal</em> data" (italics in
             the original).
-            <InlineFootnote index={14} /> But for Playfair, what is revealed
+            <InlineFootnote index={14} />But for Playfair, what is revealed
             through this particular approach to visualization is the value of
             visualization itself. This value is indeed clarifying, and it is
             efficient as well, but it is an argument and not a fact. As
@@ -496,7 +496,7 @@ export default function PlayfairPage() {
               "simple and complete" images can not only capture a clear "picture
               of the past," but also retain their utility in a range of possible
               future scenarios.
-              <InlineFootnote index={18} /> His goal is to cut through
+              <InlineFootnote index={18} />His goal is to cut through
               complexity, guided by a belief that less detail—rather than
               more—is what will enable more "useful" and enduring knowledge.
               <InlineFootnote index={19} />
@@ -509,7 +509,7 @@ export default function PlayfairPage() {
               his intended audience is not "any person" in the world, but
               rather, the narrower demographic of "men of high rank, or active
               business"
-              <InlineFootnote index={20} /> These men, he continues, "can only
+              <InlineFootnote index={20} />These men, he continues, "can only
               pay attention to general outlines; nor is attention to particulars
               of use."
               <InlineFootnote index={21} />
@@ -551,10 +551,10 @@ export default function PlayfairPage() {
               trade that favors England, as depicted in the chart, to the "lives
               and freedom of the much injured, and wretched inhabitants of
               Africa."
-              <InlineFootnote index={22} /> In the much longer and more
+              <InlineFootnote index={22} />In the much longer and more
               impassioned account of the chart of North American trade, Playfair
               does not mention the issue of slavery at all.
-              <InlineFootnote index={23} /> For Playfair—and, he believes, for
+              <InlineFootnote index={23} />For Playfair—and, he believes, for
               the "men of high rank" for whom he has designed his charts—it is
               truly the failure of Britain to hold onto its American colonies,
               and the loss of profit and power that came with it, that is most
@@ -562,7 +562,7 @@ export default function PlayfairPage() {
               assessment, and explicitly so. "What numbers have been ruined, and
               how many more have been deprived of fortune, by our ill-conducted
               trade with America?" Playfair laments.
-              <InlineFootnote index={24} /> There are no captive bodies here to
+              <InlineFootnote index={24} />There are no captive bodies here to
               illustrate this "ill-conducted trade." On the contrary, his
               boldly-colored data-lines emphasize the "numbers" and the
               "fortune" lost. The exclusion of "particulars" is what makes the
@@ -580,7 +580,7 @@ export default function PlayfairPage() {
               milieu, it is not surprising that Playfair offers no concern about
               what might be lost in the details of the data, or about who might
               be impacted by that missing information.
-              <InlineFootnote index={26} /> What is surprising is that we, in
+              <InlineFootnote index={26} />What is surprising is that we, in
               the present, have not yet come to see these design choices as the
               <em>argument</em> of Playfair's charts.
             </p>
@@ -614,7 +614,7 @@ export default function PlayfairPage() {
               From our perspective in the present, it appears that Playfair was
               correct in his assertion about the enduring nature of the "form
               and manner" of his charts.
-              <InlineFootnote index={28} /> His are among a small set of data
+              <InlineFootnote index={28} />His are among a small set of data
               visualizations from the nineteenth-century—also including John
               Snow's 1854 dot map of cholera deaths, Florence Nightingale's 1858
               coxcomb charts of mortality during the Crimean War, and Charles
@@ -680,7 +680,7 @@ export default function PlayfairPage() {
               America" with D3, the popular JavaScript-based visualization
               library, as we did for the feature at the beginning of this
               chapter.
-              <InlineFootnote index={29} /> Unlike the data-lines of Playfair's
+              <InlineFootnote index={29} />Unlike the data-lines of Playfair's
               original chart, which as previously discussed, he drew freehand,
               ours required actual data before they could be given visual form.
               Because of this, we were required to type in the data from
@@ -829,7 +829,7 @@ export default function PlayfairPage() {
               when the British economist William Stanley Jevons borrowed
               Playfair's visualization techniques for his own economic atlas,
               which was circulated among the British statistical elite.
-              <InlineFootnote index={32} /> Among this group was Karl Pearson,
+              <InlineFootnote index={32} />Among this group was Karl Pearson,
               the influential statistician and eugenicist. Pearson's use of
               charts and graphs to illustrate his own statistical work is
               generally viewed as a watershed moment for scientific

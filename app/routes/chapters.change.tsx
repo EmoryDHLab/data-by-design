@@ -107,21 +107,21 @@ export default function DuboisChapter() {
           <p className="first-paragraph">
             The last week of December 1899 had been cold and exceptionally
             rainy.
-            <InlineFootnote index={0} /> But on the day after Christmas, when
+            <InlineFootnote index={0} />But on the day after Christmas, when
             Lula Iola Mack crossed the “high and narrow iron bridge” from the
             women’s dormitory to the main campus of Atlanta University, one of
             the nation’s flagship Black colleges, to begin the winter term of
             her senior year, she likely walked with a confident step.
-            <InlineFootnote index={1} /> Mack was beginning the term as one of
+            <InlineFootnote index={1} />Mack was beginning the term as one of
             the top students in her class. She had already been awarded high
             honors after her sophomore year—the only member of her class to
             receive such recognition—and she was on track to repeat the feat at
             graduation.
-            <InlineFootnote index={2} /> She’d spent the previous term learning
+            <InlineFootnote index={2} />She’d spent the previous term learning
             a range of state-of-the-art methods for data collection and
             analysis, so she likely approached her additional coursework
             feeling well-prepared.
-            <InlineFootnote index={3} /> She was to undertake a project
+            <InlineFootnote index={3} />She was to undertake a project
             involving “a general survey of social conditions,” just as the
             course catalogue promised, and just as students had done the year
             before.
@@ -142,12 +142,12 @@ export default function DuboisChapter() {
             On January 25, 1900—one month to the day after the winter term at
             Atlanta University had begun—Calloway received a financial
             commitment from the federal government.
-            <InlineFootnote index={6} /> He tasked Daniel A. P. Murray, then
+            <InlineFootnote index={6} />He tasked Daniel A. P. Murray, then
             the Assistant Librarian of Congress, with assembling a set of books
             by Black writers to put on display. He also reached out to a
             college friend to work through what the “social” component of the
             exhibit should include.
-            <InlineFootnote index={7} /> This friend was Mack’s professor, none
+            <InlineFootnote index={7} />This friend was Mack’s professor, none
             other than the esteemed sociologist, author, and activist W. E. B.
             Du Bois. And for the next three months, Mack, Du Bois, the three
             other students enrolled in his year-long sociology sequence, and an
@@ -208,7 +208,7 @@ export default function DuboisChapter() {
               of that state. Scholars generally believe that William Andrew
               Rogers, the student from the year before, was responsible for
               much of the design and implementation of this set of charts.
-              <InlineFootnote index={9} /> The second set,{" "}
+              <InlineFootnote index={9} />The second set,{" "}
               <cite>
                 A Series of Statistical Charts Illustrating the Condition of the
                 Descendants of Former Slaves Now in Residence in the United
@@ -217,7 +217,7 @@ export default function DuboisChapter() {
               , drew from several data sources, including the US Census, in
               order to put the Black population of the United States in
               national and international perspectives.
-              <InlineFootnote index={10} /> These charts are collectively
+              <InlineFootnote index={10} />These charts are collectively
               attributed to “Negro Students of Atlanta University,” but nowhere
               does Du Bois credit any of these students by name.
               <InlineFootnote index={11} />
@@ -229,12 +229,12 @@ export default function DuboisChapter() {
               particularly those trained in techniques for recovering meaning
               from fragmentary archives, this “archival silence,” as it is often
               called, is where the real work begins.
-              <InlineFootnote index={12} /> The lists and ledger books,
+              <InlineFootnote index={12} />The lists and ledger books,
               catalogues and records—the bureaucratic and household detritus
               that, for most people, can be safely set to the side—are, for
               these scholars, the main focus of their research. Certainly
               they’ve been the main focus of mine.
-              <InlineFootnote index={13} /> In this particular case, it’s the
+              <InlineFootnote index={13} />In this particular case, it’s the
               annual{" "}
               <cite>
                 Catalogue of the Officers and Students of Atlanta University
@@ -263,15 +263,15 @@ export default function DuboisChapter() {
             Because Du Bois’s year-long sociology course sequence was required
             of all Atlanta University seniors, we can safely assume that Mack,
             Lee, Simon, and Westmoreland all took his winter-term class.
-            <InlineFootnote index={15} /> We also know from extensive
+            <InlineFootnote index={15} />We also know from extensive
             scholarship on Du Bois—and, again, from the catalogue itself—that
             the organizing principle of Du Bois’s pedagogy was to involve his
             students in the research (and requisite skills of data analysis)
             required to produce public-facing work.
-            <InlineFootnote index={16} /> When Du Bois received the invitation
+            <InlineFootnote index={16} />When Du Bois received the invitation
             to contribute to the Paris Exposition, he canceled all of his
             winter-term classes except for his sociology course.
-            <InlineFootnote index={17} /> Presumably he identified a direct
+            <InlineFootnote index={17} />Presumably he identified a direct
             alignment between the course’s learning objectives and the work
             that creating the charts would entail. But perhaps even more than
             that, Du Bois recognized from the start that, both practically and
@@ -294,7 +294,7 @@ export default function DuboisChapter() {
             Du Bois’s most famous indictment of the centrality of race and
             racism to modern American sociopolitical life,” as architectural
             historian Mabel O. Wilson explains.
-            <InlineFootnote index={18} /> These words also function as a key to
+            <InlineFootnote index={18} />These words also function as a key to
             interpreting the actual colored lines of the charts. But I believe
             that the true key to the charts lies in the contributions of Du
             Bois’s students: Rogers, Lee, Simons, Westmoreland, and Mack. After
@@ -333,12 +333,12 @@ export default function DuboisChapter() {
             spurious) statistical claims that data enabled would become a
             primary means of racial surveillance, eugenic policy, and social
             control.
-            <InlineFootnote index={21} /> But in this particular moment, before
+            <InlineFootnote index={21} />But in this particular moment, before
             the power of data and statistics had been fully consolidated in the
             hands of the state, the “very newness of these technologies also
             created loopholes” for Black and white data activists alike,
             literary scholar Autumn Womack explains.
-            <InlineFootnote index={22} /> This resulted in “enthusiasm and
+            <InlineFootnote index={22} />This resulted in “enthusiasm and
             curiosity” and, in the case of Wells, Du Bois, and his students, the
             belief that data—when collected, analyzed, and communicated with
             accuracy and care—could bring the nation closer to the goals that
@@ -356,7 +356,7 @@ export default function DuboisChapter() {
             took active steps to ensure that there would be no
             misinterpretation of the insights they hoped their charts would
             convey.
-            <InlineFootnote index={24} /> They carefully selected specific
+            <InlineFootnote index={24} />They carefully selected specific
             facets of each dataset, at times also devising novel visualization
             forms, so as to ensure that this message would be clear. The Black
             population of Georgia is shown to increase every decade; the number
@@ -404,7 +404,7 @@ export default function DuboisChapter() {
             Statistics at the same time as he was instructing his students in
             how to conduct the “survey of social conditions” that they would
             fold into the charts.
-            <InlineFootnote index={25} /> While we do not know whether the
+            <InlineFootnote index={25} />While we do not know whether the
             results of Du Bois’s surveys were ever incorporated into the larger
             statistical reports that the government released, the design of
             certain charts from the second set of charts makes clear that Du
@@ -415,11 +415,11 @@ export default function DuboisChapter() {
             In 1894, the chief geographer for the US Census, Henry Gannett, had
             released a pamphlet that compiled and visualized statistics on Black
             Americans on the basis of one hundred years of US Census data.
-            <InlineFootnote index={26} /> Among the charts was one labeled
+            <InlineFootnote index={26} />Among the charts was one labeled
             “Conjugal Condition of the Negro Element,” which Gannett marshaled
             in the service of a eugenicist argument about the relative weakness
             of the US Black population in relation to the white one.
-            <InlineFootnote index={27} /> For the Paris Exposition, Du Bois and
+            <InlineFootnote index={27} />For the Paris Exposition, Du Bois and
             his students recreated the Gannett chart as “Conjugal Condition of
             American Negroes according to Age Periods,” the 17th of their 27 (or
             28) charts. Seemingly akin to how, earlier in the century,
@@ -429,7 +429,7 @@ export default function DuboisChapter() {
             Bois enlisted his students in refuting Gannett’s arguments through
             the same form that had been used to advance them in the first place:
             the chart.
-            <InlineFootnote index={28} /> This is a clear instance of what we
+            <InlineFootnote index={28} />This is a clear instance of what we
             would call “countervisualization” today.
           </p>
 
@@ -500,7 +500,7 @@ export default function DuboisChapter() {
             Douglass and a “remarkable” wood frame carved by a man who was
             formerly enslaved, among other examples of wood and metalwork from
             students and faculty at other Black colleges and industrial schools.
-            <InlineFootnote index={30} /> There was a three-volume compilation
+            <InlineFootnote index={30} />There was a three-volume compilation
             that Du Bois titled “Black Codes of Georgia,” which contained a
             catalogue of all of the discriminatory laws enacted in the state
             since the end of the Civil War—one of the few explicit
@@ -513,11 +513,11 @@ export default function DuboisChapter() {
             original prints documenting Black Americans at home, at work, and at
             school—including at Atlanta University, where a group of four women
             students were photographed on the steps of their classroom building.
-            <InlineFootnote index={32} /> Was one of these students Lula Iola
+            <InlineFootnote index={32} />Was one of these students Lula Iola
             Mack? Did any of these students live with Mack in the “plain four
             story brick building” that served as the women’s dorm, on the corner
             of West Hunter and Vine Streets?
-            <InlineFootnote index={33} /> Or could it be that these women were,
+            <InlineFootnote index={33} />Or could it be that these women were,
             instead, in the year below Mack—part of the Class of 1901, which
             included the largest cohort of women students at Atlanta University
             to that point in time? These questions are tantalizing, but they do
@@ -538,16 +538,16 @@ export default function DuboisChapter() {
             articulated most famously in <cite>The Souls of Black Folk</cite> as
             “the sense of always looking at one’s self through the eyes of
             another.”
-            <InlineFootnote index={35} /> With the photographs, which not only
+            <InlineFootnote index={35} />With the photographs, which not only
             featured Black people but were also created by them—the prominent
             Black photographer Thomas Askew took the Atlanta University shots—Du
             Bois sought to present to a predominantly white international
             audience a view of how Black Americans saw themselves.
-            <InlineFootnote index={36} /> When we see how the charts were
+            <InlineFootnote index={36} />When we see how the charts were
             installed alongside the photographs in Paris, it becomes all the
             more apparent that the charts were also pushing back against this
             double consciousness, albeit through a different visual form.
-            <InlineFootnote index={37} /> In direct comparison to the government
+            <InlineFootnote index={37} />In direct comparison to the government
             statistics collected by Gannett, who was white, the charts created
             by Du Bois and his students can be interpreted as expressing their
             own assessment of the status of race and racism in America at the
@@ -624,7 +624,7 @@ export default function DuboisChapter() {
             off to visit his mother, who was sick. The argument spiraled out of
             control, resulting in the employer’s death; from there, rumors
             abounded.
-            <InlineFootnote index={40} /> Du Bois had the idea to write an essay
+            <InlineFootnote index={40} />Du Bois had the idea to write an essay
             about the incident for the <cite>Atlanta Constitution</cite>, the
             leading newspaper of the South. He recalls how he drafted a “careful
             and reasoned statement concerning the evident facts.” But while
@@ -666,7 +666,7 @@ export default function DuboisChapter() {
             axiomatic that the world wanted to learn the truth and if the truth
             was sought with even approximate accuracy and painstaking devotion,
             the world would gladly support the effort.”
-            <InlineFootnote index={43} /> But the violence brought about by
+            <InlineFootnote index={43} />But the violence brought about by
             centuries of white supremacy, Du Bois realized at that moment,
             demanded an epistemological charge greater than what could ever be
             learned through facts alone. Thus when he turned to the Paris
@@ -690,7 +690,7 @@ export default function DuboisChapter() {
             of Atlanta to Albany, Georgia, where she worked as a teacher for
             several years. In 1902, she married one Mr. F. H. Wilkins, and they
             spent the next decade together, moving around the southeast.
-            <InlineFootnote index={45} /> In 1907, they had a child, whom they
+            <InlineFootnote index={45} />In 1907, they had a child, whom they
             named Marggette (or possibly Marguerite) Iolamarie.
             <InlineFootnote index={46} />
           </p>
@@ -700,10 +700,10 @@ export default function DuboisChapter() {
             teacher—working for two years in Macon, Georgia, and then moving to a
             school in Petersburg, Virginia, where, in 1909, he also obtained a
             master’s degree.
-            <InlineFootnote index={47} /> Meanwhile, William George
+            <InlineFootnote index={47} />Meanwhile, William George
             Westmoreland stayed in Atlanta, finding stable work as a mail
             carrier there.
-            <InlineFootnote index={48} /> Henry Napoleon Lee and Edward Lee
+            <InlineFootnote index={48} />Henry Napoleon Lee and Edward Lee
             Simon both moved to Memphis. While Simon became the superintendent
             of the printing department at the LeMoyne Institute there, Lee worked
             as a teacher in the industrial department of the same school. Both,
@@ -730,11 +730,11 @@ export default function DuboisChapter() {
             Du Bois, by contrast, went on to live a long life, passing away at
             the age of 95 in Ghana, where he had moved two years earlier as the
             culmination of his increasingly anticolonial activism and ideas.
-            <InlineFootnote index={51} /> While he would continue to make charts
+            <InlineFootnote index={51} />While he would continue to make charts
             and tables with his students until at least 1910, when he left
             Atlanta University to join the NAACP, he would never again create
             visualizations at the size or scale of the Paris Exposition charts.
-            <InlineFootnote index={52} /> Among Du Bois scholars, it is generally
+            <InlineFootnote index={52} />Among Du Bois scholars, it is generally
             believed that the lynching of Sam Hose marked the beginning of the
             end of Du Bois’s conviction that data, and quantitative methods more
             broadly, would bring about the full extent of the social change that
@@ -753,7 +753,7 @@ export default function DuboisChapter() {
             is both for the visual strategies they employ, and for the issues of
             structural racism that they illuminate, which still demand our
             attention today.
-            <InlineFootnote index={54} /> These are chief among the reasons that
+            <InlineFootnote index={54} />These are chief among the reasons that
             Du Bois’s charts have joined William Playfair’s line graphs and bar
             charts (or perhaps even usurped their place) as a focus for
             visualization designers and artists today.
@@ -765,7 +765,7 @@ export default function DuboisChapter() {
             Exposition using contemporary data. She decided to draw her updated
             charts by hand. While visually dazzling, the picture of progress
             that they paint is, in Chalabi’s words, “bleak.”
-            <InlineFootnote index={56} /> In her analysis of the data on
+            <InlineFootnote index={56} />In her analysis of the data on
             literacy levels in the US in 2010, as compiled by the National Center
             for Education Statistics, she discovered that “illiteracy among black
             Americans was still four times higher than it was for white
@@ -810,7 +810,7 @@ export default function DuboisChapter() {
             Of course, those personally experiencing the impact of such
             inequality do not need visualization to “reveal” its effects; they
             live with its effects every day.
-            <InlineFootnote index={57} /> This is the point made by another
+            <InlineFootnote index={57} />This is the point made by another
             contemporary project based on Du Bois’s charts, by the artist and
             educator Mimi Ọnụọha, which will bring us toward this chapter’s
             close. “In Absentia” consists of six charts that reference the
@@ -915,7 +915,7 @@ export default function DuboisChapter() {
             been published the year before and would have thus been the most
             recent catalogue that was available to Du Bois and his students for
             their work.
-            <InlineFootnote index={59} /> The data table also includes summary
+            <InlineFootnote index={59} />The data table also includes summary
             statistics about the 330 students’ occupations, and presumably served
             as the data source for the occupations pictured in the central pie
             chart that was displayed on the wall in Paris.
@@ -959,7 +959,7 @@ export default function DuboisChapter() {
             Saidiya Hartman, is that the lives of those who have not been
             “endowed with the gravity and authority of historical actor” are
             precisely those who should demand our attention today.
-            <InlineFootnote index={60} /> This is, after all, why I have placed
+            <InlineFootnote index={60} />This is, after all, why I have placed
             so much emphasis on Lula Iola Mack in this chapter. It is because of
             my own deep-seated belief that it is in the lives of those most
             marginalized in the archive, as in the history of data visualization,
@@ -1021,7 +1021,7 @@ export default function DuboisChapter() {
             public health to crime, were presented each spring at a large public
             conference and, several weeks or months later, were published by
             Atlanta University’s in-house printing press for broader circulation.
-            <InlineFootnote index={61} /> The first had been published only two
+            <InlineFootnote index={61} />The first had been published only two
             years before Du Bois’s arrival, but they had already become one of
             the school’s defining intellectual contributions. Not incidentally,
             some of the data collected for the studies can be found in visual
@@ -1034,7 +1034,7 @@ export default function DuboisChapter() {
             those who had ever taken his sociology course sequence. Together, the
             students and alumni constituted “two tiers of volunteer researchers,”
             Morris explains.
-            <InlineFootnote index={63} /> While the current class of seniors
+            <InlineFootnote index={63} />While the current class of seniors
             would prepare the surveys and, when the surveys were returned, help
             to analyze the results, it was members of the Atlanta University
             alumni network who, each year, became unofficial field site
@@ -1056,7 +1056,7 @@ export default function DuboisChapter() {
             themselves. We had known that the study that Mack and her classmates
             produced after completing the charts for the Paris Exposition was,
             very appropriately, on the subject of college education.
-            <InlineFootnote index={65} /> We also knew that, a decade later, Du
+            <InlineFootnote index={65} />We also knew that, a decade later, Du
             Bois had returned to the topic, conducting a follow-up study entitled{" "}
             <cite>The College-Bred Negro American</cite>, based on a new survey
             of all known living Black college graduates across the country. Per
@@ -1068,7 +1068,7 @@ export default function DuboisChapter() {
             graduates of Atlanta University whom Du Bois had personally taught by
             that point—perhaps even Mack, who had since returned to her hometown
             of Athens, Georgia with her three-year-old daughter.
-            <InlineFootnote index={67} /> Few individual responses to the survey
+            <InlineFootnote index={67} />Few individual responses to the survey
             have been preserved, so we cannot know with any certainty whether
             Mack or any of her classmates chose to respond. But the study does
             contain a data table of all Atlanta University graduates to that
@@ -1137,7 +1137,7 @@ export default function DuboisChapter() {
                 An additional 3,693 gray dots represent the graduates of the
                 other 140 colleges included in the study, whose names and exact
                 occupations we do not know.
-                <InlineFootnote index={69} /> (In addition to the 34 Black
+                <InlineFootnote index={69} />(In addition to the 34 Black
                 colleges, Du Bois also surveyed the Black graduates of 107
                 predominantly white institutions.)
                 <InlineFootnote index={70} />
@@ -1218,7 +1218,7 @@ export default function DuboisChapter() {
             human souls—a necessary step in the abolition of slavery—it did not
             halt the injustice that Du Bois and his students confronted a full
             century later and an ocean away.
-            <InlineFootnote index={72} /> The survey responses that they
+            <InlineFootnote index={72} />The survey responses that they
             compiled, and are visualized here, testify to that fact. In
             visualizing these responses—and therefore, the unfinished struggle
             for racial justice that we now inherit—we are reminded of the task

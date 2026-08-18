@@ -58,6 +58,98 @@ const sections = [
 
 const chapterFigures = Object.values(figures);
 
+// The project's full tech stack, grouped as it appears in the chapter's
+// opening list. Each inner array is one rendered column.
+const techStack: { title: string; items: string[] }[][] = [
+  [
+    {
+      title: "Writing",
+      items: [
+        "google docs",
+        "microsoft word",
+        "notes",
+        "xcode",
+        "vs code",
+        "intelliJ",
+      ],
+    },
+    { title: "Archive", items: ["zotero", "google sheets", "google docs"] },
+  ],
+  [
+    {
+      title: "Design",
+      items: ["sketch → figma", "adobe photoshop", "glyphs", "procreate"],
+    },
+    {
+      title: "Communication",
+      items: ["slack", "google calendar", "zoom", "IRL"],
+    },
+  ],
+  [
+    {
+      title: "Front End",
+      items: [
+        "p5.js",
+        "d3.js",
+        "tailwind",
+        "vue → react",
+        "node.js",
+        "remix",
+        "typescript",
+        "html",
+        "css",
+      ],
+    },
+    { title: "Version Control", items: ["github"] },
+  ],
+  [
+    { title: "OS", items: ["mac", "windows"] },
+    {
+      title: "Browser",
+      items: ["google chrome", "apple safari", "mozilla firefox"],
+    },
+    { title: "DNS", items: ["gandi"] },
+  ],
+  [
+    { title: "Hosting", items: ["reclaim", "aws", "netlify → ecds"] },
+    {
+      title: "Data",
+      items: [
+        "adobe acrobat",
+        "anthropic claude",
+        "google sheets",
+        "python",
+      ],
+    },
+  ],
+];
+
+function TechStack() {
+  return (
+    <div className="mx-6 md:mx-24 lg:mx-32 my-12 md:my-16">
+      <h2 className="sr-only">The Data by Design tech stack</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10">
+        {techStack.map((column, index) => (
+          <div key={`stack-column-${index}`} className="space-y-10">
+            {column.map((group) => (
+              <div key={group.title}>
+                <h3 className="font-power uppercase tracking-wide text-sm md:text-base mb-3">
+                  {group.title}
+                </h3>
+                <ul className="font-mono text-sm md:text-base space-y-1">
+                  {group.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function LabourPage() {
   const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
 
@@ -101,7 +193,7 @@ export default function LabourPage() {
             The link opened to an entry on <cite>Folklore</cite>, a website
             dedicated to compiling and preserving anecdotes by the people who
             created the original Apple Macintosh computer.
-            <InlineFootnote index={0} /> The entry was written by Andy
+            <InlineFootnote index={0} />The entry was written by Andy
             Hertzfeld, a software engineer who worked at Apple at the time, and
             was submitted to the archive in 1982. Hertzfeld recalls how Bill
             Atkinson, a fellow Apple engineer, was frustrated by a new
@@ -126,7 +218,7 @@ export default function LabourPage() {
             center stage to work that is <em>undone</em>. In the absence of any
             new lines of code, what is left in that space is the person who did
             the undoing.
-            <InlineFootnote index={1} /> Over the course of the five years that
+            <InlineFootnote index={1} />Over the course of the five years that
             we—the authors of this chapter—have been involved in creating{" "}
             <cite>Data by Design</cite>, we’ve each done and undone significant
             amounts of work. No numbers or data or even the most well-designed
@@ -142,7 +234,7 @@ export default function LabourPage() {
             called attention to how the data we generate through our work, when
             placed in the hands of bosses and others in positions of power, leads
             down a very dark path.
-            <InlineFootnote index={2} /> Even working on this project, we’ve long
+            <InlineFootnote index={2} />Even working on this project, we’ve long
             been aware of how putting our code on GitHub (an online collaborative
             code management system) creates a data trail of each contributor,
             from which (often faulty) conclusions about the significance of that
@@ -204,9 +296,11 @@ export default function LabourPage() {
             questions here. Also, we are very big nerds and love talking about
             how we made our project all (mostly) work.
           </p>
+        </CenteredLayout>
 
-          <Figure figure={figures["0601-PLACEHOLDER"]} />
+        <TechStack />
 
+        <CenteredLayout>
           <p>
             As the list above makes clear, we relied upon a range of libraries,
             servers, databases, browsers, and hosting providers to bring this
@@ -234,7 +328,7 @@ export default function LabourPage() {
             spatially by the viewer; or the ethics of employing water as a visual
             metaphor given its associations with the Atlantic Ocean, the site of
             the Middle Passage.
-            <InlineFootnote index={3} /> In each of these cases, Figma was a
+            <InlineFootnote index={3} />In each of these cases, Figma was a
             necessary tool, enabling Tanvi to create quick mockups in real time
             that focused our discussion around possible designs and their
             conceptual implications. But Figma is not usually viewed as a core
@@ -428,9 +522,15 @@ export default function LabourPage() {
             each describe their own vantage point on the project.
           </p>
 
-          <h3 className="text-lg font-powerWide uppercase pt-10">
-            Tanvi Sharma, lead designer
+          <h3 className="text-2xl tracking-wide font-power font-bold uppercase pt-10">
+            Tanvi Sharma
           </h3>
+
+
+             <h4 className="text-base tracking-wide font-power uppercase" > 
+ lead designer
+              </h4> 
+
           <p>
             I was asked by Silas Munro in 2020 to join this project. I had just
             graduated from my BFA program at MICA (Maryland Institute College of
@@ -497,9 +597,13 @@ export default function LabourPage() {
             create space for all of us to thrive.
           </p>
 
-          <h3 className="text-lg font-powerWide uppercase pt-10">
-            Jay Varner, lead software engineer
+          <h3 className="text-2xl tracking-wide font-power font-bold uppercase pt-10">
+            Jay Varner
           </h3>
+
+             <h4 className="text-base tracking-wide font-power uppercase" > 
+lead software engineer
+              </h4> 
           <p>
             As a software engineer for the Emory Center for Digital Scholarship
             (ECDS), I lead the development work for the center’s bespoke projects
@@ -554,9 +658,10 @@ export default function LabourPage() {
             there now.
           </p>
 
-          <h3 className="text-lg font-powerWide uppercase pt-10">
-            Shiyao Li, visualization researcher
+          <h3 className="text-2xl tracking-wide font-power font-bold uppercase pt-10">
+            Shiyao Li
           </h3>
+          <h4 className="text-base tracking-wide font-power uppercase" > visualization researcher </h4> 
           <p>
             I joined this project as a junior visualization researcher in the
             second year of my PhD, carrying the mindset that visualization
@@ -601,9 +706,14 @@ export default function LabourPage() {
             human lives.
           </p>
 
-          <h3 className="text-lg font-powerWide uppercase pt-10">
-            Margy Adams, lead accessibility and humanities researcher
+          <h3 className="text-2xl tracking-wide font-power font-bold uppercase pt-10">
+            Margy Adams 
           </h3>
+
+            <h4 className="text-base tracking-wide font-power uppercase" > 
+ lead designer
+              </h4> 
+
           <p>
             I’ve been part of this project team for its final three years, and as
             such, I’ve been involved in its numerous pushes toward the finish
@@ -618,7 +728,7 @@ export default function LabourPage() {
             and attuning our senses to the other affective frequencies … of
             images and how they move, touch, and connect us to the event of the
             photo.”
-            <InlineFootnote index={4} /> While we need to be careful of how we
+            <InlineFootnote index={4} />While we need to be careful of how we
             apply this framework to images beyond Campt’s primary corpus (Black
             vernacular photography), the ethic of looking “beyond” is crucial to
             disrupting the alleged objectivity of visualizations of data,
@@ -702,7 +812,7 @@ export default function LabourPage() {
             listening to images, especially as I listened to “Plan of an African
             Ship’s Lower Deck,” was what Campt meant when she described her own
             practice as, foundationally, <em>grammatical</em>.
-            <InlineFootnote index={5} /> Following literary scholar Hortense
+            <InlineFootnote index={5} />Following literary scholar Hortense
             Spillers’s landmark work on the linguistic enslavement of Black
             diasporic peoples since the Middle Passage, Campt’s discussion of
             grammar invites her readers to consider how our looking practices—our
@@ -721,11 +831,11 @@ export default function LabourPage() {
             the every labor of creating an alternative future. Indeed,” she
             continues, “it is this grammatical practice of futurity that
             constitutes my definition of <em>freedom</em>.”
-            <InlineFootnote index={7} /> To Campt, listening to images is
+            <InlineFootnote index={7} />To Campt, listening to images is
             concerned with the future real conditional tense—the grammatical “what
             will have had to happen,” the enactment of a future that has not yet
             occurred but <em>must</em>, if we are to ever really be free.
-            <InlineFootnote index={8} /> It seems to me that this chapter, maybe
+            <InlineFootnote index={8} />It seems to me that this chapter, maybe
             this entire project, is an attempt to attend to the precarity of the
             “every labor”—in other words, the quotidian yet necessary work that is
             required to achieve liberation. This “every labor” is precarious
@@ -734,7 +844,7 @@ export default function LabourPage() {
             discussed in chapter 1. It also reminds me of Toni Morrison’s famous
             words delivered at Barnard in 1979: “the function of freedom is to
             free somebody else.”
-            <InlineFootnote index={9} /> The very argument of this project, that
+            <InlineFootnote index={9} />The very argument of this project, that
             data visualizations have points of view, seems itself to create the
             possibility for an “alternative future,” to return to Campt’s
             words—one where visualization can act as a language that propels us
@@ -749,7 +859,7 @@ export default function LabourPage() {
             photographed event) as well as the haptic temporalities of
             photographic capture as pernicious instruments of knowledge
             production.”
-            <InlineFootnote index={10} /> Put more simply, she does not only
+            <InlineFootnote index={10} />Put more simply, she does not only
             consider what the photograph is of, but also the contexts in which the
             photograph was taken, and of the camera itself—the “pernicious
             instrument”—in order to glean what the very act of the recording

@@ -75,7 +75,7 @@ export default function AboutPage() {
             <h2 className="text-lg font-powerWide uppercase">References</h2>
             <p>
               Clicking on any inline reference (a number with a circle around
-              it)     <InlineFootnote index={0} /> will expand the reference inline with the text. Should you
+              it)     <InlineFootnote index={0} />will expand the reference inline with the text. Should you
               want to expand all of the references at once, click the “show
               references” toggle on the top-left of each chapter. Should you
               prefer to wait until the end of the chapter to view the

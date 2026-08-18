@@ -249,8 +249,11 @@ export default function PeabodyPage() {
         </TwoColumnLayout>
 
         <ChapterSectionTitle section={sections[0]} />
-        <CenteredLayout className="pb-20">
-          <p className="first-paragraph">
+      
+
+        <TwoColumnLayout className="pt-20">
+          <Column>
+            <p className="first-paragraph">
             Peabody’s method of visualizing events of historical significance
             was inspired by a system developed in Poland in the 1820s and
             ’30s by the educator Antoni Jażwiński, and popularized in
@@ -292,9 +295,15 @@ export default function PeabodyPage() {
             events that came at the conclusion of the chapter, matching each
             item with its visual representation on the corresponding chart.
           </p>
-        </CenteredLayout>
-
-        <Scrollytell
+            
+          </Column>
+          <Column className="md:ml-12" shouldPin={true}>
+            <HoverZoomPeabodySquare
+              figure={figures["0405-Jazwinski-10588000"]}
+            />
+          </Column>
+        </TwoColumnLayout>
+ <Scrollytell
           triggers={[
             <p key={"2c8354f7"}></p>,
 
@@ -475,7 +484,7 @@ export default function PeabodyPage() {
                 right, the position representing “deaths of remarkable
                 individuals.” Peabody tells us this represents the death of
                 Pocahontas, the daughter of Chief Powhatan himself.
-                <InlineFootnote index={9} /> Returning to the overall view of
+                <InlineFootnote index={9} />Returning to the overall view of
                 the century, that orange square at once represents the power
                 of commemoration and the insufficiency of a colored box to
                 stand in for a human life, however saturated with color—and
@@ -493,9 +502,10 @@ export default function PeabodyPage() {
           ]}
         />
 
-        <TwoColumnLayout className="pt-20">
-          <Column>
-            <p>
+      
+
+        <CenteredLayout className="pb-20">
+          <p>
               In keeping with the leading pedagogical theories of the day,
               students were expected to commit the charts to memory.
               <InlineFootnote index={10} />But Peabody’s approach diverged
@@ -511,17 +521,6 @@ export default function PeabodyPage() {
               events” in adulthood—or so Peabody believed.
               <InlineFootnote index={11} />
             </p>
-          </Column>
-          <Column className="md:ml-12" shouldPin={true}>
-            <HoverZoomPeabodySquare
-              figure={figures["0405-Jazwinski-10588000"]}
-            />
-          </Column>
-        </TwoColumnLayout>
-
-        <PeabodyTimeline />
-
-        <CenteredLayout className="pb-20">
           <p>
             The reality, however—now, as then—is that Peabody’s charts are
             nearly impossible to understand without first taking the time to
@@ -549,6 +548,7 @@ export default function PeabodyPage() {
             their own interpretation of each chart.
           </p>
         </CenteredLayout>
+          <PeabodyTimeline />
 
         <PeabodyBarGraph />
 
