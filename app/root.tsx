@@ -75,7 +75,9 @@ gtag('config', 'G-N80LYNLPB7');`,
         <ScrollToHashElement />
         <LinkToMain />
         <SiteNav />
-        <Banner>Dev Build</Banner>
+        {/* Dev-only build marker: never render it in production, so merging
+            this branch into main can't ship the ribbon to dataxdesign.io. */}
+        {process.env.NODE_ENV !== "production" && <Banner>Dev Build</Banner>}
         {children}
         <Loading />
         <Analytics />

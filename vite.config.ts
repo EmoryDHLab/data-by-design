@@ -44,12 +44,14 @@ export default defineConfig(({ isSsrBuild }) => ({
       hostname: "https://dataxdesign.io",
       outDir: "public",
       exclude: [
+        // p5 sketch, not a page we want indexed
+        "/tracks",
         "/prototypes/brooks_visualization",
         "/prototypes/data_traces_vis_for_jay",
         "/prototypes/voyages/conceptual_map",
         "/prototypes/brooks_visualization/lib/empty-example",
       ],
-      dynamicRoutes: ["/about", ...CHAPTERS],
+      dynamicRoutes: ["/", "/about", "/events", ...CHAPTERS],
       robots: [robotOption],
     }),
   ],

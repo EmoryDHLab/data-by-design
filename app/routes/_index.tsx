@@ -10,6 +10,7 @@ import SelectedImage from "~/components/home/SelectedImage.client";
 import SiteTitle from "~/components/home/SiteTitle";
 import { Link } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
+import { HOST_NAME } from "~/utils";
 import type { MetaFunction, LinksFunction } from "react-router";
 import type { TFigure } from "~/types/figureType";
 import type { ChapterTitle } from "~/types/chapterMetaTags";
@@ -36,7 +37,7 @@ export const links: LinksFunction = () => {
 };
 
 export const meta: MetaFunction = () => {
-  const hostName = "https://dataxdesign.io";
+  const hostName = HOST_NAME;
   return [
     { charset: "utf-8" },
     { title: "Data by Design" },
