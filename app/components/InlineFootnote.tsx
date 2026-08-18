@@ -17,7 +17,7 @@ export default function InlineFootnote({ index }: Props) {
     <span>
       <button
         onClick={() => setIsTextVisible(!isTextVisible)}
-        className={`footnote me-2 inline-flex items-center font-semibold justify-center bg-${
+        className={`footnote me-1 inline-flex items-center font-semibold justify-center bg-${
           isTextVisible ? accentColor : "offwhite"
         } hover:bg-${accentColor} text-offblack pointer-events-auto border-[1.5px] border-offblack`}
       >
