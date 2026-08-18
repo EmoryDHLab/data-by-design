@@ -590,222 +590,241 @@ export const imageFootnotes = [
 
 export const peopleFootnotes = [
   //1
-  <span key="03f8cc84">
-    Ref renaming of Red Indian Lake, provenance of "red" in moniker.
+  <span key="a854a3f2">
+    “Beothuk Lake” is now the official name of this body of water, the result of a process led by the Government of Newfoundland and Labrador in keeping with Canadian and First Nations naming protocols. At the time of the events narrated in this chapter, and until 2021, its official name was Red Indian Lake. This name was bestowed by the British in reference to the Beothuk practice of applying a red ochre dye to their bodies and possessions. The Beothuk were also called the Red Indians at this time. In an attempt to honor the outcome of the renaming process, as well as to reflect the revised names of the historical maps discussed in this chapter, I use the name “Beothuk Lake,” employing its previous name only when quoting directly from historical sources.
   </span>,
   //2
-  <span key="c3f1da3c">
-    Thank you to Lori Temple and the management team at The Rooms, the regional
-    museum of Newfoundland and Labrador, for their fact-checking and feedback on
-    this chapter.{" "}
+  <span key="17d2868e">
+    Ingeborg Marshall, <cite>A History and Ethnography of the Beothuk </cite>(McGill-Queen’s UP, 1996), 261–262. Here I should note that, while I have attempted to prioritize Indigenous sources and scholars throughout this chapter, Marshall’s history remains the most comprehensive source of information about this earlier era. For an account of the later part of this history that centers Beothuk perspectives, see two young adult novels by Mi’Sel Joe (Miawpukek Mi’kmaq) and Sheila O’Neill (Qalipu Mi’kmaq), <cite>My Indian</cite> (Breakaway, 2021) and its sequel, <cite>Suliewey</cite> (Breakaway, 2023), which bring together Mi’kmaq oral history with many of the sources referenced in this chapter to construct a set of character-driven narratives of these events. For a critique of Marshall, see Fiona Polack, “Introduction: De-Islanding the Beothuk,” in <cite>Tracing Ochre: Changing Perspectives on the Beothuk</cite>, ed. Fiona Polack (U of Toronto Press, 2018), 12–14. And a final note on my marking of Indigenous nation/affiliation: per convention, I include such information when discussing Indigenous people (both historical figures and scholars) in the text, but do not insert affiliations into bibliographic citations. For reasons of legibility, I have chosen to leave settler scholars unmarked, but direct readers to Max Liboiron (Métis/Michif) in <cite>Pollution Is Colonialism </cite>(Duke UP, 2021), 3 n10 for an important discussion about how this choice does imply a normative identity from which others diverge. Notably, Liboiron currently lives and works in St. John’s, where this chapter is set.
   </span>,
   //3
-  <span key="28d35057">Polack 5.</span>,
+  <span key="65f96a04">
+    Marshall, <cite>A History and Ethnography of the Beothuk</cite>, 14–16.
+  </span>,
   //4
-  <span key="151903bb">Polack 5.</span>,
+  <span key="f89742b8">
+    Marshall, <cite>A History and Ethnography of the Beothuk</cite>, 14–16.
+  </span>,
   //5
-  <span key="fa508296">Polack 5.</span>,
+  <span key="44ed6aff">
+    Polack, “Introduction,” 5.
+  </span>,
   //6
-  <span key="49a30344">Howley 96</span>,
+  <span key="4fe7f18d">
+    Polack, “Introduction,” 5.
+  </span>,
   //7
-  <span key="48b2bf2a">Howley 93.</span>,
+  <span key="57865450">
+    John Peyton, as related to James P. Howley and recorded by Howley as “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of March 1819,” in <cite>The Beothucks or Red Indians: The Aboriginal Inhabitants of Newfoundland </cite>(Cambridge UP, 1915), 96.
+  </span>,
   //8
-  <span key="369cdb92">Speck 49.</span>,
+  <span key="65f1fa98">
+    Howley, <cite>The Beothucks</cite>, 93.
+  </span>,
   //9
-  <span key="915bf412">
-    Ingeborg Marshall, whose History and Ethnography of the Beothuk offers the
-    most comprehensive contemporary study of the Beothuk, believes that
-    Shanawdithit was around twenty years old at the time of her capture. Because
-    this event took place three years earlier, she would have been about
-    seventeen. Marshall 208.
+  <span key="6599f040">
+    Frank G. Speck, “The Story of Buchan’s Expedition (Related by John Paul, of Badger’s Brook, Newfoundland, 68 years of age in 1914, who heard it from his grandfather)” in <cite>Beothuk and Micmac </cite>(Museum of the American Indian–Heye Foundation, 1922), 49.
   </span>,
   //10
-  <span key="c72e8365">
-    Add in longer note about positionality, note non-US members, subject to
-    other forms of colonialism, etc.{" "}
+  <span key="88110568">
+    Marshall believes that Shanawdithit was around 20 years old at the time of her capture. Because Demasduit’s capture took place three years earlier, she would then have been about 17 (<cite>A History and Ethnography of the Beothuk</cite>, 208).
   </span>,
   //11
-  <span key="d5049c72">
-    Add in longer gloss of Liboiron and "settler and colonial entitlement to
-    Land and Indigenous cultures" (132). More on anticolonial rather than
-    decolonial approach too.{" "}
+  <span key="91846449">
+    As an example of the latter, see Penelope Myrtle Kelsey, <cite>Reading the Wampum: Essays on the Hodinöhsö:ni’ Visual Code and Epistemological Recovery </cite>(Syracuse UP, 2019).
   </span>,
   //12
-  <span key="ca76e92f">Ref Tuck/Yang, harm/reparations quote. </span>,
+  <span key="5ed99759">
+    This claim reflects the foundational work of Linda Tuhiwai Smith (Māori iwi Ngāti Awa and Ngāti Porou) in <cite>Decolonizing Methodologies: Research and Indigenous Peoples</cite>, 2nd ed. (Zed, 2012) and, more recently, Stephanie Carroll et al., “The CARE Principles for Indigenous<cite> Data Governance</cite>,” <cite>Data Science Journal </cite>19 (2020): 1–12, as well as the overarching Indigenous protocols of respect, responsibility, and reciprocity.
+  </span>,
   //13
-  <span key="cf1749f4">
-    According to Peyton, Demasduit at one point attempted to crawl across the
-    snow under the cover of night, trailing her deer-skin cloak behind her so as
-    to erase her tracks. "Capture of Mary March (Demasduit) on Red Indian Lake,
-    in the month of March 1819," in Howley 94.
+  <span key="82e867a6">
+    See “Land Acknowledgment Statement,” <cite>Emory University</cite>, <NoteLink href="https://www.emory.edu/home/explore/history/land-acknowledgment/index.html">https://www.emory.edu/home/explore/history/land-acknowledgment/index.html</NoteLink>, accessed July 25, 2025. Here I employ the traditional spelling of “Muscogee,” consistent with the preference of Mvskoke scholars including Laura Harjo, cited later in this chapter.
   </span>,
   //14
-  <span key="52d63a4d">"Report of Captain Glascock," in Howley 113-116.</span>,
+  <span key="0641f3f1">
+    E.g., Eve Tuck and K. Wayne Yang, “Decolonization Is Not a Metaphor,” <cite>Decolonization: Indigeneity, Education and Society </cite>1.1 (2012): 1–40.
+  </span>,
   //15
-  <span key="6c6e05ac">
-    W.E. Cormack, "History of the Red Indians of Newfoundland," in Howley 229.
+  <span key="cde7c8ad">
+    Here we are again guided by the work of Max Liboiron, whose thoughtful discussion of the range of expressions of anticolonial research has helped focus this chapter, as our project overall, on the goals of recognizing and resisting “the settler and colonial entitlement to Land and Indigenous cultures, concepts, knowledges, and life” that have long characterized academic research. See Liboiron, <cite>Pollution Is Colonialism</cite>, 26–27 and 133.
   </span>,
   //16
-  <span key="ce1ff96d">Cormack, "History," in Howley 224.</span>,
+  <span key="fe511a3c">
+    Liboiron, citing Eve Tuck (Unangax), writes strongly against reproducing “damage-centered research … that operates, even benevolently, from a theory of change that establishes harm or injury in order to achieve reparation.” Tuck, “Suspending Damage: A Letter to Communities,” <cite>Harvard Educational Review </cite>79.3 (2009): 413, cited in Liboiron, <cite>Pollution Is Colonialism</cite>, 34.
+  </span>,
   //17
-  <span key="dbb5330a">See Marshall 217, 2019.</span>,
+  <span key="77915583">
+    According to Peyton, Demasduit at one point attempted to crawl across the snow under the cover of night, trailing her deer-skin cloak behind her so as to erase her tracks. See “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of March 1819” in Howley, <cite>The Beothucks</cite>, 94.
+  </span>,
   //18
-  <span key="620a26f6">Add in note about the Beothick Institute. </span>,
+  <span key="9fb2d835">
+    William Nugent Glascock, “Report of Capt. Glascock,” July 20, 1819, reproduced in Howley, <cite>The Beothucks</cite>, 113–116.
+  </span>,
   //19
-  <span key="e22e9734">
-    John Paul, "The Story of Buchan's Expedition," in Speck 49
+  <span key="aca4db93">
+    William Epps Cormack, “Information obtained from Shanawdithit” (n.d.), reproduced in Howley,<cite> The Beothucks</cite>, 229.
   </span>,
   //20
-  <span key="6baf8ae7">
-    For more on the story of this ill-fated expedition, see John Paul, "The
-    Story of Buchan's Expedition," in Speck 49-51.
+  <span key="15a99338">
+    Marshall, <cite>A History and Ethnography of the Beothuk</cite>, 217.
   </span>,
   //21
-  <span key="8f4e22b4">
-    Neither Peyton's account nor Cormack's annotations suggest any direct link
-    between these dwellings and the specific events depicted, but the
-    annotations of the previous map in the sequence suggest that
+  <span key="8286864b">
+    The numbered order appears to have been decided by Howley, who explains in his book that he “shall take them according to their dates,” and labels them from one to five. Acknowledging that this may not have been the order in which Shanawdithit created them, or intended them to be viewed, The Rooms has recently (as of 2024) created updated titles for the maps that no longer include numbers, nor the designation of “sketch.”
   </span>,
   //22
-  <span key="500c3902">Ref Peyton </span>,
+  <span key="887f199a">
+    John Paul, “The Story of Buchan’s Expedition,” in Speck, <cite>Beothuk and Micmac</cite>, 49.
+  </span>,
   //23
-  <span key="239b6db0">See Howley 228.</span>,
+  <span key="371de5ec">
+    For more on this ill-fated expedition, see John Paul, “The Story of Buchan’s Expedition,” 49–51.
+  </span>,
   //24
-  <span key="b807f8c6">Ref claim </span>,
+  <span key="7d139f84">
+    “Turtle Island” is a name used by a number of Indigenous groups to describe the North American continent. It derives from the creation stories told by the Lenape, Haudenosaunee, and other nations rooted along the Northeast Coast, in which the back of a turtle becomes the ground on top of which the landmass of earth rises from the sea. Per the topic of this chapter, it is also worth noting that the continent of North America resembles a turtle, with the United States and central Canada as the body, Alaska and the Yukon as one top flipper and Quebec and Newfoundland as the other, and Mexico and the rest of Central America as one of the bottom flippers and Florida as the other, and New Orleans as its tail.
+  </span>,
   //25
-  <span key="7427f4e2">Qtd. in Howley 210.</span>,
+  <span key="0b88c13d">
+    Neither Peyton’s account nor Cormack’s annotations suggest any direct link between these dwellings and the specific events depicted, but the annotations of some of Shanawdithit’s other maps suggest that this might be the case.
+  </span>,
   //26
-  <span key="ba0ba8ad">
-    While it exceeds the scope of this chapter, it is worth noting that another
-    one of Shanawdithit's maps—fourth in the sequence—contains annotations so
-    "copious," as Howley describes them, that they threaten to overrun the map
-    itself (243). These annotations are primarily numerical, and as such, have
-    their own history—regrettably, another history of violence. From the time of
-    first contact, colonists consistently sought to collect data about the
-    Indigenous populations they encountered as a means of political and
-    psychological control. As these populations succumbed to effects of settler
-    colonialism, including but not limited to the starvation and disease that
-    afflicted the Beothuk, these numbers were wielded as weapons, proof of the
-    inevitable decline of Indigenous populations. These biopolitical overtones
-    are the source of the continued suspicion of data and data collection by
-    Indigenous peoples and groups. That this type of data collection is
-    documented on the map itself underscores how—as we've seen again and
-    again—data collection, data visualization, and the larger colonial project
-    are fundamentally intertwined. [ADD IN MAP HERE IN FOOTNOTE?]
+  <span key="369e6451">
+    “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of March 1819,” in Howley, <cite>The Beothucks</cite>, 92.
   </span>,
   //27
-  <span key="a3b5x7c9">Add in note about red ochre.</span>,
+  <span key="08745085">
+    William Epps Cormack, “Information obtained from Shanawdithit” (n.d.), reproduced in Howley, <cite>The Beothucks</cite>, 228.
+  </span>,
   //28
-  <span key="1qw8er2t">
-    Ref Shneiderman, "overview first… details on demand."
+  <span key="2be264ba">
+    In his introduction to “Capture of Mary March (Demasduit),” Howley asserts that Peyton was “the actual captor of the Beothuck woman” (<cite>The Beothucks</cite>, 91).
   </span>,
   //29
-  <span key="z4x6cv8b">Ref OCAP, CARE.</span>,
+  <span key="18902a6b">
+    William Epps Cormack, “Cormack to Bishop of Nova Scotia,” January 10, 1829, reprinted in Howley, <cite>The Beothucks</cite>, 210.
+  </span>,
   //30
-  <span key="9ui7mo5y">
-    Counting Feminicide, idea of collection as misnomer, data as "produced."
+  <span key="0535d201">
+    While it exceeds the scope of this chapter, it is interesting to observe that another one of Shanawdithit’s maps contains annotations so “copious,” as Howley himself described them, that they threaten to overrun the map itself (<cite>The Beothucks</cite>, 243). These annotations are primarily numerical, and as such can be placed in the parallel history of Indigenous data and the violence it often brought about. See the historical overview offered in Maggie Walter and Chris Anderson, <cite>Indigenous Statistics: A Quantitative Research Methodology</cite> (Routledge, 2013).
   </span>,
   //31
-  <span key="j2k4lp6n">Pearce 110. Add in refs to Malcolm Lewis, others.</span>,
+  <span key="f7ce81ea">
+    See, for example, Nihad M. Farooq, <cite>Undisciplined: Science, Ethnography, and Personhood in the Americas </cite>(NYU Press, 2016).
+  </span>,
   //32
-  <span key="h3gt5fs7">Ref Laura Harjo, discussion of "assets."</span>,
+  <span key="5fddbd09">
+    Ben Shneiderman, “The Eyes Have It: A Task by Data Type Taxonomy for Information Visualizations,” <cite>Proceedings of the 1996 IEEE Symposium on Visual Languages</cite>, Boulder, CO, 1996, 336–343.
+  </span>,
   //33
-  <span key="d9az6qx8">
-    As the literary scholar Lisa Brooks (Abenaki) explains, the power of
-    Indigenous maps resides in their ability to "connect people with relations
-    across time, bringing the past, present, and future into the same space"
-    (12).
+  <span key="686939f8">
+    Mishuana Goeman, <cite>Mark My Words: Native Women Mapping Our Nations </cite>(U of Minnesota Press, 2013), 4.
   </span>,
   //34
-  <span key="7we4ru1i">
-    Add in explanation about the "March" in Demasduit's English name.
+  <span key="c7631481">
+    Goeman, <cite>Mark My Words</cite>, 4.
   </span>,
   //35
-  <span key="l2vb5nm3">Pearce 110-111.</span>,
+  <span key="a8637129">
+    Thanks to Derya Akbaba for pushing me to extend this insight to the epistemology of visualization.
+  </span>,
   //36
-  <span key="6sdfg4h">Harjo 41.</span>,
+  <span key="29f15b82">
+    Interestingly, similar questions are beginning to be asked at the end phases of visualization projects, e.g., Derya Akbaba, Devin Lange, Michael Correll, Alexander Lex, and Miriah Meyer, “Troubling Collaboration: Matters of Care for Visualization Design Study,” <cite>Proceedings of the 2023 Conference on Human Factors in Computing (CHI ’23)</cite>, Hamburg, Germany, April 2023.
+  </span>,
   //37
-  <span key="n1jk8lp2">Sparke 324.</span>,
+  <span key="26eced63">
+    Margaret Wickens Pearce and Renee Pualani Louis, “Mapping Indigenous Depth of Place,” <cite>American Indian Culture and Research Journal</cite> 32:3 (2008): 110.
+  </span>,
   //38
-  <span key="t7gy4hu6">
-    Can quote Harjo here: "The scale of the Mvskoke community is produced
-    through relational proceses rather than territorial proceses. The production
-    of scale is often used to understand the ways in which vaputal moves or
-    Western and settler formations of territory, or territories' relationship to
-    the larger global political economy. Indigenous community scales are
-    instantiated in myriad ways. It can be useful for communities to understand
-    political and economic geographies in order to advance liberatory claims"
-    (42).
+  <span key="24927a83">
+    Interestingly, this claim that mapping is best defined in terms of process is not limited to Indigenous contexts. See Matthew Edney, <cite>Cartography: The Ideal and Its History</cite> (U of Chicago Press, 2019), for a recent example of this view. Here we might also consider Laura Harjo’s critique of how viewing the land and its features as “assets” reinforces a static and ownership-driven conceptualization of space. See Harjo, <cite>Spiral to the Stars: Mvskoke Tools of Futurity</cite> (U of Arizona Press, 2019).
   </span>,
   //39
-  <span key="5br3cv2x">Howley ##.</span>,
+  <span key="79d7f595">
+    Pearce and Louis, “Mapping Indigenous Depth of Place,” 110–111.
+  </span>,
   //40
-  <span key="e8qw1oi9">Harjo 41.</span>,
+  <span key="945d089d">
+    Harjo, <cite>Spiral to the Stars</cite>, 28; Edward R. Tufte, <cite>The Visual Display of Quantitative Information</cite>, 2nd ed. (Graphics Press, 2001), 40.
+  </span>,
   //41
-  <span key="c6mf4td7">Cormark ##, quoted in Chare 294.</span>,
+  <span key="60462212">
+    This observation paraphrases a point made by Matthew Sparke in “Mapped Bodies and Disembodied Maps: (Dis)placing Cartographic Struggle in Colonial Canada,” in <cite>Places through the Body</cite>, ed. Heidi J. Nast and Steve Pile (Routledge, 1998), 310.
+  </span>,
   //42
-  <span key="g2uh5ns8">Chare 294.</span>,
+  <span key="9dc7b131">
+    Gerald Vizenor, <cite>Manifest Manners: Narratives on Postindian Survivance </cite>(U of Nebraska Press, 1994).
+  </span>,
   //43
-  <span key="fj4dr6vy">Brooks 234.</span>,
+  <span key="5d4a747f">
+    At this juncture we would do well to recall the arguments made throughout <cite>The Imperial Map: Cartography and the Mastery of Empire</cite>, ed. James Akerman<cite> </cite>(U of Chicago Press, 2009), each of which acknowledge the power that maps accord while also challenging binary framings of colonial vs. Indigenous (and East vs. West) maps. Thanks to Bill Rankin for alerting me to these valuable essays.
+  </span>,
   //44
-  <span key="9tc7gb3i">Ref map.</span>,
+  <span key="639bc441">
+    For a detailed account of the map’s genesis, see Mark Warhus, <cite>Another America: Native American Maps and the History of Our Land </cite>(St. Martin’s Press, 1997), 1–3.
+  </span>,
   //45
-  <span key="q5yx2we1">
-    For a detailed account of the map's genesis, see Warhus, Anotehr America
-    1-3.
+  <span key="b67f8843">
+    Cathy O’Neil, <cite>Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy </cite>(Crown, 2016).
   </span>,
   //46
-  <span key="a3b5x7c9">Ref O'Neil.</span>,
+  <span key="e7439882">
+    As Paul Kahn has observed, this map and its framing was inspired by a map that appeared in Willard’s earlier global historical atlas, <cite>Willard’s Ancient Geography, Ancient Atlas to Accompany Universal Geography </cite>(1827), which was in turn inspired by Matthew Carey’s<cite> Complete Genealogical, Historical, Chronological, and Geographical Atlas; Being a General Guide to History, Both Ancient and Modern … According to the Plan of Le Sage, Greatly Improved. The Whole Forming a Complete System of History and Geography </cite>(1820).<cite> </cite>See “Inclusion and Exclusion in Emma Willard’s Maps of History,”<cite> Nightingale: Journal of the Data Visualization Society, </cite>March 30, 2023,<cite> </cite><NoteLink href="https://nightingaledvs.com/inclusion-and-exclusion-in-emma-willard-maps-of-history/">https://nightingaledvs.com/inclusion-and-exclusion-in-emma-willard-maps-of-history/</NoteLink>, accessed July 25, 2025.
+  </span>,
   //47
-  <span key="1qg8er2t">Schulten 24.</span>,
+  <span key="7073e1b8">
+    Kahn calls out several places in subsequent maps where Indigenous nations do reappear: “Indigenous people reappear as insets labeled <cite>Places Mentioned in the History of the Pequod War</cite> in the <cite>Third Map of 1643</cite> and <cite>Places Mentioned in the History of King Philip’s War</cite> in the <cite>Fourth Map of 1692</cite>. … The <cite>Fifth Map of 1755</cite> shows the names of the indigenous people who controlled the interior of the southern colonies—Tuscarora, Cawataba, Congaree, Yamasee, Cherokee, and Apalachee—but the area west of the coastal rivers remains empty. It is only in the <cite>Sixth Map of 1765</cite> that [Willard] actually includes an indigenous nation with territory, the <cite>Country of the Six Nations … [and in]</cite> the <cite>Ninth Map of 1826, referred to in the History as the Map of the Present Day</cite>, many of the previously excluded nations represented in the De L’Isle map of New France reappear. … But the most interesting detail of the Map of 1826 is the depiction of the Far West in the upper left. The North West Territory is labeled, <cite>Those lands possessed in common by the Sioux, Chippewas, Winnebago, and Sauks,</cite> an assertion that would have been news to the people who lived there. The western boundary of this territory is the upper Mississippi. Beyond that is a space with no boundaries labeled <cite>Sioux Indians or Naudowessies</cite>.”
+  </span>,
   //48
-  <span key="z4x6cv8b">Willard, "Preface," vii; "Introduction" cv.</span>,
+  <span key="bb7b37eb">
+    On the “thematic map,” its origins, and its limitations, see Bill Rankin, “Layers in the Service of the State,” in <cite>Radical Cartography</cite> (Viking, 2025), 63–70.
+  </span>,
   //49
-  <span key="9ui7mo5y">3, 5.</span>,
+  <span key="017ff78e">
+    Warhus, <cite>Another America</cite>, 9–11.
+  </span>,
   //50
-  <span key="j2k4lp6n">Schulten 25.</span>,
+  <span key="190e6207">
+    I have chosen not to reproduce the text of this note. Interested viewers may consult the original image, viewable via the British Library at: <NoteLink href="https://www.imagesonline.bl.uk/asset/3043/">https://www.imagesonline.bl.uk/asset/3043/</NoteLink>.
+  </span>,
   //51
-  <span key="h3gt5fs7">
-    Ref history of thematic mapping, figure/ground analysis here.
+  <span key="4b6c8a83">
+    The emphasis here is on the preservation of the map itself. Written accounts of such maps are plentiful and date back centuries. See Warhus, <cite>Another America</cite>, 9–11.
   </span>,
   //52
-  <span key="d9az6qx8">Bill Rankin, need cite.</span>,
+  <span key="6e610b59">
+    Sarah Sense, “Power Lines,” <NoteLink href="https://sarahsense.com/Artists/11571/website_statements_2021-22.pdf">https://sarahsense.com/Artists/11571/website_statements_2021-22.pdf</NoteLink>, accessed July 25, 2025.
+  </span>,
   //53
-  <span key="7we4ru1i">
-    As Jason Edward Lewis et al explain, "relationality is rooted in context and
-    the prime context is place."
+  <span key="8096a13a">
+    John Peyton, as related to James P. Howley and recorded by Howley in <cite>The Beothucks</cite>, 96.
   </span>,
   //54
-  <span key="l2vb5nm3">
-    Geographer Emilie Cameron highlights how for the Inuit peoples in Canada's
-    central Arctic, the vast Northern geography is ‘ordered by stories – stories
-    that make legible the connections between particular people, places, and
-    ideas.' Far from ambiguous narrations of Inuit peoples' experience within
-    the North, Cameron, following the work of John Law, asserts that stories
-    must be thought of as ‘material ordering practices' – that is, not as
-    ‘something separate from, nor merely representative of, the world around
-    us'; rather stories are themselves material and intimately bound up with
-    ‘the materials in which they are carried' (377)
+  <span key="f792eb25">
+    This analysis could be pushed further still. In Peyton’s account, his group’s surveillance of the Beothuk in advance of their attack on the winter camp structures his entire narrative, even as it contains details that stretch back decades. To wit, the narrative is titled “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of March 1819.”
   </span>,
   //55
-  <span key="6sdfg4h">Ref Warhus 9-11.</span>,
+  <span key="e659b22f">
+    Though born in Brooklyn, Speck was sent to Connecticut as a child and raised by a family friend, a Mohegan woman named Fidelia Fielding, from whom he learned the Mohegan language; evidently, he spoke it fluently. This likely granted him increased access and trust to the Native peoples he studied. See National Museum of the American Indian<cite>,</cite> “Frank Speck,”  <NoteLink href="https://americanindian.si.edu/collections-search/edan-record/ead_component%3Asova-nmai-ac-001-ref15769">https://americanindian.si.edu/collections-search/edan-record/ead_component%3Asova-nmai-ac-001-ref15769</NoteLink>,  accessed July 25, 2025.
+  </span>,
   //56
-  <span key="n1jk8lp2">Ref earlier written accounts.</span>,
+  <span key="e4d8967e">
+    Speck, <cite>Beothuk and Micmac</cite>, 23.
+  </span>,
   //57
-  <span key="t7gy4hu6">
-    Ref https://sarahsense.com/Artists/11571/website_statements_2021-22.pdf
+  <span key="3cf57a91">
+    As Max Liboiron writes, and I confirmed during my short visit, “I can’t talk about Land in Newfoundland and Labrador if I don’t talk about the weather. Weather [and oil prices] are what shape life here.” Liboiron, <cite>Pollution Is Colonialism</cite>, 30.
   </span>,
   //58
-  <span key="5br3cv2x">Howley 96.</span>,
-  //59
-  <span key="e8qw1oi9">
-    Ref Title, "Capture of Mary March (Demasduit) on Red Indian Lake, in the
-    month of Marhc 1819."
+  <span key="00c2d17c">
+    In her work with the Penobscot Nation to create a new map of their traditional place names, Margaret Pearce describes her process, as an outside collaborator, of coming to realize how her own experience and perspective—her own “vantage point,” so to speak—was required in order to assemble the place names and the stories that she’d learned through the design process into a meaningful conceptual whole. Very crucially, she realized, this conceptual whole would and could not be the same for all viewers, as they each had different relationships to the land itself. See Pearce, “The Last Piece Is You,” <cite>Cartographic Journal </cite>51 (2014): 107–122.
   </span>,
-  //60
-  <span key="c6mf4td7">Speck 23.</span>,
-  //61
-  <span key="3ea7kp9l">Speck 23.</span>,
+  //59
+  <span key="b642a4b9">
+    Only after completing this visualization did we learn of the work of Pedro Cruz, who uses the visual metaphor of tree rings to anchor a series of visualizations on US immigration data. “Simulated Dendrochronology of US Immigration, 1790–2016,” <NoteLink href="https://pmcruz.com/dendrochronology/">https://pmcruz.com/dendrochronology/</NoteLink>, accessed July 25, 2025.
+  </span>,
 ];
 
 export const processFootnotes = [
@@ -936,240 +955,296 @@ export const processFootnotes = [
 
 export const powerFootnotes = [
   //1
-  <span key="efa3fdad">
-    Note that this was not the main US exhibition space, which was reserved for
-    a unified (and white) view of the nation. Need cite.
+  <span key="98ef98c8">
+    “Table of Temperature and Rainfall, Week Ended December 25, 1899,” <cite>Public Health Reports (1896–1970)</cite>, January 12, 1900, 73–74.
   </span>,
   //2
-  <span key="b87cdc9f">
-    W.E.B. Du Bois, "The American Negro in Paris," The American Monthly Review
-    of Reviews 22.5 (November 1900), p. 576.
+  <span key="341bba0b">
+    David Levering Lewis, <cite>W. E. B. Du Bois: A Biography</cite> (Henry Holt, 2009), 154. The first day of the 1899–1900 winter term is listed as December 25, 1899 in the <cite>Catalogue of the Officers and Students of Atlanta University, 1898–1899</cite> (Atlanta UP, 1899), 2.
   </span>,
   //3
-  <span key="adf5bbd2">
-    <cite>On The Philadelphia Negro</cite> as the antecedent to the Paris
-    Exposition charts, see Alexander Weheliye, "Diagrammatics as Physiognomy:
-    W.E.B. Du Bois's Graphic Modernities,"{" "}
-    <cite>CR: The New Centennial Review</cite> 15.2 (2015): 23-58.
+  <span key="664ecdcb">
+    Per the 1898–1899 <cite>Catalogue</cite>, Mack was awarded “high honor” after her sophomore year in recognition of “maintain[ing] a certain average rank” (24). Mack would be awarded “honor” along with a classmate, Henry Napoleon Lee, at her own graduation. See <cite>Catalogue of the Officers and Students of Atlanta University, 1900–1901</cite> (Atlanta UP, 1901), 25.
   </span>,
   //4
-  <span key="3ee8d5f7">
-    In addition, it is worth noting that the visualization designer Jason
-    Forrest believes that there is evidence of an additional chart, bringing the
-    total to 64. See "Discovering an Unknown Chart from W.E.B. Du Bois's 'The
-    Exhibition of American Negroes',"
-    <cite> Nightingale: The Journal of the Data Visualization Society, </cite>
-    January 1, 2019.
+  <span key="daf96df5">
+    As listed in the 1899–1900<cite> Catalogue,</cite> the textbook employed for the course was Richmond Mayo-Smith’s <cite>Statistics and Sociology</cite> (1895), which when published became the first textbook on quantitative methods of social science research. See <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900</cite> (Atlanta UP, 1900), 7.
   </span>,
   //5
-  <span key="36b913fb">
-    {" "}
-    Du Bois, "{" "}
-    <NoteLink href="http://www.webpower.org/dbANParis.html">
-      The American Negro in Paris
-    </NoteLink>
-    ," <cite>The American Monthly Review of Reviews</cite> 22.5 (November 1900),
-    p. 576.
+  <span key="14c48e6a">
+    <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900</cite> , 14.
   </span>,
   //6
-  <span key="fb4901b2">Add in Hyperallergenic, other examples.</span>,
+  <span key="dca88998">
+    On Calloway’s role in championing the exhibit, see <cite>A Small Nation of People: W. E. B. Du Bois and African American Portraits of Progress</cite>, ed. David Levering Lewis and Deborah Willis (Harper Collins, 2005), 16–17.
+  </span>,
   //7
-  <span key="fbe17de3">
-    Give explanation for this claim (Atlanta University Studies).
+  <span key="f3608842">
+    Eugene F. Provenzo Jr., <cite>W. E. B. Du Bois’ Exhibit of American Negroes: African Americans at the Beginnings of the Twentieth Century </cite>(Rowman &amp; Littlefield, 2013), xii.
   </span>,
   //8
-  <span key="feba0647">
-    Mabel O. Wilson, "The Cartography of W.E.B. Du Bois's Color Line," in
-    Battle-Baptiste and Rusert, p. 39.
+  <span key="26706449">
+    Whitney Battle-Baptiste and Britt Rusert, <cite>W. E. B. Du Bois’s Data Portraits: Visualizing Black America </cite>(Princeton Architectural Press, 2018), 9.
   </span>,
   //9
-  <span key="1qg8er2t">
-    Henry Gannett, "Transmittal Letter," in The Statistical Atlas of the United
-    States, based upon the results of the eleventh census (Washington, D.C.:
-    Govt. print., 1898), p. 3.
+  <span key="78589050">
+    W. E. B. Du Bois, <cite>A Soliloquy on Viewing My Life from the Last Decade of Its First Century </cite>(Oxford, 2014 [1968]), 220. As mentioned in the introduction, visualization designer Jason Forrest believes that there is evidence of an additional chart, bringing the total to 64. See Forrest, “Discovering an Unknown Chart from W. E. B. Du Bois’s ‘The Exhibition of American Negroes,” <cite>Nightingale: The Journal of the Data Visualization Society</cite>, January 1, 2019, <NoteLink href="https://medium.com/nightingale/discovering-a-new-chart-from-w-e-b-du-boiss-the-exhibition-of-american-negros-part-6-66e7b340b90c">https://medium.com/nightingale/discovering-a-new-chart-from-w-e-b-du-boiss-the-exhibition-of-american-negros-part-6-66e7b340b90c</NoteLink>, accessed August 18, 2025.
   </span>,
   //10
-  <span key="32e32d9c">See Battle-Baptiste and Rusert.</span>,
+  <span key="4f3dc0ef">
+    Rogers is credited by name in the <cite>Atlanta University Bulletin </cite>106 (January 1900): 1; and<cite> </cite>“Atlanta University Exhibit at Paris,” <cite>Atlanta Journal</cite>, February 22, 1900. The <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900</cite> confirms this role, listing Rogers’s occupation as “Work on Paris Exhibit” (31). With that said, as graphic designer (and <cite>Data by Design </cite>team member) Silas Munro explains, “based on the volume of the designs, each piece’s complexity and detail, and the compressed project timeline, it seems implausible that Rogers and Du Bois worked alone to complete the project.” Silas Munro, “Introduction to the Plates,” in Battle-Baptiste and Rusert, <cite>W. E. B. Du Bois’s Data Portraits</cite>, 50.
+  </span>,
   //11
-  <span key="661bce46">
-    {" "}
-    Du Bois, "
-    <NoteLink href="http://www.webpower.org/dbANParis.html">
-      The American Negro in Paris
-    </NoteLink>
-    ," p. 577.{" "}
+  <span key="7549b415">
+    Another likely source was federal geographer Henry Gannett’s 1895 study <cite>Statistics of the Negroes in the United States </cite>(Baltimore, 1894). Gannett also served as chief geographer of the US Censuses of 1880, 1890, and 1900, as discussed in more detail below.
   </span>,
   //12
-  <span key="b1956148">
-    W.E.B. Du Bois, <cite>The Souls of Black Folk</cite> (New York: Library of
-    America, 1903), p. 8; quoted in Shawn Michelle Smith,{" "}
-    <cite>
-      Photography on the Color Line: W.E.B. Du Bois, Race, and Visual Culture
-    </cite>{" "}
-    (Durham: Duke Univ. Press, 2004) p. 25. For more on the photographs, see the
-    Library of Congress,{" "}
-    <cite>
-      A Small Nation of People: W.E.B. Du Bois and African American Portraits of
-      Progress{" "}
-    </cite>
-    (New York: Amistad-HarperCollins, 2003).{" "}
+  <span key="a75d6f0e">
+    In his third and final autobiography, written late in life, Du Bois recalls only, “I got a couple of my best students and put a series of facts into charts,” resulting in the “most interesting set of drawings” that were displayed in Paris. Du Bois, <cite>A Soliloquy</cite>, 18.
   </span>,
   //13
-  <span key="4b12ec50">
-    Historian of photography Deborah Willis identifies one of these
-    photographers as the prominent Black portraitist Thomas Askew. Others remain
-    unknown. See "The Sociologist's Eye: W.E.B. Du Bois and the Paris
-    Exposition," in <cite>A Small Nation of People</cite>, pp. 51-78.
+  <span key="337f98a5">
+    For a rich theorization of archival silence, see Michel-Rolph Trouillot, <cite>Silencing the Past: Power and the Production of History</cite> (Beacon, 1997).
   </span>,
   //14
-  <span key="a22a0441">Battle-Baptiste and Rusert, p. 15.</span>,
+  <span key="a3b3a283">
+    Those interested in how I theorize my own approach to fragmentary archives may wish to read the introduction to my first book, "No Eating in the Archive," in <cite>An Archive of Taste: Eating and Aesthetics in the Early United States </cite>(U of Minnesota Press, 2020), 1–33.
+  </span>,
   //15
-  <span key="z4x6cv8b">Data Feminism, pp. ##.</span>,
+  <span key="af1c8c60">
+    <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900, </cite>27.
+  </span>,
   //16
-  <span key="590aacc5">
-    {" "}
-    W.E.B. Du Bois,{" "}
-    <cite>
-      Dusk of Dawn: An Essay Toward an Autobiography of a Race Concept
-    </cite>
-    , ed. Irene Diggs (New Brunswick NJ: Transaction, 1984), p. 51.
+  <span key="556cd3c6">
+    <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900, </cite>7.
   </span>,
   //17
-  <span key="32c9e0d5">
-    Du Bois,
-    <cite> Dusk of Dawn </cite>p. 67.
+  <span key="bc8c6b28">
+    In all other years, this work took the form of the Atlanta University Studies, discussed in depth later in this chapter. This public-facing work was to enable “graduate study of the social problems in the South by the most approved scientific methods of Atlanta, Fisk, and other institutions,” as stated in the course description in the <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900</cite>, 14.
   </span>,
   //18
-  <span key="b1c28368">
-    Du Bois,
-    <cite> Dusk of Dawn </cite>p. 67.
+  <span key="2e6cfad0">
+    Reportage in the January 1900 <cite>Atlanta University</cite> <cite>Bulletin</cite> documents how Du Bois “[gave] up the routine of school work, except the class in Sociology, for three months” to prepare for the exhibit, further suggesting that the sociology course (and the students in it) were central to the work. <cite>Atlanta University Bulletin </cite>106 (January 1900), 2.
   </span>,
   //19
-  <span key="cc1c5e9c">
-    <cite> Dusk of Dawn </cite>pp. 67-8.
+  <span key="24b188a6">
+    Mabel O. Wilson, “The Cartography of W. E. B. Du Bois’s Color Line,” in Battle-Baptiste and Rusert, <cite>Du Bois’s Data Portraits</cite>, 39.
   </span>,
   //20
-  <span key="9ui7mo5y">
-    This was the legislation that, as Whitney Battle-Baptiste and Britt Rusert
-    explain, "stretch[ed] from the slave codes of the colonial and antebellum
-    period to the segregationist policies and laws of the present," and which
-    attempted to control and constrain all aspects of Black life (19). Du Bois's
-    transcription of the Black Codes filled three large manuscript volumes. For
-    a sustained meditation on the legacy of the Black Codes and their relation
-    to contemporary digital life, see the special issue of The Black Scholar on
-    "Black Code," edited by Jessica Marie Johnson and Mark Anthony Neal, and in
-    particular, the introduction, "Wild Seed in the Machine," The Black Scholar
-    47.3 (2017): 1-2.
+  <span key="926d78bd">
+    For an overview of the history of lynching in the United States, see the Equal Justice Initiative’s comprehensive report, <cite>Lynching in America: Confronting the Legacy of Racial Terror</cite>, 3rd ed., <NoteLink href="https://lynchinginamerica.eji.org/report/">https://lynchinginamerica.eji.org/report/</NoteLink>, accessed August 18, 2025.
   </span>,
   //21
-  <span key="j2k4lp6n">
-    The annual "Du Bois Challenge," for example, seeks to "celebrate his data
-    visualization legacy by recreating the visualizations showcased at the 1900
-    Paris Exposition using modern tools. [Cite website. ]
+  <span key="65518d4f">
+    On counterdata, see Seyi Olojo, “Counterdata,” in <cite>Keywords for a Datafied State </cite>(Data &amp; Society, 2024), 170–181.
   </span>,
   //22
-  <span key="af1c65bb">
-    Chalabi traces her own inspiration to a recent exhibition of work by the
-    Chicago-based artist Theaster Gates. See Mona Chalabi "W.E.B. Du Bois:
-    Retracing his attempt to challenge racism with data,"
-    <cite> The Guardian, </cite>
-    February 14, 2017,
-    https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs
+  <span key="52c99732">
+    Overviews of this era in the history of statistics, the culmination of its initial rise, include Theodore M. Porter, <cite>The Rise of Statistical Thinking, 1820–1900 </cite>(Princeton UP, 1986), Ian Hacking, <cite>The Taming of Chance</cite> (Cambridge UP, 2014), and more recently Chris Wiggins and Matthew L. Jones, <cite>How Data Happened: A History from the Age of Reason to the Age of Algorithms </cite>(Norton, 2023). For books focusing on the history of eugenics and its ties to statistics, see Banu Subramaniam, <cite>Ghost Stories for Darwin: The Science of Variation and the Politics of Diversity </cite>(U of Illinois Press, 2014), and more recently Anita Chan, <cite>Predatory Data: Eugenics in Big Tech and Our Fight for an Independent Future </cite>(U of California Press, 2024). Note that Du Bois was himself not immune to ties to so-called “positive eugenics.” (This was the goal of bettering the human population by encouraging the intentional reproduction of those deemed “fit,” as opposed to “negative eugenics,” which discouraged the reproduction of those deemed “unfit.”) Du Bois’s colleague Jane Addams, one of the co-founders of Chicago’s Hull House (whose own social surveys had served as a model for his own), was a leading proponent of this view, as was Margaret Sanger—the founder of Planned Parenthood—and many other reformers of the early twentieth century.
   </span>,
   //23
-  <span key="h3gt5fs7">
-    https://www.dignityanddebt.org/projects/student-debt-calculator/
+  <span key="d825c901">
+    Autumn Womack, <cite>The Matter of Black Living: The Aesthetic Experiment of Racial Data, 1880–1930 </cite>(U of Chicago Press, 2022), 21. It should be noted that Wells and Du Bois did not enjoy an easy relationship. Du Bois notoriously excluded Wells from his list of founders of the NAACP, and while he claimed that Wells had chosen not to be named, she contended that she had been deliberately excluded. If this were the case, it would have been in keeping with a trend of Du Bois turning away from Black women activists as he sought the collaboration of their white counterparts. On Wells and the NAACP, see Wells, <cite>Crusade for Justice: The Autobiography of Ida B. Wells</cite>, ed. Alfreda Duster (U of Chicago Press, 1970), 322. On Du Bois and Black women, see Farah Jasmine Griffin, “Black Feminists and Du Bois: Respectability, Protection, and Beyond,” <cite>Annals of the American Academy of Political and Social Science</cite> 568.1 (2000): 28–40, and Britt Rusert, “W. E. B. Du Bois and the Origins of Visual Sociology: The 1900 Paris Exposition and Beyond,” in <cite>Oxford Handbook of W. E. B. Du Bois</cite>, ed. Aldon D. Morris et al., 371–390. Thanks to Britt Rusert for encouraging me to elaborate this line of inquiry.
   </span>,
   //24
-  <span key="d9az6qx8">
-    The project is also notable for how it acknowledges the role of policy
-    change. As the website explains, "Visualizations can render data to make it
-    meaningful for people around the world. Furthermore, they are able to reveal
-    what might be either changed or strengthened through policy and individual
-    action." https://www.dignityanddebt.org/projects/student-debt-contest/
+  <span key="2c744d4c">
+    Womack<cite>, The Matter of Black Living</cite>, 21<cite>.</cite>
   </span>,
   //25
-  <span key="">
-    As we share in Data Feminism, "In 2015, communications researcher Candice
-    Lanius wrote a widely shared blog post, "Fact Check: Your Demand for
-    Statistical Proof is Racist," in which she summarizes the ample research on
-    how those in positions of power accept anecdotal evidence from those like
-    themselves, but demand endless statistics from minoritized groups. In those
-    cases, she argues convincingly, more data will never be enough" (##).
+  <span key="90c027e9">
+    W. E. B. Du Bois, “The American Negro in Paris,” <cite>The American Monthly Review of Reviews</cite> 22.5 (November 1900): 577.
   </span>,
   //26
-  <span key="edbf8fa4">
-    {" "}
-    <cite> Mimi Onuoha, </cite>
-    "In Absentia" (2019), https://mimionuoha.com/in-absentia, accessed February
-    21, 2021.
+  <span key="6be50d1a">
+    Lewis, <cite>W. E. B. Du Bois: A Biography</cite>, 139–140.
   </span>,
   //27
-  <span key="7we4ru1i">
-    In relaying this anecdote, Battle-Baptiste and Rusert also observe its
-    "close proximity to the hold of the ship" (17).
+  <span key="85de1bea">
+    Gannett, <cite>Statistics of the Negroes in the United States</cite>.
   </span>,
   //28
-  <span key="l2vb5nm3">
-    Reference Data for Black Lives and Milner's idea of abolishing big data.
+  <span key="d3478d16">
+    Gannett, <cite>Statistics of the Negroes in the United States</cite>, plate VII.
   </span>,
   //29
-  <span key="6sdfg4h">
-    Note about deleterious effects of white supremacy on white people too, cf.
-    Jessie Daniels.
+  <span key="bb539f3a">
+    David Walker was an early nineteenth-century writer and activist who famously advocated that Black Americans purchase a copy of Thomas Jefferson’s <cite>Notes on the State of Virginia, </cite>which contains some of Jefferson’s most racist views, so as to better be able to refute it. “Unless we try to refute Mr. Jefferson’s arguments respecting us, we will only establish them,” Walker wrote in 1829. See David Walker, <cite>Appeal to the Colored Citizens of the World </cite>(Boston, 1829). For commentary on Walker, see Gene Andrew Jarrett, “‘To Refute Mr. Jefferson’s Arguments Respecting Us’: Thomas Jefferson, David Walker, and the Politics of Early African American Literature,” <cite>Early American Literature </cite>46.2 (2011): 291–318 and, in a graphic design context, Marcy J. Dinius, “Look!! Look!!! At This!!!!”: The Radical Typography of David Walker’s <cite>Appeal</cite>,” <cite>PMLA </cite>126.1 (January 2011): 55–72.
   </span>,
   //30
-  <span key="c687ffac">
-    "The Georgia Negro Exhibit for the Paris Exposition,"
-    <cite> The Bulletin of Atlanta University, </cite>
-    May 1900, p. 2.
+  <span key="52378a54">
+    Du Bois, “The American Negro at Paris,” 576.
   </span>,
   //31
-  <span key="a3b5x7c9">
-    W.E.B. Du Bois, A Soliloquy on viewing my life from the last decade of its
-    first century, ca. 1961. W.E.B. Du Bois Papers (MS 312). Special Collections
-    and University Archives, University of Massachusetts Amherst Libraries. p.
-    18.
+  <span key="87311400">
+    The frame is noted in the <cite>Atlanta University Bulletin</cite> article reporting on the exhibit: “One of the most remarkable bits of work there, is a carved wooden frame for one of the charts made entirely by an unskilled, illiterate old Freedman, living in Atlanta.” See “The Georgia Negro Exhibit for the Paris Exposition,” <cite>Atlanta University Bulletin </cite>110 (May 1900): 2.
   </span>,
   //32
-  <span key="e0550499">
-    {" "}
-    "Atlanta University Exhibit At Paris,"'
-    <cite>The Atlanta Journal,</cite> February 22, 1900. Archives Research
-    Center, Robert W. Woodruff Library, Atlanta University Center, Box 23,
-    folder 6; "Catalogue of the Officers and Students of Atlanta University,
-    1899-1900,"
-    <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives Research
-    Center, Robert W. Woodruff Library, Atlanta University Center.
+  <span key="77c93ae4">
+    On the “Black Codes,” see Battle-Baptiste and Rusert, <cite>W. E. B. Du Bois’s Data Portraits</cite>, 21–22, and Provenzo, <cite>W. E. B. Du Bois’ Exhibit</cite>, 7.
   </span>,
   //33
-  <span key="aeee60b3">
-    Silas Munro, "Plates," in Battle-Baptiste and Rusert, p. 50.
+  <span key="e9365a0f">
+    The photo is credited to Thomas Askew, a prominent Black photographer who lived in Atlanta and who took many of the Atlanta-based photographs included in the exhibit. See Deborah Willis, “The Sociologist’s Eye: W. E. B. Du Bois and the Paris Exposition,” in Lewis and Willis, <cite>A Small Nation of People, </cite>51–78.
   </span>,
   //34
-  <span key="4416017c">
-    {" "}
-    Aldon Morris,
-    <cite>
-      {" "}
-      The Scholar Denied: W.E.B. Du Bois and the Birth of Modern Sociology{" "}
-    </cite>
-    (Oakland: Univ. of California Press, 2015), p. 71.
+  <span key="c826544d">
+    The women’s dorm is described in the <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900</cite>, 22. Its 45 residents, including Mack, then age 20, are documented in the 1900 US Federal Census, viewable at <NoteLink href="https://www.ancestry.com/search/collections/7602/records/8895499">https://www.ancestry.com/search/collections/7602/records/8895499</NoteLink>, accessed August 22, 2025.
   </span>,
   //35
-  <span key="7c3593ce">
-    "Catalogue of the Officers and Students of Atlanta University, 1899-1900,"
-    p. 14.
+  <span key="fa916c28">
+    Du Bois, “The American Negro in Paris,” 577. It’s also worth noting that photographs were increasingly featured in atlases of the time, as Ben Schmidt observed during this book’s community review. Schmidt points to the <cite>Atlas of Asiatic Russia</cite> (1914) that is “filled with photographs—many ethnographic—in the first half,” as a key example of this practice.
   </span>,
   //36
-  <span key="bbe450de">
-    In the report published in advance of the 1900 Atlanta Conference, on the
-    life trajectories and achievements of college-educated Black citizens, Du
-    Bois describes his "general method" of distributing surveys to "about fifty"
-    "experienced correspondents throughout the South," drawing from a network of
-    "graduates of Atlanta, Fisk, and other institutions."
-    <cite> See The College-Bred Negro, ed. W.E.B. Du Bois </cite>
-    (Atlanta: Atlanta Univ. Press, 1900), p. 10.
+  <span key="61588310">
+    Du Bois, <cite>The Souls of Black Folk</cite>, 8; quoted in Shawn Michelle Smith, <cite>Photography on the Color Line: W. E. B. Du Bois, Race, and Visual Culture </cite>(Durham: Duke UP, 2004), 25. Lewis and Willis, <cite>A Small Nation of People</cite>, referenced above, also explores the exhibit’s photographs in detail.
+  </span>,
+  //37
+  <span key="59be125f">
+    Historian of photography Deborah Willis identifies one of these photographers as the prominent Black portraitist Thomas Askew, who shot the photo of the Atlanta University women. The other photographers remain unknown. See “The Sociologist’s Eye: W. E. B. Du Bois and the Paris Exposition,” in Lewis and Willis, <cite>A Small Nation of People, </cite>51–78.
+  </span>,
+  //38
+  <span key="a31983ce">
+    In their discussion of the charts, Battle-Baptiste and Rusert elaborate this line of thinking, emphasizing how Du Bois understood double consciousness as a “kind of ‘second sight’ that might be transformed from a curse into a ‘gift’ that offered a unique and superior perspective on turn-of-the-century race relations, sociability, and even existence itself.” Battle-Baptiste and Rusert, <cite>W. E. B. Du Bois’s Data Portraits</cite>, 15.
+  </span>,
+  //39
+  <span key="75138173">
+    W. E. B. Du Bois, <cite>Dusk of Dawn: An Essay toward an Autobiography of a Race Concept</cite>, ed. Irene Diggs (Transaction, 1984 [1940]), 51.
+  </span>,
+  //40
+  <span key="603363c0">
+    Du Bois, <cite>Dusk of Dawn</cite>, 67. This powerful line and its variants, what is safe to call a motif of Du Bois’s oeuvre, have been analyzed by generations of scholars. For a summary of this work, see Benjamin Murphy, “Multiplied without Number”: Lynching, Statistics, and Visualization in Ida B. Wells, Mark Twain, and W. E. B. Du Bois,” <cite>American Literature</cite> 93.2 (2021): 205–207.
+  </span>,
+  //41
+  <span key="c1cd0e73">
+    Because of the biased nature of the legal record, it is difficult to determine what exactly took place. My account, which is intentionally scant for this reason, derives from Darren E. Grem, “Sam Jones, Sam Hose, and the Theology of Racial Violence,” <cite>Georgia Historical Quarterly </cite>90.1 (2006): 35–61.
+  </span>,
+  //42
+  <span key="e6884f1b">
+    Du Bois, <cite>Dusk of Dawn</cite>, 67.
+  </span>,
+  //43
+  <span key="86d9f0ae">
+    My interpretation of this incident has been strongly influenced by Bryan Wagner’s analysis in <cite>Disturbing the Peace: Black Culture and the Police Power after Slavery</cite> (Harvard UP, 2009), 180–183. Britt Rusert discusses this incident in relation to the charts in “W. E. B. Du Bois and the Origins of Visual Sociology.”
+  </span>,
+  //44
+  <span key="13200472">
+    Du Bois, <cite>Dusk of Dawn</cite>, 67–68.
+  </span>,
+  //45
+  <span key="41e875c1">
+    This was the legislation that, as Whitney Battle-Baptiste and Britt Rusert explain, “stretch[ed] from the slave codes of the colonial and antebellum period to the segregationist policies and laws of the present,” and which attempted to control and constrain all aspects of Black life (<cite>W. E. B. Du Bois’s Data Portraits</cite>, 19). Du Bois’s transcription of the Black Codes filled three large manuscript volumes. For a sustained meditation on the legacy of the Black Codes and their relation to contemporary digital life, see the special issue of <cite>The Black Scholar</cite> on “Black Code,” edited by Jessica Marie Johnson and Mark Anthony Neal, and in particular the introduction, “Wild Seed in the Machine,” <cite>Black Scholar</cite> 47.3 (2017): 1–2.
+  </span>,
+  //46
+  <span key="deb79523">
+    The <cite>Atlanta University Catalogues</cite> between the years of 1901 and 1914, when they stopped publishing individual alumni information, list locations in Georgia, Alabama, and Tennessee.
+  </span>,
+  //47
+  <span key="b0148f27">
+    Marggette Wilkins is listed as Mack’s daughter in the 1920 US Census. (She herself was recorded as Lula Brown, having remarried at that point.) Marggette’s name was listed as Marguerite in the 1930 US Census. See “Lula Brown in the 1920 United States Federal Census” and “Lula I Brown in the 1930 United States Federal Census,” <cite>Ancestry.com</cite>, accessed August 19, 2025.
+  </span>,
+  //48
+  <span key="9a7c197e">
+    <cite>Catalogue of the Officers and Students of Atlanta University, 1909–1910</cite> (Atlanta UP, 1909), 36.
+  </span>,
+  //49
+  <span key="d623b635">
+    Westmoreland’s occupation remains consistent until at least 1914, the last year in which individual alumni information was reported in the annual catalogue.
+  </span>,
+  //50
+  <span key="6a704b1b">
+    Simon may have been using skills he learned at Atlanta University, as the Atlanta University Studies were published in-house. On the history of Black printing in relation to Du Bois, see Elizabeth McHenry, <cite>To Make Negro Literature: Writing, Literary Practice, and African American Authorship</cite> (Duke UP, 2021).
+  </span>,
+  //51
+  <span key="20f9cf49">
+    I was unable to find a “Henry Napoleon Lee” in any of federal censuses for which he was alive. There were several listings for “Henry Lee,” including some born in Atlanta in the late 1800s, aligning with a 1900 college graduation date. But I could not find enough conclusive evidence that any single listing was Henry Napoleon Lee.
+  </span>,
+  //52
+  <span key="6e3d09b8">
+    The exact date, August 27, 1963, was famously the same that hundreds of thousands of Black Americans and their allies would begin assembling on the Washington Mall to hear Martin Luther King Jr. deliver his now-canonical “I Have a Dream” speech.
+  </span>,
+  //53
+  <span key="f0956da7">
+    In the summer of 1910, Du Bois resigned from his position at Atlanta University to take up the role as founding editor of <cite>The Crisis</cite>, the monthly journal of the NAACP, which required that he move to New York. He nonetheless continued to edit the Atlanta University Studies until 1914. He would return to Atlanta University in 1934.
+  </span>,
+  //54
+  <span key="5261c803">
+    Lewis, Morris, Rusert, and Womack all make versions of this claim.
+  </span>,
+  //55
+  <span key="a6b31f71">
+    W. E. B. Du Bois, “Sociology Hesitant,” <cite>boundary 2</cite> 27.3 (Fall 2000): 42. In this posthumous essay, believed to be authored around 1905, Du Bois also advances his support for interdisciplinary scholarship, writing that “mutual understanding must come under a working hypothesis which will give scope to Historian as well as Biologist,” and that to explain statistical findings, “we must assume Law and Chance working in conjunction—Chance being the scientific side of inexplicable Will. Sociology, then, is the Science that seeks the limits of Chance in human conduct” (44).
+  </span>,
+  //56
+  <span key="79e8b00c">
+    This is perhaps best exemplified by the Du Bois Challenge, an annual event sponsored by the Data Visualization Society aimed at “celebrating [Du Bois’s] data visualization legacy” by recreating his charts with contemporary visualization libraries and tools. For more on this event, see Anthony Starks, “The #DuBois Challenge,” <cite>Nightingale: Journal of the Data Visualization Society</cite>, February 1, 2022, <NoteLink href="https://nightingaledvs.com/the-dubois-challenge/">https://nightingaledvs.com/the-dubois-challenge/</NoteLink>, accessed August 19, 2025.
+  </span>,
+  //57
+  <span key="a893a0e0">
+    Mona Chalabi, “WEB Du Bois: Retracing His Attempt to Challenge Racism with Data,” <cite>Guardian</cite>, February 14, 2017, <NoteLink href="https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs">https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs</NoteLink>, accessed August 19, 2025.
+  </span>,
+  //58
+  <span key="92b2ca41">
+    In <cite>Data Feminism, </cite>Catherine D’Ignazio and I share an essay by Candice Lanius, “Fact Check: Your Demand for Statistical Proof Is Racist,” in which she summarizes the ample research on how those in positions of power accept anecdotal evidence from those like themselves, but demand endless statistics from minoritized groups. In those cases, she argues convincingly, more data will never be enough” (58).
+  </span>,
+  //59
+  <span key="58fe9e41">
+    Mimi Ọnọụha, “In Absentia” (2019), <NoteLink href="https://mimionuoha.com/in-absentia">https://mimionuoha.com/in-absentia</NoteLink>, accessed August 19, 2025.
+  </span>,
+  //60
+  <span key="4277cc10">
+    <cite>Catalogue of the Officers and Students of Atlanta University, 1898–1899</cite>, 43.
+  </span>,
+  //61
+  <span key="72873006">
+    Saidiya Hartman, <cite>Wayward Lives, Beautiful Experiments: Intimate Histories of Social Upheaval</cite> (Norton, 2019), xiii. Later in the book, Hartman in fact speculates about another woman photographed for the Paris Exposition, as she does—very briefly—about Du Bois’s charts. See <cite>Wayward Lives,</cite> 17–19 for the photograph and 109–113 for the charts.
+  </span>,
+  //62
+  <span key="352633ec">
+    A web compilation of the Atlanta University Studies, including information and links to scanned versions, can be found on the “Atlanta University Publications” page of WEBDuBois.org, edited by Robert W. Williams. See <NoteLink href="http://www.webdubois.org/wdb-AtlUniv.html">http://www.webdubois.org/wdb-AtlUniv.html</NoteLink>. On the significance of the studies for Du Bois’s pioneering contributions to the field of sociology, see Aldon Morris, <cite>The Scholar Denied: W. E. B. Du Bois and the Birth of Modern Sociology</cite> (U of California Press, 2015). On the history of Black printing and Du Bois’s role in it, see McHenry, <cite>To Make Negro Literature</cite>.
+  </span>,
+  //63
+  <span key="9095aa2a">
+    For example, “Religion of American Negroes” and “Statistics of Negro Church Organizations” employ numbers very similar to those provided in table 1 of the third study, <cite>Some Efforts of American Negroes for Their Own Social Betterment</cite> (Atlanta University, 1898); and “Negro Business Men in the United States” takes its data directly from table 2 of the fourth study, <cite>The Negro in Business</cite> (Atlanta University, 1899), 7.
+  </span>,
+  //64
+  <span key="66d47576">
+    Morris, <cite>The Scholar Denied</cite>, 71.
+  </span>,
+  //65
+  <span key="0928b13f">
+    In the absence of the Du Bois-Atlanta School, the University of Chicago would claim this honor with work beginning around 1915. See Morris, <cite>The Scholar Denied</cite>, 109–118.
+  </span>,
+  //66
+  <span key="065a7e69">
+    The official title was <cite>The College-Bred Negro </cite>(Atlanta University, 1900).
+  </span>,
+  //67
+  <span key="0a65b75f">
+    As Du Bois explains in the report, “A list of living colored college graduates was obtained and a blank with the following questions was sent them. About 800 answers to these blanks were received.” While he does not specify the total number of living graduates, the number of graduates, living and dead, was 3,856. <cite>The College-Bred Negro American </cite>(Atlanta University, 1910), 11–12.
+  </span>,
+  //68
+  <span key="aa06a3d4">
+    Per her alumni listing in the <cite>Catalogue of the Officers and Students of Atlanta University, 1909–1910</cite>, 36; I could not find her listed in the 1910 US Census there.
+  </span>,
+  //69
+  <span key="e8985787">
+    <cite>The College-Bred Negro American</cite>, 47.
+  </span>,
+  //70
+  <span key="9e401051">
+    This number was determined by subtracting the 163 Atlanta University graduates from the total number of 3,856 initially provided by Du Bois. See note 79.
+  </span>,
+  //71
+  <span key="46892604">
+    <cite>The College-Bred Negro American</cite>, 46.
+  </span>,
+  //72
+  <span key="251c0d09">
+    Tommaso Elli, Adam Bradley, et al., “Tied in Knots: A Case Study on Anthropographic Data Visualization about Sexual Harassment in the Academy,” <cite>2020 IEEE VIS Arts Program (VISAP)</cite>, Salt Lake City, UT, USA, 2020, 29–44. Also see the website viewable at <NoteLink href="https://tiedinknots.io/#/">https://tiedinknots.io/#/</NoteLink>.
+  </span>,
+  //73
+  <span key="2a0eee62">
+    While Clarkson’s advocacy efforts were oriented toward the abolition of the slave <cite>trade</cite>, slavery itself would not be abolished in England until 1834, and in the United States until 1865. (Both countries banned the slave trade—the actual trafficking of people on ships—in 1807.)
   </span>,
 ];
 

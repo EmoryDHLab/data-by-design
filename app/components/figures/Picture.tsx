@@ -20,7 +20,7 @@ const Picture = ({ figure, className, center = true }: Props) => {
   useEffect(() => {
     if (figure.width) {
       setFigurePath(
-        `https://iiif.ecds.io/iiif/3/dxd%2ffigure.chapter}/${figure.fileName}.tiff/full/max/0/default`,
+        `https://iiif.ecds.io/iiif/3/dxd%2f${figure.chapter}%2f${figure.fileName}.tiff/full/max/0/default`,
       );
     }
   }, [figure]);

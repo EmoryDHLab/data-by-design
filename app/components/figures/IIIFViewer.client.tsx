@@ -7,7 +7,7 @@ import ClientOnly from "~/components/ClientOnly";
 
 const fetchTileSource = async (figure: TFigure) => {
   const response = await fetch(
-    `https://iiif.ecds.io/iiif/3/dxd%2ffigure.chapter}/${figure.fileName}.tiff/info.json`,
+    `https://iiif.ecds.io/iiif/3/dxd%2f${figure.chapter}%2f${figure.fileName}.tiff/info.json`,
   );
   const result = await response.json();
   result.service[0].id = result.id;
