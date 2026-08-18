@@ -430,162 +430,201 @@ export const dataFootnotes = [
 
 export const imageFootnotes = [
   //1
-  <span key="adafe778">
-    Add in short history of earlier bar charts, Philippe Buache, etc.
+  <span key="5bbe17ad">
+    While there are no known examples of pie charts that predate Playfair’s, there are several earlier entries in the bar chart category. In <cite>A History of Data Visualization and Graphic Communication</cite> (Harvard UP<cite>, </cite>2021),<cite> </cite>Michael Friendly and Howard Wainer discuss a bar chart of water levels of the Seine, created by the French geographer Philippe Buache and his collaborator Guillaume de L’Isle, which dates to 1770. But because Buache and de L’Isle were using bars to represent water levels, Friendly and Wainer assert, their chart did not reflect the degree of abstraction of Playfair’s, which “use[d] the length of bars to show something intangible: imports and exports to Scotland that could be understood in a new way” (115). In her investigation of how data tables were “read” in the years before visualization, historian of science Lorraine Daston surfaces an even earlier bar chart attributed to Athanasius Kircher, from 1721, which shows temperatures in Berlin as bars. On the basis of the lack of response, even amongst the members of the Royal Society, Daston concludes that they “were more of a nuisance than a novelty,” since early modern eyes had not yet been trained to interpret them (213). See Daston, “Super-Vision: Weather Watching and Table Reading in the Early Modern Royal Society and Académie Royale des Sciences,” <cite>Huntington Library Quarterly </cite>78.2 (Summer 2015): 187–215.
   </span>,
   //2
-  <span key="750a1b40">
-    Edward Tufte, The Visual Display of Quantitative Information (Cheshire, CT:
-    Graphics Press, 2001), p. 32. In terms of other histories, see, for example,
-    Howard Wainer and Ian Spence; in their preface to the modern edition of
-    Playfair's Commercial and Political Atlas, they describe it as the "Bible"
-    of contemporary visualization design (New York: Cambridge University Press,
-    2005), p. vi. In related work, Wainer traces a direct line from Playfair to
-    Jacques Bertin, author of The Semiology of Graphics, the most significant
-    study of visualization of the twentieth century (Bertin 1983, vii). Bertin
-    himself selects an 1805 chart of Playfair's as one of only two historical
-    images he reproduces in his foundational text. Michael Friendly, in "The
-    Golden Age of Statistical Graphics," similarly canonizes Playfair
-    (Statistical Science 23.4 (2008): 502-535); and more recently, Sandra
-    Rendgen, centers Playfair in her History of Information Graphics (Koln,
-    Germany: Taschen, 2019).
+  <span key="4a14233c">
+    Howard Wainer and Ian Spence, “Introduction,” in William Playfair, <cite>The Commercial and Political Atlas</cite> <cite>and Statistical Breviary</cite>, ed. Howard Wainer and Ian Spence<cite> </cite>(Cambridge UP, 2005), 9. Unless otherwise indicated, all direct quotations from the <cite>Atlas </cite>are transcribed from this edition.
   </span>,
   //3
-  <span key="d33c3331">
-    {" "}
-    Howard Wainer and Ian Spence, "Introduction" in William Playfair,{" "}
-    <cite>
-      The Commercial and Political Atlas and Statistical Breviary,{" "}
-    </cite>{" "}
-    eds. Howard Wainer and Ian Spence (New York: Cambridge Univ. Press, 2005),
-    p. 9
+  <span key="bdfb9b74">
+    Responsible for numerous failed money-making schemes, Playfair went through bankruptcy proceedings in the final years of the 1790s and never fully recovered financial solvency. Playfair’s financial difficulties are discussed in more depth later in this chapter, and in David R. Bellhouse, <cite>The Flawed Genius of William Playfair: The Story of the Father of Statistical Graphics</cite> (U of Toronto Press, 2023), 159–195.
   </span>,
   //4
-  <span key="09aff8d2">
-    Responsible for numerous failed money-making schemes throughout his life,
-    Playfair, in 1816, attempted blackmail. Claiming ownership of a set of
-    papers that would cast doubt on the lineage of the twin inheritors of the
-    Douglas estate—a seven-year debate, known as the Douglas Cause, that earned
-    dubious distinction as the longest and most expensive legal battle in
-    Scottish history—Playfair attempted to extort funds from Lord Douglas
-    himself, one of the wealthiest men in Scotland. For more on this episode in
-    Playfair's life, see Wainer and Spence 8-9.
+  <span key="31c2bcc6">
+    My account of Neele and Playfair’s distribution of tasks derives from Wainer and Spence, “Introduction.”
   </span>,
   //5
-  <span key="24b82b93">
-    My account of Neele and Playfair's distribution of tasks derives from Wainer
-    and Spence.
+  <span key="ed2e0d81">
+    My account of copperplate engraving derives from Wainer and Spence, “Introduction,” as well as from Roger Gaskell, “Printing House and Engraving Shop: A Mysterious Collaboration,” <cite>BC</cite> 53 (2004): 213–251. Interested readers may also consult “From Paper to Copper: The Engraver’s Process,” a demonstration by Andrew Stein Raftery, Associate Professor of Printmaking at the Rhode Island School of Design, viewable online at <NoteLink href="https://www.youtube.com/watch?v=fQvghHs15hA">https://www.youtube.com/watch?v=fQvghHs15hA</NoteLink>.
   </span>,
   //6
-  <span key="b1edeea8">
-    My account of copperplate engraving derives from Wainer and Spence, as well
-    as Roger Gaskell,
-    <cite>
-      "Printing House and Engraving Shop: A Mysterious Collaboration"
-    </cite>{" "}
-    BC 53 (2004): 213-51. Interested readers may also consult{" "}
-    <cite>"From Paper to Copper: The Engraver's Process,"</cite> a demonstration
-    by Andrew Stein Raftery, Associate Professor of Printmaking at the Rhode
-    Island School of Design, viewable online at:
-    <NoteLink href="https://www.youtube.com/watch?v=fQvghHs15hA">
-      https://www.youtube.com/watch?v=fQvghHs15hA{" "}
-    </NoteLink>
+  <span key="e8df0bf2">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, viii. Here, it is worth reiterating that the term “data visualization” did not exist in Playfair’s time. Playfair himself never settled on a single term for his “invention,” describing his approach variously in the <cite>Atlas</cite> as “applying lines to subjects of Finance” and applying “the principles of geometry to matters of Finance” (vii, viii). For the 1798 version of the <cite>Atlas</cite>, Playfair coined the phrase “lineal arithmetic,” although this did not catch on (see <cite>Lineal Arithmetic</cite>, London, 1798).
   </span>,
   //7
-  <span key="ca2c1aef">
-    William Playfair, <cite>The Commercial and Political Atlas,</cite> 3rd ed.
-    (London: 1801), p. viii.
+  <span key="b2a88cc1">
+    Helen Kennedy, Rosemary Lucy Hill, Giorgia Aiello, and William Allen, “The Work that Visualization Conventions Do,” <cite>Information, Communication and Society </cite>19.6 (2016), 723. Also see Alberto Cairo, <cite>How Charts Lie: Getting Smarter about Visual Information</cite> (Norton, 2019).
   </span>,
   //8
-  <span key="85e48c28">Quoted in Wainer and Spence, p. 14.</span>,
+  <span key="21c46d49">
+    Here I am encapsulating the major contribution of science and technology studies (STS) of the past several decades. Steven Shapin and Simon Schaffer’s <cite>Leviathan and the Air-Pump: Hobbes, Boyle, and the Experimental Life</cite> (Princeton UP, 1985) lays strong conceptual groundwork for this claim. More recently, the essays included in <cite>Social Studies of Scientific Imaging and Visualization</cite>, ed. Joseph Dumit and Regula Valérie Burri (MIT Press, 2008), have applied this STS framework to visualization.
+  </span>,
   //9
-  <span key="bc7ce7aa">Ref 1786 edition, p. 7. </span>,
+  <span key="2e11427a">
+    Quoted in Wainer and Spence, “Introduction,” 14.
+  </span>,
   //10
-  <span key="96ae40c8">
-    In the introduction to the third edition, Playfair includes quotations from
-    the press coverage of earlier editions, as well as his own recollections of
-    the book's early reception in England and France.
+  <span key="456272d9">
+    William Playfair, <cite>The Commercial and Political Atlas</cite>, 1st ed. (London, 1786), 7.
   </span>,
   //11
-  <span key="dc641ca4">
-    Unless otherwise indicated, all quotations are from Wainer and Spence's
-    modern edition of the third edition of the Atlas. Playfair, pp. ix-x, in
-    Wainer/Spence 2005.
+  <span key="769ecfa3">
+    In both the preface and introduction to the third edition, Playfair includes quotations from the press coverage of earlier editions, as well as his own recollections of the book’s early reception in England and France. See <cite>The Commercial and Political Atlas</cite>, iii–xv.
   </span>,
   //12
-  <span key="fee18e02">
-    Wainer and Spence push this analysis even further, finding "minor, but
-    careless, arithmetical errors in the tables" which "throws into doubt the
-    accurracy of the remaining numbers in these and the other tables," as well
-    as discrepancies in the visual "rendering of the raw data," especially in
-    the third edition. Their analysis focuses on the charts involving the West
-    Indies and Jersey, Guernsey, and Alderney, but they arrive at a conclusion
-    about the charts overall, which is that "some of the curves that connect the
-    datapoints seem to have derived their shapes from Playfair's opinion of how
-    the itnervening data should look" (19, 18).
+  <span key="e2031412">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, ix–x.
   </span>,
   //13
-  <span key="2d58d747">Playfair, 1st ed, p. 4</span>,
+  <span key="7fc62ee2">
+    On Enlightenment empiricism and the senses, see chapter 1, note 7.
+  </span>,
   //14
-  <span key="ae3308d6">Tufte, p. 13.</span>,
+  <span key="83d3af43">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, x.
+  </span>,
   //15
-  <span key="b4e82e49">Tufte, p. 13.</span>,
+  <span key="6dbd0fca">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, xiv.
+  </span>,
   //16
-  <span key="998e22ab">Playfair, p. iii.</span>,
+  <span key="6251a35c">
+    In the field of visualization research, scholars have explored questions around the “value” of visualization, albeit focused primarily on methods of evaluation that align with its specific contributions, such as efficiency, confidence, and insight. In “The Value of Visualization,” Jarke van Wijk lays out the rationale for this research program: “If we know to which actions the visualization should lead to, the next steps are assessment whether the knowledge derived from the visualization does indeed support the decision, and also, to assess the economic value of this decision. This is not easy, but one can try for instance to estimate how much time is saved, or try to quantify the consequences of a wrong decision” (<cite>IEEE Visualization 2005</cite>, Minneapolis, 79–86). Subsequent work by John Stasko and Emily Wall models how specific values—in particular, “time, insight, essence, and confidence”—might be assessed. See Stasko, “Value-Driven Evaluation of Visualizations,” <cite>BELIV ’14: Proceedings of the Fifth Workshop on Beyond Time and Errors: Novel Evaluation Methods for Visualization</cite>, 46–53); and Emily Wall, Meeshu Agnihotri, Laura Matzen, Kristin Divis, Michael Haass, Alex Endert, and John Stasko, “A Heuristic Approach to Value-Driven Evaluation of Visualizations,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 25.1 (2019): 491–500.
+  </span>,
   //17
-  <span key="77e9bc99">Playfair, p. iv</span>,
+  <span key="cf64b912">
+    Even this was an innovation. Prior to Playfair, time was for the most part not delimited in a linear way. Rather, significant events were what defined the scale. See Daniel Rosenberg and Anthony Grafton, <cite>Cartographies of Time: A History of the Timeline </cite>(Princeton Architectural Press, 2010), 136.
+  </span>,
   //18
-  <span key="90c53b48">Playfair, p. iv.</span>,
+  <span key="2bb5ad2e">
+    Wainer and Spence push this analysis even further, finding “minor, but careless, arithmetical errors in the tables” which “throws into doubt the accuracy of the remaining numbers in these and the other tables,” as well as discrepancies in the visual “rendering of the raw data,” especially in the third edition (“Introduction,” 19). Their analysis focuses on the charts involving the West Indies and Jersey, Guernsey, and Alderney, but they arrive at a conclusion about the charts overall, which is that “some of the curves that connect the datapoints seem to have derived their shapes from Playfair’s opinion of how the intervening data should look” (18).
+  </span>,
   //19
-  <span key="6e0fca3c">Playfair, p. xiv.</span>,
+  <span key="f233a330">
+    This phase, a variation on the “simple and complete idea” that Playfair describes in his introduction, derives from the working title of the <cite>Atlas</cite>, “The commercial and political atlas representing, by means of stained copper-plate charts, the exports, imports, and general trade of England, at a single view.” This was the title Playfair employed in a draft version that he circulated to friends, including Watt, in 1785.
+  </span>,
   //20
-  <span key="4c22d55f">Playfair, p. ##.</span>,
+  <span key="f0b06c0f">
+    On the saga of Playfair’s bankruptcy, see Bellhouse, <cite>The Flawed Genius</cite>, 159–195.
+  </span>,
   //21
-  <span key="3c751aed">Playfair, p. xiv.</span>,
+  <span key="bcc3cea0">
+    This topic will be discussed in more depth in the section of this chapter on Playfair’s charts in the present, but as an opening salvo, consider the similarities between Playfair’s views about the value of visualization and Ben Shneiderman’s “visual information-seeking mantra”: “overview first, zoom and filter, then details on demand.” Shneiderman, “The Eyes Have It: A Task by Data Type Taxonomy for Information Visualizations,” in <cite>The Craft of Information Visualization</cite> (Morgan Kaufmann, 2003), 364–371.
+  </span>,
   //22
-  <span key="cb4b95f7">Playfair, p. xv.</span>,
+  <span key="4fdad6f3">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, ix.
+  </span>,
   //23
-  <span key="80c2ed3a">
-    Playfair p. 20. He concludes by noting that "much attention has been lately
-    paid to the subject, and most well informed men are of opinion that a change
-    might easily be effected that would be productive of general advantage."
+  <span key="df7d4a3e">
+    While the critical consensus is that Playfair possessed poor business acumen, this particular turn toward financial precarity was not entirely his own doing. Playfair had opened a metal factory outside of Paris, which involved significant personal investment, just as the French Revolution took hold. It was by all accounts on track to become profitable, but Playfair could not stop himself from pursuing additional business ventures. He was in the midst of planning for a second mill, as well as a separate project involving land investments in the newly constituted United States, when the economic instability brought about by the Revolution ratcheted up another notch. Lending in France collapsed and investors’ priorities shifted. In addition, the land investment scheme (in which Playfair was one of several partners) became increasingly dubious; it involved only the right to purchase land, rather than the land itself, a fact that was not clearly communicated to its investors and was discovered only when some of them, fleeing revolutionary France, traveled to the US to remake homes there. Playfair also founded a bank during this time; it was also marked by some irregularities, but these would not have been fatal had the Revolution not then reached a violent peak that forced Playfair to flee Paris, withdrawing his stake in the bank in the process. On this episode, see Bellhouse, <cite>The Flawed Genius</cite>, 70–115.
   </span>,
   //24
-  <span key="2e738d24">
-    This explanation is 11 pages to the West Indies' one-and-a-half.
+  <span key="0da157bd">
+    Bellhouse speculates that this change of fortune was what prompted Playfair’s turn to increasingly dubious schemes (<cite>The Flawed Genius</cite>, 123).
   </span>,
   //25
-  <span key="3987a182">Playfair p. 28.</span>,
+  <span key="863fbb54">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, iii.
+  </span>,
   //26
-  <span key="e43873d2">Playfair p. 29</span>,
+  <span key="f1c6fb3f">
+    Bellhouse, <cite>The Flawed Genius</cite>, 179.
+  </span>,
   //27
-  <span key="28bf492e">
-    On visualization as enabling the "big picture" of a dataset, see Kosara et
-    al. (2009) and Shneiderman (2014). Also see the work of Google's "Big
-    Picture" data visualization research group at, co-directed by Fernanda
-    Viegas and Martin Wattenberg. https://research.google.com/bigpicture/.
+  <span key="2da8b8c3">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, iv.
   </span>,
   //28
-  <span key="25557133">
-    Ref full title of 1st and 2nd editions, including the phrase "in a single
-    view."
+  <span key="e3cb634f">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, iv.
   </span>,
   //29
-  <span key="0642a7c8">Playfair 1801, p. v.</span>,
+  <span key="a656a702">
+    E.g., Manuel Lima, <cite>Visual Complexity: Mapping Patterns of Information </cite>(Princeton Architectural Press, 2011).
+  </span>,
   //30
-  <span key="9617d82b">Cite D3.</span>,
+  <span key="447190cb">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, xiv.
+  </span>,
   //31
-  <span key="48e5c18b">
-    This argument is carried even further in software platforms such as Tableau,
-    which have been developed to enable non-technical users to upload and
-    visualize their data in a series of clicks. Their mission, as they declare
-    it on their website, is to "help people see and understand data." [there are
-    more good quotes; discussion can be extended]
+  <span key="1f7083ce">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, xv. As Jenny Odell has observed, it is in fact capitalism that is responsible for the constant push toward more efficiency, which Playfair’s charts support in form, content, and audience. See Odell’s most recent works, <cite>How to Do Nothing: Resisting the Attention Economy </cite>(Melville House, 2019) and <cite>Saving Time: Discovering Life beyond the Clock </cite>(Penguin-Random House, 2023). Thanks to Alexander Sherman for these citations.
   </span>,
   //32
-  <span key="68def0aa">Need LCP catalog ID (1787, p. 232).</span>,
+  <span key="96a2303f">
+    The introduction to this chapter references work on visualization conventions led by Helen Kennedy, who brings together semiotic analyses of contemporary visualizations with interviews with practicing designers about their aims. Meanwhile, visualization researchers Jessica Hullman and Nicholas Diakopoulos have explored the idea of visualization rhetoric, analyzing the various forms of visual rhetoric that accompany visualizations that appear in a narrative context, and that contribute to the meaning that is conveyed. See “Visualization Rhetoric: Framing Effects in Narrative Visualization,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 17.12 (2011). Finally (although far from exhaustively), Ha-Kyung Kong, Zicheng Liu, and Karrie Karahalious have explored the impact of visualization titles, finding additional evidence of how viewers presume neutrality objectivity. See “Frames and Slants in Titles of Visualizations on Controversial Topics,” in<cite> CHI ’18: Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems.</cite>
+  </span>,
   //33
-  <span key="deee91e4">Ref Wainer/Spence 31.</span>,
+  <span key="9d3ec332">
+    Catherine D’Ignazio and Lauren F. Klein, “Feminist Data Visualization,” <cite>Workshop on Visualization for Digital Humanities (VIS4DH) 2016</cite>, Baltimore, MD; and Catherine D’Ignazio and Lauren Klein, “ in <cite>Data Feminism </cite>(MIT Press, 2020), 73–96.
+  </span>,
+  //34
+  <span key="1e888f4f">
+    Playfair was himself not only a proponent but also a victim of this business-first thinking. He remained drawn to the power wielded by the elite, even as he was never able to experience its benefits. In the end, the simplifying design of his charts further consolidated this power, rather than open it up to be dispersed.
+  </span>,
+  //35
+  <span key="fc1c6f0f">
+    Bellhouse consults two contemporaneous published versions of the custom house data, Charles Whitworth’s <cite>State of the Trade of Great Britain in Its Imports and Exports</cite> (1776) and David Macpherson’s <cite>Annals of Commerce </cite>(1805), to confirm this claim (59). Consulting these books, in turn, takes us back to the original custom house records, which have now been digitized and made available online via the British National Archives, viewable at <NoteLink href="https://discovery.nationalarchives.gov.uk/browse/r/h/C67">https://discovery.nationalarchives.gov.uk/browse/r/h/C67</NoteLink>.
+  </span>,
+  //36
+  <span key="3ad35a48">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, 20. He concludes by noting that “much attention has been lately paid to the subject, and most well informed men are of opinion that a change might easily be effected that would be productive of general advantage.”
+  </span>,
+  //37
+  <span key="a6e14dab">
+    This explanation is eleven pages long, as compared to the West Indies’ one and a half.
+  </span>,
+  //38
+  <span key="48eae3fe">
+    Playfair, <cite>The Commercial and Political Atlas</cite>, 28.
+  </span>,
+  //39
+  <span key="9585926b">
+    Jorge Camoes, “Excel Charts meet William Playfair,” December 6, 2011, <NoteLink href="https://excelcharts.com/excel-charts-meet-william-playfair/">https://excelcharts.com/excel-charts-meet-william-playfair/</NoteLink>, accessed July 10, 2025.
+  </span>,
+  //40
+  <span key="5fc135f6">
+    Jo Wood, “Playfair’s Wheat and Wages,” March 10, 2024, <NoteLink href="https://observablehq.com/@jwolondon/wheat-and-wages">https://observablehq.com/@jwolondon/wheat-and-wages</NoteLink>, accessed July 10, 2025.
+  </span>,
+  //41
+  <span key="9617c137">
+    Michael Bostock, Vadim Ogievetsky, and Jeffrey Heer, “D3: Data-Driven Documents,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 17.12 (2011): 2301–2309.
+  </span>,
+  //42
+  <span key="28be7185">
+    Jacques Bertin, <cite>Sémiologie graphique. Les diagrammes, les réseaux, les cartes </cite>(Gauthier-Villars, 1967). The first English edition appeared in 1983, translated by William J. Berg with a foreword by Howard Wainer, who declares Bertin’s book to be “the most important work on graphics since the publication of Playfair’s <cite>Atlas</cite>” (iv).
+  </span>,
+  //43
+  <span key="433b8584">
+    Leland Wilkinson, <cite>The Grammar of Graphics</cite> (Springer, 1999). Notably, Wilkinson’s text features Minard’s diagram on its cover.
+  </span>,
+  //44
+  <span key="9adad48f">
+    Hadley Wickham, <cite>ggplot2: Elegant Graphics for Data Analysis</cite> (Springer-Verlag New York, 2016), <NoteLink href="https://ggplot2.tidyverse.org/">https://ggplot2.tidyverse.org/</NoteLink>.
+  </span>,
+  //45
+  <span key="34d36357">
+    A similar line of thinking is taken up in Arvind Satyanarayan, Bongshin Lee, Donghao Ren, Jeffrey Heer, John Stasko, John Thompson, Matthew Brehmer, and Zhicheng Liu, “Critical Reflections on Visualization Authoring Systems,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 26.1 (2020): 461–471. This builds on work by Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer, including “Reflections on How Designers Design with Visualization,” in <cite>Proceedings of the 2014 International Working Conference on Advanced Visual Interfaces (AVI ’14)</cite> (Association for Computing Machinery, 2014), 17–24, and “Iterating between Tools to Create and Edit Visualizations,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 23.1 (2017): 481–490.
+  </span>,
+  //46
+  <span key="af78d2ed">
+    William Playfair, <cite>Joseph and Benjamin, a Conversation. Translated from a French Manuscript</cite> (London, 1787), 232. It is worth noting that Franklin would have likely appreciated Playfair’s contributions. Franklin had previously commended Joseph Priestley for his ingenuity in creating his 1765 “Chart of Biography,” going so far as to nominate him for membership in the Royal Society, and Priestley reciprocated by dedicating his 1769 “New Chart of History” to Franklin. Franklin himself also had a long history of prioritizing efficiency in written and graphic communication, e.g., “Extract from Thomas Jefferson’s Anecdotes of Benjamin Franklin,” 4 December 1818, <NoteLink href="https://tjrs.monticello.org/letter/27">https://tjrs.monticello.org/letter/27</NoteLink>, accessed July 10, 2025.
+  </span>,
+  //47
+  <span key="6e8d45c5">
+    Keynes writes: “[Jevons] was not the first to plot economic statistics in diagrams; some of his diagrams bear, indeed, a close resemblance to Playfair’s, with whose work he seems to have been acquainted.” See J. M. Keynes, “William Stanley Jevons 1835–1882: A Centenary Allocution on His Life and Work as Economist and Statistician,” <cite>Journal of the Royal Statistical Society</cite> 99.3 (1936): 523.
+  </span>,
+  //48
+  <span key="9dd5f4f7">
+    Quoted in Erica Royston, “Studies in the History of Probability and Statistics: III. A Note on the History of the Graphical Presentation of Data,” <cite>Biometrika</cite> 43.3/4 (December 1956): 241 n1.
+  </span>,
+  //49
+  <span key="5e6d5a41">
+    In their preface to the modern edition of Playfair’s <cite>Atlas</cite>, Wainer and Spence describe it as the “Bible” of contemporary visualization design (vi). I have previously noted how Wainer, in his introduction to Jacques Bertin’s <cite>Sémiologie graphique,</cite> traces a direct line from Playfair to Bertin, but not how Bertin himself selects an 1805 chart of Playfair’s as one of only two historical images he reproduces in his foundational text. Most recently, Michael Friendly, writing with Wainer in <cite>A History of Data Visualization and Graphic Communication</cite>, says of Playfair: “He can rightly be called the father of modern graphical methods, and it is only a slight stretch to consider his contributions to be the Big Bang of data graphics” (95).
+  </span>,
 ];
 
 export const peopleFootnotes = [
