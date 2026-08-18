@@ -627,7 +627,8 @@ export default function DuboisChapter() {
             <InlineFootnote index={40} />Du Bois had the idea to write an essay
             about the incident for the <cite>Atlanta Constitution</cite>, the
             leading newspaper of the South. He recalls how he drafted a “careful
-            and reasoned statement concerning the evident facts.” But while
+            and reasoned statement concerning the evident facts.”
+            <InlineFootnote index={40} />But while
             walking from the Atlanta University campus to the newspaper
             office—he planned to deliver his statement in person—Du Bois learned
             of a gruesome new turn of events: Hose had been lynched, and his
