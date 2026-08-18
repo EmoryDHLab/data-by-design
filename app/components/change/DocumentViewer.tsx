@@ -4,6 +4,7 @@ import { classNames } from "~/utils";
 import figures from "~/data/figures/change.json";
 import Picture from "../figures/Picture";
 import Figure from "../figures/Figure";
+import PlateCaption from "../figures/PlateCaption";
 import FigureModal from "../figures/FigureModal";
 import ClientOnly from "~/components/ClientOnly";
 import type { TFigure as FigureType } from "~/types/figureType";
@@ -81,37 +82,6 @@ const imageSets: ImageSet = {
     figures["925"],
   ],
 };
-
-// Matches a trailing Library of Congress call number, e.g. "LC-DIG-ppmsca-33863."
-const LC_CALL_NUMBER = /^(.*\S)\s+(LC-[A-Za-z]+-[A-Za-z0-9-]+\.?)\s*$/;
-
-function CreditLine({ text }: { text: string }) {
-  const match = text.match(LC_CALL_NUMBER);
-  if (!match) return <>{text}</>;
-  const [, lead, callNumber] = match;
-  return (
-    <>
-      {lead} <span className="md:block">{callNumber}</span>
-    </>
-  );
-}
-
-function PlateCaption({ figure }: { figure: FigureType }) {
-  return (
-    <figcaption className="mt-4 px-6 mx-auto max-w-md text-center">
-      {figure.title && (
-        <span className="block font-power text-base leading-snug text-offwhite">
-          {figure.title}
-        </span>
-      )}
-      {figure.creditLine && (
-        <span className="block font-sans text-xs leading-relaxed text-neutral-400 mt-2">
-          <CreditLine text={figure.creditLine} />
-        </span>
-      )}
-    </figcaption>
-  );
-}
 
 export default function DocumentViewer() {
   const [selectedSet, setSelectedSet] = useState<string>("setOne");

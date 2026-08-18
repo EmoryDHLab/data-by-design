@@ -3,6 +3,7 @@ import { classNames } from "~/utils";
 import figures from "~/data/figures/people.json";
 import Picture from "../figures/Picture";
 import Figure from "../figures/Figure";
+import PlateCaption from "../figures/PlateCaption";
 import type { TFigure as FigureType } from "~/types/figureType";
 
 const images: FigureType[] = [
@@ -73,6 +74,7 @@ const DocumentViewer = () => {
                 className="max-w-md text-white"
                 id={`doc-viewer-${selectedImage.fileName}`}
                 imageClassName="w-auto object-contain"
+                showCaption={false}
               />
             </div>
             
@@ -91,6 +93,10 @@ const DocumentViewer = () => {
               />
             </button>
           </div>
+          <PlateCaption figure={selectedImage} />
+          <p className="font-sans text-xs text-neutral-400 text-center mt-3 pb-8">
+            Plate {selectedImageIndex + 1} / {images.length}
+          </p>
         </div>
       </div>
     </div>
