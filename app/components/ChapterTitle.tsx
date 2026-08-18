@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
-import { spacesToHyphens } from "~/utils";
+import { spacesToHyphens, classNames } from "~/utils";
 
 interface Props {
   title: string;
@@ -10,13 +10,28 @@ interface Props {
 
 export default function ChapterTitle({ title, subtitle }: Props) {
   const { sections } = useContext(ChapterContext);
+  // Pages without section anchors (Preface, Epilogue, Events) have no nav to
+  // sit beside the title, so the title gets the full width and is centered.
+  const navSections = sections?.length ? sections : undefined;
 
   return (
     <header
       id={spacesToHyphens(title)}
-      className="root bg-black w-full flex flex-col items-center md:items-center md:grid md:grid-cols-2 md:gap-12 lg:gap-24 md:min-h-[657px] px-6 md:pl-16 lg:pl-32 md:pr-12 lg:pr-16 py-16 md:py-12"
+      className={classNames(
+        "root bg-black w-full flex flex-col items-center md:min-h-[657px] px-6 py-16 md:py-12",
+        navSections
+          ? "md:items-center md:grid md:grid-cols-2 md:gap-12 lg:gap-24 md:pl-16 lg:pl-32 md:pr-12 lg:pr-16"
+          : "md:justify-center md:px-16 lg:px-32"
+      )}
     >
-      <div className="text text-white text-center md:text-left lg:pl-16 w-full">
+      <div
+        className={classNames(
+          "text text-white w-full",
+          navSections
+            ? "text-center md:text-left lg:pl-16"
+            : "text-center max-w-4xl"
+        )}
+      >
         <h1 className="font-power font-bold text-4xl md:text-5xl lg:text-7xl mb-6 md:mb-8">
           {title}
         </h1>
@@ -24,7 +39,7 @@ export default function ChapterTitle({ title, subtitle }: Props) {
           {subtitle}
         </h2>
       </div>
-      {sections && (
+      {navSections && (
         <nav
           aria-label="Chapter sections"
           className="w-full text-offwhite font-powerWide mt-12 md:mt-0"
@@ -33,7 +48,7 @@ export default function ChapterTitle({ title, subtitle }: Props) {
             In this chapter
           </div>
           <ul className="divide-y divide-white/10 border-y border-white/10">
-            {sections.map((section, index) => (
+            {navSections.map((section, index) => (
               <li key={section.id}>
                 <Link
                   to={`#${section.id}`}
