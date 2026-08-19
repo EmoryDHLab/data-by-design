@@ -9,7 +9,7 @@ import { ChapterContext } from "~/chapterContext";
 import SelectedImage from "~/components/home/SelectedImage.client";
 import { Link } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
-import { bookFacts, bookMeta, bookSchema, retailers } from "~/data/bookMeta";
+import { bookMeta, bookSchema, retailers } from "~/data/bookMeta";
 import { trackPreorderClick } from "~/analytics";
 import StructuredData from "~/components/StructuredData";
 import { classNames, HOST_NAME } from "~/utils";
@@ -96,7 +96,7 @@ export default function Index() {
                 The history of data visualization holds the key to designing a
                 more just future.
               </p>
-              <div className="order-3 md:order-last mt-8 md:mt-10">
+              <div className="order-3 md:order-last mt-6 md:mt-5">
                 <div className="flex flex-wrap items-baseline gap-x-4 pb-3">
                   <span className="font-power font-bold tracking-widest text-sm uppercase">
                     Preorder Now
@@ -126,11 +126,14 @@ export default function Index() {
                     </a>
                   ))}
                 </div>
+                {/* Catalog details, hidden for now. To restore, add `bookFacts`
+                    back to the ~/data/bookMeta import above.
                 <div className="mt-5 font-power text-sm text-black/60 space-y-1">
                   {bookFacts.map((line) => (
                     <p key={line[0]}>{line.join(" · ")}</p>
                   ))}
                 </div>
+                */}
               </div>
               <p className="order-4 md:order-3 text-lg leading-relaxed max-w-prose mt-6 md:mt-3">
                 From maps of colonial empires to charts of national trade, data
