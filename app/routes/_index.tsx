@@ -47,15 +47,15 @@ export const meta: MetaFunction = () => {
     { name: "og:url", content: hostName },
     {
       name: "description",
-      content: "An interactive history of data visualization 1786-1900.",
+      content: "An interactive history of data visualization 1789-1900.",
     },
     {
       name: "og:description",
-      content: "An interactive history of data visualization 1786-1900.",
+      content: "An interactive history of data visualization 1789-1900.",
     },
     {
       name: "twitter:description",
-      content: "An interactive history of data visualization 1786-1900.",
+      content: "An interactive history of data visualization 1789-1900.",
     },
     { name: "image", content: `${hostName}/images/dxd.jpg` },
     { name: "og:image", content: `${hostName}/images/dxd.jpg` },
@@ -79,7 +79,7 @@ export default function Index() {
     >
       <main id="main-content" className="bg-black pb-32 text-black relative">
         <h1 className="sr-only">
-          Data by Design: An Interactive History of Data Visualization 1786-1900
+          Data by Design: An Interactive History of Data Visualization 1789-1900
         </h1>
 
         <div />
