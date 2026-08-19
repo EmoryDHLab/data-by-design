@@ -7,13 +7,12 @@ import ClientOnly from "~/components/ClientOnly";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import SelectedImage from "~/components/home/SelectedImage.client";
-import SiteTitle from "~/components/home/SiteTitle";
 import { Link } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
-import { bookSchema, retailers } from "~/data/bookMeta";
+import { bookMeta, bookSchema, retailers } from "~/data/bookMeta";
 import { trackPreorderClick } from "~/analytics";
 import StructuredData from "~/components/StructuredData";
-import { HOST_NAME } from "~/utils";
+import { classNames, HOST_NAME } from "~/utils";
 import type { MetaFunction, LinksFunction } from "react-router";
 import type { TFigure } from "~/types/figureType";
 import type { ChapterTitle } from "~/types/chapterMetaTags";
@@ -76,38 +75,57 @@ export default function Index() {
 
         <div />
         <section aria-label="Pre-order" className="bg-offwhite text-black">
-          <div className="max-w-6xl mx-auto md:flex md:items-center gap-16 xl:gap-24  md:px-10 py-12">
+          <div className="max-w-6xl mx-auto md:flex md:items-center gap-16 xl:gap-24  md:px-10 py-12 md:py-20">
             <figure className="my-10 px-5 md:px-0 flex-shrink-0 w-full md:w-[380px]">
-              <img
-                src="/images/bookcover.webp"
-                alt="Data by Design book cover"
-                className="w-full h-auto"
-              />
+              <a
+                href={retailers[0].url}
+                onClick={() =>
+                  trackPreorderClick(retailers[0].name, "homepage_cover")
+                }
+                className="block transition-transform hover:-translate-y-1"
+              >
+                <img
+                  src="/images/bookcover.webp"
+                  alt="Data by Design book cover"
+                  className="w-full h-auto shadow-xl"
+                />
+              </a>
             </figure>
             <div className="px-6 md:px-0 flex-1 flex flex-col">
-              {/* <SiteTitle className="w-full max-w-[500px]" /> */}
-              <div className="order-1 font-power font-bold tracking-wider text-sm uppercase w-2/3 pb-1">
-                Available for Preorder Now
-              </div>
-              <p className="order-2 font-power text-xl md:text-2xl prose">
+              <p className="order-2 font-power font-bold text-2xl md:text-3xl leading-tight max-w-prose">
                 The history of data visualization holds the key to designing a
                 more just future.
               </p>
-              <div className="order-3 md:order-last mt-6 md:mt-8 flex flex-wrap gap-3">
-                {retailers.map((retailer) => (
-                  <a
-                    key={retailer.name}
-                    href={retailer.url}
-                    onClick={() =>
-                      trackPreorderClick(retailer.name, "homepage_hero")
-                    }
-                    className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
-                  >
-                    {retailer.name}
-                  </a>
-                ))}
+              <div className="order-3 md:order-last mt-8 md:mt-10">
+                <div className="font-power font-bold tracking-[0.2em] text-sm uppercase pb-3">
+                  Preorder Now
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {retailers.map((retailer, index) => (
+                    <a
+                      key={retailer.name}
+                      href={retailer.url}
+                      onClick={() =>
+                        trackPreorderClick(retailer.name, "homepage_hero")
+                      }
+                      className={classNames(
+                        "inline-block font-power uppercase tracking-wide text-base md:text-lg px-6 py-3 border transition-colors",
+                        // The publisher is the primary CTA; the rest are
+                        // outlined alternatives.
+                        index === 0
+                          ? "bg-black text-white border-black hover:bg-changePrimary hover:border-changePrimary"
+                          : "text-black border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary"
+                      )}
+                    >
+                      {retailer.name}
+                    </a>
+                  ))}
+                </div>
+                <p className="font-power text-sm text-black/60 mt-4">
+                  {bookMeta.publisher} · {bookMeta.publicationYear}
+                </p>
               </div>
-              <p className="order-4 md:order-3 mt-6 md:mt-0">
+              <p className="order-4 md:order-3 text-lg leading-relaxed max-w-prose mt-6 md:mt-8">
                 From maps of colonial empires to charts of national trade, data
                 visualization has long been used to consolidate knowledge and
                 power. But just as often, it has been used to uncover oppression
@@ -115,7 +133,7 @@ export default function Index() {
                 continents and over centuries to expose the power of
                 visualization—and to show how it can be wielded back.
               </p>
-              <p className="order-5 md:order-4">
+              <p className="order-5 md:order-4 text-lg leading-relaxed max-w-prose">
                 A book for those who love charts and graphs, and for those who
                 create them, <cite>Data by Design</cite> offers historical
                 grounding, ethical clarity—and the inspiration we need—to
