@@ -4,14 +4,29 @@ export const bookMeta = {
   title: "Data by Design",
   subtitle: "Visualization and Power from Abolition to the Dawn of Data Science",
   author: "Lauren Klein",
-  publisher: "MIT Press",
-  // The book is not out yet, so only the year is asserted. Add the full
-  // YYYY-MM-DD once the on-sale date is confirmed with MIT Press.
-  publicationYear: "2026",
-  // Taken from the retailer URLs below.
+  publisher: "The MIT Press",
+  publicationDate: "2026-10-20",
+  // Kept as a literal so the displayed date can't be shifted by a timezone.
+  publicationDateDisplay: "October 20, 2026",
   isbn: "9780262056182",
+  format: "Hardcover",
+  pages: 304,
+  illustrations: "225 color illus.",
+  dimensions: "8 × 9 in",
   cover: "/images/bookcover.webp",
 };
+
+// Catalog details, as two short lines of small type under the CTAs. The on-sale
+// date is deliberately absent: it already sits beside the "Preorder Now" label.
+export const bookFacts = [
+  [bookMeta.publisher, bookMeta.format],
+  [
+    `${bookMeta.pages} pp.`,
+    bookMeta.illustrations,
+    bookMeta.dimensions,
+    `ISBN ${bookMeta.isbn}`,
+  ],
+];
 
 export type Retailer = {
   name: string;
@@ -33,10 +48,7 @@ export const retailers: Retailer[] = [
   },
 ];
 
-// schema.org Book, for search engines and rich results. Deliberately omits
-// price, page count, and format: those are not confirmed anywhere in this
-// repo, and structured data that contradicts the retailer page is worse than
-// structured data that is merely sparse.
+// schema.org Book, for search engines and rich results.
 export const bookSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Book",
@@ -51,7 +63,9 @@ export const bookSchema = () => ({
     name: bookMeta.publisher,
   },
   isbn: bookMeta.isbn,
-  datePublished: bookMeta.publicationYear,
+  bookFormat: "https://schema.org/Hardcover",
+  numberOfPages: bookMeta.pages,
+  datePublished: bookMeta.publicationDate,
   inLanguage: "en",
   url: HOST_NAME,
   image: `${HOST_NAME}${bookMeta.cover}`,
@@ -59,6 +73,7 @@ export const bookSchema = () => ({
     "@type": "Offer",
     url: retailer.url,
     availability: "https://schema.org/PreOrder",
+    availabilityStarts: bookMeta.publicationDate,
     seller: {
       "@type": "Organization",
       name: retailer.name,

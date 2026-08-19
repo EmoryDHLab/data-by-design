@@ -9,7 +9,7 @@ import { ChapterContext } from "~/chapterContext";
 import SelectedImage from "~/components/home/SelectedImage.client";
 import { Link } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
-import { bookMeta, bookSchema, retailers } from "~/data/bookMeta";
+import { bookFacts, bookMeta, bookSchema, retailers } from "~/data/bookMeta";
 import { trackPreorderClick } from "~/analytics";
 import StructuredData from "~/components/StructuredData";
 import { classNames, HOST_NAME } from "~/utils";
@@ -97,8 +97,13 @@ export default function Index() {
                 more just future.
               </p>
               <div className="order-3 md:order-last mt-8 md:mt-10">
-                <div className="font-power font-bold tracking-[0.2em] text-sm uppercase pb-3">
-                  Preorder Now
+                <div className="flex flex-wrap items-baseline gap-x-4 pb-3">
+                  <span className="font-power font-bold tracking-[0.2em] text-sm uppercase">
+                    Preorder Now
+                  </span>
+                  <span className="font-power text-sm text-black/60">
+                    On sale {bookMeta.publicationDateDisplay}
+                  </span>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {retailers.map((retailer, index) => (
@@ -121,9 +126,11 @@ export default function Index() {
                     </a>
                   ))}
                 </div>
-                <p className="font-power text-sm text-black/60 mt-4">
-                  {bookMeta.publisher} · {bookMeta.publicationYear}
-                </p>
+                <div className="mt-5 font-power text-sm text-black/60 space-y-1">
+                  {bookFacts.map((line) => (
+                    <p key={line[0]}>{line.join(" · ")}</p>
+                  ))}
+                </div>
               </div>
               <p className="order-4 md:order-3 text-lg leading-relaxed max-w-prose mt-6 md:mt-8">
                 From maps of colonial empires to charts of national trade, data
