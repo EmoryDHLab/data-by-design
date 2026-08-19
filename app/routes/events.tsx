@@ -32,6 +32,12 @@ type Event = {
   dateNote?: string;
   city?: string;
   venue?: string;
+  // Street address and postal code are used only in the schema.org markup, to
+  // give search engines and maps an exact location.
+  streetAddress?: string;
+  postalCode?: string;
+  // The venue's own page for the event, when there is one.
+  url?: string;
   // Named speaker, when the event is one person's talk rather than a panel.
   performer?: string;
   title: string;
@@ -40,6 +46,21 @@ type Event = {
 };
 
 const events: Event[] = [
+  {
+    date: "Tuesday, October 20, 2026",
+    month: "Oct",
+    day: "20",
+    weekday: "Tue",
+    year: "2026",
+    time: "7:00pm",
+    startDate: "2026-10-20T19:00:00-04:00",
+    title: "Book launch",
+    city: "Decatur, GA",
+    venue: "Charis Books & More",
+    streetAddress: "184 S Candler St",
+    postalCode: "30030-3740",
+    url: "https://charisbooksandmore.com/",
+  },
   {
     date: "Friday, October 23, 2026",
     month: "Oct",
@@ -157,18 +178,20 @@ function groupByYear(list: Event[]) {
   }, []);
 }
 
-// "New York, NY" -> a PostalAddress. Falls back to a bare locality if the
-// string isn't in "City, ST" form.
-function addressFor(city: string) {
+// "New York, NY" -> a PostalAddress, plus the street address and postal code
+// when the event supplies them. Falls back to a bare locality if the string
+// isn't in "City, ST" form.
+function addressFor(event: Event) {
+  const city = event.city ?? "";
   const match = city.match(/^(.+),\s*([A-Z]{2})$/);
-  return match
-    ? {
-        "@type": "PostalAddress",
-        addressLocality: match[1],
-        addressRegion: match[2],
-        addressCountry: "US",
-      }
-    : { "@type": "PostalAddress", addressLocality: city, addressCountry: "US" };
+  return {
+    "@type": "PostalAddress",
+    ...(event.streetAddress ? { streetAddress: event.streetAddress } : {}),
+    addressLocality: match ? match[1] : city,
+    ...(match ? { addressRegion: match[2] } : {}),
+    ...(event.postalCode ? { postalCode: event.postalCode } : {}),
+    addressCountry: "US",
+  };
 }
 
 // schema.org ItemList of Events, for search engines. Only events with a settled
@@ -189,12 +212,12 @@ function eventsSchema(list: Event[]) {
         startDate: event.startDate,
         eventStatus: "https://schema.org/EventScheduled",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-        url: `${HOST_NAME}/events`,
+        url: event.url ?? `${HOST_NAME}/events`,
         image: `${HOST_NAME}${bookMeta.cover}`,
         location: {
           "@type": "Place",
           name: event.venue ?? event.city,
-          ...(event.city ? { address: addressFor(event.city) } : {}),
+          ...(event.city ? { address: addressFor(event) } : {}),
         },
         ...(event.performer
           ? { performer: { "@type": "Person", name: event.performer } }
@@ -279,7 +302,16 @@ export default function EventsPage() {
                               </p>
                               {event.venue && (
                                 <p className="font-power text-base text-black/70 mt-1">
-                                  {event.venue}
+                                  {event.url ? (
+                                    <a
+                                      href={event.url}
+                                      className="underline underline-offset-4 decoration-1 hover:decoration-2 hover:text-black transition-colors"
+                                    >
+                                      {event.venue}
+                                    </a>
+                                  ) : (
+                                    event.venue
+                                  )}
                                 </p>
                               )}
                               {event.description && (
