@@ -87,7 +87,7 @@ export default function Index() {
                 <img
                   src="/images/bookcover.webp"
                   alt="Data by Design book cover"
-                  className="w-full h-auto shadow-xl"
+                  className="w-full h-auto"
                 />
               </a>
             </figure>
@@ -98,7 +98,7 @@ export default function Index() {
               </p>
               <div className="order-3 md:order-last mt-8 md:mt-10">
                 <div className="flex flex-wrap items-baseline gap-x-4 pb-3">
-                  <span className="font-power font-bold tracking-[0.2em] text-sm uppercase">
+                  <span className="font-power font-bold tracking-widest text-sm uppercase">
                     Preorder Now
                   </span>
                   <span className="font-power text-sm text-black/60">
