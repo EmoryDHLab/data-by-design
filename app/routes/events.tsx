@@ -1,7 +1,9 @@
 import ChapterTitle from "~/components/ChapterTitle";
 import Footer from "~/components/Footer";
+import StructuredData from "~/components/StructuredData";
 import { ChapterContext } from "~/chapterContext";
-import { classNames, pageMetaTags } from "~/utils";
+import { bookMeta } from "~/data/bookMeta";
+import { classNames, pageMetaTags, HOST_NAME } from "~/utils";
 import type { MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () =>
@@ -22,10 +24,16 @@ type Event = {
   weekday?: string;
   year: string;
   time?: string;
+  // ISO 8601 start, used only for schema.org Event markup. Set it only when the
+  // day is actually settled — events still listed as "Jan 11 or 12" have no
+  // real start date, and inventing one would publish false structured data.
+  startDate?: string;
   // Shown when the exact day isn't settled yet.
   dateNote?: string;
   city?: string;
   venue?: string;
+  // Named speaker, when the event is one person's talk rather than a panel.
+  performer?: string;
   title: string;
   description?: string;
   tbd?: boolean;
@@ -38,6 +46,7 @@ const events: Event[] = [
     day: "23",
     weekday: "Fri",
     year: "2026",
+    startDate: "2026-10-23",
     title: "Book party at ASA, with Miriam Posner and Julian Posada",
     city: "Chicago, IL",
   },
@@ -48,6 +57,8 @@ const events: Event[] = [
     weekday: "Tue",
     year: "2026",
     time: "7:00pm",
+    // EDT: US daylight time runs through November 1, 2026.
+    startDate: "2026-10-27T19:00:00-04:00",
     title: "Talk at Parsons School of Design",
     city: "New York, NY",
   },
@@ -58,6 +69,7 @@ const events: Event[] = [
     weekday: "Thu",
     year: "2026",
     time: "6:30pm arrival / 7:00pm start",
+    startDate: "2026-10-29T19:00:00-04:00",
     title: "NYC book launch",
     city: "New York, NY",
   },
@@ -67,7 +79,9 @@ const events: Event[] = [
     day: "2",
     weekday: "Mon",
     year: "2026",
+    startDate: "2026-11-02",
     title: "Tanvi Sharma: workshop and talk",
+    performer: "Tanvi Sharma",
     city: "Northampton, MA",
     venue: "Smith College",
   },
@@ -143,6 +157,58 @@ function groupByYear(list: Event[]) {
   }, []);
 }
 
+// "New York, NY" -> a PostalAddress. Falls back to a bare locality if the
+// string isn't in "City, ST" form.
+function addressFor(city: string) {
+  const match = city.match(/^(.+),\s*([A-Z]{2})$/);
+  return match
+    ? {
+        "@type": "PostalAddress",
+        addressLocality: match[1],
+        addressRegion: match[2],
+        addressCountry: "US",
+      }
+    : { "@type": "PostalAddress", addressLocality: city, addressCountry: "US" };
+}
+
+// schema.org ItemList of Events, for search engines. Only events with a settled
+// startDate are included, since Event markup without a real start date is
+// invalid and would misreport the tour.
+function eventsSchema(list: Event[]) {
+  const dated = list.filter((event) => event.startDate);
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${bookMeta.title} events`,
+    itemListElement: dated.map((event, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Event",
+        name: event.title,
+        startDate: event.startDate,
+        eventStatus: "https://schema.org/EventScheduled",
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        url: `${HOST_NAME}/events`,
+        image: `${HOST_NAME}${bookMeta.cover}`,
+        location: {
+          "@type": "Place",
+          name: event.venue ?? event.city,
+          ...(event.city ? { address: addressFor(event.city) } : {}),
+        },
+        ...(event.performer
+          ? { performer: { "@type": "Person", name: event.performer } }
+          : {}),
+        about: {
+          "@type": "Book",
+          name: `${bookMeta.title}: ${bookMeta.subtitle}`,
+          isbn: bookMeta.isbn,
+        },
+      },
+    })),
+  };
+}
+
 const DateBox = ({ event }: { event: Event }) => (
   <div className="w-20 md:w-24">
     <div className="w-20 h-20 md:w-24 md:h-24 bg-black/[0.07] flex flex-col items-center justify-center text-center leading-none">
@@ -185,6 +251,7 @@ export default function EventsPage() {
           subtitle="Book talks, launches, and appearances"
         />
         <main id="main-content" className="pb-36">
+          <StructuredData data={eventsSchema(upcoming)} />
           <div className="mx-auto max-w-5xl px-6 md:px-10 pt-16">
             {groupByYear(upcoming).map(({ year, events: yearEvents }) => (
               <section key={year} className="mb-16 last:mb-0">

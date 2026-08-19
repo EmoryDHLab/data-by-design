@@ -1,4 +1,5 @@
 import SiteTitle from "./home/SiteTitle";
+import { trackPreorderClick } from "~/analytics";
 
 export default function Footer() {
   return (
@@ -29,6 +30,7 @@ export default function Footer() {
                 <a
                   className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
                   href="https://mitpress.mit.edu/9780262056182/data-by-design/"
+                  onClick={() => trackPreorderClick("MIT Press", "footer")}
                 >
                   MIT Press
                 </a>
