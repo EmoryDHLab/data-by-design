@@ -132,7 +132,7 @@ export default function Index() {
                   ))}
                 </div>
               </div>
-              <p className="order-4 md:order-3 text-lg leading-relaxed max-w-prose mt-6 md:mt-8">
+              <p className="order-4 md:order-3 text-lg leading-relaxed max-w-prose mt-6 md:mt-3">
                 From maps of colonial empires to charts of national trade, data
                 visualization has long been used to consolidate knowledge and
                 power. But just as often, it has been used to uncover oppression
