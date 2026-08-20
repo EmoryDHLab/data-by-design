@@ -32,8 +32,10 @@ type Event = {
   dateNote?: string;
   city?: string;
   venue?: string;
-  // Street address and postal code are used only in the schema.org markup, to
-  // give search engines and maps an exact location.
+  // The street address is shown under the venue, and both it and the postal
+  // code feed the schema.org markup, to give search engines and maps an exact
+  // location. The city and state aren't repeated here — they already have their
+  // own column beside the venue.
   streetAddress?: string;
   postalCode?: string;
   // The venue's own page for the event, when there is one.
@@ -57,7 +59,7 @@ const events: Event[] = [
     title: "Book launch",
     city: "Decatur, GA",
     venue: "Charis Books & More",
-    streetAddress: "184 S Candler St",
+    streetAddress: "184 S. Candler St",
     postalCode: "30030-3740",
     url: "https://charisbooksandmore.com/",
   },
@@ -93,6 +95,9 @@ const events: Event[] = [
     startDate: "2026-10-29T19:00:00-04:00",
     title: "NYC book launch",
     city: "New York, NY",
+    venue: "P&T Knitwear Bookstore",
+    streetAddress: "180 Orchard St",
+    postalCode: "10002",
   },
   {
     date: "Monday, November 2, 2026",
@@ -107,14 +112,17 @@ const events: Event[] = [
     venue: "Smith College",
   },
   {
-    date: "Tuesday, November 10 or Thursday, November 12, 2026",
+    date: "Thursday, November 12, 2026",
     month: "Nov",
     day: "10/12",
     year: "2026",
-    dateNote: "Tuesday, November 10 or Thursday, November 12",
-    title: "Event details to come",
-    city: "Boston / Cambridge, MA",
-    tbd: true,
+    dateNote: "Thursday, November 12",
+    title: "Boston Public Library Book Signing",
+    city: "Boston, MA",
+    venue: "Norman B. Leventhal Map & Education Center",
+    streetAddress: "700 Boylston St",
+    postalCode: "02116",
+
   },
   {
     date: "November 10–14, 2026 (exact date TBD)",
@@ -312,6 +320,11 @@ export default function EventsPage() {
                                   ) : (
                                     event.venue
                                   )}
+                                </p>
+                              )}
+                              {event.streetAddress && (
+                                <p className="font-power text-base text-black/50 mt-0.5">
+                                  {event.streetAddress}
                                 </p>
                               )}
                               {event.description && (
