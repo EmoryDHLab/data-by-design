@@ -15,6 +15,16 @@ export const meta: MetaFunction = () =>
     image: "/images/bookcover.webp",
   });
 
+// The kinds of appearance on the tour. Each one gets a color, shown as a dot
+// before its label, so the list can be scanned by type.
+type EventKind = "talk" | "workshop" | "conference";
+
+const eventKinds: Record<EventKind, { label: string; dot: string }> = {
+  talk: { label: "Author talk", dot: "bg-imagePrimary" },
+  workshop: { label: "Workshop", dot: "bg-dataPrimary" },
+  conference: { label: "Conference", dot: "bg-peoplePrimary" },
+};
+
 type Event = {
   // The full date, spelled out. Used for screen readers and as the source of
   // truth for the abbreviated parts shown in the date box.
@@ -43,6 +53,7 @@ type Event = {
   // Named speaker, when the event is one person's talk rather than a panel.
   performer?: string;
   title: string;
+  kind: EventKind;
   description?: string;
   tbd?: boolean;
 };
@@ -56,7 +67,8 @@ const events: Event[] = [
     year: "2026",
     time: "7:00pm",
     startDate: "2026-10-20T19:00:00-04:00",
-    title: "Book launch",
+    title: "Book Launch",
+    kind: "talk",
     city: "Decatur, GA",
     venue: "Charis Books & More",
     streetAddress: "184 S. Candler St",
@@ -71,6 +83,7 @@ const events: Event[] = [
     year: "2026",
     startDate: "2026-10-23",
     title: "Book party at ASA, with Miriam Posner and Julian Posada",
+    kind: "conference",
     city: "Chicago, IL",
   },
   {
@@ -83,6 +96,7 @@ const events: Event[] = [
     // EDT: US daylight time runs through November 1, 2026.
     startDate: "2026-10-27T19:00:00-04:00",
     title: "Talk at Parsons School of Design",
+    kind: "talk",
     city: "New York, NY",
   },
   {
@@ -93,7 +107,8 @@ const events: Event[] = [
     year: "2026",
     time: "6:30pm arrival / 7:00pm start",
     startDate: "2026-10-29T19:00:00-04:00",
-    title: "NYC book launch",
+    title: "New York Book Launch",
+    kind: "talk",
     city: "New York, NY",
     venue: "P&T Knitwear Bookstore",
     streetAddress: "180 Orchard St",
@@ -106,7 +121,8 @@ const events: Event[] = [
     weekday: "Mon",
     year: "2026",
     startDate: "2026-11-02",
-    title: "Tanvi Sharma: workshop and talk",
+    title: "Workshop and Talk",
+    kind: "workshop",
     performer: "Tanvi Sharma",
     city: "Northampton, MA",
     venue: "Smith College",
@@ -116,25 +132,26 @@ const events: Event[] = [
     month: "Nov",
     day: "10/12",
     year: "2026",
-    dateNote: "Thursday, November 12",
-    title: "Boston Public Library Book Signing",
+    title: "Lauren Klein in conversation with Arvind Satyanarayan" ,
+    kind: "talk",
     city: "Boston, MA",
-    venue: "Norman B. Leventhal Map & Education Center",
+    venue: "Norman B. Leventhal Map & Education Center, Boston Public Library.",
     streetAddress: "700 Boylston St",
     postalCode: "02116",
 
   },
   {
-    date: "November 10–14, 2026 (exact date TBD)",
+    date: "November 10–14, 2026",
     month: "Nov",
     day: "10–14",
     year: "2026",
     dateNote: "Exact date TBD",
     title: "Lauren Klein and Shiyao Li at IEEE VIS",
+    kind: "conference",
     tbd: true,
   },
   {
-    date: "Friday, January 8, 2027 (likely)",
+    date: "Friday, January 8, 2027",
     month: "Jan",
     day: "8",
     weekday: "Fri",
@@ -142,6 +159,7 @@ const events: Event[] = [
     dateNote: "Date not yet confirmed",
     title:
       "Book party at MLA, with Sari Altschuler, Molly Farrell, and Miriam Posner",
+    kind: "conference",
     city: "Los Angeles, CA",
     tbd: true,
   },
@@ -150,30 +168,34 @@ const events: Event[] = [
     month: "Jan",
     day: "11/12",
     year: "2027",
-    dateNote: "January 11 or 12",
-    title: "Lauren Klein at a historical mapping symposium",
+    title: "Lauren Klein at a Historical Mapping Symposium",
+    kind: "conference",
     city: "Austin, TX",
     venue: "UT Austin",
+    tbd: true,
+    
   },
   {
     date: "January 28 or 29, 2027",
     month: "Jan",
     day: "28/29",
     year: "2027",
-    dateNote: "January 28 or 29",
     title: "Lauren Klein",
+    kind: "talk",
     city: "Charlottesville, VA",
     venue: "University of Virginia",
+        tbd: true,
   },
   {
     date: "February 10 or 11, 2027",
     month: "Feb",
     day: "10/11",
     year: "2027",
-    dateNote: "February 10 or 11",
     title: "Lauren Klein",
+    kind: "talk",
     city: "Norman, OK",
     venue: "University of Oklahoma",
+        tbd: true,
   },
 ];
 
@@ -240,6 +262,22 @@ function eventsSchema(list: Event[]) {
   };
 }
 
+// The label shown beside an event, with a dot in the color of its kind. The
+// words carry the meaning on their own, so the color is reinforcement rather
+// than the only signal — it stays readable without color vision.
+const KindLabel = ({ kind }: { kind: EventKind }) => (
+  <span className="inline-flex items-center gap-2 font-power font-bold uppercase text-[0.625rem] tracking-[0.15em] text-black/60">
+    <span
+      className={classNames(
+        "w-2 h-2 rounded-full shrink-0",
+        eventKinds[kind].dot
+      )}
+      aria-hidden
+    />
+    {eventKinds[kind].label}
+  </span>
+);
+
 const DateBox = ({ event }: { event: Event }) => (
   <div className="w-20 md:w-24">
     <div className="w-20 h-20 md:w-24 md:h-24 bg-black/[0.07] flex flex-col items-center justify-center text-center leading-none">
@@ -284,6 +322,11 @@ export default function EventsPage() {
         <main id="main-content" className="pb-36">
           <StructuredData data={eventsSchema(upcoming)} />
           <div className="mx-auto max-w-5xl px-6 md:px-10 pt-16">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pb-10">
+              {(Object.keys(eventKinds) as EventKind[]).map((kind) => (
+                <KindLabel key={kind} kind={kind} />
+              ))}
+            </div>
             {groupByYear(upcoming).map(({ year, events: yearEvents }) => (
               <section key={year} className="mb-16 last:mb-0">
                 <h2 className="font-power font-bold uppercase tracking-[0.2em] text-sm text-black/60 pb-3 border-b border-black/25">
@@ -305,6 +348,9 @@ export default function EventsPage() {
                           )}
                           <div className="flex-1 flex flex-col lg:flex-row lg:items-start gap-x-8 gap-y-2">
                             <div className="flex-1">
+                              <div className="mb-2">
+                                <KindLabel kind={event.kind} />
+                              </div>
                               <p className="font-power text-lg md:text-xl leading-snug">
                                 {event.title}
                               </p>
