@@ -268,7 +268,7 @@ function eventsSchema(list: Event[]) {
 // words carry the meaning on their own, so the color is reinforcement rather
 // than the only signal — it stays readable without color vision.
 const KindLabel = ({ kind }: { kind: EventKind }) => (
-  <span className="inline-flex items-center gap-2 font-power font-bold uppercase text-[0.625rem] tracking-[0.15em] text-black/60">
+  <span className="inline-flex items-center gap-2 font-power font-bold uppercase text-xs tracking-[0.15em] text-black/60">
     <span
       className={classNames(
         "w-2 h-2 rounded-full shrink-0",
@@ -282,8 +282,8 @@ const KindLabel = ({ kind }: { kind: EventKind }) => (
 
 // One quiet type treatment, shared by the weekday, the time, and the city on
 // mobile, so each row speaks in two voices — the title, and small print — rather
-// than in five slightly different ones. Size is set per use: the time carries
-// real information, so it runs a step larger than the labels around it.
+// than in five slightly different ones. Size is set per use, but the small print
+// all sits at text-xs on mobile, which is where the type scale bottoms out.
 const META = "font-power uppercase tracking-[0.15em] text-black/50";
 
 // The city leads its own column on desktop, so there it's a heading. On mobile
@@ -295,7 +295,7 @@ const CITY =
 const DateBox = ({ event }: { event: Event }) => (
   <div className="w-16 md:w-24">
     <div className="w-16 h-16 md:w-24 md:h-24 bg-black/[0.07] flex flex-col items-center justify-center text-center leading-none">
-      <span className="font-power font-bold uppercase text-[0.625rem] md:text-sm tracking-[0.15em] ps-[0.15em] md:tracking-[0.2em] md:ps-[0.2em]">
+      <span className="font-power font-bold uppercase text-xs md:text-sm tracking-[0.15em] ps-[0.15em] md:tracking-[0.2em] md:ps-[0.2em]">
         {event.month}
       </span>
       <span
@@ -310,7 +310,7 @@ const DateBox = ({ event }: { event: Event }) => (
       </span>
     </div>
     {event.weekday && (
-      <div className={classNames(META, "text-[0.625rem] text-center mt-1.5 md:mt-2")}>
+      <div className={classNames(META, "text-xs text-center mt-1.5 md:mt-2")}>
         {event.weekday}
       </div>
     )}
@@ -400,7 +400,7 @@ export default function EventsPage() {
                           {(event.city || event.time || event.dateNote) && (
                             <div className="md:order-1 shrink-0 md:w-44 lg:w-52 flex flex-wrap items-baseline gap-x-3 gap-y-1 md:block">
                               {event.city && (
-                                <h3 className={classNames(META, "text-base", CITY)}>
+                                <h3 className={classNames(META, "text-xs", CITY)}>
                                   {event.city}
                                 </h3>
                               )}
