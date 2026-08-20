@@ -42,10 +42,11 @@ type Event = {
   dateNote?: string;
   city?: string;
   venue?: string;
-  // The street address is shown under the venue, and both it and the postal
-  // code feed the schema.org markup, to give search engines and maps an exact
-  // location. The city and state aren't repeated here — they already have their
-  // own column beside the venue.
+  // The street address is shown under the venue, with the postal code after it,
+  // and both feed the schema.org markup, to give search engines and maps an
+  // exact location. The city and state aren't repeated here — they already have
+  // their own column beside the venue. Store the ZIP+4 when there is one: the
+  // markup uses it in full, and the line only shows the first five digits.
   streetAddress?: string;
   postalCode?: string;
   // The venue's own page for the event, when there is one.
@@ -82,9 +83,10 @@ const events: Event[] = [
     weekday: "Fri",
     year: "2026",
     startDate: "2026-10-23",
-    title: "Book party at ASA, with Miriam Posner and Julian Posada",
+    title: "Lauren Klein in conversation with Miriam Posner and Julian Posada",
     kind: "conference",
     city: "Chicago, IL",
+        venue: "American Studies Association",
   },
   {
     date: "Tuesday, October 27, 2026",
@@ -278,23 +280,37 @@ const KindLabel = ({ kind }: { kind: EventKind }) => (
   </span>
 );
 
+// One quiet type treatment, shared by the weekday, the time, and the city on
+// mobile, so each row speaks in two voices — the title, and small print — rather
+// than in five slightly different ones. Size is set per use: the time carries
+// real information, so it runs a step larger than the labels around it.
+const META = "font-power uppercase tracking-[0.15em] text-black/50";
+
+// The city leads its own column on desktop, so there it's a heading. On mobile
+// there is no column to anchor, and a second bold line only competes with the
+// title, so it falls back to small print beside the time.
+const CITY =
+  "md:text-xl lg:text-2xl md:font-bold md:normal-case md:tracking-normal md:text-black md:leading-tight";
+
 const DateBox = ({ event }: { event: Event }) => (
-  <div className="w-20 md:w-24">
-    <div className="w-20 h-20 md:w-24 md:h-24 bg-black/[0.07] flex flex-col items-center justify-center text-center leading-none">
-      <span className="font-power font-bold uppercase text-xs md:text-sm tracking-[0.2em] ps-[0.2em]">
+  <div className="w-16 md:w-24">
+    <div className="w-16 h-16 md:w-24 md:h-24 bg-black/[0.07] flex flex-col items-center justify-center text-center leading-none">
+      <span className="font-power font-bold uppercase text-[0.625rem] md:text-sm tracking-[0.15em] ps-[0.15em] md:tracking-[0.2em] md:ps-[0.2em]">
         {event.month}
       </span>
       <span
         className={classNames(
-          "font-power tabular-nums mt-1.5",
-          event.day.length > 2 ? "text-xl md:text-2xl" : "text-3xl md:text-4xl"
+          "font-power tabular-nums mt-1 md:mt-1.5",
+          event.day.length > 2
+            ? "text-base md:text-2xl"
+            : "text-2xl md:text-4xl"
         )}
       >
         {event.day.length === 1 ? `0${event.day}` : event.day}
       </span>
     </div>
     {event.weekday && (
-      <div className="font-power uppercase text-[0.625rem] tracking-[0.15em] text-black/50 text-center mt-2">
+      <div className={classNames(META, "text-[0.625rem] text-center mt-1.5 md:mt-2")}>
         {event.weekday}
       </div>
     )}
@@ -319,77 +335,87 @@ export default function EventsPage() {
           title="Events"
           subtitle="Book talks, launches, and appearances"
         />
-        <main id="main-content" className="pb-36">
+        <main id="main-content" className="pb-24 md:pb-36">
           <StructuredData data={eventsSchema(upcoming)} />
-          <div className="mx-auto max-w-5xl px-6 md:px-10 pt-16">
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pb-10">
+          <div className="mx-auto max-w-5xl px-6 md:px-10 pt-10 md:pt-16">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pb-8 md:pb-10">
               {(Object.keys(eventKinds) as EventKind[]).map((kind) => (
                 <KindLabel key={kind} kind={kind} />
               ))}
             </div>
             {groupByYear(upcoming).map(({ year, events: yearEvents }) => (
-              <section key={year} className="mb-16 last:mb-0">
+              <section key={year} className="mb-12 md:mb-16 last:mb-0">
                 <h2 className="font-power font-bold uppercase tracking-[0.2em] text-sm text-black/60 pb-3 border-b border-black/25">
                   {year}
                 </h2>
                 <ul className="divide-y divide-black/10">
                   {yearEvents.map((event) => (
                     <li key={event.date + event.title}>
-                      <div className="flex flex-col sm:flex-row gap-x-6 lg:gap-x-10 gap-y-4 py-8">
+                      <div className="flex gap-4 text-base md:gap-6 lg:gap-10 py-6 md:py-8">
                         <time dateTime={event.date} className="block shrink-0">
                           <span className="sr-only">{event.date}</span>
                           <DateBox event={event} />
                         </time>
-                        <div className="flex-1 flex flex-col md:flex-row md:items-start gap-x-6 lg:gap-x-10 gap-y-3">
-                          {event.city && (
-                            <h3 className="shrink-0 md:w-44 lg:w-52 font-power font-bold leading-tight text-lg md:text-xl lg:text-2xl">
-                              {event.city}
-                            </h3>
-                          )}
-                          <div className="flex-1 flex flex-col lg:flex-row lg:items-start gap-x-8 gap-y-2">
-                            <div className="flex-1">
-                              <div className="mb-2">
-                                <KindLabel kind={event.kind} />
-                              </div>
-                              <p className="font-power text-lg md:text-xl leading-snug">
-                                {event.title}
-                              </p>
-                              {event.venue && (
-                                <p className="font-power text-base text-black/70 mt-1">
-                                  {event.url ? (
-                                    <a
-                                      href={event.url}
-                                      className="underline underline-offset-4 decoration-1 hover:decoration-2 hover:text-black transition-colors"
-                                    >
-                                      {event.venue}
-                                    </a>
-                                  ) : (
-                                    event.venue
-                                  )}
-                                </p>
-                              )}
-                              {event.streetAddress && (
-                                <p className="font-power text-base text-black/50 mt-0.5">
-                                  {event.streetAddress}
-                                </p>
-                              )}
-                              {event.description && (
-                                <p className="mt-3 text-base">
-                                  {event.description}
-                                </p>
-                              )}
+                        <div className="flex-1 min-w-0 flex flex-col md:flex-row md:items-start gap-x-6 lg:gap-x-10 gap-y-2 md:gap-y-3">
+                          {/* What the event is, and where in the building. The
+                              loudest thing in the row, at every width. */}
+                          <div className="flex-1 min-w-0 md:order-2">
+                            <div className="mb-1.5 md:mb-2">
+                              <KindLabel kind={event.kind} />
                             </div>
-                            {(event.time || event.dateNote) && (
-                              <div className="shrink-0 lg:w-36 font-power uppercase tracking-wider text-xs text-black/60 lg:pt-1.5">
-                                {event.time && <div>{event.time}</div>}
-                                {event.dateNote && (
-                                  <div className="normal-case tracking-normal text-black/50 mt-1">
-                                    {event.dateNote}
-                                  </div>
+                            <p className="font-power text-lg md:text-xl leading-snug">
+                              {event.title}
+                            </p>
+                            {event.venue && (
+                              <p className="font-power text-sm md:text-base text-black/70 mt-1">
+                                {event.url ? (
+                                  <a
+                                    href={event.url}
+                                    className="underline underline-offset-4 decoration-1 hover:decoration-2 hover:text-black transition-colors"
+                                  >
+                                    {event.venue}
+                                  </a>
+                                ) : (
+                                  event.venue
                                 )}
-                              </div>
+                              </p>
+                            )}
+                            {event.streetAddress && (
+                              <p className="font-power text-sm md:text-base text-black/50 mt-0.5">
+                                {event.streetAddress}
+                                {/* The five-digit ZIP reads better in body text
+                                    than the ZIP+4 kept for the markup. */}
+                                {event.postalCode &&
+                                  `, ${event.postalCode.split("-")[0]}`}
+                              </p>
+                            )}
+                            {event.description && (
+                              <p className="mt-3 text-base">
+                                {event.description}
+                              </p>
                             )}
                           </div>
+                          {/* City and time: a column of their own on desktop,
+                              one line of small print under the event on mobile. */}
+                          {(event.city || event.time || event.dateNote) && (
+                            <div className="md:order-1 shrink-0 md:w-44 lg:w-52 flex flex-wrap items-baseline gap-x-3 gap-y-1 md:block">
+                              {event.city && (
+                                <h3 className={classNames(META, "text-base", CITY)}>
+                                  {event.city}
+                                </h3>
+                              )}
+                              {event.time && (
+                                <div className={classNames(META, "text-xs md:text-sm md:mt-1.5")}>
+                                  {event.time}
+                                </div>
+                              )}
+                              {event.dateNote && (
+                                <div className="font-power text-base md:text-xs text-black/50 md:mt-1">
+                                  {event.dateNote}
+                                </div>
+                              )}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </li>
