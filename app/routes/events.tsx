@@ -152,7 +152,6 @@ const events: Event[] = [
     venue: "Norman B. Leventhal Map & Education Center, Boston Public Library.",
     streetAddress: "700 Boylston St",
     postalCode: "02116",
-
   },
   {
     date: "November 10–14, 2026",
@@ -163,7 +162,6 @@ const events: Event[] = [
     title: "Lauren Klein and Shiyao Li at IEEE VIS",
     description: "Lauren Klein and Shiyao Li will present \"What Data Do and Do Not Represent\" at the IEEE VIS Conference.",
     kind: "conference",
-    tbd: true,
   },
   {
     date: "Friday, January 8, 2027",
@@ -175,7 +173,6 @@ const events: Event[] = [
     description: "Book party at the MLA, with Sari Altschuler, Molly Farrell, and Miriam Posner",  
     kind: "party",
     city: "Los Angeles, CA",
-    tbd: true,
   },
   {
     date: "January 11-12, 2027",
@@ -187,7 +184,6 @@ const events: Event[] = [
     kind: "conference",
     city: "Austin, TX",
     venue: "UT Austin",
-    tbd: true,
   },
   {
     date: "January 28, 2027",
@@ -199,7 +195,6 @@ const events: Event[] = [
     kind: "talk",
     city: "Charlottesville, VA",
     venue: "University of Virginia",
-        tbd: true,
   },
     {
     date: "January 29, 2027",
@@ -211,7 +206,6 @@ const events: Event[] = [
     kind: "talk",
     city: "Charlottesville, VA",
     venue: "University of Virginia",
-        tbd: true,
   },
   {
     date: "February 10, 2027",
@@ -223,7 +217,6 @@ const events: Event[] = [
     kind: "talk",
     city: "Norman, OK",
     venue: "University of Oklahoma",
-        tbd: true,
   },
 ];
 
