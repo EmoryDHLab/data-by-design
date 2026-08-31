@@ -55,6 +55,9 @@ type Event = {
   performer?: string;
   title: string;
   kind: EventKind;
+  // A sentence or two on what the event is, for anything the title can't carry
+  // on its own — a co-host, a registration note, what the talk covers. Shown
+  // under the address, and used as the schema.org Event description.
   description?: string;
   tbd?: boolean;
 };
@@ -241,6 +244,7 @@ function eventsSchema(list: Event[]) {
       item: {
         "@type": "Event",
         name: event.title,
+        ...(event.description ? { description: event.description } : {}),
         startDate: event.startDate,
         eventStatus: "https://schema.org/EventScheduled",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
