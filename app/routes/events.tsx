@@ -191,7 +191,7 @@ const events: Event[] = [
     day: "28",
     year: "2027",
     title: "Talk at the University of Virginia",
-    description: "A public talk by Lauren Klein as part of the For the (Digital) Humanities series"
+    description: "A public talk by Lauren Klein as part of the For the (Digital) Humanities series",
     kind: "talk",
     city: "Charlottesville, VA",
     venue: "University of Virginia",
@@ -202,7 +202,7 @@ const events: Event[] = [
     day: "29",
     year: "2027",
     title: "Seminar at the University of Virginia",
-    description: "A seminar by Lauren Klein as part of the For the (Digital) Humanities series"
+    description: "A seminar by Lauren Klein as part of the For the (Digital) Humanities series",
     kind: "talk",
     city: "Charlottesville, VA",
     venue: "University of Virginia",
@@ -213,7 +213,7 @@ const events: Event[] = [
     day: "10",
     year: "2027",
     title: "Talk at the University of Oklahoma",
-    description: "A public talk by Lauren Klein"
+    description: "A public talk by Lauren Klein",
     kind: "talk",
     city: "Norman, OK",
     venue: "University of Oklahoma",
