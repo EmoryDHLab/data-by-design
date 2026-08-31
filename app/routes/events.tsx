@@ -17,12 +17,14 @@ export const meta: MetaFunction = () =>
 
 // The kinds of appearance on the tour. Each one gets a color, shown as a dot
 // before its label, so the list can be scanned by type.
-type EventKind = "talk" | "workshop" | "conference";
+type EventKind = "talk" | "conversation" | "workshop" | "conference" | "party";
 
 const eventKinds: Record<EventKind, { label: string; dot: string }> = {
   talk: { label: "Author talk", dot: "bg-imagePrimary" },
+  conversation: { label: "Conversation", dot: "bg-changePrimary" },
   workshop: { label: "Workshop", dot: "bg-dataPrimary" },
   conference: { label: "Conference", dot: "bg-peoplePrimary" },
+  party: { label: "Party", dot: "bg-willardPrimary" },
 };
 
 type Event = {
@@ -88,7 +90,7 @@ const events: Event[] = [
     year: "2026",
     startDate: "2026-10-23",
     title: "Lauren Klein in conversation with Miriam Posner and Julian Posada",
-    kind: "conference",
+    kind: "conversation",
     city: "Chicago, IL",
         venue: "American Studies Association",
   },
@@ -139,7 +141,7 @@ const events: Event[] = [
     day: "10/12",
     year: "2026",
     title: "Lauren Klein in conversation with Arvind Satyanarayan" ,
-    kind: "talk",
+    kind: "conversation",
     city: "Boston, MA",
     venue: "Norman B. Leventhal Map & Education Center, Boston Public Library.",
     streetAddress: "700 Boylston St",
@@ -165,7 +167,7 @@ const events: Event[] = [
     dateNote: "Date not yet confirmed",
     title:
       "Book party at MLA, with Sari Altschuler, Molly Farrell, and Miriam Posner",
-    kind: "conference",
+    kind: "party",
     city: "Los Angeles, CA",
     tbd: true,
   },
