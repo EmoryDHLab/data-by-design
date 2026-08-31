@@ -24,7 +24,7 @@ const eventKinds: Record<EventKind, { label: string; dot: string }> = {
   conversation: { label: "Conversation", dot: "bg-changePrimary" },
   workshop: { label: "Workshop", dot: "bg-dataPrimary" },
   conference: { label: "Conference", dot: "bg-peoplePrimary" },
-  party: { label: "Party", dot: "bg-willardPrimary" },
+  party: { label: "Party", dot: "bg-knowledgePrimary" },
 };
 
 type Event = {

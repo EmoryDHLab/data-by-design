@@ -110,6 +110,11 @@ export default function Index() {
                     <a
                       key={retailer.name}
                       href={retailer.url}
+                      // The retailers are outside the site, so they get their
+                      // own tab. noopener without noreferrer: the referrer is
+                      // how the publisher sees this site as a traffic source.
+                      target="_blank"
+                      rel="noopener"
                       onClick={() =>
                         trackPreorderClick(retailer.name, "homepage_hero")
                       }
@@ -123,6 +128,7 @@ export default function Index() {
                       )}
                     >
                       {retailer.name}
+                      <span className="sr-only"> (opens in a new tab)</span>
                     </a>
                   ))}
                 </div>

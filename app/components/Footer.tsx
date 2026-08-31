@@ -4,7 +4,7 @@ import { trackPreorderClick } from "~/analytics";
 export default function Footer() {
   return (
     <footer className="grid md:grid-cols-12 gap-x-6 md:gap-x-12 p-8 md:p-16 lg:p-24 xl:p-32 xl:pt-12 font-neueMontreal bg-offblack text-offwhite">
-      <div className="col-span-12  md:col-span-3 flex flex-col">
+      <div className="col-span-12  md:col-span-3 flex flex-col pt-8 md:pt-0">
         <cite className="sr-only">Data by Design</cite>
         <SiteTitle showTag={false} className="" />
         <svg
@@ -16,42 +16,49 @@ export default function Footer() {
           className="fill-offwhite"
         >
           <g>
-            <foreignObject x={52} y={0} height={320} width={368}>
-              <p className="md:text-lg text-base font-power tracking-wide ">
-                An Interactive History of Data Visualization, 1789-1900
-              </p>
-              <p className="md:text-xl text-lg font-neueMontrealLight mt-4">
-                Expanded version available in print as{" "}
-                <cite>
-                  Data by Design: Visualization and Power from Abolition to
-                  the Dawn of Data Science
-                </cite>{" "}
-                (
-                <a
-                  className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
-                  href="https://mitpress.mit.edu/9780262056182/data-by-design/"
-                  onClick={() => trackPreorderClick("MIT Press", "footer")}
-                >
-                  MIT Press
-                </a>
-                , 2026).
-              </p>
-              <p className="md:text-lg text-sm font-neueMontrealLight mt-6">
-                Please contact the project director,{" "}
-                <a
-                  className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
-                  href="mailto:lauren.klein@emory.edu"
-                >
-                  Lauren Klein
-                </a>
-                , with any additional questions.
-              </p>
+            {/* Flush left on mobile, so this copy lines up with the Cite as
+                column. From md the 52-unit inset returns, which is where it
+                aligns with the "Design" line of the wordmark. The inset lives
+                in padding rather than the x attribute so it can be responsive;
+                52px here is 52 user units, the same as x={52} was. */}
+            <foreignObject x={0} y={0} height={320} width={420}>
+              <div className="md:ps-[52px]">
+                <p className="md:text-lg text-base font-power tracking-wide ">
+                  An Interactive History of Data Visualization, 1789-1900
+                </p>
+                <p className="md:text-xl text-lg font-neueMontrealLight mt-4">
+                  Expanded version available in print as{" "}
+                  <cite>
+                    Data by Design: Visualization and Power from Abolition to
+                    the Dawn of Data Science
+                  </cite>{" "}
+                  (
+                  <a
+                    className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
+                    href="https://mitpress.mit.edu/9780262056182/data-by-design/"
+                    onClick={() => trackPreorderClick("MIT Press", "footer")}
+                  >
+                    MIT Press
+                  </a>
+                  , 2026).
+                </p>
+                <p className="md:text-lg text-sm font-neueMontrealLight mt-6">
+                  Please contact the project director,{" "}
+                  <a
+                    className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
+                    href="mailto:lauren.klein@emory.edu"
+                  >
+                    Lauren Klein
+                  </a>
+                  , with any additional questions.
+                </p>
+              </div>
             </foreignObject>
           </g>
         </svg>
       </div>
       {/* SECOND COL */}
-      <div className="col-span-12 md:col-span-4 flex flex-col space-y-4 font-neueMontrealLight leading-6 pt-8 md:pt-0 md:px-8 lg:px-12 text-sm md:text-xs">
+      <div className="col-span-12 md:col-span-4 flex flex-col space-y-4 font-neueMontrealLight leading-6 pt-2 md:pt-0 md:px-8 lg:px-12 text-sm md:text-xs">
         <p className="uppercase text-xs font-neueMontreal">Cite as</p>
         <p className="font-neueMontreal">
           Lauren Klein, Tanvi Sharma, Jay Varner, Margy Adams, Shiyao Li,

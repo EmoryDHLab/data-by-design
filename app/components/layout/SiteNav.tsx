@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigation } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
-import MenuIcon from "../icons/Menu";
 import CloseIcon from "../icons/Close";
 import type { TChapterMeta } from "~/types/chapterMetaTags";
 
@@ -93,10 +92,21 @@ const SiteNav = () => {
       </nav>
       <button
         title="Site Navigation"
-        className="fixed right-6 top-10 text-white z-50 w-8 bg-gray-700 rounded-md"
+        className="fixed right-6 top-10 text-white z-50 w-8 h-8 flex items-center justify-center bg-black border border-white"
         onClick={() => setShow(!show)}
       >
-        {show ? <CloseIcon /> : <MenuIcon />}
+        {show ? (
+          <CloseIcon className="w-full" />
+        ) : (
+          // "G" is the menu glyph in the DxD Icons font, so it must not be
+          // case-transformed. text-3xl matches the width the SVG rendered at.
+          <span
+            className="font-icons normal-case text-3xl leading-none"
+            aria-hidden
+          >
+            G
+          </span>
+        )}
       </button>
     </>
   );
