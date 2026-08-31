@@ -196,12 +196,12 @@ const events: Event[] = [
     city: "Charlottesville, VA",
     venue: "University of Virginia",
   },
-    {
+  {
     date: "January 29, 2027",
     month: "Jan",
     day: "29",
     year: "2027",
-    title: "Semiar at the University of Virginia",
+    title: "Seminar at the University of Virginia",
     description: "A seminar by Lauren Klein as part of the For the (Digital) Humanities series"
     kind: "talk",
     city: "Charlottesville, VA",
