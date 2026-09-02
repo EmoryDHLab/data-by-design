@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AltTextContext } from "~/altTextContext";
 import { ChapterContext } from "~/chapterContext";
 import { classNames } from "~/utils";
@@ -9,33 +9,21 @@ interface Props {
   className?: string;
 }
 
-// Breakpoint widths for IIIF srcset requests. Cantaloupe (the IIIF server)
-// rejects widths larger than the source image (400 error) and doesn't
-// support webp output (415 error) - only jpg/png are safe formats. Kept to
-// a small fixed set (rather than exact-viewport widths) so CloudFront's
-// cache is reused across visitors instead of fragmenting per pixel width.
-const IIIF_WIDTHS = [400, 800, 1200, 1600, 2000];
 const SIZES = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw";
 
-function iiifUrl(fileName: string, width: number) {
-  return `https://iiif.ecds.io/iiif/3/${fileName}.tiff/full/${width},/0/default.png`;
-}
-
-function iiifSrcSet(fileName: string, maxWidth: number) {
-  const widths = IIIF_WIDTHS.filter((w) => w < maxWidth);
-  widths.push(maxWidth);
-  return widths.map((w) => `${iiifUrl(fileName, w)} ${w}w`).join(", ");
+function iiifUrl(fileName: string) {
+  return `https://iiif.ecds.io/iiif/3/${fileName}.tiff/full/1200,/0/default.jpg`;
 }
 
 const Picture = ({ figure, className }: Props) => {
   const { hideSensitiveState } = useContext(ChapterContext);
   const { preferShortAltText } = useContext(AltTextContext);
+  // Local webp/jpg is preferred, IIIF server currently does
+  // not support webp.
+  const [localFailed, setLocalFailed] = useState(false);
+  const useIIIFFallback = localFailed && figure.iiif;
 
   const localPath = `/images/chapters/${figure.fileName}`;
-  const iiifMaxWidth = figure.width || IIIF_WIDTHS[IIIF_WIDTHS.length - 1];
-  const fallbackSrc = figure.iiif
-    ? iiifUrl(figure.fileName, Math.min(1200, iiifMaxWidth))
-    : `${localPath}.jpg`;
 
   const altText =
     (hideSensitiveState
@@ -49,18 +37,15 @@ const Picture = ({ figure, className }: Props) => {
 
   return (
     <picture>
-      {figure.iiif ? (
-        <source
-          srcSet={iiifSrcSet(figure.fileName, iiifMaxWidth)}
-          sizes={SIZES}
-          type="image/jpeg"
-        />
-      ) : (
+      {!useIIIFFallback && (
         <source srcSet={`${localPath}.webp`} type="image/webp" />
       )}
       <img
         className={classNames("mx-auto", className)}
-        src={fallbackSrc}
+        src={useIIIFFallback ? iiifUrl(figure.fileName) : `${localPath}.jpg`}
+        onError={() => {
+          if (!localFailed && figure.iiif) setLocalFailed(true);
+        }}
         alt={altText}
         title={figure.cleanTitle ?? figure.fileName}
         draggable={!hideSensitiveState}
