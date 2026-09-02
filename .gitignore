@@ -18,3 +18,5 @@ node_modules*
 *.tiff
 .react-router/
 *.d.ts
+/public/images/chapters/Chapter*
+/public/images/chapters/Introduction*
