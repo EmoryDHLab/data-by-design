@@ -12,9 +12,9 @@ import Quotation from "~/components/Quotation";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import ChapterBody from "~/components/layout/ChapterBody";
 import { chapterMeta } from "~/data/chapterMeta";
+import Takeaways from "~/components/layout/Takeaways";
 import type { MetaFunction } from "react-router";
 import type { TVizAnchors } from "~/chapterContext";
-import Takeaways from "~/components/layout/Takeaways";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("labor");
@@ -211,8 +211,8 @@ export default function LabourPage() {
         </CenteredLayout>
 
         <ClientOnly>
-          <div className="py-20"> 
-          <Treemap />
+          <div className="py-20">
+            <Treemap />
           </div>
         </ClientOnly>
 
@@ -231,8 +231,8 @@ export default function LabourPage() {
         </CenteredLayout>
 
         <ClientOnly>
-             <div className="py-20"> 
-          <PeopleVersions />
+          <div className="py-20">
+            <PeopleVersions />
           </div>
         </ClientOnly>
 

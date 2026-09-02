@@ -61,7 +61,7 @@
     "postcss": "^8.4.31",
     "prettier": "2.7.1",
     "tailwindcss": "^3.2.4",
-    "typescript": "^5.8.3",
+    "typescript": "^5.9.3",
     "vite": "^6.3.3",
     "vite-plugin-sitemap": "^0.6.2",
     "vite-tsconfig-paths": "^5.1.4"

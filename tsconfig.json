@@ -33,8 +33,7 @@
       ]
     },
     // Vite takes care of building everything, not tsc.
-    "declaration": true,
-    "emitDeclarationOnly": true,
+    "noEmit": true,
     "allowImportingTsExtensions": true,
   },
   "exclude": ["./scripts"]
