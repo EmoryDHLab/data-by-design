@@ -895,7 +895,7 @@ export default function PeabodyPage() {
           </p>
         </CenteredLayout>
         <TwoColumnLayout>
-          <Column shouldPin={true}>
+          <Column>
             <p>
               The absence of Peabody's mural charts from the archive prompted me
               to reimagine Peabody's embodied pedagogy for the present.
@@ -940,7 +940,7 @@ export default function PeabodyPage() {
               that is made by human hands.
             </p>
           </Column>
-          <Column>
+          <Column shouldPin className="md:ml-12">
             <Figure
               figures={[
                 figures["0424a-Caldas-AJB03_M0514"],
@@ -975,7 +975,7 @@ export default function PeabodyPage() {
         </CenteredLayout>
 
         <TwoColumnLayout>
-          <Column shouldPin={true}>
+          <Column>
             <p>
               The tedious, time-intensive nature of the Floor Chart project
               provides another path of connection back to Peabody's original
@@ -1061,7 +1061,7 @@ export default function PeabodyPage() {
               <InlineFootnote index={39}></InlineFootnote>
             </p>
           </Column>
-          <Column>
+          <Column shouldPin className="md:ml-12">
             <Figure
               imageClassName="md:h-[33vh] md:w-auto"
               figures={[
