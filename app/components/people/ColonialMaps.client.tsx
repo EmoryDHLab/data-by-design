@@ -5,9 +5,9 @@ import Figure from "../figures/Figure";
 import figures from "~/data/figures/people.json";
 
 const FIGURES = [
-  figures["0317-Willard1"],
-  figures["0318-Willard2"],
-  figures["0319-Willard3"],
+  figures["0315-willard1"],
+  figures["0316-willard2"],
+  figures["0317-willard3"],
 ];
 
 const ColonialMaps = () => {
@@ -16,13 +16,13 @@ const ColonialMaps = () => {
 
   useEffect(() => {
     switch (hoverState) {
-      case "0317-Willard1":
+      case "0315-willard1":
         setCurrentHover(0);
         break;
-      case "0318-Willard2":
+      case "0316-willard2":
         setCurrentHover(1);
         break;
-      case "0319-Willard3":
+      case "0317-willard3":
         setCurrentHover(2);
         break;
     }

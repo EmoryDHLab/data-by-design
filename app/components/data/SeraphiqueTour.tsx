@@ -107,7 +107,7 @@ export default function SeraphiqueTour({ figure }: Props) {
             mask="url(#seraphique)"
             filter={hideSensitiveState ? "url(#seraphique-blur)" : "none"}
             role="presentation"
-            href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+            href={`/images/chapters/${figure.fileName}.jpg`}
             width="100%"
             className={`duration-[2s] transition-all ease-in-out ${
               hideSensitiveState ? "opacity-30" : "opacity-100"

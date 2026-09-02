@@ -55,11 +55,6 @@ const SelectedImage = ({
                   __html: selectedImage.creditLine ?? "",
                 }}
               />{" "}
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: selectedImage.digitizedLine ?? "",
-                }}
-              />
             </p>
           </figcaption>
         </div>

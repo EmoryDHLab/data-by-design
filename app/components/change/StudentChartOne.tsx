@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import ClientOnly from "~/components/ClientOnly";
 import { useDeviceContext, useResizeObserver } from "~/hooks";
 import PieChart from "~/components/change/PieChart.client";
 import studentData from "~/data/power/studentChartOne.json";
@@ -419,20 +418,18 @@ export default function StudentChartOne({
         }}
       >
         {isDesktop && (
-          <ClientOnly>
-            <PieChart
-              id={id ?? "student-chart-one"}
-              studentData={studentData}
-              className={`pointer-events-${
-                interactive ? "auto" : "none"
-              } order-last md:order-none transition-opacity duration-1000 translate-x-6 opacity-${
-                showPieChart ? 100 : 0
-              }`}
-              interactive={interactive}
-              activeStudent={activeStudent}
-              containerSize={pieChartWidth}
-            />
-          </ClientOnly>
+          <PieChart
+            id={id ?? "student-chart-one"}
+            studentData={studentData}
+            className={`pointer-events-${
+              interactive ? "auto" : "none"
+            } order-last md:order-none transition-opacity duration-1000 translate-x-6 opacity-${
+              showPieChart ? 100 : 0
+            }`}
+            interactive={interactive}
+            activeStudent={activeStudent}
+            containerSize={pieChartWidth}
+          />
         )}
       </div>
     </>

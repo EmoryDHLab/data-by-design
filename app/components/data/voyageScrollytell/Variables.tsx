@@ -1,31 +1,30 @@
 const fontSize = 11;
 const lineHeight = fontSize + 1.2;
 const lineSpacing = fontSize + 2.2;
-const top = 100;
 const end = 300;
 const x1 = 0;
 const x2 = 100;
 const x3 = end - 100;
 const y1 = 3 + fontSize;
-const y2 = lineHeight * 3.75 + top;
-const y3 = lineHeight * 6.5 + top;
-const y4 = lineHeight * 10.5 + top;
-const y5 = lineHeight * 17.5 + top;
-const y6 = lineHeight * 25.5 + top;
-const y7 = lineHeight * 33.5 + top;
-const y8 = lineHeight * 39.5 + top;
-const y9 = lineHeight * 44.5 + top;
+const y2 = lineHeight * 3.75;
+const y3 = lineHeight * 6.5;
+const y4 = lineHeight * 10.5;
+const y5 = lineHeight * 17.5;
+const y6 = lineHeight * 25.5;
+const y7 = lineHeight * 33.5;
+const y8 = lineHeight * 39.5;
+const y9 = lineHeight * 44.5;
 
 const Variables = () => {
   return (
     <g fontSize={fontSize}>
-      <text x={x1} y={y1} fontWeight="bold">
+      <text x={x1} y={y1} className="font-neueMontrealSemiBold">
         Variable name
       </text>
-      <text x={x2} y={y1} fontWeight="bold">
+      <text x={x2} y={y1} className="font-neueMontrealSemiBold">
         Description
       </text>
-      <text x={x3} y={y1} fontWeight="bold">
+      <text x={x3} y={y1} className="font-neueMontrealSemiBold">
         <tspan>
           Derivation <tspan fontStyle="italic">(if</tspan>
         </tspan>{" "}
@@ -182,10 +181,10 @@ const Variables = () => {
           between <tspan fontStyle="italic">Start Date</tspan> and{" "}
         </tspan>
         <tspan x={x3} dy={lineHeight}>
-          <tspan fontStyle="italic">End Dote</tspan>.
+          <tspan fontStyle="italic">End Date</tspan>.
         </tspan>
       </text>
-      <line x1={0} x2={90} y1={0} y2={0} strokeWidth={0.2} stroke="black" />
+      <line x1={0} x2={end} y1={0} y2={0} strokeWidth={0.2} stroke="black" />
       <line
         x1={0}
         x2={end}

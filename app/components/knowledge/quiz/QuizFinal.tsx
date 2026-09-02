@@ -8,47 +8,29 @@ export default function QuizFinal() {
     <div
       className={`transition-all duration-1000 ${
         currentStepCount === 9
-          ? "opacity-100 md:-translate-y-48 md:-translate-x-24 lg:-translate-y-28 lg:-translate-x-32 scale-100 delay-300 pointer-events-auto"
-          : "opacity-0 md:-translate-y-48 md:-translate-x-24 lg:-translate-y-28 lg:-translate-x-32 scale-100 pointer-events-none"
+          ? "opacity-100 md:-translate-x-24  lg:-translate-x-32 scale-100 delay-300 pointer-events-auto"
+          : "opacity-0 md:-translate-x-24  lg:-translate-x-32 scale-100 pointer-events-none"
       }`}
     >
       <div className="text-white px-12 space-y-6 max-w-7xl">
-        <div className="flex items-center pt-12 gap-3">
+        <div className="flex items-center gap-3">
           <span className="text-2xl">🎉</span>
           <h2 className="text-xl font-power text-yellow-400 m-0">
             QUIZ COMPLETE
           </h2>
         </div>
 
-
         <div className="space-y-4">
-  
-
-          <div
-            className="bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-colors cursor-pointer"
-            role="button"
-            tabIndex={0}
-            onClick={() =>
-              window.scrollBy({ top: window.innerHeight, behavior: "smooth" })
-            }
-            onKeyUp={({ key }) => {
-              if (key === "Enter" || key === " ") {
-                window.scrollBy({
-                  top: window.innerHeight,
-                  behavior: "smooth",
-                });
-              }
-            }}
-          >
+          <div className="bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-colors cursor-pointer">
             <div className="flex items-start gap-3">
               <span className="text-lg">📖</span>
               <div>
                 <p className="m-0 text-sm font-medium text-white mb-1">
-                  Continue Reading
+                  Continue the Story
                 </p>
                 <p className="m-0 text-xs text-offwhite leading-relaxed">
-          Learn how nineteenth-century students experienced this process.
-
+                  Explore how these visualization techniques reveal hidden
+                  patterns in centuries of historical data
                 </p>
               </div>
             </div>

@@ -129,7 +129,7 @@ function WillardScrollytell({ figure, triggers }: Props) {
               </mask>
               <image
                 mask="url(#willard-mask)"
-                href={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+                href={`/images/chapters/${figure.fileName}.jpg`}
                 className="transition-all origin-center duration-[3s]  opacity-100"
                 width="100%"
                 height={height}

@@ -2,7 +2,6 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
-import InlineFootnote from "~/components/InlineFootnote";
 
 type TFocusShape = {
   x: number;
@@ -12,41 +11,45 @@ type TFocusShape = {
 };
 
 const triggers = [
-  <span key="300ed3fc">
-    Just as Clarkson’s reintroduction of data to the chart underscored its
-    basis in empirical evidence and buttressed its claims to the truth, so
-    too did his visual modifications.
-  </span>,
-  <span key="d38f0a1c">
-    He shifted the view of the hold lower down the page.
-  </span>,
-  <span key="e29b6c4d">
-    He also added a series of cross sections that showed additional views of
-    the ship from the side.
-    <InlineFootnote index={25} />
-  </span>,
+  <span key="300ed3fc"></span>,
   <span key="ac19f869">
-    Unlike a typical naval diagram, however, Clarkson’s cross sections also
-    included people. These represented the captives themselves, whom
-    Clarkson included as a way to show from multiple perspectives precisely
-    how they were confined.
+    Clarkson created a series of cross-sections that showed each deck from
+    above.
   </span>,
   <span key="f63d8f0c">
-    Here we might recall how Elford’s diagram depicted the captives’ bodies
-    with minimal differentiation.
-    <InlineFootnote index={26} />In Clarkson’s version, however, the
-    captives are shown wearing loincloths, among other additional elements
-    of visual detail.
+    From the side—cross-sections that, like the Plymouth Committee's "Plan,"
+    included human figures intended to indicate how the captives were confined.
   </span>,
-  <span key="b74a2e6f">
-    The men are shackled together in pairs, by both their hands and their
-    feet.
+  <span key="a87bda1c">
+    The result was a set of schematics that carried with them the connotations
+    of accuracy and precision that were associated with the naval diagrams of
+    the time, and yet also enlisted what Ian Baucom characterizes as a
+    "sympathetic grammar" intended to draw those who viewed the chart to the
+    antislavery cause.
   </span>,
-  <span key="c15d9a3b">
-    The women remain unbound, their breasts exposed.
-    <InlineFootnote index={27} />
+  <span key="94a7a3b2">
+    Clarkson's revised chart, entitled "Description of a Slave Ship," was—like
+    the original "Plan,"--accompanied by explanatory text.
   </span>,
-  <span key="a08e4f7c"></span>,
+  <span key="63ba9abc">
+    In addition to the text, Clarkson also included a set of tables intended to
+    reinforce the factual nature of the evidence visualized above.
+  </span>,
+  <span key="1a7c90eb">
+    {" "}
+    The first table shows measurements of the actual ship, along with a scale
+    that indicated how they corresponded to the image.
+  </span>,
+  <span key="5448c43e">
+    There was a small tablet that presented information about the number of
+    captives that had actually been held on the ship.
+  </span>,
+  <span key="06e375fc">
+    The final table presented a comparison between the number of actual captives
+    and those pictured on the diagram, making clear that while the image is
+    informed by data, it is not a direct representation of those numbers and
+    lives.
+  </span>,
   <span key="9b862bca"></span>,
 ];
 
@@ -56,7 +59,7 @@ const height = 2534;
 function ClarksonSideBySideScrollytell() {
   const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
   const [highlightSection, setHighlightSection] = useState<string | undefined>(
-    undefined
+    undefined,
   );
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [focusShapeSize, setFocusShapeSize] = useState<TFocusShape>({
@@ -179,7 +182,7 @@ function ClarksonSideBySideScrollytell() {
               <image
                 filter={hideSensitiveState ? "url(#clarkson-blur)" : ""}
                 mask="url(#clarkson-mask)"
-                href="/images/data/0104-description.jpg"
+                href="/images/chapters/0105-description.jpg"
                 className={`transition-all origin-center duration-1000`}
                 width={width * zoom}
                 height={height * zoom}

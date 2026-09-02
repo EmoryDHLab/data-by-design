@@ -1,29 +1,13 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useLayoutEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
-import {
-  Button,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from "@headlessui/react";
 import { classNames } from "~/utils";
-import { Caption } from "./Figure";
-import Close from "../icons/Close";
-import ChevronUp from "../icons/ChevronUp";
-import IIIFViewer from "./IIIFViewer.client";
+import FigureLightbox from "./FigureLightbox";
 import type { TFigure } from "~/types/figureType";
-import type { ReactNode } from "react";
-import ClientOnly from "~/components/ClientOnly";
+import type { HTMLAttributes, ReactNode } from "react";
 
 interface Props {
   figure: TFigure;
-  src?: string;
-  alt?: string;
   className?: string;
-  loading?: "eager" | "lazy";
   children?: ReactNode;
   id: string;
 }
@@ -34,117 +18,52 @@ export default function FigureModal({
   className,
   id,
 }: Props) {
-  const { backgroundColor, accentColor, hideSensitiveState } =
-    useContext(ChapterContext);
+  const { hideSensitiveState } = useContext(ChapterContext);
   const [isOpen, setIsOpen] = useState(false);
-  const [interactiveOptions, setInteractiveOptions] = useState<object>({});
+  const [inColumn, setInColumn] = useState(false);
   const figureRef = useRef<HTMLDivElement>(null);
-  // FIXME: There has to be better way?
-  const inColumn =
-    figureRef.current?.parentElement?.classList.contains("md:bias-1/2");
 
-  useEffect(() => {
-    if (!hideSensitiveState || !figure.sensitive) {
-      setInteractiveOptions({
-        onClick: ({ target }: { target: HTMLElement }) => {
-          if (target.classList.contains("modal-backdrop")) {
-            setIsOpen(false);
-          } else {
-            setIsOpen(true);
-          }
-        },
-        onKeyDown: ({ key }: { key: string }) => {
-          if (key === "Enter") setIsOpen(true);
-        },
+  // A figure rendered directly inside a two-up Column layout gets extra
+  // left margin. Column marks itself with data-bias-column for this check.
+  useLayoutEffect(() => {
+    setInColumn(
+      figureRef.current?.parentElement?.hasAttribute("data-bias-column") ??
+        false,
+    );
+  }, []);
+
+  const isInteractive = !(hideSensitiveState && figure.sensitive);
+  const interactiveProps: HTMLAttributes<HTMLDivElement> = isInteractive
+    ? {
         role: "button",
         tabIndex: 0,
-      });
-    } else {
-      setInteractiveOptions({});
-    }
-  }, [hideSensitiveState, figure, setIsOpen, setInteractiveOptions]);
+        onClick: (event) => {
+          const target = event.target as HTMLElement;
+          setIsOpen(!target.classList.contains("modal-backdrop"));
+        },
+        onKeyDown: (event) => {
+          if (event.key === "Enter") setIsOpen(true);
+        },
+      }
+    : {};
 
   return (
     <div
       ref={figureRef}
       id={id}
       className={classNames(
-        "md:mx-auto relative",
-        inColumn ? "md:ml-24" : "md:mt-8",
-        className
+        "md:mx-auto relative flex-shrink",
+        inColumn ? "md:ml-24" : "",
+        className,
       )}
-      {...interactiveOptions}
+      {...interactiveProps}
     >
       {children}
-
-      <Dialog
-        as="div"
-        className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-2 transition duration-300 ease-out data-[closed]:opacity-0 z-50"
-        open={isOpen}
-        transition
+      <FigureLightbox
+        figure={figure}
+        isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-      >
-        <div className="fixed inset-0 w-screen overflow-y-auto p-2">
-          <div className="flex min-h-full items-center justify-center modal-backdrop py-4">
-            <DialogPanel className="space-y-4 w-screen md:w-1/2 lg:w-[66vw] max-h-[95vh] border bg-offblack text-white p-4 rounded-xl flex flex-col">
-              <DialogTitle as="div" className="flex justify-end flex-shrink-0">
-                <Button
-                  onClick={() => setIsOpen(false)}
-                  className="self-start"
-                  title="Close"
-                >
-                  <span className="sr-only">Close Button</span>
-                  <Close className="hover:text-offwhite hover:bg-white text-offwhite hover:fill-offblack text-lg h-6 w-6" />
-                </Button>
-              </DialogTitle>
-              <div className="flex flex-col flex-1 min-h-0 overflow-hidden">
-                <div className="flex-1 min-h-0 overflow-hidden">
-                  <ClientOnly>
-                    <IIIFViewer figure={figure} modalOpen={isOpen} />
-                  </ClientOnly>
-                </div>
-                <div className="flex-shrink-0 space-y-4 mt-4">
-                  {figure?.title && (
-                    <div
-                      className="text-sm md:text-base font-bold leading-2 text-white"
-                      dangerouslySetInnerHTML={{
-                        __html: figure.title,
-                      }}
-                    />
-                  )}
-                  <Caption figure={figure} className="md:mb-2" />
-                  <div className="mx-auto w-full rounded-2xl bg-transparent ">
-                    <Disclosure>
-                      {({ open }) => (
-                        <>
-                          <DisclosureButton
-                            className="flex items-center gap-2 text-left text-sm font-medium text-gray-400 hover:text-white transition-colors group"
-                          >
-                            <span>Alt Text</span>
-                            <ChevronUp
-                              className={classNames(
-                                "text-gray-400 group-hover:text-white w-4 h-4",
-                                "transition-all",
-                                open ? "rotate-180 transform" : ""
-                              )}
-                            />
-                          </DisclosureButton>
-                          <DisclosurePanel
-                            className=" pb-2 pt-4 text-sm text-left text-white max-h-32 overflow-y-auto"
-                            dangerouslySetInnerHTML={{
-                              __html: figure?.altText ?? "",
-                            }}
-                          />
-                        </>
-                      )}
-                    </Disclosure>
-                  </div>
-                </div>
-              </div>
-            </DialogPanel>
-          </div>
-        </div>
-      </Dialog>
+      />
     </div>
   );
 }

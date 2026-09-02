@@ -55,7 +55,7 @@ const ScrollytellTwo = ({ triggers }: { triggers: ReactElement[] }) => {
         >
           <div className="sticky p-8 md:p-0 top-0 h-min bias-full w-full md:bias-1/2 md:w-1/2 md:order-last bg-offwhite">
             <div
-              className={`h-[calc(100vh-32px)] my-auto flex flex-col mr-4 mt-8`}
+              className={`h-[calc(100vh-32px)] my-auto flex flex-col mr-4 mt-8 p-8`}
             >
               <svg
                 className="relative"
@@ -99,7 +99,7 @@ const ScrollytellTwo = ({ triggers }: { triggers: ReactElement[] }) => {
                       : "scale-100 translate-y-0"
                   }
                       transition-all duration-1000 origin-center`}
-                  href="/images/change/0525-899-series.jpg"
+                  href="/images/chapters/0527-899-series.jpg"
                   mask="url(#scrollytell-two-mask"
                 />
 
@@ -122,7 +122,7 @@ const ScrollytellTwo = ({ triggers }: { triggers: ReactElement[] }) => {
                       ? "opacity-100"
                       : "opacity-0"
                   } transition-opacity duration-1000`}
-                  href="/images/change/graduates.jpg"
+                  href="/images/chapters/0516-master-pnp-ppmsca-08700-08778u.jpg"
                 />
                 <People width={chartWidth} height={chartHeight} />
                 <Legend width={chartWidth} height={chartHeight} />

@@ -17,18 +17,27 @@ export default function QuizSquare({
   const squareRef = useRef<SVGGElement>(null);
 
   useEffect(() => {
-    if (currentStepCount === 2) squareRef.current?.focus();
+    // preventScroll: focus() otherwise triggers the browser's default
+    // scroll-into-view, which - combined with the step 3-8 zoom transform
+    // repositioning this same element - produces an unwanted page jump.
+    if (currentStepCount === 2)
+      squareRef.current?.focus({ preventScroll: true });
   }, [currentStepCount]);
+
+  const zoomed = currentStepCount >= 3 && currentStepCount < 8;
+  const scale = zoomed ? (isMobile ? 10.5 : 7) : 1;
+  const translateX = zoomed ? (isMobile ? "160%" : "-78rem") : "0";
+  const translateY = zoomed ? (isMobile ? "63%" : "-38rem") : "0";
 
   return (
     <g
       className={`${
         currentStepCount == 0 ? "hidden" : ""
-      } transition-all duration-[2000ms] ${isMobile ? "origin-center" : ""} ${
-        currentStepCount >= 3 && currentStepCount < 8
-          ? "scale-[10.5] md:scale-[7] translate-x-[160%] md:-translate-x-[78rem]  translate-y-[63%] md:-translate-y-[38rem]"
-          : ""
-      } focus:outline focus:outline-1`}
+      } ${isMobile ? "origin-center" : ""} focus:outline focus:outline-1`}
+      style={{
+        transform: `translate(${translateX}, ${translateY}) scale(${scale})`,
+        transition: "transform 2000ms",
+      }}
       tabIndex={currentStepCount > 1 ? 0 : -1}
       ref={squareRef}
     >
@@ -51,7 +60,6 @@ export default function QuizSquare({
             />
           );
         })}
-        Q
       </g>
     </g>
   );

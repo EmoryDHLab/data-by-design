@@ -156,7 +156,6 @@ export default function QuizYearSquare({
             year={year}
             absoluteIndex={absoluteIndex}
             yearEvents={yearEvents}
-            isVertical={false}
           />
         );
       })}

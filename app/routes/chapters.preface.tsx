@@ -24,9 +24,9 @@ export default function IntroPage() {
   return (
     <ChapterContext.Provider
       value={{
-        backgroundColor: "changePrimary",
+        backgroundColor: "offwhite",
         primaryTextColor: "black",
-        accentColor: "changeSecondary",
+        accentColor: "imagePrimary",
         accentTextColor: "peopleSecondary",
         footnoteTextColor: "imagePrimary",
         footnotes: prefaceFootnotes,
@@ -41,342 +41,278 @@ export default function IntroPage() {
       />
       <ChapterBody>
         <CenteredLayout>
-          <p>
-            <span className="drop-cap">I</span>’ve always loved charts. I love
-            their endless variety. I love
-            their combination of logic and creativity. I love the feeling—you’ve
-            likely had it too—when a vague inclination, a hunch you have about
-            the data, is suddenly{" "}
-            <em>right there in front of your eyes</em>. Which is
-            why, when thinking back to the origins of this project, it was
-            surprising—to no one more than myself—to realize that the idea to
-            write a new history of data visualization was prompted not by any
-            particular chart, or even by a dataset, but instead by a paragraph
-            of dense historical prose.
+          <p className="first-paragraph">
+            It might come as a surprise to learn that the idea for this project
+            was prompted not by any particular image, or even by a dataset, but
+            instead by a paragraph of dense historical prose. It was the Fall of
+            2012, and I had just started my second year an assistant professor
+            at Georgia Tech. I'd been hired to teach courses in early American
+            literature and culture (and in a humanities context, "early" means
+            very early—like, the eighteenth and nineteenth centuries) but I
+            couldn't keep myself away from writing code. I'd always been
+            interested in computers, and before going to graduate school, I'd
+            worked as a software developer. So when I learned about a growing
+            field called digital humanities, which involved the use of
+            computational methods to explore humanities research questions, I
+            knew it was an area that I wanted to explore. I had the data
+            analysis part down, but I didn't have much experience in
+            visualization. And so, like the literature professor I'd recently
+            become, I started to read.
           </p>
           <p>
-            It was the fall of 2012, and I had been teaching at Georgia Tech for
-            just over a year. I had arrived in Atlanta with a newly minted PhD
-            in early American literature. But even in my interdisciplinary
-            humanities department, my students were mostly aspiring engineers.
-            Their goals were actually quite familiar to me. Before going to
-            graduate school, I’d worked as a software developer. After eight
-            years of research and writing, however, I thought I’d left that
-            life of code sprints and client demos far behind. But there I was
-            in my Georgia Tech classroom, looking out from my podium into the
-            faces of 35 students who wanted nothing more than a chance at a job
-            like the one I’d once had. I decided to honor that. I’d teach a
-            course on data visualization. After all, I still loved charts.
-          </p>
-
-          <p>
-            I had a fair amount of experience with visualization design from my
-            time in the tech world. But creating charts for websites hadn’t
-            taught me quite as much about visualization’s history. In the
-            industry, Edward Tufte’s{" "}
-            <em>The Visual Display of Quantitative Information</em> had been
-            our definitive guide. The book included a
-            short history, centered on a man named William Playfair. He was the
-            “remarkable” Scotsman, born in 1759, whom Tufte credits with
-            improving upon the then-emergent line and bar chart forms, and with
-            inventing the pie chart outright. In Tufte’s telling, Playfair’s
-            contributions seemed nothing short of revolutionary. So I figured I
-            should start my own research there.
+            I began with the one book on data visualization that I knew from my
+            time in the tech world, Edward Tufte's Visual Display of
+            Quantitative Information. First published in 1982 and revised and
+            expanded in 2001, Tufte's book was for decades the definitive guide
+            to visualizing data. But soon I was down a rabbit hole of new (to
+            me) research. I followed Tufte's discussion of the "remarkable"
+            William Playfair (1759-1823), the Scottish political economist whom
+            Tufte credits with improving upon the line and bar chart forms, and
+            inventing the pie chart outright, to a modern edition of Playfair's
+            Commercial and Political Atlas. First published in 1786 and, like
+            the Visual Display, revised and expanded several years later, the
+            Atlas contained many of the earliest instances of Playfair's
+            field-defining charts. I started with the editors' introduction,
+            pencil in hand. But only a few pages in—the bottom of page three, to
+            be precise—I read the lines that caused my initially emphatic
+            underlining to become lighter and lighter until all that was left
+            was a thin graphite whisp. The proverbial mental gears—in my case,
+            deeply nerdy ones—had begun to turn.
           </p>
 
           <p>
-            I tracked down a facsimile edition of Playfair’s{" "}
-            <em>Commercial and Political Atlas</em>, first published in 1786
-            and revised and expanded
-            in 1801.
-            <InlineFootnote index={0} />It was a surprisingly hefty
-            hundred-page tome that contained many of the earliest instances of
-            Playfair’s field-defining charts. From Tufte, I knew the visual
-            beauty that awaited me inside the book—vivid red and yellow data
-            lines, delicate hand-tinted shading, all set against a stark black
-            grid. But I decided to begin with the editors’ introduction, pencil
-            in hand, like the literature professor I’d recently become.
-          </p>
-
-          <p>
-            Only a few pages in, however—the bottom of page 3, to be
-            precise—my pencil slowed. There was that paragraph, the one that
-            would alter the shape of my academic career. It started with a
-            mention of Playfair’s childhood tutor, a man by the name of William
-            Small. I felt a nagging sensation. I circled the name and jotted a
-            question mark in the margin. But I still couldn’t place it, so I
-            kept on reading. “In 1758 he [Small] joined the faculty of William
-            and Mary College in Williamsburg, Virginia,” the next sentence
-            began.
-            <InlineFootnote index={1} />Now I knew I’d seen this name before.
-            Sure enough, as the edition’s editors, Howard Wainer and Ian
+            The lines appeared in a discussion of Playfair's early education,
+            and made mention of his childhood tutor, a man by the name of
+            William Small. I felt a nagging sensation—something sounded
+            familiar—but I kept on reading. "In 1758 he joined the faculty of
+            William and Mary College in Williamsburg, Virginia," the next
+            sentence began.
+            <InlineFootnote index={0} /> I now knew I'd seen this name before.
+            Sure enough, as the introduction's authors, Howard Wainer and Ian
             Spence, went on to explain, Small had been a professor at William
             and Mary for six years, where he had taught none other than Thomas
-            Jefferson. Hence that nagging feeling. I’d been researching Thomas
+            Jefferson. But I knew this fact already. I'd been researching Thomas
             Jefferson for years.
           </p>
 
           <p>
-            William Small—Jefferson’s professor and Playfair’s tutor—was
-            Scottish, and the other thinkers associated with his intellectual
-            milieu, known as the Scottish Enlightenment, have long been
-            credited with providing the philosophical foundation for the
-            establishment of the United States. The more famous men in this
-            group included Adam Smith, David Hume, and Henry Home, Lord Kames.
-            But Jefferson credited Small, in particular, for seeding his own
-            philosophical thinking. “From his conversation,” Jefferson wrote in
-            his autobiography, “I got my first views of the expansion of
-            science and of the system of things in which we are all placed.”
-            <InlineFootnote index={2} />
+            For those not immersed in the eighteenth century—which is to say,
+            just about everyone—the link between these men might seem like an
+            interesting coincidence. But to me, their connection made perfect
+            sense. William Small was Scottish, and the other thinkers associated
+            with his intellectual milieu, known as the Scottish Enlightenment,
+            have long been credited with providing the philosophical foundation
+            for the establishment of the United States. Some of the more famous
+            men (and yes, they were all men) included Adam Smith, David Hume,
+            and Henry Home, Lord Kames. But Jefferson credited none other than
+            Small for seeding his own philosophical thinking. "From his
+            conversation," Jefferson wrote in his autobiography, "I got my first
+            views of the expansion of science and of the system of things in
+            which we are all placed."
+            <InlineFootnote index={1} />
           </p>
 
           <p>
-            In one of my earliest published essays, I’d analyzed this line as
-            evidence of Jefferson’s emerging empiricism: his belief that a
-            universal “system of things” could be determined through sensory
-            experience and direct observation of the world.
-            <InlineFootnote index={3} />I’d connected this belief to
-            Jefferson’s meticulous record-keeping, which included
+            In my dissertation, I'd analyzed this line as evidence of
+            Jefferson's emerging empiricism: the belief that a universal "system
+            of things" could be determined by sensory experience and direct
+            observations about the world.
+            <InlineFootnote index={2} /> I'd connected this way of thinking to
+            Jefferson's meticulous record-keeping, which included
             spreadsheet-like tables that he used to document and draw
-            conclusions about not only plants and animals but also
+            conclusions about not only plants and animals, but also
             people—including the people he enslaved. Among the most difficult
-            truths of this early form of empiricism—demonstrated here by
-            Jefferson, but practiced by many more—is that the big-picture
-            conclusions of these men, drawn from their own firsthand
-            observations, produced seemingly generalizable knowledge that was,
-            in reality, deeply limited by the exclusionary worldview that so
-            many of them shared.
-            <InlineFootnote index={4} />
+            truths of this early form of empiricism—as demonstrated in this
+            particular case by Jefferson, but as practiced by many more—is that
+            the "big picture" conclusions drawn from direct observation often
+            reflected the observers' own limited worldviews just as much as they
+            generated knowledge that had not been known before. Upon my
+            realization that the very same man had taught both Thomas Jefferson
+            and William Playfair, and that both had been inculcated in
+            empiricism and Scottish Enlightenment thought, I knew there was more
+            to the story of modern data visualization than had been told up to
+            that point.
+            <InlineFootnote index={3} /> I also realized something else: this
+            expanded story was one that I wanted to be the one to tell.
           </p>
 
           <p>
-            When I realized that the very same man had taught both Thomas
-            Jefferson and William Playfair, and that both had been inculcated
-            in the empiricism—and the exclusions—of the Scottish Enlightenment,
-            I knew there was more to the story of data visualization than had
-            been told to that point. There was more, even, to the story of
-            William Playfair. Tufte, after all, had focused only on Playfair’s
-            charts. Wainer and Spence had focused only on Playfair the person.
-            But the expanded story—the one that would place Playfair alongside
-            figures like Thomas Jefferson in their full historical,
-            philosophical, and political complexity—had yet to be told. And at
-            that moment, I also realized something else: that I wanted to be
-            the one to tell it.
+            The Introduction that you are about to read explores this
+            historical, philosophical, and political context in more detail. But
+            I begin with an account of origins of this project in order to
+            answer the question of why Data by Design begins when it does, in
+            the late eighteenth century, and why it begins where it does, in
+            Europe under the influence of Scottish Enlightenment thought. (Full
+            disclosure: the Introduction does begin a little earlier, just to
+            set the proverbial stage). While there exist a vast array of
+            examples of earlier data visualization—many of which date back far
+            longer than the colonial era, and which emanate from all over the
+            world—my interest in this particular time and place is a direct
+            result of the realization that I had while reading about Playfair:
+            that there is a more complicated story about the emergence of this
+            particular strain of data visualization—mostly European and North
+            American, and mostly undertaken by white professional men—that still
+            needed to be told.
           </p>
 
-          <p className="text-center font-power text-xl">***</p>
-
           <p>
-            Fifteen years later, you are reading the end result of that
-            realization. But I begin with its origins to answer two important
-            questions: why does <em>Data by Design</em> begin when it does, and why does
-            it begin where it does? There are, after all, a vast array of
-            examples of historical data visualization—many of which date back
-            far more than the European colonial era, and which emanate from
-            all over the world. But my interest in this particular time and
-            place is a direct consequence of what I realized while reading
-            about Playfair: that there is a more complicated story about this
-            particular strain of data visualization that has gone untold up to
-            this point. We need additional stories, of course. But we also
-            still need to understand how the standard story of modern data
-            visualization—mostly European and North American, and mostly
-            undertaken by white professional men—is entirely inseparable from
-            the histories of colonialism, capitalism, and slavery that produced
-            it.
+            A decade-plus later, that story is the book you are holding in your
+            hands. But for most of that time, it was far from certain that this
+            project would result in anything that took physical form. I've
+            already mentioned that this project first took shape at the time
+            that the field of digital humanities was beginning to coalesce.
+            This, too, was more than mere coincidence: the same dot com boom and
+            then bust that had sent me to grad school had also resulted in a
+            host of Web 1.0 technologies entering academic research. Of course,
+            the 2010s were not the first time that humanities scholars had
+            thought to use computers for their research—that tradition dates
+            back to the 1940s, if not before.
+            <InlineFootnote index={4} /> But the early 2010s were the years that
+            more and more scholars from humanities fields—students, professors,
+            and library and research staff alike—were turning to the web as a
+            platform for creating "born digital" work.
             <InlineFootnote index={5} />
           </p>
 
-          <p className="text-center font-power text-xl">***</p>
-
           <p>
-            I know from personal experience how tempting it can be to want to
-            celebrate “founders” and “fathers.” I study the founding era of the
-            United States. But if I’ve learned anything at all from my time
-            with Thomas Jefferson, it’s that we must also look at the shadows
-            that he and those like him cast. Because in those shadows are often
-            unseen people and untold stories, stories that help to bring a more
-            complete picture to light. Who were the people standing in the
-            shadows of William Playfair? What stories about the emergence of
-            modern data visualization could they tell?
+            Just as it sounds, this term describes work that is fully conceived
+            in digital form, rather than first envisioned as a book and later
+            adapted for the web. In the humanities, what this turn to born-
+            digital scholarship set in motion was the use of interaction,
+            animation, and all of the other things that the web can do, in
+            support of the kinds of arguments that humanities scholars
+            previously made purely with words. For example, the Flash-based
+            digital essay, The Knotted Line (2014), linked together a conceptual
+            argument about the destabilizing experience of incarceration with
+            creative interaction, supporting its claim with a scrolling
+            interface that advanced only in fits and starts.
+            <InlineFootnote index={6} /> Or, for another example, the digital
+            storytelling tool Neatline (2012-present) was designed to enable
+            users to overlay annotations and analysis on top of historical maps,
+            guided by a belief that these analyses are most productively viewed
+            in direct relation to the images of the artifacts they engage,
+            rather than separated by the page.
+            <InlineFootnote index={7} /> It was in the context of these
+            boundary-pushing projects—and of course many more—that I also began
+            to ask myself: what if my history of data visualization also
+            included data visualization? Would it be possible to tell the story
+            of the emergence of modern data visualization using data
+            visualization itself?
           </p>
 
           <p>
-            Of course the path from initial idea to completed project is never
-            a straight line, and <em>Data by Design</em> is no exception. I set it aside
-            to write two other books.
-            <InlineFootnote index={6} />I birthed two children. I moved from
-            Georgia Tech down the road to Emory, where, since 2019, I’ve worked
-            to build programs and curricula at the intersection of the
-            humanities and data science writ large. But just as important, the
-            kind of stories I sought to tell, and the ways I sought to tell
-            them, continued to evolve.
+            My time in the tech industry had left me with decent web skills, and
+            I'd also been exploring a then new-ish software library for data
+            visualization, called D3.js, that promised a way to create
+            customized visualizations for the web. But working in the
+            collaborative environment of an engineering school, I knew from the
+            start that the project wasn't one I'd need to pursue alone. When I
+            arrived at Georgia Tech, I'd followed my colleagues in the bench
+            sciences in establishing my own research group, which I'd called the
+            Digital Humanities Lab. My lab wasn't filled with test tubes or mass
+            spectrometers, of course, but what I did have was a fantastic group
+            of computer science and interaction design students eager to put
+            their classroom skills to use. In three cohorts of students, first
+            at Georgia Tech and then at Emory, where I moved in 2019, we
+            together designed the custom visualizations, page-level
+            interactions, and underlying platform that constitute the web
+            version of this book. Along the way, we were joined by members of
+            Emory's Center for Digital Scholarship as well as of the graphic
+            design firm Polymode, each of whom brought additional expertise in
+            software engineering, data visualization, art, and design. When the
+            MIT Press later presented us with the opportunity to publish a book
+            alongside the digital project, we then redesigned each of the web
+            components for the book you are reading now.
           </p>
 
           <p>
-            The same dot-com boom and then bust that had sent me to grad school
-            had also resulted in a host of early web technologies entering
-            academic research. These projects coalesced into a field called
-            digital humanities, defined by the use of computational methods
-            (and related digital technologies) to explore questions about
-            literature, culture, and other areas of humanistic concern.
-            <InlineFootnote index={7} />At Georgia Tech, I’d followed my
-            colleagues in the bench sciences and established my own research
-            group, which I’d called—after the field—the Digital Humanities (DH)
-            Lab. But my lab wasn’t filled with test tubes or mass spectrometers;
-            it was filled with people: a fantastic group of computer science
-            and interaction design students eager to put their classroom skills
-            to use.
+            This discussion brings me to a very important point: while I write
+            as an "I" throughout this book, because I am the author of these
+            actual words, there are ten additional authors—Tanvi Sharma, Jay
+            Varner, Shiyao Li, Margy Adams, Nicholas Yang, Dan Jutan, Jianing
+            Fu, Anna Mola, Zhou Fang, Yang Li, and Silas Munro-who have each
+            also contributed their own unique perspectives and their own unique
+            forms of expertise. As the project unfolds, you will learn more
+            about some team members' individual identities, both personal and
+            academic, as you will about how we have come together to forge our
+            collective visual voice. For now, though, I will simply state that
+            Data by Design could not have reached its final form without any
+            single member of the project team. This is both a practical
+            observation and an implicit argument of the book: that the most
+            generative digital humanities scholarship leverages not only the
+            skillsets, but also the meaning-making capacities, of each of its
+            allied fields. This is a lesson that also applies to the
+            meaning-making capacities of data visualization, as the rest of this
+            book will explore. For readers with specific questions about our
+            design and development process, or about the contributions of
+            individual members of the project team, we direct you to the book's
+            final chapter, which contains an extended discussion—and, of course,
+            also visualizations—of the collaborative work that has led to the
+            book you are reading now.
           </p>
 
           <p>
-            My DH Lab students were this project’s first interlocutors.
-            Together, we explored its central question: could a history of
-            data visualization also <em>include</em> data visualization? The answer
-            turned out to be self-evident, even if it took an incredible amount
-            of time to build out. Across three cohorts of students, first at
-            Georgia Tech and then at Emory, we together designed the custom
-            visualizations, page-level interactions, and underlying platform
-            that you are exploring right now.
-            <InlineFootnote index={8} />Along the way, we were joined by
-            members of Emory’s Center for Digital Scholarship as well as of the
-            graphic design firm Polymode, each of whom brought additional
-            expertise in software engineering, data visualization, art, and
-            design.
-          </p>
-
-          <p>
-            While I am the author of these actual words, there are eleven
-            additional authors of <em>Data by Design</em>: Tanvi Sharma, Jay Varner,
-            Margy Adams, Shiyao Li, Nicholas Yang, Dan Jutan, Jianing Fu, Anna
-            Mola, Zhou Fang, Yang Li, and Silas Munro. Each of them has worked
-            with in (or with) the DH Lab at some point over the past ten-plus
-            years. Each has also contributed their own unique perspective and
-            forms of expertise. Several are visualization designers, others are
-            visualization researchers, yet others are humanities researchers,
-            and still others are software engineers. As you explore this site,
-            you will see how we have come together to forge our collective
-            authorial voice. You will also see how this project has been
-            directly shaped by each and every member of this capacious project
-            team. I say this both as a practical observation and as an
-            implicit claim of the book: for visualization to be its most
-            impactful, it must leverage not only the skill sets but also the
-            meaning-making capacities of each of its allied fields.
-          </p>
-
-          <p>
-            This is the reason that I tend to write as a collective “we.” At
-            times, when discussing specific design decisions, this “we” is a
-            strict one; it includes only the members of the project team. I
-            have attempted to make these instances explicit. But more often
-            than not, this “we” also includes you, the visitors to this site.
-            It does so not because I assume that we share all aspects of our
-            identities, or our disciplinary and professional perspectives. I
-            certainly do not intend to erase our differences, many of which may
-            be quite profound. Rather, I write as a “we” to invite you into
-            this project: to join us in working toward a more informed and
-            more intentional practice of visualization viewing and design.
-          </p>
-
-          <p className="text-center font-power text-xl">***</p>
-
-          <p>
-            With that said, different perspectives—especially disciplinary
-            ones—do carry different expectations, and for this reason it seems
-            worth addressing them head on. To viewers from the humanities: you
-            will likely find the project’s historical and theoretical
-            frameworks quite familiar; my hope is that you will be energized by
-            seeing how these frameworks can be applied to the history and
-            practice of visualization design. For viewers coming from the
-            digital humanities in particular: my hope is that this project will
-            provide you with a model of a critical-creative practice that
-            expands the ethos of your work. For those in the fields of
-            visualization research and visualization design: you will likely
-            recognize some of the historical examples and technical reference
-            points, but you may find the way I’ve chosen to tell this story a
-            bit unfamiliar—or even opaque.
-          </p>
-
-          <p>
-            For this reason and more, it’s worth being explicit about the form
-            of the history offered here. This history is not intended as
-            different in content; rather, it’s different in approach. By this
-            I mean that, in the humanities—and in particular, in the mode of
-            literary-historical scholarship in which I was trained—our primary
-            evidence comes from detailed analysis. In this case, it consists of
-            a set of core examples of early data visualization, the processes
-            that led to their creation, and the writing that accompanies them
-            in their finished form. Interwoven with this analysis is relevant
-            historical, philosophical, political, and cultural context. This
-            context is included with a calculated goal: to tell a story about
-            each chart that is so seamless, and therefore so convincing, that
-            you cannot help but see even the most familiar chart in ways you
-            never have before.
+            This takes me to my final note, which has to do with the "you" I've
+            just addressed. Data by Design is written for several sets of
+            readers, each of which are likely coming to the book with different
+            expertise and expectations. To readers from the humanities: you will
+            likely find the book's historical and theoretical frameworks quite
+            familiar; my hope is that you will be energized by seeing how these
+            frameworks can be applied to the history and practice of
+            visualization design. For readers coming from the digital humanities
+            in particular: my hope is that this book will provide a model of a
+            critical-creative practice that aligns with the ethos of your work.
+            For readers coming from the fields of visualization researcher and
+            visualization design: you will likely recognize some of the
+            historical examples and technical reference points, but you may find
+            the humanities writing style wholly new. For this reason, it's worth
+            being explicit about the fact that the history that is offered here
+            is not intended as one that's different in content; rather, it's one
+            that's different in approach. By this I mean that, in the
+            humanities—and in particular, in the field of literary and cultural
+            studies in which I was trained—our primary evidence comes from
+            detailed analysis: in this case, of a set of core examples of early
+            data visualization, the processes that led to their creation, and
+            the writing that accompanies them in their finished form. Interwoven
+            with this analysis is relevant historical, philosophical, political,
+            and cultural context, and it is included with an unstated goal: of
+            telling a story about each chart that is so seamless, and therefore
+            so convincing, that you cannot help but see even the most familiar
+            chart in ways you never have before.
           </p>
 
           <p>
             This kind of story is what, in the humanities, we call an
-            “argument.” But to be clear on this point as well: it’s not the
-            same kind of argument as the one you might have with your kid about
+            "argument." But just to be clear on this point: it's not the same
+            kind of argument as the one you might have with your kid about
             bedtime, or the one that you have in your head when you yell at a
             politician through a screen. Rather, an argument in the humanities
             is intended to be absorbed—and, crucially, further questioned—so
-            that additional insight can emerge. The gist of the argument
-            presented in this project is that the history of data
-            visualization is a great deal darker, and more complex, than has
-            been acknowledged to this point. But there is a second core tenet
-            of current humanities scholarship that this project rests upon,
-            which is also worth stating out loud. This is the belief that
-            generative new paths forward can be revealed through a better
-            understanding of the complexities of the past.
+            that additional insight can emerge. While the gist of the argument
+            presented in this book is that the history of data visualization is
+            a great deal darker, and more complex, than has been acknowledged to
+            this point, there is a second core tenet of current humanities
+            scholarship that this project mobilizes, which is also worth stating
+            in words. This is the belief that generative new paths forward can
+            be revealed through a better understanding of the complexities of
+            the past.
           </p>
 
           <p>
             A refrain of this project, which will hopefully soon become a
-            familiar tune, is that we, the authors of this project, want the
-            ideas we express on this website to become action in the world.
-            Consistent across our project team is a belief in the power of
-            data visualization. We believe that if used intentionally, data
-            visualization can help to create new knowledge. In the right
-            circumstances, visualization can wield a uniquely transformative
-            force. With that said, this project will also introduce you to
-            some difficult historical truths: modern data visualization has
-            always been entangled with capitalism and colonialism; seemingly
-            neutral visual forms have always been shaped by politics and
-            ideology; visualization has been wielded consistently, over
-            centuries, to consolidate power and control. But this same history
-            also offers counterexamples—of how visualization has also been
-            used, over centuries, to reveal the workings of oppressive power
-            and bring about enduring change. These counterexamples are what
-            inspire our work in <em>Data by Design</em>.
-          </p>
-
-          <p>
-            In this project we argue, in both charts and words, that data can
-            be visualized with intention, with ethical clarity, and for the
-            purpose of uplifting us all. To achieve this goal, it will require
-            far more than revising our best practices (although, as you will
-            see in the “takeaways” that conclude each chapter, we do provide
-            our own version of those). It will require a commitment to
-            acknowledging the power of visualization as well as its perils—to
-            admitting how visualization can prompt the insights that lead to
-            new knowledge just as easily as it can encourage viewers not to
-            further question what they see.
-          </p>
-
-          <p>
-            At a time when our collective knowledge, and our common humanity,
-            are both under attack, the stakes of this endeavor could not be
-            higher. We are constantly being told to distrust—to distrust each
-            other, to distrust our institutions, to distrust the very
-            foundations of democracy that Thomas Jefferson, for all of his
-            flaws, helped to create. Against these forces of algorithmic
-            preferences and authoritarian agendas, and the rapacious
-            capitalism that underlies both, we must insist upon the value of
-            greater knowledge and understanding. What <em>Data by Design</em> seeks to
-            contribute to this larger project, then, is increased clarity
-            about how we have arrived at the present moment, a sharper sense
-            of the shape of our current knowledge, and inspiration for how we
-            can envision a better future to come.
+            familiar tune, is that we, the authors of this project, fully intend
+            the ideas we express to be able to be put to use. Consistent across
+            our project team is a belief in the power of data visualization to
+            contribute to new knowledge, and at times and when intended, to
+            wield a uniquely transformative political force. In the chapters
+            that follow—in fact, beginning on the very next page—you will be
+            introduced to some difficult historical truths. For this reason, we
+            ask that as you read this story, you also hold in mind a goal that
+            we believe we all share: of a more informed and intentional approach
+            to data visualization. This is a goal that exceeds any particular
+            design choices, or even sets of guidelines (although we do provide
+            some of those), because its stakes are nothing less than the shape
+            of our collective knowledge—of both history and the future to come.
           </p>
         </CenteredLayout>
       </ChapterBody>

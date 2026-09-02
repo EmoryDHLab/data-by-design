@@ -59,8 +59,6 @@ function QuizSquareMask({ defaultX, defaultY }: Props) {
         height={4}
         fill={currentStepCount >= 8 ? "white" : "none"}
       />
-      {/* x={165}
-          y={25} */}
       <rect
         className="scrollytell-shape-focus delay-300"
         x={defaultX + 75}

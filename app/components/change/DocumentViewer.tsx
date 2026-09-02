@@ -4,7 +4,6 @@ import { classNames } from "~/utils";
 import figures from "~/data/figures/change.json";
 import Picture from "../figures/Picture";
 import Figure from "../figures/Figure";
-import PlateCaption from "../figures/PlateCaption";
 import FigureModal from "../figures/FigureModal";
 import ClientOnly from "~/components/ClientOnly";
 import type { TFigure as FigureType } from "~/types/figureType";
@@ -82,6 +81,37 @@ const imageSets: ImageSet = {
     figures["925"],
   ],
 };
+
+// Matches a trailing Library of Congress call number, e.g. "LC-DIG-ppmsca-33863."
+const LC_CALL_NUMBER = /^(.*\S)\s+(LC-[A-Za-z]+-[A-Za-z0-9-]+\.?)\s*$/;
+
+function CreditLine({ text }: { text: string }) {
+  const match = text.match(LC_CALL_NUMBER);
+  if (!match) return <>{text}</>;
+  const [, lead, callNumber] = match;
+  return (
+    <>
+      {lead} <span className="md:block">{callNumber}</span>
+    </>
+  );
+}
+
+function PlateCaption({ figure }: { figure: FigureType }) {
+  return (
+    <figcaption className="mt-4 px-6 mx-auto max-w-md text-center">
+      {figure.title && (
+        <span className="block font-power text-base leading-snug text-offwhite">
+          {figure.title}
+        </span>
+      )}
+      {figure.creditLine && (
+        <span className="block font-sans text-xs leading-relaxed text-neutral-400 mt-2">
+          <CreditLine text={figure.creditLine} />
+        </span>
+      )}
+    </figcaption>
+  );
+}
 
 export default function DocumentViewer() {
   const [selectedSet, setSelectedSet] = useState<string>("setOne");
@@ -208,7 +238,7 @@ export default function DocumentViewer() {
                   className={classNames(
                     index === selectedImageIndex &&
                       "p-1 hover:border-white-700 border-solid border-white border-2 rounded-md",
-                    "max-w-[70px] text-offwhite"
+                    "max-w-[70px] text-offwhite",
                   )}
                 />
               </button>
@@ -225,7 +255,7 @@ export default function DocumentViewer() {
                 setSelectedImageIndex(
                   (i) =>
                     (i + imageSets[selectedSet].length - 1) %
-                    imageSets[selectedSet].length
+                    imageSets[selectedSet].length,
                 );
               }}
             >
@@ -250,7 +280,7 @@ export default function DocumentViewer() {
               aria-label="Select next image"
               onClick={() => {
                 setSelectedImageIndex(
-                  (i) => (i + 1) % imageSets[selectedSet].length
+                  (i) => (i + 1) % imageSets[selectedSet].length,
                 );
               }}
             >
@@ -405,14 +435,14 @@ export default function DocumentViewer() {
                 >
                   <picture>
                     <source
-                      srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`}
+                      srcSet={`/images/chapters/${figure.fileName}.webp`}
                     />
                     <source
-                      srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+                      srcSet={`/images/chapters/${figure.fileName}.jpg`}
                     />
                     <img
                       className="max-h-96 mx-auto max-w-xs"
-                      src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
+                      src={`/images/chapters/${figure.fileName}.jpg`}
                       alt={figure.altText ?? ""}
                       title={figure.title ?? ""}
                       loading={idx === mobileSlideIndex ? "eager" : "lazy"}

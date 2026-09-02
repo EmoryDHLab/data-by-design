@@ -9,16 +9,6 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
-import { pageMetaTags } from "~/utils";
-import type { MetaFunction } from "react-router";
-
-export const meta: MetaFunction = () =>
-  pageMetaTags({
-    title: "About: Data by Design",
-    description:
-      "About the site and the project behind Data by Design: how to read it, who made it, and the advisory board that guided it.",
-    path: "/about",
-  });
 
 const sections = [
   {
@@ -54,7 +44,7 @@ export default function AboutPage() {
       >
         <ChapterTitle title="About" subtitle="" />
 
-        <main id="main-content" className="pb-36">
+        <main id="main-content pb-36">
           <ChapterSectionTitle section={sections[0]}></ChapterSectionTitle>
           <CenteredLayout>
             <h2 className="text-lg font-powerWide uppercase">Compatibility</h2>
@@ -85,7 +75,7 @@ export default function AboutPage() {
             <h2 className="text-lg font-powerWide uppercase">References</h2>
             <p>
               Clicking on any inline reference (a number with a circle around
-              it)     <InlineFootnote index={0} />will expand the reference inline with the text. Should you
+              it)     <InlineFootnote index={0} /> will expand the reference inline with the text. Should you
               want to expand all of the references at once, click the “show
               references” toggle on the top-left of each chapter. Should you
               prefer to wait until the end of the chapter to view the
@@ -108,16 +98,15 @@ export default function AboutPage() {
             <p>
               Clicking the site navigation icon, which remains sticky on the top
               right, just below the chapter navigation bar, will allow you to
-              move between chapters.
-            </p>
-            <h2 className="text-lg font-powerWide uppercase">The Archive</h2>
-            <p>
-              As with any creative project, so much of our work ended up on the
-              proverbial cutting-room floor. The good news is that, on the
-              internet, this work can still find a home! Our “archive” (in
-              quotes because it is not actually an archive in the formal
-              definition of the term) is our home for these prototypes and other
-              creative explorations.
+              move between chapters. The Archive As with any creative project,
+              so much of our work ended up on the proverbial cutting-room floor.
+              The good news is that, on the internet, this work can still find a
+              home! Our “archive” (in quotes because it is not actually an
+              archive in the formal definition of the term) is our home for
+              these prototypes and other creative explorations. The [ADD IN]
+              icon that appears throughout the site indicates when an earlier
+              version of the visualization, or other feature, can be found in
+              the archive. A direct link to the archive is here.{" "}
             </p>
             <h2 className="text-lg font-powerWide uppercase">The Stack</h2>
             <p>

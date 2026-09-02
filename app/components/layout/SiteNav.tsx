@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigation } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
+import MenuIcon from "../icons/Menu";
 import CloseIcon from "../icons/Close";
 import type { TChapterMeta } from "~/types/chapterMetaTags";
 
@@ -25,88 +26,49 @@ const SiteNav = () => {
           show ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="w-full py-12 ps-8 md:ml-12 mt-12 md:mt-0">
-          <h2 className="font-power uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-400 pb-4">
-            Data by Design
-          </h2>
-          <ol className="font-power font-bold leading-none tracking-wide text-2xl md:text-3xl">
-            <li className="mb-3 md:mb-4">
-              <Link
-                to="/"
-                className="inline-block transition-colors hover:text-imagePrimary focus:text-imagePrimary"
+        <ol className="w-full text-2xl py-12 ps-8 md:ml-12 mt-12 md:mt-0">
+          <li className="mb-4">
+            <Link to="/">DxD</Link>
+          </li>
+          <li className="">
+            <Link to="about">About</Link>
+          </li>
+        </ol>
+        <ol className="overflow-y-scroll w-full">
+          {Object.keys(chapterMeta as TChapterMeta).map((chapter, index) => {
+            return (
+              <li
+                className="border-b border-dashed border-offwhite/20 focus:bg-imagePrimary hover:bg-imagePrimary"
+                key={chapter}
               >
-                Home
-              </Link>
-            </li>
-            <li className="mb-3 md:mb-4">
-              <Link
-                to="about"
-                className="inline-block transition-colors hover:text-imagePrimary focus:text-imagePrimary"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="events"
-                className="inline-block transition-colors hover:text-imagePrimary focus:text-imagePrimary"
-              >
-                Events
-              </Link>
-            </li>
-          </ol>
-        </div>
-        <div className="w-full flex flex-col min-h-0">
-          <h2 className="font-power uppercase tracking-[0.2em] text-xs md:text-sm text-neutral-400 ps-8 md:ps-2 pb-3">
-            Chapters
-          </h2>
-          <ol className="overflow-y-scroll w-full">
-            {Object.keys(chapterMeta as TChapterMeta).map((chapter, index) => {
-              return (
-                <li
-                  className="border-b border-dashed border-offwhite/20 focus:bg-imagePrimary hover:bg-imagePrimary"
-                  key={chapter}
-                >
-                  <div className="flex items-center ">
-                    <div className="grow">
-                      <Link to={`/chapters/${chapter}`} className="block py-4">
-                        {index < 2 || index >= 8 ? (
-                          ""
-                        ) : (
-                          <div className="font-power uppercase tracking-[0.15em] text-[0.625rem] md:text-xs text-neutral-400 ps-8 md:ps-2 my-1">
-                            Chapter {index - 1}
-                          </div>
-                        )}
-                        <div className="capitalize flex flex-row items-center justify-between text-xl md:text-2xl ps-8 md:ps-2 pe-8">
-                          <div className="flex-grow">{chapter}</div>
+                <div className="flex items-center ">
+                  <div className="grow">
+                    <Link to={`/chapters/${chapter}`} className="block py-4">
+                      {index < 2 || index >= 8 ? (
+                        ""
+                      ) : (
+                        <div className="text-xs ps-8 md:ps-2 my-1">
+                          Chapter {index - 1}
                         </div>
-                      </Link>
-                    </div>
-                    <div className="font-icons normal-case p-5">b</div>
+                      )}
+                      <div className="capitalize flex flex-row items-center justify-between md:text-xl ps-8 md:ps-2 pe-8">
+                        <div className="flex-grow">{chapter}</div>
+                      </div>
+                    </Link>
                   </div>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
+                  <div className="font-icons normal-case p-5">b</div>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
       </nav>
       <button
         title="Site Navigation"
-        className="fixed right-6 top-10 text-white z-50 w-8 h-8 flex items-center justify-center bg-black border border-white"
+        className="fixed right-6 top-10 text-white z-50 w-8 bg-gray-700 rounded-md"
         onClick={() => setShow(!show)}
       >
-        {show ? (
-          <CloseIcon className="w-full" />
-        ) : (
-          // "G" is the menu glyph in the DxD Icons font, so it must not be
-          // case-transformed. text-3xl matches the width the SVG rendered at.
-          <span
-            className="font-icons normal-case text-3xl leading-none"
-            aria-hidden
-          >
-            G
-          </span>
-        )}
+        {show ? <CloseIcon /> : <MenuIcon />}
       </button>
     </>
   );

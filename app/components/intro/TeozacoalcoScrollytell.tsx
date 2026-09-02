@@ -14,13 +14,6 @@ const TeozacoalcoScrollytell = ({ triggers }: Props) => {
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   const steps = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    console.log(
-      "🚀 ~ TeozacoalcoScrollytell ~ scrollProgress:",
-      scrollProgress
-    );
-  }, [scrollProgress]);
-
   return (
     <ScrollytellContext.Provider value={{ scrollProgress }}>
       <ScrollytellWrapper
@@ -171,7 +164,7 @@ const TeozacoalcoScrollytell = ({ triggers }: Props) => {
                   }
                   width={width}
                   height={height}
-                  href="/images/intro/0001-teozalcoalco.jpg"
+                  href="/images/chapters/0001-teozalcoalco_1.jpg"
                 />
               </g>
               <g data-name="major-roads">

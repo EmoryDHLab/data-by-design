@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function ImageTooltips() {
   const [activeTooltip, setActiveTooltip] = useState<number | undefined>(
-    undefined
+    undefined,
   );
 
   // Define tooltip positions and content
@@ -140,7 +140,7 @@ export default function ImageTooltips() {
           <div className="relative w-full rounded-xl overflow-hidden">
             {/* Replace this img src with your own image URL */}
             <img
-              src="/images/people/extras/2.png"
+              src="/images/chapters/people/2.png"
               alt="Annotated diagram"
               className="w-full h-full object-cover"
             />
@@ -161,7 +161,7 @@ export default function ImageTooltips() {
                   onMouseLeave={() => setActiveTooltip(undefined)}
                   onClick={() =>
                     setActiveTooltip(
-                      activeTooltip === tooltip.id ? undefined : tooltip.id
+                      activeTooltip === tooltip.id ? undefined : tooltip.id,
                     )
                   }
                   className="md:w-3 md:h-3 w-2 h-2 hover:w-3.5 hover:h-3.5 bg-gray-800  hover:bg-gray-800 text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200"
@@ -207,9 +207,6 @@ export default function ImageTooltips() {
               );
             })}
           </div>
-
-
-        
         </div>
       </div>
     </div>

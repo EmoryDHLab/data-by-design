@@ -31,7 +31,7 @@ export default function OverlaidSquare() {
   return (
     <svg viewBox="0 0 99 99">
       <image
-        href={`/images/knowledge/${image}`}
+        href={`/images/chapters/${image}`}
         x="-3.5"
         y="-3.5"
         width="105.5"

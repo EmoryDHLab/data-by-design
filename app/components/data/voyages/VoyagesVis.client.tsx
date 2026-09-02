@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useMemo } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useDeviceContext, useResizeObserver } from "~/hooks";
 import p5 from "p5";
 import Voyage from "./Voyage";
@@ -23,7 +23,6 @@ interface Props {
   fullColor?: boolean;
   widthAdjust?: number;
   heightAdjust?: number;
-  isSample?: boolean;
   interactive?: boolean;
   className?: string;
 }
@@ -39,7 +38,6 @@ function VoyagesVis({
   showSlider = true,
   allVoyages = true,
   fullColor = true,
-  isSample = false,
   widthAdjust = 0.9,
   heightAdjust = 0.45,
   interactive = false,
@@ -54,53 +52,49 @@ function VoyagesVis({
   const idRef = useRef<string>(id);
   const allVoyagesRef = useRef<boolean>(allVoyages);
   const fullColorRef = useRef<boolean>(fullColor);
-  const isSampleRef = useRef<boolean>(isSample);
   const voyages = useRef<Array<Voyage>>([]);
   const filteredVoyages = useRef<Array<Voyage>>([]);
   const [yearRange, setYearRange] = useState<number[]>([startYear, endYear]);
+  const [prevYearProps, setPrevYearProps] = useState<number[]>([
+    startYear,
+    endYear,
+  ]);
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
   const [widthDiff, setWidthDiff] = useState<number>(0);
   const borderRef = useRef<boolean>(border);
 
-  // We make a bunch of refs so we can use properties in the initial setup.
-  // We don't want the initial setup to run each time one of these is updated,
-  // but we do need to keep them current.
+  // Sync yearRange to the startYear/endYear props when they change, computed
+  // directly in the render body (React's documented pattern for this) rather
+  // than an effect - this preserves the pre-paint timing ScrollingVoyageVis
+  // relies on when it drives startYear/endYear continuously during scroll.
+  // An effect would paint once with stale yearRange, then correct it a frame
+  // later on every scroll tick.
+  if (prevYearProps[0] !== startYear || prevYearProps[1] !== endYear) {
+    setPrevYearProps([startYear, endYear]);
+    setYearRange([startYear, endYear]);
+  }
+
+  // We keep these props in refs so the p5 setup callback (below) can read
+  // current values without re-running the whole canvas setup each time one
+  // of them changes.
   useEffect(() => {
     yearRangeRef.current = [startYear, endYear];
-  }, [startYear, endYear]);
-
-  useEffect(() => {
     backgroundRef.current = background;
-  }, [background]);
-
-  useEffect(() => {
     idRef.current = id;
-  }, [id]);
-
-  useEffect(() => {
     allVoyagesRef.current = allVoyages;
-  }, [allVoyages]);
-
-  useEffect(() => {
     fullColorRef.current = fullColor;
-  }, [fullColor]);
-
-  useEffect(() => {
-    isSampleRef.current = isSample;
-  }, [isSample]);
+  }, [startYear, endYear, background, id, allVoyages, fullColor]);
 
   useEffect(() => {
     if (windowSize.width && windowSize.height) {
       setWidth(windowSize.width * widthAdjust);
       setHeight(windowSize.height * heightAdjust);
-      setWidthDiff(
-        isSample ? 40 : windowSize.width - windowSize.width * widthAdjust
-      );
+      setWidthDiff(windowSize.width - windowSize.width * widthAdjust);
     }
-  }, [windowSize, widthAdjust, heightAdjust, isSample]);
+  }, [windowSize, widthAdjust, heightAdjust]);
 
-  useMemo(() => {
+  useEffect(() => {
     if (!p5Ref.current) return;
     filteredVoyages.current = voyages.current.filter(
       (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1]
@@ -115,10 +109,6 @@ function VoyagesVis({
     });
     p5Ref.current.redraw();
   }, [yearRange]);
-
-  useMemo(() => {
-    setYearRange([startYear, endYear]);
-  }, [startYear, endYear]);
 
   useEffect(() => {
     const initP5 = (p5: p5) => {
@@ -148,22 +138,16 @@ function VoyagesVis({
         });
 
         //filter the voyages out based on the values on the slider.
-        if (isSampleRef.current) {
-          filteredVoyages.current = voyages.current.filter(
-            (obj) => obj.year === yearRangeRef.current[0] + 1
-          );
-        } else {
-          filteredVoyages.current = voyages.current.filter(
-            (obj) =>
-              obj.year >= yearRangeRef.current[0] &&
-              obj.year <= yearRangeRef.current[1]
-          );
+        filteredVoyages.current = voyages.current.filter(
+          (obj) =>
+            obj.year >= yearRangeRef.current[0] &&
+            obj.year <= yearRangeRef.current[1]
+        );
 
-          if (!allVoyagesRef.current) {
-            filteredVoyages.current = filteredVoyages.current.filter(
-              (obj) => obj.resistanceReported
-            );
-          }
+        if (!allVoyagesRef.current) {
+          filteredVoyages.current = filteredVoyages.current.filter(
+            (obj) => obj.resistanceReported
+          );
         }
       };
 
@@ -189,20 +173,6 @@ function VoyagesVis({
       p5Copy?.remove();
     };
   }, [width, height, widthDiff]);
-
-  if (isSample) {
-    if (windowSize.width) {
-      return (
-        <div
-          id={id}
-          className="fixed"
-          style={{ marginLeft: `${windowSize.width / 6}px` }}
-        ></div>
-      );
-    }
-
-    return <></>;
-  }
 
   return (
     <div

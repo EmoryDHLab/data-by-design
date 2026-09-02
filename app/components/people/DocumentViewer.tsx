@@ -3,20 +3,19 @@ import { classNames } from "~/utils";
 import figures from "~/data/figures/people.json";
 import Picture from "../figures/Picture";
 import Figure from "../figures/Figure";
-import PlateCaption from "../figures/PlateCaption";
 import type { TFigure as FigureType } from "~/types/figureType";
 
 const images: FigureType[] = [
-  figures["0316-Willard0"],
-  figures["0317-Willard1"],
-  figures["0318-Willard2"],
-  figures["0319-Willard3"],
-  figures["0320-Willard4"],
-  figures["0321-Willard5"],
-  figures["0322-Willard6"],
-  figures["0323-Willard7"],
-  figures["0324-Willard8"],
-  figures["0325-Willard9"],
+  figures["0314-Willard0"],
+  figures["0315-willard1"],
+  figures["0316-willard2"],
+  figures["0317-willard3"],
+  figures["0318-willard4"],
+  figures["0319-willard5"],
+  figures["0320-willard6"],
+  figures["0321-willard7"],
+  figures["0322-willard8"],
+  figures["0323-willard9"],
 ];
 
 const DocumentViewer = () => {
@@ -44,7 +43,7 @@ const DocumentViewer = () => {
                   className={classNames(
                     index === selectedImageIndex &&
                       "p-1 hover:border-white-700 border-solid border-white border-2 rounded-md",
-                    "max-w-[70px]"
+                    "max-w-[70px]",
                   )}
                 />
               </button>
@@ -55,7 +54,7 @@ const DocumentViewer = () => {
               aria-label="Select previous image"
               onClick={() => {
                 setSelectedImageIndex(
-                  (i) => (i + images.length - 1) % images.length
+                  (i) => (i + images.length - 1) % images.length,
                 );
               }}
             >
@@ -67,17 +66,16 @@ const DocumentViewer = () => {
                 decoding="async"
               />
             </button>
-            
+
             <div className="flex flex-col items-center justify-start h-full pt-8">
               <Figure
                 figure={selectedImage as FigureType}
                 className="max-w-md text-white"
                 id={`doc-viewer-${selectedImage.fileName}`}
                 imageClassName="w-auto object-contain"
-                showCaption={false}
               />
             </div>
-            
+
             <button
               aria-label="Select next image"
               onClick={() => {
@@ -93,10 +91,6 @@ const DocumentViewer = () => {
               />
             </button>
           </div>
-          <PlateCaption figure={selectedImage} />
-          <p className="font-sans text-xs text-neutral-400 text-center mt-3 pb-8">
-            Plate {selectedImageIndex + 1} / {images.length}
-          </p>
         </div>
       </div>
     </div>

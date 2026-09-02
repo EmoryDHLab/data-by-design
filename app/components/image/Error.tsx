@@ -69,8 +69,8 @@ const Error = ({ children }: { children: ReactNode }) => {
   return (
     <FigureModal
       className="error-trigger"
-      figure={figures["0201-playfair-northam"]}
-      id={figures["0201-playfair-northam"].fileName}
+      figure={figures["0208b-playfair-northam.jog"]}
+      id={figures["0208b-playfair-northam.jog"].fileName}
     >
       <svg viewBox="0 0 105 55">
         <g
@@ -106,7 +106,7 @@ const Error = ({ children }: { children: ReactNode }) => {
           />
         </g>
       </svg>
-      <Caption figure={figures["0201-playfair-northam"]} />
+      <Caption figure={figures["0208b-playfair-northam.jog"]} />
       {children}
     </FigureModal>
   );

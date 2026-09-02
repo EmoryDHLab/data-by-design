@@ -75,23 +75,21 @@ export default function QuizActorButton({
       tabIndex={currentStepCount === 1 ? 0 : -1}
       onClick={() => selectActor(actor)}
       onKeyUp={({ key }) => {
-        if (key === "Enter" || key === "Space") selectActor(actor);
+        if (key === "Enter" || key === " ") selectActor(actor);
       }}
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
       onFocus={() => setActive(true)}
       onBlur={() => setActive(false)}
-      role={currentStepCount === 1 ? "button" : ""}
-      className={`focus:outline-none transition-all duration-700 ${
-        currentStepCount > 1 && actor === "Americas" ? "-translate-x-7" : ""
-      }`}
+      role={currentStepCount === 1 ? "button" : undefined}
+      className="focus:outline-none transition-all duration-700"
     >
       <svg
         width={26}
         height={14}
         x={x}
         y={y}
-        className="border border-2 border-white bg-white"
+        className="border-2 border-white bg-white"
       >
         <filter id={`shadow-${actor}`}>
           <feDropShadow
@@ -114,7 +112,6 @@ export default function QuizActorButton({
             fill={fillColor}
             width={24}
             height={12}
-            //
             {...rectStyle}
           ></rect>
           <text

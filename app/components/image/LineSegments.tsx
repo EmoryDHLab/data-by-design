@@ -30,11 +30,10 @@ const LineSegments = ({ scrollProgress }: Props) => {
     transform: "",
   });
   const [chartTransform, setChartTransform] = useState<string>(
-    "scale(1.42, 1.3) translate(-17.1,-13.6) rotate(-1)"
+    "scale(1.42, 1.3) translate(-17.1,-13.6) rotate(-1)",
   );
 
   useEffect(() => {
-    console.log("🚀 ~ LineSegments ~ scrollProgress:", scrollProgress);
     if (scrollProgress < 2.5 || scrollProgress >= 3.5) {
       setFocusShape({
         x: 21,
@@ -90,7 +89,7 @@ const LineSegments = ({ scrollProgress }: Props) => {
         <image
           mask="url(#northam-mask)"
           className="transition-all duration-1000"
-          href="/images/image/0201-playfair-northam.jpg"
+          href="/images/chapters/0217A-playfair-northam-scan_copy.jpg"
           width={100}
           x={5}
           y={scrollProgress < 2.5 || scrollProgress >= 3.5 ? -25 : -15}

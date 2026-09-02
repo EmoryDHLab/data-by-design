@@ -1,1289 +1,1607 @@
-import NoteLink from "~/components/NoteLink";
-
 export const prefaceFootnotes = [
-  <span key={"a1f4c802"}>
-    A “facsimile edition” is the term for a book that’s been scanned and
-    reprinted, its original formatting preserved. By contrast, a “modern
-    edition” (which we encounter far more often) is the term for a book that’s
-    been transcribed and reformatted so that its contents are presented in a
-    more contemporary style.
-  </span>,
   <span key={"d6651051"}>
-    Howard Wainer and Ian Spence, “Introduction,” in William Playfair,{" "}
-    <cite>
-      The Commercial and Political Atlas and Statistical Breviary,
-    </cite>{" "}
-    ed. Howard Wainer and Ian Spence (Cambridge UP, 2023 [1801]), p. 3.
+    Howard Wainer and Ian Spence, "Introduction," in William Playfair, The
+    Commercial and Political Atlas and Statistical Breviary, ed. Howard Wainer
+    and Ian Spence (New York: Cambridge UP, 2023 [1801]), p. 3.
   </span>,
   <span key={"5f9dd277"}>
-    Thomas Jefferson, <cite>The Writings of Thomas Jefferson, </cite>
-    vol. 1,{" "}
-    <cite>
-      Memoir, Correspondence, and Miscellanies from the Papers of Thomas
-      Jefferson,
-    </cite>{" "}
-    ed. Thomas Jefferson Randolph (Gray and Bowen, 1830), p. 2.
+    Thomas Jefferson, The Writings of Thomas Jefferson, vol. 1. Memoir,
+    Correspondence, and Miscellanies from the Papers of Thomas Jefferson, ed.
+    Thomas Jefferson Randolph (Boston: Gray and Bowen, 1830), p. 2.
   </span>,
   <span key={"28f35307"}>
-    Lauren Klein, “The Image of Absence: Archival Silence, Data Visualization,
-    and James Hemings,” <cite>American Literature</cite> 85.4 (2013): 661–88.
-  </span>,
-  <span key={"b3d09e61"}>
-    Notably, Adam Smith wrote against the practice of slavery in{" "}
-    <cite>The Theory of Moral Sentiments</cite> (1759) and touches on its
-    economic inefficiency in <cite>The Wealth of Nations</cite> (1776). He
-    stops short of challenging the racial hierarchies proposed by his
-    contemporaries, including Hume and Kames (and Jefferson).
+    Best practice would say that this reference should be to my dissertation.
+    But because I remain too embarrassed to ever reread it, let alone cite it, I
+    will instead refer you to the essay that this observation would become:
+    Lauren Klein, "The Image of Absence: Archival Silence, Data Visualization,
+    and James Hemings" American Literature 85.4 (2013).
   </span>,
   <span key={"69ca8ec2"}>
-    “Modern data visualization” is not a phrase that should go unexamined. See
-    pp. 25–29 for this discussion.{" "}
-  </span>,
-  <span key={"c47a2e93"}>
-    The first,{" "}
-    <cite>
-      An Archive of Taste: Race and Eating in the Early United States
-    </cite>{" "}
-    (U of Minnesota Press, 2020), has a significant focus on Thomas Jefferson.
-    The second, <cite>Data Feminism</cite>, coauthored with Catherine
-    D’Ignazio (MIT Press, 2020), is characterized by a different blend of
-    humanistic theory and technical expertise.{" "}
+    The idea of "modern data visualization" is not a phrase that should go
+    unexamined. See pp ##-## for this discussion.{" "}
   </span>,
   <span key={"e8c7fc35"}>
-    The 2010s were not the first time that humanities scholars had thought to
-    use computers for their research, of course—that tradition dates back to
-    the 1940s, if not before. But the early 2010s were the years when more and
-    more scholars from the humanities—students, professors, and library and
-    research staff alike—were turning to the web as a platform for creating
-    “born digital” work. On the long history of the digital humanities, see
-    Rachel Sagner Buurma and Laura Heffernan, “Search and Replace: Josephine
-    Miles and the Origins of Distant Reading,” <cite>Modernism/modernity</cite>{" "}
-    3.1 (2018). For an overview of born digital scholarship, see Matthew
-    Kirschenbaum, “The .txtual Condition: Digital Humanities, Born-Digital
-    Archives, and the Future Literary,”{" "}
-    <cite>Digital Humanities Quarterly</cite> 7.1 (2013).{" "}
+    Rachel Sagner Buurma and Laura Heffernan, "Search and Replace: Josephine
+    Miles and the Origins of Distant Reading." Modernism/modernity 3.1 (2018).
   </span>,
   <span key={"f88a7787"}>
-    Lauren Klein, Tanvi Sharma, Jay Varner, Margy Adams, Shiyao Li, Dan Jutan,
-    Jianing Fu, Anna Mola, Nicholas Yang, Yang Li, Zhou Fang, and Silas Munro,{" "}
-    <cite>
-      Data by Design: An Interactive History of Visualization and Power,
-      1789–1900.
-    </cite>{" "}
-    Viewable at: dataxdesign.io.{" "}
+    Matthew Kirschenbaum, "The .txtual Condition: Digital Humanities,
+    Born-Digital Archives, and the Future Literary." Digital Humanities
+    Quarterly 7.1 (2013). Web.{" "}
+  </span>,
+  <span key={"95eb1706"}>
+    Evan Bissell, Erik Loyer, Tanya Orellana, Lisa Nowlain, and Josh Begley, The
+    Knotted Line (2014).{" "}
+    <a href="https://knottedline.com/">https://knottedline.com/</a>{" "}
+  </span>,
+  <span key={"3cb7a953"}>
+    In addition to exemplifying some of the most exciting possibilities for
+    digital humanities scholarship, Neatline also exemplifies intention and care
+    around its citational practices. As such, it is difficult to cite directly.
+    I direct interested readers to consult the "Credits and History" page of the
+    Neatline site:{" "}
+    <a href="https://www.neatline.org/credits/">
+      https://www.neatline.org/credits/
+    </a>
+    .{" "}
   </span>,
 ];
 
 export const introFootnotes = [
-  <span key={"132052c6"}>
-    I came across this phrase through a Google Image search, and while I am somewhat mortified that the very first citation of this introduction is not to a scholarly text but instead to a tourism website, I have not been able to come up with a better descriptor for Oaxaca’s terrain on my own. Thus, Ivan Phillipsen, “The Natural Wonders of Oaxaca, Mexico,” <cite>Wild Latitudes</cite>, <NoteLink href="https://wildlatitudes.com/natural-wonders-of-oaxaca-mexico/">https://wildlatitudes.com/natural-wonders-of-oaxaca-mexico/</NoteLink>, accessed May 16, 2025.
+  //1
+  <span key="8a8b8ecd">
+    I came across this phrase through a Google Image search, and while I am
+    somewhat mortified that the very first citation of this Introduction is to a
+    tourism website, I have not been able to come up with a better descriptor
+    for Oaxaca's terrain on my own, nor have I encountered this phrase
+    elsewhere. Thus, Ivan Phillipsen, "The Natural Wonders of Oaxaca, Mexico,"
+    Wild Latitutes, https://wildlatitudes.com/natural-wonders-of-oaxaca-mexico/.
+    Accessed 16 May 2025.{" "}
   </span>,
-  <span key={"66e5c4d9"}>
-    The Ñudzahui, like the Mexica (Aztec), used both solar and sacred calendar systems, but did not count years in the same way as the Gregorian (European) calendar system. For more on Mesoamerican calendars and codices, see Alfonso Caso, <cite>Los calendarios prehispánicos</cite> (Universidad Nacional Autónoma de México, 1967), and more recently Maarten E. R. G. N. Jansen and Gabina Aurora Pérez Jiménez, “Chronological Correlations in Aztec and Mixtec History,” in <cite>Mesoamerican Manuscripts: New Scientific Approaches and Interpretations</cite>, edited by Maarten E. R. G. N. Jansen, Virginia Lladò-Buisán, and Ludo Snijders (Brill, 2019), 341–379.
+  //2
+  <span key="ca93c2bd">
+    The cosmographer was a man by the name of Juan López de Velasco, who had
+    been appointed Chief Cosmographer-Chronicler of the Indies a decade earlier,
+    in 1571. In this role, López de Velasco compiled several substantial texts
+    documenting colonial knowledge of the Americas as well as charts and maps of
+    his own. See Felipe E. Ruan, "Prudent Deferment: Cosmographer-Chronicler
+    Juan López de Velasco and the Historiography of the Indies," The Americas
+    74.1 (2017): 27-55.{" "}
   </span>,
-  <span key={"74389e90"}>
-    The cosmographer was a man by the name of Juan López de Velasco, who had been appointed Chief Cosmographer-Chronicler of the Indies a decade earlier, in 1571. In this role, López de Velasco compiled several substantial texts documenting colonial knowledge of the Americas as well as charts and maps of his own. See Felipe E. Ruan, “Prudent Deferment: Cosmographer-Chronicler Juan López de Velasco and the Historiography of the Indies,” <cite>Americas</cite> 74.1 (2017): 27–55.
+  //3
+  <span key="3fc53364">
+    Visualization researcher Ben Shneiderman is credited with the oft-quoted
+    phrase, "The purpose of visualization is insight, not pictures." See, for
+    example, Jessica Hullman, "The Purpose of Visualization is Insight, not
+    Pictures: An Interview with Ben Shneiderman," ACM Interactions, August 19th,
+    2019,
+    https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben.
+    Accessed 16 May 2025. For a more extended discussion of insight, including
+    its roots in Stuard Card, Jock Macinlay, and Shneiderman's "visualization
+    reference model," see Derya Akbaba, Lauren Klein, and Miriah Meyer,
+    "Entanglements for Visualization: Changing Research Outcomes through
+    Feminist Theory," IEEE Transactions on Visualization and Computer Graphics
+    31.1 (2025): 1279-89.{" "}
   </span>,
-  <span key={"83f16c5e"}>
-    Visualization researcher Ben Shneiderman is credited with the oft-quoted phrase, “The purpose of visualization is insight, not pictures.” See, for example, Jessica Hullman, “The Purpose of Visualization Is Insight, Not Pictures: An Interview with Ben Shneiderman,” <cite>ACM Interactions</cite>, August 19, 2019, <NoteLink href="https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben">https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben</NoteLink>, accessed May 16, 2025. For a more extended discussion of insight, including its roots in Stuart Card, Jock Mackinlay, and Shneiderman’s “visualization reference model,” see Derya Akbaba, Lauren Klein, and Miriah Meyer, “Entanglements for Visualization: Changing Research Outcomes through Feminist Theory,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 31.1 (2025): 1279–1289.
+  //4
+  <span key="bc6fe997">
+    This statement is inspired by the definition of "local data" as articulated
+    by Yanni Loukissas in All Data are Local: Thinking Critically in a
+    Data-Driven Society (MIT Press, 2019). There, he writes: "Data are cultural
+    artifacts created by people, and their dutiful machines, at a time, in a
+    place, and with the instruments at hand for audiences that are conditioned
+    to receive them" (2).{" "}
   </span>,
-  <span key={"02c73c9a"}>
-    This statement is inspired by the definition of “local data” as articulated by Yanni Loukissas in <cite>All Data Are Local: Thinking Critically in a Data-Driven Society</cite> (MIT Press, 2019). There he writes: “Data are cultural artifacts created by people, and their dutiful machines, at a time, in a place, and with the instruments at hand for audiences that are conditioned to receive them” (2).
+  //5
+  <span key="f25a0e15">
+    Thank you to Jihan Sherman for alerting me to this method of attribution,
+    developed by the curators of "Hear Me Now: The Black Potters of Old
+    Edgefield, South Carolina" at the High Museum in Atlanta, GA, which ran from
+    Feburary 16th through May 12th, 2024. This method of attribution is intended
+    to acknowledge the social, historical, and political conditions that result
+    in the names of certain artists being preserved for posterity and others
+    not. See https://high.org/exhibition/hear-me-now/. Accessed May 16, 2025. On
+    the mapmaker's training as a painter, see Alex Hidalgo, Trail of Footprints:
+    A History of Indigenous Maps from Viceregal Mexico (Univ. of Texas Press,
+    2019), p. 40.{" "}
   </span>,
-  <span key={"2c04b226"}>
-    Thanks to Jihan Sherman for alerting me to this method of attribution, developed by the curators of “Hear Me Now: The Black Potters of Old Edgefield, South Carolina” at the High Museum in Atlanta, which ran from February 16 through May 12, 2024. It is intended to acknowledge the social, historical, and political conditions that result in the names of certain artists being preserved for posterity and others not. See <NoteLink href="https://high.org/exhibition/hear-me-now/">https://high.org/exhibition/hear-me-now/</NoteLink>, accessed May 16, 2025. On the mapmaker’s training as a painter, see Alex Hidalgo, <cite>Trail of Footprints: A History of Indigenous Maps from Viceregal Mexico</cite> (U of Texas Press, 2019), 40.
+  //6
+  <span key="802babbc">
+    A later section of this introduction problematizes the framing of modernity.
+    For now, I employ scare quotes with all that they imply to indicate that
+    this designation requires significant contextualization, and significant
+    critique.{" "}
   </span>,
-  <span key={"d5ab0c03"}>
-    A later section of this introduction problematizes the framing of modernity. For now, I employ scare quotes with all that they imply to indicate that this designation requires significant contextualization, and significant critique.
+  //7
+  <span key="de46dc90">
+    Howard F. Cline, "The Relaciones Geográficas of the Spanish Indies,
+    1577-1586," Hispanic American Historical Review 44.3 (1964): 341-75
   </span>,
-  <span key={"ac24343c"}>
-    Howard F. Cline, “The Relaciones Geográficas of the Spanish Indies, 1577–1586,” <cite>Hispanic American Historical Review</cite> 44.3 (1964): 341–374.
+  //8
+  <span key="e0c687b0">
+    Thank you to Yanna Yannakakis for her detailed feedback on an earlier
+    version of this Introduction, and in particular, her suggestion that I
+    introduce the concept of yuhuiayu so as to place Ñudzahui and Spanish
+    worldviews alongside each other. This reflets how Teozacoalco itself was a
+    place that was viewed through multiple lenses by multiple groups, often at
+    the same time. For more on the concept of yuhuiayu, see Yanna Yannakakis,
+    Since Time Immemorial: Native Custom & Law in Colonial Mexico (Duke UP,
+    2023) and Kevin Terraciano, The Mixtecs of Colonial Oaxaca: Ñudzahui
+    History, Sixteenth Through Eighteenth Centuries (Stanford UP, 2002).
   </span>,
-  <span key={"5f31e8cb"}>
-    Henry Kamen, <cite>Philip of Spain</cite> (Yale UP, 1997).
+  //9
+  <span key="ffb5943d">
+    David Shoemaker, "El Mapa de Teozacoalco" (Foundation for the Advancement of
+    Mesoamerican Studies, 1999).{" "}
   </span>,
-  <span key={"13e314d0"}>
-    Thanks to Yanna Yannakakis for her detailed feedback on an earlier version of this introduction, and in particular her suggestion that I introduce the concept of <cite>yuhuiayu</cite> so as to place Ñudzahui and Spanish worldviews alongside each other. This reflets how Teozacoalco itself was a place that was viewed through multiple lenses by multiple groups, often at the same time. For more on the concept of <cite>yuhuiayu</cite>, see Yanna Yannakakis, <cite>Since Time Immemorial: Native Custom and Law in Colonial Mexico</cite> (Duke UP, 2023), and Kevin Terraciano, <cite>The Mixtecs of Colonial Oaxaca: Ñudzahui History, Sixteenth through Eighteenth Centuries</cite> (Stanford UP, 2002).
+  //10
+  <span key="54ed3f8d">
+    Both Barbara Mundy and Yanna Yannakakis provide detailed readings of these
+    diagrams. See Mundy, The Mapping of New Spain: Indigenous Cartography and
+    the Maps of the Relaciones Geographicas (Univ. of Chicago, 2000), p. 114 and
+    Yannakakis, Since Time Immemorial, p. 98
   </span>,
-  <span key={"f4c46200"}>
-    Both Barbara Mundy and Yanna Yannakakis provide detailed readings of these diagrams. See Mundy, <cite>The Mapping of New Spain: Indigenous Cartography and the Maps of the Relaciones Geográficas</cite> (U of Chicago Press, 2000), 114, and Yannakakis, <cite>Since Time Immemorial</cite>, 99.
+  //11
+  <span key="0be0eef9">
+    In addition to Mundy, Hidalgo, and Yannakakis, see also Alfonso Caso, "El
+    Mapa de Teozacoa1co," Cuadernos Americanos 47.5 (1949): 145-81; René Acuña,
+    ed. Relaciones geográficas del siglo XVI (UNAM, 1984); and Francisco de
+    Solano, ed. Cuestionarios para la formación de las relaciones geográficas de
+    Indias: Siglos XVI/XIX (Consejo Superior de Investigaciones Científicas,
+    1988).
   </span>,
-  <span key={"3dd251b9"}>
-    In addition to Mundy, Hidalgo, and Yannakakis, see also Alfonso Caso, “El Mapa de Teozacoalco,” <cite>Cuadernos Americanos</cite> 47.5 (1949): 145–181; René Acuña, ed., <cite>Relaciones geográficas del siglo XVI</cite> (UNAM, 1984); and Francisco de Solano, ed., <cite>Cuestionarios para la formación de las relaciones geográficas de Indias: Siglos XVI/XIX</cite> (Consejo Superior de Investigaciones Científicas, 1988).
+  //12
+  <span key="8db2da43">Yannakakis, Since Time Immemorial, p. 105</span>,
+  //13
+  <span key="5e6ad62e">
+    For an elaboration of this point, see Yannakakis, Since Time Immemorial, p.
+    106.{" "}
   </span>,
-  <span key={"e4bee1c0"}>
-    Yannakakis, <cite>Since Time Immemorial</cite>, 106.
+  //14
+  <span key="dc89396a">
+    Orit Halpern, Beautiful Data: A History of Vision and Reason sine 1945 (Duke
+    UP, 2015), p. 20
   </span>,
-  <span key={"7b2cfca4"}>
-    Orit Halpern, <cite>Beautiful Data: A History of Vision and Reason since 1945</cite> (Duke UP, 2015), 21.
+  //15
+  <span key="3f84d18a">
+    RJ Andrews, "Don't say ‘data visualizations,' Chartography January 28, 2025.
+    https://www.chartography.net/p/dont-say-data-visualizations. Accessed 16 May
+    2025.{" "}
   </span>,
-  <span key={"928c1b80"}>
-    “Chart, n.,” <cite>The Oxford English Dictionary</cite>, September 2025, <NoteLink href="https://doi.org/10.1093/OED/4890659491">https://doi.org/10.1093/OED/4890659491</NoteLink>. For an in-depth exploration of the history of the term, see the multivolume <cite>History of Cartography</cite> project, edited by J. B. Harley and David Woodward and published by the University of Chicago Press.
+  //16
+  <span key="cd163bfd">
+    Howard Grey Funkhouser, "Historical Development of the Graphical
+    Representation of Statistical Data," Osiris 3 (1937): 269-404; Jacques
+    Bertin, Sémiologie graphique. Les diagrammes, les réseauz, les cartes
+    (Gauthier-Villars, 1967); Edward Tufte, Visual Display of Quantitative
+    Information (Cheshire Press, 1983). Another prominent work of this era is
+    John Tukey's Exploratory Data Analysis (Addison-Wesley, 1977), which
+    advances lightweight visualizations (e.g. scatter plots and bar charts) as
+    tools to support early, exploratory work with data.{" "}
   </span>,
-  <span key={"ce75d220"}>
-    Daniel Rosenberg and Anthony Grafton, <cite>Cartographies of Time: A History of the Timeline</cite> (Princeton Architectural Press, 2012), 96–149.
+  //17
+  <span key="b60ca222">Halpern, Beautiful Data, p. 21. </span>,
+  //18
+  <span key="94b5dee3">
+    Stuard Card, Jock Macinlay, and Ben Shneiderman, Readings in Information
+    Visualization: Using Vision to Think (Morgan Kaufman, 1999), p. 5
   </span>,
-  <span key={"81c5c833"}>
-    Numerous large-scale visualizations of US Census data can be found in the catalogues of the American Antiquarian Society and the Library Company of Philadelphia, dating as far back as the 1840s; this was a trend I observed during my archival research. Beginning with the 1870 census, the Census Bureau itself published dazzling illustrated statistical atlases, discussed in depth in chapter 5.
+  //19
+  <span key="d14e4004">
+    This technical definition has been carried into the present largely
+    unchanged. See, for example, Michael Friendly and Daniel J. Denis,
+    "Varieties of Data Visualization," which accompanies their monumental
+    website, Milestones in the History of Thematic Cartography, Statistical
+    Graphics, and Data Visualization.
+    https://www.datavis.ca/milestones/index.php?page=varieties+of+data+visualization.
+    Accessed 16 May 2025.{" "}
   </span>,
-  <span key={"3b5ab145"}>
-    RJ Andrews, “Don’t Say ‘Data Visualizations,’” <cite>Chartograph</cite>, January 28, 2025, <NoteLink href="https://www.chartography.net/p/dont-say-data-visualizations">https://www.chartography.net/p/dont-say-data-visualizations</NoteLink>, accessed May 16, 2025.
+  //20
+  <span key="b248330b">
+    It is also worth noting that the field itself has begun to move in this
+    direction. The annual IEEE Visualization conference, which once defined
+    three independent tracks—one for scientific visualization, the other for
+    information visualization, and the third for visual analytics—merged into a
+    single weeklong conference, IEEE VIS, in 2016
   </span>,
-  <span key={"21fa273d"}>
-    In 2022, Georges Hattab and RJ Andrews published a modern English translation, <cite>The Graphic Method</cite> (Visionary Press).
+  //21
+  <span key="3dfd1358">
+    This argument largely parallels the argument about data science that I make,
+    alongside Catherine D'Ignazio, in Data Feminism (MIT Press, 2020), p. 21. It
+    also bears mention that I am not alone in rejecting binary distinctions
+    between visualization forms. In describing the relationship between
+    visualizations and infographics, for example, theorist-practitioner Alberto
+    Cairo, explains, "every infographic and every visualization has a
+    presentation and an exploration component: they present, but they also
+    facilitate the analysis of what they show, to different degrees." The
+    Functional Art: An Introduction to Information Graphics and Visualization
+    (New Riders, 2012), p. xvi.{" "}
   </span>,
-  <span key={"f4ad84e5"}>
-    Howard Grey Funkhouser, “Historical Development of the Graphical Representation of Statistical Data,” <cite>Osiris</cite> 3 (1936): 269–404; Jacques Bertin, <cite>Sémiologie graphique. Les diagrammes, les réseaux, les cartes</cite> (Gauthier-Villars, 1967); Edward R. Tufte, <cite>The Visual Display of Quantitative Information</cite> (Graphics Press, 1983). Another prominent work of this era is John Tukey’s <cite>Exploratory Data Analysis</cite> (Addison-Wesley, 1977), which advances lightweight visualizations (e.g., scatter plots and bar charts) as tools to support early, exploratory work with data.
+  //22
+  <span key="22405ba3">
+    While this anecdote has never been formally verified, it remains a part of
+    Galileo lore, viz. Steven Strogatz, "From a Swinging Chandelier to Global
+    Positioning Systems," American Scientist 109.2 (2021), p. 106.{" "}
   </span>,
-  <span key={"ad575468"}>
-    See, for example, Michael Friendly and Daniel J. Denis, “Varieties of Data Visualization,” which accompanies their monumental website, <cite>Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization</cite>, <NoteLink href="https://www.datavis.ca/milestones/index.php?page=varieties+of+data+visualization">https://www.datavis.ca/milestones/index.php?page=varieties+of+data+visualization</NoteLink>, accessed May 16, 2025.
+  //23
+  <span key="2a70c1bd">
+    See Funkhouser, "Historical Development," Tufte, Visual Display, and more
+    recently, Sandra Rendgen, History of Information Graphics (Taschen, 2019),
+    and Michael Friendly and Howard Wainer, A History of Data Visualization and
+    Graphic Communication (Harvard UP, 2021). While many of these describe how
+    the generally exploratory air of the Renaissance set these developments in
+    motion, especially with the example of illuminated manuscripts, it was the
+    Scientific Revolution's turn to empirical observation and measurement that
+    provided the data which modern visualization would require.{" "}
   </span>,
-  <span key={"2736b08a"}>
-    Tamara Munzner, <cite>Visualization Analysis and Design</cite> (CRC Press, 2014), 1. One could also point to the 2021 merging of the flagship IEEE VIS conferences on information visualization, scientific visualization, and visual analytics into a single conference now called IEEE VIS: Visualization & Visual Analytics. See Christoph Garth, Min Chen, Alex Endert, Petra Isenberg, Alexander Lex, Shixia Liu, and Anders Ynnerman, “Things Are Changing in 2021: The New VIS Conference,” <cite>IEEE VIS</cite> (blog), October 7, 2020, <NoteLink href="https://ieeevis.org/year/2024/blog/things-are-changing-2021">https://ieeevis.org/year/2024/blog/things-are-changing-2021</NoteLink>, accessed January 15, 2026.
+  //24
+  <span key="cc770d53">
+    This is, of course, an exceedingly general gloss. In an Islamic
+    epistemology, for example, empirical evidence has been considered a part of
+    divine knowledge from its very inception. Even within Enlightenment Europe,
+    empiricism was not the only governing theory. The theory of rationalism, as
+    exemplified by figures such as René Descartes and Baruch Spinoza, offered a
+    wholly alternative explanation to how knowledge was produced, one which held
+    that certain core ideas, such as the notion of language or the shape of a
+    curve, came to be understood not by experiment but instead through the inner
+    workings of the mind. These fundamental concepts were not observable but
+    innate, the rationalists posited, and were transformed into knowledge by a
+    process of deduction: by moving from the abstract to the particular. This
+    process was the opposite of the inductive approach advanced by the
+    empiricists, who believed in moving from the particular to the abstract.{" "}
   </span>,
-  <span key={"344b1502"}>
-    On data physicalization, see Pierre Dragicevic, Yvonne Jansen, and Andrew Vande Moere, “Data Physicalization,” in the <cite>Springer Handbook of Human Computer Interaction</cite>, ed. Jean Vanderdonckt, Philippe Palanque, and Marco Winckler (Springer, 2021). On “data hunches,” see Haihan Lin, Derya Akbaba, Miriah Meyer, and Alexander Lex, “Data Hunches: Incorporating Personal Knowledge into Visualizations,” <cite>IEEE Transactions on Visualization and Computer Graphics (VIS)</cite> 29.1 (2022): 504–514. On “visualization vibes,” see Michelle Morgenstern, Amy Fox, Graham M. Jones, and Arvind Satyanarayan, “Visualization Vibes: The Socio-Indexical Function of Visualization Design,” <cite>IEEE Transactions on Visualization and Computer Graphics (VIS)</cite> 32.1 (2026): 1284–1294.
+  //25
+  <span key="4075d947">
+    The idea of a hierarchy of the senses, in which sight is at the top, dates
+    to the ancient Greeks. In De Anima (ca. 350 BCE), for example, Aristotle
+    posits that the sense of sight is the highest sense because it can act
+    alone. In Sense and Sensibilia, he further articulates the five senses and
+    maintains that sight is at the top because it retains distance from its
+    objects of perception. For more of this history, see Carolyn Korsmeyer, "The
+    Hierarchy of the Senses," in Making Sense of Taste: Food and Philosophy
+    (Cornell UP, 2015), pp. 20-54
   </span>,
-  <span key={"a1684040"}>
-    We should all now be familiar with the history of women “computers,” as documented by historians of technology such as Nathan Ensmenger and Mar Hicks, in which the introduction of formal technical credentialing requirements pushed out women who had taught themselves. But the phenomenon goes back further still. In <cite>Witches, Midwives, and Nurses: A History of Women Healers</cite>, Barbara Ehrenreich and Deirdre English detail the history of obstetrics in the United States, in which experience-directed women midwives were replaced by book-smart men obstetricians after the establishment of formal medical schools. The same pattern can be found in the kitchen, with women performing most home cooking without formal training (or recognition), while men attend culinary school to become celebrity chefs. See Ensmenger, <cite>The Computer Boys Take Over: Computers, Programmers, and the Politics of Technical Expertise</cite> (MIT Press, 2010); Hicks, <cite>Programmed Inequality: How Britain Discarded Women Technologists and Lost Its Edge in Computing</cite> (MIT Press, 2017); and Ehrenreich and English, <cite>Witches, Midwives, and Nurses: A History of Women Healers</cite> (New York: Feminist Press, [1973] 2010).
+  //26
+  <span key="5072a642">
+    His air pump experiments notwithstanding, Boyle's own visual impulse would
+    seem to be towards precision and detail, rather than abstraction, as evinced
+    by the detailed illustrations that accompanied his New Experiments, as
+    literary scholar Alex Sherman observes. Comment on open review, January 13,
+    2025. https://hyp.is/_GCQpNH6Ee-wcGtkgLC9FQ/dataxdesign.io/chapters/intro{" "}
   </span>,
-  <span key={"f36b5a0a"}>
-    On the “continuum” between data visualization and data communication, see Alberto Cairo, <cite>The Functional Art: An Introduction to Information Graphics and Visualization</cite> (New Riders, 2012), 15.
+  //27
+  <span key="487169ae">
+    If you are distressed to see the entirety of the Enlightenment summarized in
+    a single sentence, rest assured that this is not the last time we will
+    discuss the contributions associated with this pivotal time.{" "}
   </span>,
-  <span key={"04f23f9d"}>
-    On the significance of visualizations that occur naturally in the world, see Dietmar Offenhuber, <cite>Autographic Design: The Matter of Data in a Self-Inscribing World</cite> (MIT Press, 2023).
+  //28
+  <span key="9b6f40eb">
+    Friendly and Wainer, History of Data Visualization, pp. 16
   </span>,
-  <span key={"449087fe"}>
-    This argument largely parallels the argument about data science that I make, alongside Catherine D’Ignazio, in <cite>Data Feminism</cite> (MIT Press, 2020), 21. It also bears mention that I am not alone in rejecting binary distinctions between visualization forms. In describing the relationship between visualizations and infographics, for example, theorist-practitioner Alberto Cairo explains, “every infographic and every visualization has a <cite>presentation</cite> and an <cite>exploration</cite> component: they present, but they also facilitate the analysis of what they show, to different degrees.” Cairo, <cite>The Functional Art</cite>, xvi.
+  //29
+  <span key="c6eecaec">Ref role of barometer, Friendly and Wainer, p. 19</span>,
+  //30
+  <span key="5e5c1d34">Tufte, Visual Display, p. 21</span>,
+  //31
+  <span key="74aad6ad">
+    Halley would go on to captain the British naval vessel, the Paramour, on a
+    mission to the South Atlantic ocean that has been claimed as the first
+    "purely scientific voyage" to take place on a royal ship (Susan Borowski,
+    "The Multi-Layered Wisdom of Edmond Halley," American Association for the
+    Advancement of Science, 12 October, 2012). Forced to return due to personal
+    conflicts with his crew, Halley returned to the South Atlantic two more
+    times in the next three years, culminating a 1701 map showing the isogonic
+    lines of the entire Atlantic Ocean. This map was, in turn, used to ease
+    navigation across the Atlantic, not only for future scientific research, but
+    also for the trade of goods—goods which, at time, took human form.{" "}
   </span>,
-  <span key={"b8201828"}>
-    While this anecdote has never been formally verified, it remains a part of Galileo lore, viz. Steven Strogatz, “From a Swinging Chandelier to Global Positioning Systems,” <cite>American Scientist</cite> 109.2 (2021): 106.
+  //32
+  <span key="a5c0b11c">
+    I am not the first to have made this argument. See, for example, Sylvia
+    Wynter, "1492: A New World View," in Race, Discourse, and the Origin of the
+    Americas: A New World View, eds. Vera Lawrence Hyatt and Rex Nettleford
+    (Smithsonian Institution Press, 1994): 5–57.{" "}
   </span>,
-  <span key={"1261d814"}>
-    See Funkhouser, “Historical Development,” Tufte, <cite>Visual Display</cite>, and more recently Sandra Rendgen, <cite>History of Information Graphics</cite> (Taschen, 2019), and Michael Friendly and Howard Wainer, <cite>A History of Data Visualization and Graphic Communication</cite> (Harvard UP, 2021). While many of these describe how the generally exploratory air of the Renaissance set these developments in motion, especially with the example of illuminated manuscripts, it was the Scientific Revolution’s turn to empirical observation and measurement that provided the data which modern visualization would require.
+  //33
+  <span key="d74d3166">
+    The impact of this devastation continues into the present, as contemporary
+    Indigenous scholars such as Mishauna Goeman (Seneca) and Max Liboiron
+    (Métis/Mechif) remind us, profoundly disordering social structures and
+    relationships (Goeman), as well as relations with land and resources
+    (Libioron). As Liboiron, citing Glen Sean Coulthard (Yellowknives Dene)
+    explains, "colonialism is a way to describe relationships characterized by
+    conquest and genocide that grant colonialists and settlers ‘ongoing state
+    access to land and resources that contradictorily provide the material and
+    spiritual sustenance of Indigenous societies on the one hand, and the
+    foundation of colonial state-formation, settlement, and capitalist
+    development on the other." Max Liboiron, Pollution is Colonialism (Duke UP,
+    2021), p. 9.{" "}
   </span>,
-  <span key={"dcdfcf8b"}>
-    This is, of course, an exceedingly general gloss. In an Islamic epistemology, for example, empirical evidence has been considered a part of divine knowledge from its very inception. Even within Enlightenment Europe, empiricism was not the only governing theory. The theory of rationalism, as exemplified by Figures such as René Descartes and Baruch Spinoza, offered a wholly alternative explanation to how knowledge was produced, one that held that certain core ideas, such as the notion of language or the shape of a curve, came to be understood not by experiment but instead through the inner workings of the mind. These fundamental concepts were not observable but innate, the rationalists posited, and were transformed into knowledge by a process of deduction: by moving from the abstract to the particular. This process was the opposite of the inductive approach advanced by the empiricists, who believed in moving from the particular to the abstract.
+  //34
+  <span key="cf48fd95">Liboiron, Pollution, p. 8</span>,
+  //35
+  <span key="d3c11ff4">Cline, "Relaciones Geográficas," p. 349</span>,
+  //36
+  <span key="b62de09d">
+    Ian Hacking, The Taming of Chance (Cambridge UP, 1990), p. 18. For a more
+    recent account of the rise of modern statistics, see Chris Wiggins and
+    Matthew L. Jones, How Data Happened: A History from the Age of Reason to the
+    Age of Algorithms (Norton, 2023).{" "}
   </span>,
-  <span key={"c0632e76"}>
-    The idea of a hierarchy of the senses, in which sight is at the top, dates to the ancient Greeks. In <cite>De anima</cite> (ca. 350 BCE), for example, Aristotle posits that the sense of sight is the highest sense because it can act alone. In <cite>Sense and Sensibilia</cite>, he further articulates the five senses and maintains that sight is at the top because it retains distance from its objects of perception. For more of this history, see Carolyn Korsmeyer, “The Hierarchy of the Senses,” in <cite>Making Sense of Taste: Food and Philosophy</cite> (Cornell UP, 2015), 20–53.
+  //37
+  <span key="e71638a9">
+    Admittedly, not in as much depth or as much urgency as is deserved. As a
+    supplement, see Banu Subramaniam, Ghost Stories for Darwin: The Science of
+    Variation and the Politics of Diversity (Univ. of Illinois Press, 2014) and
+    Anita Chan, Predatory Data: Eugenics in Big Tech and Our Fight for an
+    Independent Future (Univ. of California Press, 2025).
   </span>,
-  <span key={"1f95db45"}>
-    His air pump experiments notwithstanding, Boyle’s own visual impulse would seem to have been toward precision and detail rather than abstraction, as evinced by the detailed illustrations that accompanied his <cite>New Experiments</cite>, as literary scholar Alex Sherman observes. Comment on open review, January 13, 2025, <NoteLink href="https://hyp.is/_GCQpNH6Ee-wcGtkgLC9FQ/dataxdesign.io/chapters/intro">https://hyp.is/_GCQpNH6Ee-wcGtkgLC9FQ/dataxdesign.io/chapters/intro</NoteLink>.
+  //38
+  <span key="6db458ac">
+    This is the enduring contribution of feminist science and technology studies
+    scholarship of the 1980s and 1990s, viz. Donna Haraway's "Situated
+    Knowledges: The Science Question in Feminism and the Privilege of Partial
+    Perspective," Feminist Studies 14.3 (1988): 575-599. It has since been
+    renewed and expanded by scholars such as Katherine McKittrick, whose Dear
+    Science and Other Stories (Duke UP, 2020), exposes the limits of even
+    Haraway's partial perspective; this work is discussed in Chapter 3
   </span>,
-  <span key={"0db22997"}>
-    If you are distressed to see the entirety of the Enlightenment summarized in a single sentence, rest assured that this is not the last time we will discuss the contributions associated with this pivotal time.
+  //39
+  <span key="61508e19">
+    On Tawantinsuyu, or "the land of four parts," see The Inka Empire: A
+    Multidisciplinary Approach, ed. Izumi Shimada (Univ. of Texas Press, 2015).{" "}
   </span>,
-  <span key={"83d217ae"}>
-    Friendly and Wainer, <cite>A History of Data Visualization</cite>, 17.
+  //40
+  <span key="c4569577">
+    Xiyao Mei, Yu Zhang, Chaofan Yang, Rui Shi, and Xiaoru Yuan, "ZuantuSet: A
+    Collection of Historical Chinese Visualizations and Illustrations," arXiv
+    preprint, February 26, 2025, https://arxiv.org/pdf/2502.19093{" "}
   </span>,
-  <span key={"dd607ae9"}>
-    On the role of the barometer, see Friendly and Wainer, <cite>A History of Data Visualization</cite>, 20.
+  //41
+  <span key="e54dfa4a">
+    Some, such as Bruno Latour, have argued that Europe has never been modern at
+    all, and that all claims to modernity that are founded on the distinctions
+    between science and culture that the Enlightenment would introduce are in
+    fact false distinctions, and therefore untrue. We Have Never Been Modern
+    (Harvard UP, 1993).
   </span>,
-  <span key={"7227d1f0"}>
-    Friendly and Wainer, in the subtitle of their chapter on Playfair, call him “the father of modern graphics” (<cite>A History of Data Visualization</cite>, 95). Friendly and Daniel J. Denis’s website, <cite>Milestones in the History of Thematic Cartography, Statistical Graphics, and Data Visualization</cite>, which, before the publication of Friendly and Wainer’s book, served as the field’s most comprehensive history, is the source of the “golden age” terminology, defined as the period between 1840 and 1910. Also see Friendly with Matthew Sigal and Derek Harnanansingh, “The Milestones Project: A Database for the History of Data Visualization,” January 11, 2013, <NoteLink href="https://datavis.ca/papers/MilestonesProject.pdf">https://datavis.ca/papers/MilestonesProject.pdf</NoteLink>, accessed January 25, 2026.
+  //42
+  <span key="d145b34f">
+    The prominent Scottish philosopher David Hume, for example, claimed that
+    there was a racial hierarchy of "four or five different kinds" of humans,
+    with "all other species… naturally inferior to the whites." "On National
+    Characters," in Political Essays, ed. Knud Haakonsse (Cambridge UP, 2012),
+    pp. 78-93
   </span>,
-  <span key={"9effb176"}>
-    Tufte, <cite>Visual Display</cite>, 24. On the mythology of John Snow and his visual and epidemiological antecedents, see Howard Brody et al., “Map-Making and Myth-Making in Broad Street: The London Cholera Epidemic, 1854,” <cite>The Lancet</cite> 356.9223 (2000): 64–68.
+  //43
+  <span key="1c1ed8df">
+    Some readers may recognize this as a gloss of Michel Foucault's theorization
+    of counterhistory, which he develops in relation to the historiographic
+    theory of Friedrich Nietzsche; they would be right. For more on Foucault and
+    counterhistory, see "Nietzsche, Genealogy, History," in Language,
+    Counter-Memory, Practice: Selected Essays and Interviews, ed, D.F. Bouchard
+    (Cornell UP, 1977): 139-165
   </span>,
-  <span key={"3a361320"}>
-    The sole woman (sometimes) included in this chronology, Florence Nightingale, has been anointed a “master” but, significantly, never (at least to my knowledge) a “founder” or “pioneer” (or even a “mother”); e.g., Noel-Ann Bradshaw, “Florence Nightingale (1820–1910): An Unexpected Master of Data,” <cite>Patterns</cite> 8.1/2 (2020).
+  //44
+  <span key="9add9571">
+    Ruha Benjamin, Imagination: A Manifesto (Norton, 2024), p. 22
   </span>,
-  <span key={"491430f8"}>
-    Deborah Shapley, “The Da Vinci of Data,” <cite>New York Times,</cite> March 30, 1998; Tufte, <cite>Visual Display</cite>, 40. In <cite>The Minard System: The Complete Statistical Graphics of Charles-Joseph Minard</cite> (Princeton Architectural Press, 2018), Sandra Rendgen describes Minard as a “forefather of modern information visualization.” Friendly, in his early work on Minard, also calls him a “true pioneer.” See Friendly, “Visions and Re-Visions of Charles Joseph Minard,” <cite>Journal of Educational and Behavioral Statistics</cite> 27.1 (Spring 2002): 31.
+  //45
+  <span key="f46e6892">
+    On racial capitalism, see Cedric Robinson, Black Marxism: The Making of the
+    Black Radical Tradition (Univ. of North Carolina Press, 1993) or just read
+    Chapter 1.{" "}
   </span>,
-  <span key={"fcc2e489"}>
-    Tufte, <cite>Visual Display</cite>, 22.
-  </span>,
-  <span key={"b01d1692"}>
-    Halley would go on to captain the British naval vessel <cite>Paramour</cite> on a mission to the South Atlantic that has been claimed as the first “purely scientific voyage” to take place on a royal ship (Susan Borowski, “The Multi-layered Wisdom of Edmond Halley,” American Association for the Advancement of Science, October 12, 2012). Forced to return due to personal conflicts with his crew, Halley returned to the South Atlantic two more times in the next three years, his work there culminating in a 1701 map showing the isogonic lines of the entire Atlantic Ocean. This map was, in turn, used to ease navigation across the Atlantic, not only for future scientific research but also for the trade of goods—goods which, at times, took human form.
-  </span>,
-  <span key={"a354be52"}>
-    I am not the first to have made this argument. See, for example, Sylvia Wynter, “1492: A New World View,” in <cite>Race, Discourse, and the Origin of the Americas: A New World View</cite>, ed. Vera Lawrence Hyatt and Rex Nettleford (Smithsonian Institution Press, 1994), 5–57.
-  </span>,
-  <span key={"3ed960d6"}>
-    The impact of this devastation continues into the present, as contemporary Indigenous scholars such as Mishauna Goeman (Seneca) and Max Liboiron (Métis/Mechif) remind us, profoundly disordering social structures and relationships (Goeman), as well as relations with land and resources (Liboiron). As Liboiron, citing Glen Sean Coulthard (Yellowknives Dene) explains, “colonialism is a way to describe relationships characterized by conquest and genocide that grant colonialists and settlers ongoing state access to land and resources that contradictorily provide the material and spiritual sustenance of Indigenous societies on the one hand, and the foundation of colonial state-formation, settlement, and capitalist development on the other.” Max Liboiron, <cite>Pollution Is Colonialism</cite> (Duke UP, 2021), 9.
-  </span>,
-  <span key={"114ee019"}>
-    Russell Thornton, “Native American Demographic and Tribal Survival into the Twenty-first Century,” <cite>American Studies</cite> 46.3/4 (2005): 23–38.
-  </span>,
-  <span key={"ff1ea922"}>
-    Cline, “The Relaciones Geográficas of the Spanish Indies,” 350.
-  </span>,
-  <span key={"f6ef07ca"}>
-    In <cite>Horizons: The Globalization of Modern Science</cite> (Mariner, 2022) James Poskett documents how, in fact, the Spanish learned many methods of data collection from the Indigenous societies over which they sought to rule.
-  </span>,
-  <span key={"b579e3f4"}>
-    Ian Hacking, <cite>The Taming of Chance</cite> (Cambridge UP, 1990), 18. For a more recent account of the rise of modern statistics, see Chris Wiggins and Matthew L. Jones, <cite>How Data Happened: A History from the Age of Reason to the Age of Algorithms</cite> (Norton, 2023).
-  </span>,
-  <span key={"7fba6962"}>
-    On Tawantinsuyu, or “the land of four parts,” see <cite>The Inka Empire: A Multidisciplinary Approach</cite>, ed. Izumi Shimada (U of Texas Press, 2015).
-  </span>,
-  <span key={"22fb600e"}>
-    Xiyao Mei, Yu Zhang, Chaofan Yang, Rui Shi, and Xiaoru Yuan, “ZuantuSet: A Collection of Historical Chinese Visualizations and Illustrations,” arXiv preprint, February 26, 2025, <NoteLink href="https://arxiv.org/pdf/2502.19093">https://arxiv.org/pdf/2502.19093</NoteLink>.
-  </span>,
-  <span key={"8cd61ed9"}>
-    On the shogunal map and early modern Japanese mapping practices, see Mark Ravina, “Algorithmic Maps and the Political Geography of Early-Modern Japan,” <cite>Cultural Analytics</cite> 8.3, <NoteLink href="https://doi.org/10.22148/001c.84860">https://doi.org/10.22148/001c.84860</NoteLink>. On the map of Jambudvīpa, see Katherine Anne Paul, Richard A. Pegg, and Katie E. Osborne, “A Jain Cosmographic Map of the Rose-Apple Continent (Jambudvipa),” Norman B. Leventhal Map & Education Center, Boston Public Library, <NoteLink href="https://www.leventhalmap.org/projects/jain-map-chat/">https://www.leventhalmap.org/projects/jain-map-chat/</NoteLink>, accessed March 17, 2026.
-  </span>,
-  <span key={"c1529fc6"}>
-    Some, such as Bruno Latour, have argued that Europe has never been modern at all, and that all claims to modernity that are founded on the distinctions between science and culture that the Enlightenment would introduce are in fact false distinctions, and therefore untrue. Latour, <cite>We Have Never Been Modern</cite> (Harvard UP, 1993).
-  </span>,
-  <span key={"f0746a90"}>
-    The prominent Scottish philosopher David Hume, for example, claimed that there was a racial hierarchy of “four or five different kinds” of humans, with “all other species … naturally inferior to the whites.” “On National Characters,” in <cite>Political Essays</cite>, ed. Knud Haakonssen (Cambridge UP, 2012), 78–92.
-  </span>,
-  <span key={"5ad28343"}>
-    Some readers may recognize this as a gloss of Michel Foucault’s theorization of counterhistory, which he develops in relation to the historiographic theory of Friedrich Nietzsche. For more on Foucault and counterhistory, see Foucault, “Nietzsche, Genealogy, History,” in <cite>Language, Counter-Memory, Practice: Selected Essays and Interviews,</cite> ed. D. F. Bouchard (Cornell UP, 1977), 139–164.
-  </span>,
-  <span key={"95309193"}>
-    Ruha Benjamin, <cite>Imagination</cite>: <cite>A Manifesto</cite> (Norton, 2024), 23.
-  </span>,
-  <span key={"2e3e6dde"}>
-    E.g., Michael Friendly, “The Golden Age of Statistical Graphics,” <cite>Statistical Science</cite> 23.4 (2008): 502–535.
-  </span>,
-  <span key={"1b686467"}>
-    On racial capitalism, see Cedric Robinson, <cite>Black Marxism: The Making of the Black Radical Tradition</cite> (U of North Carolina Press, 1993), or just read chapter 1.
-  </span>,
-  <span key={"8eb56754"}>
-    On positivism as the dominant epistemology of visualization research, see Akbaba, Klein, and Meyer, “Entanglements for Visualization.”
+  //46
+  <span key="37bbb2a3">
+    On positivism as the dominant epistemology of visualization research, see
+    Akbaba et al.{" "}
   </span>,
 ];
 
 export const dataFootnotes = [
-  <span key={"32d3160c"}>
-    Recent scholarship has raised questions about Equiano’s account of his early years in Benin. Literary scholar Vincent Carretta, most notably, has pointed to several later records that list Equiano’s birthplace as South Carolina. As Carretta himself makes clear, this evidence is “not absolutely conclusive” (xvi). Because of this lack of certainty, I have chosen to prioritize Equiano’s own account of his homeland and early life experiences. See Carretta, <cite>Equiano, the African: Biography of a Self-Made Man</cite> (U of Georgia Press, 2005).
+  //1
+  <span key="560e48c1">
+    Carretta, explain evidence to doubt veracity of childhood in Africa.{" "}
   </span>,
-  <span key={"726a6def"}>
-    Olaudah Equiano, <cite>The Interesting Narrative of the Life of Olaudah Equiano, or Gustavus Vassa, the African, Written by Himself</cite>, ed. Werner Sollors (Norton, 2001), 39, 41.
+  //2
+  <span key="f2043330">Equiano 55, 58. </span>,
+  //3
+  <span key="b5c28022">
+    Say it out loud. Contemporary CS acronyms have nothing on C18 abolitionists!{" "}
   </span>,
-  <span key={"c088623b"}>
-    Say it out loud. Contemporary computer science project acronyms have nothing on nineteenth-century abolitionists! More seriously, SEAST was a major (but of course not the only) force that led to the abolition of the slave trade in England. It coalesced in 1787, after a decade of increasing momentum around the movement to end slavery in England, and was run mostly by Quakers (although Clarkson himself was not one). As indicated by the distinction between the Plymouth Committee and the London Committee noted above, its structure was geographically distributed. Other committees existed in Manchester and Birmingham, among other British locales. The committees communicated with each other via letters, many of which have been preserved in local Quaker archives, as well as in the British National Archives. Clarkson himself, radicalized through his senior thesis work at St. John’s College, Cambridge, also traveled from committee to committee, circulating pamphlets and other documents and giving speeches of his own. SEAST was also a reference point for the abolitionist movement in the United States. In fact, that first “Plan of an African Ship’s Lower Deck” was copied and reengraved by the famed Philadelphia printer Matthew Carey, who circulated it throughout the young United States. As we know, however, it would take more than 50 years for full legal emancipation to take place in the United States, with its struggle for racial justice continuing into the present. For more on SEAST, see John Oldfield, <cite>Popular Politics and British Anti-Slavery: The Mobilization of Public Opinion against the Slave Trade, 1787–1807</cite> (Frank Cass, 1998) and Adam Hochschild, <cite>Bury the Chains: Prophets and Rebels in the Fight to Free an Empire’s Slaves</cite> (Houghton Mifflin, 2005). For more on Clarkson’s role in particular, see the texts cited throughout this chapter.
+  //4
+  <span key="6cc8613f">
+    The art historian Cheryl Finley, in her landmark study of this image,
+    Committed to Memory: The Art of the Slave Ship Icon, makes clear that it's
+    important to identify which version Equiano saw. In particular, this was a
+    print accompanied 4-page pamphlet. Later, the Plymouth Committee printed
+    them together as a broadside. Finley also powerfully considers the impact of
+    this request from Equiano's perspective: "One can picture how [Equiano's]
+    eyes might have followed the contours of the darkly shaded figures, counting
+    each one, possibly imagining the face of someone he once knew. Fine black
+    lines representing the wall that divided groups of figures by age and sex
+    might have caused him to pause and think about which space he had occupied
+    or the people who had lived and died next to him. The combination of rows
+    and rows of black figures separated and surrounded by fine black lines
+    schematically mapped the space of the hold, marking a route to untold
+    horror" ##.
   </span>,
-  <span key={"09d956e4"}>
-    The meeting between Equiano and Clarkson can be confirmed by a public letter authored by Equiano and published in a London newspaper, <cite>The Public Advertiser</cite>, on February 14, 1789. In the letter, Equiano registers “having seen” the engraving sent to Clarkson, whom he describes as a “worthy friend of mine.” See “Letter to the Committee for the Abolition of the Slave Trade,” in Equiano, <cite>The Interesting Narrative</cite>, 205. While Equiano offers scant additional details about their exchange, the art historian Cheryl Finley, in her landmark study <cite>Committed to Memory: The Art of the Slave Ship Icon</cite> (Princeton UP, 2018), powerfully imagines the impact of this request from Equiano’s perspective (23). We will return to this letter, and the significance of the exchange between Equiano and Clarkson, in this chapter’s final section.
+  //5
+  <span key="97e782e7">
+    Equiano 58; add in more on Cugoano refusal, p. 15, connect to data refusal.{" "}
   </span>,
-  <span key={"4c6b81d8"}>
-    Equiano, <cite>The Interesting Narrative</cite>, 41. Scholars have made much of Cugoano’s assessment, in his 1787 treatise, <cite>Thoughts and Sentiments on the Evils of Slavery</cite>, that his own experience “may be easier conceived than described” (15). As literary scholar Joanne Chassot explains, “His silence over the details of the experience might therefore be explained by a form of censorship, which could be imposed by white editors for reasons of decorum, or self-imposed either out of a personal or cultural aversion at relating such intimate matters or out of the psychological refusal to recall events that are too painful.” Chassot, <cite>Ghosts of the African Diaspora: Re-visioning History, Memory, and Identity</cite> (Dartmouth College Press, 2018), 41. In the context of our present discussion, we might draw generative connections between Cugoano’s narrative refusal and contemporary arguments for data refusal. See, for example, Marika Cifor, Patricia Garcia, TL Cowan, Jasmine Rault, Tonya Sutherland, Anita Say Chan, Jennifer Rode, Anna Lauren Hoffmann, Niloufar Salehi, and Lisa Nakamura, <cite>Feminist Data Manifest-No</cite> (2019), <NoteLink href="https://www.manifestno.com/">https://www.manifestno.com/</NoteLink>, accessed May 20, 2025.
+  //6
+  <span key="ea40ed60">Clarkson, History</span>,
+  //7
+  <span key="8df7cc09">
+    Note about centrality of impression, Locke, senses, Schuller, Biopolitics of
+    Feeling. Also Hume, impressions vs. ideas.{" "}
   </span>,
-  <span key={"7ea07106"}>
-    Thomas Clarkson, <cite>The History of the Rise, Progress, and Accomplishment of the Abolition of the African Slave-Trade by the British Parliament</cite>, vol. 2 (London, 1808), 111.
+  //8
+  <span key="a63ef162"> Finley 34. </span>,
+  //9
+  <span key="325f4c91">Hartman, Scenes.</span>,
+  //10
+  <span key="c5520f54">Hartman, Scenes. </span>,
+  //11
+  <span key="a24478b3">Morgan, Reckoning with Slavery. </span>,
+  //12
+  <span key="a52fd08c">
+    Spillers 72. Also gloss critique of white space / modernism.
   </span>,
-  <span key={"31367503"}>
-    The use of the word “impression” is the tell. For Enlightenment thinkers such as John Locke and David Hume, the impression that objects in the world make on sensory organs signals the start of the knowledge-making process. This epistemological theory would go on to influence British literary sentimentalism, as well as the sentimentalist undercurrent of white-led abolitionist movements, of which Clarkson was certainly a part. On literary sentimentalism and its relationship to empiricism, see Jessica Riskin, <cite>Science in the Age of Sensibility: The Sentimental Empiricists of the French Enlightenment</cite> (U of Chicago Press, 2002); on the colonial implications of sentimentalism, see Lynn Festa, <cite>Sentimental Figures of Empire in Eighteenth-Century Britain and France</cite> (Johns Hopkins UP, 2006); on the imbrications of racism and sentimentalism, and Clarkson’s in particular, see Ian Baucom, <cite>Specters of the Atlantic: Finance Capital, Slavery, and the Philosophy of History</cite> (Duke UP, 2005); on sentimentalism’s journey from the British empiricists to the United States, and its transformation into nineteenth-century race science, see Kyla Schuller, <cite>The Biopolitics of Feeling: Race, Sex, and Science in the Nineteenth Century</cite> (Duke UP, 2018).
+  //13
+  <span key="43d4a6ec">Cite discussion in intro. </span>,
+  //14
+  <span key="0a123912">Spillers </span>,
+  //15
+  <span key="945f669a">
+    Finley makes a similar point with respect to another diagram of the Marie
+    Seraphique. (Note that both images are in high circulation because of the
+    process of amends-making by the Musée de Nantes)
   </span>,
-  <span key={"d6d79c34"}>
-    While the Parrey report would become a central piece of evidence for the British abolitionist movement, one important fact that failed to enter the historical record was Parrey’s first name. See Finley, <cite>Committed to Memory</cite>, 34.
+  //16
+  <span key="63940a2c">
+    Gordon Wood elaborates this point: "This image supports an abolitionist
+    cultural agenda which dictated that slaves were to be visualized in a manner
+    which emphasized their total passivity and prioritized their status as
+    helpless victims" (17). Can also gloss body vs. flesh, Spillers, Tiffany
+    King, Wood 28.
   </span>,
-  <span key={"61972934"}>
-    While not directly relevant to this chapter’s main argument, two points are worth noting here: first, that while the origin story of Clarkson’s “Description” usually begins with Elford’s “Plan,” in fact it has a longer and more diffuse history; and second, that while the story would seem to be one of the visual and moral acuity of the elite, the idea for the “Plan,” if not its application, originates with working-class sailors.
+  //17
+  <span key="8025cd1e">
+    Explain connection to Hurston, Ligon, "Against a sharp white background,"
+    and Senchyne/Fielder book. Bernier also lends her support to this
+    interpretation: "Working not to humanize but to propagandize black subjects
+    bought and sold into slavery, the iconographic emphasis across these
+    broadsides betrays a white British commitment to exposing slavery's
+    atrocities by imagining black women, men, and children not as individualized
+    subjects but as unindividualized objects defined solely by their
+    incarceration on board a slave ship" (998).
   </span>,
-  <span key={"69aaceba"}>
-    Finley, <cite>Committed to Memory</cite>, 34.
+  //18
+  <span key="45ac2174">
+    In fact, Otto and Marie Neurath, the inventors of the ISOTYPE icon system,
+    incorporated their isotype icons into a reproduction of the diagram in their
+    pamphlet on the history of global trade. They also held a ca. 1800 version
+    of the diagram, created by the German printmaker Jacob Xaver Schmunzer, in
+    their personal archive. It is possible to make an argument their icons, like
+    those on the slave ship, were intended to serve as abstract representations
+    of "observed particulars"—in their case, of the population of the world.
+    What's more, they similarly sought to enlist their icons in a political
+    cause. [ADD IN IMAGE HERE]
   </span>,
-  <span key={"f316aeac"}>
-    These harms may be retrospective, in the influential words of literary scholar Saidiya Hartman, the result of “the uncertain line between witness and spectator” that scholars of slavery often must walk. They may also carry into the future, in the form of the desensitization brought about by ever more depictions of the “routinized violence of slavery,” as Hartman further explains. For viewers whose own ancestors were enslaved, such depictions can also exacerbate existing intergenerational trauma, as historian Jennifer Morgan describes. For this reason, we gave online viewers the choice to “opt in” to view these images by clicking a toggle at the top left of the screen. If they did not opt in, they would proceed with the default: to read short and intentionally generalized descriptions of the images discussed. (We also provided more detailed descriptions of the images, toggled when opting in, for users who rely on alt text as their primary means of encountering visual material.)Saidiya Hartman, <cite>Scenes of Subjection: Terror, Slavery, and Self-Making in Nineteenth-Century America</cite> (Oxford UP, 1997), 4; and Jennifer Morgan, <cite>Reckoning with Slavery: Gender, Kinship, and Capitalism in the Early Black Atlantic</cite> (Duke UP, 2021).
+  //19
+  <span key="7337f333">Tufte</span>,
+  //20
+  <span key="d688cb70">Viegas in Data Feminism.</span>,
+  //21
+  <span key="532d207a">
+    In an example of mixed methods research avant le letter, Clarkson also
+    published the transcripts of his interviews with these men at roughly the
+    same time as he released his revised version of the Plymouth Committee's
+    "Plan." For more on the interviews, see Riedeker 319-324.
   </span>,
-  <span key={"e3d99e92"}>
-    Hortense Spillers, “Mama’s Baby, Papa’s Maybe: An American Grammar Book,” <cite>Diacritics</cite> 17.2 (Summer 1987): 72.
+  //22
+  <span key="afa3a6c1">
+    Cite chart, transcription in Finley 62-67. Clarkson, para 1.
   </span>,
-  <span key={"3cb4508d"}>
-    As is true of the history of visualization, the history of data tables is also long, with examples drawn from all over the world. The earliest known data tables can be traced to the Neolithic cities of Sumerian Mesopotamia ca. 3500 BCE. For a short and accessible history, see “A Brief History of Data,” in Rahul Bhargava, <cite>Community Data: Creative Approaches to Empowering People with Information</cite> (Oxford UP, 2024), 16–50. For a visualization-oriented assessment of data tables as knowledge-making devices, see Lyn Bartram, Michael Correll, and Melanie Tory, “Untidy Data: The Unreasonable Effectiveness of Tables,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 28.1 (2002): 686–696.
+  //23
+  <span key="43ec2892">
+    27. Ref Marey. Also note about definition of visualization.{" "}
   </span>,
-  <span key={"c8188e25"}>
-    Jessica Marie Johnson, “Markup Bodies: Black [Life] Studies and Slavery [Death] Studies at the Digital Crossroads,” <cite>Social Text</cite> 36.4 (2017): 70.
+  //24
+  <span key="e7fc1e51">Wood 28</span>,
+  //25
+  <span key="17fe0afe">Wood</span>,
+  //26
+  <span key="f01ec097">
+    Clarkson's motivation for these design choices is, admittedly, difficult to
+    discern. Why leave the women unbound when evidence points to the fact that
+    they were also "known to organize, lead, and assist with rebellions aboard
+    slave ships," Finley wonders (59). Is the exaggerated sexuality of the women
+    figures a comment, on the part of Clarkson, about the "objectified status of
+    the black female body and the history of rape and sexual abuse to which
+    black female slaves were subjected by their white male captors," or because
+    of his own racist perceptions about the sexuality of Black women, Finley
+    further enquires (59). We may never be able to answer these questions with
+    any degree of certainty, but their possible answers expand our understanding
+    of the chart nonetheless. More specifically, they underscore the perspective
+    inhabited by the chart, and point to the additional perspectives we must
+    consider if we are to achieve a more complete picture of the actual subject
+    at hand.
   </span>,
-  <span key={"7193907c"}>
-    Spillers, “Mama’s Baby,” 72.
+  //27
+  <span key="1726a736">
+    Here, Ian Baucom argues, Clarkson mobilizes a central tenet of the Scottish
+    Enlightenment, which held that meaning was created first by verifiable
+    evidence and then through a responsibly used imagination. In this case,
+    Clarkson enlists the "facts" of the slave trade in the interest of engaging
+    the "otherwise disinterested spectator in the sufferings of an actually
+    unseen other" (Baucom ##). But for this transformation to take place, the
+    viewer would be required to enlist their own imagination in imagining the
+    suffering of others.
   </span>,
-  <span key={"900f59c3"}>
-    There exist several commemorative engravings of the <cite>Marie-Séraphique</cite>. Finley makes a similar point with respect to a different image of this ship, which dates to 1772–1773, in <cite>Committed to Memory</cite>, 38–42.
+  //28
+  <span key="75812c99">Add in Clarkson quote. Para 22.</span>,
+  //29
+  <span key="0014505a">
+    Quoted in Baucom 218. Also ref wood model, and discussion in Critical
+    Visualization book.
   </span>,
-  <span key={"552607b9"}>
-    Wood’s use of the word “flesh” is also likely a reference to Spillers’s distinction between bodies and flesh, the latter resulting from the dehumanizing process of the Middle Passage. Marcus Wood, <cite>Blind Memory: Visual Representations of Slavery, 1780–1865</cite> (Manchester UP, 2000), 27.
+  //30
+  <span key="89b4a05f">Haraway, D'Ignazio and Klein.</span>,
+  //31
+  <span key="d0bd55aa">Browne 49. </span>,
+  //32
+  <span key="t7gY4Hu6">Haraway. </span>,
+  //33
+  <span key="5Br3Cv2X">Quoted in Baucom 267</span>,
+  //34
+  <span key="75fbde5b">
+    Browne 49. While on this note, Clarkson would also likely not disagree. In
+    the History, Clarkson proudly recalls how the chart "brought forth tears of
+    sympathy in behalf of the sufferers, and it fixed their sufferings in [the
+    viewer's] heart." Quoted in Baucom 267
   </span>,
-  <span key={"e670decb"}>
-    Celeste-Marie Bernier also lends her support to this interpretation: “Working not to humanize but to propagandize black subjects bought and sold into slavery, the iconographic emphasis across these broadsides betrays a white British commitment to exposing slavery’s atrocities by imagining black women, men, and children not as individualized subjects but as unindividualized objects defined solely by their incarceration on board a slave ship.” Bernier, “The Slave Ship Imprint: Representing the Body, Memory, and History in Contemporary African American and Black British Painting,” <cite>Callaloo</cite> 37.4 (2014): 998. We might trace the visual contrast forward to the work of contemporary artist Glenn Ligon, whose 1992 screenprint <cite>Untitled (I Feel Most Colored When I Am Thrown against a Sharp White Background)</cite>, itself a quote from author Zora Neale Hurston, emphasizes the racialized dimensions of black-on-white design. This echoes a larger critique of modern art and design for its glorification of the color white, and therefore whiteness, alongside its other signal features of clean lines and other forms of visual minimalism. While not engaging the racialized dimension of modernism, Helen Kennedy, Rosemary Lucy Hill, Giorgia Aiello, and William Allen analyze how specific modernist visual conventions, such as clean lines and clearly demarcated boundaries, are strongly associated with the authoritativeness of visualization. Kennedy et al., “The Work that Visualization Conventions Do,” <cite>Information, Communication and Society</cite> 19.6 (2016): 715–735.
+  //35
+  <span key="8b46db1c">Browne 50.</span>,
+  //36
+  <span key="24fa21d3">
+    The viewers intended to be affected by this image were white abolitionists,
+    and the response that was intended was one of imaginative, sympathetic
+    response. Clarkson himself frames the value of the image in these terms,
+    recalling how "No one saw it but he was impressed. It spoke to him in a
+    language, which was at once intelligible and irresistible. It brought forth
+    tears of sympathy in behalf of the sufferers, and it fixed their sufferings
+    in his heart" (##). Here, Ian Baucom argues, Clarkson mobilizes a central
+    tenet of the Scottish Enlightenment, which held that meaning was created
+    first by verifiable evidence and then through a responsibly used
+    imagination. In this case, Clarkson enlists the "facts" of the slave trade
+    in the interest of engaging the "otherwise disinterested spectator in the
+    sufferings of an actually unseen other" (Baucom ##). But for this
+    transformation to take place, the viewer would be required to enlist their
+    own imagination in imagining the suffering of others. As Finley also
+    explains, "The image is a starting point for the viewer – a point of
+    reference while the text enables the reader to elaborate on the image in her
+    mind" (##).
   </span>,
-  <span key={"0864daea"}>
-    In fact, Otto and Marie Neurath, the inventors of the Isotype icon system, incorporated their Isotype icons into a reproduction of Clarkson’s “Description” in their pamphlet on the history of global trade, <cite>Wereldverkeer</cite> (1935). They also held a ca. 1800 version of the “Description,” created by the German printmaker Jacob Xaver Schmunzer, in their personal archive, as Otto Neurath himself documents in <cite>From Hieroglyphics to Isotype: A Visual Autobiography</cite> (Hyphen Press, 2010). It is possible to make an argument that their icons, like those on the slave ship, were similarly intended to serve as abstract representations of “observed particulars”—in their case, of the population of the world. What’s more, they similarly sought to enlist their icons in a political cause, though their icons of human figures fell prey to the deeply offensive cultural stereotypes of non-European cultures in circulation at the time. For more on Isotype and the Neuraths in a visualization context, see Christopher Burke and Gunther Sandner, <cite>History and Legacy of Isotype</cite> (Bloomsbury, 2024).
+  //37
+  <span key="37035873">
+    Add in cites to TAST database, history, and overview.{" "}
   </span>,
-  <span key={"a32ca9f3"}>
-    Edward R. Tufte, <cite>The Visual Display of Quantitative Information</cite> (Graphics Press, [1983] 2001), 13.
+  //38
+  <span key="858f3e32">TAST, "History of Project"</span>,
+  //39
+  <span key="f1a4e3f8">
+    https://slate.com/news-and-politics/2021/09/atlantic-slave-trade-history-animated-interactive.html.
+    As Britt Rusert helpfully summarizes, "The Slate map has at least two direct
+    antecedents: a set of maps of the slave trade on the Trans-Atlantic Slave
+    Trade Database website, and David Eltis and David Richardson's 2010 print
+    volume, Atlas of the Transatlantic Slave Trade, whose maps were "constructed
+    from a set of estimates derived from the Trans-Atlantic Slave Trade Database
+    as it existed in January 2008— almost a year before the launch of the
+    Voyages Web site" (xxiv). These earlier iterations of maps derived from the
+    Trans-Atlantic Slave Trade Database are a reminder of the important
+    continuities between the "age of print" and the "digital age."
   </span>,
-  <span key={"960d2d58"}>
-    Catherine D’Ignazio and Lauren F. Klein, <cite>Data Feminism</cite> (MIT Press, 2020), 92.
+  //40
+  <span key="a3b5X7c9">Ref Rusert, "New World." </span>,
+  //41
+  <span key="1Qw8Er2T">Ref Johnson, "Markup Bodies" </span>,
+  //42
+  <span key="z4X6cV8B">
+    Spillers, 1978; Hartman, 2002; Sharpe, 2016; King, 2019{" "}
   </span>,
-  <span key={"8eee3e01"}>
-    Notably, Clarkson also published the transcripts of his interviews with these men at roughly the same time as he released his revised version of the Plymouth Committee’s “Plan.” For more on the interviews, see Marcus Rediker, <cite>The Slave Ship: A Human History</cite> (Penguin, 2007), 319–324. On the concept of counterdata, see D’Ignazio and Klein, <cite>Data Feminism</cite>, as well as Seyi Olojo, “Counterdata,” in <cite>Keywords of the Datafied State</cite>, ed. Jenna Burrell, Ranjit Singh, and Patrick Davison (Data & Society, 2024),170–181. On the history of data being enlisted in the service of abolition, see Ellen Gruber Garvey, “‘facts and FACTS’: Abolitionists’ Database Innovations,” in <cite>“Raw Data” Is an Oxymoron</cite>, ed. Lisa Gitelman (MIT Press, 2013), 89–102.
+  //43
+  <span key="9uI7mO5y">Morrison 2018. </span>,
+  //44
+  <span key="J2k4Lp6N">
+    A further connection to Spillers' theorization of the process of
+    dehumanization as the conversion of bodies into flesh that the Middle
+    Passage brought about.{" "}
   </span>,
-  <span key={"e329a7cb"}>
-    These lines come from the first paragraph of text included in the chart itself. Finley provides a full transcription in <cite>Committed to Memory</cite>, 62–67.
+  //45
+  <span key="h3Gt5Fs7">First quote is ch 2, second ch 3. Need numbers. </span>,
+  //46
+  <span key="d9Az6Qx8">
+    Add in note about wide circulation, in England France and US. Finley
+    chapters 2 and 3.
   </span>,
-  <span key={"9f02e01f"}>
-    A notable recent exception is Peter A. Hall and Patricio Dávila’s <cite>Critical Visualization: Rethinking the Representation of Data</cite> (Bloomsbury, 2022). There, they herald the diagram as “one of the most impactful visualizations in the history of the genre” (55). For their full discussion, see 55–59.
+  //47
+  <span key="7We4Ru1I">
+    "I was in possession of more facts on this subject than any other person,"
+    as he wrote in the second chapter of the 1200-page tome (Clarkson, History,
+    vol 1, p 31) Clarkson, History, vol 1, p 31.{" "}
   </span>,
-  <span key={"62aceb6f"}>
-    Michael Friendly and Howard Wainer, <cite>A History of Data Visualization and Graphic Communication</cite> (Harvard UP, 2021), 27.
+  //48
+  <span key="l2Vb5nM3">Cartographies of Time. </span>,
+  //49
+  <span key="6Sd9Fg4H">History ch 12. </span>,
+  //50
+  <span key="n1Jk8Lp2">
+    In adapting this particular style of image, the hydrographic map, to the
+    abolitionist movement, Clarkson also imposes the colonial valences of
+    mapping—and mapping waterways in particular—onto the abolitionist movement.
+    Here, however, it is not the discovery of new trade routes, but the
+    discovery of the horrors of slavery, that the image renders visible; and
+    these horrors were, of course, already viscerally known to those who
+    experienced the trade's direct effects. Wood 4.
   </span>,
-  <span key={"643a1878"}>
-    The inclusion of the cross sections drew from the conventions of naval architectural plans, which were by that time strongly established. This had the rhetorical effect of securing the chart’s “graphic authority,” as Marcus Wood describes it, in ways similar to how drawing new national borders on an existing map leverages the power of its seemingly documentary form. <cite>Blind Memory</cite>, 28.
+  //51
+  <span key="e8Qw1Oi9">Wood 4. </span>,
+  //52
+  <span key="c6Mf4Td7">
+    Strass "believed that a graphic representation of history held manifold
+    advantages over a textual one: it revealed order, scale, and synchronism
+    simply and without the trouble of memorization and calculation," Rosenberg
+    and Grafton explain (Cartographies of Time 143).
   </span>,
-  <span key={"43d25ff1"}>
-    Scholars have largely interpreted this choice as reflecting “an abolitionist cultural agenda which dictated that slaves were to be visualized in a manner which emphasized their total passivity and prioritized their status as helpless victims,” as Wood explains. <cite>Blind Memory</cite>, 19.
+  //53
+  <span key="3Ea7Kp9L">Bell, quoted in Cartographies of Time, p. 147.</span>,
+  //54
+  <span key="g2Uh5Ns8">
+    Cartographies of Time 136. Also gloss contribution of Priestley.{" "}
   </span>,
-  <span key={"3c6de6ee"}>
-    Clarkson’s motivation for these design choices is difficult to discern. Why leave the women unbound when evidence points to the fact that they were also “known to organize, lead, and assist with rebellions aboard slave ships,” Finley wonders (<cite>Committed to Memory</cite>, 59). Is the exaggerated sexuality of the women figures a comment, on the part of Clarkson, about the “objectified status of the black female body and the history of rape and sexual abuse to which black female slaves were subjected by their white male captors,” or because of his own racist perceptions about the sexuality of Black women, Finley further enquires (59)? We may never be able to answer these questions with any degree of certainty, but their possible answers expand our understanding of the chart nonetheless. More specifically, they underscore the perspective inhabited by the chart, and point to the additional perspectives we must consider if we are to achieve a more complete picture of the actual subject at hand.
+  //55
+  <span key="Fj4Dr6Vy">Quoted in Cartographies of Time 136. </span>,
+  //56
+  <span key="9tC7Gb3I">
+    Ref Playfair, "Introduction," x. Also cite Clarkson, second version of his
+    goal: to "bring [the history of abolition] before the reader, that he may
+    comprehend the whole of it at a single view." Playfair also uses the phrase
+    "single view" in the title of his book.{" "}
   </span>,
-  <span key={"478ff5d3"}>
-    Clarkson, para 22, reproduced in Finley, <cite>Committed to Memory</cite>, 67.
-  </span>,
-  <span key={"ee614d64"}>
-    Wilberforce, quoted in Baucom, <cite>Specters of the Atlantic</cite>, 218. Across Europe, other abolitionists shared Wilberforce’s sentiment. Upon seeing Clarkson’s diagram, the French Comte de Mirabeau went one step further, commissioning a wooden replica of the ship depicted in the chart about “one yard long,” with “little men and women” painted black, which he kept on his dining room mantel to show to potential converts to the cause (Finley, <cite>Committed to Memory</cite>, 78). Clarkson himself saw the replica, and when he told Wilberforce about it, Wilberforce had his own replica commissioned, which he brough to Parliament and “passed from hand to hand” (Finley, 81). In <cite>Community Data</cite>, Bhargava discusses this replica in the context of an argument about the value of data physicalization (125–127).
-  </span>,
-  <span key={"d8176ff1"}>
-    Donna Haraway, “Situated Knowledges: The Science Question in Feminism and the Privilege of Partial Perspective,” <cite>Feminist Studies</cite> 14.3 (1988): 589.
-  </span>,
-  <span key={"9b24d76a"}>
-    Simone Browne, <cite>Dark Matters: On the Surveillance of Blackness</cite> (Duke UP, 2015) 49.
-  </span>,
-  <span key={"c3283fa8"}>
-    Quoted in Baucom, <cite>Specters of the Atlantic</cite>, 267. Here, Baucom argues, Clarkson is mobilizing the central tenet of the Scottish strain of Enlightenment empiricism, which held that meaning was created first by verifiable evidence and then through a responsibly used imagination. In this case, Clarkson enlists the “facts” of the slave trade in the interest of engaging the “otherwise disinterested spectator in the sufferings of an actually unseen other” (268). But for this transformation to take place, the viewer would also be required to enlist their own imagination in imagining the suffering of others—the point at which theories of sentimentalism, as previously discussed, also enter in. There are many flaws in this theory. Note 18 discusses its implicit racism. Among the others is the presumption that all viewers, even limited to all white viewers, would respond in the same way.
-  </span>,
-  <span key={"f5a206c3"}>
-    Browne, <cite>Dark Matters</cite>, 49.
-  </span>,
-  <span key={"bd042b83"}>
-    Browne, <cite>Dark Matters</cite>, 50.
-  </span>,
-  <span key={"0b376fa7"}>
-    “Trans-Atlantic Slave Trade—Estimates,” <cite>Slave Voyages</cite>, <NoteLink href="https://www.slavevoyages.org/assessment/estimates">https://www.slavevoyages.org/assessment/estimates</NoteLink>, accessed May 23, 2025.
-  </span>,
-  <span key={"8b57e20c"}>
-    “History of the Project,” <cite>Slave Voyages</cite>, <NoteLink href="https://www.slavevoyages.org/about/about#history/1/en/">https://www.slavevoyages.org/about/about#history/1/en/</NoteLink>, accessed May 23, 2025.
-  </span>,
-  <span key={"80a94e8e"}>
-    To view Kahn and Bouie’s visualization and accompanying text, see Andrew Kahn and Jamelle Bouie, “The Atlantic Slave Trade in Two Minutes,” <cite>Slate</cite>, September 16, 2021, <NoteLink href="https://slate.com/news-and-politics/2021/09/atlantic-slave-trade-history-">https://slate.com/news-and-politics/2021/09/atlantic-slave-trade-history-</NoteLink> animated-interactive.html, accessed May 23, 2025. Note that the visualization was created and released in 2016, and rereleased in 2021 with no changes that we could detect. In “New World: The Impact of Digitization on the Study of Slavery,” literary scholar Britt Rusert helpfully summarizes the visualization’s history: “The <cite>Slate</cite> map has at least two direct antecedents: a set of maps of the slave trade on the Trans-Atlantic Slave Trade Database website, and David Eltis and David Richardson’s 2010 print volume, <cite>Atlas of the Transatlantic Slave Trade</cite>, whose maps were “constructed from a set of estimates derived from the Trans-Atlantic Slave Trade Database as it existed in January 2008—almost a year before the launch of the Voyages Web site.” Rusert, “New World: The Impact of Digitization on the Study of Slavery,” <cite>American Literary History</cite> 29.2 (2017): 274.
-  </span>,
-  <span key={"bfad50b5"}>
-    Rusert, “New World,” 275.
-  </span>,
-  <span key={"6db5dc9b"}>
-    By paraphrasing Rusert’s argument as “another version” of the god trick, I’m not giving full justice to the richness of her argument. In her observation about “invisible hands,” Rusert is at once referencing Adam Smith’s formulation of the “invisible hand of the market,” his famed articulation of the forces of free-market capitalism, and the literal invisible hands that seem to pluck the ships from the African coast and carry them across the Atlantic without ever being attached to the people responsible for setting that particular ship or the slave trade overall in motion. In the case of both free-market capitalism and the slave trade (which are themselves, in many ways, two halves of a whole), there emphatically are <cite>people</cite> responsible for the decisions that are presented by Smith and the visualization, respectively, as coming from “no body,” to return to Haraway’s phrase.
-  </span>,
-  <span key={"44efc7c0"}>
-    Johnson, “Markup Bodies,” 41.
-  </span>,
-  <span key={"747214ac"}>
-    We are not the only design team to have considered similar questions. Celia E. Naylor, Kirsten Akey, Madiha Zahrah Choksi, Alex Gil, Moacir P. de Sa Pereira, and Monique S. J. Williams, in “Un(silencing) Slavery: Remembering the Enslaved at Rose Hall Plantation, Jamaica,” similarly “aims to re-center the lives of the enslaved persons at Rose Hall Plantation by emphasizing the history of slavery and enslaved persons as that historical site.” See the interactive visualization and “About” page at <NoteLink href="https://unsilencing-slavery.org/about">https://unsilencing-slavery.org/about</NoteLink>, accessed May 26, 2025.
-  </span>,
-  <span key={"e30b3d0c"}>
-    The canonical essay in this regard is Katherine McKittrick’s “Mathematics Black Life,” <cite>Black Scholar</cite> 44.2 (Summer 2014): 18, in which she comments directly on the “descriptive analytics of violence.” More recently, Caitlin Rosenthal, in <cite>Accounting for Slavery: Masters and Management</cite> (Harvard UP, 2019) has returned to these numbers to support an argument about the management theory driving the plantation system, enlisting this violent data as evidence of the racism at the core of modern methods of industrial management. At the time that we began our design process, we did not consider the possibility that we might use this data as a form of “studying up” (cf. Laura Nader), but we note its continued possibilities in this regard.
-  </span>,
-  <span key={"2443856a"}>
-    See, for example, Stephanie Smallwood, <cite>Saltwater Slavery: A Middle Passage from Africa to American Diaspora</cite> (Harvard UP, 2007); Rusert, “New World”; Christina Sharpe, <cite>In the Wake: On Blackness and Being</cite> (Duke UP, 2016); Romi Morrison, “Gaps between the Digits: On the Fleshy Unknowns of the Human,” <cite>Information Design Journal</cite> 25.1 (2019): 56–70; Tiffany Lethabo King, <cite>The Black Shoals: Offshore Formations of Black and Native Studies</cite> (Duke UP, 2019).
-  </span>,
-  <span key={"90f5d0ad"}>
-    Morrison, “Gaps between the Digits,” 56.
-  </span>,
-  <span key={"ffd68aca"}>
-    Orlando Patterson, <cite>Slavery and Social Death: A Comparative Study</cite> (Harvard UP, 1982).
-  </span>,
-  <span key={"2226405c"}>
-    We also appreciated the further connection to Spillers’s theorization of the process of dehumanization as the conversion of bodies into flesh that the Middle Passage brought about. See Spillers, “Mama’s Baby.”
-  </span>,
-  <span key={"b62aa494"}>
-    Equiano, <cite>The Interesting Narrative</cite>, 39, 45.
-  </span>,
-  <span key={"f3d36c49"}>
-    Kevin Quashie, <cite>The Sovereignty of Quiet: Beyond Resistance in Black Culture</cite> (Rutgers UP, 2012).
-  </span>,
-  <span key={"6306bfd4"}>
-    On the wide circulation and impact of the “Description,” see Finley, <cite>Committed to Memory</cite>, 71–74. On Clarkson’s <cite>History</cite>, see Finley, 88–92.
-  </span>,
-  <span key={"6170e070"}>
-    As Clarkson explains in the second chapter of the 1200-page tome, “I was in possession of more facts on this subject than any other person” (<cite>History</cite>, 1:31).
-  </span>,
-  <span key={"af722495"}>
-    Daniel Rosenberg and Anthony Grafton, <cite>Cartographies of Time: A History of the Timeline</cite> (Princeton Architectural Press, 2012), 148.
-  </span>,
-  <span key={"0945dc76"}>
-    Clarkson’s “attempt to create a self-sufficient cultural history for the cause requires a coherent descriptive model which is capable of overriding the heterogeneity of the names and writings he has furnished” in the text of his volume, Wood asserts (4).
-  </span>,
-  <span key={"91baaf01"}>
-    As Rosenberg and Grafton explain, Strass “believed that a graphic representation of history held manifold advantages over a textual one: it revealed order, scale, and synchronism simply and without the trouble of memorization and calculation” (<cite>Cartographies of Time</cite>, 143).
-  </span>,
-  <span key={"b9ea561a"}>
-    Bell, quoted in Rosenberg and Grafton, <cite>Cartographies of Time</cite>, 147.
-  </span>,
-  <span key={"1dd46be2"}>
-    Rosenberg and Grafton, <cite>Cartographies of Time</cite>, 136.
-  </span>,
-  <span key={"ec7aa4c4"}>
-    Quoted in Rosenberg and Grafton, <cite>Cartographies of Time</cite>, 136.
-  </span>,
-  <span key={"3eacd98f"}>
-    William Playfair, introduction to <cite>The Commercial and Political Atlas</cite>, ed. Howard Wainer and Ian Spence (New York: Cambridge UP, 2023 [1801]),x. As we will learn in chapter 2, this is not the only instance of similar framing. Just as Playfair, in the subtitle to his <cite>Atlas</cite>, described his goal of providing a picture of British imports and exports in a “single view,” so too did Clarkson describe how he sought to “bring [the history of abolition] before the reader, that he may comprehend the whole of it at a single view” (<cite>History</cite>, 1:259).
-  </span>,
-  <span key={"e2fab226"}>
-    “Letter to the Committee for the Abolition of the Slave Trade,” in Equiano, <cite>The Interesting Narrative</cite>, 205.
-  </span>,
+  //57
+  <span key="q5Yx2We1">Ref Norton edition, p.205. </span>,
 ];
 
 export const imageFootnotes = [
   //1
-  <span key="5bbe17ad">
-    While there are no known examples of pie charts that predate Playfair’s, there are several earlier entries in the bar chart category. In <cite>A History of Data Visualization and Graphic Communication</cite> (Harvard UP<cite>, </cite>2021),<cite> </cite>Michael Friendly and Howard Wainer discuss a bar chart of water levels of the Seine, created by the French geographer Philippe Buache and his collaborator Guillaume de L’Isle, which dates to 1770. But because Buache and de L’Isle were using bars to represent water levels, Friendly and Wainer assert, their chart did not reflect the degree of abstraction of Playfair’s, which “use[d] the length of bars to show something intangible: imports and exports to Scotland that could be understood in a new way” (115). In her investigation of how data tables were “read” in the years before visualization, historian of science Lorraine Daston surfaces an even earlier bar chart attributed to Athanasius Kircher, from 1721, which shows temperatures in Berlin as bars. On the basis of the lack of response, even amongst the members of the Royal Society, Daston concludes that they “were more of a nuisance than a novelty,” since early modern eyes had not yet been trained to interpret them (213). See Daston, “Super-Vision: Weather Watching and Table Reading in the Early Modern Royal Society and Académie Royale des Sciences,” <cite>Huntington Library Quarterly </cite>78.2 (Summer 2015): 187–215.
+  <span key="adafe778">
+    Add in short history of earlier bar charts, Philippe Buache, etc.
   </span>,
   //2
-  <span key="4a14233c">
-    Howard Wainer and Ian Spence, “Introduction,” in William Playfair, <cite>The Commercial and Political Atlas</cite> <cite>and Statistical Breviary</cite>, ed. Howard Wainer and Ian Spence<cite> </cite>(Cambridge UP, 2005), 9. Unless otherwise indicated, all direct quotations from the <cite>Atlas </cite>are transcribed from this edition.
+  <span key="750a1b40">
+    Edward Tufte, The Visual Display of Quantitative Information (Cheshire, CT:
+    Graphics Press, 2001), p. 32. In terms of other histories, see, for example,
+    Howard Wainer and Ian Spence; in their preface to the modern edition of
+    Playfair's Commercial and Political Atlas, they describe it as the "Bible"
+    of contemporary visualization design (New York: Cambridge University Press,
+    2005), p. vi. In related work, Wainer traces a direct line from Playfair to
+    Jacques Bertin, author of The Semiology of Graphics, the most significant
+    study of visualization of the twentieth century (Bertin 1983, vii). Bertin
+    himself selects an 1805 chart of Playfair's as one of only two historical
+    images he reproduces in his foundational text. Michael Friendly, in "The
+    Golden Age of Statistical Graphics," similarly canonizes Playfair
+    (Statistical Science 23.4 (2008): 502-535); and more recently, Sandra
+    Rendgen, centers Playfair in her History of Information Graphics (Koln,
+    Germany: Taschen, 2019).
   </span>,
   //3
-  <span key="bdfb9b74">
-    Responsible for numerous failed money-making schemes, Playfair went through bankruptcy proceedings in the final years of the 1790s and never fully recovered financial solvency. Playfair’s financial difficulties are discussed in more depth later in this chapter, and in David R. Bellhouse, <cite>The Flawed Genius of William Playfair: The Story of the Father of Statistical Graphics</cite> (U of Toronto Press, 2023), 159–195.
+  <span key="d33c3331">
+    {" "}
+    Howard Wainer and Ian Spence, "Introduction" in William Playfair,{" "}
+    <cite>
+      The Commercial and Political Atlas and Statistical Breviary,{" "}
+    </cite>{" "}
+    eds. Howard Wainer and Ian Spence (New York: Cambridge Univ. Press, 2005),
+    p. 9
   </span>,
   //4
-  <span key="31c2bcc6">
-    My account of Neele and Playfair’s distribution of tasks derives from Wainer and Spence, “Introduction.”
+  <span key="09aff8d2">
+    Responsible for numerous failed money-making schemes throughout his life,
+    Playfair, in 1816, attempted blackmail. Claiming ownership of a set of
+    papers that would cast doubt on the lineage of the twin inheritors of the
+    Douglas estate—a seven-year debate, known as the Douglas Cause, that earned
+    dubious distinction as the longest and most expensive legal battle in
+    Scottish history—Playfair attempted to extort funds from Lord Douglas
+    himself, one of the wealthiest men in Scotland. For more on this episode in
+    Playfair's life, see Wainer and Spence 8-9.
   </span>,
   //5
-  <span key="ed2e0d81">
-    My account of copperplate engraving derives from Wainer and Spence, “Introduction,” as well as from Roger Gaskell, “Printing House and Engraving Shop: A Mysterious Collaboration,” <cite>BC</cite> 53 (2004): 213–251. Interested readers may also consult “From Paper to Copper: The Engraver’s Process,” a demonstration by Andrew Stein Raftery, Associate Professor of Printmaking at the Rhode Island School of Design, viewable online at <NoteLink href="https://www.youtube.com/watch?v=fQvghHs15hA">https://www.youtube.com/watch?v=fQvghHs15hA</NoteLink>.
+  <span key="24b82b93">
+    My account of Neele and Playfair's distribution of tasks derives from Wainer
+    and Spence.
   </span>,
   //6
-  <span key="e8df0bf2">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, viii. Here, it is worth reiterating that the term “data visualization” did not exist in Playfair’s time. Playfair himself never settled on a single term for his “invention,” describing his approach variously in the <cite>Atlas</cite> as “applying lines to subjects of Finance” and applying “the principles of geometry to matters of Finance” (vii, viii). For the 1798 version of the <cite>Atlas</cite>, Playfair coined the phrase “lineal arithmetic,” although this did not catch on (see <cite>Lineal Arithmetic</cite>, London, 1798).
+  <span key="b1edeea8">
+    My account of copperplate engraving derives from Wainer and Spence, as well
+    as Roger Gaskell,
+    <cite>
+      "Printing House and Engraving Shop: A Mysterious Collaboration"
+    </cite>{" "}
+    BC 53 (2004): 213-51. Interested readers may also consult{" "}
+    <cite>"From Paper to Copper: The Engraver's Process,"</cite> a demonstration
+    by Andrew Stein Raftery, Associate Professor of Printmaking at the Rhode
+    Island School of Design, viewable online at:
+    <a href=" https://www.youtube.com/watch?v=fQvghHs15hA">
+      https://www.youtube.com/watch?v=fQvghHs15hA{" "}
+    </a>
   </span>,
   //7
-  <span key="b2a88cc1">
-    Helen Kennedy, Rosemary Lucy Hill, Giorgia Aiello, and William Allen, “The Work that Visualization Conventions Do,” <cite>Information, Communication and Society </cite>19.6 (2016), 723. Also see Alberto Cairo, <cite>How Charts Lie: Getting Smarter about Visual Information</cite> (Norton, 2019).
+  <span key="ca2c1aef">
+    William Playfair, <cite>The Commercial and Political Atlas,</cite> 3rd ed.
+    (London: 1801), p. viii.
   </span>,
   //8
-  <span key="21c46d49">
-    Here I am encapsulating the major contribution of science and technology studies (STS) of the past several decades. Steven Shapin and Simon Schaffer’s <cite>Leviathan and the Air-Pump: Hobbes, Boyle, and the Experimental Life</cite> (Princeton UP, 1985) lays strong conceptual groundwork for this claim. More recently, the essays included in <cite>Social Studies of Scientific Imaging and Visualization</cite>, ed. Joseph Dumit and Regula Valérie Burri (MIT Press, 2008), have applied this STS framework to visualization.
-  </span>,
+  <span key="85e48c28">Quoted in Wainer and Spence, p. 14.</span>,
   //9
-  <span key="2e11427a">
-    Quoted in Wainer and Spence, “Introduction,” 14.
-  </span>,
+  <span key="bc7ce7aa">Ref 1786 edition, p. 7. </span>,
   //10
-  <span key="456272d9">
-    William Playfair, <cite>The Commercial and Political Atlas</cite>, 1st ed. (London, 1786), 7.
+  <span key="96ae40c8">
+    In the introduction to the third edition, Playfair includes quotations from
+    the press coverage of earlier editions, as well as his own recollections of
+    the book's early reception in England and France.
   </span>,
   //11
-  <span key="769ecfa3">
-    In both the preface and introduction to the third edition, Playfair includes quotations from the press coverage of earlier editions, as well as his own recollections of the book’s early reception in England and France. See <cite>The Commercial and Political Atlas</cite>, iii–xv.
+  <span key="dc641ca4">
+    Unless otherwise indicated, all quotations are from Wainer and Spence's
+    modern edition of the third edition of the Atlas. Playfair, pp. ix-x, in
+    Wainer/Spence 2005.
   </span>,
   //12
-  <span key="e2031412">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, ix–x.
+  <span key="fee18e02">
+    Wainer and Spence push this analysis even further, finding "minor, but
+    careless, arithmetical errors in the tables" which "throws into doubt the
+    accurracy of the remaining numbers in these and the other tables," as well
+    as discrepancies in the visual "rendering of the raw data," especially in
+    the third edition. Their analysis focuses on the charts involving the West
+    Indies and Jersey, Guernsey, and Alderney, but they arrive at a conclusion
+    about the charts overall, which is that "some of the curves that connect the
+    datapoints seem to have derived their shapes from Playfair's opinion of how
+    the itnervening data should look" (19, 18).
   </span>,
   //13
-  <span key="7fc62ee2">
-    On Enlightenment empiricism and the senses, see chapter 1, note 7.
-  </span>,
+  <span key="2d58d747">Playfair, 1st ed, p. 4</span>,
   //14
-  <span key="83d3af43">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, x.
-  </span>,
+  <span key="ae3308d6">Tufte, p. 13.</span>,
   //15
-  <span key="6dbd0fca">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, xiv.
-  </span>,
+  <span key="b4e82e49">Tufte, p. 13.</span>,
   //16
-  <span key="6251a35c">
-    In the field of visualization research, scholars have explored questions around the “value” of visualization, albeit focused primarily on methods of evaluation that align with its specific contributions, such as efficiency, confidence, and insight. In “The Value of Visualization,” Jarke van Wijk lays out the rationale for this research program: “If we know to which actions the visualization should lead to, the next steps are assessment whether the knowledge derived from the visualization does indeed support the decision, and also, to assess the economic value of this decision. This is not easy, but one can try for instance to estimate how much time is saved, or try to quantify the consequences of a wrong decision” (<cite>IEEE Visualization 2005</cite>, Minneapolis, 79–86). Subsequent work by John Stasko and Emily Wall models how specific values—in particular, “time, insight, essence, and confidence”—might be assessed. See Stasko, “Value-Driven Evaluation of Visualizations,” <cite>BELIV ’14: Proceedings of the Fifth Workshop on Beyond Time and Errors: Novel Evaluation Methods for Visualization</cite>, 46–53); and Emily Wall, Meeshu Agnihotri, Laura Matzen, Kristin Divis, Michael Haass, Alex Endert, and John Stasko, “A Heuristic Approach to Value-Driven Evaluation of Visualizations,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 25.1 (2019): 491–500.
-  </span>,
+  <span key="998e22ab">Playfair, p. iii.</span>,
   //17
-  <span key="cf64b912">
-    Even this was an innovation. Prior to Playfair, time was for the most part not delimited in a linear way. Rather, significant events were what defined the scale. See Daniel Rosenberg and Anthony Grafton, <cite>Cartographies of Time: A History of the Timeline </cite>(Princeton Architectural Press, 2010), 136.
-  </span>,
+  <span key="77e9bc99">Playfair, p. iv</span>,
   //18
-  <span key="2bb5ad2e">
-    Wainer and Spence push this analysis even further, finding “minor, but careless, arithmetical errors in the tables” which “throws into doubt the accuracy of the remaining numbers in these and the other tables,” as well as discrepancies in the visual “rendering of the raw data,” especially in the third edition (“Introduction,” 19). Their analysis focuses on the charts involving the West Indies and Jersey, Guernsey, and Alderney, but they arrive at a conclusion about the charts overall, which is that “some of the curves that connect the datapoints seem to have derived their shapes from Playfair’s opinion of how the intervening data should look” (18).
-  </span>,
+  <span key="90c53b48">Playfair, p. iv.</span>,
   //19
-  <span key="f233a330">
-    This phase, a variation on the “simple and complete idea” that Playfair describes in his introduction, derives from the working title of the <cite>Atlas</cite>, “The commercial and political atlas representing, by means of stained copper-plate charts, the exports, imports, and general trade of England, at a single view.” This was the title Playfair employed in a draft version that he circulated to friends, including Watt, in 1785.
-  </span>,
+  <span key="6e0fca3c">Playfair, p. xiv.</span>,
   //20
-  <span key="f0b06c0f">
-    On the saga of Playfair’s bankruptcy, see Bellhouse, <cite>The Flawed Genius</cite>, 159–195.
-  </span>,
+  <span key="4c22d55f">Playfair, p. ##.</span>,
   //21
-  <span key="bcc3cea0">
-    This topic will be discussed in more depth in the section of this chapter on Playfair’s charts in the present, but as an opening salvo, consider the similarities between Playfair’s views about the value of visualization and Ben Shneiderman’s “visual information-seeking mantra”: “overview first, zoom and filter, then details on demand.” Shneiderman, “The Eyes Have It: A Task by Data Type Taxonomy for Information Visualizations,” in <cite>The Craft of Information Visualization</cite> (Morgan Kaufmann, 2003), 364–371.
-  </span>,
+  <span key="3c751aed">Playfair, p. xiv.</span>,
   //22
-  <span key="4fdad6f3">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, ix.
-  </span>,
+  <span key="cb4b95f7">Playfair, p. xv.</span>,
   //23
-  <span key="df7d4a3e">
-    While the critical consensus is that Playfair possessed poor business acumen, this particular turn toward financial precarity was not entirely his own doing. Playfair had opened a metal factory outside of Paris, which involved significant personal investment, just as the French Revolution took hold. It was by all accounts on track to become profitable, but Playfair could not stop himself from pursuing additional business ventures. He was in the midst of planning for a second mill, as well as a separate project involving land investments in the newly constituted United States, when the economic instability brought about by the Revolution ratcheted up another notch. Lending in France collapsed and investors’ priorities shifted. In addition, the land investment scheme (in which Playfair was one of several partners) became increasingly dubious; it involved only the right to purchase land, rather than the land itself, a fact that was not clearly communicated to its investors and was discovered only when some of them, fleeing revolutionary France, traveled to the US to remake homes there. Playfair also founded a bank during this time; it was also marked by some irregularities, but these would not have been fatal had the Revolution not then reached a violent peak that forced Playfair to flee Paris, withdrawing his stake in the bank in the process. On this episode, see Bellhouse, <cite>The Flawed Genius</cite>, 70–115.
+  <span key="80c2ed3a">
+    Playfair p. 20. He concludes by noting that "much attention has been lately
+    paid to the subject, and most well informed men are of opinion that a change
+    might easily be effected that would be productive of general advantage."
   </span>,
   //24
-  <span key="0da157bd">
-    Bellhouse speculates that this change of fortune was what prompted Playfair’s turn to increasingly dubious schemes (<cite>The Flawed Genius</cite>, 123).
+  <span key="2e738d24">
+    This explanation is 11 pages to the West Indies' one-and-a-half.
   </span>,
   //25
-  <span key="863fbb54">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, iii.
-  </span>,
+  <span key="3987a182">Playfair p. 28.</span>,
   //26
-  <span key="f1c6fb3f">
-    Bellhouse, <cite>The Flawed Genius</cite>, 179.
-  </span>,
+  <span key="e43873d2">Playfair p. 29</span>,
   //27
-  <span key="2da8b8c3">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, iv.
+  <span key="28bf492e">
+    On visualization as enabling the "big picture" of a dataset, see Kosara et
+    al. (2009) and Shneiderman (2014). Also see the work of Google's "Big
+    Picture" data visualization research group at, co-directed by Fernanda
+    Viegas and Martin Wattenberg. https://research.google.com/bigpicture/.
   </span>,
   //28
-  <span key="e3cb634f">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, iv.
+  <span key="25557133">
+    Ref full title of 1st and 2nd editions, including the phrase "in a single
+    view."
   </span>,
   //29
-  <span key="a656a702">
-    E.g., Manuel Lima, <cite>Visual Complexity: Mapping Patterns of Information </cite>(Princeton Architectural Press, 2011).
-  </span>,
+  <span key="0642a7c8">Playfair 1801, p. v.</span>,
   //30
-  <span key="447190cb">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, xiv.
-  </span>,
+  <span key="9617d82b">Cite D3.</span>,
   //31
-  <span key="1f7083ce">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, xv. As Jenny Odell has observed, it is in fact capitalism that is responsible for the constant push toward more efficiency, which Playfair’s charts support in form, content, and audience. See Odell’s most recent works, <cite>How to Do Nothing: Resisting the Attention Economy </cite>(Melville House, 2019) and <cite>Saving Time: Discovering Life beyond the Clock </cite>(Penguin-Random House, 2023). Thanks to Alexander Sherman for these citations.
+  <span key="48e5c18b">
+    This argument is carried even further in software platforms such as Tableau,
+    which have been developed to enable non-technical users to upload and
+    visualize their data in a series of clicks. Their mission, as they declare
+    it on their website, is to "help people see and understand data." [there are
+    more good quotes; discussion can be extended]
   </span>,
   //32
-  <span key="96a2303f">
-    The introduction to this chapter references work on visualization conventions led by Helen Kennedy, who brings together semiotic analyses of contemporary visualizations with interviews with practicing designers about their aims. Meanwhile, visualization researchers Jessica Hullman and Nicholas Diakopoulos have explored the idea of visualization rhetoric, analyzing the various forms of visual rhetoric that accompany visualizations that appear in a narrative context, and that contribute to the meaning that is conveyed. See “Visualization Rhetoric: Framing Effects in Narrative Visualization,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 17.12 (2011). Finally (although far from exhaustively), Ha-Kyung Kong, Zicheng Liu, and Karrie Karahalious have explored the impact of visualization titles, finding additional evidence of how viewers presume neutrality objectivity. See “Frames and Slants in Titles of Visualizations on Controversial Topics,” in<cite> CHI ’18: Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems.</cite>
-  </span>,
+  <span key="68def0aa">Need LCP catalog ID (1787, p. 232).</span>,
   //33
-  <span key="9d3ec332">
-    Catherine D’Ignazio and Lauren F. Klein, “Feminist Data Visualization,” <cite>Workshop on Visualization for Digital Humanities (VIS4DH) 2016</cite>, Baltimore, MD; and Catherine D’Ignazio and Lauren Klein, “ in <cite>Data Feminism </cite>(MIT Press, 2020), 73–96.
-  </span>,
-  //34
-  <span key="1e888f4f">
-    Playfair was himself not only a proponent but also a victim of this business-first thinking. He remained drawn to the power wielded by the elite, even as he was never able to experience its benefits. In the end, the simplifying design of his charts further consolidated this power, rather than open it up to be dispersed.
-  </span>,
-  //35
-  <span key="fc1c6f0f">
-    Bellhouse consults two contemporaneous published versions of the custom house data, Charles Whitworth’s <cite>State of the Trade of Great Britain in Its Imports and Exports</cite> (1776) and David Macpherson’s <cite>Annals of Commerce </cite>(1805), to confirm this claim (59). Consulting these books, in turn, takes us back to the original custom house records, which have now been digitized and made available online via the British National Archives, viewable at <NoteLink href="https://discovery.nationalarchives.gov.uk/browse/r/h/C67">https://discovery.nationalarchives.gov.uk/browse/r/h/C67</NoteLink>.
-  </span>,
-  //36
-  <span key="3ad35a48">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, 20. He concludes by noting that “much attention has been lately paid to the subject, and most well informed men are of opinion that a change might easily be effected that would be productive of general advantage.”
-  </span>,
-  //37
-  <span key="a6e14dab">
-    This explanation is eleven pages long, as compared to the West Indies’ one and a half.
-  </span>,
-  //38
-  <span key="48eae3fe">
-    Playfair, <cite>The Commercial and Political Atlas</cite>, 28.
-  </span>,
-  //39
-  <span key="9585926b">
-    Jorge Camoes, “Excel Charts meet William Playfair,” December 6, 2011, <NoteLink href="https://excelcharts.com/excel-charts-meet-william-playfair/">https://excelcharts.com/excel-charts-meet-william-playfair/</NoteLink>, accessed July 10, 2025.
-  </span>,
-  //40
-  <span key="5fc135f6">
-    Jo Wood, “Playfair’s Wheat and Wages,” March 10, 2024, <NoteLink href="https://observablehq.com/@jwolondon/wheat-and-wages">https://observablehq.com/@jwolondon/wheat-and-wages</NoteLink>, accessed July 10, 2025.
-  </span>,
-  //41
-  <span key="9617c137">
-    Michael Bostock, Vadim Ogievetsky, and Jeffrey Heer, “D3: Data-Driven Documents,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 17.12 (2011): 2301–2309.
-  </span>,
-  //42
-  <span key="28be7185">
-    Jacques Bertin, <cite>Sémiologie graphique. Les diagrammes, les réseaux, les cartes </cite>(Gauthier-Villars, 1967). The first English edition appeared in 1983, translated by William J. Berg with a foreword by Howard Wainer, who declares Bertin’s book to be “the most important work on graphics since the publication of Playfair’s <cite>Atlas</cite>” (iv).
-  </span>,
-  //43
-  <span key="433b8584">
-    Leland Wilkinson, <cite>The Grammar of Graphics</cite> (Springer, 1999). Notably, Wilkinson’s text features Minard’s diagram on its cover.
-  </span>,
-  //44
-  <span key="9adad48f">
-    Hadley Wickham, <cite>ggplot2: Elegant Graphics for Data Analysis</cite> (Springer-Verlag New York, 2016), <NoteLink href="https://ggplot2.tidyverse.org/">https://ggplot2.tidyverse.org/</NoteLink>.
-  </span>,
-  //45
-  <span key="34d36357">
-    A similar line of thinking is taken up in Arvind Satyanarayan, Bongshin Lee, Donghao Ren, Jeffrey Heer, John Stasko, John Thompson, Matthew Brehmer, and Zhicheng Liu, “Critical Reflections on Visualization Authoring Systems,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 26.1 (2020): 461–471. This builds on work by Alex Bigelow, Steven Drucker, Danyel Fisher, and Miriah Meyer, including “Reflections on How Designers Design with Visualization,” in <cite>Proceedings of the 2014 International Working Conference on Advanced Visual Interfaces (AVI ’14)</cite> (Association for Computing Machinery, 2014), 17–24, and “Iterating between Tools to Create and Edit Visualizations,” <cite>IEEE Transactions on Visualization and Computer Graphics</cite> 23.1 (2017): 481–490.
-  </span>,
-  //46
-  <span key="af78d2ed">
-    William Playfair, <cite>Joseph and Benjamin, a Conversation. Translated from a French Manuscript</cite> (London, 1787), 232. It is worth noting that Franklin would have likely appreciated Playfair’s contributions. Franklin had previously commended Joseph Priestley for his ingenuity in creating his 1765 “Chart of Biography,” going so far as to nominate him for membership in the Royal Society, and Priestley reciprocated by dedicating his 1769 “New Chart of History” to Franklin. Franklin himself also had a long history of prioritizing efficiency in written and graphic communication, e.g., “Extract from Thomas Jefferson’s Anecdotes of Benjamin Franklin,” 4 December 1818, <NoteLink href="https://tjrs.monticello.org/letter/27">https://tjrs.monticello.org/letter/27</NoteLink>, accessed July 10, 2025.
-  </span>,
-  //47
-  <span key="6e8d45c5">
-    Keynes writes: “[Jevons] was not the first to plot economic statistics in diagrams; some of his diagrams bear, indeed, a close resemblance to Playfair’s, with whose work he seems to have been acquainted.” See J. M. Keynes, “William Stanley Jevons 1835–1882: A Centenary Allocution on His Life and Work as Economist and Statistician,” <cite>Journal of the Royal Statistical Society</cite> 99.3 (1936): 523.
-  </span>,
-  //48
-  <span key="9dd5f4f7">
-    Quoted in Erica Royston, “Studies in the History of Probability and Statistics: III. A Note on the History of the Graphical Presentation of Data,” <cite>Biometrika</cite> 43.3/4 (December 1956): 241 n1.
-  </span>,
-  //49
-  <span key="5e6d5a41">
-    In their preface to the modern edition of Playfair’s <cite>Atlas</cite>, Wainer and Spence describe it as the “Bible” of contemporary visualization design (vi). I have previously noted how Wainer, in his introduction to Jacques Bertin’s <cite>Sémiologie graphique,</cite> traces a direct line from Playfair to Bertin, but not how Bertin himself selects an 1805 chart of Playfair’s as one of only two historical images he reproduces in his foundational text. Most recently, Michael Friendly, writing with Wainer in <cite>A History of Data Visualization and Graphic Communication</cite>, says of Playfair: “He can rightly be called the father of modern graphical methods, and it is only a slight stretch to consider his contributions to be the Big Bang of data graphics” (95).
-  </span>,
+  <span key="deee91e4">Ref Wainer/Spence 31.</span>,
 ];
 
 export const peopleFootnotes = [
   //1
-  <span key="a854a3f2">
-    “Beothuk Lake” is now the official name of this body of water, the result of a process led by the Government of Newfoundland and Labrador in keeping with Canadian and First Nations naming protocols. At the time of the events narrated in this chapter, and until 2021, its official name was Red Indian Lake. This name was bestowed by the British in reference to the Beothuk practice of applying a red ochre dye to their bodies and possessions. The Beothuk were also called the Red Indians at this time. In an attempt to honor the outcome of the renaming process, as well as to reflect the revised names of the historical maps discussed in this chapter, I use the name “Beothuk Lake,” employing its previous name only when quoting directly from historical sources.
+  <span key="03f8cc84">
+    Ref renaming of Red Indian Lake, provenance of "red" in moniker.
   </span>,
   //2
-  <span key="17d2868e">
-    Ingeborg Marshall, <cite>A History and Ethnography of the Beothuk </cite>(McGill-Queen’s UP, 1996), 261–262. Here I should note that, while I have attempted to prioritize Indigenous sources and scholars throughout this chapter, Marshall’s history remains the most comprehensive source of information about this earlier era. For an account of the later part of this history that centers Beothuk perspectives, see two young adult novels by Mi’Sel Joe (Miawpukek Mi’kmaq) and Sheila O’Neill (Qalipu Mi’kmaq), <cite>My Indian</cite> (Breakaway, 2021) and its sequel, <cite>Suliewey</cite> (Breakaway, 2023), which bring together Mi’kmaq oral history with many of the sources referenced in this chapter to construct a set of character-driven narratives of these events. For a critique of Marshall, see Fiona Polack, “Introduction: De-Islanding the Beothuk,” in <cite>Tracing Ochre: Changing Perspectives on the Beothuk</cite>, ed. Fiona Polack (U of Toronto Press, 2018), 12–14. And a final note on my marking of Indigenous nation/affiliation: per convention, I include such information when discussing Indigenous people (both historical figures and scholars) in the text, but do not insert affiliations into bibliographic citations. For reasons of legibility, I have chosen to leave settler scholars unmarked, but direct readers to Max Liboiron (Métis/Michif) in <cite>Pollution Is Colonialism </cite>(Duke UP, 2021), 3 n10 for an important discussion about how this choice does imply a normative identity from which others diverge. Notably, Liboiron currently lives and works in St. John’s, where this chapter is set.
+  <span key="c3f1da3c">
+    Thank you to Lori Temple and the management team at The Rooms, the regional
+    museum of Newfoundland and Labrador, for their fact-checking and feedback on
+    this chapter.{" "}
   </span>,
   //3
-  <span key="65f96a04">
-    Marshall, <cite>A History and Ethnography of the Beothuk</cite>, 14–16.
-  </span>,
+  <span key="28d35057">Polack 5.</span>,
   //4
-  <span key="f89742b8">
-    Marshall, <cite>A History and Ethnography of the Beothuk</cite>, 14–16.
-  </span>,
+  <span key="151903bb">Polack 5.</span>,
   //5
-  <span key="44ed6aff">
-    Polack, “Introduction,” 5.
-  </span>,
+  <span key="fa508296">Polack 5.</span>,
   //6
-  <span key="4fe7f18d">
-    Polack, “Introduction,” 5.
-  </span>,
+  <span key="49a30344">Howley 96</span>,
   //7
-  <span key="57865450">
-    John Peyton, as related to James P. Howley and recorded by Howley as “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of March 1819,” in <cite>The Beothucks or Red Indians: The Aboriginal Inhabitants of Newfoundland </cite>(Cambridge UP, 1915), 96.
-  </span>,
+  <span key="48b2bf2a">Howley 93.</span>,
   //8
-  <span key="65f1fa98">
-    Howley, <cite>The Beothucks</cite>, 93.
-  </span>,
+  <span key="369cdb92">Speck 49.</span>,
   //9
-  <span key="6599f040">
-    Frank G. Speck, “The Story of Buchan’s Expedition (Related by John Paul, of Badger’s Brook, Newfoundland, 68 years of age in 1914, who heard it from his grandfather)” in <cite>Beothuk and Micmac </cite>(Museum of the American Indian–Heye Foundation, 1922), 49.
+  <span key="915bf412">
+    Ingeborg Marshall, whose History and Ethnography of the Beothuk offers the
+    most comprehensive contemporary study of the Beothuk, believes that
+    Shanawdithit was around twenty years old at the time of her capture. Because
+    this event took place three years earlier, she would have been about
+    seventeen. Marshall 208.
   </span>,
   //10
-  <span key="88110568">
-    Marshall believes that Shanawdithit was around 20 years old at the time of her capture. Because Demasduit’s capture took place three years earlier, she would then have been about 17 (<cite>A History and Ethnography of the Beothuk</cite>, 208).
+  <span key="c72e8365">
+    Add in longer note about positionality, note non-US members, subject to
+    other forms of colonialism, etc.{" "}
   </span>,
   //11
-  <span key="91846449">
-    As an example of the latter, see Penelope Myrtle Kelsey, <cite>Reading the Wampum: Essays on the Hodinöhsö:ni’ Visual Code and Epistemological Recovery </cite>(Syracuse UP, 2019).
+  <span key="d5049c72">
+    Add in longer gloss of Liboiron and "settler and colonial entitlement to
+    Land and Indigenous cultures" (132). More on anticolonial rather than
+    decolonial approach too.{" "}
   </span>,
   //12
-  <span key="5ed99759">
-    This claim reflects the foundational work of Linda Tuhiwai Smith (Māori iwi Ngāti Awa and Ngāti Porou) in <cite>Decolonizing Methodologies: Research and Indigenous Peoples</cite>, 2nd ed. (Zed, 2012) and, more recently, Stephanie Carroll et al., “The CARE Principles for Indigenous<cite> Data Governance</cite>,” <cite>Data Science Journal </cite>19 (2020): 1–12, as well as the overarching Indigenous protocols of respect, responsibility, and reciprocity.
-  </span>,
+  <span key="ca76e92f">Ref Tuck/Yang, harm/reparations quote. </span>,
   //13
-  <span key="82e867a6">
-    See “Land Acknowledgment Statement,” <cite>Emory University</cite>, <NoteLink href="https://www.emory.edu/home/explore/history/land-acknowledgment/index.html">https://www.emory.edu/home/explore/history/land-acknowledgment/index.html</NoteLink>, accessed July 25, 2025. Here I employ the traditional spelling of “Muscogee,” consistent with the preference of Mvskoke scholars including Laura Harjo, cited later in this chapter.
+  <span key="cf1749f4">
+    According to Peyton, Demasduit at one point attempted to crawl across the
+    snow under the cover of night, trailing her deer-skin cloak behind her so as
+    to erase her tracks. "Capture of Mary March (Demasduit) on Red Indian Lake,
+    in the month of March 1819," in Howley 94.
   </span>,
   //14
-  <span key="0641f3f1">
-    E.g., Eve Tuck and K. Wayne Yang, “Decolonization Is Not a Metaphor,” <cite>Decolonization: Indigeneity, Education and Society </cite>1.1 (2012): 1–40.
-  </span>,
+  <span key="52d63a4d">"Report of Captain Glascock," in Howley 113-116.</span>,
   //15
-  <span key="cde7c8ad">
-    Here we are again guided by the work of Max Liboiron, whose thoughtful discussion of the range of expressions of anticolonial research has helped focus this chapter, as our project overall, on the goals of recognizing and resisting “the settler and colonial entitlement to Land and Indigenous cultures, concepts, knowledges, and life” that have long characterized academic research. See Liboiron, <cite>Pollution Is Colonialism</cite>, 26–27 and 133.
+  <span key="6c6e05ac">
+    W.E. Cormack, "History of the Red Indians of Newfoundland," in Howley 229.
   </span>,
   //16
-  <span key="fe511a3c">
-    Liboiron, citing Eve Tuck (Unangax), writes strongly against reproducing “damage-centered research … that operates, even benevolently, from a theory of change that establishes harm or injury in order to achieve reparation.” Tuck, “Suspending Damage: A Letter to Communities,” <cite>Harvard Educational Review </cite>79.3 (2009): 413, cited in Liboiron, <cite>Pollution Is Colonialism</cite>, 34.
-  </span>,
+  <span key="ce1ff96d">Cormack, "History," in Howley 224.</span>,
   //17
-  <span key="77915583">
-    According to Peyton, Demasduit at one point attempted to crawl across the snow under the cover of night, trailing her deer-skin cloak behind her so as to erase her tracks. See “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of March 1819” in Howley, <cite>The Beothucks</cite>, 94.
-  </span>,
+  <span key="dbb5330a">See Marshall 217, 2019.</span>,
   //18
-  <span key="9fb2d835">
-    William Nugent Glascock, “Report of Capt. Glascock,” July 20, 1819, reproduced in Howley, <cite>The Beothucks</cite>, 113–116.
-  </span>,
+  <span key="620a26f6">Add in note about the Beothick Institute. </span>,
   //19
-  <span key="aca4db93">
-    William Epps Cormack, “Information obtained from Shanawdithit” (n.d.), reproduced in Howley,<cite> The Beothucks</cite>, 229.
+  <span key="e22e9734">
+    John Paul, "The Story of Buchan's Expedition," in Speck 49
   </span>,
   //20
-  <span key="15a99338">
-    Marshall, <cite>A History and Ethnography of the Beothuk</cite>, 217.
+  <span key="6baf8ae7">
+    For more on the story of this ill-fated expedition, see John Paul, "The
+    Story of Buchan's Expedition," in Speck 49-51.
   </span>,
   //21
-  <span key="8286864b">
-    The numbered order appears to have been decided by Howley, who explains in his book that he “shall take them according to their dates,” and labels them from one to five. Acknowledging that this may not have been the order in which Shanawdithit created them, or intended them to be viewed, The Rooms has recently (as of 2024) created updated titles for the maps that no longer include numbers, nor the designation of “sketch.”
+  <span key="8f4e22b4">
+    Neither Peyton's account nor Cormack's annotations suggest any direct link
+    between these dwellings and the specific events depicted, but the
+    annotations of the previous map in the sequence suggest that
   </span>,
   //22
-  <span key="887f199a">
-    John Paul, “The Story of Buchan’s Expedition,” in Speck, <cite>Beothuk and Micmac</cite>, 49.
-  </span>,
+  <span key="500c3902">Ref Peyton </span>,
   //23
-  <span key="371de5ec">
-    For more on this ill-fated expedition, see John Paul, “The Story of Buchan’s Expedition,” 49–51.
-  </span>,
+  <span key="239b6db0">See Howley 228.</span>,
   //24
-  <span key="7d139f84">
-    “Turtle Island” is a name used by a number of Indigenous groups to describe the North American continent. It derives from the creation stories told by the Lenape, Haudenosaunee, and other nations rooted along the Northeast Coast, in which the back of a turtle becomes the ground on top of which the landmass of earth rises from the sea. Per the topic of this chapter, it is also worth noting that the continent of North America resembles a turtle, with the United States and central Canada as the body, Alaska and the Yukon as one top flipper and Quebec and Newfoundland as the other, and Mexico and the rest of Central America as one of the bottom flippers and Florida as the other, and New Orleans as its tail.
-  </span>,
+  <span key="b807f8c6">Ref claim </span>,
   //25
-  <span key="0b88c13d">
-    Neither Peyton’s account nor Cormack’s annotations suggest any direct link between these dwellings and the specific events depicted, but the annotations of some of Shanawdithit’s other maps suggest that this might be the case.
-  </span>,
+  <span key="7427f4e2">Qtd. in Howley 210.</span>,
   //26
-  <span key="369e6451">
-    “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of March 1819,” in Howley, <cite>The Beothucks</cite>, 92.
+  <span key="ba0ba8ad">
+    While it exceeds the scope of this chapter, it is worth noting that another
+    one of Shanawdithit's maps—fourth in the sequence—contains annotations so
+    "copious," as Howley describes them, that they threaten to overrun the map
+    itself (243). These annotations are primarily numerical, and as such, have
+    their own history—regrettably, another history of violence. From the time of
+    first contact, colonists consistently sought to collect data about the
+    Indigenous populations they encountered as a means of political and
+    psychological control. As these populations succumbed to effects of settler
+    colonialism, including but not limited to the starvation and disease that
+    afflicted the Beothuk, these numbers were wielded as weapons, proof of the
+    inevitable decline of Indigenous populations. These biopolitical overtones
+    are the source of the continued suspicion of data and data collection by
+    Indigenous peoples and groups. That this type of data collection is
+    documented on the map itself underscores how—as we've seen again and
+    again—data collection, data visualization, and the larger colonial project
+    are fundamentally intertwined. [ADD IN MAP HERE IN FOOTNOTE?]
   </span>,
   //27
-  <span key="08745085">
-    William Epps Cormack, “Information obtained from Shanawdithit” (n.d.), reproduced in Howley, <cite>The Beothucks</cite>, 228.
-  </span>,
+  <span key="a3b5x7c9">Add in note about red ochre.</span>,
   //28
-  <span key="2be264ba">
-    In his introduction to “Capture of Mary March (Demasduit),” Howley asserts that Peyton was “the actual captor of the Beothuck woman” (<cite>The Beothucks</cite>, 91).
+  <span key="1qw8er2t">
+    Ref Shneiderman, "overview first… details on demand."
   </span>,
   //29
-  <span key="18902a6b">
-    William Epps Cormack, “Cormack to Bishop of Nova Scotia,” January 10, 1829, reprinted in Howley, <cite>The Beothucks</cite>, 210.
-  </span>,
+  <span key="z4x6cv8b">Ref OCAP, CARE.</span>,
   //30
-  <span key="0535d201">
-    While it exceeds the scope of this chapter, it is interesting to observe that another one of Shanawdithit’s maps contains annotations so “copious,” as Howley himself described them, that they threaten to overrun the map itself (<cite>The Beothucks</cite>, 243). These annotations are primarily numerical, and as such can be placed in the parallel history of Indigenous data and the violence it often brought about. See the historical overview offered in Maggie Walter and Chris Anderson, <cite>Indigenous Statistics: A Quantitative Research Methodology</cite> (Routledge, 2013).
+  <span key="9ui7mo5y">
+    Counting Feminicide, idea of collection as misnomer, data as "produced."
   </span>,
   //31
-  <span key="f7ce81ea">
-    See, for example, Nihad M. Farooq, <cite>Undisciplined: Science, Ethnography, and Personhood in the Americas </cite>(NYU Press, 2016).
-  </span>,
+  <span key="j2k4lp6n">Pearce 110. Add in refs to Malcolm Lewis, others.</span>,
   //32
-  <span key="5fddbd09">
-    Ben Shneiderman, “The Eyes Have It: A Task by Data Type Taxonomy for Information Visualizations,” <cite>Proceedings of the 1996 IEEE Symposium on Visual Languages</cite>, Boulder, CO, 1996, 336–343.
-  </span>,
+  <span key="h3gt5fs7">Ref Laura Harjo, discussion of "assets."</span>,
   //33
-  <span key="686939f8">
-    Mishuana Goeman, <cite>Mark My Words: Native Women Mapping Our Nations </cite>(U of Minnesota Press, 2013), 4.
+  <span key="d9az6qx8">
+    As the literary scholar Lisa Brooks (Abenaki) explains, the power of
+    Indigenous maps resides in their ability to "connect people with relations
+    across time, bringing the past, present, and future into the same space"
+    (12).
   </span>,
   //34
-  <span key="c7631481">
-    Goeman, <cite>Mark My Words</cite>, 4.
+  <span key="7we4ru1i">
+    Add in explanation about the "March" in Demasduit's English name.
   </span>,
   //35
-  <span key="a8637129">
-    Thanks to Derya Akbaba for pushing me to extend this insight to the epistemology of visualization.
-  </span>,
+  <span key="l2vb5nm3">Pearce 110-111.</span>,
   //36
-  <span key="29f15b82">
-    Interestingly, similar questions are beginning to be asked at the end phases of visualization projects, e.g., Derya Akbaba, Devin Lange, Michael Correll, Alexander Lex, and Miriah Meyer, “Troubling Collaboration: Matters of Care for Visualization Design Study,” <cite>Proceedings of the 2023 Conference on Human Factors in Computing (CHI ’23)</cite>, Hamburg, Germany, April 2023.
-  </span>,
+  <span key="6sdfg4h">Harjo 41.</span>,
   //37
-  <span key="26eced63">
-    Margaret Wickens Pearce and Renee Pualani Louis, “Mapping Indigenous Depth of Place,” <cite>American Indian Culture and Research Journal</cite> 32:3 (2008): 110.
-  </span>,
+  <span key="n1jk8lp2">Sparke 324.</span>,
   //38
-  <span key="24927a83">
-    Interestingly, this claim that mapping is best defined in terms of process is not limited to Indigenous contexts. See Matthew Edney, <cite>Cartography: The Ideal and Its History</cite> (U of Chicago Press, 2019), for a recent example of this view. Here we might also consider Laura Harjo’s critique of how viewing the land and its features as “assets” reinforces a static and ownership-driven conceptualization of space. See Harjo, <cite>Spiral to the Stars: Mvskoke Tools of Futurity</cite> (U of Arizona Press, 2019).
+  <span key="t7gy4hu6">
+    Can quote Harjo here: "The scale of the Mvskoke community is produced
+    through relational proceses rather than territorial proceses. The production
+    of scale is often used to understand the ways in which vaputal moves or
+    Western and settler formations of territory, or territories' relationship to
+    the larger global political economy. Indigenous community scales are
+    instantiated in myriad ways. It can be useful for communities to understand
+    political and economic geographies in order to advance liberatory claims"
+    (42).
   </span>,
   //39
-  <span key="79d7f595">
-    Pearce and Louis, “Mapping Indigenous Depth of Place,” 110–111.
-  </span>,
+  <span key="5br3cv2x">Howley ##.</span>,
   //40
-  <span key="945d089d">
-    Harjo, <cite>Spiral to the Stars</cite>, 28; Edward R. Tufte, <cite>The Visual Display of Quantitative Information</cite>, 2nd ed. (Graphics Press, 2001), 40.
-  </span>,
+  <span key="e8qw1oi9">Harjo 41.</span>,
   //41
-  <span key="60462212">
-    This observation paraphrases a point made by Matthew Sparke in “Mapped Bodies and Disembodied Maps: (Dis)placing Cartographic Struggle in Colonial Canada,” in <cite>Places through the Body</cite>, ed. Heidi J. Nast and Steve Pile (Routledge, 1998), 310.
-  </span>,
+  <span key="c6mf4td7">Cormark ##, quoted in Chare 294.</span>,
   //42
-  <span key="9dc7b131">
-    Gerald Vizenor, <cite>Manifest Manners: Narratives on Postindian Survivance </cite>(U of Nebraska Press, 1994).
-  </span>,
+  <span key="g2uh5ns8">Chare 294.</span>,
   //43
-  <span key="5d4a747f">
-    At this juncture we would do well to recall the arguments made throughout <cite>The Imperial Map: Cartography and the Mastery of Empire</cite>, ed. James Akerman<cite> </cite>(U of Chicago Press, 2009), each of which acknowledge the power that maps accord while also challenging binary framings of colonial vs. Indigenous (and East vs. West) maps. Thanks to Bill Rankin for alerting me to these valuable essays.
-  </span>,
+  <span key="fj4dr6vy">Brooks 234.</span>,
   //44
-  <span key="639bc441">
-    For a detailed account of the map’s genesis, see Mark Warhus, <cite>Another America: Native American Maps and the History of Our Land </cite>(St. Martin’s Press, 1997), 1–3.
-  </span>,
+  <span key="9tc7gb3i">Ref map.</span>,
   //45
-  <span key="b67f8843">
-    Cathy O’Neil, <cite>Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy </cite>(Crown, 2016).
+  <span key="q5yx2we1">
+    For a detailed account of the map's genesis, see Warhus, Anotehr America
+    1-3.
   </span>,
   //46
-  <span key="e7439882">
-    As Paul Kahn has observed, this map and its framing was inspired by a map that appeared in Willard’s earlier global historical atlas, <cite>Willard’s Ancient Geography, Ancient Atlas to Accompany Universal Geography </cite>(1827), which was in turn inspired by Matthew Carey’s<cite> Complete Genealogical, Historical, Chronological, and Geographical Atlas; Being a General Guide to History, Both Ancient and Modern … According to the Plan of Le Sage, Greatly Improved. The Whole Forming a Complete System of History and Geography </cite>(1820).<cite> </cite>See “Inclusion and Exclusion in Emma Willard’s Maps of History,”<cite> Nightingale: Journal of the Data Visualization Society, </cite>March 30, 2023,<cite> </cite><NoteLink href="https://nightingaledvs.com/inclusion-and-exclusion-in-emma-willard-maps-of-history/">https://nightingaledvs.com/inclusion-and-exclusion-in-emma-willard-maps-of-history/</NoteLink>, accessed July 25, 2025.
-  </span>,
+  <span key="a3b5x7c9">Ref O'Neil.</span>,
   //47
-  <span key="7073e1b8">
-    Kahn calls out several places in subsequent maps where Indigenous nations do reappear: “Indigenous people reappear as insets labeled <cite>Places Mentioned in the History of the Pequod War</cite> in the <cite>Third Map of 1643</cite> and <cite>Places Mentioned in the History of King Philip’s War</cite> in the <cite>Fourth Map of 1692</cite>. … The <cite>Fifth Map of 1755</cite> shows the names of the indigenous people who controlled the interior of the southern colonies—Tuscarora, Cawataba, Congaree, Yamasee, Cherokee, and Apalachee—but the area west of the coastal rivers remains empty. It is only in the <cite>Sixth Map of 1765</cite> that [Willard] actually includes an indigenous nation with territory, the <cite>Country of the Six Nations … [and in]</cite> the <cite>Ninth Map of 1826, referred to in the History as the Map of the Present Day</cite>, many of the previously excluded nations represented in the De L’Isle map of New France reappear. … But the most interesting detail of the Map of 1826 is the depiction of the Far West in the upper left. The North West Territory is labeled, <cite>Those lands possessed in common by the Sioux, Chippewas, Winnebago, and Sauks,</cite> an assertion that would have been news to the people who lived there. The western boundary of this territory is the upper Mississippi. Beyond that is a space with no boundaries labeled <cite>Sioux Indians or Naudowessies</cite>.”
-  </span>,
+  <span key="1qg8er2t">Schulten 24.</span>,
   //48
-  <span key="bb7b37eb">
-    On the “thematic map,” its origins, and its limitations, see Bill Rankin, “Layers in the Service of the State,” in <cite>Radical Cartography</cite> (Viking, 2025), 63–70.
-  </span>,
+  <span key="z4x6cv8b">Willard, "Preface," vii; "Introduction" cv.</span>,
   //49
-  <span key="017ff78e">
-    Warhus, <cite>Another America</cite>, 9–11.
-  </span>,
+  <span key="9ui7mo5y">3, 5.</span>,
   //50
-  <span key="190e6207">
-    I have chosen not to reproduce the text of this note. Interested viewers may consult the original image, viewable via the British Library at: <NoteLink href="https://www.imagesonline.bl.uk/asset/3043/">https://www.imagesonline.bl.uk/asset/3043/</NoteLink>.
-  </span>,
+  <span key="j2k4lp6n">Schulten 25.</span>,
   //51
-  <span key="4b6c8a83">
-    The emphasis here is on the preservation of the map itself. Written accounts of such maps are plentiful and date back centuries. See Warhus, <cite>Another America</cite>, 9–11.
+  <span key="h3gt5fs7">
+    Ref history of thematic mapping, figure/ground analysis here.
   </span>,
   //52
-  <span key="6e610b59">
-    Sarah Sense, “Power Lines,” <NoteLink href="https://sarahsense.com/Artists/11571/website_statements_2021-22.pdf">https://sarahsense.com/Artists/11571/website_statements_2021-22.pdf</NoteLink>, accessed July 25, 2025.
-  </span>,
+  <span key="d9az6qx8">Bill Rankin, need cite.</span>,
   //53
-  <span key="8096a13a">
-    John Peyton, as related to James P. Howley and recorded by Howley in <cite>The Beothucks</cite>, 96.
+  <span key="7we4ru1i">
+    As Jason Edward Lewis et al explain, "relationality is rooted in context and
+    the prime context is place."
   </span>,
   //54
-  <span key="f792eb25">
-    This analysis could be pushed further still. In Peyton’s account, his group’s surveillance of the Beothuk in advance of their attack on the winter camp structures his entire narrative, even as it contains details that stretch back decades. To wit, the narrative is titled “Capture of Mary March (Demasduit) on Red Indian Lake, in the month of March 1819.”
+  <span key="l2vb5nm3">
+    Geographer Emilie Cameron highlights how for the Inuit peoples in Canada's
+    central Arctic, the vast Northern geography is ‘ordered by stories – stories
+    that make legible the connections between particular people, places, and
+    ideas.' Far from ambiguous narrations of Inuit peoples' experience within
+    the North, Cameron, following the work of John Law, asserts that stories
+    must be thought of as ‘material ordering practices' – that is, not as
+    ‘something separate from, nor merely representative of, the world around
+    us'; rather stories are themselves material and intimately bound up with
+    ‘the materials in which they are carried' (377)
   </span>,
   //55
-  <span key="e659b22f">
-    Though born in Brooklyn, Speck was sent to Connecticut as a child and raised by a family friend, a Mohegan woman named Fidelia Fielding, from whom he learned the Mohegan language; evidently, he spoke it fluently. This likely granted him increased access and trust to the Native peoples he studied. See National Museum of the American Indian<cite>,</cite> “Frank Speck,”  <NoteLink href="https://americanindian.si.edu/collections-search/edan-record/ead_component%3Asova-nmai-ac-001-ref15769">https://americanindian.si.edu/collections-search/edan-record/ead_component%3Asova-nmai-ac-001-ref15769</NoteLink>,  accessed July 25, 2025.
-  </span>,
+  <span key="6sdfg4h">Ref Warhus 9-11.</span>,
   //56
-  <span key="e4d8967e">
-    Speck, <cite>Beothuk and Micmac</cite>, 23.
-  </span>,
+  <span key="n1jk8lp2">Ref earlier written accounts.</span>,
   //57
-  <span key="3cf57a91">
-    As Max Liboiron writes, and I confirmed during my short visit, “I can’t talk about Land in Newfoundland and Labrador if I don’t talk about the weather. Weather [and oil prices] are what shape life here.” Liboiron, <cite>Pollution Is Colonialism</cite>, 30.
+  <span key="t7gy4hu6">
+    Ref https://sarahsense.com/Artists/11571/website_statements_2021-22.pdf
   </span>,
   //58
-  <span key="00c2d17c">
-    In her work with the Penobscot Nation to create a new map of their traditional place names, Margaret Pearce describes her process, as an outside collaborator, of coming to realize how her own experience and perspective—her own “vantage point,” so to speak—was required in order to assemble the place names and the stories that she’d learned through the design process into a meaningful conceptual whole. Very crucially, she realized, this conceptual whole would and could not be the same for all viewers, as they each had different relationships to the land itself. See Pearce, “The Last Piece Is You,” <cite>Cartographic Journal </cite>51 (2014): 107–122.
-  </span>,
+  <span key="5br3cv2x">Howley 96.</span>,
   //59
-  <span key="b642a4b9">
-    Only after completing this visualization did we learn of the work of Pedro Cruz, who uses the visual metaphor of tree rings to anchor a series of visualizations on US immigration data. “Simulated Dendrochronology of US Immigration, 1790–2016,” <NoteLink href="https://pmcruz.com/dendrochronology/">https://pmcruz.com/dendrochronology/</NoteLink>, accessed July 25, 2025.
+  <span key="e8qw1oi9">
+    Ref Title, "Capture of Mary March (Demasduit) on Red Indian Lake, in the
+    month of Marhc 1819."
   </span>,
+  //60
+  <span key="c6mf4td7">Speck 23.</span>,
+  //61
+  <span key="3ea7kp9l">Speck 23.</span>,
 ];
 
 export const processFootnotes = [
-  <span key={"f9dace6a"}>
-    An earlier version of this chapter appears as “What Data Visualization Reveals: Elizabeth Palmer Peabody and the Work of Knowledge Production,” <cite>Harvard Data Science Review</cite> 4.2 (2022).
+  //1
+  <span key="a3b5x7c9">
+    One of Peabody's sisters, Sophia Amelia Peabody, was married to Hawthorne;
+    and the other, Mary Tyler Peabody, was married to Mann.
   </span>,
-  <span key={"a398010b"}>
-    For more on Peabody’s biography, see Bruce A. Ronda, <cite>Elizabeth Palmer Peabody: A Reformer on Her Own Terms</cite> (Harvard UP, 1999), Megan Marshall, <cite>The Peabody Sisters: Three Women Who Ignited American Romanticism</cite> (New York: Mariner, 2006), and Monika Elbert, Julie E. Hall, and Katharine Rodier, eds., <cite>Reinventing the Peabody Sisters</cite> (U of Iowa Press, 2006).
+  //2
+  <span key="a50176dd">
+    For more on Peabody's biography, see Bruce A. Rhoda,
+    <cite> Elizabeth Palmer Peabody: A Reformer on Her Own Terms </cite>
+    (Cambridge: Harvard Univ. Press, 1999), Megan Marshall,
+    <cite>
+      {" "}
+      The Peabody Sisters: Three Women Who Ignited American Romanticism{" "}
+    </cite>
+    (New York: Mariner, 2006), and Monika Elbert, Julie E. Hall, and Katharine
+    Rodier, eds., <cite> Reinventing the Peabody Sisters</cite> (Iowa City:
+    Univ. of Iowa Press, 2006).
   </span>,
-  <span key={"ab8bb335"}>
-    Elizabeth Palmer Peabody, <cite>The Polish-American System of Chronology, Reproduced, with Some Modifications, from General Bem’s Franco-Polish Method</cite> (Boston, 1850), 3.
+  //3
+  <span key="273a7b83">
+    {" "}
+    Elizabeth Palmer Peabody,{" "}
+    <cite>
+      The Polish-American System of Chronology, reproduced, with some
+      modifications, from General Bem's Franco-Polish Method
+    </cite>{" "}
+    (Boston, 1850), p. 3.
   </span>,
-  <span key={"c704d09d"}>
-    The term “feminism” began to coalesce in the second half of the nineteenth century—first in France, and then in the United States, as historian Karen Offen has explored. While some credit the French utopian philosopher (and major influence on the transcendentalist movement) Charles Fourier with coining the term, this has not been borne out by the research. See Nancy Cott, <cite>The Grounding of Modern Feminism</cite> (Yale UP, 1987), and Karen Offen, “Defining Feminism: A Comparative Historical Approach,” <cite>Signs</cite> 14.1 (1988): 119–157.
+  //4
+  <span key="ebb9d980">
+    While it exceeds the scope of this essay, it is worth noting the particular
+    appeal of Bem's Polish identity. Peabody had a particular interest in the
+    ideas coming out of central and eastern Europe as a result of her ongoing
+    engagement in theories of language. She had sustained correspondence with
+    the Hungarian philologist Charles Kraitsir throughout the 1840s, and he
+    traveled to Boston to meet with her in 1847. Peabody went on to support the
+    (failed) Hungarian Revolution of 1848, which she viewed as allied with the
+    aims of American Independence. Among her central concerns with standard
+    accounts of US History was that they were written from the perspective of
+    England. She would have likely imputed an anti-colonial stance inherent in
+    Bem's system. For more on her relationship with Kraitsir, see Ronda (1999,
+    pp. 225-226). For more on her support for the Hungarian Revolution and her
+    views on history, see Baym (1991).
   </span>,
-  <span key={"33e1ac1f"}>
-    On Antoni Jażwiński and the Polish system, see Hunter Dukes and Adam Green, “Visualizing History: The Polish System,” <cite>Public Domain Review</cite>, May 5, 2021, and Daniel Rosenberg and Anthony Grafton, <cite>Cartographies of Time: A History of the Timeline</cite> (Princeton Architectural Press, 2010), 203–209. While it exceeds the scope of this chapter, it is worth noting the particular appeal for Peabody of the Polish origins of this method. Peabody had a particular interest in the ideas coming out of central and eastern Europe as a result of her ongoing engagement in theories of language. She had sustained correspondence with the Hungarian philologist Charles Kraitsir throughout the 1840s, and he traveled to Boston to meet with her in 1847. Peabody went on to support the (failed) Hungarian revolution of 1848, which she viewed as allied with the aims of American independence. Among her central concerns with standard accounts of US history was that they were written from the perspective of England. She would have likely seen an anticolonial stance as inherent in Bem’s system. For more on her relationship with Kraitsir, see Ronda, <cite>Elizabeth Palmer Peabody</cite>, 225–226. For more on her support for the Hungarian revolution and her views on history, see Nina Baym, “The Ann Sisters: Elizabeth Peabody’s Millennial Historicism,” <cite>American Literary History 3</cite>.1 (1991): 25–45.
+  //5
+  <span key="0f6c6877">
+    Daniel Rosenberg and Anthony Grafton,{" "}
+    <cite>Cartographies of Time: A History of the Timeline </cite> (Princeton:
+    Princeton Architectural Press, 2010), p. 205.
   </span>,
-  <span key={"13cae384"}>
-    Rosenberg and Grafton, <cite>Cartographies of Time</cite>, 205.
+  //6
+  <span key="fd738318">Ronda, p. 227</span>,
+  //7
+  <span key="c3929d90">
+    Elizabeth Palmer Peabody, Chronological History of the United States.
+    Arranged with Plates on Bem's Principle (New York: 1856), p. 5
   </span>,
-  <span key={"390fc149"}>
-    Ronda, <cite>Elizabeth Palmer Peabody</cite>, 227.
+  //8
+  <span key="94bac05d">
+    For more on the role of mnemonics in nineteenth-century US history
+    education, see "Mnemonics, Methods, and Memory: Organizing and Encoding the
+    American Story," in Barry Joyce, The First US History Textbooks:{" "}
+    <cite>
+      Constructing and Disseminating the American Tale in the Nineteenth Century{" "}
+    </cite>{" "}
+    (Lexington, KY: Lexington Books, 2015), pp. 61-100.
   </span>,
-  <span key={"e5c82e80"}>
-    Elizabeth Palmer Peabody, <cite>Chronological History of the United States: Arranged with Plates on Bem’s Principle</cite> (New York, 1856), 9.
+  //9
+  <span key="51e8a882">Peabody, Chronological History, p. 7.</span>,
+  //10
+  <span key="27616462">
+    Nikole Hannah-Jones et al., "The 1619 Project," The New York Times Magazine,
+    August 14, 2019.
+    https://www.nytimes.com/interactive/2019/08/14/magazine/1619-america-slavery.html
   </span>,
-  <span key={"051228e6"}>
-    Peabody, <cite>The Polish-American System</cite>, 10.
+  //11
+  <span key="0676228e">
+    Jake Silverstein, "Why We Published the 1619 Project,"{" "}
+    <cite> The New York Times Magazine, </cite> December 20, 2019.{" "}
+    <a href="https://www.nytimes.com/interactive/2019/12/20/magazine/1619-intro.html.">
+      {" "}
+      https://www.nytimes.com/interactive/2019/12/20/magazine/1619-intro.html.{" "}
+    </a>
   </span>,
-  <span key={"592e8076"}>
-    Scholars now date the death of Pocahontas to five years earlier, in 1617. She had been abroad in England with her husband (the British settler John Rolphe) and their child, where she served as the main draw in a campaign to attract new investment in the Jamestown colony. She had just begun the long ship voyage home, not yet out of the Thames, when she became sick and died shortly after being taken off the boat. This is another story that exceeds the scope of this chapter, but it is important to acknowledge the power relations that framed Pocahontas’s marriage to Rolphe, as well as how her story has been shaped over centuries to fit various colonial and national origin stories. See Rayna Green, “The Pocahontas Perplex: The Image of Indian Women in American Culture,” <cite>Massachusetts Review</cite> 16.4 (Autumn 1975): 698–714, and more recently Chris Finley, “Decolonizing the Queer Native Body (and Recovering the Native Bull-Dyke),” in <cite>Queer Indigenous Studies: Critical Interventions in Theory, Politics, and Literature</cite>, ed. Qwo-Li Driskill, Chris Finley, Brian Joseph Gilley, and Scott Lauria Morgensen (U of Arizona Press, 2011), 31–42.
+  //12
+  <span key="07b2b314">
+    Katherine McKittrick, Dear Science and Other Stories (Durham: Duke Univ.
+    Press, 2021), p. 3.
   </span>,
-  <span key={"7672d765"}>
-    For more on the role of mnemonics in nineteenth-century  US history education, see “Mnemonics, Methods, and  Memory: Organizing and Encoding the American Story,” in  Barry Joyce, <cite>The First US History Textbooks: Constructing  and Disseminating the American Tale in the Nineteenth Century</cite>(Lexington Books, 2015), 61–100.
+  //13
+  <span key="15457725">
+    Donna Haraway, "Situated Knowledges: The Science Question in Feminism and
+    the Privilege of Partial Perspective," <cite>Feminist Studies </cite> 14.1
+    (1988), pp. 575-599. In work with Catherine D'Ignazio, I have articulated a
+    general approach to countering the god trick, and to acknowledging the
+    situated nature of knowledge production in data visualization. See Catherine
+    D'Ignazio and Lauren Klein, "Feminist Data Visualization,"{" "}
+    <cite>
+      {" "}
+      VIS4DH: Proceedings of the Workshop on Visualization for the Digital
+      Humanities, IEEE VIS 2016{" "}
+    </cite>{" "}
+    (Baltimore: IEEE, 2016) and Catherine D'Ignazio and Lauren Klein,{" "}
+    <cite>Data Feminism</cite> (Cambridge: MIT Press, 2020).
   </span>,
-  <span key={"7da50cb2"}>
-    Peabody, <cite>Chronological History</cite>, 7.
+  //14
+  <span key="8098566c">Haraway, p. 584.</span>,
+  //15
+  <span key="1976e6c9">
+    Peabody's nephew, Julian Hawthorne, who served as her first test subject,
+    recalled that she "labored during some years to teach me all the leading
+    dates of human history," but that he nevertheless remained "most inapt and
+    grievous" throughout the process, ultimately exhausting her patience (Ronda,
+    p. 227).
   </span>,
-  <span key={"c5b0f0d1"}>
-    Elizabeth Palmer Peabody, <cite>Universal History; Arranged to Illustrate Bem’s Charts of Chronology</cite> (New York, 1859), v.
+  //16
+  <span key="3fe88ab3">
+    Peabody,{" "}
+    <cite>
+      Universal History; Arranged to Illustrate Bem's Charts of Chronology
+    </cite>{" "}
+    (New York: 1859), p. v.
   </span>,
-  <span key={"d3b9a409"}>
-    In Peabody’s own words, the Polish-American system “does not pretend to be what an outline can never be, namely: a perfect frame work for history.” See Elizabeth Palmer Peabody “Bem’s Method of History: An Appeal to Teachers and Boards of Education,” <cite>Indiana School Journal</cite> 1.2 (1856): 325.
+  //17
+  <span key="46d66328">
+    In Peabody's own words, the Polish-American System "does not pretend to be
+    what an outline can never be, namely: a perfect frame work for history." See
+    "Bem's Method of History: An Appeal to Teachers and Boards of Education,"{" "}
+    <cite> The Indiana School Journal 1.2 </cite>(1856), p. 325.
   </span>,
-  <span key={"afb3b705"}>
-    As evident in the pedagogy surrounding her charts, Peabody believed that self-directed play mattered as much as formal instruction, and that knowledge was derived not from any external authority but instead from a focused and sustained analysis of “the self-activity of the mind.” See Elizabeth Palmer Peabody, “The Origin and Growth of the Kindergarten,” <cite>Education</cite> 2 (1882): 507–527. Here it is also worth noting that, while Peabody was the sister-in-law of famed educational innovator and advocate Horace Mann, she did not maintain a close relationship with him after he married her sister Mary. In fact, there was significant tension between Elizabeth and Mary over the intensity of Elizabeth’s intellectual relationship with Mann. Only after Mann’s death in 1859 did the sisters’ shared interest in theories (and practices) of education become rekindled. For more on this new phase of Peabody’s educational theories, developed in conversation with her sister, see Ronda, <cite>Elizabeth Palmer Peabody</cite>, 269–317.
+  //18
+  <span key="182146cf">
+    As also evident in the pedagogy surrounding her charts, Peabody believed
+    that self-directed play mattered as much as formal instruction, and that
+    knowledge was derived not from any external authority but instead from a
+    focused and sustained analysis of "the self-activity of the mind." See
+    Elizabeth Palmer Peabody, "The Origin and Growth of the Kindergarten,"{" "}
+    <cite> Education 2 (1882)</cite>, pp. 507-527. It is also worth noting that
+    while Peabody was the sister-in-law of famed educational innovator and
+    advocate Horace Mann, she did not maintain a close relationship with him
+    after he married her sister Mary. In fact, there was significant tension
+    between Elizabeth and Mary over the intensity of Elizabeth's intellectual
+    relationship with Mann. With that said, Mann's death in 1859 seems to have
+    reopened the possibility of the sisters' shared interest in theories (and
+    practices) of education. For more on this new phase of Peabody's educational
+    theories, developed in conversation with her sister, see Ronda pp. 269-317.
   </span>,
-  <span key={"db8db488"}>
-    Ronda, <cite>Elizabeth Palmer Peabody</cite>, 227.
+  //19
+  <span key="e7958062">Ronda, p. 227.</span>,
+  //20
+  <span key="5581bcd5">Peabody, Chronological History, p. 7.</span>,
+  //21
+  <span key="6eb87894">
+    For an extended analysis of Willard's charts, see Susan Schulten, "Emma
+    Willard's Maps of Time," <cite>Public Domain Review </cite>(2020). Web.{" "}
+    <a href="https://publicdomainreview.org/essay/emma-willard-maps-of-time/">
+      https://publicdomainreview.org/essay/emma-willard-maps-of-time/
+    </a>
   </span>,
-  <span key={"6f418c50"}>
-    Caldas, a Colombian naturalist who roomed with Humboldt in Quito for eight months while the latter created his famed visualizations of Chimborazo, was in fact the person who first created the forms for which Humboldt would soon be renowned. See Jorge Cañizares-Esguerra, “Screwing Humboldt and His Hagiographers,” <cite>Medium,</cite> September 27, 2019,  <NoteLink href="https://jorgecanizaresesguerra.medium.com/screwing-in-two-positions-82c2cc5b09db">https://jorgecanizaresesguerra.medium.com/screwing-in-two-positions-82c2cc5b09db</NoteLink>, and in a more scholarly register, Mauricio Nieto Olarte, <cite>La obra cartográfica de Francisco José de Caldas</cite> (Universidad de los Andes, 2006).
+  //22
+  <span key="0dcc3597">
+    Elizabeth Palmer Peabody, "Bem's Method of History: An Appeal to Teachers
+    and Boards of Education," <cite>The Indiana School Journal</cite> 1.2
+    (1856), p. 326.
   </span>,
-  <span key={"5997f9b3"}>
-    For an extended analysis of Willard’s charts, see Susan Schulten, “Emma Willard’s Maps of Time,” <cite>Public Domain Review</cite> (2020), <NoteLink href="https://publicdomainreview.org/essay/emma-willard-maps-of-time/">https://publicdomainreview.org/essay/emma-willard-maps-of-time/</NoteLink>.
+  //23
+  <span key="ef84765d">
+    Susan Schulten,
+    <cite>
+      Mapping the Nation: History and Cartography in Nineteenth-Century America
+    </cite>{" "}
+    (Chicago: Univ. of Chicago Press, 2012). p, 31.
   </span>,
-  <span key={"24870f8c"}>
-    As an example of how domain experts might be enabled to contribute their own knowledge to a visualization system, see Haihan Lin, Derya Akbaba, Miriah Meyer, and Alexander Lex, “Data Hunches: Incorporating Personal Knowledge into Visualizations,” IEEE Transactions on Visualization and Computer Graphics (VIS) 29.1 (2022): 504–514.
+  //24
+  <span key="4a2799aa">
+    Peabody, Chronological History, p. 9. The LED system was prototyped by
+    Svyatoslav Kucheryavykh. The design was further refined by Courtney Allen
+    and Alexandra Beall. The final system was designed and implemented by
+    Courtney Allen, Gavin McGuire, and Sarah Schoemann. Noah Sutter wrote the
+    underlying code.
   </span>,
-  <span key={"ce0e04f8"}>
-    Peabody, <cite>Chronological History</cite>, 9.
+  //25
+  <span key="274b1094">
+    Elizabeth Palmer Peabody, "My Experience as a Teacher,"
+    <cite>American Journal of Education </cite> 32 (1882), p. 785.
   </span>,
-  <span key={"1fce8cd3"}>
-    Elizabeth Palmer Peabody, “My Experience as a Teacher,” <cite>American Journal of Education</cite> 32 (1882): 785.
+  //26
+  <span key="a0633393">Ronda, p. 236.</span>,
+  //27
+  <span key="ce484926">
+    {" "}
+    Jessica Hullman, "The Purpose of Visualization is Insight, not Pictures: An
+    Interview with Ben Shneiderman," <cite> ACM Interactions. </cite> Web.{" "}
+    <a href="https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben">
+      https://interactions.acm.org/blog/view/the-purpose-of-visualization-is-insight-not-pictures-an-interview-with-ben
+    </a>
   </span>,
-  <span key={"58827d3e"}>
-    Ronda, <cite>Elizabeth Palmer Peabody</cite>, 236.
+  //28
+  <span key="19b497e0">
+    Shortly before the time of this manuscript submission, I was alerted to the
+    recent acquisition of one of these mural charts by the David Rumsey Map
+    Collection, viewable here:
+    https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~358471~90126267:Christian-Era?sort=pub_list_no_initialsort%2Cpub_date%2Cpub_date%2Cpub_list_no&qvq=q:process;sort:pub_list_no_initialsort%2Cpub_date%2Cpub_date%2Cpub_list_no;lc:RUMSEY~8~1&mi=0&trs=14.
+    The final version of this chapter will incorporate this new information.
   </span>,
-  <span key={"d5ce3661"}>
-    Thanks to RJ Andrews for sending the email that alerted me to this fact. The mural chart, “Christian Era,” associated with her <cite>Universal History</cite> (1850), can now be viewed online via the David Rumsey Historical Map Collection, image number 15895000.jp2.
+  //29
+  <span key="df9e0afa">Ronda, p. 234.</span>,
+  //30
+  <span key="5dd4e4f4">Ronda, p. 227.</span>,
+  //31
+  <span key="ec240d31">
+    Evidently, they measure five feet by three-and-a-half feet. Photos of the
+    charts can be seen in an essay by Granville Ganter, "Mistress of Her Art:
+    Anne Laura Clarke, Traveling Lecturer of the 1820s,"{" "}
+    <cite>New England Quarterly </cite>87.4 (2014), pp. 709-746.
   </span>,
-  <span key={"6ba9a09b"}>
-    In his biography of Peabody, Ronda speculated that they “must have been much larger than even folio size” (<cite>Elizabeth Palmer Peabody</cite>, 234). The chart in the David Rumsey collection measures 176 by 148 centimeters.
+  //32
+  <span key="3ca8ce1c">
+    For papers discussing this process, see Caroline Foster et al., "The Shape
+    of History: Reimagining Nineteenth-Century Data Visualization,"{" "}
+    <cite>Digital Humanities 2017 </cite>(Association of Digital Humanities
+    Organizations, 2017); and Alexandra Beall et al., "Reimagining Elizabeth
+    Palmer Peabody's Lost 'Mural Charts,'"<cite>Digital Humanities 2018 </cite>
+    (Association of Digital Humanities Organizations, 2018).
   </span>,
-  <span key={"b743565d"}>
-    Thanks to Granville Ganter for sharing these photos and allowing me to reproduce them here. For Ganter’s work on Clarke, who created her timelines with the help of her sister, also named Elizabeth, see Granville Ganter, “Mistress of Her Art: Anne Laura Clarke, Traveling Lecturer of the 1820s,” <cite>New England Quarterly</cite> 87.4 (2014): 709–746.
+  //33
+  <span key="62d5afdf">
+    The touch matrix was prototyped by Angela Vujic and Maninder Japra. The
+    design was refined and further implemented by Courtney Allen, Alexandra
+    Beall, and Gavin McGuire.
   </span>,
-  <span key={"61b060dc"}>
-    Papers discussing this process include: Caroline Foster et al., “The Shape of History: Reimagining Nineteenth-Century Data Visualization,” <cite>Digital Humanities 2017</cite> (Association of Digital Humanities Organizations, 2017); and Alexandra Beall et al., “Reimagining Elizabeth Palmer Peabody’s Lost ‘Mural Charts,’” <cite>Digital Humanities 2018</cite> (Association of Digital Humanities Organizations, 2018).
+  //34
+  <span key="2325e2aa">
+    The fabric topper was designed and fabricated by Sarah Schoemann.
   </span>,
-  <span key={"73c97ce3"}>
-    The touch matrix was prototyped by Angela Vujic and Maninder Japra. The design was refined and further implemented by Courtney Allen, Alexandra Beall, and Gwendolyn McGuire.
+  //35
+  <span key="9987bc65">
+    Elizabeth Peabody, Letter to Samuel Gray Ward, September 1850.
   </span>,
-  <span key={"057b7d0d"}>
-    The fabric topper was designed and fabricated by S.E. Schoemann. The LED system was prototyped by Svyatoslav Kucheryavykh. The design was further refined by Courtney Allen and Alexandra Beall. The final system was designed and implemented by Courtney Allen, Gwendolyn McGuire, and S.E. Schoemann. Noah Sutter wrote the underlying code.
+  //36
+  <span key="c62220bc">
+    For an overview of this gendered history of work, see "Show Your Work," in
+    D'Ignazio and Klein, <cite>Data Feminism,</cite> pp. 173-202.
   </span>,
-  <span key={"f1632fad"}>
-    Neither focus nor fatigue are limited to the physical realm, of course. Chapter 6 addresses these considerations with respect to the making of the visualizations and other digital components of this project.
+  //37
+  <span key="9e75ae6d">
+    While not explored in this chapter, it's worth noting that the history of
+    computing provides another key example, one which&mdash;in the
+    object-oriented way in which Peabody structures her event dataPeabody might
+    also be engaged. On the history of women in computing, see Jennifer Light,
+    "When Computers Were Women. <cite>Technology and Culture</cite> 40.3 (1999),
+    pp. 455-83; Nathan Ensmenger,{" "}
+    <cite>
+      The Computer Boys Take Over: Computers, Programmers, and the Politics of
+      Technical Expertise
+    </cite>{" "}
+    (Cambridge: MIT Press, 2010)l and Mar Hicks,
+    <cite>
+      {" "}
+      Programmed Inequality: How Britain Discarded Women Technologists and Lots
+      Its Edge in Computing
+    </cite>
+    (Cambridge: MIT Press, 2017).
   </span>,
-  <span key={"b0586c3b"}>
-    Elizabeth Peabody to Samuel Gray Ward, September 1850, quoted in Ronda, <cite>Elizabeth Palmer Peabody</cite>, 235.
+  //38
+  <span key="ae11d60c">
+    See, for example, William Ferris, ed.,{" "}
+    <cite>fro-American Folk Art and Crafts</cite>A (Boston: G.K. Hall, 1983);
+    and S.J. Markowitz, "The Distinction between Art and Craft,"
+    <cite>A Journal of Aesthetic Education</cite>A 28.1 (Spring 1994): 55-70.
   </span>,
-  <span key={"08164b06"}>
-    The process of acquiring, restoring, and preserving historical artifacts is of course far from magic to those who participate in it. Alex Clausen, of Ruderman Antique Maps, reported in an email how the chart arrived in poor condition, and required significant restoration before it was resold to David Rumsey.
+  //39
+  <span key="f5d65b30">
+    See, for example, R. Kalina, "Gee's Bend Modern."
+    <cite>Art in America 10 </cite>(2003): 104-149; and S.A. Duncan, "From Cloth
+    to Canvas: Reinventing Gee's Bend Quilts in the Name of Art,"{" "}
+    <cite> Museum Anthropology</cite> 28.1 (March 2005): 27-28.
   </span>,
-  <span key={"d3a0b099"}>
-    For an overview of this gendered history of work, see “Show Your Work,” in D’Ignazio and Klein, <cite>Data Feminism,</cite> 173–202.
+  //40
+  <span key="1bea657c">
+    Ryan Leahy,"The Alabama Women Who Made Their Quilts a Part of Modern Art,"{" "}
+    <cite>Artsy</cite> (2018).{" "}
+    <a href="https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art">
+      https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art
+    </a>
   </span>,
-  <span key={"1e465260"}>
-    E.g., William Ferris, ed., <cite>Afro-American Folk Art and Crafts</cite> (G. K. Hall, 1983); and S. J. Markowitz, “The Distinction between Art and Craft,” <cite>Journal of Aesthetic Education</cite> 28.1 (Spring 1994): 55–70.
+  //41
+  <span key="56d186b5">
+    Elsa Barkley Brown, "African-American Women's Quilting: A Framework for
+    Conceptualizing and Teaching African-American Women's History,"{" "}
+    <cite>Signs </cite>14.4 (1989), p. 926.
   </span>,
-  <span key={"491522ec"}>
-    E.g., R. Kalina, “Gee’s Bend Modern,” <cite>Art in America</cite> 10 (2003): 104–149; and S. A. Duncan, “From Cloth to Canvas: Reinventing Gee’s Bend Quilts in the Name of Art,” <cite>Museum Anthropology</cite> 28.1 (March 2005): 27–28.
+  //42
+  <span key="9c3a8b6d">Brown, p. 927.</span>,
+  //43
+  <span key="cc4bf901">Brown, p. 928.</span>,
+  //44
+  <span key="9a4c5c68">
+    Edward Tufte,{" "}
+    <cite>Seeing with Fresh Eyes: Meaning, Space, Data, Truth </cite>(Cheshire,
+    CT: Graphics Press 2020), p. 29.
   </span>,
-  <span key={"1361685b"}>
-    Ryan Leahy, “The Alabama Women Who Made Their Quilts a Part of Modern Art,” <cite>Artsy</cite> (2018), <NoteLink href="https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art">https://www.artsy.net/article/artsy-editorial-alabama-women-made-quilts-modern-art</NoteLink>
-  </span>,
-  <span key={"852116b0"}>
-    Elsa Barkley Brown, “African-American Women’s Quilting: A Framework for Conceptualizing and Teaching African-American Women’s History,” <cite>Signs</cite> 14.4 (1989): 926.
-  </span>,
-  <span key={"4fc20a4d"}>
-    Barkley Brown, “African-American Women’s Quilting,” 927.
-  </span>,
-  <span key={"c2355427"}>
-    Barkley Brown, “African-American Women’s Quilting,” 928.
-  </span>,
-  <span key={"fedbdb83"}>
-    Edward Tufte, <cite>Seeing with Fresh Eyes: Meaning, Space, Data, Truth</cite> (Graphics Press, 2020), 29.
-  </span>,
-  <span key={"d435106d"}>
-    Katherine McKittrick, <cite>Dear Science and Other Stories</cite> (Duke UP, 2021), 3.
-  </span>,
-  <span key={"763e99e9"}>
-    Barkley Brown, “African-American Women’s Quilting,” 926.
-  </span>,
+  //45
 ];
 
 export const powerFootnotes = [
   //1
-  <span key="98ef98c8">
-    “Table of Temperature and Rainfall, Week Ended December 25, 1899,” <cite>Public Health Reports (1896–1970)</cite>, January 12, 1900, 73–74.
+  <span key="efa3fdad">
+    Note that this was not the main US exhibition space, which was reserved for
+    a unified (and white) view of the nation. Need cite.
   </span>,
   //2
-  <span key="341bba0b">
-    David Levering Lewis, <cite>W. E. B. Du Bois: A Biography</cite> (Henry Holt, 2009), 154. The first day of the 1899–1900 winter term is listed as December 25, 1899 in the <cite>Catalogue of the Officers and Students of Atlanta University, 1898–1899</cite> (Atlanta UP, 1899), 2.
+  <span key="b87cdc9f">
+    W.E.B. Du Bois, "The American Negro in Paris," The American Monthly Review
+    of Reviews 22.5 (November 1900), p. 576.
   </span>,
   //3
-  <span key="664ecdcb">
-    Per the 1898–1899 <cite>Catalogue</cite>, Mack was awarded “high honor” after her sophomore year in recognition of “maintain[ing] a certain average rank” (24). Mack would be awarded “honor” along with a classmate, Henry Napoleon Lee, at her own graduation. See <cite>Catalogue of the Officers and Students of Atlanta University, 1900–1901</cite> (Atlanta UP, 1901), 25.
+  <span key="adf5bbd2">
+    <cite>On The Philadelphia Negro</cite> as the antecedent to the Paris
+    Exposition charts, see Alexander Weheliye, "Diagrammatics as Physiognomy:
+    W.E.B. Du Bois's Graphic Modernities,"{" "}
+    <cite>CR: The New Centennial Review</cite> 15.2 (2015): 23-58.
   </span>,
   //4
-  <span key="daf96df5">
-    As listed in the 1899–1900<cite> Catalogue,</cite> the textbook employed for the course was Richmond Mayo-Smith’s <cite>Statistics and Sociology</cite> (1895), which when published became the first textbook on quantitative methods of social science research. See <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900</cite> (Atlanta UP, 1900), 7.
+  <span key="3ee8d5f7">
+    In addition, it is worth noting that the visualization designer Jason
+    Forrest believes that there is evidence of an additional chart, bringing the
+    total to 64. See "Discovering an Unknown Chart from W.E.B. Du Bois's 'The
+    Exhibition of American Negroes',"
+    <cite> Nightingale: The Journal of the Data Visualization Society, </cite>
+    January 1, 2019.
   </span>,
   //5
-  <span key="14c48e6a">
-    <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900</cite> , 14.
+  <span key="36b913fb">
+    {" "}
+    Du Bois, "{" "}
+    <a
+      href="http://www.webpower.org/dbANParis.html"
+      className="underline text-blue-500"
+    >
+      The American Negro in Paris
+    </a>
+    ," <cite>The American Monthly Review of Reviews</cite> 22.5 (November 1900),
+    p. 576.
   </span>,
   //6
-  <span key="dca88998">
-    On Calloway’s role in championing the exhibit, see <cite>A Small Nation of People: W. E. B. Du Bois and African American Portraits of Progress</cite>, ed. David Levering Lewis and Deborah Willis (Harper Collins, 2005), 16–17.
-  </span>,
+  <span key="fb4901b2">Add in Hyperallergenic, other examples.</span>,
   //7
-  <span key="f3608842">
-    Eugene F. Provenzo Jr., <cite>W. E. B. Du Bois’ Exhibit of American Negroes: African Americans at the Beginnings of the Twentieth Century </cite>(Rowman &amp; Littlefield, 2013), xii.
+  <span key="fbe17de3">
+    Give explanation for this claim (Atlanta University Studies).
   </span>,
   //8
-  <span key="26706449">
-    Whitney Battle-Baptiste and Britt Rusert, <cite>W. E. B. Du Bois’s Data Portraits: Visualizing Black America </cite>(Princeton Architectural Press, 2018), 9.
+  <span key="feba0647">
+    Mabel O. Wilson, "The Cartography of W.E.B. Du Bois's Color Line," in
+    Battle-Baptiste and Rusert, p. 39.
   </span>,
   //9
-  <span key="78589050">
-    W. E. B. Du Bois, <cite>A Soliloquy on Viewing My Life from the Last Decade of Its First Century </cite>(Oxford, 2014 [1968]), 220. As mentioned in the introduction, visualization designer Jason Forrest believes that there is evidence of an additional chart, bringing the total to 64. See Forrest, “Discovering an Unknown Chart from W. E. B. Du Bois’s ‘The Exhibition of American Negroes,” <cite>Nightingale: The Journal of the Data Visualization Society</cite>, January 1, 2019, <NoteLink href="https://medium.com/nightingale/discovering-a-new-chart-from-w-e-b-du-boiss-the-exhibition-of-american-negros-part-6-66e7b340b90c">https://medium.com/nightingale/discovering-a-new-chart-from-w-e-b-du-boiss-the-exhibition-of-american-negros-part-6-66e7b340b90c</NoteLink>, accessed August 18, 2025.
+  <span key="1qg8er2t">
+    Henry Gannett, "Transmittal Letter," in The Statistical Atlas of the United
+    States, based upon the results of the eleventh census (Washington, D.C.:
+    Govt. print., 1898), p. 3.
   </span>,
   //10
-  <span key="4f3dc0ef">
-    Rogers is credited by name in the <cite>Atlanta University Bulletin </cite>106 (January 1900): 1; and<cite> </cite>“Atlanta University Exhibit at Paris,” <cite>Atlanta Journal</cite>, February 22, 1900. The <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900</cite> confirms this role, listing Rogers’s occupation as “Work on Paris Exhibit” (31). With that said, as graphic designer (and <cite>Data by Design </cite>team member) Silas Munro explains, “based on the volume of the designs, each piece’s complexity and detail, and the compressed project timeline, it seems implausible that Rogers and Du Bois worked alone to complete the project.” Silas Munro, “Introduction to the Plates,” in Battle-Baptiste and Rusert, <cite>W. E. B. Du Bois’s Data Portraits</cite>, 50.
-  </span>,
+  <span key="32e32d9c">See Battle-Baptiste and Rusert.</span>,
   //11
-  <span key="7549b415">
-    Another likely source was federal geographer Henry Gannett’s 1895 study <cite>Statistics of the Negroes in the United States </cite>(Baltimore, 1894). Gannett also served as chief geographer of the US Censuses of 1880, 1890, and 1900, as discussed in more detail below.
+  <span key="661bce46">
+    {" "}
+    Du Bois, "
+    <a href="http://www.webpower.org/dbANParis.html">
+      The American Negro in Paris
+    </a>
+    ," p. 577.{" "}
   </span>,
   //12
-  <span key="a75d6f0e">
-    In his third and final autobiography, written late in life, Du Bois recalls only, “I got a couple of my best students and put a series of facts into charts,” resulting in the “most interesting set of drawings” that were displayed in Paris. Du Bois, <cite>A Soliloquy</cite>, 18.
+  <span key="b1956148">
+    W.E.B. Du Bois, <cite>The Souls of Black Folk</cite> (New York: Library of
+    America, 1903), p. 8; quoted in Shawn Michelle Smith,{" "}
+    <cite>
+      Photography on the Color Line: W.E.B. Du Bois, Race, and Visual Culture
+    </cite>{" "}
+    (Durham: Duke Univ. Press, 2004) p. 25. For more on the photographs, see the
+    Library of Congress,{" "}
+    <cite>
+      A Small Nation of People: W.E.B. Du Bois and African American Portraits of
+      Progress{" "}
+    </cite>
+    (New York: Amistad-HarperCollins, 2003).{" "}
   </span>,
   //13
-  <span key="337f98a5">
-    For a rich theorization of archival silence, see Michel-Rolph Trouillot, <cite>Silencing the Past: Power and the Production of History</cite> (Beacon, 1997).
+  <span key="4b12ec50">
+    Historian of photography Deborah Willis identifies one of these
+    photographers as the prominent Black portraitist Thomas Askew. Others remain
+    unknown. See "The Sociologist's Eye: W.E.B. Du Bois and the Paris
+    Exposition," in <cite>A Small Nation of People</cite>, pp. 51-78.
   </span>,
   //14
-  <span key="a3b3a283">
-    Those interested in how I theorize my own approach to fragmentary archives may wish to read the introduction to my first book, "No Eating in the Archive," in <cite>An Archive of Taste: Eating and Aesthetics in the Early United States </cite>(U of Minnesota Press, 2020), 1–33.
-  </span>,
+  <span key="a22a0441">Battle-Baptiste and Rusert, p. 15.</span>,
   //15
-  <span key="af1c8c60">
-    <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900, </cite>27.
-  </span>,
+  <span key="z4x6cv8b">Data Feminism, pp. ##.</span>,
   //16
-  <span key="556cd3c6">
-    <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900, </cite>7.
+  <span key="590aacc5">
+    {" "}
+    W.E.B. Du Bois,{" "}
+    <cite>
+      Dusk of Dawn: An Essay Toward an Autobiography of a Race Concept
+    </cite>
+    , ed. Irene Diggs (New Brunswick NJ: Transaction, 1984), p. 51.
   </span>,
   //17
-  <span key="bc8c6b28">
-    In all other years, this work took the form of the Atlanta University Studies, discussed in depth later in this chapter. This public-facing work was to enable “graduate study of the social problems in the South by the most approved scientific methods of Atlanta, Fisk, and other institutions,” as stated in the course description in the <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900</cite>, 14.
+  <span key="32c9e0d5">
+    Du Bois,
+    <cite> Dusk of Dawn </cite>p. 67.
   </span>,
   //18
-  <span key="2e6cfad0">
-    Reportage in the January 1900 <cite>Atlanta University</cite> <cite>Bulletin</cite> documents how Du Bois “[gave] up the routine of school work, except the class in Sociology, for three months” to prepare for the exhibit, further suggesting that the sociology course (and the students in it) were central to the work. <cite>Atlanta University Bulletin </cite>106 (January 1900), 2.
+  <span key="b1c28368">
+    Du Bois,
+    <cite> Dusk of Dawn </cite>p. 67.
   </span>,
   //19
-  <span key="24b188a6">
-    Mabel O. Wilson, “The Cartography of W. E. B. Du Bois’s Color Line,” in Battle-Baptiste and Rusert, <cite>Du Bois’s Data Portraits</cite>, 39.
+  <span key="cc1c5e9c">
+    <cite> Dusk of Dawn </cite>pp. 67-8.
   </span>,
   //20
-  <span key="926d78bd">
-    For an overview of the history of lynching in the United States, see the Equal Justice Initiative’s comprehensive report, <cite>Lynching in America: Confronting the Legacy of Racial Terror</cite>, 3rd ed., <NoteLink href="https://lynchinginamerica.eji.org/report/">https://lynchinginamerica.eji.org/report/</NoteLink>, accessed August 18, 2025.
+  <span key="9ui7mo5y">
+    This was the legislation that, as Whitney Battle-Baptiste and Britt Rusert
+    explain, "stretch[ed] from the slave codes of the colonial and antebellum
+    period to the segregationist policies and laws of the present," and which
+    attempted to control and constrain all aspects of Black life (19). Du Bois's
+    transcription of the Black Codes filled three large manuscript volumes. For
+    a sustained meditation on the legacy of the Black Codes and their relation
+    to contemporary digital life, see the special issue of The Black Scholar on
+    "Black Code," edited by Jessica Marie Johnson and Mark Anthony Neal, and in
+    particular, the introduction, "Wild Seed in the Machine," The Black Scholar
+    47.3 (2017): 1-2.
   </span>,
   //21
-  <span key="65518d4f">
-    On counterdata, see Seyi Olojo, “Counterdata,” in <cite>Keywords for a Datafied State </cite>(Data &amp; Society, 2024), 170–181.
+  <span key="j2k4lp6n">
+    The annual "Du Bois Challenge," for example, seeks to "celebrate his data
+    visualization legacy by recreating the visualizations showcased at the 1900
+    Paris Exposition using modern tools. [Cite website. ]
   </span>,
   //22
-  <span key="52c99732">
-    Overviews of this era in the history of statistics, the culmination of its initial rise, include Theodore M. Porter, <cite>The Rise of Statistical Thinking, 1820–1900 </cite>(Princeton UP, 1986), Ian Hacking, <cite>The Taming of Chance</cite> (Cambridge UP, 2014), and more recently Chris Wiggins and Matthew L. Jones, <cite>How Data Happened: A History from the Age of Reason to the Age of Algorithms </cite>(Norton, 2023). For books focusing on the history of eugenics and its ties to statistics, see Banu Subramaniam, <cite>Ghost Stories for Darwin: The Science of Variation and the Politics of Diversity </cite>(U of Illinois Press, 2014), and more recently Anita Chan, <cite>Predatory Data: Eugenics in Big Tech and Our Fight for an Independent Future </cite>(U of California Press, 2024). Note that Du Bois was himself not immune to ties to so-called “positive eugenics.” (This was the goal of bettering the human population by encouraging the intentional reproduction of those deemed “fit,” as opposed to “negative eugenics,” which discouraged the reproduction of those deemed “unfit.”) Du Bois’s colleague Jane Addams, one of the co-founders of Chicago’s Hull House (whose own social surveys had served as a model for his own), was a leading proponent of this view, as was Margaret Sanger—the founder of Planned Parenthood—and many other reformers of the early twentieth century.
+  <span key="af1c65bb">
+    Chalabi traces her own inspiration to a recent exhibition of work by the
+    Chicago-based artist Theaster Gates. See Mona Chalabi "W.E.B. Du Bois:
+    Retracing his attempt to challenge racism with data,"
+    <cite> The Guardian, </cite>
+    February 14, 2017,
+    https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs
   </span>,
   //23
-  <span key="d825c901">
-    Autumn Womack, <cite>The Matter of Black Living: The Aesthetic Experiment of Racial Data, 1880–1930 </cite>(U of Chicago Press, 2022), 21. It should be noted that Wells and Du Bois did not enjoy an easy relationship. Du Bois notoriously excluded Wells from his list of founders of the NAACP, and while he claimed that Wells had chosen not to be named, she contended that she had been deliberately excluded. If this were the case, it would have been in keeping with a trend of Du Bois turning away from Black women activists as he sought the collaboration of their white counterparts. On Wells and the NAACP, see Wells, <cite>Crusade for Justice: The Autobiography of Ida B. Wells</cite>, ed. Alfreda Duster (U of Chicago Press, 1970), 322. On Du Bois and Black women, see Farah Jasmine Griffin, “Black Feminists and Du Bois: Respectability, Protection, and Beyond,” <cite>Annals of the American Academy of Political and Social Science</cite> 568.1 (2000): 28–40, and Britt Rusert, “W. E. B. Du Bois and the Origins of Visual Sociology: The 1900 Paris Exposition and Beyond,” in <cite>Oxford Handbook of W. E. B. Du Bois</cite>, ed. Aldon D. Morris et al., 371–390. Thanks to Britt Rusert for encouraging me to elaborate this line of inquiry.
+  <span key="h3gt5fs7">
+    https://www.dignityanddebt.org/projects/student-debt-calculator/
   </span>,
   //24
-  <span key="2c744d4c">
-    Womack<cite>, The Matter of Black Living</cite>, 21<cite>.</cite>
+  <span key="d9az6qx8">
+    The project is also notable for how it acknowledges the role of policy
+    change. As the website explains, "Visualizations can render data to make it
+    meaningful for people around the world. Furthermore, they are able to reveal
+    what might be either changed or strengthened through policy and individual
+    action." https://www.dignityanddebt.org/projects/student-debt-contest/
   </span>,
   //25
-  <span key="90c027e9">
-    W. E. B. Du Bois, “The American Negro in Paris,” <cite>The American Monthly Review of Reviews</cite> 22.5 (November 1900): 577.
+  <span key="">
+    As we share in Data Feminism, "In 2015, communications researcher Candice
+    Lanius wrote a widely shared blog post, "Fact Check: Your Demand for
+    Statistical Proof is Racist," in which she summarizes the ample research on
+    how those in positions of power accept anecdotal evidence from those like
+    themselves, but demand endless statistics from minoritized groups. In those
+    cases, she argues convincingly, more data will never be enough" (##).
   </span>,
   //26
-  <span key="6be50d1a">
-    Lewis, <cite>W. E. B. Du Bois: A Biography</cite>, 139–140.
+  <span key="edbf8fa4">
+    {" "}
+    <cite> Mimi Onuoha, </cite>
+    "In Absentia" (2019), https://mimionuoha.com/in-absentia, accessed February
+    21, 2021.
   </span>,
   //27
-  <span key="85de1bea">
-    Gannett, <cite>Statistics of the Negroes in the United States</cite>.
+  <span key="7we4ru1i">
+    In relaying this anecdote, Battle-Baptiste and Rusert also observe its
+    "close proximity to the hold of the ship" (17).
   </span>,
   //28
-  <span key="d3478d16">
-    Gannett, <cite>Statistics of the Negroes in the United States</cite>, plate VII.
+  <span key="l2vb5nm3">
+    Reference Data for Black Lives and Milner's idea of abolishing big data.
   </span>,
   //29
-  <span key="bb539f3a">
-    David Walker was an early nineteenth-century writer and activist who famously advocated that Black Americans purchase a copy of Thomas Jefferson’s <cite>Notes on the State of Virginia, </cite>which contains some of Jefferson’s most racist views, so as to better be able to refute it. “Unless we try to refute Mr. Jefferson’s arguments respecting us, we will only establish them,” Walker wrote in 1829. See David Walker, <cite>Appeal to the Colored Citizens of the World </cite>(Boston, 1829). For commentary on Walker, see Gene Andrew Jarrett, “‘To Refute Mr. Jefferson’s Arguments Respecting Us’: Thomas Jefferson, David Walker, and the Politics of Early African American Literature,” <cite>Early American Literature </cite>46.2 (2011): 291–318 and, in a graphic design context, Marcy J. Dinius, “Look!! Look!!! At This!!!!”: The Radical Typography of David Walker’s <cite>Appeal</cite>,” <cite>PMLA </cite>126.1 (January 2011): 55–72.
+  <span key="6sdfg4h">
+    Note about deleterious effects of white supremacy on white people too, cf.
+    Jessie Daniels.
   </span>,
   //30
-  <span key="52378a54">
-    Du Bois, “The American Negro at Paris,” 576.
+  <span key="c687ffac">
+    "The Georgia Negro Exhibit for the Paris Exposition,"
+    <cite> The Bulletin of Atlanta University, </cite>
+    May 1900, p. 2.
   </span>,
   //31
-  <span key="87311400">
-    The frame is noted in the <cite>Atlanta University Bulletin</cite> article reporting on the exhibit: “One of the most remarkable bits of work there, is a carved wooden frame for one of the charts made entirely by an unskilled, illiterate old Freedman, living in Atlanta.” See “The Georgia Negro Exhibit for the Paris Exposition,” <cite>Atlanta University Bulletin </cite>110 (May 1900): 2.
+  <span key="a3b5x7c9">
+    W.E.B. Du Bois, A Soliloquy on viewing my life from the last decade of its
+    first century, ca. 1961. W.E.B. Du Bois Papers (MS 312). Special Collections
+    and University Archives, University of Massachusetts Amherst Libraries. p.
+    18.
   </span>,
   //32
-  <span key="77c93ae4">
-    On the “Black Codes,” see Battle-Baptiste and Rusert, <cite>W. E. B. Du Bois’s Data Portraits</cite>, 21–22, and Provenzo, <cite>W. E. B. Du Bois’ Exhibit</cite>, 7.
+  <span key="e0550499">
+    {" "}
+    "Atlanta University Exhibit At Paris,"'
+    <cite>The Atlanta Journal,</cite> February 22, 1900. Archives Research
+    Center, Robert W. Woodruff Library, Atlanta University Center, Box 23,
+    folder 6; "Catalogue of the Officers and Students of Atlanta University,
+    1899-1900,"
+    <cite> Atlanta University Bulletin (Catalogs)</cite> 31. Archives Research
+    Center, Robert W. Woodruff Library, Atlanta University Center.
   </span>,
   //33
-  <span key="e9365a0f">
-    The photo is credited to Thomas Askew, a prominent Black photographer who lived in Atlanta and who took many of the Atlanta-based photographs included in the exhibit. See Deborah Willis, “The Sociologist’s Eye: W. E. B. Du Bois and the Paris Exposition,” in Lewis and Willis, <cite>A Small Nation of People, </cite>51–78.
+  <span key="aeee60b3">
+    Silas Munro, "Plates," in Battle-Baptiste and Rusert, p. 50.
   </span>,
   //34
-  <span key="c826544d">
-    The women’s dorm is described in the <cite>Catalogue of the Officers and Students of Atlanta University, 1899–1900</cite>, 22. Its 45 residents, including Mack, then age 20, are documented in the 1900 US Federal Census, viewable at <NoteLink href="https://www.ancestry.com/search/collections/7602/records/8895499">https://www.ancestry.com/search/collections/7602/records/8895499</NoteLink>, accessed August 22, 2025.
+  <span key="4416017c">
+    {" "}
+    Aldon Morris,
+    <cite>
+      {" "}
+      The Scholar Denied: W.E.B. Du Bois and the Birth of Modern Sociology{" "}
+    </cite>
+    (Oakland: Univ. of California Press, 2015), p. 71.
   </span>,
   //35
-  <span key="fa916c28">
-    Du Bois, “The American Negro in Paris,” 577. It’s also worth noting that photographs were increasingly featured in atlases of the time, as Ben Schmidt observed during this book’s community review. Schmidt points to the <cite>Atlas of Asiatic Russia</cite> (1914) that is “filled with photographs—many ethnographic—in the first half,” as a key example of this practice.
+  <span key="7c3593ce">
+    "Catalogue of the Officers and Students of Atlanta University, 1899-1900,"
+    p. 14.
   </span>,
   //36
-  <span key="61588310">
-    Du Bois, <cite>The Souls of Black Folk</cite>, 8; quoted in Shawn Michelle Smith, <cite>Photography on the Color Line: W. E. B. Du Bois, Race, and Visual Culture </cite>(Durham: Duke UP, 2004), 25. Lewis and Willis, <cite>A Small Nation of People</cite>, referenced above, also explores the exhibit’s photographs in detail.
-  </span>,
-  //37
-  <span key="59be125f">
-    Historian of photography Deborah Willis identifies one of these photographers as the prominent Black portraitist Thomas Askew, who shot the photo of the Atlanta University women. The other photographers remain unknown. See “The Sociologist’s Eye: W. E. B. Du Bois and the Paris Exposition,” in Lewis and Willis, <cite>A Small Nation of People, </cite>51–78.
-  </span>,
-  //38
-  <span key="a31983ce">
-    In their discussion of the charts, Battle-Baptiste and Rusert elaborate this line of thinking, emphasizing how Du Bois understood double consciousness as a “kind of ‘second sight’ that might be transformed from a curse into a ‘gift’ that offered a unique and superior perspective on turn-of-the-century race relations, sociability, and even existence itself.” Battle-Baptiste and Rusert, <cite>W. E. B. Du Bois’s Data Portraits</cite>, 15.
-  </span>,
-  //39
-  <span key="75138173">
-    W. E. B. Du Bois, <cite>Dusk of Dawn: An Essay toward an Autobiography of a Race Concept</cite>, ed. Irene Diggs (Transaction, 1984 [1940]), 51.
-  </span>,
-  //40
-  <span key="603363c0">
-    Du Bois, <cite>Dusk of Dawn</cite>, 67. This powerful line and its variants, what is safe to call a motif of Du Bois’s oeuvre, have been analyzed by generations of scholars. For a summary of this work, see Benjamin Murphy, “Multiplied without Number”: Lynching, Statistics, and Visualization in Ida B. Wells, Mark Twain, and W. E. B. Du Bois,” <cite>American Literature</cite> 93.2 (2021): 205–207.
-  </span>,
-  //41
-  <span key="c1cd0e73">
-    Because of the biased nature of the legal record, it is difficult to determine what exactly took place. My account, which is intentionally scant for this reason, derives from Darren E. Grem, “Sam Jones, Sam Hose, and the Theology of Racial Violence,” <cite>Georgia Historical Quarterly </cite>90.1 (2006): 35–61.
-  </span>,
-  //42
-  <span key="e6884f1b">
-    Du Bois, <cite>Dusk of Dawn</cite>, 67.
-  </span>,
-  //43
-  <span key="86d9f0ae">
-    My interpretation of this incident has been strongly influenced by Bryan Wagner’s analysis in <cite>Disturbing the Peace: Black Culture and the Police Power after Slavery</cite> (Harvard UP, 2009), 180–183. Britt Rusert discusses this incident in relation to the charts in “W. E. B. Du Bois and the Origins of Visual Sociology.”
-  </span>,
-  //44
-  <span key="13200472">
-    Du Bois, <cite>Dusk of Dawn</cite>, 67–68.
-  </span>,
-  //45
-  <span key="41e875c1">
-    This was the legislation that, as Whitney Battle-Baptiste and Britt Rusert explain, “stretch[ed] from the slave codes of the colonial and antebellum period to the segregationist policies and laws of the present,” and which attempted to control and constrain all aspects of Black life (<cite>W. E. B. Du Bois’s Data Portraits</cite>, 19). Du Bois’s transcription of the Black Codes filled three large manuscript volumes. For a sustained meditation on the legacy of the Black Codes and their relation to contemporary digital life, see the special issue of <cite>The Black Scholar</cite> on “Black Code,” edited by Jessica Marie Johnson and Mark Anthony Neal, and in particular the introduction, “Wild Seed in the Machine,” <cite>Black Scholar</cite> 47.3 (2017): 1–2.
-  </span>,
-  //46
-  <span key="deb79523">
-    The <cite>Atlanta University Catalogues</cite> between the years of 1901 and 1914, when they stopped publishing individual alumni information, list locations in Georgia, Alabama, and Tennessee.
-  </span>,
-  //47
-  <span key="b0148f27">
-    Marggette Wilkins is listed as Mack’s daughter in the 1920 US Census. (She herself was recorded as Lula Brown, having remarried at that point.) Marggette’s name was listed as Marguerite in the 1930 US Census. See “Lula Brown in the 1920 United States Federal Census” and “Lula I Brown in the 1930 United States Federal Census,” <cite>Ancestry.com</cite>, accessed August 19, 2025.
-  </span>,
-  //48
-  <span key="9a7c197e">
-    <cite>Catalogue of the Officers and Students of Atlanta University, 1909–1910</cite> (Atlanta UP, 1909), 36.
-  </span>,
-  //49
-  <span key="d623b635">
-    Westmoreland’s occupation remains consistent until at least 1914, the last year in which individual alumni information was reported in the annual catalogue.
-  </span>,
-  //50
-  <span key="6a704b1b">
-    Simon may have been using skills he learned at Atlanta University, as the Atlanta University Studies were published in-house. On the history of Black printing in relation to Du Bois, see Elizabeth McHenry, <cite>To Make Negro Literature: Writing, Literary Practice, and African American Authorship</cite> (Duke UP, 2021).
-  </span>,
-  //51
-  <span key="20f9cf49">
-    I was unable to find a “Henry Napoleon Lee” in any of federal censuses for which he was alive. There were several listings for “Henry Lee,” including some born in Atlanta in the late 1800s, aligning with a 1900 college graduation date. But I could not find enough conclusive evidence that any single listing was Henry Napoleon Lee.
-  </span>,
-  //52
-  <span key="6e3d09b8">
-    The exact date, August 27, 1963, was famously the same that hundreds of thousands of Black Americans and their allies would begin assembling on the Washington Mall to hear Martin Luther King Jr. deliver his now-canonical “I Have a Dream” speech.
-  </span>,
-  //53
-  <span key="f0956da7">
-    In the summer of 1910, Du Bois resigned from his position at Atlanta University to take up the role as founding editor of <cite>The Crisis</cite>, the monthly journal of the NAACP, which required that he move to New York. He nonetheless continued to edit the Atlanta University Studies until 1914. He would return to Atlanta University in 1934.
-  </span>,
-  //54
-  <span key="5261c803">
-    Lewis, Morris, Rusert, and Womack all make versions of this claim.
-  </span>,
-  //55
-  <span key="a6b31f71">
-    W. E. B. Du Bois, “Sociology Hesitant,” <cite>boundary 2</cite> 27.3 (Fall 2000): 42. In this posthumous essay, believed to be authored around 1905, Du Bois also advances his support for interdisciplinary scholarship, writing that “mutual understanding must come under a working hypothesis which will give scope to Historian as well as Biologist,” and that to explain statistical findings, “we must assume Law and Chance working in conjunction—Chance being the scientific side of inexplicable Will. Sociology, then, is the Science that seeks the limits of Chance in human conduct” (44).
-  </span>,
-  //56
-  <span key="79e8b00c">
-    This is perhaps best exemplified by the Du Bois Challenge, an annual event sponsored by the Data Visualization Society aimed at “celebrating [Du Bois’s] data visualization legacy” by recreating his charts with contemporary visualization libraries and tools. For more on this event, see Anthony Starks, “The #DuBois Challenge,” <cite>Nightingale: Journal of the Data Visualization Society</cite>, February 1, 2022, <NoteLink href="https://nightingaledvs.com/the-dubois-challenge/">https://nightingaledvs.com/the-dubois-challenge/</NoteLink>, accessed August 19, 2025.
-  </span>,
-  //57
-  <span key="a893a0e0">
-    Mona Chalabi, “WEB Du Bois: Retracing His Attempt to Challenge Racism with Data,” <cite>Guardian</cite>, February 14, 2017, <NoteLink href="https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs">https://www.theguardian.com/world/2017/feb/14/web-du-bois-racism-data-paris-african-americans-jobs</NoteLink>, accessed August 19, 2025.
-  </span>,
-  //58
-  <span key="92b2ca41">
-    In <cite>Data Feminism, </cite>Catherine D’Ignazio and I share an essay by Candice Lanius, “Fact Check: Your Demand for Statistical Proof Is Racist,” in which she summarizes the ample research on how those in positions of power accept anecdotal evidence from those like themselves, but demand endless statistics from minoritized groups. In those cases, she argues convincingly, more data will never be enough” (58).
-  </span>,
-  //59
-  <span key="58fe9e41">
-    Mimi Ọnọụha, “In Absentia” (2019), <NoteLink href="https://mimionuoha.com/in-absentia">https://mimionuoha.com/in-absentia</NoteLink>, accessed August 19, 2025.
-  </span>,
-  //60
-  <span key="4277cc10">
-    <cite>Catalogue of the Officers and Students of Atlanta University, 1898–1899</cite>, 43.
-  </span>,
-  //61
-  <span key="72873006">
-    Saidiya Hartman, <cite>Wayward Lives, Beautiful Experiments: Intimate Histories of Social Upheaval</cite> (Norton, 2019), xiii. Later in the book, Hartman in fact speculates about another woman photographed for the Paris Exposition, as she does—very briefly—about Du Bois’s charts. See <cite>Wayward Lives,</cite> 17–19 for the photograph and 109–113 for the charts.
-  </span>,
-  //62
-  <span key="352633ec">
-    A web compilation of the Atlanta University Studies, including information and links to scanned versions, can be found on the “Atlanta University Publications” page of WEBDuBois.org, edited by Robert W. Williams. See <NoteLink href="http://www.webdubois.org/wdb-AtlUniv.html">http://www.webdubois.org/wdb-AtlUniv.html</NoteLink>. On the significance of the studies for Du Bois’s pioneering contributions to the field of sociology, see Aldon Morris, <cite>The Scholar Denied: W. E. B. Du Bois and the Birth of Modern Sociology</cite> (U of California Press, 2015). On the history of Black printing and Du Bois’s role in it, see McHenry, <cite>To Make Negro Literature</cite>.
-  </span>,
-  //63
-  <span key="9095aa2a">
-    For example, “Religion of American Negroes” and “Statistics of Negro Church Organizations” employ numbers very similar to those provided in table 1 of the third study, <cite>Some Efforts of American Negroes for Their Own Social Betterment</cite> (Atlanta University, 1898); and “Negro Business Men in the United States” takes its data directly from table 2 of the fourth study, <cite>The Negro in Business</cite> (Atlanta University, 1899), 7.
-  </span>,
-  //64
-  <span key="66d47576">
-    Morris, <cite>The Scholar Denied</cite>, 71.
-  </span>,
-  //65
-  <span key="0928b13f">
-    In the absence of the Du Bois-Atlanta School, the University of Chicago would claim this honor with work beginning around 1915. See Morris, <cite>The Scholar Denied</cite>, 109–118.
-  </span>,
-  //66
-  <span key="065a7e69">
-    The official title was <cite>The College-Bred Negro </cite>(Atlanta University, 1900).
-  </span>,
-  //67
-  <span key="0a65b75f">
-    As Du Bois explains in the report, “A list of living colored college graduates was obtained and a blank with the following questions was sent them. About 800 answers to these blanks were received.” While he does not specify the total number of living graduates, the number of graduates, living and dead, was 3,856. <cite>The College-Bred Negro American </cite>(Atlanta University, 1910), 11–12.
-  </span>,
-  //68
-  <span key="aa06a3d4">
-    Per her alumni listing in the <cite>Catalogue of the Officers and Students of Atlanta University, 1909–1910</cite>, 36; I could not find her listed in the 1910 US Census there.
-  </span>,
-  //69
-  <span key="e8985787">
-    <cite>The College-Bred Negro American</cite>, 47.
-  </span>,
-  //70
-  <span key="9e401051">
-    This number was determined by subtracting the 163 Atlanta University graduates from the total number of 3,856 initially provided by Du Bois. See note 79.
-  </span>,
-  //71
-  <span key="46892604">
-    <cite>The College-Bred Negro American</cite>, 46.
-  </span>,
-  //72
-  <span key="251c0d09">
-    Tommaso Elli, Adam Bradley, et al., “Tied in Knots: A Case Study on Anthropographic Data Visualization about Sexual Harassment in the Academy,” <cite>2020 IEEE VIS Arts Program (VISAP)</cite>, Salt Lake City, UT, USA, 2020, 29–44. Also see the website viewable at <NoteLink href="https://tiedinknots.io/#/">https://tiedinknots.io/#/</NoteLink>.
-  </span>,
-  //73
-  <span key="2a0eee62">
-    While Clarkson’s advocacy efforts were oriented toward the abolition of the slave <cite>trade</cite>, slavery itself would not be abolished in England until 1834, and in the United States until 1865. (Both countries banned the slave trade—the actual trafficking of people on ships—in 1807.)
+  <span key="bbe450de">
+    In the report published in advance of the 1900 Atlanta Conference, on the
+    life trajectories and achievements of college-educated Black citizens, Du
+    Bois describes his "general method" of distributing surveys to "about fifty"
+    "experienced correspondents throughout the South," drawing from a network of
+    "graduates of Atlanta, Fisk, and other institutions."
+    <cite> See The College-Bred Negro, ed. W.E.B. Du Bois </cite>
+    (Atlanta: Atlanta Univ. Press, 1900), p. 10.
   </span>,
 ];
 
@@ -1294,55 +1612,6 @@ export const aboutFootnotes = [
   </span>,
 ];
 
-export const workFootnotes = [
-  //1
-  <span key="02dfa847">
-    Andy Hertzfeld, “-2000 Lines of Code,” <cite>Folklore.org</cite> (February 1982), <NoteLink href="https://folklore.org/Negative_2000_Lines_Of_Code.html?sort=date">https://folklore.org/Negative_2000_Lines_Of_Code.html?sort=date</NoteLink>, accessed August 30, 2025.
-  </span>,
-  //2
-  <span key="5b947705">
-    In her study of Indigenous women’s impact on electronic manufacturing, Lisa Nakamura likewise highlights how digital work can literally be understood as “the work of the hands and its digits” (932), again accentuating the human involvement in the creation of digital technologies that often go under- (if not fully un-) recognized. Nakamura, “Indigenous Circuits: Navajo Women and the Racialization of Early Electronic Manufacture,” American Quarterly 66.4 (2014): 919–941, <NoteLink href="https://dx.doi.org/10.1353/aq.2014.0070">https://dx.doi.org/10.1353/aq.2014.0070</NoteLink>.
-  </span>,
-  //3
-  <span key="c22b9de3">
-    E.g., Jessica Bruder, “These Workers Have a New Demand: Stop Watching Us,” <cite>Nation</cite>, May 27, 2015; Ifeoma Ajunwa, <cite>The Quantified Worker: Law and Technology in the Modern Workplace</cite> (Cambridge UP, 2023); and more recently Milagros Miceli et al., “The Data-Workers Inquiry,” <NoteLink href="https://data-workers.org/">https://data-workers.org/</NoteLink>, accessed August 30, 2025.
-  </span>,
-  //4
-  <span key="f03e64c1">
-    For a more in-depth examination of this phase of the project in particular, see our collaborative essay “What Data Do and Do Not Represent: Visualizing the Archive of Slavery” in <cite>IEEE Computer Graphics and Applications</cite> 45.3 (May-June 2025): 45–57, doi: 10.1109/MCG.2025.3553412.
-  </span>,
-  //5
-  <span key="d9822d07">
-    Tina Campt, <cite>Listening to Images</cite> (Duke UP, 2017), 9.
-  </span>,
-  //6
-  <span key="40aa9014">
-    Here I use “grammar” in its basic sense. For the use of the term in a visualization context, see note 12.
-  </span>,
-  //7
-  <span key="706d219a">
-    I often think of Bruce Fink’s understanding of language as a force that we use and that also “uses” us. See Fink, <cite>The Lacanian Subject: Between Language and Jouissance</cite> (Princeton UP, 1997), 14.
-  </span>,
-  //8
-  <span key="d9f38750">
-    Campt, <cite>Listening to Images</cite>, 116, emphasis in original.
-  </span>,
-  //9
-  <span key="5e6920d0">
-    Campt, <cite>Listening to Images</cite>, 116.
-  </span>,
-  //10
-  <span key="732f8484">
-    Toni Morrison, “Cinderella’s Stepsisters,” in <cite>The Source of Self-Regard</cite> (Knopf, 2019), 111.
-  </span>,
-  //11
-  <span key="ab012992">
-    Campt, <cite>Listening to Images</cite>, 8–9.
-  </span>,
-  //12
-  <span key="8a08c46f">
-    Leland Wilkinson’s <cite>Grammar of Graphics</cite> (2001), also referenced in the introduction, has strongly influenced the design of many widely used contemporary visualization libraries, such as ggplot (the “g”s are for “grammar” and “graphics”) and Vega-Lite, as well as the commercial visualization platform Tableau.
-  </span>,
-];
+export const workFootnotes = [];
 
 export const epilogueFootnotes = [];

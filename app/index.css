@@ -36,19 +36,6 @@
   padding: 1rem 0.75rem 0rem 0rem;
 }
 
-/* Manual drop cap for paragraphs whose first word is a contraction
-   (e.g. "I've"), since ::first-letter sweeps in adjacent punctuation
-   like a following apostrophe. */
-.drop-cap {
-  float: left;
-  font-family: VTC Du Bois, serif !important;
-  font-feature-settings: "ss06" !important;
-  font-size: 6rem;
-  line-height: 3.5rem;
-  font-weight: bold;
-  padding: 1rem 0.75rem 0rem 0rem;
-}
-
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr min(111ch, 100%) 1fr;
@@ -128,7 +115,6 @@ main p {
   margin: 0.75rem auto;
   line-height: 1.75rem;
   letter-spacing: 0.025em;
-  text-wrap: pretty;
 }
 
 .se {
@@ -483,6 +469,13 @@ input[type="range"]::-webkit-slider-thumb::before {
   src: url("/fonts/NeueMontreal/PPNeueMontreal-Bold.woff") format("woff"),
     url("/fonts/NeueMontreal/PPNeueMontreal-Bold.woff2") format("woff2");
   font-weight: bold;
+}
+
+@font-face {
+  font-family: "PPNeueMontreal SemiBold";
+  src: url("/fonts/NeueMontreal/PPNeueMontreal-SemiBold.woff") format("woff"),
+    url("/fonts/NeueMontreal/PPNeueMontreal-SemiBold.woff2") format("woff2");
+  font-weight: 600;
 }
 
 /* Neue Haas Unica from Typekit */

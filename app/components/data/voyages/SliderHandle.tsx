@@ -71,19 +71,22 @@ function SliderHandle({
     d3.select(circleRef.current)
       .call(
         // @ts-ignore
-        d3.drag().on("drag", drag)
+        d3.drag().on("drag", drag),
       )
       .select("circle")
       .on("keydown", keyDown);
   }, [start, setSliderWidth, maxX, sliderWidth, interactive]);
 
   return (
-    <g ref={circleRef} className={`${interactive ? "cursor-grab active:cursor-grabbing" : ""}`}>
+    <g
+      ref={circleRef}
+      className={`${interactive ? "cursor-grab active:cursor-grabbing" : ""}`}
+    >
       <text
         x={start ? sliderWidth[0] - 20 : sliderWidth[1] - 20}
         y={-18}
         fill="white"
-        fontSize={15}
+        fontSize={12}
         className="font-power tracking-wide"
       >
         {`${year}`}

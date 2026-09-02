@@ -9,6 +9,7 @@ import {
   isRouteErrorResponse,
 } from "react-router";
 import styles from "./index.css?url";
+import { AltTextProvider } from "./altTextContext";
 import ScrollToHashElement from "./components/ScrollToHashElement";
 import LinkToMain from "./components/layout/LinkToMain";
 import Banner from "./components/layout/Banner";
@@ -75,9 +76,7 @@ gtag('config', 'G-N80LYNLPB7');`,
         <ScrollToHashElement />
         <LinkToMain />
         <SiteNav />
-        {/* Dev-only build marker: never render it in production, so merging
-            this branch into main can't ship the ribbon to dataxdesign.io. */}
-        {process.env.NODE_ENV !== "production" && <Banner>Dev Build</Banner>}
+        <Banner>Dev Build</Banner>
         {children}
         <Loading />
         <Analytics />
@@ -89,7 +88,11 @@ gtag('config', 'G-N80LYNLPB7');`,
 };
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <AltTextProvider>
+      <Outlet />
+    </AltTextProvider>
+  );
 }
 
 const ErrorContainer = ({ children }: WrapperProps) => {

@@ -42,8 +42,6 @@ export type ActivePeabodyEvent =
 export type QuizStep = {
   solvedEvents: Array<PeabodySquare>;
   stepEvent: PeabodyEvent;
-  instructions: string;
-  notes: string;
 };
 
 export type QuizFeedbackType =

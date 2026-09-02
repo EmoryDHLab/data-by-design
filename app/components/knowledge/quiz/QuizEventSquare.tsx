@@ -19,7 +19,7 @@ interface Props {
   index: number;
   year: number;
   yearEvents: Array<PeabodyEvent>;
-  size: number;
+  size?: number;
 }
 
 export default function RecreatedEventSquare({

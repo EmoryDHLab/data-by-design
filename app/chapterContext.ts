@@ -38,9 +38,9 @@ export type HoverState =
   | "Religion"
   | "Occupation"
   | "Map"
-  | "0317-Willard1"
-  | "0318-Willard2"
-  | "0319-Willard3"
+  | "0315-willard1"
+  | "0316-willard2"
+  | "0317-willard3"
   | "showError"
   | undefined;
 
@@ -92,7 +92,7 @@ const ChapterContext = createContext<IChapterContext>({
   sections: [],
   setShowFootnotes: (_: SetStateAction<boolean>) => {
     console.error(
-      "setShowFootnotes not implemented. Did you pass it to context?"
+      "setShowFootnotes not implemented. Did you pass it to context?",
     );
   },
   showFootnotes: false,

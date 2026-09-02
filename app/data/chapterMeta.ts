@@ -36,7 +36,7 @@ export const chapterMeta: TChapterMeta = {
   },
   image: {
     title: "Image",
-    subtitle: "William Playfair and the Politics of the “Simple View”",
+    subtitle: "William Playfair and the Politics of the “Simple View",
     description:
       "Visualization has never been neutral or objective. How can we learn to recognize the human decisions that shape each design?",
     image:

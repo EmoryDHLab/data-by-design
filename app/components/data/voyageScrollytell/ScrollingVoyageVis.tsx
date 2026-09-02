@@ -39,7 +39,6 @@ const ScrollingVoyageVis = ({
       setStartYear(1708);
       setEndYear(1719);
     }
-    console.log("🚀 ~ ScrollingVoyageVis ~ scrollProgress:", scrollProgress);
   }, [scrollProgress]);
 
   return (

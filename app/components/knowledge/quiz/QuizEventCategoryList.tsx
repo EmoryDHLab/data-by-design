@@ -7,7 +7,7 @@ import { useDeviceContext } from "~/hooks";
 const unusedCategories = [3, 4, 6, 7, 8];
 
 export default function QuizEventCategoryList() {
-  const { currentStepCount, setCurrentStepCount } = useContext(QuizContext);
+  const { currentStepCount } = useContext(QuizContext);
   const { isMobile, isDesktop } = useDeviceContext();
   const [mobileHeight, setMobileHeight] = useState<string | undefined>("h-0");
 
@@ -49,20 +49,6 @@ export default function QuizEventCategoryList() {
             />
           );
         })}
-        {currentStepCount >= 7 && (
-          <li className="list-none mt-4">
-            {/* <button
-              className="font-powerLightNarrow italic focus:outline-none focus:underline hover:underline cursor-pointer text-white"
-              onClick={() => setCurrentStepCount(8)}
-              onKeyUp={({ key }) => {
-                if (key === "Enter" || key === "Space") setCurrentStepCount(8);
-              }}
-            >
-              CONTINUE
-              <span className="font-icons ml-2">b</span>
-            </button> */}
-          </li>
-        )}
       </ol>
     );
   }

@@ -138,7 +138,7 @@ const RecreatedEventSquare = ({
               height={30}
               fill={eventData.actorColors.Americas}
             />
-            <path d="M -1,2 l 6,0" stroke="white" stroke-width="3" />
+            <path d="M -1,2 l 6,0" stroke="white" strokeWidth={3} />
           </pattern>
         </defs>
         {eventPolygons.map((p, i) => {

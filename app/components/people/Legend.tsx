@@ -7,7 +7,7 @@ export default function Legend() {
           <div className="basis-1/2 ">
             <div className="flex flex-row gap-4 items-center ">
               <img
-                src="/images/people/extras/key-1.png"
+                src="/images/chapters/people/key-1.png"
                 alt="Annotated diagram"
                 className="w-auto h-7 object-cover"
               />
@@ -16,7 +16,7 @@ export default function Legend() {
 
             <div className="flex flex-row gap-5 items-center ">
               <img
-                src="/images/people/extras/key-2.png"
+                src="/images/chapters/people/key-2.png"
                 alt="Annotated diagram"
                 className="w-auto h-5 object-cover"
               />
@@ -25,7 +25,7 @@ export default function Legend() {
 
             <div className="flex flex-row gap-6 items-center ">
               <img
-                src="/images/people/extras/key-3.png"
+                src="/images/chapters/people/key-3.png"
                 alt="Annotated diagram"
                 className="w-auto h-5 object-cover"
               />
@@ -33,7 +33,7 @@ export default function Legend() {
             </div>
             <div className="flex flex-row gap-6 items-start ">
               <img
-                src="/images/people/extras/key-3.5.png"
+                src="/images/chapters/people/key-3.5.png"
                 alt="Annotated diagram"
                 className="w-auto h-5 object-cover"
               />
@@ -45,7 +45,7 @@ export default function Legend() {
             <div className="flex flex-row gap-3 items-center ">
               <div className="w-12 flex justify-center">
                 <img
-                  src="/images/people/extras/key-4.png"
+                  src="/images/chapters/people/key-4.png"
                   alt="Annotated diagram"
                   className="w-auto h-5 object-cover"
                 />
@@ -55,7 +55,7 @@ export default function Legend() {
             <div className="flex flex-row gap-3 items-center ">
               <div className="w-12 flex justify-center">
                 <img
-                  src="/images/people/extras/key-5.png"
+                  src="/images/chapters/people/key-5.png"
                   alt="Annotated diagram"
                   className="w-auto h-5 object-cover"
                 />
@@ -65,7 +65,7 @@ export default function Legend() {
             <div className="flex flex-row gap-3 items-center ">
               <div className="w-12 flex justify-center">
                 <img
-                  src="/images/people/extras/key-6.png"
+                  src="/images/chapters/people/key-6.png"
                   alt="Annotated diagram"
                   className="w-auto h-5 object-cover"
                 />

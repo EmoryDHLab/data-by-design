@@ -13,25 +13,43 @@ interface Props {
   captionClassName?: string;
   groupCaption?: ReactElement;
   id?: string;
-  figureHeight?: number;
   showCaption?: boolean;
-  classNames?: string[];
+  modalClassNames?: string[];
 }
 
-export const Caption = ({ figure, className }: Props) => {
+export const Caption = ({
+  figure,
+  className,
+}: {
+  figure?: TFigure;
+  className?: string;
+}) => {
+  if (!figure?.caption && !figure?.creditLine) return null;
+
   return (
     <figcaption
       className={`font-neueMontreal text-xs md:text-sm leading-5 text-left mt-6 md:mt-8 mb-6 md:mb-8 col-span-full ${
         className ?? ""
       }`}
-      dangerouslySetInnerHTML={{
-        __html: `<caption>${figure?.caption ?? ""}<caption> ${
-          figure?.creditLine
-            ? `<caption>${figure?.creditLine ?? ""}</caption>`
-            : ""
-        }`,
-      }}
-    />
+    >
+      {figure.caption && (
+        <span dangerouslySetInnerHTML={{ __html: figure.caption }} />
+      )}
+      {figure.creditLine && (
+        <span dangerouslySetInnerHTML={{ __html: ` ${figure.creditLine}` }} />
+      )}
+    </figcaption>
+  );
+};
+
+const SensitiveOverlay = ({ figure }: { figure: TFigure }) => {
+  const { hideSensitiveState } = useContext(ChapterContext);
+  if (!hideSensitiveState || !figure.sensitive) return null;
+
+  return (
+    <div className="absolute p-6 z-10 text-xl font-neueMontreal">
+      {figure.sensitiveAltText}
+    </div>
   );
 };
 
@@ -44,31 +62,29 @@ export default function Figure({
   imageClassName,
   id,
   showCaption = true,
-  classNames = [],
+  modalClassNames = [],
 }: Props) {
   const { hideSensitiveState } = useContext(ChapterContext);
 
   if (figures) {
+    const groupId = id ?? `fig-${figures[0]?.fileName}`;
     return (
-      <div className={className ?? ""} id={id ?? `fig-${figures[0]?.fileName}`}>
-        {figures.map((figure, index) => {
-          return (
-            <FigureModal
-              key={`${figure?.fileName}`}
-              figure={figure}
-              id={id ?? `fig-${figures[0]?.fileName}`}
-              className={classNames.length >= index ? classNames[index] : ""}
-            >
-              {hideSensitiveState && figure.sensitive && (
-                <div className="absolute p-6 z-10 text-xl font-neueMontreal">
-                  {figure.sensitiveAltText}
-                </div>
-              )}
-              <Picture figure={figure} className={imageClassName} />
-            </FigureModal>
-          );
-        })}
-        {groupCaption && (
+      <div
+        className={className ?? "flex flex-col space-y-4"}
+        id={groupId}
+      >
+        {figures.map((figure, index) => (
+          <FigureModal
+            key={figure.fileName}
+            figure={figure}
+            id={`${groupId}-${index}`}
+            className={modalClassNames[index]}
+          >
+            <SensitiveOverlay figure={figure} />
+            <Picture figure={figure} className={imageClassName} />
+          </FigureModal>
+        ))}
+        {groupCaption ? (
           <figcaption
             className={`font-neueMontreal text-sm leading-tight text-left mt-3 md:mt-6 mb-6 md:mb-8 col-span-full ${
               captionClassName ?? ""
@@ -76,25 +92,24 @@ export default function Figure({
           >
             {groupCaption}
           </figcaption>
+        ) : (
+          <Caption figure={figures[0]} />
         )}
-        {!groupCaption && <Caption figure={figures[0]} />}
       </div>
     );
-  } else if (figure) {
+  }
+
+  if (figure) {
     return (
       <FigureModal
         figure={figure}
         className={className}
         id={id ?? `fig-${figure.fileName}`}
       >
-        {hideSensitiveState && figure.sensitive && (
-          <div className="absolute p-6 z-10 text-xl font-neueMontreal">
-            {figure.sensitiveAltText}
-          </div>
-        )}
+        <SensitiveOverlay figure={figure} />
         <Picture
           figure={figure}
-          className={`transition-all duration-1000 ${imageClassName} ${
+          className={`transition-all duration-1000 ${imageClassName ?? ""} ${
             hideSensitiveState && figure.sensitive
               ? "blur-md border-2 border-offblack"
               : ""
@@ -107,5 +122,5 @@ export default function Figure({
     );
   }
 
-  return <></>;
+  return null;
 }

@@ -24,7 +24,7 @@ const IntroTriggers = [
     don’t actually exist but are still worth our consideration, worlds that
     require us, in the words of sociologist Ruha Benjamin, to “push us beyond
     the constraints of what we think, and are told, is politically possible.”
-    <InlineFootnote index={6} />These imagined futures are worlds still waiting
+    <InlineFootnote index={6} /> These imagined futures are worlds still waiting
     to come to be.
   </p>,
   <p key="0733c36">
@@ -42,7 +42,7 @@ const IntroTriggers = [
       we wanted to convey to the viewer: that each of us makes choices about
       which path to take, and therefore each of us is responsible for our
       choices.
-      <InlineFootnote index={7} />The shuffle would help get us there.
+      <InlineFootnote index={7} /> The shuffle would help get us there.
     </p>
     <p>
       Accordingly, each time a person visits the site, they see a different set
@@ -121,7 +121,7 @@ const IntroTriggers = [
       the epitome of the “golden age of graphics.” It’s been acclaimed for its
       “singular rhetorical power,” and for how it communicates its own “epic
       story” in ways that “had never been done before.”{" "}
-      <InlineFootnote index={8} />Edward Tufte, the best-known contemporary
+      <InlineFootnote index={8} /> Edward Tufte, the best-known contemporary
       scholar of data visualization, has gone so far as to claim that Minard’s
       chart “may well be the best statistical graphic ever drawn.”{" "}
       <InlineFootnote index={9} />
@@ -144,7 +144,7 @@ const IntroTriggers = [
       In support of this ideal, Tufte constructs his own timeline for the
       history of the field, one that borrows from nineteenth and
       twentieth-century histories, and that has been carried into the
-      twenty-first century largely unchanged. <InlineFootnote index={10} />This
+      twenty-first century largely unchanged. <InlineFootnote index={10} /> This
       chronology looks back to the late eighteenth-century time-series charts of
       the Swiss-German mathematician Johann Heinrich Lambert and the Scottish
       political economist William Playfair—the subject of the second chapter of

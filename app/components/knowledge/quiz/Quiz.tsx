@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback, useMemo } from "react";
+import type { ReactNode } from "react";
 import QuizConclusion from "./QuizConclusion";
 import QuizEventCategoryList from "./QuizEventCategoryList";
 import QuizFeedback from "./QuizFeedback";
@@ -19,11 +20,46 @@ import type {
 } from "~/types/process";
 import QuizSquareMask from "./QuizSquareMask";
 
+// Slides `children` in from fully off-screen (one viewBox-width to the
+// right) on mount, via an inline-style transform rather than a toggled
+// Tailwind class. SVG transform transitions driven by toggled utility
+// classes have proven unreliable in this component - see where this is
+// used, below.
+function SlideInFromRight({ children }: { children: ReactNode }) {
+  const [entered, setEntered] = useState(false);
+
+  useEffect(() => {
+    // A brief delay (rather than requestAnimationFrame) guarantees the
+    // browser has painted the off-screen starting position at least once
+    // before we flip to the entered position, so the transition actually
+    // has a "from" state to animate from. requestAnimationFrame would be
+    // the more typical choice here, but it never fires at all in a
+    // background/hidden tab (a real constraint, not just a testing one -
+    // e.g. a user who opens this in a background tab and switches to it
+    // later), whereas a timer still fires.
+    const timer = setTimeout(() => setEntered(true), 20);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <g
+      style={{
+        transform: entered ? "translateX(0)" : "translateX(300px)",
+        transition: "transform 1000ms",
+      }}
+    >
+      {children}
+    </g>
+  );
+}
+
 export default function Quiz() {
   // Memoize quiz steps to prevent recreation
   const memoizedQuizSteps = useMemo(() => quizSteps as Array<QuizStep>, []);
 
-  const [currentStep, setCurrentStep] = useState<QuizStep>(memoizedQuizSteps[0]);
+  const [currentStep, setCurrentStep] = useState<QuizStep>(
+    memoizedQuizSteps[0],
+  );
   const [currentStepCount, setCurrentStepCount] = useState<QuizStepCount>(0);
   const [selectedCategories, setSelectedCategories] = useState<
     Array<PeabodySquare>
@@ -181,7 +217,7 @@ export default function Quiz() {
       });
 
       setCurrentStepCount(
-        (currentStepCount) => (currentStepCount + 1) as QuizStepCount
+        (currentStepCount) => (currentStepCount + 1) as QuizStepCount,
       );
       setSelectedYears([]);
     }
@@ -192,7 +228,7 @@ export default function Quiz() {
       setFeedback({
         message: `${currentStep?.stepEvent?.event.replace(
           / \[.*\]/,
-          ""
+          "",
         )} was categorized as ${
           eventData.eventTypes[
             (currentStep.stepEvent?.squares as Array<number>)[0] - 1
@@ -201,7 +237,7 @@ export default function Quiz() {
         correct: false,
       });
       setCurrentStepCount(
-        (currentStepCount) => (currentStepCount + 1) as QuizStepCount
+        (currentStepCount) => (currentStepCount + 1) as QuizStepCount,
       );
     }
   }, [selectedCategories, currentStep, setFeedback]);
@@ -211,95 +247,118 @@ export default function Quiz() {
     setSelectedCategories([]);
   }, [currentStepCount, memoizedQuizSteps]);
 
-  const handleYearClick = useCallback((year: number) => {
-    if (year === 1644 && currentStepCount === 2) {
-      setCurrentStepCount(
-        (currentStepCount) => (currentStepCount + 1) as QuizStepCount
-      );
-      setSelectedYears([]);
-      setFeedback({
-        message: `YES it was 1644. Now select how Peabody would categorize ${memoizedQuizSteps[2].stepEvent.event}`,
-        correct: true,
-      });
-    } else {
-      setSelectedYears(prev => [...prev, year]);
-    }
-  }, [currentStepCount, memoizedQuizSteps]);
+  // Step 7 is "All done!" - advance to the finish step on its own once that
+  // feedback message has had time to show and fade (QuizFeedback displays a
+  // message for 3s, then fades it out over ~0.5-0.7s).
+  useEffect(() => {
+    if (currentStepCount !== 7) return;
+
+    const timer = setTimeout(() => {
+      setCurrentStepCount(8);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [currentStepCount, setCurrentStepCount]);
+
+  const handleYearClick = useCallback(
+    (year: number) => {
+      if (year === 1644 && currentStepCount === 2) {
+        setCurrentStepCount(
+          (currentStepCount) => (currentStepCount + 1) as QuizStepCount,
+        );
+        setSelectedYears([]);
+        setFeedback({
+          message: `YES it was 1644. Now select how Peabody would categorize ${memoizedQuizSteps[2].stepEvent?.event}`,
+          correct: true,
+        });
+      } else {
+        setSelectedYears((prev) => [...prev, year]);
+      }
+    },
+    [currentStepCount, memoizedQuizSteps],
+  );
 
   // Called when an event square or category is selected
-  const handleCategoryClick = useCallback((selected: number) => {
-    if (currentStepCount === 3 && selected == 0) {
-      setCurrentStepCount(4);
-      setFeedback({
-        message: "Peabody identified other events that took place in the year.",
-        correct: true,
-      });
-    } else if (currentStepCount === 4 && selected == 1) {
-      setCurrentStepCount(5);
-      setFeedback({
-        message:
-          "The third event that Peabody identified taking place later that year is...",
-        correct: true,
-      });
-    } else if (currentStepCount === 5 && selected == 2) {
-      setCurrentStepCount(6);
-      setFeedback({
-        message: "One more...",
-        correct: true,
-      });
-    } else if (currentStepCount === 6 && selected == 5) {
-      setCurrentStepCount(7);
-      setFeedback({
-        message: "All done!",
-        correct: true,
-      });
-      setTimeout(() => {
-        setCurrentStepCount(8);
-      }, 3000);
-    } else if (
-      !(currentStep.solvedEvents as Array<number>).includes(selected)
-    ) {
-      setSelectedCategories(prev => [selected as PeabodySquare, ...prev]);
-    }
-  }, [currentStepCount, currentStep.solvedEvents]);
-
-  const allowOption = useCallback((index: PeabodySquare) => {
-    if (currentStepCount > 2 && currentStepCount < 7) {
-      if (
-        selectedCategories.includes(index) ||
-        (currentStep.solvedEvents as Array<PeabodySquare>).includes(index)
+  const handleCategoryClick = useCallback(
+    (selected: number) => {
+      if (currentStepCount === 3 && selected == 0) {
+        setCurrentStepCount(4);
+        setFeedback({
+          message:
+            "Peabody identified other events that took place in the year.",
+          correct: true,
+        });
+      } else if (currentStepCount === 4 && selected == 1) {
+        setCurrentStepCount(5);
+        setFeedback({
+          message:
+            "The third event that Peabody identified taking place later that year is...",
+          correct: true,
+        });
+      } else if (currentStepCount === 5 && selected == 2) {
+        setCurrentStepCount(6);
+        setFeedback({
+          message: "One more...",
+          correct: true,
+        });
+      } else if (currentStepCount === 6 && selected == 5) {
+        setCurrentStepCount(7);
+        setFeedback({
+          message: "All done!",
+          correct: true,
+        });
+      } else if (
+        !(currentStep.solvedEvents as Array<number>).includes(selected)
       ) {
-        return false;
+        setSelectedCategories((prev) => [selected as PeabodySquare, ...prev]);
       }
-    }
-    return true;
-  }, [currentStepCount, selectedCategories, currentStep.solvedEvents]);
+    },
+    [currentStepCount, currentStep.solvedEvents],
+  );
+
+  const allowOption = useCallback(
+    (index: PeabodySquare) => {
+      if (currentStepCount > 2 && currentStepCount < 7) {
+        if (
+          selectedCategories.includes(index) ||
+          (currentStep.solvedEvents as Array<PeabodySquare>).includes(index)
+        ) {
+          return false;
+        }
+      }
+      return true;
+    },
+    [currentStepCount, selectedCategories, currentStep.solvedEvents],
+  );
 
   // Memoize context value to prevent unnecessary re-renders
-  const contextValue = useMemo(() => ({
-    allowOption,
-    currentStep,
-    currentStepCount,
-    setCurrentStepCount,
-    focusedCategory,
-    setFocusedCategory,
-    handleCategoryClick,
-    selectedCategories,
-    selectedYears,
-    handleYearClick,
-    feedback,
-    setFeedback,
-  }), [
-    allowOption,
-    currentStep,
-    currentStepCount,
-    focusedCategory,
-    handleCategoryClick,
-    selectedCategories,
-    selectedYears,
-    handleYearClick,
-    feedback,
-  ]);
+  const contextValue = useMemo(
+    () => ({
+      allowOption,
+      currentStep,
+      currentStepCount,
+      setCurrentStepCount,
+      focusedCategory,
+      setFocusedCategory,
+      handleCategoryClick,
+      selectedCategories,
+      selectedYears,
+      handleYearClick,
+      feedback,
+      setFeedback,
+    }),
+    [
+      allowOption,
+      currentStep,
+      currentStepCount,
+      focusedCategory,
+      handleCategoryClick,
+      selectedCategories,
+      selectedYears,
+      handleYearClick,
+      feedback,
+    ],
+  );
 
   return (
     <QuizContext.Provider value={contextValue}>
@@ -373,30 +432,41 @@ export default function Quiz() {
                 )}
 
                 {/* Category list - HTML for step 2+ */}
-                {currentStepCount > 1 && currentStepCount < 9 && (
+                {currentStepCount > 1 && currentStepCount < 8 && (
                   <div className="mt-4">
                     <QuizEventCategoryList />
                   </div>
                 )}
               </div>
 
-              {/* Conclusion text */}
-              <div
-                id="quiz-conclusion"
-                className={`pointer-events-auto transition-all duration-1000 -mt-40 ${
-                  currentStepCount === 8
-                    ? "opacity-100 translate-y-0 scale-100 delay-300"
-                    : "opacity-0 translate-y-4 scale-95"
-                }`}
-              >
-                <QuizConclusion />
-              </div>
-              {/* Enhanced end screen for step 9 - now in QuizFinal component */}
-              <div
-                id="quiz-final"
-                className="flex items-start justify-center w-full pointer-events-auto relative z-40"
-              >
-                <QuizFinal />
+              {/* Conclusion (step 8) crossfades into the final screen (step
+                  9). Both share one grid cell so they overlap at the same
+                  position instead of sitting in normal document flow, where
+                  the second one would sit lower on the page and the "fade"
+                  would really be a fade + jump. */}
+              <div className="relative z-40 grid">
+                <div
+                  id="quiz-conclusion"
+                  style={{ gridArea: "1 / 1" }}
+                  className={`transition-opacity duration-1000 ${
+                    currentStepCount === 8
+                      ? "opacity-100 pointer-events-auto"
+                      : "opacity-0 pointer-events-none"
+                  }`}
+                >
+                  <QuizConclusion />
+                </div>
+                <div
+                  id="quiz-final"
+                  style={{ gridArea: "1 / 1" }}
+                  className={`flex items-start justify-center w-full transition-opacity duration-1000 ${
+                    currentStepCount === 9
+                      ? "opacity-100 pointer-events-auto"
+                      : "opacity-0 pointer-events-none"
+                  }`}
+                >
+                  <QuizFinal />
+                </div>
               </div>
             </div>
           </div>
@@ -407,28 +477,29 @@ export default function Quiz() {
             viewBox="0 0 300 200"
             className="h-screen m-auto w-11/12 sticky top-0"
           >
-            <QuizFinal />
-
             <g
-              className={`md:scale-${
-                currentStepCount >= 2 ? 100 : 0
-              } transition-all duration-1000 origin-bottom-right`}
+              style={{
+                transform: `scale(${currentStepCount >= 2 ? 1 : 0})`,
+                transformOrigin: "bottom right",
+                transition: "transform 1000ms",
+              }}
             >
               <QuizSquare defaultX={165} defaultY={45} />
             </g>
 
-            {/* SVG actors - only show for step 1 */}
-            <g
-              className={`${
-                currentStepCount === 0 ? "hidden translate-x-full" : ""
-              } ${
-                currentStepCount >= 2 ? "hidden" : ""
-              } transition-all duration-1000`}
-            >
-              <g className="transition-all duration-700 delay-100">
-                <QuizSelectActors />
-              </g>
-            </g>
+            {/* SVG actors - only mounted for step 1. Only mounted here (not
+                just hidden) because QuizSelectActors renders an HTML <div>
+                once currentStepCount >= 2, and that <div> nested inside this
+                <svg>/<g> is invalid and breaks hydration. Slides in via
+                SlideInFromRight (inline-style transform, not a toggled
+                Tailwind class - see its comment for why). */}
+            {currentStepCount === 1 && (
+              <SlideInFromRight>
+                <g className="transition-all duration-700 delay-100">
+                  <QuizSelectActors />
+                </g>
+              </SlideInFromRight>
+            )}
 
             <QuizNav />
           </svg>
@@ -460,65 +531,63 @@ export default function Quiz() {
             <QuizIntro className="mx-6" />
           </div>
 
-<div className="mt-12">
-          <div
-            className={`transition-all duration-1000 ${
-              currentStepCount == 8
-                ? "opacity-100 h-auto max-h-96 mx-6 mb-6 px-4 py-6"
-                : "opacity-0 h-0 pointer-events-none"
-            }`}
-          >
-            <QuizConclusion />
+          <div className="mt-12">
+            <div
+              className={`transition-all duration-1000 ${
+                currentStepCount == 8
+                  ? "opacity-100 h-auto max-h-96 mx-6 mb-6 px-4 py-6"
+                  : "opacity-0 h-0 pointer-events-none"
+              }`}
+            >
+              <QuizConclusion />
+            </div>
+            <div className="grid place-content-start items-leg text-white px-6">
+              <QuizInstructions />
+            </div>
+
+            <div
+              className={`text-white px-6 transition-opacity duration-1000 ${
+                currentStepCount > 0 && currentStepCount < 8
+                  ? "opacity-100"
+                  : "opacity-0 h-0"
+              }`}
+            >
+              <p className="mt-10 mb-0 text-sm text-left">
+                EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
+              </p>
+              <p className=" my-0 font-sans text-xl">
+                {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
+              </p>
+            </div>
           </div>
-          <div className="grid place-content-start items-leg text-white px-6">
-            <QuizInstructions />
-          </div>
 
-          <div
-            className={`text-white px-6 transition-opacity duration-1000 ${
-              currentStepCount > 0 && currentStepCount < 8
-                ? "opacity-100"
-                : "opacity-0 h-0"
-            }`}
-          >
-            <p className="mt-10 mb-0 text-sm text-left">
-              EVENT {Math.min(currentStep.solvedEvents.length + 1, 4)} of 4
-            </p>
-            <p className=" my-0 font-sans text-xl">
-              {currentStep?.stepEvent?.event.replace(/ \[.*\]/, "")}
-            </p>
-          </div>
-</div>
-
-
-
-<div className="pl-2">
-          <div
-            className={`text-white ml-4 mt-4 transition-opacity duration-100 ${
-              currentStepCount > 0 && currentStepCount < 8
-                ? "opacity-100"
-                : "opacity-0 h-0"
-            }`}
-          >
-            {currentStepCount === 1 ? (
-              <svg viewBox="0 0 120 20" className="w-80 h-16">
+          <div className="pl-2">
+            <div
+              className={`text-white ml-4 mt-4 transition-opacity duration-100 ${
+                currentStepCount > 0 && currentStepCount < 8
+                  ? "opacity-100"
+                  : "opacity-0 h-0"
+              }`}
+            >
+              {currentStepCount <= 1 ? (
+                <svg viewBox="0 0 120 20" className="w-80 h-16">
+                  <QuizSelectActors />
+                </svg>
+              ) : (
                 <QuizSelectActors />
-              </svg>
-            ) : (
-              <QuizSelectActors />
-            )}
-          </div>
+              )}
+            </div>
 
-          <div
-            className={`text-white ml-4 mt-4 transition-opacity duration-600 ${
-              currentStepCount > 2 && currentStepCount < 8
-                ? "opacity-100"
-                : "opacity-0"
-            }`}
-          >
-            <QuizEventCategoryList />
+            <div
+              className={`text-white ml-4 mt-4 transition-opacity duration-600 ${
+                currentStepCount > 2 && currentStepCount < 8
+                  ? "opacity-100"
+                  : "opacity-0"
+              }`}
+            >
+              <QuizEventCategoryList />
+            </div>
           </div>
-</div>
           <div
             className={`text-white transition-all duration-1000 opacity-${
               currentStepCount > 1 ? 100 : 0

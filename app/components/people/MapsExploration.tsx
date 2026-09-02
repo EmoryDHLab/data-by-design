@@ -1,8 +1,9 @@
 import { useState } from "react";
+import figures from "~/data/figures/people.json";
 
 export default function ImageTooltips() {
   const [activeTooltip, setActiveTooltip] = useState<number | undefined>(
-    undefined
+    undefined,
   );
 
   // Define tooltip positions and content
@@ -58,7 +59,7 @@ export default function ImageTooltips() {
           {/* Image Container */}
           <div className="relative w-full rounded-xl overflow-hidden">
             <img
-              src="/images/people/extras/1.png"
+              src={`/images/chapters/${figures["0301a"].fileName}.webp`}
               alt="Annotated diagram"
               className="w-full h-full object-cover"
             />
@@ -79,7 +80,7 @@ export default function ImageTooltips() {
                   onMouseLeave={() => setActiveTooltip(undefined)}
                   onClick={() =>
                     setActiveTooltip(
-                      activeTooltip === tooltip.id ? undefined : tooltip.id
+                      activeTooltip === tooltip.id ? undefined : tooltip.id,
                     )
                   }
                   className="w-4 h-4 bg-gray-800  hover:bg-gray-800 text-white rounded-full  flex items-center justify-center transition-colors duration-200"
@@ -125,8 +126,6 @@ export default function ImageTooltips() {
               );
             })}
           </div>
-
-     
         </div>
       </div>
     </div>

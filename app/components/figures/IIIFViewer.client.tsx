@@ -1,18 +1,7 @@
 import CloverImage from "@samvera/clover-iiif/image";
-import { useMemo, useState } from "react";
-import type { Options } from "openseadragon";
-import type { LabeledIIIFExternalWebResource } from "@samvera/clover-iiif/image";
-import type { TFigure } from "~/types/figureType";
 import ClientOnly from "~/components/ClientOnly";
-
-const fetchTileSource = async (figure: TFigure) => {
-  const response = await fetch(
-    `https://iiif.ecds.io/iiif/3/dxd%2f${figure.chapter}%2f${figure.fileName}.tiff/info.json`,
-  );
-  const result = await response.json();
-  result.service[0].id = result.id;
-  return { ...result, tileFormat: "png" };
-};
+import type { Options } from "openseadragon";
+import type { TFigure } from "~/types/figureType";
 
 const openSeadragonConfig: Options = {
   showNavigator: false,
@@ -37,26 +26,12 @@ const IIIFViewer = ({
   modalOpen = true,
   openSeadragonOptions = {},
 }: Props) => {
-  const [tileSource, setTileSource] = useState<
-    LabeledIIIFExternalWebResource | undefined
-  >(undefined);
-
-  useMemo(() => {
-    if (figure) {
-      const fetchSource = async () => {
-        const result = await fetchTileSource(figure);
-        setTileSource(result);
-      };
-      fetchSource();
-    }
-  }, [figure]);
-
   return (
     <div className="h-full bg-offblack w-full aspect-[1.75]">
       {modalOpen && (
         <ClientOnly>
           <CloverImage
-            body={tileSource}
+            src={`https://iiif.ecds.io/iiif/3/${figure.fileName}.tiff`}
             isTiledImage
             openSeadragonConfig={{
               ...openSeadragonConfig,
