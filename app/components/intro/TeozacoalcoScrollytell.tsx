@@ -29,7 +29,7 @@ const TeozacoalcoScrollytell = ({ triggers }: Props) => {
           <div className="sticky p-8 md:p-0 top-20 h-min bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
             <svg
               viewBox={`0 0 ${width} ${height}`}
-              className={`max-h-[80vh] max-w-[90%] md:my-16 mx-auto  transition-all duration-[2000ms] ${
+              className={`max-h-[80vh] max-w-[90%] md:my-16 mx-auto will-change-transform transition-transform duration-[2000ms] ${
                 scrollProgress >= 4.75 && scrollProgress < 5.75
                   ? "scale-[8] translate-y-[300px]"
                   : ""
