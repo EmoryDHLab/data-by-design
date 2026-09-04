@@ -139,7 +139,7 @@ const events: Event[] = [
     weekday: "Mon",
     year: "2026",
     startDate: "2026-11-02",
-    title: "Smith College",
+    title: "Workshop at Wurtele Center for Collaborative Leadership",
     kind: "workshop",
     description: "Talk and workshop by Tanvi Sharma",
     performer: "Tanvi Sharma",
