@@ -61,6 +61,13 @@ type Event = {
   // on its own — a co-host, a registration note, what the talk covers. Shown
   // under the address, and used as the schema.org Event description.
   description?: string;
+  // Where the register button points. Falls back to url, since a venue's page
+  // for the event is usually also where you sign up — so an event only needs
+  // this when registration lives somewhere other than the venue's page.
+  registerUrl?: string;
+  // What the register button says, when "Register" isn't right — "RSVP",
+  // "Get tickets", "Free, no ticket needed". Ignored without a link to point at.
+  registerLabel?: string;
   tbd?: boolean;
 };
 
@@ -264,7 +271,7 @@ function eventsSchema(list: Event[]) {
         startDate: event.startDate,
         eventStatus: "https://schema.org/EventScheduled",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-        url: event.url ?? `${HOST_NAME}/events`,
+        url: registerLinkFor(event) ?? `${HOST_NAME}/events`,
         image: `${HOST_NAME}${bookMeta.cover}`,
         location: {
           "@type": "Place",
@@ -282,6 +289,14 @@ function eventsSchema(list: Event[]) {
       },
     })),
   };
+}
+
+// Where an event's register button points, if it has one. An explicit
+// registerUrl wins; otherwise the venue's own page for the event doubles as the
+// registration link. Returns undefined when there's nowhere to send people, and
+// the button is left off.
+function registerLinkFor(event: Event) {
+  return event.registerUrl ?? event.url;
 }
 
 // The label shown beside an event, with a dot in the color of its kind. The
@@ -413,6 +428,20 @@ export default function EventsPage() {
                               <p className="mt-3 text-base">
                                 {event.description}
                               </p>
+                            )}
+                            {registerLinkFor(event) && (
+                              <a
+                                href={registerLinkFor(event)}
+                                target="_blank"
+                                rel="noopener"
+                                className="inline-block font-power uppercase tracking-wide text-sm md:text-base mt-4 px-5 py-2 border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
+                              >
+                                {event.registerLabel ?? "Register"}
+                                <span className="sr-only">
+                                  {" "}
+                                  for {event.title} (opens in a new tab)
+                                </span>
+                              </a>
                             )}
                           </div>
                           {/* City and time: a column of their own on desktop,
