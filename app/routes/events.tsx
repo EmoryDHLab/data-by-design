@@ -61,12 +61,17 @@ type Event = {
   // on its own — a co-host, a registration note, what the talk covers. Shown
   // under the address, and used as the schema.org Event description.
   description?: string;
-  // Where the register button points. Falls back to url, since a venue's page
-  // for the event is usually also where you sign up — so an event only needs
-  // this when registration lives somewhere other than the venue's page.
+  // How you can attend. Absent means in person only, which is most of the tour.
+  // "hybrid" is in person with an online option; "virtual" is online only, and
+  // such an event has no city or venue to show.
+  attendance?: "virtual" | "hybrid";
+  // Where the register button points. There is deliberately no fallback to url:
+  // url is the venue's page for the event, which is not always a registration
+  // page, and for a hybrid event may cover only one way of attending.
   registerUrl?: string;
   // What the register button says, when "Register" isn't right — "RSVP",
-  // "Get tickets", "Free, no ticket needed". Ignored without a link to point at.
+  // "Get tickets", or, on a hybrid event whose link only covers the online
+  // option, something that says so. Ignored without a link to point at.
   registerLabel?: string;
   tbd?: boolean;
 };
@@ -87,7 +92,12 @@ const events: Event[] = [
     venue: "Charis Books & More",
     streetAddress: "184 S. Candler St",
     postalCode: "30030-3740",
+    // Charis's page for the event is the online RSVP, so the button says which
+    // way of attending it covers. Turning up in person needs no registration.
+    attendance: "hybrid",
     url: "https://charisbooksandmore.com/event/2026-10-20/data-design-visualization-and-power-abolition-dawn-data-science-panel-discussion",
+    registerUrl: "https://charisbooksandmore.com/event/2026-10-20/data-design-visualization-and-power-abolition-dawn-data-science-panel-discussion",
+    registerLabel: "RSVP to attend online",
   },
   {
     date: "Friday, October 23, 2026",
@@ -131,6 +141,8 @@ const events: Event[] = [
     venue: "P&T Knitwear Bookstore",
     streetAddress: "180 Orchard St",
     postalCode: "10002",
+    url: "https://ptknitwear.com/events/51515",
+    registerUrl: "https://www.eventbrite.com/e/1999226784129?aff=oddtdtcreator",
   },
   {
     date: "Monday, November 2, 2026",
@@ -252,6 +264,36 @@ function addressFor(event: Event) {
   };
 }
 
+// schema.org's three attendance modes. Getting this wrong misreports the tour:
+// an online event marked Offline tells search engines to send people to a city
+// they don't need to travel to.
+function attendanceModeFor(event: Event) {
+  if (event.attendance === "virtual")
+    return "https://schema.org/OnlineEventAttendanceMode";
+  if (event.attendance === "hybrid")
+    return "https://schema.org/MixedEventAttendanceMode";
+  return "https://schema.org/OfflineEventAttendanceMode";
+}
+
+// An online event's location is a VirtualLocation carrying the joining URL, not
+// a Place; a hybrid event has both. Only registerUrl is used for the virtual
+// location, never url — url is the venue's page, which is not somewhere you can
+// attend.
+function locationFor(event: Event) {
+  const place = {
+    "@type": "Place",
+    name: event.venue ?? event.city,
+    ...(event.city ? { address: addressFor(event) } : {}),
+  };
+  const virtual = {
+    "@type": "VirtualLocation",
+    ...(event.registerUrl ? { url: event.registerUrl } : {}),
+  };
+  if (event.attendance === "virtual") return virtual;
+  if (event.attendance === "hybrid") return [place, virtual];
+  return place;
+}
+
 // schema.org ItemList of Events, for search engines. Only events with a settled
 // startDate are included, since Event markup without a real start date is
 // invalid and would misreport the tour.
@@ -270,14 +312,10 @@ function eventsSchema(list: Event[]) {
         ...(event.description ? { description: event.description } : {}),
         startDate: event.startDate,
         eventStatus: "https://schema.org/EventScheduled",
-        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-        url: registerLinkFor(event) ?? `${HOST_NAME}/events`,
+        eventAttendanceMode: attendanceModeFor(event),
+        url: event.registerUrl ?? event.url ?? `${HOST_NAME}/events`,
         image: `${HOST_NAME}${bookMeta.cover}`,
-        location: {
-          "@type": "Place",
-          name: event.venue ?? event.city,
-          ...(event.city ? { address: addressFor(event) } : {}),
-        },
+        location: locationFor(event),
         ...(event.performer
           ? { performer: { "@type": "Person", name: event.performer } }
           : {}),
@@ -289,14 +327,6 @@ function eventsSchema(list: Event[]) {
       },
     })),
   };
-}
-
-// Where an event's register button points, if it has one. An explicit
-// registerUrl wins; otherwise the venue's own page for the event doubles as the
-// registration link. Returns undefined when there's nowhere to send people, and
-// the button is left off.
-function registerLinkFor(event: Event) {
-  return event.registerUrl ?? event.url;
 }
 
 // The label shown beside an event, with a dot in the color of its kind. The
@@ -429,9 +459,9 @@ export default function EventsPage() {
                                 {event.description}
                               </p>
                             )}
-                            {registerLinkFor(event) && (
+                            {event.registerUrl && (
                               <a
-                                href={registerLinkFor(event)}
+                                href={event.registerUrl}
                                 target="_blank"
                                 rel="noopener"
                                 className="inline-block font-power uppercase tracking-wide text-sm md:text-base mt-4 px-5 py-2 border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
@@ -446,12 +476,34 @@ export default function EventsPage() {
                           </div>
                           {/* City and time: a column of their own on desktop,
                               one line of small print under the event on mobile. */}
-                          {(event.city || event.time || event.dateNote) && (
+                          {(event.city ||
+                            event.time ||
+                            event.dateNote ||
+                            event.attendance) && (
                             <div className="md:order-1 shrink-0 md:w-44 lg:w-52 flex flex-wrap items-baseline gap-x-3 gap-y-1 md:block">
-                              {event.city && (
+                              {event.city && event.attendance !== "virtual" && (
                                 <h3 className={classNames(META, "text-xs", CITY)}>
                                   {event.city}
                                 </h3>
+                              )}
+                              {/* A virtual event has no city, so "Online" takes
+                                  the city's place as the heading. A hybrid one
+                                  keeps its city and notes the online option
+                                  beneath, in the same small print as the time. */}
+                              {event.attendance === "virtual" && (
+                                <h3 className={classNames(META, "text-xs", CITY)}>
+                                  Online
+                                </h3>
+                              )}
+                              {event.attendance === "hybrid" && (
+                                <div
+                                  className={classNames(
+                                    META,
+                                    "text-xs md:text-sm md:mt-1.5"
+                                  )}
+                                >
+                                  &amp; online
+                                </div>
                               )}
                               {event.time && (
                                 <div className={classNames(META, "text-xs md:text-sm md:mt-1.5")}>
