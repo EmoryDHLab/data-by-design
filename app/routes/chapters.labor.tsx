@@ -13,6 +13,8 @@ import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import ChapterBody from "~/components/layout/ChapterBody";
 import { chapterMeta } from "~/data/chapterMeta";
 import Takeaways from "~/components/layout/Takeaways";
+import Figure from "~/components/figures/Figure";
+import figures from "~/data/figures/labor.json";
 import type { MetaFunction } from "react-router";
 import type { TVizAnchors } from "~/chapterContext";
 
@@ -126,7 +128,7 @@ export default function LabourPage() {
             answer:
           </p>
 
-          <p>[ VISUALIZATION OF TECH STACK HERE ]</p>
+          <Figure figure={figures["0601-techstack-06082026"]} />
 
           <p>
             Pictured above is the technology “stack,” the various platforms and
