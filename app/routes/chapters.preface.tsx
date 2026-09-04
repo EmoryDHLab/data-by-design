@@ -229,7 +229,7 @@ export default function IntroPage() {
             This discussion brings me to a very important point: while I write
             as an "I" throughout this book, because I am the author of these
             actual words, there are ten additional authors—Tanvi Sharma, Jay
-            Varner, Shiyao Li, Margy Adams, Nicholas Yang, Dan Jutan, Jianing
+            Varner, Margy Adams, Shiyao Li, Nicholas Yang, Dan Jutan, Jianing
             Fu, Anna Mola, Zhou Fang, Yang Li, and Silas Munro-who have each
             also contributed their own unique perspectives and their own unique
             forms of expertise. As the project unfolds, you will learn more
