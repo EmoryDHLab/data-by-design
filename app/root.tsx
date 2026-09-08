@@ -36,23 +36,6 @@ export const links: LinksFunction = () => {
 };
 
 export const Layout = ({ children }: WrapperProps) => {
-  useEffect(() => {
-    if (process.env.NODE_ENV == "production") {
-      // @ts-expect-error: This is added via a script tag. Will be removed in final version.
-      window.hypothesisConfig = function () {
-        return {
-          openSidebar: false,
-          showHighlights: false,
-        };
-      };
-      const head = document.querySelector("head");
-      const script = document.createElement("script");
-      script.setAttribute("src", "https://hypothes.is/embed.js");
-      script.async = true;
-      head?.appendChild(script);
-    }
-  }, []);
-
   return (
     <html lang="en">
       <head>
