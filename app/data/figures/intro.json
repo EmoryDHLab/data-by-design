@@ -39,8 +39,8 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2012,
-    "width": 2083,
-    "height": 1329,
+    "width": 4096,
+    "height": 2731,
     "iiif": true
   },
   "0003-energy": {
@@ -347,7 +347,7 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1685,
-    "width": 1080,
+    "width": 1078,
     "height": 1408,
     "iiif": true
   },
