@@ -49,6 +49,7 @@ export const timelineImages = () => {
 
   return filteredFigures || [];
 };
+console.log("🚀 ~ timelineImages ~ timelineImages:", timelineImages());
 
 export const randomTimelineImages = (imageCount: number) => {
   const shuffled = d3.shuffle(timelineImages());

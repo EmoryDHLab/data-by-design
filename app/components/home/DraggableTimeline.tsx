@@ -163,11 +163,11 @@ export default function DraggableTimeline({
             >
               <picture>
                 <source
-                  srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${image.chapter}%2f${image.fileName}.tiff/full/400,/0/default.png`}
+                  srcSet={`https://iiif.ecds.io/iiif/3/${image.fileName}.tiff/full/400,/0/default.png`}
                   type="image/webp"
                 />
                 <source
-                  srcSet={`https://iiif.ecds.io/iiif/3/dxd%2f${image.chapter}%2f${image.fileName}.tiff/full/400,/0/default.jpg`}
+                  srcSet={`https://iiif.ecds.io/iiif/3/${image.fileName}.tiff/full/400,/0/default.jpg`}
                   type="image/jpeg"
                 />
                 <img
