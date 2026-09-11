@@ -725,7 +725,7 @@ export default function DuboisChapter() {
             <InlineFootnote index={50} />
           </p>
 
-          <Figure figure={figures["0518-auc002catalog1908-cropped"]} />
+          <Figure figure={figures["0518"]} />
 
           <p>
             Du Bois, by contrast, went on to live a long life, passing away at
@@ -847,20 +847,14 @@ export default function DuboisChapter() {
             titled “It Could Never Be Large Enough.”
           </p>
 
-          <div className="sm:grid grid-cols-3 gap-4">
-            <Figure
-              figure={figures["0523"]}
-              className="mx-2 md:mx-12 text-sm md:text-base"
-            />
-            <Figure
-              figure={figures["0523-onuoha2"]}
-              className="mx-2 md:mx-12 text-sm md:text-base"
-            />
-            <Figure
-              figure={figures["0524-onuoha3"]}
-              className="mx-2 md:mx-12 text-sm md:text-base"
-            />
-          </div>
+          {/* One installation photograph of the whole six-frame wall. The book
+              runs three crops of it; those crops are not in the catalogue yet,
+              so the wall stands in for them — it contains every chart the
+              paragraph above names. */}
+          <Figure
+            figure={figures["0523"]}
+            className="mx-2 md:mx-12 text-sm md:text-base"
+          />
 
           <p>
             In the context of Du Bois’s autobiographical writing about the

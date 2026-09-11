@@ -10,6 +10,7 @@ import Column from "~/components/layout/Column";
 import { peopleFootnotes } from "~/footnotes";
 import { chapterMetaTags } from "~/utils";
 import figures from "~/data/figures/people.json";
+import { missing } from "~/data/figures/missing";
 import Figure from "~/components/figures/Figure";
 import ColonialMaps from "~/components/people/ColonialMaps.client";
 import DocumentViewer from "~/components/people/DocumentViewer";
@@ -677,7 +678,7 @@ export default function ShanawdithitPage() {
 
           <Figure
             className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6 items-baseline"
-            figures={[figures["0313-howley-sketch2"], figures["0314-minard"]]}
+            figures={[figures["0311"], missing("0314-minard")]}
           />
 
           <p>

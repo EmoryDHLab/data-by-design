@@ -424,10 +424,15 @@ export default function IntroPage() {
               className="md:col-span-2"
               figure={figures["0008-usworkers"]}
             />
+            {/* The catalogue splits "A Week of Clocks" into its two faces, which
+                stack in this cell — the one tall slot in the grid. */}
             <Figure
               showCaption={false}
               className="md:row-span-2"
-              figure={figures["0008-deardata"]}
+              figures={[
+                figures["0010a-Stefanie01a_toscale"],
+                figures["0010b-Stefanie01b_toscale"],
+              ]}
             />
             <Figure
               showCaption={false}

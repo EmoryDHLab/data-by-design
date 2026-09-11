@@ -808,7 +808,6 @@ export default function PeabodyPage() {
               figures={[
                 figures["0424a-Caldas-AJB03_M0514"],
                 figures["0424b-Caldas-AJB03_M0526"],
-                figures["0426-Caldas-AJB03_M0529"],
               ]}
               className="md:ml-12"
               groupCaption={

@@ -359,11 +359,13 @@ export default function LabourPage() {
             into the site itself.
           </p>
 
+          {/* Stacked, not side by side: the catalogue caption reads
+              "contributors (top) and code frequency (bottom)". */}
           <Figure
-            className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-baseline"
-            figures={[figures["0602-contributors"], figures["0603-frequency"]]}
+            className="grid grid-cols-1 gap-2 md:gap-4 items-baseline"
+            figures={[figures["0602a"], figures["0602c"]]}
             groupCaption={
-              <p>{figures["0602-contributors"].caption}</p>
+              <p>{figures["0602a"].caption}</p>
             }
           />
 

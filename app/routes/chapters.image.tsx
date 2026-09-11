@@ -14,6 +14,7 @@ import { imageFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import Quotation from "~/components/Quotation";
 import figures from "~/data/figures/image.json";
+import { missing } from "~/data/figures/missing";
 import { chapterMetaTags } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
 import Takeaways from "~/components/layout/Takeaways";
@@ -518,7 +519,7 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <Figure figure={figures["0212-minard"]} />
+            <Figure figure={missing("0212-minard")} />
           </Column>
         </TwoColumnLayout>
 
@@ -632,8 +633,8 @@ export default function PlayfairPage() {
           </Column>
           <Column shouldPin>
             <Figure figure={figures["0212-playfair-indies"]} />
-            <Figure figure={figures["0213-periscopic"]} />
-            <Figure figure={figures["0214-activeshooters"]} />
+            <Figure figure={figures["0209-periscopic"]} />
+            <Figure figure={figures["0210-gun-deaths-2018"]} />
           </Column>
         </TwoColumnLayout>
 
@@ -889,7 +890,7 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin className="md:ms-12">
-            <Figure figure={figures["0224-playfair1787"]} />
+            <Figure figure={figures["0205-bl-playfair"]} />
             <Figure figure={figures["0218-jevons002"]} />
             <Figure figure={figures["0219-jevons001"]} />
           </Column>
