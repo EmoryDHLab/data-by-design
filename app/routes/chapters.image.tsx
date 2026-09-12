@@ -14,7 +14,6 @@ import { imageFootnotes } from "~/footnotes";
 import FootnotesList from "~/components/FootnotesList";
 import Quotation from "~/components/Quotation";
 import figures from "~/data/figures/image.json";
-import { missing } from "~/data/figures/missing";
 import { chapterMetaTags } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
 import Takeaways from "~/components/layout/Takeaways";
@@ -438,90 +437,85 @@ export default function PlayfairPage() {
 
         <ChapterSectionTitle section={sections[1]} />
 
-        <TwoColumnLayout>
-          <Column>
-            <p className="first-paragraph">
-              Playfair created his charts at a time of intense political change,
-              matched only by the intensity of his personal financial struggles.
-              At the time that Playfair released the third edition of the{" "}
-              <cite>Atlas</cite>, the French Revolution had only just come to an
-              end. Playfair himself had lived in Paris for six years after the
-              initial publication of the <cite>Atlas</cite>, first riding high on
-              his reputation—Louis XVI reportedly “expressed great satisfaction”
-              in his charts—and then on the profits from a series of business
-              schemes.
-              <InlineFootnote index={21} />But in 1792, after a surge of
-              anti-aristocratic violence, including an assault on a close friend
-              that took place right outside his door, Playfair was forced to
-              return to England—and to his writing career.
-              <InlineFootnote index={22} />
-            </p>
-            <p>
-              Upon his return to writing, perhaps predictably, Playfair’s
-              finances began to decline.
-              <InlineFootnote index={23} />With the exception of his 1795{" "}
-              <cite>History of Jacobinism</cite>, informed by his experience in
-              France, Playfair’s writing did not earn him the attention, or the
-              profit, that he believed he deserved. A series of failed business
-              ventures in the second half of the 1790s—most ignominiously, the
-              loss of an entire bank—culminated in personal bankruptcy. Thus when
-              Playfair explains, in the preface to the third edition, that he has
-              “chosen the present moment” to rerelease his charts, he is referring
-              to a moment of both political uncertainty and personal upheaval—the
-              latter, by all accounts, more acutely felt.
-              <InlineFootnote index={24} />
-            </p>
-            <p>
-              Playfair would go to debtor’s prison shortly after the publication
-              of the third edition of the <cite>Atlas</cite>. He would never see
-              the book’s proceeds, which would go to his creditors instead.
-              <InlineFootnote index={25} />But the extent of his financial
-              distress makes his continued faith in the power of data
-              visualization all the more affecting. He still vehemently believed
-              that his work could make an intervention on a global stage—a means
-              of countering the instability that the age of revolutions had
-              brought about. “The minds of men, the boundaries of nations, their
-              laws and relations with one another, are all in a state of change,”
-              he writes in the third edition’s preface.
-              <InlineFootnote index={26} />While he cannot (or will not) say
-              whether “war and contention” or “art and commerce” will ultimately
-              prevail, he sees this uncertainty as further underscoring the
-              enduring value of his charts. As he explains:
-            </p>
+        <CenteredLayout>
+          <p className="first-paragraph">
+            Playfair created his charts at a time of intense political change,
+            matched only by the intensity of his personal financial struggles.
+            At the time that Playfair released the third edition of the{" "}
+            <cite>Atlas</cite>, the French Revolution had only just come to an
+            end. Playfair himself had lived in Paris for six years after the
+            initial publication of the <cite>Atlas</cite>, first riding high on
+            his reputation—Louis XVI reportedly “expressed great satisfaction”
+            in his charts—and then on the profits from a series of business
+            schemes.
+            <InlineFootnote index={21} />But in 1792, after a surge of
+            anti-aristocratic violence, including an assault on a close friend
+            that took place right outside his door, Playfair was forced to
+            return to England—and to his writing career.
+            <InlineFootnote index={22} />
+          </p>
+          <p>
+            Upon his return to writing, perhaps predictably, Playfair’s
+            finances began to decline.
+            <InlineFootnote index={23} />With the exception of his 1795{" "}
+            <cite>History of Jacobinism</cite>, informed by his experience in
+            France, Playfair’s writing did not earn him the attention, or the
+            profit, that he believed he deserved. A series of failed business
+            ventures in the second half of the 1790s—most ignominiously, the
+            loss of an entire bank—culminated in personal bankruptcy. Thus when
+            Playfair explains, in the preface to the third edition, that he has
+            “chosen the present moment” to rerelease his charts, he is referring
+            to a moment of both political uncertainty and personal upheaval—the
+            latter, by all accounts, more acutely felt.
+            <InlineFootnote index={24} />
+          </p>
+          <p>
+            Playfair would go to debtor’s prison shortly after the publication
+            of the third edition of the <cite>Atlas</cite>. He would never see
+            the book’s proceeds, which would go to his creditors instead.
+            <InlineFootnote index={25} />But the extent of his financial
+            distress makes his continued faith in the power of data
+            visualization all the more affecting. He still vehemently believed
+            that his work could make an intervention on a global stage—a means
+            of countering the instability that the age of revolutions had
+            brought about. “The minds of men, the boundaries of nations, their
+            laws and relations with one another, are all in a state of change,”
+            he writes in the third edition’s preface.
+            <InlineFootnote index={26} />While he cannot (or will not) say
+            whether “war and contention” or “art and commerce” will ultimately
+            prevail, he sees this uncertainty as further underscoring the
+            enduring value of his charts. As he explains:
+          </p>
 
-            <Quotation
-              quote={
-                <>
-                  If [a future of war] turns out so, a picture of the past will be
-                  a valuable thing, if, on the contrary, commerce should still
-                  continue its progress, this will make the first part of a great
-                  whole, which, when completed on some future day, will be a most
-                  valuable work.
-                  <InlineFootnote index={27} />
-                </>
-              }
-              byline="William Playfair, The Commercial and Political Atlas, 3rd ed."
-            ></Quotation>
+          <Quotation
+            quote={
+              <>
+                If [a future of war] turns out so, a picture of the past will be
+                a valuable thing, if, on the contrary, commerce should still
+                continue its progress, this will make the first part of a great
+                whole, which, when completed on some future day, will be a most
+                valuable work.
+                <InlineFootnote index={27} />
+              </>
+            }
+            byline="William Playfair, The Commercial and Political Atlas, 3rd ed."
+          ></Quotation>
 
-            <p>
-              From these lines, it would seem that Playfair thinks his charts can
-              not only capture a clear “picture of the past,” but also retain
-              their significance in a range of possible future scenarios. Their
-              simplicity, as it turns out, is a key feature. It is by minimizing
-              complexity—and not, per today’s adage, visualizing it—that,
-              according to Playfair, “valuable” and enduring knowledge is made.
-              <InlineFootnote index={28} />Returning to the engraving error in
-              “Exports &amp; Imports in all of North America,” it may well be
-              that Playfair was not perturbed at all. The chart still communicated
-              all the information that Playfair intended, which in the end was not
-              dependent upon the accuracy of any particular data point but only a
-              general trend.
-            </p>
-          </Column>
-          <Column shouldPin>
-            <Figure figure={missing("0212-minard")} />
-          </Column>
-        </TwoColumnLayout>
+          <p>
+            From these lines, it would seem that Playfair thinks his charts can
+            not only capture a clear “picture of the past,” but also retain
+            their significance in a range of possible future scenarios. Their
+            simplicity, as it turns out, is a key feature. It is by minimizing
+            complexity—and not, per today’s adage, visualizing it—that,
+            according to Playfair, “valuable” and enduring knowledge is made.
+            <InlineFootnote index={28} />Returning to the engraving error in
+            “Exports &amp; Imports in all of North America,” it may well be
+            that Playfair was not perturbed at all. The chart still communicated
+            all the information that Playfair intended, which in the end was not
+            dependent upon the accuracy of any particular data point but only a
+            general trend.
+          </p>
+        </CenteredLayout>
 
         <CenteredLayout>
           <p className="text-center font-power text-xl">***</p>
