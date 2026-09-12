@@ -30,7 +30,7 @@
    1300px on a large display. Cap the running text at a readable measure while
    figures and charts in the same block keep the full column width. Centered
    paragraphs are the section dividers, which should stay on the column axis. */
-.chapter-body .centered-layout {
+.chapter-body {
   --measure: 68ch;
 }
 
@@ -65,10 +65,11 @@
   }
 }
 
-/* Captions sit inside the full-width figure block — and for figure groups,
-   alongside it — so they need capping and centring of their own to land on
-   the prose measure. */
-.chapter-body .centered-layout figcaption {
+/* No caption should outrun the prose measure, wherever it sits — inside a
+   figure block, alongside one in a figure group, or under a full-width
+   scrollytell visualisation. In the two-up columns the container is already
+   narrower than the measure, so this is a no-op there. */
+.chapter-body figcaption {
   max-width: var(--measure);
   margin-inline: auto;
 }
