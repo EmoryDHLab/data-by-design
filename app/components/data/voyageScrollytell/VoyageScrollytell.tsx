@@ -136,13 +136,14 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
               />
               {/* 2 */}
               <image
-                href={`/images/chapters/missing.jpg`}
+                href={`/images/chapters/${figures["0107-resistance"].fileName}.jpg`}
                 width={width}
                 height={height}
                 preserveAspectRatio="xMidYMid meet"
-                // href={`/images/chapters/${figures["PLACEHOLDERquery2"].fileName}.jpg`}
+                // Covers both the step that names the "resistance" variable and
+                // the one that enumerates its seven subcategories.
                 className={`transition-opacity duration-1000 opacity-${
-                  slideIndex === 2 ? 100 : 0
+                  slideIndex === 2 || slideIndex === 3 ? 100 : 0
                 }`}
               />
               {/* 3 */}
@@ -244,16 +245,23 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
               key={`voyageScrollytell-${trigger.key}`}
               data-step={index}
               className={`pointer-events-none step text-xl p-5 md:px-20 relative w-auto ${
-                fullWidthSlides.includes(index)
-                  ? "md:w-full md:px-52"
-                  : "md:w-1/2"
+                fullWidthSlides.includes(index) ? "md:w-full" : "md:w-1/2"
               } ${
                 index + 1 === triggers.length
                   ? "min-h-screen"
                   : "min-h-screen md:mb-64"
               } text-${accentTextColor}`}
             >
-              <div className="bg-dataSecondary-translucent p-3 md:p-12">
+              {/* The full-width steps span the viewport, so the text box is
+                  capped at the body measure to keep the lines readable. The
+                  extra 6rem covers the box's own md:p-12 padding. */}
+              <div
+                className={`bg-dataSecondary-translucent p-3 md:p-12 ${
+                  fullWidthSlides.includes(index)
+                    ? "md:mx-auto md:max-w-[calc(68ch+6rem)]"
+                    : ""
+                }`}
+              >
                 {trigger}
               </div>
             </div>
