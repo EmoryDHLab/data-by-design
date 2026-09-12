@@ -17,7 +17,6 @@ import HoverText from "~/components/HoverText";
 import Figure from "~/components/figures/Figure";
 
 import figures from "~/data/figures/data.json";
-import { missing } from "~/data/figures/missing";
 import ClarksonSideBySideScrollytell from "~/components/data/ClarksonSideBySideScrollytell";
 import ClientOnly from "~/components/ClientOnly";
 
@@ -1026,7 +1025,7 @@ export default function BrooksPage() {
             <InlineFootnote index={51} />
           </p>
 
-          <Figure figure={missing("0113-history")} />
+          <Figure figure={figures["0114-history"]} />
 
           <p>
             On the surface, the metaphor of abolition as a network of
@@ -1081,7 +1080,7 @@ export default function BrooksPage() {
           <Figure
             className="md:grid grid-cols-2 gap-4"
             imageClassName="h-full"
-            figures={[figures["0115-stream"], missing("0115-bell")]}
+            figures={[figures["0115-stream"], figures["0116-stream-of-time"]]}
           />
 
           <p>
