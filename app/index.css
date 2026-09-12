@@ -26,6 +26,62 @@
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23FFFFFF54' stroke-width='2' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 
+/* CenteredLayout's margins widen at 2xl, which would run body text to nearly
+   1300px on a large display. Cap the running text at a readable measure while
+   figures and charts in the same block keep the full column width. Centered
+   paragraphs are the section dividers, which should stay on the column axis. */
+.chapter-body .centered-layout {
+  --measure: 68ch;
+}
+
+.chapter-body .centered-layout > p:not(.text-center) {
+  max-width: var(--measure);
+}
+
+/* Body paragraphs centre themselves via `main p { margin: 0.75rem auto }`, so
+   the quote blocks have to centre on the same axis to line up with them. Each
+   is widened by its own inner padding — 4px of rule plus md:pl-6 for the pull
+   quote, p-10 for the quotation — so the quoted lines run to the same measure
+   as the prose and start at the same left edge. */
+.chapter-body .centered-layout .pull-quote {
+  max-width: calc(var(--measure) + 1.75rem);
+  margin-inline: auto !important;
+}
+
+.chapter-body .centered-layout .quotation {
+  max-width: calc(var(--measure) + 5rem);
+  margin-inline: auto;
+}
+
+/* One vertical rhythm for every figure sitting in the reading column, rather
+   than whatever the neighbouring paragraph margins happen to add up to. */
+.chapter-body .centered-layout > .figure-block {
+  margin-block: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .chapter-body .centered-layout > .figure-block {
+    margin-block: 5rem;
+  }
+}
+
+/* Captions sit inside the full-width figure block, so they need capping and
+   centring of their own to land on the prose measure. */
+.chapter-body .centered-layout .figure-block figcaption {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+/* Lets the browser reflow the closing lines of a block to avoid leaving a
+   single word stranded on the last one. Ignored where unsupported, which just
+   means the old greedy wrapping. */
+.chapter-body p,
+.chapter-body figcaption,
+.chapter-body blockquote,
+.chapter-body li {
+  text-wrap: pretty;
+}
+
 .first-paragraph::first-letter {
   float: left;
   font-family: VTC Du Bois, serif !important;

@@ -26,7 +26,7 @@ export default function PullQuote({
   }, [className, backgroundColor, primaryTextColor]);
 
   return (
-    <aside ref={asideRef} className={classList}>
+    <aside ref={asideRef} className={`pull-quote ${classList ?? ""}`}>
       <blockquote
         className={`border-l-4 border-l-${backgroundColor} pl-4 md:pl-6`}
         style={borderColor ? { borderLeftColor: borderColor } : undefined}

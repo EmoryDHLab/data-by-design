@@ -52,7 +52,7 @@ export default function FigureModal({
       ref={figureRef}
       id={id}
       className={classNames(
-        "md:mx-auto relative flex-shrink",
+        "figure-block md:mx-auto relative flex-shrink",
         inColumn ? "md:ml-24" : "",
         className,
       )}

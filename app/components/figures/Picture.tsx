@@ -41,7 +41,10 @@ const Picture = ({ figure, className }: Props) => {
         <source srcSet={`${localPath}.webp`} type="image/webp" />
       )}
       <img
-        className={classNames("mx-auto", className)}
+        className={classNames(
+          "mx-auto max-h-screen object-contain",
+          className,
+        )}
         src={useIIIFFallback ? iiifUrl(figure.fileName) : `${localPath}.jpg`}
         onError={() => {
           if (!localFailed && figure.iiif) setLocalFailed(true);
