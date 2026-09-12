@@ -10,13 +10,14 @@ interface Props {
 }
 
 export default function HoverText({ className, children, hoverState }: Props) {
-  const { setHoverState } = useContext(ChapterContext);
+  const { setHoverState, backgroundColor, accentColor } =
+    useContext(ChapterContext);
   if (setHoverState) {
     return (
       <>
         <span
           className={`hidden md:inline underline-offset-4
-          cursor-pointer font-bold underline decoration-solid decoration-changePrimary decoration-2 hover:decoration-4 hover-bg-changeSecondary ${
+          cursor-pointer font-bold underline decoration-solid decoration-${backgroundColor} decoration-2 hover:decoration-4 hover:bg-${accentColor} ${
             className ?? ""
           }`}
           onMouseEnter={() => setHoverState(hoverState)}
