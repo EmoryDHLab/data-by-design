@@ -713,6 +713,8 @@ export default function BrooksPage() {
             an estimated 10.6 million souls.
             <InlineFootnote index={35} />
           </p>
+
+          <Figure figure={figures["0106-outcome"]} />
           <p>
             Ever since the first release of the database, in 1999 via
             CD-ROM, scholars and designers have attempted to give this
@@ -772,7 +774,6 @@ export default function BrooksPage() {
             data could not show.
             <InlineFootnote index={41} />
           </p>
-          <PullQuote quote="To honor the enslaved as they lived, and not as they were reduced to data, we would need a visual strategy for showing just how much about these lives the data could not show." />
         </CenteredLayout>
 
         <VoyageScrollytell
@@ -1037,7 +1038,6 @@ export default function BrooksPage() {
             chart. Most notably, the name of Olaudah Equiano, or of any other
             Black abolitionist, is nowhere to be found.
           </p>
-          <PullQuote quote="And yet, certain key contributors are missing from the chart. Most notably,  the name of Olaudah Equiano, or of any other Black abolitionist, is nowhere to be found." />
           <p>
             As with “Description of a Slave Ship,” the question of audience
             returns to the fore. This chart was also not designed for those
@@ -1055,7 +1055,6 @@ export default function BrooksPage() {
             the condition of enslavement—as the anchoring metaphor of his
             abolitionist chart?
           </p>
-          <PullQuote quote="Why would Clarkson use water—the very site of the dehumanization that enslavement brought about—as the anchoring metaphor of his account?" />
           <p>
             As it turns out, Clarkson was anchoring his diagram in some
             stable ground: namely, the then-prevalent use of water and
@@ -1103,7 +1102,6 @@ export default function BrooksPage() {
             memory.”
             <InlineFootnote index={57} />
           </p>
-          <PullQuote quote="But to simply slot Clarkson into the standard history of the field would miss much of the point." />
           <p>
             But to simply slot Clarkson into the standard history would miss
             this chapter’s point: his visualizations matter for the
@@ -1117,10 +1115,6 @@ export default function BrooksPage() {
             we come to see the responsibility that we hold as viewers of
             data visualizations—and as designers of them as well.
           </p>
-          <PullQuote
-            quote="It also underscores how, if the goal of a visualization is to bring about change,"
-            subquote="then it must necessarily be accompanied by action."
-          />
           <p>
             We will never know if Equiano posed questions like these to
             Clarkson upon seeing the original “Plan”; there is no record of
