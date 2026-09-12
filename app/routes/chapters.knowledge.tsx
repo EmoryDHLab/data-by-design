@@ -19,7 +19,8 @@ import Quiz from "~/components/knowledge/quiz/Quiz";
 import PeabodyTimeline from "~/components/knowledge/PeabodyTimeline";
 import LEDChart from "~/components/knowledge/LEDChart";
 import figures from "~/data/figures/knowledge.json";
-import Figure from "~/components/figures/Figure";
+import Figure, { Caption } from "~/components/figures/Figure";
+import FloorChartLayers from "~/components/knowledge/FloorChartLayers";
 import { chapterMetaTags } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
 import eventData from "~/data/process/eventData.json";
@@ -649,6 +650,29 @@ export default function PeabodyPage() {
               by <cite>Temple of Time</cite>.
               <InlineFootnote index={16} />
             </p>
+
+            <Figure
+              className="grid grid-cols-2 md:grid-cols-3 gap-2 items-center"
+              figures={[
+                figures["0424a-Caldas-AJB03_M0514"],
+                figures["0424b-Caldas-AJB03_M0526"],
+                figures[
+                  "0425-Humboldt-Geographie_der_Pflanzen_in_den_Tropen-Landern"
+                ],
+                figures["0426-am1829-phelps-67941-d-p1"],
+                figures["0427-Willard-4545001"],
+              ]}
+              groupCaption={
+                <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
+                  The lineage behind <cite>Temple of Time</cite>: two elevation
+                  profiles by Francisco José de Caldas; Humboldt’s{" "}
+                  <cite>Geographie der Pflanzen in den Tropen-Ländern</cite>;
+                  Thirza Lee’s recreation of “Top of Chimborazo” for Willard’s
+                  1829 <cite>Familiar Lectures on Botany</cite>; and Willard’s{" "}
+                  <cite>Picture of Nations</cite> (1836).
+                </p>
+              }
+            />
             <p>
               In the chart, Willard depicts past centuries as the pillars
               that support the titular temple. Here, the nineteenth century
@@ -804,22 +828,10 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column>
-            <Figure
-              figures={[
-                figures["0424a-Caldas-AJB03_M0514"],
-                figures["0424b-Caldas-AJB03_M0526"],
-              ]}
-              className="md:ml-12"
-              groupCaption={
-                <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
-                  The layers of the touch interface, built with copper tape and
-                  a foam spacer; the assembled touch interface; a view of the
-                  modular circuit boards for communicating with the LEDs; a
-                  rendering of the completed Floor Chart; the LEDs displayed on
-                  top of the quilted chart. Photos by Lauren Klein.
-                </p>
-              }
-            />
+            <figure className="md:ml-12">
+              <FloorChartLayers />
+              <Caption figure={figures["0430-Peabody-Sandwich"]} />
+            </figure>
           </Column>
         </TwoColumnLayout>
 
@@ -935,8 +947,8 @@ export default function PeabodyPage() {
           <Figure
             className="grid grid-cols-2 items-center middle-full gap-x-4"
             figures={[
-              figures["0426-am1829-phelps-67941-d-p1"],
-              figures["0427-Willard-4545001"],
+              figures["0432-rachel-carey-george"],
+              figures["0433-gbq-q030-06"],
             ]}
             groupCaption={
               <>
