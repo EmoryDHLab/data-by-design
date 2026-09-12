@@ -29,6 +29,11 @@ const icon = (type: string) => {
 
 const iconWidth = 13;
 
+// Icons are spaced edge to edge at iconWidth, which reads as a solid run when
+// several anchors bunch up. The extra few pixels keep them legible as
+// individual glyphs.
+const minSpacing = iconWidth + 7;
+
 interface Props {
   progress: number;
   fixedNav: boolean;
@@ -86,6 +91,25 @@ export function ChapterNav({ progress, fixedNav }: Props) {
         }
       }
       next.sort((a, b) => a.offset - b.offset);
+
+      // Anchors that sit close together in the chapter — or that all clamp to
+      // the same minimum near the top — land on nearly the same spot along the
+      // progress bar, so nudge each icon far enough right to clear the one
+      // before it, then walk back to keep the last one on screen.
+      const maxOffset = document.documentElement.clientWidth - iconWidth;
+      let previous = -Infinity;
+      for (const anchor of next) {
+        anchor.offset = Math.max(anchor.offset, previous + minSpacing);
+        previous = anchor.offset;
+      }
+      let limit = maxOffset;
+      for (let i = next.length - 1; i >= 0; i--) {
+        next[i].offset = Math.max(
+          Math.min(next[i].offset, limit),
+          iconWidth / 2,
+        );
+        limit = next[i].offset - minSpacing;
+      }
 
       setAnchorMap((prev) => {
         if (
