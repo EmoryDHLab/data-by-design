@@ -553,42 +553,46 @@ export default function DuboisChapter() {
             own assessment of the status of race and racism in America at the
             time.
           </p>
-          <p>
-            At the same time, Du Bois’s decision to pair the charts with the
-            photographs also points to his awareness of the limits of what
-            either medium—one quantitative, the other qualitative—could achieve
-            on its own. While the photographs could document the richness of
-            individual lives, they could not document the life of each of the
-            nation’s Black citizens. Conversely, while the charts could present
-            powerful evidence of broad trends, they could not expose the
-            individuals behind the data. Considered as a complementary pair,
-            however, the charts and the photographs recall another visual
-            technology of that era, the stereoscope, whose form is suggested by
-            the double-projection layout of the <cite>Georgia Negro</cite>’s
-            introductory chart.
-          </p>
+        </CenteredLayout>
 
-          <Figure
-            className="mix-blend-multiply"
-            figure={figures["0517"]}
-          />
+        <TwoColumnLayout>
+          <Column>
+            <p>
+              At the same time, Du Bois’s decision to pair the charts with the
+              photographs also points to his awareness of the limits of what
+              either medium—one quantitative, the other qualitative—could
+              achieve on its own. While the photographs could document the
+              richness of individual lives, they could not document the life of
+              each of the nation’s Black citizens. Conversely, while the charts
+              could present powerful evidence of broad trends, they could not
+              expose the individuals behind the data. Considered as a
+              complementary pair, however, the charts and the photographs recall
+              another visual technology of that era, the stereoscope, whose form
+              is suggested by the double-projection layout of the{" "}
+              <cite>Georgia Negro</cite>’s introductory chart.
+            </p>
+            <p>
+              The stereoscope was a device that spliced together two photographs
+              of the same scene, taken from slightly different viewpoints. When
+              the photos were viewed simultaneously, one by each eye, the
+              stereoscope created the illusion of three-dimensional depth.
+              Similarly, I believe that Du Bois understood the charts and the
+              photographs as two parts of a larger whole. While each was legible
+              on its own, the more complete—and therefore more accurate—picture
+              was gained by viewing the two components together. The stakes of
+              this apperception were high. Both Du Bois’s students, and the
+              people for whom they designed their charts, would be required to
+              cultivate not only historical knowledge but also political
+              consciousness: the conviction necessary to pair any insights
+              prompted by the charts with a personal commitment to act.
+            </p>
+          </Column>
+          <Column className="md:p-10">
+            <Figure className="mix-blend-multiply" figure={figures["0517"]} />
+          </Column>
+        </TwoColumnLayout>
 
-          <p>
-            The stereoscope was a device that spliced together two photographs
-            of the same scene, taken from slightly different viewpoints. When
-            the photos were viewed simultaneously, one by each eye, the
-            stereoscope created the illusion of three-dimensional depth.
-            Similarly, I believe that Du Bois understood the charts and the
-            photographs as two parts of a larger whole. While each was legible
-            on its own, the more complete—and therefore more accurate—picture
-            was gained by viewing the two components together. The stakes of
-            this apperception were high. Both Du Bois’s students, and the people
-            for whom they designed their charts, would be required to cultivate
-            not only historical knowledge but also political consciousness: the
-            conviction necessary to pair any insights prompted by the charts
-            with a personal commitment to act.
-          </p>
-
+        <CenteredLayout>
           <p className="text-center font-power text-xl">***</p>
 
           <p>
@@ -927,8 +931,18 @@ export default function DuboisChapter() {
             figures={[figures["899"], figures["0526-data-table"]]}
             groupCaption={
               <p>
-                Left: {figures["899"].caption} Right:{" "}
-                {figures["0526-data-table"].caption}
+                Left:{" "}
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: figures["899"].caption ?? "",
+                  }}
+                />{" "}
+                Right:{" "}
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: figures["0526-data-table"].caption ?? "",
+                  }}
+                />
               </p>
             }
           />
