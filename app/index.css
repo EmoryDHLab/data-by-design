@@ -65,9 +65,10 @@
   }
 }
 
-/* Captions sit inside the full-width figure block, so they need capping and
-   centring of their own to land on the prose measure. */
-.chapter-body .centered-layout .figure-block figcaption {
+/* Captions sit inside the full-width figure block — and for figure groups,
+   alongside it — so they need capping and centring of their own to land on
+   the prose measure. */
+.chapter-body .centered-layout figcaption {
   max-width: var(--measure);
   margin-inline: auto;
 }

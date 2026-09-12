@@ -70,7 +70,7 @@ export default function Figure({
     const groupId = id ?? `fig-${figures[0]?.fileName}`;
     return (
       <div
-        className={className ?? "flex flex-col space-y-4"}
+        className={`figure-block ${className ?? "flex flex-col space-y-4"}`}
         id={groupId}
       >
         {figures.map((figure, index) => (

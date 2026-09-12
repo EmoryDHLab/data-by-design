@@ -953,16 +953,26 @@ export default function PeabodyPage() {
             groupCaption={
               <>
                 <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
-                  <strong>Left:</strong> "Housetop," by Rachel Carey George, ca.
-                  1935.
+                  <strong>Left:</strong>{" "}
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: `${
+                        figures["0432-rachel-carey-george"].caption ?? ""
+                      } ${
+                        figures["0432-rachel-carey-george"].creditLine ?? ""
+                      }`,
+                    }}
+                  />
                 </p>
                 <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
-                  <strong>Right:</strong> "Housetop" variation, design by Mary
-                  Lee Bendolph. 1998, quilted by Essie Bendolph Pettaway, 2001.
-                  Photos courtesy of Tinwood Media.
-                </p>
-                <p>
-                  <em>Permissions pending.</em>
+                  <strong>Right:</strong>{" "}
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: `${figures["0433-gbq-q030-06"].caption ?? ""} ${
+                        figures["0433-gbq-q030-06"].creditLine ?? ""
+                      }`,
+                    }}
+                  />
                 </p>
               </>
             }
