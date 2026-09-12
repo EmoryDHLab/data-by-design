@@ -241,6 +241,28 @@
     "height": 13503,
     "iiif": true
   },
+  "0312-minard": {
+    "chapter": "people",
+    "fileName": "0312-minard",
+    "title": "Carte figurative des pertes successives en hommes de l'armee française dans la campagne de Russie 1812-1813 comparées à celle d'Hannibal durant la 2ème Guerre Punique",
+    "cleanTitle": "Carte figurative des pertes successives en hommes de l'armee française dans la campagne de Russie 1812-1813 comparées à celle d'Hannibal durant la 2ème Guerre Punique",
+    "artist": "Charles Joseph Minard",
+    "creditLine": "Courtesy of the Bibliothèque nationale de France.",
+    "caption": "Howley’s recreation of Shanawdithit’s map (left) viewed alongside Minard’s flow maps (right). Their striking formal similarities belie their epistemological differences—and the commitments that their respective epistemologies each entail. “Sketch V” from The Beothucks or Red Indians. Digitized by Margy Adams. “Carte Figurative” courtesy of the Bibliothèque nationale de France.",
+    "sourceUrl": "https://catalogue.bnf.fr/ark:/12148/cb40650878p",
+    "altText": "A spread divided in two. A top map with a curved beige line tracks the journey of Hannibal’s army from Spain to Italy through the Alps. A bottom line graph of two thick, jagged lines that shows the losses of the French army in the Russian campaign of 1812–1813.",
+    "sensitiveAltText": null,
+    "altTextLong": "A line graph by Charles Minard inspired by Playfair. The graph’s descriptive text is in French. The title translates to “the losses of the French army in the Russian campaign from 1812-1813.” Two thick, jagged horizontal lines dominate the graph. A beige line is thickest and top-most on the graph, decreasing in thickness as the line moves right, indicating movement across Russia. Underneath the beige line, a black line decreases in thickness as the line moves left, indicating retreating movement from Russia by Napoleon’s army. Both lines hit various peaks and valleys, but only intersect at “Polotsk.”",
+    "cleanAltText": "A spread divided in two. A top map with a curved beige line tracks the journey of Hannibal’s army from Spain to Italy through the Alps. A bottom line graph of two thick, jagged lines that shows the losses of the French army in the Russian campaign of 1812–1813.",
+    "cleanSensitiveAltText": null,
+    "cleanAltTextLong": "A line graph by Charles Minard inspired by Playfair. The graph’s descriptive text is in French. The title translates to “the losses of the French army in the Russian campaign from 1812-1813.” Two thick, jagged horizontal lines dominate the graph. A beige line is thickest and top-most on the graph, decreasing in thickness as the line moves right, indicating movement across Russia. Underneath the beige line, a black line decreases in thickness as the line moves left, indicating retreating movement from Russia by Napoleon’s army. Both lines hit various peaks and valleys, but only intersect at “Polotsk.”",
+    "sensitive": false,
+    "frontPage": true,
+    "year": 1869,
+    "width": 8809,
+    "height": 7612,
+    "iiif": false
+  },
   "0313-fidler-large-HBCA-E3-2-225": {
     "chapter": "people",
     "fileName": "0313-fidler-large-HBCA-E3-2-225",

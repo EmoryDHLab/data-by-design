@@ -439,6 +439,28 @@
     "height": 3826,
     "iiif": true
   },
+  "0021-minard": {
+    "chapter": "intro",
+    "fileName": "0021-minard",
+    "title": "Carte figurative des pertes successives en hommes de l'armee française dans la campagne de Russie 1812-1813 comparées à celle d'Hannibal durant la 2ème Guerre Punique",
+    "cleanTitle": "Carte figurative des pertes successives en hommes de l'armee française dans la campagne de Russie 1812-1813 comparées à celle d'Hannibal durant la 2ème Guerre Punique",
+    "artist": "Charles Joseph Minard",
+    "creditLine": "Image courtesy of the Bibliothèque nationale de France.",
+    "caption": "Charles Minard’s “Carte Figurative des pertes successives en hommes de l’armée française dans la campagne de Russie 1812–1813 comparées à celle d’Hannibal durant la 2ème Guerre Punique,” from 1869, which Edward Tufte proclaims perhaps “the best statistical graphic ever drawn.” Image courtesy of the Bibliothèque nationale de France.",
+    "sourceUrl": "https://catalogue.bnf.fr/ark:/12148/cb40650878p",
+    "altText": "A line graph of two thick, jagged lines shows the losses of the French army in the Russian campaign of 1812–1813. A beige line indicates movement across Russia and, below, a black line shows retreating movement from Russia by Napoleon’s army.",
+    "sensitiveAltText": null,
+    "altTextLong": "A line graph by Charles Minard inspired by Playfair. The graph’s descriptive text is in French. The title translates to “the losses of the French army in the Russian campaign from 1812-1813.” Two thick, jagged horizontal lines dominate the graph. A beige line is thickest and top-most on the graph, decreasing in thickness as the line moves right, indicating movement across Russia. Underneath the beige line, a black line decreases in thickness as the line moves left, indicating retreating movement from Russia by Napoleon’s army. Both lines hit various peaks and valleys, but only intersect at “Polotsk.”",
+    "cleanAltText": "A line graph of two thick, jagged lines shows the losses of the French army in the Russian campaign of 1812–1813. A beige line indicates movement across Russia and, below, a black line shows retreating movement from Russia by Napoleon’s army.",
+    "cleanSensitiveAltText": null,
+    "cleanAltTextLong": "A line graph by Charles Minard inspired by Playfair. The graph’s descriptive text is in French. The title translates to “the losses of the French army in the Russian campaign from 1812-1813.” Two thick, jagged horizontal lines dominate the graph. A beige line is thickest and top-most on the graph, decreasing in thickness as the line moves right, indicating movement across Russia. Underneath the beige line, a black line decreases in thickness as the line moves left, indicating retreating movement from Russia by Napoleon’s army. Both lines hit various peaks and valleys, but only intersect at “Polotsk.”",
+    "sensitive": false,
+    "frontPage": true,
+    "year": 1869,
+    "width": 8809,
+    "height": 7612,
+    "iiif": false
+  },
   "0022-halley": {
     "chapter": "intro",
     "fileName": "0022-halley",
