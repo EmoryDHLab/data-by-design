@@ -2,11 +2,11 @@
   "0601-techstack-06082026": {
     "chapter": "labor",
     "fileName": "0601-techstack-06082026",
-    "title": "<i>The Tech Stack of </i>Data by Design",
+    "title": "<span class=\"italic\">The Tech Stack of </span>Data by Design",
     "cleanTitle": "The Tech Stack of Data by Design",
     "artist": "Tanvi Sharma",
     "creditLine": "Compiled and designed by Tanvi Sharma.",
-    "caption": "The tech stack of <i>Data by Design</i>. Compiled and designed by Tanvi Sharma.",
+    "caption": "The tech stack of <span class=\"italic\">Data by Design</span>. Compiled and designed by Tanvi Sharma.",
     "sourceUrl": null,
     "altText": "A diagram of the software libraries and other platforms used to create the web version of this project.",
     "sensitiveAltText": null,
@@ -24,7 +24,7 @@
   "0602a": {
     "chapter": "labor",
     "fileName": "0602a",
-    "title": "<i>GitHub Insights</i>",
+    "title": "<span class=\"italic\">GitHub Insights</span>",
     "cleanTitle": "GitHub Insights",
     "artist": "Artist Once Known",
     "creditLine": "Screenshot by Tanvi Sharma.",

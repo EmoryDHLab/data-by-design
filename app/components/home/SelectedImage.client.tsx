@@ -1,4 +1,5 @@
 import FigureModal from "../figures/FigureModal";
+import { titleToPlainText } from "~/utils";
 import type { TFigure } from "~/types/figureType";
 
 const SelectedImage = ({
@@ -24,13 +25,12 @@ const SelectedImage = ({
             <img
               src={`https://iiif.ecds.io/iiif/3/${selectedImage.fileName}.tiff/full/,300/0/color.jpg`}
               alt={
-                selectedImage.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
-                selectedImage.title?.replace(/(<i>|<\/i>)/gi, '"') ??
+                titleToPlainText(selectedImage.altText) ??
+                titleToPlainText(selectedImage.title) ??
                 ""
               }
               title={
-                selectedImage.title?.replace(/(<i>|<\/i>)/gi, '"') ??
-                selectedImage.fileName
+                titleToPlainText(selectedImage.title) ?? selectedImage.fileName
               }
               className="max-w-full max-h-full object-contain"
             />

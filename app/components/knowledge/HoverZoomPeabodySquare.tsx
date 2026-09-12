@@ -3,6 +3,7 @@ import { ChapterContext } from "~/chapterContext";
 import type { TFigure } from "~/types/figureType";
 import { Caption } from "../figures/Figure";
 import FigureModal from "../figures/FigureModal";
+import { stripMarkup } from "~/utils";
 
 interface Props {
   figure: TFigure;
@@ -13,7 +14,7 @@ export default function HoverZoomPeabodySquare({ figure }: Props) {
   return (
     <FigureModal figure={figure} className="hidden md:block" id="hover-square">
       <p id={figure.fileName} className="sr-only">
-        {figure.caption}
+        {stripMarkup(figure.caption)}
       </p>
       <svg
         viewBox="0 0 244.56 242.88"

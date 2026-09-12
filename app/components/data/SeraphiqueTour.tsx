@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import FigureModal from "../figures/FigureModal";
+import { stripMarkup } from "~/utils";
 import type { TFigure } from "~/types/figureType";
 
 type MaskType = {
@@ -117,7 +118,7 @@ export default function SeraphiqueTour({ figure }: Props) {
       </svg>
       <figcaption className="font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
         <span id={`fig-label-${figure.fileName}`} className="sr-only">
-          {figure.caption}
+          {stripMarkup(figure.caption)}
         </span>
         <span
           dangerouslySetInnerHTML={{

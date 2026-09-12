@@ -134,6 +134,9 @@ export default {
     extend: {},
   },
   safelist: [
+    // Figure titles and captions in app/data/figures/*.json mark up work
+    // titles with <span class="italic">, and JSON isn't scanned by `content`.
+    "italic",
     "bg-peopleAccent",
     "peopleAccent",
     "bg-dataPrimary",
@@ -277,6 +280,11 @@ export default {
     ...Object.keys(chapterMeta).map((chapter) => `selection:bg-${chapter}Secondary`),
     ...Object.keys(chapterMeta).map((chapter) => `outline-${chapter}Primary`),
     ...Object.keys(chapterMeta).map((chapter) => `outline-${chapter}Secondary`),
+    // HoverText and NoteLink colour their underline from the chapter context.
+    ...Object.keys(chapterMeta).map((chapter) => `decoration-${chapter}Primary`),
+    ...Object.keys(chapterMeta).map(
+      (chapter) => `decoration-${chapter}Secondary`,
+    ),
     nativeBgPattern   
   ],
 } satisfies Config;

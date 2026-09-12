@@ -16,6 +16,19 @@ export const spacesToHyphens = (str: string) => {
   return str.replace(/\s/g, "-").toLowerCase();
 };
 
+// Figure titles and captions carry markup so work titles render in italics.
+// Attributes like alt and title can't hold markup, so the italic span becomes
+// a pair of quotation marks instead.
+export const titleToPlainText = (str?: string | null) => {
+  return str?.replace(/(<span class="italic">|<\/span>)/gi, '"');
+};
+
+// Screen-reader-only copy is read aloud, so the markup is dropped outright
+// rather than swapped for punctuation.
+export const stripMarkup = (str?: string | null) => {
+  return str?.replace(/<[^>]+>/g, "");
+};
+
 export const random = (min: number, max: number) => {
   min = Math.floor(min);
   max = Math.floor(max) - min;

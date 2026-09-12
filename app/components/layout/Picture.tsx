@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import type { TFigure } from "~/types/figureType";
-import { classNames } from "~/utils";
+import { classNames, titleToPlainText } from "~/utils";
 
 interface Props {
   figure: TFigure;
@@ -17,14 +17,17 @@ const Picture = ({ figure, className, center = true }: Props) => {
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.webp`} />
       <source srcSet={`/images/${figure.chapter}/${figure.fileName}.jpg`} />
       <img
-        className={classNames(center ? "mx-auto" : "mx-0", className)}
+        className={classNames(
+          center ? "mx-auto max-h-screen w-auto object-contain" : "mx-0",
+          className,
+        )}
         src={`/images/${figure.chapter}/${figure.fileName}.jpg`}
         alt={
-          figure.altText?.replace(/(<i>|<\/i>)/gi, '"') ??
-          figure.title?.replace(/(<i>|<\/i>)/gi, '"') ??
+          titleToPlainText(figure.altText) ??
+          titleToPlainText(figure.title) ??
           ""
         }
-        title={figure.title?.replace(/(<i>|<\/i>)/gi, '"') ?? figure.fileName}
+        title={titleToPlainText(figure.title) ?? figure.fileName}
         draggable={!hideSensitiveState}
       />
     </picture>
