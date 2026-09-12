@@ -78,6 +78,27 @@ type Event = {
 
 const events: Event[] = [
   {
+    date: "Tuesday, September 15, 2026",
+    month: "Sep",
+    day: "15",
+    weekday: "Tue",
+    year: "2026",
+    time: "7:00pm–8:30pm",
+    // EDT: US daylight time runs through November 1, 2026.
+    startDate: "2026-09-15T19:00:00-04:00",
+    title: "ChinatownJS: They Who Name the Fields",
+    kind: "talk",
+    description:
+      "Tanvi Sharma presents \"Navigating Resistance in Data\" at ChinatownJS, hosted by Sanctuary Computer.",
+    city: "New York, NY",
+    venue: "Index Chinatown",
+    // Two Luma pages: the venue's listing for the evening, and the separate
+    // ticket page the button points at.
+    url: "https://luma.com/index-ltuw",
+    registerUrl: "https://luma.com/dnl59iqk",
+    registerLabel: "Get tickets",
+  },
+  {
     date: "Tuesday, October 20, 2026",
     month: "Oct",
     day: "20",
