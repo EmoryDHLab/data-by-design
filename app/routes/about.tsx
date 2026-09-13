@@ -44,7 +44,7 @@ export default function AboutPage() {
       >
         <ChapterTitle title="About" subtitle="" />
 
-        <main id="main-content pb-36">
+        <main id="main-content" className="chapter-body pb-36">
           <ChapterSectionTitle section={sections[0]}></ChapterSectionTitle>
           <CenteredLayout>
             <h2 className="text-lg font-powerWide uppercase">Compatibility</h2>
