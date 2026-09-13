@@ -167,10 +167,17 @@ export default function PeabodyPage() {
             visual learning—the Polish-American system, she came to call
             it—a method with data visualization at its core.
           </p>
-        </CenteredLayout>
 
-        <TwoColumnLayout>
-          <Column shouldPin>
+          <Figure
+            className="grid grid-cols-2 gap-4"
+            figures={[
+              figures["0401-1500s"],
+              figures["0402-1600s"],
+              figures["0403-1700s"],
+              figures["0404-1800s"],
+            ]}
+          />
+
             <p>
               Peabody’s contributions to the development of data
               visualization are rarely recognized at the same level as her
@@ -236,19 +243,7 @@ export default function PeabodyPage() {
               can lead to new knowledge, as well as to the multiple ways in
               which we might understand the nature of knowledge itself.
             </p>
-          </Column>
-          <Column shouldPin>
-            <Figure
-              className="md:ml-24 md:grid grid-cols-2 gap-4"
-              figures={[
-                figures["0401-1500s"],
-                figures["0402-1600s"],
-                figures["0403-1700s"],
-                figures["0404-1800s"],
-              ]}
-            />
-          </Column>
-        </TwoColumnLayout>
+        </CenteredLayout>
 
         <ChapterSectionTitle section={sections[0]} />
       

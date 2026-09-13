@@ -570,11 +570,10 @@ export default function ShanawdithitPage() {
           </p>
         </CenteredLayout>
 
-        <div id="source map-2">
-          <MapsExploration2></MapsExploration2>
-        </div>
-
         <CenteredLayout>
+          <div id="source map-2">
+            <MapsExploration2></MapsExploration2>
+          </div>
           <Legend></Legend>
           <p>
             In this version, we add Cormack and Howley, along with
@@ -924,15 +923,7 @@ export default function ShanawdithitPage() {
             400 miles away.
             <InlineFootnote index={48} />
           </p>
-        </CenteredLayout>
 
-        <Figure
-          figure={figures["0324-birch-bark-1841"]}
-          className="mx-2 md:mx-12 text-sm md:text-base"
-          captionClassName="text-center"
-        />
-
-        <CenteredLayout className="pb-20">
           <p>
             We do not know whether the other members of the group ever saw
             the map. We do know, however, that it was seen by one Captain
@@ -950,7 +941,15 @@ export default function ShanawdithitPage() {
             of a birch bark map to have been preserved.
             <InlineFootnote index={50} />
           </p>
+        </CenteredLayout>
 
+        <Figure
+          figure={figures["0324-birch-bark-1841"]}
+          className="mx-2 md:mx-12 text-sm md:text-base"
+          captionClassName="text-center"
+        />
+
+        <CenteredLayout className="pb-20">
           <p>
             Yet Bainbrigge’s preservation of the map flattens it—and not
             only in a literal sense. By removing it from the time, place,
@@ -1161,14 +1160,11 @@ export default function ShanawdithitPage() {
             recognize what we must leave for others to explore.
           </p>
         </CenteredLayout>
-        <div id="maps-exploration-3">
-          <MapsExploration3></MapsExploration3>
-        </div>
-
         <CenteredLayout>
-          <div className="mx-auto place-content-center">
-            <Legend></Legend>
+          <div id="maps-exploration-3">
+            <MapsExploration3></MapsExploration3>
           </div>
+          <Legend></Legend>
         </CenteredLayout>
 
         <Takeaways
