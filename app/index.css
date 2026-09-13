@@ -29,12 +29,19 @@
 /* CenteredLayout's margins widen at 2xl, which would run body text to nearly
    1300px on a large display. Cap the running text at a readable measure while
    figures and charts in the same block keep the full column width. Centered
-   paragraphs are the section dividers, which should stay on the column axis. */
+   paragraphs are the section dividers, which should stay on the column axis.
+
+   The measure is in rem, not ch: custom properties resolve at the point of
+   use, so a ch-based value would give the 14px captions a visibly narrower
+   column than the 18px prose. 47.5rem is the width 68ch works out to at the
+   body size. */
 .chapter-body {
-  --measure: 68ch;
+  --measure: 47.5rem;
 }
 
-.chapter-body .centered-layout > p:not(.text-center) {
+/* Any depth, not just direct children: paragraphs wrapped in something like
+   the image chapter's <Error> would otherwise run the full column width. */
+.chapter-body .centered-layout p:not(.text-center) {
   max-width: var(--measure);
 }
 

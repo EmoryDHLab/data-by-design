@@ -6,6 +6,7 @@ import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
 import ProjectTimelineInteractive from "~/components/image/projectTimeline/ProjectTimelineInteractive";
 import Figure from "~/components/figures/Figure";
+import CaptionDirection from "~/components/figures/CaptionDirection";
 import CenteredLayout from "~/components/layout/CenteredLayout";
 import PlayfairScrollytell from "~/components/image/RecreationScrollytell";
 import Footer from "~/components/Footer";
@@ -148,25 +149,24 @@ export default function PlayfairPage() {
 
         <CenteredLayout>
           <Figure
-            className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-center"
-            modalClassNames={["", "", "md:col-span-2"]}
+            className="grid grid-cols-1 gap-2 md:gap-4 items-center"
             figures={[
               figures["0202"],
               figures["0203-playfair-scotland"],
               figures["0204-playfair-pie"],
             ]}
             groupCaption={
-              <p className="md:col-span-2 font-neueMontreal text-xs md:text-sm leading-5 text-left mb-6 md:mb-12 col-span-full">
-                Top left: “A bar chart from 1770 created by the French mapmaking
+              <p className="font-neueMontreal text-xs md:text-sm leading-5 text-left mb-6 md:mb-12 col-span-full">
+                <CaptionDirection>Top:</CaptionDirection> “A bar chart from 1770 created by the French mapmaking
                 team of Philippe Buache and Guillaume de L’Isle. William
                 Playfair included a less ornate bar chart in his Commerical and
                 Political Atlas, and returned the form later in life.” Image
                 from the David Rumsey Map Collection courtesy Stanford
                 University Libraries. Digitized by the David Rumsey Map
-                Collection, Cartography Associates. Top right: “The bar chart
+                Collection, Cartography Associates. <CaptionDirection>Middle:</CaptionDirection> “The bar chart
                 included in the first edition of Playfair's Commercial and
                 Political Atlas, considered one of the first examples of the bar
-                chart form.” Image courtesy of Wikimedia Commons. Bottom:
+                chart form.” Image courtesy of Wikimedia Commons. <CaptionDirection>Bottom:</CaptionDirection>
                 Playfair’s “Chart Representing the Extent, Population &amp;
                 Revenues, of the Principal Nations in Europe, after the Division
                 of Poland &amp; Treaty of Luneville,” published in the
@@ -744,12 +744,9 @@ export default function PlayfairPage() {
           <Column shouldPin>
             <Figure figure={figures["0213-playfair-wheat"]} />
             <Figure figure={figures["0214-camoes"]} />
+            <Figure figure={figures["0215-wood"]} />
           </Column>
         </TwoColumnLayout>
-
-        <CenteredLayout>
-          <Figure figure={figures["0215-wood"]} />
-        </CenteredLayout>
 
         <span id={visualizations[2].id}>
           <LineSegmentsScrollytell

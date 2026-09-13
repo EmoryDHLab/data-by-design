@@ -13,6 +13,7 @@ import figures from "~/data/figures/intro.json";
 import peopleFigures from "~/data/figures/people.json";
 import imageFigures from "~/data/figures/image.json";
 import Figure from "~/components/figures/Figure";
+import CaptionDirection from "~/components/figures/CaptionDirection";
 import ChapterBody from "~/components/layout/ChapterBody";
 import { chapterMeta } from "~/data/chapterMeta";
 import FigureModal from "~/components/figures/FigureModal";
@@ -443,7 +444,8 @@ export default function IntroPage() {
             <Figure showCaption={false} figure={figures["0011-AR847648"]} />
             <Figure showCaption={false} figure={figures["0013"]} />
             <p className="font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
-              Examples of data visualization, clockwise from top left: Mona
+              Examples of data visualization,{" "}
+              <CaptionDirection>clockwise from top left:</CaptionDirection> Mona
               Chalabi, "US Workers on Strike\" (2023); Shirley Wu, "Hong Kong
               Artists, Women" (2020); Stephanie Posavec, "A Week of Clocks,"
               from Giorgia Lupi and Stephanie Posavec, Dear Data (2016), Ambos
@@ -593,7 +595,7 @@ export default function IntroPage() {
               showCaption={false}
             />
             <p className="md:col-span-2 font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12">
-              Clockwise from top left: An early graph of daily barometric
+              <CaptionDirection>Clockwise from top left:</CaptionDirection> An early graph of daily barometric
               pressure in Oxford, England, that appears in Robert Plot's
               "History of the Weather" (1685); three graphs from Lambert's
               Hygrometric Studies, which show the relationship between air,
@@ -792,8 +794,8 @@ export default function IntroPage() {
             ]}
             groupCaption={
               <p>
-                Examples of data visualization that predate our story. Left to
-                right: an example of Inkan khhipu; Chinese counting rods
+                Examples of data visualization that predate our story.{" "}
+                <CaptionDirection>Left to right:</CaptionDirection> an example of Inkan khhipu; Chinese counting rods
                 recently discovered in Changsha, Hunan Provence; and a
                 proto-cuneiform tablet documenting the distribution of grain.
               </p>

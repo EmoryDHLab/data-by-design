@@ -13,6 +13,7 @@ import FootnotesList from "~/components/FootnotesList";
 import figures from "~/data/figures/change.json";
 import Quotation from "~/components/Quotation";
 import Figure from "~/components/figures/Figure";
+import CaptionDirection from "~/components/figures/CaptionDirection";
 import { chapterMetaTags } from "~/utils";
 import Viz1 from "~/components/change/Viz1";
 import Viz2 from "~/components/change/Viz2";
@@ -167,11 +168,11 @@ export default function DuboisChapter() {
             groupCaption={
               <div>
                 <p>
-                  Left: A photograph of the “Exhibit of American Negroes” at the
+                  <CaptionDirection>Left:</CaptionDirection> A photograph of the “Exhibit of American Negroes” at the
                   1900 Exposition Universelle.
                 </p>
                 <p>
-                  Right: The floor plan of the Place of Social Economy; the
+                  <CaptionDirection>Right:</CaptionDirection> The floor plan of the Place of Social Economy; the
                   exhibit was installed in the south-east corner of the hall.
                 </p>
               </div>
@@ -381,7 +382,7 @@ export default function DuboisChapter() {
             className="grid grid-cols-1 md:grid-cols-3 gap-2 mdp:gap-4"
             groupCaption={
               <p>
-                Left to right: The Black population of Georgia; the number of
+                <CaptionDirection>Left to right:</CaptionDirection> The Black population of Georgia; the number of
                 Black children enrolled in public school; the number of acres
                 of land owned by Black Georgians, with an overall form that
                 resembles the shape of the state itself. Images courtesy of the
@@ -441,9 +442,9 @@ export default function DuboisChapter() {
             ]}
             groupCaption={
               <p>
-                Left: the chart of marriage statistics that appeared in Henry
+                <CaptionDirection>Left:</CaptionDirection> the chart of marriage statistics that appeared in Henry
                 Gannett’s 1894 <cite>Statistics of the Negroes in the United
-                States</cite>. Right: the chart created by Du Bois and his
+                States</cite>. <CaptionDirection>Right:</CaptionDirection> the chart created by Du Bois and his
                 students, visualizing the Black population only, for the Paris
                 Exposition. Images courtesy of the Library of Congress, Rare
                 Book and Special Collections Division, and Prints &amp;
@@ -931,13 +932,13 @@ export default function DuboisChapter() {
             figures={[figures["899"], figures["0526-data-table"]]}
             groupCaption={
               <p>
-                Left:{" "}
+                <CaptionDirection>Left:</CaptionDirection>{" "}
                 <span
                   dangerouslySetInnerHTML={{
                     __html: figures["899"].caption ?? "",
                   }}
                 />{" "}
-                Right:{" "}
+                <CaptionDirection>Right:</CaptionDirection>{" "}
                 <span
                   dangerouslySetInnerHTML={{
                     __html: figures["0526-data-table"].caption ?? "",

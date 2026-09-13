@@ -20,6 +20,7 @@ import PeabodyTimeline from "~/components/knowledge/PeabodyTimeline";
 import LEDChart from "~/components/knowledge/LEDChart";
 import figures from "~/data/figures/knowledge.json";
 import Figure, { Caption } from "~/components/figures/Figure";
+import CaptionDirection from "~/components/figures/CaptionDirection";
 import FloorChartLayers from "~/components/knowledge/FloorChartLayers";
 import { chapterMetaTags } from "~/utils";
 import ChapterBody from "~/components/layout/ChapterBody";
@@ -953,7 +954,7 @@ export default function PeabodyPage() {
             groupCaption={
               <>
                 <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
-                  <strong>Left:</strong>{" "}
+                  <CaptionDirection>Left:</CaptionDirection>{" "}
                   <span
                     dangerouslySetInnerHTML={{
                       __html: `${
@@ -965,7 +966,7 @@ export default function PeabodyPage() {
                   />
                 </p>
                 <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
-                  <strong>Right:</strong>{" "}
+                  <CaptionDirection>Right:</CaptionDirection>{" "}
                   <span
                     dangerouslySetInnerHTML={{
                       __html: `${figures["0433-gbq-q030-06"].caption ?? ""} ${
