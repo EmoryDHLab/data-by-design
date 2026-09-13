@@ -10,6 +10,7 @@ import SelectedImage from "~/components/home/SelectedImage.client";
 import { Link } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
 import { bookMeta, bookSchema, retailers } from "~/data/bookMeta";
+import { events } from "~/data/events";
 import { trackPreorderClick } from "~/analytics";
 import StructuredData from "~/components/StructuredData";
 import { classNames, HOST_NAME } from "~/utils";
@@ -55,6 +56,11 @@ export const meta: MetaFunction = () => {
     { name: "og:site_name", content: "Data by Design" },
   ];
 };
+
+// The three launches, pulled from the same tour list the /events page reads.
+const releaseEvents = events.filter((event) =>
+  event.title.includes("Book Release!")
+);
 
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<TFigure>();
@@ -156,6 +162,57 @@ export default function Index() {
                 envision a more just future.
               </p>
             </div>
+          </div>
+        </section>
+
+        <section
+          aria-label="Book release events"
+          className="bg-offwhite text-black border-t border-black/10"
+        >
+          <div className="max-w-6xl mx-auto px-6 md:px-10 py-12 md:py-16">
+            <h2 className="font-power font-bold tracking-widest text-sm uppercase pb-6">
+              Book Release Events
+            </h2>
+            <ul className="divide-y divide-black/10 border-y border-black/10">
+              {releaseEvents.map((event) => {
+                const href = event.registerUrl ?? event.url;
+                return (
+                  <li key={event.title}>
+                    <a
+                      href={href ?? "/events"}
+                      {...(href ? { target: "_blank", rel: "noopener" } : {})}
+                      className="group flex items-baseline gap-4 md:gap-8 py-5 transition-colors hover:text-changePrimary"
+                    >
+                      <span className="font-power font-bold text-sm md:text-base tabular-nums shrink-0 w-20 md:w-24">
+                        {event.month} {event.day}
+                      </span>
+                      <span className="flex-1">
+                        <span className="font-power block text-base md:text-lg">
+                          {event.city}
+                        </span>
+                        {event.venue && (
+                          <span className="block text-sm text-black/60">
+                            {event.venue}
+                          </span>
+                        )}
+                      </span>
+                      <span
+                        aria-hidden
+                        className="font-icons text-black/40 transition-transform group-hover:translate-x-1"
+                      >
+                        b
+                      </span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            <a
+              href="/events"
+              className="inline-block mt-8 font-power uppercase tracking-wide text-base md:text-lg px-6 py-3 border border-black text-black transition-colors hover:bg-changePrimary hover:text-white hover:border-changePrimary"
+            >
+              See all events
+            </a>
           </div>
         </section>
         <section
