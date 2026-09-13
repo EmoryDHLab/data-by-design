@@ -655,6 +655,8 @@ export default function PeabodyPage() {
               now consider one of Willard’s later charts, <cite>Temple of Time</cite>,
               which helpfully puts its own ideology right on the surface.
             </p>
+
+            <Figure figure={figures["0423-willard-temple"]} />
             <p>
               Willard designed her <cite>Temple of Time</cite> in 1846 after
               nearly two decades of her own continual experimentation with
@@ -731,57 +733,52 @@ export default function PeabodyPage() {
               charts’ original designer—in this case, Peabody herself.
             </p>
         </CenteredLayout>
-        <CenteredLayout>
-          <Figure figure={figures["0423-willard-temple"]} />
-        </CenteredLayout>
         <ChapterSectionTitle section={sections[2]} />
-        <CenteredLayout>
-          <p className="first-paragraph">
-            As part of her participatory pedagogy, Peabody also created
-            larger “painted centuries,” or “mural charts” as she also
-            sometimes described them, in order to guide classroom
-            discussion.
-            <InlineFootnote index={19} />These were the charts she traveled
-            with on her national promotional tour, and by all accounts they
-            were dazzling—triangles and squares of crimson, ochre, and
-            forest green, set against a sharp black grid. In her version of
-            a sales pitch, Peabody would “lay [a] chart down on the floor”
-            and invite her would-be textbook adopters to sit around it and
-            contemplate the colors and patterns that enveloped them.
-            <InlineFootnote index={20} />
-          </p>
-          <p>
-            While the experience of sitting on the floor to learn together,
-            rather than in rows of wooden desks, was—to most adults—quite
-            shocking, the pedagogical impact of this more collective and
-            embodied form of learning was, as best we can gather, nothing
-            short of transformative. “I have never known a system which
-            placed the events of the history of all nations before the mind
-            with such clearness, so little confusion, and so much
-            permanency,” wrote Eliphalet Nott, then president of Union
-            College, who participated in one of Peabody’s teaching
-            demonstrations.
-            <InlineFootnote index={21} />
-          </p>
-          <p>
-            And yet, until one of Peabody’s mural charts was acquired,
-            digitized, and put online by the David Rumsey Map Collection in
-            2024, most scholars—including me—believed that this
-            transformative experience would remain only second-hand.
-            <InlineFootnote index={22} />Nott’s account notwithstanding, it
-            was difficult to even get a sense of the charts’ basic features.
-            <InlineFootnote index={23} />I doubted that I would ever see one
-            in person, especially since a colleague who’d been researching
-            another nineteenth-century woman chart-maker, Anne Laura Clarke,
-            sent me a photo of how he’d found Clarke’s own large-scale
-            charts: brittle and water-damaged in her sister’s family’s attic.
-            <InlineFootnote index={24} />Peabody’s parents had only rented
-            their West Street home; there would be no attic discovery for
-            me.
-          </p>
-        </CenteredLayout>
         <TwoColumnLayout>
           <Column shouldPin={true}>
+            <p className="first-paragraph">
+              As part of her participatory pedagogy, Peabody also created
+              larger “painted centuries,” or “mural charts” as she also
+              sometimes described them, in order to guide classroom
+              discussion.
+              <InlineFootnote index={19} />These were the charts she traveled
+              with on her national promotional tour, and by all accounts they
+              were dazzling—triangles and squares of crimson, ochre, and
+              forest green, set against a sharp black grid. In her version of
+              a sales pitch, Peabody would “lay [a] chart down on the floor”
+              and invite her would-be textbook adopters to sit around it and
+              contemplate the colors and patterns that enveloped them.
+              <InlineFootnote index={20} />
+            </p>
+            <p>
+              While the experience of sitting on the floor to learn together,
+              rather than in rows of wooden desks, was—to most adults—quite
+              shocking, the pedagogical impact of this more collective and
+              embodied form of learning was, as best we can gather, nothing
+              short of transformative. “I have never known a system which
+              placed the events of the history of all nations before the mind
+              with such clearness, so little confusion, and so much
+              permanency,” wrote Eliphalet Nott, then president of Union
+              College, who participated in one of Peabody’s teaching
+              demonstrations.
+              <InlineFootnote index={21} />
+            </p>
+            <p>
+              And yet, until one of Peabody’s mural charts was acquired,
+              digitized, and put online by the David Rumsey Map Collection in
+              2024, most scholars—including me—believed that this
+              transformative experience would remain only second-hand.
+              <InlineFootnote index={22} />Nott’s account notwithstanding, it
+              was difficult to even get a sense of the charts’ basic features.
+              <InlineFootnote index={23} />I doubted that I would ever see one
+              in person, especially since a colleague who’d been researching
+              another nineteenth-century woman chart-maker, Anne Laura Clarke,
+              sent me a photo of how he’d found Clarke’s own large-scale
+              charts: brittle and water-damaged in her sister’s family’s attic.
+              <InlineFootnote index={24} />Peabody’s parents had only rented
+              their West Street home; there would be no attic discovery for
+              me.
+            </p>
             <p>
               But Peabody’s embodied pedagogy seemed, to me, so primed for
               the present that I could not let the idea of the mural charts
