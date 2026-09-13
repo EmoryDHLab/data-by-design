@@ -4,7 +4,6 @@ import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
 import TwoColumnLayout from "~/components/layout/TwoColumnLayout";
 import Column from "~/components/layout/Column";
-import ProjectTimelineInteractive from "~/components/image/projectTimeline/ProjectTimelineInteractive";
 import Figure from "~/components/figures/Figure";
 import CaptionDirection from "~/components/figures/CaptionDirection";
 import CenteredLayout from "~/components/layout/CenteredLayout";
@@ -53,11 +52,6 @@ const visualizations: TVizAnchors[] = [
     type: "scrollytell",
     id: "playfair-scrollytell",
     title: "Playfair Scrollytell",
-  },
-  {
-    type: "visualization",
-    id: "project-timeline-interactive",
-    title: "Project Timeline Interactive",
   },
   {
     type: "scrollytell",
@@ -145,9 +139,7 @@ export default function PlayfairPage() {
               <InlineFootnote index={3} />
             </p>
           </Error>
-        </CenteredLayout>
 
-        <CenteredLayout>
           <Figure
             className="grid grid-cols-1 gap-2 md:gap-4 items-center"
             figures={[
@@ -748,7 +740,7 @@ export default function PlayfairPage() {
           </Column>
         </TwoColumnLayout>
 
-        <span id={visualizations[2].id}>
+        <span id={visualizations[1].id}>
           <LineSegmentsScrollytell
             triggers={[
               <span key="0dec3ef1"></span>,
@@ -781,8 +773,7 @@ export default function PlayfairPage() {
           />
         </span>
 
-        <span id={visualizations[1].id}>
-          <ProjectTimelineInteractive>
+        <CenteredLayout>
           <p>
             If this process seems convoluted, that is a large part of the point. It
             underscores the degree to which D3 depends on data, as well as the
@@ -801,13 +792,11 @@ export default function PlayfairPage() {
             accurate but—to return again to the words of William Playfair—knowledge
             that is more complete.
           </p>
-          </ProjectTimelineInteractive>
-        </span>
+        </CenteredLayout>
 
         <ChapterSectionTitle section={sections[3]} />
 
-        <TwoColumnLayout>
-          <Column>
+        <CenteredLayout>
             <p className="first-paragraph">
               Throughout his life, Playfair longed to be recognized for his
               innovations. In 1787, one year after the initial publication of the{" "}
@@ -843,6 +832,27 @@ export default function PlayfairPage() {
               today.
               <InlineFootnote index={47} />
             </p>
+
+          <Figure
+            className="grid grid-cols-1 gap-2 md:gap-4"
+            figures={[figures["0218-jevons002"], figures["0219-jevons001"]]}
+            groupCaption={
+              <p className="font-neueMontreal text-xs md:text-sm leading-5 text-left mb-6 md:mb-12 col-span-full">
+                <CaptionDirection>Top:</CaptionDirection>{" "}
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: figures["0218-jevons002"].caption ?? "",
+                  }}
+                />{" "}
+                <CaptionDirection>Bottom:</CaptionDirection>{" "}
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: figures["0219-jevons001"].caption ?? "",
+                  }}
+                />
+              </p>
+            }
+          />
             <p>
               For Edward Tufte, himself often credited as a father of the field,
               Playfair’s charts epitomize the “graphical excellence” that Tufte has
@@ -879,13 +889,7 @@ export default function PlayfairPage() {
               contexts—personal, political, and philosophical—that informed the
               creation of Playfair’s iconic chart.
             </p>
-          </Column>
-          <Column shouldPin className="md:ms-12">
-            <Figure figure={figures["0205-bl-playfair"]} />
-            <Figure figure={figures["0218-jevons002"]} />
-            <Figure figure={figures["0219-jevons001"]} />
-          </Column>
-        </TwoColumnLayout>
+        </CenteredLayout>
 
         <Takeaways
           forDesigners={[
