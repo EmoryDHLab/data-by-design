@@ -8,6 +8,7 @@ import {
 export default [
   index("routes/_index.tsx"),
   route("about", "routes/about.tsx"),
+  route("archive", "routes/archive.tsx"),
   route("events", "routes/events.tsx"),
   route("dev/voyage-snapshot", "routes/dev.voyage-snapshot.tsx"),
   route("chapters", "routes/chapters.tsx", [
