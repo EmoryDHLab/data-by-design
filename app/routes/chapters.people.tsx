@@ -990,7 +990,7 @@ export default function ShanawdithitPage() {
 
         <Figure
           figure={figures["0325-BirchBark"]}
-          captionClassName="text-center	md:mx-8"
+          captionClassName="text-center"
         />
 
         <CenteredLayout>

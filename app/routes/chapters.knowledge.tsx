@@ -578,14 +578,34 @@ export default function PeabodyPage() {
             </p>
           </Column>
           <Column>
-            <Figure figure={figures["0417-student3"]} />
+            <Figure figure={figures["0413-blank-chart"]} />
           </Column>
         </TwoColumnLayout>
 
         <Quiz />
 
-        <TwoColumnLayout className="pt-20">
-          <Column>
+        <CenteredLayout className="pt-20">
+          <Figure
+            className="grid grid-cols-2 md:grid-cols-4 gap-2"
+            figures={[
+              figures["0415-student1"],
+              figures["0416-student2"],
+              figures["0417-student3"],
+              figures["0418-student4"],
+              figures["0419-student5"],
+              figures["0420-student6"],
+              figures["0421-student7"],
+              figures["0422-student8"],
+            ]}
+            groupCaption={
+              <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
+                <cite>The Polish-American System </cite>
+                housed at the American Antiquarian Society. Courtesy of the
+                American Antiquarian Society. Photos by Lauren Klein.
+              </p>
+            }
+          />
+
             <p>
               Peabody’s nephew, Julian Hawthorne, who served as her first
               test subject, recalled how he remained “most inapt and
@@ -648,7 +668,8 @@ export default function PeabodyPage() {
             </p>
 
             <Figure
-              className="grid grid-cols-2 md:grid-cols-3 gap-2 items-center"
+              className="grid grid-cols-2 gap-x-1 gap-y-4 items-start"
+              modalClassNames={["", "", "col-span-2", "col-span-2", "col-span-2"]}
               figures={[
                 figures["0424a-Caldas-AJB03_M0514"],
                 figures["0424b-Caldas-AJB03_M0526"],
@@ -660,8 +681,9 @@ export default function PeabodyPage() {
               ]}
               groupCaption={
                 <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
-                  The lineage behind <cite>Temple of Time</cite>: two elevation
-                  profiles by Francisco José de Caldas; Humboldt’s{" "}
+                  The lineage behind <cite>Temple of Time</cite>: the two
+                  facing pages of Francisco José de Caldas’s elevation profile,
+                  and below them Humboldt’s{" "}
                   <cite>Geographie der Pflanzen in den Tropen-Ländern</cite>;
                   Thirza Lee’s recreation of “Top of Chimborazo” for Willard’s
                   1829 <cite>Familiar Lectures on Botany</cite>; and Willard’s{" "}
@@ -708,30 +730,7 @@ export default function PeabodyPage() {
               create <em>and</em> interpret the image, rather than the
               charts’ original designer—in this case, Peabody herself.
             </p>
-          </Column>
-          <Column shouldPin={true}>
-            <Figure
-              className="grid grid-cols-2 md:grid-cols-4 gap-2 md:ml-12"
-              figures={[
-                figures["0415-student1"],
-                figures["0416-student2"],
-                figures["0417-student3"],
-                figures["0418-student4"],
-                figures["0419-student5"],
-                figures["0420-student6"],
-                figures["0421-student7"],
-                figures["0422-student8"],
-              ]}
-              groupCaption={
-                <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
-                  <cite>The Polish-American System </cite>
-                  housed at the American Antiquarian Society. Courtesy of the
-                  American Antiquarian Society. Photos by Lauren Klein.
-                </p>
-              }
-            />
-          </Column>
-        </TwoColumnLayout>
+        </CenteredLayout>
         <CenteredLayout>
           <Figure figure={figures["0423-willard-temple"]} />
         </CenteredLayout>

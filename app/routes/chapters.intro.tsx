@@ -650,7 +650,7 @@ export default function IntroPage() {
         </CenteredLayout>
         <Figure
           className="mx-2  md:mx-12 text-sm md:text-base"
-          captionClassName="mx-12"
+          captionClassName=""
           figure={figures["0022-halley"]}
         />
         <CenteredLayout className="pt-20">
