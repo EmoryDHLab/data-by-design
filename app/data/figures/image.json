@@ -545,9 +545,10 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1861,
-    "width": 9078,
-    "height": 6636,
-    "iiif": true
+    "width": 4096,
+    "height": 2994,
+    "iiif": true,
+    "alpha": true
   },
   "0219-jevons001": {
     "chapter": "image",
@@ -567,8 +568,9 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1861,
-    "width": 9090,
-    "height": 6533,
-    "iiif": true
+    "width": 4096,
+    "height": 2944,
+    "iiif": true,
+    "alpha": true
   }
 }

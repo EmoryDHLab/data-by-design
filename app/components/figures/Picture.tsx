@@ -24,6 +24,9 @@ const Picture = ({ figure, className }: Props) => {
   const useIIIFFallback = localFailed && figure.iiif;
 
   const localPath = `/images/chapters/${figure.fileName}`;
+  // Scans with their paper background cleared fall back to a PNG so the
+  // transparency survives for browsers that skip the webp source.
+  const localFallback = `${localPath}.${figure.alpha ? "png" : "jpg"}`;
 
   const altText =
     (hideSensitiveState
@@ -45,7 +48,7 @@ const Picture = ({ figure, className }: Props) => {
           "mx-auto max-h-screen object-contain",
           className,
         )}
-        src={useIIIFFallback ? iiifUrl(figure.fileName) : `${localPath}.jpg`}
+        src={useIIIFFallback ? iiifUrl(figure.fileName) : localFallback}
         onError={() => {
           if (!localFailed && figure.iiif) setLocalFailed(true);
         }}
