@@ -1,9 +1,11 @@
 export default function Legend() {
   return (
-    <div className="  min-w-[700px]">
+    <div className="mx-auto max-w-[var(--measure)] md:min-w-[700px]">
       <p className="font-power font-bold text-sm"> LEGEND</p>
       <ul id="key" className="font-power  text-sm">
-        <div className="flex flex-row gap-12">
+        {/* Stacked below md: the two-up arrangement needs 700px, which is wider
+            than a phone and was pushing the page into horizontal scroll. */}
+        <div className="flex flex-col gap-4 md:flex-row md:gap-12">
           <div className="basis-1/2 ">
             <div className="flex flex-row gap-4 items-center ">
               <img
