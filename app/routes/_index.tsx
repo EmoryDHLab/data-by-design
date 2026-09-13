@@ -187,7 +187,7 @@ export default function Index() {
                         {event.month} {event.day}
                       </span>
                       <span className="flex-1">
-                        <span className="font-power block text-base md:text-lg">
+                        <span className="font-power font-bold text-2xl md:text-3xl leading-tight block">
                           {event.city}
                         </span>
                         {event.venue && (
