@@ -444,7 +444,7 @@ export default function DuboisChapter() {
               <p>
                 <CaptionDirection>Left:</CaptionDirection> the chart of marriage statistics that appeared in Henry
                 Gannett’s 1894 <cite>Statistics of the Negroes in the United
-                States</cite>. <CaptionDirection>Right:</CaptionDirection> the chart created by Du Bois and his
+                States</cite>. <CaptionDirection newLine>Right:</CaptionDirection> the chart created by Du Bois and his
                 students, visualizing the Black population only, for the Paris
                 Exposition. Images courtesy of the Library of Congress, Rare
                 Book and Special Collections Division, and Prints &amp;
@@ -938,7 +938,7 @@ export default function DuboisChapter() {
                     __html: figures["899"].caption ?? "",
                   }}
                 />{" "}
-                <CaptionDirection>Right:</CaptionDirection>{" "}
+                <CaptionDirection newLine>Right:</CaptionDirection>{" "}
                 <span
                   dangerouslySetInnerHTML={{
                     __html: figures["0526-data-table"].caption ?? "",

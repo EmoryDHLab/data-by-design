@@ -132,8 +132,11 @@ export default function ImageTooltips() {
     },
   ];
 
+  // Centre the diagram in its min-height box: with the content pinned to the
+  // top, the leftover viewport height all fell below it, so the gap after the
+  // diagram was much larger than the gap before.
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen flex flex-col justify-center">
       <div className="max-w-4xl mx-auto">
         <div>
           {/* Image Container */}

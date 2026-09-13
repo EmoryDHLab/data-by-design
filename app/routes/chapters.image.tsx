@@ -155,10 +155,10 @@ export default function PlayfairPage() {
                 Political Atlas, and returned the form later in life.” Image
                 from the David Rumsey Map Collection courtesy Stanford
                 University Libraries. Digitized by the David Rumsey Map
-                Collection, Cartography Associates. <CaptionDirection>Middle:</CaptionDirection> “The bar chart
+                Collection, Cartography Associates. <CaptionDirection newLine>Middle:</CaptionDirection> “The bar chart
                 included in the first edition of Playfair's Commercial and
                 Political Atlas, considered one of the first examples of the bar
-                chart form.” Image courtesy of Wikimedia Commons. <CaptionDirection>Bottom:</CaptionDirection>
+                chart form.” Image courtesy of Wikimedia Commons. <CaptionDirection newLine>Bottom:</CaptionDirection>
                 Playfair’s “Chart Representing the Extent, Population &amp;
                 Revenues, of the Principal Nations in Europe, after the Division
                 of Poland &amp; Treaty of Luneville,” published in the
@@ -618,7 +618,6 @@ export default function PlayfairPage() {
             </p>
           </Column>
           <Column shouldPin>
-            <Figure figure={figures["0212-playfair-indies"]} />
             <Figure figure={figures["0209-periscopic"]} />
             <Figure figure={figures["0210-gun-deaths-2018"]} />
           </Column>
@@ -844,7 +843,7 @@ export default function PlayfairPage() {
                     __html: figures["0218-jevons002"].caption ?? "",
                   }}
                 />{" "}
-                <CaptionDirection>Bottom:</CaptionDirection>{" "}
+                <CaptionDirection newLine>Bottom:</CaptionDirection>{" "}
                 <span
                   dangerouslySetInnerHTML={{
                     __html: figures["0219-jevons001"].caption ?? "",

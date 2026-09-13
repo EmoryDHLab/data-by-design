@@ -4,11 +4,7 @@ import { ChapterContext } from "~/chapterContext";
 import Figure from "../figures/Figure";
 import figures from "~/data/figures/people.json";
 
-const FIGURES = [
-  figures["0315-willard1"],
-  figures["0316-willard2"],
-  figures["0317-willard3"],
-];
+const FIGURES = [figures["0316-willard2"], figures["0317-willard3"]];
 
 const ColonialMaps = () => {
   const { hoverState } = useContext(ChapterContext);
@@ -16,14 +12,11 @@ const ColonialMaps = () => {
 
   useEffect(() => {
     switch (hoverState) {
-      case "0315-willard1":
+      case "0316-willard2":
         setCurrentHover(0);
         break;
-      case "0316-willard2":
-        setCurrentHover(1);
-        break;
       case "0317-willard3":
-        setCurrentHover(2);
+        setCurrentHover(1);
         break;
     }
   }, [hoverState, setCurrentHover]);

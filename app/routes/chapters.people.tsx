@@ -27,6 +27,7 @@ import MapsExploration3 from "~/components/people/MapsExploration3";
 import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 import Legend from "~/components/people/Legend.tsx";
+import CaptionDirection from "~/components/figures/CaptionDirection";
 
 export const meta: MetaFunction = () => {
   return chapterMetaTags("people");
@@ -676,8 +677,23 @@ export default function ShanawdithitPage() {
           </p>
 
           <Figure
-            className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6 items-baseline"
+            className="grid grid-cols-1 gap-2 md:gap-6"
             figures={[figures["0311"], figures["0312-minard"]]}
+            groupCaption={
+              <p className="font-neueMontreal text-xs md:text-sm leading-5 text-left mb-6 md:mb-12 col-span-full">
+                <CaptionDirection>Top:</CaptionDirection> Howley’s
+                recreation of Shanawdithit’s map. “Sketch V” from{" "}
+                <cite>The Beothucks or Red Indians</cite>. Digitized by Margy
+                Adams.
+                <CaptionDirection newLine>Bottom:</CaptionDirection> Minard’s
+                flow maps. “Carte Figurative” courtesy of the
+                Bibliothèque nationale de France.
+                <br />
+                Their striking formal similarities belie their epistemological
+                differences—and the commitments that their respective
+                epistemologies each entail.
+              </p>
+            }
           />
 
           <p>
@@ -727,6 +743,8 @@ export default function ShanawdithitPage() {
             he’d heard Ac ko mok ki speak aloud, and then sent the map back
             to the headquarters of the Hudson’s Bay Company in London.
           </p>
+          <Figure figure={figures["0313-fidler-large-HBCA-E3-2-225"]} />
+
           <p>
             Ac ko mok ki’s knowledge was then incorporated into the map of
             the continent that the Hudson’s Bay Company had been preparing,
@@ -746,9 +764,6 @@ export default function ShanawdithitPage() {
             colonial power depends.
             <InlineFootnote index={44} />
           </p>
-        </CenteredLayout>
-        <CenteredLayout>
-          <Figure figure={figures["0313-fidler-large-HBCA-E3-2-225"]} />
         </CenteredLayout>
         <TwoColumnLayout>
           <Column>
