@@ -176,7 +176,7 @@ export default function Index() {
             </h2>
             <ul className="divide-y divide-black/10 border-y border-black/10">
               {releaseEvents.map((event) => (
-                <EventRow key={event.date + event.title} event={event} />
+                <EventRow key={event.date + event.title} event={event} hideTitle />
               ))}
             </ul>
             <a

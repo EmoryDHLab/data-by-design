@@ -53,7 +53,16 @@ const DateBox = ({ event }: { event: Event }) => (
   </div>
 );
 
-export default function EventRow({ event }: { event: Event }) {
+export default function EventRow({
+  event,
+  hideTitle,
+}: {
+  event: Event;
+  // The homepage's release section is already headed "Book Release Events", so
+  // repeating "Atlanta Book Release!" on each row says nothing. The title still
+  // reaches screen readers through the register button's label.
+  hideTitle?: boolean;
+}) {
   return (
     <li>
       <div className="flex gap-4 text-base md:gap-6 lg:gap-10 py-6 md:py-8">
@@ -68,9 +77,11 @@ export default function EventRow({ event }: { event: Event }) {
             <div className="mb-1.5 md:mb-2">
               <KindLabel kind={event.kind} />
             </div>
-            <p className="font-power text-lg md:text-xl leading-snug">
-              {event.title}
-            </p>
+            {!hideTitle && (
+              <p className="font-power text-lg md:text-xl leading-snug">
+                {event.title}
+              </p>
+            )}
             {event.description && (
               <p className="mt-3 text-base">{event.description}</p>
             )}

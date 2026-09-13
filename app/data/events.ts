@@ -166,6 +166,7 @@ export const events: Event[] = [
     date: "Thursday, November 12, 2026",
     month: "Nov",
     day: "12",
+    weekday: "Thu",
     year: "2026",
     time: "5:00pm",
     title: "Boston Book Release!",
