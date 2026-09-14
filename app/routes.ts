@@ -3,6 +3,7 @@ import { type RouteConfig, index, layout, route } from "@react-router/dev/routes
 export default [
   index("routes/_index.tsx"),
   route("about", "routes/about.tsx"),
+  route("events", "routes/events.tsx"),
   // chapters routes disabled: files renamed to *.tsx.bk
   // route("chapters", "routes/chapters.tsx", [
   //   route("change", "routes/chapters.change.tsx"),
