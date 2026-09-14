@@ -58,7 +58,10 @@ const Slider = ({
   }, [sliderWidth, setYearRange, interactive]);
 
   useEffect(() => {
-    if (isNaN(width)) return;
+    // width starts at 0 until VoyagesVis's resize-observer effect reports a
+    // real size; the scale below subtracts 40, so anything at or under that
+    // produces a negative range and, downstream, negative rect/svg widths.
+    if (isNaN(width) || width <= 40) return;
 
     const svg = d3
       .select(containerRef.current)

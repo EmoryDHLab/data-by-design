@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useMemo, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "../../ScrollytellWrapper";
@@ -7,6 +7,64 @@ import { paths } from "./paths";
 import Labels from "./Labels";
 import type { ReactElement } from "react";
 
+function getFocusShapeSize(scrollProgress: number) {
+  switch (true) {
+    case scrollProgress < 0.5:
+      return { x: 645, y: 0, width: 0, height: 291 };
+    // Men
+    case scrollProgress >= 0.5 && scrollProgress < 1.5:
+      return { x: 380, y: 0, width: 265, height: 291 };
+    // Boys
+    case scrollProgress >= 1.5 && scrollProgress < 2.5:
+      return { x: 300, y: 0, width: 345, height: 291 };
+    // Women
+    case scrollProgress >= 2.5 && scrollProgress < 3.5:
+      return { x: 155, y: 0, width: 490, height: 291 };
+    // Girls
+    case scrollProgress >= 3.5 && scrollProgress < 4.5:
+      return { x: 95, y: 0, width: 550, height: 291 };
+    default:
+      return { x: 25, y: 0, width: 618, height: 291 };
+  }
+}
+
+function getFadeShape(scrollProgress: number) {
+  switch (true) {
+    // Men
+    case scrollProgress < 2.5:
+      return {
+        fadeShapeSize: { x: 385, y: 0, width: 265, height: 291 },
+        fadeBorder: "m385,66 l0,150",
+      };
+    // Boys
+    case scrollProgress >= 2.5 && scrollProgress < 3.5:
+      return {
+        fadeShapeSize: { x: 305, y: 0, width: 345, height: 291 },
+        fadeBorder: "m305,70 l0,146",
+      };
+    // Women
+    case scrollProgress >= 3.5 && scrollProgress < 4.5:
+      return {
+        fadeShapeSize: { x: 160, y: 0, width: 490, height: 291 },
+        fadeBorder: "m160,85 l0,122",
+      };
+    default:
+      return {
+        fadeShapeSize: { x: 645, y: 0, width: 0, height: 291 },
+        fadeBorder: "m160,85 l0,122",
+      };
+  }
+}
+
+// The "fade" mask/path is a dark cover over the currently-focused deck
+// section, separate from the blur filter and the Labels text overlay. It
+// should only ever show while sensitive content is being hidden.
+function getFadeOpacity(scrollProgress: number, hideSensitiveState?: boolean) {
+  if (!hideSensitiveState) return 0.0;
+  if (scrollProgress < 1.5) return 0.0;
+  return 1.0;
+}
+
 export default function PlymouthCommitteeScrollytell({
   triggers,
 }: {
@@ -14,85 +72,28 @@ export default function PlymouthCommitteeScrollytell({
 }) {
   const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
-  const [focusShapeSize, setFocusShapeSize] = useState<object>({
-    x: 645,
-    y: 130,
-    width: 0,
-    height: 0,
-  });
-  const [fadeShapeSize, setFadeShapeSize] = useState<object>({
-    x: 380,
-    y: 0,
-    width: 0,
-    height: 291,
-  });
-  const [fadeBorder, setFadeBorder] = useState<string>("m380,66 l0,150");
-  const [fadeOpacity, setFadeOpacity] = useState<number>(0.0);
   const steps = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    switch (true) {
-      case scrollProgress < 0.5:
-        setFocusShapeSize({ x: 645, y: 0, width: 0, height: 291 });
-        break;
-      // Men
-      case scrollProgress >= 0.5 && scrollProgress < 1.5:
-        setFocusShapeSize({ x: 380, y: 0, width: 265, height: 291 });
-        break;
-      // Boys
-      case scrollProgress >= 1.5 && scrollProgress < 2.5:
-        setFocusShapeSize({ x: 300, y: 0, width: 345, height: 291 });
-        break;
-      // Women
-      case scrollProgress >= 2.5 && scrollProgress < 3.5:
-        setFocusShapeSize({ x: 155, y: 0, width: 490, height: 291 });
-        break;
-      // Girls
-      case scrollProgress >= 3.5 && scrollProgress < 4.5:
-        setFocusShapeSize({ x: 95, y: 0, width: 550, height: 291 });
-        break;
-      default:
-        setFocusShapeSize({ x: 25, y: 0, width: 618, height: 291 });
-    }
-  }, [scrollProgress, setFocusShapeSize]);
+  const focusShapeSize = useMemo(
+    () => getFocusShapeSize(scrollProgress),
+    [scrollProgress],
+  );
+  const { fadeShapeSize, fadeBorder } = useMemo(
+    () => getFadeShape(scrollProgress),
+    [scrollProgress],
+  );
+  const fadeOpacity = useMemo(
+    () => getFadeOpacity(scrollProgress, hideSensitiveState),
+    [scrollProgress, hideSensitiveState],
+  );
 
-  useEffect(() => {
-    switch (true) {
-      // Men
-      case scrollProgress < 2.5:
-        setFadeShapeSize({ x: 385, y: 0, width: 265, height: 291 });
-        setFadeBorder("m385,66 l0,150");
-        break;
-      // Boys
-      case scrollProgress >= 2.5 && scrollProgress < 3.5:
-        setFadeShapeSize({ x: 305, y: 0, width: 345, height: 291 });
-        setFadeBorder("m305,70 l0,146");
-        break;
-      // Women
-      case scrollProgress >= 3.5 && scrollProgress < 4.5:
-        setFadeShapeSize({ x: 160, y: 0, width: 490, height: 291 });
-        setFadeBorder("m160,85 l0,122");
-        break;
-      default:
-        setFadeShapeSize({ x: 645, y: 0, width: 0, height: 291 });
-        setFadeBorder("m160,85 l0,122");
-    }
-  }, [scrollProgress, setFadeShapeSize]);
-
-  useEffect(() => {
-    if (scrollProgress >= 1.5) {
-      if (hideSensitiveState) {
-        setFadeOpacity(1.0);
-      } else {
-        setFadeOpacity(0.75);
-      }
-    } else {
-      setFadeOpacity(0.0);
-    }
-  }, [scrollProgress, hideSensitiveState, setFadeOpacity]);
+  const scrollytellContextValue = useMemo(
+    () => ({ scrollProgress }),
+    [scrollProgress],
+  );
 
   return (
-    <ScrollytellContext.Provider value={{ scrollProgress }}>
+    <ScrollytellContext.Provider value={scrollytellContextValue}>
       <ScrollytellWrapper
         bgColor="dataSecondary"
         setScrollProgress={setScrollProgress}
@@ -119,7 +120,7 @@ export default function PlymouthCommitteeScrollytell({
                 </filter>
                 <image
                   filter={hideSensitiveState ? "url(#ship-blur)" : ""}
-                  href="/images/chapters/0103a-africanship.jpg"
+                  href="/images/chapters/0103b-africanship.jpg"
                   width="2973"
                   height="1213"
                   transform="scale(.24)"

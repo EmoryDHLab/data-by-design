@@ -79,7 +79,7 @@ function SliderJoin({
           x={sliderWidth[0]}
           y={-8}
           height={16}
-          width={sliderWidth[1] - sliderWidth[0]}
+          width={Math.max(0, sliderWidth[1] - sliderWidth[0])}
           fill="#E0DCF2"
           tabIndex={interactive ? 0 : -1}
           onKeyDown={keyDown}
@@ -101,7 +101,7 @@ function SliderJoin({
         x={0}
         y={-2}
         height={4}
-        width={maxX}
+        width={Math.max(0, maxX)}
         fill="#E0DCF2"
         opacity={0.35}
         pointerEvents="none"
