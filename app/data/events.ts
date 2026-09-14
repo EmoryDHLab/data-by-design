@@ -92,7 +92,7 @@ export const events: Event[] = [
     title: "Atlanta Book Release!",
     kind: "conversation",
     description: "A conversation with Lauren Klein, Tanvi Sharma, Jay Varner, Margy Adams, and Shiyao Li, moderated by Catherine D'Ignazio, director of the Data + Feminism Lab at MIT.",
-    city: "Decatur, GA",
+    city: "Atlanta, GA",
     venue: "Charis Books & More",
     streetAddress: "184 S. Candler St",
     postalCode: "30030-3740",
