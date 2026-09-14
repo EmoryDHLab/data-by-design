@@ -44,6 +44,43 @@ export const map = (
   }
 };
 
+// Canonical production host. The dev deployment is served from a subdomain,
+// but this branch merges into main, so URLs in metadata always point at the
+// production site.
+export const HOST_NAME = "https://dataxdesign.io";
+
+export const SITE_DESCRIPTION =
+  "An interactive history of data visualization, 1789-1900. Read the online edition of Data by Design, by Lauren Klein (MIT Press, 2026).";
+
+export const pageMetaTags = ({
+  title,
+  description = SITE_DESCRIPTION,
+  path,
+  image = "/images/dxd.jpg",
+}: {
+  title: string;
+  description?: string;
+  path: string;
+  image?: string;
+}) => {
+  const imageUrl = image.startsWith("http") ? image : `${HOST_NAME}${image}`;
+  return [
+    { charset: "utf-8" },
+    { title },
+    { name: "viewport", content: "width=device-width,initial-scale=1" },
+    { name: "description", content: description },
+    { name: "og:title", content: title },
+    { name: "og:description", content: description },
+    { name: "og:url", content: `${HOST_NAME}${path}` },
+    { name: "og:image", content: imageUrl },
+    { name: "og:site_name", content: "Data by Design" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: imageUrl },
+  ];
+};
+
 export const chapterMetaTags = (chapter: ChapterTitle) => {
   const metaData: TChapterMeta = chapterMetaData;
   const hostName: string = "https://dev.dataxdesign.io";

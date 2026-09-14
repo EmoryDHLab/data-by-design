@@ -1,42 +1,18 @@
 // This is the home page!
 
-import { useState } from "react";
 import ChapterCardGrid from "~/components/home/ChapterCardGrid";
-import Timeline from "~/components/home/Timeline.client";
-import ClientOnly from "~/components/ClientOnly";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
-import SelectedImage from "~/components/home/SelectedImage.client";
-import SiteTitle from "~/components/home/SiteTitle";
 import { Link } from "react-router";
-import { chapterMeta } from "~/data/chapterMeta";
-import type { MetaFunction, LinksFunction } from "react-router";
-import type { TFigure } from "~/types/figureType";
-import type { ChapterTitle } from "~/types/chapterMetaTags";
-
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
-
-function trackPreorder(retailer: string) {
-  if (typeof window !== "undefined" && typeof window.gtag === "function") {
-    window.gtag("event", "preorder_click", { retailer });
-  }
-}
-
-export const links: LinksFunction = () => {
-  return Object.keys(chapterMeta).map((chapter) => {
-    return {
-      rel: "preload",
-      href: chapterMeta[chapter as ChapterTitle].bgImage,
-    };
-  });
-};
+import { bookMeta, bookSchema, retailers } from "~/data/bookMeta";
+import { events } from "~/data/events";
+import { trackPreorderClick } from "~/analytics";
+import StructuredData from "~/components/StructuredData";
+import { classNames, HOST_NAME } from "~/utils";
+import type { MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => {
-  const hostName = "https://dataxdesign.io";
+  const hostName = HOST_NAME;
   return [
     { charset: "utf-8" },
     { title: "Data by Design" },
@@ -46,15 +22,15 @@ export const meta: MetaFunction = () => {
     { name: "og:url", content: hostName },
     {
       name: "description",
-      content: "An interactive history of data visualization 1786-1900.",
+      content: "An interactive history of data visualization 1789-1900.",
     },
     {
       name: "og:description",
-      content: "An interactive history of data visualization 1786-1900.",
+      content: "An interactive history of data visualization 1789-1900.",
     },
     {
       name: "twitter:description",
-      content: "An interactive history of data visualization 1786-1900.",
+      content: "An interactive history of data visualization 1789-1900.",
     },
     { name: "image", content: `${hostName}/images/dxd.jpg` },
     { name: "og:image", content: `${hostName}/images/dxd.jpg` },
@@ -65,9 +41,12 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
-  const [selectedImage, setSelectedImage] = useState<TFigure>();
+// The three launches, pulled from the same tour list the /events page reads.
+const releaseEvents = events.filter((event) =>
+  event.title.includes("Book Release!")
+);
 
+export default function Index() {
   return (
     <ChapterContext.Provider
       value={{
@@ -77,53 +56,80 @@ export default function Index() {
       }}
     >
       <main id="main-content" className="bg-black pb-32 text-black relative">
+        <StructuredData data={bookSchema()} />
         <h1 className="sr-only">
-          Data by Design: An Interactive History of Data Visualization 1786-1900
+          Data by Design: An Interactive History of Data Visualization 1789-1900
         </h1>
 
         <div />
         <section aria-label="Pre-order" className="bg-offwhite text-black">
-          <div className="max-w-6xl mx-auto md:flex md:items-center gap-16 xl:gap-24  md:px-10 py-12">
+          <div className="max-w-6xl mx-auto md:flex md:items-center gap-16 xl:gap-24  md:px-10 py-12 md:py-20">
             <figure className="my-10 px-5 md:px-0 flex-shrink-0 w-full md:w-[380px]">
-              <img
-                src="/images/bookcover.webp"
-                alt="Data by Design book cover"
-                className="w-full h-auto"
-              />
+              <a
+                href={retailers[0].url}
+                onClick={() =>
+                  trackPreorderClick(retailers[0].name, "homepage_cover")
+                }
+                className="block transition-transform hover:-translate-y-1"
+              >
+                <img
+                  src="/images/bookcover.webp"
+                  alt="Data by Design book cover"
+                  className="w-full h-auto"
+                />
+              </a>
             </figure>
             <div className="px-6 md:px-0 flex-1 flex flex-col">
-              {/* <SiteTitle className="w-full max-w-[500px]" /> */}
-              <div className="order-1 font-power font-bold tracking-wider text-sm uppercase w-2/3 pb-1">
-                Available for Preorder Now
-              </div>
-              <p className="order-2 font-power text-xl md:text-2xl prose">
+              <p className="order-2 font-power font-bold text-2xl md:text-3xl leading-tight max-w-prose">
                 The history of data visualization holds the key to designing a
                 more just future.
               </p>
-              <div className="order-3 md:order-last mt-6 md:mt-8 flex flex-wrap gap-3">
-                <a
-                  href="https://mitpress.mit.edu/9780262056182/data-by-design/"
-                  onClick={() => trackPreorder("MIT Press")}
-                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
-                >
-                  MIT Press
-                </a>
-                <a
-                  href="https://bookshop.org/p/books/data-by-design-visualization-and-powerfrom-abolition-to-the-dawn-of-data-science-lauren-f-klein/60e85f080f3ef3b9?ean=9780262056182&next=t&next=t&affiliate=2238"
-                  onClick={() => trackPreorder("Bookshop.org")}
-                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
-                >
-                  Bookshop.org
-                </a>
-                <a
-                  href="https://www.barnesandnoble.com/s/9780262056182/"
-                  onClick={() => trackPreorder("Barnes & Noble")}
-                  className="inline-block font-power uppercase tracking-wide text-base px-5 py-2 text-black border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
-                >
-                  Barnes &amp; Noble
-                </a>
+              <div className="order-3 md:order-last mt-6 md:mt-5">
+                <div className="flex flex-wrap items-baseline gap-x-4 pb-3">
+                  <span className="font-power font-bold tracking-widest text-sm uppercase">
+                    Preorder Now
+                  </span>
+                  <span className="font-power text-sm text-black/60">
+                    On sale {bookMeta.publicationDateDisplay}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {retailers.map((retailer, index) => (
+                    <a
+                      key={retailer.name}
+                      href={retailer.url}
+                      // The retailers are outside the site, so they get their
+                      // own tab. noopener without noreferrer: the referrer is
+                      // how the publisher sees this site as a traffic source.
+                      target="_blank"
+                      rel="noopener"
+                      onClick={() =>
+                        trackPreorderClick(retailer.name, "homepage_hero")
+                      }
+                      className={classNames(
+                        "inline-block font-power uppercase tracking-wide text-base md:text-lg px-6 py-3 border transition-colors",
+                        // The publisher is the primary CTA; the rest are
+                        // outlined alternatives.
+                        index === 0
+                          ? "bg-black text-white border-black hover:bg-changePrimary hover:border-changePrimary"
+                          : "text-black border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary"
+                      )}
+                    >
+                      {retailer.name}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  ))}
+                </div>
+                {/* Catalog details, hidden for now. To restore, add `bookFacts`
+                    back to the ~/data/bookMeta import above.
+                <div className="mt-5 font-power text-sm text-black/60 space-y-1">
+                  {bookFacts.map((line) => (
+                    <p key={line[0]}>{line.join(" · ")}</p>
+                  ))}
+                </div>
+                */}
               </div>
-              <p className="order-4 md:order-3 mt-6 md:mt-0">
+              <p className="order-4 md:order-3 text-lg leading-relaxed max-w-prose mt-6 md:mt-3">
                 From maps of colonial empires to charts of national trade, data
                 visualization has long been used to consolidate knowledge and
                 power. But just as often, it has been used to uncover oppression
@@ -131,7 +137,7 @@ export default function Index() {
                 continents and over centuries to expose the power of
                 visualization—and to show how it can be wielded back.
               </p>
-              <p className="order-5 md:order-4">
+              <p className="order-5 md:order-4 text-lg leading-relaxed max-w-prose">
                 A book for those who love charts and graphs, and for those who
                 create them, <cite>Data by Design</cite> offers historical
                 grounding, ethical clarity—and the inspiration we need—to
@@ -140,26 +146,61 @@ export default function Index() {
             </div>
           </div>
         </section>
+
         <section
-          aria-label="Timeline"
-          className="hidden lg:block relative w-screen h-auto  fancyborder pt-4"
+          aria-label="Book release events"
+          className="bg-offwhite text-black border-t border-black/10"
         >
-          <div className="max-w-6xl mx-auto px-6 md:px-10 pt-6 pb-16 z-20">
-            <ClientOnly>
-              <SelectedImage selectedImage={selectedImage} />
-            </ClientOnly>
-          </div>
-          <div className="pt-20">
-            <div className="flex items-center w-full h-96 xxl:h-[40rem]">
-              <ClientOnly>
-                <Timeline
-                  selectedImage={selectedImage}
-                  setSelectedImage={setSelectedImage}
-                />
-              </ClientOnly>
-            </div>
+          <div className="max-w-6xl mx-auto px-6 md:px-10 py-12 md:py-16">
+            <h2 className="font-power font-bold tracking-widest text-sm uppercase pb-6">
+              Book Release Events
+            </h2>
+            <ul className="divide-y divide-black/10 border-y border-black/10">
+              {releaseEvents.map((event) => {
+                const href = event.registerUrl ?? event.url;
+                return (
+                  <li key={event.title}>
+                    <a
+                      href={href ?? "/events"}
+                      {...(href ? { target: "_blank", rel: "noopener" } : {})}
+                      className="group flex items-baseline gap-4 md:gap-8 py-5 transition-colors hover:text-changePrimary"
+                    >
+                      <span className="font-power font-bold text-sm md:text-base tabular-nums shrink-0 w-20 md:w-24">
+                        {event.month} {event.day}
+                      </span>
+                      <span className="flex-1">
+                        <span className="font-power font-bold text-2xl md:text-3xl leading-tight block">
+                          {event.city}
+                        </span>
+                        {event.venue && (
+                          <span className="block text-sm text-black/60">
+                            {event.venue}
+                          </span>
+                        )}
+                      </span>
+                      <span
+                        aria-hidden
+                        className="font-icons text-black/40 transition-transform group-hover:translate-x-1"
+                      >
+                        b
+                      </span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            <a
+              href="/events"
+              className="inline-block mt-8 font-power uppercase tracking-wide text-base md:text-lg px-6 py-3 border border-black text-black transition-colors hover:bg-changePrimary hover:text-white hover:border-changePrimary"
+            >
+              See all events
+            </a>
           </div>
         </section>
+        {/* The shuffle timeline is withheld from this branch — the chapters
+            it draws its images from are not published yet. Restore this block
+            with the ClientOnly/SelectedImage/Timeline imports and the
+            selectedImage state when the chapters go live. */}
         {/* <div className="grid grid-cols-1 md:grid-cols-2 font-neueMontreal my-32  md:pb-6">
           <div className="px-6 md:px-28">
             <p>
