@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ChapterTitle from "~/components/ChapterTitle";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -96,23 +96,26 @@ export default function ShanawdithitPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
   const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
 
+  const chapterContextValue = useMemo(
+    () => ({
+      backgroundColor: "peoplePrimary",
+      primaryTextColor: "black",
+      accentColor: "peopleSecondary",
+      footnoteTextColor: "peopleSecondary",
+      footnotes: peopleFootnotes,
+      hoverState,
+      setHoverState,
+      visualizations,
+      chapterFigures,
+      sections,
+      showFootnotes,
+      setShowFootnotes,
+    }),
+    [hoverState, showFootnotes],
+  );
+
   return (
-    <ChapterContext.Provider
-      value={{
-        backgroundColor: "peoplePrimary",
-        primaryTextColor: "black",
-        accentColor: "peopleSecondary",
-        footnoteTextColor: "peopleSecondary",
-        footnotes: peopleFootnotes,
-        hoverState,
-        setHoverState,
-        visualizations,
-        chapterFigures,
-        sections,
-        showFootnotes,
-        setShowFootnotes,
-      }}
-    >
+    <ChapterContext.Provider value={chapterContextValue}>
       <ChapterTitle
         title={chapterMeta.people.title}
         subtitle={chapterMeta.people.subtitle}
