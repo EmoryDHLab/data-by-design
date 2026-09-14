@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import RecreatedPeabodySquare from "~/components/knowledge/recreated/RecreatedPeabodySquare";
 import type {
   HighlightedElement,
@@ -17,27 +17,29 @@ export function EditablePeabodySquare({ currentColor }: Props) {
     HighlightedElement | undefined
   >(undefined);
 
-  function handleSquareClick(index: number) {
-    const yearIndex = Math.floor(index / 9);
-    const eventIndex = index % 9;
-    if (!squareColors[yearIndex]) {
-      squareColors[yearIndex] = Array.from({ length: 9 }, () => null);
-    }
-    const eventColors = squareColors[yearIndex][eventIndex];
-    if (eventColors) {
-      if (eventColors.includes(currentColor.rgb)) {
-        squareColors[yearIndex][eventIndex] = eventColors.filter(
-          (color) => color !== currentColor.rgb
-        );
-      } else {
-        squareColors[yearIndex][eventIndex].push(currentColor.rgb);
-      }
-    } else {
-      squareColors[yearIndex][eventIndex] = [currentColor.rgb];
-    }
+  const handleSquareClick = useCallback(
+    (index: number) => {
+      const yearIndex = Math.floor(index / 9);
+      const eventIndex = index % 9;
 
-    setSquareColors([...squareColors]);
-  }
+      setSquareColors((prevSquareColors) => {
+        const nextSquareColors = [...prevSquareColors];
+        const prevYear = nextSquareColors[yearIndex];
+        const nextYear = prevYear ? [...prevYear] : Array.from({ length: 9 }, () => null);
+        const eventColors = nextYear[eventIndex];
+
+        nextYear[eventIndex] = eventColors
+          ? eventColors.includes(currentColor.rgb)
+            ? eventColors.filter((color) => color !== currentColor.rgb)
+            : [...eventColors, currentColor.rgb]
+          : [currentColor.rgb];
+
+        nextSquareColors[yearIndex] = nextYear;
+        return nextSquareColors;
+      });
+    },
+    [currentColor],
+  );
 
   return (
     <RecreatedPeabodySquare

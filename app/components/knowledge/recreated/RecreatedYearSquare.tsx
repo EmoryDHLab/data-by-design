@@ -1,3 +1,4 @@
+import { memo } from "react";
 import {
   getYearXFromIndex,
   getYearYFromIndex,
@@ -21,7 +22,7 @@ interface Props {
   yearSquareColors: YearSquare | null;
 }
 
-export default function RecreatedYearSquare({
+function RecreatedYearSquare({
   index,
   highlightedElement,
   setHighlightedElement,
@@ -54,3 +55,5 @@ export default function RecreatedYearSquare({
     </svg>
   );
 }
+
+export default memo(RecreatedYearSquare);

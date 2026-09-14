@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import type { ReactNode } from "react";
 
@@ -17,16 +17,11 @@ export default function PullQuote({
   className,
   borderColor,
 }: Props) {
-  const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
-  const [classList, setClassList] = useState<string | undefined>(undefined);
-  const asideRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    setClassList(`flex flex-col py-12 md:py-24 md:-ml-4 ${className ?? ""}`);
-  }, [className, backgroundColor, primaryTextColor]);
+  const { backgroundColor } = useContext(ChapterContext);
+  const classList = `flex flex-col py-12 md:py-24 md:-ml-4 ${className ?? ""}`;
 
   return (
-    <aside ref={asideRef} className={`pull-quote ${classList ?? ""}`}>
+    <aside className={`pull-quote ${classList}`}>
       <blockquote
         className={`border-l-4 border-l-${backgroundColor} pl-4 md:pl-6`}
         style={borderColor ? { borderLeftColor: borderColor } : undefined}

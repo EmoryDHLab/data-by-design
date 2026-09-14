@@ -1,5 +1,4 @@
-import { Fragment, useState } from "react";
-import SlideShow from "~/components/layout/SlideShow";
+import { Fragment, useMemo, useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -16,8 +15,6 @@ import FootnotesList from "~/components/FootnotesList";
 import Scrollytell from "~/components/knowledge/PeabodyScrollytell";
 import Quotation from "~/components/Quotation";
 import Quiz from "~/components/knowledge/quiz/Quiz";
-import PeabodyTimeline from "~/components/knowledge/PeabodyTimeline";
-import LEDChart from "~/components/knowledge/LEDChart";
 import figures from "~/data/figures/knowledge.json";
 import Figure, { Caption } from "~/components/figures/Figure";
 import CaptionDirection from "~/components/figures/CaptionDirection";
@@ -28,7 +25,6 @@ import eventData from "~/data/process/eventData.json";
 import PeabodyActors from "~/components/knowledge/PeabodyActors";
 import TutorialKey from "~/components/knowledge/tutorial/TutorialKey";
 import Takeaways from "~/components/layout/Takeaways";
-import ClientOnly from "~/components/ClientOnly";
 import { chapterMeta } from "~/data/chapterMeta";
 import PeabodyBarGraph from "~/components/knowledge/PeabodyBarGraph";
 import type { MetaFunction } from "react-router";
@@ -96,24 +92,27 @@ export default function PeabodyPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
   const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
 
+  const chapterContextValue = useMemo(
+    () => ({
+      backgroundColor: "knowledgePrimary",
+      accentColor: "knowledgeSecondary",
+      footnoteTextColor: "imagePrimary",
+      primaryTextColor: "black",
+      accentTextColor: "black",
+      footnotes: processFootnotes,
+      hoverState,
+      setHoverState,
+      chapterFigures,
+      visualizations,
+      sections,
+      showFootnotes,
+      setShowFootnotes,
+    }),
+    [hoverState, showFootnotes],
+  );
+
   return (
-    <ChapterContext.Provider
-      value={{
-        backgroundColor: "knowledgePrimary",
-        accentColor: "knowledgeSecondary",
-        footnoteTextColor: "imagePrimary",
-        primaryTextColor: "black",
-        accentTextColor: "black",
-        footnotes: processFootnotes,
-        hoverState,
-        setHoverState,
-        chapterFigures,
-        visualizations,
-        sections,
-        showFootnotes,
-        setShowFootnotes,
-      }}
-    >
+    <ChapterContext.Provider value={chapterContextValue}>
       <ChapterTitle
         title={chapterMeta.knowledge.title}
         subtitle={chapterMeta.knowledge.subtitle}
@@ -807,14 +806,14 @@ export default function PeabodyPage() {
           </Column>
           <Column>
             <figure className="md:ml-12">
-              <LEDChart />
+              <FloorChartLayers />
               <Caption figure={figures["0430-Peabody-Sandwich"]} />
             </figure>
           </Column>
         </TwoColumnLayout>
 
         <TwoColumnLayout>
-          <Column shouldPin={true}>
+          <Column>
             <p>
               The tedious, time-intensive nature of the Floor Chart project also
               called me back to another historical detail related to Peabody’s
@@ -873,9 +872,9 @@ export default function PeabodyPage() {
               <InlineFootnote index={31} />
             </p>
           </Column>
-          <Column>
+          <Column shouldPin>
             <Figure
-              className="md:ml-12"
+              className="md:ml-12 grid grid-cols-1 gap-2 md:gap-4"
               figures={[
                 figures["0428-clarke-1-4000BC-ps-30x43-2"],
                 figures["0429-Tattered_map_in_attic"],
