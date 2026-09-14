@@ -24,29 +24,26 @@ export const KindLabel = ({ kind }: { kind: EventKind }) => (
 // all sits at text-xs on mobile, which is where the type scale bottoms out.
 const META = "font-power uppercase tracking-[0.15em] text-black/50";
 
-// The city leads its own column on desktop, so there it's a heading. On mobile
-// there is no column to anchor, and a second bold line only competes with the
-// title, so it falls back to small print beside the time.
+// The city leads its own column on desktop. On mobile there is no column to
+// anchor, so it moves in beside the time — but at the same size, not shrunk.
 const CITY =
-  "md:text-xl lg:text-2xl md:font-bold md:normal-case md:tracking-normal md:text-black md:leading-tight";
+  "text-xl lg:text-2xl font-bold normal-case tracking-normal text-black leading-tight";
 
+// The date reads as a label: month and day on one line, knocked out of a black
+// rectangle. The column width is fixed so the content starts at the same place
+// on every row, including the "10–14" spans.
 const DateBox = ({ event }: { event: Event }) => (
-  <div className="w-16 md:w-24">
-    <div className="w-16 h-16 md:w-24 md:h-24 bg-black/[0.07] flex flex-col items-center justify-center text-center leading-none">
-      <span className="font-power font-bold uppercase text-xs md:text-sm tracking-[0.15em] ps-[0.15em] md:tracking-[0.2em] md:ps-[0.2em]">
+  <div className="w-24 md:w-32">
+    <div className="inline-flex items-baseline gap-1.5 md:gap-2 bg-black text-white px-2 py-1 md:px-2.5 md:py-1.5 leading-none">
+      <span className="font-power font-bold uppercase text-sm md:text-base">
         {event.month}
       </span>
-      <span
-        className={classNames(
-          "font-power tabular-nums mt-1 md:mt-1.5",
-          event.day.length > 2 ? "text-base md:text-2xl" : "text-2xl md:text-4xl"
-        )}
-      >
+      <span className="font-power font-bold tabular-nums text-sm md:text-base">
         {event.day.length === 1 ? `0${event.day}` : event.day}
       </span>
     </div>
     {event.weekday && (
-      <div className={classNames(META, "text-xs text-center mt-1.5 md:mt-2")}>
+      <div className={classNames(META, "text-xs mt-1.5 md:mt-2")}>
         {event.weekday}
       </div>
     )}
@@ -55,13 +52,13 @@ const DateBox = ({ event }: { event: Event }) => (
 
 export default function EventRow({
   event,
-  hideTitle,
+  compact,
 }: {
   event: Event;
   // The homepage's release section is already headed "Book Release Events", so
-  // repeating "Atlanta Book Release!" on each row says nothing. The title still
-  // reaches screen readers through the register button's label.
-  hideTitle?: boolean;
+  // the per-row title and kind label only repeat it. The title still reaches
+  // screen readers through the register button's label.
+  compact?: boolean;
 }) {
   return (
     <li>
@@ -74,10 +71,12 @@ export default function EventRow({
           {/* What the event is, and where in the building. The loudest thing in
               the row, at every width. */}
           <div className="flex-1 min-w-0 md:order-2">
-            <div className="mb-1.5 md:mb-2">
-              <KindLabel kind={event.kind} />
-            </div>
-            {!hideTitle && (
+            {!compact && (
+              <div className="mb-1.5 md:mb-2">
+                <KindLabel kind={event.kind} />
+              </div>
+            )}
+            {!compact && (
               <p className="font-power text-lg md:text-xl leading-snug">
                 {event.title}
               </p>
@@ -130,7 +129,7 @@ export default function EventRow({
             event.attendance) && (
             <div className="md:order-1 shrink-0 md:w-44 lg:w-52 flex flex-wrap items-baseline gap-x-3 gap-y-1 md:block">
               {event.city && event.attendance !== "virtual" && (
-                <h3 className={classNames(META, "text-xs", CITY)}>
+                <h3 className={classNames(META, CITY)}>
                   {event.city}
                 </h3>
               )}
@@ -138,7 +137,7 @@ export default function EventRow({
                   as the heading. A hybrid one keeps its city and notes the
                   online option beneath, in the same small print as the time. */}
               {event.attendance === "virtual" && (
-                <h3 className={classNames(META, "text-xs", CITY)}>Online</h3>
+                <h3 className={classNames(META, CITY)}>Online</h3>
               )}
               {event.attendance === "hybrid" && (
                 <div

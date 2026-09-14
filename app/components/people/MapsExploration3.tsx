@@ -196,12 +196,21 @@ export default function ImageTooltips() {
         <div>
           {/* Image Container */}
           <div className="relative w-full rounded-xl overflow-hidden">
-            {/* Replace this img src with your own image URL */}
-            <img
-              src="/images/chapters/people/3.png"
-              alt="Annotated diagram"
-              className="w-full h-full object-cover"
-            />
+            {/* The diagram is a transparent export; the webp is a fraction
+                of the PNG's weight, which stays as the fallback. */}
+            <picture>
+              <source
+                srcSet="/images/chapters/people/3.webp"
+                type="image/webp"
+              />
+              <img
+                src="/images/chapters/people/3.png"
+                alt="Annotated diagram"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
 
             {/* Tooltip Markers */}
             {tooltips.map((tooltip) => (

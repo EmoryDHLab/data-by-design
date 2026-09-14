@@ -15,18 +15,8 @@ import EventRow from "~/components/events/EventRow";
 import { trackPreorderClick } from "~/analytics";
 import StructuredData from "~/components/StructuredData";
 import { classNames, HOST_NAME } from "~/utils";
-import type { MetaFunction, LinksFunction } from "react-router";
+import type { MetaFunction } from "react-router";
 import type { TFigure } from "~/types/figureType";
-import type { ChapterTitle } from "~/types/chapterMetaTags";
-
-export const links: LinksFunction = () => {
-  return Object.keys(chapterMeta).map((chapter) => {
-    return {
-      rel: "preload",
-      href: chapterMeta[chapter as ChapterTitle].bgImage,
-    };
-  });
-};
 
 export const meta: MetaFunction = () => {
   const hostName = HOST_NAME;
@@ -176,7 +166,7 @@ export default function Index() {
             </h2>
             <ul className="divide-y divide-black/10 border-y border-black/10">
               {releaseEvents.map((event) => (
-                <EventRow key={event.date + event.title} event={event} hideTitle />
+                <EventRow key={event.date + event.title} event={event} compact />
               ))}
             </ul>
             <a

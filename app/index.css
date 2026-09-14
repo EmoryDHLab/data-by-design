@@ -40,9 +40,14 @@
 }
 
 /* Any depth, not just direct children: paragraphs wrapped in something like
-   the image chapter's <Error> would otherwise run the full column width. */
-.chapter-body .centered-layout p:not(.text-center) {
+   the image chapter's <Error> would otherwise run the full column width. The
+   headings and lists come along too, or a page built from them — the about page —
+   would sit at the full column while its paragraphs sat at the measure. They
+   need the auto margins spelled out, since only `p` gets them from `main p`. */
+.chapter-body .centered-layout
+  :is(p, h2, h3, h4, ul, ol, dl):not(.text-center) {
   max-width: var(--measure);
+  margin-inline: auto;
 }
 
 /* Body paragraphs centre themselves via `main p { margin: 0.75rem auto }`, so
