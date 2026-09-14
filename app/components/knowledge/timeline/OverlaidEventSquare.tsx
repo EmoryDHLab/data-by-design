@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useMemo } from "react";
 import TimelineContext from "./TimelineContext";
 import {
   getEventXFromIndex,
@@ -24,30 +24,27 @@ export default function OverlaidEventSquare({
 }: Props) {
   const { activeEvent, setActiveEvent } = useContext(TimelineContext);
 
-  const [squareEvent, setSquareEvent] = useState<object | undefined>(undefined);
-  const [strokeClass, setStrokeClass] = useState<string | undefined>(undefined);
-  const [active, setActive] = useState<boolean>(false);
-
-  useEffect(() => {
-    setSquareEvent(
+  const squareEvent = useMemo(
+    () =>
       yearEvents?.find(
         (event) =>
           (event?.squares as Array<number>).includes(index + 1) ||
-          event?.squares === "full"
-      )
-    );
-  }, [setSquareEvent, yearEvents, index]);
+          event?.squares === "full",
+      ),
+    [yearEvents, index],
+  );
 
-  useEffect(() => {
-    if (isFull) setStrokeClass(strokeDasharray(index));
-  }, [isFull, setStrokeClass, index, activeEvent, year]);
+  const strokeClass = useMemo(
+    () => (isFull ? strokeDasharray(index) : undefined),
+    [isFull, index],
+  );
 
-  useEffect(() => {
-    setActive(
+  const active = useMemo(
+    () =>
       activeEvent?.event === squareEvent ||
-        (isFull && activeEvent?.event?.year === year)
-    );
-  }, [activeEvent, year, setActive, squareEvent, isFull]);
+      (isFull && activeEvent?.event?.year === year),
+    [activeEvent, year, squareEvent, isFull],
+  );
 
   if (squareEvent) {
     return (

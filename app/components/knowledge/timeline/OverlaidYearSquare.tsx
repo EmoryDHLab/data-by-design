@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useMemo } from "react";
 import TimelineContext from "./TimelineContext";
 import { numberRange } from "~/utils";
 import OverlaidEventSquare from "./OverlaidEventSquare";
@@ -8,8 +8,6 @@ import {
   YEAR_WIDTH,
 } from "~/components/knowledge/peabodyUtils";
 
-import type { PeabodyEvent } from "~/types/process";
-
 interface Props {
   index: number;
   year: number;
@@ -17,17 +15,15 @@ interface Props {
 
 export default function OverlaidYearSquare({ index, year }: Props) {
   const { currentCenturyEvents } = useContext(TimelineContext);
-  const [yearEvents, setYearEvents] =
-    useState<Array<PeabodyEvent>>(currentCenturyEvents);
-  const [isFull, setIsFull] = useState<boolean>(false);
 
-  useEffect(() => {
-    setYearEvents(currentCenturyEvents.filter((event) => event?.year === year));
-  }, [currentCenturyEvents, year]);
+  const yearEvents = useMemo(
+    () => currentCenturyEvents.filter((event) => event?.year === year),
+    [currentCenturyEvents, year],
+  );
 
-  useEffect(() => {
-    const someSquares = yearEvents?.flatMap((event) => event?.squares) || [];
-    setIsFull(someSquares.length === 9 || someSquares.includes("full"));
+  const isFull = useMemo(() => {
+    const someSquares = yearEvents.flatMap((event) => event?.squares);
+    return someSquares.length === 9 || someSquares.includes("full");
   }, [yearEvents]);
 
   return (

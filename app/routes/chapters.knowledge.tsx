@@ -30,7 +30,7 @@ import TutorialKey from "~/components/knowledge/tutorial/TutorialKey";
 import Takeaways from "~/components/layout/Takeaways";
 import ClientOnly from "~/components/ClientOnly";
 import { chapterMeta } from "~/data/chapterMeta";
-import PeabodyBarGraph from "~/components/peabody/PeabodyBarGraph";
+import PeabodyBarGraph from "~/components/knowledge/PeabodyBarGraph";
 import type { MetaFunction } from "react-router";
 import type { HoverState, TVizAnchors } from "~/chapterContext";
 
@@ -537,7 +537,6 @@ export default function PeabodyPage() {
             each chart.
           </p>
         </CenteredLayout>
-        <PeabodyTimeline />
 
         <PeabodyBarGraph />
 
@@ -569,7 +568,7 @@ export default function PeabodyPage() {
               the bottom right—to skip ahead.
             </p>
           </Column>
-          <Column>
+          <Column shouldPin>
             <Figure figure={figures["0413-blank-chart"]} />
           </Column>
         </TwoColumnLayout>
@@ -808,7 +807,7 @@ export default function PeabodyPage() {
           </Column>
           <Column>
             <figure className="md:ml-12">
-              <FloorChartLayers />
+              <LEDChart />
               <Caption figure={figures["0430-Peabody-Sandwich"]} />
             </figure>
           </Column>

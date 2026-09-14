@@ -8,18 +8,26 @@ export function Key() {
   return (
     <div className="grid grid-cols-1 gap-6 text-left w-auto mx-auto mt-6 md:mt-0">
       <div className="text-left">
-        <p className="font-power text-base italic font-bold small-caps">
-          Hover over an event
-          <svg viewBox="0 0 30 30" className="w-6 ml-4 inline">
-            <rect
-              stroke="#b3b3b3"
-              strokeWidth={5}
-              fillOpacity={1}
-              fill="white"
-              width={30}
-              height={30}
-            ></rect>
-          </svg>
+        <p className="font-power font-bold small-caps text-xl">
+          {activeEvent?.event ? (
+            <>
+              {activeEvent.event.year}: {activeEvent?.event.event}
+            </>
+          ) : (
+            <>
+              Hover over an event
+              <svg viewBox="0 0 30 30" className="w-6 ml-4 inline">
+                <rect
+                  stroke="#b3b3b3"
+                  strokeWidth={5}
+                  fillOpacity={1}
+                  fill="white"
+                  width={30}
+                  height={30}
+                ></rect>
+              </svg>
+            </>
+          )}
         </p>
       </div>
       <ol className="grid grid-cols-3 text-sm gap-y-2 gap-x-8 list-decimal ml-4 md:mx-auto">
@@ -36,15 +44,6 @@ export function Key() {
           );
         })}
       </ol>
-      <div className="font-power text-xl text-left">
-        <p className="min-h-16">
-          {activeEvent?.event && (
-            <span>
-              {activeEvent.event.year}: {activeEvent?.event.event}
-            </span>
-          )}
-        </p>
-      </div>
     </div>
   );
 }

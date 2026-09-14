@@ -1,8 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useMemo } from "react";
 import TimelineContext from "./TimelineContext";
 import RecreatedEventSquare from "./RecreatedEventSquare";
 import { numberRange } from "~/utils";
-import type { PeabodyEvent } from "~/types/process";
 
 interface Props {
   year: number;
@@ -10,19 +9,16 @@ interface Props {
 
 const BarGraphYears = ({ year }: Props) => {
   const { currentCenturyEvents } = useContext(TimelineContext);
-  const [yearEvents, setYearEvents] = useState<Array<PeabodyEvent>>(
-    currentCenturyEvents.filter((event) => event?.year === year)
+
+  const yearEvents = useMemo(
+    () => currentCenturyEvents.filter((event) => event?.year === year),
+    [currentCenturyEvents, year],
   );
-  const [isFull, setIsFull] = useState<boolean>(false);
 
-  useEffect(() => {
-    setYearEvents(currentCenturyEvents.filter((event) => event?.year === year));
-  }, [setYearEvents, currentCenturyEvents, year]);
-
-  useEffect(() => {
-    const squares = yearEvents?.flatMap((event) => event?.squares);
-    setIsFull(Boolean(squares?.length === 9 || squares?.includes("full")));
-  }, [setIsFull, yearEvents]);
+  const isFull = useMemo(() => {
+    const squares = yearEvents.flatMap((event) => event?.squares);
+    return Boolean(squares.length === 9 || squares.includes("full"));
+  }, [yearEvents]);
 
   return (
     <div className="w-6 h-full flex flex-col-reverse border border-transparent">
