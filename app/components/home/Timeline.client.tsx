@@ -14,10 +14,11 @@ const IMAGE_COUNT = 30;
 // is hidden from screen readers because the label beneath it says the same
 // thing, and aria-pressed reports which view is active.
 //
-// The timeline sits on the black background, so the active toggle is solid
-// offwhite and the inactive one solid grey. Both glyphs are a filled disc with
-// the symbol knocked out as a counter, so the background reads through the
-// symbol and one glyph serves both states.
+// The timeline sits on the black background. Both glyphs are a filled disc with
+// the symbol knocked out as a counter, so the disc colour is what distinguishes
+// the two states: the active toggle paints the disc offwhite, and the inactive
+// one inverts — the disc goes to the page black and an offwhite ring shows its
+// edge. The label stays white either way.
 const ViewToggle = ({
   glyph,
   label,
@@ -33,12 +34,15 @@ const ViewToggle = ({
     type="button"
     onClick={onClick}
     aria-pressed={active}
-    className={classNames(
-      "flex flex-col items-center gap-1.5 m-2 cursor-pointer",
-      active ? "text-offwhite" : "text-neutral-500",
-    )}
+    className="flex flex-col items-center gap-1.5 m-2 cursor-pointer text-offwhite"
   >
-    <span className="font-icons normal-case text-5xl leading-none" aria-hidden>
+    <span
+      className={classNames(
+        "font-icons normal-case text-5xl leading-none rounded-full",
+        active ? "text-offwhite" : "text-black ring-2 ring-offwhite",
+      )}
+      aria-hidden
+    >
       {glyph}
     </span>
     <span className="font-power font-bold uppercase text-xs tracking-widest">

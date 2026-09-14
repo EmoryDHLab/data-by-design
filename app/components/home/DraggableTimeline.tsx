@@ -162,8 +162,11 @@ export default function DraggableTimeline({
               }}
             >
               <picture>
+                {/* The local thumbnail is the whole story now that every
+                    front-page figure has one — 400px webp, a few KB each. IIIF
+                    stays as a remote fallback for anything that 404s. */}
                 <source
-                  srcSet={`https://iiif.ecds.io/iiif/3/${image.fileName}.tiff/full/400,/0/default.png`}
+                  srcSet={`/images/${image.chapter}/thumbnails/${image.fileName}.webp`}
                   type="image/webp"
                 />
                 <source
