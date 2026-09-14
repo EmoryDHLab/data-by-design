@@ -2,8 +2,7 @@ import { classNames } from "~/utils";
 import { eventKinds } from "~/data/events";
 import type { Event, EventKind } from "~/data/events";
 
-// One row of the tour, shared by the /events page and the homepage's release
-// section so the two never drift apart.
+// One row of the tour, as the /events page lists it.
 
 export const KindLabel = ({ kind }: { kind: EventKind }) => (
   <span className="inline-flex items-center gap-2 font-power font-bold uppercase text-xs tracking-[0.15em] text-black/60">
@@ -52,16 +51,7 @@ const DateBox = ({ event }: { event: Event }) => (
   </div>
 );
 
-export default function EventRow({
-  event,
-  compact,
-}: {
-  event: Event;
-  // The homepage's release section is already headed "Book Release Events", so
-  // the per-row title and kind label only repeat it. The title still reaches
-  // screen readers through the register button's label.
-  compact?: boolean;
-}) {
+export default function EventRow({ event }: { event: Event }) {
   return (
     <li>
       <div className="flex gap-4 text-base md:gap-6 lg:gap-10 py-6 md:py-8">
@@ -73,16 +63,12 @@ export default function EventRow({
           {/* What the event is, and where in the building. The loudest thing in
               the row, at every width. */}
           <div className="flex-1 min-w-0 md:order-2">
-            {!compact && (
-              <div className="mb-1.5 md:mb-2">
-                <KindLabel kind={event.kind} />
-              </div>
-            )}
-            {!compact && (
-              <p className="font-power text-lg md:text-xl leading-snug">
-                {event.title}
-              </p>
-            )}
+            <div className="mb-1.5 md:mb-2">
+              <KindLabel kind={event.kind} />
+            </div>
+            <p className="font-power text-lg md:text-xl leading-snug">
+              {event.title}
+            </p>
             {event.description && (
               <p className="mt-3 text-base">{event.description}</p>
             )}

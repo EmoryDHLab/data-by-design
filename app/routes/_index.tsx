@@ -11,7 +11,6 @@ import { Link } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
 import { bookMeta, bookSchema, retailers } from "~/data/bookMeta";
 import { events } from "~/data/events";
-import EventRow from "~/components/events/EventRow";
 import { trackPreorderClick } from "~/analytics";
 import StructuredData from "~/components/StructuredData";
 import { classNames, HOST_NAME } from "~/utils";
@@ -165,9 +164,38 @@ export default function Index() {
               Book Release Events
             </h2>
             <ul className="divide-y divide-black/10 border-y border-black/10">
-              {releaseEvents.map((event) => (
-                <EventRow key={event.date + event.title} event={event} compact />
-              ))}
+              {releaseEvents.map((event) => {
+                const href = event.registerUrl ?? event.url;
+                return (
+                  <li key={event.title}>
+                    <a
+                      href={href ?? "/events"}
+                      {...(href ? { target: "_blank", rel: "noopener" } : {})}
+                      className="group flex items-baseline gap-4 md:gap-8 py-5 transition-colors hover:text-changePrimary"
+                    >
+                      <span className="font-power font-bold text-sm md:text-base tabular-nums shrink-0 w-20 md:w-24">
+                        {event.month} {event.day}
+                      </span>
+                      <span className="flex-1">
+                        <span className="font-power font-bold text-2xl md:text-3xl leading-tight block">
+                          {event.city}
+                        </span>
+                        {event.venue && (
+                          <span className="block text-sm text-black/60">
+                            {event.venue}
+                          </span>
+                        )}
+                      </span>
+                      <span
+                        aria-hidden
+                        className="font-icons text-black/40 transition-transform group-hover:translate-x-1"
+                      >
+                        b
+                      </span>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
             <a
               href="/events"
