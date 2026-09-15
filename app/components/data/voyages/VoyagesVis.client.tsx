@@ -65,11 +65,7 @@ function VoyagesVis({
   const borderRef = useRef<boolean>(border);
 
   // Sync yearRange to the startYear/endYear props when they change, computed
-  // directly in the render body (React's documented pattern for this) rather
-  // than an effect - this preserves the pre-paint timing ScrollingVoyageVis
-  // relies on when it drives startYear/endYear continuously during scroll.
-  // An effect would paint once with stale yearRange, then correct it a frame
-  // later on every scroll tick.
+  // directly in the render body.
   if (prevYearProps[0] !== startYear || prevYearProps[1] !== endYear) {
     setPrevYearProps([startYear, endYear]);
     setYearRange([startYear, endYear]);
@@ -97,11 +93,11 @@ function VoyagesVis({
   useEffect(() => {
     if (!p5Ref.current) return;
     filteredVoyages.current = voyages.current.filter(
-      (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1]
+      (obj) => obj.year >= yearRange[0] && obj.year <= yearRange[1],
     );
     if (!allVoyagesRef.current) {
       filteredVoyages.current = filteredVoyages.current.filter(
-        (obj) => obj.resistanceReported
+        (obj) => obj.resistanceReported,
       );
     }
     filteredVoyages.current.forEach((filteredVoyage) => {
@@ -132,8 +128,8 @@ function VoyagesVis({
               height,
               width,
               widthDiff,
-              fullColorRef.current
-            )
+              fullColorRef.current,
+            ),
           );
         });
 
@@ -141,12 +137,12 @@ function VoyagesVis({
         filteredVoyages.current = voyages.current.filter(
           (obj) =>
             obj.year >= yearRangeRef.current[0] &&
-            obj.year <= yearRangeRef.current[1]
+            obj.year <= yearRangeRef.current[1],
         );
 
         if (!allVoyagesRef.current) {
           filteredVoyages.current = filteredVoyages.current.filter(
-            (obj) => obj.resistanceReported
+            (obj) => obj.resistanceReported,
           );
         }
       };

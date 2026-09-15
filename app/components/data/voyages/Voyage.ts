@@ -1,6 +1,8 @@
 import type p5 from "p5";
 import type { TVoyage, TPoint } from "~/types/voyage";
 
+const TAPER_EXPONENT = 12;
+
 class Voyage {
   p5: p5;
   shapeSeed: number;
@@ -10,6 +12,7 @@ class Voyage {
   totalPeople: number;
   year: number;
   duration: number;
+  mortalityRate: number;
   resistanceReported: boolean;
   rgb: Array<number>;
   minYear: number;
@@ -29,7 +32,7 @@ class Voyage {
     height: number,
     width: number,
     widthAdjust: number,
-    fullColor: boolean = false
+    fullColor: boolean = false,
   ) {
     this.p5 = p5;
     ({
@@ -38,6 +41,7 @@ class Voyage {
       year: this.year,
       resistanceReported: this.resistanceReported,
       duration: this.duration,
+      mortalityRate: this.mortalityRate,
       rgb: this.rgb,
       points: this.points,
       offsets: this.offsets,
@@ -71,7 +75,7 @@ class Voyage {
       this.minEmbark,
       this.maxEmbark,
       0,
-      this.height
+      this.height,
     );
     const rat = voyageHeight / this.height;
     const yStart = -this.height / 2;
@@ -82,9 +86,9 @@ class Voyage {
         this.minYear,
         this.maxYear,
         this.widthAdjust,
-        this.width
+        this.width,
       ),
-      this.height / 2
+      this.height / 2,
     );
 
     // Add color
@@ -99,6 +103,19 @@ class Voyage {
       this.p5.fill([250, 241, 233]);
     }
 
+    // Width of the ribbon tapers from offsets.c1 (top, scaled to totalPeople)
+    // down to a mortality-scaled fraction of it at the
+    // bottom (step 6), linearly interpolated across the 7 curve points.
+    // Clamped to [0, 1]: a few dozen records have a negative mortalityRate
+    // which result in the bottom being wider than the top instead of
+    // tapering it.
+    const bottomRatio = Math.pow(
+      Math.min(1, Math.max(0, 1 - this.mortalityRate)),
+      TAPER_EXPONENT,
+    );
+    const offsetAt = (step: number) =>
+      this.offsets.c1 * (1 - (1 - bottomRatio) * (step / 6));
+
     this.p5.beginShape();
     this.p5.curveVertex(this.points.c6, yStart - 300 * rat);
     this.p5.curveVertex(this.points.c5, yStart - 300 * rat);
@@ -109,27 +126,27 @@ class Voyage {
     this.p5.curveVertex(this.points.c7, this.height / 2 + 500 * rat);
 
     this.p5.curveVertex(
-      this.points.c7 + this.offsets.c7,
-      this.height / 2 + 500 * rat
+      this.points.c7 + offsetAt(6),
+      this.height / 2 + 500 * rat,
     );
     this.p5.curveVertex(
-      this.points.c4 + this.offsets.c6,
-      yStart + (this.height / 5) * 4
+      this.points.c4 + offsetAt(5),
+      yStart + (this.height / 5) * 4,
     );
     this.p5.curveVertex(
-      this.points.c3 + this.offsets.c5,
-      yStart + (this.height / 5) * 3
+      this.points.c3 + offsetAt(4),
+      yStart + (this.height / 5) * 3,
     );
     this.p5.curveVertex(
-      this.points.c2 + this.offsets.c4,
-      yStart + (this.height / 5) * 2
+      this.points.c2 + offsetAt(3),
+      yStart + (this.height / 5) * 2,
     );
     this.p5.curveVertex(
-      this.points.c1 + this.offsets.c3,
-      yStart + (this.height / 5) * 1
+      this.points.c1 + offsetAt(2),
+      yStart + (this.height / 5) * 1,
     );
-    this.p5.curveVertex(this.points.c5 + this.offsets.c2, yStart - 300 * rat);
-    this.p5.curveVertex(this.points.c6 + this.offsets.c1, yStart - 300 * rat);
+    this.p5.curveVertex(this.points.c5 + offsetAt(1), yStart - 300 * rat);
+    this.p5.curveVertex(this.points.c6 + offsetAt(0), yStart - 300 * rat);
     this.p5.endShape(this.p5.CLOSE);
     this.p5.pop();
   }
