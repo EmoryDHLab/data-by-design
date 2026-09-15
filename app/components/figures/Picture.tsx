@@ -44,10 +44,7 @@ const Picture = ({ figure, className }: Props) => {
         <source srcSet={`${localPath}.webp`} type="image/webp" />
       )}
       <img
-        className={classNames(
-          "mx-auto max-h-screen object-contain",
-          className,
-        )}
+        className={classNames("mx-auto max-h-screen object-contain", className)}
         src={useIIIFFallback ? iiifUrl(figure.fileName) : localFallback}
         onError={() => {
           if (!localFailed && figure.iiif) setLocalFailed(true);
@@ -55,7 +52,6 @@ const Picture = ({ figure, className }: Props) => {
         alt={altText}
         title={figure.cleanTitle ?? figure.fileName}
         draggable={!hideSensitiveState}
-        loading="lazy"
         decoding="async"
         width={figure.width ?? 0}
         height={figure.height ?? 0}

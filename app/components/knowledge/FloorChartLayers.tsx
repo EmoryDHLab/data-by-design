@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import ScrollytellWrapper from "../ScrollytellWrapper";
+import { ScrollytellContext } from "~/scrollytellContext";
 
 // The Floor Chart is a nine-layer sandwich. Drawn top to bottom, the way the
 // exploded-view diagram (figure 0430-Peabody-Sandwich) presents it.
@@ -73,6 +75,12 @@ const ISO = "matrix(0.866 0.5 -0.866 0.5 0 0)";
 const COLLAPSED_GAP = 7;
 const EXPANDED_GAP = 44;
 
+// The figure releases from its sticky pin once there's no more step height
+// left to hold it in place. Finishing the expansion before that point (with
+// room to spare) means the reader sees the fully-exploded state before the
+// diagram starts scrolling away.
+const EXPANSION_COMPLETE_AT = 0.5;
+
 const VIEW_WIDTH = 200;
 const VIEW_HEIGHT = 520;
 const CENTER_X = VIEW_WIDTH / 2;
@@ -89,7 +97,13 @@ const LayerPattern = ({ layer }: { layer: TLayer }) => {
   const { pattern, stroke } = layer;
   if (!pattern) return null;
 
-  const line = (key: string, x1: number, y1: number, x2: number, y2: number) => (
+  const line = (
+    key: string,
+    x1: number,
+    y1: number,
+    x2: number,
+    y2: number,
+  ) => (
     <line
       key={key}
       x1={x1}
@@ -178,16 +192,16 @@ const Layer = ({ layer, y }: { layer: TLayer; y: number }) => {
       {depth > 0 && (
         <>
           <polygon
-            points={`${left[0]},${left[1]} ${bottom[0]},${bottom[1]} ${bottom[0]},${
-              bottom[1] + depth
-            } ${left[0]},${left[1] + depth}`}
+            points={`${left[0]},${left[1]} ${bottom[0]},${bottom[1]} ${
+              bottom[0]
+            },${bottom[1] + depth} ${left[0]},${left[1] + depth}`}
             fill={layer.fill}
             style={{ filter: "brightness(0.78)" }}
           />
           <polygon
-            points={`${bottom[0]},${bottom[1]} ${right[0]},${right[1]} ${right[0]},${
-              right[1] + depth
-            } ${bottom[0]},${bottom[1] + depth}`}
+            points={`${bottom[0]},${bottom[1]} ${right[0]},${right[1]} ${
+              right[0]
+            },${right[1] + depth} ${bottom[0]},${bottom[1] + depth}`}
             fill={layer.fill}
             style={{ filter: "brightness(0.9)" }}
           />
@@ -207,18 +221,50 @@ const Layer = ({ layer, y }: { layer: TLayer; y: number }) => {
   );
 };
 
+const FloorChartDiagram = ({ gap }: { gap: number }) => {
+  const middle = (LAYERS.length - 1) / 2;
+
+  return (
+    <svg
+      viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
+      className="h-[70vh] max-h-[520px] w-auto max-w-full mx-auto"
+      role="img"
+      aria-label="An exploded-view diagram showing the nine layers of the Floor Chart, from top to bottom: quilt topper, batting, LEDs, quilt bottom, foam, copper strips, foam spacer, copper strips, foam bottom."
+    >
+      <defs />
+      {/* Painted bottom up so each layer occludes the one below it. */}
+      {LAYERS.map((layer, index) => ({ layer, index }))
+        .reverse()
+        .map(({ layer, index }) => (
+          <Layer
+            key={layer.id}
+            layer={layer}
+            y={CENTER_Y + (index - middle) * gap}
+          />
+        ))}
+    </svg>
+  );
+};
+
+// A single trigger spanning the whole scroll-through: with one step,
+// scrollama's index is always 0, so scrollProgress is already a plain 0-1
+// float rather than a step count to translate.
+const Triggers = [
+  <div
+    key="floor-chart-trigger"
+    data-step="floor-chart-trigger"
+    className="floor-chart-step h-[150vh] md:h-[200vh]"
+  ></div>,
+];
+
 /**
  * A coded stand-in for the exploded-view photograph of the Floor Chart. The
  * nine layers sit stacked when the diagram enters the viewport and draw apart
  * as the reader scrolls through it.
  */
-export default function FloorChartLayers({
-  className,
-}: {
-  className?: string;
-}) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [progress, setProgress] = useState(0);
+const FloorChartLayers = ({ className }: { className?: string }) => {
+  const stepsRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -229,61 +275,45 @@ export default function FloorChartLayers({
     return () => query.removeEventListener("change", sync);
   }, []);
 
-  useEffect(() => {
-    if (reducedMotion) return;
+  if (reducedMotion) {
+    return (
+      <div className={className}>
+        <FloorChartDiagram gap={EXPANDED_GAP} />
+      </div>
+    );
+  }
 
-    let pending: number | undefined;
-    const measure = () => {
-      const element = containerRef.current;
-      if (!element) return;
-      const rect = element.getBoundingClientRect();
-      // 0 as the diagram's top edge reaches the bottom of the viewport, 1 once
-      // it has travelled a full viewport height further up.
-      const travelled = window.innerHeight - rect.top;
-      const distance = window.innerHeight * 0.85 + rect.height * 0.5;
-      setProgress(Math.min(Math.max(travelled / distance, 0), 1));
-    };
-
-    const schedule = () => {
-      if (pending !== undefined) cancelAnimationFrame(pending);
-      pending = requestAnimationFrame(measure);
-    };
-
-    schedule();
-    window.addEventListener("scroll", schedule, { passive: true });
-    window.addEventListener("resize", schedule);
-
-    return () => {
-      if (pending !== undefined) cancelAnimationFrame(pending);
-      window.removeEventListener("scroll", schedule);
-      window.removeEventListener("resize", schedule);
-    };
-  }, [reducedMotion]);
-
-  const expansion = reducedMotion ? 1 : progress;
+  const expansion = Math.min(
+    Math.max(scrollProgress / EXPANSION_COMPLETE_AT, 0),
+    1,
+  );
   const gap = COLLAPSED_GAP + (EXPANDED_GAP - COLLAPSED_GAP) * expansion;
-  const middle = (LAYERS.length - 1) / 2;
 
   return (
-    <div ref={containerRef} className={className}>
-      <svg
-        viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
-        className="w-full h-auto"
-        role="img"
-        aria-label="An exploded-view diagram showing the nine layers of the Floor Chart, from top to bottom: quilt topper, batting, LEDs, quilt bottom, foam, copper strips, foam spacer, copper strips, foam bottom."
+    <ScrollytellContext.Provider value={{ scrollProgress, setScrollProgress }}>
+      <ScrollytellWrapper
+        setScrollProgress={setScrollProgress}
+        triggers={Triggers}
+        steps={stepsRef}
+        stepClassName=".floor-chart-step"
+        bgColor="none"
+        threshold={4}
+        className={className}
+        debug={false}
       >
-        <defs />
-        {/* Painted bottom up so each layer occludes the one below it. */}
-        {LAYERS.map((layer, index) => ({ layer, index }))
-          .reverse()
-          .map(({ layer, index }) => (
-            <Layer
-              key={layer.id}
-              layer={layer}
-              y={CENTER_Y + (index - middle) * gap}
-            />
-          ))}
-      </svg>
-    </div>
+        <div id="scrolly-floor-chart">
+          <figure className="sticky top-16">
+            <FloorChartDiagram gap={gap} />
+          </figure>
+          <div ref={stepsRef} className="relative">
+            {Triggers.map((trigger) => (
+              <div key={`trigger-wrap-${trigger.key}`}>{trigger}</div>
+            ))}
+          </div>
+        </div>
+      </ScrollytellWrapper>
+    </ScrollytellContext.Provider>
   );
-}
+};
+
+export default FloorChartLayers;

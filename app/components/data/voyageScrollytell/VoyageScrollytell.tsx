@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import figures from "~/data/figures/data.json";
@@ -60,29 +60,30 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
   const { accentTextColor } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
   const [slideIndex, setSlideIndex] = useState<number>(0);
-  const [width, setWidth] = useState<number>(0);
-  const [height, setHeight] = useState<number>(0);
   const { windowSize } = useResizeObserver();
   const steps = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    setWidth(
-      windowSize.width
-        ? windowSize.width < 768
-          ? windowSize.width * 0.9
-          : windowSize.width * 0.45
-        : 300,
-    );
-    setHeight(windowSize.height ? windowSize.height - 80 : 742);
-  }, [windowSize]);
+  const width = windowSize.width
+    ? windowSize.width < 768
+      ? windowSize.width * 0.9
+      : windowSize.width * 0.45
+    : 300;
+  const height = windowSize.height ? windowSize.height - 80 : 742;
 
-  useEffect(() => {
-    if (scrollProgress > minScrollProgress && scrollProgress % 1 > 0.5) {
-      setSlideIndex(Math.ceil(scrollProgress) - minScrollProgress);
-    } else if (scrollProgress <= minScrollProgress + 0.5) {
-      setSlideIndex(0);
-    }
-  }, [scrollProgress]);
+  // Adjusted during render (React's documented pattern) rather than in an
+  // effect: slideIndex depends on its own previous value (a hysteresis band
+  // near step boundaries, not a pure function of scrollProgress alone), and
+  // scrollProgress updates on every scroll tick, so an effect would add a
+  // stale extra render on each one.
+  let nextSlideIndex = slideIndex;
+  if (scrollProgress > minScrollProgress && scrollProgress % 1 > 0.5) {
+    nextSlideIndex = Math.ceil(scrollProgress) - minScrollProgress;
+  } else if (scrollProgress <= minScrollProgress + 0.5) {
+    nextSlideIndex = 0;
+  }
+  if (nextSlideIndex !== slideIndex) {
+    setSlideIndex(nextSlideIndex);
+  }
 
   const voyageExampleTransform = getCenteredTransform(
     VOYAGE_EXAMPLE_BOUNDS,
@@ -226,7 +227,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             >
               <Axis
                 yearRange={[1708, 1719]}
-                width={(windowSize.width ?? 400) - 128}
+                width={Math.max(0, (windowSize.width || 400) - 128)}
                 color="black"
                 widthAdjustment={45}
               />

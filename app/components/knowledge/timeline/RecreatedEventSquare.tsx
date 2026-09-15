@@ -4,7 +4,7 @@ import {
   POLYGONS,
   strokeDasharray,
 } from "~/components/knowledge/peabodyUtils";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useMemo } from "react";
 import BarGraphContext from "./TimelineContext";
 import eventData from "~/data/process/eventData.json";
 import type { PeabodyEvent, PolygonTransform } from "~/types/process";
@@ -30,43 +30,42 @@ const RecreatedEventSquare = ({
 }: Props) => {
   const { activeEvent, setActiveEvent } = useContext(BarGraphContext);
 
-  const [squareEvent, setSquareEvent] = useState<PeabodyEvent | undefined>(
-    undefined
-  );
-  const [strokeClass, setStrokeClass] = useState<string | undefined>(undefined);
-  const [active, setActive] = useState<boolean>(false);
-  const [eventPolygons, setEventPolygons] = useState<Array<string>>([]);
-  const eventColors = useRef<Array<string>>([]);
-  const polygonTransform = useRef<PolygonTransform>({});
-
-  useEffect(() => {
-    setSquareEvent(
+  const squareEvent = useMemo(
+    () =>
       yearEvents?.find(
         (event) =>
           (event?.squares as Array<number>).includes(index + 1) ||
-          event?.squares === "full"
-      )
-    );
-  }, [setSquareEvent, yearEvents, index]);
+          event?.squares === "full",
+      ),
+    [yearEvents, index],
+  );
 
-  useEffect(() => {
-    if (isFull) setStrokeClass(strokeDasharray(index, isVertical));
-  }, [isFull, setStrokeClass, index, isVertical]);
+  const strokeClass = useMemo(
+    () => (isFull ? strokeDasharray(index, isVertical) : undefined),
+    [isFull, index, isVertical],
+  );
 
-  useEffect(() => {
-    eventColors.current =
+  const active = useMemo(
+    () =>
+      activeEvent?.event === squareEvent ||
+      (isFull && activeEvent?.event?.year === year),
+    [activeEvent, year, squareEvent, isFull],
+  );
+
+  const { eventColors, polygonTransform, eventPolygons } = useMemo(() => {
+    let eventColors: Array<string> =
       squareEvent?.actors.map(
-        (actor) => (eventData.actorColors as { [key: string]: string })[actor]
+        (actor) => (eventData.actorColors as { [key: string]: string })[actor],
       ) || [];
 
-    polygonTransform.current = squareEvent?.transform
+    const polygonTransform: PolygonTransform = squareEvent?.transform
       ? {
           transform: `rotate(${squareEvent.transform[0]}deg)`,
           transformOrigin: squareEvent.transform[1],
         }
       : {};
 
-    const polygons = [];
+    const polygons: Array<string> = [];
 
     if (squareEvent?.actors && squareEvent.actors.length > 1) {
       if (squareEvent?.squares === "full") {
@@ -75,7 +74,7 @@ const RecreatedEventSquare = ({
           case 1:
           case 3:
             polygons.push(...POLYGONS[0]);
-            eventColors.current = [
+            eventColors = [
               (eventData.actorColors as { [key: string]: string })[
                 squareEvent.actors[0]
               ],
@@ -85,7 +84,7 @@ const RecreatedEventSquare = ({
           case 7:
           case 8:
             polygons.push(...POLYGONS[0]);
-            eventColors.current = [
+            eventColors = [
               (eventData.actorColors as { [key: string]: string })[
                 squareEvent.actors[1]
               ],
@@ -101,15 +100,8 @@ const RecreatedEventSquare = ({
       polygons.push(...POLYGONS[0]);
     }
 
-    setEventPolygons(polygons);
-  }, [squareEvent, index, setEventPolygons]);
-
-  useEffect(() => {
-    setActive(
-      activeEvent?.event === squareEvent ||
-        (isFull && activeEvent?.event?.year === year)
-    );
-  }, [activeEvent, year, setActive, squareEvent, isFull]);
+    return { eventColors, polygonTransform, eventPolygons: polygons };
+  }, [squareEvent, index]);
 
   if (squareEvent) {
     return (
@@ -119,7 +111,7 @@ const RecreatedEventSquare = ({
         height={30}
         x={getEventXFromIndex(index)}
         y={getEventYFromIndex(index)}
-        className={`${isVertical ? "w-full h-auto" : ""}`}
+        className={`${isVertical ? "w-full h-auto" : ""} cursor-pointer`}
         onMouseEnter={() =>
           setActiveEvent({ type: index, event: squareEvent, absoluteIndex })
         }
@@ -146,10 +138,10 @@ const RecreatedEventSquare = ({
             <polygon
               key={i}
               points={p}
-              fill={eventColors.current[i] ?? ""}
-              stroke={eventColors.current[i] ?? ""}
+              fill={eventColors[i] ?? ""}
+              stroke={eventColors[i] ?? ""}
               strokeWidth={0.5}
-              style={polygonTransform.current}
+              style={polygonTransform}
             />
           );
         })}

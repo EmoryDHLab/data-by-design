@@ -1,19 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useMemo } from "react";
 import TimelineContext from "./TimelineContext";
 import PeabodyActors from "../PeabodyActors";
 import eventData from "~/data/process/eventData.json";
 
 export default function BarGraphActors() {
   const { activeEvent, currentCentury } = useContext(TimelineContext);
-  const [currentActors, setCurrentActors] = useState<Array<string>>(
-    (eventData.actors as { [key: string]: Array<string> })[currentCentury]
+  const currentActors = useMemo(
+    () => (eventData.actors as { [key: string]: Array<string> })[currentCentury],
+    [currentCentury],
   );
-
-  useEffect(() => {
-    setCurrentActors(
-      (eventData.actors as { [key: string]: Array<string> })[currentCentury]
-    );
-  }, [setCurrentActors, currentCentury]);
 
   return (
     <div className="flex flex-row">

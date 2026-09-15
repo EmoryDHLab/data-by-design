@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useMemo, useRef, useState } from "react";
 import Tutorial from "./tutorial/TutorialSquares";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
@@ -14,13 +14,13 @@ export default function Scrollytell({
   const { primaryTextColor } = useContext(ChapterContext);
   const steps = useRef<HTMLDivElement>(null);
 
+  const scrollytellContextValue = useMemo(
+    () => ({ scrollProgress, setScrollProgress }),
+    [scrollProgress],
+  );
+
   return (
-    <ScrollytellContext.Provider
-      value={{
-        scrollProgress,
-        setScrollProgress,
-      }}
-    >
+    <ScrollytellContext.Provider value={scrollytellContextValue}>
       <ScrollytellWrapper
         className={`md:flex justify-between`}
         setScrollProgress={setScrollProgress}

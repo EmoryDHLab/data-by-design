@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useMemo, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
@@ -8,6 +8,14 @@ type TFocusShape = {
   y: number;
   width: number;
   height: number;
+};
+
+type TFocusState = {
+  highlightSection: string | undefined;
+  focusShapeSize: TFocusShape;
+  zoom: number;
+  xOffset: number;
+  yOffset: number;
 };
 
 const triggers = [
@@ -56,110 +64,116 @@ const triggers = [
 const width = 2000;
 const height = 2534;
 
+const minScrollProgress = 6.5;
+
+function getFocusState(scrollProgress: number): TFocusState {
+  switch (true) {
+    // Cross-sections
+    case scrollProgress >= minScrollProgress &&
+      scrollProgress < minScrollProgress + 1:
+      return {
+        highlightSection: "cross",
+        focusShapeSize: { x: 0, y: 650, width, height: 800 },
+        zoom: 1,
+        xOffset: 0,
+        yOffset: 0,
+      };
+    // Side Cross-section
+    case scrollProgress >= minScrollProgress + 1 &&
+      scrollProgress < minScrollProgress + 2:
+      return {
+        highlightSection: "side",
+        focusShapeSize: { x: 0, y: 200, width, height: 600 },
+        zoom: 1,
+        xOffset: 0,
+        yOffset: 0,
+      };
+    // Text
+    case scrollProgress >= minScrollProgress + 2 &&
+      scrollProgress < minScrollProgress + 3:
+      return {
+        highlightSection: "text",
+        focusShapeSize: { x: 0, y: 1550, width, height: 950 },
+        zoom: 1,
+        xOffset: 0,
+        yOffset: 0,
+      };
+    // Title
+    case scrollProgress >= minScrollProgress + 3 &&
+      scrollProgress < minScrollProgress + 4:
+      return {
+        highlightSection: "title",
+        focusShapeSize: { x: 0, y: 10, width, height: 220 },
+        zoom: 1,
+        xOffset: 0,
+        yOffset: 0,
+      };
+    // Tables
+    case scrollProgress >= minScrollProgress + 4 &&
+      scrollProgress < minScrollProgress + 5:
+      return {
+        highlightSection: "tables",
+        focusShapeSize: { x: 0, y: 1550, width: 1000, height: 950 },
+        zoom: 1,
+        xOffset: 0,
+        yOffset: 0,
+      };
+    // Table 1
+    case scrollProgress >= minScrollProgress + 5 &&
+      scrollProgress < minScrollProgress + 6:
+      return {
+        highlightSection: "table1",
+        focusShapeSize: { x: 0, y: 50, width, height: 2200 },
+        zoom: 4,
+        xOffset: -150,
+        yOffset: -6800,
+      };
+    // Table 2
+    case scrollProgress >= minScrollProgress + 6 &&
+      scrollProgress < minScrollProgress + 7:
+      return {
+        highlightSection: "table2",
+        focusShapeSize: { x: 0, y: 840, width, height: 450 },
+        zoom: 5.85,
+        xOffset: -1025,
+        yOffset: -12300,
+      };
+    // Table 3
+    case scrollProgress >= minScrollProgress + 7 &&
+      scrollProgress < minScrollProgress + 8:
+      return {
+        highlightSection: "table3",
+        focusShapeSize: { x: 0, y: 400, width, height: 1000 },
+        zoom: 4.9,
+        xOffset: -2875,
+        yOffset: -7550,
+      };
+    default:
+      return {
+        highlightSection: undefined,
+        focusShapeSize: { x: 0, y: 0, width, height },
+        zoom: 1,
+        xOffset: 0,
+        yOffset: 0,
+      };
+  }
+}
+
 function ClarksonSideBySideScrollytell() {
   const { accentTextColor, hideSensitiveState } = useContext(ChapterContext);
-  const [highlightSection, setHighlightSection] = useState<string | undefined>(
-    undefined,
-  );
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
-  const [focusShapeSize, setFocusShapeSize] = useState<TFocusShape>({
-    x: 0,
-    y: 0,
-    width,
-    height,
-  });
-  const [zoom, setZoom] = useState<number>(1);
-  const [xOffset, setXOffset] = useState<number>(0);
-  const [yOffset, setYOffset] = useState<number>(0);
   const steps = useRef<HTMLDivElement>(null);
 
-  const minScrollProgress = 6.5;
+  const { highlightSection, focusShapeSize, zoom, xOffset, yOffset } =
+    useMemo(() => getFocusState(scrollProgress), [scrollProgress]);
 
-  useEffect(() => {
-    switch (true) {
-      // Cross-sections
-      case scrollProgress >= minScrollProgress &&
-        scrollProgress < minScrollProgress + 1:
-        setHighlightSection("cross");
-        setFocusShapeSize({ x: 0, y: 650, width, height: 800 });
-        setZoom(1);
-        setXOffset(0);
-        setYOffset(0);
-        break;
-      // Side Cross-section
-      case scrollProgress >= minScrollProgress + 1 &&
-        scrollProgress < minScrollProgress + 2:
-        setHighlightSection("side");
-        setFocusShapeSize({ x: 0, y: 200, width, height: 600 });
-        setZoom(1);
-        setXOffset(0);
-        setYOffset(0);
-        break;
-      // Text
-      case scrollProgress >= minScrollProgress + 2 &&
-        scrollProgress < minScrollProgress + 3:
-        setHighlightSection("text");
-        setFocusShapeSize({ x: 0, y: 1550, width, height: 950 });
-        setZoom(1);
-        setXOffset(0);
-        setYOffset(0);
-        break;
-      // Title
-      case scrollProgress >= minScrollProgress + 3 &&
-        scrollProgress < minScrollProgress + 4:
-        setHighlightSection("title");
-        setFocusShapeSize({ x: 0, y: 10, width, height: 220 });
-        setZoom(1);
-        setXOffset(0);
-        setYOffset(0);
-        break;
-      // Tables
-      case scrollProgress >= minScrollProgress + 4 &&
-        scrollProgress < minScrollProgress + 5:
-        setHighlightSection("tables");
-        setFocusShapeSize({ x: 0, y: 1550, width: 1000, height: 950 });
-        setZoom(1);
-        setXOffset(0);
-        setYOffset(0);
-        break;
-      // Table 1
-      case scrollProgress >= minScrollProgress + 5 &&
-        scrollProgress < minScrollProgress + 6:
-        setHighlightSection("table1");
-        setFocusShapeSize({ x: 0, y: 50, width, height: 2200 });
-        setZoom(4);
-        setXOffset(-150);
-        setYOffset(-6800);
-        break;
-      // Table 2
-      case scrollProgress >= minScrollProgress + 6 &&
-        scrollProgress < minScrollProgress + 7:
-        setHighlightSection("table2");
-        setFocusShapeSize({ x: 0, y: 840, width, height: 450 });
-        setZoom(5.85);
-        setXOffset(-1025);
-        setYOffset(-12300);
-        break;
-      // Table 3
-      case scrollProgress >= minScrollProgress + 7 &&
-        scrollProgress < minScrollProgress + 8:
-        setHighlightSection("table3");
-        setFocusShapeSize({ x: 0, y: 400, width, height: 1000 });
-        setZoom(4.9);
-        setXOffset(-2875);
-        setYOffset(-7550);
-        break;
-      default:
-        setHighlightSection(undefined);
-        setFocusShapeSize({ x: 0, y: 0, width, height });
-        setZoom(1);
-        setXOffset(0);
-        setYOffset(0);
-    }
-  }, [scrollProgress, hideSensitiveState]);
+  const scrollytellContextValue = useMemo(
+    () => ({ scrollProgress }),
+    [scrollProgress],
+  );
 
   return (
-    <ScrollytellContext.Provider value={{ scrollProgress }}>
+    <ScrollytellContext.Provider value={scrollytellContextValue}>
       <ScrollytellWrapper
         setScrollProgress={setScrollProgress}
         triggers={triggers}

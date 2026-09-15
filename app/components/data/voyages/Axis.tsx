@@ -37,7 +37,7 @@ function Axis({
     d3.select(axisRef.current)
       // .append("svg")
       // .attr("id", "x-axis")
-      .attr("width", width + 100)
+      .attr("width", Math.max(0, width + 100))
       .attr("height", 75)
       .attr("fill", color ?? "white")
       .append("g")

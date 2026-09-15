@@ -1,3 +1,4 @@
+import { memo } from "react";
 import {
   getEventXFromIndex,
   getEventYFromIndex,
@@ -20,7 +21,7 @@ interface Props {
   className?: string | null;
 }
 
-export default function RecreatedEventSquare({
+function RecreatedEventSquare({
   absoluteIndex,
   index,
   highlightedElement,
@@ -105,3 +106,5 @@ export default function RecreatedEventSquare({
     </svg>
   );
 }
+
+export default memo(RecreatedEventSquare);
