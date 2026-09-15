@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { rectColor, rectHoverColor } from "./data";
 import type { TContribution } from "./data";
 import type { Dispatch, SetStateAction } from "react";
@@ -19,12 +18,8 @@ const WeekBar = ({
   width,
   setActiveContribution,
 }: Props) => {
-  const [height, setHeight] = useState(0);
-
-  useEffect(() => {
-    if (!contributions || !contributions.length) return;
-    setHeight(80 / contributions.length);
-  }, [contributions]);
+  const height =
+    contributions && contributions.length > 0 ? 80 / contributions.length : 0;
 
   return (
     <g>

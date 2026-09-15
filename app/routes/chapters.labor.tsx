@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ChapterTitle from "~/components/ChapterTitle";
 import { chapterMetaTags } from "~/utils";
@@ -153,20 +153,23 @@ function TechStack() {
 export default function LabourPage() {
   const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
 
+  const chapterContextValue = useMemo(
+    () => ({
+      backgroundColor: "laborPrimary",
+      accentColor: "laborSecondary",
+      footnoteTextColor: "laborPrimary",
+      footnotes: workFootnotes,
+      sections,
+      visualizations,
+      chapterFigures,
+      showFootnotes,
+      setShowFootnotes,
+    }),
+    [showFootnotes],
+  );
+
   return (
-    <ChapterContext.Provider
-      value={{
-        backgroundColor: "laborPrimary",
-        accentColor: "laborSecondary",
-        footnoteTextColor: "laborPrimary",
-        footnotes: workFootnotes,
-        sections,
-        visualizations,
-        chapterFigures,
-        showFootnotes,
-        setShowFootnotes,
-      }}
-    >
+    <ChapterContext.Provider value={chapterContextValue}>
       <ChapterTitle
         title={chapterMeta.labor.title}
         subtitle={chapterMeta.labor.subtitle}
