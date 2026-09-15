@@ -176,6 +176,8 @@ export const events: Event[] = [
     venue: "Norman B. Leventhal Map & Education Center, Boston Public Library.",
     streetAddress: "700 Boylston St",
     postalCode: "02116",
+    url: "https://www.leventhalmap.org/event/author-talk-data-by-design/",
+    registerUrl: "https://luma.com/wuxm2im7",
   },
   {
     date: "November 10–14, 2026",
