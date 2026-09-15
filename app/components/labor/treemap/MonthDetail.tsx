@@ -1,10 +1,9 @@
 import * as d3 from "d3";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import weeklyData from "./weeklyData";
 import { csvData as csv } from "./data";
 import WeekBar from "./WeekBar";
 import type { TContribution } from "./data";
-import type { TWeekData } from "./weeklyData";
 import type { Dispatch, SetStateAction } from "react";
 
 interface Props {
@@ -13,52 +12,23 @@ interface Props {
 }
 
 const MonthDetail = ({ selectedMonth, setActiveContribution }: Props) => {
-  const [weeks, setWeeks] = useState<TWeekData[] | undefined>(undefined);
   const [csvData, setCSVData] = useState<TContribution[] | undefined>();
-  const [contributions, setContributions] = useState<
-    Array<TContribution[]> | undefined
-  >(undefined);
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    const fetchCsv = async () => {
-      if (!weeks) return;
-      const data = await csv();
-      setCSVData(data);
-      const _contributions = [];
-      for (const week of weeks) {
-        _contributions.push(
-          data.filter(
-            (c) => c.monday.toDateString() == week.week.toDateString(),
-          ),
-        );
-      }
-      setContributions(_contributions);
-    };
+    csv().then(setCSVData);
+  }, []);
 
-    fetchCsv();
-  }, [weeks]);
+  const weeks = selectedMonth ? weeklyData[selectedMonth] : undefined;
 
-  useEffect(() => {
-    if (selectedMonth) {
-      setWeeks(weeklyData[selectedMonth]);
-    } else {
-      setWeeks(undefined);
-    }
-  }, [selectedMonth]);
-
-  useEffect(() => {
-    if (!weeks || !csvData) return;
-    const _contributions = [];
-    for (const week of weeks) {
-      _contributions.push(
-        csvData.filter(
-          (c) => c.monday.toDateString() == week.week.toDateString(),
-        ),
-      );
-    }
-    setContributions(_contributions);
-  }, [weeks, csvData, selectedMonth]);
+  const contributions = useMemo(() => {
+    if (!weeks || !csvData) return undefined;
+    return weeks.map((week) =>
+      csvData.filter(
+        (c) => c.monday.toDateString() == week.week.toDateString(),
+      ),
+    );
+  }, [weeks, csvData]);
 
   const monthYear = () => {
     if (!selectedMonth || !contributions || contributions.length === 0)

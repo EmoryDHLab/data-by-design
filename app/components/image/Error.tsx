@@ -35,35 +35,32 @@ const Error = ({ children }: { children: ReactNode }) => {
   }, [hoverState]);
 
   useEffect(() => {
+    const timers: Array<ReturnType<typeof setTimeout>> = [];
+    const schedule = (fn: () => void, delay: number) => {
+      timers.push(setTimeout(fn, delay));
+    };
+
     if (showError) {
       setImageOpacity("opacity-20");
-      setTimeout(() => {
-        setStrokeDashoffset(8.2);
-      }, 700);
-      setTimeout(() => {
-        setZoom(true);
-      }, 1500);
-      setTimeout(() => {
-        setDrawError(true);
-      }, 2500);
-      setTimeout(() => {
-        setStrokeDashoffset(0);
-      }, 3000);
+      schedule(() => setStrokeDashoffset(8.2), 700);
+      schedule(() => setZoom(true), 1500);
+      schedule(() => setDrawError(true), 2500);
+      schedule(() => setStrokeDashoffset(0), 3000);
       showErrorRef.current = true;
     } else if (showErrorRef.current) {
       setStrokeDashoffset(8.2);
-      setTimeout(() => {
-        setDrawError(false);
-      }, 1000);
-      setTimeout(() => {
+      schedule(() => setDrawError(false), 1000);
+      schedule(() => {
         setZoom(false);
         setStrokeDashoffset(112.31173706054688);
       }, 2000);
-      setTimeout(() => {
-        setImageOpacity("opacity-100");
-      }, 3000);
+      schedule(() => setImageOpacity("opacity-100"), 3000);
       showErrorRef.current = false;
     }
+
+    return () => {
+      timers.forEach(clearTimeout);
+    };
   }, [showError]);
 
   return (

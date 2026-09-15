@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import ChapterTitle from "~/components/ChapterTitle";
 import { ChapterContext } from "~/chapterContext";
 import ChapterSectionTitle from "~/components/ChapterSectionTitle";
@@ -66,23 +66,26 @@ export default function PlayfairPage() {
   const [hoverState, setHoverState] = useState<HoverState>(undefined);
   const [showFootnotes, setShowFootnotes] = useState<boolean>(false);
 
+  const chapterContextValue = useMemo(
+    () => ({
+      backgroundColor: "imagePrimary",
+      primaryTextColor: "black",
+      accentColor: "imageSecondary",
+      footnoteTextColor: "imagePrimary",
+      footnotes: imageFootnotes,
+      hoverState,
+      setHoverState,
+      chapterFigures,
+      visualizations,
+      sections,
+      showFootnotes,
+      setShowFootnotes,
+    }),
+    [hoverState, showFootnotes],
+  );
+
   return (
-    <ChapterContext.Provider
-      value={{
-        backgroundColor: "imagePrimary",
-        primaryTextColor: "black",
-        accentColor: "imageSecondary",
-        footnoteTextColor: "imagePrimary",
-        footnotes: imageFootnotes,
-        hoverState,
-        setHoverState,
-        chapterFigures,
-        visualizations,
-        sections,
-        showFootnotes,
-        setShowFootnotes,
-      }}
-    >
+    <ChapterContext.Provider value={chapterContextValue}>
       <ChapterTitle
         title={chapterMeta.image.title}
         subtitle={chapterMeta.image.subtitle}

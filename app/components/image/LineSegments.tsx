@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import * as d3 from "d3";
 import playfairData from "../../data/image/playfairImportExport.json";
 import { Paths } from "./scrollytellElements/Paths";
@@ -18,52 +18,55 @@ const white = "#FFEBD7";
 const height = 44;
 const width = 94;
 
+function getFocusShape(scrollProgress: number) {
+  if (scrollProgress < 2.5 || scrollProgress >= 3.5) {
+    return { x: 21, y: 13.6, width: 66, height: 39, transform: "rotate(1)" };
+  }
+  return { x: 0, y: -17, width: 200, height: 200 };
+}
+
+function getChartTransform(scrollProgress: number) {
+  if (scrollProgress >= 2.5 && scrollProgress <= 3.5) {
+    return "scale(1) translate(0) rotate(0)";
+  }
+  if (scrollProgress >= 3.5 && scrollProgress <= 4.5) {
+    return "scale(1.41, 1.38) translate(-17.1,-13.5) rotate(-1)";
+  }
+  return "scale(1.42, 1.3) translate(-17.1,-13.6) rotate(-1)";
+}
+
 const LineSegments = ({ scrollProgress }: Props) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [recreationScrollProgress, setRecreationScrollProgress] =
     useState<number>(50);
-  const [focusShape, setFocusShape] = useState<object>({
-    x: 0,
-    y: 0,
-    width,
-    height,
-    transform: "",
-  });
-  const [chartTransform, setChartTransform] = useState<string>(
-    "scale(1.42, 1.3) translate(-17.1,-13.6) rotate(-1)",
+
+  // Adjusted during render (React's documented pattern) rather than in an
+  // effect: these thresholds have gaps (not else-if), so outside them the
+  // value deliberately holds its previous state - it's not a pure function
+  // of scrollProgress alone, and scrollProgress updates on every scroll
+  // tick, so an effect would add a stale extra render on each one.
+  let nextRecreationScrollProgress = recreationScrollProgress;
+  if (scrollProgress > 6.7 && scrollProgress < 7.5) {
+    nextRecreationScrollProgress = 20;
+  }
+  if (scrollProgress > 7.5 && scrollProgress < 8.5) {
+    nextRecreationScrollProgress = 12.5;
+  }
+  if (scrollProgress > 8.5) {
+    nextRecreationScrollProgress = 13;
+  }
+  if (nextRecreationScrollProgress !== recreationScrollProgress) {
+    setRecreationScrollProgress(nextRecreationScrollProgress);
+  }
+
+  const focusShape = useMemo(
+    () => getFocusShape(scrollProgress),
+    [scrollProgress],
   );
-
-  useEffect(() => {
-    if (scrollProgress < 2.5 || scrollProgress >= 3.5) {
-      setFocusShape({
-        x: 21,
-        y: 13.6,
-        width: 66,
-        height: 39,
-        transform: "rotate(1)",
-      });
-    } else {
-      setFocusShape({ x: 0, y: -17, width: 200, height: 200 });
-    }
-  }, [scrollProgress]);
-
-  useEffect(() => {
-    if (scrollProgress > 6.7 && scrollProgress < 7.5)
-      setRecreationScrollProgress(20);
-
-    if (scrollProgress > 7.5 && scrollProgress < 8.5)
-      setRecreationScrollProgress(12.5);
-
-    if (scrollProgress > 8.5) setRecreationScrollProgress(13);
-
-    if (scrollProgress >= 2.5 && scrollProgress <= 3.5) {
-      setChartTransform("scale(1) translate(0) rotate(0)");
-    } else if (scrollProgress >= 3.5 && scrollProgress <= 4.5) {
-      setChartTransform("scale(1.41, 1.38) translate(-17.1,-13.5) rotate(-1)");
-    } else {
-      setChartTransform("scale(1.42, 1.3) translate(-17.1,-13.6) rotate(-1)");
-    }
-  }, [scrollProgress]);
+  const chartTransform = useMemo(
+    () => getChartTransform(scrollProgress),
+    [scrollProgress],
+  );
 
   return (
     <svg

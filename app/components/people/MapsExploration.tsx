@@ -1,56 +1,56 @@
 import { useState } from "react";
 import figures from "~/data/figures/people.json";
 
+// Define tooltip positions and content
+const TOOLTIPS = [
+  {
+    id: 1,
+    x: 56.8,
+    y: 50.5,
+    title: "1818",
+    description: "'Theft' of Peyton's boat",
+  },
+  {
+    id: 2,
+    x: 56.5,
+    y: 63.5,
+    title: "1819",
+    description: "Attack on winter camp and capture of Demasduit",
+  },
+  {
+    id: 3,
+    x: 45,
+    y: 35.6,
+    title: "1829",
+    description: "Shanawdithit creates her maps ",
+  },
+  {
+    id: 4,
+    x: 72.3,
+    y: 40.4,
+    title: "1871",
+    description: "Peyton relates his narrative",
+  },
+  {
+    id: 5,
+    x: 73.6,
+    y: 78,
+    title: "~1819-1914",
+    description: "Grandfather tells John Paul his account ",
+  },
+  {
+    id: 6,
+    x: 81.6,
+    y: 80.8,
+    title: "1914",
+    description: "John Paul's narrative is recorded",
+  },
+];
+
 export default function ImageTooltips() {
   const [activeTooltip, setActiveTooltip] = useState<number | undefined>(
     undefined,
   );
-
-  // Define tooltip positions and content
-  const tooltips = [
-    {
-      id: 1,
-      x: 56.8,
-      y: 50.5,
-      title: "1818",
-      description: "'Theft' of Peyton's boat",
-    },
-    {
-      id: 2,
-      x: 56.5,
-      y: 63.5,
-      title: "1819",
-      description: "Attack on winter camp and capture of Demasduit",
-    },
-    {
-      id: 3,
-      x: 45,
-      y: 35.6,
-      title: "1829",
-      description: "Shanawdithit creates her maps ",
-    },
-    {
-      id: 4,
-      x: 72.3,
-      y: 40.4,
-      title: "1871",
-      description: "Peyton relates his narrative",
-    },
-    {
-      id: 5,
-      x: 73.6,
-      y: 78,
-      title: "~1819-1914",
-      description: "Grandfather tells John Paul his account ",
-    },
-    {
-      id: 6,
-      x: 81.6,
-      y: 80.8,
-      title: "1914",
-      description: "John Paul's narrative is recorded",
-    },
-  ];
 
   return (
     <div className="min-h-screen z-90 p-8">
@@ -65,7 +65,7 @@ export default function ImageTooltips() {
             />
 
             {/* Tooltip Markers */}
-            {tooltips.map((tooltip) => (
+            {TOOLTIPS.map((tooltip) => (
               <div
                 key={tooltip.id}
                 className="absolute"
@@ -89,7 +89,7 @@ export default function ImageTooltips() {
             ))}
 
             {/* Tooltip Content - Rendered separately with higher z-index */}
-            {tooltips.map((tooltip) => {
+            {TOOLTIPS.map((tooltip) => {
               // Check if tooltip would be cut off at bottom (if y position > 70%)
               const isNearBottom = tooltip.y > 70;
 

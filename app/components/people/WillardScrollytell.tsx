@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useMemo, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
@@ -8,6 +8,86 @@ import type { ReactElement } from "react";
 const width = 1232;
 const height = 1089;
 
+const minScrollProgress = 10.5;
+
+type TFocusState = {
+  focusShapeSize: { x: number; y: number; width: number; height: number };
+  zoom: number;
+  translateX: number;
+  translateY: number;
+  skewX: number;
+  skewY: number;
+};
+
+function getFocusState(scrollProgress: number): TFocusState {
+  switch (true) {
+    // Intro
+    case scrollProgress >= minScrollProgress + 1 &&
+      scrollProgress < minScrollProgress + 2:
+      return {
+        focusShapeSize: { x: 815, y: 765, width: 165, height: 75 },
+        zoom: 4,
+        translateX: -275,
+        translateY: -250,
+        skewX: 0,
+        skewY: 0,
+      };
+    // Tribe names
+    case scrollProgress >= minScrollProgress + 2 &&
+      scrollProgress < minScrollProgress + 3:
+      return {
+        focusShapeSize: { x: 0, y: 0, width, height },
+        zoom: 4,
+        translateX: 75,
+        translateY: -200,
+        skewX: 0,
+        skewY: 0,
+      };
+    // Tribe influence
+    case scrollProgress >= minScrollProgress + 3 &&
+      scrollProgress < minScrollProgress + 4:
+      return {
+        focusShapeSize: { x: 475, y: 660, width: 210, height: 80 },
+        zoom: 4,
+        translateX: 75,
+        translateY: -200,
+        skewX: 0,
+        skewY: 0,
+      };
+    // Circle color
+    case scrollProgress >= minScrollProgress + 4 &&
+      scrollProgress < minScrollProgress + 5:
+      return {
+        focusShapeSize: { x: 5, y: 405, width: 900, height: 190 },
+        zoom: 2,
+        translateX: 50,
+        translateY: -50,
+        skewX: 0,
+        skewY: 0,
+      };
+    // Salt water
+    case scrollProgress >= minScrollProgress + 5 &&
+      scrollProgress < minScrollProgress + 6:
+      return {
+        focusShapeSize: { x: 1160, y: 410, width: 115, height: 435 },
+        zoom: 2.25,
+        translateX: -120,
+        translateY: -80,
+        skewX: -30,
+        skewY: 0,
+      };
+    default:
+      return {
+        focusShapeSize: { x: 0, y: 0, width, height },
+        zoom: 1.5,
+        translateX: 0,
+        translateY: 0,
+        skewX: 0,
+        skewY: 0,
+      };
+  }
+}
+
 interface Props {
   figure: TFigure;
   triggers: ReactElement[];
@@ -16,85 +96,18 @@ interface Props {
 function WillardScrollytell({ figure, triggers }: Props) {
   const { accentTextColor } = useContext(ChapterContext);
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
-  const [focusShapeSize, setFocusShapeSize] = useState<object>({
-    x: 0,
-    y: 0,
-    width,
-    height,
-  });
-  const [zoom, setZoom] = useState<number>(1);
-  const [translateX, setTranslateX] = useState<number>(-414);
-  const [translateY, setTranslateY] = useState<number>(-50);
-  const [skewX, setSkewX] = useState<number>(0);
-  const [skewY, setSkewY] = useState<number>(0);
   const steps = useRef<HTMLDivElement>(null);
 
-  const minScrollProgress = 10.5;
+  const { focusShapeSize, zoom, translateX, translateY, skewX, skewY } =
+    useMemo(() => getFocusState(scrollProgress), [scrollProgress]);
 
-  useEffect(() => {
-    switch (true) {
-      // Intro
-      case scrollProgress >= minScrollProgress + 1 &&
-        scrollProgress < minScrollProgress + 2:
-        setFocusShapeSize({ x: 815, y: 765, width: 165, height: 75 });
-        setZoom(4);
-        setTranslateX(-275);
-        setTranslateY(-250);
-        setSkewX(0);
-        setSkewY(0);
-        break;
-      // Tribe names
-      case scrollProgress >= minScrollProgress + 2 &&
-        scrollProgress < minScrollProgress + 3:
-        setFocusShapeSize({ x: 0, y: 0, width, height });
-        setZoom(4);
-        setTranslateX(75);
-        setTranslateY(-200);
-        setSkewX(0);
-        setSkewY(0);
-        break;
-      // Tribe influence
-      case scrollProgress >= minScrollProgress + 3 &&
-        scrollProgress < minScrollProgress + 4:
-        setFocusShapeSize({ x: 475, y: 660, width: 210, height: 80 });
-        setZoom(4);
-        setTranslateX(75);
-        setTranslateY(-200);
-        setSkewX(0);
-        setSkewY(0);
-        break;
-      // Circle color
-      case scrollProgress >= minScrollProgress + 4 &&
-        scrollProgress < minScrollProgress + 5:
-        setFocusShapeSize({ x: 5, y: 405, width: 900, height: 190 });
-        setZoom(2);
-        setTranslateX(50);
-        setTranslateY(-50);
-        setSkewX(0);
-        setSkewY(0);
-        break;
-      // Salt water
-      case scrollProgress >= minScrollProgress + 5 &&
-        scrollProgress < minScrollProgress + 6:
-        setFocusShapeSize({ x: 1160, y: 410, width: 115, height: 435 });
-        setZoom(2.25);
-        setTranslateX(-120);
-        setTranslateY(-80);
-        setSkewX(-30);
-        setSkewY(0);
-        break;
-      default:
-        setFocusShapeSize({ x: 0, y: 0, width, height });
-        setZoom(1.5);
-        setTranslateX(0);
-        setTranslateY(0);
-        setSkewX(0);
-        setSkewY(0);
-    }
-  }, [scrollProgress]);
+  const scrollytellContextValue = useMemo(
+    () => ({ scrollProgress }),
+    [scrollProgress],
+  );
 
   return (
-    <ScrollytellContext.Provider value={{ scrollProgress }}>
+    <ScrollytellContext.Provider value={scrollytellContextValue}>
       <ScrollytellWrapper
         setScrollProgress={setScrollProgress}
         triggers={triggers}
