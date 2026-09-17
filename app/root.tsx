@@ -43,14 +43,14 @@ export const Layout = ({ children }: WrapperProps) => {
         {/* Google tag (gtag.js) */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-N80LYNLPB7"
+          src="https://www.googletagmanager.com/gtag/js?id=G-W0CLLLE69K"
         />
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-N80LYNLPB7');`,
+gtag('config', 'G-W0CLLLE69K');`,
           }}
         />
       </head>
