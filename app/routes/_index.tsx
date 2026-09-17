@@ -6,7 +6,7 @@ import { ChapterContext } from "~/chapterContext";
 import { Link } from "react-router";
 import { bookMeta, bookSchema, retailers } from "~/data/bookMeta";
 import { events } from "~/data/events";
-import { trackPreorderClick } from "~/analytics";
+import { trackPreorderClick, trackEventClick } from "~/analytics";
 import StructuredData from "~/components/StructuredData";
 import { classNames, HOST_NAME } from "~/utils";
 import type { MetaFunction } from "react-router";
@@ -163,6 +163,13 @@ export default function Index() {
                     <a
                       href={href ?? "/events"}
                       {...(href ? { target: "_blank", rel: "noopener" } : {})}
+                      onClick={() =>
+                        trackEventClick(
+                          event.title,
+                          "row",
+                          "homepage_release"
+                        )
+                      }
                       className="group flex items-baseline gap-4 md:gap-8 py-5 transition-colors hover:text-changePrimary"
                     >
                       <span className="font-power font-bold text-sm md:text-base tabular-nums shrink-0 w-20 md:w-24">

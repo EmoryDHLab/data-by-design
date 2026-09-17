@@ -6,10 +6,10 @@
 // "preorder_click" row and break it down by retailer or placement, instead of
 // scanning a long list of one-off event names.
 //
-// NOTE: `retailer` and `placement` must be registered once in GA4 under
-// Admin -> Custom definitions -> Custom dimensions (event-scoped) before they
-// appear in standard reports. Until then they are only visible in Realtime,
-// DebugView, and the BigQuery export.
+// NOTE: `retailer`, `placement`, `event_title` and `link_type` must be
+// registered once in GA4 under Admin -> Custom definitions -> Custom dimensions
+// (event-scoped) before they appear in standard reports. Until then they are
+// only visible in Realtime, DebugView, and the BigQuery export.
 
 declare global {
   interface Window {
@@ -34,3 +34,30 @@ export const trackEvent = (name: string, params: EventParams = {}) => {
  */
 export const trackPreorderClick = (retailer: string, placement: string) =>
   trackEvent("preorder_click", { retailer, placement });
+
+/**
+ * A click on a link belonging to one of the tour events.
+ *
+ * Named `event_click` rather than `click`, which GA4's enhanced measurement
+ * already collects for outbound links.
+ *
+ * @param eventTitle the event's `title` from ~/data/events, which is what
+ *                   identifies it across both pages — the dates and venues
+ *                   repeat, the titles don't.
+ * @param linkType   which link in the row was taken: "register" for the
+ *                   register/RSVP button, "venue" for the venue's own page,
+ *                   "row" for the whole-row link the homepage uses.
+ * @param placement  "homepage_release" or "events_page" — the same event is
+ *                   reachable from both, and this is how you tell which
+ *                   listing is doing the work.
+ */
+export const trackEventClick = (
+  eventTitle: string,
+  linkType: string,
+  placement: string
+) =>
+  trackEvent("event_click", {
+    event_title: eventTitle,
+    link_type: linkType,
+    placement,
+  });

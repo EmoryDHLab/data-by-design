@@ -1,5 +1,6 @@
 import { classNames } from "~/utils";
 import { eventKinds } from "~/data/events";
+import { trackEventClick } from "~/analytics";
 import type { Event, EventKind } from "~/data/events";
 
 // One row of the tour, as the /events page lists it.
@@ -77,6 +78,9 @@ export default function EventRow({ event }: { event: Event }) {
                 {event.url ? (
                   <a
                     href={event.url}
+                    onClick={() =>
+                      trackEventClick(event.title, "venue", "events_page")
+                    }
                     className="underline underline-offset-4 decoration-1 hover:decoration-2 hover:text-black transition-colors"
                   >
                     {event.venue}
@@ -99,6 +103,9 @@ export default function EventRow({ event }: { event: Event }) {
                 href={event.registerUrl}
                 target="_blank"
                 rel="noopener"
+                onClick={() =>
+                  trackEventClick(event.title, "register", "events_page")
+                }
                 className="inline-block font-power uppercase tracking-wide text-sm md:text-base mt-4 px-5 py-2 border border-black hover:bg-changePrimary hover:text-white hover:border-changePrimary transition-colors"
               >
                 {event.registerLabel ?? "Register"}
