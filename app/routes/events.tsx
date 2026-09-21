@@ -3,10 +3,11 @@ import Footer from "~/components/Footer";
 import StructuredData from "~/components/StructuredData";
 import { ChapterContext } from "~/chapterContext";
 import { bookMeta } from "~/data/bookMeta";
-import { events, eventKinds } from "~/data/events";
+import { events, eventKinds, hasPassed, lastDay } from "~/data/events";
 import EventRow, { KindLabel } from "~/components/events/EventRow";
 import type { Event, EventKind } from "~/data/events";
 import { classNames, pageMetaTags, HOST_NAME } from "~/utils";
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import type { MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () =>
@@ -114,8 +115,53 @@ function eventsSchema(list: Event[]) {
 // The label shown beside an event, with a dot in the color of its kind. The
 // words carry the meaning on their own, so the color is reinforcement rather
 // than the only signal — it stays readable without color vision.
+
+// One tab's worth of listings: the years, each with its events. Pulled out so
+// Upcoming and Past render through the same code, differing only in whether
+// their rows still offer a way to register.
+function EventYears({ list, isPast }: { list: Event[]; isPast?: boolean }) {
+  if (list.length === 0) {
+    return (
+      <p className="font-power text-black/60 py-8">
+        Nothing to list here yet.
+      </p>
+    );
+  }
+  return (
+    <>
+      {groupByYear(list).map(({ year, events: yearEvents }) => (
+        <section key={year} className="mb-12 md:mb-16 last:mb-0">
+          <h3 className="font-power font-bold uppercase tracking-[0.2em] text-sm text-black/60 pb-3 border-b border-black/25">
+            {year}
+          </h3>
+          <ul className="divide-y divide-black/10">
+            {yearEvents.map((event) => (
+              <EventRow
+                key={event.date + event.title}
+                event={event}
+                isPast={isPast}
+              />
+            ))}
+          </ul>
+        </section>
+      ))}
+    </>
+  );
+}
+
+const TAB =
+  "font-power font-bold uppercase tracking-[0.15em] text-sm md:text-base pb-2 border-b-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-changePrimary";
+
 export default function EventsPage() {
-  const upcoming = events.filter((event) => !event.tbd);
+  const listed = events.filter((event) => !event.tbd);
+  // Split on the day rather than by hand, so an event moves itself across once
+  // its date is behind us and the page doesn't go stale between deploys.
+  const upcoming = listed.filter((event) => !hasPassed(event));
+  // Most recent first: the far end of a past list is the least interesting
+  // thing on it.
+  const past = listed
+    .filter((event) => hasPassed(event))
+    .sort((a, b) => lastDay(b).getTime() - lastDay(a).getTime());
 
   return (
     <div className="bg-offwhite">
@@ -133,25 +179,54 @@ export default function EventsPage() {
           subtitle="Book talks, launches, and appearances"
         />
         <main id="main-content" className="pb-24 md:pb-36">
+          {/* Only the upcoming events are marked up for search engines: the
+              point of Event markup is to send people to something they can
+              still attend. */}
           <StructuredData data={eventsSchema(upcoming)} />
           <div className="mx-auto max-w-5xl px-6 md:px-10 pt-10 md:pt-16">
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pb-8 md:pb-10">
-              {(Object.keys(eventKinds) as EventKind[]).map((kind) => (
-                <KindLabel key={kind} kind={kind} />
-              ))}
-            </div>
-            {groupByYear(upcoming).map(({ year, events: yearEvents }) => (
-              <section key={year} className="mb-12 md:mb-16 last:mb-0">
-                <h2 className="font-power font-bold uppercase tracking-[0.2em] text-sm text-black/60 pb-3 border-b border-black/25">
-                  {year}
-                </h2>
-                <ul className="divide-y divide-black/10">
-                  {yearEvents.map((event) => (
-                    <EventRow key={event.date + event.title} event={event} />
-                  ))}
-                </ul>
-              </section>
-            ))}
+            <TabGroup>
+              <TabList className="flex gap-8 border-b border-black/25 mb-8 md:mb-10">
+                <Tab
+                  className={({ selected }) =>
+                    classNames(
+                      TAB,
+                      selected
+                        ? "border-black text-black"
+                        : "border-transparent text-black/50 hover:text-black"
+                    )
+                  }
+                >
+                  Upcoming
+                </Tab>
+                <Tab
+                  className={({ selected }) =>
+                    classNames(
+                      TAB,
+                      selected
+                        ? "border-black text-black"
+                        : "border-transparent text-black/50 hover:text-black"
+                    )
+                  }
+                >
+                  Past
+                </Tab>
+              </TabList>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pb-8 md:pb-10">
+                {(Object.keys(eventKinds) as EventKind[]).map((kind) => (
+                  <KindLabel key={kind} kind={kind} />
+                ))}
+              </div>
+              <TabPanels>
+                <TabPanel>
+                  <h2 className="sr-only">Upcoming events</h2>
+                  <EventYears list={upcoming} />
+                </TabPanel>
+                <TabPanel>
+                  <h2 className="sr-only">Past events</h2>
+                  <EventYears list={past} isPast />
+                </TabPanel>
+              </TabPanels>
+            </TabGroup>
           </div>
         </main>
         <Footer />
