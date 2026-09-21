@@ -40,6 +40,17 @@ export default function Footer() {
             </foreignObject>
           </g>
         </svg>
+        {/* The icons sit outside the svg, so they stay real links at a real
+            size rather than being scaled with the viewBox. mt-auto drops them
+            to the foot of the column, level with the bottom of the footer on
+            wide screens; the padding is what keeps them clear of the copy when
+            the column is only as tall as its content. The inset matches the
+            52-unit indent of the foreignObject above, as a share of the 420-unit
+            viewBox, so they line up with the paragraphs rather than the
+            wordmark. */}
+        <div className="mt-auto pt-10 ps-[12.38%]">
+          <SocialLinks />
+        </div>
       </div>
       {/* SECOND COL */}
       <div className="col-span-12 md:col-span-4 flex flex-col space-y-4 font-neueMontrealLight leading-6 pt-8 md:pt-0 md:px-8 lg:px-12 text-sm md:text-xs">
@@ -96,7 +107,7 @@ export default function Footer() {
           Sign up for project updates
         </p>
         <form
-          className="relative w-full max-w-md"
+          className="relative w-full max-w-md mb-8"
           action="https://dataxdesign.us22.list-manage.com/subscribe/post?u=6d2b8677087077c76d5d9940a&amp;id=7cff42ff53&amp;f_id=00a6c7e1f0"
           method="post"
           id="mc-embedded-subscribe-form"
@@ -151,18 +162,6 @@ export default function Footer() {
             />
           </div>
         </form>
-
-        {/* Socials */}
-
-        {/* The three blocks in this column — the mailing list, the socials and
-            the logos — are set apart by the same pt-12 md:pt-20 on each one's
-            first element, so the column reads as evenly spaced sections rather
-            than a list with one gap wider than the next. The parent's space-y-4
-            handles the tighter spacing within a block. */}
-        <p className="uppercase text-xs font-neueMontreal pt-12 md:pt-20">
-          Follow the project
-        </p>
-        <SocialLinks />
 
         {/* Logos  */}
 
