@@ -52,7 +52,16 @@ const DateBox = ({ event }: { event: Event }) => (
   </div>
 );
 
-export default function EventRow({ event }: { event: Event }) {
+// `isPast` marks an event that has already happened: the row still records it,
+// but the register button comes off, since there is nothing left to register
+// for.
+export default function EventRow({
+  event,
+  isPast = false,
+}: {
+  event: Event;
+  isPast?: boolean;
+}) {
   return (
     <li>
       <div className="flex gap-4 text-base md:gap-6 lg:gap-10 py-6 md:py-8">
@@ -98,7 +107,7 @@ export default function EventRow({ event }: { event: Event }) {
                 {event.postalCode && `, ${event.postalCode.split("-")[0]}`}
               </p>
             )}
-            {event.registerUrl && (
+            {event.registerUrl && !isPast && (
               <a
                 href={event.registerUrl}
                 target="_blank"

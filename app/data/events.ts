@@ -61,6 +61,28 @@ export type Event = {
 
 export const events: Event[] = [
   {
+    date: "Tuesday, September 15, 2026",
+    month: "Sep",
+    day: "15",
+    weekday: "Tue",
+    year: "2026",
+    time: "7:00pm–8:30pm",
+    // EDT: US daylight time runs through November 1, 2026.
+    startDate: "2026-09-15T19:00:00-04:00",
+    title: "ChinatownJS: They Who Name the Fields",
+    kind: "talk",
+    description:
+      "Tanvi Sharma presents \"Navigating Resistance in Data\" at ChinatownJS, hosted by Sanctuary Computer.",
+    city: "New York, NY",
+    venue: "Index Chinatown",
+    // Two Luma pages: the venue's listing for the evening, and the separate
+    // ticket page the button points at. The ticket link stays in the data as a
+    // record of the event; the page stops showing it once the date has passed.
+    url: "https://luma.com/index-ltuw",
+    registerUrl: "https://luma.com/dnl59iqk",
+    registerLabel: "Get tickets",
+  },
+  {
     date: "Tuesday, October 20, 2026",
     month: "Oct",
     day: "20",
@@ -173,6 +195,25 @@ export const events: Event[] = [
     kind: "conference",
   },
   {
+    date: "Friday, November 20, 2026",
+    month: "Nov",
+    day: "20",
+    weekday: "Fri",
+    year: "2026",
+    time: "7:00pm–9:00pm",
+    // EST: US daylight time ended November 1, 2026.
+    startDate: "2026-11-20T19:00:00-05:00",
+    title: "Data Vandals x Data by Design",
+    description:
+      "A subway station party, with DJs Lauren Klein, Aileen Brophy, and Dan Selzer.",
+    kind: "party",
+    city: "New York, NY",
+    venue: "Data Vandals Newsstand",
+    streetAddress: "Lexington Ave & E 51st St",
+    postalCode: "10022",
+    url: "https://datavandals.com/",
+  },
+  {
     date: "Friday, January 8, 2027",
     month: "Jan",
     day: "8",
@@ -228,3 +269,28 @@ export const events: Event[] = [
     venue: "University of Oklahoma",
   },
 ];
+
+// Months as the `month` field abbreviates them, for turning a listing back into
+// a date.
+const MONTHS = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
+
+// The last day an event runs, at local midnight. Read off month/day/year rather
+// than startDate, which most of the list doesn't have — a conference with no
+// settled hour still has a settled day. A range ("10–14", "11-12") takes its
+// final day, so a multi-day event stays upcoming until it is wholly over.
+export function lastDay(event: Event): Date {
+  const day = Number(event.day.split(/[–—-]/).pop());
+  return new Date(Number(event.year), MONTHS.indexOf(event.month), day);
+}
+
+// An event is past once the day after its last day has begun, so it stays under
+// Upcoming for the whole of the day it happens — someone checking the page that
+// morning is still looking at something they can go to.
+export function hasPassed(event: Event, now: Date = new Date()): boolean {
+  const dayAfter = lastDay(event);
+  dayAfter.setDate(dayAfter.getDate() + 1);
+  return now >= dayAfter;
+}
