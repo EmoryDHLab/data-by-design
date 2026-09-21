@@ -10,6 +10,13 @@ import { classNames } from "~/utils";
 const LOGO =
   "w-auto object-contain opacity-75 hover:opacity-100 transition-opacity duration-200";
 
+// The source links in the credits paragraph. One constant rather than three
+// copies, which is how they drifted to different underline offsets in the first
+// place. The underline sits closer here than in the first column's larger copy,
+// because this paragraph is set small.
+const CREDIT_LINK =
+  "underline underline-offset-3 decoration-1 hover:decoration-2 focus:decoration-2";
+
 export default function Footer() {
   return (
     <footer className="grid md:grid-cols-12 gap-x-6 md:gap-x-12 p-8 md:p-16 lg:p-24 xl:p-32 xl:pt-12 font-neueMontreal bg-offblack text-offwhite">
@@ -104,23 +111,17 @@ export default function Footer() {
           Additional research for this project was completed through fellowships
           from the{" "}
           <a
-            className="underline underline-offset-4 decoration-1 hover:decoration-2 focus:decoration-2"
+            className={CREDIT_LINK}
             href="https://www.americanantiquarian.org/"
           >
             American Antiquarian Society
           </a>{" "}
           and the{" "}
-          <a
-            className="underline underline-offset-3 decoration-1 hover:decoration-2 focus:decoration-2"
-            href="https://librarycompany.org/"
-          >
+          <a className={CREDIT_LINK} href="https://librarycompany.org/">
             Library Company of Philadelphia
           </a>
           , and the assistance of the Archives and Collections Department at{" "}
-          <a
-            className="underline underline-offset-3 decoration-1 hover:decoration-2 focus:decoration-2"
-            href="https://www.therooms.ca/"
-          >
+          <a className={CREDIT_LINK} href="https://www.therooms.ca/">
             The Rooms
           </a>
           .
