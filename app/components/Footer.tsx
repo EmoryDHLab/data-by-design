@@ -1,6 +1,14 @@
 import SiteTitle from "./home/SiteTitle";
 import SocialLinks from "./SocialLinks";
 import { trackPreorderClick } from "~/analytics";
+import { classNames } from "~/utils";
+
+// The funder and collaborator logos share everything but their height, so the
+// common part lives here. They sit a little back from full strength and come up
+// to it under the cursor — the row is a credit rather than a call to action, so
+// it stays quiet until you look at it.
+const LOGO =
+  "w-auto object-contain opacity-75 hover:opacity-100 transition-opacity duration-200";
 
 export default function Footer() {
   return (
@@ -182,51 +190,54 @@ export default function Footer() {
 
         {/* Logos  */}
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-row md:flex-wrap gap-4 md:gap-8 pt-12 md:pt-20 items-center justify-items-center">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-row md:flex-wrap gap-4 md:gap-8 pt-6 md:pt-10 items-center justify-items-center">
           <img
-            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+            className={classNames("h-8 sm:h-10 md:h-12", LOGO)}
             src="/images/footer/ecds.png"
             alt="Emory Center for Digital Scholarship"
             loading="lazy"
             decoding="async"
           />
           <img
-            className="h-6 sm:h-8 md:h-8 w-auto object-contain"
+            className={classNames("h-6 sm:h-8 md:h-8", LOGO)}
             src="/images/footer/DHlab.svg"
             alt="Digital Humanities Lab"
             loading="lazy"
             decoding="async"
           />
           <img
-            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+            className={classNames("h-8 sm:h-10 md:h-12", LOGO)}
             src="/images/footer/polymode.svg"
             alt="Polymode Studio"
             loading="lazy"
             decoding="async"
           />
           <img
-            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+            className={classNames("h-8 sm:h-10 md:h-12", LOGO)}
             src="/images/footer/DigitalPublishingHumanities.png"
             alt="Emory Digital Humanities Lab"
             loading="lazy"
             decoding="async"
           />
           <img
-            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+            className={classNames("h-8 sm:h-10 md:h-12", LOGO)}
             src="/images/footer/neh.png"
             alt="The National Endowment for the Humanities"
             loading="lazy"
             decoding="async"
           />
           <img
-            className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+            className={classNames("h-8 sm:h-10 md:h-12", LOGO)}
             src="/images/footer/mellon.jpeg"
             alt="Andrew W. Mellon Foundation"
             loading="lazy"
             decoding="async"
           />
           <img
-            className="h-6 sm:h-8 md:h-10 w-auto object-contain col-span-3 sm:col-span-4 md:col-span-1 justify-self-center"
+            className={classNames(
+              "h-6 sm:h-8 md:h-10 col-span-3 sm:col-span-4 md:col-span-1 justify-self-center",
+              LOGO
+            )}
             src="/images/footer/mit.svg"
             alt="MIT Press"
             loading="lazy"
