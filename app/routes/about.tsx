@@ -121,7 +121,7 @@ export default function AboutPage() {
 
         <main id="main-content" className="chapter-body pb-36">
           <ChapterSectionTitle section={sections[0]}></ChapterSectionTitle>
-          <CenteredLayout>
+          <CenteredLayout className="max-w-3xl">
             {/* Each topic is its own section with its heading, rather than a
                 single run of h2s and paragraphs, so the page has an outline a
                 screen reader can move through and the spacing between topics is
@@ -222,7 +222,7 @@ export default function AboutPage() {
 
           <ChapterSectionTitle section={sections[1]}></ChapterSectionTitle>
 
-          <CenteredLayout>
+          <CenteredLayout className="max-w-3xl">
             {/* The lead-in is set larger than the entries it introduces, so the
                 section opens with a statement rather than starting flat. */}
             <p className="text-lg md:text-xl leading-relaxed">
@@ -256,7 +256,7 @@ export default function AboutPage() {
           </CenteredLayout>
 
           <ChapterSectionTitle section={sections[2]}></ChapterSectionTitle>
-          <CenteredLayout>
+          <CenteredLayout className="max-w-3xl">
             <p>
               Following the community review, the Data by Design project team
               convened an advisory board to help parse the community feedback
@@ -276,7 +276,7 @@ export default function AboutPage() {
                 <summary className="text-xl  font-power py-2  mx-12 md:ml-[26rem] md:py-5 ">
                   Project Beta (2023-2025)
                 </summary>
-                <CenteredLayout>
+                <CenteredLayout className="max-w-3xl">
                   <p>
                     The beta version of Data by Design was released in 2025 as
                     part of our open community review. It evolved out of the
