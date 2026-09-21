@@ -4,13 +4,12 @@ import { trackPreorderClick } from "~/analytics";
 import { classNames } from "~/utils";
 
 // The funder and collaborator logos share everything but their height, so the
-// common part lives here. They rest in grey at three-quarter strength and come
-// up to full colour under the cursor — the row is a credit rather than a call
-// to action, so it stays quiet until you look at it. Greyscale rather than a
-// tint, because these are seven supplied assets in three formats, and a filter
-// that recolours them would land differently on each.
+// common part lives here. They sit at full strength, and the hover is a small
+// lift rather than a change of colour: anything that dims or greys the resting
+// state makes a row of credits look switched off, which these organisations
+// are not.
 const LOGO =
-  "w-auto object-contain grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-200";
+  "w-auto object-contain transition-transform duration-200 hover:scale-110";
 
 // The source links in the credits paragraph. One constant rather than three
 // copies, which is how they drifted to different underline offsets in the first
