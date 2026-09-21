@@ -5,9 +5,9 @@
 // camera next to a solid Bluesky butterfly reads as two different weights at
 // this size. Colour comes from currentColor so the row inherits the footer's
 // offwhite, rather than dropping three brand colours into an otherwise
-// black-and-white footer. They rest dimmed and come up to full strength on
-// hover, matching the logo row; going offwhite to white would be a change of
-// two values in 255, which is no hover at all.
+// black-and-white footer. They sit at full strength — a dimmed resting state
+// reads as switched off — and the hover is a shift to the site's accent, since
+// offwhite to white is a change of two values in 255 and no hover at all.
 
 const socials = [
   {
@@ -39,7 +39,7 @@ export default function SocialLinks() {
             href={href}
             target="_blank"
             rel="noopener"
-            className="block text-offwhite/60 hover:text-offwhite transition-colors duration-200"
+            className="block text-offwhite hover:text-changePrimary transition-colors duration-200"
           >
             <span className="sr-only">{name} (opens in a new tab)</span>
             <svg
