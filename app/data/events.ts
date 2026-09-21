@@ -72,7 +72,7 @@ export const events: Event[] = [
     title: "ChinatownJS: They Who Name the Fields",
     kind: "talk",
     description:
-      "Tanvi Sharma presents \"Navigating Resistance in Data\" at ChinatownJS, hosted by Sanctuary Computer.",
+      "Tanvi Sharma presents “Navigating Resistance in Data” at ChinatownJS, hosted by Sanctuary Computer.",
     city: "New York, NY",
     venue: "Index Chinatown",
     // Two Luma pages: the venue's listing for the evening, and the separate
