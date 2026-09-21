@@ -4,11 +4,13 @@ import { trackPreorderClick } from "~/analytics";
 import { classNames } from "~/utils";
 
 // The funder and collaborator logos share everything but their height, so the
-// common part lives here. They sit a little back from full strength and come up
-// to it under the cursor — the row is a credit rather than a call to action, so
-// it stays quiet until you look at it.
+// common part lives here. They rest in grey at three-quarter strength and come
+// up to full colour under the cursor — the row is a credit rather than a call
+// to action, so it stays quiet until you look at it. Greyscale rather than a
+// tint, because these are seven supplied assets in three formats, and a filter
+// that recolours them would land differently on each.
 const LOGO =
-  "w-auto object-contain opacity-75 hover:opacity-100 transition-opacity duration-200";
+  "w-auto object-contain grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-200";
 
 // The source links in the credits paragraph. One constant rather than three
 // copies, which is how they drifted to different underline offsets in the first
@@ -191,7 +193,7 @@ export default function Footer() {
 
         {/* Logos  */}
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-row md:flex-wrap gap-4 md:gap-8 pt-6 md:pt-10 items-center justify-items-center">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:flex md:flex-row md:flex-wrap gap-4 md:gap-8 pt-4 md:pt-6 items-center justify-items-center">
           <img
             className={classNames("h-8 sm:h-10 md:h-12", LOGO)}
             src="/images/footer/ecds.png"
