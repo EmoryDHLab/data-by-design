@@ -1,4 +1,5 @@
 import SiteTitle from "./home/SiteTitle";
+import SocialLinks from "./SocialLinks";
 
 export default function Footer() {
   return (
@@ -150,6 +151,11 @@ export default function Footer() {
             />
           </div>
         </form>
+
+        {/* Socials */}
+
+        <p className="uppercase text-xs font-neueMontreal">Follow the project</p>
+        <SocialLinks />
 
         {/* Logos  */}
 
