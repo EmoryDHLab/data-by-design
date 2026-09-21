@@ -114,7 +114,7 @@ export default function Footer() {
           Sign up for project updates
         </p>
         <form
-          className="relative w-full max-w-md mb-8"
+          className="relative w-full max-w-md"
           action="https://dataxdesign.us22.list-manage.com/subscribe/post?u=6d2b8677087077c76d5d9940a&amp;id=7cff42ff53&amp;f_id=00a6c7e1f0"
           method="post"
           id="mc-embedded-subscribe-form"
@@ -172,7 +172,14 @@ export default function Footer() {
 
         {/* Socials */}
 
-        <p className="uppercase text-xs font-neueMontreal">Follow the project</p>
+        {/* The three blocks in this column — the mailing list, the socials and
+            the logos — are set apart by the same pt-12 md:pt-20 on each one's
+            first element, so the column reads as evenly spaced sections rather
+            than a list with one gap wider than the next. The parent's space-y-4
+            handles the tighter spacing within a block. */}
+        <p className="uppercase text-xs font-neueMontreal pt-12 md:pt-20">
+          Follow the project
+        </p>
         <SocialLinks />
 
         {/* Logos  */}
