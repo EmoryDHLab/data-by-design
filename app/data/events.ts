@@ -191,7 +191,7 @@ export const events: Event[] = [
     year: "2026",
     dateNote: "Date TBD",
     title: "IEEE VIS conference",
-    description: "Lauren Klein and Shiyao Li will present \"What Data Do and Do Not Represent\" at the IEEE VIS Conference.",
+    description: "Lauren Klein and Shiyao Li will present “What Data Do and Do Not Represent” at the IEEE VIS Conference.",
     kind: "conference",
   },
   {
