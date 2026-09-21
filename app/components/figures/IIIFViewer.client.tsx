@@ -13,6 +13,7 @@ const openSeadragonConfig: Options = {
     scrollToZoom: true,
     clickToZoom: true,
   },
+  loadTilesWithAjax: true,
 };
 
 interface Props {

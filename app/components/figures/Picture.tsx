@@ -11,22 +11,15 @@ interface Props {
 
 const SIZES = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw";
 
-function iiifUrl(fileName: string) {
-  return `https://iiif.ecds.io/iiif/3/${fileName}.tiff/full/1200,/0/default.jpg`;
-}
+const iiifUrl = (figure: TFigure) => {
+  return `https://iiif.ecds.io/iiif/3/${
+    figure.fileName
+  }.tiff/full/1200,/0/default.${figure.alpha ? "png" : "jpg"}`;
+};
 
 const Picture = ({ figure, className }: Props) => {
   const { hideSensitiveState } = useContext(ChapterContext);
   const { preferShortAltText } = useContext(AltTextContext);
-  // Local webp/jpg is preferred, IIIF server currently does
-  // not support webp.
-  const [localFailed, setLocalFailed] = useState(false);
-  const useIIIFFallback = localFailed && figure.iiif;
-
-  const localPath = `/images/chapters/${figure.fileName}`;
-  // Scans with their paper background cleared fall back to a PNG so the
-  // transparency survives for browsers that skip the webp source.
-  const localFallback = `${localPath}.${figure.alpha ? "png" : "jpg"}`;
 
   const altText =
     (hideSensitiveState
@@ -40,15 +33,20 @@ const Picture = ({ figure, className }: Props) => {
 
   return (
     <picture>
-      {!useIIIFFallback && (
-        <source srcSet={`${localPath}.webp`} type="image/webp" />
+      {figure.iiif ? (
+        <source
+          srcSet={iiifUrl(figure)}
+          type={`image/${figure.alpha ? "png" : "jpeg"}`}
+        />
+      ) : (
+        <source
+          srcSet={`/images/chapters/${figure.fileName}.webp`}
+          type="image/webp"
+        />
       )}
       <img
         className={classNames("mx-auto max-h-screen object-contain", className)}
-        src={useIIIFFallback ? iiifUrl(figure.fileName) : localFallback}
-        onError={() => {
-          if (!localFailed && figure.iiif) setLocalFailed(true);
-        }}
+        src={`/images/chapters/${figure.fileName}.jpg`}
         alt={altText}
         title={figure.cleanTitle ?? figure.fileName}
         draggable={!hideSensitiveState}

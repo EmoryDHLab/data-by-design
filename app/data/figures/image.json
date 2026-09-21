@@ -2,11 +2,11 @@
   "0201b-playfair-northam-cropped": {
     "chapter": "image",
     "fileName": "0201b-playfair-northam-cropped",
-    "title": "Detail view of <span class=\"italic\">Exports & Imports to and from all North-America</span>",
+    "title": "Detail view of <i>Exports & Imports to and from all North-America</i>",
     "cleanTitle": "Detail view of Exports & Imports to and from all North-America",
     "artist": "William Playfair",
     "creditLine": "Image courtesy of the Library Company of Philadelphia.",
-    "caption": "William Playfair’s chart of “Exports & Imports to and from all North-America,” published in the third edition of the <span class=\"italic\">Commercial and Political Atlas</span> (1801), showing an engraving error, likely the result of a tired or sweaty hand. Image courtesy of the Library Company of Philadelphia.",
+    "caption": "William Playfair’s chart of “Exports & Imports to and from all North-America,” published in the third edition of the <i>Commercial and Political Atlas</i> (1801), showing an engraving error, likely the result of a tired or sweaty hand. Image courtesy of the Library Company of Philadelphia.",
     "sourceUrl": "https://librarycompany.org/",
     "altText": "A close up of the error in the line graph in figure 2.1. At the far end of the x-axis, the lower data line branches into two. The correct line is shaded yellow. The error is plain black.",
     "sensitiveAltText": null,
@@ -17,18 +17,19 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1801,
+    "alpha": false,
     "width": 561,
     "height": 352,
-    "iiif": true
+    "iiif": false
   },
   "0201a-playfair-northam": {
     "chapter": "image",
     "fileName": "0201a-playfair-northam",
-    "title": "<span class=\"italic\">Exports & Imports to and from all North-America</span>",
+    "title": "<i>Exports & Imports to and from all North-America</i>",
     "cleanTitle": "Exports & Imports to and from all North-America",
     "artist": "William Playfair",
     "creditLine": "Image courtesy of the Library Company of Philadelphia.",
-    "caption": "William Playfair’s chart of “Exports & Imports to and from all North-America,” published in the third edition of the <span class=\"italic\">Commercial and Political Atlas</span> (1801). Image courtesy of the Library Company of Philadelphia.",
+    "caption": "William Playfair’s chart of “Exports & Imports to and from all North-America,” published in the third edition of the <i>Commercial and Political Atlas</i> (1801). Image courtesy of the Library Company of Philadelphia.",
     "sourceUrl": "https://librarycompany.org/",
     "altText": "A line graph of exports and imports from 1700 to 1800. Exports peak at 4.5 million in 1771 and 4.8 million in 1800, while imports peak at 3.2 million in 1800. When exports exceed imports, Playfair writes, “balance in favour of England.”",
     "sensitiveAltText": null,
@@ -39,6 +40,7 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1801,
+    "alpha": false,
     "width": 5395,
     "height": 3323,
     "iiif": true
@@ -46,7 +48,7 @@
   "0202": {
     "chapter": "image",
     "fileName": "0202",
-    "title": "<span class=\"italic\">Profils Représentés la Cruë et la Diminution des Eaux de la Seine</span>",
+    "title": "<i>Profils Représentés la Cruë et la Diminution des Eaux de la Seine</i>",
     "cleanTitle": "Profils Représentés la Cruë et la Diminution des Eaux de la Seine",
     "artist": "Philippe Buache",
     "creditLine": "Image from the David Rumsey Map Collection, courtesy Stanford University Libraries.",
@@ -61,18 +63,19 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1770,
+    "alpha": false,
     "width": 1184,
     "height": 752,
-    "iiif": true
+    "iiif": false
   },
   "0203-playfair-scotland": {
     "chapter": "image",
     "fileName": "0203-playfair-scotland",
-    "title": "<span class=\"italic\">Exports and Imports of Scotland to and from different parts for one Year from Christmas 1780 to Christmans 1781</span>",
+    "title": "<i>Exports and Imports of Scotland to and from different parts for one Year from Christmas 1780 to Christmans 1781</i>",
     "cleanTitle": "Exports and Imports of Scotland to and from different parts for one Year from Christmas 1780 to Christmans 1781",
     "artist": "William Playfair",
     "creditLine": "Image courtesy of Wikimedia Commons.",
-    "caption": "The bar chart included in the first edition of Playfair’s <span class=\"italic\">Commercial and Political Atlas</span> (1786), also considered one of the first examples of the bar chart form. Image courtesy of Wikimedia Commons.",
+    "caption": "The bar chart included in the first edition of Playfair’s <i>Commercial and Political Atlas</i> (1786), also considered one of the first examples of the bar chart form. Image courtesy of Wikimedia Commons.",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:1786_Playfair_-_Exports_and_Imports_of_Scotland_to_and_from_different_parts_for_one_Year_from_Christmas_1780_to_Christmas_1781.jpg",
     "altText": "A horizontal bar graph of imports and exports from Scotland for a year, from 1780 to 1781. Each location has two bars, one shaded in black for exports and another that is lighter (labeled “Ribbed) that tracks imports.",
     "sensitiveAltText": null,
@@ -83,18 +86,19 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1786,
+    "alpha": false,
     "width": 1137,
     "height": 763,
-    "iiif": true
+    "iiif": false
   },
   "0204-playfair-pie": {
     "chapter": "image",
     "fileName": "0204-playfair-pie",
-    "title": "<span class=\"italic\">Chart Representing the Extent, Population & Revenues, of the Principal Nations in Europe, after the Division of Poland & Treaty of Luneville</span>",
+    "title": "<i>Chart Representing the Extent, Population & Revenues, of the Principal Nations in Europe, after the Division of Poland & Treaty of Luneville</i>",
     "cleanTitle": "Chart Representing the Extent, Population & Revenues, of the Principal Nations in Europe, after the Division of Poland & Treaty of Luneville",
     "artist": "William Playfair",
     "creditLine": "Image from the David Rumsey Map Collection, courtesy Stanford University Libraries.",
-    "caption": "“Chart Representing the Extent, Population & Revenues, of the Principal Nations in Europe, after the Division of Poland & Treaty of Luneville,” from the <span class=\"italic\">Statistical Breviary</span>, French edition (1802). Image from the David Rumsey Map Collection, courtesy Stanford University Libraries.",
+    "caption": "“Chart Representing the Extent, Population & Revenues, of the Principal Nations in Europe, after the Division of Poland & Treaty of Luneville,” from the <i>Statistical Breviary</i>, French edition (1802). Image from the David Rumsey Map Collection, courtesy Stanford University Libraries.",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Playfair_piecharts.jpg",
     "altText": "Twelve multicolored circles decrease in size from left to right. The chart details the extent, population, and revenues of various European nations, from the Russian Empire, the largest circle, to Portugal, the smallest.",
     "sensitiveAltText": null,
@@ -105,6 +109,7 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1802,
+    "alpha": false,
     "width": 6306,
     "height": 3456,
     "iiif": true
@@ -112,11 +117,11 @@
   "0205-bl-playfair": {
     "chapter": "image",
     "fileName": "0205-bl-playfair",
-    "title": "<span class=\"italic\">Imports and Exports to and from North America from 1700 to 1780</span>",
+    "title": "<i>Imports and Exports to and from North America from 1700 to 1780</i>",
     "cleanTitle": "Imports and Exports to and from North America from 1700 to 1780",
     "artist": "William Playfair",
     "creditLine": "Courtesy of the British Library Collection, shelfmark L.R.111.a.18, plate II. Digitized by the British Library.",
-    "caption": "“Imports and Exports to and from North America from 1700 to 1780,” as it appears in the first edition of the <span class=\"italic\">Commercial and Political Atlas</span>. Courtesy of the British Library Collection, shelfmark L.R.111.a.18, plate II. Digitized by the British Library.",
+    "caption": "“Imports and Exports to and from North America from 1700 to 1780,” as it appears in the first edition of the <i>Commercial and Political Atlas</i>. Courtesy of the British Library Collection, shelfmark L.R.111.a.18, plate II. Digitized by the British Library.",
     "sourceUrl": null,
     "altText": "A line graph of exports and imports from 1700 to 1780 with balance of trade shaded in red and then brown.",
     "sensitiveAltText": null,
@@ -127,6 +132,7 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1801,
+    "alpha": false,
     "width": 3076,
     "height": 2497,
     "iiif": true
@@ -138,7 +144,7 @@
     "cleanTitle": "\"Plate V. America.\"",
     "artist": "William Playfair",
     "creditLine": "Image courtesy of the Library Company of Philadelphia.",
-    "caption": "The data table included in the second edition of the <span class=\"italic\">Commercial and Political Atlas</span> (1787) that shows annual data for the years 1770 to 1782. Image courtesy of the Library Company of Philadelphia.",
+    "caption": "The data table included in the second edition of the <i>Commercial and Political Atlas</i> (1787) that shows annual data for the years 1770 to 1782. Image courtesy of the Library Company of Philadelphia.",
     "sourceUrl": "https://librarycompany.org/",
     "altText": "A table of four columns that lists, from left to right: the year, import amount, export amount, and balance between imports and exports to America between 1770 and 1782.",
     "sensitiveAltText": null,
@@ -149,6 +155,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1787,
+    "alpha": false,
     "width": 2864,
     "height": 2163,
     "iiif": true
@@ -171,6 +178,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1787,
+    "alpha": false,
     "width": 2449,
     "height": 2242,
     "iiif": true
@@ -178,7 +186,7 @@
   "0208a-bl-playfair": {
     "chapter": "image",
     "fileName": "0208a-bl-playfair",
-    "title": "<span class=\"italic\">Imports and Exports to and from North America from 1700 to 1780</span>",
+    "title": "<i>Imports and Exports to and from North America from 1700 to 1780</i>",
     "cleanTitle": "Imports and Exports to and from North America from 1700 to 1780",
     "artist": "William Playfair",
     "creditLine": "Image courtesy of the Library Company of Philadelphia.",
@@ -193,14 +201,15 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1787,
+    "alpha": false,
     "width": 814,
     "height": 682,
-    "iiif": true
+    "iiif": false
   },
   "0208b-playfair-northam.jog": {
     "chapter": "image",
     "fileName": "0208b-playfair-northam.jog",
-    "title": "<span class=\"italic\">Exports & Imports to and from all North-America</span>",
+    "title": "<i>Exports & Imports to and from all North-America</i>",
     "cleanTitle": "Exports & Imports to and from all North-America",
     "artist": "William Playfair",
     "creditLine": "Image courtesy of the Library Company of Philadelphia.",
@@ -215,14 +224,15 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1801,
+    "alpha": false,
     "width": 1538,
     "height": 1170,
-    "iiif": true
+    "iiif": false
   },
   "0208c-playfair-northam.jog": {
     "chapter": "image",
     "fileName": "0208c-playfair-northam.jog",
-    "title": "<span class=\"italic\">Exports & Imports to and from all North-America</span>",
+    "title": "<i>Exports & Imports to and from all North-America</i>",
     "cleanTitle": "Exports & Imports to and from all North-America",
     "artist": "William Playfair",
     "creditLine": "Image courtesy of the Library Company of Philadelphia.",
@@ -237,6 +247,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1801,
+    "alpha": false,
     "width": 2421,
     "height": 1455,
     "iiif": true
@@ -244,7 +255,7 @@
   "0209-periscopic": {
     "chapter": "image",
     "fileName": "0209-periscopic",
-    "title": "<span class=\"italic\">US Gun Killings in 2018</span>",
+    "title": "<i>US Gun Killings in 2018</i>",
     "cleanTitle": "US Gun Killings in 2018",
     "artist": "Periscopic",
     "creditLine": "Courtesy of Periscopic, periscopic.com.",
@@ -259,14 +270,15 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2018,
+    "alpha": false,
     "width": 1512,
     "height": 771,
-    "iiif": true
+    "iiif": false
   },
   "0210-gun-deaths-2018": {
     "chapter": "image",
     "fileName": "0210-gun-deaths-2018",
-    "title": "<span class=\"italic\">Guns Killed Nearly 40,000 Americans in 2018</span>",
+    "title": "<i>Guns Killed Nearly 40,000 Americans in 2018</i>",
     "cleanTitle": "Guns Killed Nearly 40,000 Americans in 2018",
     "artist": "Daniel Nass",
     "creditLine": "Chart by Daniel Nass for The Trace.",
@@ -281,9 +293,10 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2018,
+    "alpha": false,
     "width": 1280,
     "height": 963,
-    "iiif": true
+    "iiif": false
   },
   "0211-upscale": {
     "chapter": "image",
@@ -303,6 +316,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1771,
+    "alpha": false,
     "width": 4800,
     "height": 5576,
     "iiif": true
@@ -310,11 +324,11 @@
   "0212-playfair-indies": {
     "chapter": "image",
     "fileName": "0212-playfair-indies",
-    "title": "<span class=\"italic\">Exports & Imports to and from the West Indies</span>",
+    "title": "<i>Exports & Imports to and from the West Indies</i>",
     "cleanTitle": "Exports & Imports to and from the West Indies",
     "artist": "William Playfair",
     "creditLine": "Image courtesy of the Library Company of Philadelphia.",
-    "caption": "Playfair’s chart of “Exports & Imports to and from the West Indies,” from the third edition of the <span class=\"italic\">Commercial and Political Atlas</span> (1801). Image courtesy of the Library Company of Philadelphia.",
+    "caption": "Playfair’s chart of “Exports & Imports to and from the West Indies,” from the third edition of the <i>Commercial and Political Atlas</i> (1801). Image courtesy of the Library Company of Philadelphia.",
     "sourceUrl": "https://librarycompany.org/",
     "altText": "A line graph of exports and imports to and from the West Indies from 1700 to 1800. The chart shows a steep import increase after 1750, a deficit dip in the 1770s, and a sharp rise again near 1800.",
     "sensitiveAltText": null,
@@ -325,6 +339,7 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1801,
+    "alpha": false,
     "width": 7042,
     "height": 6263,
     "iiif": true
@@ -332,7 +347,7 @@
   "0213-playfair-wheat": {
     "chapter": "image",
     "fileName": "0213-playfair-wheat",
-    "title": "<span class=\"italic\">Chart Showing at One View the Price of the Quarter of Wheat, & Wages of Labour by the Week, from the Year 1565 to 1821</span>",
+    "title": "<i>Chart Showing at One View the Price of the Quarter of Wheat, & Wages of Labour by the Week, from the Year 1565 to 1821</i>",
     "cleanTitle": "Chart Showing at One View the Price of the Quarter of Wheat, & Wages of Labour by the Week, from the Year 1565 to 1821",
     "artist": "William Playfair",
     "creditLine": "Image courtesy of Wikimedia Commons.",
@@ -347,9 +362,10 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1821,
+    "alpha": false,
     "width": 1000,
     "height": 528,
-    "iiif": true
+    "iiif": false
   },
   "0214-camoes": {
     "chapter": "image",
@@ -369,9 +385,10 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2011,
+    "alpha": false,
     "width": 926,
     "height": 599,
-    "iiif": true
+    "iiif": false
   },
   "0215-wood": {
     "chapter": "image",
@@ -391,6 +408,7 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2024,
+    "alpha": false,
     "width": 2032,
     "height": 1068,
     "iiif": true
@@ -413,9 +431,10 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 1315,
     "height": 761,
-    "iiif": true
+    "iiif": false
   },
   "0216b-PLACEHOLDER": {
     "chapter": "image",
@@ -435,9 +454,10 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 830,
     "height": 484,
-    "iiif": true
+    "iiif": false
   },
   "0217A-playfair-northam-scan_copy": {
     "chapter": "image",
@@ -457,6 +477,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1801,
+    "alpha": false,
     "width": 9798,
     "height": 6263,
     "iiif": true
@@ -479,9 +500,10 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 1236,
     "height": 582,
-    "iiif": true
+    "iiif": false
   },
   "0217C": {
     "chapter": "image",
@@ -501,14 +523,15 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 1452,
     "height": 1316,
-    "iiif": true
+    "iiif": false
   },
   "0217D": {
     "chapter": "image",
     "fileName": "0217D",
-    "title": "Recreation of <span class=\"italic\">Exports & Imports to and from all North-America</span>",
+    "title": "Recreation of <i>Exports & Imports to and from all North-America</i>",
     "cleanTitle": "Recreation of Exports & Imports to and from all North-America",
     "artist": "Tanvi Sharma and Jay Varner",
     "creditLine": "Prototype by Anna Mola. Implementation by Jay Varner.",
@@ -523,6 +546,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 2930,
     "height": 1708,
     "iiif": true
@@ -545,10 +569,10 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1861,
-    "width": 4096,
-    "height": 2994,
-    "iiif": true,
-    "alpha": true
+    "alpha": true,
+    "width": 9078,
+    "height": 6636,
+    "iiif": true
   },
   "0219-jevons001": {
     "chapter": "image",
@@ -568,9 +592,9 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1861,
-    "width": 4096,
-    "height": 2944,
-    "iiif": true,
-    "alpha": true
+    "alpha": true,
+    "width": 9090,
+    "height": 6533,
+    "iiif": true
   }
 }

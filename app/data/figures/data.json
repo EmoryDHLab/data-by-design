@@ -2,7 +2,7 @@
   "0101-clarkson": {
     "chapter": "data",
     "fileName": "0101-clarkson",
-    "title": "<span class=\"italic\">Thomas Clarkson</span>",
+    "title": "<i>Thomas Clarkson</i>",
     "cleanTitle": "Thomas Clarkson",
     "artist": "Carl Frederik von Breda",
     "creditLine": "© National Portrait Gallery, London.",
@@ -17,6 +17,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1788,
+    "alpha": false,
     "width": 2400,
     "height": 3120,
     "iiif": true
@@ -24,11 +25,11 @@
   "0102-equiano": {
     "chapter": "data",
     "fileName": "0102-equiano",
-    "title": "<span class=\"italic\">Olaudah Equiano ('Gustavus Vassa')</span>",
+    "title": "<i>Olaudah Equiano ('Gustavus Vassa')</i>",
     "cleanTitle": "Olaudah Equiano ('Gustavus Vassa')",
     "artist": "Daniel Orme",
     "creditLine": "© National Portrait Gallery, London.",
-    "caption": "A portrait of Olaudah Equiano that appears as the frontispiece of his 1789 autobiography, <span class=\"italic\">The Interesting Narrative of the Life of Olaudah Equiano, or Gustavus Vassa, the African, Written by Himself.</span> © National Portrait Gallery, London.",
+    "caption": "A portrait of Olaudah Equiano that appears as the frontispiece of his 1789 autobiography, <i>The Interesting Narrative of the Life of Olaudah Equiano, or Gustavus Vassa, the African, Written by Himself.</i> © National Portrait Gallery, London.",
     "sourceUrl": "https://www.npg.org.uk/collections/search/use-this-image/?mkey=mw42525",
     "altText": "A grayscale portrait of Equiano, dressed in a black coat, white chemise, and frilly cravat. A book lies open on his lap, but his eyes gaze at the viewer. His portrait is contained in an oval, and the names W. Denton and D. Orne line the bottom.",
     "sensitiveAltText": "Two blurred portraits placed side-by-side, one of a white figure against a dark background (left), and another of a Black person against a light background (right).",
@@ -39,6 +40,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1789,
+    "alpha": false,
     "width": 2400,
     "height": 3598,
     "iiif": true
@@ -50,7 +52,7 @@
     "cleanTitle": "Example of sensitive image and alt-text",
     "artist": "Tanvi Sharma, Jay Varner, Margy Adams",
     "creditLine": "Design by Tanvi Sharma. Implementation by Jay Varner. Alt text by Margy Adams.",
-    "caption": "The blurred image of “Plan of an African Ship’s Lower Deck” as it appears in the web version of <span class=\"italic\">Data by Design</span>. Visitors to the site must opt in before viewing the sensitive images in the chapter or reading the more descriptive alt text. Design by Tanvi Sharma. Implementation by Jay Varner. Alt text by Margy Adams.",
+    "caption": "The blurred image of “Plan of an African Ship’s Lower Deck” as it appears in the web version of <i>Data by Design</i>. Visitors to the site must opt in before viewing the sensitive images in the chapter or reading the more descriptive alt text. Design by Tanvi Sharma. Implementation by Jay Varner. Alt text by Margy Adams.",
     "sourceUrl": null,
     "altText": null,
     "sensitiveAltText": null,
@@ -61,6 +63,7 @@
     "sensitive": true,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 3273,
     "height": 1513,
     "iiif": true
@@ -68,7 +71,7 @@
   "0103b-africanship": {
     "chapter": "data",
     "fileName": "0103b-africanship",
-    "title": "<span class=\"italic\">Plan of an African Slave Ship's Lower Deck with Negroes in the Proportion of Only One to a Ton</span>",
+    "title": "<i>Plan of an African Slave Ship's Lower Deck with Negroes in the Proportion of Only One to a Ton</i>",
     "cleanTitle": "Plan of an African Slave Ship's Lower Deck with Negroes in the Proportion of Only One to a Ton",
     "artist": "Plymouth Committee",
     "creditLine": "© Britain Yearly Meeting.",
@@ -83,6 +86,7 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1788,
+    "alpha": false,
     "width": 2973,
     "height": 1213,
     "iiif": true
@@ -90,11 +94,11 @@
   "0104-marieseraphique": {
     "chapter": "data",
     "fileName": "0104-marieseraphique",
-    "title": "<span class=\"italic\">Plan, Profil, et Distribution du Navire La Marie Séraphique de Nantes</span>",
+    "title": "<i>Plan, Profil, et Distribution du Navire La Marie Séraphique de Nantes</i>",
     "cleanTitle": "Plan, Profil, et Distribution du Navire La Marie Séraphique de Nantes",
     "artist": "Artist once known",
     "creditLine": "Image courtesy of Wikimedia Commons. Digitized by the Musée d’histoire de Nantes.",
-    "caption": "An early engraving, <span class=\"italic\">Plan, profil, et distribution du navire la Marie Séraphique de Nantes</span> (ca. 1770), that makes use of an aerial view of the ship’s hold, displaying its human captives alongside its goods for sale. Image courtesy of Wikimedia Commons. Digitized by the Musée d’histoire de Nantes.",
+    "caption": "An early engraving, <i>Plan, profil, et distribution du navire la Marie Séraphique de Nantes</i> (ca. 1770), that makes use of an aerial view of the ship’s hold, displaying its human captives alongside its goods for sale. Image courtesy of Wikimedia Commons. Digitized by the Musée d’histoire de Nantes.",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plan,_profil_et_distribution_du_navire_La_Marie_S%C3%A9raphique_de_Nantes.jpg",
     "altText": "A colored page depicting the human captives and products for sale in a ship’s hold along with a watercolor painting of the ship and an accounting table. The captives’ bodies are curved and overlap one another, implying a claustrophobic environment.",
     "sensitiveAltText": "A hazy view of a yellowed page that depicts four blurred aerial views as well as a side view of a ship. The images are colored rather than monochromatic. The words atop the image take the place of witnessing.",
@@ -105,6 +109,7 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1770,
+    "alpha": false,
     "width": 1468,
     "height": 2047,
     "iiif": true
@@ -112,7 +117,7 @@
   "0105-description": {
     "chapter": "data",
     "fileName": "0105-description",
-    "title": "<span class=\"italic\">Description of a Slave Ship</span>",
+    "title": "<i>Description of a Slave Ship</i>",
     "cleanTitle": "Description of a Slave Ship",
     "artist": "London Committee",
     "creditLine": "Image courtesy of the Beinecke Rare Book and Manuscript Library, Yale University.",
@@ -127,6 +132,7 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1789,
+    "alpha": false,
     "width": 2000,
     "height": 2534,
     "iiif": true
@@ -134,11 +140,11 @@
   "0106-outcome": {
     "chapter": "data",
     "fileName": "0106-outcome",
-    "title": "Web interface of the <span class=\"italic\">Voyages Database</span>",
+    "title": "Web interface of the <i>Voyages Database</i>",
     "cleanTitle": "Web interface of the Voyages Database",
     "artist": "Voyages Database",
     "creditLine": "Screenshot by Tanvi Sharma.",
-    "caption": "The fields included in the <span class=\"italic\">Voyages Database</span> as viewed through its web interface. Here, the “outcome” field, which includes the category of “resistance.”",
+    "caption": "The fields included in the <i>Voyages Database</i> as viewed through its web interface. Here, the “outcome” field, which includes the category of “resistance.”",
     "sourceUrl": null,
     "altText": "A spreadsheet-like webpage from the TAST Database that categorize into columns and rows the documented voyages according to multiple variables and the number of captive passengers on each ship.",
     "sensitiveAltText": null,
@@ -149,6 +155,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 2796,
     "height": 1516,
     "iiif": true
@@ -156,7 +163,7 @@
   "0107-resistance": {
     "chapter": "data",
     "fileName": "0107-resistance",
-    "title": "Detail view of the web interface of the <span class=\"italic\">Voyages Database</span>",
+    "title": "Detail view of the web interface of the <i>Voyages Database</i>",
     "cleanTitle": "Detail view of the web interface of the Voyages Database",
     "artist": "Voyages Database",
     "creditLine": "Screenshot by Tanvi Sharma.",
@@ -171,18 +178,19 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 740,
     "height": 672,
-    "iiif": true
+    "iiif": false
   },
   "0108-fisk": {
     "chapter": "data",
     "fileName": "0108-fisk",
-    "title": "<span class=\"italic\">Geological Investigation of the Alluvial Valley of the Lower Mississippi River</span>, plate 22",
+    "title": "<i>Geological Investigation of the Alluvial Valley of the Lower Mississippi River</i>, plate 22",
     "cleanTitle": "Geological Investigation of the Alluvial Valley of the Lower Mississippi River, plate 22",
     "artist": "Harold Fisk",
     "creditLine": "Image courtesy of the US Army Corps of Engineers, Engineer Research and Development Center.",
-    "caption": "One of the 15 maps included in Harold Fisk’s <span class=\"italic\">Geological Investigation of the Alluvial Valley of the Lower Mississippi River</span> (1944). Image courtesy of the US Army Corps of Engineers, Engineer Research and Development Center.",
+    "caption": "One of the 15 maps included in Harold Fisk’s <i>Geological Investigation of the Alluvial Valley of the Lower Mississippi River</i> (1944). Image courtesy of the US Army Corps of Engineers, Engineer Research and Development Center.",
     "sourceUrl": "https://lmvmapping.erdc.usace.army.mil/",
     "altText": "A vertically oriented, colorful map of intertwining bends representing various waterways in the Mississippi valley.",
     "sensitiveAltText": null,
@@ -193,6 +201,7 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1944,
+    "alpha": false,
     "width": 2284,
     "height": 3175,
     "iiif": true
@@ -215,6 +224,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 2933,
     "height": 2571,
     "iiif": true
@@ -237,6 +247,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 2933,
     "height": 2198,
     "iiif": true
@@ -259,6 +270,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 2933,
     "height": 2427,
     "iiif": true
@@ -281,6 +293,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 2933,
     "height": 2198,
     "iiif": true
@@ -303,6 +316,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 2933,
     "height": 2397,
     "iiif": true
@@ -310,11 +324,11 @@
   "0110": {
     "chapter": "data",
     "fileName": "0110",
-    "title": "<span class=\"italic\">Visualizing Resistance</span>, Phase 1",
+    "title": "<i>Visualizing Resistance</i>, Phase 1",
     "cleanTitle": "Visualizing Resistance, Phase 1",
     "artist": "Screenshot by Tanvi Sharma",
     "creditLine": "Design by Tanvi Sharma. Implementation by Shiyao Li and Jay Varner.",
-    "caption": "The interactive visualization as it appears in the web version of <span class=\"italic\">Data by Design</span>, showing the decade between 1756 and 1766, when Equiano was enslaved.",
+    "caption": "The interactive visualization as it appears in the web version of <i>Data by Design</i>, showing the decade between 1756 and 1766, when Equiano was enslaved.",
     "sourceUrl": null,
     "altText": "A zoomed-out version of the previous images, displaying clusters of multicolored curved lines for the 10-year period between 1756 and 1766. Between one and nine binds are visible in each year; white space separates the years.",
     "sensitiveAltText": null,
@@ -325,6 +339,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 2709,
     "height": 953,
     "iiif": true
@@ -332,7 +347,7 @@
   "0111": {
     "chapter": "data",
     "fileName": "0111",
-    "title": "<span class=\"italic\">Visualizing Resistance</span>, Phase 2",
+    "title": "<i>Visualizing Resistance</i>, Phase 2",
     "cleanTitle": "Visualizing Resistance, Phase 2",
     "artist": "Screenshot by Tanvi Sharma",
     "creditLine": "Design by Tanvi Sharma. Implementation by Shiyao Li and Jay Varner.",
@@ -347,6 +362,7 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 2681,
     "height": 955,
     "iiif": true
@@ -354,7 +370,7 @@
   "0112": {
     "chapter": "data",
     "fileName": "0112",
-    "title": "<span class=\"italic\">Visualizing Resistance</span>, Phase 3",
+    "title": "<i>Visualizing Resistance</i>, Phase 3",
     "cleanTitle": "Visualizing Resistance, Phase 3",
     "artist": "Screenshot by Tanvi Sharma",
     "creditLine": "Design by Tanvi Sharma. Implementation by Shiyao Li and Jay Varner.",
@@ -369,36 +385,15 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "alpha": false,
     "width": 8041,
     "height": 2864,
     "iiif": true
   },
-  "0114-history": {
-    "chapter": "data",
-    "fileName": "0114-history",
-    "title": "Unititled, from The History of the Rise, Progress, and Accomplishment of the Abolition of the Slave Trade by the British Parliament",
-    "cleanTitle": "Unititled, from The History of the Rise, Progress, and Accomplishment of the Abolition of the Slave Trade by the British Parliament",
-    "artist": "Thomas Clarkson",
-    "creditLine": "Image courtesy of Wikimedia Commons.",
-    "caption": "A diagram of the British and American abolitionist movement, depicted as a network of rivers, created by Thomas Clarkson for his book The History of the Rise, Progress, and Accomplishment of the Abolition of the African Slave-Trade by the British Parliament (1808). Image courtesy of Wikimedia Commons.",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_history_of_the_rise,_progress,_and_accomplishment_of_the_abolition_of_the_African_Slave-trade_by_the_British_parliament_(1808)_(14589556558).jpg",
-    "altText": "A maplike graphic that resembles water flowing downstream from the top of the page to the bottom, where metaphorical “rivers” grow and connect as the viewer’s gaze travels downward with the water.",
-    "sensitiveAltText": null,
-    "altTextLong": "A “stream chart,” or a map-like graphic that resembles water flowing downstream from the top of the page to the bottom, the metaphorical “rivers” growing in size and connecting as the viewer’s gaze travels downward with the water. The graphic is symbolic rather than concretely illustrative of particular waterways, for its connection to famous (albeit arbitrarily named) abolitionists is fluid, emphasized by the curved, bent, and swirling paths of the tributaries. While to Clarkson the diagram shows a watery path, the chart also resembles trees due to its brown color and rigid shapes, as if two sturdier trunks hold up the multiple diverging, splitting branches. While most of the branches or smaller rivers have abolitionist names associated with them, many of the cross-sections are also labeled with a letter from the English alphabet in, again, a seemingly arbitrary manner. The two bottom “trunks” or grander bodies of water at the bottom of the page are labeled X and Y (to the left and right, respectively), while the cross sections of the rivers that flow into both the X and Y rivers are labeled E and, just slightly above, C.",
-    "cleanAltText": "A maplike graphic that resembles water flowing downstream from the top of the page to the bottom, where metaphorical “rivers” grow and connect as the viewer’s gaze travels downward with the water.",
-    "cleanSensitiveAltText": null,
-    "cleanAltTextLong": "A “stream chart,” or a map-like graphic that resembles water flowing downstream from the top of the page to the bottom, the metaphorical “rivers” growing in size and connecting as the viewer’s gaze travels downward with the water. The graphic is symbolic rather than concretely illustrative of particular waterways, for its connection to famous (albeit arbitrarily named) abolitionists is fluid, emphasized by the curved, bent, and swirling paths of the tributaries. While to Clarkson the diagram shows a watery path, the chart also resembles trees due to its brown color and rigid shapes, as if two sturdier trunks hold up the multiple diverging, splitting branches. While most of the branches or smaller rivers have abolitionist names associated with them, many of the cross-sections are also labeled with a letter from the English alphabet in, again, a seemingly arbitrary manner. The two bottom “trunks” or grander bodies of water at the bottom of the page are labeled X and Y (to the left and right, respectively), while the cross sections of the rivers that flow into both the X and Y rivers are labeled E and, just slightly above, C.",
-    "sensitive": false,
-    "frontPage": true,
-    "year": 1808,
-    "width": 3840,
-    "height": 2739,
-    "iiif": false
-  },
   "0115-stream": {
     "chapter": "data",
     "fileName": "0115-stream",
-    "title": "<span class=\"italic\">Der Strom der Zeiten</span>",
+    "title": "<i>Der Strom der Zeiten</i>",
     "cleanTitle": "Der Strom der Zeiten",
     "artist": "Friedrich Strass",
     "creditLine": "Image courtesy of the David Rumsey Map Collection, Cartography Associates.",
@@ -413,30 +408,9 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1803,
+    "alpha": false,
     "width": 1756,
     "height": 3182,
     "iiif": true
-  },
-  "0116-stream-of-time": {
-    "chapter": "data",
-    "fileName": "0116-stream-of-time",
-    "title": "English translation of Freidrich Strass's Strom der Zeiten",
-    "cleanTitle": "English translation of Freidrich Strass's Strom der Zeiten",
-    "artist": "William Bell",
-    "creditLine": "Image courtesy of Cotsen Children’s Collection, Department of Rare Books and Special Collections, Princeton University.",
-    "caption": "An English translation of Strass’s “Strom der Zeiten,” published in 1849 by William Bell. Image courtesy of Cotsen Children’s Collection, Department of Rare Books and Special Collections, Princeton University.",
-    "sourceUrl": "",
-    "altText": "The previous diagram translated from German to English. In contrast to the original, this chart is vibrantly colored; at the bottom of the page, two paragraphs offer an explanation for what Strass calls the “universal history” of the world.",
-    "sensitiveAltText": null,
-    "altTextLong": "Strass’s “stream diagram” translated from German to English. In contrast to the original, this chart is vibrantly colored, with bright yellows and light pinks and reds standing out against the paper’s color. The clouds heading the page remain grayscale, but the border is green instead of the faded beige tone of Strass’s original. Also unlike the original, at the bottom of the page, beneath the streams, two paragraphs offer an explanation for what Strass calls the “universal history” of the world.",
-    "cleanAltText": "The previous diagram translated from German to English. In contrast to the original, this chart is vibrantly colored; at the bottom of the page, two paragraphs offer an explanation for what Strass calls the “universal history” of the world.",
-    "cleanSensitiveAltText": null,
-    "cleanAltTextLong": "Strass’s “stream diagram” translated from German to English. In contrast to the original, this chart is vibrantly colored, with bright yellows and light pinks and reds standing out against the paper’s color. The clouds heading the page remain grayscale, but the border is green instead of the faded beige tone of Strass’s original. Also unlike the original, at the bottom of the page, beneath the streams, two paragraphs offer an explanation for what Strass calls the “universal history” of the world.",
-    "sensitive": false,
-    "frontPage": true,
-    "year": 1849,
-    "width": 7188,
-    "height": 13524,
-    "iiif": false
   }
 }
