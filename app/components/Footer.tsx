@@ -61,11 +61,10 @@ export default function Footer() {
             size rather than being scaled with the viewBox. mt-auto drops them
             to the foot of the column, level with the bottom of the footer on
             wide screens; the padding is what keeps them clear of the copy when
-            the column is only as tall as its content. The inset matches the
-            52-unit indent of the foreignObject above, as a share of the 420-unit
-            viewBox, so they line up with the paragraphs rather than the
-            wordmark. */}
-        <div className="mt-auto pt-10 ps-[12.38%]">
+            the column is only as tall as its content. The inset follows the
+            copy above — flush left on mobile, and from md the foreignObject's
+            52-unit indent as a share of the 420-unit viewBox. */}
+        <div className="mt-auto pt-10 md:ps-[12.38%]">
           <SocialLinks />
         </div>
       </div>
