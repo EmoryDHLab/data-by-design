@@ -133,15 +133,15 @@ export default function EventRow({
             event.attendance) && (
             <div className="md:order-1 shrink-0 md:w-44 lg:w-52 flex flex-wrap items-baseline gap-x-3 gap-y-1 md:block">
               {event.city && event.attendance !== "virtual" && (
-                <h3 className={CITY}>
+                <h4 className={CITY}>
                   {event.city}
-                </h3>
+                </h4>
               )}
               {/* A virtual event has no city, so "Online" takes the city's place
                   as the heading. A hybrid one keeps its city and notes the
                   online option beneath, in the same small print as the time. */}
               {event.attendance === "virtual" && (
-                <h3 className={CITY}>Online</h3>
+                <h4 className={CITY}>Online</h4>
               )}
               {event.attendance === "hybrid" && (
                 <div
