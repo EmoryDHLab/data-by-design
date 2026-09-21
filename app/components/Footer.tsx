@@ -25,62 +25,56 @@ export default function Footer() {
       <div className="col-span-12  md:col-span-3 flex flex-col pt-8 md:pt-0">
         <cite className="sr-only">Data by Design</cite>
         <SiteTitle showTag={false} className="" />
-        <svg
-          width="100%"
-          viewBox="0 0 420 320"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          role="presentation"
-          className="fill-offwhite"
-        >
-          <g>
-            {/* Flush left on mobile, so this copy lines up with the Cite as
-                column. From md the 52-unit inset returns, which is where it
-                aligns with the "Design" line of the wordmark. The inset lives
-                in padding rather than the x attribute so it can be responsive;
-                52px here is 52 user units, the same as x={52} was. */}
-            <foreignObject x={0} y={0} height={320} width={420}>
-              <div className="md:ps-[52px]">
-                <p className="md:text-lg text-base font-power tracking-wide ">
-                  An Interactive History of Data Visualization, 1789-1900
-                </p>
-                <p className="md:text-xl text-lg font-neueMontrealLight mt-4">
-                  Expanded version available in print as{" "}
-                  <cite>
-                    Data by Design: Visualization and Power from Abolition to
-                    the Dawn of Data Science
-                  </cite>{" "}
-                  (
-                  <a
-                    className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
-                    href="https://mitpress.mit.edu/9780262056182/data-by-design/"
-                    onClick={() => trackPreorderClick("MIT Press", "footer")}
-                  >
-                    MIT Press
-                  </a>
-                  , 2026).
-                </p>
-                <p className="md:text-lg text-sm font-neueMontrealLight mt-6">
-                  Please contact the project director,{" "}
-                  <a
-                    className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
-                    href="mailto:lauren.klein@emory.edu"
-                  >
-                    Lauren Klein
-                  </a>
-                  , with any additional questions.
-                </p>
-              </div>
-            </foreignObject>
-          </g>
-        </svg>
-        {/* The icons sit outside the svg, so they stay real links at a real
-            size rather than being scaled with the viewBox. mt-auto drops them
-            to the foot of the column, level with the bottom of the footer on
-            wide screens; the padding is what keeps them clear of the copy when
-            the column is only as tall as its content. The inset follows the
-            copy above — flush left on mobile, and from md the foreignObject's
-            52-unit indent as a share of the 420-unit viewBox. */}
+        {/* Plain HTML, not a foreignObject inside a viewBox svg. In an svg
+            scaled to width="100%" the copy was geometry rather than text: the
+            420-unit viewBox multiplied every size by columnWidth/420, so the
+            paragraphs shrank on narrow columns — worst at md, where a 3-of-12
+            column is at its tightest just as the classes step up — and grew
+            past their set sizes on wide ones. The 320-unit box clipped them on
+            top of that. The icons below already sit outside the svg for this
+            reason; the copy belongs out here with them.
+
+            Flush left on mobile, so this lines up with the Cite as column.
+            From md the inset returns, which is where it aligns with the
+            "Design" line of the wordmark: 12.38% is the 52 user units the
+            foreignObject was inset by as a share of the 420-unit viewBox, so
+            it holds that alignment at any width. The icons use the same
+            figure. */}
+        <div className="md:ps-[12.38%]">
+          <p className="md:text-lg text-base font-power tracking-wide ">
+            An Interactive History of Data Visualization, 1789-1900
+          </p>
+          <p className="md:text-xl text-lg font-neueMontrealLight mt-4">
+            Expanded version available in print as{" "}
+            <cite>
+              Data by Design: Visualization and Power from Abolition to the
+              Dawn of Data Science
+            </cite>{" "}
+            (
+            <a
+              className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
+              href="https://mitpress.mit.edu/9780262056182/data-by-design/"
+              onClick={() => trackPreorderClick("MIT Press", "footer")}
+            >
+              MIT Press
+            </a>
+            , 2026).
+          </p>
+          <p className="md:text-lg text-sm font-neueMontrealLight mt-6">
+            Please contact the project director,{" "}
+            <a
+              className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
+              href="mailto:lauren.klein@emory.edu"
+            >
+              Lauren Klein
+            </a>
+            , with any additional questions.
+          </p>
+        </div>
+        {/* mt-auto drops the icons to the foot of the column, level with the
+            bottom of the footer on wide screens; the padding is what keeps
+            them clear of the copy when the column is only as tall as its
+            content. The inset matches the copy above. */}
         <div className="mt-auto pt-10 md:ps-[12.38%]">
           <SocialLinks />
         </div>
