@@ -155,7 +155,7 @@ export default function Footer() {
               type="submit"
               name="subscribe"
               id="mc-embedded-subscribe"
-              className="absolute right-0 bottom-2 text-offwhite hover:text-white transition-colors"
+              className="absolute right-0 bottom-2 text-offwhite/60 hover:text-offwhite transition-colors duration-200"
               aria-label="Subscribe"
             >
               <svg
