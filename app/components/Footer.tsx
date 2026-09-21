@@ -1,4 +1,5 @@
 import SiteTitle from "./home/SiteTitle";
+import SocialLinks from "./SocialLinks";
 import { trackPreorderClick } from "~/analytics";
 
 export default function Footer() {
@@ -168,6 +169,11 @@ export default function Footer() {
             />
           </div>
         </form>
+
+        {/* Socials */}
+
+        <p className="uppercase text-xs font-neueMontreal">Follow the project</p>
+        <SocialLinks />
 
         {/* Logos  */}
 
