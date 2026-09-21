@@ -4,8 +4,10 @@
 // viewBoxes and are drawn with fill rather than stroke — a stroked Instagram
 // camera next to a solid Bluesky butterfly reads as two different weights at
 // this size. Colour comes from currentColor so the row inherits the footer's
-// offwhite and brightens on hover, rather than dropping six brand colours into
-// an otherwise black-and-white footer.
+// offwhite, rather than dropping three brand colours into an otherwise
+// black-and-white footer. They rest dimmed and come up to full strength on
+// hover, matching the logo row; going offwhite to white would be a change of
+// two values in 255, which is no hover at all.
 
 const socials = [
   {
@@ -37,7 +39,7 @@ export default function SocialLinks() {
             href={href}
             target="_blank"
             rel="noopener"
-            className="block text-offwhite hover:text-white transition-colors"
+            className="block text-offwhite/60 hover:text-offwhite transition-colors duration-200"
           >
             <span className="sr-only">{name} (opens in a new tab)</span>
             <svg
