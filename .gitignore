@@ -20,3 +20,7 @@ node_modules*
 *.d.ts
 /public/images/chapters/Chapter*
 /public/images/chapters/Introduction*
+credentials.json
+Gemfile*
+*.rb
+token*

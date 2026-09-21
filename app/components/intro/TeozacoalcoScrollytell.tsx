@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ScrollytellContext } from "~/scrollytellContext";
 import ScrollytellWrapper from "../ScrollytellWrapper";
 import type { ReactElement } from "react";
@@ -9,6 +9,18 @@ interface Props {
 
 const width = 663.84;
 const height = 550.96;
+
+const scale = (scrollProgress: number) => {
+  return scrollProgress >= 4.75 && scrollProgress < 5.75
+    ? "scale-[8] translate-y-[300px]"
+    : scrollProgress >= 5.75 && scrollProgress < 6.75
+    ? "scale-[1.75] -translate-x-[200px] translate-y-[100px]"
+    : scrollProgress >= 6.75 && scrollProgress < 7.75
+    ? "scale-[6] -translate-x-[100px] translate-y-[700px]"
+    : scrollProgress >= 7.75 && scrollProgress < 8.75
+    ? "scale-[2] translate-x-[550px] 5translate-y-[20px]"
+    : "";
+};
 
 const TeozacoalcoScrollytell = ({ triggers }: Props) => {
   const [scrollProgress, setScrollProgress] = useState<number>(0);
@@ -21,19 +33,15 @@ const TeozacoalcoScrollytell = ({ triggers }: Props) => {
         triggers={triggers}
         steps={steps}
         bgColor="knowledgePrimary"
+        id="scrollytell-two"
       >
-        <div
-          className={`flex flex-col md:flex-row justify-between `}
-          id="scrollytell-two"
-        >
+        <div className={`flex flex-col md:flex-row justify-between `}>
           <div className="sticky p-8 md:p-0 top-20 h-min bias-full w-full md:bias-1/2 md:w-7/12 md:order-last">
             <svg
               viewBox={`0 0 ${width} ${height}`}
-              className={`max-h-[80vh] max-w-[90%] md:my-16 mx-auto will-change-transform transition-transform duration-[2000ms] ${
-                scrollProgress >= 4.75 && scrollProgress < 5.75
-                  ? "scale-[8] translate-y-[300px]"
-                  : ""
-              }`}
+              className={`max-h-[80vh] max-w-[90%] md:my-16 mx-auto will-change-transform transition-transform duration-[2000ms] ${scale(
+                scrollProgress,
+              )}`}
             >
               <mask id="mapa-mask">
                 <rect
@@ -44,7 +52,9 @@ const TeozacoalcoScrollytell = ({ triggers }: Props) => {
                   className="transition-all duration-1000"
                   // fill={scrollProgress > 0.75 ? "white" : "black"}
                   fill="white"
-                  fillOpacity={scrollProgress > 0.75 ? 0.2 : 1}
+                  fillOpacity={
+                    scrollProgress > 0.75 && scrollProgress < 8.75 ? 0.2 : 1
+                  }
                 />
                 <g
                   data-name="mountains"
@@ -102,29 +112,18 @@ const TeozacoalcoScrollytell = ({ triggers }: Props) => {
                 <g
                   data-name="figures"
                   className={`${
-                    scrollProgress >= 6.75 && scrollProgress < 8.75
+                    scrollProgress >= 6.75 && scrollProgress < 7.75
                       ? "fill-white opacity-100"
                       : "fill-black opacity-0"
                   } translate-x-[272px] translate-y-[155px] transition-all duration-1000`}
                 >
-                  <rect x={-250} y={-10} height={375} width={50} />
+                  {/* <rect x={-250} y={-10} height={375} width={50} /> */}
                   <rect x={65} y={-35} height={115} width={30} />
-                </g>
-                <g
-                  data-name="family"
-                  className={`${
-                    scrollProgress >= 7.75 && scrollProgress < 8.75
-                      ? "fill-white opacity-100"
-                      : "fill-black opacity-0"
-                  } translate-x-[272px] translate-y-[155px] transition-all duration-1000`}
-                >
-                  <rect x={-200} y={-10} height={375} width={75} />
-                  <rect x={-125} y={-10} height={60} width={100} />
                 </g>
                 <g
                   data-name="marriages"
                   className={`${
-                    scrollProgress >= 7.75 && scrollProgress < 9.75
+                    scrollProgress >= 7.75 && scrollProgress < 8.75
                       ? "fill-white opacity-100"
                       : "fill-black opacity-0"
                   } translate-x-[272px] translate-y-[155px] transition-all duration-1000`}
@@ -157,6 +156,7 @@ const TeozacoalcoScrollytell = ({ triggers }: Props) => {
               </mask>
               <g data-name="image">
                 <image
+                  className="d shadow-lg"
                   mask={
                     scrollProgress > 0.72
                       ? "url(#mapa-mask)"

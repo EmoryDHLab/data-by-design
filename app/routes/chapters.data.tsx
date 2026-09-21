@@ -1067,7 +1067,7 @@ export default function BrooksPage() {
           <Figure
             className="md:grid grid-cols-2 gap-4"
             imageClassName="h-full"
-            figures={[figures["0115-stream"], figures["0116-stream-of-time"]]}
+            figures={[figures["0115-stream"], figures["0115-stream"]]}
           />
 
           <p>
