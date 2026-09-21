@@ -4,19 +4,20 @@ import { trackPreorderClick } from "~/analytics";
 import { classNames } from "~/utils";
 
 // The funder and collaborator logos share everything but their height, so the
-// common part lives here. They sit at full strength, and the hover is a small
-// lift rather than a change of colour: anything that dims or greys the resting
-// state makes a row of credits look switched off, which these organisations
-// are not.
-const LOGO =
-  "w-auto object-contain transition-transform duration-200 hover:scale-110";
+// common part lives here. No hover: they aren't links, and nothing about a
+// credit row needs to react to the cursor.
+const LOGO = "w-auto object-contain";
 
 // The source links in the credits paragraph. One constant rather than three
-// copies, which is how they drifted to different underline offsets in the first
-// place. The underline sits closer here than in the first column's larger copy,
-// because this paragraph is set small.
+// copies, which is how they drifted apart in the first place. The underline
+// sits just off the baseline — this paragraph is set small, so a wider gap
+// detaches the rule from its words — and goes dashed under the cursor rather
+// than thickening, matching the links in the first column.
+//
+// offset-2 rather than the 3 that was here before: Tailwind's scale is
+// 0/1/2/4/8, so underline-offset-3 was never a class and emitted nothing.
 const CREDIT_LINK =
-  "underline underline-offset-3 decoration-1 hover:decoration-2 focus:decoration-2";
+  "underline underline-offset-2 decoration-1 hover:decoration-dashed focus:decoration-dashed";
 
 export default function Footer() {
   return (
