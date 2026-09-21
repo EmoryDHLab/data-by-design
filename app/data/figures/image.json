@@ -17,10 +17,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1801,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 561,
-    "height": 352,
-    "iiif": false
+    "height": 352
   },
   "0201a-playfair-northam": {
     "chapter": "image",
@@ -40,10 +41,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1801,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 5395,
-    "height": 3323,
-    "iiif": true
+    "height": 3323
   },
   "0202": {
     "chapter": "image",
@@ -63,10 +65,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1770,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1184,
-    "height": 752,
-    "iiif": false
+    "height": 752
   },
   "0203-playfair-scotland": {
     "chapter": "image",
@@ -86,10 +89,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1786,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1137,
-    "height": 763,
-    "iiif": false
+    "height": 763
   },
   "0204-playfair-pie": {
     "chapter": "image",
@@ -109,10 +113,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1802,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 6306,
-    "height": 3456,
-    "iiif": true
+    "height": 3456
   },
   "0205-bl-playfair": {
     "chapter": "image",
@@ -132,10 +137,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1801,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 3076,
-    "height": 2497,
-    "iiif": true
+    "height": 2497
   },
   "0206-playfair-table-america-rect-cropped": {
     "chapter": "image",
@@ -155,10 +161,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1787,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2864,
-    "height": 2163,
-    "iiif": true
+    "height": 2163
   },
   "0207-playfair-table-northam-rect-cropped": {
     "chapter": "image",
@@ -178,10 +185,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1787,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2449,
-    "height": 2242,
-    "iiif": true
+    "height": 2242
   },
   "0208a-bl-playfair": {
     "chapter": "image",
@@ -201,10 +209,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1787,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 814,
-    "height": 682,
-    "iiif": false
+    "height": 682
   },
   "0208b-playfair-northam.jog": {
     "chapter": "image",
@@ -224,10 +233,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1801,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1538,
-    "height": 1170,
-    "iiif": false
+    "height": 1170
   },
   "0208c-playfair-northam.jog": {
     "chapter": "image",
@@ -247,10 +257,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1801,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2421,
-    "height": 1455,
-    "iiif": true
+    "height": 1455
   },
   "0209-periscopic": {
     "chapter": "image",
@@ -270,10 +281,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2018,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1512,
-    "height": 771,
-    "iiif": false
+    "height": 771
   },
   "0210-gun-deaths-2018": {
     "chapter": "image",
@@ -293,10 +305,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2018,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1280,
-    "height": 963,
-    "iiif": false
+    "height": 963
   },
   "0211-upscale": {
     "chapter": "image",
@@ -316,10 +329,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1771,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 4800,
-    "height": 5576,
-    "iiif": true
+    "height": 5576
   },
   "0212-playfair-indies": {
     "chapter": "image",
@@ -339,10 +353,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1801,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 7042,
-    "height": 6263,
-    "iiif": true
+    "height": 6263
   },
   "0213-playfair-wheat": {
     "chapter": "image",
@@ -362,10 +377,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1821,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1000,
-    "height": 528,
-    "iiif": false
+    "height": 528
   },
   "0214-camoes": {
     "chapter": "image",
@@ -385,10 +401,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2011,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 926,
-    "height": 599,
-    "iiif": false
+    "height": 599
   },
   "0215-wood": {
     "chapter": "image",
@@ -408,10 +425,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2024,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2032,
-    "height": 1068,
-    "iiif": true
+    "height": 1068
   },
   "0216a-PLACEHOLDER": {
     "chapter": "image",
@@ -431,10 +449,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1315,
-    "height": 761,
-    "iiif": false
+    "height": 761
   },
   "0216b-PLACEHOLDER": {
     "chapter": "image",
@@ -454,10 +473,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 830,
-    "height": 484,
-    "iiif": false
+    "height": 484
   },
   "0217A-playfair-northam-scan_copy": {
     "chapter": "image",
@@ -477,10 +497,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1801,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 9798,
-    "height": 6263,
-    "iiif": true
+    "height": 6263
   },
   "0217B": {
     "chapter": "image",
@@ -500,10 +521,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1236,
-    "height": 582,
-    "iiif": false
+    "height": 582
   },
   "0217C": {
     "chapter": "image",
@@ -523,10 +545,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 1452,
-    "height": 1316,
-    "iiif": false
+    "height": 1316
   },
   "0217D": {
     "chapter": "image",
@@ -546,10 +569,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2930,
-    "height": 1708,
-    "iiif": true
+    "height": 1708
   },
   "0218-jevons002": {
     "chapter": "image",
@@ -569,10 +593,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1861,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": true,
     "width": 9078,
-    "height": 6636,
-    "iiif": true
+    "height": 6636
   },
   "0219-jevons001": {
     "chapter": "image",
@@ -592,9 +617,10 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1861,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": true,
     "width": 9090,
-    "height": 6533,
-    "iiif": true
+    "height": 6533
   }
 }

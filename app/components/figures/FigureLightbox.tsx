@@ -51,7 +51,7 @@ export default function FigureLightbox({ figure, isOpen, onClose }: Props) {
             </DialogTitle>
             <div className="flex flex-col flex-1 min-h-0 overflow-hidden">
               <div className="flex-1 min-h-0 overflow-hidden">
-                {figure.iiif ? (
+                {figure.deepZoom ? (
                   <IIIFViewer figure={figure} modalOpen={isOpen} />
                 ) : (
                   <Picture figure={figure} />

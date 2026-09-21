@@ -11,10 +11,19 @@ interface Props {
 
 const SIZES = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw";
 
-const iiifUrl = (figure: TFigure) => {
+const IIIF_SRCSET_WIDTHS = [640, 960, 1280, 1920, 2560];
+
+const iiifUrl = (figure: TFigure, width: number) => {
   return `https://iiif.ecds.io/iiif/3/${
     figure.fileName
-  }.tiff/full/1200,/0/default.${figure.alpha ? "png" : "jpg"}`;
+  }.tiff/full/${width},/0/default.${figure.alpha ? "png" : "jpg"}`;
+};
+
+const iiifSrcSet = (figure: TFigure) => {
+  const maxWidth =
+    figure.width ?? IIIF_SRCSET_WIDTHS[IIIF_SRCSET_WIDTHS.length - 1];
+  const widths = [...IIIF_SRCSET_WIDTHS.filter((w) => w < maxWidth), maxWidth];
+  return widths.map((w) => `${iiifUrl(figure, w)} ${w}w`).join(", ");
 };
 
 const Picture = ({ figure, className }: Props) => {
@@ -35,7 +44,8 @@ const Picture = ({ figure, className }: Props) => {
     <picture>
       {figure.iiif ? (
         <source
-          srcSet={iiifUrl(figure)}
+          srcSet={iiifSrcSet(figure)}
+          sizes={SIZES}
           type={`image/${figure.alpha ? "png" : "jpeg"}`}
         />
       ) : (

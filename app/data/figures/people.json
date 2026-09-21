@@ -17,10 +17,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 2838,
-    "height": 3166,
-    "iiif": true
+    "height": 3166
   },
   "0302-DRW-II": {
     "chapter": "people",
@@ -40,10 +41,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1829,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 10189,
-    "height": 6595,
-    "iiif": true
+    "height": 6595
   },
   "0303": {
     "chapter": "people",
@@ -63,10 +65,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1829,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 4504,
-    "height": 1258,
-    "iiif": true
+    "height": 1258
   },
   "0304": {
     "chapter": "people",
@@ -86,10 +89,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1829,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1531,
-    "height": 1531,
-    "iiif": false
+    "height": 1531
   },
   "0305": {
     "chapter": "people",
@@ -109,10 +113,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1829,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 502,
-    "height": 502,
-    "iiif": false
+    "height": 502
   },
   "0306": {
     "chapter": "people",
@@ -132,10 +137,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1829,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 405,
-    "height": 405,
-    "iiif": false
+    "height": 405
   },
   "0307": {
     "chapter": "people",
@@ -155,10 +161,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1829,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 540,
-    "height": 540,
-    "iiif": false
+    "height": 540
   },
   "0308": {
     "chapter": "people",
@@ -178,10 +185,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1829,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2578,
-    "height": 3114,
-    "iiif": true
+    "height": 3114
   },
   "0309": {
     "chapter": "people",
@@ -201,10 +209,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1829,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 379,
-    "height": 379,
-    "iiif": false
+    "height": 379
   },
   "0310a": {
     "chapter": "people",
@@ -224,10 +233,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 4361,
-    "height": 4481,
-    "iiif": true
+    "height": 4481
   },
   "0311": {
     "chapter": "people",
@@ -247,10 +257,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1915,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 9214,
-    "height": 12628,
-    "iiif": true
+    "height": 12628
   },
   "0312-minard": {
     "chapter": "people",
@@ -270,10 +281,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1869,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 4096,
-    "height": 3539,
-    "iiif": true
+    "height": 3539
   },
   "0313-fidler-large-HBCA-E3-2-225": {
     "chapter": "people",
@@ -293,10 +305,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1801,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1400,
-    "height": 1094,
-    "iiif": false
+    "height": 1094
   },
   "0314-Willard0": {
     "chapter": "people",
@@ -316,10 +329,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1828,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1966,
-    "height": 1211,
-    "iiif": false
+    "height": 1211
   },
   "0315-willard1": {
     "chapter": "people",
@@ -339,10 +353,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1828,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 1728,
-    "height": 2052,
-    "iiif": true
+    "height": 2052
   },
   "0316-willard2": {
     "chapter": "people",
@@ -362,10 +377,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1828,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 1768,
-    "height": 2047,
-    "iiif": true
+    "height": 2047
   },
   "0317-willard3": {
     "chapter": "people",
@@ -385,10 +401,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1828,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 1822,
-    "height": 2096,
-    "iiif": true
+    "height": 2096
   },
   "0318-willard4": {
     "chapter": "people",
@@ -408,10 +425,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1828,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 1769,
-    "height": 2056,
-    "iiif": true
+    "height": 2056
   },
   "0319-willard5": {
     "chapter": "people",
@@ -431,10 +449,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1828,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 1732,
-    "height": 2015,
-    "iiif": true
+    "height": 2015
   },
   "0320-willard6": {
     "chapter": "people",
@@ -454,10 +473,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1828,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1967,
-    "height": 1223,
-    "iiif": false
+    "height": 1223
   },
   "0321-willard7": {
     "chapter": "people",
@@ -477,10 +497,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1828,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1989,
-    "height": 1236,
-    "iiif": false
+    "height": 1236
   },
   "0322-willard8": {
     "chapter": "people",
@@ -500,10 +521,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1828,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1004,
-    "height": 625,
-    "iiif": false
+    "height": 625
   },
   "0323-willard9": {
     "chapter": "people",
@@ -523,10 +545,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1828,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1996,
-    "height": 1252,
-    "iiif": false
+    "height": 1252
   },
   "0324-birch-bark-1841": {
     "chapter": "people",
@@ -546,10 +569,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1841,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 5543,
-    "height": 3356,
-    "iiif": true
+    "height": 3356
   },
   "0325-BirchBark": {
     "chapter": "people",
@@ -569,10 +593,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2022,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2721,
-    "height": 2700,
-    "iiif": true
+    "height": 2700
   },
   "0326-speck-tree-p14": {
     "chapter": "people",
@@ -592,10 +617,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1914,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 4665,
-    "height": 7169,
-    "iiif": true
+    "height": 7169
   },
   "0327-speck-tree-p13": {
     "chapter": "people",
@@ -615,10 +641,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1914,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 7320,
-    "height": 4304,
-    "iiif": true
+    "height": 4304
   },
   "0328a-PLACEHOLDER": {
     "chapter": "people",
@@ -638,9 +665,10 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 5000,
-    "height": 5000,
-    "iiif": true
+    "height": 5000
   }
 }

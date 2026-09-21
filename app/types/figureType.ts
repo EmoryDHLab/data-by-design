@@ -12,6 +12,11 @@ export type TFigure = {
   cleanSensitiveAltText: string | null;
   cleanTitle: string | null;
   creditLine: string | null;
+  // True when the OSD/CloverImage deep-zoom viewer is worth showing in the
+  // lightbox - i.e. the image is high enough resolution to have more detail
+  // than the flat picture already shows. Independent of `iiif`: every image
+  // has an IIIF version, but only large scans get the deep-zoom treatment.
+  deepZoom?: boolean;
   fileName: string;
   frontPage: boolean;
   height: number | null;

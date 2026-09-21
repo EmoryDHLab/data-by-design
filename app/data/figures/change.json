@@ -17,10 +17,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 739,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "0502-Group-XVI-floorplan": {
     "chapter": "change",
@@ -40,10 +41,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1901,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 629,
-    "height": 789,
-    "iiif": false
+    "height": 789
   },
   "0503-georgia": {
     "chapter": "change",
@@ -63,10 +65,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 820,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "0506-866-population": {
     "chapter": "change",
@@ -86,10 +89,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 821,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "0507-877-schools": {
     "chapter": "change",
@@ -109,10 +113,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 809,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "0508-881-land": {
     "chapter": "change",
@@ -132,10 +137,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 812,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "0509-value": {
     "chapter": "change",
@@ -155,10 +161,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 807,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "0510": {
     "chapter": "change",
@@ -178,10 +185,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 815,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "0511-master-rbc-rbaapc-10601-0031": {
     "chapter": "change",
@@ -201,10 +209,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1894,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2588,
-    "height": 1380,
-    "iiif": true
+    "height": 1380
   },
   "0512-alt": {
     "chapter": "change",
@@ -224,10 +233,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1898,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1400,
-    "height": 1027,
-    "iiif": false
+    "height": 1027
   },
   "0513-db-conjugal": {
     "chapter": "change",
@@ -247,10 +257,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 811,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "0514-population": {
     "chapter": "change",
@@ -270,10 +281,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1898,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1236,
-    "height": 1566,
-    "iiif": false
+    "height": 1566
   },
   "0515-916-amalg": {
     "chapter": "change",
@@ -293,10 +305,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2310,
-    "height": 2940,
-    "iiif": true
+    "height": 2940
   },
   "0516-master-pnp-ppmsca-08700-08778u": {
     "chapter": "change",
@@ -316,10 +329,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2075,
-    "height": 1485,
-    "iiif": true
+    "height": 1485
   },
   "0517": {
     "chapter": "change",
@@ -339,10 +353,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 0,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1000,
-    "height": 1000,
-    "iiif": false
+    "height": 1000
   },
   "0518": {
     "chapter": "change",
@@ -362,10 +377,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1910,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 1712,
-    "height": 2656,
-    "iiif": true
+    "height": 2656
   },
   "0519a": {
     "chapter": "change",
@@ -385,10 +401,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 16000,
-    "height": 10487,
-    "iiif": true
+    "height": 10487
   },
   "0519b": {
     "chapter": "change",
@@ -408,10 +425,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 16000,
-    "height": 10445,
-    "iiif": true
+    "height": 10445
   },
   "0519c": {
     "chapter": "change",
@@ -431,10 +449,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 16000,
-    "height": 10487,
-    "iiif": true
+    "height": 10487
   },
   "0519d": {
     "chapter": "change",
@@ -454,10 +473,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 16000,
-    "height": 10487,
-    "iiif": true
+    "height": 10487
   },
   "0520a": {
     "chapter": "change",
@@ -477,10 +497,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2017,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 814,
-    "height": 1017,
-    "iiif": false
+    "height": 1017
   },
   "0520-2-BlackHistoryDataVis1": {
     "chapter": "change",
@@ -500,10 +521,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2017,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2933,
-    "height": 3750,
-    "iiif": true
+    "height": 3750
   },
   "0521-2-BlackHistoryDataVis4": {
     "chapter": "change",
@@ -523,10 +545,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2017,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 3038,
-    "height": 3750,
-    "iiif": true
+    "height": 3750
   },
   "0522-dignity-and-debt": {
     "chapter": "change",
@@ -546,10 +569,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2019,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 1556,
-    "height": 2250,
-    "iiif": true
+    "height": 2250
   },
   "0523": {
     "chapter": "change",
@@ -569,10 +593,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2019,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 3024,
-    "height": 4032,
-    "iiif": true
+    "height": 4032
   },
   "0526-data-table": {
     "chapter": "change",
@@ -592,10 +617,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1899,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 3574,
-    "height": 5527,
-    "iiif": true
+    "height": 5527
   },
   "0527": {
     "chapter": "change",
@@ -615,10 +641,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 4512,
-    "height": 5802,
-    "iiif": true
+    "height": 5802
   },
   "0527-899-series": {
     "chapter": "change",
@@ -638,10 +665,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2580,
-    "height": 3222,
-    "iiif": true
+    "height": 3222
   },
   "0530": {
     "chapter": "change",
@@ -661,10 +689,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 780,
-    "height": 485,
-    "iiif": false
+    "height": 485
   },
   "0531": {
     "chapter": "change",
@@ -684,10 +713,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1580,
-    "height": 1066,
-    "iiif": false
+    "height": 1066
   },
   "863": {
     "chapter": "change",
@@ -707,10 +737,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 820,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "864": {
     "chapter": "change",
@@ -730,10 +761,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 836,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "865": {
     "chapter": "change",
@@ -753,10 +785,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 814,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "866": {
     "chapter": "change",
@@ -776,10 +809,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 821,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "867": {
     "chapter": "change",
@@ -799,10 +833,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 820,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "868": {
     "chapter": "change",
@@ -822,10 +857,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 816,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "869": {
     "chapter": "change",
@@ -845,10 +881,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 815,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "870": {
     "chapter": "change",
@@ -868,10 +905,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 819,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "871": {
     "chapter": "change",
@@ -891,10 +929,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 810,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "872": {
     "chapter": "change",
@@ -914,10 +953,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 809,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "873": {
     "chapter": "change",
@@ -937,10 +977,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 815,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "874": {
     "chapter": "change",
@@ -960,10 +1001,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 820,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "875": {
     "chapter": "change",
@@ -983,10 +1025,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 816,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "876": {
     "chapter": "change",
@@ -1006,10 +1049,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 814,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "877": {
     "chapter": "change",
@@ -1029,10 +1073,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 809,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "878": {
     "chapter": "change",
@@ -1052,10 +1097,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 814,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "879": {
     "chapter": "change",
@@ -1075,10 +1121,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 818,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "880": {
     "chapter": "change",
@@ -1098,10 +1145,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 811,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "881": {
     "chapter": "change",
@@ -1121,10 +1169,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 812,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "882": {
     "chapter": "change",
@@ -1144,10 +1193,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 818,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "883": {
     "chapter": "change",
@@ -1167,10 +1217,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 812,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "884": {
     "chapter": "change",
@@ -1190,10 +1241,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 817,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "885": {
     "chapter": "change",
@@ -1213,10 +1265,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 820,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "886": {
     "chapter": "change",
@@ -1236,10 +1289,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 815,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "887": {
     "chapter": "change",
@@ -1259,10 +1313,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 807,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "888": {
     "chapter": "change",
@@ -1282,10 +1337,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 806,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "889": {
     "chapter": "change",
@@ -1305,10 +1361,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 811,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "890": {
     "chapter": "change",
@@ -1328,10 +1385,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1024,
-    "height": 814,
-    "iiif": false
+    "height": 814
   },
   "891": {
     "chapter": "change",
@@ -1351,10 +1409,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1024,
-    "height": 863,
-    "iiif": false
+    "height": 863
   },
   "892": {
     "chapter": "change",
@@ -1374,10 +1433,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1024,
-    "height": 811,
-    "iiif": false
+    "height": 811
   },
   "893": {
     "chapter": "change",
@@ -1397,10 +1457,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1024,
-    "height": 814,
-    "iiif": false
+    "height": 814
   },
   "894": {
     "chapter": "change",
@@ -1420,10 +1481,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1024,
-    "height": 812,
-    "iiif": false
+    "height": 812
   },
   "895": {
     "chapter": "change",
@@ -1443,10 +1505,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1024,
-    "height": 820,
-    "iiif": false
+    "height": 820
   },
   "896": {
     "chapter": "change",
@@ -1466,10 +1529,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1024,
-    "height": 812,
-    "iiif": false
+    "height": 812
   },
   "897": {
     "chapter": "change",
@@ -1489,10 +1553,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1024,
-    "height": 805,
-    "iiif": false
+    "height": 805
   },
   "898": {
     "chapter": "change",
@@ -1512,10 +1577,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1024,
-    "height": 807,
-    "iiif": false
+    "height": 807
   },
   "899": {
     "chapter": "change",
@@ -1535,10 +1601,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 820,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "900": {
     "chapter": "change",
@@ -1558,10 +1625,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 975,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "901": {
     "chapter": "change",
@@ -1581,10 +1649,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 829,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "902": {
     "chapter": "change",
@@ -1604,10 +1673,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 910,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "903": {
     "chapter": "change",
@@ -1627,10 +1697,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 811,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "904": {
     "chapter": "change",
@@ -1650,10 +1721,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 851,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "905": {
     "chapter": "change",
@@ -1673,10 +1745,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 817,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "906": {
     "chapter": "change",
@@ -1696,10 +1769,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 746,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "907": {
     "chapter": "change",
@@ -1719,10 +1793,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 817,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "908": {
     "chapter": "change",
@@ -1742,10 +1817,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 870,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "909": {
     "chapter": "change",
@@ -1765,10 +1841,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 817,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "910": {
     "chapter": "change",
@@ -1788,10 +1865,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 830,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "911": {
     "chapter": "change",
@@ -1811,10 +1889,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 819,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "912": {
     "chapter": "change",
@@ -1834,10 +1913,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 747,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "913": {
     "chapter": "change",
@@ -1857,10 +1937,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 799,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "914": {
     "chapter": "change",
@@ -1880,10 +1961,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 892,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "915": {
     "chapter": "change",
@@ -1903,10 +1985,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 811,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "916": {
     "chapter": "change",
@@ -1926,10 +2009,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 805,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "917": {
     "chapter": "change",
@@ -1949,10 +2033,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 682,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "918": {
     "chapter": "change",
@@ -1972,10 +2057,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 813,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "919": {
     "chapter": "change",
@@ -1995,10 +2081,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 811,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "920": {
     "chapter": "change",
@@ -2018,10 +2105,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 962,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "921": {
     "chapter": "change",
@@ -2041,10 +2129,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 849,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "922": {
     "chapter": "change",
@@ -2064,10 +2153,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 820,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "923": {
     "chapter": "change",
@@ -2087,10 +2177,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 614,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "924": {
     "chapter": "change",
@@ -2110,10 +2201,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 881,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   },
   "925": {
     "chapter": "change",
@@ -2133,9 +2225,10 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1900,
+    "iiif": false,
+    "deepZoom": false,
     "alpha": false,
     "width": 824,
-    "height": 1024,
-    "iiif": false
+    "height": 1024
   }
 }

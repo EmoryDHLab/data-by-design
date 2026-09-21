@@ -17,10 +17,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1834,
-    "height": 1586,
-    "iiif": false
+    "height": 1586
   },
   "0602b": {
     "chapter": "labor",
@@ -40,10 +41,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1816,
-    "height": 922,
-    "iiif": false
+    "height": 922
   },
   "0602c": {
     "chapter": "labor",
@@ -63,9 +65,10 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1818,
-    "height": 1082,
-    "iiif": false
+    "height": 1082
   }
 }

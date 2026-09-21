@@ -17,10 +17,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1788,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2400,
-    "height": 3120,
-    "iiif": true
+    "height": 3120
   },
   "0102-equiano": {
     "chapter": "data",
@@ -40,10 +41,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1789,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2400,
-    "height": 3598,
-    "iiif": true
+    "height": 3598
   },
   "0103a-africanship": {
     "chapter": "data",
@@ -63,10 +65,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 3273,
-    "height": 1513,
-    "iiif": true
+    "height": 1513
   },
   "0103b-africanship": {
     "chapter": "data",
@@ -86,10 +89,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1788,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2973,
-    "height": 1213,
-    "iiif": true
+    "height": 1213
   },
   "0104-marieseraphique": {
     "chapter": "data",
@@ -109,10 +113,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1770,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 1468,
-    "height": 2047,
-    "iiif": true
+    "height": 2047
   },
   "0105-description": {
     "chapter": "data",
@@ -132,10 +137,11 @@
     "sensitive": true,
     "frontPage": false,
     "year": 1789,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2000,
-    "height": 2534,
-    "iiif": true
+    "height": 2534
   },
   "0106-outcome": {
     "chapter": "data",
@@ -155,10 +161,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2796,
-    "height": 1516,
-    "iiif": true
+    "height": 1516
   },
   "0107-resistance": {
     "chapter": "data",
@@ -178,10 +185,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 740,
-    "height": 672,
-    "iiif": false
+    "height": 672
   },
   "0108-fisk": {
     "chapter": "data",
@@ -201,10 +209,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1944,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2284,
-    "height": 3175,
-    "iiif": true
+    "height": 3175
   },
   "0109a": {
     "chapter": "data",
@@ -224,10 +233,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 2933,
-    "height": 2571,
-    "iiif": true
+    "height": 2571
   },
   "0109b": {
     "chapter": "data",
@@ -247,10 +257,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2933,
-    "height": 2198,
-    "iiif": true
+    "height": 2198
   },
   "0109c": {
     "chapter": "data",
@@ -270,10 +281,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 2933,
-    "height": 2427,
-    "iiif": true
+    "height": 2427
   },
   "0109d": {
     "chapter": "data",
@@ -293,10 +305,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2933,
-    "height": 2198,
-    "iiif": true
+    "height": 2198
   },
   "0109e": {
     "chapter": "data",
@@ -316,10 +329,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 2933,
-    "height": 2397,
-    "iiif": true
+    "height": 2397
   },
   "0110": {
     "chapter": "data",
@@ -339,10 +353,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 2709,
-    "height": 953,
-    "iiif": true
+    "height": 953
   },
   "0111": {
     "chapter": "data",
@@ -362,10 +377,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 2681,
-    "height": 955,
-    "iiif": true
+    "height": 955
   },
   "0112": {
     "chapter": "data",
@@ -385,10 +401,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 8041,
-    "height": 2864,
-    "iiif": true
+    "height": 2864
   },
   "0115-stream": {
     "chapter": "data",
@@ -408,9 +425,10 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1803,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 1756,
-    "height": 3182,
-    "iiif": true
+    "height": 3182
   }
 }

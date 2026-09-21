@@ -17,10 +17,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1856,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1019,
-    "height": 1012,
-    "iiif": false
+    "height": 1012
   },
   "0402-1600s": {
     "chapter": "knowledge",
@@ -40,10 +41,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1856,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1019,
-    "height": 1012,
-    "iiif": false
+    "height": 1012
   },
   "0403-1700s": {
     "chapter": "knowledge",
@@ -63,10 +65,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1856,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1019,
-    "height": 1012,
-    "iiif": false
+    "height": 1012
   },
   "0404-1800s": {
     "chapter": "knowledge",
@@ -86,10 +89,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1856,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1012,
-    "height": 1019,
-    "iiif": false
+    "height": 1019
   },
   "0405-Jazwinski-10588000": {
     "chapter": "knowledge",
@@ -109,10 +113,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1834,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 9430,
-    "height": 7846,
-    "iiif": true
+    "height": 7846
   },
   "0406": {
     "chapter": "knowledge",
@@ -132,10 +137,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1274,
-    "height": 1278,
-    "iiif": false
+    "height": 1278
   },
   "0407": {
     "chapter": "knowledge",
@@ -155,10 +161,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 520,
-    "height": 520,
-    "iiif": false
+    "height": 520
   },
   "0408": {
     "chapter": "knowledge",
@@ -178,10 +185,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 814,
-    "height": 817,
-    "iiif": false
+    "height": 817
   },
   "0409": {
     "chapter": "knowledge",
@@ -201,10 +209,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 814,
-    "height": 817,
-    "iiif": false
+    "height": 817
   },
   "0410": {
     "chapter": "knowledge",
@@ -224,10 +233,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 814,
-    "height": 817,
-    "iiif": false
+    "height": 817
   },
   "0411": {
     "chapter": "knowledge",
@@ -247,10 +257,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 814,
-    "height": 817,
-    "iiif": false
+    "height": 817
   },
   "0412": {
     "chapter": "knowledge",
@@ -270,10 +281,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 4437,
-    "height": 2838,
-    "iiif": true
+    "height": 2838
   },
   "0413-blank-chart": {
     "chapter": "knowledge",
@@ -293,10 +305,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1870,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 3264,
-    "height": 2448,
-    "iiif": true
+    "height": 2448
   },
   "0415-student1": {
     "chapter": "knowledge",
@@ -316,10 +329,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1870,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1012,
-    "height": 1019,
-    "iiif": false
+    "height": 1019
   },
   "0416-student2": {
     "chapter": "knowledge",
@@ -339,10 +353,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1870,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1012,
-    "height": 1019,
-    "iiif": false
+    "height": 1019
   },
   "0417-student3": {
     "chapter": "knowledge",
@@ -362,10 +377,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1870,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1012,
-    "height": 1019,
-    "iiif": false
+    "height": 1019
   },
   "0418-student4": {
     "chapter": "knowledge",
@@ -385,10 +401,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1870,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1012,
-    "height": 1019,
-    "iiif": false
+    "height": 1019
   },
   "0419-student5": {
     "chapter": "knowledge",
@@ -408,10 +425,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1870,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1012,
-    "height": 1019,
-    "iiif": false
+    "height": 1019
   },
   "0420-student6": {
     "chapter": "knowledge",
@@ -431,10 +449,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1870,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1012,
-    "height": 1019,
-    "iiif": false
+    "height": 1019
   },
   "0421-student7": {
     "chapter": "knowledge",
@@ -454,10 +473,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1870,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1012,
-    "height": 1019,
-    "iiif": false
+    "height": 1019
   },
   "0422-student8": {
     "chapter": "knowledge",
@@ -477,10 +497,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1870,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1012,
-    "height": 1000,
-    "iiif": false
+    "height": 1000
   },
   "0423-willard-temple": {
     "chapter": "knowledge",
@@ -500,10 +521,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1846,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 4662,
-    "height": 3390,
-    "iiif": true
+    "height": 3390
   },
   "0424a-Caldas-AJB03_M0514": {
     "chapter": "knowledge",
@@ -523,10 +545,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1803,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 6128,
-    "height": 4008,
-    "iiif": true
+    "height": 4008
   },
   "0424b-Caldas-AJB03_M0526": {
     "chapter": "knowledge",
@@ -546,10 +569,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1803,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 6074,
-    "height": 3925,
-    "iiif": true
+    "height": 3925
   },
   "0425-Humboldt-Geographie_der_Pflanzen_in_den_Tropen-Landern": {
     "chapter": "knowledge",
@@ -569,10 +593,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1807,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 10283,
-    "height": 7230,
-    "iiif": true
+    "height": 7230
   },
   "0426-am1829-phelps-67941-d-p1": {
     "chapter": "knowledge",
@@ -592,10 +617,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1829,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 4503,
-    "height": 2619,
-    "iiif": true
+    "height": 2619
   },
   "0427-Willard-4545001": {
     "chapter": "knowledge",
@@ -615,10 +641,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1836,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 7923,
-    "height": 5002,
-    "iiif": true
+    "height": 5002
   },
   "0428-clarke-1-4000BC-ps-30x43-2": {
     "chapter": "knowledge",
@@ -638,10 +665,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 0,
+    "iiif": true,
+    "deepZoom": false,
     "alpha": false,
     "width": 1368,
-    "height": 1824,
-    "iiif": false
+    "height": 1824
   },
   "0429-Tattered_map_in_attic": {
     "chapter": "knowledge",
@@ -661,10 +689,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2014,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 3456,
-    "height": 2304,
-    "iiif": true
+    "height": 2304
   },
   "0430-Peabody-Sandwich": {
     "chapter": "knowledge",
@@ -684,10 +713,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 5237,
-    "height": 9726,
-    "iiif": true
+    "height": 9726
   },
   "0430-B": {
     "chapter": "knowledge",
@@ -707,10 +737,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 3558,
-    "height": 2791,
-    "iiif": true
+    "height": 2791
   },
   "0431-Peabody-15895000": {
     "chapter": "knowledge",
@@ -730,10 +761,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 0,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 12226,
-    "height": 10318,
-    "iiif": true
+    "height": 10318
   },
   "0432-rachel-carey-george": {
     "chapter": "knowledge",
@@ -753,10 +785,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 0,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 903,
-    "height": 960,
-    "iiif": false
+    "height": 960
   },
   "0433-gbq-q030-06": {
     "chapter": "knowledge",
@@ -776,10 +809,11 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1998,
-    "alpha": false,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": true,
     "width": 936,
-    "height": 917,
-    "iiif": false
+    "height": 917
   },
   "0434": {
     "chapter": "knowledge",
@@ -799,9 +833,10 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2026,
+    "iiif": true,
+    "deepZoom": true,
     "alpha": false,
     "width": 2918,
-    "height": 1668,
-    "iiif": true
+    "height": 1668
   }
 }
