@@ -29,6 +29,81 @@ const sections = [
   },
 ];
 
+// The subheads inside a section. font-power, not the Wide cut: at this size the
+// wide face is doing a display job in a place that only needs a label, and it
+// crowds the measure. Uppercase and letterspaced instead, which is how the rest
+// of the site marks small headings.
+const SUBHEAD =
+  "font-power font-bold uppercase tracking-[0.15em] text-sm md:text-base pb-2 border-b border-black/15";
+
+// The project team. Held as data rather than twelve hand-written paragraphs, so
+// one typographic treatment covers every entry and they can't drift apart: the
+// name in the display face, the affiliation as small print beneath it, and then
+// the sentence already written about them, word for word.
+const contributors = [
+  {
+    name: "Lauren Klein",
+    affiliation: "Emory, Departments of Data & Decision Sciences and English",
+    text: "is the director of the project and conducted all of the historical and archival research. She also wrote most of the words that appear on the site.",
+  },
+  {
+    name: "Tanvi Sharma",
+    affiliation: "NYU, MS ‘23, Interactive Design and Media",
+    text: "is the lead designer on the project. She designed the project website, including both site-wide and page-specific interactions, as well as the custom visualizations and other illustrations. She also coauthored the “Labor” chapter.",
+  },
+  {
+    name: "Jay Varner",
+    affiliation: "Emory, Center for Digital Scholarship",
+    text: "is the lead developer on the project. He implemented most of the project website, including the final versions of all of the interactive components that appear throughout the site. He also contributed to the writing of the “Labor” chapter.",
+  },
+  {
+    name: "Margy Adams",
+    affiliation: "Emory, PhD ‘25, English",
+    text: "wrote the alt-text for the project site, and contributed research and ideas to the “Data” chapter. She also coauthored the “Labor” chapter.",
+  },
+  {
+    name: "Shiyao Li",
+    affiliation: "Emory, PhD ‘26, Computer Science",
+    text: "prototyped the visualizations for the “Data” and “Labor” chapters. He also contributed to the writing of the “Labor” chapter.",
+  },
+  {
+    name: "Nicholas Yang",
+    affiliation: "NYU, BA ‘22, Computer Science",
+    text: "is a developer on the project and former lead developer on the project. He implemented the “Introduction” and led the migration from Vue to React.",
+  },
+  {
+    name: "Dan Jutan",
+    affiliation: "Georgia Tech, BS ‘24, Computer Science",
+    text: "was the first lead developer on the project. He built the project prototype and alpha version of the site, including most interactive components.",
+  },
+  {
+    name: "Jianing Fu",
+    affiliation:
+      "Georgia Tech, BS ‘21, Computer Science; Univ. of California, Berkeley, MEng ‘22, Computer Science",
+    text: "was a developer on the project. She built the components on the project’s front page, including the interactive timeline, for the project prototype and alpha versions of the site.",
+  },
+  {
+    name: "Anna Mola",
+    affiliation: "Emory, BA ‘22, Computer Science and Visual Arts",
+    text: "was a developer on the project. She built the components of the Playfair chapter for the project’s alpha version.",
+  },
+  {
+    name: "Zhou Fang",
+    affiliation: "Emory, BA ‘22, Quantitative Sciences",
+    text: "was a developer on the project. She built the image browser component of the Change chapter for the project’s alpha version.",
+  },
+  {
+    name: "Yang Li",
+    affiliation: "Emory, Center for Digital Scholarship",
+    text: "is a developer on the project. He built the chapter navigation component for the project site, and contributed to the visualizations in the Change chapter.",
+  },
+  {
+    name: "Silas Munro",
+    affiliation: "Polymode",
+    text: "created the initial design concept for the site. Also at Polymode, Edgar Casarin and Brian Johnson contributed valuable ideas and feedback.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <div className="bg-offwhite">
@@ -44,81 +119,113 @@ export default function AboutPage() {
       >
         <ChapterTitle title="About" subtitle="" />
 
-        <main id="main-content pb-36">
+        <main id="main-content" className="chapter-body pb-36">
           <ChapterSectionTitle section={sections[0]}></ChapterSectionTitle>
           <CenteredLayout>
-            <h2 className="text-lg font-powerWide uppercase">Compatibility</h2>
-            <p>
-              This site is best experienced on a computer. If you’re on a phone
-              or small tablet, some interactive visualization features may not
-              work. In those cases, we show a static version of the
-              visualization and suggest switching to a computer to explore the
-              interactive version when time allows.
-            </p>
-            <h2 className="text-lg font-powerWide uppercase">Accessibility</h2>
-            <p>
-              We have designed this site to be accessible to blind and
-              low-vision users. All images and interactions are accompanied by
-              alt-text. We provide two versions: one shorter and more
-              traditional, and the other longer and more conceptual. Inspired by
-              art historian Tina Campt’s idea of “listening to images,” as
-              discussed in Chapter 6, this longer version emphasizes the
-              resonance of the image with the argument expressed in the text.
-              The long alt-text is the default version for the site. To switch
-              to the short version, click the toggle located at the top-left of
-              each chapter.
-            </p>
-            <p>
-              Chapter 1, which contains sensitive images, also contains an
-              option for sensitive alt-text.
-            </p>
-            <h2 className="text-lg font-powerWide uppercase">References</h2>
-            <p>
-              Clicking on any inline reference (a number with a circle around
-              it)     <InlineFootnote index={0} /> will expand the reference inline with the text. Should you
-              want to expand all of the references at once, click the “show
-              references” toggle on the top-left of each chapter. Should you
-              prefer to wait until the end of the chapter to view the
-              references, they also appear at the bottom of the page.
-            </p>
-           
-            <h2 className="text-lg font-powerWide uppercase">Navigation</h2>
-            <p>
-              We are under no illusions: these chapters are long! Should you
-              wish to navigate (or link) directly to a specific part of the
-              chapter, you can use the chapter navigation bar at the top of the
-              page. Icons indicate archival images{" "}
-              <span className="font-icons text-xl">a</span>, new visualizations{" "}
-              <span className="font-icons text-xl">h</span>, interactive features{" "}
-              <span className="font-icons text-xl">g</span>. Hovering over each icon
-              will display the
-              feature’s title. Clicking the icon will take you to that part of
-              the chapter. A navigation bar displays your reading progress.
-            </p>
-            <p>
-              Clicking the site navigation icon, which remains sticky on the top
-              right, just below the chapter navigation bar, will allow you to
-              move between chapters. The Archive As with any creative project,
-              so much of our work ended up on the proverbial cutting-room floor.
-              The good news is that, on the internet, this work can still find a
-              home! Our “archive” (in quotes because it is not actually an
-              archive in the formal definition of the term) is our home for
-              these prototypes and other creative explorations. The [ADD IN]
-              icon that appears throughout the site indicates when an earlier
-              version of the visualization, or other feature, can be found in
-              the archive. A direct link to the archive is here.{" "}
-            </p>
-            <h2 className="text-lg font-powerWide uppercase">The Stack</h2>
-            <p>
-              For more information about the libraries, tools, and processes
-              that contributed to this site, please consult Chapter 6, “Labor.”
-            </p>
+            {/* Each topic is its own section with its heading, rather than a
+                single run of h2s and paragraphs, so the page has an outline a
+                screen reader can move through and the spacing between topics is
+                set once. */}
+            <section className="mb-10 md:mb-12">
+              <h2 className={SUBHEAD}>Compatibility</h2>
+              <p className="mt-4">
+                This site is best experienced on a computer. If you’re on a
+                phone or small tablet, some interactive visualization features
+                may not work. In those cases, we show a static version of the
+                visualization and suggest switching to a computer to explore the
+                interactive version when time allows.
+              </p>
+            </section>
+
+            <section className="mb-10 md:mb-12">
+              <h2 className={SUBHEAD}>Accessibility</h2>
+              <p className="mt-4">
+                We have designed this site to be accessible to blind and
+                low-vision users. All images and interactions are accompanied by
+                alt-text. We provide two versions: one shorter and more
+                traditional, and the other longer and more conceptual. Inspired
+                by art historian Tina Campt’s idea of “listening to images,” as
+                discussed in Chapter 6, this longer version emphasizes the
+                resonance of the image with the argument expressed in the text.
+                The long alt-text is the default version for the site. To switch
+                to the short version, click the toggle located at the top-left of
+                each chapter.
+              </p>
+              <p className="mt-4">
+                Chapter 1, which contains sensitive images, also contains an
+                option for sensitive alt-text.
+              </p>
+            </section>
+
+            <section className="mb-10 md:mb-12">
+              <h2 className={SUBHEAD}>References</h2>
+              <p className="mt-4">
+                Clicking on any inline reference (a number with a circle around
+                it) <InlineFootnote index={0} /> will expand the reference
+                inline with the text. Should you want to expand all of the
+                references at once, click the “show references” toggle on the
+                top-left of each chapter. Should you prefer to wait until the
+                end of the chapter to view the references, they also appear at
+                the bottom of the page.
+              </p>
+            </section>
+
+            <section className="mb-10 md:mb-12">
+              <h2 className={SUBHEAD}>Navigation</h2>
+              <p className="mt-4">
+                We are under no illusions: these chapters are long! Should you
+                wish to navigate (or link) directly to a specific part of the
+                chapter, you can use the chapter navigation bar at the top of
+                the page. Icons indicate archival images{" "}
+                <span className="font-icons text-xl">a</span>, new
+                visualizations <span className="font-icons text-xl">h</span>,
+                interactive features{" "}
+                <span className="font-icons text-xl">g</span>. Hovering over
+                each icon will display the feature’s title. Clicking the icon
+                will take you to that part of the chapter. A navigation bar
+                displays your reading progress.
+              </p>
+              <p className="mt-4">
+                Clicking the site navigation icon, which remains sticky on the
+                top right, just below the chapter navigation bar, will allow you
+                to move between chapters.
+              </p>
+            </section>
+
+            {/* "The Archive" was running on inside the Navigation paragraph
+                with no break, mid-sentence after "move between chapters." It
+                was plainly meant to be its own heading. */}
+            <section className="mb-10 md:mb-12">
+              <h2 className={SUBHEAD}>The Archive</h2>
+              <p className="mt-4">
+                As with any creative project, so much of our work ended up on
+                the proverbial cutting-room floor. The good news is that, on the
+                internet, this work can still find a home! Our “archive” (in
+                quotes because it is not actually an archive in the formal
+                definition of the term) is our home for these prototypes and
+                other creative explorations. The [ADD IN] icon that appears
+                throughout the site indicates when an earlier version of the
+                visualization, or other feature, can be found in the archive. A
+                direct link to the archive is here.
+              </p>
+            </section>
+
+            <section className="mb-10 md:mb-12">
+              <h2 className={SUBHEAD}>The Stack</h2>
+              <p className="mt-4">
+                For more information about the libraries, tools, and processes
+                that contributed to this site, please consult Chapter 6,
+                “Labor.”
+              </p>
+            </section>
           </CenteredLayout>
 
           <ChapterSectionTitle section={sections[1]}></ChapterSectionTitle>
 
           <CenteredLayout>
-            <p>
+            {/* The lead-in is set larger than the entries it introduces, so the
+                section opens with a statement rather than starting flat. */}
+            <p className="text-lg md:text-xl leading-relaxed">
               Data by Design, a project of the Emory Digital Humanities Lab, was
               created by an interdisciplinary team of faculty, staff, students,
               and professionals, collaborating across two continents, three
@@ -126,75 +233,26 @@ export default function AboutPage() {
               in depth in the “Labor” chapter. More information about each
               contributor is below.
             </p>
-            <p>
-              Lauren Klein (Emory, Departments of Data & Decision Sciences and
-              English) is the director of the project and conducted all of the
-              historical and archival research. She also wrote most of the words
-              that appear on the site.
-            </p>
-            <p>
-              Tanvi Sharma (NYU, MS ‘23, Interactive Design and Media) is the
-              lead designer on the project. She designed the project website,
-              including both site-wide and page-specific interactions, as well
-              as the custom visualizations and other illustrations. She also
-              coauthored the “Labor” chapter.
-            </p>
-            <p>
-              Jay Varner (Emory, Center for Digital Scholarship) is the lead
-              developer on the project. He implemented most of the project
-              website, including the final versions of all of the interactive
-              components that appear throughout the site. He also contributed to
-              the writing of the “Labor” chapter.
-            </p>
-            <p>
-              Margy Adams (Emory, PhD ‘25, English) wrote the alt-text for the
-              project site, and contributed research and ideas to the "Data"
-              chapter. She also coauthored the “Labor” chapter.
-            </p>
-            <p>
-              Shiyao Li (Emory, PhD ‘26, Computer Science) prototyped the
-              visualizations for the "Data" and “Labor” chapters. He also
-              contributed to the writing of the “Labor” chapter.
-            </p>
-            <p>
-              Nicholas Yang (NYU, BA ‘22, Computer Science) is a developer on
-              the project and former lead developer on the project. He
-              implemented the "Introduction" and led the migration from Vue to
-              React.
-            </p>
-            <p>
-              Dan Jutan (Georgia Tech, BS ‘24, Computer Science) was the first
-              lead developer on the project. He built the project prototype and
-              alpha version of the site, including most interactive components.
-            </p>
-            <p>
-              Jianing Fu (Georgia Tech, BS ‘21, Computer Science, Univ. of
-              California, Berkeley, MEng ‘22, Computer Science) was a developer
-              on the project. She built the components on the project’s front
-              page, including the interactive timeline, for the project
-              prototype and alpha versions of the site.
-            </p>
-            <p>
-              Anna Mola (Emory, BA ‘22, Computer Science and Visual Arts) was a
-              developer on the project. She built the components of the Playfair
-              chapter for the project’s alpha version.
-            </p>
-            <p>
-              Zhou Fang (Emory BA ‘22, Quantitative Sciences) was a developer on
-              the project. She built the image browser component of the Change
-              chapter for the project’s alpha version.
-            </p>
-            <p>
-              Yang Li (Emory, Center for Digital Scholarship) is a developer on
-              the project. He built the chapter navigation component for the
-              project site, and contributed to the visualizations in the Change
-              chapter.
-            </p>
-            <p>
-              Silas Munro (Polymode) created the initial design concept for the
-              site. Also at Polymode, Edgar Casarin and Brian Johnson
-              contributed valuable ideas and feedback.
-            </p>
+            {/* One entry per contributor, separated by rules rather than by
+                nothing, so twelve people read as twelve entries instead of
+                twelve consecutive paragraphs. The name is a run-in heading: it
+                leads the line in the display face and the sentence carries on
+                from it, which is how these were written and keeps each one
+                grammatical — a name on its own line would leave the sentence
+                below it starting "is the lead designer…". */}
+            <ul className="mt-10 divide-y divide-black/15 border-t border-black/15">
+              {contributors.map(({ name, affiliation, text }) => (
+                <li key={name} className="py-5 md:py-6">
+                  <p>
+                    <strong className="font-power font-bold text-lg md:text-xl">
+                      {name}
+                    </strong>{" "}
+                    <span className="text-black/55">({affiliation})</span>{" "}
+                    {text}
+                  </p>
+                </li>
+              ))}
+            </ul>
           </CenteredLayout>
 
           <ChapterSectionTitle section={sections[2]}></ChapterSectionTitle>
