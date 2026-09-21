@@ -2,7 +2,7 @@
   "0001-teozalcoalco_1": {
     "chapter": "intro",
     "fileName": "0001-teozalcoalco_1",
-    "title": "<span class=\"italic\">Mapa de Teozacoalco</span>",
+    "title": "<i>Mapa de Teozacoalco</i>",
     "cleanTitle": "Mapa de Teozacoalco",
     "artist": "Artist once known",
     "creditLine": "Courtesy of the Joaquín García Icazbalceta Manuscript Collection, Benson Latin American Collection, LLILAS Benson Latin American Studies and Collections, The University of Texas at Austin.",
@@ -17,14 +17,16 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1580,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 7978,
-    "height": 6624,
-    "iiif": true
+    "height": 6624
   },
   "0002-windmap-300dpi": {
     "chapter": "intro",
     "fileName": "0002-windmap-300dpi",
-    "title": "<span class=\"italic\">Wind Map</span>",
+    "title": "<i>Wind Map</i>",
     "cleanTitle": "Wind Map",
     "artist": "Fernanda Bertini Viégas and Martin Wattenberg",
     "creditLine": "Image courtesy of the artists.",
@@ -39,9 +41,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2012,
-    "width": 4096,
-    "height": 2731,
-    "iiif": true
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
+    "width": 2083,
+    "height": 1329
   },
   "0003-energy": {
     "chapter": "intro",
@@ -61,14 +65,16 @@
     "sensitive": false,
     "frontPage": false,
     "year": 2019,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 7404,
-    "height": 4936,
-    "iiif": true
+    "height": 4936
   },
   "0005-biography-priestley": {
     "chapter": "intro",
     "fileName": "0005-biography-priestley",
-    "title": "<span class=\"italic\">A Chart of Biography</span>",
+    "title": "<i>A Chart of Biography</i>",
     "cleanTitle": "A Chart of Biography",
     "artist": "Joseph Priestley",
     "creditLine": "Image courtesy of the Library Company of Philadelphia.",
@@ -83,14 +89,16 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1765,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 6968,
-    "height": 4944,
-    "iiif": true
+    "height": 4944
   },
   "0006-priestley-new-chart": {
     "chapter": "intro",
     "fileName": "0006-priestley-new-chart",
-    "title": "<span class=\"italic\">A New Chart of History</span>",
+    "title": "<i>A New Chart of History</i>",
     "cleanTitle": "A New Chart of History",
     "artist": "Joseph Priestley",
     "creditLine": "Image courtesy of the David Rumsey Map Collection, Cartography Associates.",
@@ -105,9 +113,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1769,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 3014,
-    "height": 1948,
-    "iiif": true
+    "height": 1948
   },
   "0007-table": {
     "chapter": "intro",
@@ -116,7 +126,7 @@
     "cleanTitle": "Table 1.1",
     "artist": "Stuart Card, Jock Mackinlay, and Ben Shneiderman",
     "creditLine": null,
-    "caption": "The hierarchical definition of visualization provided in Stuart Card, Jock Mackinlay, and Ben Shneiderman’s influential visualization textbook, <span class=\"italic\">Readings in Information Visualization: Using Vision to Think</span> (Morgan Kaufman, 1999).",
+    "caption": "The hierarchical definition of visualization provided in Stuart Card, Jock Mackinlay, and Ben Shneiderman’s influential visualization textbook, <i>Readings in Information Visualization: Using Vision to Think</i> (Morgan Kaufman, 1999).",
     "sourceUrl": null,
     "altText": "A table of definitions describing the layers of cognitive processing and design required for visualization. \n\n(for html chart):\nExternal Cognition: Use of the external world to accomplish cognition.\nInformation design: Design of external representations to amplify cognition.\nData graphics: Use of abstract, nonrepresentational visual representations of data to amplify cognition.\nVisualization: Use of computer-based, interactive visual representations of data to amplify cognition.\nScientific visualization: Use of interactive visual representations of scientific data, typically physically based, to amplify cognition.\nInformation visualization: Use of interactive visual representations of abstract, nonphysically based data to amplify cognition.",
     "sensitiveAltText": null,
@@ -127,14 +137,16 @@
     "sensitive": false,
     "frontPage": false,
     "year": 1999,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": false,
     "width": 1407,
-    "height": 301,
-    "iiif": true
+    "height": 301
   },
   "0008-usworkers": {
     "chapter": "intro",
     "fileName": "0008-usworkers",
-    "title": "<span class=\"italic\">U.S. Workers on Strike</span>",
+    "title": "<i>U.S. Workers on Strike</i>",
     "cleanTitle": "U.S. Workers on Strike",
     "artist": "Mona Chalabi",
     "creditLine": "Used with permission of the artist.",
@@ -149,14 +161,16 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2023,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 3997,
-    "height": 1658,
-    "iiif": true
+    "height": 1658
   },
   "0010": {
     "chapter": "intro",
     "fileName": "0010",
-    "title": "<span class=\"italic\">Hong Kong Artists, Women</span>",
+    "title": "<i>Hong Kong Artists, Women</i>",
     "cleanTitle": "Hong Kong Artists, Women",
     "artist": "Shirley Wu",
     "creditLine": "Commissioned by M+, courtesy of the artist.",
@@ -171,18 +185,20 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2020,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 3024,
-    "height": 1964,
-    "iiif": true
+    "height": 1964
   },
   "0010a-Stefanie01a_toscale": {
     "chapter": "intro",
     "fileName": "0010a-Stefanie01a_toscale",
-    "title": "<span class=\"italic\">A Week of Clocks </span>(front)",
+    "title": "<i>A Week of Clocks </i>(front)",
     "cleanTitle": "A Week of Clocks (front)",
     "artist": "Stefanie Posavec",
     "creditLine": "Courtesy of the artist.",
-    "caption": "Stefanie Posavec, “A Week of Clocks,” front, from Giorgia Lupi and Stefanie Posavec, <span class=\"italic\">Dear Data</span> (2016), courtesy of the artist.",
+    "caption": "Stefanie Posavec, “A Week of Clocks,” front, from Giorgia Lupi and Stefanie Posavec, <i>Dear Data</i> (2016), courtesy of the artist.",
     "sourceUrl": "https://www.dear-data.com/theproject",
     "altText": "Two images of the front and back of a postcard. The front shows sketched arrows, lines, and dots form a snowflake pattern on a postcard. The postal service bar code is visible in orange on the bottom left, evidence of it having been sent in the mail.",
     "sensitiveAltText": null,
@@ -193,18 +209,20 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2016,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 2690,
-    "height": 1920,
-    "iiif": true
+    "height": 1920
   },
   "0010b-Stefanie01b_toscale": {
     "chapter": "intro",
     "fileName": "0010b-Stefanie01b_toscale",
-    "title": "<span class=\"italic\">A Week of Clocks</span> (back)",
+    "title": "<i>A Week of Clocks</i> (back)",
     "cleanTitle": "A Week of Clocks (back)",
     "artist": "Stefanie Posavec",
     "creditLine": "Courtesy of the artist.",
-    "caption": "Stefanie Posavec, “A Week of Clocks,” back, from Giorgia Lupi and Stefanie Posavec, <span class=\"italic\">Dear Data</span> (2016), courtesy of the artist.",
+    "caption": "Stefanie Posavec, “A Week of Clocks,” back, from Giorgia Lupi and Stefanie Posavec, <i>Dear Data</i> (2016), courtesy of the artist.",
     "sourceUrl": "https://www.dear-data.com/theproject",
     "altText": "The back is titled “Dear Data: Week 01” with explanations of the symbols used on the other side. The postal information shows that it was sent from S. Posavec (London, UK) to Giorgia Lupi (Brooklyn, NY, USA).",
     "sensitiveAltText": null,
@@ -215,14 +233,16 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2016,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
     "width": 2690,
-    "height": 1920,
-    "iiif": true
+    "height": 1920
   },
   "0011-AR847648": {
     "chapter": "intro",
     "fileName": "0011-AR847648",
-    "title": "<span class=\"italic\">Border Quipu / Quipu Fronterizo</span>",
+    "title": "<i>Border Quipu / Quipu Fronterizo</i>",
     "cleanTitle": "Border Quipu / Quipu Fronterizo",
     "artist": "Ambos Project",
     "creditLine": "Digital image © 2026 Museum Associates / LACMA, licensed by Art Resource, NY.",
@@ -237,14 +257,16 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2018,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 7976,
-    "height": 2832,
-    "iiif": true
+    "height": 2832
   },
   "0012-AMBOS-BorderQuipu-02": {
     "chapter": "intro",
     "fileName": "0012-AMBOS-BorderQuipu-02",
-    "title": "<span class=\"italic\">Border Quipu / Quipu Fronterizo</span>",
+    "title": "<i>Border Quipu / Quipu Fronterizo</i>",
     "cleanTitle": "Border Quipu / Quipu Fronterizo",
     "artist": "Tanya Aguiñiga",
     "creditLine": "Photo by Gina Clyne, courtesy of Tanya Aguiñiga and AMBOS.",
@@ -259,14 +281,16 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2018,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 3600,
-    "height": 2400,
-    "iiif": true
+    "height": 2400
   },
   "0013": {
     "chapter": "intro",
     "fileName": "0013",
-    "title": "<span class=\"italic\">A Piece of the Pie Chart</span>",
+    "title": "<i>A Piece of the Pie Chart</i>",
     "cleanTitle": "A Piece of the Pie Chart",
     "artist": "Annina Ruest",
     "creditLine": "Image courtesy of LACMA.",
@@ -281,14 +305,16 @@
     "sensitive": false,
     "frontPage": true,
     "year": 2017,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 1400,
-    "height": 2100,
-    "iiif": true
+    "height": 2100
   },
   "0014-anon": {
     "chapter": "intro",
     "fileName": "0014-anon",
-    "title": "Graph of planetary movements, given as an illustration to a short appendix, titled <span class=\"italic\">De cursu per zodiacum</span>, to a copy of Macrobius' <span class=\"italic\">Commentary on Cicero's</span> Somnium Scipionis",
+    "title": "Graph of planetary movements, given as an illustration to a short appendix, titled <i>De cursu per zodiacum</i>, to a copy of Macrobius' <i>Commentary on Cicero's</i> Somnium Scipionis",
     "cleanTitle": "Graph of planetary movements, given as an illustration to a short appendix, titled De cursu per zodiacum, to a copy of Macrobius' Commentary on Cicero's Somnium Scipionis",
     "artist": "Artist once known",
     "creditLine": "Published in Funkhouser, “A Note on a Tenth Century Graph,” Osiris 1 (1936).",
@@ -303,14 +329,16 @@
     "sensitive": false,
     "frontPage": true,
     "year": 900,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 4931,
-    "height": 2786,
-    "iiif": true
+    "height": 2786
   },
   "0015-oresme": {
     "chapter": "intro",
     "fileName": "0015-oresme",
-    "title": "From <span class=\"italic\">Tractatus de latitudinibus formarum </span>",
+    "title": "From <i>Tractatus de latitudinibus formarum </i>",
     "cleanTitle": "From Tractatus de latitudinibus formarum",
     "artist": "Nicolas d'Oresme",
     "creditLine": "Published in Funkhouser, “A Note on a Tenth Century Graph,” Osiris 1 (1936).",
@@ -325,9 +353,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1300,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": false,
     "width": 702,
-    "height": 1872,
-    "iiif": true
+    "height": 1872
   },
   "0016-plot": {
     "chapter": "intro",
@@ -336,7 +366,7 @@
     "cleanTitle": "\"Observations of the Wind, Weather, and Height of the Mercury in the Barometer, throughout the Year 1684; Taken in the Musaeum Ashmoleanum at Oxford\"",
     "artist": "Robert Plot",
     "creditLine": "Published in Philosophical Transactions (1683–1775). © 1685 Royal Society.",
-    "caption": "An early graph of daily barometric pressure in Oxford, England, that appears in Robert Plot’s “History of the Weather.” Published in <span class=\"italic\">Philosophical Transactions</span> (1683–1775). © 1685 Royal Society.",
+    "caption": "An early graph of daily barometric pressure in Oxford, England, that appears in Robert Plot’s “History of the Weather.” Published in <i>Philosophical Transactions</i> (1683–1775). © 1685 Royal Society.",
     "sourceUrl": "https://www.jstor.org/stable/102133",
     "altText": "A vertically oriented line chart divided into twelve sections—six on top and six on the bottom—for each month of the year. The title reads “Philosoph. Transact. Numb. 169.”",
     "sensitiveAltText": null,
@@ -347,18 +377,20 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1685,
-    "width": 1078,
-    "height": 1408,
-    "iiif": true
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": false,
+    "width": 1080,
+    "height": 1408
   },
   "0017-lambert": {
     "chapter": "intro",
     "fileName": "0017-lambert",
-    "title": "Two graphs from Lambert's <span class=\"italic\">Hygrometric Studies</span>",
+    "title": "Two graphs from Lambert's <i>Hygrometric Studies</i>",
     "cleanTitle": "Two graphs from Lambert's Hygrometric Studies",
     "artist": "Johann Heinrich Lambert",
     "creditLine": "Published in “Essai d’hygrométrie ou sur la mesure de l’humidité,” Nouveaux Mémoires de l’Académie Royale des Sciences et Belles-Lettres de Berlin (1771).",
-    "caption": "Two graphs from Johann Lambert’s hygrometric studies, which show the relationship between air, water, heat, and evaporation. Published in “Essai d’hygrométrie ou sur la mesure de l’humidité,” <span class=\"italic\">Nouveaux Mémoires de l’Académie Royale des Sciences et Belles-Lettres de Berlin</span> (1771).",
+    "caption": "Two graphs from Johann Lambert’s hygrometric studies, which show the relationship between air, water, heat, and evaporation. Published in “Essai d’hygrométrie ou sur la mesure de l’humidité,” <i>Nouveaux Mémoires de l’Académie Royale des Sciences et Belles-Lettres de Berlin</i> (1771).",
     "sourceUrl": "https://www.cambridge.org/core/journals/science-in-context/article/johann-heinrich-lamberts-scientific-tool-kit-exemplified-by-his-measurement-of-humidity-17691772/8F1CC9F584F8A1C32ED8DAC0D8DA6A8B",
     "altText": "Two line graphs that relate heat, water, air, and evaporation, each drawn in differently bolded lines. The lines of the first graph fluctuate, those of the second show a general decline, and those of the third show a steady increase.",
     "sensitiveAltText": null,
@@ -369,9 +401,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1771,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": false,
     "width": 583,
-    "height": 1266,
-    "iiif": true
+    "height": 1266
   },
   "0018-playfair": {
     "chapter": "intro",
@@ -380,7 +414,7 @@
     "cleanTitle": "\"Chart of all the import and exports to and from England from the year 1700 to 1782\"",
     "artist": "William Playfair",
     "creditLine": "Image courtesy of Wikimedia Commons.",
-    "caption": "William Playfair’s “Chart of All the Imports and Exports to and from England from the Year 1700 to 1782,” from the third edition of the <span class=\"italic\">Commercial and Political Atlas</span> (1801). Image courtesy of Wikimedia Commons.",
+    "caption": "William Playfair’s “Chart of All the Imports and Exports to and from England from the Year 1700 to 1782,” from the third edition of the <i>Commercial and Political Atlas</i> (1801). Image courtesy of Wikimedia Commons.",
     "sourceUrl": "https://commons.wikimedia.org/wiki/File:1786_Playfair_-_1_Chart_of_all_the_import_and_exports_to_and_from_England_from_the_year_1700_to_1782.jpg",
     "altText": "A line graph where the top red line represents exports and the yellow line represents imports, and the area between, shaded in blue, represents the balance in favor of England. In 1770, both lines show a dip in imports and exports.",
     "sensitiveAltText": null,
@@ -391,9 +425,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1801,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": false,
     "width": 1145,
-    "height": 804,
-    "iiif": true
+    "height": 804
   },
   "0019-snow-cholera-map-1": {
     "chapter": "intro",
@@ -413,14 +449,16 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1854,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 16000,
-    "height": 15009,
-    "iiif": true
+    "height": 15009
   },
   "0020-Nightingale-mortality": {
     "chapter": "intro",
     "fileName": "0020-Nightingale-mortality",
-    "title": "<span class=\"italic\">Diagram of the causes of mortality in the army in the East</span>",
+    "title": "<i>Diagram of the causes of mortality in the army in the East</i>",
     "cleanTitle": "Diagram of the causes of mortality in the army in the East",
     "artist": "Florence Nightingale",
     "creditLine": "Image courtesy of Wikimedia Commons.",
@@ -435,36 +473,16 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1858,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 6996,
-    "height": 3826,
-    "iiif": true
-  },
-  "0021-minard": {
-    "chapter": "intro",
-    "fileName": "0021-minard",
-    "title": "Carte figurative des pertes successives en hommes de l'armee française dans la campagne de Russie 1812-1813 comparées à celle d'Hannibal durant la 2ème Guerre Punique",
-    "cleanTitle": "Carte figurative des pertes successives en hommes de l'armee française dans la campagne de Russie 1812-1813 comparées à celle d'Hannibal durant la 2ème Guerre Punique",
-    "artist": "Charles Joseph Minard",
-    "creditLine": "Image courtesy of the Bibliothèque nationale de France.",
-    "caption": "Charles Minard’s “Carte Figurative des pertes successives en hommes de l’armée française dans la campagne de Russie 1812–1813 comparées à celle d’Hannibal durant la 2ème Guerre Punique,” from 1869, which Edward Tufte proclaims perhaps “the best statistical graphic ever drawn.” Image courtesy of the Bibliothèque nationale de France.",
-    "sourceUrl": "https://catalogue.bnf.fr/ark:/12148/cb40650878p",
-    "altText": "A line graph of two thick, jagged lines shows the losses of the French army in the Russian campaign of 1812–1813. A beige line indicates movement across Russia and, below, a black line shows retreating movement from Russia by Napoleon’s army.",
-    "sensitiveAltText": null,
-    "altTextLong": "A line graph by Charles Minard inspired by Playfair. The graph’s descriptive text is in French. The title translates to “the losses of the French army in the Russian campaign from 1812-1813.” Two thick, jagged horizontal lines dominate the graph. A beige line is thickest and top-most on the graph, decreasing in thickness as the line moves right, indicating movement across Russia. Underneath the beige line, a black line decreases in thickness as the line moves left, indicating retreating movement from Russia by Napoleon’s army. Both lines hit various peaks and valleys, but only intersect at “Polotsk.”",
-    "cleanAltText": "A line graph of two thick, jagged lines shows the losses of the French army in the Russian campaign of 1812–1813. A beige line indicates movement across Russia and, below, a black line shows retreating movement from Russia by Napoleon’s army.",
-    "cleanSensitiveAltText": null,
-    "cleanAltTextLong": "A line graph by Charles Minard inspired by Playfair. The graph’s descriptive text is in French. The title translates to “the losses of the French army in the Russian campaign from 1812-1813.” Two thick, jagged horizontal lines dominate the graph. A beige line is thickest and top-most on the graph, decreasing in thickness as the line moves right, indicating movement across Russia. Underneath the beige line, a black line decreases in thickness as the line moves left, indicating retreating movement from Russia by Napoleon’s army. Both lines hit various peaks and valleys, but only intersect at “Polotsk.”",
-    "sensitive": false,
-    "frontPage": true,
-    "year": 1869,
-    "width": 4096,
-    "height": 3539,
-    "iiif": false
+    "height": 3826
   },
   "0022-halley": {
     "chapter": "intro",
     "fileName": "0022-halley",
-    "title": "<span class=\"italic\">Map of the Trade Winds</span>",
+    "title": "<i>Map of the Trade Winds</i>",
     "cleanTitle": "Map of the Trade Winds",
     "artist": "Edmond Halley",
     "creditLine": "Image courtesy of Wikimedia Commons.",
@@ -479,9 +497,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1686,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 3323,
-    "height": 1103,
-    "iiif": true
+    "height": 1103
   },
   "0023-quipu": {
     "chapter": "intro",
@@ -501,9 +521,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1532,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": false,
     "width": 1000,
-    "height": 962,
-    "iiif": true
+    "height": 962
   },
   "0024-rods": {
     "chapter": "intro",
@@ -523,9 +545,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": -221,
+    "iiif": true,
+    "deepZoom": false,
+    "alpha": false,
     "width": 889,
-    "height": 1200,
-    "iiif": true
+    "height": 1200
   },
   "0025-cuneiform": {
     "chapter": "intro",
@@ -545,9 +569,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": -2900,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 3000,
-    "height": 4000,
-    "iiif": true
+    "height": 4000
   },
   "0026-001892016": {
     "chapter": "intro",
@@ -567,9 +593,11 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1838,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 8000,
-    "height": 7875,
-    "iiif": true
+    "height": 7875
   },
   "0027-16246000": {
     "chapter": "intro",
@@ -589,8 +617,10 @@
     "sensitive": false,
     "frontPage": true,
     "year": 1850,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": false,
     "width": 11544,
-    "height": 10934,
-    "iiif": true
+    "height": 10934
   }
 }

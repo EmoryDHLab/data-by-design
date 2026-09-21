@@ -11,22 +11,24 @@ interface Props {
 
 const SIZES = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw";
 
-function iiifUrl(fileName: string) {
-  return `https://iiif.ecds.io/iiif/3/${fileName}.tiff/full/1200,/0/default.jpg`;
-}
+const IIIF_SRCSET_WIDTHS = [640, 960, 1280, 1920, 2560];
+
+const iiifUrl = (figure: TFigure, width: number) => {
+  return `https://iiif.ecds.io/iiif/3/${
+    figure.fileName
+  }.tiff/full/${width},/0/default.${figure.alpha ? "png" : "jpg"}`;
+};
+
+const iiifSrcSet = (figure: TFigure) => {
+  const maxWidth =
+    figure.width ?? IIIF_SRCSET_WIDTHS[IIIF_SRCSET_WIDTHS.length - 1];
+  const widths = [...IIIF_SRCSET_WIDTHS.filter((w) => w < maxWidth), maxWidth];
+  return widths.map((w) => `${iiifUrl(figure, w)} ${w}w`).join(", ");
+};
 
 const Picture = ({ figure, className }: Props) => {
   const { hideSensitiveState } = useContext(ChapterContext);
   const { preferShortAltText } = useContext(AltTextContext);
-  // Local webp/jpg is preferred, IIIF server currently does
-  // not support webp.
-  const [localFailed, setLocalFailed] = useState(false);
-  const useIIIFFallback = localFailed && figure.iiif;
-
-  const localPath = `/images/chapters/${figure.fileName}`;
-  // Scans with their paper background cleared fall back to a PNG so the
-  // transparency survives for browsers that skip the webp source.
-  const localFallback = `${localPath}.${figure.alpha ? "png" : "jpg"}`;
 
   const altText =
     (hideSensitiveState
@@ -40,15 +42,21 @@ const Picture = ({ figure, className }: Props) => {
 
   return (
     <picture>
-      {!useIIIFFallback && (
-        <source srcSet={`${localPath}.webp`} type="image/webp" />
+      {figure.iiif ? (
+        <source
+          srcSet={iiifSrcSet(figure)}
+          sizes={SIZES}
+          type={`image/${figure.alpha ? "png" : "jpeg"}`}
+        />
+      ) : (
+        <source
+          srcSet={`/images/chapters/${figure.fileName}.webp`}
+          type="image/webp"
+        />
       )}
       <img
         className={classNames("mx-auto max-h-screen object-contain", className)}
-        src={useIIIFFallback ? iiifUrl(figure.fileName) : localFallback}
-        onError={() => {
-          if (!localFailed && figure.iiif) setLocalFailed(true);
-        }}
+        src={`/images/chapters/${figure.fileName}.jpg`}
         alt={altText}
         title={figure.cleanTitle ?? figure.fileName}
         draggable={!hideSensitiveState}

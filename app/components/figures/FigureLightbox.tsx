@@ -16,6 +16,7 @@ import Close from "../icons/Close";
 import ChevronUp from "../icons/ChevronUp";
 import IIIFViewer from "./IIIFViewer.client";
 import type { TFigure } from "~/types/figureType";
+import Picture from "./Picture";
 
 interface Props {
   figure: TFigure;
@@ -50,8 +51,10 @@ export default function FigureLightbox({ figure, isOpen, onClose }: Props) {
             </DialogTitle>
             <div className="flex flex-col flex-1 min-h-0 overflow-hidden">
               <div className="flex-1 min-h-0 overflow-hidden">
-                {figure.iiif && (
+                {figure.deepZoom ? (
                   <IIIFViewer figure={figure} modalOpen={isOpen} />
+                ) : (
+                  <Picture figure={figure} />
                 )}
               </div>
               <div className="flex-shrink-0 space-y-4 mt-4">
