@@ -61,27 +61,6 @@ export type Event = {
 
 export const events: Event[] = [
   {
-    date: "Tuesday, September 15, 2026",
-    month: "Sep",
-    day: "15",
-    weekday: "Tue",
-    year: "2026",
-    time: "7:00pm–8:30pm",
-    // EDT: US daylight time runs through November 1, 2026.
-    startDate: "2026-09-15T19:00:00-04:00",
-    title: "ChinatownJS: They Who Name the Fields",
-    kind: "talk",
-    description:
-      "Tanvi Sharma presents \"Navigating Resistance in Data\" at ChinatownJS, hosted by Sanctuary Computer.",
-    city: "New York, NY",
-    venue: "Index Chinatown",
-    // Two Luma pages: the venue's listing for the evening, and the separate
-    // ticket page the button points at.
-    url: "https://luma.com/index-ltuw",
-    registerUrl: "https://luma.com/dnl59iqk",
-    registerLabel: "Get tickets",
-  },
-  {
     date: "Tuesday, October 20, 2026",
     month: "Oct",
     day: "20",
@@ -122,13 +101,17 @@ export const events: Event[] = [
     day: "27",
     weekday: "Tue",
     year: "2026",
-    time: "7:00pm",
+    time: "6:30pm",
     // EDT: US daylight time runs through November 1, 2026.
-    startDate: "2026-10-27T19:00:00-04:00",
-    title: "Parsons School of Design",
+    startDate: "2026-10-27T18:30:00-04:00",
+    title: "Visualization and Power: Learning from the Past to Design the Future We Need",
     description: "Talk by Lauren Klein and Tanvi Sharma",
     kind: "talk",
     city: "New York, NY",
+    venue: "Parsons School of Design, Wollman Hall, Room 500",
+    streetAddress: "65 W 11th St",
+    postalCode: "10011",
+    url: "https://event.newschool.edu/visualizationandpower",
   },
   {
     date: "Thursday, October 29, 2026",
