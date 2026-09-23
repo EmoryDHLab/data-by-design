@@ -44,7 +44,14 @@ export default function Footer() {
           <p className="md:text-lg text-base font-power tracking-wide ">
             An Interactive History of Data Visualization, 1789-1900
           </p>
-          <p className="md:text-xl text-lg font-neueMontrealLight mt-4">
+          {/* Both notes sit at a flat text-base, with no breakpoint step. They
+              had been md:text-xl/text-lg and md:text-lg/text-sm, which the old
+              viewBox scaling hid by multiplying everything down: at their real
+              sizes the print note was the largest thing in the column,
+              outranking the tagline above it, and the contact line stepped
+              14px to 18px for the same class of content. One size for both
+              leaves the tagline leading and the two notes level. */}
+          <p className="text-base font-neueMontrealLight mt-4">
             Expanded version available in print as{" "}
             <cite>
               Data by Design: Visualization and Power from Abolition to the
@@ -60,7 +67,7 @@ export default function Footer() {
             </a>
             , 2026).
           </p>
-          <p className="md:text-lg text-sm font-neueMontrealLight mt-6">
+          <p className="text-base font-neueMontrealLight mt-6">
             Please contact the project director,{" "}
             <a
               className="underline underline-offset-4 decoration-1 hover:decoration-dashed focus:decoration-2"
