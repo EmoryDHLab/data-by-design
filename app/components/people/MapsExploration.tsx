@@ -53,7 +53,7 @@ export default function ImageTooltips() {
   );
 
   return (
-    <div className="min-h-screen z-90 p-8">
+    <div className="min-h-screen z-90 p-8" id="source-map">
       <div className="max-w-5xl mx-auto">
         <div>
           {/* Image Container */}
