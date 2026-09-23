@@ -67,12 +67,12 @@ const DocumentViewer = () => {
               />
             </button>
 
-            <div className="flex flex-col items-center justify-start h-full pt-8">
+            <div className="flex flex-col items-center justify-start h-full pt-">
               <Figure
                 figure={selectedImage as FigureType}
                 className="max-w-md text-white"
                 id={`doc-viewer-${selectedImage.fileName}`}
-                imageClassName="w-auto object-contain"
+                imageClassName="w-auto object-contain max-h-72"
               />
             </div>
 
