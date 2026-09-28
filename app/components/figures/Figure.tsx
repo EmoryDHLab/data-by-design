@@ -45,10 +45,19 @@ export const Caption = ({
 
 const SensitiveOverlay = ({ figure }: { figure: TFigure }) => {
   const { hideSensitiveState } = useContext(ChapterContext);
-  if (!hideSensitiveState || !figure.sensitive) return null;
+  if (!figure.sensitive) return null;
 
+  // Stays mounted and fades on the same duration as the Picture's
+  // blur/border transition below, instead of popping in/out instantly -
+  // otherwise the two fall out of sync mid-transition (sharp text over a
+  // still-blurring image, or text vanishing before the blur clears).
   return (
-    <div className="absolute p-6 z-10 text-xl font-neueMontreal">
+    <div
+      className={`absolute p-6 z-10 text-xl font-neueMontreal transition-opacity duration-1000 ${
+        hideSensitiveState ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+      aria-hidden={!hideSensitiveState}
+    >
       <span className="[text-shadow:_0_0_10px_#fff,_0_0_20px_#fff] text-offblack">
         {figure.sensitiveAltText}
       </span>
@@ -90,11 +99,7 @@ export default function Figure({
               figure={figure}
               className={`transition-all duration-1000 ${
                 imageClassName ?? ""
-              } ${
-                hideSensitiveState && figure.sensitive
-                  ? "blur-md border-2 border-offblack"
-                  : ""
-              }`}
+              } ${hideSensitiveState && figure.sensitive ? "blur-md" : ""}`}
             />
           </FigureModal>
         ))}
@@ -125,9 +130,7 @@ export default function Figure({
         <Picture
           figure={figure}
           className={`transition-all duration-1000 ${imageClassName ?? ""} ${
-            hideSensitiveState && figure.sensitive
-              ? "blur-md border-2 border-offblack"
-              : ""
+            hideSensitiveState && figure.sensitive ? "blur-md" : ""
           }`}
         />
         {showCaption && (
