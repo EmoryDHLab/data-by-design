@@ -39,7 +39,9 @@ const RecreationScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
               >
                 <p
                   className={`${
-                    index === 0 ? "" : "bg-imagePrimary-translucent"
+                    index === 0
+                      ? ""
+                      : "bg-imagePrimary-translucent text-offwhite"
                   } p-3 md:p-0`}
                 >
                   {trigger}
