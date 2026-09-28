@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { Suspense, useContext, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import figures from "~/data/figures/data.json";
@@ -12,8 +12,8 @@ import VoyagesVis from "../voyages/VoyagesVis.client";
 import ClientOnly from "~/components/ClientOnly";
 import type { ReactElement } from "react";
 
-const minScrollProgress = 16;
-const fullWidthSlides = [0, 3, 12, 13, 14, 15, 16, 17, 18, 21, 22];
+const minScrollProgress = 0;
+const fullWidthSlides = [0, 12, 13, 14, 17, 18, 21, 22];
 
 const VOYAGE_EXAMPLE_BOUNDS = { x: 93, y: 146, width: 443, height: 390 };
 
@@ -39,12 +39,17 @@ function getCenteredTransform(
 
 const pullQuotes = [
   {
-    slideIndex: 6,
-    quote: `Fisk's "representation [of the river] is one of unbridled tangles, and recursively looped waterways that flow, spread, and interrupt each other, a cacophony of effusion, a watery din."`,
-    subquote: `— Romi Morrison, "Gaps between the digits: On the fleshy unknowns of the HUMAN" (2019)`,
+    slideIndex: 4,
+    quote: `Quisquam sint modi voluptatem aut perferendis voluptatum ipsa.`,
+    subquote: `- Stephanie Smallwood`,
   },
+  // {
+  //   slideIndex: 6,
+  //   quote: `Fisk's "representation [of the river] is one of unbridled tangles, and recursively looped waterways that flow, spread, and interrupt each other, a cacophony of effusion, a watery din."`,
+  //   subquote: `— Romi Morrison, "Gaps between the digits: On the fleshy unknowns of the HUMAN" (2019)`,
+  // },
   {
-    slideIndex: 20,
+    slideIndex: 16,
     quote: `This argument for quiet aims to give up resistance as a framework in search of what is lost in its all-encompassing reach.`,
     subquote: `— Kevin Quashie, "The Sovereignty of Quiet: Beyond Resistance in Black Culture" p5. (2012)`,
   },
@@ -65,11 +70,13 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
   const height = windowSize.height ? windowSize.height - 80 : 742;
 
   let nextSlideIndex = slideIndex;
+
   if (scrollProgress > minScrollProgress && scrollProgress % 1 > 0.5) {
     nextSlideIndex = Math.ceil(scrollProgress) - minScrollProgress;
   } else if (scrollProgress <= minScrollProgress + 0.5) {
     nextSlideIndex = 0;
   }
+
   if (nextSlideIndex !== slideIndex) {
     setSlideIndex(nextSlideIndex);
   }
@@ -93,6 +100,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
       triggers={triggers}
       id="voyage-scrollytell"
       className="w-screen"
+      stepClassName=".voyage-scrollytell-step"
     >
       <div className={`sticky h-screen -top-0 overflow-hidden`}>
         <div className="flex flex-col-reverse md:flex-none md:grid grid-cols-2 justify-items-center">
@@ -116,7 +124,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             >
               {/* 1 */}
               <image
-                href={`/images/chapters/data/query.jpg`}
+                href={`https://iiif.ecds.io/iiif/2/0106-outcome.tiff/1575,44,603,630/full/0/default.jpg`}
                 width={width}
                 height={height}
                 preserveAspectRatio="xMidYMid meet"
@@ -133,13 +141,13 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 // Covers both the step that names the "resistance" variable and
                 // the one that enumerates its seven subcategories.
                 className={`transition-opacity duration-1000 opacity-${
-                  slideIndex === 2 || slideIndex === 3 ? 100 : 0
+                  slideIndex === 2 ? 100 : 0
                 }`}
               />
               {/* 3 */}
               <g
                 className={`transition-opacity duration-1000 opacity-${
-                  slideIndex === 4 ? 100 : 0
+                  slideIndex === 3 ? 100 : 0
                 }`}
                 transform={variablesTransform}
               >
@@ -156,6 +164,18 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                   slideIndex === 5 ? 100 : 0
                 }`}
               />
+              <image
+                x={0}
+                width={width}
+                height={height}
+                preserveAspectRatio="xMidYMid meet"
+                href={
+                  "https://iiif.ecds.io/iiif/3/0102-equiano.tiff/full/max/0/default.jpg"
+                }
+                className={`duration-1000 transition-opacity ${
+                  slideIndex === 15 ? "opacity-100" : "opacity-0"
+                }`}
+              />
               {/* 19 */}
               <image
                 x={0}
@@ -165,8 +185,10 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 href={`/images/chapters/${
                   missing("0105-narrative").fileName
                 }.jpg`}
-                className={`absolute transition-opacity duration-1000 opacity-${
-                  slideIndex === 19 ? 100 : 0
+                className={`absolute transition-opacity duration-1000 ${
+                  slideIndex >= 7 && slideIndex < 8
+                    ? "opacity-100"
+                    : "opacity-0"
                 }`}
               />
               <g transform={voyageExampleTransform}>
@@ -180,12 +202,11 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
           slideIndex={slideIndex}
         />
         <ClientOnly>
-          <>
+          <Suspense fallback={<></>}>
             <div className="absolute top-4 md:top-18 mt-8 scale-90">
               <VoyagesVis
                 className={`${
-                  (slideIndex >= 17 && slideIndex <= 18) ||
-                  (scrollProgress >= 36.4 && scrollProgress <= 36.7)
+                  slideIndex >= 17 && slideIndex < 18
                     ? "opacity-100"
                     : "opacity-0"
                 }`}
@@ -199,11 +220,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             </div>
             <div className="absolute top-4 md:top-18 mt-8 scale-90">
               <VoyagesVis
-                className={`${
-                  slideIndex === 21 && scrollProgress >= 36.7
-                    ? "opacity-100"
-                    : "opacity-0"
-                }`}
+                className={`${slideIndex >= 18 ? "opacity-100" : "opacity-0"}`}
                 id="all-full-color"
                 allVoyages={true}
                 fullColor={true}
@@ -212,7 +229,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 showSlider={false}
               />
             </div>
-          </>
+          </Suspense>
         </ClientOnly>{" "}
       </div>
 
@@ -225,7 +242,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             <div
               key={`voyageScrollytell-${trigger.key}`}
               data-step={index}
-              className={`pointer-events-none step text-xl p-5 md:px-20 relative w-auto ${
+              className={`pointer-events-none voyage-scrollytell-step text-xl p-5 md:px-20 relative w-auto ${
                 fullWidthSlides.includes(index) ? "md:w-full" : "md:w-1/2"
               } ${
                 index + 1 === triggers.length

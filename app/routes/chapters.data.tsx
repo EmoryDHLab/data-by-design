@@ -68,12 +68,17 @@ const visualizations: TVizAnchors[] = [
   {
     type: "scrollytell",
     id: "scrollytell1",
-    title: "Scrollytell One",
+    title: "Plymouth Committee Scrollytell",
+  },
+  {
+    type: "visualization",
+    id: "seraphique-tour",
+    title: "Seraphique",
   },
   {
     type: "scrollytell",
     id: "scrollytell2",
-    title: "Scrollytell Two",
+    title: "Clarkson Scrollytell",
   },
   {
     type: "visualization",
@@ -83,7 +88,7 @@ const visualizations: TVizAnchors[] = [
   {
     type: "scrollytell",
     id: "voyage-scrollytell",
-    title: "Scrollytell 3",
+    title: "Voyages Scrollytell",
   },
 ];
 
@@ -185,44 +190,63 @@ export default function BrooksPage() {
             join the abolitionist cause.
             <InlineFootnote index={5} />
           </p>
-
-          {/* blur-none does not transition, that's whats up with the blur-[0px] */}
-          <div className="flex justify-center w-full max-w-96 pt-12 m-auto">
-            <img
-              className={`h-96 max-w-full object-contain p-4 drop-shadow-md transition-all duration-1000 ${
-                hideSensitiveState ? "blur-md" : "blur-[0px]"
-              }`}
-              src={`/images/${figures["0102-equiano"].chapter}/${figures["0102-equiano"].fileName}.jpg`}
-              alt=""
+        </CenteredLayout>
+        <TwoColumnLayout>
+          <Column>
+            <Figure
+              ignoreColumn
+              className="md:me-4"
+              imageClassName="h-64 md:h-[500px]"
+              figure={{
+                ...figures["0101-clarkson"],
+                sensitive: true,
+                sensitiveAltText:
+                  "Blurred portrait of a white figure against a dark background.",
+              }}
             />
-          </div>
+          </Column>
+          <Column>
+            <Figure
+              ignoreColumn
+              imageClassName="h-64 md:h-[500px]"
+              className="md:ms-4"
+              figure={{
+                ...figures["0102-equiano"],
+                sensitive: true,
+                sensitiveAltText:
+                  "Blurred portrait of a Black person against a light background.",
+              }}
+            />
+          </Column>
+        </TwoColumnLayout>
 
-          <div
-            id="consent-explain"
-            className="flex text-lg md:text-xl flex-row items-center ms-8 md:ms-0 pt-12 space-x-6 md:mb-8"
-          >
-            <div className="w-auto md:w-1/6 flex justify-center">
-              <span className={`inline-flex justify-center`}>
-                <ConsentToggle
-                  className="h-12 w-12 md:h-20 md:w-20 p-0.5 md:p-2"
-                  id="big-toggle"
-                />
-              </span>
-            </div>
-            <div
-              id="toggle-description"
-              className="font-power md:w-4/6 text-lg leading-tight md:text-xl"
-            >
-              <p className="  md:block">
-                <span className="font-bold prose">
-                  {" "}
-                  This chapter contains images of enslavement.{" "}
-                </span>{" "}
-                This button will show or hide sensitive images. It will remain
-                below throughout the chapter.
-              </p>
-            </div>
+        <div
+          id="consent-explain"
+          className="flex text-lg md:text-xl flex-row items-center ms-8 md:ms-0 space-x-6 lg:mx-48 md:mx-24 mt-0 mx-6 xl:mx-96"
+        >
+          <div className="w-auto md:w-1/6 flex grow justify-end">
+            <span className={`inline-flex justify-center`}>
+              <ConsentToggle
+                className="h-12 w-12 md:h-20 md:w-20 p-0.5 md:p-2"
+                id="big-toggle"
+              />
+            </span>
           </div>
+          <div
+            id="toggle-description"
+            className="font-power md:w-4/6 text-lg leading-tight md:text-xl"
+          >
+            <p className="  md:block">
+              <span className="font-bold prose">
+                {" "}
+                This chapter contains images of enslavement.{" "}
+              </span>{" "}
+              This button will show or hide sensitive images. It will remain
+              below throughout the chapter.
+            </p>
+          </div>
+        </div>
+        <CenteredLayout className="mt-0">
           <p>
             The “instantaneous impression of horror” that Clarkson hoped his
             diagram would prompt was, like all carefully engineered viewing
@@ -389,7 +413,7 @@ export default function BrooksPage() {
         />
 
         <TwoColumnLayout>
-          <Column shouldPin={true}>
+          <Column>
             <p>
               We do not know with certainty whether Elford was familiar with an
               earlier, more literal depiction of a slave ship, the Marie
@@ -536,76 +560,69 @@ export default function BrooksPage() {
 
         <ChapterSectionTitle section={sections[1]} />
 
-        <TwoColumnLayout>
-          <Column shouldPin>
-            <p className="first-paragraph">
-              As William Elford was scrutinizing the Parrey report, Thomas
-              Clarkson was pursuing his own research into the pernicious nature
-              of the slave trade. Like Parrey, Clarkson began by transforming
-              the available records into data. He visited merchant halls in
-              order to examine the muster rolls stored there, and used them to
-              compute mortality rates among the sailors aboard the ships. (The
-              dangers of the slave trade to the sailors, who were predominantly
-              white, would become a highly persuasive piece of evidence in the
-              argument for its abolition.) While examining the muster rolls,
-              Clarkson also covertly transcribed 20,000 of the sailors’ names.
-              He then sought out individual sailors—primarily those who had been
-              mistreated or maimed—whom he thought might be willing to speak
-              about the conditions aboard the ships (both those that they
-              personally experienced and those of the captives that they
-              observed). These efforts at an early form of counterdata
-              collection, complemented by what was, in effect, mixed-methods
-              research, underscore how Clarkson understood the value of
-              empirical evidence—qualitative as well as quantitative—in
-              advancing his abolitionist claims.
-              <InlineFootnote index={21} />
-            </p>
+        <CenteredLayout>
+          <p className="first-paragraph">
+            As William Elford was scrutinizing the Parrey report, Thomas
+            Clarkson was pursuing his own research into the pernicious nature of
+            the slave trade. Like Parrey, Clarkson began by transforming the
+            available records into data. He visited merchant halls in order to
+            examine the muster rolls stored there, and used them to compute
+            mortality rates among the sailors aboard the ships. (The dangers of
+            the slave trade to the sailors, who were predominantly white, would
+            become a highly persuasive piece of evidence in the argument for its
+            abolition.) While examining the muster rolls, Clarkson also covertly
+            transcribed 20,000 of the sailors’ names. He then sought out
+            individual sailors—primarily those who had been mistreated or
+            maimed—whom he thought might be willing to speak about the
+            conditions aboard the ships (both those that they personally
+            experienced and those of the captives that they observed). These
+            efforts at an early form of counterdata collection, complemented by
+            what was, in effect, mixed-methods research, underscore how Clarkson
+            understood the value of empirical evidence—qualitative as well as
+            quantitative—in advancing his abolitionist claims.
+            <InlineFootnote index={21} />
+          </p>
 
-            <p>
-              Clarkson’s awareness of the value of evidence of multiple forms,
-              and of the value of multiple forms of display, strongly influenced
-              his revisions to the original diagram. While Elford and the
-              Plymouth Committee had first printed the diagram as a companion to
-              a four-page abolitionist pamphlet, and later as a broadside
-              version with the image at the top, it was Clarkson who insisted
-              that the London Committee’s version also include data tables. The
-              tables included measurements of the ship, the <cite>Brooks</cite>,
-              that had been used as a model for the diagram, and a conversion
-              scale that indicated precisely how much square footage had been
-              intended to be allocated to each captive on the chart. A second
-              set of tables enabled a comparison between the number of captives
-              who had actually been held on the original ship and the smaller
-              number depicted in the diagram. This additional information was
-              intended to “give a representation of the trade against which no
-              complaint of exaggeration could be brought.”{" "}
-              <InlineFootnote index={22} />
-            </p>
-            <p>
-              Clarkson’s attention to the strategic deployment of data also
-              underscores the fact that “Description of Slave Ship” was, like
-              its predecessor, a data visualization. The SEAST diagrams have at
-              times been dismissed from the visualization pantheon because of
-              their explicit political objectives, which go against the
-              presumption of visualization’s neutrality—a myth we will continue
-              to dismantle in Chapter 2.
-              <InlineFootnote index={23} />
-              They are also sometimes left unconsidered altogether because they
-              are often presumed to picture the data of one specific ship—that
-              is to say, a form of direct rather than abstract representation.
-              But Clarkson’s extensive commentary on his methodological choices
-              makes clear that his “Description,” like Elford’s “Plan,” involved
-              a synthesis of data from multiple sources. More than that, it
-              satisfies both of the core criteria of that era’s definition of
-              data visualization, as Michael Friendly and Howard Wainer propose:
-              making “previously invisible phenomena subject to direct
-              inspection,” and making those phenomena “palpable and concrete.”
-              <InlineFootnote index={24} />
-            </p>
-          </Column>
-          <Column shouldPin>
-            <Figure figure={figures["0105-description"]} />
-          </Column>
-        </TwoColumnLayout>
+          <p>
+            Clarkson’s awareness of the value of evidence of multiple forms, and
+            of the value of multiple forms of display, strongly influenced his
+            revisions to the original diagram. While Elford and the Plymouth
+            Committee had first printed the diagram as a companion to a
+            four-page abolitionist pamphlet, and later as a broadside version
+            with the image at the top, it was Clarkson who insisted that the
+            London Committee’s version also include data tables. The tables
+            included measurements of the ship, the <cite>Brooks</cite>, that had
+            been used as a model for the diagram, and a conversion scale that
+            indicated precisely how much square footage had been intended to be
+            allocated to each captive on the chart. A second set of tables
+            enabled a comparison between the number of captives who had actually
+            been held on the original ship and the smaller number depicted in
+            the diagram. This additional information was intended to “give a
+            representation of the trade against which no complaint of
+            exaggeration could be brought.” <InlineFootnote index={22} />
+          </p>
+          <p>
+            Clarkson’s attention to the strategic deployment of data also
+            underscores the fact that “Description of Slave Ship” was, like its
+            predecessor, a data visualization. The SEAST diagrams have at times
+            been dismissed from the visualization pantheon because of their
+            explicit political objectives, which go against the presumption of
+            visualization’s neutrality—a myth we will continue to dismantle in
+            Chapter 2.
+            <InlineFootnote index={23} />
+            They are also sometimes left unconsidered altogether because they
+            are often presumed to picture the data of one specific ship—that is
+            to say, a form of direct rather than abstract representation. But
+            Clarkson’s extensive commentary on his methodological choices makes
+            clear that his “Description,” like Elford’s “Plan,” involved a
+            synthesis of data from multiple sources. More than that, it
+            satisfies both of the core criteria of that era’s definition of data
+            visualization, as Michael Friendly and Howard Wainer propose: making
+            “previously invisible phenomena subject to direct inspection,” and
+            making those phenomena “palpable and concrete.”
+            <InlineFootnote index={24} />
+          </p>
+        </CenteredLayout>
 
         <ClarksonSideBySideScrollytell />
 
@@ -772,7 +789,7 @@ export default function BrooksPage() {
 
         <VoyageScrollytell
           triggers={[
-            <span key="490b6e1c">
+            <span key="490b6e1c" data-slide={0}>
               We began our prototyping process, as many do, by examining the
               summary statistics of our dataset. But few facets of the
               data—counts of ships and people, and, more chillingly,
@@ -780,40 +797,44 @@ export default function BrooksPage() {
               reframed.
               <InlineFootnote index={42} />
             </span>,
-            <span className="block" key="38d0f8a6">
+            <span className="block" key="38d0f8a6" data-slide={1}>
               One variable, however, labeled “resistance,” seemed to provide an
               opening.
             </span>,
-            <span className="block" key="8e1ece04">
+            <span className="block" key="8e1ece04" data-slide={2}>
               It contained seven subcategories of resistance that might have
               taken place on any particular journey. Could we use it to create a
               visualization that “looked back at the gaze from nowhere”?
             </span>,
-            <span className="block" key="cd4ac8ca">
+            <span className="block" key="cd4ac8ca" data-slide={3}>
               We began by pulling out the voyages that had any form of
               resistance associated with them, as well as six of the more basic
               variables that were associated with each journey.
             </span>,
-            <span className="block" key="156434b0">
+            <span className="block" key="156434b0" data-slide={4}>
               Because our motivation was to visualize the dataset from the
               perspective of the enslaved, our design process began by focusing
               on a frequent observation: that the captives did not experience
               time as linear while in the hold of the ship.
               <InlineFootnote index={43} />
             </span>,
-            <span className="block" key="963d2d76">
+            <span className="block" key="963d2d76" data-slide={5}>
               Drawing visual inspiration from Harold Fisk’s alluvial diagram of
               the Mississippi River, we decided to use bends and turns to
               represent the nonlinearity of the Middle Passage.
               <InlineFootnote index={44} />
             </span>,
-            <span className="block" key="a2565c78">
+            <span className="block" key="a2565c78" data-slide={6}>
               We retained the diagram’s vertical orientation so that the paths
               could not be read as corresponding to any actual location on a
               map.
             </span>,
-            <span className="block" key="e7a1c4b9"></span>,
-            <span key="d4c5b977">
+            <span className="block" key="e7a1c4b9" data-slide={7}>
+              We also borrowed the color palette of the Fisk diagram but muted
+              the colors, in the hope that this visualization of trauma would
+              not inadvertently become too beautiful.
+            </span>,
+            <span key="d4c5b977" data-slide={8}>
               <span className="block mb-8">
                 We represented each voyage as a snaking line, its color randomly
                 selected from our Fisk-inspired palette.
@@ -827,52 +848,57 @@ export default function BrooksPage() {
                 <InlineFootnote index={45} />
               </span>
             </span>,
-            <span className="block" key="2356b657">
+            <span className="block" key="2356b657" data-slide={9}>
               The width at the top of each bind corresponds to the number of
               captives who were taken from any location in Africa. The width at
               the bottom corresponds to the number who arrived in the Americas
               having survived.
             </span>,
-            <span className="block" key="577fe346">
+            <span className="block" key="577fe346" data-slide={10}>
               The duration of each voyage is conveyed through the amplitude of
               each bind, but plotted from side to side. Encoded in this way, the
               longer voyages have wider sideways curves, and the shorter voyages
               narrower and more direct paths.
             </span>,
-            <span className="block" key="90c3c7eb">
-              While Fisk’s original design superimposes the floodplains of the
-              Mississippi from all points in time on a single image, we chose to
-              retain the start and end date of each voyage, since the rise and
-              fall of the slave trade—and the resistance that met it
-              throughout—seemed like a crucial feature of the data to convey.
+            <span key="90c3c7eb" data-slide={11}>
+              <span className="block mb-8">
+                While Fisk’s original design superimposes the floodplains of the
+                Mississippi from all points in time on a single image, we chose
+                to retain the start and end date of each voyage, since the rise
+                and fall of the slave trade—and the resistance that met it
+                throughout—seemed like a crucial feature of the data to convey.
+              </span>
+              <span className="block">
+                In our visualization, the binds are arranged chronologically,
+                from the first recorded act of resistance aboard a slave ship in
+                1565, on the far left, through the last in 1865, on the far
+                right. Since the majority of the voyages lacked data on the
+                month or day of departure, we grouped the voyages by year.
+              </span>
             </span>,
-            <span className="block" key="b3f8d1c2">
-              In our visualization, the binds are arranged chronologically, from
-              the first recorded act of resistance aboard a slave ship in 1565,
-              on the far left, through the last in 1865, on the far right. Since
-              the majority of the voyages lacked data on the month or day of
-              departure, we grouped the voyages by year.
-            </span>,
-            <span className="block" key="cf140bd8">
+            <span className="block" key="cf140bd8" data-slide={12}>
               The visual effect of this decision is not visible when viewing the
               voyages all at once. But zooming in on a single timespan exposes
               these clusters for closer inspection.
             </span>,
-            <span className="block" key="7ed03972">
-              Consider the time span between 1756 and 1766, the decade during
-              which Olaudah Equiano was enslaved. Within each year, we can see
-              that the binds overlap—what is called “occlusion” in visualization
-              design. Occlusion is generally viewed as something to avoid. But
-              we made the decision to not further separate the voyages, since
-              viewing them together communicates their collective force.
+            <span key="7ed03972" data-slide={13}>
+              <span className="block mb-8">
+                Consider the time span between 1756 and 1766, the decade during
+                which Olaudah Equiano was enslaved. Within each year, we can see
+                that the binds overlap—what is called “occlusion” in
+                visualization design. Occlusion is generally viewed as something
+                to avoid. But we made the decision to not further separate the
+                voyages, since viewing them together communicates their
+                collective force.
+              </span>
+              <span className="block">
+                The voyage that took Equiano from Benin to Barbados and on to
+                Virginia is not pictured in this chart, however, because it did
+                not include a form of resistance that was documented in the
+                dataset.
+              </span>
             </span>,
-            <span className="block" key="8562b8b3">
-              The voyage that took Equiano from Benin to Barbados and on to
-              Virginia is not pictured in this chart, however, because it did
-              not include a form of resistance that was documented in the
-              dataset.
-            </span>,
-            <span key="f754f6ea">
+            <span key="f754f6ea" data-slide={14}>
               <span className="block mb-8">
                 But it might have been included among the 35,578 additional
                 voyages that the dataset contains. This was our inspiration to
@@ -894,16 +920,17 @@ export default function BrooksPage() {
                 forms of resistance that it still does not represent.
               </span>
             </span>,
-            <span className="block" key="0b8820f6">
-              In his autobiography, for example, Equiano recalls observing acts
-              of resistance that were set in motion but ultimately “prevented by
-              the ship’s crew.” These acts of resistance likely had concrete
-              effects, both for the captives and for the crew. But as unfinished
-              acts of resistance, they would have gone unrecorded in the
-              dataset, as they did not meet its criteria for inclusion.
-            </span>,
-            <span key="8f72225a">
+            <span key="0b8820f6" data-slide={15}>
               <span className="block mb-8">
+                In his autobiography, for example, Equiano recalls observing
+                acts of resistance that were set in motion but ultimately
+                “prevented by the ship’s crew.” These acts of resistance likely
+                had concrete effects, both for the captives and for the crew.
+                But as unfinished acts of resistance, they would have gone
+                unrecorded in the dataset, as they did not meet its criteria for
+                inclusion.
+              </span>
+              <span className="block">
                 We might also consider the myriad smaller acts of resistance,
                 including those in which Equiano himself engaged. Upon first
                 being captured, for example, Equiano refused to eat; and when
@@ -912,6 +939,8 @@ export default function BrooksPage() {
                 my new name.”
                 <InlineFootnote index={47} />
               </span>
+            </span>,
+            <span key="8f72225a" data-slide={16}>
               <span className="block">
                 These more “quiet” forms of resistance, as literary scholar
                 Kevin Quashie might term them, were also real, and also
@@ -920,23 +949,26 @@ export default function BrooksPage() {
                 <InlineFootnote index={48} />
               </span>
             </span>,
-            <span className="block" key="c68f1d3b">
-              In our final view, we decided to leverage the power of
-              visualization to amplify these quiet acts. We display all 36,150
-              voyages with a color fill, selected from the same color palette as
-              the visualization of only the resistance voyages. The implication
-              of this choice, we hope, is clear: that every single journey
-              documented in the Voyages Database involved acts of
-              resistance—some that were recorded as “resistance” voyages, some
-              that took place but went unrecorded as “resistance,” and some that
-              defied recording at all.
+            <span className="block" key="c68f1d3b" data-slide={17}>
+              <span className="block mb-8">
+                In our final view, we decided to leverage the power of
+                visualization to amplify these quiet acts. We display all 36,150
+                voyages with a color fill, selected from the same color palette
+                as the visualization of only the resistance voyages. The
+                implication of this choice, we hope, is clear: that every single
+                journey documented in the Voyages Database involved acts of
+                resistance—some that were recorded as “resistance” voyages, some
+                that took place but went unrecorded as “resistance,” and some
+                that defied recording at all.
+              </span>
+              <span className="block">
+                What we were visualizing in the end, our process allowed us to
+                see, was not actually the Middle Passage, but the data it had
+                left in its wake.
+              </span>
+              ,
             </span>,
-            <span className="block" key="a5c2e9f0">
-              What we were visualizing in the end, our process allowed us to
-              see, was not actually the Middle Passage, but the data it had left
-              in its wake.
-            </span>,
-            <span key="cdd173c9">
+            <span key="cdd173c9" data-slide={18}>
               <span className="block mb-8">
                 To underscore this point, we drew from common visualization
                 techniques. But we did not use them in common ways. Instead of
@@ -1063,13 +1095,24 @@ export default function BrooksPage() {
           </p>
         </CenteredLayout>
 
-        <CenteredLayout>
-          <Figure
-            className="md:grid grid-cols-2 gap-4"
-            imageClassName="h-full"
-            figures={[figures["0115-stream"], figures["0115-stream"]]}
-          />
+        <TwoColumnLayout>
+          <Column>
+            <Figure
+              ignoreColumn
+              className="md:me-4"
+              figure={figures["0115-stream"]}
+            />
+          </Column>
+          <Column>
+            <Figure
+              ignoreColumn
+              className="md:ms-4"
+              figure={figures["0116-stream-of-time"]}
+            />
+          </Column>
+        </TwoColumnLayout>
 
+        <CenteredLayout>
           <p>
             Indeed, there is a version of the history of data visualization
             that, without too much reconfiguring, provides Clarkson with a more

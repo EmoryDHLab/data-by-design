@@ -454,5 +454,29 @@
     "alpha": true,
     "width": 1756,
     "height": 3182
+  },
+  "0116-stream-of-time": {
+    "chapter": "data",
+    "fileName": "0116-stream-of-time",
+    "title": "English translation of Freidrich Strass's <i>Strom der Zeiten</i>",
+    "cleanTitle": "English translation of Freidrich Strass's Strom der Zeiten",
+    "artist": "William Bell",
+    "creditLine": "Image courtesy of Cotsen Children’s Collection, Department of Rare Books and Special Collections, Princeton University.",
+    "caption": "An English translation of Strass’s “Strom der Zeiten,” published in 1849 by William Bell. Image courtesy of Cotsen Children’s Collection, Department of Rare Books and Special Collections, Princeton University.",
+    "sourceUrl": null,
+    "altText": "The previous diagram translated from German to English. In contrast to the original, this chart is vibrantly colored; at the bottom of the page, two paragraphs offer an explanation for what Strass calls the “universal history” of the world.",
+    "sensitiveAltText": null,
+    "altTextLong": "Strass’s “stream diagram” translated from German to English. In contrast to the original, this chart is vibrantly colored, with bright yellows and light pinks and reds standing out against the paper’s color. The clouds heading the page remain grayscale, but the border is green instead of the faded beige tone of Strass’s original. Also unlike the original, at the bottom of the page, beneath the streams, two paragraphs offer an explanation for what Strass calls the “universal history” of the world.",
+    "cleanAltText": "The previous diagram translated from German to English. In contrast to the original, this chart is vibrantly colored; at the bottom of the page, two paragraphs offer an explanation for what Strass calls the “universal history” of the world.",
+    "cleanSensitiveAltText": null,
+    "cleanAltTextLong": "Strass’s “stream diagram” translated from German to English. In contrast to the original, this chart is vibrantly colored, with bright yellows and light pinks and reds standing out against the paper’s color. The clouds heading the page remain grayscale, but the border is green instead of the faded beige tone of Strass’s original. Also unlike the original, at the bottom of the page, beneath the streams, two paragraphs offer an explanation for what Strass calls the “universal history” of the world.",
+    "sensitive": false,
+    "frontPage": true,
+    "year": 1849,
+    "iiif": true,
+    "deepZoom": true,
+    "alpha": true,
+    "width": 7188,
+    "height": 13524
   }
 }

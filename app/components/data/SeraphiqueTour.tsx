@@ -63,8 +63,9 @@ export default function SeraphiqueTour({ figure }: Props) {
   const { hoverState, hideSensitiveState } = useContext(ChapterContext);
 
   return (
-    <FigureModal figure={figure} id={figure.fileName}>
+    <FigureModal figure={figure} id={figure.fileName} ignoreColumn={false}>
       <div
+        id="seraphique-tour"
         className={`absolute z-10 overflow-hidden   p-6  text-xl font-neueMontreal transition-opacity duration-1000 opacity-${
           hideSensitiveState ? 100 : 0
         }`}

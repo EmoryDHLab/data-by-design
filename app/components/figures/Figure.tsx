@@ -15,6 +15,7 @@ interface Props {
   id?: string;
   showCaption?: boolean;
   modalClassNames?: string[];
+  ignoreColumn?: boolean;
 }
 
 export const Caption = ({
@@ -48,7 +49,9 @@ const SensitiveOverlay = ({ figure }: { figure: TFigure }) => {
 
   return (
     <div className="absolute p-6 z-10 text-xl font-neueMontreal">
-      {figure.sensitiveAltText}
+      <span className="[text-shadow:_0_0_10px_#fff,_0_0_20px_#fff] text-offblack">
+        {figure.sensitiveAltText}
+      </span>
     </div>
   );
 };
@@ -63,6 +66,7 @@ export default function Figure({
   id,
   showCaption = true,
   modalClassNames = [],
+  ignoreColumn = false,
 }: Props) {
   const { hideSensitiveState } = useContext(ChapterContext);
 
@@ -79,9 +83,19 @@ export default function Figure({
             figure={figure}
             id={`${groupId}-${index}`}
             className={modalClassNames[index]}
+            ignoreColumn={ignoreColumn}
           >
             <SensitiveOverlay figure={figure} />
-            <Picture figure={figure} className={imageClassName} />
+            <Picture
+              figure={figure}
+              className={`transition-all duration-1000 ${
+                imageClassName ?? ""
+              } ${
+                hideSensitiveState && figure.sensitive
+                  ? "blur-md border-2 border-offblack"
+                  : ""
+              }`}
+            />
           </FigureModal>
         ))}
         {groupCaption ? (
@@ -105,6 +119,7 @@ export default function Figure({
         figure={figure}
         className={className}
         id={id ?? `fig-${figure.fileName}`}
+        ignoreColumn={ignoreColumn}
       >
         <SensitiveOverlay figure={figure} />
         <Picture

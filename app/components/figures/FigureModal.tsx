@@ -10,6 +10,7 @@ interface Props {
   className?: string;
   children?: ReactNode;
   id: string;
+  ignoreColumn: boolean;
 }
 
 export default function FigureModal({
@@ -17,6 +18,7 @@ export default function FigureModal({
   figure,
   className,
   id,
+  ignoreColumn,
 }: Props) {
   const { hideSensitiveState } = useContext(ChapterContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -26,10 +28,14 @@ export default function FigureModal({
   // A figure rendered directly inside a two-up Column layout gets extra
   // left margin. Column marks itself with data-bias-column for this check.
   useLayoutEffect(() => {
-    setInColumn(
-      figureRef.current?.parentElement?.hasAttribute("data-bias-column") ??
-        false,
-    );
+    if (ignoreColumn) {
+      setInColumn(false);
+    } else {
+      setInColumn(
+        figureRef.current?.parentElement?.hasAttribute("data-bias-column") ??
+          false,
+      );
+    }
   }, []);
 
   const isInteractive = !(hideSensitiveState && figure.sensitive);
@@ -52,9 +58,9 @@ export default function FigureModal({
       ref={figureRef}
       id={id}
       className={classNames(
+        className,
         "figure-block md:mx-auto relative flex-shrink",
         inColumn ? "md:ml-24" : "",
-        className,
       )}
       {...interactiveProps}
     >
