@@ -194,6 +194,7 @@ export const events: Event[] = [
     weekday: "Thu",
     year: "2026",
     startDate: "2026-11-12",
+    city: "Boston, MA",
     title: "IEEE VIS conference",
     description: "Lauren Klein and Shiyao Li will present “What Data Do and Do Not Represent” at the IEEE VIS Conference.",
     kind: "conference",
