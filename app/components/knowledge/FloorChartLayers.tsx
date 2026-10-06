@@ -227,7 +227,7 @@ const FloorChartDiagram = ({ gap }: { gap: number }) => {
   return (
     <svg
       viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
-      className="h-[70vh] max-h-[520px] w-auto max-w-full mx-auto"
+      className="h-[80vh] max-h-[600px] w-auto max-w-full mx-auto"
       role="img"
       aria-label="An exploded-view diagram showing the nine layers of the Floor Chart, from top to bottom: quilt topper, batting, LEDs, quilt bottom, foam, copper strips, foam spacer, copper strips, foam bottom."
     >

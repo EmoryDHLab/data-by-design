@@ -43,11 +43,12 @@ const DateBox = ({ event }: { event: Event }) => (
         {event.day.length === 1 ? `0${event.day}` : event.day}
       </span>
     </div>
-    {event.weekday && (
-      <div className={classNames(META, "text-xs mt-1.5 md:mt-2")}>
-        {event.weekday}
-      </div>
-    )}
+    {/* The year rides in the small print under the box rather than in a column
+        of its own. Every row carries it, so a row read on its own — or the Past
+        tab, which crosses years — never leaves the year to be inferred. */}
+    <div className={classNames(META, "text-xs mt-1.5 md:mt-2")}>
+      {event.weekday ? `${event.weekday} · ${event.year}` : event.year}
+    </div>
   </div>
 );
 
@@ -78,8 +79,15 @@ export default function EventRow({
             <p className="font-power text-lg md:text-xl leading-snug">
               {event.title}
             </p>
+            {/* max-w-prose keeps the lines to a reading length now that the
+                page has no max width, and text-pretty rebalances the last
+                lines so a description doesn't end on a lone word. mx-0 undoes
+                the auto margins `main p` gives every paragraph, which would
+                otherwise centre it once it is narrower than the column. */}
             {event.description && (
-              <p className="mt-3 text-base">{event.description}</p>
+              <p className="mt-3 mx-0 text-base max-w-prose text-pretty">
+                {event.description}
+              </p>
             )}
             {event.venue && (
               <p className="font-power text-sm md:text-base text-black/70 mt-1">

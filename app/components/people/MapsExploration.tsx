@@ -57,11 +57,15 @@ export default function ImageTooltips() {
       <div className="max-w-5xl mx-auto">
         <div>
           {/* Image Container */}
-          <div className="relative w-full rounded-xl overflow-hidden">
+          {/* Sized to the screen's height, less the p-8 around it, so the whole
+              diagram is in view at once; width follows, and takes over as the
+              limit on a narrow screen. w-fit shrink-wraps the container to the
+              image, since the markers are placed in percentages of it. */}
+          <div className="relative w-fit mx-auto rounded-xl overflow-hidden">
             <img
               src={`/images/chapters/${figures["0301a"].fileName}.webp`}
               alt="Annotated diagram"
-              className="w-full h-full object-cover"
+              className="block w-auto h-auto max-w-full max-h-[calc(100svh-4rem)]"
             />
 
             {/* Tooltip Markers */}

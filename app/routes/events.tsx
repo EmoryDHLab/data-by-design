@@ -22,15 +22,6 @@ export const meta: MetaFunction = () =>
 // The kinds of appearance on the tour. Each one gets a color, shown as a dot
 // before its label, so the list can be scanned by type.
 
-function groupByYear(list: Event[]) {
-  return list.reduce<{ year: string; events: Event[] }[]>((groups, event) => {
-    const group = groups.find(({ year }) => year === event.year);
-    if (group) group.events.push(event);
-    else groups.push({ year: event.year, events: [event] });
-    return groups;
-  }, []);
-}
-
 // "New York, NY" -> a PostalAddress, plus the street address and postal code
 // when the event supplies them. Falls back to a bare locality if the string
 // isn't in "City, ST" form.
@@ -112,10 +103,11 @@ function eventsSchema(list: Event[]) {
   };
 }
 
-// One tab's worth of listings: the years, each with its events. Pulled out so
-// Upcoming and Past render through the same code, differing only in whether
-// their rows still offer a way to register.
-function EventYears({ list, isPast }: { list: Event[]; isPast?: boolean }) {
+// One tab's worth of listings. Pulled out so Upcoming and Past render through
+// the same code, differing only in whether their rows still offer a way to
+// register. The year is in each row's date column, so the list needs no year
+// groups of its own.
+function EventList({ list, isPast }: { list: Event[]; isPast?: boolean }) {
   if (list.length === 0) {
     return (
       <p className="font-power text-black/60 py-8">
@@ -124,36 +116,15 @@ function EventYears({ list, isPast }: { list: Event[]; isPast?: boolean }) {
     );
   }
   return (
-    <>
-      {groupByYear(list).map(({ year, events: yearEvents }) => (
-        // The year rides beside its events rather than sitting above them in a
-        // full-width band, which is what the rule and its padding used to cost.
-        // It sticks while its own section scrolls, so the year you're reading
-        // stays named without being repeated.
-        <section
-          key={year}
-          className="md:grid md:grid-cols-[3.5rem_1fr] md:gap-x-6 lg:gap-x-8 mb-10 md:mb-12 last:mb-0"
-        >
-          {/* Same type as the heading it replaces — font-power, bold, uppercase,
-              tracking-[0.2em], text-sm, text-black/60. Only the band comes off:
-              the border and its padding are what the sticky column makes
-              unnecessary. md:pt-8 matches EventRow's md:py-8 so the year sits
-              level with the first date box rather than above it. */}
-          <h3 className="font-power font-bold uppercase tracking-[0.2em] text-sm text-black/60 md:sticky md:top-8 md:self-start mb-3 md:mb-0 md:pt-8">
-            {year}
-          </h3>
-          <ul className="divide-y divide-black/10 min-w-0">
-            {yearEvents.map((event) => (
-              <EventRow
-                key={event.date + event.title}
-                event={event}
-                isPast={isPast}
-              />
-            ))}
-          </ul>
-        </section>
+    <ul className="divide-y divide-black/10">
+      {list.map((event) => (
+        <EventRow
+          key={event.date + event.title}
+          event={event}
+          isPast={isPast}
+        />
       ))}
-    </>
+    </ul>
   );
 }
 
@@ -191,15 +162,17 @@ export default function EventsPage() {
               point of Event markup is to send people to something they can
               still attend. */}
           <StructuredData data={eventsSchema(upcoming)} />
-          <div className="mx-auto max-w-6xl px-6 md:px-10 pt-8 md:pt-12">
+          {/* The margins are ChapterTitle's, so the listings line up under the
+              title rather than in a centered box of their own: its padding
+              (px-6 md:pl-16 md:pr-12 lg:pr-16), with lg:pl-48 being its
+              lg:pl-32 plus the lg:pl-16 that indents its text. */}
+          <div className="px-6 md:pl-16 lg:pl-48 md:pr-12 lg:pr-16 pt-8 md:pt-12">
             <TabGroup>
               {/* The tabs and the kind legend used to be two full-width bands
                   stacked above the listings, each costing height before the
                   first event. They move into a column beside the listings
                   instead, into space that was margin, and the column sticks so
-                  both stay reachable down a long list. max-w-5xl becomes 6xl to
-                  pay for the column rather than taking the width out of the
-                  rows. */}
+                  both stay reachable down a long list. */}
               <div className="md:grid md:grid-cols-[11rem_1fr] lg:grid-cols-[13rem_1fr] md:gap-x-10 lg:gap-x-14">
                 <div className="md:col-start-1 md:row-start-1 md:sticky md:top-8 md:self-start mb-8 md:mb-0">
                   {/* flex-wrap so the tabs drop to their own lines rather than
@@ -243,11 +216,11 @@ export default function EventsPage() {
                   <TabPanels>
                     <TabPanel>
                       <h2 className="sr-only">Upcoming events</h2>
-                      <EventYears list={upcoming} />
+                      <EventList list={upcoming} />
                     </TabPanel>
                     <TabPanel>
                       <h2 className="sr-only">Past events</h2>
-                      <EventYears list={past} isPast />
+                      <EventList list={past} isPast />
                     </TabPanel>
                   </TabPanels>
                 </div>

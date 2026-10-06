@@ -34,3 +34,15 @@ export const trackEvent = (name: string, params: EventParams = {}) => {
  */
 export const trackPreorderClick = (retailer: string, placement: string) =>
   trackEvent("preorder_click", { retailer, placement });
+
+/**
+ * A press of one of the homepage timeline's view toggles.
+ *
+ * @param view "shuffle" | "sort". A shuffle is counted on every press, since
+ *             each one deals a new set of images, not only when it switches
+ *             the view.
+ *
+ * NOTE: `view` needs registering as a custom dimension too, as above.
+ */
+export const trackTimelineToggle = (view: "shuffle" | "sort") =>
+  trackEvent("timeline_toggle", { view });

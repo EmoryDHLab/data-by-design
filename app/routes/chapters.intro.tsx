@@ -368,7 +368,10 @@ export default function IntroPage() {
             less, as visualizations have increasingly made use of multiple
             sources of data, and multiple visual and interactive forms.
           </p>
-          <Figure figure={figures["0007-table"]} />
+          <Figure
+            figure={figures["0007-table"]}
+            imageClassName="mix-blend-multiply"
+          />
           <p>
             Perhaps as a reflection of this evolution of the field, Tamara
             Munzner, in the definition that she offers in her also now-canonical

@@ -3,6 +3,7 @@ import DraggableTimeline from "~/components/home/DraggableTimeline";
 import OrderedTimeline from "~/components/home/OrderedTimeline";
 import { randomTimelineImages, TimelineType } from "./timelineUtils";
 import { classNames } from "~/utils";
+import { trackTimelineToggle } from "~/analytics";
 import type { Dispatch, SetStateAction } from "react";
 import type { TFigure } from "~/types/figureType";
 
@@ -81,13 +82,17 @@ const Timeline = ({ selectedImage, setSelectedImage }: Props) => {
           onClick={() => {
             setTimelineType(TimelineType.Draggable);
             setShouldShuffle(!shouldShuffle);
+            trackTimelineToggle("shuffle");
           }}
         />
         <ViewToggle
           glyph="K"
           label="Sort"
           active={timelineType === TimelineType.Ordered}
-          onClick={() => setTimelineType(TimelineType.Ordered)}
+          onClick={() => {
+            setTimelineType(TimelineType.Ordered);
+            trackTimelineToggle("sort");
+          }}
         />
       </div>
 

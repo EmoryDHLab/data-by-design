@@ -36,6 +36,7 @@ const IIIFViewer = ({
             isTiledImage
             openSeadragonConfig={{
               ...openSeadragonConfig,
+              degrees: figure.rotation ?? 0,
               ...openSeadragonOptions,
             }}
           />

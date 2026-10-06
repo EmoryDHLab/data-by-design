@@ -21,6 +21,10 @@ export type TFigure = {
   frontPage: boolean;
   height: number | null;
   iiif: boolean;
+  // Degrees clockwise to turn the scan, for one digitized on its side. Applied
+  // by the IIIF server and the deep-zoom viewer rather than CSS, so the layout
+  // box turns with the image.
+  rotation?: number;
   sensitive: boolean;
   sensitiveAltText: string | null;
   sourceUrl: string | null;
