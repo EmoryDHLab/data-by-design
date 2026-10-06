@@ -27,6 +27,45 @@ const icon = (type: string) => {
   }
 };
 
+// element.offsetTop alone is only relative to the nearest *positioned*
+// ancestor (offsetParent) - e.g. a Column with shouldPin (sticky) sitting
+// between an anchor and main-content makes offsetTop relative to that
+// column instead, which reads as ~0 regardless of where the anchor
+// actually falls in the chapter. Walking the whole offsetParent chain
+// gives a document-relative value that's immune to that.
+const cumulativeOffsetTop = (element: HTMLElement) => {
+  let top = 0;
+  let node: HTMLElement | null = element;
+  while (node) {
+    top += node.offsetTop;
+    node = node.offsetParent as HTMLElement | null;
+  }
+  return top;
+};
+
+// A pinned Column's box spans the top portion of the row it sits in
+// while its sticky range lasts as long as the neighboring text column
+// takes to scroll past. Anchoring to the pinned column's top shows up
+// too early. The unpinned neighboring column is truer representation of
+// the the figure's placement.
+const anchorPositionElement = (element: HTMLElement) => {
+  const column = element.closest<HTMLElement>("[data-bias-column]");
+  if (!column || getComputedStyle(column).position !== "sticky") {
+    return element;
+  }
+
+  const sibling = column.parentElement
+    ? Array.from(column.parentElement.children).find(
+        (child): child is HTMLElement =>
+          child !== column &&
+          child instanceof HTMLElement &&
+          child.hasAttribute("data-bias-column"),
+      )
+    : undefined;
+
+  return sibling ?? element;
+};
+
 const iconWidth = 13;
 
 // Icons are spaced edge to edge at iconWidth, which reads as a solid run when
@@ -51,11 +90,14 @@ export function ChapterNav({ progress, fixedNav }: Props) {
       const mainElement = document.getElementById("main-content");
       if (!mainElement || !mainElement.offsetHeight) return;
 
+      const mainOffsetTop = cumulativeOffsetTop(mainElement);
       const offset = (id: string) => {
         const element = document.getElementById(id);
         if (!element) return null;
-        const offsetPercent =
-          (element.offsetTop / mainElement.offsetHeight) * 100;
+        const positionElement = anchorPositionElement(element);
+        const relativeTop =
+          cumulativeOffsetTop(positionElement) - mainOffsetTop;
+        const offsetPercent = (relativeTop / mainElement.offsetHeight) * 100;
         let offsetPx =
           (offsetPercent * document.documentElement.clientWidth) / 100 -
           iconWidth;
@@ -117,7 +159,7 @@ export function ChapterNav({ progress, fixedNav }: Props) {
           prev.every(
             (p, i) =>
               p.hash === next[i].hash &&
-              Math.abs(p.offset - next[i].offset) < 0.5
+              Math.abs(p.offset - next[i].offset) < 0.5,
           )
         ) {
           return prev;

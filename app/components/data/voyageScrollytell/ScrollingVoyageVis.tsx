@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import ClientOnly from "~/components/ClientOnly";
 import VoyagesVis from "../voyages/VoyagesVis.client";
 
-const startProgress = 27;
-const endProgress = 29;
+const startProgress = 12;
+const endProgress = 14;
 
 const ScrollingVoyageVis = ({
   scrollProgress,
@@ -36,8 +36,8 @@ const ScrollingVoyageVis = ({
     }
 
     if (scrollProgress >= endProgress) {
-      setStartYear(1708);
-      setEndYear(1719);
+      setStartYear(1756);
+      setEndYear(1766);
     }
   }, [scrollProgress]);
 
@@ -47,7 +47,9 @@ const ScrollingVoyageVis = ({
         <VoyagesVis
           id="scrolling-voyage"
           className={`${
-            slideIndex >= 12 && slideIndex <= 16 ? "opacity-100" : "opacity-0"
+            slideIndex >= startProgress && slideIndex <= endProgress
+              ? "opacity-100"
+              : "opacity-0"
           }`}
           allVoyages={false}
           fullColor={false}

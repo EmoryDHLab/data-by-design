@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { Suspense, useContext, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import figures from "~/data/figures/data.json";
@@ -8,19 +8,13 @@ import { useResizeObserver } from "~/hooks";
 import ScrollingVoyageVis from "./ScrollingVoyageVis";
 import PullQuote from "~/components/layout/PullQuote";
 import { missing } from "~/data/figures/missing";
+import VoyagesVis from "../voyages/VoyagesVis.client";
+import ClientOnly from "~/components/ClientOnly";
 import type { ReactElement } from "react";
-import Axis from "../voyages/Axis";
 
-const minScrollProgress = 16;
-const fullWidthSlides = [0, 3, 12, 13, 14, 15, 16, 17, 18, 21, 22];
+const minScrollProgress = 0;
+const fullWidthSlides = [0, 12, 13, 14, 17, 18, 21, 22];
 
-// VoyageExample has its own fixed coordinate space for the paths, and the
-// annotation labels that show at different slideIndex values extend beyond
-// its framed rect. Measured via getBBox() on the frame rect unioned with
-// each unclipped annotation group (the internally clipped decorative paths
-// are excluded - getBBox ignores clip-path, so including them would report
-// their raw, never-actually-visible geometry). Used to center and scale it
-// to fit the parent SVG's dynamic viewBox without clipping anything.
 const VOYAGE_EXAMPLE_BOUNDS = { x: 93, y: 146, width: 443, height: 390 };
 
 // Same idea for Variables, measured via getBBox() on its root <g>.
@@ -45,12 +39,17 @@ function getCenteredTransform(
 
 const pullQuotes = [
   {
-    slideIndex: 6,
-    quote: `Fisk's "representation [of the river] is one of unbridled tangles, and recursively looped waterways that flow, spread, and interrupt each other, a cacophony of effusion, a watery din."`,
-    subquote: `— Romi Morrison, "Gaps between the digits: On the fleshy unknowns of the HUMAN" (2019)`,
+    slideIndex: 4,
+    quote: `Quisquam sint modi voluptatem aut perferendis voluptatum ipsa.`,
+    subquote: `- Stephanie Smallwood`,
   },
+  // {
+  //   slideIndex: 6,
+  //   quote: `Fisk's "representation [of the river] is one of unbridled tangles, and recursively looped waterways that flow, spread, and interrupt each other, a cacophony of effusion, a watery din."`,
+  //   subquote: `— Romi Morrison, "Gaps between the digits: On the fleshy unknowns of the HUMAN" (2019)`,
+  // },
   {
-    slideIndex: 20,
+    slideIndex: 16,
     quote: `This argument for quiet aims to give up resistance as a framework in search of what is lost in its all-encompassing reach.`,
     subquote: `— Kevin Quashie, "The Sovereignty of Quiet: Beyond Resistance in Black Culture" p5. (2012)`,
   },
@@ -70,17 +69,14 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
     : 300;
   const height = windowSize.height ? windowSize.height - 80 : 742;
 
-  // Adjusted during render (React's documented pattern) rather than in an
-  // effect: slideIndex depends on its own previous value (a hysteresis band
-  // near step boundaries, not a pure function of scrollProgress alone), and
-  // scrollProgress updates on every scroll tick, so an effect would add a
-  // stale extra render on each one.
   let nextSlideIndex = slideIndex;
+
   if (scrollProgress > minScrollProgress && scrollProgress % 1 > 0.5) {
     nextSlideIndex = Math.ceil(scrollProgress) - minScrollProgress;
   } else if (scrollProgress <= minScrollProgress + 0.5) {
     nextSlideIndex = 0;
   }
+
   if (nextSlideIndex !== slideIndex) {
     setSlideIndex(nextSlideIndex);
   }
@@ -104,6 +100,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
       triggers={triggers}
       id="voyage-scrollytell"
       className="w-screen"
+      stepClassName=".voyage-scrollytell-step"
     >
       <div className={`sticky h-screen -top-0 overflow-hidden`}>
         <div className="flex flex-col-reverse md:flex-none md:grid grid-cols-2 justify-items-center">
@@ -127,7 +124,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             >
               {/* 1 */}
               <image
-                href={`/images/chapters/data/query.jpg`}
+                href={`https://iiif.ecds.io/iiif/2/0106-outcome.tiff/1575,44,603,630/full/0/default.jpg`}
                 width={width}
                 height={height}
                 preserveAspectRatio="xMidYMid meet"
@@ -144,13 +141,13 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 // Covers both the step that names the "resistance" variable and
                 // the one that enumerates its seven subcategories.
                 className={`transition-opacity duration-1000 opacity-${
-                  slideIndex === 2 || slideIndex === 3 ? 100 : 0
+                  slideIndex === 2 ? 100 : 0
                 }`}
               />
               {/* 3 */}
               <g
                 className={`transition-opacity duration-1000 opacity-${
-                  slideIndex === 4 ? 100 : 0
+                  slideIndex === 3 ? 100 : 0
                 }`}
                 transform={variablesTransform}
               >
@@ -167,6 +164,18 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                   slideIndex === 5 ? 100 : 0
                 }`}
               />
+              <image
+                x={0}
+                width={width}
+                height={height}
+                preserveAspectRatio="xMidYMid meet"
+                href={
+                  "https://iiif.ecds.io/iiif/3/0102-equiano.tiff/full/max/0/default.jpg"
+                }
+                className={`duration-1000 transition-opacity ${
+                  slideIndex === 15 ? "opacity-100" : "opacity-0"
+                }`}
+              />
               {/* 19 */}
               <image
                 x={0}
@@ -176,8 +185,10 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
                 href={`/images/chapters/${
                   missing("0105-narrative").fileName
                 }.jpg`}
-                className={`absolute transition-opacity duration-1000 opacity-${
-                  slideIndex === 19 ? 100 : 0
+                className={`absolute transition-opacity duration-1000 ${
+                  slideIndex >= 7 && slideIndex < 8
+                    ? "opacity-100"
+                    : "opacity-0"
                 }`}
               />
               <g transform={voyageExampleTransform}>
@@ -190,50 +201,36 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
           scrollProgress={scrollProgress}
           slideIndex={slideIndex}
         />
-        {[
-          {
-            name: "voyage-not-full-color",
-            alt: "Visualization of enslaving voyages from 1708 to 1719, muted except for the strands of voyages with documented resistance.",
-            visible:
-              (slideIndex >= 17 && slideIndex <= 18) ||
-              (scrollProgress >= 36.4 && scrollProgress <= 36.7),
-          },
-          {
-            name: "voyage-full-color",
-            alt: "Visualization of enslaving voyages from 1708 to 1719, each strand colored by the nation that carried out the voyage.",
-            visible: slideIndex === 21 && scrollProgress >= 36.7,
-          },
-        ].map(({ name, alt, visible }) => (
-          <div key={name} className="absolute top-4 md:top-18 mt-8 scale-90">
-            <picture
-              className={`block w-screen transition-opacity duration-1000 ${
-                visible ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <source
-                srcSet={`/images/voyages/${name}.webp`}
-                type="image/webp"
-              />
-              <img
-                src={`/images/voyages/${name}.jpg`}
-                alt={alt}
-                className="h-auto mx-auto"
-              />
-            </picture>
-            <div
-              className={`block w-[90%] transition-opacity duration-1000 ${
-                visible ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <Axis
-                yearRange={[1708, 1719]}
-                width={Math.max(0, (windowSize.width || 400) - 128)}
-                color="black"
-                widthAdjustment={45}
+        <ClientOnly>
+          <Suspense fallback={<></>}>
+            <div className="absolute top-4 md:top-18 mt-8 scale-90">
+              <VoyagesVis
+                className={`${
+                  slideIndex >= 17 && slideIndex < 18
+                    ? "opacity-100"
+                    : "opacity-0"
+                }`}
+                id="all-not-full-color-voyage"
+                allVoyages={true}
+                fullColor={false}
+                startYear={1708}
+                endYear={1719}
+                showSlider={false}
               />
             </div>
-          </div>
-        ))}
+            <div className="absolute top-4 md:top-18 mt-8 scale-90">
+              <VoyagesVis
+                className={`${slideIndex >= 18 ? "opacity-100" : "opacity-0"}`}
+                id="all-full-color"
+                allVoyages={true}
+                fullColor={true}
+                startYear={1708}
+                endYear={1719}
+                showSlider={false}
+              />
+            </div>
+          </Suspense>
+        </ClientOnly>{" "}
       </div>
 
       <div
@@ -245,7 +242,7 @@ const VoyageScrollytell = ({ triggers }: { triggers: ReactElement[] }) => {
             <div
               key={`voyageScrollytell-${trigger.key}`}
               data-step={index}
-              className={`pointer-events-none step text-xl p-5 md:px-20 relative w-auto ${
+              className={`pointer-events-none voyage-scrollytell-step text-xl p-5 md:px-20 relative w-auto ${
                 fullWidthSlides.includes(index) ? "md:w-full" : "md:w-1/2"
               } ${
                 index + 1 === triggers.length

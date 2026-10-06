@@ -4,7 +4,7 @@ const VoyageExample = ({ slideIndex }: { slideIndex: number }) => {
   const [show, setShow] = useState<boolean>(false);
 
   useEffect(() => {
-    setShow(slideIndex >= 7 && slideIndex <= 11);
+    setShow(slideIndex === 6 || (slideIndex >= 8 && slideIndex <= 11));
   }, [slideIndex]);
 
   return (
@@ -109,7 +109,7 @@ const VoyageExample = ({ slideIndex }: { slideIndex: number }) => {
       </g>
       <g
         className={`transition-opacity duration-1000 opacity-${
-          slideIndex === 7 ? 100 : 0
+          slideIndex === 6 ? 100 : 0
         }`}
       >
         <line className="stroke-offblack" x1="425" y1="167" x2="435" y2="167" />
