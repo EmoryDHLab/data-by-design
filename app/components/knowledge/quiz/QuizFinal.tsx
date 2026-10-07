@@ -2,17 +2,17 @@ import { useContext } from "react";
 import { QuizContext } from "./QuizContext";
 
 export default function QuizFinal() {
-  const { currentStepCount, setCurrentStepCount } = useContext(QuizContext);
+  const { currentStepCount, retakeQuiz } = useContext(QuizContext);
 
   return (
     <div
       className={`transition-all duration-1000 ${
         currentStepCount === 9
-          ? "opacity-100 md:-translate-x-24  lg:-translate-x-32 scale-100 delay-300 pointer-events-auto"
-          : "opacity-0 md:-translate-x-24  lg:-translate-x-32 scale-100 pointer-events-none"
+          ? "opacity-100 delay-300 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="text-white px-12 space-y-6 max-w-7xl">
+      <div className="text-white px-6 md:px-0 space-y-6 max-w-7xl">
         <div className="flex items-center gap-3">
           <span className="text-2xl">🎉</span>
           <h2 className="text-xl font-power text-yellow-400 m-0">
@@ -42,10 +42,7 @@ export default function QuizFinal() {
             </p>
             <button
               className="focus:outline-none focus:underline hover:underline text-xs text-white/60 hover:text-white transition-colors pointer-events-auto relative z-50"
-              onClick={() => {
-                console.log("Retake Quiz clicked");
-                setCurrentStepCount(1);
-              }}
+              onClick={retakeQuiz}
             >
               <span className="font-icons mr-1 text-xs">e</span>
               Retake Quiz

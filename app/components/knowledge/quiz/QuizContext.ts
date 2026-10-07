@@ -20,6 +20,7 @@ interface IQuizContext {
   handleYearClick: Function;
   feedback: QuizFeedbackType;
   setFeedback: Dispatch<SetStateAction<QuizFeedbackType>>;
+  retakeQuiz: () => void;
 }
 
 export const QuizContext = createContext<IQuizContext>({
@@ -38,4 +39,5 @@ export const QuizContext = createContext<IQuizContext>({
   handleYearClick: (year: number) => {},
   feedback: { message: "", correct: true },
   setFeedback: (_: SetStateAction<QuizFeedbackType>) => "",
+  retakeQuiz: () => {},
 });

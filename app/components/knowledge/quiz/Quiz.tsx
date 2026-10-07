@@ -61,6 +61,27 @@ export default function Quiz() {
     memoizedQuizSteps[0],
   );
   const [currentStepCount, setCurrentStepCount] = useState<QuizStepCount>(0);
+
+  // Retaking jumps from the final screen straight back to step 1. Played out,
+  // that is every step-driven fade, slide and scale in the quiz at once, so
+  // transitions are switched off for the jump and back on once step 1 has
+  // painted. A timer rather than requestAnimationFrame, for the reason given
+  // in SlideInFromRight; 100ms outlasts its 20ms flip, so the actors land in
+  // place rather than sliding in.
+  const [instant, setInstant] = useState(false);
+  const retakeQuiz = useCallback(() => {
+    setInstant(true);
+    setCurrentStepCount(1);
+  }, []);
+  useEffect(() => {
+    if (!instant) return;
+    const timer = setTimeout(() => setInstant(false), 100);
+    return () => clearTimeout(timer);
+  }, [instant]);
+  // !important, so it also beats the transitions set as inline styles.
+  const instantClass = instant
+    ? "[&_*]:!transition-none [&_*]:!animate-none"
+    : "";
   const [selectedCategories, setSelectedCategories] = useState<
     Array<PeabodySquare>
   >([]);
@@ -346,6 +367,7 @@ export default function Quiz() {
       handleYearClick,
       feedback,
       setFeedback,
+      retakeQuiz,
     }),
     [
       allowOption,
@@ -357,6 +379,7 @@ export default function Quiz() {
       selectedYears,
       handleYearClick,
       feedback,
+      retakeQuiz,
     ],
   );
 
@@ -364,7 +387,7 @@ export default function Quiz() {
     <QuizContext.Provider value={contextValue}>
       <section
         ref={desktopSectionRef}
-        className="bg-black w-full h-screen hidden md:block relative z-10 overflow-hidden scroll-mt-0"
+        className={`bg-black w-full h-screen hidden md:block relative z-10 overflow-hidden scroll-mt-0 ${instantClass}`}
         id="quiz"
       >
         <div
@@ -440,7 +463,7 @@ export default function Quiz() {
               </div>
 
               {/* Conclusion (step 8) crossfades into the final screen (step
-                  9). Both share one grid cell so they overlap at the same
+                  9), both on the column's left edge, as FINISH is. Both share one grid cell so they overlap at the same
                   position instead of sitting in normal document flow, where
                   the second one would sit lower on the page and the "fade"
                   would really be a fade + jump. */}
@@ -459,7 +482,7 @@ export default function Quiz() {
                 <div
                   id="quiz-final"
                   style={{ gridArea: "1 / 1" }}
-                  className={`flex items-start justify-center w-full transition-opacity duration-1000 ${
+                  className={`flex items-start justify-start w-full transition-opacity duration-1000 ${
                     currentStepCount === 9
                       ? "opacity-100 pointer-events-auto"
                       : "opacity-0 pointer-events-none"
@@ -501,7 +524,10 @@ export default function Quiz() {
               </SlideInFromRight>
             )}
 
-            <QuizNav />
+            {/* Not on step 0: the intro overlay covers the whole quiz there,
+                so the nav drew but couldn't be clicked. BEGIN is the one way
+                in; the nav takes over from step 1. */}
+            {currentStepCount >= 1 && <QuizNav />}
           </svg>
 
           {/* Progress text */}
@@ -514,7 +540,7 @@ export default function Quiz() {
       {/* MOBILE */}
       <div
         ref={mobileSectionRef}
-        className="bg-black h-screen relative w-full md:hidden overflow-hidden scroll-mt-0"
+        className={`bg-black h-screen relative w-full md:hidden overflow-hidden scroll-mt-0 ${instantClass}`}
       >
         <div
           className={`flex flex-col h-full font-power transition-opacity duration-1000 ${
@@ -535,7 +561,7 @@ export default function Quiz() {
             <div
               className={`transition-all duration-1000 ${
                 currentStepCount == 8
-                  ? "opacity-100 h-auto max-h-96 mx-6 mb-6 px-4 py-6"
+                  ? "opacity-100 h-auto max-h-96 mx-6 mb-6 py-6"
                   : "opacity-0 h-0 pointer-events-none"
               }`}
             >
@@ -610,12 +636,12 @@ export default function Quiz() {
             }`}
           >
             <svg viewBox="0 0 80 100" className="w-full h-full mx-auto">
-              <QuizNav />
+              {currentStepCount >= 1 && <QuizNav />}
             </svg>
           </div>
 
           <div
-            className={`grid place-content-center text-white text-2xl text-center font-powerLightNarrow transition-opacity duration-1000 ${
+            className={`px-6 text-white text-2xl text-left transition-opacity duration-1000 ${
               currentStepCount == 8
                 ? "opacity-100"
                 : "opacity-0 pointer-events-none h-0"
@@ -623,12 +649,12 @@ export default function Quiz() {
           >
             <p className="m-0">
               <button
-                className="focus:outline-none italic focus:underline hover:underline my-6"
+                className="font-power font-bold focus:outline-none focus:underline hover:underline my-6"
                 tabIndex={0}
                 onClick={() => setCurrentStepCount(9)}
               >
                 FINISH
-                <span className="font-icons mr-2">b</span>
+                <span className="font-icons ml-2">b</span>
               </button>
             </p>
           </div>

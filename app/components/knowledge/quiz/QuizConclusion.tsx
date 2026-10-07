@@ -5,7 +5,7 @@ import { useDeviceContext } from "~/hooks";
 const ConclusionContent = () => {
   return (
     <>
-      <div className="lg:-translate-x-12 max-w-[65ch] place-content-start">
+      <div className="max-w-[65ch]">
         <p className=" font-sans  leading-relaxed text-offwhite font-thin">
           Once you've learned to recognize the Gold and Burgundy triangles as
           visual representation of Indigenous and colonial conflict.
@@ -31,7 +31,7 @@ export default function QuizConclusion({ className }: { className?: string }) {
     <div className={`text-white ${className || ""}`}>
       <ConclusionContent />
       <button
-        className="font-powerLightNarrow italic focus:outline-none focus:underline hover:underline text-xl md:text-2xl mt-6 pointer-events-auto cursor-pointer"
+        className="font-power font-bold focus:outline-none focus:underline hover:underline text-xl md:text-2xl mt-6 pointer-events-auto cursor-pointer"
         tabIndex={0}
         onClick={() => setCurrentStepCount(9)}
         onKeyUp={({ key }) => {

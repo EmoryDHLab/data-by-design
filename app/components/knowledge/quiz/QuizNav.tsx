@@ -5,6 +5,9 @@ import type { QuizStepCount } from "~/types/process";
 
 const side = 20;
 
+// The labels are set in the same face as the quiz's BEGIN and FINISH buttons —
+// VTC Du Bois, bold, upright — so the controls read as one set.
+
 export default function QuizNav() {
   const { currentStepCount, setCurrentStepCount } = useContext(QuizContext);
   const [x, setX] = useState(212);
@@ -65,7 +68,8 @@ export default function QuizNav() {
           fontSize={4}
           textAnchor="middle"
           fill="#fafbfd"
-          fontFamily="neue-haas-unica, sans-serif"
+          fontFamily="VTC Du Bois, serif"
+          fontWeight="bold"
           pointerEvents="none"
         >
           START
@@ -109,7 +113,8 @@ export default function QuizNav() {
           fontSize={4}
           textAnchor="middle"
           fill="#fafbfd"
-          fontFamily="neue-haas-unica, sans-serif"
+          fontFamily="VTC Du Bois, serif"
+          fontWeight="bold"
           pointerEvents="none"
         >
           BACK
@@ -153,7 +158,8 @@ export default function QuizNav() {
           fontSize={4}
           textAnchor="middle"
           fill="#fafbfd"
-          fontFamily="neue-haas-unica, sans-serif"
+          fontFamily="VTC Du Bois, serif"
+          fontWeight="bold"
           pointerEvents="none"
         >
           NEXT
@@ -197,7 +203,8 @@ export default function QuizNav() {
           fontSize={4}
           textAnchor="middle"
           fill="#fafbfd"
-          fontFamily="neue-haas-unica, sans-serif"
+          fontFamily="VTC Du Bois, serif"
+          fontWeight="bold"
           pointerEvents="none"
         >
           END
