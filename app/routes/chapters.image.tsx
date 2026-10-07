@@ -151,7 +151,7 @@ export default function PlayfairPage() {
               figures["0204-playfair-pie"],
             ]}
             groupCaption={
-              <p className="font-neueMontreal text-xs md:text-sm leading-5 text-left mb-6 md:mb-12 col-span-full">
+              <>
                 <CaptionDirection>Top:</CaptionDirection> “A bar chart from 1770 created by the French mapmaking
                 team of Philippe Buache and Guillaume de L’Isle. William
                 Playfair included a less ornate bar chart in his Commerical and
@@ -168,7 +168,7 @@ export default function PlayfairPage() {
                 Statistical Breviary (1801). The pie charts included in this
                 volume are considered the first of their kind. Image courtesy of
                 Wikimedia Commons.
-              </p>
+              </>
             }
           />
           <p>
@@ -839,7 +839,7 @@ export default function PlayfairPage() {
             className="grid grid-cols-1 gap-2 md:gap-4"
             figures={[figures["0218-jevons002"], figures["0219-jevons001"]]}
             groupCaption={
-              <p className="font-neueMontreal text-xs md:text-sm leading-5 text-left mb-6 md:mb-12 col-span-full">
+              <>
                 <CaptionDirection>Top:</CaptionDirection>{" "}
                 <span
                   dangerouslySetInnerHTML={{
@@ -852,7 +852,7 @@ export default function PlayfairPage() {
                     __html: figures["0219-jevons001"].caption ?? "",
                   }}
                 />
-              </p>
+              </>
             }
           />
             <p>

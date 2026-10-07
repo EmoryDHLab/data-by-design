@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ChapterContext } from "~/chapterContext";
 import FigureModal from "../figures/FigureModal";
 import { stripMarkup } from "~/utils";
+import { CAPTION, creditLineFor } from "~/components/figures/Figure";
 import type { TFigure } from "~/types/figureType";
 
 type MaskType = {
@@ -117,7 +118,7 @@ export default function SeraphiqueTour({ figure }: Props) {
           />
         </g>
       </svg>
-      <figcaption className="font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12 col-span-full">
+      <figcaption className={`${CAPTION} col-span-full`}>
         <span id={`fig-label-${figure.fileName}`} className="sr-only">
           {stripMarkup(figure.caption)}
         </span>
@@ -126,11 +127,11 @@ export default function SeraphiqueTour({ figure }: Props) {
             __html: figure.caption ?? "",
           }}
         />
-        {figure.creditLine && (
+        {creditLineFor(figure) && (
           <span
             className="pl-1"
             dangerouslySetInnerHTML={{
-              __html: figure.creditLine,
+              __html: creditLineFor(figure),
             }}
           />
         )}

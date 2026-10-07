@@ -674,7 +674,7 @@ export default function ShanawdithitPage() {
             className="grid grid-cols-1 gap-2 md:gap-6"
             figures={[figures["0311"], figures["0312-minard"]]}
             groupCaption={
-              <p className="font-neueMontreal text-xs md:text-sm leading-5 text-left mb-6 md:mb-12 col-span-full">
+              <>
                 <CaptionDirection>Top:</CaptionDirection> Howley’s recreation of
                 Shanawdithit’s map. “Sketch V” from{" "}
                 <cite>The Beothucks or Red Indians</cite>. Digitized by Margy
@@ -682,11 +682,11 @@ export default function ShanawdithitPage() {
                 <CaptionDirection newLine>Bottom:</CaptionDirection> Minard’s
                 flow maps. “Carte Figurative” courtesy of the Bibliothèque
                 nationale de France.
-                <br />
+                <span className="block h-2" aria-hidden />
                 Their striking formal similarities belie their epistemological
                 differences—and the commitments that their respective
                 epistemologies each entail.
-              </p>
+              </>
             }
           />
 
@@ -924,7 +924,6 @@ export default function ShanawdithitPage() {
         <Figure
           figure={figures["0324-birch-bark-1841"]}
           className="mx-2 md:mx-12 text-sm md:text-base"
-          captionClassName="text-center"
         />
 
         <CenteredLayout className="pb-20">
@@ -966,7 +965,6 @@ export default function ShanawdithitPage() {
 
         <Figure
           figure={figures["0325-BirchBark"]}
-          captionClassName="text-center"
         />
 
         <CenteredLayout>

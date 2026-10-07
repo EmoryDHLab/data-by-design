@@ -4,6 +4,7 @@ import type { ControlProps } from "nuka-carousel";
 import type { ReactElement } from "react";
 import type { TFigure } from "~/types/figureType";
 import ClientOnly from "~/components/ClientOnly";
+import { CAPTION } from "~/components/figures/Figure";
 
 interface Props {
   figures?: Array<TFigure>;
@@ -82,7 +83,7 @@ const SlideShow = ({ figures, className, children }: Props) => {
                   />
                 </picture>
                 <figcaption
-                  className="font-sans text-sm mt-3 w-2/3 mx-auto"
+                  className={`${CAPTION} w-2/3 mx-auto`}
                   dangerouslySetInnerHTML={{
                     __html: figure.caption ?? "",
                   }}

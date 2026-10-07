@@ -368,7 +368,7 @@ export default function LabourPage() {
             className="grid grid-cols-1 gap-2 md:gap-4 items-baseline"
             figures={[figures["0602a"], figures["0602c"]]}
             groupCaption={
-              <p>{figures["0602a"].caption}</p>
+              <>{figures["0602a"].caption}</>
             }
           />
 

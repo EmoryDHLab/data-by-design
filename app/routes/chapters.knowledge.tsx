@@ -16,7 +16,7 @@ import Scrollytell from "~/components/knowledge/PeabodyScrollytell";
 import Quotation from "~/components/Quotation";
 import Quiz from "~/components/knowledge/quiz/Quiz";
 import figures from "~/data/figures/knowledge.json";
-import Figure, { Caption } from "~/components/figures/Figure";
+import Figure, { Caption, creditLineFor } from "~/components/figures/Figure";
 import CaptionDirection from "~/components/figures/CaptionDirection";
 import FloorChartLayers from "~/components/knowledge/FloorChartLayers";
 import { chapterMetaTags } from "~/utils";
@@ -588,11 +588,11 @@ export default function PeabodyPage() {
               figures["0422-student8"],
             ]}
             groupCaption={
-              <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
+              <>
                 <cite>The Polish-American System </cite>
                 housed at the American Antiquarian Society. Courtesy of the
                 American Antiquarian Society. Photos by Lauren Klein.
-              </p>
+              </>
             }
           />
 
@@ -670,7 +670,7 @@ export default function PeabodyPage() {
               figures["0427-Willard-4545001"],
             ]}
             groupCaption={
-              <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
+              <>
                 The lineage behind <cite>Temple of Time</cite>: the two facing
                 pages of Francisco José de Caldas’s elevation profile, and below
                 them Humboldt’s{" "}
@@ -678,7 +678,7 @@ export default function PeabodyPage() {
                 Thirza Lee’s recreation of “Top of Chimborazo” for Willard’s
                 1829 <cite>Familiar Lectures on Botany</cite>; and Willard’s{" "}
                 <cite>Picture of Nations</cite> (1836).
-              </p>
+              </>
             }
           />
           <p>
@@ -926,28 +926,24 @@ export default function PeabodyPage() {
             ]}
             groupCaption={
               <>
-                <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
-                  <CaptionDirection>Left:</CaptionDirection>{" "}
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: `${
-                        figures["0432-rachel-carey-george"].caption ?? ""
-                      } ${
-                        figures["0432-rachel-carey-george"].creditLine ?? ""
-                      }`,
-                    }}
-                  />
-                </p>
-                <p className="font-neueMontreal text-sm leading-tight text-left col-span-full">
-                  <CaptionDirection>Right:</CaptionDirection>{" "}
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: `${figures["0433-gbq-q030-06"].caption ?? ""} ${
-                        figures["0433-gbq-q030-06"].creditLine ?? ""
-                      }`,
-                    }}
-                  />
-                </p>
+                <CaptionDirection>Left:</CaptionDirection>{" "}
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: `${
+                      figures["0432-rachel-carey-george"].caption ?? ""
+                    } ${
+                      creditLineFor(figures["0432-rachel-carey-george"])
+                    }`,
+                  }}
+                />
+                <CaptionDirection newLine>Right:</CaptionDirection>{" "}
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: `${figures["0433-gbq-q030-06"].caption ?? ""} ${
+                      creditLineFor(figures["0433-gbq-q030-06"])
+                    }`,
+                  }}
+                />
               </>
             }
           />

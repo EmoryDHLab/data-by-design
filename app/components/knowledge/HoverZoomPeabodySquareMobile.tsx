@@ -1,5 +1,6 @@
 import SlideShow from "../layout/SlideShow";
 import type { TFigure } from "~/types/figureType";
+import { CAPTION } from "~/components/figures/Figure";
 import type { ReactNode } from "react";
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
 
 export const Caption = ({ children }: { children: ReactNode }) => {
   return (
-    <figcaption className="font-power text-center my-3 w-3/4 mx-auto">
+    <figcaption className={`${CAPTION} w-3/4 mx-auto`}>
       {children}
     </figcaption>
   );

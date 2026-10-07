@@ -577,7 +577,7 @@ export default function IntroPage() {
             grid-cols-1 md:grid-cols-2 items-center"
             figures={[figures["0014-anon"], figures["0015-oresme"]]}
             groupCaption={
-              <p>
+              <>
                 Two prominent examples of proto-data visualizations, first
                 surfaced by Howard Funkhauser in 1937 and (justifiably!)
                 celebrated through the present day. Little is known about the
@@ -585,7 +585,7 @@ export default function IntroPage() {
                 changing locations of constellations in the night sky. On the
                 right is a set of fourteenth-century charts of the relationships
                 between quantities created by French philosopher Nichole Oresme.
-              </p>
+              </>
             }
           />
           <p>
@@ -619,12 +619,12 @@ export default function IntroPage() {
             <p className="md:col-span-2 font-neueMontreal text-xs md:text-sm leading-5 text-left mt-3 md:mt-6 mb-6 md:mb-12">
               <CaptionDirection>Clockwise from top left:</CaptionDirection> An
               early graph of daily barometric pressure in Oxford, England, that
-              appears in Robert Plot's "History of the Weather" (1685); three
-              graphs from Lambert's Hygrometric Studies, which show the
+              appears in Robert Plot’s “History of the Weather” (1685); three
+              graphs from Lambert’s Hygrometric Studies, which show the
               relationship between air, water, heat, and evaporation; and
-              William Playfair's "Chart of all the import and exports to and
-              from England from the year 1700 to 1782," from the third edition
-              of the Commercial and Political Atlas (1801).
+              William Playfair’s “Chart of all the import and exports to and
+              from England from the year 1700 to 1782,” from the third edition
+              of the <em>Commercial and Political Atlas</em> (1801).
             </p>
           </div>
 
@@ -813,13 +813,13 @@ export default function IntroPage() {
               figures["0025-cuneiform"],
             ]}
             groupCaption={
-              <p>
+              <>
                 Examples of data visualization that predate our story.{" "}
                 <CaptionDirection>Left to right:</CaptionDirection> an example
                 of Inkan khhipu; Chinese counting rods recently discovered in
                 Changsha, Hunan Provence; and a proto-cuneiform tablet
                 documenting the distribution of grain.
-              </p>
+              </>
             }
           />
           <p>

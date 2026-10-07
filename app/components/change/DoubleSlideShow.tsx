@@ -5,6 +5,7 @@ import figures from "~/data/figures/change.json";
 import FigureModal from "../figures/FigureModal";
 import ClientOnly from "~/components/ClientOnly";
 import Picture from "../figures/Picture";
+import { CAPTION } from "~/components/figures/Figure";
 
 const figureGroups = [
   {
@@ -89,7 +90,7 @@ function DoubleSlideShow() {
                 );
               })}
               <figcaption
-                className="font-power mt-3 md:w-1/2 mx-auto md:col-span-2"
+                className={`${CAPTION} md:w-1/2 mx-auto md:col-span-2`}
                 dangerouslySetInnerHTML={{
                   __html: group.caption,
                 }}

@@ -166,16 +166,12 @@ export default function DuboisChapter() {
             className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-baseline"
             captionClassName=""
             groupCaption={
-              <div>
-                <p>
-                  <CaptionDirection>Left:</CaptionDirection> A photograph of the “Exhibit of American Negroes” at the
-                  1900 Exposition Universelle.
-                </p>
-                <p>
-                  <CaptionDirection>Right:</CaptionDirection> The floor plan of the Place of Social Economy; the
-                  exhibit was installed in the south-east corner of the hall.
-                </p>
-              </div>
+              <>
+                <CaptionDirection>Left:</CaptionDirection> A photograph of the “Exhibit of American Negroes” at the
+                1900 Exposition Universelle.
+                <CaptionDirection newLine>Right:</CaptionDirection> The floor plan of the Place of Social Economy; the
+                exhibit was installed in the south-east corner of the hall.
+              </>
             }
           />
           <p>
@@ -381,7 +377,7 @@ export default function DuboisChapter() {
             ]}
             className="grid grid-cols-1 md:grid-cols-3 gap-2 mdp:gap-4"
             groupCaption={
-              <p>
+              <>
                 <CaptionDirection>Left to right:</CaptionDirection> The Black population of Georgia; the number of
                 Black children enrolled in public school; the number of acres
                 of land owned by Black Georgians, with an overall form that
@@ -389,7 +385,7 @@ export default function DuboisChapter() {
                 Library of Congress, Prints &amp; Photographs Division,
                 LC-DIG-ppmsca-33866, LC-DIG-ppmsca-33877, and
                 LC-DIG-ppmsca-33881.
-              </p>
+              </>
             }
           />
 
@@ -441,7 +437,7 @@ export default function DuboisChapter() {
               figures["0513-db-conjugal"],
             ]}
             groupCaption={
-              <p>
+              <>
                 <CaptionDirection>Left:</CaptionDirection> the chart of marriage statistics that appeared in Henry
                 Gannett’s 1894 <cite>Statistics of the Negroes in the United
                 States</cite>. <CaptionDirection newLine>Right:</CaptionDirection> the chart created by Du Bois and his
@@ -449,7 +445,7 @@ export default function DuboisChapter() {
                 Exposition. Images courtesy of the Library of Congress, Rare
                 Book and Special Collections Division, and Prints &amp;
                 Photographs Division, LC-DIG-ppmsca-33915.
-              </p>
+              </>
             }
           />
 
@@ -931,7 +927,7 @@ export default function DuboisChapter() {
             className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 items-baseline"
             figures={[figures["899"], figures["0526-data-table"]]}
             groupCaption={
-              <p>
+              <>
                 <CaptionDirection>Left:</CaptionDirection>{" "}
                 <span
                   dangerouslySetInnerHTML={{
@@ -944,7 +940,7 @@ export default function DuboisChapter() {
                     __html: figures["0526-data-table"].caption ?? "",
                   }}
                 />
-              </p>
+              </>
             }
           />
 

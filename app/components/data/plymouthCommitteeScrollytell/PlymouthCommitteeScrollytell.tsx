@@ -5,6 +5,7 @@ import ScrollytellWrapper from "../../ScrollytellWrapper";
 import Areas from "./Areas";
 import { paths } from "./paths";
 import Labels from "./Labels";
+import { CAPTION } from "~/components/figures/Figure";
 import type { ReactElement } from "react";
 
 function getFocusShapeSize(scrollProgress: number) {
@@ -208,7 +209,7 @@ export default function PlymouthCommitteeScrollytell({
                   strokeWidth={scrollProgress >= 4.5 ? 1 : 3}
                 />
               </svg>
-              <figcaption className="mt-2 text-offblack/80 text-sm">
+              <figcaption className={CAPTION}>
                 The first published version of the slave ship diagram,{" "}
                 <cite>
                   Plan of an African Ship’s Lower Deck with Negroes in the
