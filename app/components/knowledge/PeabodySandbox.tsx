@@ -77,6 +77,12 @@ export default function PeabodySandbox() {
               {" "}
               How to play
             </p>
+            {/* The rules as the sandbox runs them: pick a colour, and a click
+                toggles it in a cell. */}
+            <ol className="mt-3 list-decimal list-outside pl-5 space-y-1 text-sm md:text-base leading-relaxed max-w-prose text-pretty">
+              <li>Pick a colour.</li>
+              <li>Click a cell to paint it. Click again to clear it.</li>
+            </ol>
           </div>
         </div>
       </div>
