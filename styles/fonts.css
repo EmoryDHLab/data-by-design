@@ -15,8 +15,8 @@
 
 @font-face {
     font-family: "VTC Du Bois";
-    src: url("/fonts/VTCDubois/VTCDuBois-Bold.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-Bold.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-Bold.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-Bold.woff") format("woff");
     font-weight: bold;
     font-style: normal;
     font-feature-settings: 'ss06' on;
@@ -24,8 +24,8 @@
 
 @font-face {
     font-family: "VTC Du Bois";
-    src: url("/fonts/VTCDubois/VTCDuBois-Regular.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-Regular.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-Regular.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-feature-settings: 'ss06' on;
@@ -33,8 +33,8 @@
 
 @font-face {
     font-family: "VTC Du Bois";
-    src: url("/fonts/VTCDubois/VTCDuBois-Italic.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-Italic.woff") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-Italic.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-Italic.woff") format("woff");
     font-weight: normal;
     font-style: italic;
     font-feature-settings: 'ss06' on;
@@ -42,8 +42,8 @@
 
 @font-face {
     font-family: "VTC Du Bois RItalic";
-    src: url("/fonts/VTCDubois/VTCDuBois-RItalic.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-RItalic.woff") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-Ritalic.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-Ritalic.woff") format("woff");
     font-weight: normal;
     font-style: oblique;
     font-feature-settings: 'ss06' on;
@@ -51,8 +51,8 @@
 
 @font-face {
     font-family: "VTC Du Bois Bold RItalic";
-    src: url("/fonts/VTCDubois/VTCDuBois-BoldRitalic.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-BoldRitalic.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-BoldRitalic.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-BoldRitalic.woff") format("woff");
     font-weight: bold;
     font-style: oblique;
     font-feature-settings: 'ss06' on;
@@ -61,16 +61,16 @@
 
 @font-face {
     font-family: "VTC Du Bois Bold Italic";
-    src: url("/fonts/VTCDubois/VTCDuBois-BoldItalic.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-BoldItalic.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-BoldItalic.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-BoldItalic.woff") format("woff");
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: "VTC Du Bois";
-    src: url("/fonts/VTCDubois/VTCDuBois-Light.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-Light.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-Light.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-Light.woff") format("woff");
     font-weight: 200;
     font-style: normal;
 
@@ -80,8 +80,8 @@
 
 @font-face {
     font-family: "VTC Du Bois Light Italic";
-    src: url("/fonts/VTCDubois/VTCDuBois-LightItalic.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-LightItalic.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-LightItalic.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-LightItalic.woff") format("woff");
     font-weight: light;
     font-style: italic;
 }
@@ -92,16 +92,16 @@
 /* ========  wide ======== */
 @font-face {
     font-family: "VTC Du Bois Bold Wide";
-    src: url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-BoldWide.woff") format("woff");
     font-weight: bold;
 
 }
 
 @font-face {
     font-family: "VTC Du Bois Italic Wide";
-    src: url("/fonts/VTCDubois/VTCDuBois-ItalicWide.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-ItalicWide.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-ItalicWide.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-ItalicWide.woff") format("woff");
     font-style: italic;
 
 }
@@ -109,8 +109,8 @@
 
 @font-face {
     font-family: "VTC Du Bois Bold Italic Wide";
-    src: url("/fonts/VTCDubois/VTCDuBois-BoldItalicWide.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-BoldItalicWide.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-BoldItalicWide.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-BoldItalicWide.woff") format("woff");
     font-weight: bold;
     font-style: italic;
 
@@ -118,8 +118,8 @@
 
 @font-face {
     font-family: "VTC Du Bois Bold RItalic Wider";
-    src: url("/fonts/VTCDubois/VTCDuBois-BoldRitalicWide.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-BoldRitalicWide.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-BoldRitalicWide.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-BoldRitalicWide.woff") format("woff");
     font-weight: bold;
     font-style: oblique;
 
@@ -127,16 +127,16 @@
 
 @font-face {
     font-family: "VTC Du Bois Wide";
-    src: url("/fonts/VTCDubois/VTCDuBois-RegularWide.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-RegularWide.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-RegularWide.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-RegularWide.woff") format("woff");
     font-weight: 400;
 
 }
 
 @font-face {
     font-family: "VTC Du Bois Light Wide";
-    src: url("/fonts/VTCDubois/VTCDuBois-LightWide.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-LightWide.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-LightWide.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-LightWide.woff") format("woff");
     font-weight: lighter;
 
 }
@@ -146,8 +146,8 @@
 
 @font-face {
     font-family: "VTC Du Bois Narrow";
-    src: url("/fonts/VTCDubois/VTCDuBois-RegularNarrow.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-RegularNarrow.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-RegularNarrow.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-RegularNarrow.woff") format("woff");
     font-weight: normal;
 
 }
@@ -155,24 +155,24 @@
 
 @font-face {
     font-family: "VTC Du Bois Bold Narrow";
-    src: url("/fonts/VTCDubois/VTCDuBois-BoldNarrow.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-BoldNarrow.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-BoldNarrow.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-BoldNarrow.woff") format("woff");
     font-weight: bold;
 
 }
 
 @font-face {
     font-family: "VTC Du Bois Light Narrow";
-    src: url("/fonts/VTCDubois/VTCDuBois-LightNarrow.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-LightNarrow.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-LightNarrow.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-LightNarrow.woff") format("woff");
     font-weight: lighter;
 
 }
 
 @font-face {
     font-family: "VTC Du Bois Light Italic Narrow";
-    src: url("/fonts/VTCDubois/VTCDuBois-LightItalicNarrow.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-LightItalicNarrow.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-LightItalicNarrow.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-LightItalicNarrow.woff") format("woff");
     font-style: italic;
     font-weight: lighter;
 
@@ -181,16 +181,16 @@
 
 @font-face {
     font-family: "VTC Du Bois Italic Narrow";
-    src: url("/fonts/VTCDubois/VTCDuBois-ItalicNarrow.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-ItalicNarrow.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-ItalicNarrow.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-ItalicNarrow.woff") format("woff");
     font-style: italic;
 
 }
 
 @font-face {
     font-family: "VTC Du Bois Bold Italic Narrow";
-    src: url("/fonts/VTCDubois/VTCDuBois-BoldItalicNarrow.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-BoldItalicNarrow.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-BoldItalicNarrow.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-BoldItalicNarrow.woff") format("woff");
     font-weight: bold;
     font-style: italic;
 
@@ -198,8 +198,8 @@
 
 @font-face {
     font-family: "VTC Du Bois Bold RItalic Narrow";
-    src: url("/fonts/VTCDubois/VTCDuBois-BoldRitalicNarrow.woff") format("woff"),
-        url("/fonts/VTCDubois/VTCDuBois-BoldRitalicNarrow.woff2") format("woff2");
+    src: url("/fonts/VTCDubois/VTCDuBois-BoldRItalicNarrow.woff2") format("woff2"),
+        url("/fonts/VTCDubois/VTCDuBois-BoldRItalicNarrow.woff") format("woff");
     font-weight: bold;
     font-style: oblique;
 }
@@ -210,23 +210,23 @@
 
 @font-face {
     font-family: "PPNeueMontreal";
-    src: url("/fonts/NeueMontreal/PPNeueMontreal-Thin.woff") format("woff"),
-        url("/fonts/NeueMontreal/PPNeueMontreal-Thin.woff2") format("woff2");
+    src: url("/fonts/NeueMontreal/PPNeueMontreal-Thin.woff2") format("woff2"),
+        url("/fonts/NeueMontreal/PPNeueMontreal-Thin.woff") format("woff");
     font-weight: 100;
 }
 
 
 @font-face {
     font-family: "PPNeueMontreal";
-    src: url("/fonts/NeueMontreal/PPNeueMontreal-Book.woff") format("woff"),
-        url("/fonts/NeueMontreal/PPNeueMontreal-Book.woff2") format("woff2");
+    src: url("/fonts/NeueMontreal/PPNeueMontreal-Book.woff2") format("woff2"),
+        url("/fonts/NeueMontreal/PPNeueMontreal-Book.woff") format("woff");
     font-weight: 200;
 }
 
 @font-face {
     font-family: "PPNeueMontreal";
-    src: url("/fonts/NeueMontreal/PPNeueMontreal-Light.woff") format("woff"),
-        url("/fonts/NeueMontreal/PPNeueMontreal-Light.woff2") format("woff2");
+    src: url("/fonts/NeueMontreal/PPNeueMontreal-Light.woff2") format("woff2"),
+        url("/fonts/NeueMontreal/PPNeueMontreal-Light.woff") format("woff");
     font-weight: 300;
 }
 
@@ -234,15 +234,15 @@
 
 @font-face {
     font-family: "PPNeueMontreal";
-    src: url("/fonts/NeueMontreal/PPNeueMontreal-Regular.woff") format("woff"),
-        url("/fonts/NeueMontreal/PPNeueMontreal-Regular.woff2") format("woff2");
+    src: url("/fonts/NeueMontreal/PPNeueMontreal-Regular.woff2") format("woff2"),
+        url("/fonts/NeueMontreal/PPNeueMontreal-Regular.woff") format("woff");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "PPNeueMontreal";
-    src: url("/fonts/NeueMontreal/PPNeueMontreal-Medium.woff") format("woff"),
-        url("/fonts/NeueMontreal/PPNeueMontreal-Medium.woff2") format("woff2");
+    src: url("/fonts/NeueMontreal/PPNeueMontreal-Medium.woff2") format("woff2"),
+        url("/fonts/NeueMontreal/PPNeueMontreal-Medium.woff") format("woff");
     font-weight: 500;
 }
 
@@ -250,8 +250,8 @@
 
 @font-face {
     font-family: "PPNeueMontreal";
-    src: url("/fonts/NeueMontreal/PPNeueMontreal-Semibold.woff") format("woff"),
-        url("/fonts/NeueMontreal/PPNeueMontreal-Semibold.woff2") format("woff2");
+    src: url("/fonts/NeueMontreal/PPNeueMontreal-SemiBold.woff2") format("woff2"),
+        url("/fonts/NeueMontreal/PPNeueMontreal-SemiBold.woff") format("woff");
     font-weight: 600;
 }
 
@@ -259,8 +259,8 @@
 
 @font-face {
     font-family: "PPNeueMontreal";
-    src: url("/fonts/NeueMontreal/PPNeueMontreal-Bold.woff") format("woff"),
-        url("/fonts/NeueMontreal/PPNeueMontreal-Bold.woff2") format("woff2");
+    src: url("/fonts/NeueMontreal/PPNeueMontreal-Bold.woff2") format("woff2"),
+        url("/fonts/NeueMontreal/PPNeueMontreal-Bold.woff") format("woff");
     font-weight: 700;
 }
 
