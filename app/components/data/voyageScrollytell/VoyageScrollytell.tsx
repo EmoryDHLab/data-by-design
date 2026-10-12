@@ -40,8 +40,8 @@ function getCenteredTransform(
 const pullQuotes = [
   {
     slideIndex: 4,
-    quote: `Quisquam sint modi voluptatem aut perferendis voluptatum ipsa.`,
-    subquote: `- Stephanie Smallwood`,
+    quote: `The saltwater [ocean] in African memory... was perhaps the antithesis of a “middle” passage, with all that phrase implies about a smooth, linear progression leading to a known end. For many in the pioneering generations of slaves, there could be no such integration of the terror of Atlantic memory.`,
+    subquote: `- Stephanie Smallwood, Saltwater Slavery: A Middle Passage from Africa to American Diaspora, p. 207`,
   },
   // {
   //   slideIndex: 6,
