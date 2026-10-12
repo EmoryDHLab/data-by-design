@@ -4,6 +4,7 @@ interface Props {
   y: number;
   className?: string;
   showColleges?: boolean;
+  showATL?: boolean;
 }
 
 const white = "fill-[#fff6c9]";
@@ -23,7 +24,14 @@ const viewBoxWidth = 2563;
 const viewBoxHeight = 1778.13;
 const fontSize = 150;
 
-const Map = ({ className, showColleges = true, width, x, y }: Props) => {
+const Map = ({
+  className,
+  showColleges = true,
+  showATL = true,
+  width,
+  x,
+  y,
+}: Props) => {
   return (
     <svg
       viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
@@ -478,7 +486,12 @@ const Map = ({ className, showColleges = true, width, x, y }: Props) => {
           className="stroke-offblack stroke-[15] fill-offwhite"
         />{" "}
       </g>
-      <g id="atlanta-star">
+      <g
+        id="atlanta-star"
+        className={`transition-opacity duration-1000 ${
+          showATL ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <ellipse
           className="fill-offwhite"
           cx="1910.98"

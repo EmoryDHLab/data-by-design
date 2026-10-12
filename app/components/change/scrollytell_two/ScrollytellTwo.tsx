@@ -3,10 +3,11 @@ import ScrollytellWrapper from "~/components/ScrollytellWrapper";
 import { ScrollytellContext } from "~/scrollytellContext";
 import { ChapterContext } from "~/chapterContext";
 import { TFocusShape } from "~/types/scrollytellTypes";
-import StudentChartOneV2 from "./StudentChartOneV2";
 import People from "./People";
 import Legend from "./Legend";
 import Students from "./Students";
+import Map from "./Map";
+import figures from "~/data/figures/change.json";
 import type { ReactElement } from "react";
 
 const chartHeight = 1024;
@@ -55,7 +56,7 @@ const ScrollytellTwo = ({ triggers }: { triggers: ReactElement[] }) => {
         >
           <div className="sticky p-8 md:p-0 top-0 h-min bias-full w-full md:bias-1/2 md:w-1/2 md:order-last bg-offwhite">
             <div
-              className={`h-[calc(100vh-32px)] my-auto flex flex-col mr-4 mt-8 p-8`}
+              className={`h-[calc(100vh-32px)] my-auto flex flex-col mt-8 p-8`}
             >
               <svg
                 className="relative"
@@ -89,41 +90,33 @@ const ScrollytellTwo = ({ triggers }: { triggers: ReactElement[] }) => {
                 <image
                   width={chartWidth}
                   height={chartHeight}
-                  className={`scale-90 ${
-                    scrollProgress >= 0 && scrollProgress <= 1.25
+                  className={`scale-150 ${
+                    scrollProgress >= 0 && scrollProgress <= 1
                       ? "opacity-100"
                       : "opacity-0"
-                  } ${
-                    scrollProgress >= 0.5
-                      ? "scale-[2.5] translate-y-80"
-                      : "scale-100 translate-y-0"
                   }
                       transition-all duration-1000 origin-center`}
-                  href="/images/chapters/0527-899-series.jpg"
-                  mask="url(#scrollytell-two-mask"
+                  href={`/images/chapters/${figures["0530"].fileName}.jpg`}
                 />
 
-                <StudentChartOneV2
-                  width={chartWidth}
-                  height={chartHeight}
-                  className={
-                    scrollProgress >= 1.25 && scrollProgress <= 6.25
+                <g
+                  className={`duration-1000 transition-opacity ${
+                    scrollProgress >= 1 && scrollProgress <= 3
                       ? "opacity-100"
                       : "opacity-0"
-                  }
-                />
+                  }`}
+                >
+                  <Map
+                    showColleges
+                    showATL={scrollProgress > 2}
+                    width={chartWidth}
+                    x={0}
+                    y={0}
+                    className="scale-[0.88] translate-x-6 translate-y-0 origin-center"
+                  />
+                </g>
+
                 <Students width={chartWidth} height={chartHeight} />
-                <image
-                  x={(chartWidth - 752) / 2}
-                  width={752}
-                  height={chartHeight}
-                  className={`scale-90 origin-center drop-shadow-md ${
-                    scrollProgress >= 3.25 && scrollProgress <= 4.25
-                      ? "opacity-100"
-                      : "opacity-0"
-                  } transition-opacity duration-1000`}
-                  href="/images/chapters/0516-master-pnp-ppmsca-08700-08778u.jpg"
-                />
                 <People width={chartWidth} height={chartHeight} />
                 <Legend width={chartWidth} height={chartHeight} />
               </svg>{" "}

@@ -54,8 +54,8 @@ export default function StudentChartTwo({
         1000, // Height of SVG viewbox
         0,
         // Add 80 to account for the navbar.
-        windowSize.height + topOffset
-      )
+        windowSize.height + topOffset,
+      ),
     );
   }, [windowSize, pieChartWidth, topOffset]);
 
@@ -63,10 +63,10 @@ export default function StudentChartTwo({
     if (!pieContainerRef.current) return;
     setPieChartLeft(
       pieContainerRef.current?.getBoundingClientRect().width / 2 -
-        pieContainerRef.current.getBoundingClientRect().height / 4
+        pieContainerRef.current.getBoundingClientRect().height / 4,
     );
     setPieChartWidth(
-      pieContainerRef.current?.getBoundingClientRect().height ?? 500
+      pieContainerRef.current?.getBoundingClientRect().height ?? 500,
     );
   }, [chartWidth]);
 
@@ -251,7 +251,7 @@ export default function StudentChartTwo({
               An additional
             </tspan>
             <tspan x={leftMargin} dy={largeText} textLength={755}>
-              3,693 dots represent the graduates of the other 140 colleges
+              2,893 dots represent the graduates of the other 140 colleges
               included in the study
             </tspan>
             <tspan x={leftMargin} dy={largeText}>
