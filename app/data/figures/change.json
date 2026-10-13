@@ -594,10 +594,10 @@
     "frontPage": true,
     "year": 2019,
     "iiif": true,
-    "deepZoom": true,
+    "deepZoom": false,
     "alpha": false,
-    "width": 3024,
-    "height": 4032
+    "width": 1100,
+    "height": 1100
   },
   "0524": {
     "chapter": "change",
@@ -620,8 +620,8 @@
     "iiif": true,
     "deepZoom": false,
     "alpha": false,
-    "width": 421,
-    "height": 629
+    "width": 1100,
+    "height": 1100
   },
   "0525": {
     "chapter": "change",
@@ -644,8 +644,8 @@
     "iiif": true,
     "deepZoom": false,
     "alpha": false,
-    "width": 421,
-    "height": 629
+    "width": 1100,
+    "height": 1100
   },
   "0526-data-table": {
     "chapter": "change",

@@ -874,20 +874,12 @@ export default function DuboisChapter() {
             is titled “It Could Never Be Large Enough.”
           </p>
 
-          <div className="sm:grid grid-cols-3 gap-4">
-            <Figure
-              figure={figures["0523"]}
-              className="mx-2 md:mx-12 text-sm md:text-base"
-            />
-            <Figure
-              figure={figures["0524"]}
-              className="mx-2 md:mx-12 text-sm md:text-base"
-            />
-            <Figure
-              figure={figures["0525"]}
-              className="mx-2 md:mx-12 text-sm md:text-base"
-            />
-          </div>
+          <Figure
+            figures={[figures["0523"], figures["0524"], figures["0525"]]}
+            className="sm:grid grid-cols-3 gap-4"
+            captionClassName="c col-span-3"
+            // className="mx-2 md:mx-12 text-sm md:text-base"
+          />
 
           <p>
             In the context of Du Bois’s autobiographical writing about the
