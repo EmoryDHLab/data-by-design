@@ -14,6 +14,7 @@ import { classNames } from "~/utils";
 interface Props {
   setScrollProgress: Dispatch<SetStateAction<number>>;
   setCurrentStep?: Dispatch<SetStateAction<number>>;
+  setDirection?: Dispatch<SetStateAction<string>>;
   children: ReactNode;
   container?: ReactNode;
   parent?: ReactNode | HTMLElement;
@@ -36,6 +37,7 @@ export default function ScrollytellWrapper({
   triggers,
   setScrollProgress,
   setCurrentStep,
+  setDirection,
   className,
   stepClassName,
   bgColor,
@@ -73,6 +75,12 @@ export default function ScrollytellWrapper({
         .onStepProgress(({ index, progress }) => {
           if (setCurrentStep) setCurrentStep(index);
           setScrollProgress(index + progress);
+        })
+        .onStepEnter(({ direction }) => {
+          if (setDirection) setDirection(direction);
+        })
+        .onStepExit(({ direction }) => {
+          if (setDirection) setDirection(direction);
         });
       setSetupFailed(false);
     } catch (error) {
@@ -118,7 +126,7 @@ export default function ScrollytellWrapper({
       className={classNames(
         `bg-${bgColor ?? backgroundColor}`,
         className,
-        "md:my-8 md:mt-12 md:mb-0 relative z-10"
+        "md:my-8 md:mt-12 md:mb-0 relative z-10",
       )}
     >
       {children}

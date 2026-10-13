@@ -1,9 +1,8 @@
-import { useContext, useRef, useState } from "react";
-import Recreation from "./Recreation";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ChapterContext } from "~/chapterContext";
 import ScrollytellWrapper from "../ScrollytellWrapper";
-import type { ReactElement } from "react";
 import LineSegments from "./LineSegments";
+import type { ReactElement } from "react";
 
 const LineSegmentsScrollytell = ({
   triggers,
@@ -11,6 +10,7 @@ const LineSegmentsScrollytell = ({
   triggers: ReactElement[];
 }) => {
   const [scrollProgress, setScrollProgress] = useState<number>(0.0);
+  const [direction, setDirection] = useState<string>("down");
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
   const steps = useRef<HTMLDivElement>(null);
 
@@ -20,13 +20,14 @@ const LineSegmentsScrollytell = ({
       triggers={triggers}
       steps={steps}
       stepClassName=".line-segments"
+      setDirection={setDirection}
     >
       <div className={`bg-${backgroundColor} md:flex justify-between md:mb-8`}>
         <div className="sticky top-16 md:top-0 h-screen mt-16 md:mt-0 md:mr-24 bias-full w-full md:bias-1/2 md:w-3/5 md:order-last md:pb-[60px]">
           <div className="text-3xl relative md:top-[calc(100vh-12rem)] right-[35vw] text-white hidden md:block">
             ↓
           </div>
-          <LineSegments scrollProgress={scrollProgress} />
+          <LineSegments scrollProgress={scrollProgress} direction={direction} />
         </div>
         <div
           ref={steps}
@@ -45,7 +46,9 @@ const LineSegmentsScrollytell = ({
               >
                 <p
                   className={`${
-                    index === 0 ? "" : "bg-imagePrimary-translucent"
+                    index === 0
+                      ? ""
+                      : "bg-imagePrimary-translucent text-offwhite"
                   } p-3 md:p-0`}
                 >
                   {trigger}

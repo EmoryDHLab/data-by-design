@@ -3,14 +3,17 @@ import VerticalGrid from "./elements/VerticalGrid";
 import HorizontalGrid from "./elements/HorizontalGrid";
 import OvalTitle from "./elements/OvalTitle";
 import playfairData from "~/data/image/playfairImportExport.json";
-import ScatterPlot from "./elements/ScatterPlot";
+import figures from "~/data/figures/image.json";
 import StippleHatch from "./elements/StippleHatch";
+import ScatterPlot from "./elements/ScatterPlot";
 import ColorArea from "./elements/ColorArea";
 import { Paths } from "./scrollytellElements/Paths";
 import { useRef } from "react";
 
+const VIEW_BOX_HEIGHT = 55;
+const VIEW_BOX_WIDTH = 105; //85
 const height = 44;
-const width = 94;
+const width = 94; //77
 const innerGridWidth = (width / 11) * 10 + 5.5;
 const maxImport = 3300000; // Math.max(...playfairData.map((d: PlayfairData) => d.Imports))
 const maxExport = 4900000; // Math.max(...playfairData.map((d: PlayfairData) => d.Exports))
@@ -20,7 +23,7 @@ const interval = 200000;
 const xScaleDomain = [1700, 1800]; // d3.extent(playfairData.map(d => d.Years))
 const xScale = d3
   .scaleLinear()
-  .range([0, (width / 11) * 10])
+  .range([0, (width / 11) * 10]) // 9, 8
   .domain(xScaleDomain);
 
 const yScale = d3
@@ -106,7 +109,7 @@ export default function Recreation({
   return (
     <svg
       ref={svgRef}
-      viewBox="0 0 105 55"
+      viewBox={`0 0 ${VIEW_BOX_WIDTH} ${VIEW_BOX_HEIGHT}`}
       className="w-full md:h-full flex md:ml-6 p-3 md:p-0 pt-10 md:pt-0"
     >
       <g
@@ -213,7 +216,7 @@ export default function Recreation({
             })}
           </g>
           {/* Color Areas */}
-          <g opacity={scrollProgress >= 9.5 ? transitionIn([9.5, 10]) : 0}>
+          <g opacity={scrollProgress >= 8.5 ? transitionIn([8.5, 9]) : 0}>
             <ColorArea opacity={1} />
           </g>
           {/* Import Export Lines */}
@@ -222,36 +225,36 @@ export default function Recreation({
             transform="translate(0,0)"
           >
             <path
-              d={scrollProgress <= 8 ? Paths.import1stEd : Paths.import3rdEd}
+              d={scrollProgress <= 6.5 ? Paths.import1stEd : Paths.import3rdEd}
               stroke="#F4B20C"
               strokeWidth="0.3px"
               fill="none"
               className="transition-all duration-1000"
               // strokeLinecap="round"
               strokeDasharray={
-                scrollProgress <= 8 ? 83.06825256347656 : 112.31173706054688
+                scrollProgress <= 6.5 ? 83.06825256347656 : 112.31173706054688
               }
               strokeDashoffset={
                 scrollProgress >= 4.5
                   ? 0
-                  : scrollProgress <= 8
+                  : scrollProgress <= 6.5
                   ? 83.06825256347656
                   : 112.31173706054688
               }
             />
             <path
-              d={scrollProgress <= 8 ? Paths.export1stEd : Paths.export3rdEd}
+              d={scrollProgress <= 6.5 ? Paths.export1stEd : Paths.export3rdEd}
               stroke="#56190F"
               strokeWidth="0.3px"
               fill="none"
               className="transition-all duration-1000"
               strokeDasharray={
-                scrollProgress <= 8 ? 139.813720703125 : 157.57818603515625
+                scrollProgress <= 6.5 ? 139.813720703125 : 157.57818603515625
               }
               strokeDashoffset={
                 scrollProgress >= 4.5
                   ? 0
-                  : scrollProgress <= 8
+                  : scrollProgress <= 6.5
                   ? 139.813720703125
                   : 157.57818603515625
               }
@@ -260,8 +263,8 @@ export default function Recreation({
 
           <StippleHatch
             opacity={
-              scrollProgress >= 5.5 && scrollProgress < 7.5
-                ? transitionInOut([5.5, 6], [7, 7.75])
+              scrollProgress >= 5.5 && scrollProgress < 6.5
+                ? transitionInOut([5.5, 6], [7, 6.75])
                 : 0
             }
           />
@@ -272,10 +275,11 @@ export default function Recreation({
                 key={xValue}
                 xValue={xMinorScale(xValue)}
                 xOffset={(width / 11) * 7 + 5.5}
+                y1Offset={1}
                 text={" "}
                 opacity={
-                  scrollProgress >= 6.5 && scrollProgress < 9
-                    ? transitionInOut([6.5, 7], [7.5, 8.5])
+                  scrollProgress >= 6.5 && scrollProgress < 7.5
+                    ? transitionInOut([6.5, 7], [7, 7.5])
                     : 0
                 }
               />
@@ -283,7 +287,7 @@ export default function Recreation({
           })}
           {/* Labels */}
           <g
-            opacity={scrollProgress >= 9.5 ? transitionIn([9.5, 10]) : 0}
+            opacity={scrollProgress >= 8.5 ? transitionIn([8.5, 9]) : 0}
             className="tracking-wide"
           >
             <path
@@ -327,10 +331,10 @@ export default function Recreation({
             topText={{ text: "EXPORTS & IMPORTS", x: 14, y: 17 }}
             midText={{ text: "to and from all", x: 22, y: 20.5 }}
             botText={{ text: "NORTH AMERICA", x: 15, y: 24 }}
-            opacity={scrollProgress >= 10.5 ? transitionIn([10.5, 11]) : 0}
+            opacity={scrollProgress >= 9.5 ? transitionIn([9.5, 10]) : 0}
             transform="translate(5.5, 1) scale(0.88)"
           />
-          <g opacity={scrollProgress >= 11.5 ? transitionIn([11.5, 12.5]) : 0}>
+          <g opacity={scrollProgress >= 10.5 ? transitionIn([10.5, 11]) : 0}>
             <text
               fill="black"
               x={width / 2}
@@ -360,38 +364,74 @@ export default function Recreation({
         opacity={scrollProgress > 0 && scrollProgress < 1.5 ? 1 : 0}
       >
         <image
-          href="/images/image/extras/0224-playfair1787-cropped.jpg"
-          width={105}
-          height={55}
+          href="/images/chapters/0206-playfair-table-america-rect-cropped.jpg"
           x={0}
-          y={0}
+          y={
+            VIEW_BOX_HEIGHT / 2 -
+            (50 *
+              (figures["0206-playfair-table-america-rect-cropped"].height /
+                figures["0206-playfair-table-america-rect-cropped"].width)) /
+              2
+          }
+          width={50}
+        />
+        <image
+          href="/images/chapters/0207-playfair-table-northam-rect-cropped.jpg"
+          x={55}
+          y={
+            VIEW_BOX_HEIGHT / 2 -
+            (50 *
+              (figures["0207-playfair-table-northam-rect-cropped"].height /
+                figures["0207-playfair-table-northam-rect-cropped"].width)) /
+              2
+          }
+          width={50}
         />
       </g>
       <g
         className="transition-opacity duration-1000"
-        opacity={scrollProgress > 1.5 && scrollProgress < 2.5 ? 1 : 0}
+        opacity={scrollProgress > 1.5 && scrollProgress < 3.5 ? 1 : 0}
       >
+        <mask id="plot">
+          <rect
+            x={scrollProgress > 2.5 && scrollProgress < 3.5 ? 10 : 0}
+            y={scrollProgress > 2.5 && scrollProgress < 3.5 ? 10 : 0}
+            width={
+              scrollProgress > 2.5 && scrollProgress < 3.5 ? 10 : VIEW_BOX_WIDTH
+            }
+            height={
+              scrollProgress > 2.5 && scrollProgress < 3.5
+                ? 10
+                : VIEW_BOX_HEIGHT
+            }
+          />
+        </mask>
         <image
           href="/images/image/extras/0205-bl-playfair-cropped.jpg"
           width={105}
           height={55}
           x={0}
           y={0}
+          className={`duration-1000 transition-transform ${
+            scrollProgress > 2.5 && scrollProgress < 3.5
+              ? "scale-[5.5] -translate-x-96 -translate-y-48 "
+              : ""
+          }`}
         />
       </g>
 
-      <g
+      {/* <g
         className="transition-opacity duration-1000"
-        opacity={scrollProgress > 2.5 && scrollProgress < 3.5 ? 1 : 0}
+        opacity={scrollProgress > 2.5 && scrollProgress < 4.5 ? 1 : 0}
       >
         <image
-          href="/images/image/extras/0201-playfair-northam-cropped.jpg"
+          href="/images/chapters/0207-playfair-table-northam-rect-cropped.jpg"
           width={105}
           height={55}
           x={0}
           y={0}
         />
-      </g>
+      </g> */}
 
       <g
         className="transition-opacity duration-1000"
