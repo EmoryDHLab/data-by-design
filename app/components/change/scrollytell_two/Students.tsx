@@ -192,16 +192,17 @@ const Students = ({ width, height }: { width: number; height: number }) => {
     (scrollProgress >= 3 && scrollProgress < 4) || scrollProgress >= 10;
   const showAtlanta =
     (scrollProgress >= 3 && scrollProgress <= 5) || scrollProgress >= 10;
+  const plucked = scrollProgress >= 3.25 && scrollProgress <= 6;
   const zoomed = scrollProgress >= 4 && scrollProgress <= 6;
 
   return (
     <g className="scale-95 origin-center">
       <g
         className={`origin-top-left transition-all duration-1000 ${
-          zoomed ? "-translate-x-12 -translate-y-[36rem] scale-[5]" : ""
+          zoomed ? "-translate-x-6 -translate-y-[33.5rem] scale-[5]" : ""
         }`}
         // Wait for the Atlanta graduates to finish moving before zooming in.
-        style={{ transitionDelay: zoomed ? "500ms" : "0ms" }}
+        style={{ transitionDelay: plucked ? "1000ms" : "0ms" }}
       >
         <g
           className={`transition-opacity duration-1000 ${

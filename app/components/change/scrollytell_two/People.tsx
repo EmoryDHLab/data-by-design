@@ -16,7 +16,7 @@ const People = ({ width, height }: Props) => {
     <g
       className={`${
         scrollProgress >= 5 ? "opacity-100" : "opacity-0"
-      } transition-opacity duration-1000`}
+      } transition-opacity duration-1000 scale-90`}
     >
       <g
         className={`${
