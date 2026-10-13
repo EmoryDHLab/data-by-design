@@ -42,10 +42,6 @@ const LineSegments = ({ scrollProgress, direction }: Props) => {
     [scrollProgress],
   );
 
-  useEffect(() => {
-    console.log("🚀 ~ LineSegments ~ scrollProgress:", scrollProgress);
-  }, [scrollProgress]);
-
   return (
     <svg
       ref={svgRef}
