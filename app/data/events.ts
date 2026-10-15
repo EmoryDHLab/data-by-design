@@ -134,8 +134,7 @@ export const events: Event[] = [
     streetAddress: "65 W 11th St",
     postalCode: "10011",
     url: "https://event.newschool.edu/visualizationandpower",
-    // The RSVP form sits further down the same page the venue line links to.
-    registerUrl: "https://event.newschool.edu/visualizationandpower#rsvp",
+    registerUrl: "https://event.newschool.edu/visualizationandpower",
     registerLabel: "RSVP",
   },
   {

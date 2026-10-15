@@ -52,6 +52,44 @@ const DateBox = ({ event }: { event: Event }) => (
   </div>
 );
 
+// City and time: one line of small print on mobile, a stacked column on
+// desktop.
+const Where = ({ event }: { event: Event }) =>
+  event.city || event.time || event.dateNote || event.attendance ? (
+    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 md:block">
+      {event.city && event.attendance !== "virtual" && (
+                <h4 className={CITY}>
+                  {event.city}
+                </h4>
+              )}
+              {/* A virtual event has no city, so "Online" takes the city's place
+                  as the heading. A hybrid one keeps its city and notes the
+                  online option beneath, in the same small print as the time. */}
+              {event.attendance === "virtual" && (
+                <h4 className={CITY}>Online</h4>
+              )}
+              {event.attendance === "hybrid" && (
+                <div
+                  className={classNames(META, "text-xs md:text-sm md:mt-1.5")}
+                >
+                  &amp; online
+                </div>
+              )}
+              {event.time && (
+                <div
+                  className={classNames(META, "text-xs md:text-sm md:mt-1.5")}
+                >
+                  {event.time}
+                </div>
+              )}
+              {event.dateNote && (
+                <div className="font-power text-base md:text-xs text-black/50 md:mt-1">
+                  {event.dateNote}
+                </div>
+              )}
+    </div>
+  ) : null;
+
 // `isPast` marks an event that has already happened: the row still records it,
 // but the register button comes off, since there is nothing left to register
 // for.
@@ -75,6 +113,10 @@ export default function EventRow({
           <div className="flex-1 min-w-0 md:order-2">
             <div className="mb-1.5 md:mb-2">
               <KindLabel kind={event.kind} />
+            </div>
+            {/* On mobile the city and time sit directly under the tag. */}
+            <div className="md:hidden mb-2">
+              <Where event={event} />
             </div>
             <p className="font-power text-lg md:text-xl leading-snug">
               {event.title}
@@ -126,45 +168,10 @@ export default function EventRow({
               </a>
             )}
           </div>
-          {/* City and time: a column of their own on desktop, one line of small
-              print under the event on mobile. */}
-          {(event.city ||
-            event.time ||
-            event.dateNote ||
-            event.attendance) && (
-            <div className="md:order-1 shrink-0 md:w-44 lg:w-52 flex flex-wrap items-baseline gap-x-3 gap-y-1 md:block">
-              {event.city && event.attendance !== "virtual" && (
-                <h4 className={CITY}>
-                  {event.city}
-                </h4>
-              )}
-              {/* A virtual event has no city, so "Online" takes the city's place
-                  as the heading. A hybrid one keeps its city and notes the
-                  online option beneath, in the same small print as the time. */}
-              {event.attendance === "virtual" && (
-                <h4 className={CITY}>Online</h4>
-              )}
-              {event.attendance === "hybrid" && (
-                <div
-                  className={classNames(META, "text-xs md:text-sm md:mt-1.5")}
-                >
-                  &amp; online
-                </div>
-              )}
-              {event.time && (
-                <div
-                  className={classNames(META, "text-xs md:text-sm md:mt-1.5")}
-                >
-                  {event.time}
-                </div>
-              )}
-              {event.dateNote && (
-                <div className="font-power text-base md:text-xs text-black/50 md:mt-1">
-                  {event.dateNote}
-                </div>
-              )}
-            </div>
-          )}
+          {/* City and time: a column of their own on desktop. */}
+          <div className="hidden md:block md:order-1 shrink-0 md:w-44 lg:w-52">
+            <Where event={event} />
+          </div>
         </div>
       </div>
     </li>
