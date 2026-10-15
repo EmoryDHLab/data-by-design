@@ -1,8 +1,5 @@
-import { useMemo, useRef, useState } from "react";
-import * as d3 from "d3";
-import playfairData from "../../data/image/playfairImportExport.json";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Paths } from "./scrollytellElements/Paths";
-import ScatterPlot from "./elements/ScatterPlot";
 import Recreation from "./Recreation";
 import LineSegmentDots from "./LineSegmentDots";
 import D3Chart from "./line_segment_elements/D3Chart";
@@ -10,6 +7,7 @@ import RawPath from "./line_segment_elements/RawPath";
 
 interface Props {
   scrollProgress: number;
+  direction: string;
 }
 
 const blue = "#3B4BE0";
@@ -19,45 +17,21 @@ const height = 44;
 const width = 94;
 
 function getFocusShape(scrollProgress: number) {
-  if (scrollProgress < 2.5 || scrollProgress >= 3.5) {
+  if (scrollProgress < 2.5 || scrollProgress >= 4.5) {
     return { x: 21, y: 13.6, width: 66, height: 39, transform: "rotate(1)" };
   }
   return { x: 0, y: -17, width: 200, height: 200 };
 }
 
 function getChartTransform(scrollProgress: number) {
-  if (scrollProgress >= 2.5 && scrollProgress <= 3.5) {
+  if (scrollProgress >= 2.5 && scrollProgress <= 5.5) {
     return "scale(1) translate(0) rotate(0)";
-  }
-  if (scrollProgress >= 3.5 && scrollProgress <= 4.5) {
-    return "scale(1.41, 1.38) translate(-17.1,-13.5) rotate(-1)";
   }
   return "scale(1.42, 1.3) translate(-17.1,-13.6) rotate(-1)";
 }
 
-const LineSegments = ({ scrollProgress }: Props) => {
+const LineSegments = ({ scrollProgress, direction }: Props) => {
   const svgRef = useRef<SVGSVGElement>(null);
-  const [recreationScrollProgress, setRecreationScrollProgress] =
-    useState<number>(50);
-
-  // Adjusted during render (React's documented pattern) rather than in an
-  // effect: these thresholds have gaps (not else-if), so outside them the
-  // value deliberately holds its previous state - it's not a pure function
-  // of scrollProgress alone, and scrollProgress updates on every scroll
-  // tick, so an effect would add a stale extra render on each one.
-  let nextRecreationScrollProgress = recreationScrollProgress;
-  if (scrollProgress > 6.7 && scrollProgress < 7.5) {
-    nextRecreationScrollProgress = 20;
-  }
-  if (scrollProgress > 7.5 && scrollProgress < 8.5) {
-    nextRecreationScrollProgress = 12.5;
-  }
-  if (scrollProgress > 8.5) {
-    nextRecreationScrollProgress = 13;
-  }
-  if (nextRecreationScrollProgress !== recreationScrollProgress) {
-    setRecreationScrollProgress(nextRecreationScrollProgress);
-  }
 
   const focusShape = useMemo(
     () => getFocusShape(scrollProgress),
@@ -77,25 +51,33 @@ const LineSegments = ({ scrollProgress }: Props) => {
       {/* Original Chart */}
       <g
         className={`transition-opacity duration-1000 ${
-          scrollProgress >= 3.5 ? "delay-1000" : ""
-        } ${scrollProgress <= 3.5 ? "opacity-100" : "opacity-100"}`}
+          direction === "down" && scrollProgress < 4 ? "delay-1000" : "delay-0"
+        } ${scrollProgress <= 4.5 ? "opacity-100" : "opacity-0"}`}
       >
         <mask id="northam-mask">
           <rect
             {...focusShape}
             fill="white"
             fillOpacity={1}
-            className="transition-all duration-1000"
+            className={`transition-all duration-1000 ${
+              direction === "down" && scrollProgress < 4
+                ? "delay-1000"
+                : "delay-0"
+            }`}
           />
         </mask>
 
         <image
           mask="url(#northam-mask)"
-          className="transition-all duration-1000"
+          className={`transition-all ${
+            direction === "down" && scrollProgress < 4
+              ? "delay-1000 duration-1000"
+              : "delay-0 duration-700"
+          }`}
           href="/images/chapters/0217A-playfair-northam-scan_copy.jpg"
           width={100}
           x={5}
-          y={scrollProgress < 2.5 || scrollProgress >= 3.5 ? -25 : -15}
+          y={scrollProgress < 2.5 || scrollProgress >= 4.5 ? -25 : -15}
           transform={chartTransform}
         />
       </g>
@@ -117,7 +99,9 @@ const LineSegments = ({ scrollProgress }: Props) => {
           fill="none"
           strokeLinecap="butt"
           strokeWidth={0.5}
-          className="transition-all duration-1000"
+          className={`transition-all duration-1000 ${
+            direction === "up" ? "delay-1000" : "delay-0"
+          }`}
           strokeDasharray={114.47510528564453}
           strokeDashoffset={
             scrollProgress < 0.5 || scrollProgress > 2.5
@@ -131,7 +115,9 @@ const LineSegments = ({ scrollProgress }: Props) => {
           fill="none"
           strokeLinecap="butt"
           strokeWidth={0.5}
-          className="transition-all duration-1000"
+          className={`transition-all duration-1000 ${
+            direction === "up" ? "delay-1000" : "delay-0"
+          }`}
           strokeDasharray={180.4506378173828}
           strokeDashoffset={
             scrollProgress < 0.5 || scrollProgress > 2.5 ? 180.4506378173828 : 0
@@ -139,17 +125,10 @@ const LineSegments = ({ scrollProgress }: Props) => {
         />
       </g>
 
-      {/* Full scan image from above between 2.5 and 3.5 */}
-
-      {/* Background for drawn lines when scrolling up between 6.5 and 7.5 */}
-      <g className={scrollProgress >= 6.5 ? "opacity-100" : "opacity-0"}>
-        <rect x={5.75} y={0} height={55} width={93.5} fill={white} />
-      </g>
-
       {/* Drawn line between 3.5 and 5.5 and at 6.5 */}
       <g
         className={`transition-opacity duration-1000 ${
-          scrollProgress > 6.5 || (scrollProgress > 3.5 && scrollProgress < 5.5)
+          scrollProgress > 3.5 && scrollProgress < 5.5
             ? "opacity-100"
             : "opacity-0"
         }`}
@@ -160,8 +139,12 @@ const LineSegments = ({ scrollProgress }: Props) => {
           height={55}
           width={93.5}
           fill={white}
-          fillOpacity={scrollProgress > 3.5 && scrollProgress < 7.5 ? 100 : 0}
-          className="transition-all duration-1000 delay-1000"
+          fillOpacity={scrollProgress > 4.5 && scrollProgress < 7.5 ? 100 : 0}
+          className={`transition-all duration-1000 origin-center ${
+            scrollProgress >= 3.5 && scrollProgress <= 4.5
+              ? "scale-75"
+              : "scale-100"
+          } ${direction === "down" ? "delay-0" : "delay-0"}`}
         />
 
         <g
@@ -172,18 +155,34 @@ const LineSegments = ({ scrollProgress }: Props) => {
           <path
             d={Paths.import3rdEd}
             stroke="#F4B20C"
-            strokeWidth="0.3px"
+            strokeWidth={scrollProgress >= 4.5 ? "0.3px" : "0.5px"}
             fill="none"
-            className="transition-all duration-1000"
+            className={`transition-all duration-1000 ${
+              scrollProgress >= 2.5 && scrollProgress <= 4.5
+                ? "scale-[0.7] translate-x-[1.05rem] translate-y-[1.6rem]"
+                : "scale-100"
+            } ${
+              direction === "down" && scrollProgress < 4
+                ? "delay-1000"
+                : "delay-0"
+            }`}
             strokeDasharray={112.31173706054688}
             strokeDashoffset={scrollProgress >= 3.5 ? 0 : 112.31173706054688}
           />
           <path
             d={Paths.export3rdEd}
             stroke="#56190F"
-            strokeWidth="0.3px"
+            strokeWidth={scrollProgress >= 4.5 ? "0.3px" : "0.5px"}
             fill="none"
-            className="transition-all duration-1000"
+            className={`transition-all duration-1000 ${
+              scrollProgress >= 2.5 && scrollProgress <= 4.5
+                ? "scale-[0.7] translate-x-[1.05rem] translate-y-[1.6rem]"
+                : "scale-100"
+            } ${
+              direction === "down" && scrollProgress < 4
+                ? "delay-1000"
+                : "delay-0"
+            }`}
             strokeDasharray={157.57818603515625}
             strokeDashoffset={scrollProgress >= 3.5 ? 0 : 157.57818603515625}
           />
@@ -193,10 +192,14 @@ const LineSegments = ({ scrollProgress }: Props) => {
       {/* Dots between 4.5 and 5.5 */}
       <g
         transform="translate(5.6, 0) scale(1)"
-        className={`transition-opacity duration-1000 ${
+        className={`transition-opacity ${
           scrollProgress > 4.5 && scrollProgress < 5.5
             ? "opacity-100"
             : "opacity-0"
+        } ${
+          direction === "down"
+            ? "delay-[1500ms] duration-1000"
+            : "delay-0 duration-0"
         }`}
       >
         <LineSegmentDots />
@@ -216,10 +219,10 @@ const LineSegments = ({ scrollProgress }: Props) => {
       {/* Recreation above 7.5 */}
       <g
         className={`transition-opacity duration-1000 ${
-          scrollProgress >= 7.5 ? "opacity-100" : "opacity-0"
+          scrollProgress >= 6.5 ? "opacity-100" : "opacity-0"
         }`}
       >
-        <Recreation scrollProgress={recreationScrollProgress} />
+        <Recreation scrollProgress={12} />
       </g>
     </svg>
   );

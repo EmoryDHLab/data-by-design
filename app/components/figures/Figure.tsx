@@ -25,7 +25,7 @@ interface Props {
 // <figcaption> would otherwise go without it. Captions covering several images
 // stay one paragraph, with <CaptionDirection newLine> starting each later cue.
 export const CAPTION =
-  "font-neueMontreal text-xs md:text-sm leading-5 tracking-wide text-left mt-3 md:mt-6 mb-6 md:mb-12";
+  "font-neueMontreal text-xs md:text-sm leading-5 tracking-wide text-left mb-6 md:mb-12";
 
 // The credit line to print after a caption, or "" when the caption already
 // carries it. Many figures' captions end with their own credit line, so
@@ -37,8 +37,7 @@ const plain = (html?: string | null) =>
   (stripMarkup(html) ?? "").replace(/\s+/g, "");
 
 export const creditLineFor = (figure: TFigure) =>
-  figure.creditLine &&
-  !plain(figure.caption).includes(plain(figure.creditLine))
+  figure.creditLine && !plain(figure.caption).includes(plain(figure.creditLine))
     ? figure.creditLine
     : "";
 
@@ -52,9 +51,7 @@ export const Caption = ({
   if (!figure?.caption && !figure?.creditLine) return null;
 
   return (
-    <figcaption
-      className={`${CAPTION} col-span-full ${className ?? ""}`}
-    >
+    <figcaption className={`${CAPTION} ${className ?? ""}`}>
       {figure.caption && (
         <span dangerouslySetInnerHTML={{ __html: figure.caption }} />
       )}
@@ -128,13 +125,11 @@ export default function Figure({
           </FigureModal>
         ))}
         {groupCaption ? (
-          <figcaption
-            className={`${CAPTION} col-span-full ${captionClassName ?? ""}`}
-          >
+          <figcaption className={`${CAPTION} ${captionClassName ?? ""}`}>
             {groupCaption}
           </figcaption>
         ) : (
-          <Caption figure={figures[0]} />
+          <Caption figure={figures[0]} className={captionClassName} />
         )}
       </div>
     );

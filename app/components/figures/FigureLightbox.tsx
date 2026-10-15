@@ -75,6 +75,14 @@ const AltTextBody = ({ html }: { html: string }) => {
   );
 };
 
+// As drawn, so a quarter turn swaps the scan's sides.
+const aspectRatio = (figure: TFigure) => {
+  if (!figure.width || !figure.height) return "4 / 3";
+  return (figure.rotation ?? 0) % 180 !== 0
+    ? `${figure.height} / ${figure.width}`
+    : `${figure.width} / ${figure.height}`;
+};
+
 export default function FigureLightbox({ figure, isOpen, onClose }: Props) {
   const { preferShortAltText, setPreferShortAltText } =
     useContext(AltTextContext);
@@ -113,13 +121,26 @@ export default function FigureLightbox({ figure, isOpen, onClose }: Props) {
               </Button>
             </DialogTitle>
             <div className="flex flex-col flex-1 min-h-0 overflow-hidden">
-              <div className="flex-1 min-h-0 overflow-hidden">
-                {figure.deepZoom ? (
+              {figure.deepZoom ? (
+                <div className="flex-1 min-h-0 overflow-hidden">
                   <IIIFViewer figure={figure} modalOpen={isOpen} />
-                ) : (
-                  <Picture figure={figure} />
-                )}
-              </div>
+                </div>
+              ) : (
+                // The dialog only has a max-height, so a percentage height on
+                // the image would never resolve and a tall one ran past the
+                // caption and got clipped. A box with the image's own aspect
+                // ratio that can shrink to the space left, with the image
+                // filling it, scales it down to fit instead.
+                <div
+                  className="relative flex-initial min-h-0 overflow-hidden"
+                  style={{ aspectRatio: aspectRatio(figure) }}
+                >
+                  <Picture
+                    figure={figure}
+                    className="absolute inset-0 h-full w-full !max-h-none"
+                  />
+                </div>
+              )}
               {/* Two columns from md: what the image is on the left, and the
                   alt text describing what it shows beside it, open by default
                   so the two can be read together. The four pieces sit in one
