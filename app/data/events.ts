@@ -115,7 +115,8 @@ export const events: Event[] = [
     description: "A celebration of recent books by Miriam Posner, Julian Posada, and Lauren Klein",
     kind: "party",
     city: "Chicago, IL",
-        venue: "Location TBD",
+    streetAddress: "151 E Wacker Dr",
+    postalCode: "60601",
   },
   {
     date: "Tuesday, October 27, 2026",
