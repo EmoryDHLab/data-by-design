@@ -4,7 +4,7 @@ import ChapterCardGrid from "~/components/home/ChapterCardGrid";
 import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import { Link } from "react-router";
-import { bookMeta, bookSchema, retailers } from "~/data/bookMeta";
+import { bookSchema, retailers } from "~/data/bookMeta";
 import { events } from "~/data/events";
 import { trackPreorderClick, trackEventClick } from "~/analytics";
 import StructuredData from "~/components/StructuredData";
