@@ -62,7 +62,7 @@ export default function Index() {
         </h1>
 
         <div />
-        <section aria-label="Pre-order" className="bg-offwhite text-black">
+        <section aria-label="Buy the book" className="bg-offwhite text-black">
           <div className="max-w-6xl mx-auto md:flex md:items-center gap-16 xl:gap-24  md:px-10 py-12 md:py-20">
             <figure className="my-10 px-5 md:px-0 flex-shrink-0 w-full md:w-[380px]">
               <a
@@ -87,10 +87,7 @@ export default function Index() {
               <div className="order-3 md:order-last mt-6 md:mt-5">
                 <div className="flex flex-wrap items-baseline gap-x-4 pb-3">
                   <span className="font-power font-bold tracking-widest text-sm uppercase">
-                    Preorder Now
-                  </span>
-                  <span className="font-power text-sm text-black/60">
-                    On sale {bookMeta.publicationDateDisplay}
+                    Out Now
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-3">

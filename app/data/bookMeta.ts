@@ -16,8 +16,8 @@ export const bookMeta = {
   cover: "/images/bookcover.webp",
 };
 
-// Catalog details, as two short lines of small type under the CTAs. The on-sale
-// date is deliberately absent: it already sits beside the "Preorder Now" label.
+// Catalog details, as two short lines of small type under the CTAs. The
+// publication date is deliberately absent.
 export const bookFacts = [
   [bookMeta.publisher, bookMeta.format],
   [
@@ -72,8 +72,7 @@ export const bookSchema = () => ({
   offers: retailers.map((retailer) => ({
     "@type": "Offer",
     url: retailer.url,
-    availability: "https://schema.org/PreOrder",
-    availabilityStarts: bookMeta.publicationDate,
+    availability: "https://schema.org/InStock",
     seller: {
       "@type": "Organization",
       name: retailer.name,
