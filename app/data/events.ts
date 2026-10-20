@@ -197,6 +197,7 @@ export const events: Event[] = [
     startDate: "2026-11-12T08:48:00-05:00",
     city: "Boston, MA",
     title: "IEEE VIS conference",
+    venue: "Hall Essex Center",
     description: "Lauren Klein and Shiyao Li will present “What Data Do and Do Not Represent” at the IEEE VIS Conference.",
     kind: "conference",
     registerUrl: "https://ieeevis.org/year/2026/program/content/3e882a43-49fc-40e2-9b81-b1de23651e6e/",
