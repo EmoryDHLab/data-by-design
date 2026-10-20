@@ -197,6 +197,8 @@ export const events: Event[] = [
     title: "IEEE VIS conference",
     description: "Lauren Klein and Shiyao Li will present “What Data Do and Do Not Represent” at the IEEE VIS Conference.",
     kind: "conference",
+    registerUrl: "https://ieeevis.org/year/2026/program/content/3e882a43-49fc-40e2-9b81-b1de23651e6e/",
+    registerLabel: "View session",
   },
   {
     date: "Friday, November 20, 2026",
