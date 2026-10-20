@@ -192,7 +192,9 @@ export const events: Event[] = [
     day: "12",
     weekday: "Thu",
     year: "2026",
-    startDate: "2026-11-12",
+    time: "8:48am–9:00am",
+    // EST: US daylight time ended November 1, 2026.
+    startDate: "2026-11-12T08:48:00-05:00",
     city: "Boston, MA",
     title: "IEEE VIS conference",
     description: "Lauren Klein and Shiyao Li will present “What Data Do and Do Not Represent” at the IEEE VIS Conference.",
