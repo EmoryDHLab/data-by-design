@@ -9,7 +9,7 @@ import { ChapterContext } from "~/chapterContext";
 import SelectedImage from "~/components/home/SelectedImage.client";
 import { Link } from "react-router";
 import { chapterMeta } from "~/data/chapterMeta";
-import { bookMeta, bookSchema, retailers } from "~/data/bookMeta";
+import { bookSchema, retailers } from "~/data/bookMeta";
 import { events } from "~/data/events";
 import { trackPreorderClick } from "~/analytics";
 import StructuredData from "~/components/StructuredData";
