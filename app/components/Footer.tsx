@@ -137,11 +137,11 @@ export default function Footer() {
         </p>
         <form
           className="relative w-full max-w-md mb-8"
-          action="https://dataxdesign.us22.list-manage.com/subscribe/post?u=6d2b8677087077c76d5d9940a&amp;id=7cff42ff53&amp;f_id=00a6c7e1f0"
+          action="https://network.us21.list-manage.com/subscribe/post?u=7b24b85a700e666651850d816&amp;id=c6313e8a41&amp;f_id=003fa4e6f0"
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
-          target="_blank"
+          target="_self"
         >
           <div className="relative">
             <input
@@ -176,6 +176,7 @@ export default function Footer() {
               </svg>
             </button>
           </div>
+          <input type="hidden" name="tags" value="3021723" />
           <div aria-hidden="true" className="sr-only">
             {/*
                 Note from MailChimp - example real people should not fill this
@@ -184,7 +185,7 @@ export default function Footer() {
             */}
             <input
               type="text"
-              name="b_6d2b8677087077c76d5d9940a_7cff42ff53"
+              name="b_7b24b85a700e666651850d816_c6313e8a41"
               tabIndex={-1}
               value=""
               readOnly
