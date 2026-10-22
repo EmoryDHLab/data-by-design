@@ -5,7 +5,7 @@ import Footer from "~/components/Footer";
 import { ChapterContext } from "~/chapterContext";
 import { Link } from "react-router";
 import { bookSchema, retailers } from "~/data/bookMeta";
-import { events } from "~/data/events";
+import { events, hasPassed } from "~/data/events";
 import { trackPreorderClick, trackEventClick } from "~/analytics";
 import StructuredData from "~/components/StructuredData";
 import { classNames, HOST_NAME } from "~/utils";
@@ -41,10 +41,13 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-// The three launches, pulled from the same tour list the /events page reads.
-const releaseEvents = events.filter((event) =>
-  event.title.includes("Book Release!")
-);
+// The launches still ahead, pulled from the same tour list the /events page
+// reads. Called per render rather than once at load, so a launch drops off
+// once its day is behind us.
+const upcomingReleaseEvents = () =>
+  events.filter(
+    (event) => event.title.includes("Book Release!") && !hasPassed(event)
+  );
 
 export default function Index() {
   return (
@@ -153,7 +156,7 @@ export default function Index() {
               Book Release Events
             </h2>
             <ul className="divide-y divide-black/10 border-y border-black/10">
-              {releaseEvents.map((event) => {
+              {upcomingReleaseEvents().map((event) => {
                 const href = event.registerUrl ?? event.url;
                 return (
                   <li key={event.title}>
