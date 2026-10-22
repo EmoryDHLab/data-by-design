@@ -115,9 +115,9 @@ export const events: Event[] = [
     description: "A celebration of recent books by Miriam Posner, Julian Posada, and Lauren Klein",
     kind: "party",
     city: "Chicago, IL",
-    venue: "Big Bar, 2nd floor of the Hyatt Regency Chicago",
-    streetAddress: "151 E Wacker Dr",
-    postalCode: "60601",
+    venue: "2twenty2 Tavern",
+    streetAddress: "222 S Wabash Ave",
+    postalCode: "60604",
   },
   {
     date: "Tuesday, October 27, 2026",
