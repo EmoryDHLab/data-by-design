@@ -1,40 +1,11 @@
 import { EditablePeabodySquare } from "~/components/knowledge/EditablePeabodySquare";
 import { useState } from "react";
 import { classNames } from "~/utils";
-
-type Color = { label: string; rgb: string };
-
-type Colors = Array<Color>;
-
-const actorColors: Colors = [
-  {
-    label: "brown",
-    rgb: "rgb(119,43,21)",
-  },
-  {
-    label: "orange",
-    rgb: "rgb(222,145,49)",
-  },
-  {
-    label: "blue",
-    rgb: "rgb(60,100,100)",
-  },
-  {
-    label: "green",
-    rgb: "rgb(68,108,73)",
-  },
-  {
-    label: "yellow",
-    rgb: "rgb(217,182,17)",
-  },
-  {
-    label: "red",
-    rgb: "rgb(209,42,5)",
-  },
-];
+import { actorColors } from "~/components/knowledge/peabodyUtils";
+import type { PeabodyColor } from "~/components/knowledge/peabodyUtils";
 
 export default function PeabodySandbox() {
-  const [currentColor, setCurrentColor] = useState<Color>(actorColors[0]);
+  const [currentColor, setCurrentColor] = useState<PeabodyColor>(actorColors[0]);
   return (
     <div
       className="w-full bg-black py-10 flex flex-col items-center my-8 md:my-12 relative z-10"

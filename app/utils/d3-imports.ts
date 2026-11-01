@@ -7,6 +7,7 @@ export { scaleLinear, scaleOrdinal, scaleBand, scaleTime } from 'd3-scale';
 export { axisBottom, axisLeft } from 'd3-axis';
 export { format } from 'd3-format';
 export { csv } from 'd3-fetch';
+export { csvParse } from 'd3-dsv';
 export { treemap, hierarchy, treemapSquarify } from 'd3-hierarchy';
 export { drag } from 'd3-drag';
 export { timeFormat } from 'd3-time-format';

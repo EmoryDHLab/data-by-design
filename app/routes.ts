@@ -10,6 +10,7 @@ export default [
   route("about", "routes/about.tsx"),
   route("archive", "routes/archive.tsx"),
   route("events", "routes/events.tsx"),
+  route("peabody-workshop", "routes/peabody-workshop.tsx"),
   route("dev/voyage-snapshot", "routes/dev.voyage-snapshot.tsx"),
   route("chapters", "routes/chapters.tsx", [
     route("change", "routes/chapters.change.tsx"),

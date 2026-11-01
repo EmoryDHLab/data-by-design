@@ -23,6 +23,19 @@ export function getYearYFromIndex(index: number, width?: number) {
 
 export type Actor = string;
 
+export type PeabodyColor = { label: string; rgb: string };
+
+// The six actor colors from Peabody's charts, used wherever readers color
+// their own grids.
+export const actorColors: PeabodyColor[] = [
+  { label: "brown", rgb: "rgb(119,43,21)" },
+  { label: "orange", rgb: "rgb(222,145,49)" },
+  { label: "blue", rgb: "rgb(60,100,100)" },
+  { label: "green", rgb: "rgb(68,108,73)" },
+  { label: "yellow", rgb: "rgb(217,182,17)" },
+  { label: "red", rgb: "rgb(209,42,5)" },
+];
+
 export type YearSquare = (Actor[] | null)[];
 
 export type SquareData = (YearSquare | null)[];
