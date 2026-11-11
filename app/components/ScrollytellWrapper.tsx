@@ -14,7 +14,7 @@ import { classNames } from "~/utils";
 interface Props {
   setScrollProgress: Dispatch<SetStateAction<number>>;
   setCurrentStep?: Dispatch<SetStateAction<number>>;
-  setDirection?: Dispatch<SetStateAction<string>>;
+  setDirection?: Dispatch<SetStateAction<"down" | "up">>;
   children: ReactNode;
   container?: ReactNode;
   parent?: ReactNode | HTMLElement;

@@ -21,10 +21,12 @@ const ScrollytellTwo = ({ triggers }: { triggers: ReactElement[] }) => {
     y: chartHeight / 2 - figures["0530"].height / 2,
     x: chartWidth / 2 - figures["0530"].width / 2,
   });
+  const [direction, setDirection] = useState<"down" | "up">("down");
   const steps = useRef<HTMLDivElement>(null);
   const { backgroundColor, primaryTextColor } = useContext(ChapterContext);
 
   useEffect(() => {
+    console.log("🚀 ~ ScrollytellTwo ~ scrollProgress:", scrollProgress);
     switch (true) {
       case scrollProgress <= 2:
         setFocusShape({
@@ -56,13 +58,14 @@ const ScrollytellTwo = ({ triggers }: { triggers: ReactElement[] }) => {
   }, [scrollProgress]);
 
   return (
-    <ScrollytellContext.Provider value={{ scrollProgress }}>
+    <ScrollytellContext.Provider value={{ scrollProgress, direction }}>
       <ScrollytellWrapper
         setScrollProgress={setScrollProgress}
         triggers={triggers}
         steps={steps}
         bgColor={backgroundColor}
         stepClassName=".scrollytell-two-step"
+        setDirection={setDirection}
       >
         <div
           className="flex flex-col md:flex-row justify-between"
@@ -79,23 +82,50 @@ const ScrollytellTwo = ({ triggers }: { triggers: ReactElement[] }) => {
                 version="1.1"
                 viewBox={`0 0 ${chartWidth} ${chartHeight}`}
               >
+                <defs>
+                  <filter
+                    id="shadow"
+                    x="-20%"
+                    y="-20%"
+                    width="140%"
+                    height="140%"
+                  >
+                    <feDropShadow
+                      dx="4"
+                      dy="4"
+                      stdDeviation="5"
+                      flood-color="#000"
+                      flood-opacity="0.4"
+                    />
+                  </filter>
+                </defs>
                 <rect
                   {...focusShape}
-                  className="fill-offwhite transition-all duration-1000"
+                  rx={15}
+                  ry={15}
+                  className={`fill-offwhite transition-all duration-1000 ${
+                    scrollProgress >= 1 ? "opacity-100" : "opacity-0"
+                  }`}
+                  filter="url(#shadow)"
                 />
 
                 <image
-                  width={figures["0530"].width}
-                  height={figures["0530"].height}
-                  y={chartHeight / 2 - figures["0530"].height / 2}
-                  x={chartWidth / 2 - figures["0530"].width / 2}
+                  width={chartWidth}
+                  height={chartHeight}
+                  y={0}
+                  x={0}
                   className={`${
                     scrollProgress >= 0 && scrollProgress <= 1
                       ? "opacity-100"
                       : "opacity-0"
                   }
-                      transition-opacity duration-1000`}
-                  href={`/images/chapters/${figures["0530"].fileName}.jpg`}
+                      ${
+                        scrollProgress >= 0.5
+                          ? "scale-[5] -translate-x-[103rem] -translate-y-[62rem]"
+                          : "scale-100 translate-x-0 translate-y-0"
+                      }
+                      transition-all duration-1000`}
+                  href={`/images/chapters/${figures["0527-899-series"].fileName}.webp`}
                 />
 
                 <g

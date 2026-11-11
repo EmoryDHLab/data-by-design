@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { ScrollytellContext } from "~/scrollytellContext";
+
 interface Props {
   width: number;
   x: number;
@@ -32,6 +35,7 @@ const Map = ({
   x,
   y,
 }: Props) => {
+  const { direction } = useContext(ScrollytellContext);
   return (
     <svg
       viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
@@ -501,6 +505,15 @@ const Map = ({
         />
 
         <path d="M1929.14,1098.63l-17.58-10.53-17.58,10.53,4.65-19.87-15.5-13.34,20.44-1.73,7.98-18.75,7.98,18.71,20.44,1.73-15.5,13.34,4.65,19.91M1911.56,1032.54c-22.98,0-41.55,18.59-41.55,41.31s18.6,41.31,41.55,41.31,41.55-18.49,41.55-41.31-18.6-41.31-41.55-41.31Z" />
+      </g>
+      <g
+        id="atlanta-label"
+        className={`transition-opacity ${
+          direction && direction === "down"
+            ? "delay-300 duration-1000"
+            : "delay-0 duration-300"
+        } ${showATL ? "opacity-100" : "opacity-0"}`}
+      >
         <svg
           height={fontSize}
           y={1765}

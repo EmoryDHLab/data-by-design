@@ -22,7 +22,9 @@ export default function Legend({ width, height }: Props) {
   return (
     <g
       className={`transition-opacity duration-1000 scale-90 translate-x-6 ${
-        scrollProgress >= 8 && scrollProgress <= 9 ? "opacity-100" : "opacity-0"
+        scrollProgress >= 10 && scrollProgress <= 11
+          ? "opacity-100"
+          : "opacity-0"
       }`}
     >
       <g id="row1">

@@ -1115,59 +1115,68 @@ export default function DuboisChapter() {
 
         <ScrollytellTwo
           triggers={[
-            <span key="94a7a3b2">
+            <span key="slide-0">
               We created an updated version of our initial chart with the
               additional data from the 1910 Atlanta University Study.
             </span>,
-            <span key="94a7a3b3">
+            <span key="slide-1">
               In the original chart, a map at the top of the page informed
               viewers of the location of Atlanta University.
             </span>,
-            <span key="63ba9abc">
+            <span key="slide-2">
               In our version, we added the locations of the 33 additional Black
               colleges also included in the study.
               <InlineFootnote index={68} />
             </span>,
-            <span key="06e375fc">
+            <span key="slide-3">
               The location of Atlanta University (which is also, notably, the
               location of the majority of our own research team) is still marked
               with a star.
             </span>,
-            <span key="5448c43e">
+            <span key="slide-4">
               We also expanded the pie chart. We documented all 3,856 of the
               Black college graduates described by the study, living or dead,
               whether they returned the survey or not.
             </span>,
-            <span key="9b862bca">
+            <span key="slide-5">
               The 163 graduates of the “college course” at Atlanta University,
               whom Du Bois describes in the study in depth, are named in our
-              chart. We once again used the alumni section of that year’s{" "}
+              chart.
+            </span>,
+            <span key="slide-6">
+              We once again used the alumni section of that year’s{" "}
               <cite>Catalogue</cite> to group the graduates by occupation and
               position them in the appropriate area of the pie chart.
             </span>,
-            <span key="6bb49ec4">
+            <span key="slide-7">
               Mack is positioned as a “homemaker,” as she had stopped teaching
               for a time.
             </span>,
-            <span key="9802732f">
+            <span key="slide-8">
               Westmoreland is positioned in “government service,” as he was
               still working as a mail carrier.
             </span>,
-            <span key="590917b7">
+            <span key="slide-9">
               Simon and Rogers are positioned as “teachers.”
             </span>,
-            <span key="d5f4d889">
+            <span key="slide-10">
+              Here, poignantly, Edward Lee Simon is recorded as deceased.
+            </span>,
+            <span key="slide-11">
               As in our own previous chart, we’ve added categories to represent
-              those with unknown occupations, as well as those—at that point
-              also including Lee—who were recorded as “Deceased.”
+              those with unknown occupations.
             </span>,
-            <span key="e00e084e">
-              We used the counts of the occupations reported by the 800 survey
-              respondents to calculate the approximate proportion of dots to
-              place in each category. These are displayed with lighter
-              saturation and dotted outlines.
+            <span key="slide-12">
+              We began with the same Atlanta University graduates, whose names
+              and occupations were known.
             </span>,
-            <span key="239180fe">
+            <span key="slide-13">
+              We then used the counts of the occupations reported by the
+              additional 800 survey respondents to calculate the approximate
+              proportion of additional dots to place in each category. These are
+              displayed with lighter saturation and dotted outlines.
+            </span>,
+            <span key="slide-14">
               An additional 2,893 gray dots represent the graduates of the other
               140 colleges included in the study, whose names and exact
               occupations we do not know.
@@ -1176,7 +1185,7 @@ export default function DuboisChapter() {
               Black graduates of 107 predominantly white institutions.)
               <InlineFootnote index={70} />
             </span>,
-            <span key="cd7da2c4e700">
+            <span key="slide-15">
               We used the counts of the occupations reported by the 800 survey
               respondents to calculate the approximate proportion of dots to
               place in each category, which we see as holding visual space for

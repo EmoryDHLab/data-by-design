@@ -6,6 +6,10 @@ interface Props {
   height: number;
 }
 
+const MACK_Y_OFFSET = 2;
+const SIMON_Y_OFFSET = 3;
+const ROGERS_Y_OFFSET = 1.5;
+
 const People = ({ width, height }: Props) => {
   const largeText = height / 28;
   const smallText = height / 32;
@@ -15,32 +19,32 @@ const People = ({ width, height }: Props) => {
   return (
     <g
       className={`${
-        scrollProgress >= 5 ? "opacity-100" : "opacity-0"
+        scrollProgress >= 6 ? "opacity-100" : "opacity-0"
       } transition-opacity duration-1000 scale-90`}
     >
       <g
         className={`${
-          scrollProgress >= 5 && scrollProgress <= 7
+          scrollProgress >= 6 && scrollProgress <= 8
             ? "opacity-100"
             : "opacity-0"
         } transition-opacity duration-1000`}
       >
         <polygon
           points={`
-          ${width / 10},${height / 4}
-          ${width / 10 + 40}, ${height / 4 + 40}
-          ${width / 10},${height / 4 + 80}
-          ${width / 10 - 40},${height / 4 + 40}
+          ${width / 10},${height / MACK_Y_OFFSET}
+          ${width / 10 + 40}, ${height / MACK_Y_OFFSET + 40}
+          ${width / 10},${height / MACK_Y_OFFSET + 80}
+          ${width / 10 - 40},${height / MACK_Y_OFFSET + 40}
         `}
           strokeWidth={10}
           className={`stroke-offblack transition-all duration-1000 ${
-            scrollProgress >= 5 && scrollProgress <= 6
+            scrollProgress >= 6 && scrollProgress <= 7
               ? "fill-[#FEC313]"
               : "fill-[#FFD3D3]"
           }`}
         />
         <rect
-          y={height / 4}
+          y={height / MACK_Y_OFFSET}
           x={width * 0.2}
           height={largeText * 6}
           width={width * 0.8}
@@ -49,13 +53,13 @@ const People = ({ width, height }: Props) => {
         />
         <g
           className={`${
-            scrollProgress >= 5 && scrollProgress <= 6
+            scrollProgress >= 6 && scrollProgress <= 7
               ? "opacity-100"
               : "opacity-0"
           } transition-opacity duration-1000`}
         >
           <text
-            y={height / 4 + 25}
+            y={height / MACK_Y_OFFSET + 25}
             x={width * 0.2 + 25}
             fontSize={largeText}
             className="fill-offwhite font-powerWide tracking-wider"
@@ -80,13 +84,13 @@ const People = ({ width, height }: Props) => {
         </g>
         <g
           className={`${
-            scrollProgress >= 6 && scrollProgress <= 7
+            scrollProgress >= 7 && scrollProgress <= 8
               ? "opacity-100"
               : "opacity-0"
           } transition-opacity duration-1000`}
         >
           <text
-            y={height / 4 + 25}
+            y={height / MACK_Y_OFFSET + 25}
             x={width * 0.2 + 25}
             fontSize={largeText}
             className="fill-offwhite font-powerWide tracking-wider"
@@ -119,7 +123,7 @@ const People = ({ width, height }: Props) => {
       </g>
       <g
         className={`${
-          scrollProgress >= 7 && scrollProgress <= 8
+          scrollProgress >= 8 && scrollProgress <= 10
             ? "opacity-100"
             : "opacity-0"
         } transition-opacity duration-1000`}
@@ -127,17 +131,19 @@ const People = ({ width, height }: Props) => {
         <g id="simon">
           <polygon
             points={`
-          ${width / 15},${height / 5}
-          ${width / 15 + 40}, ${height / 5 + 40}
-          ${width / 15},${height / 5 + 80}
-          ${width / 15 - 40},${height / 5 + 40}
+          ${width / 8},${height / SIMON_Y_OFFSET}
+          ${width / 8 + 40}, ${height / SIMON_Y_OFFSET + 40}
+          ${width / 8},${height / SIMON_Y_OFFSET + 80}
+          ${width / 8 - 40},${height / SIMON_Y_OFFSET + 40}
         `}
             strokeWidth={10}
-            className={`stroke-offblack transition-all duration-1000 fill-[#D92944]`}
+            className={`stroke-offblack transition-all duration-1000 ${
+              scrollProgress <= 9 ? "fill-[#D92944]" : "fill-[#C4C4C4]"
+            }`}
           />
           <rect
-            y={height / 5}
-            x={width * 0.15}
+            y={height / SIMON_Y_OFFSET}
+            x={width * 0.2}
             height={largeText * 6}
             width={width * 0.85}
             rx={20}
@@ -145,56 +151,64 @@ const People = ({ width, height }: Props) => {
           />
           <g
             className={`${
-              scrollProgress >= 7 && scrollProgress <= 8
+              scrollProgress >= 8 && scrollProgress <= 10
                 ? "opacity-100"
                 : "opacity-0"
             } transition-opacity duration-1000`}
           >
             <text
-              y={height / 5 + 25}
-              x={width * 0.15 + 25}
+              y={height / SIMON_Y_OFFSET + 25}
+              x={width * 0.2 + 25}
               fontSize={largeText}
-              className="fill-offwhite font-powerWide tracking-wider"
+              className={`fill-offwhite font-powerWide tracking-wider`}
               dominantBaseline="hanging"
             >
               <tspan>Edward Lee Simon</tspan>
               <tspan
                 fontSize={smallText}
                 dy={largeText + smallText / 1.75}
-                x={width * 0.15 + 25}
+                x={width * 0.2 + 25}
               >
                 Supervisor Indus. Work, Pub. Schools
               </tspan>
               <tspan
                 fontSize={smallText}
                 dy={largeText + smallText / 2.75}
-                x={width * 0.15 + 25}
+                x={width * 0.2 + 25}
               >
                 Memphis, Tenn.
               </tspan>
               <tspan
                 fontSize={smallText}
                 dy={largeText + smallText / 2.75}
-                x={width * 0.15 + 25}
+                x={width * 0.2 + 25}
               >
                 Class of 1900
               </tspan>
             </text>
           </g>
         </g>
+      </g>
+      <g
+        className={`${
+          scrollProgress >= 8 && scrollProgress <= 9
+            ? "opacity-100"
+            : "opacity-0"
+        } transition-opacity duration-1000`}
+      >
         <g id="rogers">
           <polygon
             points={`
-          ${width / 5},${height / 1.75}
-          ${width / 5 + 40}, ${height / 1.75 + 40}
-          ${width / 5},${height / 1.75 + 80}
-          ${width / 5 - 40},${height / 1.75 + 40}
+          ${width / 5},${height / ROGERS_Y_OFFSET}
+          ${width / 5 + 40}, ${height / ROGERS_Y_OFFSET + 40}
+          ${width / 5},${height / ROGERS_Y_OFFSET + 80}
+          ${width / 5 - 40},${height / ROGERS_Y_OFFSET + 40}
         `}
             strokeWidth={10}
             className={`stroke-offblack transition-all duration-1000 fill-[#D92944]`}
           />
           <rect
-            y={height / 1.75}
+            y={height / ROGERS_Y_OFFSET}
             x={width * 0.28}
             height={largeText * 6}
             width={width * 0.7}
@@ -203,7 +217,7 @@ const People = ({ width, height }: Props) => {
           />
           <g className={``}>
             <text
-              y={height / 1.75 + 25}
+              y={height / ROGERS_Y_OFFSET + 25}
               x={width * 0.28 + 25}
               fontSize={largeText}
               className="fill-offwhite font-powerWide tracking-wider"
@@ -212,7 +226,7 @@ const People = ({ width, height }: Props) => {
               <tspan>William Andrew Rogers</tspan>
               <tspan
                 fontSize={smallText}
-                dy={largeText + smallText / 1.75}
+                dy={largeText + smallText / ROGERS_Y_OFFSET}
                 x={width * 0.28 + 25}
               >
                 Teacher State Normal School
@@ -235,7 +249,7 @@ const People = ({ width, height }: Props) => {
           </g>
         </g>
       </g>
-      <g
+      {/* <g
         className={`${
           scrollProgress >= 9 && scrollProgress <= 10
             ? "opacity-100"
@@ -290,7 +304,7 @@ const People = ({ width, height }: Props) => {
             Class of 1900
           </tspan>
         </text>
-      </g>
+      </g> */}
     </g>
   );
 };

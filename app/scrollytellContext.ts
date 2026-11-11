@@ -8,12 +8,15 @@ interface IScrollytellContext {
   setTriggers?: Dispatch<SetStateAction<Array<RefObject<HTMLDivElement>>>>;
   steps?: RefObject<HTMLDivElement> | undefined;
   setHighlightedSquare?: Dispatch<SetStateAction<object | undefined>>;
+  direction?: "down" | "up";
 }
 
 export const ScrollytellContext = createContext<IScrollytellContext>({
   scrollProgress: 0.0,
   setScrollProgress: (_: SetStateAction<number>) => {
-    console.error("setScrollProgress not implemented. Did you pass it to context?");
+    console.error(
+      "setScrollProgress not implemented. Did you pass it to context?",
+    );
   },
   setTriggers: (_: SetStateAction<Array<RefObject<HTMLDivElement>>>) => {
     // console.error("setTriggers not implemented. Did you pass it to context?");

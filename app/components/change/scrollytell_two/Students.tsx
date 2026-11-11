@@ -189,11 +189,16 @@ const Students = ({ width, height }: { width: number; height: number }) => {
   }, [width, height, radius]);
 
   const showOthers =
-    (scrollProgress >= 3 && scrollProgress < 4) || scrollProgress >= 10;
+    (scrollProgress >= 3 && scrollProgress < 4) || scrollProgress >= 12;
+  const fillOthers = scrollProgress >= 12;
   const showAtlanta =
-    (scrollProgress >= 3 && scrollProgress <= 5) || scrollProgress >= 10;
-  const plucked = scrollProgress >= 3.25 && scrollProgress <= 6;
-  const zoomed = scrollProgress >= 4 && scrollProgress <= 6;
+    (scrollProgress >= 3 && scrollProgress <= 6) || scrollProgress >= 11;
+  const fillAtlanta = scrollProgress >= 4;
+  // const plucked = scrollProgress >= 3.25 && scrollProgress <= 6;
+  const zoomed = scrollProgress >= 5 && scrollProgress <= 7;
+  const grouped = scrollProgress >= 4 && scrollProgress <= 7;
+  const showDeceased =
+    (scrollProgress >= 3 && scrollProgress < 4) || scrollProgress >= 13;
 
   return (
     <g className="scale-95 origin-center">
@@ -202,30 +207,45 @@ const Students = ({ width, height }: { width: number; height: number }) => {
           zoomed ? "-translate-x-6 -translate-y-[33.5rem] scale-[5]" : ""
         }`}
         // Wait for the Atlanta graduates to finish moving before zooming in.
-        style={{ transitionDelay: plucked ? "1000ms" : "0ms" }}
+        // style={{ transitionDelay: plucked ? "1000ms" : "0ms" }}
       >
         <g
           className={`transition-opacity duration-1000 ${
             showOthers ? "opacity-100" : "opacity-0"
           }`}
         >
-          {others.map((cell, index) => (
-            <circle
-              key={index}
-              r={radius}
-              cx={cell.x}
-              cy={cell.y}
-              opacity={cell.respondent ? 0.6 : 0.6}
-              // strokeDasharray={cell.respondent ? "2 2" : "2 2"}
-              className={`stroke-offblack ${cell.fill}`}
-              style={{
-                fillOpacity: (() => {
-                  if (scrollProgress < 9) return 0;
-                  return 1;
-                })(),
-              }}
-            />
-          ))}
+          {others
+            .filter((s) => s.fill !== GRAY)
+            .map((cell, index) => (
+              <circle
+                key={index}
+                r={radius}
+                cx={cell.x}
+                cy={cell.y}
+                opacity={0.6}
+                // strokeDasharray={cell.respondent ? "2 2" : "2 2"}
+                className={`stroke-offblack ${fillOthers ? cell.fill : GRAY}`}
+              />
+            ))}
+        </g>
+        <g
+          className={`transition-opacity duration-1000 ${
+            showDeceased ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {others
+            .filter((s) => s.fill === GRAY)
+            .map((cell, index) => (
+              <circle
+                key={index}
+                r={radius}
+                cx={cell.x}
+                cy={cell.y}
+                opacity={0.6}
+                // strokeDasharray={cell.respondent ? "2 2" : "2 2"}
+                className={`stroke-offblack ${cell.fill}`}
+              />
+            ))}
         </g>
         <g
           className={`transition-opacity duration-1000 ${
@@ -238,27 +258,13 @@ const Students = ({ width, height }: { width: number; height: number }) => {
               r={radius}
               cx={cell.x}
               cy={cell.y}
-              className={`stroke-offblack transition-[fill-opacity,opacity,transform] duration-1000 ${cell.fill}`}
-              opacity={(() => {
-                if (scrollProgress >= 3 && scrollProgress < 4) {
-                  return 0.6;
-                } else if (scrollProgress >= 4 && scrollProgress < 5) {
-                  return 1;
-                } else if (scrollProgress >= 10) {
-                  return 1;
-                }
-                return 0;
-              })()}
+              className={`stroke-offblack transition-[fill-opacity,opacity,transform] duration-1000 ${
+                fillAtlanta ? cell.fill : GRAY
+              }`}
+              opacity={fillAtlanta ? 1 : 0.6}
               style={{
-                fillOpacity: (() => {
-                  if (scrollProgress >= 4 && scrollProgress < 5) {
-                    return 1;
-                  } else if (scrollProgress >= 10) {
-                    return 1;
-                  }
-                  return 0;
-                })(),
-                transform: zoomed
+                fillOpacity: fillAtlanta ? 1 : 0.6,
+                transform: grouped
                   ? `translate(${cell.dx}px, ${cell.dy}px)`
                   : "none",
                 transitionDelay: `${cell.delay}ms`,
